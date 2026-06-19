@@ -34,8 +34,9 @@ Output:
 3. Reject forbidden fields.
 4. Match score sets and expected actions by `episode_id`.
 5. Select top-1 from unblocked candidates.
-6. Compare top-1 action type with the synthetic expected action type.
-7. Write summary and per-episode results.
+6. Read `CandidateScore.action_type` from the score output.
+7. Compare top-1 action type with the synthetic expected action type.
+8. Write summary and per-episode results.
 
 ## 6. Important data structures
 
@@ -44,6 +45,9 @@ Output:
 `EpisodeEvaluation` describes one episode-level comparison.
 
 `EvaluationReport` groups summary counts, rates, and per-episode records.
+
+`CandidateScore.action_type` is the candidate action category produced upstream.
+`candidate_id` is only an identifier and is not parsed to recover action type.
 
 ## 7. Theory behind the implementation
 
@@ -87,9 +91,8 @@ Tests cover loading score sets, loading expected actions, exact-match calculatio
 
 ## 13. Known limitations
 
-Candidate action type is currently derived from the synthetic prototype `candidate_id` convention when no explicit `action_type` field is present in score output.
-
-This is acceptable for the prototype but should become an explicit score-schema field before serious evaluation work.
+The evaluator now requires explicit `CandidateScore.action_type`. Older score
+fixtures without this field need to be regenerated before evaluation.
 
 ## 14. What to read next
 

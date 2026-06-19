@@ -15,6 +15,7 @@ It also records whether the expected action appears anywhere among candidates an
 1. `CandidateScoreSet` JSONL
    - one score set per episode
    - produced by `python/ot_scorer.score`
+   - each candidate score must include explicit `action_type`
 
 2. Synthetic expected action JSONL
    - one expected action per episode
@@ -26,6 +27,11 @@ It also records whether the expected action appears anywhere among candidates an
      - `notes`
 
 Synthetic expected actions are not real gold labels and not teacher corrections.
+
+The evaluator compares `expected_action_type` with `CandidateScore.action_type`.
+It does not parse `candidate_id` to infer action type. `candidate_id` remains a
+stable identifier, while `action_type` is the candidate-generation-derived
+category used for comparison.
 
 ## Output
 

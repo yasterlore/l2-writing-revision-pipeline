@@ -104,6 +104,7 @@ def score_candidate(candidate_violation: dict[str, Any]) -> CandidateScore:
     return CandidateScore(
         candidate_id=str(candidate_violation["candidate_id"]),
         episode_id=str(candidate_violation["episode_id"]),
+        action_type=str(candidate_violation["action_type"]),
         weighted_score=weighted_score,
         blocked=bool(block_reasons),
         block_reasons=block_reasons,
@@ -145,6 +146,7 @@ def assign_ranks(scores: list[CandidateScore]) -> list[CandidateScore]:
             CandidateScore(
                 candidate_id=score.candidate_id,
                 episode_id=score.episode_id,
+                action_type=score.action_type,
                 weighted_score=score.weighted_score,
                 blocked=score.blocked,
                 block_reasons=score.block_reasons,

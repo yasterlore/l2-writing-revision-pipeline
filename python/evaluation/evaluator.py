@@ -115,17 +115,10 @@ def top_unblocked_candidate(candidates: list[dict[str, Any]]) -> dict[str, Any] 
 def action_type_from_candidate(candidate: dict[str, Any] | None) -> str | None:
     if not candidate:
         return None
-    if "action_type" in candidate:
-        return str(candidate["action_type"])
-    candidate_id = str(candidate.get("candidate_id", ""))
-    marker = ":cand:"
-    if marker not in candidate_id:
+    action_type = candidate.get("action_type")
+    if action_type is None:
         return None
-    after_marker = candidate_id.split(marker, 1)[1]
-    parts = after_marker.split(":", 1)
-    if len(parts) != 2:
-        return None
-    return parts[1]
+    return str(action_type)
 
 
 def safe_rate(count: int, denominator: int) -> float:

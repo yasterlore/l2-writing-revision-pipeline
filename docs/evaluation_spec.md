@@ -21,10 +21,13 @@ The evaluator reads:
 - `episode_id`
 - `candidate_scores`
 - `candidate_id`
+- `action_type`
 - `rank`
 - `blocked`
 
-The current score schema does not explicitly include `action_type`, so the prototype derives it from the synthetic `candidate_id` convention. This should become explicit before serious evaluation.
+`candidate_id` is an identifier only. The evaluator compares synthetic expected
+actions against the explicit `CandidateScore.action_type` field and does not
+infer action type from candidate-id naming conventions.
 
 ### Synthetic Expected Action JSONL
 

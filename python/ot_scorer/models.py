@@ -169,6 +169,7 @@ class ConstraintContribution:
 class CandidateScore:
     candidate_id: str
     episode_id: str
+    action_type: str
     weighted_score: float
     blocked: bool
     block_reasons: list[str]
