@@ -37,6 +37,15 @@ Each candidate feature contains:
 - `no_oracle_safe`
 - `uses_observed_edit_text`
 - `action_family`
+- `candidate_metadata_complete`
+- `has_generation_rule`
+- `has_action_family`
+- `is_safety_relevant_candidate`
+- `is_placeholder_candidate`
+- `is_grammar_family_candidate`
+- `is_local_edit_family_candidate`
+- `is_hold_candidate`
+- `candidate_family_bucket`
 - `is_placeholder`
 - `is_hold`
 - `is_local_edit`
@@ -44,6 +53,10 @@ Each candidate feature contains:
 - `candidate_description_length`
 - `feature_notes_count`
 - `leakage_flags`
+
+The newer structural fields are derived only from candidate metadata and safety
+flags. They are intended for later constraint refinement and debugging, not for
+performance claims.
 
 The feature output does not include candidate descriptions, proposed edit payloads, local context text, or observed edit text.
 

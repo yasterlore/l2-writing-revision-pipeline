@@ -36,6 +36,10 @@ class CandidateFeatureTests(unittest.TestCase):
             "synthetic_session_001:micro:3:candidate_set:features",
         )
         self.assertTrue(feature_set.no_oracle_safe)
+        self.assertEqual(
+            feature_set.feature_schema_version,
+            "candidate_feature_schema_v0_2",
+        )
         self.assertEqual(len(feature_set.candidate_features), 3)
 
     def test_rejects_forbidden_field(self) -> None:
@@ -67,8 +71,11 @@ class CandidateFeatureTests(unittest.TestCase):
         hold = feature_set.candidate_features[0]
 
         self.assertTrue(hold.is_hold)
+        self.assertTrue(hold.is_hold_candidate)
         self.assertEqual(hold.action_family, "hold")
+        self.assertEqual(hold.candidate_family_bucket, "hold")
         self.assertFalse(hold.is_placeholder)
+        self.assertFalse(hold.is_placeholder_candidate)
 
     def test_placeholder_action_family(self) -> None:
         feature_set = build_feature_set(candidate_set())
@@ -77,8 +84,30 @@ class CandidateFeatureTests(unittest.TestCase):
 
         self.assertEqual(local_delete.action_family, "local_edit")
         self.assertTrue(local_delete.is_local_edit)
+        self.assertTrue(local_delete.is_local_edit_family_candidate)
+        self.assertEqual(local_delete.candidate_family_bucket, "local_edit")
         self.assertEqual(grammar.action_family, "grammar_placeholder")
         self.assertTrue(grammar.is_grammar_placeholder)
+        self.assertTrue(grammar.is_grammar_family_candidate)
+        self.assertTrue(grammar.is_placeholder_candidate)
+
+    def test_structural_metadata_features_are_present(self) -> None:
+        feature_set = build_feature_set(candidate_set())
+        hold = feature_set.candidate_features[0]
+
+        self.assertTrue(hold.candidate_metadata_complete)
+        self.assertTrue(hold.has_generation_rule)
+        self.assertTrue(hold.has_action_family)
+        self.assertFalse(hold.is_safety_relevant_candidate)
+
+    def test_safety_relevant_candidate_feature_is_structural(self) -> None:
+        data = candidate_set()
+        data["candidates"][0]["uses_observed_edit_text"] = True
+
+        feature_set = build_feature_set(data)
+        hold = feature_set.candidate_features[0]
+
+        self.assertTrue(hold.is_safety_relevant_candidate)
 
     def test_cli_output_excludes_text_fragments(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -92,6 +121,9 @@ class CandidateFeatureTests(unittest.TestCase):
             self.assertNotIn("proposed_edit", output_text)
             rows = [json.loads(line) for line in output_text.splitlines()]
             self.assertIn("candidate_features", rows[0])
+            first_feature = rows[0]["candidate_features"][0]
+            self.assertIn("candidate_metadata_complete", first_feature)
+            self.assertIn("candidate_family_bucket", first_feature)
 
     def test_source_does_not_use_eval_exec_or_pickle(self) -> None:
         source_dir = Path("python/ot_scorer")

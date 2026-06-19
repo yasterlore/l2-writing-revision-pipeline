@@ -54,6 +54,15 @@ class CandidateFeature:
     no_oracle_safe: bool
     uses_observed_edit_text: bool
     action_family: str
+    candidate_metadata_complete: bool
+    has_generation_rule: bool
+    has_action_family: bool
+    is_safety_relevant_candidate: bool
+    is_placeholder_candidate: bool
+    is_grammar_family_candidate: bool
+    is_local_edit_family_candidate: bool
+    is_hold_candidate: bool
+    candidate_family_bucket: str
     is_placeholder: bool
     is_hold: bool
     is_local_edit: bool

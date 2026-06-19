@@ -43,7 +43,7 @@ The output is a feature schema for later experiments.
 1. Read CandidateSet JSONL line by line.
 2. Parse each line as JSON.
 3. Reject forbidden fields such as `final_text`, `observed_after_text`, `gold_label`, `teacher_correction`, and `local_context_after_observed`.
-4. For each candidate, compute structural features.
+4. For each candidate, compute structural features from candidate metadata.
 5. Add leakage flags if a candidate claims to use observed edit text or is not marked no-oracle safe.
 6. Write feature sets as JSONL.
 7. Optionally read feature sets and create unweighted constraint-violation records.
@@ -53,6 +53,10 @@ The output is a feature schema for later experiments.
 ## 6. Important data structures
 
 `CandidateFeature` describes one candidate's structural features.
+
+Important structural features include `candidate_metadata_complete`, `has_generation_rule`, `has_action_family`, `is_safety_relevant_candidate`, `is_placeholder_candidate`, `is_grammar_family_candidate`, `is_local_edit_family_candidate`, `is_hold_candidate`, and `candidate_family_bucket`.
+
+These fields are derived from candidate metadata, action taxonomy, and leakage flags. They do not add candidate descriptions, proposed edit payloads, local context text, observed edit text, final text, or expected actions.
 
 `CandidateFeatureSet` groups all candidate features for one episode.
 
