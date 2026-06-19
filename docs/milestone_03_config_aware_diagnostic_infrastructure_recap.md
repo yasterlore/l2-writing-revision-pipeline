@@ -360,7 +360,8 @@ performance evaluation.
 
 Possible next steps:
 
-- milestone 03 release quality check
+- milestone 03 release quality check and
+  [final docs-only release review](milestone_03_final_docs_only_release_review.md)
 - config-enabled summary smoke expansion
 - synthetic-only hand-weight rationale examples
 - score-active family selection revisit
@@ -374,6 +375,7 @@ Real participant data remains out of the public repository.
 
 - [Milestone 01 pipeline recap](milestone_01_pipeline_recap.md)
 - [Milestone 02 synthetic evaluation recap](milestone_02_synthetic_evaluation_recap.md)
+- [Milestone 03 final docs-only release review](milestone_03_final_docs_only_release_review.md)
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md)
 - [Diagnostic summary tooling plan](diagnostic_summary_tooling_plan.md)
 - [Diagnostic-to-scoring boundary review](diagnostic_to_scoring_boundary_review.md)

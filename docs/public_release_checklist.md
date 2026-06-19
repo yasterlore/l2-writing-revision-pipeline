@@ -76,6 +76,7 @@ Confirm docs link to:
 - `docs/milestone_01_pipeline_recap.md`
 - `docs/milestone_02_synthetic_evaluation_recap.md`
 - `docs/milestone_03_config_aware_diagnostic_infrastructure_recap.md`
+- `docs/milestone_03_final_docs_only_release_review.md`
 - `docs/private_real_data_readiness_checklist.md`
 - `docs/observation_note_storage_and_review_workflow.md`
 - `docs/filled_observation_note_public_sharing_checklist.md`
@@ -87,6 +88,10 @@ Confirm docs link to:
 ## 4. License
 
 `LICENSE` is currently a placeholder, not a final open-source license.
+
+The Milestone 03
+[final docs-only release review](milestone_03_final_docs_only_release_review.md)
+is an internal checkpoint and does not resolve this license placeholder.
 
 Before public release:
 

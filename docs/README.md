@@ -7,6 +7,7 @@ Recommended entry points:
 - [Milestone 01 pipeline recap](milestone_01_pipeline_recap.md): beginner-friendly recap of the current pipeline foundation.
 - [Milestone 02 synthetic evaluation recap](milestone_02_synthetic_evaluation_recap.md): beginner-friendly recap of the synthetic evaluation wiring milestone.
 - [Milestone 03 config-aware diagnostic infrastructure recap](milestone_03_config_aware_diagnostic_infrastructure_recap.md): beginner-friendly recap of diagnostics, config-aware scoring infrastructure, explicit config E2E, and observation-note workflows.
+- [Milestone 03 final docs-only release review](milestone_03_final_docs_only_release_review.md): internal release-quality checkpoint; not a formal public release.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
