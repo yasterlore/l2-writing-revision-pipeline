@@ -155,12 +155,13 @@ fn classify_kind(event: &RawEvent) -> RevisionEventKind {
         return RevisionEventKind::Paste;
     }
 
+    if has_non_collapsed_selection(event) && has_text_edit(event) {
+        return RevisionEventKind::SelectionRangeEdit;
+    }
+
     match (&event.inserted_text, &event.deleted_text) {
         (Some(_), Some(_)) => RevisionEventKind::Replacement,
         (None, Some(_)) => RevisionEventKind::Deletion,
-        (Some(_), None) if has_non_collapsed_selection(event) => {
-            RevisionEventKind::SelectionRangeEdit
-        }
         (Some(_), None) => RevisionEventKind::Insertion,
         (None, None) => RevisionEventKind::Unsupported,
     }
@@ -168,7 +169,9 @@ fn classify_kind(event: &RawEvent) -> RevisionEventKind {
 
 fn is_revision_like(event: &RawEvent, kind: &RevisionEventKind) -> bool {
     match kind {
-        RevisionEventKind::Insertion => has_non_collapsed_selection(event),
+        RevisionEventKind::Insertion => {
+            has_non_collapsed_selection(event) || is_cursor_local(event)
+        }
         RevisionEventKind::Deletion
         | RevisionEventKind::Replacement
         | RevisionEventKind::SelectionRangeEdit
@@ -285,6 +288,17 @@ fn has_non_collapsed_selection(event: &RawEvent) -> bool {
     )
 }
 
+fn has_text_edit(event: &RawEvent) -> bool {
+    event.inserted_text.is_some() || event.deleted_text.is_some()
+}
+
+fn is_cursor_local(event: &RawEvent) -> bool {
+    matches!(
+        (event.cursor_pos_before, event.doc_len_before),
+        (Some(cursor), Some(doc_len)) if cursor < doc_len
+    )
+}
+
 fn is_paste(event: &RawEvent) -> bool {
     event.event_type == EventType::Paste || event.input_type == Some(InputType::InsertFromPaste)
 }
@@ -300,7 +314,7 @@ fn char_count(text: &str) -> usize {
 #[cfg(test)]
 mod tests {
     use super::{extract_revision_events, RevisionEventKind};
-    use kslog_schema::{EventType, RawEvent};
+    use kslog_schema::{DiffOp, EventType, InputType, RawEvent};
     use kslog_validate::{validate_jsonl_reader, ValidationOptions};
     use std::{
         fs,
@@ -332,6 +346,60 @@ mod tests {
             .collect()
     }
 
+    fn synthetic_event(
+        seq: u64,
+        event_type: EventType,
+        input_type: Option<InputType>,
+        before_text_len: u32,
+        after_text_len: u32,
+        cursor_before: u32,
+        cursor_after: u32,
+    ) -> RawEvent {
+        RawEvent {
+            logger_schema_version: "kslog.raw_event.v1".to_string(),
+            session_id: "synthetic_session_extract_inline".to_string(),
+            participant_local_id: "synthetic_writer_extract_inline".to_string(),
+            task_id: "synthetic_task_extract_inline".to_string(),
+            prompt_id: "synthetic_prompt_extract_inline".to_string(),
+            seq,
+            timestamp_ms: 1_700_000_020_000 + seq,
+            event_type,
+            input_type,
+            is_composing: false,
+            composition_id: None,
+            selection_start_before: Some(cursor_before),
+            selection_end_before: Some(cursor_before),
+            selection_start_after: Some(cursor_after),
+            selection_end_after: Some(cursor_after),
+            cursor_pos_before: Some(cursor_before),
+            cursor_pos_after: Some(cursor_after),
+            doc_len_before: Some(before_text_len),
+            doc_len_after: Some(after_text_len),
+            inserted_text: None,
+            deleted_text: None,
+            text_hash_before: None,
+            text_hash_after: None,
+            diff_op: None,
+            quality_flags: vec![],
+        }
+    }
+
+    fn insert_event(seq: u64, before_text_len: u32, cursor_before: u32, text: &str) -> RawEvent {
+        let inserted_len = text.chars().count() as u32;
+        let mut event = synthetic_event(
+            seq,
+            EventType::Input,
+            Some(InputType::InsertText),
+            before_text_len,
+            before_text_len + inserted_len,
+            cursor_before,
+            cursor_before + inserted_len,
+        );
+        event.inserted_text = Some(text.to_string());
+        event.diff_op = Some(DiffOp::Insert);
+        event
+    }
+
     #[test]
     fn deletion_case_extracts_deletion() {
         let events =
@@ -349,7 +417,7 @@ mod tests {
     }
 
     #[test]
-    fn replacement_case_extracts_replacement() {
+    fn replacement_fixture_with_selection_prioritizes_selection_range_edit() {
         let events =
             read_valid_fixture("tests/fixtures/synthetic/raw_events/valid/replacement_case.jsonl");
 
@@ -358,8 +426,8 @@ mod tests {
         let replacement = report
             .events
             .iter()
-            .find(|event| event.kind == RevisionEventKind::Replacement)
-            .expect("Replacement event exists");
+            .find(|event| event.kind == RevisionEventKind::SelectionRangeEdit)
+            .expect("selection-prioritized replacement event exists");
         assert_eq!(replacement.inserted_text.as_deref(), Some("go to"));
         assert_eq!(replacement.deleted_text.as_deref(), Some("go"));
         assert!(replacement.is_revision_like);
@@ -392,6 +460,60 @@ mod tests {
                 .map(|span| (span.start, span.end)),
             Some((8, 12))
         );
+        assert_eq!(selection_edit.kind, RevisionEventKind::SelectionRangeEdit);
+        assert!(selection_edit.is_revision_like);
+    }
+
+    #[test]
+    fn selection_range_edit_is_prioritized_over_replacement() {
+        let setup = insert_event(1, 0, 0, "abcd");
+        let mut selection_replace =
+            synthetic_event(2, EventType::Input, Some(InputType::InsertText), 4, 4, 1, 3);
+        selection_replace.selection_start_before = Some(1);
+        selection_replace.selection_end_before = Some(3);
+        selection_replace.selection_start_after = Some(3);
+        selection_replace.selection_end_after = Some(3);
+        selection_replace.inserted_text = Some("XY".to_string());
+        selection_replace.deleted_text = Some("bc".to_string());
+        selection_replace.diff_op = Some(DiffOp::Replace);
+
+        let report = extract_revision_events(&[setup, selection_replace])
+            .expect("selection replacement should extract");
+        let event = report.events.last().expect("selection event exists");
+
+        assert_eq!(event.kind, RevisionEventKind::SelectionRangeEdit);
+        assert!(event.is_revision_like);
+        assert_eq!(
+            event.span.as_ref().map(|span| (span.start, span.end)),
+            Some((1, 3))
+        );
+    }
+
+    #[test]
+    fn non_terminal_cursor_insertion_is_revision_like() {
+        let setup = insert_event(1, 0, 0, "abcd");
+        let local_insert = insert_event(2, 4, 2, "X");
+
+        let report =
+            extract_revision_events(&[setup, local_insert]).expect("local insertion extracts");
+        let event = report.events.last().expect("local insertion exists");
+
+        assert_eq!(event.kind, RevisionEventKind::Insertion);
+        assert!(event.is_revision_like);
+    }
+
+    #[test]
+    fn terminal_normal_typing_remains_non_revision_like() {
+        let events =
+            read_valid_fixture("tests/fixtures/synthetic/raw_events/valid/simple_typing.jsonl");
+
+        let report = extract_revision_events(&events).expect("simple typing fixture extracts");
+
+        assert!(report
+            .events
+            .iter()
+            .all(|event| event.kind == RevisionEventKind::Insertion));
+        assert!(report.events.iter().all(|event| !event.is_revision_like));
     }
 
     #[test]
@@ -411,6 +533,27 @@ mod tests {
     }
 
     #[test]
+    fn input_type_insert_from_paste_extracts_paste() {
+        let mut paste = synthetic_event(
+            1,
+            EventType::Input,
+            Some(InputType::InsertFromPaste),
+            0,
+            6,
+            0,
+            6,
+        );
+        paste.inserted_text = Some("pasted".to_string());
+        paste.diff_op = Some(DiffOp::Insert);
+
+        let report = extract_revision_events(&[paste]).expect("paste input type extracts");
+        let event = report.events.first().expect("paste event exists");
+
+        assert_eq!(event.kind, RevisionEventKind::Paste);
+        assert!(event.is_revision_like);
+    }
+
+    #[test]
     fn ime_case_extracts_composition_commit() {
         let events = read_valid_fixture(
             "tests/fixtures/synthetic/raw_events/valid/ime_composition_case.jsonl",
@@ -425,6 +568,19 @@ mod tests {
             .expect("CompositionCommit event exists");
         assert_eq!(commit.inserted_text.as_deref(), Some("ime_token"));
         assert!(commit.is_revision_like);
+    }
+
+    #[test]
+    fn composition_end_with_inserted_text_extracts_composition_commit() {
+        let mut commit = synthetic_event(1, EventType::CompositionEnd, None, 0, 3, 0, 3);
+        commit.inserted_text = Some("ime".to_string());
+        commit.diff_op = Some(DiffOp::Composition);
+
+        let report = extract_revision_events(&[commit]).expect("composition commit extracts");
+        let event = report.events.first().expect("composition event exists");
+
+        assert_eq!(event.kind, RevisionEventKind::CompositionCommit);
+        assert!(event.is_revision_like);
     }
 
     #[test]

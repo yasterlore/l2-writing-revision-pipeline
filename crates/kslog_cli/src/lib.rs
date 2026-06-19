@@ -542,7 +542,7 @@ mod tests {
         .expect("extract should succeed");
 
         assert!(output.contains("revision_events: ok"));
-        assert!(output.contains("replacement=1"));
+        assert!(output.contains("selection_range_edit=1"));
     }
 
     #[test]

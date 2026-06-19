@@ -14,8 +14,8 @@ This component:
 - checks that replay succeeds before extraction
 - classifies each event into a small set of observed edit kinds
 - creates deterministic `revision_event_id` values
-- marks normal typing as `is_revision_like = false`
-- marks deletion, replacement, selection edit, paste, and composition commit as `is_revision_like = true`
+- marks terminal normal typing as `is_revision_like = false`
+- marks deletion, replacement, selection edit, paste, composition commit, and cursor-local insertion as `is_revision_like = true`
 
 ## 3. What This Component Does Not Do
 
@@ -45,9 +45,9 @@ Each `RevisionEvent` includes identifiers, source `seq`, timestamp, kind, span, 
 1. Replay the full event sequence with `kslog_replay`.
 2. If replay fails, return `RevisionExtractionError`.
 3. For each `RawEvent`, inspect only observed event fields.
-4. Classify paste and composition commit first.
+4. Classify composition commit and paste first.
 5. Classify selection range edits when a non-collapsed selection and text edit are present.
-6. Classify replacement, deletion, selection-range insertion, insertion, or unsupported.
+6. Classify replacement, deletion, insertion, or unsupported.
 7. Compute a span from selection or cursor positions.
 8. Create a deterministic ID in the form `{session_id}:{source_seq}`.
 
@@ -85,9 +85,11 @@ No ranking is used in this component.
 
 The extractor is deliberately conservative. It uses only fields available in `RawEvent`, plus replay success as a consistency check.
 
-Normal typing is preserved as `Insertion` but marked `is_revision_like = false` so later components can include or exclude it without losing information.
+Normal terminal typing is preserved as `Insertion` but marked `is_revision_like = false` so later components can include or exclude it without losing information.
 
-When inserted and deleted text are both present, the extractor uses `Replacement` as the primary kind even if a selection range exists. This keeps replacement behavior easy to find while still preserving the selection span.
+When a non-collapsed selection is present, the extractor uses `SelectionRangeEdit` before `Replacement`. This makes selection-driven edits easy to find. If inserted and deleted text are both present without a non-collapsed selection, the event can still be classified as `Replacement`.
+
+Cursor-local insertion is treated as revision-like when `cursor_pos_before < doc_len_before`. This is a heuristic: it catches edits made away from the document end, but it is not a claim about correctness or learner intention.
 
 Micro-episode grouping is left for a later crate to keep this layer focused.
 
@@ -98,6 +100,8 @@ Tests use only synthetic fixtures.
 The extractor does not read `private_data/`, `real_data/`, or `participant_data/`.
 
 It does not use `final_text`, `observed_after_text`, `gold_label`, teacher corrections, human corrections, or post-hoc annotations.
+
+It does not use replay output final text to decide revision kind.
 
 `RevisionEvent` may include inserted or deleted text. Do not commit revision-event output derived from real participant data.
 
@@ -112,6 +116,9 @@ The tests cover:
 - selection range edit extraction
 - paste extraction
 - composition commit extraction
+- selection range priority over replacement
+- cursor-local insertion marked revision-like
+- paste detection from `input_type = insertFromPaste`
 - simple typing as non-revision-like insertion
 - unsupported event handling without panic
 
@@ -122,6 +129,8 @@ IME handling is minimal. The extractor identifies `composition_end` with `insert
 The extractor does not determine whether an edit is linguistically meaningful or correct.
 
 The extractor currently emits an `Unsupported` event for observed events that are not text edits.
+
+Classification coverage is heuristic and can be improved as more synthetic manual cases are checked.
 
 ## 15. What To Read Next
 

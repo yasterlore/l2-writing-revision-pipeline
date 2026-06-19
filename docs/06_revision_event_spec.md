@@ -22,9 +22,25 @@ The first extractor supports:
 - `CompositionCommit`
 - `Unsupported`
 
-Normal typing is extracted as `Insertion` with `is_revision_like = false`. This preserves observed input events while distinguishing ordinary text production from deletion, replacement, selection edit, paste, and composition commit.
+Normal terminal typing is extracted as `Insertion` with `is_revision_like = false`. This preserves observed input events while distinguishing ordinary text production from deletion, replacement, selection edit, paste, and composition commit.
 
-When `inserted_text` and `deleted_text` are both present, the first extractor uses `Replacement` as the primary kind even if a selection range is present. The selection span is still preserved on the event.
+Revision kinds are heuristic observations, not correctness labels.
+
+Current priority:
+
+1. `CompositionCommit`: `event_type = composition_end` and observed `inserted_text`
+2. `Paste`: `event_type = paste` or `input_type = insertFromPaste`
+3. `SelectionRangeEdit`: non-collapsed `selection_start_before < selection_end_before` with inserted and/or deleted text
+4. `Replacement`: both inserted and deleted text, without a non-collapsed selection
+5. `Deletion`
+6. `Insertion`
+7. `Unsupported`
+
+`SelectionRangeEdit` is prioritized over `Replacement` when a non-collapsed selection is present. The inserted and deleted text fields are still preserved.
+
+Cursor-local insertion is marked `is_revision_like = true` when `cursor_pos_before < doc_len_before`. This is a heuristic for edits away from the document end. Terminal ordinary typing remains `is_revision_like = false`.
+
+Paste and IME classification are minimal and browser-dependent. Paste can be detected from `event_type = paste` or `input_type = insertFromPaste`. Composition commit is detected only for `composition_end` with observed inserted text.
 
 ## Current Fields
 
@@ -72,4 +88,4 @@ Revision-event extraction must not be implemented in the TypeScript logger.
 
 ## Current Limitations
 
-IME handling is minimal. Micro-episode grouping is not implemented here.
+IME handling is minimal. Paste and cursor-local classification are heuristic. Micro-episode grouping is not implemented here.
