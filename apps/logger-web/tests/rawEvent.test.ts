@@ -73,8 +73,75 @@ const deletion = buildRawEvent({
 
 assert(deletion.deleted_text === "B", "deleted text is inferred");
 assert(deletion.diff_op === "delete", "delete op is inferred");
+assert(deletion.cursor_pos_before === 2, "collapsed delete cursor before is preserved");
+assert(deletion.cursor_pos_after === 1, "collapsed delete cursor after is preserved");
+assert(deletion.doc_len_before === 2, "collapsed delete doc_len_before is char count");
+assert(deletion.doc_len_after === 1, "collapsed delete doc_len_after is char count");
 assertNoForbiddenFields(deletion);
 
-const jsonl = toJsonl([event, deletion]);
-assert(jsonl.split("\n").length === 3, "JSONL has two records and trailing newline");
+const selectionDeletion = buildRawEvent({
+  metadata: SYNTHETIC_METADATA,
+  seq: 3,
+  timestampMs: 1_700_000_000_002,
+  eventType: "input",
+  inputType: "deleteContentBackward",
+  isComposing: false,
+  before: {
+    text: "ABCDE",
+    selectionStart: 1,
+    selectionEnd: 4
+  },
+  after: {
+    text: "AE",
+    selectionStart: 1,
+    selectionEnd: 1
+  }
+});
 
+assert(selectionDeletion.deleted_text === "BCD", "selection delete text is inferred from selected range");
+assert(selectionDeletion.inserted_text === undefined, "selection delete has no inserted text");
+assert(selectionDeletion.diff_op === "delete", "selection delete op is inferred");
+assert(selectionDeletion.selection_start_before === 1, "selection delete start before is preserved");
+assert(selectionDeletion.selection_end_before === 4, "selection delete end before is preserved");
+assert(selectionDeletion.cursor_pos_before === 1, "selection delete cursor before follows selection start");
+assert(selectionDeletion.cursor_pos_after === 1, "selection delete cursor after is collapsed");
+assertNoForbiddenFields(selectionDeletion);
+
+const movedCursorDeletion = buildRawEvent({
+  metadata: SYNTHETIC_METADATA,
+  seq: 4,
+  timestampMs: 1_700_000_000_003,
+  eventType: "input",
+  inputType: "deleteContentBackward",
+  isComposing: false,
+  before: {
+    text: "ABCDE",
+    selectionStart: 3,
+    selectionEnd: 3
+  },
+  after: {
+    text: "ABDE",
+    selectionStart: 2,
+    selectionEnd: 2
+  }
+});
+
+assert(movedCursorDeletion.deleted_text === "C", "moved cursor delete text is inferred from cursor range");
+assert(movedCursorDeletion.inserted_text === undefined, "moved cursor delete has no inserted text");
+assert(movedCursorDeletion.diff_op === "delete", "moved cursor delete op is inferred");
+assert(movedCursorDeletion.cursor_pos_before === 3, "moved cursor delete cursor before is preserved");
+assert(movedCursorDeletion.cursor_pos_after === 2, "moved cursor delete cursor after is preserved");
+assertNoForbiddenFields(movedCursorDeletion);
+
+const jsonl = toJsonl([event, deletion, selectionDeletion, movedCursorDeletion]);
+assert(jsonl.split("\n").length === 5, "JSONL has four records and trailing newline");
+
+const reparsed = jsonl
+  .trim()
+  .split("\n")
+  .map((line) => JSON.parse(line) as RawEvent);
+
+assert(reparsed.length === 4, "JSONL records can be reparsed");
+for (const rawEvent of reparsed) {
+  assertNoForbiddenFields(rawEvent);
+}

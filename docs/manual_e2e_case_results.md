@@ -12,6 +12,8 @@ As of this document update, all seven manual synthetic cases have been checked w
 
 The manual JSONL contents are not pasted here. Some CLI error messages can include tiny text snippets; those snippets are intentionally paraphrased below as non-content error categories.
 
+Note: the results in this table were produced before the Step 16 `logger-web` deletion-diff fix. The `deletion`, `selection_edit`, and `cursor_movement` manual outputs need to be regenerated with the updated logger before their replay status can be re-evaluated.
+
 | case name | manual file path | validate result | event count | replay result | final_doc_len | extract summary | micro_episode count | audit-no-oracle result | safe-view result | schema mismatch | notes | JSONL kept out of Git |
 | --- | --- | --- | ---: | --- | ---: | --- | ---: | --- | --- | --- | --- | --- |
 | simple_typing | `manual_outputs/logger_web/manual_outputs:logger_web:simple_typing.jsonl` | ok | 114 | ok | 21 | revision_events=114; insertion=21; unsupported=93 | 114 | ok; full `MicroEpisode` candidate-generation audit reports 114 unsafe issues due to observed-after context | ok; safe_views=114; `local_context_after_observed` absent; candidate audit issues=0 | none | final text suppressed; summary only | yes |
@@ -47,6 +49,8 @@ Minimal next fixes:
 
 `diagnose-replay` was applied to the three replay mismatch cases. The command output is content-suppressed and records metadata and lengths only.
 
+These diagnostic rows describe pre-Step 16 manual outputs. They remain useful as historical triage evidence, but they are not a result for the updated logger.
+
 | case name | replay_status | failure_line | failure_kind | source_seq | event_type | input_type | doc_len_before | doc_len_after | cursor_pos_before | cursor_pos_after | selection_before | selection_after | inserted_text_present | inserted_text_len | deleted_text_present | deleted_text_len | diff_op | quality_flags | content_suppressed | probable_layer | suggested_next_check |
 | --- | --- | ---: | --- | ---: | --- | --- | ---: | ---: | ---: | ---: | --- | --- | --- | ---: | --- | ---: | --- | --- | --- | --- | --- |
 | deletion | failed | 179 | deleted_text_mismatch | 179 | Input | DeleteContentBackward | 26 | 25 | 10 | 9 | 10..10 | 9..9 | false | 0 | true | 1 | Delete | none | true | logger_diff_estimation | Check synthetic-only logger diff inference for inserted/deleted text lengths and edit range metadata. |
@@ -54,6 +58,24 @@ Minimal next fixes:
 | cursor_movement | failed | 97 | deleted_text_mismatch | 97 | Input | DeleteContentBackward | 14 | 13 | 7 | 6 | 7..7 | 6..6 | false | 0 | true | 1 | Delete | none | true | logger_diff_estimation | Check synthetic-only logger diff inference for inserted/deleted text lengths and edit range metadata. |
 
 The shared pattern is a schema-valid `DeleteContentBackward` event with one deleted character recorded, but replay cannot reconcile the deleted-text metadata with the reconstructed state. The most likely first investigation point is `logger-web` diff estimation for deletion-like events.
+
+## Step 16 Fix Summary
+
+Rust replay remains strict.
+
+`logger-web` was minimally changed so `input` events prefer the snapshot captured at `beforeinput`, preventing later selection events from replacing the true pre-edit state. `deleteContentBackward` inference now uses:
+
+- the selected range from the before snapshot for selection deletion
+- the cursor range from after-to-before for collapsed-cursor backspace
+- generic text diff only as fallback
+
+The three previously failing manual synthetic cases must be regenerated and rerun:
+
+- `deletion`
+- `selection_edit`
+- `cursor_movement`
+
+Record only summary output from the rerun.
 
 ### deletion
 

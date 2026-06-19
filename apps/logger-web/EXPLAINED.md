@@ -44,10 +44,11 @@ Output is downloaded JSONL, with one raw event object per line.
 3. A user types synthetic text in the textarea.
 4. Browser events such as `keydown`, `beforeinput`, `input`, and `compositionend` are observed.
 5. The app snapshots textarea state before and after events when possible.
-6. The app builds RawEvent-like objects.
-7. The app stores those objects in memory.
-8. The user downloads JSONL.
-9. Rust tools validate and process the JSONL later.
+6. For `beforeinput` followed by `input`, the app keeps the `beforeinput` snapshot so deletion events are not accidentally based on a later `selectionchange`.
+7. The app builds RawEvent-like objects.
+8. The app stores those objects in memory.
+9. The user downloads JSONL.
+10. Rust tools validate and process the JSONL later.
 
 ## 6. Important Data Structures
 
@@ -105,7 +106,7 @@ The tests check:
 
 ## 14. Known Limitations
 
-The first version performs only limited inserted/deleted text inference.
+The first version performs only limited inserted/deleted text inference. `deleteContentBackward` has a focused rule for collapsed-cursor and selected-range deletion, but broader browser editing behavior may still need synthetic E2E checks.
 
 IME behavior is observed but not deeply interpreted.
 
@@ -119,4 +120,3 @@ The logger uses `Date.now()` for timestamps.
 - `docs/04_raw_event_schema.md`
 - `crates/kslog_schema/README.md`
 - `crates/kslog_validate/README.md`
-

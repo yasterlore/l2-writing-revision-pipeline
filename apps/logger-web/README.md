@@ -47,6 +47,8 @@ The logger records synthetic metadata:
 
 It also records event type, sequence number, timestamp, input type when available, selection positions, cursor positions, document lengths, limited inserted/deleted text inference, placeholder hashes, diff operation hints, and quality flags.
 
+For `deleteContentBackward`, the logger uses the `beforeinput` snapshot as the input event's before-state when available. Collapsed-cursor deletion uses the cursor range between before and after snapshots, and selection deletion uses the selected range from the before snapshot. This keeps deletion metadata closer to the strict Rust replay assumptions without implementing replay in TypeScript.
+
 ## Timestamp Policy
 
 The first version uses `Date.now()` for `timestamp_ms`. Rust validation remains authoritative for deterministic validation. Future versions may add a monotonic browser timestamp field if needed.
