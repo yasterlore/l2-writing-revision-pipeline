@@ -115,10 +115,10 @@ export function snapshotFromTextArea(textarea: HTMLTextAreaElement): TextSnapsho
 }
 
 export function buildRawEvent(input: BuildRawEventInput): RawEvent {
-  const textChange = inferTextChange(input.before.text, input.after.text);
-  const diffOp = inferDiffOp(input.eventType, input.before, input.after, textChange);
   const qualityFlags = [...(input.qualityFlags ?? [])];
   const inputType = normalizeInputType(input.inputType);
+  const textChange = inferTextChange(input.before, input.after, inputType);
+  const diffOp = inferDiffOp(input.eventType, input.before, input.after, textChange);
 
   if (input.inputType && !inputType) {
     qualityFlags.push("unsupported_input_type");
@@ -165,14 +165,58 @@ function normalizeInputType(inputType: string | null | undefined): InputType | u
   return SUPPORTED_INPUT_TYPES.has(inputType as InputType) ? (inputType as InputType) : undefined;
 }
 
-function inferTextChange(before: string, after: string): {
+function inferTextChange(
+  before: TextSnapshot,
+  after: TextSnapshot,
+  inputType: InputType | undefined
+): {
   insertedText?: string;
   deletedText?: string;
 } {
-  if (before === after) {
+  if (before.text === after.text) {
     return {};
   }
 
+  if (inputType === "deleteContentBackward") {
+    return inferBackwardDeletion(before, after);
+  }
+
+  return inferGenericTextChange(before.text, after.text);
+}
+
+function inferBackwardDeletion(
+  before: TextSnapshot,
+  after: TextSnapshot
+): {
+  insertedText?: string;
+  deletedText?: string;
+} {
+  if (before.selectionStart !== before.selectionEnd) {
+    return omitUndefined({
+      deletedText: sliceChars(before.text, before.selectionStart, before.selectionEnd) || undefined
+    });
+  }
+
+  if (after.selectionStart < before.selectionStart) {
+    return omitUndefined({
+      deletedText: sliceChars(before.text, after.selectionStart, before.selectionStart) || undefined
+    });
+  }
+
+  const fallback = inferGenericTextChange(before.text, after.text);
+  return omitUndefined({
+    deletedText: fallback.deletedText,
+    insertedText: fallback.insertedText
+  });
+}
+
+function inferGenericTextChange(
+  before: string,
+  after: string
+): {
+  insertedText?: string;
+  deletedText?: string;
+} {
   let prefix = 0;
   const beforeChars = [...before];
   const afterChars = [...after];
@@ -246,6 +290,10 @@ function charCount(value: string): number {
   return [...value].length;
 }
 
+function sliceChars(value: string, start: number, end: number): string {
+  return [...value].slice(start, end).join("");
+}
+
 function omitUndefined<T extends Record<string, unknown>>(value: T): T {
   const result: Record<string, unknown> = {};
   for (const [key, entry] of Object.entries(value)) {
@@ -255,4 +303,3 @@ function omitUndefined<T extends Record<string, unknown>>(value: T): T {
   }
   return result as T;
 }
-

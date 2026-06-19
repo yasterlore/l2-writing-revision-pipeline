@@ -19,6 +19,12 @@ const statusText = requireElement<HTMLElement>("#statusText");
 let events: RawEvent[] = [];
 let seq = 1;
 let lastSnapshot: TextSnapshot = snapshotFromTextArea(textarea);
+let pendingBeforeInputSnapshot:
+  | {
+      snapshot: TextSnapshot;
+      inputType: string | null;
+    }
+  | undefined;
 let activeCompositionId: string | undefined;
 let compositionCounter = 1;
 
@@ -72,6 +78,33 @@ function inputIsComposing(event: Event): boolean {
   return "isComposing" in event && event.isComposing === true;
 }
 
+function takeInputBeforeSnapshot(inputType: string | null): {
+  before: TextSnapshot;
+  qualityFlags: string[];
+} {
+  const pending = pendingBeforeInputSnapshot;
+  pendingBeforeInputSnapshot = undefined;
+
+  if (!pending) {
+    return {
+      before: lastSnapshot,
+      qualityFlags: ["missing_beforeinput_snapshot"]
+    };
+  }
+
+  if (pending.inputType && inputType && pending.inputType !== inputType) {
+    return {
+      before: pending.snapshot,
+      qualityFlags: ["beforeinput_input_type_mismatch"]
+    };
+  }
+
+  return {
+    before: pending.snapshot,
+    qualityFlags: []
+  };
+}
+
 function requireElement<T extends Element>(selector: string): T {
   const element = document.querySelector<T>(selector);
   if (!element) {
@@ -81,11 +114,13 @@ function requireElement<T extends Element>(selector: string): T {
 }
 
 textarea.addEventListener("focus", () => {
+  pendingBeforeInputSnapshot = undefined;
   const snapshot = currentSnapshot();
   recordEvent("focus", lastSnapshot, snapshot, { isComposing: false });
 });
 
 textarea.addEventListener("blur", () => {
+  pendingBeforeInputSnapshot = undefined;
   const snapshot = currentSnapshot();
   recordEvent("blur", lastSnapshot, snapshot, { isComposing: false });
 });
@@ -102,21 +137,30 @@ textarea.addEventListener("keyup", () => {
 
 textarea.addEventListener("beforeinput", (event) => {
   const snapshot = currentSnapshot();
+  const inputType = inputEventType(event);
+  pendingBeforeInputSnapshot = {
+    snapshot,
+    inputType
+  };
   recordEvent("before_input", snapshot, snapshot, {
-    inputType: inputEventType(event),
+    inputType,
     isComposing: inputIsComposing(event)
   });
 });
 
 textarea.addEventListener("input", (event) => {
   const snapshot = currentSnapshot();
-  recordEvent("input", lastSnapshot, snapshot, {
-    inputType: inputEventType(event),
-    isComposing: inputIsComposing(event)
+  const inputType = inputEventType(event);
+  const beforeInput = takeInputBeforeSnapshot(inputType);
+  recordEvent("input", beforeInput.before, snapshot, {
+    inputType,
+    isComposing: inputIsComposing(event),
+    qualityFlags: beforeInput.qualityFlags
   });
 });
 
 textarea.addEventListener("compositionstart", () => {
+  pendingBeforeInputSnapshot = undefined;
   activeCompositionId = `synthetic_composition_web_${compositionCounter}`;
   compositionCounter += 1;
   const snapshot = currentSnapshot();
@@ -176,6 +220,7 @@ clearButton.addEventListener("click", () => {
   seq = 1;
   textarea.value = "";
   lastSnapshot = currentSnapshot();
+  pendingBeforeInputSnapshot = undefined;
   activeCompositionId = undefined;
   updateSummary("none");
 });

@@ -271,6 +271,18 @@ Record only the diagnostic summary fields. Do not copy raw replay error strings 
 
 Treat mismatch diagnostics as boundary-specification evidence, not as permission to weaken Rust replay. Keep replay strict until the synthetic evidence shows that a narrow logger or replay fix is needed.
 
+## After Logger Changes
+
+When `apps/logger-web` changes, previously downloaded files under `manual_outputs/` are historical outputs from the older logger version. Regenerate affected synthetic manual cases before claiming that the current logger passes E2E.
+
+For the Step 16 deletion-diff fix, regenerate at least:
+
+- `deletion`
+- `selection_edit`
+- `cursor_movement`
+
+Run the full CLI pipeline again, including `diagnose-replay` if `replay` fails. Record only summary fields. Do not paste JSONL lines or text fragments.
+
 ## How To Read Errors
 
 Validation errors usually point to schema, sequence, timestamp, cursor, selection, unknown-field, or forbidden-field problems.
