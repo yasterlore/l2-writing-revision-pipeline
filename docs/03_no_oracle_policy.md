@@ -119,6 +119,16 @@ Leakage-related constraints are blocking. If a candidate violates `NO-LEAKAGE-FL
 
 Prototype ranking is not a correctness label and must not be evaluated as gold accuracy until a separate evaluation design exists.
 
+## Synthetic Evaluation Prototype
+
+The evaluation prototype may use synthetic expected actions only after scoring is complete.
+
+Expected actions must not feed back into candidate generation, feature extraction, constraint generation, weighted scoring, or rank adjustment.
+
+Synthetic expected actions are not real gold labels, teacher corrections, final corrected text, or participant outcomes.
+
+The evaluator must reject forbidden fields such as `final_text`, `observed_after_text`, `gold_label`, and `teacher_correction`.
+
 ## Forbidden Field Names
 
 The audit policy treats the following as forbidden concepts:

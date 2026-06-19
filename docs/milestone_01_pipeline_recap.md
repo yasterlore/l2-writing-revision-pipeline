@@ -300,7 +300,7 @@ Not implemented:
 
 Possible next milestones:
 
-- define evaluation schema without leaking oracle information
+- refine the synthetic-only evaluation schema without leaking oracle information
 - add synthetic gold-like expected-action fixtures for testing evaluation mechanics
 - refine scoring policy and blocking behavior
 - add scorer output summary tools
@@ -344,3 +344,11 @@ scripts/run_synthetic_e2e_summary.sh
 ```
 
 Remember: these commands are synthetic-only connection checks, not evaluation.
+
+## 12. Synthetic Evaluation Status
+
+The first evaluation schema prototype is synthetic-only.
+
+It compares `CandidateScoreSet` JSONL with synthetic expected action fixtures after scoring. These expected actions are not real gold labels, teacher corrections, or final corrected text.
+
+This prototype is for checking evaluation mechanics only. It does not support real participant evaluation, F1, calibration, selective prediction, or learner-state estimation.
