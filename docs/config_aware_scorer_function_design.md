@@ -232,7 +232,8 @@ synthetic-only config effects.
 ### Step 75: Explicit CLI Option Design
 
 Design a `score.py` explicit config option separately. Do not add implicit
-config loading.
+config loading. See
+[Explicit config CLI option design](explicit_config_cli_option_design.md).
 
 ### Step 76: Explicit Config Ranking Diff Smoke Script
 
@@ -247,6 +248,7 @@ implemented inside the public repository.
 ## 11. Related Documents
 
 - [Explicit config ranking diff plan](explicit_config_ranking_diff_plan.md)
+- [Explicit config CLI option design](explicit_config_cli_option_design.md)
 - [Default-unchanged config support design](default_unchanged_config_support_design.md)
 - [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)

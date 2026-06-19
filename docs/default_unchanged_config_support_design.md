@@ -192,6 +192,9 @@ Connect the config-aware path only through an explicit CLI option.
 
 Do not auto-load config from environment variables or repository paths.
 
+For the CLI boundary, read
+[Explicit config CLI option design](explicit_config_cli_option_design.md).
+
 ### Phase 4: Ranking Diff Smoke Tests
 
 Add synthetic-only tests that show config-enabled ranking changes only when

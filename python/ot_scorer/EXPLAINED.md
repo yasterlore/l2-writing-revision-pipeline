@@ -289,3 +289,5 @@ For the safe summary tooling for diagnostics, read
 `../../docs/diagnostic_summary_tooling_plan.md`.
 For future hand-weight config schema design, read
 `../../docs/hand_weight_config_schema_plan.md`.
+For future explicit scorer config CLI design, read
+`../../docs/explicit_config_cli_option_design.md`.
