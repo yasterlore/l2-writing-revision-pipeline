@@ -53,6 +53,14 @@ tests/fixtures/synthetic/expected_actions/registry.json
 The registry is a fixture-management table, not a real gold-label registry.
 It contains only synthetic case metadata and expected-action fixture paths.
 
+The initial active synthetic expected action fixtures cover `deletion_case`,
+`selection_edit_case`, and `cursor_movement_case`. The latter two are
+conservative placeholders: `selection_edit_case` uses
+`local_replace_placeholder` for its central range-edit episode, while
+`cursor_movement_case` uses `local_insert_placeholder` for its non-terminal
+cursor-edit episode. These are synthetic expectations for wiring checks, not
+claims about learner correctness.
+
 Registry entry statuses:
 
 - `active`: the case has a synthetic expected action fixture and can be used for optional evaluation.

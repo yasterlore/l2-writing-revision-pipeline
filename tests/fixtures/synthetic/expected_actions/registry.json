@@ -20,13 +20,15 @@
     },
     {
       "case_name": "selection_edit_case",
-      "status": "pending",
-      "notes": "Synthetic expected action fixture has not been defined yet."
+      "status": "active",
+      "expected_action_path": "tests/fixtures/synthetic/expected_actions/valid/selection_edit_expected_actions.jsonl",
+      "notes": "Synthetic expected action fixture for selection_edit_case."
     },
     {
       "case_name": "cursor_movement_case",
-      "status": "pending",
-      "notes": "Synthetic expected action fixture has not been defined yet."
+      "status": "active",
+      "expected_action_path": "tests/fixtures/synthetic/expected_actions/valid/cursor_movement_expected_actions.jsonl",
+      "notes": "Synthetic expected action fixture for cursor_movement_case."
     },
     {
       "case_name": "paste_case",
