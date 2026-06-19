@@ -171,6 +171,30 @@ These are observed-event classifications, not gold labels. They do not use final
 
 The Step 17 manual rerun results remain valid as replay compatibility evidence. Classification summaries should be regenerated with the updated extractor before claiming that the manual `selection_edit`, `cursor_movement`, paste, or IME coverage gaps are resolved.
 
+## Step 19 Post-Classification Rerun Summary
+
+After the Step 18 extractor update, manual synthetic JSONL files were reprocessed with the Rust CLI. This section records CLI summaries only. No JSONL lines, text fragments, final text, or local context are recorded here.
+
+| case name | validate | events | replay | final_doc_len | extract kind_counts | micro_episode count | revision_like_episodes | audit-no-oracle | make-safe-view | candidate_generation_audit_issues | schema mismatch | replay mismatch | classification change after Step 18 | notes | JSONL kept out of Git |
+| --- | --- | ---: | --- | ---: | --- | ---: | ---: | --- | --- | ---: | --- | --- | --- | --- | --- |
+| simple_typing | ok | 77 | ok | 14 | insertion=14, deletion=0, replacement=0, selection_range_edit=0, paste=0, composition_commit=0, unsupported=63 | 77 | 0 | ok; issues=77; unsafe_or_blocking_issues=77 | ok; safe_views=77 | 0 | none | none | unchanged; terminal typing remains non-revision-like | expected baseline | yes |
+| deletion | ok | 108 | ok | 20 | insertion=20, deletion=0, replacement=0, selection_range_edit=0, paste=0, composition_commit=0, unsupported=88 | 108 | 7 | ok; issues=108; unsafe_or_blocking_issues=108 | ok; safe_views=108 | 0 | none | none | cursor-local insertion heuristic increases revision-like coverage | deletion replay remains resolved; no `Deletion` kind in this manual output summary | yes |
+| replacement | ok | 118 | ok | 14 | insertion=20, deletion=0, replacement=0, selection_range_edit=1, paste=0, composition_commit=0, unsupported=97 | 118 | 6 | ok; issues=118; unsafe_or_blocking_issues=118 | ok; safe_views=118 | 0 | none | none | selection-backed replacement is now summarized as `SelectionRangeEdit` | priority change is intentional | yes |
+| selection_edit | ok | 119 | ok | 14 | insertion=20, deletion=0, replacement=0, selection_range_edit=1, paste=0, composition_commit=0, unsupported=98 | 119 | 6 | ok; issues=119; unsafe_or_blocking_issues=119 | ok; safe_views=119 | 0 | none | none | improved: `selection_range_edit` changed from 0 to 1; revision_like_episodes changed from 1 to 6 | selection edit classification gap is resolved for this manual output | yes |
+| cursor_movement | ok | 107 | ok | 20 | insertion=20, deletion=0, replacement=0, selection_range_edit=0, paste=0, composition_commit=0, unsupported=87 | 107 | 7 | ok; issues=107; unsafe_or_blocking_issues=107 | ok; safe_views=107 | 0 | none | none | improved: revision_like_episodes changed from 0 to 7 through cursor-local insertion heuristic | cursor-local edit is now captured as revision-like, though not a separate kind | yes |
+| paste | ok | 100 | ok | 15 | insertion=15, deletion=0, replacement=0, selection_range_edit=0, paste=0, composition_commit=0, unsupported=85 | 100 | 3 | ok; issues=100; unsafe_or_blocking_issues=100 | ok; safe_views=100 | 0 | none | none | partially improved through cursor-local heuristic; still no `Paste` kind in this manual output | likely logger/browser event summary lacks paste-kind signal usable by extractor | yes |
+| ime_composition_minimal | ok | 72 | ok | 13 | insertion=13, deletion=0, replacement=0, selection_range_edit=0, paste=0, composition_commit=0, unsupported=59 | 72 | 0 | ok; issues=72; unsafe_or_blocking_issues=72 | ok; safe_views=72 | 0 | none | none | unchanged; no `CompositionCommit` kind in this manual output | likely logger/browser event summary lacks composition commit signal usable by extractor | yes |
+
+Step 18 classification changes observed in manual E2E summaries:
+
+- `selection_edit`: `selection_range_edit` improved from 0 to 1.
+- `cursor_movement`: `revision_like_episodes` improved from 0 to 7.
+- `replacement`: selection-backed replacement is now intentionally counted as `SelectionRangeEdit`.
+- `paste`: still not counted as `Paste` for this manual output, although `revision_like_episodes` increased to 3 through cursor-local insertion.
+- `ime_composition_minimal`: still not counted as `CompositionCommit` for this manual output.
+
+No schema or replay mismatch was observed in the Step 19 rerun summaries.
+
 ## Failure Record Format
 
 Use this format if a case fails. Keep it summary-only.
