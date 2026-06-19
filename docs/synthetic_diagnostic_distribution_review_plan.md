@@ -166,8 +166,13 @@ docs.
 
 ### Step 55: Optional Diagnostic Distribution Smoke Check Script
 
-Consider a small script that verifies expected count-only fields exist and that
-diagnostic summary generation succeeded for synthetic cases.
+Implemented as `scripts/check_synthetic_diagnostic_distribution.sh`.
+
+The script verifies that `summary.csv` exists, diagnostic columns are present,
+at least one case has `diagnostic_summary_status=ok`, and diagnostic count
+fields are parseable. It prints count-only summary information and does not
+print raw CSV bodies, diagnostic summary bodies, raw JSONL, per-episode detail,
+or performance metrics.
 
 ### Step 56: Synthetic Diagnostic Observation Note Template
 
