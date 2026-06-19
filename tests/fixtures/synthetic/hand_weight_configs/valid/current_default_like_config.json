@@ -1,0 +1,104 @@
+{
+  "config_schema_version": "hand_weight_config_schema_v0_1",
+  "config_name": "synthetic_current_default_like",
+  "created_for": "synthetic schema validation only; scorer is not connected to this config",
+  "default_behavior": "Current default scoring remains unchanged: safety blocking constraints are active, descriptive diagnostics are score-neutral, and deterministic tie-break is unchanged.",
+  "score_active_constraint_families": [
+    "safety_blocking"
+  ],
+  "constraint_weights": [
+    {
+      "constraint_id": "NO-LEAKAGE-FLAG",
+      "constraint_family": "safety_blocking",
+      "weight": 1000000.0,
+      "active": true,
+      "rationale": "Blocks leakage-bearing candidates before ordinary ranking.",
+      "no_oracle_safe_reason": "Uses leakage flags produced by no-oracle audit, not future or gold information.",
+      "expected_effect": "Candidate is blocked when violation_count is greater than zero.",
+      "risk_note": "Do not weaken without a separate privacy and no-oracle review.",
+      "tests_required": [
+        "blocking behavior unchanged",
+        "defaults unchanged"
+      ],
+      "last_reviewed": "2026-06-19"
+    },
+    {
+      "constraint_id": "NO-OBSERVED-EDIT-TEXT",
+      "constraint_family": "safety_blocking",
+      "weight": 1000000.0,
+      "active": true,
+      "rationale": "Blocks candidates that use observed edit text.",
+      "no_oracle_safe_reason": "Uses a safety flag, not the observed edit text value.",
+      "expected_effect": "Candidate is blocked when violation_count is greater than zero.",
+      "risk_note": "Observed edit text can be target leakage for some prediction tasks.",
+      "tests_required": [
+        "blocking behavior unchanged",
+        "defaults unchanged"
+      ],
+      "last_reviewed": "2026-06-19"
+    },
+    {
+      "constraint_id": "NO-UNSAFE-CANDIDATE",
+      "constraint_family": "safety_blocking",
+      "weight": 1000000.0,
+      "active": true,
+      "rationale": "Blocks candidates that are not marked no_oracle_safe.",
+      "no_oracle_safe_reason": "Uses the no_oracle_safe flag only.",
+      "expected_effect": "Candidate is blocked when violation_count is greater than zero.",
+      "risk_note": "Unsafe candidates must not compete with safe candidates.",
+      "tests_required": [
+        "blocking behavior unchanged",
+        "defaults unchanged"
+      ],
+      "last_reviewed": "2026-06-19"
+    }
+  ],
+  "blocking_constraints": [
+    "NO-LEAKAGE-FLAG",
+    "NO-OBSERVED-EDIT-TEXT",
+    "NO-UNSAFE-CANDIDATE"
+  ],
+  "score_neutral_constraints": [
+    "HOLD-CANDIDATE",
+    "LOCAL-EDIT-CANDIDATE",
+    "GRAMMAR-PLACEHOLDER-CANDIDATE",
+    "PLACEHOLDER-CANDIDATE"
+  ],
+  "rationale": "This synthetic config fixture represents the current default-like safety policy for schema validation only. It is not connected to scoring.",
+  "no_oracle_review": {
+    "review_status": "synthetic schema review only",
+    "allowed_information": [
+      "constraint_id",
+      "constraint_family",
+      "violation_count",
+      "no_oracle_safe flag",
+      "leakage flags"
+    ],
+    "forbidden_information": [
+      "final text",
+      "post-edit text",
+      "gold labels",
+      "teacher correction",
+      "expected actions",
+      "real participant data"
+    ]
+  },
+  "synthetic_only_notice": "Synthetic design fixture only; no real participant data is used.",
+  "expected_action_usage_policy": "Expected actions are not used for scoring or weight tuning.",
+  "forbidden_information_policy": {
+    "forbidden_fields": [
+      "final_text",
+      "observed_after_text",
+      "gold_label",
+      "teacher_correction",
+      "local_context_after_observed"
+    ],
+    "forbidden_path_parts": [
+      "manual_outputs",
+      "private_data",
+      "real_data",
+      "participant_data"
+    ],
+    "raw_text_policy": "Raw text patterns and local context strings are not allowed in config."
+  }
+}

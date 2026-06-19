@@ -210,6 +210,28 @@ grammatical correctness and do not affect weighted scoring.
 
 The output includes `violation_count`, `severity`, and `explanation`, but it does not include weights, weighted scores, ranks, candidate text, local context text, or observed edit text.
 
+## Hand-Weight Config Schema Models
+
+`python/ot_scorer/weight_config.py` defines schema models and strict validation
+helpers for future hand-designed scoring weight configs.
+
+The models include:
+
+- `HandWeightConfig`
+- `ConstraintWeightEntry`
+- `NoOracleReviewInfo`
+- `ForbiddenInformationPolicy`
+
+The loader validates synthetic config JSON files for schema version, active
+weight rationale, no-oracle-safe reason, finite numeric weights, duplicate
+constraint IDs, known constraint IDs, forbidden field names, unsafe
+manual/private/real path-like strings, synthetic-only notice, and an
+expected-action usage policy that forbids scoring and weight tuning.
+
+This config schema groundwork is not connected to scoring. The scorer CLI does
+not accept a config option, default weights are unchanged, scoring formula is
+unchanged, and tie-break behavior is unchanged.
+
 ## Diagnostic Summary Tool
 
 The diagnostic summary CLI reads `ConstraintViolationSet` JSONL and writes a

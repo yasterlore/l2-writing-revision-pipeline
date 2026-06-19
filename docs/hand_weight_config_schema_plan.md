@@ -8,6 +8,10 @@ scoring weights, change the scoring formula, change deterministic tie-break
 behavior, change constraint generation, add evaluation metrics, or implement
 learner-state estimation.
 
+Status after Step 65: Python schema models and a strict validation helper have
+been added in `python/ot_scorer/weight_config.py`. They are not connected to
+the scorer, and default scoring behavior remains unchanged.
+
 The schema described here is intended to make future hand-designed weights
 explicit, interpretable, and auditable before any scoring behavior changes.
 
@@ -372,6 +376,10 @@ Tests should use synthetic fixtures only.
 ### Step 65: Implement Hand-Weight Config Schema Models Without Changing Defaults
 
 Add schema model types only if approved. Do not change scoring behavior.
+
+Status: completed for schema models and strict validation helper. No scorer
+connection, CLI option, default weight change, formula change, or tie-break
+change was added.
 
 ### Step 66: Implement Config Loader With Strict Validation
 
