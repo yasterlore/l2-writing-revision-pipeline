@@ -7,6 +7,10 @@ from ot_scorer.constraint_builder import (
     build_constraint_violation_set,
     build_constraint_violation_sets,
 )
+from ot_scorer.diagnostic_summary import (
+    summarize_constraint_violation_file,
+    summarize_constraint_violation_sets,
+)
 from ot_scorer.models import (
     CandidateFeature,
     CandidateFeatureSet,
@@ -46,4 +50,6 @@ __all__ = [
     "build_constraint_violation_set",
     "build_constraint_violation_sets",
     "load_candidate_sets",
+    "summarize_constraint_violation_file",
+    "summarize_constraint_violation_sets",
 ]
