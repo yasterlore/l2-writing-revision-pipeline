@@ -271,6 +271,30 @@ context, or per-episode records.
 For safe interpretation of these count-only outputs, see
 [`synthetic_diagnostic_distribution_review_plan.md`](synthetic_diagnostic_distribution_review_plan.md).
 
+## Diagnostic Distribution Smoke Check
+
+After running the summary collector, a lightweight smoke check can verify that
+the count-only diagnostic columns exist and contain parseable values:
+
+```bash
+scripts/check_synthetic_diagnostic_distribution.sh
+```
+
+You can also pass an explicit summary path:
+
+```bash
+scripts/check_synthetic_diagnostic_distribution.sh tmp/synthetic_e2e_summary/summary.csv
+```
+
+This script reads only the summary CSV. It checks column presence, at least one
+case, at least one `diagnostic_summary_status=ok` row, and parseable diagnostic
+count fields. It does not read raw JSONL, diagnostic summary bodies,
+per-episode detail, expected actions, final text, or local context.
+
+The smoke check is not performance evaluation. It does not calculate F1,
+accuracy, calibration, grammatical correctness, ranking quality, or
+learner-state estimates.
+
 ## What This Is Not
 
 This pipeline is not production evaluation. Its optional evaluation stage is only
