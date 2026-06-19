@@ -31,6 +31,8 @@ For synthetic-only examples of rationale entries before actual config changes,
 read [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md).
 For a possible future metadata completeness explicit-config experiment, read
 [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md).
+For the possible fixture shape for that experiment, read
+[Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md).
 
 ## 1. Purpose
 
