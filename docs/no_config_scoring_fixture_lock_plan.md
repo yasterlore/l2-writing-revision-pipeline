@@ -231,7 +231,9 @@ single expected/generated path mode.
 
 ### Step 71: Explicit Config Ranking Diff Plan
 
-Design how explicit config-enabled ranking differences should be reviewed
+Status: completed as a design document. See
+[Explicit config ranking diff plan](explicit_config_ranking_diff_plan.md) for
+how future explicit config-enabled ranking differences should be reviewed
 without changing the no-config lock.
 
 ### Step 72: Config-Aware Scorer Function, Defaults Unchanged
@@ -249,6 +251,7 @@ auto-loading should be added.
 ## 11. Related Documents
 
 - [Default-unchanged config support design](default_unchanged_config_support_design.md)
+- [Explicit config ranking diff plan](explicit_config_ranking_diff_plan.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Scoring policy refinement plan](scoring_policy_refinement_plan.md)
 - [Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md)

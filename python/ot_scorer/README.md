@@ -397,3 +397,5 @@ For the default-unchanged boundary before any future scorer config connection,
 read `../../docs/default_unchanged_config_support_design.md`.
 For the planned no-config scoring fixture lock, read
 `../../docs/no_config_scoring_fixture_lock_plan.md`.
+For the future explicit-config ranking diff boundary, read
+`../../docs/explicit_config_ranking_diff_plan.md`.
