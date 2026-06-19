@@ -64,6 +64,62 @@ pub struct ReplayReport {
     pub final_doc_len: usize,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ReplayDiagnosticReport {
+    pub replay_status: ReplayDiagnosticStatus,
+    pub event_count: usize,
+    pub failure_line: Option<usize>,
+    pub failure_kind: Option<ReplayDiagnosticFailureKind>,
+    pub source_seq: Option<u64>,
+    pub event_type: Option<EventType>,
+    pub input_type: Option<String>,
+    pub doc_len_before: Option<u32>,
+    pub doc_len_after: Option<u32>,
+    pub cursor_pos_before: Option<u32>,
+    pub cursor_pos_after: Option<u32>,
+    pub selection_start_before: Option<u32>,
+    pub selection_end_before: Option<u32>,
+    pub selection_start_after: Option<u32>,
+    pub selection_end_after: Option<u32>,
+    pub inserted_text_present: Option<bool>,
+    pub inserted_text_len: Option<usize>,
+    pub deleted_text_present: Option<bool>,
+    pub deleted_text_len: Option<usize>,
+    pub diff_op: Option<String>,
+    pub quality_flags: Vec<String>,
+    pub content_suppressed: bool,
+    pub probable_layer: ReplayDiagnosticProbableLayer,
+    pub suggested_next_check: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum ReplayDiagnosticStatus {
+    Ok,
+    Failed,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum ReplayDiagnosticFailureKind {
+    DocLenBeforeMismatch,
+    DocLenAfterMismatch,
+    TextHashBeforeMismatch,
+    TextHashAfterMismatch,
+    CursorOutOfBounds,
+    SelectionOutOfBounds,
+    SelectionRangeInverted,
+    AmbiguousEditLocation,
+    DeletedTextMismatch,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum ReplayDiagnosticProbableLayer {
+    LoggerDiffEstimation,
+    CursorOrSelectionCapture,
+    ReplayAssumption,
+    SchemaOrValidation,
+    Unknown,
+}
+
 pub type ReplayResult<T> = Result<T, ReplayError>;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -180,6 +236,169 @@ impl Display for ReplayErrorKind {
 
 pub fn replay_events(events: &[RawEvent]) -> ReplayResult<ReplayReport> {
     replay_events_with_options(events, &ReplayOptions::default())
+}
+
+pub fn diagnose_replay_events(events: &[RawEvent]) -> ReplayDiagnosticReport {
+    match replay_events(events) {
+        Ok(report) => ReplayDiagnosticReport {
+            replay_status: ReplayDiagnosticStatus::Ok,
+            event_count: report.event_count,
+            failure_line: None,
+            failure_kind: None,
+            source_seq: None,
+            event_type: None,
+            input_type: None,
+            doc_len_before: None,
+            doc_len_after: None,
+            cursor_pos_before: None,
+            cursor_pos_after: None,
+            selection_start_before: None,
+            selection_end_before: None,
+            selection_start_after: None,
+            selection_end_after: None,
+            inserted_text_present: None,
+            inserted_text_len: None,
+            deleted_text_present: None,
+            deleted_text_len: None,
+            diff_op: None,
+            quality_flags: vec![],
+            content_suppressed: true,
+            probable_layer: ReplayDiagnosticProbableLayer::Unknown,
+            suggested_next_check:
+                "No replay mismatch was detected. Continue with extraction or micro-episode checks."
+                    .to_string(),
+        },
+        Err(error) => diagnostic_from_error(events, &error),
+    }
+}
+
+fn diagnostic_from_error(events: &[RawEvent], error: &ReplayError) -> ReplayDiagnosticReport {
+    let event = events.get(error.event_index);
+    ReplayDiagnosticReport {
+        replay_status: ReplayDiagnosticStatus::Failed,
+        event_count: events.len(),
+        failure_line: Some(error.event_index + 1),
+        failure_kind: Some(failure_kind_name(&error.kind)),
+        source_seq: event.map(|event| event.seq).or(error.seq),
+        event_type: event.map(|event| event.event_type.clone()),
+        input_type: event
+            .and_then(|event| event.input_type.as_ref())
+            .map(debug_name),
+        doc_len_before: event.and_then(|event| event.doc_len_before),
+        doc_len_after: event.and_then(|event| event.doc_len_after),
+        cursor_pos_before: event.and_then(|event| event.cursor_pos_before),
+        cursor_pos_after: event.and_then(|event| event.cursor_pos_after),
+        selection_start_before: event.and_then(|event| event.selection_start_before),
+        selection_end_before: event.and_then(|event| event.selection_end_before),
+        selection_start_after: event.and_then(|event| event.selection_start_after),
+        selection_end_after: event.and_then(|event| event.selection_end_after),
+        inserted_text_present: event.map(|event| event.inserted_text.is_some()),
+        inserted_text_len: event.map(|event| text_len(event.inserted_text.as_deref())),
+        deleted_text_present: event.map(|event| event.deleted_text.is_some()),
+        deleted_text_len: event.map(|event| text_len(event.deleted_text.as_deref())),
+        diff_op: event
+            .and_then(|event| event.diff_op.as_ref())
+            .map(debug_name),
+        quality_flags: event
+            .map(|event| event.quality_flags.clone())
+            .unwrap_or_default(),
+        content_suppressed: true,
+        probable_layer: probable_layer(&error.kind, event),
+        suggested_next_check: suggested_next_check(&error.kind, event),
+    }
+}
+
+fn failure_kind_name(kind: &ReplayErrorKind) -> ReplayDiagnosticFailureKind {
+    match kind {
+        ReplayErrorKind::DocLenBeforeMismatch { .. } => {
+            ReplayDiagnosticFailureKind::DocLenBeforeMismatch
+        }
+        ReplayErrorKind::DocLenAfterMismatch { .. } => {
+            ReplayDiagnosticFailureKind::DocLenAfterMismatch
+        }
+        ReplayErrorKind::TextHashBeforeMismatch { .. } => {
+            ReplayDiagnosticFailureKind::TextHashBeforeMismatch
+        }
+        ReplayErrorKind::TextHashAfterMismatch { .. } => {
+            ReplayDiagnosticFailureKind::TextHashAfterMismatch
+        }
+        ReplayErrorKind::CursorOutOfBounds { .. } => ReplayDiagnosticFailureKind::CursorOutOfBounds,
+        ReplayErrorKind::SelectionOutOfBounds { .. } => {
+            ReplayDiagnosticFailureKind::SelectionOutOfBounds
+        }
+        ReplayErrorKind::SelectionRangeInverted { .. } => {
+            ReplayDiagnosticFailureKind::SelectionRangeInverted
+        }
+        ReplayErrorKind::AmbiguousEditLocation => {
+            ReplayDiagnosticFailureKind::AmbiguousEditLocation
+        }
+        ReplayErrorKind::DeletedTextMismatch { .. } => {
+            ReplayDiagnosticFailureKind::DeletedTextMismatch
+        }
+    }
+}
+
+fn probable_layer(
+    kind: &ReplayErrorKind,
+    event: Option<&RawEvent>,
+) -> ReplayDiagnosticProbableLayer {
+    match kind {
+        ReplayErrorKind::DeletedTextMismatch { .. } => {
+            ReplayDiagnosticProbableLayer::LoggerDiffEstimation
+        }
+        ReplayErrorKind::CursorOutOfBounds { .. }
+        | ReplayErrorKind::SelectionOutOfBounds { .. }
+        | ReplayErrorKind::SelectionRangeInverted { .. }
+        | ReplayErrorKind::AmbiguousEditLocation => {
+            ReplayDiagnosticProbableLayer::CursorOrSelectionCapture
+        }
+        ReplayErrorKind::DocLenBeforeMismatch { .. }
+        | ReplayErrorKind::DocLenAfterMismatch { .. } => {
+            if event_has_text_change(event) {
+                ReplayDiagnosticProbableLayer::LoggerDiffEstimation
+            } else {
+                ReplayDiagnosticProbableLayer::ReplayAssumption
+            }
+        }
+        ReplayErrorKind::TextHashBeforeMismatch { .. }
+        | ReplayErrorKind::TextHashAfterMismatch { .. } => {
+            ReplayDiagnosticProbableLayer::SchemaOrValidation
+        }
+    }
+}
+
+fn suggested_next_check(kind: &ReplayErrorKind, event: Option<&RawEvent>) -> String {
+    match probable_layer(kind, event) {
+        ReplayDiagnosticProbableLayer::LoggerDiffEstimation => {
+            "Check synthetic-only logger diff inference for inserted/deleted text lengths and edit range metadata.".to_string()
+        }
+        ReplayDiagnosticProbableLayer::CursorOrSelectionCapture => {
+            "Check synthetic-only cursor and selection capture before and after the failing event.".to_string()
+        }
+        ReplayDiagnosticProbableLayer::ReplayAssumption => {
+            "Check whether the strict Rust replay assumption covers this schema-valid browser event pattern.".to_string()
+        }
+        ReplayDiagnosticProbableLayer::SchemaOrValidation => {
+            "Check schema, validation, and hash policy before changing replay behavior.".to_string()
+        }
+        ReplayDiagnosticProbableLayer::Unknown => {
+            "Check the failing event metadata with content suppressed.".to_string()
+        }
+    }
+}
+
+fn event_has_text_change(event: Option<&RawEvent>) -> bool {
+    event
+        .map(|event| event.inserted_text.is_some() || event.deleted_text.is_some())
+        .unwrap_or(false)
+}
+
+fn text_len(text: Option<&str>) -> usize {
+    text.map(char_count).unwrap_or(0)
+}
+
+fn debug_name<T: fmt::Debug>(value: &T) -> String {
+    format!("{value:?}")
 }
 
 pub fn replay_events_with_options(
@@ -529,7 +748,10 @@ fn slice_chars(text: &str, start: usize, end: usize) -> String {
 
 #[cfg(test)]
 mod tests {
-    use super::{replay_events, ReplayErrorKind};
+    use super::{
+        diagnose_replay_events, replay_events, ReplayDiagnosticFailureKind,
+        ReplayDiagnosticProbableLayer, ReplayDiagnosticStatus, ReplayErrorKind,
+    };
     use kslog_schema::{DiffOp, EventType, InputType, RawEvent};
     use kslog_validate::{validate_jsonl_reader, ValidationOptions};
     use std::{
@@ -601,6 +823,19 @@ mod tests {
 
         assert_eq!(report.final_text, "I like music.");
         assert_eq!(report.final_doc_len, 13);
+    }
+
+    #[test]
+    fn diagnose_replay_success_suppresses_content() {
+        let events =
+            read_valid_fixture("tests/fixtures/synthetic/raw_events/valid/simple_typing.jsonl");
+
+        let report = diagnose_replay_events(&events);
+
+        assert_eq!(report.replay_status, ReplayDiagnosticStatus::Ok);
+        assert_eq!(report.event_count, 6);
+        assert_eq!(report.failure_kind, None);
+        assert!(report.content_suppressed);
     }
 
     #[test]
@@ -741,5 +976,40 @@ mod tests {
         let parsed = serde_json::from_str::<RawEvent>(malformed);
 
         assert!(parsed.is_err());
+    }
+
+    #[test]
+    fn diagnose_replay_deleted_text_mismatch_uses_lengths_only() {
+        let mut insert = synthetic_event(1, 0, 1);
+        insert.inserted_text = Some("x".to_string());
+        insert.cursor_pos_before = Some(0);
+        insert.cursor_pos_after = Some(1);
+
+        let mut delete = synthetic_event(2, 1, 0);
+        delete.inserted_text = None;
+        delete.deleted_text = Some("LEAK_MARKER_SHOULD_NOT_APPEAR".to_string());
+        delete.cursor_pos_before = Some(1);
+        delete.cursor_pos_after = Some(0);
+        delete.doc_len_before = Some(1);
+        delete.doc_len_after = Some(0);
+        delete.diff_op = Some(DiffOp::Delete);
+
+        let report = diagnose_replay_events(&[insert, delete]);
+
+        assert_eq!(report.replay_status, ReplayDiagnosticStatus::Failed);
+        assert_eq!(
+            report.failure_kind,
+            Some(ReplayDiagnosticFailureKind::DeletedTextMismatch)
+        );
+        assert_eq!(
+            report.probable_layer,
+            ReplayDiagnosticProbableLayer::LoggerDiffEstimation
+        );
+        assert_eq!(report.deleted_text_present, Some(true));
+        assert_eq!(
+            report.deleted_text_len,
+            Some("LEAK_MARKER_SHOULD_NOT_APPEAR".chars().count())
+        );
+        assert!(report.content_suppressed);
     }
 }

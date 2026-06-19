@@ -32,6 +32,14 @@ cargo run -p kslog_cli -- replay <input.jsonl>
 
 Validates and replays the raw events. It prints only a summary, not the final replayed text.
 
+### diagnose-replay
+
+```bash
+cargo run -p kslog_cli -- diagnose-replay <input.jsonl>
+```
+
+Validates the input and runs replay diagnostics. This command is for mismatch triage. It prints line number, source sequence, event metadata, cursor/selection positions, document lengths, text-presence flags, and text lengths. It does not print inserted text, deleted text, final text, or local context.
+
 ### extract
 
 ```bash
@@ -86,6 +94,7 @@ Then run:
 ```bash
 cargo run -p kslog_cli -- validate manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- replay manual_outputs/logger_web/<file>.jsonl
+cargo run -p kslog_cli -- diagnose-replay manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- extract manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- build-micro-episodes manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- audit-no-oracle manual_outputs/logger_web/<file>.jsonl
@@ -103,6 +112,8 @@ This CLI must be used with synthetic data in this repository.
 Do not run this repository workflow on real participant data. Do not save CLI output derived from real participant data into the repository.
 
 Replay, revision-event extraction, micro-episode construction, and safe views can involve writing fragments. The CLI intentionally prints summaries rather than final text or local contexts.
+
+Use `diagnose-replay` instead of copying raw replay error text into documentation. Replay errors may include small content snippets, while `diagnose-replay` suppresses content and reports lengths and metadata only.
 
 ## What This CLI Does Not Do
 
