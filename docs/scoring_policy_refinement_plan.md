@@ -268,6 +268,9 @@ Possible future linguistic placeholder constraints:
 
 These should remain descriptive until a clear scoring rationale exists.
 
+See [Linguistic placeholder constraint plan](linguistic_placeholder_constraint_plan.md)
+for the no-oracle design boundary before implementing these constraints.
+
 ### Step D: Document Initial Hand Weights
 
 If non-safety weights are introduced:
