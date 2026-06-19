@@ -59,6 +59,19 @@ config from environment variables, and rejects config paths under
 For the safety design boundary for optional config-enabled E2E, see
 [`config_enabled_e2e_design.md`](config_enabled_e2e_design.md).
 
+To smoke-check config-enabled E2E wiring without changing the summary
+collector, run:
+
+```bash
+scripts/check_config_enabled_e2e_smoke.sh
+```
+
+The smoke script runs no-config, current-default-like config, and intentional
+synthetic config E2E cases with separate case names. It checks that invalid and
+unsafe configs fail closed and that no-config output is not overwritten. It
+prints safe status only and does not print JSONL bodies, config bodies,
+candidate score rows, raw text, or evaluation report bodies.
+
 ## Summary Collector
 
 To run every synthetic valid raw-event fixture and print a summary-only table:
