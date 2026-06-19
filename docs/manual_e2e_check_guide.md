@@ -208,6 +208,8 @@ Expected focus:
 
 Use `docs/manual_e2e_case_template.md` for a copyable record format. Keep records as summaries only. Do not paste JSONL lines, downloaded file contents, final text, local contexts, or text fragments from real data.
 
+Use `docs/manual_e2e_case_results.md` to maintain the seven-case summary ledger after synthetic manual runs are complete.
+
 Each case record should include:
 
 - `case name`
