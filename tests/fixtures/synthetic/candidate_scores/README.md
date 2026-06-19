@@ -8,9 +8,14 @@ Valid candidate scores include explicit `action_type`; evaluators must not infer
 They are not participant data, experiment data, production data, or real
 scoring output. Do not place real participant score outputs in this directory.
 
-`valid/deletion_candidate_scores.jsonl` is also the initial no-config scoring
-lock fixture. It should match the synthetic E2E output generated at
-`tmp/synthetic_e2e/deletion_case/candidate_scores.jsonl` when no scorer config
-is supplied. Do not paste its JSONL body into docs or stdout.
+The initial no-config scoring lock fixtures are:
+
+- `valid/deletion_candidate_scores.jsonl`
+- `valid/selection_edit_candidate_scores.jsonl`
+- `valid/cursor_movement_candidate_scores.jsonl`
+
+They should match the synthetic E2E outputs generated under
+`tmp/synthetic_e2e/<case_name>/candidate_scores.jsonl` when no scorer config is
+supplied. Do not paste their JSONL bodies into docs or stdout.
 
 `valid/` contains synthetic examples. `invalid/` contains intentionally unsafe examples for rejection tests.

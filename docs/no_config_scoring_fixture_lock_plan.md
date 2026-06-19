@@ -3,12 +3,13 @@
 This document designs and documents the fixture-lock check for no-config
 scoring output.
 
-Status after Step 69: `python/ot_scorer/score_fixture_lock.py` and
+Status after Step 70: `python/ot_scorer/score_fixture_lock.py` and
 `scripts/check_no_config_scoring_fixture_lock.sh` implement the synthetic
-no-config score fixture lock. They do not connect config support to the scorer,
-add a `score.py` config option, change default weights, change the scoring
-formula, change deterministic tie-break behavior, add evaluation metrics, or
-implement learner-state estimation.
+no-config score fixture lock for `deletion_case`, `selection_edit_case`, and
+`cursor_movement_case`. They do not connect config support to the scorer, add a
+`score.py` config option, change default weights, change the scoring formula,
+change deterministic tie-break behavior, add evaluation metrics, or implement
+learner-state estimation.
 
 The goal is to protect current default scoring behavior before any future
 config support is connected to scoring.
@@ -107,8 +108,11 @@ Recommended candidates:
 - `selection_edit_case`
 - `cursor_movement_case`
 
-The initial implemented lock starts with `deletion_case`, because it already
-exercises the synthetic E2E scoring path and optional evaluation wiring.
+The implemented default lock checks all three recommended cases:
+
+- `deletion_case`
+- `selection_edit_case`
+- `cursor_movement_case`
 
 More cases can be added after the lock script proves stable.
 
@@ -219,17 +223,23 @@ Do not paste JSONL contents into docs.
 Status: completed. The script compares generated no-config scores against the
 locked synthetic `deletion_case` score fixture and prints safe summary only.
 
-### Step 70: Explicit Config Ranking Diff Plan
+### Step 70: Expand No-Config Fixture Lock Cases
+
+Status: completed. The default script now checks `deletion_case`,
+`selection_edit_case`, and `cursor_movement_case` while preserving explicit
+single expected/generated path mode.
+
+### Step 71: Explicit Config Ranking Diff Plan
 
 Design how explicit config-enabled ranking differences should be reviewed
 without changing the no-config lock.
 
-### Step 71: Config-Aware Scorer Function, Defaults Unchanged
+### Step 72: Config-Aware Scorer Function, Defaults Unchanged
 
 If approved, add a separate config-aware scorer function while preserving the
 default path.
 
-### Step 72: Explicit Config CLI Option, If Approved
+### Step 73: Explicit Config CLI Option, If Approved
 
 If approved, expose config support only through an explicit CLI option.
 

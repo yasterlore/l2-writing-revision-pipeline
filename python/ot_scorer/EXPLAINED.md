@@ -29,7 +29,9 @@ output, evaluation results, expected action details, JSONL content, or raw text.
 
 It also provides a no-config scoring fixture lock helper. That helper compares
 synthetic `CandidateScoreSet` output against a locked synthetic fixture and
-prints safe summary only. It does not connect config to scoring.
+prints safe summary only. The default lock covers `deletion_case`,
+`selection_edit_case`, and `cursor_movement_case`. It does not connect config
+to scoring.
 
 ## 3. What this component does not do
 

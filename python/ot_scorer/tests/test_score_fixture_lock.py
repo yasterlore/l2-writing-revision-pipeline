@@ -13,14 +13,35 @@ from ot_scorer.score_fixture_lock import (
     run_lock_check,
 )
 
+SELECTION_EXPECTED = Path(
+    "tests/fixtures/synthetic/candidate_scores/valid/selection_edit_candidate_scores.jsonl"
+)
+CURSOR_EXPECTED = Path(
+    "tests/fixtures/synthetic/candidate_scores/valid/cursor_movement_candidate_scores.jsonl"
+)
+
 
 class ScoreFixtureLockTests(unittest.TestCase):
     def test_matching_fixture_passes(self) -> None:
         report = run_lock_check(DEFAULT_EXPECTED, DEFAULT_EXPECTED)
 
         self.assertEqual(report.lock_status, "ok")
+        self.assertEqual(report.case_name, "deletion_case")
         self.assertEqual(report.mismatch_counts, {})
         self.assertGreater(report.candidates_checked, 0)
+
+    def test_added_lock_fixtures_pass_against_themselves(self) -> None:
+        cases = [
+            ("selection_edit_case", SELECTION_EXPECTED),
+            ("cursor_movement_case", CURSOR_EXPECTED),
+        ]
+        for case_name, fixture in cases:
+            with self.subTest(case_name=case_name):
+                report = run_lock_check(fixture, fixture, case_name=case_name)
+
+                self.assertEqual(report.lock_status, "ok")
+                self.assertEqual(report.case_name, case_name)
+                self.assertGreater(report.candidates_checked, 0)
 
     def test_rank_mismatch_fails(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -98,6 +119,7 @@ class ScoreFixtureLockTests(unittest.TestCase):
         result = run_cli(DEFAULT_EXPECTED, DEFAULT_EXPECTED)
 
         self.assertEqual(result.returncode, 0)
+        self.assertIn("case_name=deletion_case", result.stdout)
         self.assertIn("lock_status=ok", result.stdout)
         assert_safe_cli_output(self, result.stdout + result.stderr)
 
