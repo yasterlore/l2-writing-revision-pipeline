@@ -16,6 +16,11 @@ unchanged tie-break behavior, unchanged blocking behavior, inactive weight
 handling, validator rejection before scoring, unchanged output schema, and
 forbidden-field absence. No CLI or E2E config connection was added.
 
+Status after Step 76: `score.py` has an explicit `--weight-config <path>`
+option that calls the config-aware scorer only after strict validation. No-config
+scoring remains the default, and the synthetic E2E pipeline and summary
+collector remain no-config.
+
 This is not performance evaluation.
 
 ## 1. Purpose
@@ -40,7 +45,8 @@ Current state:
 
 - `python/ot_scorer/scorer.py` holds current default scoring behavior
   internally.
-- `python/ot_scorer/score.py` has no config option.
+- `python/ot_scorer/score.py` has explicit `--weight-config`; no-config remains
+  the default.
 - `python/ot_scorer/weight_config.py` is validation-only.
 - `python/ot_scorer/validate_weight_config.py` is validation-only.
 - no-config scoring fixture lock checks exist for synthetic cases.
@@ -235,7 +241,11 @@ Design a `score.py` explicit config option separately. Do not add implicit
 config loading. See
 [Explicit config CLI option design](explicit_config_cli_option_design.md).
 
-### Step 76: Explicit Config Ranking Diff Smoke Script
+### Step 76: Implement Explicit `score.py --weight-config` Option
+
+Implemented with no-config default behavior unchanged.
+
+### Step 77: Explicit Config Ranking Diff Smoke Script
 
 If approved, add a synthetic-only ranking diff smoke script that reports safe
 summary categories only.

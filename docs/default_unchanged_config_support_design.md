@@ -37,8 +37,10 @@ Current config-related state:
 - `python/ot_scorer/validate_weight_config.py` validates config JSON files only.
 - `scripts/check_hand_weight_config_validation.sh` smoke-checks valid and
   invalid synthetic config fixtures.
-- `python/ot_scorer/scorer.py` does not use hand-weight config.
-- `python/ot_scorer/score.py` does not expose a config option.
+- `python/ot_scorer/scorer.py` has a separate config-aware function, but the
+  default scorer path remains no-config.
+- `python/ot_scorer/score.py` exposes an explicit `--weight-config` option, but
+  no-config scoring remains the default path.
 - `CandidateScoreSet` output does not include config fields.
 
 Current default scoring behavior:
@@ -159,16 +161,13 @@ Before config is connected to scoring, the following tests are required:
 
 ### Phase 0: Current State
 
-Validation only.
-
-No scorer connection, no `score.py` config option, and no default scoring
-change.
+Validation, a separate config-aware scorer function, and explicit
+`score.py --weight-config` exist. No-config remains the default scoring path,
+and the synthetic E2E pipeline and summary collector remain no-config.
 
 ### Phase 1: Explicit CLI Option Design
 
-Design the shape of a future option such as `--weight-config`.
-
-Do not implement it yet.
+Designed and implemented as explicit `--weight-config`.
 
 Before implementing the option, add a no-config scoring fixture lock so the
 current default path is protected.
@@ -246,9 +245,10 @@ or generate config files.
 
 Do not implement:
 
-- scorer config connection
-- config-aware scorer function
-- `score.py` config option
+- E2E config connection
+- summary collector config connection
+- implicit config discovery
+- environment-variable config loading
 - default weight changes
 - scoring formula changes
 - tie-break policy changes

@@ -39,6 +39,8 @@ def validation_summary(config: HandWeightConfig, config_path: str | Path) -> str
 
 def safe_error_message(error: WeightConfigError) -> str:
     message = str(error)
+    if "unsafe weight config path" in message:
+        return "unsafe weight config path"
     if "forbidden path-like" in message:
         return "forbidden path-like string"
     if "forbidden config field" in message:

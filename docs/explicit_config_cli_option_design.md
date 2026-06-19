@@ -1,20 +1,20 @@
 # Explicit Config CLI Option Design
 
-This document designs a future explicit config option for
+This document designs the explicit config option for
 `python/ot_scorer/score.py`.
 
-It is a design document only. It does not add a config option to `score.py`,
-connect config support to the synthetic E2E pipeline or summary collector,
-change default weights, change the scoring formula, change deterministic
-tie-break behavior, add evaluation metrics, or implement learner-state
-estimation.
+Status after Step 76: `score.py` supports explicit `--weight-config <path>`.
+No-config scoring remains the default. Config support is not connected to the
+synthetic E2E pipeline or summary collector. This change does not alter default
+weights, the default scoring formula, deterministic tie-break behavior,
+evaluation metrics, or learner-state estimation.
 
 This is not performance evaluation.
 
 ## 1. Purpose
 
-The purpose of this design is to define a safe CLI boundary before any future
-`score.py` config option is implemented.
+The purpose of this design is to define a safe CLI boundary for explicit
+`score.py` config use.
 
 The design goals are:
 
@@ -32,7 +32,7 @@ calibration, grammatical-correctness check, or learner-state estimate.
 
 Current state:
 
-- `python/ot_scorer/score.py` has no config option.
+- `python/ot_scorer/score.py` has explicit `--weight-config`.
 - `python/ot_scorer/scorer.py` has the existing default scorer path.
 - `python/ot_scorer/scorer.py` also has
   `score_constraint_violation_set_with_config(violation_set, config)`.
@@ -44,9 +44,9 @@ Current state:
 - config-aware scorer unit tests exist.
 - synthetic E2E pipeline and summary collector do not pass config to scoring.
 
-## 3. CLI Option Proposal
+## 3. CLI Option
 
-Recommended option name:
+Implemented option name:
 
 ```text
 --weight-config <path>
@@ -58,7 +58,7 @@ Rationale:
 - it matches the `HandWeightConfig` terminology
 - it reduces confusion with unrelated runtime or pipeline config
 
-Future behavior should be:
+Behavior:
 
 - without `--weight-config`, `score.py` behaves exactly as it does now
 - with `--weight-config`, `score.py` loads and validates the config first
@@ -119,7 +119,7 @@ Stdout should remain safe summary only.
 
 ## 6. Failure Policy
 
-Future `--weight-config` handling should fail closed.
+`--weight-config` handling fails closed.
 
 Failure cases:
 
@@ -148,7 +148,7 @@ Scoring must not start after config validation fails.
 
 ## 7. Tests Required Before Implementation
 
-Before implementing the CLI option, tests should cover:
+Tests should continue to cover:
 
 - no-config `score.py` output equals current fixture behavior
 - no-config fixture lock passes
@@ -186,7 +186,6 @@ used for weight tuning.
 
 Do not implement:
 
-- `score.py --weight-config`
 - `score.py --config`
 - E2E config connection
 - summary collector config connection
@@ -209,8 +208,7 @@ rows into docs.
 
 ### Step 76: Implement Explicit `score.py --weight-config` Option
 
-If approved, add an explicit `--weight-config` path while keeping no-config
-default behavior unchanged.
+Implemented with no-config default behavior unchanged.
 
 ### Step 77: Explicit Config Ranking Diff Smoke Script
 

@@ -36,7 +36,7 @@ Current state:
 - `python/ot_scorer/validate_weight_config.py` is validation-only.
 - `python/ot_scorer/scorer.py` includes a separate explicit config-aware
   function, but the default scorer path is not connected to config.
-- `python/ot_scorer/score.py` has no config option.
+- `python/ot_scorer/score.py` has an explicit `--weight-config` option.
 - no-config fixture lock covers:
   - `deletion_case`
   - `selection_edit_case`
@@ -256,7 +256,11 @@ Design an explicit CLI option such as `--weight-config`. Do not allow implicit
 config discovery. See
 [Explicit config CLI option design](explicit_config_cli_option_design.md).
 
-### Step 76: Explicit Config Ranking Diff Smoke Script
+### Step 76: Implement Explicit `score.py --weight-config` Option
+
+Implemented with no-config default behavior unchanged.
+
+### Step 77: Explicit Config Ranking Diff Smoke Script
 
 If approved, implement a synthetic-only script that compares no-config and
 explicit-config outputs using safe summary-only diff categories.
