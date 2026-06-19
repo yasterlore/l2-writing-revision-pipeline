@@ -11,8 +11,11 @@ Confirm before public release:
 - no real participant data is tracked
 - no real raw event JSONL is tracked
 - no private/manual/tmp output is tracked
+- no private/local observation notes are tracked
 - no participant text appears in docs
 - no JSONL rows are pasted into docs
+- no summary CSV bodies, diagnostic summary bodies, config bodies, or candidate
+  score rows are pasted into docs
 - `examples/` contains synthetic examples only
 - `tests/fixtures/` contains synthetic fixtures only
 - invalid fixtures are clearly synthetic and intentionally unsafe only for tests
@@ -22,7 +25,7 @@ Useful path checks:
 ```bash
 git status --short
 git ls-files
-git ls-files | grep -E 'manual_outputs|tmp|private_data|real_data|participant_data|\.real\.jsonl|\.private\.jsonl'
+git ls-files | grep -E 'manual_outputs|tmp|private_data|real_data|participant_data|private_notes|local_notes|\.real\.jsonl|\.private\.jsonl'
 ```
 
 Note: documentation filenames such as `private_real_data_readiness_checklist.md`
@@ -38,6 +41,8 @@ Confirm `.gitignore` blocks:
 - `private_data/`
 - `real_data/`
 - `participant_data/`
+- `private_notes/`
+- `local_notes/`
 - `*.real.jsonl`
 - `*.private.jsonl`
 - local `.env` and secret-looking files
@@ -70,7 +75,10 @@ Confirm docs link to:
 
 - `docs/milestone_01_pipeline_recap.md`
 - `docs/milestone_02_synthetic_evaluation_recap.md`
+- `docs/milestone_03_config_aware_diagnostic_infrastructure_recap.md`
 - `docs/private_real_data_readiness_checklist.md`
+- `docs/observation_note_storage_and_review_workflow.md`
+- `docs/filled_observation_note_public_sharing_checklist.md`
 - `docs/synthetic_e2e_pipeline.md`
 - `docs/evaluation_spec.md`
 - `docs/03_no_oracle_policy.md`
@@ -115,6 +123,8 @@ Confirm:
 - JSONL input is treated as untrusted
 - no network access is introduced without documentation
 - unsafe Rust, unsafe DOM APIs, `eval`, `exec`, and pickle loading are avoided
+- config support remains explicit-only
+- no hidden config loading or environment-variable config loading is introduced
 
 ## 6. No-Oracle Policy
 
@@ -132,6 +142,10 @@ Confirm docs state that candidate generation, scoring, ranking, and learner-stat
 
 Synthetic expected actions must be used only after scoring for evaluation wiring.
 
+Configs must not be tuned from expected actions. Config-enabled E2E and
+config-enabled summaries must remain explicit and separate from no-config
+summaries.
+
 ## 7. Checks To Run
 
 ```bash
@@ -144,6 +158,12 @@ PYTHONPATH=python python3 -m compileall python
 cd apps/logger-web && npm run typecheck
 cd apps/logger-web && npm test
 cd apps/logger-web && npm run build
+scripts/check_no_config_scoring_fixture_lock.sh
+scripts/check_hand_weight_config_validation.sh
+scripts/check_explicit_config_ranking_diff.sh
+scripts/check_config_enabled_e2e_smoke.sh
+scripts/check_config_enabled_summary_smoke.sh
+scripts/check_synthetic_diagnostic_distribution.sh
 ```
 
 ## 8. Current Non-Goals
@@ -156,6 +176,8 @@ Do not claim:
 - accuracy
 - calibration
 - learner-state estimation
+- automatic weight learning
+- private validation
 - model performance
 - public data release readiness
 
