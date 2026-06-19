@@ -152,6 +152,52 @@ class ConstraintTests(unittest.TestCase):
             if violation["constraint_type"] == "descriptive":
                 self.assertEqual(violation["violation_count"], 0)
 
+    def test_identifies_linguistic_placeholder_constraints(self) -> None:
+        data = candidate_feature_set()
+        data["candidate_features"] = [
+            grammar_placeholder_feature(
+                "article_fix_placeholder",
+                "article_placeholder_rule",
+            ),
+            grammar_placeholder_feature(
+                "number_fix_placeholder",
+                "number_placeholder_rule",
+            ),
+            grammar_placeholder_feature(
+                "sva_fix_placeholder",
+                "sva_placeholder_rule",
+            ),
+            grammar_placeholder_feature(
+                "tense_fix_placeholder",
+                "tense_placeholder_rule",
+            ),
+            grammar_placeholder_feature(
+                "preposition_fix_placeholder",
+                "preposition_placeholder_rule",
+            ),
+            grammar_placeholder_feature(
+                "punctuation_fix_placeholder",
+                "punctuation_placeholder_rule",
+            ),
+        ]
+
+        violation_set = build_constraint_violation_set(data)
+
+        expected_constraints = [
+            "ARTICLE-PLACEHOLDER-CANDIDATE",
+            "NUMBER-PLACEHOLDER-CANDIDATE",
+            "SVA-PLACEHOLDER-CANDIDATE",
+            "TENSE-PLACEHOLDER-CANDIDATE",
+            "PREPOSITION-PLACEHOLDER-CANDIDATE",
+            "PUNCTUATION-PLACEHOLDER-CANDIDATE",
+        ]
+        for index, constraint_id in enumerate(expected_constraints):
+            with self.subTest(constraint_id=constraint_id):
+                violation = find_violation(violation_set, index, constraint_id)
+                self.assertTrue(violation["observed"])
+                self.assertEqual(violation["constraint_type"], "descriptive")
+                self.assertEqual(violation["violation_count"], 0)
+
     def test_rejects_forbidden_field(self) -> None:
         with self.assertRaises(CandidateFeatureError):
             load_candidate_feature_sets(FORBIDDEN_FIXTURE)
@@ -278,6 +324,34 @@ def candidate_feature_set() -> dict[str, object]:
                 "leakage_flags": [],
             },
         ],
+    }
+
+
+def grammar_placeholder_feature(action_type: str, generation_rule: str) -> dict[str, object]:
+    return {
+        "candidate_id": f"synthetic_session_001:micro:3:cand:synthetic:{action_type}",
+        "episode_id": "synthetic_session_001:micro:3",
+        "action_type": action_type,
+        "generation_rule": generation_rule,
+        "no_oracle_safe": True,
+        "uses_observed_edit_text": False,
+        "action_family": "grammar_placeholder",
+        "candidate_metadata_complete": True,
+        "has_generation_rule": True,
+        "has_action_family": True,
+        "is_safety_relevant_candidate": False,
+        "is_placeholder_candidate": True,
+        "is_grammar_family_candidate": True,
+        "is_local_edit_family_candidate": False,
+        "is_hold_candidate": False,
+        "candidate_family_bucket": "grammar_placeholder",
+        "is_placeholder": True,
+        "is_hold": False,
+        "is_local_edit": False,
+        "is_grammar_placeholder": True,
+        "candidate_description_length": 0,
+        "feature_notes_count": 0,
+        "leakage_flags": [],
     }
 
 

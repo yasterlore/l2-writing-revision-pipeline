@@ -142,10 +142,19 @@ Descriptive constraints record candidate type without adding a penalty in this v
 - `PLACEHOLDER-FAMILY-CANDIDATE`
 - `SAFETY-RELEVANT-CANDIDATE`
 - `CANDIDATE-FAMILY-BUCKET`
+- `ARTICLE-PLACEHOLDER-CANDIDATE`
+- `NUMBER-PLACEHOLDER-CANDIDATE`
+- `SVA-PLACEHOLDER-CANDIDATE`
+- `TENSE-PLACEHOLDER-CANDIDATE`
+- `PREPOSITION-PLACEHOLDER-CANDIDATE`
+- `PUNCTUATION-PLACEHOLDER-CANDIDATE`
 
 These structural descriptive constraints are derived from
 `CandidateFeatureSet` metadata. Their `violation_count` is always `0`, and the
 weighted scorer does not add them to `weighted_score`.
+
+The linguistic placeholder constraints record candidate families only. They do
+not judge grammatical correctness.
 
 The output includes `violation_count`, `severity`, and `explanation`, but it does not include weights, weighted scores, ranks, candidate text, local context text, or observed edit text.
 

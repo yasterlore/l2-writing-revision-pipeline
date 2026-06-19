@@ -92,6 +92,11 @@ membership, safety relevance, and family-bucket presence. They are
 interpretation records only: their violation count is `0`, and they do not
 change `weighted_score` or rank.
 
+The linguistic placeholder descriptive constraints record whether a candidate
+belongs to article, number, subject-verb-agreement, tense, preposition, or
+punctuation placeholder families. They do not decide whether the grammar is
+correct.
+
 The scorer uses blocking constraints as safety gates. It does not learn from data and does not use gold labels.
 
 The score output includes `action_type` explicitly so evaluation does not need to infer candidate class from the string shape of `candidate_id`. It also carries `generation_rule` and `action_family` so later analysis can inspect why a candidate exists without adding candidate descriptions, proposed edit payloads, local context text, or observed edit text to the score output.
