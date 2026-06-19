@@ -89,6 +89,16 @@ Observed edit text is ignored by default even if present in a safe-view export. 
 
 Candidate generation produces unranked placeholder candidates. It is not an evaluation step and does not create gold labels.
 
+## Candidate Feature Extraction
+
+The Python candidate feature step reads `CandidateSet` JSONL and prepares structural features for future OT scoring.
+
+It must not use candidate descriptions as text features, proposed edit payloads, observed edit text, final text, post-edit context, gold labels, or teacher corrections.
+
+Allowed first-version features are structural fields such as `action_type`, `generation_rule`, action-family flags, description length, and feature-note count.
+
+If a candidate or candidate set has `uses_observed_edit_text=true` or `no_oracle_safe=false`, the feature step must flag it as a leakage concern before any scorer can use it.
+
 ## Forbidden Field Names
 
 The audit policy treats the following as forbidden concepts:
