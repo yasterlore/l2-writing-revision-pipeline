@@ -1,0 +1,19 @@
+[package]
+name = "kslog_cli"
+version = "0.1.0"
+edition.workspace = true
+description = "Command-line tools for deterministic synthetic keystroke-log pipeline checks."
+
+[dependencies]
+kslog_extract = { path = "../kslog_extract" }
+kslog_micro_episode = { path = "../kslog_micro_episode" }
+kslog_no_oracle_audit = { path = "../kslog_no_oracle_audit" }
+kslog_replay = { path = "../kslog_replay" }
+kslog_schema = { path = "../kslog_schema" }
+kslog_validate = { path = "../kslog_validate" }
+serde_json = "1"
+
+[[bin]]
+name = "kslog"
+path = "src/main.rs"
+

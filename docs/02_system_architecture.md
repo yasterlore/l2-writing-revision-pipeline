@@ -32,6 +32,8 @@ Planned crates:
 - `kslog_no_oracle_audit`: no-oracle compliance checks.
 - `kslog_cli`: command-line tools.
 
+`kslog_cli` is the initial command-line entry point for running validation, replay, revision-event extraction, micro-episode construction, no-oracle audit, and safe-view summary generation on synthetic JSONL fixtures.
+
 ## Python
 
 Python is used in `python/` for exploratory research workflows.
