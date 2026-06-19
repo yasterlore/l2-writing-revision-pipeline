@@ -198,3 +198,5 @@ For the implemented v0.3 local pattern feature schema, read
 `../../docs/local_pattern_feature_schema_v0_3_plan.md`.
 For the descriptive diagnostic constraints based on those fields, read
 `../../docs/local_pattern_diagnostic_constraint_plan.md`.
+For the planned safe summary tooling for diagnostics, read
+`../../docs/diagnostic_summary_tooling_plan.md`.

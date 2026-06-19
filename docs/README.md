@@ -18,6 +18,7 @@ Recommended entry points:
 - [Local pattern feature plan](local_pattern_feature_plan.md): design plan for future no-oracle-safe local context abstractions.
 - [Local pattern feature schema v0.3 plan](local_pattern_feature_schema_v0_3_plan.md): implemented initial CandidateFeatureSet v0.3 field definitions.
 - [Local pattern diagnostic constraint plan](local_pattern_diagnostic_constraint_plan.md): design plan for descriptive diagnostics derived from v0.3 local pattern features.
+- [Diagnostic summary tooling plan](diagnostic_summary_tooling_plan.md): design plan for safe summary-only aggregation of descriptive diagnostics.
 - [Public release checklist](public_release_checklist.md): public GitHub readiness checklist.
 
 Do not paste JSONL contents, real participant text, private data, or production outputs into documentation.
