@@ -1,14 +1,14 @@
 # Config-Enabled Summary Collector Design
 
-This document designs a possible future summary collector for explicit
+This document designs and records the separate summary collector for explicit
 config-enabled synthetic E2E outputs.
 
-It is a design document only. It does not connect config to
-`scripts/run_synthetic_e2e_summary.sh`, does not implement a config-enabled
-summary CSV, does not change default summary collector behavior, does not
-change default weights, does not change the scoring formula, does not change
-deterministic tie-break behavior, and does not add F1, accuracy, calibration,
-or learner-state estimation.
+The implementation is intentionally separate from
+`scripts/run_synthetic_e2e_summary.sh`. It does not change default summary
+collector behavior, does not add config columns to the no-config summary CSV,
+does not change default weights, does not change the scoring formula, does not
+change deterministic tie-break behavior, and does not add F1, accuracy,
+calibration, or learner-state estimation.
 
 This is not performance evaluation.
 
@@ -33,20 +33,21 @@ estimation.
 
 ## 2. Current State
 
-Current state after Step 80:
+Current state after Step 82:
 
 - `scripts/run_synthetic_e2e_summary.sh` remains no-config.
 - `scripts/run_synthetic_e2e_pipeline.sh` accepts `--weight-config` only when
   explicitly supplied.
 - `scripts/check_config_enabled_e2e_smoke.sh` verifies explicit config-enabled
   E2E output separation and fail-closed behavior.
+- `scripts/run_synthetic_e2e_config_summary.sh` writes a separate config-enabled
+  count-only summary when `--weight-config` is explicitly supplied.
 - `scripts/check_explicit_config_ranking_diff.sh` compares no-config and
   explicit-config scoring outputs using safe diff summaries.
 - `scripts/check_no_config_scoring_fixture_lock.sh` protects no-config scoring
   output for selected synthetic cases.
-- no current summary collector auto-discovers config, reads config from
-  environment variables, or mixes config-enabled rows into the default summary
-  CSV.
+- no summary collector auto-discovers config, reads config from environment
+  variables, or mixes config-enabled rows into the default summary CSV.
 
 ## 3. Summary Collector Design Options
 
@@ -117,10 +118,10 @@ Risks:
 Initial config-enabled summary support should use Option B: a separate
 directory per config.
 
-Recommended output shape:
+Implemented output shape:
 
 ```text
-tmp/synthetic_e2e_config_summary/<config_name>/summary.csv
+tmp/synthetic_e2e_config_summary/<safe_config_name>/summary.csv
 ```
 
 Policy:
@@ -128,15 +129,33 @@ Policy:
 - keep `tmp/synthetic_e2e_summary/summary.csv` unchanged
 - require explicit config path input
 - validate config before running config-enabled E2E
-- derive `<config_name>` from the validated config metadata
-- normalize config names to safe path components
+- derive `<safe_config_name>` from the config file basename
+- normalize config summary directories to safe path components
 - do not include config JSON body in the summary
 - do not include raw JSONL bodies in the summary
 - keep config-enabled summary count-only
 - keep config-enabled summary separate from no-config summary
+- run per-case pipeline output under config-suffixed case names in
+  `tmp/synthetic_e2e/`, so no-config case directories are not overwritten
 
 The initial config-enabled summary should not add performance metrics. It may
 record safe config metadata and count-only E2E/diagnostic status fields.
+
+Example:
+
+```bash
+scripts/run_synthetic_e2e_config_summary.sh \
+  --weight-config tests/fixtures/synthetic/hand_weight_configs/valid/current_default_like_config.json
+```
+
+This writes:
+
+```text
+tmp/synthetic_e2e_config_summary/current_default_like_config/summary.csv
+```
+
+The script validates the config before running cases. Invalid, missing, or
+unsafe config paths fail closed before per-case pipelines are started.
 
 ## 5. Information Allowed In Config-Enabled Summary
 
@@ -255,10 +274,8 @@ These tests are regression and wiring checks, not performance evaluation.
 
 ## 10. What Not To Do Yet
 
-Do not implement:
+Do not implement in this collector:
 
-- summary collector config connection
-- config-enabled summary CSV
 - default summary changes
 - config columns in no-config summary
 - implicit config loading
@@ -280,8 +297,9 @@ evaluation report bodies, score rows, or private output into docs.
 
 ### Step 82: Implement Separate Config-Enabled Summary Collector
 
-If approved, implement a separate config-enabled summary collector that writes
-under `tmp/synthetic_e2e_config_summary/<config_name>/`.
+Completed: `scripts/run_synthetic_e2e_config_summary.sh` writes a separate
+count-only summary under
+`tmp/synthetic_e2e_config_summary/<safe_config_name>/summary.csv`.
 
 ### Step 83: Config-Enabled Summary Smoke Check
 
