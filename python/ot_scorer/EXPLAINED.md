@@ -163,3 +163,5 @@ Leakage flags are not a complete formal proof of no leakage. Future scorer-speci
 Read `docs/09_ot_scoring_spec.md`, `docs/08_candidate_generation_spec.md`, and `docs/03_no_oracle_policy.md`.
 
 For the future scoring policy roadmap, read `../../docs/scoring_policy_refinement_plan.md`.
+For the beginner-friendly plan for linguistic placeholder constraints, read
+`../../docs/linguistic_placeholder_constraint_plan.md`.
