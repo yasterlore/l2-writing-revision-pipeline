@@ -31,7 +31,7 @@ npm run build
 cargo run -p kslog_cli -- validate path/to/synthetic_session_web_001.raw_events.jsonl
 ```
 
-For manual end-to-end checks, place downloaded synthetic JSONL under `manual_outputs/logger_web/` and follow `docs/manual_e2e_check_guide.md`.
+For manual end-to-end checks, place downloaded synthetic JSONL under `manual_outputs/logger_web/` and follow `docs/manual_e2e_check_guide.md`. Use `docs/manual_e2e_case_template.md` to record summaries only.
 
 ## JSONL Output
 
@@ -73,3 +73,5 @@ The app does not use `localStorage`, does not send network requests, and does no
 Downloaded JSONL can contain text fragments. Do not commit downloaded JSONL from real sessions to this repository.
 
 Downloaded synthetic manual outputs should stay under `manual_outputs/`, which is ignored by Git.
+
+Manual case summaries must not include JSONL lines or real text fragments. Keep only command results such as event counts, replay status, and safe-view status.

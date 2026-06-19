@@ -94,6 +94,8 @@ cargo run -p kslog_cli -- make-safe-view manual_outputs/logger_web/<file>.jsonl
 
 See `docs/manual_e2e_check_guide.md`.
 
+For the recommended manual synthetic case set and summary-only record format, see `docs/manual_e2e_check_guide.md` and `docs/manual_e2e_case_template.md`.
+
 ## Privacy Notes
 
 This CLI must be used with synthetic data in this repository.
