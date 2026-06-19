@@ -326,3 +326,5 @@ For future non-leaky linguistic diagnostic design, read
 `../../docs/non_leaky_linguistic_constraint_design_plan.md`.
 For planned summary-only diagnostic aggregation, read
 `../../docs/diagnostic_summary_tooling_plan.md`.
+For the boundary between diagnostics and future scoring policy, read
+`../../docs/diagnostic_to_scoring_boundary_review.md`.
