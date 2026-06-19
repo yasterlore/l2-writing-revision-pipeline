@@ -1,0 +1,15 @@
+[package]
+name = "kslog_no_oracle_audit"
+version = "0.1.0"
+edition.workspace = true
+description = "Initial no-oracle audit checks for synthetic writing-process pipeline artifacts."
+
+[dependencies]
+kslog_extract = { path = "../kslog_extract" }
+kslog_micro_episode = { path = "../kslog_micro_episode" }
+kslog_schema = { path = "../kslog_schema" }
+
+[dev-dependencies]
+kslog_validate = { path = "../kslog_validate" }
+serde_json = "1"
+

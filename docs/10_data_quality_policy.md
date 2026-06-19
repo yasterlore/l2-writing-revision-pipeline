@@ -61,6 +61,16 @@ The first micro-episode construction layer lives in `crates/kslog_micro_episode/
 
 `local_context_after_observed` is retained for reconstruction checks and evaluation, but it is no-oracle unsafe for candidate generation and ranking. Micro-episode outputs may contain writing fragments and must not be committed when derived from real participant data.
 
+The first no-oracle audit layer lives in `crates/kslog_no_oracle_audit/`. It checks use-context-specific risks before candidate generation, ranking, OT scoring, or learner-state estimation.
+
+Current audit checks include:
+
+- forbidden field names such as `final_text`, `observed_after_text`, and `gold_label`
+- observed post-edit context used in candidate generation or ranking contexts
+- core Rust pipeline field-name collisions with the forbidden list
+
+Audit reports derived from real participant data must not be committed to this repository.
+
 ## Derived Data Quality
 
 Derived artifacts should document:
