@@ -101,6 +101,24 @@ the scorer or to the single-case pipeline. Any future config-enabled summary
 behavior must be designed separately. See
 [`config_enabled_summary_collector_design.md`](config_enabled_summary_collector_design.md).
 
+For explicit config-enabled synthetic E2E summaries, use the separate collector:
+
+```bash
+scripts/run_synthetic_e2e_config_summary.sh \
+  --weight-config tests/fixtures/synthetic/hand_weight_configs/valid/current_default_like_config.json
+```
+
+This writes a separate count-only summary under:
+
+```text
+tmp/synthetic_e2e_config_summary/<safe_config_name>/summary.csv
+```
+
+It does not modify the no-config summary at
+`tmp/synthetic_e2e_summary/summary.csv`, does not auto-discover configs, and
+does not print config bodies, JSONL bodies, score rows, raw text, or evaluation
+report bodies.
+
 The collector looks up each case name in the synthetic expected action registry.
 If the case is `active`, it passes the expected action fixture as the third
 pipeline argument and records whether `evaluation_report.json` exists. If the
