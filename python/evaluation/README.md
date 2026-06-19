@@ -33,6 +33,25 @@ It does not parse `candidate_id` to infer action type. `candidate_id` remains a
 stable identifier, while `action_type` is the candidate-generation-derived
 category used for comparison.
 
+## Synthetic Expected Action Registry
+
+`tests/fixtures/synthetic/expected_actions/registry.json` maps synthetic case
+names to synthetic expected action fixture paths.
+
+The registry helper can:
+
+- load the registry
+- return an active expected action path for a case
+- mark a known-but-not-ready case as `pending`
+- mark an unknown case as `missing`
+- reject duplicate case names
+- reject missing fixture paths
+- reject `manual_outputs/`, `private_data/`, `real_data/`, and `participant_data/` paths
+
+The helper validates paths only. It does not read expected-action JSONL bodies.
+The registry is not a real gold-label registry and must not be used for
+production or participant-data evaluation.
+
 ## Output
 
 Output is one `EvaluationReport` JSON file with summary fields and per-episode records.

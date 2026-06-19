@@ -1,0 +1,42 @@
+{
+  "registry_schema_version": "synthetic_expected_action_registry_v0_1",
+  "synthetic_only": true,
+  "entries": [
+    {
+      "case_name": "deletion_case",
+      "status": "active",
+      "expected_action_path": "tests/fixtures/synthetic/expected_actions/valid/deletion_expected_actions.jsonl",
+      "notes": "Synthetic expected action fixture for deletion_case."
+    },
+    {
+      "case_name": "simple_typing",
+      "status": "pending",
+      "notes": "Synthetic expected action fixture has not been defined yet."
+    },
+    {
+      "case_name": "replacement_case",
+      "status": "pending",
+      "notes": "Synthetic expected action fixture has not been defined yet."
+    },
+    {
+      "case_name": "selection_edit_case",
+      "status": "pending",
+      "notes": "Synthetic expected action fixture has not been defined yet."
+    },
+    {
+      "case_name": "cursor_movement_case",
+      "status": "pending",
+      "notes": "Synthetic expected action fixture has not been defined yet."
+    },
+    {
+      "case_name": "paste_case",
+      "status": "pending",
+      "notes": "Synthetic expected action fixture has not been defined yet."
+    },
+    {
+      "case_name": "ime_composition_case",
+      "status": "pending",
+      "notes": "Synthetic expected action fixture has not been defined yet."
+    }
+  ]
+}

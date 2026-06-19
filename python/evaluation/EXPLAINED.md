@@ -12,6 +12,9 @@ It reads `CandidateScoreSet` JSONL and synthetic expected action JSONL, matches 
 
 It records exact match, whether the expected action appears among candidates, and whether the expected action is blocked.
 
+It also includes a small registry helper that maps synthetic case names to
+synthetic expected action fixture paths without reading the JSONL bodies.
+
 ## 3. What this component does not do
 
 It does not evaluate real participant data, calculate F1, calculate calibration, perform selective prediction, estimate learner state, or use teacher corrections.
@@ -22,6 +25,7 @@ Input:
 
 - `CandidateScoreSet` JSONL
 - synthetic expected action JSONL
+- optional synthetic expected action registry JSON
 
 Output:
 
@@ -49,11 +53,20 @@ Output:
 `CandidateScore.action_type` is the candidate action category produced upstream.
 `candidate_id` is only an identifier and is not parsed to recover action type.
 
+`ExpectedActionRegistryEntry` describes whether a synthetic case is `active` or
+`pending` and, for active cases, where its synthetic expected action fixture is.
+
+`ExpectedActionRegistryLookup` reports `active`, `pending`, or `missing` for a
+case name.
+
 ## 7. Theory behind the implementation
 
 Evaluation belongs after scoring. Expected actions must never change candidate generation or ranking.
 
 This keeps a clean boundary between prediction-time information and evaluation-time information.
+
+The registry exists only to organize synthetic fixtures. It is not a real
+gold-label registry.
 
 ## 8. Mathematical formulas, if any
 
@@ -88,6 +101,10 @@ The module does not use `pickle`, `eval`, `exec`, unsafe deserialization, or net
 ## 12. Tests added
 
 Tests cover loading score sets, loading expected actions, exact-match calculation, expected-rank detection, missing expected actions, blocked expected candidates, ranking immutability, forbidden field rejection, absence of F1/accuracy/calibration fields, and source scanning for `eval`, `exec`, and `pickle`.
+
+Registry tests cover loading, active lookup, pending lookup, missing lookup,
+duplicate case rejection, missing path rejection, and private/manual path
+rejection.
 
 ## 13. Known limitations
 

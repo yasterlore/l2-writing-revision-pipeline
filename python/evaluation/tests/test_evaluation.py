@@ -7,6 +7,11 @@ from pathlib import Path
 
 from evaluation.evaluate import run
 from evaluation.evaluator import evaluate_score_sets
+from evaluation.expected_action_registry import (
+    ExpectedActionRegistryError,
+    load_expected_action_registry,
+    lookup_expected_action_path,
+)
 from evaluation.loader import EvaluationInputError, load_expected_actions, load_score_sets
 from evaluation.models import ExpectedAction
 
@@ -16,6 +21,7 @@ SCORES_FIXTURE = Path(
 EXPECTED_FIXTURE = Path(
     "tests/fixtures/synthetic/expected_actions/valid/deletion_expected_actions.jsonl"
 )
+REGISTRY_FIXTURE = Path("tests/fixtures/synthetic/expected_actions/registry.json")
 FORBIDDEN_SCORE_FIXTURE = Path(
     "tests/fixtures/synthetic/candidate_scores/invalid/forbidden_field_candidate_scores.jsonl"
 )
@@ -97,6 +103,91 @@ class EvaluationTests(unittest.TestCase):
         with self.assertRaises(EvaluationInputError):
             load_expected_actions(FORBIDDEN_EXPECTED_FIXTURE)
 
+    def test_loads_expected_action_registry(self) -> None:
+        registry = load_expected_action_registry(REGISTRY_FIXTURE)
+
+        self.assertIn("deletion_case", registry)
+        self.assertEqual(registry["deletion_case"].status, "active")
+        self.assertTrue(registry["deletion_case"].expected_action_path is not None)
+
+    def test_registry_returns_deletion_expected_action_path(self) -> None:
+        registry = load_expected_action_registry(REGISTRY_FIXTURE)
+
+        lookup = lookup_expected_action_path(registry, "deletion_case")
+
+        self.assertEqual(lookup.status, "active")
+        self.assertIsNotNone(lookup.expected_action_path)
+        self.assertEqual(lookup.expected_action_path.name, "deletion_expected_actions.jsonl")
+
+    def test_registry_marks_pending_case(self) -> None:
+        registry = load_expected_action_registry(REGISTRY_FIXTURE)
+
+        lookup = lookup_expected_action_path(registry, "selection_edit_case")
+
+        self.assertEqual(lookup.status, "pending")
+        self.assertIsNone(lookup.expected_action_path)
+
+    def test_registry_marks_unknown_case_as_missing(self) -> None:
+        registry = load_expected_action_registry(REGISTRY_FIXTURE)
+
+        lookup = lookup_expected_action_path(registry, "unknown_case")
+
+        self.assertEqual(lookup.status, "missing")
+        self.assertIsNone(lookup.expected_action_path)
+
+    def test_registry_rejects_duplicate_case_names(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            registry_path = write_registry(
+                Path(directory),
+                [
+                    {"case_name": "duplicate_case", "status": "pending"},
+                    {"case_name": "duplicate_case", "status": "pending"},
+                ],
+            )
+
+            with self.assertRaises(ExpectedActionRegistryError):
+                load_expected_action_registry(registry_path)
+
+    def test_registry_rejects_missing_expected_action_path(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            registry_path = write_registry(
+                Path(directory),
+                [
+                    {
+                        "case_name": "missing_path_case",
+                        "status": "active",
+                        "expected_action_path": "tests/fixtures/synthetic/expected_actions/valid/missing.jsonl",
+                    }
+                ],
+            )
+
+            with self.assertRaises(ExpectedActionRegistryError):
+                load_expected_action_registry(registry_path)
+
+    def test_registry_rejects_private_or_manual_paths(self) -> None:
+        forbidden_paths = [
+            "manual_outputs/expected.jsonl",
+            "private_data/expected.jsonl",
+            "real_data/expected.jsonl",
+            "participant_data/expected.jsonl",
+        ]
+        for forbidden_path in forbidden_paths:
+            with self.subTest(forbidden_path=forbidden_path):
+                with tempfile.TemporaryDirectory() as directory:
+                    registry_path = write_registry(
+                        Path(directory),
+                        [
+                            {
+                                "case_name": "forbidden_path_case",
+                                "status": "active",
+                                "expected_action_path": forbidden_path,
+                            }
+                        ],
+                    )
+
+                    with self.assertRaises(ExpectedActionRegistryError):
+                        load_expected_action_registry(registry_path)
+
     def test_cli_writes_report_without_forbidden_metrics_or_fields(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / "evaluation_report.json"
@@ -175,6 +266,21 @@ def candidate_score(action_type: str, rank: int, *, blocked: bool) -> dict[str, 
         "scoring_policy_version": "weighted_ot_scorer_policy_v0_1",
         "no_oracle_safe": not blocked,
     }
+
+
+def write_registry(directory: Path, entries: list[dict[str, object]]) -> Path:
+    registry_path = directory / "registry.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "registry_schema_version": "synthetic_expected_action_registry_v0_1",
+                "synthetic_only": True,
+                "entries": entries,
+            }
+        ),
+        encoding="utf-8",
+    )
+    return registry_path
 
 
 if __name__ == "__main__":
