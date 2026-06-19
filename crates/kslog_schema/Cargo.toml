@@ -1,0 +1,11 @@
+[package]
+name = "kslog_schema"
+version = "0.1.0"
+edition.workspace = true
+description = "Shared Rust schema types for synthetic keystroke-level L2 writing logs."
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+
+[dev-dependencies]
+serde_json = "1"
