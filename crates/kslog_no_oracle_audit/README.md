@@ -85,6 +85,16 @@ The safe view also excludes `final_text`, `observed_after_text`, `gold_label`, a
 
 The safe view is not universally safe. It must be audited together with the exact prediction-task definition.
 
+## Safe-View JSONL Export
+
+`kslog_cli export-safe-view` can export one `NoOracleSafeEpisodeView` per JSONL line for synthetic downstream Python candidate-generation prototypes.
+
+The export contains the narrowed safe view only. It does not include `local_context_after_observed`, `final_text`, `observed_after_text`, `gold_label`, teacher correction fields, or full `MicroEpisode` artifacts.
+
+Observed edit text is excluded by default in the CLI export. It can be included only with `--include-observed-edit-text`, and this may be target leakage if the prediction task is to predict the inserted or deleted text.
+
+Do not commit safe-view exports derived from real participant data. Use synthetic data only in this repository.
+
 ## Use Contexts
 
 `ForCandidateGeneration` and `ForRanking` are no-oracle modeling contexts. They must not use observed post-edit context or forbidden gold/future fields.

@@ -79,6 +79,10 @@ The initial CLI lives in `crates/kslog_cli/`. It prints summaries for validation
 
 CLI output should remain summary-oriented. Do not print or save real participant final text, local contexts, inserted/deleted fragments, or derived safe-view artifacts into this repository.
 
+The CLI can export `NoOracleSafeEpisodeView` JSONL for synthetic downstream Python prototypes. Export must run after validation, replay, micro-episode construction, and no-oracle safe-view audit. By default, observed edit text is excluded.
+
+Safe-view export still may contain pre-edit writing context. Do not commit exports derived from real participant data. Use ignored locations such as `manual_outputs/` or `tmp/` for local synthetic smoke tests.
+
 ## Derived Data Quality
 
 Derived artifacts should document:

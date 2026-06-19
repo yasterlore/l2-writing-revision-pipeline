@@ -38,6 +38,7 @@ dependencies = [
  "kslog_extract",
  "kslog_schema",
  "kslog_validate",
+ "serde",
  "serde_json",
 ]
 
@@ -49,6 +50,7 @@ dependencies = [
  "kslog_micro_episode",
  "kslog_schema",
  "kslog_validate",
+ "serde",
  "serde_json",
 ]
 

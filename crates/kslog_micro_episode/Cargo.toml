@@ -7,8 +7,8 @@ description = "Initial micro-episode construction from synthetic revision events
 [dependencies]
 kslog_extract = { path = "../kslog_extract" }
 kslog_schema = { path = "../kslog_schema" }
+serde = { version = "1", features = ["derive"] }
 
 [dev-dependencies]
 kslog_validate = { path = "../kslog_validate" }
 serde_json = "1"
-

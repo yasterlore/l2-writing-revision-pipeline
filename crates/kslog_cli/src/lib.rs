@@ -28,6 +28,7 @@ pub enum CliError {
     Replay(String),
     Extraction(String),
     MicroEpisode(String),
+    Export(String),
 }
 
 impl Display for CliError {
@@ -35,7 +36,7 @@ impl Display for CliError {
         match self {
             Self::Usage(message) => write!(formatter, "{message}\n\n{}", usage()),
             Self::Io { path, message } => {
-                write!(formatter, "failed to read {}: {message}", path.display())
+                write!(formatter, "I/O error at {}: {message}", path.display())
             }
             Self::Validation(message) => write!(formatter, "validation failed: {message}"),
             Self::ParseRawEvent {
@@ -50,6 +51,7 @@ impl Display for CliError {
             Self::MicroEpisode(message) => {
                 write!(formatter, "micro-episode construction failed: {message}")
             }
+            Self::Export(message) => write!(formatter, "safe-view export failed: {message}"),
         }
     }
 }
@@ -92,6 +94,7 @@ where
             command_audit_no_oracle(input)
         }
         "make-safe-view" => command_make_safe_view(&args),
+        "export-safe-view" => command_export_safe_view(&args),
         "-h" | "--help" | "help" => Ok(usage()),
         other => Err(CliError::Usage(format!("unknown command: {other}"))),
     }
@@ -292,6 +295,125 @@ fn command_make_safe_view(args: &[String]) -> Result<String, CliError> {
     ))
 }
 
+fn command_export_safe_view(args: &[String]) -> Result<String, CliError> {
+    let ExportSafeViewArgs {
+        input_path,
+        output_path,
+        include_observed_edit_text,
+    } = parse_export_safe_view_args(args)?;
+    let content = read_file(input_path)?;
+    validate_content(&content)?;
+    let events = parse_events(&content)?;
+    let episode_report =
+        build_micro_episodes(&events).map_err(|error| CliError::MicroEpisode(error.to_string()))?;
+    let options = NoOracleSafeEpisodeViewOptions {
+        include_observed_edit_text,
+    };
+    let safe_views = episode_report
+        .episodes
+        .iter()
+        .map(|episode| {
+            NoOracleSafeEpisodeView::try_from_micro_episode_with_options(episode, &options)
+        })
+        .collect::<Vec<_>>();
+    let blocking_issue_count = safe_views
+        .iter()
+        .map(audit_no_oracle_safe_episode_view_for_candidate_generation)
+        .flat_map(|report| report.issues)
+        .filter(|issue| {
+            matches!(
+                issue.risk_level,
+                NoOracleRiskLevel::Unsafe | NoOracleRiskLevel::Blocking
+            )
+        })
+        .count();
+
+    if blocking_issue_count > 0 {
+        return Err(CliError::Export(format!(
+            "candidate-generation audit found {blocking_issue_count} unsafe or blocking issue(s)"
+        )));
+    }
+
+    let mut output = String::new();
+    for safe_view in &safe_views {
+        let line = serde_json::to_string(safe_view)
+            .map_err(|error| CliError::Export(format!("failed to serialize safe view: {error}")))?;
+        output.push_str(&line);
+        output.push('\n');
+    }
+
+    if let Some(parent) = output_path.parent() {
+        if !parent.as_os_str().is_empty() {
+            fs::create_dir_all(parent).map_err(|error| CliError::Io {
+                path: parent.to_path_buf(),
+                message: error.to_string(),
+            })?;
+        }
+    }
+    fs::write(output_path, output).map_err(|error| CliError::Io {
+        path: output_path.to_path_buf(),
+        message: error.to_string(),
+    })?;
+
+    Ok(format!(
+        "export_safe_view: ok\nsafe_views: {}\noutput_path: {}\nobserved_edit_text_included: {}\nlocal_context_after_observed_included: false\ncandidate_generation_audit_issues: 0",
+        safe_views.len(),
+        output_path.display(),
+        include_observed_edit_text
+    ))
+}
+
+struct ExportSafeViewArgs<'a> {
+    input_path: &'a Path,
+    output_path: &'a Path,
+    include_observed_edit_text: bool,
+}
+
+fn parse_export_safe_view_args(args: &[String]) -> Result<ExportSafeViewArgs<'_>, CliError> {
+    let mut paths = Vec::new();
+    let mut include_observed_edit_text = false;
+    let mut include_seen = false;
+    let mut exclude_seen = false;
+
+    for arg in args.iter().skip(1) {
+        match arg.as_str() {
+            "--include-observed-edit-text" => {
+                include_seen = true;
+                include_observed_edit_text = true;
+            }
+            "--exclude-observed-edit-text" => {
+                exclude_seen = true;
+                include_observed_edit_text = false;
+            }
+            _ => paths.push(Path::new(arg)),
+        }
+    }
+
+    if include_seen && exclude_seen {
+        return Err(CliError::Usage(
+            "export-safe-view accepts only one observed-edit-text option".to_string(),
+        ));
+    }
+
+    match paths.as_slice() {
+        [input_path, output_path] => Ok(ExportSafeViewArgs {
+            input_path,
+            output_path,
+            include_observed_edit_text,
+        }),
+        [_] => Err(CliError::Usage(
+            "missing output JSONL path for export-safe-view".to_string(),
+        )),
+        [] => Err(CliError::Usage(
+            "missing input and output JSONL paths for export-safe-view".to_string(),
+        )),
+        _ => Err(CliError::Usage(
+            "export-safe-view expected input path, output path, and optional observed-edit-text flag"
+                .to_string(),
+        )),
+    }
+}
+
 fn read_file(path: &Path) -> Result<String, CliError> {
     fs::read_to_string(path).map_err(|error| CliError::Io {
         path: path.to_path_buf(),
@@ -390,6 +512,7 @@ fn usage() -> String {
         "  build-micro-episodes <input.jsonl>",
         "  audit-no-oracle <input.jsonl>",
         "  make-safe-view <input.jsonl> [--exclude-observed-edit-text]",
+        "  export-safe-view <input.jsonl> <output.jsonl> [--exclude-observed-edit-text|--include-observed-edit-text]",
     ]
     .join("\n")
 }
@@ -583,6 +706,149 @@ mod tests {
         assert!(output.contains("contains_local_context_after_observed: false"));
         assert!(output.contains("observed_edit_text_included: false"));
         assert!(!output.contains("local_context_after_observed,"));
+    }
+
+    #[test]
+    fn export_safe_view_writes_parseable_jsonl_without_forbidden_fields_by_default() {
+        let path = std::env::temp_dir().join(format!(
+            "kslog_cli_safe_view_export_{}.jsonl",
+            std::process::id()
+        ));
+        let _ = fs::remove_file(&path);
+
+        let output = run_cli([
+            "export-safe-view",
+            fixture("tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl").as_str(),
+            path.to_string_lossy().as_ref(),
+        ])
+        .expect("safe-view export should succeed");
+
+        assert!(output.contains("export_safe_view: ok"));
+        assert!(output.contains("observed_edit_text_included: false"));
+        assert!(output.contains("local_context_after_observed_included: false"));
+        assert!(output.contains("candidate_generation_audit_issues: 0"));
+
+        let exported = fs::read_to_string(&path).expect("export output should be readable");
+        let _ = fs::remove_file(&path);
+        let rows = exported
+            .lines()
+            .map(|line| serde_json::from_str::<serde_json::Value>(line).expect("JSONL row parses"))
+            .collect::<Vec<_>>();
+
+        assert!(!rows.is_empty());
+        for row in rows {
+            assert!(row.get("episode_id").is_some());
+            assert_eq!(
+                row.get("no_oracle_safe_view")
+                    .and_then(|value| value.as_bool()),
+                Some(true)
+            );
+            assert_eq!(
+                row.get("post_edit_context_suppressed")
+                    .and_then(|value| value.as_bool()),
+                Some(true)
+            );
+            assert_eq!(
+                row.get("observed_edit_text_included")
+                    .and_then(|value| value.as_bool()),
+                Some(false)
+            );
+            assert!(row.get("local_context_after_observed").is_none());
+            assert!(row.get("final_text").is_none());
+            assert!(row.get("observed_after_text").is_none());
+            assert!(row.get("gold_label").is_none());
+            assert!(row.get("teacher_correction").is_none());
+            assert!(row.get("inserted_text_observed").is_none());
+            assert!(row.get("deleted_text_observed").is_none());
+        }
+    }
+
+    #[test]
+    fn export_safe_view_can_include_observed_edit_text_explicitly() {
+        let path = std::env::temp_dir().join(format!(
+            "kslog_cli_safe_view_export_include_{}.jsonl",
+            std::process::id()
+        ));
+        let _ = fs::remove_file(&path);
+
+        let output = run_cli([
+            "export-safe-view",
+            fixture("tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl").as_str(),
+            path.to_string_lossy().as_ref(),
+            "--include-observed-edit-text",
+        ])
+        .expect("safe-view export should succeed");
+
+        assert!(output.contains("observed_edit_text_included: true"));
+
+        let exported = fs::read_to_string(&path).expect("export output should be readable");
+        let _ = fs::remove_file(&path);
+        let rows = exported
+            .lines()
+            .map(|line| serde_json::from_str::<serde_json::Value>(line).expect("JSONL row parses"))
+            .collect::<Vec<_>>();
+
+        assert!(rows
+            .iter()
+            .any(|row| row.get("deleted_text_observed").is_some()));
+        assert!(rows
+            .iter()
+            .all(|row| row.get("local_context_after_observed").is_none()));
+    }
+
+    #[test]
+    fn export_safe_view_creates_missing_output_parent_without_panic() {
+        let base = std::env::temp_dir().join(format!(
+            "kslog_cli_safe_view_export_nested_{}",
+            std::process::id()
+        ));
+        let path = base.join("nested").join("safe_view.jsonl");
+        let _ = fs::remove_dir_all(&base);
+
+        let output = run_cli([
+            "export-safe-view",
+            fixture("tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl").as_str(),
+            path.to_string_lossy().as_ref(),
+        ])
+        .expect("safe-view export should create missing parent directories");
+
+        assert!(output.contains("export_safe_view: ok"));
+        assert!(path.exists());
+        let exported = fs::read_to_string(&path).expect("export output should be readable");
+        assert!(!exported.lines().collect::<Vec<_>>().is_empty());
+
+        let _ = fs::remove_dir_all(&base);
+    }
+
+    #[test]
+    fn export_safe_view_missing_args_returns_usage_error_without_panic() {
+        let error = run_cli(["export-safe-view"]).expect_err("missing args should fail");
+
+        assert!(error
+            .to_string()
+            .contains("missing input and output JSONL paths"));
+        assert!(error
+            .to_string()
+            .contains("export-safe-view <input.jsonl> <output.jsonl>"));
+    }
+
+    #[test]
+    fn export_safe_view_conflicting_options_return_usage_error() {
+        let error = run_cli([
+            "export-safe-view",
+            fixture("tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl").as_str(),
+            std::env::temp_dir()
+                .join("kslog_conflicting_export_options.jsonl")
+                .to_string_lossy()
+                .as_ref(),
+            "--include-observed-edit-text",
+            "--exclude-observed-edit-text",
+        ])
+        .expect_err("conflicting options should fail");
+
+        assert!(error
+            .to_string()
+            .contains("only one observed-edit-text option"));
     }
 
     #[test]
