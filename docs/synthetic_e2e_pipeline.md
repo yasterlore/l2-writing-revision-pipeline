@@ -45,11 +45,21 @@ You can also pass an explicit synthetic fixture directory:
 scripts/run_synthetic_e2e_summary.sh tests/fixtures/synthetic/raw_events/valid
 ```
 
+You can pass an explicit synthetic expected action registry as the second argument:
+
+```bash
+scripts/run_synthetic_e2e_summary.sh \
+  tests/fixtures/synthetic/raw_events/valid \
+  tests/fixtures/synthetic/expected_actions/registry.json
+```
+
 The collector runs `scripts/run_synthetic_e2e_pipeline.sh` once per `.jsonl` file. The case name is the file stem.
 
-The collector intentionally uses the no-evaluation form of the pipeline. It is
-for connection smoke checks across raw-event fixtures, not expected-action
-comparison.
+The collector looks up each case name in the synthetic expected action registry.
+If the case is `active`, it passes the expected action fixture as the third
+pipeline argument and records whether `evaluation_report.json` exists. If the
+case is `pending` or `missing`, it runs the pipeline without evaluation and
+records the skipped status.
 
 Synthetic expected action fixtures can be mapped by case name in:
 
@@ -62,6 +72,10 @@ The registry is optional support for future multi-case synthetic evaluation.
 are known cases without an expected action fixture and must be skipped for
 evaluation. Unknown cases are treated as missing. The registry is synthetic only
 and is not a real gold-label registry.
+
+The collector reads registry metadata and checks paths through the Python
+registry helper. It does not print expected action JSONL contents or
+evaluation report contents.
 
 It writes a CSV summary to:
 
@@ -80,9 +94,27 @@ The collector records:
 - `blocked_candidates_count`
 - `unblocked_candidates_count`
 - `rank1_available`
+- `evaluation_status`
+- `expected_action_status`
+- `expected_action_path`
+- `evaluation_report_exists`
 - `content_suppressed`
 
 The collector is not evaluation. It does not calculate F1, accuracy, calibration, selective prediction, or learner-state estimates.
+
+Evaluation statuses:
+
+- `ok`: active case evaluation ran and `evaluation_report.json` exists.
+- `fail`: registry lookup or pipeline evaluation failed.
+- `skipped_pending`: case is registered as pending, so evaluation was not run.
+- `skipped_missing`: case is not in the registry, so evaluation was not run.
+- `skipped_no_registry`: reserved for runs without registry support.
+
+Expected action statuses:
+
+- `active`: expected action fixture exists and may be used for optional synthetic evaluation.
+- `pending`: expected action fixture is not defined yet.
+- `missing`: case is not present in the registry.
 
 It must not be run on `manual_outputs/`, `private_data/`, `real_data/`, or `participant_data/`.
 

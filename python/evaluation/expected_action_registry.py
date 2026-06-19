@@ -6,7 +6,9 @@ paths. It validates paths only; it does not read expected-action JSONL bodies.
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -163,3 +165,37 @@ def resolve_registry_path(path_value: str, *, base_dir: Path) -> Path:
     else:
         resolved = base_dir / raw_path
     return resolved
+
+
+def run_lookup_cli(registry_path: str | Path, case_name: str) -> str:
+    registry = load_expected_action_registry(registry_path)
+    lookup = lookup_expected_action_path(registry, case_name)
+    path_text = "" if lookup.expected_action_path is None else str(lookup.expected_action_path)
+    return f"{lookup.status}\t{path_text}"
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Lookup synthetic expected-action fixture path by case name."
+    )
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    lookup_parser = subparsers.add_parser(
+        "lookup",
+        help="Print expected action status and path without reading JSONL bodies.",
+    )
+    lookup_parser.add_argument("--registry", required=True, help="Registry JSON path")
+    lookup_parser.add_argument("--case-name", required=True, help="Synthetic case name")
+    args = parser.parse_args(argv)
+
+    try:
+        if args.command == "lookup":
+            print(run_lookup_cli(args.registry, args.case_name))
+            return 0
+    except ExpectedActionRegistryError as error:
+        print(f"expected_action_registry: error: {error}", file=sys.stderr)
+        return 2
+    return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
