@@ -1,96 +1,205 @@
 # L2 Writing Revision Pipeline
 
-This repository is for collecting and analyzing keystroke-level writing process data from L2 English free-writing tasks.
+Research software for studying keystroke-level L2 English free-writing revision processes.
 
-The intended research pipeline runs from raw browser events to deterministic validation, text replay, revision events, micro-episodes, no-oracle candidate generation, OT-inspired ranking prototypes, evaluation, and learner-state estimation.
+This repository builds a reproducible, synthetic-only pipeline from browser raw events to deterministic replay, revision events, micro-episodes, no-oracle candidate generation, OT-inspired scoring prototypes, and synthetic evaluation wiring.
 
-This is research software for studying revision processes in L2 English free writing. It is not an automatic scoring system and it does not make learner-state claims by itself.
+It is not:
 
-## Language Boundaries
+- an automatic essay scorer
+- a grammar-correction product
+- a learner-state estimator yet
+- a production data-processing system
+- a repository for real participant data
 
-TypeScript is reserved for the browser logger only. It may collect raw browser-side events, but it must not extract revision events, construct micro-episodes, generate candidates, rank candidates, or estimate learner state.
-
-Rust is the authoritative deterministic layer. Validation, text replay, revision-event extraction, micro-episode construction, no-oracle audit, and CLI tools belong in Rust.
-
-Python is for exploratory modeling and analysis. Candidate generation prototypes, OT scorer experiments, evaluation, learner-state estimation, and visualization belong in Python. Python must not become the authoritative raw-event validation layer.
-
-## Data Policy
-
-All development and testing in this repository must use synthetic data only.
-
-Real participant data must never be committed, read, inspected, transformed, summarized, or written by Codex in this repository. Real-data testing may happen only after the full pipeline passes synthetic-data validation, and only in a private local or institution-approved environment.
-
-Before any private real-data trial, read `docs/private_real_data_readiness_checklist.md`. This checklist is not permission to use real data in this repository.
-
-## Repository Map
+## Current Pipeline
 
 ```text
-apps/logger-web/                  TypeScript browser logger foundation
-crates/                           Rust deterministic pipeline crates
-python/                           Python exploratory modeling and analysis
-docs/                             Architecture, policy, and component specs
-examples/synthetic/               Synthetic examples only
-tests/fixtures/synthetic/         Synthetic test fixtures only
+RawEvent JSONL
+  -> Rust validation
+  -> Rust replay
+  -> Rust revision_event extraction
+  -> Rust micro_episode construction
+  -> Rust no-oracle audit
+  -> Rust NoOracleSafeEpisodeView export
+  -> Python CandidateSet
+  -> Python CandidateFeatureSet
+  -> Python ConstraintViolationSet
+  -> Python CandidateScoreSet
+  -> optional synthetic expected-action evaluation
+  -> summary-only synthetic E2E collector
 ```
 
-## Current Status
+The synthetic evaluation wiring is a connection check. It is not production evaluation and does not report F1, accuracy, calibration, or learner-state estimates.
 
-Milestone 1 is a synthetic-only, no-oracle pipeline foundation:
+## Language Architecture
 
-- TypeScript browser logger foundation.
-- Rust deterministic schema, validation, replay, extraction, micro-episode, no-oracle audit, safe-view export, and CLI tools.
-- Python candidate generation, feature extraction, constraint violation, and weighted scoring prototypes.
-- Synthetic E2E scripts and CI smoke checks.
+TypeScript is for the browser logger only:
 
-Start with `docs/milestone_01_pipeline_recap.md` for a beginner-friendly recap.
+- collect browser-side raw events
+- download RawEvent-like JSONL for synthetic/manual testing
+- do not validate authoritatively
+- do not replay text
+- do not extract revision events
+- do not generate or rank candidates
 
-Milestone 2 adds synthetic-only evaluation wiring:
+Rust is the authoritative deterministic layer:
 
-- synthetic expected action schema
-- explicit `CandidateScore.action_type`
-- optional evaluation at the end of the synthetic E2E pipeline
-- expected action registry for active, pending, and missing cases
-- summary-only evaluation connection checks
+- `kslog_schema`
+- `kslog_validate`
+- `kslog_replay`
+- `kslog_extract`
+- `kslog_micro_episode`
+- `kslog_no_oracle_audit`
+- `kslog_cli`
 
-See `docs/milestone_02_synthetic_evaluation_recap.md`. This is not production evaluation and does not report F1, accuracy, calibration, or learner-state estimates.
+Python is for exploratory modeling and analysis prototypes:
 
-## Synthetic E2E Pipeline
+- candidate generation
+- candidate feature extraction
+- constraint violation records
+- weighted scoring prototype
+- synthetic evaluation schema
+- future visualization and learner-state experiments
 
-The current synthetic-only Rust + Python prototype can be run end to end:
+## Safety Policy
+
+This repository is synthetic-only.
+
+- Do not commit real participant data.
+- Do not place real participant data in `examples/` or `tests/fixtures/`.
+- Do not paste JSONL rows or participant text into docs.
+- Do not commit outputs from `manual_outputs/` or `tmp/`.
+- Do not ask Codex to read, inspect, transform, summarize, or write real participant data.
+- Real-data trials, if they ever happen, must be private/local or institution-approved and must follow [the private real-data readiness checklist](docs/private_real_data_readiness_checklist.md).
+
+## No-Oracle Policy
+
+Candidate generation, scoring, ranking, and learner-state work must not use:
+
+- `final_text`
+- `observed_after_text`
+- `gold_label`
+- teacher correction
+- human correction after writing
+- answer key
+- future edits
+- post-hoc annotations
+- `local_context_after_observed`
+
+Synthetic expected actions are used only after scoring for synthetic evaluation checks. They must not flow into candidate generation, feature extraction, constraints, scoring, or ranking.
+
+## Quick Start
+
+Run Rust checks:
+
+```bash
+cargo fmt --all -- --check
+cargo test --workspace
+cargo clippy --workspace -- -D warnings
+```
+
+Run Python checks:
+
+```bash
+PYTHONPATH=python python3 -m unittest discover -s python
+PYTHONPATH=python python3 -m compileall python
+```
+
+Run logger-web checks:
+
+```bash
+cd apps/logger-web
+npm run typecheck
+npm test
+npm run build
+```
+
+Run synthetic policy checks:
+
+```bash
+scripts/check_synthetic_policy.sh
+```
+
+Run one synthetic E2E case:
 
 ```bash
 scripts/run_synthetic_e2e_pipeline.sh tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl deletion_case
 ```
 
-Outputs are written under `tmp/synthetic_e2e/<case_name>/`, which is Git-ignored. The script is not for production data or real participant data. See `docs/synthetic_e2e_pipeline.md`.
-
-To run all valid synthetic raw-event fixtures and print a summary-only connection check:
+Run all valid synthetic raw-event fixtures with summary-only output:
 
 ```bash
 scripts/run_synthetic_e2e_summary.sh
 ```
 
-The summary collector is not evaluation and does not report F1, accuracy, or calibration.
+Outputs go under `tmp/`, which is Git-ignored.
+
+## What Is Implemented
+
+- TypeScript logger-web foundation
+- Rust RawEvent schema
+- Rust JSONL validation
+- Rust text replay
+- Rust revision_event extraction
+- Rust micro_episode construction
+- Rust no-oracle audit
+- Rust NoOracleSafeEpisodeView export
+- Rust CLI tools
+- Python candidate generation prototype
+- Python CandidateFeatureSet extraction
+- Python ConstraintViolationSet generation
+- Python CandidateScoreSet weighted scoring prototype
+- Python synthetic evaluation schema
+- synthetic expected action registry
+- synthetic E2E pipeline and summary collector
+- GitHub Actions CI for Rust checks, policy checks, CLI smoke tests, and one synthetic E2E smoke test
+
+## What Is Not Implemented
+
+- production data processing
+- real participant data processing
+- real gold label workflow
+- public dataset release
+- F1, accuracy, calibration, or selective prediction
+- learner-state estimation
+- backend ingestion
+- database storage
+- cloud deployment
+- real-data CI
+
+## Documentation Map
+
+- [Documentation index](docs/README.md)
+- [Milestone 01 pipeline recap](docs/milestone_01_pipeline_recap.md)
+- [Milestone 02 synthetic evaluation recap](docs/milestone_02_synthetic_evaluation_recap.md)
+- [Private real-data readiness checklist](docs/private_real_data_readiness_checklist.md)
+- [No-oracle policy](docs/03_no_oracle_policy.md)
+- [Synthetic data policy](docs/12_synthetic_data_policy.md)
+- [Synthetic E2E pipeline](docs/synthetic_e2e_pipeline.md)
+- [Evaluation spec](docs/evaluation_spec.md)
+- [Public release checklist](docs/public_release_checklist.md)
+- [Security policy](SECURITY.md)
 
 ## CI
 
-GitHub Actions runs the Rust workspace checks on push and pull request:
+GitHub Actions runs:
 
 ```bash
 cargo fmt --all -- --check
 cargo test --workspace
 cargo clippy --workspace -- -D warnings
 scripts/check_synthetic_policy.sh
-```
-
-CI uses synthetic fixtures only. It does not process production data or real participant data.
-
-The synthetic policy check rejects private/real-data-looking paths and checks public synthetic examples plus valid fixtures for no-oracle forbidden fields such as `final_text`, `observed_after_text`, `gold_label`, `teacher_correction`, `answer_key`, and `future_context`. Invalid fixtures are excluded because some intentionally contain forbidden examples for validator tests.
-
-CI also runs one synthetic E2E smoke test:
-
-```bash
+cargo run -p kslog_cli -- validate tests/fixtures/synthetic/raw_events/valid/simple_typing.jsonl
 scripts/run_synthetic_e2e_pipeline.sh tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl deletion_case_ci
 ```
 
-This is a connection check, not evaluation. It does not report F1, accuracy, calibration, or learner-state estimates.
+CI uses synthetic fixtures only. It must not process real participant data.
+
+## License
+
+`LICENSE` is currently a placeholder. Choose and apply the final license before public release.
+
+## Security and Privacy
+
+See [SECURITY.md](SECURITY.md). Treat all JSONL input as untrusted, keep real data out of this repository, and do not publish logs, screenshots, derived outputs, or reports that may contain participant text.

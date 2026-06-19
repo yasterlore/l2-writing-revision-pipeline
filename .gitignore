@@ -10,6 +10,8 @@ target/
 dist/
 dist-test/
 build/
+.vite/
+**/.vite/
 coverage/
 htmlcov/
 
