@@ -35,6 +35,16 @@ tests/fixtures/synthetic/         Synthetic test fixtures only
 
 Foundation-only repository. See `docs/00_project_overview.md` and `docs/codex_workflow.md` before adding implementation.
 
+## Synthetic E2E Pipeline
+
+The current synthetic-only Rust + Python prototype can be run end to end:
+
+```bash
+scripts/run_synthetic_e2e_pipeline.sh tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl deletion_case
+```
+
+Outputs are written under `tmp/synthetic_e2e/<case_name>/`, which is Git-ignored. The script is not for production data or real participant data. See `docs/synthetic_e2e_pipeline.md`.
+
 ## CI
 
 GitHub Actions runs the Rust workspace checks on push and pull request:
