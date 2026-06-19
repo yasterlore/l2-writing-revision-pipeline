@@ -420,3 +420,5 @@ For the future explicit-config ranking diff boundary, read
 `../../docs/explicit_config_ranking_diff_plan.md`.
 For the future config-aware scorer function boundary, read
 `../../docs/config_aware_scorer_function_design.md`.
+For the future explicit scorer config CLI boundary, read
+`../../docs/explicit_config_cli_option_design.md`.

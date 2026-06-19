@@ -22,6 +22,7 @@ Recommended entry points:
 - [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md): design plan for locking no-config scoring output before config support.
 - [Explicit config ranking diff plan](explicit_config_ranking_diff_plan.md): design plan for future explicit-config ranking diff checks without changing no-config defaults.
 - [Config-aware scorer function design](config_aware_scorer_function_design.md): design plan for a future explicit config-aware scorer path that preserves no-config defaults.
+- [Explicit config CLI option design](explicit_config_cli_option_design.md): design plan for a future `score.py --weight-config` option while preserving no-config defaults.
 - [Linguistic placeholder constraint plan](linguistic_placeholder_constraint_plan.md): design plan for future descriptive linguistic placeholder constraints.
 - [Non-leaky linguistic constraint design plan](non_leaky_linguistic_constraint_design_plan.md): design plan for future descriptive linguistic diagnostics using no-oracle-safe local pattern features.
 - [Local pattern feature plan](local_pattern_feature_plan.md): design plan for future no-oracle-safe local context abstractions.

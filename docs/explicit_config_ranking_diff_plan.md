@@ -250,12 +250,13 @@ path unchanged. See
 Implemented as a separate function that accepts a validated config but does not
 alter default scoring.
 
-### Step 74: Explicit CLI Option Design
+### Step 75: Explicit CLI Option Design
 
 Design an explicit CLI option such as `--weight-config`. Do not allow implicit
-config discovery.
+config discovery. See
+[Explicit config CLI option design](explicit_config_cli_option_design.md).
 
-### Step 75: Explicit Config Ranking Diff Smoke Script
+### Step 76: Explicit Config Ranking Diff Smoke Script
 
 If approved, implement a synthetic-only script that compares no-config and
 explicit-config outputs using safe summary-only diff categories.
@@ -270,6 +271,7 @@ the public repository.
 - [Default-unchanged config support design](default_unchanged_config_support_design.md)
 - [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md)
 - [Config-aware scorer function design](config_aware_scorer_function_design.md)
+- [Explicit config CLI option design](explicit_config_cli_option_design.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Hand-weight policy design](hand_weight_policy_design.md)
 - [Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md)
