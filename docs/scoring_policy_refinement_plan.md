@@ -271,6 +271,10 @@ These should remain descriptive until a clear scoring rationale exists.
 See [Linguistic placeholder constraint plan](linguistic_placeholder_constraint_plan.md)
 for the no-oracle design boundary before implementing these constraints.
 
+Status: the initial article, number, SVA, tense, preposition, and punctuation
+placeholder constraints have been implemented as descriptive records with
+`violation_count=0`. They do not affect `weighted_score` or rank.
+
 ### Step D: Document Initial Hand Weights
 
 If non-safety weights are introduced:

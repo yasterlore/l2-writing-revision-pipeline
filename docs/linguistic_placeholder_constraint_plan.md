@@ -1,8 +1,11 @@
 # Linguistic Placeholder Constraint Plan
 
-This document is a design plan for future linguistic placeholder constraints.
+This document is a design plan for linguistic placeholder constraints.
 
-It does not implement constraints, change scorer weights, change the scoring formula, change tie-break policy, add evaluation metrics, or introduce learner-state estimation.
+The first descriptive constraints from this plan are now implemented in
+`python/ot_scorer/constraint_builder.py`. They do not change scorer weights,
+the scoring formula, tie-break policy, evaluation metrics, or learner-state
+estimation.
 
 ## 1. Purpose
 
@@ -40,7 +43,7 @@ These candidates are placeholders. They name a possible revision family, but the
 
 ## 3. Constraint Candidates
 
-Initial constraint ids:
+Implemented descriptive constraint ids:
 
 - `ARTICLE-PLACEHOLDER-CANDIDATE`
 - `NUMBER-PLACEHOLDER-CANDIDATE`
@@ -49,7 +52,7 @@ Initial constraint ids:
 - `PREPOSITION-PLACEHOLDER-CANDIDATE`
 - `PUNCTUATION-PLACEHOLDER-CANDIDATE`
 
-Each constraint should be:
+Each implemented constraint is:
 
 - `constraint_type = "descriptive"`
 - `severity = "info"`
@@ -176,6 +179,9 @@ Recording candidate type is useful for debugging and later constraint design. Cl
 
 Add the six linguistic placeholder constraints as descriptive records with `violation_count=0`.
 
+Status: completed for the six initial placeholder families. The constraints are
+descriptive records only and do not affect score or rank.
+
 ### Step B: Review Non-Leaky Local Pattern Features
 
 Consider structural features that can be derived from pre-edit context without exposing raw text or future information.
@@ -218,7 +224,6 @@ That later design must keep expected labels out of candidate generation, constra
 
 This plan does not:
 
-- implement constraints
 - change scoring
 - add weights
 - add ranking logic
@@ -227,4 +232,3 @@ This plan does not:
 - use teacher corrections
 - implement F1, accuracy, calibration, or learner-state estimation
 - permit public storage of real participant data
-

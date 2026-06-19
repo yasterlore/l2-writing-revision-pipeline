@@ -14,6 +14,15 @@ from ot_scorer.models import (
 
 CONSTRAINT_SCHEMA_VERSION = "ot_constraint_schema_v0_2"
 
+LINGUISTIC_PLACEHOLDER_CONSTRAINTS: dict[str, str] = {
+    "article_fix_placeholder": "ARTICLE-PLACEHOLDER-CANDIDATE",
+    "number_fix_placeholder": "NUMBER-PLACEHOLDER-CANDIDATE",
+    "sva_fix_placeholder": "SVA-PLACEHOLDER-CANDIDATE",
+    "tense_fix_placeholder": "TENSE-PLACEHOLDER-CANDIDATE",
+    "preposition_fix_placeholder": "PREPOSITION-PLACEHOLDER-CANDIDATE",
+    "punctuation_fix_placeholder": "PUNCTUATION-PLACEHOLDER-CANDIDATE",
+}
+
 CONSTRAINTS: tuple[Constraint, ...] = (
     Constraint(
         constraint_id="NO-LEAKAGE-FLAG",
@@ -110,6 +119,42 @@ CONSTRAINTS: tuple[Constraint, ...] = (
         constraint_type="descriptive",
         severity="info",
         explanation="Records whether the candidate has a structural family bucket.",
+    ),
+    Constraint(
+        constraint_id="ARTICLE-PLACEHOLDER-CANDIDATE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate is an article placeholder.",
+    ),
+    Constraint(
+        constraint_id="NUMBER-PLACEHOLDER-CANDIDATE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate is a number placeholder.",
+    ),
+    Constraint(
+        constraint_id="SVA-PLACEHOLDER-CANDIDATE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate is a subject-verb-agreement placeholder.",
+    ),
+    Constraint(
+        constraint_id="TENSE-PLACEHOLDER-CANDIDATE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate is a tense placeholder.",
+    ),
+    Constraint(
+        constraint_id="PREPOSITION-PLACEHOLDER-CANDIDATE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate is a preposition placeholder.",
+    ),
+    Constraint(
+        constraint_id="PUNCTUATION-PLACEHOLDER-CANDIDATE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate is a punctuation placeholder.",
     ),
 )
 
@@ -224,6 +269,7 @@ def build_candidate_constraint_violations(
             "CANDIDATE-FAMILY-BUCKET",
             bool(candidate_feature.get("candidate_family_bucket")),
         ),
+        *linguistic_placeholder_violations(candidate_feature),
     ]
     return CandidateConstraintViolations(
         candidate_id=str(candidate_feature["candidate_id"]),
@@ -268,6 +314,31 @@ def descriptive_violation(
         severity=constraint.severity,
         explanation=constraint.explanation,
         observed=observed,
+    )
+
+
+def linguistic_placeholder_violations(
+    candidate_feature: dict[str, Any],
+) -> list[ConstraintViolation]:
+    return [
+        descriptive_violation(
+            candidate_feature,
+            constraint_id,
+            is_linguistic_placeholder_candidate(candidate_feature, action_type),
+        )
+        for action_type, constraint_id in LINGUISTIC_PLACEHOLDER_CONSTRAINTS.items()
+    ]
+
+
+def is_linguistic_placeholder_candidate(
+    candidate_feature: dict[str, Any], action_type: str
+) -> bool:
+    return (
+        candidate_feature.get("action_type") == action_type
+        and candidate_feature.get("action_family") == "grammar_placeholder"
+        and candidate_feature.get("candidate_family_bucket") == "grammar_placeholder"
+        and candidate_feature.get("is_grammar_family_candidate") is True
+        and candidate_feature.get("is_placeholder_candidate") is True
     )
 
 
