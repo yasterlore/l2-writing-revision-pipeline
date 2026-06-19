@@ -11,8 +11,11 @@ This project handles keystroke-level writing process data. Treat every JSONL inp
 - Do not ask Codex to read, inspect, transform, summarize, or write real participant data.
 - Keep real-data testing outside this repository unless a private local or institution-approved environment has been established.
 - Do not process real data in public CI.
-- Do not paste JSONL rows, participant text, or evaluation report bodies into docs.
-- Keep `manual_outputs/`, `tmp/`, `private_data/`, `real_data/`, and `participant_data/` out of Git.
+- Do not paste JSONL rows, participant text, summary CSV bodies, diagnostic
+  summary bodies, config bodies, candidate score rows, or evaluation report
+  bodies into docs.
+- Keep `manual_outputs/`, `tmp/`, `private_notes/`, `local_notes/`,
+  `private_data/`, `real_data/`, and `participant_data/` out of Git.
 
 Before any private real-data trial, review `docs/private_real_data_readiness_checklist.md`.
 
@@ -30,7 +33,12 @@ Candidate generation, scoring, ranking, and learner-state work must not use:
 - future context
 - `local_context_after_observed`
 
-Synthetic expected actions are evaluation-time fixtures only. They must not be passed into candidate generation, feature extraction, constraints, scoring, or ranking.
+Synthetic expected actions are evaluation-time fixtures only. They must not be
+passed into candidate generation, feature extraction, constraints, config
+tuning, scoring, or ranking.
+
+Weight config support must be explicit-only. Do not auto-discover config files,
+load configs from environment variables, or use hidden default configs.
 
 ## Implementation Restrictions
 

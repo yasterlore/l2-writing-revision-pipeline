@@ -2,7 +2,7 @@
 
 Research software for studying keystroke-level L2 English free-writing revision processes.
 
-This repository builds a reproducible, synthetic-only pipeline from browser raw events to deterministic replay, revision events, micro-episodes, no-oracle candidate generation, OT-inspired scoring prototypes, and synthetic evaluation wiring.
+This repository builds a reproducible, synthetic-only pipeline from browser raw events to deterministic replay, revision events, micro-episodes, no-oracle candidate generation, OT-inspired scoring prototypes, synthetic evaluation wiring, and config-aware diagnostic infrastructure.
 
 It is not:
 
@@ -31,6 +31,10 @@ RawEvent JSONL
 ```
 
 The synthetic evaluation wiring is a connection check. It is not production evaluation and does not report F1, accuracy, calibration, or learner-state estimates.
+
+Config-aware scoring support is explicit-only. It is diagnostic infrastructure,
+not performance evaluation. The no-config default path remains the protected
+baseline.
 
 ## Language Architecture
 
@@ -135,6 +139,20 @@ scripts/run_synthetic_e2e_summary.sh
 
 Outputs go under `tmp/`, which is Git-ignored.
 
+Run optional diagnostic/config smoke checks:
+
+```bash
+scripts/check_no_config_scoring_fixture_lock.sh
+scripts/check_hand_weight_config_validation.sh
+scripts/check_explicit_config_ranking_diff.sh
+scripts/check_config_enabled_e2e_smoke.sh
+scripts/check_config_enabled_summary_smoke.sh
+scripts/check_synthetic_diagnostic_distribution.sh
+```
+
+These checks are synthetic-only wiring and regression checks, not performance
+metrics.
+
 ## What Is Implemented
 
 - TypeScript logger-web foundation
@@ -153,6 +171,11 @@ Outputs go under `tmp/`, which is Git-ignored.
 - Python synthetic evaluation schema
 - synthetic expected action registry
 - synthetic E2E pipeline and summary collector
+- diagnostic summary tooling
+- hand-weight config validation
+- explicit `score.py --weight-config` path
+- config-enabled E2E and separate config-enabled summary collector
+- observation note templates and storage/review workflow
 - GitHub Actions CI for Rust checks, policy checks, CLI smoke tests, and one synthetic E2E smoke test
 
 ## What Is Not Implemented
@@ -163,6 +186,8 @@ Outputs go under `tmp/`, which is Git-ignored.
 - public dataset release
 - F1, accuracy, calibration, or selective prediction
 - learner-state estimation
+- automatic weight learning
+- private validation
 - backend ingestion
 - database storage
 - cloud deployment
