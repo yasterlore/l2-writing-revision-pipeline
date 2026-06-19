@@ -33,6 +33,7 @@ Recommended entry points:
 - [Diagnostic summary tooling plan](diagnostic_summary_tooling_plan.md): safe summary-only aggregation of descriptive diagnostics.
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md): safe review plan for count-only synthetic diagnostic distributions.
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md): storage and sharing workflow for blank templates and private/local count-only notes.
+- [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md): exception-only checklist before considering any filled observation note for public repository sharing.
 - [Synthetic diagnostic observation note template](templates/synthetic_diagnostic_observation_note_template.md): count-only note template for safe human diagnostic review.
 - [Config-enabled observation note template](templates/config_enabled_observation_note_template.md): count-only note template for safe human review of explicit config-enabled summaries.
 - [Public release checklist](public_release_checklist.md): public GitHub readiness checklist.

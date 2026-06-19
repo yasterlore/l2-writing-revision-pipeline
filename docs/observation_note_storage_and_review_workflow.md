@@ -55,6 +55,9 @@ The public repository should not contain filled observation notes by default.
 If a filled note is proposed for the public repository, it needs an additional
 review focused on privacy, no-oracle safety, content suppression, and
 performance-claim risk.
+Use the
+[filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md)
+for that exceptional review.
 
 ### Private Or Local Storage
 
@@ -175,6 +178,11 @@ Before sharing a note outside private or local storage, confirm:
 
 If any item cannot be confirmed, do not share the note publicly.
 
+If public sharing is still being considered after this checklist, run the
+additional
+[filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md)
+and obtain repository owner approval before committing.
+
 ## 8. No-Oracle And Privacy Policy
 
 Observation notes must preserve the no-oracle boundary:
@@ -234,6 +242,7 @@ Do not use expected actions as scoring feedback or config feedback.
 
 - [Synthetic diagnostic observation note template](templates/synthetic_diagnostic_observation_note_template.md)
 - [Config-enabled observation note template](templates/config_enabled_observation_note_template.md)
+- [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md)
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md)
 - [Config-enabled summary collector design](config_enabled_summary_collector_design.md)
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md)
