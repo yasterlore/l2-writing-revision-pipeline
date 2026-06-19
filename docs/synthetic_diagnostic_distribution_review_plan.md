@@ -181,6 +181,8 @@ Completed in
 [`templates/synthetic_diagnostic_observation_note_template.md`](templates/synthetic_diagnostic_observation_note_template.md).
 Use it for local, count-only observations. It avoids JSONL bodies, report
 bodies, per-episode text, expected-action feedback, and performance claims.
+For note storage and sharing policy, see
+[Observation note storage and review workflow](observation_note_storage_and_review_workflow.md).
 
 ### Step 57: Non-Leaky Linguistic Constraint Design
 
