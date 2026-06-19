@@ -2,9 +2,9 @@
 
 This repository is for collecting and analyzing keystroke-level writing process data from L2 English free-writing tasks.
 
-The intended research pipeline runs from raw browser events to deterministic validation, text replay, revision events, micro-episodes, no-oracle candidate generation, OT-inspired ranking, evaluation, and learner-state estimation.
+The intended research pipeline runs from raw browser events to deterministic validation, text replay, revision events, micro-episodes, no-oracle candidate generation, OT-inspired ranking prototypes, evaluation, and learner-state estimation.
 
-This repository currently contains structure, policies, documentation templates, and project foundations only. It intentionally does not implement the logger, replay engine, revision extraction, micro-episode construction, candidate generation, ranking, evaluation, or learner-state estimation logic yet.
+This is research software for studying revision processes in L2 English free writing. It is not an automatic scoring system and it does not make learner-state claims by itself.
 
 ## Language Boundaries
 
@@ -33,7 +33,14 @@ tests/fixtures/synthetic/         Synthetic test fixtures only
 
 ## Current Status
 
-Foundation-only repository. See `docs/00_project_overview.md` and `docs/codex_workflow.md` before adding implementation.
+Milestone 1 is a synthetic-only, no-oracle pipeline foundation:
+
+- TypeScript browser logger foundation.
+- Rust deterministic schema, validation, replay, extraction, micro-episode, no-oracle audit, safe-view export, and CLI tools.
+- Python candidate generation, feature extraction, constraint violation, and weighted scoring prototypes.
+- Synthetic E2E scripts and CI smoke checks.
+
+Start with `docs/milestone_01_pipeline_recap.md` for a beginner-friendly recap.
 
 ## Synthetic E2E Pipeline
 
