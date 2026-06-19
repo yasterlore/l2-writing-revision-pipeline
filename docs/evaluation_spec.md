@@ -1,0 +1,119 @@
+# Evaluation Spec
+
+This document defines the first synthetic-only evaluation schema prototype.
+
+It is not a production evaluation protocol and does not report real research performance.
+
+## Purpose
+
+The evaluation prototype compares `CandidateScoreSet` JSONL with synthetic expected action JSONL.
+
+It checks whether the rank-1 unblocked candidate action matches the synthetic expected action for the same episode.
+
+## Inputs
+
+### CandidateScoreSet JSONL
+
+One score set per line, produced by the weighted OT scorer prototype.
+
+The evaluator reads:
+
+- `episode_id`
+- `candidate_scores`
+- `candidate_id`
+- `rank`
+- `blocked`
+
+The current score schema does not explicitly include `action_type`, so the prototype derives it from the synthetic `candidate_id` convention. This should become explicit before serious evaluation.
+
+### Synthetic Expected Action JSONL
+
+One expected action per line:
+
+- `episode_id`
+- `expected_action_type`
+- `expected_source`
+- `synthetic_only: true`
+- `notes`
+
+Synthetic expected actions are not real gold labels, teacher corrections, or final corrected text.
+
+## Output
+
+The evaluator writes one `EvaluationReport` JSON file.
+
+Summary fields:
+
+- `episodes_total`
+- `episodes_evaluated`
+- `episodes_missing_expected`
+- `exact_match_count`
+- `exact_match_rate`
+- `expected_found_in_candidates_count`
+- `expected_found_in_candidates_rate`
+- `blocked_expected_count`
+
+Per-episode fields:
+
+- `episode_id`
+- `expected_action_type`
+- `top1_action_type`
+- `exact_match`
+- `expected_found_in_candidates`
+- `expected_rank`
+- `expected_candidate_blocked`
+- `evaluation_notes`
+
+## exact_match_rate
+
+```text
+exact_match_rate = exact_match_count / episodes_evaluated
+```
+
+If `episodes_evaluated` is zero, `exact_match_rate` is `0.0`.
+
+The report intentionally does not include F1, production accuracy, calibration, or selective prediction.
+
+## Blocked Candidate Policy
+
+Top-1 is selected from unblocked candidates only.
+
+If the expected action appears only in blocked candidates:
+
+- `expected_candidate_blocked=true`
+- exact match is false
+- `blocked_expected_count` increases
+
+This prevents a safety-blocked candidate from counting as a successful evaluation result.
+
+## No-Oracle Boundary
+
+Expected actions are used only after scoring.
+
+They must not be used for:
+
+- candidate generation
+- feature extraction
+- constraint generation
+- weighted scoring
+- rank adjustment
+
+The evaluator must reject forbidden fields such as `final_text`, `observed_after_text`, `gold_label`, `teacher_correction`, and post-hoc correction fields.
+
+## Synthetic-Only Policy
+
+Use synthetic expected action fixtures only in this repository.
+
+Do not use real participant data, real teacher corrections, real gold labels, or final corrected text.
+
+Do not commit evaluation reports derived from real participant data.
+
+## Current Non-Goals
+
+- no real-data evaluation
+- no F1
+- no production accuracy claim
+- no calibration
+- no selective prediction
+- no learner-state estimation
+- no model comparison
