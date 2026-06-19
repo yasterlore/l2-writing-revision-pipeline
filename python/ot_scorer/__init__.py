@@ -27,6 +27,7 @@ from ot_scorer.scorer import (
     SCORING_POLICY_VERSION,
     build_candidate_score_set,
     build_candidate_score_sets,
+    score_constraint_violation_set_with_config,
 )
 from ot_scorer.weight_config import (
     CONFIG_SCHEMA_VERSION,
@@ -68,6 +69,7 @@ __all__ = [
     "load_candidate_sets",
     "load_hand_weight_config",
     "parse_hand_weight_config",
+    "score_constraint_violation_set_with_config",
     "summarize_constraint_violation_file",
     "summarize_constraint_violation_sets",
 ]

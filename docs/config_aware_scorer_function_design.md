@@ -1,13 +1,14 @@
 # Config-Aware Scorer Function Design
 
-This document designs how a future config-aware scorer function could be added
+This document designs how a config-aware scorer function can be kept separate
 without changing the current no-config default scoring path.
 
-It is a design document only. It does not implement a config-aware scorer
-function, connect config support to the scorer, add a `score.py` config option,
-change default weights, change the scoring formula, change deterministic
-tie-break behavior, add evaluation metrics, or implement learner-state
-estimation.
+Status after Step 73: `python/ot_scorer/scorer.py` includes
+`score_constraint_violation_set_with_config(violation_set, config)`. This
+function is explicit-only and is not connected to `score.py`, the synthetic E2E
+pipeline, or the summary collector. It does not change default weights, the
+default scoring formula, deterministic tie-break behavior, evaluation metrics,
+or learner-state estimation.
 
 This is not performance evaluation.
 
@@ -44,11 +45,11 @@ Current state:
 This document assumes those facts stay true until a separate approved
 implementation step changes them.
 
-## 3. Function Design Proposal
+## 3. Function Design
 
 Do not replace the existing scorer function.
 
-The safer design is to add a separate config-aware function later, for example:
+The implemented minimal function is separate from the default path:
 
 ```text
 score_constraint_violation_set_with_config(violation_set, config)
@@ -64,17 +65,17 @@ If the second shape is chosen, `weight_policy=None` must be exactly identical to
 current behavior. However, the separate-function design is preferred because it
 makes the default path harder to change accidentally.
 
-Recommended boundary:
+Boundary:
 
 - keep the existing default scorer function unchanged
-- add a new explicit function only after validation and fixture-lock tests are
-  in place
-- require a validated config object as an argument
+- use the config-aware function only when it is called directly
+- require a validated config object as an argument in tests or future explicit
+  callers
 - avoid any implicit file loading inside scorer logic
 
 ## 4. Config-Aware Function Inputs
 
-A future config-aware function may accept:
+The config-aware function accepts:
 
 - a `ConstraintViolationSet`
 - a validated `HandWeightConfig` object
@@ -98,7 +99,7 @@ weight selection.
 
 ## 5. Config-Aware Function Outputs
 
-A future config-aware function would output a `CandidateScoreSet`.
+The config-aware function outputs a `CandidateScoreSet`.
 
 If config-enabled output needs metadata, such as `config_name` or
 `config_schema_version`, that should be handled carefully as one of:
@@ -138,7 +139,7 @@ Default unchanged means:
 - default `CandidateScoreSet` schema remains the same
 - no-config fixture lock passes before and after the new function is added
 
-If a future implementation cannot prove those conditions, config-aware scoring
+If a future caller cannot prove those conditions, config-aware scoring
 should not be connected.
 
 ## 7. Validation And Failure Policy
@@ -162,7 +163,8 @@ path or raw config JSON body.
 
 ## 8. Tests Required Before Implementation
 
-Before implementing a config-aware scorer function, tests should cover:
+Before connecting the config-aware function to any CLI or pipeline path, tests
+should cover:
 
 - default scorer output unchanged
 - no-config fixture lock passes
@@ -186,7 +188,6 @@ metrics.
 
 Do not implement:
 
-- config-aware scorer function
 - scorer config connection
 - `score.py` config option
 - config-aware CLI behavior
@@ -210,8 +211,8 @@ rows into docs.
 
 ### Step 73: Implement Config-Aware Scorer Function Without Default Path Change
 
-If approved, implement a separate config-aware function that requires a
-validated config object and does not alter the default scorer path.
+Implemented as a separate function. It is not connected to the default scorer
+path, CLI, synthetic E2E pipeline, or summary collector.
 
 ### Step 74: Config-Aware Scorer Unit Tests
 
