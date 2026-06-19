@@ -212,8 +212,9 @@ Implemented with no-config default behavior unchanged.
 
 ### Step 77: Explicit Config Ranking Diff Smoke Script
 
-Add a synthetic-only script that compares no-config and explicit-config outputs
-using safe summary-only diff categories.
+Implemented as `scripts/check_explicit_config_ranking_diff.sh`. It compares
+no-config and explicit-config outputs using safe summary-only diff categories.
+It is not connected to the E2E pipeline or summary collector.
 
 ### Step 78: Config-Enabled E2E Design
 

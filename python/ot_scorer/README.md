@@ -250,9 +250,10 @@ The smoke script expects the valid synthetic config to pass and invalid
 synthetic configs to fail. Expected invalid failures are treated as a successful
 validation wiring check.
 
-This config schema groundwork is not connected to scoring. The scorer CLI does
-not accept a config option, default weights are unchanged, scoring formula is
-unchanged, and tie-break behavior is unchanged.
+The config schema is connected to scoring only when `score.py --weight-config`
+is supplied explicitly. No-config scoring remains the default, default weights
+are unchanged, scoring formula is unchanged, and tie-break behavior is
+unchanged.
 
 ## Diagnostic Summary Tool
 
@@ -404,6 +405,25 @@ output against synthetic lock fixtures. It prints safe summary only and does
 not print score rows, JSONL bodies, raw text, expected actions, or evaluation
 results. It is a regression guard, not a performance evaluation or ranking
 correctness claim.
+
+### Explicit Config Ranking Diff Smoke
+
+To smoke-check explicit config wiring without changing default E2E behavior,
+run:
+
+```bash
+scripts/check_explicit_config_ranking_diff.sh
+```
+
+The script generates no-config and explicit-config synthetic score outputs,
+checks that the current-default-like config has zero diff, and checks that an
+intentional synthetic tiny-weight config produces at least one
+`weighted_score_changed` diff. It prints safe summary only and does not print
+JSONL bodies, score rows, config bodies, raw text, expected actions, evaluation
+results, F1, accuracy, calibration, or learner-state estimates.
+
+This smoke check is not connected to the synthetic E2E pipeline or summary
+collector, and it is not a performance evaluation.
 
 For planned refinements and non-goals, read `../../docs/scoring_policy_refinement_plan.md`.
 For the future linguistic placeholder constraint boundary, read

@@ -8,6 +8,10 @@ CLI, add a `score.py` config option, change default weights, change the scoring
 formula, change deterministic tie-break behavior, add evaluation metrics, or
 implement learner-state estimation.
 
+Status after Step 77: the synthetic-only ranking diff smoke helper is
+implemented as `python/ot_scorer/config_ranking_diff.py` and
+`scripts/check_explicit_config_ranking_diff.sh`.
+
 The goal is to check intentional ranking differences only when an explicit
 config path is supplied.
 
@@ -93,7 +97,7 @@ feedback or as the reason a config is accepted.
 
 ## 5. Explicit Config Diff Design Principles
 
-Future explicit config diff tooling should follow these rules.
+The implemented explicit config diff tooling follows these rules.
 
 ### Explicit Config Path Only
 
@@ -180,7 +184,7 @@ full JSON rows.
 
 ## 7. Tests Required Before Implementation
 
-Before explicit config ranking diff tooling is implemented, tests should cover:
+The explicit config ranking diff tooling is covered by tests for:
 
 - no-config lock still passes
 - explicit config validates
@@ -262,8 +266,11 @@ Implemented with no-config default behavior unchanged.
 
 ### Step 77: Explicit Config Ranking Diff Smoke Script
 
-If approved, implement a synthetic-only script that compares no-config and
-explicit-config outputs using safe summary-only diff categories.
+Implemented as `scripts/check_explicit_config_ranking_diff.sh`. It checks
+zero diff for the current-default-like config and an intentional
+`weighted_score_changed` diff for a synthetic tiny-weight config. It prints
+safe summary only and does not connect config to the E2E pipeline or summary
+collector.
 
 ### Later: Private Validation Design
 

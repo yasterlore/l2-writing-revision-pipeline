@@ -38,6 +38,12 @@ prints safe summary only. The default lock covers `deletion_case`,
 `selection_edit_case`, and `cursor_movement_case`. It does not connect config
 to scoring.
 
+It also provides an explicit config ranking-diff smoke helper. That helper
+compares no-config and explicit-config synthetic `CandidateScoreSet` outputs,
+expects zero diff for the current-default-like config, and expects an
+intentional `weighted_score` diff for a synthetic tiny-weight config. It prints
+safe summary only and is not a performance evaluation.
+
 ## 3. What this component does not do
 
 It does not implement evaluation, F1, calibration, selective prediction, learner-state estimation, or grammar correction.
@@ -73,6 +79,12 @@ Input for no-config score fixture lock: expected and generated synthetic
 
 Output from no-config score fixture lock: safe match/mismatch summary only.
 The JSONL body is not printed.
+
+Input for explicit config ranking diff: no-config and explicit-config
+synthetic `CandidateScoreSet` JSONL files.
+
+Output from explicit config ranking diff: safe diff category counts only. The
+JSONL body and score rows are not printed.
 
 The output is a feature schema for later experiments.
 
@@ -176,9 +188,10 @@ The scorer uses blocking constraints as safety gates. It does not learn from dat
 
 The score output includes `action_type` explicitly so evaluation does not need to infer candidate class from the string shape of `candidate_id`. It also carries `generation_rule` and `action_family` so later analysis can inspect why a candidate exists without adding candidate descriptions, proposed edit payloads, local context text, or observed edit text to the score output.
 
-The hand-weight config validator is separate from scoring. It rejects unsafe
-or ambiguous config files before any future loader is connected, but it does
-not change weights, formula, blocking, or tie-break behavior.
+The hand-weight config validator rejects unsafe or ambiguous config files
+before explicit config scoring is allowed. No-config scoring still does not
+load config, and validation itself does not change weights, formula, blocking,
+or tie-break behavior.
 
 The config validation CLI is also separate from scoring. It is a smoke-check
 entry point for schema validation only.
@@ -264,6 +277,10 @@ They also cover no-config score fixture lock matching, rank mismatch,
 weighted-score mismatch, schema mismatch, missing generated file, unsafe path,
 config field leakage in default output, forbidden field leakage, and safe CLI
 stdout.
+
+They also cover explicit config ranking diff smoke behavior, including
+default-like zero diff, intentional `weighted_score` diff, malformed JSONL
+failure, missing file failure, unsafe path rejection, and safe stdout.
 
 ## 15. Known limitations
 

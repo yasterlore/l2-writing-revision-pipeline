@@ -1,14 +1,17 @@
 #!/usr/bin/env sh
 set -eu
 
-VALID_CONFIG="tests/fixtures/synthetic/hand_weight_configs/valid/current_default_like_config.json"
+VALID_DIR="tests/fixtures/synthetic/hand_weight_configs/valid"
 INVALID_DIR="tests/fixtures/synthetic/hand_weight_configs/invalid"
 
 echo "hand_weight_config_validation_check: start"
-echo "valid_config: ${VALID_CONFIG}"
 echo "content_suppressed: true"
 
-PYTHONPATH=python python3 -m ot_scorer.validate_weight_config --config "${VALID_CONFIG}"
+valid_count=0
+for config in "${VALID_DIR}"/*.json; do
+  valid_count=$((valid_count + 1))
+  PYTHONPATH=python python3 -m ot_scorer.validate_weight_config --config "${config}"
+done
 
 invalid_count=0
 for config in "${INVALID_DIR}"/*.json; do
@@ -33,6 +36,7 @@ done
 rm -f /tmp/hand_weight_config_invalid_check.out
 
 echo "hand_weight_config_validation_check: ok"
+echo "valid_configs_checked: ${valid_count}"
 echo "invalid_configs_checked: ${invalid_count}"
 echo "scorer_connected: false"
 echo "score_output_generated: false"
