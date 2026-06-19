@@ -43,6 +43,18 @@ Minimal next fixes:
 
 ## Failure Cases
 
+## Replay Diagnostic Summary
+
+`diagnose-replay` was applied to the three replay mismatch cases. The command output is content-suppressed and records metadata and lengths only.
+
+| case name | replay_status | failure_line | failure_kind | source_seq | event_type | input_type | doc_len_before | doc_len_after | cursor_pos_before | cursor_pos_after | selection_before | selection_after | inserted_text_present | inserted_text_len | deleted_text_present | deleted_text_len | diff_op | quality_flags | content_suppressed | probable_layer | suggested_next_check |
+| --- | --- | ---: | --- | ---: | --- | --- | ---: | ---: | ---: | ---: | --- | --- | --- | ---: | --- | ---: | --- | --- | --- | --- | --- |
+| deletion | failed | 179 | deleted_text_mismatch | 179 | Input | DeleteContentBackward | 26 | 25 | 10 | 9 | 10..10 | 9..9 | false | 0 | true | 1 | Delete | none | true | logger_diff_estimation | Check synthetic-only logger diff inference for inserted/deleted text lengths and edit range metadata. |
+| selection_edit | failed | 36 | deleted_text_mismatch | 36 | Input | DeleteContentBackward | 6 | 5 | 6 | 5 | 6..6 | 5..5 | false | 0 | true | 1 | Delete | none | true | logger_diff_estimation | Check synthetic-only logger diff inference for inserted/deleted text lengths and edit range metadata. |
+| cursor_movement | failed | 97 | deleted_text_mismatch | 97 | Input | DeleteContentBackward | 14 | 13 | 7 | 6 | 7..7 | 6..6 | false | 0 | true | 1 | Delete | none | true | logger_diff_estimation | Check synthetic-only logger diff inference for inserted/deleted text lengths and edit range metadata. |
+
+The shared pattern is a schema-valid `DeleteContentBackward` event with one deleted character recorded, but replay cannot reconcile the deleted-text metadata with the reconstructed state. The most likely first investigation point is `logger-web` diff estimation for deletion-like events.
+
 ### deletion
 
 Failed layer: `replay`.

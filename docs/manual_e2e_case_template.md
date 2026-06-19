@@ -31,6 +31,7 @@ Run these commands from the repository root. Replace `<file>.jsonl` with the ign
 ```bash
 cargo run -p kslog_cli -- validate manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- replay manual_outputs/logger_web/<file>.jsonl
+cargo run -p kslog_cli -- diagnose-replay manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- extract manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- build-micro-episodes manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- audit-no-oracle manual_outputs/logger_web/<file>.jsonl

@@ -12,7 +12,10 @@ use kslog_no_oracle_audit::{
     audit_micro_episodes, audit_no_oracle_safe_episode_view_for_candidate_generation,
     NoOracleRiskLevel, NoOracleSafeEpisodeView, NoOracleSafeEpisodeViewOptions, NoOracleUseContext,
 };
-use kslog_replay::replay_events;
+use kslog_replay::{
+    diagnose_replay_events, replay_events, ReplayDiagnosticFailureKind,
+    ReplayDiagnosticProbableLayer, ReplayDiagnosticStatus,
+};
 use kslog_schema::RawEvent;
 use kslog_validate::{validate_jsonl_reader, ValidationOptions};
 
@@ -72,6 +75,10 @@ where
             let input = required_path(&args)?;
             command_replay(input)
         }
+        "diagnose-replay" => {
+            let input = required_path(&args)?;
+            command_diagnose_replay(input)
+        }
         "extract" => {
             let input = required_path(&args)?;
             command_extract(input)
@@ -123,6 +130,49 @@ fn command_replay(path: &Path) -> Result<String, CliError> {
     Ok(format!(
         "replay: ok\nevents: {}\nfinal_doc_len: {}\nfinal_cursor_pos: {}\nfinal_text_suppressed: true",
         report.event_count, report.final_doc_len, report.final_cursor_pos
+    ))
+}
+
+fn command_diagnose_replay(path: &Path) -> Result<String, CliError> {
+    let content = read_file(path)?;
+    validate_content(&content)?;
+    let events = parse_events(&content)?;
+    let report = diagnose_replay_events(&events);
+
+    Ok(format!(
+        "diagnose_replay: ok\nreplay_status: {}\nevent_count: {}\nfailure_line: {}\nfailure_kind: {}\nsource_seq: {}\nevent_type: {}\ninput_type: {}\ndoc_len_before: {}\ndoc_len_after: {}\ncursor_pos_before: {}\ncursor_pos_after: {}\nselection_start_before: {}\nselection_end_before: {}\nselection_start_after: {}\nselection_end_after: {}\ninserted_text_present: {}\ninserted_text_len: {}\ndeleted_text_present: {}\ndeleted_text_len: {}\ndiff_op: {}\nquality_flags: {}\ncontent_suppressed: {}\nprobable_layer: {}\nsuggested_next_check: {}",
+        diagnostic_status_name(&report.replay_status),
+        report.event_count,
+        option_usize(report.failure_line),
+        option_failure_kind(report.failure_kind.as_ref()),
+        option_u64(report.source_seq),
+        report
+            .event_type
+            .as_ref()
+            .map(|event_type| format!("{event_type:?}"))
+            .unwrap_or_else(|| "none".to_string()),
+        option_string(report.input_type.as_deref()),
+        option_u32(report.doc_len_before),
+        option_u32(report.doc_len_after),
+        option_u32(report.cursor_pos_before),
+        option_u32(report.cursor_pos_after),
+        option_u32(report.selection_start_before),
+        option_u32(report.selection_end_before),
+        option_u32(report.selection_start_after),
+        option_u32(report.selection_end_after),
+        option_bool(report.inserted_text_present),
+        option_usize(report.inserted_text_len),
+        option_bool(report.deleted_text_present),
+        option_usize(report.deleted_text_len),
+        option_string(report.diff_op.as_deref()),
+        if report.quality_flags.is_empty() {
+            "none".to_string()
+        } else {
+            report.quality_flags.join(",")
+        },
+        report.content_suppressed,
+        probable_layer_name(&report.probable_layer),
+        report.suggested_next_check
     ))
 }
 
@@ -274,6 +324,60 @@ fn option_u64(value: Option<u64>) -> String {
         .unwrap_or_else(|| "none".to_string())
 }
 
+fn option_u32(value: Option<u32>) -> String {
+    value
+        .map(|value| value.to_string())
+        .unwrap_or_else(|| "none".to_string())
+}
+
+fn option_usize(value: Option<usize>) -> String {
+    value
+        .map(|value| value.to_string())
+        .unwrap_or_else(|| "none".to_string())
+}
+
+fn option_bool(value: Option<bool>) -> String {
+    value
+        .map(|value| value.to_string())
+        .unwrap_or_else(|| "none".to_string())
+}
+
+fn option_string(value: Option<&str>) -> String {
+    value.unwrap_or("none").to_string()
+}
+
+fn diagnostic_status_name(status: &ReplayDiagnosticStatus) -> &'static str {
+    match status {
+        ReplayDiagnosticStatus::Ok => "ok",
+        ReplayDiagnosticStatus::Failed => "failed",
+    }
+}
+
+fn option_failure_kind(kind: Option<&ReplayDiagnosticFailureKind>) -> &'static str {
+    match kind {
+        Some(ReplayDiagnosticFailureKind::DocLenBeforeMismatch) => "doc_len_before_mismatch",
+        Some(ReplayDiagnosticFailureKind::DocLenAfterMismatch) => "doc_len_after_mismatch",
+        Some(ReplayDiagnosticFailureKind::TextHashBeforeMismatch) => "text_hash_before_mismatch",
+        Some(ReplayDiagnosticFailureKind::TextHashAfterMismatch) => "text_hash_after_mismatch",
+        Some(ReplayDiagnosticFailureKind::CursorOutOfBounds) => "cursor_out_of_bounds",
+        Some(ReplayDiagnosticFailureKind::SelectionOutOfBounds) => "selection_out_of_bounds",
+        Some(ReplayDiagnosticFailureKind::SelectionRangeInverted) => "selection_range_inverted",
+        Some(ReplayDiagnosticFailureKind::AmbiguousEditLocation) => "ambiguous_edit_location",
+        Some(ReplayDiagnosticFailureKind::DeletedTextMismatch) => "deleted_text_mismatch",
+        None => "none",
+    }
+}
+
+fn probable_layer_name(layer: &ReplayDiagnosticProbableLayer) -> &'static str {
+    match layer {
+        ReplayDiagnosticProbableLayer::LoggerDiffEstimation => "logger_diff_estimation",
+        ReplayDiagnosticProbableLayer::CursorOrSelectionCapture => "cursor_or_selection_capture",
+        ReplayDiagnosticProbableLayer::ReplayAssumption => "replay_assumption",
+        ReplayDiagnosticProbableLayer::SchemaOrValidation => "schema_or_validation",
+        ReplayDiagnosticProbableLayer::Unknown => "unknown",
+    }
+}
+
 fn usage() -> String {
     [
         "kslog <command> <input.jsonl>",
@@ -281,6 +385,7 @@ fn usage() -> String {
         "Commands:",
         "  validate <input.jsonl>",
         "  replay <input.jsonl>",
+        "  diagnose-replay <input.jsonl>",
         "  extract <input.jsonl>",
         "  build-micro-episodes <input.jsonl>",
         "  audit-no-oracle <input.jsonl>",
@@ -334,7 +439,10 @@ impl KindCounts {
 #[cfg(test)]
 mod tests {
     use super::run_cli;
-    use std::path::{Path, PathBuf};
+    use std::{
+        fs,
+        path::{Path, PathBuf},
+    };
 
     fn repository_root() -> PathBuf {
         Path::new(env!("CARGO_MANIFEST_DIR")).join("../..")
@@ -382,6 +490,47 @@ mod tests {
         assert!(output.contains("final_doc_len: 13"));
         assert!(output.contains("final_text_suppressed: true"));
         assert!(!output.contains("I like music."));
+    }
+
+    #[test]
+    fn diagnose_replay_returns_success_summary_for_valid_fixture() {
+        let output = run_cli([
+            "diagnose-replay",
+            fixture("tests/fixtures/synthetic/raw_events/valid/simple_typing.jsonl").as_str(),
+        ])
+        .expect("diagnose replay should succeed");
+
+        assert!(output.contains("diagnose_replay: ok"));
+        assert!(output.contains("replay_status: ok"));
+        assert!(output.contains("content_suppressed: true"));
+        assert!(output.contains("failure_kind: none"));
+        assert!(!output.contains("I like music."));
+    }
+
+    #[test]
+    fn diagnose_replay_returns_safe_failure_summary() {
+        let path = std::env::temp_dir().join(format!(
+            "kslog_cli_diagnose_replay_{}.jsonl",
+            std::process::id()
+        ));
+        let jsonl = r#"{"logger_schema_version":"kslog.raw_event.v1","session_id":"synthetic_session_cli_diag","participant_local_id":"synthetic_writer_cli_diag","task_id":"synthetic_task_cli_diag","prompt_id":"synthetic_prompt_cli_diag","seq":1,"timestamp_ms":1700000100001,"event_type":"input","input_type":"insertText","is_composing":false,"composition_id":null,"selection_start_before":null,"selection_end_before":null,"selection_start_after":null,"selection_end_after":null,"cursor_pos_before":0,"cursor_pos_after":1,"doc_len_before":0,"doc_len_after":1,"inserted_text":"x","deleted_text":null,"text_hash_before":null,"text_hash_after":null,"diff_op":"insert","quality_flags":[]}
+{"logger_schema_version":"kslog.raw_event.v1","session_id":"synthetic_session_cli_diag","participant_local_id":"synthetic_writer_cli_diag","task_id":"synthetic_task_cli_diag","prompt_id":"synthetic_prompt_cli_diag","seq":2,"timestamp_ms":1700000100002,"event_type":"input","input_type":"deleteContentBackward","is_composing":false,"composition_id":null,"selection_start_before":null,"selection_end_before":null,"selection_start_after":null,"selection_end_after":null,"cursor_pos_before":1,"cursor_pos_after":0,"doc_len_before":1,"doc_len_after":0,"inserted_text":null,"deleted_text":"LEAK_MARKER_SHOULD_NOT_APPEAR","text_hash_before":null,"text_hash_after":null,"diff_op":"delete","quality_flags":[]}
+"#;
+        fs::write(&path, jsonl).expect("write synthetic diagnostic fixture");
+
+        let output = run_cli(["diagnose-replay", path.to_string_lossy().as_ref()])
+            .expect("diagnose replay should return a safe failure summary");
+
+        let _ = fs::remove_file(&path);
+
+        assert!(output.contains("diagnose_replay: ok"));
+        assert!(output.contains("replay_status: failed"));
+        assert!(output.contains("failure_kind: deleted_text_mismatch"));
+        assert!(output.contains("probable_layer: logger_diff_estimation"));
+        assert!(output.contains("content_suppressed: true"));
+        assert!(output.contains("deleted_text_present: true"));
+        assert!(output.contains("deleted_text_len:"));
+        assert!(!output.contains("LEAK_MARKER_SHOULD_NOT_APPEAR"));
     }
 
     #[test]
@@ -442,5 +591,13 @@ mod tests {
 
         assert!(error.to_string().contains("missing command"));
         assert!(error.to_string().contains("kslog <command> <input.jsonl>"));
+    }
+
+    #[test]
+    fn diagnose_replay_missing_path_returns_usage_error_without_panic() {
+        let error = run_cli(["diagnose-replay"]).expect_err("missing path should fail");
+
+        assert!(error.to_string().contains("missing input JSONL path"));
+        assert!(error.to_string().contains("diagnose-replay <input.jsonl>"));
     }
 }

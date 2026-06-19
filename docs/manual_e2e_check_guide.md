@@ -29,11 +29,14 @@ Run these commands from the repository root, replacing `<file>.jsonl` with the s
 ```bash
 cargo run -p kslog_cli -- validate manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- replay manual_outputs/logger_web/<file>.jsonl
+cargo run -p kslog_cli -- diagnose-replay manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- extract manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- build-micro-episodes manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- audit-no-oracle manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- make-safe-view manual_outputs/logger_web/<file>.jsonl
 ```
+
+`diagnose-replay` is optional when `replay` succeeds. Run it when `replay` fails or when a manual case needs privacy-preserving triage.
 
 ## Manual Synthetic Case Set
 
@@ -238,6 +241,35 @@ If a manual case fails, first identify the layer that failed:
 - `make-safe-view` failure: inspect whether unsafe observed-after context accidentally entered the safe view.
 
 Use the smallest reasonable fix. Prefer documenting a known browser/logger limitation when Rust behavior is correct. Change TypeScript logger logic only when the emitted RawEvent is malformed or inconsistent. Change Rust logic only when the deterministic pipeline rejects a valid schema-compatible event pattern that the current specs intend to support.
+
+For replay failures, prefer:
+
+```bash
+cargo run -p kslog_cli -- diagnose-replay manual_outputs/logger_web/<file>.jsonl
+```
+
+Record only the diagnostic summary fields. Do not copy raw replay error strings if they contain expected or observed text snippets.
+
+`diagnose-replay` reports:
+
+- `failure_line`
+- `failure_kind`
+- `source_seq`
+- `event_type`
+- `input_type`
+- document lengths
+- cursor and selection positions
+- inserted/deleted text presence flags
+- inserted/deleted text lengths
+- `diff_op`
+- `quality_flags`
+- `content_suppressed`
+- `probable_layer`
+- `suggested_next_check`
+
+`diagnose-replay` does not report JSONL lines, inserted text contents, deleted text contents, final text, or local context.
+
+Treat mismatch diagnostics as boundary-specification evidence, not as permission to weaken Rust replay. Keep replay strict until the synthetic evidence shows that a narrow logger or replay fix is needed.
 
 ## How To Read Errors
 
