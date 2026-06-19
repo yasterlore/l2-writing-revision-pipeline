@@ -23,6 +23,30 @@ LINGUISTIC_PLACEHOLDER_CONSTRAINTS: dict[str, str] = {
     "punctuation_fix_placeholder": "PUNCTUATION-PLACEHOLDER-CANDIDATE",
 }
 
+CONTEXT_BEFORE_LENGTH_CONSTRAINTS: dict[str, str] = {
+    "empty": "CONTEXT-BEFORE-EMPTY",
+    "short": "CONTEXT-BEFORE-SHORT",
+    "medium": "CONTEXT-BEFORE-MEDIUM",
+    "long": "CONTEXT-BEFORE-LONG",
+}
+
+SELECTION_SPAN_CONSTRAINTS: dict[str, str] = {
+    "short": "SELECTION-SPAN-SHORT",
+    "medium": "SELECTION-SPAN-MEDIUM",
+    "long": "SELECTION-SPAN-LONG",
+}
+
+LEFT_CHAR_CLASS_CONSTRAINTS: dict[str, str] = {
+    "none": "LEFT-CHAR-CLASS-NONE",
+    "whitespace": "LEFT-CHAR-CLASS-WHITESPACE",
+    "punctuation": "LEFT-CHAR-CLASS-PUNCTUATION",
+    "digit": "LEFT-CHAR-CLASS-DIGIT",
+    "uppercase_letter": "LEFT-CHAR-CLASS-UPPERCASE-LETTER",
+    "lowercase_letter": "LEFT-CHAR-CLASS-LOWERCASE-LETTER",
+    "other_letter": "LEFT-CHAR-CLASS-OTHER-LETTER",
+    "other": "LEFT-CHAR-CLASS-OTHER",
+}
+
 CONSTRAINTS: tuple[Constraint, ...] = (
     Constraint(
         constraint_id="NO-LEAKAGE-FLAG",
@@ -156,6 +180,132 @@ CONSTRAINTS: tuple[Constraint, ...] = (
         severity="info",
         explanation="Records whether the candidate is a punctuation placeholder.",
     ),
+    Constraint(
+        constraint_id="CONTEXT-BEFORE-EMPTY",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records an empty pre-edit left context bucket.",
+    ),
+    Constraint(
+        constraint_id="CONTEXT-BEFORE-SHORT",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records a short pre-edit left context bucket.",
+    ),
+    Constraint(
+        constraint_id="CONTEXT-BEFORE-MEDIUM",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records a medium pre-edit left context bucket.",
+    ),
+    Constraint(
+        constraint_id="CONTEXT-BEFORE-LONG",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records a long pre-edit left context bucket.",
+    ),
+    Constraint(
+        constraint_id="CURSOR-AT-DOCUMENT-START",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the pre-edit cursor is at document start.",
+    ),
+    Constraint(
+        constraint_id="CURSOR-AT-DOCUMENT-END-BEFORE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the pre-edit cursor is at document end.",
+    ),
+    Constraint(
+        constraint_id="SELECTION-COLLAPSED-BEFORE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the pre-edit selection is collapsed.",
+    ),
+    Constraint(
+        constraint_id="SELECTION-NONCOLLAPSED-BEFORE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the pre-edit selection is non-collapsed.",
+    ),
+    Constraint(
+        constraint_id="SELECTION-SPAN-SHORT",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records a short pre-edit selection span bucket.",
+    ),
+    Constraint(
+        constraint_id="SELECTION-SPAN-MEDIUM",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records a medium pre-edit selection span bucket.",
+    ),
+    Constraint(
+        constraint_id="SELECTION-SPAN-LONG",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records a long pre-edit selection span bucket.",
+    ),
+    Constraint(
+        constraint_id="LEFT-CONTEXT-ENDS-WITH-SPACE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the pre-edit left context ends with whitespace.",
+    ),
+    Constraint(
+        constraint_id="LEFT-CONTEXT-ENDS-WITH-PUNCTUATION",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the pre-edit left context ends with punctuation.",
+    ),
+    Constraint(
+        constraint_id="LEFT-CHAR-CLASS-NONE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records that no pre-edit left character is available.",
+    ),
+    Constraint(
+        constraint_id="LEFT-CHAR-CLASS-WHITESPACE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records a whitespace pre-edit left-character class.",
+    ),
+    Constraint(
+        constraint_id="LEFT-CHAR-CLASS-PUNCTUATION",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records a punctuation pre-edit left-character class.",
+    ),
+    Constraint(
+        constraint_id="LEFT-CHAR-CLASS-DIGIT",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records a digit pre-edit left-character class.",
+    ),
+    Constraint(
+        constraint_id="LEFT-CHAR-CLASS-UPPERCASE-LETTER",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records an uppercase-letter pre-edit left-character class.",
+    ),
+    Constraint(
+        constraint_id="LEFT-CHAR-CLASS-LOWERCASE-LETTER",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records a lowercase-letter pre-edit left-character class.",
+    ),
+    Constraint(
+        constraint_id="LEFT-CHAR-CLASS-OTHER-LETTER",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records another-letter pre-edit left-character class.",
+    ),
+    Constraint(
+        constraint_id="LEFT-CHAR-CLASS-OTHER",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records an other pre-edit left-character class.",
+    ),
 )
 
 
@@ -270,6 +420,7 @@ def build_candidate_constraint_violations(
             bool(candidate_feature.get("candidate_family_bucket")),
         ),
         *linguistic_placeholder_violations(candidate_feature),
+        *local_pattern_diagnostic_violations(candidate_feature),
     ]
     return CandidateConstraintViolations(
         candidate_id=str(candidate_feature["candidate_id"]),
@@ -340,6 +491,70 @@ def is_linguistic_placeholder_candidate(
         and candidate_feature.get("is_grammar_family_candidate") is True
         and candidate_feature.get("is_placeholder_candidate") is True
     )
+
+
+def local_pattern_diagnostic_violations(
+    candidate_feature: dict[str, Any],
+) -> list[ConstraintViolation]:
+    return [
+        *bucket_violations(
+            candidate_feature,
+            value=str(candidate_feature.get("context_before_length_bucket", "")),
+            mapping=CONTEXT_BEFORE_LENGTH_CONSTRAINTS,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "CURSOR-AT-DOCUMENT-START",
+            candidate_feature.get("cursor_at_document_start") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "CURSOR-AT-DOCUMENT-END-BEFORE",
+            candidate_feature.get("cursor_at_document_end_before") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "SELECTION-COLLAPSED-BEFORE",
+            candidate_feature.get("selection_is_collapsed_before") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "SELECTION-NONCOLLAPSED-BEFORE",
+            candidate_feature.get("selection_is_collapsed_before") is False,
+        ),
+        *bucket_violations(
+            candidate_feature,
+            value=str(candidate_feature.get("selection_span_length_bucket", "")),
+            mapping=SELECTION_SPAN_CONSTRAINTS,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "LEFT-CONTEXT-ENDS-WITH-SPACE",
+            candidate_feature.get("left_context_ends_with_space") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "LEFT-CONTEXT-ENDS-WITH-PUNCTUATION",
+            candidate_feature.get("left_context_ends_with_punctuation") is True,
+        ),
+        *bucket_violations(
+            candidate_feature,
+            value=str(candidate_feature.get("left_char_class", "")),
+            mapping=LEFT_CHAR_CLASS_CONSTRAINTS,
+        ),
+    ]
+
+
+def bucket_violations(
+    candidate_feature: dict[str, Any],
+    *,
+    value: str,
+    mapping: dict[str, str],
+) -> list[ConstraintViolation]:
+    return [
+        descriptive_violation(candidate_feature, constraint_id, value == bucket)
+        for bucket, constraint_id in mapping.items()
+    ]
 
 
 def constraint_by_id(constraint_id: str) -> Constraint:

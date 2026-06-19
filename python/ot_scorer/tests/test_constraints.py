@@ -198,6 +198,105 @@ class ConstraintTests(unittest.TestCase):
                 self.assertEqual(violation["constraint_type"], "descriptive")
                 self.assertEqual(violation["violation_count"], 0)
 
+    def test_identifies_context_before_length_diagnostics(self) -> None:
+        data = candidate_feature_set()
+        data["candidate_features"] = [
+            feature_with_local_patterns(context_before_length_bucket="empty"),
+            feature_with_local_patterns(context_before_length_bucket="short"),
+            feature_with_local_patterns(context_before_length_bucket="medium"),
+            feature_with_local_patterns(context_before_length_bucket="long"),
+        ]
+
+        violation_set = build_constraint_violation_set(data)
+
+        for index, constraint_id in enumerate(
+            [
+                "CONTEXT-BEFORE-EMPTY",
+                "CONTEXT-BEFORE-SHORT",
+                "CONTEXT-BEFORE-MEDIUM",
+                "CONTEXT-BEFORE-LONG",
+            ]
+        ):
+            with self.subTest(constraint_id=constraint_id):
+                assert_descriptive_observed(violation_set, index, constraint_id)
+
+    def test_identifies_cursor_selection_and_left_context_diagnostics(self) -> None:
+        data = candidate_feature_set()
+        data["candidate_features"] = [
+            feature_with_local_patterns(
+                cursor_at_document_start=True,
+                cursor_at_document_end_before=True,
+                selection_is_collapsed_before=True,
+                selection_span_length_bucket="collapsed",
+                left_context_ends_with_space=True,
+                left_char_class="whitespace",
+            ),
+            feature_with_local_patterns(
+                selection_is_collapsed_before=False,
+                selection_span_length_bucket="short",
+                left_context_ends_with_punctuation=True,
+                left_char_class="punctuation",
+            ),
+            feature_with_local_patterns(
+                selection_is_collapsed_before=False,
+                selection_span_length_bucket="medium",
+                left_char_class="digit",
+            ),
+            feature_with_local_patterns(
+                selection_is_collapsed_before=False,
+                selection_span_length_bucket="long",
+                left_char_class="uppercase_letter",
+            ),
+        ]
+
+        violation_set = build_constraint_violation_set(data)
+
+        for constraint_id in [
+            "CURSOR-AT-DOCUMENT-START",
+            "CURSOR-AT-DOCUMENT-END-BEFORE",
+            "SELECTION-COLLAPSED-BEFORE",
+            "LEFT-CONTEXT-ENDS-WITH-SPACE",
+            "LEFT-CHAR-CLASS-WHITESPACE",
+        ]:
+            assert_descriptive_observed(violation_set, 0, constraint_id)
+        for constraint_id in [
+            "SELECTION-NONCOLLAPSED-BEFORE",
+            "SELECTION-SPAN-SHORT",
+            "LEFT-CONTEXT-ENDS-WITH-PUNCTUATION",
+            "LEFT-CHAR-CLASS-PUNCTUATION",
+        ]:
+            assert_descriptive_observed(violation_set, 1, constraint_id)
+        assert_descriptive_observed(violation_set, 2, "SELECTION-SPAN-MEDIUM")
+        assert_descriptive_observed(violation_set, 2, "LEFT-CHAR-CLASS-DIGIT")
+        assert_descriptive_observed(violation_set, 3, "SELECTION-SPAN-LONG")
+        assert_descriptive_observed(
+            violation_set,
+            3,
+            "LEFT-CHAR-CLASS-UPPERCASE-LETTER",
+        )
+
+    def test_identifies_remaining_left_char_class_diagnostics(self) -> None:
+        data = candidate_feature_set()
+        data["candidate_features"] = [
+            feature_with_local_patterns(left_char_class="none"),
+            feature_with_local_patterns(left_char_class="lowercase_letter"),
+            feature_with_local_patterns(left_char_class="other_letter"),
+            feature_with_local_patterns(left_char_class="other"),
+        ]
+
+        violation_set = build_constraint_violation_set(data)
+
+        for index, constraint_id in enumerate(
+            [
+                "LEFT-CHAR-CLASS-NONE",
+                "LEFT-CHAR-CLASS-LOWERCASE-LETTER",
+                "LEFT-CHAR-CLASS-OTHER-LETTER",
+                "LEFT-CHAR-CLASS-OTHER",
+            ]
+        ):
+            with self.subTest(constraint_id=constraint_id):
+                assert_descriptive_observed(violation_set, index, constraint_id)
+
     def test_rejects_forbidden_field(self) -> None:
         with self.assertRaises(CandidateFeatureError):
             load_candidate_feature_sets(FORBIDDEN_FIXTURE)
@@ -237,6 +336,17 @@ def find_violation(
         if violation["constraint_id"] == constraint_id:
             return violation
     raise AssertionError(f"missing constraint: {constraint_id}")
+
+
+def assert_descriptive_observed(
+    violation_set: object,
+    candidate_index: int,
+    constraint_id: str,
+) -> None:
+    violation = find_violation(violation_set, candidate_index, constraint_id)
+    assert violation["observed"] is True
+    assert violation["constraint_type"] == "descriptive"
+    assert violation["violation_count"] == 0
 
 
 def candidate_feature_set() -> dict[str, object]:
@@ -357,6 +467,15 @@ def grammar_placeholder_feature(action_type: str, generation_rule: str) -> dict[
         "feature_notes_count": 0,
         "leakage_flags": [],
     }
+
+
+def feature_with_local_patterns(**overrides: object) -> dict[str, object]:
+    feature = grammar_placeholder_feature(
+        "article_fix_placeholder",
+        "article_placeholder_rule",
+    )
+    feature.update(overrides)
+    return feature
 
 
 def local_pattern_fields() -> dict[str, object]:
