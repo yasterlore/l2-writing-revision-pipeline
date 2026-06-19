@@ -199,6 +199,7 @@ metrics.
 - [Milestone 01 pipeline recap](docs/milestone_01_pipeline_recap.md)
 - [Milestone 02 synthetic evaluation recap](docs/milestone_02_synthetic_evaluation_recap.md)
 - [Milestone 03 config-aware diagnostic infrastructure recap](docs/milestone_03_config_aware_diagnostic_infrastructure_recap.md)
+- [Milestone 03 final docs-only release review](docs/milestone_03_final_docs_only_release_review.md)
 - [Private real-data readiness checklist](docs/private_real_data_readiness_checklist.md)
 - [No-oracle policy](docs/03_no_oracle_policy.md)
 - [Synthetic data policy](docs/12_synthetic_data_policy.md)
