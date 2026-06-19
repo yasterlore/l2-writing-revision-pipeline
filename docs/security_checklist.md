@@ -12,7 +12,10 @@ Use this checklist when adding implementation.
 - [ ] Runs no-oracle audit before candidate generation, ranking, OT scoring, or learner-state estimation.
 - [ ] Ensures `local_context_after_observed` is not used as candidate-generation or ranking input.
 - [ ] Uses `NoOracleSafeEpisodeView` or an equivalent narrowed view before candidate generation, ranking, or OT scoring.
+- [ ] Exports only `NoOracleSafeEpisodeView`, not full `MicroEpisode`, for downstream modeling prototypes.
+- [ ] Ensures safe-view export excludes `local_context_after_observed` and no-oracle forbidden fields.
 - [ ] Excludes observed edit text from safe views when the prediction target is the edit text itself.
+- [ ] Does not commit safe-view exports derived from real participant data.
 - [ ] Adds tests for invalid and adversarial input where applicable.
 - [ ] Does not hard-code secrets or personal data.
 - [ ] Does not introduce network access unless explicitly required.

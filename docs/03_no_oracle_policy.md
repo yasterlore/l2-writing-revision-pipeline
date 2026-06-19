@@ -56,6 +56,27 @@ However, the safe view is not universally safe. If the prediction task is to pre
 
 Safe view outputs may still contain writing fragments and must not be committed when derived from real participant data.
 
+## Safe View Export
+
+Rust CLI safe-view export is the approved pre-processing boundary before future Python candidate generation prototypes.
+
+Export must use `NoOracleSafeEpisodeView`, not full `MicroEpisode`.
+
+Safe-view export must not include:
+
+- `local_context_after_observed`
+- `final_text`
+- `observed_after_text`
+- `gold_label`
+- teacher corrections
+- human corrections
+- answer keys
+- post-hoc annotations
+
+Observed edit text is excluded by default. It may be included only by an explicit option and only when the prediction task definition permits it. If the model is supposed to predict inserted or deleted text, observed edit text is target leakage.
+
+Safe-view export files derived from real participant data must not be stored in this repository.
+
 ## Forbidden Field Names
 
 The audit policy treats the following as forbidden concepts:

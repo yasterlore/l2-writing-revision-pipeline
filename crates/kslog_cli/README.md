@@ -71,7 +71,21 @@ cargo run -p kslog_cli -- make-safe-view <input.jsonl>
 cargo run -p kslog_cli -- make-safe-view <input.jsonl> --exclude-observed-edit-text
 ```
 
-Builds `NoOracleSafeEpisodeView` summaries. The first version does not export JSON.
+Builds `NoOracleSafeEpisodeView` summaries.
+
+### export-safe-view
+
+```bash
+cargo run -p kslog_cli -- export-safe-view <input.jsonl> <output.jsonl>
+cargo run -p kslog_cli -- export-safe-view <input.jsonl> <output.jsonl> --exclude-observed-edit-text
+cargo run -p kslog_cli -- export-safe-view <input.jsonl> <output.jsonl> --include-observed-edit-text
+```
+
+Exports one `NoOracleSafeEpisodeView` per JSONL line after validation, replay, micro-episode construction, and candidate-generation no-oracle audit.
+
+By default, observed edit text is excluded. Use `--include-observed-edit-text` only when the prediction task definition permits it. Observed inserted/deleted text can be target leakage if a model is supposed to predict the edit itself.
+
+The export excludes `local_context_after_observed`, `final_text`, `observed_after_text`, `gold_label`, and teacher correction fields.
 
 ## Synthetic Fixture Example
 
@@ -99,6 +113,7 @@ cargo run -p kslog_cli -- extract manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- build-micro-episodes manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- audit-no-oracle manual_outputs/logger_web/<file>.jsonl
 cargo run -p kslog_cli -- make-safe-view manual_outputs/logger_web/<file>.jsonl
+cargo run -p kslog_cli -- export-safe-view manual_outputs/logger_web/<file>.jsonl tmp/safe_view_export.jsonl
 ```
 
 See `docs/manual_e2e_check_guide.md`.
@@ -115,6 +130,8 @@ Replay, revision-event extraction, micro-episode construction, and safe views ca
 
 Use `diagnose-replay` instead of copying raw replay error text into documentation. Replay errors may include small content snippets, while `diagnose-replay` suppresses content and reports lengths and metadata only.
 
+Safe-view JSONL export is intended as a synthetic-only pre-processing step for future Python candidate generation prototypes. Do not save exports derived from real participant data into this repository. Prefer ignored locations such as `manual_outputs/` or `tmp/`.
+
 ## What This CLI Does Not Do
 
 - It does not implement the web logger.
@@ -122,4 +139,4 @@ Use `diagnose-replay` instead of copying raw replay error text into documentatio
 - It does not implement OT scoring.
 - It does not estimate learner state.
 - It does not process production or real participant data.
-- It does not export safe-view JSON yet.
+- It does not decide whether a safe-view export is appropriate for every prediction target.

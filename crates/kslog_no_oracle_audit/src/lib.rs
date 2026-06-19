@@ -7,6 +7,7 @@
 use kslog_extract::RevisionEvent;
 use kslog_micro_episode::{MicroEpisode, MicroEpisodeContext};
 use kslog_schema::RawEvent;
+use serde::Serialize;
 
 pub const FORBIDDEN_FIELD_NAMES: &[&str] = &[
     "final_text",
@@ -115,6 +116,9 @@ pub const NO_ORACLE_SAFE_EPISODE_VIEW_FIELD_NAMES: &[&str] = &[
     "inserted_text_observed",
     "deleted_text_observed",
     "quality_flags",
+    "no_oracle_safe_view",
+    "post_edit_context_suppressed",
+    "observed_edit_text_included",
 ];
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -166,7 +170,7 @@ impl Default for NoOracleSafeEpisodeViewOptions {
     }
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 pub struct NoOracleSafeEpisodeView {
     pub episode_id: String,
     pub session_id: String,
@@ -178,13 +182,22 @@ pub struct NoOracleSafeEpisodeView {
     pub revision_kind: String,
     pub is_revision_like: bool,
     pub local_context_before: MicroEpisodeContext,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub cursor_pos_before: Option<u32>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub span_start: Option<u32>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub span_end: Option<u32>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub doc_len_before: Option<u32>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub inserted_text_observed: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub deleted_text_observed: Option<String>,
     pub quality_flags: Vec<String>,
+    pub no_oracle_safe_view: bool,
+    pub post_edit_context_suppressed: bool,
+    pub observed_edit_text_included: bool,
 }
 
 impl NoOracleSafeEpisodeView {
@@ -223,6 +236,9 @@ impl NoOracleSafeEpisodeView {
                 .then(|| micro_episode.deleted_text.clone())
                 .flatten(),
             quality_flags: micro_episode.quality_flags.clone(),
+            no_oracle_safe_view: true,
+            post_edit_context_suppressed: true,
+            observed_edit_text_included: options.include_observed_edit_text,
         }
     }
 
@@ -689,6 +705,39 @@ mod tests {
 
         assert!(safe_view.inserted_text_observed.is_none());
         assert!(safe_view.deleted_text_observed.is_none());
+        assert!(!safe_view.observed_edit_text_included);
+        assert!(safe_view.no_oracle_safe_view);
+        assert!(safe_view.post_edit_context_suppressed);
+    }
+
+    #[test]
+    fn safe_view_serializes_without_after_observed_or_forbidden_fields() {
+        let events =
+            read_valid_fixture("tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl");
+        let report = build_micro_episodes(&events).expect("micro episodes build");
+        let episode = report
+            .episodes
+            .iter()
+            .find(|episode| episode.is_revision_like)
+            .expect("revision-like episode exists");
+        let options = NoOracleSafeEpisodeViewOptions {
+            include_observed_edit_text: false,
+        };
+        let safe_view =
+            NoOracleSafeEpisodeView::try_from_micro_episode_with_options(episode, &options);
+
+        let json = serde_json::to_string(&safe_view).expect("safe view serializes");
+
+        assert!(!json.contains("local_context_after_observed"));
+        assert!(!json.contains("final_text"));
+        assert!(!json.contains("observed_after_text"));
+        assert!(!json.contains("gold_label"));
+        assert!(!json.contains("teacher_correction"));
+        assert!(!json.contains("inserted_text_observed"));
+        assert!(!json.contains("deleted_text_observed"));
+        assert!(json.contains("\"no_oracle_safe_view\":true"));
+        assert!(json.contains("\"post_edit_context_suppressed\":true"));
+        assert!(json.contains("\"observed_edit_text_included\":false"));
     }
 
     #[test]

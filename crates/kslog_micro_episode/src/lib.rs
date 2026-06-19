@@ -13,6 +13,7 @@ use kslog_extract::{
     extract_revision_events, RevisionEvent, RevisionEventKind, RevisionExtractionError,
 };
 use kslog_schema::RawEvent;
+use serde::Serialize;
 
 pub const DEFAULT_CONTEXT_WINDOW_CHARS: usize = 30;
 
@@ -33,7 +34,7 @@ impl Default for MicroEpisodeOptions {
     }
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 pub struct MicroEpisodeContext {
     pub text: String,
     pub anchor: u32,
