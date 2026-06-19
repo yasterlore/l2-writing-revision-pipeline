@@ -232,7 +232,7 @@ weights.
 
 Recommended next steps:
 
-1. Step 91: synthetic-only hand-weight rationale examples
+1. Step 91: [synthetic-only hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md)
 2. Step 92: candidate metadata completeness as an optional explicit config
    experiment
 3. Step 93: config diff review, count-only only
@@ -313,6 +313,7 @@ by metadata or diagnostics.
 
 - [Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md)
 - [Hand-weight policy design](hand_weight_policy_design.md)
+- [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Diagnostic-to-scoring boundary review](diagnostic_to_scoring_boundary_review.md)
 - [Milestone 03 config-aware diagnostic infrastructure recap](milestone_03_config_aware_diagnostic_infrastructure_recap.md)

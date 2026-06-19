@@ -16,6 +16,8 @@ Before any future config is connected to scoring, read
 [Default-unchanged config support design](default_unchanged_config_support_design.md).
 For the Milestone 03 follow-up review of score-active candidates, read
 [Score-active family selection revisit](score_active_family_selection_revisit.md).
+For synthetic-only examples of safe rationale writing, read
+[Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md).
 
 ## 1. Purpose
 
