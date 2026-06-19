@@ -21,6 +21,7 @@ Recommended entry points:
 - [Default-unchanged config support design](default_unchanged_config_support_design.md): safety design for future config support without changing default scoring behavior.
 - [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md): design plan for locking no-config scoring output before config support.
 - [Explicit config ranking diff plan](explicit_config_ranking_diff_plan.md): design plan for future explicit-config ranking diff checks without changing no-config defaults.
+- [Config-aware scorer function design](config_aware_scorer_function_design.md): design plan for a future explicit config-aware scorer path that preserves no-config defaults.
 - [Linguistic placeholder constraint plan](linguistic_placeholder_constraint_plan.md): design plan for future descriptive linguistic placeholder constraints.
 - [Non-leaky linguistic constraint design plan](non_leaky_linguistic_constraint_design_plan.md): design plan for future descriptive linguistic diagnostics using no-oracle-safe local pattern features.
 - [Local pattern feature plan](local_pattern_feature_plan.md): design plan for future no-oracle-safe local context abstractions.

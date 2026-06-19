@@ -183,6 +183,9 @@ the default scoring path.
 
 The default path must stay unchanged.
 
+For the function-level boundary, read
+[Config-aware scorer function design](config_aware_scorer_function_design.md).
+
 ### Phase 3: Explicit CLI Option
 
 Connect the config-aware path only through an explicit CLI option.

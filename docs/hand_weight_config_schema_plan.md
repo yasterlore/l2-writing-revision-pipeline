@@ -23,6 +23,8 @@ For the planned no-config regression guard, read
 [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md).
 For the future explicit-config ranking diff boundary, read
 [Explicit config ranking diff plan](explicit_config_ranking_diff_plan.md).
+For the future explicit function boundary, read
+[Config-aware scorer function design](config_aware_scorer_function_design.md).
 
 ## 1. Purpose
 

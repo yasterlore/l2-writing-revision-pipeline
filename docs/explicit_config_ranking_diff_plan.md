@@ -242,7 +242,8 @@ rows into docs.
 ### Step 72: Config-Aware Scorer Function Design
 
 Design a separate config-aware scorer path while keeping the default no-config
-path unchanged.
+path unchanged. See
+[Config-aware scorer function design](config_aware_scorer_function_design.md).
 
 ### Step 73: Implement Config-Aware Scorer Function Without Default Path Change
 
@@ -268,6 +269,7 @@ the public repository.
 
 - [Default-unchanged config support design](default_unchanged_config_support_design.md)
 - [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md)
+- [Config-aware scorer function design](config_aware_scorer_function_design.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Hand-weight policy design](hand_weight_policy_design.md)
 - [Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md)
