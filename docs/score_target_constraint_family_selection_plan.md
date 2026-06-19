@@ -476,6 +476,9 @@ Do not use synthetic expected actions as scoring feedback.
 Design a config representation for future hand weights without changing
 defaults.
 
+See [Hand-weight config schema plan](hand_weight_config_schema_plan.md) for the
+proposed schema fields, validation policy, and default-behavior constraints.
+
 ### Step 65: Implement Config File Support Without Changing Defaults
 
 Add configuration plumbing only if approved and keep current scoring behavior

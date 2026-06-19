@@ -17,6 +17,7 @@ Recommended entry points:
 - [Diagnostic-to-scoring boundary review](diagnostic_to_scoring_boundary_review.md): boundary review before connecting diagnostics to hand-weight scoring policy.
 - [Hand-weight policy design](hand_weight_policy_design.md): design principles for future interpretable hand-designed scoring weights.
 - [Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md): narrow selection plan for future score-active constraint families.
+- [Hand-weight config schema plan](hand_weight_config_schema_plan.md): schema design for future explicit hand-weight configuration.
 - [Linguistic placeholder constraint plan](linguistic_placeholder_constraint_plan.md): design plan for future descriptive linguistic placeholder constraints.
 - [Non-leaky linguistic constraint design plan](non_leaky_linguistic_constraint_design_plan.md): design plan for future descriptive linguistic diagnostics using no-oracle-safe local pattern features.
 - [Local pattern feature plan](local_pattern_feature_plan.md): design plan for future no-oracle-safe local context abstractions.

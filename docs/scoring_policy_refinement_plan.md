@@ -325,6 +325,10 @@ The narrower family-selection proposal is in
 [Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md).
 It keeps current scoring behavior unchanged.
 
+The future config schema proposal is in
+[Hand-weight config schema plan](hand_weight_config_schema_plan.md). It is
+design-only and does not implement config loading.
+
 ### Step E: Synthetic-Only Smoke Evaluation
 
 Run synthetic expected-action checks only to verify wiring.
@@ -386,3 +390,4 @@ Read:
 - `docs/diagnostic_to_scoring_boundary_review.md`
 - `docs/hand_weight_policy_design.md`
 - `docs/score_target_constraint_family_selection_plan.md`
+- `docs/hand_weight_config_schema_plan.md`
