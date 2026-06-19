@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 import json
+import os
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -20,6 +23,10 @@ FIXTURE = Path(
 FORBIDDEN_FIXTURE = Path(
     "tests/fixtures/synthetic/constraint_violations/invalid/forbidden_field_constraint_violations.jsonl"
 )
+VALID_WEIGHT_CONFIG = Path(
+    "tests/fixtures/synthetic/hand_weight_configs/valid/current_default_like_config.json"
+)
+INVALID_WEIGHT_CONFIG_DIR = Path("tests/fixtures/synthetic/hand_weight_configs/invalid")
 
 
 class ScorerTests(unittest.TestCase):
@@ -358,12 +365,185 @@ class ScorerTests(unittest.TestCase):
             self.assertIn("generation_rule", rows[0]["candidate_scores"][0])
             self.assertIn("action_family", rows[0]["candidate_scores"][0])
 
-    def test_score_cli_has_no_config_option(self) -> None:
+    def test_score_cli_no_config_output_has_no_config_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "no_config_scores.jsonl"
+            result = run_score_cli(
+                "--constraints",
+                str(FIXTURE),
+                "--output",
+                str(output),
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn("candidate_scores: ok", result.stdout)
+            self.assertNotIn("weight_config:", result.stdout)
+            rows = jsonl_rows(output)
+            for row in rows:
+                assert_no_config_fields(self, row)
+                assert_forbidden_output_fields_absent(self, row)
+
+    def test_score_cli_valid_default_like_weight_config_matches_default(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            default_output = Path(directory) / "default_scores.jsonl"
+            config_output = Path(directory) / "config_scores.jsonl"
+
+            default_result = run_score_cli(
+                "--constraints",
+                str(FIXTURE),
+                "--output",
+                str(default_output),
+            )
+            config_result = run_score_cli(
+                "--constraints",
+                str(FIXTURE),
+                "--output",
+                str(config_output),
+                "--weight-config",
+                str(VALID_WEIGHT_CONFIG),
+            )
+
+            self.assertEqual(default_result.returncode, 0, default_result.stderr)
+            self.assertEqual(config_result.returncode, 0, config_result.stderr)
+            self.assertIn("weight_config: used", config_result.stdout)
+            self.assertIn(
+                "weight_config_name: synthetic_current_default_like",
+                config_result.stdout,
+            )
+            self.assertEqual(jsonl_rows(config_output), jsonl_rows(default_output))
+            self.assertNotIn('"constraint_weights"', config_result.stdout)
+
+    def test_score_cli_explicit_weight_config_can_change_weighted_score(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            directory_path = Path(directory)
+            constraints = directory_path / "constraint_violations.jsonl"
+            config_path = directory_path / "weight_config.json"
+            output = directory_path / "scores.jsonl"
+            data = constraint_violation_set()
+            set_violation_count(data, 0, "NO-LEAKAGE-FLAG", 1)
+            write_jsonl(constraints, [data])
+            config_data = default_like_config_dict()
+            config_data["config_name"] = "synthetic_cli_leakage_weight"
+            config_data["constraint_weights"][0]["weight"] = 5.0
+            write_json(config_path, config_data)
+
+            result = run_score_cli(
+                "--constraints",
+                str(constraints),
+                "--output",
+                str(output),
+                "--weight-config",
+                str(config_path),
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            score = jsonl_rows(output)[0]["candidate_scores"][-1]
+            self.assertEqual(score["candidate_id"], "synthetic_session_001:micro:3:cand:01:hold")
+            self.assertEqual(score["weighted_score"], 5.0)
+            self.assertTrue(score["blocked"])
+            assert_forbidden_output_fields_absent(self, jsonl_rows(output)[0])
+
+    def test_score_cli_invalid_weight_config_fails_before_output(self) -> None:
+        invalid_configs = [
+            "forbidden_field_config.json",
+            "expected_action_tuning_policy_config.json",
+            "unknown_active_constraint_config.json",
+        ]
+        for filename in invalid_configs:
+            with self.subTest(filename=filename):
+                with tempfile.TemporaryDirectory() as directory:
+                    output = Path(directory) / "scores.jsonl"
+                    result = run_score_cli(
+                        "--constraints",
+                        str(FIXTURE),
+                        "--output",
+                        str(output),
+                        "--weight-config",
+                        str(INVALID_WEIGHT_CONFIG_DIR / filename),
+                    )
+
+                    self.assertNotEqual(result.returncode, 0)
+                    self.assertFalse(output.exists())
+                    combined = result.stdout + result.stderr
+                    self.assertIn("candidate scoring failed:", combined)
+                    assert_cli_failure_output_is_safe(self, combined)
+
+    def test_score_cli_malformed_weight_config_fails_before_output(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            config_path = Path(directory) / "malformed_config.json"
+            output = Path(directory) / "scores.jsonl"
+            config_path.write_text("{not valid json", encoding="utf-8")
+
+            result = run_score_cli(
+                "--constraints",
+                str(FIXTURE),
+                "--output",
+                str(output),
+                "--weight-config",
+                str(config_path),
+            )
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertFalse(output.exists())
+            assert_cli_failure_output_is_safe(self, result.stdout + result.stderr)
+
+    def test_score_cli_unsafe_weight_config_path_fails_before_output(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "scores.jsonl"
+            result = run_score_cli(
+                "--constraints",
+                str(FIXTURE),
+                "--output",
+                str(output),
+                "--weight-config",
+                "private_data/synthetic_weight_config.json",
+            )
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertFalse(output.exists())
+            self.assertIn("unsafe weight config path", result.stdout + result.stderr)
+
+    def test_score_cli_does_not_load_config_from_environment(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "scores.jsonl"
+            env = os.environ.copy()
+            env["WEIGHT_CONFIG"] = str(VALID_WEIGHT_CONFIG)
+            env["OT_SCORER_WEIGHT_CONFIG"] = str(VALID_WEIGHT_CONFIG)
+
+            result = run_score_cli(
+                "--constraints",
+                str(FIXTURE),
+                "--output",
+                str(output),
+                env=env,
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertNotIn("weight_config:", result.stdout)
+            for row in jsonl_rows(output):
+                assert_no_config_fields(self, row)
+
+    def test_score_cli_has_weight_config_option_but_no_config_alias(self) -> None:
         source = Path("python/ot_scorer/score.py").read_text(encoding="utf-8")
 
-        self.assertNotIn("--config", source)
-        self.assertNotIn("--weight-config", source)
-        self.assertNotIn("load_hand_weight_config", source)
+        self.assertIn("--weight-config", source)
+        self.assertNotIn('"--config"', source)
+        self.assertNotIn("'--config'", source)
+
+    def test_score_cli_rejects_config_alias(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "scores.jsonl"
+            result = run_score_cli(
+                "--constraints",
+                str(FIXTURE),
+                "--output",
+                str(output),
+                "--config",
+                str(VALID_WEIGHT_CONFIG),
+            )
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertFalse(output.exists())
 
     def test_source_does_not_use_eval_exec_or_pickle(self) -> None:
         source_dir = Path("python/ot_scorer")
@@ -444,6 +624,59 @@ def assert_forbidden_output_fields_absent(
     ]
     for fragment in forbidden_fragments:
         test_case.assertNotIn(fragment, serialized)
+
+
+def assert_cli_failure_output_is_safe(
+    test_case: unittest.TestCase,
+    combined_output: str,
+) -> None:
+    forbidden_fragments = [
+        '"constraint_weights"',
+        '"rationale"',
+        "final_text",
+        "observed_after_text",
+        "gold_label",
+        "teacher_correction",
+        "Synthetic invalid fixture",
+        "expected actions may be used",
+        "raw_text",
+        "raw_local_context_before",
+    ]
+    for fragment in forbidden_fragments:
+        test_case.assertNotIn(fragment, combined_output)
+
+
+def jsonl_rows(path: Path) -> list[dict[str, object]]:
+    return [
+        json.loads(line)
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+
+
+def write_json(path: Path, data: dict[str, object]) -> None:
+    path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+
+
+def write_jsonl(path: Path, rows: list[dict[str, object]]) -> None:
+    path.write_text(
+        "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows),
+        encoding="utf-8",
+    )
+
+
+def run_score_cli(
+    *args: str,
+    env: dict[str, str] | None = None,
+) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        [sys.executable, "-m", "ot_scorer.score", *args],
+        check=False,
+        cwd=Path.cwd(),
+        text=True,
+        capture_output=True,
+        env=env,
+    )
 
 
 def default_like_config_dict() -> dict[str, object]:

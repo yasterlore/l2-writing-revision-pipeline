@@ -293,6 +293,19 @@ PYTHONPATH=python python3 -m ot_scorer.score \
   --output tmp/candidate_scores.jsonl
 ```
 
+Explicit config scoring is available only through `--weight-config`:
+
+```bash
+PYTHONPATH=python python3 -m ot_scorer.score \
+  --constraints tests/fixtures/synthetic/constraint_violations/valid/deletion_constraint_violations.jsonl \
+  --output tmp/candidate_scores_with_config.jsonl \
+  --weight-config tests/fixtures/synthetic/hand_weight_configs/valid/current_default_like_config.json
+```
+
+No-config scoring remains the default. `--config` is not an alias, config files
+are not discovered implicitly, and environment variables are not used to load
+config.
+
 Each candidate score contains:
 
 - `candidate_id`
@@ -365,9 +378,10 @@ unit-tested synthetic config experiments. It accepts a validated
 `HandWeightConfig` object and uses only active constraint weights from that
 object.
 
-This function is not connected to `score.py`, the synthetic E2E pipeline, or
-the summary collector. The default scorer path still does not load, discover,
-or import config at runtime, and default `CandidateScoreSet` output does not
+This function is connected to `score.py` only through explicit
+`--weight-config`. It is not connected to the synthetic E2E pipeline or the
+summary collector. The default scorer path still does not load, discover, or
+import config at runtime, and default `CandidateScoreSet` output does not
 include config fields.
 
 Unit tests cover default snapshot stability, default-like config equivalence,
