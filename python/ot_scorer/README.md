@@ -94,6 +94,35 @@ PYTHONPATH=python python3 -m compileall python
 
 `ruff` and `pytest` are not required in this first version to keep dependencies minimal.
 
+## Constraint Schema
+
+The constraint prototype reads `CandidateFeatureSet` JSONL and writes `ConstraintViolationSet` JSONL.
+
+Run it from the repository root:
+
+```bash
+PYTHONPATH=python python3 -m ot_scorer.constraints \
+  --input tests/fixtures/synthetic/candidate_features/valid/deletion_candidate_features.jsonl \
+  --output tmp/constraint_violations.jsonl
+```
+
+### Constraint Taxonomy
+
+Penalty constraints record violations that future scoring should treat as blocking until a task-specific policy says otherwise:
+
+- `NO-LEAKAGE-FLAG`: violation when candidate `leakage_flags` is not empty.
+- `NO-OBSERVED-EDIT-TEXT`: violation when `uses_observed_edit_text=true`.
+- `NO-UNSAFE-CANDIDATE`: violation when `no_oracle_safe=false`.
+
+Descriptive constraints record candidate type without adding a penalty in this version:
+
+- `HOLD-CANDIDATE`
+- `LOCAL-EDIT-CANDIDATE`
+- `GRAMMAR-PLACEHOLDER-CANDIDATE`
+- `PLACEHOLDER-CANDIDATE`
+
+The output includes `violation_count`, `severity`, and `explanation`, but it does not include weights, weighted scores, ranks, candidate text, local context text, or observed edit text.
+
 ## Synthetic Data Only
 
 All fixtures are synthetic. Do not commit feature outputs derived from real participant data.

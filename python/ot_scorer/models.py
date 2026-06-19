@@ -83,3 +83,59 @@ class CandidateFeatureSet:
             for candidate_feature in self.candidate_features
         ]
         return data
+
+
+@dataclass(frozen=True)
+class Constraint:
+    constraint_id: str
+    constraint_type: str
+    severity: str
+    explanation: str
+
+    def to_json_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class ConstraintViolation:
+    candidate_id: str
+    episode_id: str
+    constraint_id: str
+    constraint_type: str
+    violation_count: int
+    severity: str
+    explanation: str
+    observed: bool
+
+    def to_json_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class CandidateConstraintViolations:
+    candidate_id: str
+    episode_id: str
+    action_type: str
+    violations: list[ConstraintViolation]
+
+    def to_json_dict(self) -> dict[str, Any]:
+        data = asdict(self)
+        data["violations"] = [violation.to_json_dict() for violation in self.violations]
+        return data
+
+
+@dataclass(frozen=True)
+class ConstraintViolationSet:
+    constraint_violation_set_id: str
+    candidate_feature_set_id: str
+    episode_id: str
+    constraint_schema_version: str
+    candidate_violations: list[CandidateConstraintViolations]
+
+    def to_json_dict(self) -> dict[str, Any]:
+        data = asdict(self)
+        data["candidate_violations"] = [
+            candidate_violation.to_json_dict()
+            for candidate_violation in self.candidate_violations
+        ]
+        return data

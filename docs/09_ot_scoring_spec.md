@@ -6,6 +6,8 @@ No scoring logic is implemented yet.
 
 The initial Python feature schema and leakage audit lives in `python/ot_scorer/`.
 
+The initial Python constraint schema prototype also lives in `python/ot_scorer/`.
+
 ## Planned Responsibility
 
 OT-inspired scorers will rank candidates using explicit constraints and documented weights.
@@ -77,9 +79,43 @@ Scoring and ranking must not use final corrected text, future edits, gold labels
 
 The feature step follows the same boundary. It uses only structural metadata from candidate generation and does not read observed edit text.
 
+## Constraint Schema Prototype
+
+`python/ot_scorer/constraints.py` converts `CandidateFeatureSet` JSONL into `ConstraintViolationSet` JSONL.
+
+This is still not an OT scorer. It does not assign weights, calculate weighted scores, rank candidates, or evaluate correctness.
+
+Each `ConstraintViolationSet` contains candidate-level constraint records with:
+
+- `constraint_id`
+- `constraint_type`
+- `violation_count`
+- `severity`
+- `explanation`
+- `observed`
+
+## Constraint Taxonomy
+
+Penalty constraints:
+
+- `NO-LEAKAGE-FLAG`: violation count is 1 when candidate `leakage_flags` is not empty.
+- `NO-OBSERVED-EDIT-TEXT`: violation count is 1 when `uses_observed_edit_text=true`.
+- `NO-UNSAFE-CANDIDATE`: violation count is 1 when `no_oracle_safe=false`.
+
+Descriptive constraints:
+
+- `HOLD-CANDIDATE`: records whether the candidate is a hold baseline.
+- `LOCAL-EDIT-CANDIDATE`: records whether the candidate is a local edit placeholder.
+- `GRAMMAR-PLACEHOLDER-CANDIDATE`: records whether the candidate is a grammar placeholder.
+- `PLACEHOLDER-CANDIDATE`: records whether the candidate is any placeholder candidate.
+
+Descriptive constraints have `violation_count=0` in this prototype. They are present so a future weighted scorer can decide how to use candidate type information.
+
+Constraint generation uses only `CandidateFeatureSet` structural fields. It must reject forbidden no-oracle field names and must not read context text, observed edit text, final text, gold labels, or teacher corrections.
+
 ## Current Non-Goals
 
-- No OT constraints are implemented.
+- No weighted OT scoring is implemented.
 - No weights are introduced.
 - No ranking is performed.
 - No evaluation or learner-state estimation is performed.

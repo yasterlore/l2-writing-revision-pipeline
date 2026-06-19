@@ -99,6 +99,16 @@ Allowed first-version features are structural fields such as `action_type`, `gen
 
 If a candidate or candidate set has `uses_observed_edit_text=true` or `no_oracle_safe=false`, the feature step must flag it as a leakage concern before any scorer can use it.
 
+## Constraint Violation Generation
+
+The Python constraint prototype reads only `CandidateFeatureSet` JSONL and produces unweighted constraint-violation records.
+
+Penalty constraints may record no-oracle problems such as leakage flags, observed edit text use, or unsafe candidates.
+
+Descriptive constraints may record candidate categories such as hold, local edit, grammar placeholder, or placeholder. These descriptive records are not correctness labels and are not rankings.
+
+The constraint step must not read local context text, observed edit text, final text, gold labels, teacher corrections, or post-edit context.
+
 ## Forbidden Field Names
 
 The audit policy treats the following as forbidden concepts:
