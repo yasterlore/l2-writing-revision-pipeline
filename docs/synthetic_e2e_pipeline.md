@@ -98,7 +98,8 @@ The collector runs `scripts/run_synthetic_e2e_pipeline.sh` once per `.jsonl` fil
 
 The summary collector is also no-config. It does not pass `--weight-config` to
 the scorer or to the single-case pipeline. Any future config-enabled summary
-behavior must be designed separately.
+behavior must be designed separately. See
+[`config_enabled_summary_collector_design.md`](config_enabled_summary_collector_design.md).
 
 The collector looks up each case name in the synthetic expected action registry.
 If the case is `active`, it passes the expected action fixture as the third

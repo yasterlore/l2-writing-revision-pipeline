@@ -458,3 +458,5 @@ For the future explicit scorer config CLI boundary, read
 `../../docs/explicit_config_cli_option_design.md`.
 For optional explicit config-enabled E2E design, read
 `../../docs/config_enabled_e2e_design.md`.
+For future separate config-enabled summary collector design, read
+`../../docs/config_enabled_summary_collector_design.md`.

@@ -283,6 +283,10 @@ and no-config by default. See
 Private validation design remains separate and must not be implemented inside
 the public repository.
 
+Config-enabled summary collector design is separate from ranking diff smoke.
+See
+[Config-enabled summary collector design](config_enabled_summary_collector_design.md).
+
 ## 11. Related Documents
 
 - [Default-unchanged config support design](default_unchanged_config_support_design.md)
@@ -293,3 +297,4 @@ the public repository.
 - [Hand-weight policy design](hand_weight_policy_design.md)
 - [Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md)
 - [Config-enabled E2E design](config_enabled_e2e_design.md)
+- [Config-enabled summary collector design](config_enabled_summary_collector_design.md)
