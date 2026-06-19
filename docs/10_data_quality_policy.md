@@ -40,6 +40,18 @@ The first Rust replay layer lives in `crates/kslog_replay/`. It checks replay-sp
 
 Replay output may contain reconstructed writing. Do not commit replay output derived from real participant data.
 
+The first revision-event extraction layer lives in `crates/kslog_extract/`. It converts validated and replayable raw events into observed edit records:
+
+- insertion
+- deletion
+- replacement
+- selection range edit
+- paste
+- composition commit
+- unsupported observed event
+
+These records are observations, not correctness labels. Extraction must not use final corrected text, gold labels, teacher corrections, or post-hoc annotations.
+
 ## Derived Data Quality
 
 Derived artifacts should document:
