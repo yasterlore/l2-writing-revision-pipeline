@@ -228,6 +228,28 @@ constraint IDs, known constraint IDs, forbidden field names, unsafe
 manual/private/real path-like strings, synthetic-only notice, and an
 expected-action usage policy that forbids scoring and weight tuning.
 
+Validate a config without scoring:
+
+```bash
+PYTHONPATH=python python3 -m ot_scorer.validate_weight_config \
+  --config tests/fixtures/synthetic/hand_weight_configs/valid/current_default_like_config.json
+```
+
+The validation CLI prints a safe summary only: validation status, config path,
+schema version, config name, and count fields. It does not print the config JSON
+body, scoring output, ranking output, exact-match/evaluation output, expected
+action details, JSONL content, or raw text.
+
+For repository smoke checks, run:
+
+```bash
+scripts/check_hand_weight_config_validation.sh
+```
+
+The smoke script expects the valid synthetic config to pass and invalid
+synthetic configs to fail. Expected invalid failures are treated as a successful
+validation wiring check.
+
 This config schema groundwork is not connected to scoring. The scorer CLI does
 not accept a config option, default weights are unchanged, scoring formula is
 unchanged, and tie-break behavior is unchanged.
