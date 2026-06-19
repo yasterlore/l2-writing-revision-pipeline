@@ -29,6 +29,8 @@ For the Milestone 03 follow-up review of score-active family boundaries, read
 [Score-active family selection revisit](score_active_family_selection_revisit.md).
 For synthetic-only examples of rationale entries before actual config changes,
 read [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md).
+For a possible future metadata completeness explicit-config experiment, read
+[Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md).
 
 ## 1. Purpose
 

@@ -21,6 +21,7 @@ Recommended entry points:
 - [Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md): narrow selection plan for future score-active constraint families.
 - [Score-active family selection revisit](score_active_family_selection_revisit.md): Milestone 03 follow-up review of which diagnostic families may remain neutral or become future score-active candidates.
 - [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md): synthetic-only examples of safe rationale writing before any future hand-weight implementation.
+- [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md): design for a future optional explicit config experiment without changing no-config defaults.
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md): schema design for future explicit hand-weight configuration.
 - [Default-unchanged config support design](default_unchanged_config_support_design.md): safety design for future config support without changing default scoring behavior.
 - [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md): design plan for locking no-config scoring output before config support.
