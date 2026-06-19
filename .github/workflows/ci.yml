@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  rust:
+    name: Rust workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Cargo format check
+        run: cargo fmt --all -- --check
+
+      - name: Cargo test
+        run: cargo test --workspace
+
+      - name: Cargo clippy
+        run: cargo clippy --workspace -- -D warnings
+
+      - name: Synthetic-only and no-oracle policy checks
+        run: scripts/check_synthetic_policy.sh
+
+      - name: CLI smoke test valid fixture
+        run: cargo run -p kslog_cli -- validate tests/fixtures/synthetic/raw_events/valid/simple_typing.jsonl
+
+      - name: CLI smoke test invalid fixture
+        run: |
+          if cargo run -p kslog_cli -- validate tests/fixtures/synthetic/raw_events/invalid/seq_gap.jsonl; then
+            echo "expected invalid seq_gap fixture to fail validation" >&2
+            exit 1
+          fi
+
