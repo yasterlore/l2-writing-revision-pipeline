@@ -63,6 +63,14 @@ class CandidateGenerationTests(unittest.TestCase):
                 for candidate in candidate_set.candidates
             )
         )
+        self.assertEqual(
+            candidate_set.local_context_before["text"],
+            "Synthetic local context.",
+        )
+        self.assertEqual(candidate_set.cursor_pos_before, 10)
+        self.assertEqual(candidate_set.doc_len_before, 24)
+        self.assertEqual(candidate_set.selection_start_before, 9)
+        self.assertEqual(candidate_set.selection_end_before, 10)
 
     def test_observed_edit_text_present_is_ignored_by_default(self) -> None:
         episode = safe_episode()
@@ -95,6 +103,8 @@ class CandidateGenerationTests(unittest.TestCase):
             self.assertEqual(len(rows), 1)
             self.assertIn("candidates", rows[0])
             self.assertFalse(rows[0]["uses_observed_edit_text"])
+            self.assertIn("local_context_before", rows[0])
+            self.assertEqual(rows[0]["cursor_pos_before"], 10)
 
     def test_source_does_not_use_eval_exec_or_pickle(self) -> None:
         source_dir = Path("python/candidate_generation")

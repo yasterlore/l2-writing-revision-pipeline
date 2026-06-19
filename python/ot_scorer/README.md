@@ -46,6 +46,14 @@ Each candidate feature contains:
 - `is_local_edit_family_candidate`
 - `is_hold_candidate`
 - `candidate_family_bucket`
+- `context_before_length_bucket`
+- `cursor_at_document_start`
+- `cursor_at_document_end_before`
+- `selection_is_collapsed_before`
+- `selection_span_length_bucket`
+- `left_context_ends_with_space`
+- `left_context_ends_with_punctuation`
+- `left_char_class`
 - `is_placeholder`
 - `is_hold`
 - `is_local_edit`
@@ -54,11 +62,14 @@ Each candidate feature contains:
 - `feature_notes_count`
 - `leakage_flags`
 
-The newer structural fields are derived only from candidate metadata and safety
-flags. They are intended for later constraint refinement and debugging, not for
-performance claims.
+The structural fields are derived from candidate metadata, safety flags, and
+no-oracle-safe pre-edit metadata. `candidate_feature_schema_v0_3` adds local
+pattern features as coarse booleans and buckets. These fields are intended for
+later constraint refinement and debugging, not for performance claims.
 
-The feature output does not include candidate descriptions, proposed edit payloads, local context text, or observed edit text.
+The feature output does not include candidate descriptions, proposed edit
+payloads, raw `local_context_before` text, post-edit context, or observed edit
+text.
 
 ## Running
 
@@ -96,7 +107,10 @@ The module does not use:
 - observed edit text
 - future edits
 
-It uses only structural properties of the candidate object, such as action type, rule name, description length, and note count.
+It uses only structural properties of the candidate object and pre-edit local
+pattern metadata, such as action type, rule name, description length, note
+count, cursor-position buckets, selection buckets, and final-character classes.
+It does not copy raw local context text into feature output.
 
 ## Tests
 
@@ -241,7 +255,7 @@ Candidate score outputs derived from real participant data must not be committed
 For planned refinements and non-goals, read `../../docs/scoring_policy_refinement_plan.md`.
 For the future linguistic placeholder constraint boundary, read
 `../../docs/linguistic_placeholder_constraint_plan.md`.
-For future no-oracle-safe local pattern features, read
+For the no-oracle-safe local pattern feature design, read
 `../../docs/local_pattern_feature_plan.md`.
-For the planned v0.3 local pattern field schema, read
+For the implemented v0.3 local pattern field schema, read
 `../../docs/local_pattern_feature_schema_v0_3_plan.md`.

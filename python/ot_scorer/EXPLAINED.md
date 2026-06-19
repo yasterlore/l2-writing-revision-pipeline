@@ -56,6 +56,12 @@ The output is a feature schema for later experiments.
 
 Important structural features include `candidate_metadata_complete`, `has_generation_rule`, `has_action_family`, `is_safety_relevant_candidate`, `is_placeholder_candidate`, `is_grammar_family_candidate`, `is_local_edit_family_candidate`, `is_hold_candidate`, and `candidate_family_bucket`.
 
+`candidate_feature_schema_v0_3` also adds no-oracle-safe local pattern
+features: `context_before_length_bucket`, cursor boundary booleans, selection
+span buckets, whitespace/punctuation ending booleans, and `left_char_class`.
+These are abstract booleans or buckets. The raw `local_context_before` text is
+not stored in `CandidateFeatureSet`.
+
 These fields are derived from candidate metadata, action taxonomy, and leakage flags. They do not add candidate descriptions, proposed edit payloads, local context text, observed edit text, final text, or expected actions.
 
 `CandidateFeatureSet` groups all candidate features for one episode.
@@ -82,7 +88,9 @@ These fields are derived from candidate metadata, action taxonomy, and leakage f
 
 The design separates feature extraction from scoring. This makes it possible to audit the input boundary before any model, ranker, or OT-style weighted constraint system is introduced.
 
-Only non-content structural features are used in the first version.
+Only non-content structural features and coarse pre-edit local pattern features
+are used in this prototype. Local pattern features summarize shape, such as
+length bucket or final-character class, without storing text.
 
 The constraint schema separates penalty constraints from descriptive constraints. Penalty constraints count leakage and unsafe-candidate problems. Descriptive constraints record candidate categories for future scoring experiments.
 
@@ -151,11 +159,18 @@ Use synthetic data only in this repository.
 
 The loader rejects forbidden no-oracle fields recursively. It does not use `pickle`, `eval`, `exec`, unsafe deserialization, or network access.
 
-Feature, constraint, and score output exclude candidate descriptions, proposed edit payloads, local context text, and observed edit text.
+Feature, constraint, and score output exclude candidate descriptions, proposed
+edit payloads, raw local context text, post-edit context, and observed edit
+text.
 
 ## 14. Tests added
 
-Tests cover loading CandidateSet JSONL, feature-set construction, forbidden field rejection, post-edit context rejection, leakage flag detection, hold/local/grammar feature classification, text-fragment exclusion, constraint generation, penalty/descriptive constraint behavior, scorer blocking, deterministic tie-break, unique ranks, and source scanning for `eval`, `exec`, and `pickle`.
+Tests cover loading CandidateSet JSONL, feature-set construction, forbidden
+field rejection, post-edit context rejection, leakage flag detection,
+hold/local/grammar feature classification, v0.3 local pattern feature buckets
+and character classes, text-fragment exclusion, constraint generation,
+penalty/descriptive constraint behavior, scorer blocking, deterministic
+tie-break, unique ranks, and source scanning for `eval`, `exec`, and `pickle`.
 
 ## 15. Known limitations
 
@@ -172,5 +187,5 @@ For the beginner-friendly plan for linguistic placeholder constraints, read
 `../../docs/linguistic_placeholder_constraint_plan.md`.
 For the no-oracle plan for local pattern features, read
 `../../docs/local_pattern_feature_plan.md`.
-For the planned v0.3 local pattern feature schema, read
+For the implemented v0.3 local pattern feature schema, read
 `../../docs/local_pattern_feature_schema_v0_3_plan.md`.

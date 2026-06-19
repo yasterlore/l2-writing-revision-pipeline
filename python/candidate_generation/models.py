@@ -58,6 +58,11 @@ class CandidateSet:
     candidate_set_id: str
     episode_id: str
     source_revision_event_id: str | None
+    local_context_before: dict[str, Any]
+    cursor_pos_before: int | None
+    doc_len_before: int | None
+    selection_start_before: int | None
+    selection_end_before: int | None
     no_oracle_safe: bool
     uses_observed_edit_text: bool
     observed_edit_text_policy: str

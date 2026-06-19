@@ -63,6 +63,14 @@ class CandidateFeature:
     is_local_edit_family_candidate: bool
     is_hold_candidate: bool
     candidate_family_bucket: str
+    context_before_length_bucket: str
+    cursor_at_document_start: bool
+    cursor_at_document_end_before: bool
+    selection_is_collapsed_before: bool
+    selection_span_length_bucket: str
+    left_context_ends_with_space: bool
+    left_context_ends_with_punctuation: bool
+    left_char_class: str
     is_placeholder: bool
     is_hold: bool
     is_local_edit: bool
