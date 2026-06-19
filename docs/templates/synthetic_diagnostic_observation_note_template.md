@@ -5,6 +5,9 @@ Use this template for human review of synthetic diagnostic distribution outputs.
 This note is count-only. Do not paste raw JSONL, generated report bodies,
 candidate text, writing text, or per-episode text details into this file.
 
+For storage and sharing policy, see
+[`../observation_note_storage_and_review_workflow.md`](../observation_note_storage_and_review_workflow.md).
+
 ## 1. Review Metadata
 
 - Date:

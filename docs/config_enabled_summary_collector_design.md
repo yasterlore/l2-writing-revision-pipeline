@@ -327,6 +327,8 @@ columns, and does not add config columns to the no-config summary.
 Completed: `templates/config_enabled_observation_note_template.md` provides a
 count-only observation note template for reviewing config-enabled synthetic
 summaries without treating them as performance metrics.
+For note storage and sharing policy, see
+[Observation note storage and review workflow](observation_note_storage_and_review_workflow.md).
 
 ### Later: Private Validation Design
 
@@ -342,3 +344,4 @@ public repository.
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md)
 - [Default-unchanged config support design](default_unchanged_config_support_design.md)
 - [Config-enabled observation note template](templates/config_enabled_observation_note_template.md)
+- [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md)

@@ -6,6 +6,9 @@ This note is count-only. Do not paste config JSON bodies, raw JSONL, summary
 CSV bodies, candidate score rows, generated report bodies, writing text, or
 per-episode details into this file.
 
+For storage and sharing policy, see
+[`../observation_note_storage_and_review_workflow.md`](../observation_note_storage_and_review_workflow.md).
+
 This note is not model performance evaluation.
 
 ## 1. Review Metadata

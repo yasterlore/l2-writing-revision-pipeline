@@ -32,6 +32,7 @@ Recommended entry points:
 - [Local pattern diagnostic constraint plan](local_pattern_diagnostic_constraint_plan.md): design plan for descriptive diagnostics derived from v0.3 local pattern features.
 - [Diagnostic summary tooling plan](diagnostic_summary_tooling_plan.md): safe summary-only aggregation of descriptive diagnostics.
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md): safe review plan for count-only synthetic diagnostic distributions.
+- [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md): storage and sharing workflow for blank templates and private/local count-only notes.
 - [Synthetic diagnostic observation note template](templates/synthetic_diagnostic_observation_note_template.md): count-only note template for safe human diagnostic review.
 - [Config-enabled observation note template](templates/config_enabled_observation_note_template.md): count-only note template for safe human review of explicit config-enabled summaries.
 - [Public release checklist](public_release_checklist.md): public GitHub readiness checklist.

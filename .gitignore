@@ -32,6 +32,10 @@ tmp/
 temp/
 manual_outputs/
 manual_outputs:*
+private_notes/
+local_notes/
+**/private_notes/
+**/local_notes/
 
 # Real or private participant data: never commit
 private_data/
