@@ -78,15 +78,32 @@ Confirm docs link to:
 
 ## 4. License
 
-`LICENSE` is currently a placeholder.
+`LICENSE` is currently a placeholder, not a final open-source license.
 
 Before public release:
 
 - choose the final project license
 - replace the placeholder with the complete license text
+- make the README license notice match the final LICENSE file
 - confirm dependency license compatibility if needed
+- confirm whether repository citation metadata is needed
+- if citation metadata is added later, make it match the chosen release policy
 
-Do not present the repository as fully licensed until this is resolved.
+Until this is resolved, do not present the repository as fully licensed and do
+not imply that reuse, redistribution, or modification terms are finalized.
+
+## 4.1 Repository Metadata TODO
+
+Before formal public release, decide whether to add or update:
+
+- repository description
+- topics / keywords
+- citation metadata such as `CITATION.cff`
+- release notes
+- authorship and acknowledgement wording
+- funding or institutional metadata, if applicable
+
+Any metadata should match the final license, data policy, and release policy.
 
 ## 5. Security
 
