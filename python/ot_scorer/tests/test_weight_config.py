@@ -3,6 +3,8 @@ from __future__ import annotations
 import copy
 import json
 import math
+import subprocess
+import sys
 import unittest
 from pathlib import Path
 
@@ -115,6 +117,43 @@ class HandWeightConfigTests(unittest.TestCase):
         self.assertNotIn("config_schema_version", score_set.to_json_dict())
         self.assertNotIn("constraint_weights", score_set.to_json_dict())
 
+    def test_validate_cli_valid_config_success(self) -> None:
+        result = run_validate_cli(VALID_CONFIG)
+
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("validation_status=ok", result.stdout)
+        self.assertIn("config_schema_version=hand_weight_config_schema_v0_1", result.stdout)
+        self.assertIn("config_name=synthetic_current_default_like", result.stdout)
+        self.assertIn("constraint_weights_count=3", result.stdout)
+        self.assertIn("active_weights_count=3", result.stdout)
+        assert_cli_output_is_safe(self, result.stdout + result.stderr)
+
+    def test_validate_cli_invalid_config_failure(self) -> None:
+        result = run_validate_cli(INVALID_DIR / "duplicate_constraint_config.json")
+
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("validation_status=fail", result.stdout)
+        self.assertIn("safe_error=duplicate constraint_id", result.stdout)
+        assert_cli_output_is_safe(self, result.stdout + result.stderr)
+
+    def test_validate_cli_rejects_required_invalid_fixtures(self) -> None:
+        expected_errors = {
+            "forbidden_field_config.json": "forbidden config field",
+            "duplicate_constraint_config.json": "duplicate constraint_id",
+            "non_finite_weight_config.json": "non-finite weight",
+            "missing_rationale_config.json": "missing rationale",
+            "expected_action_tuning_policy_config.json": (
+                "unsafe expected_action_usage_policy"
+            ),
+        }
+        for filename, safe_error in expected_errors.items():
+            with self.subTest(filename=filename):
+                result = run_validate_cli(INVALID_DIR / filename)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("validation_status=fail", result.stdout)
+                self.assertIn(f"safe_error={safe_error}", result.stdout)
+                assert_cli_output_is_safe(self, result.stdout + result.stderr)
+
     def assert_invalid_fixture(self, filename: str, expected_fragment: str) -> None:
         with self.assertRaises(WeightConfigError) as context:
             load_hand_weight_config(INVALID_DIR / filename)
@@ -123,6 +162,43 @@ class HandWeightConfigTests(unittest.TestCase):
 
 def valid_config_dict() -> dict[str, object]:
     return copy.deepcopy(json.loads(VALID_CONFIG.read_text(encoding="utf-8")))
+
+
+def run_validate_cli(config_path: Path) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "ot_scorer.validate_weight_config",
+            "--config",
+            str(config_path),
+        ],
+        check=False,
+        cwd=Path.cwd(),
+        text=True,
+        capture_output=True,
+    )
+
+
+def assert_cli_output_is_safe(
+    test_case: unittest.TestCase, combined_output: str
+) -> None:
+    forbidden_fragments = [
+        '"constraint_weights"',
+        '"rationale"',
+        "final_text",
+        "observed_after_text",
+        "gold_label",
+        "teacher_correction",
+        "Synthetic invalid fixture",
+        "expected actions may be used",
+        "manual_outputs/",
+        "private_data/",
+        "real_data/",
+        "participant_data/",
+    ]
+    for fragment in forbidden_fragments:
+        test_case.assertNotIn(fragment, combined_output)
 
 
 if __name__ == "__main__":

@@ -23,6 +23,10 @@ It also defines hand-weight config schema models and a strict validation helper
 for future scoring-weight config files. Those configs are not connected to the
 scorer yet, so default scoring behavior is unchanged.
 
+It also provides a validation CLI for those config files. The CLI prints only a
+safe count summary and does not print config bodies, score output, ranking
+output, evaluation results, expected action details, JSONL content, or raw text.
+
 ## 3. What this component does not do
 
 It does not implement evaluation, F1, calibration, selective prediction, learner-state estimation, or grammar correction.
@@ -49,8 +53,9 @@ Output from diagnostic summary: one JSON file with aggregate counts only.
 
 Input for hand-weight config validation: one synthetic config JSON file.
 
-Output from hand-weight config validation: typed dataclass models in memory.
-No `CandidateScoreSet` output is changed by this validation.
+Output from hand-weight config validation: typed dataclass models in memory, or
+a CLI safe summary containing validation status, schema/config names, and count
+fields. No `CandidateScoreSet` output is changed by this validation.
 
 The output is a feature schema for later experiments.
 
@@ -66,6 +71,9 @@ The output is a feature schema for later experiments.
 8. Optionally read constraint records and compute prototype weighted scores.
 9. Assign deterministic ranks within each episode.
 10. Optionally summarize constraint records into count-only diagnostic JSON.
+11. Optionally validate a synthetic hand-weight config and print only a safe
+    count summary. This does not run scoring and does not connect the config to
+    the scorer.
 
 ## 6. Important data structures
 
@@ -152,6 +160,9 @@ The hand-weight config validator is separate from scoring. It rejects unsafe
 or ambiguous config files before any future loader is connected, but it does
 not change weights, formula, blocking, or tie-break behavior.
 
+The config validation CLI is also separate from scoring. It is a smoke-check
+entry point for schema validation only.
+
 ## 8. Mathematical formulas, if any
 
 The weighted score is:
@@ -223,7 +234,8 @@ config loading, forbidden field rejection, duplicate constraint rejection,
 non-finite weight rejection, active-weight rationale requirements,
 no-oracle-safe reason requirements, unknown constraint rejection, unsafe path
 string rejection, synthetic-only notice requirements, expected-action tuning
-policy rejection, and default scoring behavior remaining unchanged.
+policy rejection, validation CLI success/failure behavior, safe CLI stdout, and
+default scoring behavior remaining unchanged.
 
 ## 15. Known limitations
 

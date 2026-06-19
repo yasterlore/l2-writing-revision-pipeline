@@ -3,14 +3,16 @@
 This document designs a possible future configuration schema for
 hand-designed scoring weights.
 
-It is a design plan only. It does not implement a config loader, change
-scoring weights, change the scoring formula, change deterministic tie-break
-behavior, change constraint generation, add evaluation metrics, or implement
-learner-state estimation.
+It is primarily a design plan. The repository now includes schema models,
+strict validation helpers, and a validation-only CLI, but those pieces do not
+change scoring weights, change the scoring formula, change deterministic
+tie-break behavior, change constraint generation, add evaluation metrics, or
+implement learner-state estimation.
 
-Status after Step 65: Python schema models and a strict validation helper have
-been added in `python/ot_scorer/weight_config.py`. They are not connected to
-the scorer, and default scoring behavior remains unchanged.
+Status after Step 66: Python schema models and a strict validation helper have
+been added in `python/ot_scorer/weight_config.py`, and a validation-only CLI has
+been added in `python/ot_scorer/validate_weight_config.py`. They are not
+connected to the scorer, and default scoring behavior remains unchanged.
 
 The schema described here is intended to make future hand-designed weights
 explicit, interpretable, and auditable before any scoring behavior changes.
@@ -383,9 +385,12 @@ change was added.
 
 ### Step 66: Implement Config Loader With Strict Validation
 
-Add loader and validator only after schema tests are planned.
+Status: completed as a validation-only CLI and repository smoke script. The
+CLI validates synthetic config fixtures and prints safe summary fields only.
+It does not print config bodies, score output, ranking output, evaluation
+results, expected action details, JSONL content, or raw text.
 
-Default behavior must remain unchanged.
+Default behavior remains unchanged. The scorer still has no config option.
 
 ### Step 67: Synthetic Ranking Behavior Diff Smoke Tests
 
