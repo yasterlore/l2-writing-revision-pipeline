@@ -253,6 +253,8 @@ Do not include raw context text in feature or score output.
 
 See [Local pattern feature plan](local_pattern_feature_plan.md) for the
 no-oracle and privacy boundary before implementing local context abstractions.
+The initial schema proposal is in
+[Local pattern feature schema v0.3 plan](local_pattern_feature_schema_v0_3_plan.md).
 
 ### Step C: Add Linguistic Placeholder Constraints
 

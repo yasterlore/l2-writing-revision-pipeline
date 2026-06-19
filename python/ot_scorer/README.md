@@ -243,3 +243,5 @@ For the future linguistic placeholder constraint boundary, read
 `../../docs/linguistic_placeholder_constraint_plan.md`.
 For future no-oracle-safe local pattern features, read
 `../../docs/local_pattern_feature_plan.md`.
+For the planned v0.3 local pattern field schema, read
+`../../docs/local_pattern_feature_schema_v0_3_plan.md`.
