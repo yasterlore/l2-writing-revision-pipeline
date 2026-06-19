@@ -109,6 +109,16 @@ Descriptive constraints may record candidate categories such as hold, local edit
 
 The constraint step must not read local context text, observed edit text, final text, gold labels, teacher corrections, or post-edit context.
 
+## Weighted Scoring Prototype
+
+The weighted OT scorer prototype reads only `ConstraintViolationSet` JSONL.
+
+It may use constraint IDs, violation counts, constraint types, and descriptive candidate-type records. It must not use writing text, observed edit text, final text, gold labels, teacher corrections, or post-edit context.
+
+Leakage-related constraints are blocking. If a candidate violates `NO-LEAKAGE-FLAG`, `NO-OBSERVED-EDIT-TEXT`, or `NO-UNSAFE-CANDIDATE`, it must be marked blocked before ranking.
+
+Prototype ranking is not a correctness label and must not be evaluated as gold accuracy until a separate evaluation design exists.
+
 ## Forbidden Field Names
 
 The audit policy treats the following as forbidden concepts:

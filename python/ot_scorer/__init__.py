@@ -10,9 +10,19 @@ from ot_scorer.constraint_builder import (
 from ot_scorer.models import (
     CandidateFeature,
     CandidateFeatureSet,
+    CandidateScore,
+    CandidateScoreSet,
     Constraint,
+    ConstraintContribution,
     ConstraintViolation,
     ConstraintViolationSet,
+    ConstraintWeight,
+)
+from ot_scorer.scorer import (
+    CONSTRAINT_WEIGHTS,
+    SCORING_POLICY_VERSION,
+    build_candidate_score_set,
+    build_candidate_score_sets,
 )
 
 __all__ = [
@@ -20,9 +30,17 @@ __all__ = [
     "CandidateFeature",
     "CandidateFeatureError",
     "CandidateFeatureSet",
+    "CandidateScore",
+    "CandidateScoreSet",
+    "CONSTRAINT_WEIGHTS",
     "Constraint",
+    "ConstraintContribution",
     "ConstraintViolation",
     "ConstraintViolationSet",
+    "ConstraintWeight",
+    "SCORING_POLICY_VERSION",
+    "build_candidate_score_set",
+    "build_candidate_score_sets",
     "build_feature_set",
     "build_feature_sets",
     "build_constraint_violation_set",
