@@ -258,6 +258,11 @@ no-oracle and privacy boundary before implementing local context abstractions.
 The initial schema proposal is in
 [Local pattern feature schema v0.3 plan](local_pattern_feature_schema_v0_3_plan.md).
 
+The descriptive diagnostic constraint design is in
+[Local pattern diagnostic constraint plan](local_pattern_diagnostic_constraint_plan.md).
+These planned constraints should keep `violation_count=0` and should not affect
+`weighted_score`, blocking, or tie-break behavior.
+
 ### Step C: Add Linguistic Placeholder Constraints
 
 Status: structural descriptive constraints have been added for metadata

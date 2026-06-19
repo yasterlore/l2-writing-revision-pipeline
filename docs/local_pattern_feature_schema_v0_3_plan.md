@@ -424,6 +424,9 @@ Update synthetic fixtures and add targeted tests for each bucket and boolean.
 
 Connect selected local pattern fields to descriptive constraints only.
 
+See [Local pattern diagnostic constraint plan](local_pattern_diagnostic_constraint_plan.md)
+for the proposed constraint IDs, no-oracle boundary, and scoring non-goals.
+
 ### Later: Scoring Review
 
 Do not add these features to `weighted_score` until there is a separate
