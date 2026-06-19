@@ -98,9 +98,24 @@ The collector records:
 - `expected_action_status`
 - `expected_action_path`
 - `evaluation_report_exists`
+- `evaluation_summary_available`
+- `evaluation_episodes_total`
+- `evaluation_episodes_evaluated`
+- `evaluation_exact_match_count`
+- `evaluation_expected_found_count`
+- `evaluation_blocked_expected_count`
 - `content_suppressed`
 
-The collector is not evaluation. It does not calculate F1, accuracy, calibration, selective prediction, or learner-state estimates.
+The collector reads only top-level summary counts from `evaluation_report.json`
+when an active case produced a report. It does not print report contents or
+per-episode details.
+
+The collector is not production evaluation. It does not calculate F1, accuracy,
+calibration, selective prediction, or learner-state estimates.
+
+The collector intentionally does not add `exact_match_rate` to the CSV in this
+version. Count fields are enough for synthetic wiring checks and are less likely
+to be mistaken for research-performance claims.
 
 Evaluation statuses:
 
@@ -201,6 +216,10 @@ When optional evaluation is enabled, stdout reports only `evaluation: ok` or
 must not be committed. Do not paste report contents or JSONL contents into docs.
 
 The summary collector also suppresses JSONL contents. It may count structural fields in `candidate_scores.jsonl`, but it does not print candidate descriptions, contexts, proposed edits, final text, or JSONL rows.
+
+For active evaluation cases, the summary collector may read top-level numeric
+fields from `evaluation_report.json`, but it does not print the report body,
+per-episode records, or any text fragments.
 
 ## What This Is Not
 

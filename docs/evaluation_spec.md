@@ -76,6 +76,19 @@ It rejects paths under `manual_outputs/`, `private_data/`, `real_data/`, and
 evaluation for `active` cases only. `pending` and `missing` cases are reported
 as skipped and do not receive expected-action input.
 
+The summary collector may read top-level numeric fields from
+`evaluation_report.json` for active cases:
+
+- `episodes_total`
+- `episodes_evaluated`
+- `exact_match_count`
+- `expected_found_in_candidates_count`
+- `blocked_expected_count`
+
+It does not print the full report or per-episode details. It also does not copy
+`exact_match_rate` into `summary.csv` in this version, to avoid presenting a
+synthetic wiring check as a research-performance result.
+
 ## Output
 
 The evaluator writes one `EvaluationReport` JSON file.
