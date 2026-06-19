@@ -42,6 +42,16 @@ Milestone 1 is a synthetic-only, no-oracle pipeline foundation:
 
 Start with `docs/milestone_01_pipeline_recap.md` for a beginner-friendly recap.
 
+Milestone 2 adds synthetic-only evaluation wiring:
+
+- synthetic expected action schema
+- explicit `CandidateScore.action_type`
+- optional evaluation at the end of the synthetic E2E pipeline
+- expected action registry for active, pending, and missing cases
+- summary-only evaluation connection checks
+
+See `docs/milestone_02_synthetic_evaluation_recap.md`. This is not production evaluation and does not report F1, accuracy, calibration, or learner-state estimates.
+
 ## Synthetic E2E Pipeline
 
 The current synthetic-only Rust + Python prototype can be run end to end:
