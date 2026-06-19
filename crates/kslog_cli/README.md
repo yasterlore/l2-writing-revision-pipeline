@@ -73,6 +73,27 @@ cargo run -p kslog_cli -- replay tests/fixtures/synthetic/raw_events/valid/delet
 cargo run -p kslog_cli -- extract tests/fixtures/synthetic/raw_events/valid/replacement_case.jsonl
 ```
 
+## Manual Logger E2E Check
+
+Downloaded synthetic output from `apps/logger-web/` should be placed under:
+
+```text
+manual_outputs/logger_web/
+```
+
+Then run:
+
+```bash
+cargo run -p kslog_cli -- validate manual_outputs/logger_web/<file>.jsonl
+cargo run -p kslog_cli -- replay manual_outputs/logger_web/<file>.jsonl
+cargo run -p kslog_cli -- extract manual_outputs/logger_web/<file>.jsonl
+cargo run -p kslog_cli -- build-micro-episodes manual_outputs/logger_web/<file>.jsonl
+cargo run -p kslog_cli -- audit-no-oracle manual_outputs/logger_web/<file>.jsonl
+cargo run -p kslog_cli -- make-safe-view manual_outputs/logger_web/<file>.jsonl
+```
+
+See `docs/manual_e2e_check_guide.md`.
+
 ## Privacy Notes
 
 This CLI must be used with synthetic data in this repository.
@@ -89,4 +110,3 @@ Replay, revision-event extraction, micro-episode construction, and safe views ca
 - It does not estimate learner state.
 - It does not process production or real participant data.
 - It does not export safe-view JSON yet.
-

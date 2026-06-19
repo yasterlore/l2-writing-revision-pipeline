@@ -28,6 +28,8 @@ __pycache__/
 *.log
 tmp/
 temp/
+manual_outputs/
+manual_outputs:*
 
 # Real or private participant data: never commit
 private_data/
