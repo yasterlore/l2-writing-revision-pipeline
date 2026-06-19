@@ -1,0 +1,1 @@
+{"episode_id":"synthetic_session_005:micro:2","expected_action_type":"local_replace_placeholder","expected_source":"synthetic_expected_action_fixture","synthetic_only":true,"notes":"Synthetic expected action for selection_edit_case; range edit is conservatively represented as a local replacement placeholder."}

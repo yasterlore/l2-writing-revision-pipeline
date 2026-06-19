@@ -1,0 +1,1 @@
+{"episode_id":"synthetic_session_004:micro:3","expected_action_type":"local_insert_placeholder","expected_source":"synthetic_expected_action_fixture","synthetic_only":true,"notes":"Synthetic expected action for cursor_movement_case; non-terminal cursor edit is represented as a local insertion placeholder."}

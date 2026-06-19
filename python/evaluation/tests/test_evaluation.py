@@ -23,6 +23,12 @@ SCORES_FIXTURE = Path(
 EXPECTED_FIXTURE = Path(
     "tests/fixtures/synthetic/expected_actions/valid/deletion_expected_actions.jsonl"
 )
+SELECTION_EDIT_EXPECTED_FIXTURE = Path(
+    "tests/fixtures/synthetic/expected_actions/valid/selection_edit_expected_actions.jsonl"
+)
+CURSOR_MOVEMENT_EXPECTED_FIXTURE = Path(
+    "tests/fixtures/synthetic/expected_actions/valid/cursor_movement_expected_actions.jsonl"
+)
 REGISTRY_FIXTURE = Path("tests/fixtures/synthetic/expected_actions/registry.json")
 FORBIDDEN_SCORE_FIXTURE = Path(
     "tests/fixtures/synthetic/candidate_scores/invalid/forbidden_field_candidate_scores.jsonl"
@@ -47,6 +53,23 @@ class EvaluationTests(unittest.TestCase):
 
         self.assertIn("synthetic_session_001:micro:3", expected)
         self.assertTrue(expected["synthetic_session_001:micro:3"].synthetic_only)
+
+    def test_loads_added_synthetic_expected_action_jsonl(self) -> None:
+        selection_expected = load_expected_actions(SELECTION_EDIT_EXPECTED_FIXTURE)
+        cursor_expected = load_expected_actions(CURSOR_MOVEMENT_EXPECTED_FIXTURE)
+
+        self.assertIn("synthetic_session_005:micro:2", selection_expected)
+        self.assertEqual(
+            selection_expected[
+                "synthetic_session_005:micro:2"
+            ].expected_action_type,
+            "local_replace_placeholder",
+        )
+        self.assertIn("synthetic_session_004:micro:3", cursor_expected)
+        self.assertEqual(
+            cursor_expected["synthetic_session_004:micro:3"].expected_action_type,
+            "local_insert_placeholder",
+        )
 
     def test_exact_match_is_computed(self) -> None:
         report = evaluate_score_sets(score_sets(), expected_actions("hold"))
@@ -121,10 +144,27 @@ class EvaluationTests(unittest.TestCase):
         self.assertIsNotNone(lookup.expected_action_path)
         self.assertEqual(lookup.expected_action_path.name, "deletion_expected_actions.jsonl")
 
+    def test_registry_marks_added_expected_action_cases_active(self) -> None:
+        registry = load_expected_action_registry(REGISTRY_FIXTURE)
+
+        selection_lookup = lookup_expected_action_path(registry, "selection_edit_case")
+        cursor_lookup = lookup_expected_action_path(registry, "cursor_movement_case")
+
+        self.assertEqual(selection_lookup.status, "active")
+        self.assertEqual(
+            selection_lookup.expected_action_path.name,
+            "selection_edit_expected_actions.jsonl",
+        )
+        self.assertEqual(cursor_lookup.status, "active")
+        self.assertEqual(
+            cursor_lookup.expected_action_path.name,
+            "cursor_movement_expected_actions.jsonl",
+        )
+
     def test_registry_marks_pending_case(self) -> None:
         registry = load_expected_action_registry(REGISTRY_FIXTURE)
 
-        lookup = lookup_expected_action_path(registry, "selection_edit_case")
+        lookup = lookup_expected_action_path(registry, "simple_typing")
 
         self.assertEqual(lookup.status, "pending")
         self.assertIsNone(lookup.expected_action_path)
