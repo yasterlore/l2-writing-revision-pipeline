@@ -37,6 +37,11 @@ class ScorerTests(unittest.TestCase):
         )
         self.assertEqual(len(score_set.candidate_scores), 4)
         self.assertEqual(score_set.candidate_scores[0].action_type, "hold")
+        self.assertEqual(
+            score_set.candidate_scores[1].generation_rule,
+            "revision_kind_delete_like",
+        )
+        self.assertEqual(score_set.candidate_scores[1].action_family, "local_edit")
 
     def test_leakage_violation_blocks_candidate(self) -> None:
         data = constraint_violation_set()
@@ -104,6 +109,32 @@ class ScorerTests(unittest.TestCase):
             ],
         )
 
+    def test_generation_rule_and_action_family_do_not_change_order(self) -> None:
+        score_set = build_candidate_score_set(constraint_violation_set())
+
+        ordered_metadata = [
+            (score.action_type, score.generation_rule, score.action_family)
+            for score in score_set.candidate_scores
+        ]
+
+        self.assertEqual(
+            ordered_metadata,
+            [
+                ("hold", "always_include_hold", "hold"),
+                (
+                    "local_delete_placeholder",
+                    "revision_kind_delete_like",
+                    "local_edit",
+                ),
+                (
+                    "article_fix_placeholder",
+                    "article_placeholder_rule",
+                    "grammar_placeholder",
+                ),
+                ("other_placeholder", "synthetic_other_placeholder_rule", "other"),
+            ],
+        )
+
     def test_ranks_are_unique_within_episode(self) -> None:
         score_set = build_candidate_score_set(constraint_violation_set())
         ranks = [score.rank for score in score_set.candidate_scores]
@@ -131,6 +162,8 @@ class ScorerTests(unittest.TestCase):
             rows = [json.loads(line) for line in output_text.splitlines()]
             self.assertIn("candidate_scores", rows[0])
             self.assertIn("action_type", rows[0]["candidate_scores"][0])
+            self.assertIn("generation_rule", rows[0]["candidate_scores"][0])
+            self.assertIn("action_family", rows[0]["candidate_scores"][0])
 
     def test_source_does_not_use_eval_exec_or_pickle(self) -> None:
         source_dir = Path("python/ot_scorer")
@@ -209,6 +242,10 @@ def candidate_violations(
         "candidate_id": candidate_id,
         "episode_id": "synthetic_session_001:micro:3",
         "action_type": action_type,
+        "generation_rule": generation_rule_for_action(action_type),
+        "action_family": action_family_for_flags(
+            hold=hold, local=local, grammar=grammar, placeholder=placeholder
+        ),
         "violations": [
             penalty("NO-LEAKAGE-FLAG"),
             penalty("NO-OBSERVED-EDIT-TEXT"),
@@ -219,6 +256,30 @@ def candidate_violations(
             descriptive("PLACEHOLDER-CANDIDATE", placeholder),
         ],
     }
+
+
+def generation_rule_for_action(action_type: str) -> str:
+    if action_type == "hold":
+        return "always_include_hold"
+    if action_type == "local_delete_placeholder":
+        return "revision_kind_delete_like"
+    if action_type == "article_fix_placeholder":
+        return "article_placeholder_rule"
+    return "synthetic_other_placeholder_rule"
+
+
+def action_family_for_flags(
+    *, hold: bool, local: bool, grammar: bool, placeholder: bool
+) -> str:
+    if hold:
+        return "hold"
+    if local:
+        return "local_edit"
+    if grammar:
+        return "grammar_placeholder"
+    if placeholder:
+        return "other"
+    return "other"
 
 
 def penalty(constraint_id: str) -> dict[str, object]:

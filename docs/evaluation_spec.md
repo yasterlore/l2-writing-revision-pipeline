@@ -22,12 +22,19 @@ The evaluator reads:
 - `candidate_scores`
 - `candidate_id`
 - `action_type`
+- `generation_rule`
+- `action_family`
 - `rank`
 - `blocked`
 
 `candidate_id` is an identifier only. The evaluator compares synthetic expected
 actions against the explicit `CandidateScore.action_type` field and does not
 infer action type from candidate-id naming conventions.
+
+`generation_rule` and `action_family` may be present for interpretability, but
+the current evaluator does not use them for exact-match comparison. This keeps
+synthetic evaluation tied to the candidate action category and prevents
+debugging metadata from becoming an implicit expected label.
 
 ### Synthetic Expected Action JSONL
 

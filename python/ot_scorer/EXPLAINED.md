@@ -66,9 +66,11 @@ The output is a feature schema for later experiments.
 
 `ConstraintWeight` defines a fixed prototype weight for a constraint.
 
-`CandidateScore` stores candidate id, episode id, explicit `action_type`, weighted score, block status, block reasons, rank, and constraint contributions.
+`CandidateScore` stores candidate id, episode id, explicit `action_type`, `generation_rule`, `action_family`, weighted score, block status, block reasons, rank, and constraint contributions.
 
 `candidate_id` identifies the candidate. `action_type` describes the candidate action category and is copied from candidate generation through constraint generation into score output.
+
+`generation_rule` records which candidate-generation rule produced the candidate. `action_family` records the broad candidate family, such as hold, local edit, grammar placeholder, or other. These fields are carried for interpretation and debugging; they do not change the score formula or rank policy.
 
 `CandidateScoreSet` groups candidate scores for one episode.
 
@@ -82,7 +84,7 @@ The constraint schema separates penalty constraints from descriptive constraints
 
 The scorer uses blocking constraints as safety gates. It does not learn from data and does not use gold labels.
 
-The score output includes `action_type` explicitly so evaluation does not need to infer candidate class from the string shape of `candidate_id`.
+The score output includes `action_type` explicitly so evaluation does not need to infer candidate class from the string shape of `candidate_id`. It also carries `generation_rule` and `action_family` so later analysis can inspect why a candidate exists without adding candidate descriptions, proposed edit payloads, local context text, or observed edit text to the score output.
 
 ## 8. Mathematical formulas, if any
 

@@ -116,6 +116,8 @@ class EvaluationTests(unittest.TestCase):
     def test_evaluation_uses_action_type_not_candidate_id_convention(self) -> None:
         data = score_sets()
         data[0]["candidate_scores"][0]["candidate_id"] = "synthetic_arbitrary_id_001"
+        data[0]["candidate_scores"][0]["generation_rule"] = "changed_rule_name"
+        data[0]["candidate_scores"][0]["action_family"] = "changed_family_name"
 
         report = evaluate_score_sets(data, expected_actions("hold"))
 
@@ -321,6 +323,8 @@ def candidate_score(action_type: str, rank: int, *, blocked: bool) -> dict[str, 
         "candidate_id": f"synthetic_session_001:micro:3:cand:{rank:02d}:{action_type}",
         "episode_id": "synthetic_session_001:micro:3",
         "action_type": action_type,
+        "generation_rule": generation_rule_for_action(action_type),
+        "action_family": action_family_for_action(action_type),
         "weighted_score": 0.0,
         "blocked": blocked,
         "block_reasons": [],
@@ -329,6 +333,26 @@ def candidate_score(action_type: str, rank: int, *, blocked: bool) -> dict[str, 
         "scoring_policy_version": "weighted_ot_scorer_policy_v0_1",
         "no_oracle_safe": not blocked,
     }
+
+
+def generation_rule_for_action(action_type: str) -> str:
+    if action_type == "hold":
+        return "always_include_hold"
+    if action_type == "local_delete_placeholder":
+        return "revision_kind_delete_like"
+    if action_type == "article_fix_placeholder":
+        return "article_placeholder_rule"
+    return "synthetic_other_placeholder_rule"
+
+
+def action_family_for_action(action_type: str) -> str:
+    if action_type == "hold":
+        return "hold"
+    if action_type.startswith("local_"):
+        return "local_edit"
+    if action_type.endswith("_fix_placeholder"):
+        return "grammar_placeholder"
+    return "other"
 
 
 def write_registry(directory: Path, entries: list[dict[str, object]]) -> Path:

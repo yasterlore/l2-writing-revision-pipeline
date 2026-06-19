@@ -36,6 +36,14 @@ class ConstraintTests(unittest.TestCase):
             "synthetic_session_001:micro:3:candidate_set:features:constraints",
         )
         self.assertEqual(len(violation_set.candidate_violations), 3)
+        self.assertEqual(
+            violation_set.candidate_violations[1].generation_rule,
+            "revision_kind_delete_like",
+        )
+        self.assertEqual(
+            violation_set.candidate_violations[1].action_family,
+            "local_edit",
+        )
 
     def test_leakage_flags_get_no_leakage_flag_violation(self) -> None:
         data = candidate_feature_set()
