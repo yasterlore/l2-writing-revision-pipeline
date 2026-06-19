@@ -67,3 +67,11 @@ scripts/check_synthetic_policy.sh
 CI uses synthetic fixtures only. It does not process production data or real participant data.
 
 The synthetic policy check rejects private/real-data-looking paths and checks public synthetic examples plus valid fixtures for no-oracle forbidden fields such as `final_text`, `observed_after_text`, `gold_label`, `teacher_correction`, `answer_key`, and `future_context`. Invalid fixtures are excluded because some intentionally contain forbidden examples for validator tests.
+
+CI also runs one synthetic E2E smoke test:
+
+```bash
+scripts/run_synthetic_e2e_pipeline.sh tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl deletion_case_ci
+```
+
+This is a connection check, not evaluation. It does not report F1, accuracy, calibration, or learner-state estimates.
