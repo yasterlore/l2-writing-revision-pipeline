@@ -283,6 +283,8 @@ For the Step 16 deletion-diff fix, regenerate at least:
 
 Run the full CLI pipeline again, including `diagnose-replay` if `replay` fails. Record only summary fields. Do not paste JSONL lines or text fragments.
 
+Step 17 confirmed that the three Step 16 target cases (`deletion`, `selection_edit`, and `cursor_movement`) pass the full Rust CLI pipeline after rerun. Keep the same summary-only recording rule for future reruns.
+
 ## How To Read Errors
 
 Validation errors usually point to schema, sequence, timestamp, cursor, selection, unknown-field, or forbidden-field problems.
