@@ -12,7 +12,7 @@ As of this document update, all seven manual synthetic cases have been checked w
 
 The manual JSONL contents are not pasted here. Some CLI error messages can include tiny text snippets; those snippets are intentionally paraphrased below as non-content error categories.
 
-Note: the results in this table were produced before the Step 16 `logger-web` deletion-diff fix. The `deletion`, `selection_edit`, and `cursor_movement` manual outputs need to be regenerated with the updated logger before their replay status can be re-evaluated.
+Note: the seven-case table below preserves the first manual run, including the pre-Step 16 replay mismatches. Step 17 reran the three previously failing cases after the Step 16 `logger-web` deletion-diff fix; those rerun results are recorded in the Step 17 section below.
 
 | case name | manual file path | validate result | event count | replay result | final_doc_len | extract summary | micro_episode count | audit-no-oracle result | safe-view result | schema mismatch | notes | JSONL kept out of Git |
 | --- | --- | --- | ---: | --- | ---: | --- | ---: | --- | --- | --- | --- | --- |
@@ -76,6 +76,51 @@ The three previously failing manual synthetic cases must be regenerated and reru
 - `cursor_movement`
 
 Record only summary output from the rerun.
+
+## Step 17 Post-Fix Rerun Summary
+
+After the Step 16 `logger-web` deletion-diff fix, the three cases that previously failed replay were rerun from summary-only CLI output. All three now pass the full Rust CLI pipeline.
+
+No JSONL lines, text fragments, final text, or local context are recorded here. `manual_outputs/` remains Git-ignored.
+
+| case name | validate | events | replay | final_doc_len | final_text_suppressed | extract | extract summary | build-micro-episodes | micro summary | audit-no-oracle | audit summary | make-safe-view | safe-view summary | replay mismatch | schema mismatch | JSONL kept out of Git | notes |
+| --- | --- | ---: | --- | ---: | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| deletion | ok | n/a | ok | n/a | true | ok | summary-only result provided; exact counts not recorded in shared summary | ok | summary-only result provided | ok | summary-only result provided | ok | summary-only result provided | resolved | none | yes | full pipeline passed after Step 16 |
+| selection_edit | ok | 119 | ok | 14 | true | ok | revision_events=119; insertion=20; deletion=1; replacement=0; selection_range_edit=0; paste=0; composition_commit=0; unsupported=98 | ok | episodes=119; revision_like_episodes=1 | ok | issues=119; unsafe_or_blocking_issues=119 | ok | safe_views=119; candidate_generation_audit_issues=0 | resolved | none | yes | replay passed; still not classified as `selection_range_edit`, so classification coverage remains an improvement candidate |
+| cursor_movement | ok | 107 | ok | 20 | true | ok | revision_events=107; insertion=20; deletion=0; replacement=0; selection_range_edit=0; paste=0; composition_commit=0; unsupported=87 | ok | episodes=107; revision_like_episodes=0 | ok | issues=107; unsafe_or_blocking_issues=107 | ok | safe_views=107; candidate_generation_audit_issues=0 | resolved | none | yes | replay passed; local edit from cursor movement may still not be captured as revision-like, so classification coverage remains an improvement candidate |
+
+Conclusion:
+
+- The earlier replay mismatches for `deletion`, `selection_edit`, and `cursor_movement` are resolved after the Step 16 logger fix.
+- No RawEvent schema mismatch was reported for the rerun cases.
+- Rust replay remained strict; the fix was on the logger-side deletion diff inference path.
+- Remaining work is classification coverage, not replay compatibility.
+
+## Step 16 Deletion Rerun Notes
+
+Three post-fix deletion manual artifacts were added under ignored `manual_outputs/logger_web/` paths. Their filenames include the command name, so they appear to be separate manual outputs rather than one shared JSONL passed through the full pipeline.
+
+| artifact label | command checked | result | event count | replay diagnostic | notes | JSONL kept out of Git |
+| --- | --- | --- | ---: | --- | --- | --- |
+| `validate manual_outputs:logger_web:deletion.jsonl` | `validate` | ok | 113 | `diagnose-replay` also reports ok | summary only; no JSONL content copied | yes |
+| `replay manual_outputs:logger_web:deletion.jsonl` | `replay` | ok | 108 | `diagnose-replay` also reports ok | summary only; final text suppressed | yes |
+| `build-micro-episodes manual_outputs:logger_web:deletion.jsonl` | `build-micro-episodes` | failed before micro-episode construction | n/a | `deleted_text_mismatch` at failure line/source seq 82; probable layer `logger_diff_estimation`; content suppressed | still needs focused deletion triage | yes |
+
+Because these are separate files, the next check should regenerate one deletion JSONL with the updated logger and run the full command sequence against that same file:
+
+```bash
+cargo run -p kslog_cli -- validate manual_outputs/logger_web/<deletion-file>.jsonl
+cargo run -p kslog_cli -- replay manual_outputs/logger_web/<deletion-file>.jsonl
+cargo run -p kslog_cli -- diagnose-replay manual_outputs/logger_web/<deletion-file>.jsonl
+cargo run -p kslog_cli -- extract manual_outputs/logger_web/<deletion-file>.jsonl
+cargo run -p kslog_cli -- build-micro-episodes manual_outputs/logger_web/<deletion-file>.jsonl
+cargo run -p kslog_cli -- audit-no-oracle manual_outputs/logger_web/<deletion-file>.jsonl
+cargo run -p kslog_cli -- make-safe-view manual_outputs/logger_web/<deletion-file>.jsonl
+```
+
+Do not paste JSONL lines or text snippets from any failing command. Use `diagnose-replay` for replay failures.
+
+This intermediate note is superseded by the Step 17 post-fix rerun summary above for the final replay-compatibility conclusion.
 
 ### deletion
 
