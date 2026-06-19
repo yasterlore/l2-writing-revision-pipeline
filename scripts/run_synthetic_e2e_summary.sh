@@ -45,7 +45,7 @@ if [ ! -s "$file_list" ]; then
   exit 2
 fi
 
-printf '%s\n' "case_name,pipeline_status,failed_stage,output_dir,score_sets_count,candidates_count,blocked_candidates_count,unblocked_candidates_count,rank1_available,evaluation_status,expected_action_status,expected_action_path,evaluation_report_exists,content_suppressed" > "$summary_csv"
+printf '%s\n' "case_name,pipeline_status,failed_stage,output_dir,score_sets_count,candidates_count,blocked_candidates_count,unblocked_candidates_count,rank1_available,evaluation_status,expected_action_status,expected_action_path,evaluation_report_exists,evaluation_summary_available,evaluation_episodes_total,evaluation_episodes_evaluated,evaluation_exact_match_count,evaluation_expected_found_count,evaluation_blocked_expected_count,content_suppressed" > "$summary_csv"
 
 echo "synthetic_e2e_summary: start"
 echo "input_dir: $input_dir"
@@ -72,6 +72,12 @@ while IFS= read -r input_file; do
   expected_action_status="missing"
   expected_action_path=""
   evaluation_report_exists="false"
+  evaluation_summary_available="false"
+  evaluation_episodes_total="0"
+  evaluation_episodes_evaluated="0"
+  evaluation_exact_match_count="0"
+  evaluation_expected_found_count="0"
+  evaluation_blocked_expected_count="0"
 
   lookup_result=$(
     env PYTHONPATH=python python3 -m evaluation.expected_action_registry lookup \
@@ -81,7 +87,7 @@ while IFS= read -r input_file; do
     pipeline_status="fail"
     failed_stage="expected_action_registry"
     overall_status=1
-    printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,true\n' \
+    printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,true\n' \
       "$case_name" \
       "$pipeline_status" \
       "$failed_stage" \
@@ -94,7 +100,13 @@ while IFS= read -r input_file; do
       "fail" \
       "error" \
       "" \
-      "$evaluation_report_exists" >> "$summary_csv"
+      "$evaluation_report_exists" \
+      "$evaluation_summary_available" \
+      "$evaluation_episodes_total" \
+      "$evaluation_episodes_evaluated" \
+      "$evaluation_exact_match_count" \
+      "$evaluation_expected_found_count" \
+      "$evaluation_blocked_expected_count" >> "$summary_csv"
     printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %s\n' \
       "$case_name" \
       "$pipeline_status" \
@@ -144,6 +156,26 @@ while IFS= read -r input_file; do
       if [ -f "$output_dir/evaluation_report.json" ]; then
         evaluation_status="ok"
         evaluation_report_exists="true"
+        evaluation_counts=$(
+          python3 -c 'import json, sys
+path = sys.argv[1]
+with open(path, "r", encoding="utf-8") as handle:
+    report = json.load(handle)
+print(",".join(str(report.get(key, 0)) for key in (
+    "episodes_total",
+    "episodes_evaluated",
+    "exact_match_count",
+    "expected_found_in_candidates_count",
+    "blocked_expected_count",
+)))' \
+            "$output_dir/evaluation_report.json"
+        )
+        evaluation_summary_available="true"
+        evaluation_episodes_total=$(echo "$evaluation_counts" | cut -d, -f1)
+        evaluation_episodes_evaluated=$(echo "$evaluation_counts" | cut -d, -f2)
+        evaluation_exact_match_count=$(echo "$evaluation_counts" | cut -d, -f3)
+        evaluation_expected_found_count=$(echo "$evaluation_counts" | cut -d, -f4)
+        evaluation_blocked_expected_count=$(echo "$evaluation_counts" | cut -d, -f5)
       else
         evaluation_status="fail"
         overall_status=1
@@ -188,7 +220,7 @@ print(f"{score_sets},{candidates},{blocked},{candidates - blocked},{str(rank1).l
     fi
   fi
 
-  printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,true\n' \
+  printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,true\n' \
     "$case_name" \
     "$pipeline_status" \
     "$failed_stage" \
@@ -201,7 +233,13 @@ print(f"{score_sets},{candidates},{blocked},{candidates - blocked},{str(rank1).l
     "$evaluation_status" \
     "$expected_action_status" \
     "$expected_action_path" \
-    "$evaluation_report_exists" >> "$summary_csv"
+    "$evaluation_report_exists" \
+    "$evaluation_summary_available" \
+    "$evaluation_episodes_total" \
+    "$evaluation_episodes_evaluated" \
+    "$evaluation_exact_match_count" \
+    "$evaluation_expected_found_count" \
+    "$evaluation_blocked_expected_count" >> "$summary_csv"
 
   printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %s\n' \
     "$case_name" \
