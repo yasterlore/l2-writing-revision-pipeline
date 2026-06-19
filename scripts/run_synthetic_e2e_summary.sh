@@ -2,16 +2,17 @@
 set -eu
 
 usage() {
-  echo "Usage: scripts/run_synthetic_e2e_summary.sh [input_dir]" >&2
+  echo "Usage: scripts/run_synthetic_e2e_summary.sh [input_dir] [registry.json]" >&2
   echo "Runs synthetic raw-event fixtures through the E2E pipeline and prints summary only." >&2
 }
 
-if [ "$#" -gt 1 ]; then
+if [ "$#" -gt 2 ]; then
   usage
   exit 2
 fi
 
 input_dir=${1:-tests/fixtures/synthetic/raw_events/valid}
+registry_path=${2:-tests/fixtures/synthetic/expected_actions/registry.json}
 
 case "$input_dir" in
   *manual_outputs* | *private_data* | *real_data* | *participant_data* )
@@ -22,6 +23,12 @@ esac
 
 if [ ! -d "$input_dir" ]; then
   echo "Input directory does not exist: $input_dir" >&2
+  usage
+  exit 2
+fi
+
+if [ ! -f "$registry_path" ]; then
+  echo "Expected action registry does not exist: $registry_path" >&2
   usage
   exit 2
 fi
@@ -38,14 +45,15 @@ if [ ! -s "$file_list" ]; then
   exit 2
 fi
 
-printf '%s\n' "case_name,pipeline_status,failed_stage,output_dir,score_sets_count,candidates_count,blocked_candidates_count,unblocked_candidates_count,rank1_available,content_suppressed" > "$summary_csv"
+printf '%s\n' "case_name,pipeline_status,failed_stage,output_dir,score_sets_count,candidates_count,blocked_candidates_count,unblocked_candidates_count,rank1_available,evaluation_status,expected_action_status,expected_action_path,evaluation_report_exists,content_suppressed" > "$summary_csv"
 
 echo "synthetic_e2e_summary: start"
 echo "input_dir: $input_dir"
+echo "expected_action_registry: $registry_path"
 echo "summary_csv: $summary_csv"
 echo "content_suppressed: true"
-printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %s\n' \
-  "case_name" "status" "failed_stage" "sets" "candidates" "blocked" "unblocked" "rank1" "output_dir"
+printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %s\n' \
+  "case_name" "status" "failed_stage" "sets" "candidates" "blocked" "unblocked" "rank1" "evaluation" "expected" "output_dir"
 
 overall_status=0
 
@@ -60,9 +68,87 @@ while IFS= read -r input_file; do
   blocked_candidates_count="0"
   unblocked_candidates_count="0"
   rank1_available="false"
+  evaluation_status="skipped_no_registry"
+  expected_action_status="missing"
+  expected_action_path=""
+  evaluation_report_exists="false"
 
-  if scripts/run_synthetic_e2e_pipeline.sh "$input_file" "$case_name" > "$log_file" 2>&1; then
+  lookup_result=$(
+    env PYTHONPATH=python python3 -m evaluation.expected_action_registry lookup \
+      --registry "$registry_path" \
+      --case-name "$case_name"
+  ) || {
+    pipeline_status="fail"
+    failed_stage="expected_action_registry"
+    overall_status=1
+    printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,true\n' \
+      "$case_name" \
+      "$pipeline_status" \
+      "$failed_stage" \
+      "$output_dir" \
+      "$score_sets_count" \
+      "$candidates_count" \
+      "$blocked_candidates_count" \
+      "$unblocked_candidates_count" \
+      "$rank1_available" \
+      "fail" \
+      "error" \
+      "" \
+      "$evaluation_report_exists" >> "$summary_csv"
+    printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %s\n' \
+      "$case_name" \
+      "$pipeline_status" \
+      "$failed_stage" \
+      "$score_sets_count" \
+      "$candidates_count" \
+      "$blocked_candidates_count" \
+      "$unblocked_candidates_count" \
+      "$rank1_available" \
+      "fail" \
+      "error" \
+      "$output_dir"
+    continue
+  }
+  expected_action_status=$(printf '%s\n' "$lookup_result" | cut -f1)
+  expected_action_path=$(printf '%s\n' "$lookup_result" | cut -f2)
+
+  case "$expected_action_status" in
+    active )
+      evaluation_status="fail"
+      ;;
+    pending )
+      evaluation_status="skipped_pending"
+      ;;
+    missing )
+      evaluation_status="skipped_missing"
+      ;;
+    * )
+      evaluation_status="fail"
+      ;;
+  esac
+
+  if [ "$expected_action_status" = "active" ]; then
+    pipeline_command_status=0
+    scripts/run_synthetic_e2e_pipeline.sh \
+      "$input_file" \
+      "$case_name" \
+      "$expected_action_path" > "$log_file" 2>&1 || pipeline_command_status=$?
+  else
+    pipeline_command_status=0
+    scripts/run_synthetic_e2e_pipeline.sh "$input_file" "$case_name" > "$log_file" 2>&1 || pipeline_command_status=$?
+  fi
+
+  if [ "$pipeline_command_status" -eq 0 ]; then
     pipeline_status="ok"
+    if [ "$expected_action_status" = "active" ]; then
+      if [ -f "$output_dir/evaluation_report.json" ]; then
+        evaluation_status="ok"
+        evaluation_report_exists="true"
+      else
+        evaluation_status="fail"
+        overall_status=1
+      fi
+    fi
     if [ -f "$output_dir/candidate_scores.jsonl" ]; then
       counts=$(
         python3 -c 'import json, sys
@@ -102,7 +188,7 @@ print(f"{score_sets},{candidates},{blocked},{candidates - blocked},{str(rank1).l
     fi
   fi
 
-  printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,true\n' \
+  printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,true\n' \
     "$case_name" \
     "$pipeline_status" \
     "$failed_stage" \
@@ -111,9 +197,13 @@ print(f"{score_sets},{candidates},{blocked},{candidates - blocked},{str(rank1).l
     "$candidates_count" \
     "$blocked_candidates_count" \
     "$unblocked_candidates_count" \
-    "$rank1_available" >> "$summary_csv"
+    "$rank1_available" \
+    "$evaluation_status" \
+    "$expected_action_status" \
+    "$expected_action_path" \
+    "$evaluation_report_exists" >> "$summary_csv"
 
-  printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %s\n' \
+  printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %s\n' \
     "$case_name" \
     "$pipeline_status" \
     "$failed_stage" \
@@ -122,6 +212,8 @@ print(f"{score_sets},{candidates},{blocked},{candidates - blocked},{str(rank1).l
     "$blocked_candidates_count" \
     "$unblocked_candidates_count" \
     "$rank1_available" \
+    "$evaluation_status" \
+    "$expected_action_status" \
     "$output_dir"
 done < "$file_list"
 
@@ -129,5 +221,6 @@ echo "synthetic_e2e_summary: complete"
 echo "summary_csv: $summary_csv"
 echo "content_suppressed: true"
 echo "evaluation_metrics_included: false"
+echo "evaluation_report_contents_suppressed: true"
 
 exit "$overall_status"

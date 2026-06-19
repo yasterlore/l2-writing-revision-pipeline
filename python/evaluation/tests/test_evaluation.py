@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -187,6 +189,27 @@ class EvaluationTests(unittest.TestCase):
 
                     with self.assertRaises(ExpectedActionRegistryError):
                         load_expected_action_registry(registry_path)
+
+    def test_registry_cli_lookup_outputs_status_and_path_only(self) -> None:
+        result = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "evaluation.expected_action_registry",
+                "lookup",
+                "--registry",
+                str(REGISTRY_FIXTURE),
+                "--case-name",
+                "deletion_case",
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+
+        self.assertTrue(result.stdout.startswith("active\t"))
+        self.assertIn("deletion_expected_actions.jsonl", result.stdout)
+        self.assertNotIn("expected_action_type", result.stdout)
 
     def test_cli_writes_report_without_forbidden_metrics_or_fields(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

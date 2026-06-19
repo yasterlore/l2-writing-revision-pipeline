@@ -64,6 +64,10 @@ private/manual-looking paths. It does not read expected-action JSONL contents.
 It rejects paths under `manual_outputs/`, `private_data/`, `real_data/`, and
 `participant_data/`.
 
+`scripts/run_synthetic_e2e_summary.sh` uses this registry to run optional
+evaluation for `active` cases only. `pending` and `missing` cases are reported
+as skipped and do not receive expected-action input.
+
 ## Output
 
 The evaluator writes one `EvaluationReport` JSON file.
