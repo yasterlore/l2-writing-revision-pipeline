@@ -171,8 +171,10 @@ diagnostic summary generation succeeded for synthetic cases.
 
 ### Step 56: Synthetic Diagnostic Observation Note Template
 
-Create a template for local, count-only observations. It should avoid JSONL
-bodies, report bodies, per-episode text, and performance claims.
+Completed in
+[`templates/synthetic_diagnostic_observation_note_template.md`](templates/synthetic_diagnostic_observation_note_template.md).
+Use it for local, count-only observations. It avoids JSONL bodies, report
+bodies, per-episode text, expected-action feedback, and performance claims.
 
 ### Step 57: Non-Leaky Linguistic Constraint Design
 
