@@ -7,6 +7,9 @@ candidate text, writing text, or per-episode text details into this file.
 
 For storage and sharing policy, see
 [`../observation_note_storage_and_review_workflow.md`](../observation_note_storage_and_review_workflow.md).
+If public sharing of a filled note is exceptionally considered, use
+[`../filled_observation_note_public_sharing_checklist.md`](../filled_observation_note_public_sharing_checklist.md)
+before committing anything.
 
 ## 1. Review Metadata
 
