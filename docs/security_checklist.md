@@ -6,6 +6,9 @@ Use this checklist when adding implementation.
 - [ ] Does not read or write real participant data.
 - [ ] Treats JSONL input as untrusted.
 - [ ] Rejects malformed and oversized input where applicable.
+- [ ] For raw event JSONL, validates one JSON object per line.
+- [ ] For raw event JSONL, rejects no-oracle forbidden fields such as `final_text`, `observed_after_text`, and `gold_label`.
+- [ ] For raw event JSONL, checks basic `seq`, timestamp, cursor, and selection invariants before replay.
 - [ ] Adds tests for invalid and adversarial input where applicable.
 - [ ] Does not hard-code secrets or personal data.
 - [ ] Does not introduce network access unless explicitly required.
