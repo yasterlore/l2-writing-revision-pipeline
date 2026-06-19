@@ -19,6 +19,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "kslog_micro_episode"
+version = "0.1.0"
+dependencies = [
+ "kslog_extract",
+ "kslog_schema",
+ "kslog_validate",
+ "serde_json",
+]
+
+[[package]]
 name = "kslog_replay"
 version = "0.1.0"
 dependencies = [
