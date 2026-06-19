@@ -5,9 +5,11 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from ot_scorer.constraint_builder import build_constraint_violation_set
 from ot_scorer.diagnostic_summary import summarize_constraint_violation_sets
 from ot_scorer.loader import CandidateFeatureError
 from ot_scorer.summarize_diagnostics import run
+from ot_scorer.tests.test_constraints import candidate_feature_set
 from ot_scorer.violation_set_loader import load_constraint_violation_sets
 
 FIXTURE = Path(
@@ -65,6 +67,24 @@ class DiagnosticSummaryTests(unittest.TestCase):
         self.assertEqual(counts["TENSE-PLACEHOLDER-CANDIDATE"], 1)
         self.assertEqual(counts["PREPOSITION-PLACEHOLDER-CANDIDATE"], 1)
         self.assertEqual(counts["PUNCTUATION-PLACEHOLDER-CANDIDATE"], 1)
+
+    def test_non_leaky_linguistic_counts_are_observed_counts(self) -> None:
+        violation_set = build_constraint_violation_set(candidate_feature_set())
+        summary = summarize_constraint_violation_sets([violation_set.to_json_dict()])
+        counts = summary["non_leaky_linguistic_constraint_counts"]
+
+        self.assertEqual(
+            counts["ARTICLE-CANDIDATE-LOCAL-CONTEXT-AVAILABLE"],
+            1,
+        )
+        self.assertEqual(
+            counts["GRAMMAR-CANDIDATE-LEFT-CHAR-CLASS-RECORDED"],
+            1,
+        )
+        self.assertEqual(
+            counts["GRAMMAR-CANDIDATE-SELECTION-CONTEXT-RECORDED"],
+            1,
+        )
 
     def test_summary_excludes_raw_text_and_forbidden_fields(self) -> None:
         summary = summarize_constraint_violation_sets(

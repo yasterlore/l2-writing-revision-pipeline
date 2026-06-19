@@ -297,6 +297,133 @@ class ConstraintTests(unittest.TestCase):
             with self.subTest(constraint_id=constraint_id):
                 assert_descriptive_observed(violation_set, index, constraint_id)
 
+    def test_identifies_non_leaky_local_context_linguistic_diagnostics(self) -> None:
+        data = candidate_feature_set()
+        data["candidate_features"] = [
+            grammar_placeholder_feature(
+                "article_fix_placeholder",
+                "article_placeholder_rule",
+            ),
+            grammar_placeholder_feature(
+                "number_fix_placeholder",
+                "number_placeholder_rule",
+            ),
+            grammar_placeholder_feature(
+                "sva_fix_placeholder",
+                "sva_placeholder_rule",
+            ),
+            grammar_placeholder_feature(
+                "tense_fix_placeholder",
+                "tense_placeholder_rule",
+            ),
+            grammar_placeholder_feature(
+                "preposition_fix_placeholder",
+                "preposition_placeholder_rule",
+            ),
+        ]
+
+        violation_set = build_constraint_violation_set(data)
+
+        for index, constraint_id in enumerate(
+            [
+                "ARTICLE-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+                "NUMBER-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+                "SVA-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+                "TENSE-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+                "PREPOSITION-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+            ]
+        ):
+            with self.subTest(constraint_id=constraint_id):
+                assert_descriptive_observed(violation_set, index, constraint_id)
+
+    def test_empty_context_suppresses_local_context_available_diagnostic(self) -> None:
+        data = candidate_feature_set()
+        data["candidate_features"] = [
+            feature_with_local_patterns(
+                action_type="article_fix_placeholder",
+                context_before_length_bucket="empty",
+            )
+        ]
+
+        violation = find_violation(
+            build_constraint_violation_set(data),
+            0,
+            "ARTICLE-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+        )
+
+        self.assertFalse(violation["observed"])
+        self.assertEqual(violation["constraint_type"], "descriptive")
+        self.assertEqual(violation["severity"], "info")
+        self.assertEqual(violation["violation_count"], 0)
+
+    def test_identifies_punctuation_non_leaky_diagnostics(self) -> None:
+        data = candidate_feature_set()
+        data["candidate_features"] = [
+            feature_with_local_patterns(
+                action_type="punctuation_fix_placeholder",
+                generation_rule="punctuation_placeholder_rule",
+                left_context_ends_with_punctuation=True,
+                left_context_ends_with_space=False,
+            ),
+            feature_with_local_patterns(
+                action_type="punctuation_fix_placeholder",
+                generation_rule="punctuation_placeholder_rule",
+                left_context_ends_with_punctuation=False,
+                left_context_ends_with_space=True,
+            ),
+        ]
+
+        violation_set = build_constraint_violation_set(data)
+
+        assert_descriptive_observed(
+            violation_set,
+            0,
+            "PUNCTUATION-CANDIDATE-LEFT-PUNCTUATION-AWARE",
+        )
+        assert_descriptive_observed(
+            violation_set,
+            1,
+            "PUNCTUATION-CANDIDATE-LEFT-SPACE-AWARE",
+        )
+
+    def test_identifies_grammar_context_recorded_diagnostics(self) -> None:
+        data = candidate_feature_set()
+        data["candidate_features"] = [
+            feature_with_local_patterns(
+                left_char_class="punctuation",
+                selection_is_collapsed_before=True,
+            ),
+            feature_with_local_patterns(
+                left_char_class="none",
+                selection_is_collapsed_before=False,
+            ),
+        ]
+
+        violation_set = build_constraint_violation_set(data)
+
+        assert_descriptive_observed(
+            violation_set,
+            0,
+            "GRAMMAR-CANDIDATE-LEFT-CHAR-CLASS-RECORDED",
+        )
+        assert_descriptive_observed(
+            violation_set,
+            0,
+            "GRAMMAR-CANDIDATE-SELECTION-CONTEXT-RECORDED",
+        )
+        self.assertFalse(
+            find_violation(
+                violation_set,
+                1,
+                "GRAMMAR-CANDIDATE-LEFT-CHAR-CLASS-RECORDED",
+            )["observed"]
+        )
+        assert_descriptive_observed(
+            violation_set,
+            1,
+            "GRAMMAR-CANDIDATE-SELECTION-CONTEXT-RECORDED",
+        )
+
     def test_rejects_forbidden_field(self) -> None:
         with self.assertRaises(CandidateFeatureError):
             load_candidate_feature_sets(FORBIDDEN_FIXTURE)
@@ -346,6 +473,7 @@ def assert_descriptive_observed(
     violation = find_violation(violation_set, candidate_index, constraint_id)
     assert violation["observed"] is True
     assert violation["constraint_type"] == "descriptive"
+    assert violation["severity"] == "info"
     assert violation["violation_count"] == 0
 
 

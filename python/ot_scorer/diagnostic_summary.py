@@ -34,6 +34,20 @@ LINGUISTIC_PLACEHOLDER_CONSTRAINT_IDS: frozenset[str] = frozenset(
     }
 )
 
+NON_LEAKY_LINGUISTIC_CONSTRAINT_IDS: frozenset[str] = frozenset(
+    {
+        "ARTICLE-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+        "NUMBER-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+        "SVA-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+        "TENSE-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+        "PREPOSITION-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+        "PUNCTUATION-CANDIDATE-LEFT-PUNCTUATION-AWARE",
+        "PUNCTUATION-CANDIDATE-LEFT-SPACE-AWARE",
+        "GRAMMAR-CANDIDATE-LEFT-CHAR-CLASS-RECORDED",
+        "GRAMMAR-CANDIDATE-SELECTION-CONTEXT-RECORDED",
+    }
+)
+
 
 def summarize_constraint_violation_file(path: str) -> dict[str, Any]:
     return summarize_constraint_violation_sets(load_constraint_violation_sets(path))
@@ -51,6 +65,7 @@ def summarize_constraint_violation_sets(
     candidate_family_bucket_counts: Counter[str] = Counter()
     local_pattern_constraint_counts: Counter[str] = Counter()
     linguistic_placeholder_constraint_counts: Counter[str] = Counter()
+    non_leaky_linguistic_constraint_counts: Counter[str] = Counter()
 
     total_candidates = 0
     total_constraints = 0
@@ -94,6 +109,10 @@ def summarize_constraint_violation_sets(
                         linguistic_placeholder_constraint_counts.update(
                             [constraint_id]
                         )
+                    if constraint_id in NON_LEAKY_LINGUISTIC_CONSTRAINT_IDS:
+                        non_leaky_linguistic_constraint_counts.update(
+                            [constraint_id]
+                        )
 
     return {
         "diagnostic_summary_schema_version": "diagnostic_summary_schema_v0_1",
@@ -119,6 +138,9 @@ def summarize_constraint_violation_sets(
         ),
         "linguistic_placeholder_constraint_counts": sorted_dict(
             linguistic_placeholder_constraint_counts
+        ),
+        "non_leaky_linguistic_constraint_counts": sorted_dict(
+            non_leaky_linguistic_constraint_counts
         ),
         "top_constraint_ids": top_counts(constraint_id_counts),
     }

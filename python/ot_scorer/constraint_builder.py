@@ -23,6 +23,14 @@ LINGUISTIC_PLACEHOLDER_CONSTRAINTS: dict[str, str] = {
     "punctuation_fix_placeholder": "PUNCTUATION-PLACEHOLDER-CANDIDATE",
 }
 
+LOCAL_CONTEXT_AVAILABLE_CONSTRAINTS: dict[str, str] = {
+    "article_fix_placeholder": "ARTICLE-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+    "number_fix_placeholder": "NUMBER-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+    "sva_fix_placeholder": "SVA-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+    "tense_fix_placeholder": "TENSE-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+    "preposition_fix_placeholder": "PREPOSITION-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+}
+
 CONTEXT_BEFORE_LENGTH_CONSTRAINTS: dict[str, str] = {
     "empty": "CONTEXT-BEFORE-EMPTY",
     "short": "CONTEXT-BEFORE-SHORT",
@@ -306,6 +314,60 @@ CONSTRAINTS: tuple[Constraint, ...] = (
         severity="info",
         explanation="Records an other pre-edit left-character class.",
     ),
+    Constraint(
+        constraint_id="ARTICLE-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records that an article candidate has non-empty abstract pre-edit context.",
+    ),
+    Constraint(
+        constraint_id="NUMBER-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records that a number candidate has non-empty abstract pre-edit context.",
+    ),
+    Constraint(
+        constraint_id="SVA-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records that an SVA candidate has non-empty abstract pre-edit context.",
+    ),
+    Constraint(
+        constraint_id="TENSE-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records that a tense candidate has non-empty abstract pre-edit context.",
+    ),
+    Constraint(
+        constraint_id="PREPOSITION-CANDIDATE-LOCAL-CONTEXT-AVAILABLE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records that a preposition candidate has non-empty abstract pre-edit context.",
+    ),
+    Constraint(
+        constraint_id="PUNCTUATION-CANDIDATE-LEFT-PUNCTUATION-AWARE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records that a punctuation candidate has an abstract left-punctuation flag.",
+    ),
+    Constraint(
+        constraint_id="PUNCTUATION-CANDIDATE-LEFT-SPACE-AWARE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records that a punctuation candidate has an abstract left-space flag.",
+    ),
+    Constraint(
+        constraint_id="GRAMMAR-CANDIDATE-LEFT-CHAR-CLASS-RECORDED",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records that a grammar candidate has a non-empty abstract left-character class.",
+    ),
+    Constraint(
+        constraint_id="GRAMMAR-CANDIDATE-SELECTION-CONTEXT-RECORDED",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records that a grammar candidate has abstract pre-edit selection context.",
+    ),
 )
 
 
@@ -421,6 +483,7 @@ def build_candidate_constraint_violations(
         ),
         *linguistic_placeholder_violations(candidate_feature),
         *local_pattern_diagnostic_violations(candidate_feature),
+        *non_leaky_linguistic_diagnostic_violations(candidate_feature),
     ]
     return CandidateConstraintViolations(
         candidate_id=str(candidate_feature["candidate_id"]),
@@ -543,6 +606,67 @@ def local_pattern_diagnostic_violations(
             mapping=LEFT_CHAR_CLASS_CONSTRAINTS,
         ),
     ]
+
+
+def non_leaky_linguistic_diagnostic_violations(
+    candidate_feature: dict[str, Any],
+) -> list[ConstraintViolation]:
+    return [
+        *local_context_available_violations(candidate_feature),
+        descriptive_violation(
+            candidate_feature,
+            "PUNCTUATION-CANDIDATE-LEFT-PUNCTUATION-AWARE",
+            is_linguistic_placeholder_candidate(
+                candidate_feature,
+                "punctuation_fix_placeholder",
+            )
+            and candidate_feature.get("left_context_ends_with_punctuation") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "PUNCTUATION-CANDIDATE-LEFT-SPACE-AWARE",
+            is_linguistic_placeholder_candidate(
+                candidate_feature,
+                "punctuation_fix_placeholder",
+            )
+            and candidate_feature.get("left_context_ends_with_space") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "GRAMMAR-CANDIDATE-LEFT-CHAR-CLASS-RECORDED",
+            is_grammar_family_candidate(candidate_feature)
+            and str(candidate_feature.get("left_char_class", "")) != "none",
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "GRAMMAR-CANDIDATE-SELECTION-CONTEXT-RECORDED",
+            is_grammar_family_candidate(candidate_feature)
+            and isinstance(candidate_feature.get("selection_is_collapsed_before"), bool),
+        ),
+    ]
+
+
+def local_context_available_violations(
+    candidate_feature: dict[str, Any],
+) -> list[ConstraintViolation]:
+    has_context = str(candidate_feature.get("context_before_length_bucket", "")) != "empty"
+    return [
+        descriptive_violation(
+            candidate_feature,
+            constraint_id,
+            is_linguistic_placeholder_candidate(candidate_feature, action_type)
+            and has_context,
+        )
+        for action_type, constraint_id in LOCAL_CONTEXT_AVAILABLE_CONSTRAINTS.items()
+    ]
+
+
+def is_grammar_family_candidate(candidate_feature: dict[str, Any]) -> bool:
+    return (
+        candidate_feature.get("action_family") == "grammar_placeholder"
+        and candidate_feature.get("candidate_family_bucket") == "grammar_placeholder"
+        and candidate_feature.get("is_grammar_family_candidate") is True
+    )
 
 
 def bucket_violations(
