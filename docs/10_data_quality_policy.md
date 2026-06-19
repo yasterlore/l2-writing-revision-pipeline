@@ -71,6 +71,10 @@ Current audit checks include:
 
 Audit reports derived from real participant data must not be committed to this repository.
 
+The no-oracle audit layer also provides `NoOracleSafeEpisodeView`, a narrower view of `MicroEpisode` for candidate generation, ranking, and OT scoring. It excludes `local_context_after_observed`.
+
+Even safe-view outputs may contain writing fragments. Do not commit safe views derived from real participant data.
+
 ## Derived Data Quality
 
 Derived artifacts should document:

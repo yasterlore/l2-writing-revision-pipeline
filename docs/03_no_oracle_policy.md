@@ -44,6 +44,18 @@ No-oracle safety depends on how an artifact is used.
 
 `MicroEpisode.local_context_after_observed` is allowed to exist for reconstruction checks and evaluation. It is no-oracle unsafe for candidate generation, ranking, OT scoring, and learner-state estimation.
 
+## Safe Episode View
+
+Before candidate generation, ranking, or OT scoring, code should prefer `NoOracleSafeEpisodeView` from `crates/kslog_no_oracle_audit/` rather than passing full `MicroEpisode` values.
+
+`NoOracleSafeEpisodeView` includes pre-edit context such as `local_context_before` and excludes `local_context_after_observed`.
+
+The safe view also excludes forbidden fields such as `final_text`, `observed_after_text`, `gold_label`, and teacher corrections.
+
+However, the safe view is not universally safe. If the prediction task is to predict inserted or deleted text, then `inserted_text_observed` and `deleted_text_observed` can be target leakage and should be excluded with safe-view options or a narrower task-specific view.
+
+Safe view outputs may still contain writing fragments and must not be committed when derived from real participant data.
+
 ## Forbidden Field Names
 
 The audit policy treats the following as forbidden concepts:
