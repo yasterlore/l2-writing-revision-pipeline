@@ -473,5 +473,6 @@ scoring policy. That would break the boundary between evaluation and ranking.
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Score-active family selection revisit](score_active_family_selection_revisit.md)
 - [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md)
+- [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md)
 - [Diagnostic-to-scoring boundary review](diagnostic_to_scoring_boundary_review.md)
 - [Default-unchanged config support design](default_unchanged_config_support_design.md)

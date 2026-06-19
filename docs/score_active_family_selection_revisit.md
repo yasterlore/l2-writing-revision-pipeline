@@ -235,7 +235,7 @@ Recommended next steps:
 1. Step 91: [synthetic-only hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md)
 2. Step 92: [candidate metadata completeness as an optional explicit config
    experiment](metadata_completeness_explicit_config_experiment_design.md)
-3. Step 93: config diff review, count-only only
+3. Step 93: [metadata completeness explicit config fixture design](metadata_completeness_config_fixture_design.md)
 4. Later step: private validation design, with no real data in the public
    repository
 
@@ -315,6 +315,7 @@ by metadata or diagnostics.
 - [Hand-weight policy design](hand_weight_policy_design.md)
 - [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md)
 - [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md)
+- [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Diagnostic-to-scoring boundary review](diagnostic_to_scoring_boundary_review.md)
 - [Milestone 03 config-aware diagnostic infrastructure recap](milestone_03_config_aware_diagnostic_infrastructure_recap.md)
