@@ -17,6 +17,9 @@ connected to the scorer, and default scoring behavior remains unchanged.
 The schema described here is intended to make future hand-designed weights
 explicit, interpretable, and auditable before any scoring behavior changes.
 
+Before any config is connected to scoring, read
+[Default-unchanged config support design](default_unchanged_config_support_design.md).
+
 ## 1. Purpose
 
 The purpose of a hand-weight config schema is to represent hand-designed
@@ -398,6 +401,9 @@ Add synthetic-only tests that demonstrate intentional scoring differences when
 an explicit config is supplied.
 
 Do not report performance metrics.
+
+Before this step, the default-unchanged config support boundary should be
+reviewed so that no-config scoring remains identical to current behavior.
 
 ### Step 68: Hand-Weight Rationale Examples, Synthetic-Only
 

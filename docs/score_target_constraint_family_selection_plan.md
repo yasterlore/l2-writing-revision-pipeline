@@ -27,6 +27,9 @@ This document answers:
 
 It does not assign weights. It does not change current behavior.
 
+Before any future hand-weight config is connected to scoring, read
+[Default-unchanged config support design](default_unchanged_config_support_design.md).
+
 ## 2. Current Constraint Families
 
 ### Safety Blocking Constraints
