@@ -249,6 +249,8 @@ Extraction and micro-episode errors usually mean the event sequence passed schem
 
 No-oracle audit output may report unsafe post-edit context for full `MicroEpisode` values. `make-safe-view` should not expose `local_context_after_observed`.
 
+Some replay error messages may include tiny expected/observed text snippets. Do not copy those snippets into docs, issues, or summaries. Record only the non-content error category, such as `deleted-text consistency mismatch`.
+
 ## Privacy Notes
 
 Do not paste JSONL contents into docs, README files, issues, or chat.
