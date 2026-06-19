@@ -75,6 +75,10 @@ The no-oracle audit layer also provides `NoOracleSafeEpisodeView`, a narrower vi
 
 Even safe-view outputs may contain writing fragments. Do not commit safe views derived from real participant data.
 
+The initial CLI lives in `crates/kslog_cli/`. It prints summaries for validation, replay, revision events, micro-episodes, no-oracle audit, and safe views.
+
+CLI output should remain summary-oriented. Do not print or save real participant final text, local contexts, inserted/deleted fragments, or derived safe-view artifacts into this repository.
+
 ## Derived Data Quality
 
 Derived artifacts should document:
