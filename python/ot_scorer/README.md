@@ -195,3 +195,5 @@ Among unblocked candidates with the same score, tie-break is deterministic:
 This rank is not a correctness prediction. It is a deterministic prototype order for later experiments.
 
 Candidate score outputs derived from real participant data must not be committed to this repository.
+
+For planned refinements and non-goals, read `../../docs/scoring_policy_refinement_plan.md`.

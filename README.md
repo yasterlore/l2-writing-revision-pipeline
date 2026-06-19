@@ -178,6 +178,7 @@ Outputs go under `tmp/`, which is Git-ignored.
 - [Synthetic data policy](docs/12_synthetic_data_policy.md)
 - [Synthetic E2E pipeline](docs/synthetic_e2e_pipeline.md)
 - [Evaluation spec](docs/evaluation_spec.md)
+- [Scoring policy refinement plan](docs/scoring_policy_refinement_plan.md)
 - [Public release checklist](docs/public_release_checklist.md)
 - [Security policy](SECURITY.md)
 
