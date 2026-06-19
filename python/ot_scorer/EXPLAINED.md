@@ -309,3 +309,5 @@ For future hand-weight config schema design, read
 `../../docs/hand_weight_config_schema_plan.md`.
 For future explicit scorer config CLI design, read
 `../../docs/explicit_config_cli_option_design.md`.
+For optional explicit config-enabled E2E design, read
+`../../docs/config_enabled_e2e_design.md`.

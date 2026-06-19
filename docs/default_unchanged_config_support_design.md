@@ -174,6 +174,9 @@ current default path is protected.
 After the no-config lock is protected, explicit-config ranking diff behavior
 should be designed separately. See
 [Explicit config ranking diff plan](explicit_config_ranking_diff_plan.md).
+Optional config-enabled E2E should also be designed separately and remain
+explicit-only. See
+[Config-enabled E2E design](config_enabled_e2e_design.md).
 
 ### Phase 2: Config-Aware Scorer Function
 
@@ -266,6 +269,7 @@ participant text, or private output into documentation.
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md)
 - [Explicit config ranking diff plan](explicit_config_ranking_diff_plan.md)
+- [Config-enabled E2E design](config_enabled_e2e_design.md)
 - [Hand-weight policy design](hand_weight_policy_design.md)
 - [Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md)
 - [Diagnostic-to-scoring boundary review](diagnostic_to_scoring_boundary_review.md)

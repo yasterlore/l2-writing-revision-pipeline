@@ -272,6 +272,12 @@ zero diff for the current-default-like config and an intentional
 safe summary only and does not connect config to the E2E pipeline or summary
 collector.
 
+### Step 78: Config-Enabled E2E Design
+
+Design optional config-enabled E2E wiring separately. It must be explicit-only
+and no-config by default. See
+[Config-enabled E2E design](config_enabled_e2e_design.md).
+
 ### Later: Private Validation Design
 
 Private validation design remains separate and must not be implemented inside
@@ -286,3 +292,4 @@ the public repository.
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Hand-weight policy design](hand_weight_policy_design.md)
 - [Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md)
+- [Config-enabled E2E design](config_enabled_e2e_design.md)
