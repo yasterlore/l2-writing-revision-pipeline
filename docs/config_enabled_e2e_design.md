@@ -3,11 +3,13 @@
 This document records the safety design for the optional config-enabled
 synthetic E2E path.
 
-Status after Step 79: `scripts/run_synthetic_e2e_pipeline.sh` supports an
-optional explicit `--weight-config <config.json>` argument. The summary
-collector remains no-config. Default no-config E2E behavior, default weights,
-the scoring formula, deterministic tie-break behavior, F1, accuracy,
-calibration, and learner-state estimation are unchanged.
+Status after Step 80: `scripts/run_synthetic_e2e_pipeline.sh` supports an
+optional explicit `--weight-config <config.json>` argument, and
+`scripts/check_config_enabled_e2e_smoke.sh` checks the explicit config-enabled
+E2E wiring. The summary collector remains no-config. Default no-config E2E
+behavior, default weights, the scoring formula, deterministic tie-break
+behavior, F1, accuracy, calibration, and learner-state estimation are
+unchanged.
 
 This is not performance evaluation.
 
@@ -37,6 +39,8 @@ Current state after Step 79:
 - `scripts/run_synthetic_e2e_pipeline.sh` uses no-config scoring by default.
 - `scripts/run_synthetic_e2e_pipeline.sh` can pass `--weight-config` only when
   the option is explicitly supplied.
+- `scripts/check_config_enabled_e2e_smoke.sh` confirms no-config and
+  config-enabled E2E outputs are written to separate case directories.
 - `scripts/run_synthetic_e2e_summary.sh` still uses no-config scoring.
 - `scripts/check_explicit_config_ranking_diff.sh` compares no-config and
   explicit-config score outputs outside the E2E pipeline.
@@ -258,8 +262,11 @@ synthetic E2E script. No-config behavior remains the default.
 
 ### Step 80: Config-Enabled E2E Smoke Check
 
-Add a synthetic-only smoke check that proves explicit config-enabled E2E writes
-to a separate output location and does not change default E2E.
+Implemented as `scripts/check_config_enabled_e2e_smoke.sh`. It runs no-config,
+current-default-like config, and intentional synthetic config E2E cases with
+separate case names, checks invalid and unsafe config failures, and confirms
+the no-config output is not overwritten. It also calls the explicit config
+ranking diff smoke for the intentional weighted-score diff check.
 
 ### Step 81: Config-Enabled Summary Collector Design
 
