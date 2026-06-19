@@ -357,6 +357,19 @@ This rank is not a correctness prediction. It is a deterministic prototype order
 
 Candidate score outputs derived from real participant data must not be committed to this repository.
 
+### No-Config Scoring Fixture Lock
+
+After generating the synthetic `deletion_case` E2E output, run:
+
+```bash
+scripts/check_no_config_scoring_fixture_lock.sh
+```
+
+The lock compares the default no-config `CandidateScoreSet` output against the
+synthetic lock fixture. It prints safe summary only and does not print score
+rows, JSONL bodies, raw text, expected actions, or evaluation results. It is a
+regression guard, not a performance evaluation or ranking correctness claim.
+
 For planned refinements and non-goals, read `../../docs/scoring_policy_refinement_plan.md`.
 For the future linguistic placeholder constraint boundary, read
 `../../docs/linguistic_placeholder_constraint_plan.md`.

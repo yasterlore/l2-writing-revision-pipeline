@@ -27,6 +27,10 @@ It also provides a validation CLI for those config files. The CLI prints only a
 safe count summary and does not print config bodies, score output, ranking
 output, evaluation results, expected action details, JSONL content, or raw text.
 
+It also provides a no-config scoring fixture lock helper. That helper compares
+synthetic `CandidateScoreSet` output against a locked synthetic fixture and
+prints safe summary only. It does not connect config to scoring.
+
 ## 3. What this component does not do
 
 It does not implement evaluation, F1, calibration, selective prediction, learner-state estimation, or grammar correction.
@@ -57,6 +61,12 @@ Output from hand-weight config validation: typed dataclass models in memory, or
 a CLI safe summary containing validation status, schema/config names, and count
 fields. No `CandidateScoreSet` output is changed by this validation.
 
+Input for no-config score fixture lock: expected and generated synthetic
+`CandidateScoreSet` JSONL files.
+
+Output from no-config score fixture lock: safe match/mismatch summary only.
+The JSONL body is not printed.
+
 The output is a feature schema for later experiments.
 
 ## 5. Step-by-step mechanism
@@ -74,6 +84,9 @@ The output is a feature schema for later experiments.
 11. Optionally validate a synthetic hand-weight config and print only a safe
     count summary. This does not run scoring and does not connect the config to
     the scorer.
+12. Optionally compare generated no-config score output with a locked synthetic
+    score fixture. This checks regression behavior only and does not evaluate
+    ranking correctness.
 
 ## 6. Important data structures
 
@@ -163,6 +176,9 @@ not change weights, formula, blocking, or tie-break behavior.
 The config validation CLI is also separate from scoring. It is a smoke-check
 entry point for schema validation only.
 
+The no-config score fixture lock is separate from config support. It checks
+that default score output stays stable when no config is supplied.
+
 ## 8. Mathematical formulas, if any
 
 The weighted score is:
@@ -236,6 +252,11 @@ no-oracle-safe reason requirements, unknown constraint rejection, unsafe path
 string rejection, synthetic-only notice requirements, expected-action tuning
 policy rejection, validation CLI success/failure behavior, safe CLI stdout, and
 default scoring behavior remaining unchanged.
+
+They also cover no-config score fixture lock matching, rank mismatch,
+weighted-score mismatch, schema mismatch, missing generated file, unsafe path,
+config field leakage in default output, forbidden field leakage, and safe CLI
+stdout.
 
 ## 15. Known limitations
 

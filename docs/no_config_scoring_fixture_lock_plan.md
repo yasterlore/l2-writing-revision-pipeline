@@ -1,18 +1,21 @@
 # No-Config Scoring Fixture Lock Plan
 
-This document designs a future fixture-lock check for no-config scoring output.
+This document designs and documents the fixture-lock check for no-config
+scoring output.
 
-It is a design document only. It does not implement a fixture lock script,
-connect config support to the scorer, add a `score.py` config option, change
-default weights, change the scoring formula, change deterministic tie-break
-behavior, add evaluation metrics, or implement learner-state estimation.
+Status after Step 69: `python/ot_scorer/score_fixture_lock.py` and
+`scripts/check_no_config_scoring_fixture_lock.sh` implement the synthetic
+no-config score fixture lock. They do not connect config support to the scorer,
+add a `score.py` config option, change default weights, change the scoring
+formula, change deterministic tie-break behavior, add evaluation metrics, or
+implement learner-state estimation.
 
 The goal is to protect current default scoring behavior before any future
 config support is connected to scoring.
 
 ## 1. Purpose
 
-The fixture lock should make no-config scoring output stable.
+The fixture lock makes no-config scoring output stable.
 
 If config support is added later, the lock should verify that running the
 scorer without a config still produces the same `CandidateScoreSet` JSONL as
@@ -55,7 +58,7 @@ The lock must not add raw text to expected fixtures.
 
 ## 3. Information Allowed in Comparison
 
-The future lock check may compare:
+The lock check compares:
 
 - `episode_id`
 - `candidate_id`
@@ -75,7 +78,7 @@ These are no-oracle-safe scoring output fields and metadata.
 
 ## 4. Information Not Allowed in Comparison
 
-The future lock check must not compare, print, or introduce:
+The lock check must not compare, print, or introduce:
 
 - raw `local_context_before`
 - `local_context_after_observed`
@@ -96,7 +99,7 @@ for scoring behavior.
 
 ## 5. Initial Lock Fixture Candidates
 
-Initial lock fixture candidates should be synthetic only.
+Initial lock fixture candidates are synthetic only.
 
 Recommended candidates:
 
@@ -104,23 +107,23 @@ Recommended candidates:
 - `selection_edit_case`
 - `cursor_movement_case`
 
-It is acceptable to start with one case, preferably `deletion_case`, because it
-already exercises the synthetic E2E scoring path and optional evaluation wiring.
+The initial implemented lock starts with `deletion_case`, because it already
+exercises the synthetic E2E scoring path and optional evaluation wiring.
 
 More cases can be added after the lock script proves stable.
 
 ## 6. Lock Check Design
 
-The future script should compare:
+The script compares:
 
 ```text
 expected CandidateScoreSet JSONL fixture
 generated no-config CandidateScoreSet JSONL
 ```
 
-Design requirements:
+Implemented design requirements:
 
-- run scorer with no config
+- compare scorer output generated with no config
 - normalize JSON objects before comparison
 - preserve line and candidate order where rank/order is meaningful
 - perform order-sensitive comparison for rank behavior
@@ -132,12 +135,12 @@ Design requirements:
 - fail on `blocked` or `block_reasons` mismatch
 - print safe summary only
 - never print raw JSONL bodies
-- write temporary generated output under `tmp/`
+- expect generated output under `tmp/` by default
 - keep generated output Git ignored
 
 Failure messages should name the failure category and safe counts only.
 
-Allowed failure summary examples:
+Failure summaries use safe count-only fields such as:
 
 ```text
 lock_status=fail
@@ -172,7 +175,7 @@ ranking change must never be used to redefine the no-config lock.
 
 ## 8. Test Plan for Implementation
 
-When the lock script is implemented, tests should cover:
+Tests cover or require coverage for:
 
 - generated no-config scores equal the expected fixture
 - missing expected fixture fails clearly
@@ -184,7 +187,7 @@ When the lock script is implemented, tests should cover:
 - raw text is absent from expected fixture and generated output
 - config fields are absent in default output
 - scorer does not auto-load config
-- environment variables do not alter no-config behavior
+- scorer does not expose config auto-loading through this lock path
 - synthetic E2E smoke still passes
 - synthetic E2E summary collector remains unchanged
 - failure output is safe summary only
@@ -192,9 +195,8 @@ When the lock script is implemented, tests should cover:
 
 ## 9. What Not To Do Yet
 
-Do not implement:
+Do not implement in this lock step:
 
-- fixture lock script
 - scorer config connection
 - config-aware scorer function
 - `score.py` config option
@@ -214,8 +216,8 @@ Do not paste JSONL contents into docs.
 
 ### Step 69: Implement No-Config Scoring Fixture Lock Script
 
-Add a synthetic-only script that compares generated no-config scores against a
-locked expected score fixture.
+Status: completed. The script compares generated no-config scores against the
+locked synthetic `deletion_case` score fixture and prints safe summary only.
 
 ### Step 70: Explicit Config Ranking Diff Plan
 
