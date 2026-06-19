@@ -1,3 +1,14 @@
-LICENSE PLACEHOLDER
+LICENSE PLACEHOLDER - NOT A FINAL OPEN-SOURCE LICENSE
 
-Choose and apply the final project license before public release.
+The final license for this project has not been selected yet.
+
+This repository is under active research-software development. Until a final
+license is chosen and this placeholder is replaced, reuse, redistribution,
+modification, and publication terms are not finalized.
+
+Before formal public release:
+
+- choose the final project license
+- replace this placeholder with the complete license text
+- make the README license notice match the final LICENSE file
+- review dependency and citation metadata against the chosen release policy

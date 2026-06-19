@@ -198,7 +198,14 @@ CI uses synthetic fixtures only. It must not process real participant data.
 
 ## License
 
-`LICENSE` is currently a placeholder. Choose and apply the final license before public release.
+The license is not finalized yet.
+
+This project is under active research-software development. `LICENSE` is a
+placeholder, not a final open-source license. Until a final license is selected
+and the placeholder is replaced, reuse terms are not finalized.
+
+A final license must be chosen before formal public release. See
+[the public release checklist](docs/public_release_checklist.md).
 
 ## Security and Privacy
 
