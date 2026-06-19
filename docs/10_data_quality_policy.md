@@ -15,6 +15,21 @@ Raw JSONL input must be treated as untrusted. Future validators should check:
 - invalid encodings
 - adversarial structures
 
+The first Rust validator lives in `crates/kslog_validate/`. It currently checks:
+
+- one JSON object per JSONL line
+- malformed JSON
+- empty-line rejection by default
+- maximum line size
+- `kslog_schema::RawEvent` deserialization
+- no-oracle forbidden fields
+- consecutive `seq`
+- monotonic non-decreasing `timestamp_ms`
+- cursor positions against corresponding document lengths
+- selection range ordering and bounds
+
+It intentionally does not replay text or validate the semantic consistency of `inserted_text`, `deleted_text`, and `diff_op`.
+
 ## Derived Data Quality
 
 Derived artifacts should document:

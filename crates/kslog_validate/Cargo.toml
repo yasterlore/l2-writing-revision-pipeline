@@ -1,0 +1,10 @@
+[package]
+name = "kslog_validate"
+version = "0.1.0"
+edition.workspace = true
+description = "Deterministic JSONL validation for synthetic keystroke-level raw events."
+
+[dependencies]
+kslog_schema = { path = "../kslog_schema" }
+serde_json = "1"
+
