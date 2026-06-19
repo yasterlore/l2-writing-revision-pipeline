@@ -18,6 +18,45 @@ Usage:
 scripts/run_synthetic_e2e_pipeline.sh <input_raw_events.jsonl> <case_name>
 ```
 
+## Summary Collector
+
+To run every synthetic valid raw-event fixture and print a summary-only table:
+
+```bash
+scripts/run_synthetic_e2e_summary.sh
+```
+
+You can also pass an explicit synthetic fixture directory:
+
+```bash
+scripts/run_synthetic_e2e_summary.sh tests/fixtures/synthetic/raw_events/valid
+```
+
+The collector runs `scripts/run_synthetic_e2e_pipeline.sh` once per `.jsonl` file. The case name is the file stem.
+
+It writes a CSV summary to:
+
+```text
+tmp/synthetic_e2e_summary/summary.csv
+```
+
+The collector records:
+
+- `case_name`
+- `pipeline_status`
+- `failed_stage`
+- `output_dir`
+- `score_sets_count`
+- `candidates_count`
+- `blocked_candidates_count`
+- `unblocked_candidates_count`
+- `rank1_available`
+- `content_suppressed`
+
+The collector is not evaluation. It does not calculate F1, accuracy, calibration, selective prediction, or learner-state estimates.
+
+It must not be run on `manual_outputs/`, `private_data/`, `real_data/`, or `participant_data/`.
+
 ## Output Location
 
 Outputs are written under:
@@ -27,6 +66,14 @@ tmp/synthetic_e2e/<case_name>/
 ```
 
 `tmp/` is Git-ignored. Do not add generated JSONL outputs to Git.
+
+The summary collector also writes under:
+
+```text
+tmp/synthetic_e2e_summary/
+```
+
+This directory is Git-ignored as part of `tmp/`.
 
 If the directory already exists, this first version may overwrite files with the same names:
 
@@ -67,6 +114,8 @@ If the directory already exists, this first version may overwrite files with the
 - Do not process `private_data/`, `real_data/`, or `participant_data/`.
 
 The script suppresses JSONL contents from stdout. It prints only stage summaries and output paths.
+
+The summary collector also suppresses JSONL contents. It may count structural fields in `candidate_scores.jsonl`, but it does not print candidate descriptions, contexts, proposed edits, final text, or JSONL rows.
 
 ## What This Is Not
 
