@@ -328,3 +328,5 @@ For planned summary-only diagnostic aggregation, read
 `../../docs/diagnostic_summary_tooling_plan.md`.
 For the boundary between diagnostics and future scoring policy, read
 `../../docs/diagnostic_to_scoring_boundary_review.md`.
+For future hand-designed weight principles, read
+`../../docs/hand_weight_policy_design.md`.

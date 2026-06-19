@@ -317,6 +317,10 @@ If non-safety weights are introduced:
 - include tests showing deterministic behavior
 - avoid performance claims
 
+The design principles for this later step are in
+[Hand-weight policy design](hand_weight_policy_design.md). That document does
+not select or implement new weights.
+
 ### Step E: Synthetic-Only Smoke Evaluation
 
 Run synthetic expected-action checks only to verify wiring.
@@ -375,3 +379,5 @@ Read:
 - `docs/03_no_oracle_policy.md`
 - `docs/evaluation_spec.md`
 - `docs/milestone_02_synthetic_evaluation_recap.md`
+- `docs/diagnostic_to_scoring_boundary_review.md`
+- `docs/hand_weight_policy_design.md`
