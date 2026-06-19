@@ -5,6 +5,7 @@ members = [
     "crates/kslog_replay",
     "crates/kslog_extract",
     "crates/kslog_micro_episode",
+    "crates/kslog_no_oracle_audit",
 ]
 resolver = "2"
 

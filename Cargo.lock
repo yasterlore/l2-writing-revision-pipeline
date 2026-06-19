@@ -29,6 +29,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "kslog_no_oracle_audit"
+version = "0.1.0"
+dependencies = [
+ "kslog_extract",
+ "kslog_micro_episode",
+ "kslog_schema",
+ "kslog_validate",
+ "serde_json",
+]
+
+[[package]]
 name = "kslog_replay"
 version = "0.1.0"
 dependencies = [
