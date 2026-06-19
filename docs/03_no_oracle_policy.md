@@ -77,6 +77,18 @@ Observed edit text is excluded by default. It may be included only by an explici
 
 Safe-view export files derived from real participant data must not be stored in this repository.
 
+## Python Candidate Generation Prototype
+
+The Python candidate generation prototype reads only Rust-exported `NoOracleSafeEpisodeView` JSONL.
+
+It must reject input containing forbidden field names, including `local_context_after_observed`, `final_text`, `observed_after_text`, `gold_label`, and `teacher_correction`.
+
+The prototype may use `local_context_before`, event-shape metadata, and quality flags. It must not use observed post-edit context.
+
+Observed edit text is ignored by default even if present in a safe-view export. Candidate outputs must mark `uses_observed_edit_text=false` unless a future task-specific design explicitly permits otherwise and documents the leakage risk.
+
+Candidate generation produces unranked placeholder candidates. It is not an evaluation step and does not create gold labels.
+
 ## Forbidden Field Names
 
 The audit policy treats the following as forbidden concepts:
