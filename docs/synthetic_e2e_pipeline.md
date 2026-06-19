@@ -119,6 +119,13 @@ It does not modify the no-config summary at
 does not print config bodies, JSONL bodies, score rows, raw text, or evaluation
 report bodies.
 
+To smoke-check that the config-enabled summary is separate, count-only, and
+does not add config columns to the no-config summary, run:
+
+```bash
+scripts/check_config_enabled_summary_smoke.sh
+```
+
 The collector looks up each case name in the synthetic expected action registry.
 If the case is `active`, it passes the expected action fixture as the third
 pipeline argument and records whether `evaluation_report.json` exists. If the

@@ -33,7 +33,7 @@ estimation.
 
 ## 2. Current State
 
-Current state after Step 82:
+Current state after Step 83:
 
 - `scripts/run_synthetic_e2e_summary.sh` remains no-config.
 - `scripts/run_synthetic_e2e_pipeline.sh` accepts `--weight-config` only when
@@ -42,6 +42,9 @@ Current state after Step 82:
   E2E output separation and fail-closed behavior.
 - `scripts/run_synthetic_e2e_config_summary.sh` writes a separate config-enabled
   count-only summary when `--weight-config` is explicitly supplied.
+- `scripts/check_config_enabled_summary_smoke.sh` verifies the separate summary
+  path, required safe columns, content suppression, expected failure cases, and
+  no-config summary column separation.
 - `scripts/check_explicit_config_ranking_diff.sh` compares no-config and
   explicit-config scoring outputs using safe diff summaries.
 - `scripts/check_no_config_scoring_fixture_lock.sh` protects no-config scoring
@@ -156,6 +159,18 @@ tmp/synthetic_e2e_config_summary/current_default_like_config/summary.csv
 
 The script validates the config before running cases. Invalid, missing, or
 unsafe config paths fail closed before per-case pipelines are started.
+
+The smoke check for this collector is:
+
+```bash
+scripts/check_config_enabled_summary_smoke.sh
+```
+
+It runs the collector with a synthetic current-default-like config, checks that
+`tmp/synthetic_e2e_config_summary/current_default_like_config/summary.csv`
+exists, verifies required count-only columns, checks expected failures for
+missing/invalid/unsafe config inputs, and confirms the no-config summary has no
+config columns.
 
 ## 5. Information Allowed In Config-Enabled Summary
 
@@ -303,8 +318,9 @@ count-only summary under
 
 ### Step 83: Config-Enabled Summary Smoke Check
 
-Add a smoke check proving config-enabled summary output is separate, count-only,
-and does not overwrite no-config summary.
+Completed: `scripts/check_config_enabled_summary_smoke.sh` proves
+config-enabled summary output is separate, count-only, has required safe
+columns, and does not add config columns to the no-config summary.
 
 ### Step 84: Config-Enabled Observation Note Template
 
