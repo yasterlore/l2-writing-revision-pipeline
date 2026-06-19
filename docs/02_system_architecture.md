@@ -9,6 +9,7 @@ Allowed responsibilities:
 - Browser-side raw event collection.
 - Event serialization.
 - Local logger UI needed for collection.
+- In-memory JSONL download for synthetic manual testing.
 
 Forbidden responsibilities:
 
@@ -17,6 +18,8 @@ Forbidden responsibilities:
 - Candidate generation.
 - Candidate ranking.
 - Learner-state estimation.
+
+The initial `apps/logger-web/` implementation is a Vite + plain TypeScript app. It observes textarea events and emits RawEvent-like JSONL with synthetic metadata only. Rust remains authoritative for validation, replay, extraction, micro-episodes, no-oracle audit, and CLI processing.
 
 ## Rust
 

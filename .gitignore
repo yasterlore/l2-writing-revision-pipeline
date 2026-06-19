@@ -8,6 +8,7 @@
 # Build artifacts
 target/
 dist/
+dist-test/
 build/
 coverage/
 htmlcov/
