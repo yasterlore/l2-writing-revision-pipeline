@@ -221,6 +221,9 @@ constraint generation as descriptive records with `violation_count = 0`.
 Consider summary-only tooling that counts diagnostic constraint observations
 without printing JSONL content.
 
+See [Diagnostic summary tooling plan](diagnostic_summary_tooling_plan.md) for
+the proposed summary fields, output policy, and privacy boundary.
+
 ### Step 52: Consider Non-Leaky Linguistic Constraints
 
 Use diagnostic evidence to decide whether more interpretable linguistic

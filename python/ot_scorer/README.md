@@ -286,3 +286,5 @@ For the implemented v0.3 local pattern field schema, read
 `../../docs/local_pattern_feature_schema_v0_3_plan.md`.
 For descriptive diagnostics derived from those fields, read
 `../../docs/local_pattern_diagnostic_constraint_plan.md`.
+For planned summary-only diagnostic aggregation, read
+`../../docs/diagnostic_summary_tooling_plan.md`.

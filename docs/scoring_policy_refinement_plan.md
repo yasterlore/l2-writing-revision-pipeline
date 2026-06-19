@@ -264,6 +264,11 @@ The descriptive diagnostic constraint design is in
 These constraints keep `violation_count=0` and should not affect
 `weighted_score`, blocking, or tie-break behavior.
 
+The safe aggregation design for those diagnostics is in
+[Diagnostic summary tooling plan](diagnostic_summary_tooling_plan.md). It is
+summary-only and should not report F1, accuracy, calibration, or learner-state
+estimates.
+
 ### Step C: Add Linguistic Placeholder Constraints
 
 Status: structural descriptive constraints have been added for metadata
