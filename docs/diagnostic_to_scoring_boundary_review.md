@@ -302,6 +302,10 @@ Define which constraint families may become score-active, which remain
 descriptive, and why any hand-designed weight is interpretable and
 no-oracle-safe.
 
+See [Hand-weight policy design](hand_weight_policy_design.md) for the
+follow-up design principles. That document remains design-only and does not
+change current weights or ranking behavior.
+
 ### Step 63: Score-Target Constraint Family Selection Plan
 
 Select a small set of candidate constraint families for possible scoring while

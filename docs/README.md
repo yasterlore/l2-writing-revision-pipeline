@@ -15,6 +15,7 @@ Recommended entry points:
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md): Rust + Python synthetic E2E pipeline scripts.
 - [Scoring policy refinement plan](scoring_policy_refinement_plan.md): planned no-oracle-safe scorer improvements.
 - [Diagnostic-to-scoring boundary review](diagnostic_to_scoring_boundary_review.md): boundary review before connecting diagnostics to hand-weight scoring policy.
+- [Hand-weight policy design](hand_weight_policy_design.md): design principles for future interpretable hand-designed scoring weights.
 - [Linguistic placeholder constraint plan](linguistic_placeholder_constraint_plan.md): design plan for future descriptive linguistic placeholder constraints.
 - [Non-leaky linguistic constraint design plan](non_leaky_linguistic_constraint_design_plan.md): design plan for future descriptive linguistic diagnostics using no-oracle-safe local pattern features.
 - [Local pattern feature plan](local_pattern_feature_plan.md): design plan for future no-oracle-safe local context abstractions.
