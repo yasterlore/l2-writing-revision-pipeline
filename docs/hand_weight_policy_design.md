@@ -334,6 +334,10 @@ ranking behavior.
 Design how weights would be represented in config without changing current
 defaults.
 
+See [Hand-weight config schema plan](hand_weight_config_schema_plan.md) for the
+schema design. It does not implement a loader or change current scoring
+behavior.
+
 ### Step 65: Implement Hand-Weight Config Without Changing Defaults
 
 Add configuration plumbing only if approved, while preserving current scoring

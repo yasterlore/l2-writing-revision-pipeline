@@ -332,3 +332,5 @@ For future hand-designed weight principles, read
 `../../docs/hand_weight_policy_design.md`.
 For future score-target constraint family selection, read
 `../../docs/score_target_constraint_family_selection_plan.md`.
+For future hand-weight config schema design, read
+`../../docs/hand_weight_config_schema_plan.md`.
