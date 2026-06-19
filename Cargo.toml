@@ -3,6 +3,7 @@ members = [
     "crates/kslog_schema",
     "crates/kslog_validate",
     "crates/kslog_replay",
+    "crates/kslog_extract",
 ]
 resolver = "2"
 
