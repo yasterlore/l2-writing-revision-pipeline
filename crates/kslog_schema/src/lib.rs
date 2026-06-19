@@ -89,6 +89,10 @@ pub struct RawEvent {
 #[cfg(test)]
 mod tests {
     use super::{DiffOp, EventType, InputType, RawEvent};
+    use std::{
+        fs,
+        path::{Path, PathBuf},
+    };
 
     fn synthetic_insert_event() -> RawEvent {
         RawEvent {
@@ -249,6 +253,72 @@ mod tests {
         "#;
 
         let err = serde_json::from_str::<RawEvent>(json).expect_err("final_text is not accepted");
+
+        assert!(err.to_string().contains("final_text"));
+    }
+
+    fn repository_root() -> PathBuf {
+        Path::new(env!("CARGO_MANIFEST_DIR")).join("../..")
+    }
+
+    fn read_jsonl_fixture(path: &Path) -> Vec<RawEvent> {
+        let content = fs::read_to_string(path)
+            .unwrap_or_else(|err| panic!("failed to read {}: {err}", path.display()));
+        let mut events = Vec::new();
+
+        for (line_index, line) in content.lines().enumerate() {
+            if line.trim().is_empty() {
+                continue;
+            }
+
+            let event = serde_json::from_str::<RawEvent>(line).unwrap_or_else(|err| {
+                panic!(
+                    "failed to parse {} at line {}: {err}",
+                    path.display(),
+                    line_index + 1
+                )
+            });
+            events.push(event);
+        }
+
+        events
+    }
+
+    #[test]
+    fn valid_synthetic_jsonl_fixtures_deserialize_line_by_line() {
+        let valid_dir = repository_root().join("tests/fixtures/synthetic/raw_events/valid");
+        let mut fixture_paths = fs::read_dir(&valid_dir)
+            .unwrap_or_else(|err| panic!("failed to read {}: {err}", valid_dir.display()))
+            .map(|entry| entry.expect("fixture directory entry is readable").path())
+            .filter(|path| path.extension().and_then(|ext| ext.to_str()) == Some("jsonl"))
+            .collect::<Vec<_>>();
+        fixture_paths.sort();
+
+        assert_eq!(fixture_paths.len(), 7);
+
+        for path in fixture_paths {
+            let events = read_jsonl_fixture(&path);
+            assert!(
+                !events.is_empty(),
+                "{} should contain at least one RawEvent",
+                path.display()
+            );
+        }
+    }
+
+    #[test]
+    fn unknown_forbidden_field_fixture_is_rejected_by_raw_event_schema() {
+        let path = repository_root()
+            .join("tests/fixtures/synthetic/raw_events/invalid/unknown_forbidden_field.jsonl");
+        let content = fs::read_to_string(&path)
+            .unwrap_or_else(|err| panic!("failed to read {}: {err}", path.display()));
+        let line = content
+            .lines()
+            .find(|line| !line.trim().is_empty())
+            .expect("fixture contains one non-empty JSONL line");
+
+        let err = serde_json::from_str::<RawEvent>(line)
+            .expect_err("observed no-oracle forbidden field should be rejected");
 
         assert!(err.to_string().contains("final_text"));
     }

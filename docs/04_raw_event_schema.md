@@ -106,3 +106,11 @@ The schema crate uses serde `deny_unknown_fields` so unknown fields, including f
 ## Data Notes
 
 Examples and fixtures for this schema may contain synthetic data only. Real participant data must never be committed, read, inspected, transformed, summarized, or written by Codex.
+
+Current synthetic raw event JSONL files live in:
+
+- `examples/synthetic/raw_events/`
+- `tests/fixtures/synthetic/raw_events/valid/`
+- `tests/fixtures/synthetic/raw_events/invalid/`
+
+The valid fixture lines are expected to deserialize as `RawEvent`. The invalid fixtures are reserved for future `kslog_validate` tests and include both schema-level invalid cases and cross-field invalid cases.

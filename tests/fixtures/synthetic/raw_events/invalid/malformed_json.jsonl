@@ -1,0 +1,1 @@
+{"logger_schema_version":"kslog.raw_event.v1","session_id":"synthetic_session_invalid_001","participant_local_id":"synthetic_writer_invalid_001","task_id":"synthetic_task_freewrite_001","prompt_id":"synthetic_prompt_invalid","seq":1,"timestamp_ms":1700000001001,"event_type":"input","is_composing":false

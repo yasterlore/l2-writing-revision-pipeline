@@ -9,6 +9,16 @@ Synthetic examples may live in:
 - `examples/synthetic/`
 - `tests/fixtures/synthetic/`
 
+Synthetic raw event JSONL examples and fixtures are organized as:
+
+- `examples/synthetic/raw_events/`
+- `tests/fixtures/synthetic/raw_events/valid/`
+- `tests/fixtures/synthetic/raw_events/invalid/`
+
+The `valid/` directory contains JSONL lines that should deserialize as `RawEvent`.
+
+The `invalid/` directory contains malformed, forbidden-field, or cross-field-invalid cases for future validator tests. Some invalid files may still deserialize as `RawEvent` because cross-field validation belongs in `kslog_validate`, not `kslog_schema`.
+
 ## Disallowed Data
 
 Do not commit:
@@ -33,3 +43,5 @@ The following filename patterns are treated as private or real-data indicators a
 ## Codex Rule
 
 Codex must not read, inspect, transform, summarize, or write real participant data.
+
+Codex may work with the synthetic fixtures in this repository when the task explicitly concerns synthetic data or schema tests.
