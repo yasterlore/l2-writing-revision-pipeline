@@ -34,3 +34,18 @@ tests/fixtures/synthetic/         Synthetic test fixtures only
 ## Current Status
 
 Foundation-only repository. See `docs/00_project_overview.md` and `docs/codex_workflow.md` before adding implementation.
+
+## CI
+
+GitHub Actions runs the Rust workspace checks on push and pull request:
+
+```bash
+cargo fmt --all -- --check
+cargo test --workspace
+cargo clippy --workspace -- -D warnings
+scripts/check_synthetic_policy.sh
+```
+
+CI uses synthetic fixtures only. It does not process production data or real participant data.
+
+The synthetic policy check rejects private/real-data-looking paths and checks public synthetic examples plus valid fixtures for no-oracle forbidden fields such as `final_text`, `observed_after_text`, `gold_label`, `teacher_correction`, `answer_key`, and `future_context`. Invalid fixtures are excluded because some intentionally contain forbidden examples for validator tests.

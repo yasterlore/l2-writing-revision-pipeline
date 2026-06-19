@@ -17,6 +17,9 @@ Use this checklist when adding implementation.
 - [ ] Does not hard-code secrets or personal data.
 - [ ] Does not introduce network access unless explicitly required.
 - [ ] Explains any new dependency.
+- [ ] CI passes formatting, tests, clippy, synthetic-only policy checks, and CLI smoke tests.
+- [ ] CI checks no-oracle forbidden fields in public examples and valid synthetic fixtures.
+- [ ] CI does not inspect or process real/private participant data.
 - [ ] Avoids unsafe Rust, or justifies it explicitly.
 - [ ] Avoids `innerHTML`, `eval`, and unsafe dynamic code in TypeScript.
 - [ ] Avoids `eval`, `exec`, unsafe deserialization, and unsafe pickle loading in Python.
