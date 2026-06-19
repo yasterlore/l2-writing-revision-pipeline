@@ -45,6 +45,14 @@ scripts/run_synthetic_e2e_pipeline.sh tests/fixtures/synthetic/raw_events/valid/
 
 Outputs are written under `tmp/synthetic_e2e/<case_name>/`, which is Git-ignored. The script is not for production data or real participant data. See `docs/synthetic_e2e_pipeline.md`.
 
+To run all valid synthetic raw-event fixtures and print a summary-only connection check:
+
+```bash
+scripts/run_synthetic_e2e_summary.sh
+```
+
+The summary collector is not evaluation and does not report F1, accuracy, or calibration.
+
 ## CI
 
 GitHub Actions runs the Rust workspace checks on push and pull request:
