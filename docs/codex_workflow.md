@@ -38,8 +38,11 @@ GitHub Actions runs:
 - `cargo clippy --workspace -- -D warnings`
 - `scripts/check_synthetic_policy.sh`
 - CLI smoke tests on synthetic valid and invalid fixtures
+- one synthetic E2E pipeline smoke test on `deletion_case.jsonl`
 
 CI uses synthetic data only. It must not process production data, real participant data, `private_data/`, `real_data/`, or `participant_data/`.
+
+The E2E smoke is a connection check only. It does not compute evaluation metrics such as F1, accuracy, calibration, or learner-state estimates, and it must not print JSONL contents.
 
 The synthetic policy script checks public synthetic examples and valid fixtures for no-oracle forbidden fields. It intentionally excludes invalid fixtures because they include adversarial examples such as forbidden field names.
 

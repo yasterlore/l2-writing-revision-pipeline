@@ -57,6 +57,18 @@ The collector is not evaluation. It does not calculate F1, accuracy, calibration
 
 It must not be run on `manual_outputs/`, `private_data/`, `real_data/`, or `participant_data/`.
 
+## CI Smoke Test
+
+GitHub Actions runs one lightweight synthetic E2E smoke test:
+
+```bash
+scripts/run_synthetic_e2e_pipeline.sh tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl deletion_case_ci
+```
+
+This CI check verifies that the Rust safe-view export and Python prototype stages still connect. It is not evaluation and does not calculate F1, accuracy, calibration, or learner-state estimates.
+
+The CI smoke uses only synthetic fixture data. Generated files are written under `tmp/synthetic_e2e/deletion_case_ci/`, which is Git-ignored.
+
 ## Output Location
 
 Outputs are written under:

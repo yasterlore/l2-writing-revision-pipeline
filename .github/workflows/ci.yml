@@ -43,3 +43,5 @@ jobs:
             exit 1
           fi
 
+      - name: Synthetic E2E pipeline smoke test
+        run: scripts/run_synthetic_e2e_pipeline.sh tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl deletion_case_ci
