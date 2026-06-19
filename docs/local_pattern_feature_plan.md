@@ -190,6 +190,9 @@ reporting any performance metric.
 Define exact field names, bucket boundaries, Unicode handling, and no-oracle
 input boundaries.
 
+See [Local pattern feature schema v0.3 plan](local_pattern_feature_schema_v0_3_plan.md)
+for the initial proposed field definitions.
+
 ### Step B: Synthetic Fixture Update
 
 Add synthetic fixtures that cover document-start, document-end, punctuation,
@@ -229,4 +232,3 @@ This plan does not:
 - introduce real gold labels
 - use teacher corrections
 - implement F1, accuracy, calibration, or learner-state estimation
-

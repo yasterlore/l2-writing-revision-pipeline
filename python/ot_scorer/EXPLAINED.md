@@ -172,3 +172,5 @@ For the beginner-friendly plan for linguistic placeholder constraints, read
 `../../docs/linguistic_placeholder_constraint_plan.md`.
 For the no-oracle plan for local pattern features, read
 `../../docs/local_pattern_feature_plan.md`.
+For the planned v0.3 local pattern feature schema, read
+`../../docs/local_pattern_feature_schema_v0_3_plan.md`.
