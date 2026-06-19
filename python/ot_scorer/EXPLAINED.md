@@ -66,7 +66,9 @@ The output is a feature schema for later experiments.
 
 `ConstraintWeight` defines a fixed prototype weight for a constraint.
 
-`CandidateScore` stores weighted score, block status, block reasons, rank, and constraint contributions.
+`CandidateScore` stores candidate id, episode id, explicit `action_type`, weighted score, block status, block reasons, rank, and constraint contributions.
+
+`candidate_id` identifies the candidate. `action_type` describes the candidate action category and is copied from candidate generation through constraint generation into score output.
 
 `CandidateScoreSet` groups candidate scores for one episode.
 
@@ -79,6 +81,8 @@ Only non-content structural features are used in the first version.
 The constraint schema separates penalty constraints from descriptive constraints. Penalty constraints count leakage and unsafe-candidate problems. Descriptive constraints record candidate categories for future scoring experiments.
 
 The scorer uses blocking constraints as safety gates. It does not learn from data and does not use gold labels.
+
+The score output includes `action_type` explicitly so evaluation does not need to infer candidate class from the string shape of `candidate_id`.
 
 ## 8. Mathematical formulas, if any
 

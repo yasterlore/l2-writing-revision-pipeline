@@ -143,6 +143,7 @@ Each candidate score contains:
 
 - `candidate_id`
 - `episode_id`
+- `action_type`
 - `weighted_score`
 - `blocked`
 - `block_reasons`
@@ -150,6 +151,11 @@ Each candidate score contains:
 - `constraint_contributions`
 - `scoring_policy_version`
 - `no_oracle_safe`
+
+`candidate_id` is only an identifier. `action_type` is the explicit candidate
+classification copied from the constraint-violation input and is used by the
+synthetic evaluation prototype. It is not a gold label, expected answer, or
+teacher correction.
 
 ### Weighted Score
 

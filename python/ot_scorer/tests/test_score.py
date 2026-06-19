@@ -36,6 +36,7 @@ class ScorerTests(unittest.TestCase):
             "synthetic_session_001:micro:3:candidate_set:features:constraints:scores",
         )
         self.assertEqual(len(score_set.candidate_scores), 4)
+        self.assertEqual(score_set.candidate_scores[0].action_type, "hold")
 
     def test_leakage_violation_blocks_candidate(self) -> None:
         data = constraint_violation_set()
@@ -80,6 +81,9 @@ class ScorerTests(unittest.TestCase):
     def test_hold_local_grammar_tie_break_order(self) -> None:
         score_set = build_candidate_score_set(constraint_violation_set())
         ordered_ids = [score.candidate_id for score in score_set.candidate_scores]
+        ordered_action_types = [
+            score.action_type for score in score_set.candidate_scores
+        ]
 
         self.assertEqual(
             ordered_ids,
@@ -88,6 +92,15 @@ class ScorerTests(unittest.TestCase):
                 "synthetic_session_001:micro:3:cand:02:local_delete_placeholder",
                 "synthetic_session_001:micro:3:cand:03:article_fix_placeholder",
                 "synthetic_session_001:micro:3:cand:04:other_placeholder",
+            ],
+        )
+        self.assertEqual(
+            ordered_action_types,
+            [
+                "hold",
+                "local_delete_placeholder",
+                "article_fix_placeholder",
+                "other_placeholder",
             ],
         )
 
@@ -117,6 +130,7 @@ class ScorerTests(unittest.TestCase):
             self.assertNotIn("Synthetic candidate description", output_text)
             rows = [json.loads(line) for line in output_text.splitlines()]
             self.assertIn("candidate_scores", rows[0])
+            self.assertIn("action_type", rows[0]["candidate_scores"][0])
 
     def test_source_does_not_use_eval_exec_or_pickle(self) -> None:
         source_dir = Path("python/ot_scorer")

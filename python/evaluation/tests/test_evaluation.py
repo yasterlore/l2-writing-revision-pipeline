@@ -82,6 +82,15 @@ class EvaluationTests(unittest.TestCase):
         after = [candidate["candidate_id"] for candidate in data[0]["candidate_scores"]]
         self.assertEqual(before, after)
 
+    def test_evaluation_uses_action_type_not_candidate_id_convention(self) -> None:
+        data = score_sets()
+        data[0]["candidate_scores"][0]["candidate_id"] = "synthetic_arbitrary_id_001"
+
+        report = evaluate_score_sets(data, expected_actions("hold"))
+
+        self.assertEqual(report.exact_match_count, 1)
+        self.assertEqual(report.per_episode[0].top1_action_type, "hold")
+
     def test_forbidden_fields_are_rejected(self) -> None:
         with self.assertRaises(EvaluationInputError):
             load_score_sets(FORBIDDEN_SCORE_FIXTURE)
@@ -157,6 +166,7 @@ def candidate_score(action_type: str, rank: int, *, blocked: bool) -> dict[str, 
     return {
         "candidate_id": f"synthetic_session_001:micro:3:cand:{rank:02d}:{action_type}",
         "episode_id": "synthetic_session_001:micro:3",
+        "action_type": action_type,
         "weighted_score": 0.0,
         "blocked": blocked,
         "block_reasons": [],

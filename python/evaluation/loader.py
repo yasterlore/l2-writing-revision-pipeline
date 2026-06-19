@@ -93,6 +93,7 @@ def validate_candidate_score(
     required_fields = (
         "candidate_id",
         "episode_id",
+        "action_type",
         "weighted_score",
         "blocked",
         "rank",

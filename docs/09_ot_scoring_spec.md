@@ -2,7 +2,8 @@
 
 This file defines the documentation home for OT-inspired ranking and scoring experiments.
 
-No scoring logic is implemented yet.
+Prototype scoring logic is implemented for synthetic-only connection testing.
+It is not a production scorer and does not claim research performance.
 
 The initial Python feature schema and leakage audit lives in `python/ot_scorer/`.
 
@@ -118,6 +119,25 @@ Constraint generation uses only `CandidateFeatureSet` structural fields. It must
 ## Weighted OT Scorer Prototype
 
 `python/ot_scorer/score.py` converts `ConstraintViolationSet` JSONL into `CandidateScoreSet` JSONL.
+
+Each `CandidateScore` includes:
+
+- `candidate_id`
+- `episode_id`
+- `action_type`
+- `weighted_score`
+- `blocked`
+- `block_reasons`
+- `rank`
+- `constraint_contributions`
+- `scoring_policy_version`
+- `no_oracle_safe`
+
+`candidate_id` is an identifier. `action_type` is the explicit candidate action
+category copied from candidate generation via constraint generation. Downstream
+synthetic evaluation must use `action_type`, not candidate-id naming conventions.
+This field is candidate-derived and is not an expected action, gold label, or
+teacher correction.
 
 The score formula is:
 
