@@ -218,8 +218,17 @@ another caller-provided path. Empty input produces a valid zero-count summary.
 
 ### Step 53: Connect Diagnostic Summary to Synthetic E2E Summary
 
-Optionally run the diagnostic summary tool from the synthetic E2E collector and
-record only safe count fields.
+Completed: `scripts/run_synthetic_e2e_summary.sh` optionally runs the diagnostic
+summary tool for each case after the synthetic E2E pipeline creates
+`constraint_violations.jsonl`.
+
+The collector writes `diagnostic_summary.json` under
+`tmp/synthetic_e2e/<case_name>/` and records only safe top-level count fields in
+`tmp/synthetic_e2e_summary/summary.csv`.
+
+It does not print diagnostic report bodies, raw JSONL rows, per-episode detail,
+candidate descriptions, proposed edits, local context, expected actions, or
+performance metrics.
 
 ### Step 54: Inspect Synthetic Diagnostic Distribution
 

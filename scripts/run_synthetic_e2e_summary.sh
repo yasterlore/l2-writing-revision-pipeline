@@ -45,15 +45,15 @@ if [ ! -s "$file_list" ]; then
   exit 2
 fi
 
-printf '%s\n' "case_name,pipeline_status,failed_stage,output_dir,score_sets_count,candidates_count,blocked_candidates_count,unblocked_candidates_count,rank1_available,evaluation_status,expected_action_status,expected_action_path,evaluation_report_exists,evaluation_summary_available,evaluation_episodes_total,evaluation_episodes_evaluated,evaluation_exact_match_count,evaluation_expected_found_count,evaluation_blocked_expected_count,content_suppressed" > "$summary_csv"
+printf '%s\n' "case_name,pipeline_status,failed_stage,output_dir,score_sets_count,candidates_count,blocked_candidates_count,unblocked_candidates_count,rank1_available,evaluation_status,expected_action_status,expected_action_path,evaluation_report_exists,evaluation_summary_available,evaluation_episodes_total,evaluation_episodes_evaluated,evaluation_exact_match_count,evaluation_expected_found_count,evaluation_blocked_expected_count,diagnostic_summary_status,diagnostic_summary_path,diagnostic_total_constraints,diagnostic_descriptive_constraint_count,diagnostic_blocking_constraint_count,diagnostic_safety_constraint_count,diagnostic_local_pattern_constraint_count,diagnostic_linguistic_placeholder_constraint_count,content_suppressed" > "$summary_csv"
 
 echo "synthetic_e2e_summary: start"
 echo "input_dir: $input_dir"
 echo "expected_action_registry: $registry_path"
 echo "summary_csv: $summary_csv"
 echo "content_suppressed: true"
-printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %s\n' \
-  "case_name" "status" "failed_stage" "sets" "candidates" "blocked" "unblocked" "rank1" "evaluation" "expected" "output_dir"
+printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %-10s %s\n' \
+  "case_name" "status" "failed_stage" "sets" "candidates" "blocked" "unblocked" "rank1" "evaluation" "expected" "diagnostic" "output_dir"
 
 overall_status=0
 
@@ -78,6 +78,14 @@ while IFS= read -r input_file; do
   evaluation_exact_match_count="0"
   evaluation_expected_found_count="0"
   evaluation_blocked_expected_count="0"
+  diagnostic_summary_status="skipped_missing_constraints"
+  diagnostic_summary_path="$output_dir/diagnostic_summary.json"
+  diagnostic_total_constraints="0"
+  diagnostic_descriptive_constraint_count="0"
+  diagnostic_blocking_constraint_count="0"
+  diagnostic_safety_constraint_count="0"
+  diagnostic_local_pattern_constraint_count="0"
+  diagnostic_linguistic_placeholder_constraint_count="0"
 
   lookup_result=$(
     env PYTHONPATH=python python3 -m evaluation.expected_action_registry lookup \
@@ -87,7 +95,7 @@ while IFS= read -r input_file; do
     pipeline_status="fail"
     failed_stage="expected_action_registry"
     overall_status=1
-    printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,true\n' \
+    printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,true\n' \
       "$case_name" \
       "$pipeline_status" \
       "$failed_stage" \
@@ -106,8 +114,16 @@ while IFS= read -r input_file; do
       "$evaluation_episodes_evaluated" \
       "$evaluation_exact_match_count" \
       "$evaluation_expected_found_count" \
-      "$evaluation_blocked_expected_count" >> "$summary_csv"
-    printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %s\n' \
+      "$evaluation_blocked_expected_count" \
+      "$diagnostic_summary_status" \
+      "$diagnostic_summary_path" \
+      "$diagnostic_total_constraints" \
+      "$diagnostic_descriptive_constraint_count" \
+      "$diagnostic_blocking_constraint_count" \
+      "$diagnostic_safety_constraint_count" \
+      "$diagnostic_local_pattern_constraint_count" \
+      "$diagnostic_linguistic_placeholder_constraint_count" >> "$summary_csv"
+    printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %-10s %s\n' \
       "$case_name" \
       "$pipeline_status" \
       "$failed_stage" \
@@ -118,6 +134,7 @@ while IFS= read -r input_file; do
       "$rank1_available" \
       "fail" \
       "error" \
+      "$diagnostic_summary_status" \
       "$output_dir"
     continue
   }
@@ -211,6 +228,41 @@ print(f"{score_sets},{candidates},{blocked},{candidates - blocked},{str(rank1).l
       unblocked_candidates_count=$(echo "$counts" | cut -d, -f4)
       rank1_available=$(echo "$counts" | cut -d, -f5)
     fi
+    if [ -f "$output_dir/constraint_violations.jsonl" ]; then
+      diagnostic_command_status=0
+      env PYTHONPATH=python python3 -m ot_scorer.summarize_diagnostics \
+        --constraints "$output_dir/constraint_violations.jsonl" \
+        --output "$diagnostic_summary_path" >> "$log_file" 2>&1 || diagnostic_command_status=$?
+      if [ "$diagnostic_command_status" -eq 0 ] && [ -f "$diagnostic_summary_path" ]; then
+        diagnostic_summary_status="ok"
+        diagnostic_counts=$(
+          python3 -c 'import json, sys
+path = sys.argv[1]
+with open(path, "r", encoding="utf-8") as handle:
+    summary = json.load(handle)
+local_count = sum(summary.get("local_pattern_constraint_counts", {}).values())
+linguistic_count = sum(summary.get("linguistic_placeholder_constraint_counts", {}).values())
+print(",".join(str(value) for value in (
+    summary.get("total_constraints", 0),
+    summary.get("descriptive_constraint_count", 0),
+    summary.get("blocking_constraint_count", 0),
+    summary.get("safety_constraint_count", 0),
+    local_count,
+    linguistic_count,
+)))' \
+            "$diagnostic_summary_path"
+        )
+        diagnostic_total_constraints=$(echo "$diagnostic_counts" | cut -d, -f1)
+        diagnostic_descriptive_constraint_count=$(echo "$diagnostic_counts" | cut -d, -f2)
+        diagnostic_blocking_constraint_count=$(echo "$diagnostic_counts" | cut -d, -f3)
+        diagnostic_safety_constraint_count=$(echo "$diagnostic_counts" | cut -d, -f4)
+        diagnostic_local_pattern_constraint_count=$(echo "$diagnostic_counts" | cut -d, -f5)
+        diagnostic_linguistic_placeholder_constraint_count=$(echo "$diagnostic_counts" | cut -d, -f6)
+      else
+        diagnostic_summary_status="fail"
+        overall_status=1
+      fi
+    fi
   else
     pipeline_status="fail"
     overall_status=1
@@ -220,7 +272,7 @@ print(f"{score_sets},{candidates},{blocked},{candidates - blocked},{str(rank1).l
     fi
   fi
 
-  printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,true\n' \
+  printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,true\n' \
     "$case_name" \
     "$pipeline_status" \
     "$failed_stage" \
@@ -239,9 +291,17 @@ print(f"{score_sets},{candidates},{blocked},{candidates - blocked},{str(rank1).l
     "$evaluation_episodes_evaluated" \
     "$evaluation_exact_match_count" \
     "$evaluation_expected_found_count" \
-    "$evaluation_blocked_expected_count" >> "$summary_csv"
+    "$evaluation_blocked_expected_count" \
+    "$diagnostic_summary_status" \
+    "$diagnostic_summary_path" \
+    "$diagnostic_total_constraints" \
+    "$diagnostic_descriptive_constraint_count" \
+    "$diagnostic_blocking_constraint_count" \
+    "$diagnostic_safety_constraint_count" \
+    "$diagnostic_local_pattern_constraint_count" \
+    "$diagnostic_linguistic_placeholder_constraint_count" >> "$summary_csv"
 
-  printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %s\n' \
+  printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %-10s %s\n' \
     "$case_name" \
     "$pipeline_status" \
     "$failed_stage" \
@@ -252,6 +312,7 @@ print(f"{score_sets},{candidates},{blocked},{candidates - blocked},{str(rank1).l
     "$rank1_available" \
     "$evaluation_status" \
     "$expected_action_status" \
+    "$diagnostic_summary_status" \
     "$output_dir"
 done < "$file_list"
 
