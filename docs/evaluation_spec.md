@@ -41,6 +41,29 @@ One expected action per line:
 
 Synthetic expected actions are not real gold labels, teacher corrections, or final corrected text.
 
+### Synthetic Expected Action Registry
+
+The registry file maps synthetic case names to synthetic expected action
+fixtures:
+
+```text
+tests/fixtures/synthetic/expected_actions/registry.json
+```
+
+The registry is a fixture-management table, not a real gold-label registry.
+It contains only synthetic case metadata and expected-action fixture paths.
+
+Registry entry statuses:
+
+- `active`: the case has a synthetic expected action fixture and can be used for optional evaluation.
+- `pending`: the case is known, but the expected action fixture has not been defined yet and must not be evaluated.
+- `missing`: returned by the helper when a case name is not present in the registry.
+
+The registry helper validates case names, duplicate entries, path existence, and
+private/manual-looking paths. It does not read expected-action JSONL contents.
+It rejects paths under `manual_outputs/`, `private_data/`, `real_data/`, and
+`participant_data/`.
+
 ## Output
 
 The evaluator writes one `EvaluationReport` JSON file.

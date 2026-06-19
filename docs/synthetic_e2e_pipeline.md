@@ -51,6 +51,18 @@ The collector intentionally uses the no-evaluation form of the pipeline. It is
 for connection smoke checks across raw-event fixtures, not expected-action
 comparison.
 
+Synthetic expected action fixtures can be mapped by case name in:
+
+```text
+tests/fixtures/synthetic/expected_actions/registry.json
+```
+
+The registry is optional support for future multi-case synthetic evaluation.
+`active` entries may be passed as the third pipeline argument. `pending` entries
+are known cases without an expected action fixture and must be skipped for
+evaluation. Unknown cases are treated as missing. The registry is synthetic only
+and is not a real gold-label registry.
+
 It writes a CSV summary to:
 
 ```text
