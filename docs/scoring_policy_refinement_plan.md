@@ -253,7 +253,12 @@ Do not include raw context text in feature or score output.
 
 ### Step C: Add Linguistic Placeholder Constraints
 
-Possible future constraints:
+Status: structural descriptive constraints have been added for metadata
+completeness, rule presence, action-family presence, family membership,
+placeholder-family membership, safety relevance, and family-bucket presence.
+They remain descriptive and are not added to `weighted_score`.
+
+Possible future linguistic placeholder constraints:
 
 - article placeholder candidate present
 - number agreement placeholder candidate present
