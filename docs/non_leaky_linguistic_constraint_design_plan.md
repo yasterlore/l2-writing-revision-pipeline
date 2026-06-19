@@ -3,10 +3,9 @@
 This document is a design plan for future non-leaky linguistic diagnostic
 constraints.
 
-It is not an implementation plan for immediate scoring changes. It does not
-change feature extraction, constraint generation, scoring weights, scoring
-formula, tie-break policy, F1, accuracy, calibration, or learner-state
-estimation.
+Step 59 implemented the first descriptive-only diagnostic constraints from this
+plan. They do not change feature extraction, scoring weights, scoring formula,
+tie-break policy, F1, accuracy, calibration, or learner-state estimation.
 
 ## 1. Purpose
 
@@ -258,8 +257,9 @@ confirm:
 
 ### Step 59: Implement Non-Leaky Linguistic Diagnostic Constraints
 
-Implement the initial constraints as descriptive records only. They should not
-change score or rank.
+Completed for the initial nine constraints listed in this document. They are
+descriptive records only with `violation_count = 0` and `severity = "info"`.
+They do not change score or rank.
 
 ### Step 60: Update Diagnostic Summary Categories If Needed
 

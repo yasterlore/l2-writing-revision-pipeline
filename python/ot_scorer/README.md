@@ -183,6 +183,15 @@ Descriptive constraints record candidate type without adding a penalty in this v
 - `LEFT-CHAR-CLASS-LOWERCASE-LETTER`
 - `LEFT-CHAR-CLASS-OTHER-LETTER`
 - `LEFT-CHAR-CLASS-OTHER`
+- `ARTICLE-CANDIDATE-LOCAL-CONTEXT-AVAILABLE`
+- `NUMBER-CANDIDATE-LOCAL-CONTEXT-AVAILABLE`
+- `SVA-CANDIDATE-LOCAL-CONTEXT-AVAILABLE`
+- `TENSE-CANDIDATE-LOCAL-CONTEXT-AVAILABLE`
+- `PREPOSITION-CANDIDATE-LOCAL-CONTEXT-AVAILABLE`
+- `PUNCTUATION-CANDIDATE-LEFT-PUNCTUATION-AWARE`
+- `PUNCTUATION-CANDIDATE-LEFT-SPACE-AWARE`
+- `GRAMMAR-CANDIDATE-LEFT-CHAR-CLASS-RECORDED`
+- `GRAMMAR-CANDIDATE-SELECTION-CONTEXT-RECORDED`
 
 These structural descriptive constraints are derived from
 `CandidateFeatureSet` metadata. Their `violation_count` is always `0`, and the
@@ -194,6 +203,10 @@ not judge grammatical correctness.
 The local pattern diagnostic constraints record `CandidateFeatureSet v0_3`
 bucket, boolean, and enum features only. They do not reintroduce raw
 `local_context_before` text and do not affect weighted scoring.
+
+The non-leaky linguistic diagnostic constraints combine grammar-placeholder
+candidate metadata with v0.3 abstract local pattern features. They do not judge
+grammatical correctness and do not affect weighted scoring.
 
 The output includes `violation_count`, `severity`, and `explanation`, but it does not include weights, weighted scores, ranks, candidate text, local context text, or observed edit text.
 
@@ -212,7 +225,8 @@ PYTHONPATH=python python3 -m ot_scorer.summarize_diagnostics \
 
 The summary includes aggregate counts such as `total_constraint_sets`,
 `total_candidates`, `constraint_id_counts`, `local_pattern_constraint_counts`,
-and `linguistic_placeholder_constraint_counts`.
+`linguistic_placeholder_constraint_counts`, and
+`non_leaky_linguistic_constraint_counts`.
 
 It does not include raw JSONL lines, per-episode text detail, candidate
 descriptions, proposed edit payloads, local context text, observed edit text,

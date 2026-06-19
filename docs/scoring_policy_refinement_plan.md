@@ -298,6 +298,10 @@ The next design layer for non-leaky linguistic diagnostics is in
 It keeps these future constraints descriptive and outside scoring until a
 separate no-oracle scoring review exists.
 
+Status after Step 59: the initial non-leaky linguistic diagnostic constraints
+have been implemented as descriptive records with `violation_count=0`. They do
+not affect `weighted_score`, blocking, or tie-break behavior.
+
 ### Step D: Document Initial Hand Weights
 
 If non-safety weights are introduced:

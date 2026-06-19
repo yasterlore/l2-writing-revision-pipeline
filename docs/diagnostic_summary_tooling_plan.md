@@ -128,6 +128,7 @@ Initial summary candidates:
 - `candidate_family_bucket_counts`
 - `local_pattern_constraint_counts`
 - `linguistic_placeholder_constraint_counts`
+- `non_leaky_linguistic_constraint_counts`
 
 `top_constraint_ids` should be a bounded list, such as the top 20 by count,
 not a dump of every record.
@@ -157,7 +158,17 @@ Invalid interpretation:
 - comparing learners by diagnostic count
 - claiming model performance from diagnostic summaries
 
-## 8. Safety Blocking Summary
+## 8. Non-Leaky Linguistic Diagnostic Summary
+
+The non-leaky linguistic diagnostic summary may count the initial descriptive
+diagnostic constraints from
+[`non_leaky_linguistic_constraint_design_plan.md`](non_leaky_linguistic_constraint_design_plan.md).
+
+These counts are based on candidate metadata and abstract v0.3 local pattern
+features only. They are not grammatical correctness judgments and are not
+performance metrics.
+
+## 9. Safety Blocking Summary
 
 The summary may separately count safety constraints:
 
@@ -170,7 +181,7 @@ This is a wiring and safety check, not an evaluation metric.
 If safety blocking counts are nonzero in synthetic smoke output, the next step
 should be investigation, not ranking or performance interpretation.
 
-## 9. No-Oracle and Privacy Policy
+## 10. No-Oracle and Privacy Policy
 
 The summary tool should read abstract constraint records only.
 
@@ -190,7 +201,7 @@ summary tooling.
 The summary should be safe even if someone later runs it on private data, but
 this repository should only use synthetic fixtures and synthetic E2E outputs.
 
-## 10. Implementation Test Plan
+## 11. Implementation Test Plan
 
 When implemented, tests should cover:
 
@@ -208,7 +219,7 @@ When implemented, tests should cover:
 
 All tests should use synthetic fixtures only.
 
-## 11. Future Roadmap
+## 12. Future Roadmap
 
 ### Step 52: Implement Diagnostic Summary Tool
 
@@ -243,7 +254,7 @@ Do not use diagnostic summaries to tune weights or claim performance until
 there is a separate scoring-policy design, no-oracle review, and validation
 plan.
 
-## 12. Non-Goals
+## 13. Non-Goals
 
 This plan and implementation do not:
 

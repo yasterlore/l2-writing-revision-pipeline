@@ -124,6 +124,11 @@ bucket, whitespace/punctuation ending flags, and left-character class. They use
 only already-extracted no-oracle-safe buckets, booleans, and enums. They do not
 store or reconstruct raw local context text.
 
+The non-leaky linguistic diagnostic descriptive constraints combine
+grammar-placeholder candidate metadata with those v0.3 abstract features. They
+record whether a grammar candidate has relevant pre-edit diagnostic context,
+but they do not decide whether a sentence is grammatically correct.
+
 The scorer uses blocking constraints as safety gates. It does not learn from data and does not use gold labels.
 
 The score output includes `action_type` explicitly so evaluation does not need to infer candidate class from the string shape of `candidate_id`. It also carries `generation_rule` and `action_family` so later analysis can inspect why a candidate exists without adding candidate descriptions, proposed edit payloads, local context text, or observed edit text to the score output.
