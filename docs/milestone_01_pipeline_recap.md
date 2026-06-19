@@ -308,6 +308,8 @@ Possible next milestones:
 - decide whether to add the full summary collector to CI or keep it local
 - document private-environment requirements before any real-data trial
 
+Before any private real-data trial, read `docs/private_real_data_readiness_checklist.md`.
+
 ## 11. Quick Commands
 
 Run Rust checks:

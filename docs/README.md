@@ -10,6 +10,7 @@ Recommended entry points:
 - `03_no_oracle_policy.md`: no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - `10_data_quality_policy.md`: validation and data-quality rules.
 - `12_synthetic_data_policy.md`: synthetic-only development policy.
+- `private_real_data_readiness_checklist.md`: Go / No-Go checklist before any private real-data trial.
 - `evaluation_spec.md`: synthetic-only evaluation schema.
 - `synthetic_e2e_pipeline.md`: Rust + Python synthetic E2E pipeline scripts.
 
