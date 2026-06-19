@@ -69,7 +69,14 @@ def validate_constraint_violation_set(
 def validate_candidate_constraint_violations(
     candidate_violation: dict[str, Any], *, location: str, index: int
 ) -> None:
-    required_fields = ("candidate_id", "episode_id", "action_type", "violations")
+    required_fields = (
+        "candidate_id",
+        "episode_id",
+        "action_type",
+        "generation_rule",
+        "action_family",
+        "violations",
+    )
     missing = [field for field in required_fields if field not in candidate_violation]
     if missing:
         joined = ", ".join(missing)

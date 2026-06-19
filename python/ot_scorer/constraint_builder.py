@@ -130,6 +130,8 @@ def build_candidate_constraint_violations(
         candidate_id=str(candidate_feature["candidate_id"]),
         episode_id=str(candidate_feature["episode_id"]),
         action_type=str(candidate_feature["action_type"]),
+        generation_rule=str(candidate_feature["generation_rule"]),
+        action_family=str(candidate_feature["action_family"]),
         violations=violations,
     )
 

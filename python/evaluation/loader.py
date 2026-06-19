@@ -94,6 +94,8 @@ def validate_candidate_score(
         "candidate_id",
         "episode_id",
         "action_type",
+        "generation_rule",
+        "action_family",
         "weighted_score",
         "blocked",
         "rank",

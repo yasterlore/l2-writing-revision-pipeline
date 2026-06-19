@@ -144,6 +144,8 @@ Each candidate score contains:
 - `candidate_id`
 - `episode_id`
 - `action_type`
+- `generation_rule`
+- `action_family`
 - `weighted_score`
 - `blocked`
 - `block_reasons`
@@ -156,6 +158,11 @@ Each candidate score contains:
 classification copied from the constraint-violation input and is used by the
 synthetic evaluation prototype. It is not a gold label, expected answer, or
 teacher correction.
+
+`generation_rule` and `action_family` are copied through from candidate
+generation and feature extraction for interpretability and debugging. They are
+no-oracle-safe metadata in this prototype and do not change the weighted score,
+blocking constraints, or deterministic tie-break policy.
 
 ### Weighted Score
 

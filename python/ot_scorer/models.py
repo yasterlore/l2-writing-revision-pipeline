@@ -116,6 +116,8 @@ class CandidateConstraintViolations:
     candidate_id: str
     episode_id: str
     action_type: str
+    generation_rule: str
+    action_family: str
     violations: list[ConstraintViolation]
 
     def to_json_dict(self) -> dict[str, Any]:
@@ -170,6 +172,8 @@ class CandidateScore:
     candidate_id: str
     episode_id: str
     action_type: str
+    generation_rule: str
+    action_family: str
     weighted_score: float
     blocked: bool
     block_reasons: list[str]

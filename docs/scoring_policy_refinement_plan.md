@@ -131,11 +131,7 @@ These are deliberate prototype choices:
 - action taxonomy is an initial version
 - linguistic constraints are not implemented
 - score output includes `action_type`
-
-Potential schema gap:
-
-- `generation_rule` may not be preserved all the way into `CandidateScoreSet`.
-- If future scoring needs rule-level analysis, preserve `generation_rule` through constraint and score outputs before adding new scorer logic.
+- score output preserves `generation_rule` and `action_family` for interpretation
 
 ## 5. No-Oracle Policy
 
@@ -200,10 +196,13 @@ Reporting F1, accuracy, or calibration now would make the project look more matu
 
 Future refinements should proceed cautiously.
 
-Possible improvements:
+Completed schema refinement:
 
 - preserve `generation_rule` through scorer output
-- preserve or derive stable `action_family`
+- preserve stable `action_family` through scorer output
+
+Possible future improvements:
+
 - enrich non-leaky candidate features
 - add local context pattern features that do not use post-edit context
 - separate safety constraints from linguistic constraints
@@ -226,7 +225,8 @@ CandidateSet
   -> CandidateScoreSet
 ```
 
-Do this before rule-level scoring.
+Status: completed for `generation_rule` and `action_family`. They are metadata
+only and do not change weights, blocking behavior, or tie-break order.
 
 ### Step B: Add Interpretable Non-Leaky Features
 
