@@ -251,6 +251,9 @@ Future examples:
 
 Do not include raw context text in feature or score output.
 
+See [Local pattern feature plan](local_pattern_feature_plan.md) for the
+no-oracle and privacy boundary before implementing local context abstractions.
+
 ### Step C: Add Linguistic Placeholder Constraints
 
 Status: structural descriptive constraints have been added for metadata

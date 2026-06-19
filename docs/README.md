@@ -15,6 +15,7 @@ Recommended entry points:
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md): Rust + Python synthetic E2E pipeline scripts.
 - [Scoring policy refinement plan](scoring_policy_refinement_plan.md): planned no-oracle-safe scorer improvements.
 - [Linguistic placeholder constraint plan](linguistic_placeholder_constraint_plan.md): design plan for future descriptive linguistic placeholder constraints.
+- [Local pattern feature plan](local_pattern_feature_plan.md): design plan for future no-oracle-safe local context abstractions.
 - [Public release checklist](public_release_checklist.md): public GitHub readiness checklist.
 
 Do not paste JSONL contents, real participant text, private data, or production outputs into documentation.

@@ -188,6 +188,9 @@ Consider structural features that can be derived from pre-edit context without e
 
 Examples may include length or punctuation-adjacent flags, but only after privacy and leakage review.
 
+See [Local pattern feature plan](local_pattern_feature_plan.md) before
+implementing any local context abstraction.
+
 ### Step C: Design Interpretable Linguistic Constraints
 
 If richer linguistic constraints are added, each should have:
