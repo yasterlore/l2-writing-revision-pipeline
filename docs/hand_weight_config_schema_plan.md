@@ -19,6 +19,8 @@ explicit, interpretable, and auditable before any scoring behavior changes.
 
 Before any config is connected to scoring, read
 [Default-unchanged config support design](default_unchanged_config_support_design.md).
+For the planned no-config regression guard, read
+[No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md).
 
 ## 1. Purpose
 
