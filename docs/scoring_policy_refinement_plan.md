@@ -230,15 +230,26 @@ only and do not change weights, blocking behavior, or tie-break order.
 
 ### Step B: Add Interpretable Non-Leaky Features
 
-Examples:
+Status: initial structural metadata features have been added to
+`CandidateFeatureSet`.
+
+Current examples:
 
 - action family
-- cursor-local edit flag
 - candidate placeholder class
+- candidate metadata completeness
+- generation-rule presence
+- action-family presence
+- safety-relevant candidate flag
+- candidate family bucket
+
+Future examples:
+
+- cursor-local edit flag
 - safe structural context length
 - punctuation-adjacent flag, if derived without post-edit context
 
-Do not include raw context text in score output.
+Do not include raw context text in feature or score output.
 
 ### Step C: Add Linguistic Placeholder Constraints
 

@@ -13,7 +13,7 @@ from ot_scorer.models import (
     CandidateFeatureSet,
 )
 
-FEATURE_SCHEMA_VERSION = "candidate_feature_schema_v0_1"
+FEATURE_SCHEMA_VERSION = "candidate_feature_schema_v0_2"
 
 
 def build_feature_sets(
@@ -56,25 +56,54 @@ def build_candidate_feature(
 ) -> CandidateFeature:
     flags = [*(set_flags or []), *audit_candidate(candidate)]
     action_type = str(candidate["action_type"])
+    generation_rule = str(candidate["generation_rule"])
+    family = action_family(action_type)
     description = candidate.get("description", "")
     feature_notes = candidate.get("feature_notes", [])
     if not isinstance(description, str):
         description = ""
     if not isinstance(feature_notes, list):
         feature_notes = []
+    no_oracle_safe = candidate.get("no_oracle_safe") is True
+    uses_observed_edit_text = candidate.get("uses_observed_edit_text") is True
+    is_hold = action_type == "hold"
+    is_local_edit = action_type in LOCAL_EDIT_ACTIONS
+    is_grammar_placeholder = action_type in GRAMMAR_PLACEHOLDER_ACTIONS
+    is_placeholder = action_type.endswith("_placeholder")
+    candidate_metadata_complete = all(
+        [
+            bool(str(candidate["candidate_id"])),
+            bool(str(candidate["episode_id"])),
+            bool(action_type),
+            bool(generation_rule),
+            bool(family),
+        ]
+    )
+    is_safety_relevant_candidate = (
+        bool(flags) or uses_observed_edit_text or not no_oracle_safe
+    )
 
     return CandidateFeature(
         candidate_id=str(candidate["candidate_id"]),
         episode_id=str(candidate["episode_id"]),
         action_type=action_type,
-        generation_rule=str(candidate["generation_rule"]),
-        no_oracle_safe=candidate.get("no_oracle_safe") is True,
-        uses_observed_edit_text=candidate.get("uses_observed_edit_text") is True,
-        action_family=action_family(action_type),
-        is_placeholder=action_type.endswith("_placeholder"),
-        is_hold=action_type == "hold",
-        is_local_edit=action_type in LOCAL_EDIT_ACTIONS,
-        is_grammar_placeholder=action_type in GRAMMAR_PLACEHOLDER_ACTIONS,
+        generation_rule=generation_rule,
+        no_oracle_safe=no_oracle_safe,
+        uses_observed_edit_text=uses_observed_edit_text,
+        action_family=family,
+        candidate_metadata_complete=candidate_metadata_complete,
+        has_generation_rule=bool(generation_rule),
+        has_action_family=bool(family),
+        is_safety_relevant_candidate=is_safety_relevant_candidate,
+        is_placeholder_candidate=is_placeholder,
+        is_grammar_family_candidate=family == "grammar_placeholder",
+        is_local_edit_family_candidate=family == "local_edit",
+        is_hold_candidate=family == "hold",
+        candidate_family_bucket=family,
+        is_placeholder=is_placeholder,
+        is_hold=is_hold,
+        is_local_edit=is_local_edit,
+        is_grammar_placeholder=is_grammar_placeholder,
         candidate_description_length=len(description),
         feature_notes_count=len(feature_notes),
         leakage_flags=sorted(set(flags)),
