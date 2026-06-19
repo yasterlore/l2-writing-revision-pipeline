@@ -359,16 +359,18 @@ Candidate score outputs derived from real participant data must not be committed
 
 ### No-Config Scoring Fixture Lock
 
-After generating the synthetic `deletion_case` E2E output, run:
+After generating the synthetic E2E outputs, run:
 
 ```bash
 scripts/check_no_config_scoring_fixture_lock.sh
 ```
 
-The lock compares the default no-config `CandidateScoreSet` output against the
-synthetic lock fixture. It prints safe summary only and does not print score
-rows, JSONL bodies, raw text, expected actions, or evaluation results. It is a
-regression guard, not a performance evaluation or ranking correctness claim.
+The default lock checks `deletion_case`, `selection_edit_case`, and
+`cursor_movement_case`. It compares the default no-config `CandidateScoreSet`
+output against synthetic lock fixtures. It prints safe summary only and does
+not print score rows, JSONL bodies, raw text, expected actions, or evaluation
+results. It is a regression guard, not a performance evaluation or ranking
+correctness claim.
 
 For planned refinements and non-goals, read `../../docs/scoring_policy_refinement_plan.md`.
 For the future linguistic placeholder constraint boundary, read

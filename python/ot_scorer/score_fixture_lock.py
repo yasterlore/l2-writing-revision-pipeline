@@ -19,6 +19,7 @@ DEFAULT_EXPECTED = Path(
     "tests/fixtures/synthetic/candidate_scores/valid/deletion_candidate_scores.jsonl"
 )
 DEFAULT_GENERATED = Path("tmp/synthetic_e2e/deletion_case/candidate_scores.jsonl")
+DEFAULT_CASE_NAME = "deletion_case"
 
 UNSAFE_PATH_PARTS: tuple[str, ...] = (
     "manual_outputs/",
@@ -63,6 +64,7 @@ class ScoreFixtureLockError(Exception):
 
 @dataclass(frozen=True)
 class ScoreFixtureLockReport:
+    case_name: str
     lock_status: str
     expected_path: Path
     generated_path: Path
@@ -82,6 +84,7 @@ class ScoreFixtureLockReport:
             )
         )
         return [
+            f"case_name={self.case_name}",
             f"lock_status={self.lock_status}",
             f"expected_path={self.expected_path}",
             f"generated_path={self.generated_path}",
@@ -99,6 +102,8 @@ class ScoreFixtureLockReport:
 def run_lock_check(
     expected_path: str | Path = DEFAULT_EXPECTED,
     generated_path: str | Path = DEFAULT_GENERATED,
+    *,
+    case_name: str = DEFAULT_CASE_NAME,
 ) -> ScoreFixtureLockReport:
     expected = Path(expected_path)
     generated = Path(generated_path)
@@ -115,6 +120,7 @@ def run_lock_check(
         generated_normalized,
         expected_path=expected,
         generated_path=generated,
+        case_name=case_name,
     )
 
 
@@ -302,6 +308,7 @@ def compare_normalized_scores(
     *,
     expected_path: Path,
     generated_path: Path,
+    case_name: str,
 ) -> ScoreFixtureLockReport:
     mismatches: list[tuple[str, str]] = []
 
@@ -334,6 +341,7 @@ def compare_normalized_scores(
         status = "ok"
 
     return ScoreFixtureLockReport(
+        case_name=case_name,
         lock_status=status,
         expected_path=expected_path,
         generated_path=generated_path,
@@ -429,8 +437,10 @@ def category_for_field(field_name: str) -> str:
 def run_summary(
     expected_path: str | Path = DEFAULT_EXPECTED,
     generated_path: str | Path = DEFAULT_GENERATED,
+    *,
+    case_name: str = DEFAULT_CASE_NAME,
 ) -> str:
-    report = run_lock_check(expected_path, generated_path)
+    report = run_lock_check(expected_path, generated_path, case_name=case_name)
     return "\n".join(report.to_summary_lines())
 
 
@@ -451,6 +461,11 @@ def build_parser() -> argparse.ArgumentParser:
         default=str(DEFAULT_GENERATED),
         help="Generated no-config CandidateScoreSet JSONL",
     )
+    parser.add_argument(
+        "--case-name",
+        default=DEFAULT_CASE_NAME,
+        help="Synthetic case name for safe summary output",
+    )
     return parser
 
 
@@ -458,11 +473,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     try:
-        report = run_lock_check(args.expected, args.generated)
+        report = run_lock_check(
+            args.expected,
+            args.generated,
+            case_name=args.case_name,
+        )
     except ScoreFixtureLockError as error:
         print(
             "\n".join(
                 [
+                    f"case_name={args.case_name}",
                     "lock_status=fail",
                     f"expected_path={Path(args.expected)}",
                     f"generated_path={Path(args.generated)}",
