@@ -31,6 +31,8 @@ npm run build
 cargo run -p kslog_cli -- validate path/to/synthetic_session_web_001.raw_events.jsonl
 ```
 
+For manual end-to-end checks, place downloaded synthetic JSONL under `manual_outputs/logger_web/` and follow `docs/manual_e2e_check_guide.md`.
+
 ## JSONL Output
 
 Each JSONL line is intended to match the first `RawEvent` shape used by the Rust schema layer.
@@ -70,3 +72,4 @@ The app does not use `localStorage`, does not send network requests, and does no
 
 Downloaded JSONL can contain text fragments. Do not commit downloaded JSONL from real sessions to this repository.
 
+Downloaded synthetic manual outputs should stay under `manual_outputs/`, which is ignored by Git.
