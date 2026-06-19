@@ -311,6 +311,10 @@ change current weights or ranking behavior.
 Select a small set of candidate constraint families for possible scoring while
 explicitly listing excluded families.
 
+See
+[Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md)
+for the follow-up selection document.
+
 ### Step 64: Implement Hand-Weight Config, If Approved
 
 Implement only after the design, no-oracle review, and tests are ready.

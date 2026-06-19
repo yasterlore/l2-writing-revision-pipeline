@@ -330,3 +330,5 @@ For the boundary between diagnostics and future scoring policy, read
 `../../docs/diagnostic_to_scoring_boundary_review.md`.
 For future hand-designed weight principles, read
 `../../docs/hand_weight_policy_design.md`.
+For future score-target constraint family selection, read
+`../../docs/score_target_constraint_family_selection_plan.md`.

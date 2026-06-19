@@ -321,6 +321,10 @@ The design principles for this later step are in
 [Hand-weight policy design](hand_weight_policy_design.md). That document does
 not select or implement new weights.
 
+The narrower family-selection proposal is in
+[Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md).
+It keeps current scoring behavior unchanged.
+
 ### Step E: Synthetic-Only Smoke Evaluation
 
 Run synthetic expected-action checks only to verify wiring.
@@ -381,3 +385,4 @@ Read:
 - `docs/milestone_02_synthetic_evaluation_recap.md`
 - `docs/diagnostic_to_scoring_boundary_review.md`
 - `docs/hand_weight_policy_design.md`
+- `docs/score_target_constraint_family_selection_plan.md`
