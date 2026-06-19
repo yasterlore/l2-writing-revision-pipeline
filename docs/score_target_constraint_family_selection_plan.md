@@ -29,6 +29,8 @@ It does not assign weights. It does not change current behavior.
 
 Before any future hand-weight config is connected to scoring, read
 [Default-unchanged config support design](default_unchanged_config_support_design.md).
+For the Milestone 03 follow-up review, read
+[Score-active family selection revisit](score_active_family_selection_revisit.md).
 
 ## 2. Current Constraint Families
 

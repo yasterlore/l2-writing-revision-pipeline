@@ -25,6 +25,8 @@ For the future explicit-config ranking diff boundary, read
 [Explicit config ranking diff plan](explicit_config_ranking_diff_plan.md).
 For the future explicit function boundary, read
 [Config-aware scorer function design](config_aware_scorer_function_design.md).
+For the Milestone 03 follow-up review of score-active family boundaries, read
+[Score-active family selection revisit](score_active_family_selection_revisit.md).
 
 ## 1. Purpose
 

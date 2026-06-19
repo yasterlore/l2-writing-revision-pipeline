@@ -364,7 +364,7 @@ Possible next steps:
   [final docs-only release review](milestone_03_final_docs_only_release_review.md)
 - config-enabled summary smoke expansion
 - synthetic-only hand-weight rationale examples
-- score-active family selection revisit
+- [score-active family selection revisit](score_active_family_selection_revisit.md)
 - default-path regression review before any future config expansion
 - private validation design later
 - continued public repository safety review
@@ -380,6 +380,7 @@ Real participant data remains out of the public repository.
 - [Diagnostic summary tooling plan](diagnostic_summary_tooling_plan.md)
 - [Diagnostic-to-scoring boundary review](diagnostic_to_scoring_boundary_review.md)
 - [Hand-weight policy design](hand_weight_policy_design.md)
+- [Score-active family selection revisit](score_active_family_selection_revisit.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Config-enabled E2E design](config_enabled_e2e_design.md)
 - [Config-enabled summary collector design](config_enabled_summary_collector_design.md)
