@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from ot_scorer.models import (
     CandidateScore,
@@ -11,6 +11,9 @@ from ot_scorer.models import (
     ConstraintWeight,
 )
 from ot_scorer.violation_set_loader import validate_constraint_violation_set
+
+if TYPE_CHECKING:
+    from ot_scorer.weight_config import HandWeightConfig
 
 SCORING_POLICY_VERSION = "weighted_ot_scorer_policy_v0_1"
 BLOCKING_WEIGHT = 1_000_000.0
@@ -89,9 +92,67 @@ def build_candidate_score_set(violation_set: dict[str, Any]) -> CandidateScoreSe
     )
 
 
+def score_constraint_violation_set_with_config(
+    violation_set: dict[str, Any],
+    config: "HandWeightConfig",
+) -> CandidateScoreSet:
+    """Score one violation set with an explicitly supplied validated config.
+
+    This function is intentionally separate from the default scorer path. It
+    does not load config files, inspect environment variables, or change the
+    default `build_candidate_score_set` behavior.
+    """
+
+    validate_constraint_violation_set(violation_set)
+    constraint_weights = active_constraint_weights_from_config(config)
+    scores = [
+        score_candidate_with_config(candidate_violation, constraint_weights)
+        for candidate_violation in violation_set["candidate_violations"]
+    ]
+    ranked_scores = assign_ranks(scores)
+    return CandidateScoreSet(
+        candidate_score_set_id=f"{violation_set['constraint_violation_set_id']}:scores",
+        constraint_violation_set_id=str(violation_set["constraint_violation_set_id"]),
+        episode_id=str(violation_set["episode_id"]),
+        scoring_policy_version=SCORING_POLICY_VERSION,
+        candidate_scores=ranked_scores,
+    )
+
+
 def score_candidate(candidate_violation: dict[str, Any]) -> CandidateScore:
     contributions = [
         contribution_from_violation(violation)
+        for violation in candidate_violation["violations"]
+    ]
+    block_reasons = [
+        contribution.constraint_id
+        for contribution in contributions
+        if contribution.constraint_id in BLOCKING_CONSTRAINT_IDS
+        and contribution.violation_count > 0
+    ]
+    weighted_score = sum(contribution.contribution for contribution in contributions)
+    return CandidateScore(
+        candidate_id=str(candidate_violation["candidate_id"]),
+        episode_id=str(candidate_violation["episode_id"]),
+        action_type=str(candidate_violation["action_type"]),
+        generation_rule=str(candidate_violation["generation_rule"]),
+        action_family=str(candidate_violation["action_family"]),
+        weighted_score=weighted_score,
+        blocked=bool(block_reasons),
+        block_reasons=block_reasons,
+        rank=0,
+        constraint_contributions=contributions,
+        scoring_policy_version=SCORING_POLICY_VERSION,
+        no_oracle_safe=not block_reasons,
+    )
+
+
+def score_candidate_with_config(
+    candidate_violation: dict[str, Any],
+    constraint_weights: dict[str, ConstraintWeight],
+) -> CandidateScore:
+    contributions = [
+        contribution_from_violation_with_weights(violation, constraint_weights)
         for violation in candidate_violation["violations"]
     ]
     block_reasons = [
@@ -138,6 +199,47 @@ def contribution_from_violation(violation: dict[str, Any]) -> ConstraintContribu
         contribution=contribution,
         observed=violation.get("observed") is True,
     )
+
+
+def contribution_from_violation_with_weights(
+    violation: dict[str, Any],
+    constraint_weights: dict[str, ConstraintWeight],
+) -> ConstraintContribution:
+    constraint_id = str(violation["constraint_id"])
+    weight = constraint_weights.get(
+        constraint_id,
+        ConstraintWeight(
+            constraint_id=constraint_id,
+            weight=0.0,
+            is_blocking=False,
+            rationale="Inactive or unknown constraints are not weighted.",
+        ),
+    )
+    violation_count = int(violation["violation_count"])
+    contribution = weight.weight * violation_count
+    return ConstraintContribution(
+        constraint_id=constraint_id,
+        constraint_type=str(violation["constraint_type"]),
+        violation_count=violation_count,
+        weight=weight.weight,
+        contribution=contribution,
+        observed=violation.get("observed") is True,
+    )
+
+
+def active_constraint_weights_from_config(
+    config: "HandWeightConfig",
+) -> dict[str, ConstraintWeight]:
+    return {
+        entry.constraint_id: ConstraintWeight(
+            constraint_id=entry.constraint_id,
+            weight=entry.weight,
+            is_blocking=entry.constraint_id in BLOCKING_CONSTRAINT_IDS,
+            rationale=entry.rationale,
+        )
+        for entry in config.constraint_weights
+        if entry.active
+    }
 
 
 def assign_ranks(scores: list[CandidateScore]) -> list[CandidateScore]:

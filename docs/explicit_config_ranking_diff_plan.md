@@ -3,11 +3,10 @@
 This document designs how future explicit-config scoring behavior should be
 reviewed without changing no-config default scoring.
 
-It is a design document only. It does not connect config support to the scorer,
-implement a config-aware scorer function, add a `score.py` config option,
-change default weights, change the scoring formula, change deterministic
-tie-break behavior, add evaluation metrics, or implement learner-state
-estimation.
+It is a design document only. It does not connect config support to the scorer
+CLI, add a `score.py` config option, change default weights, change the scoring
+formula, change deterministic tie-break behavior, add evaluation metrics, or
+implement learner-state estimation.
 
 The goal is to check intentional ranking differences only when an explicit
 config path is supplied.
@@ -35,7 +34,8 @@ Current state:
 
 - `python/ot_scorer/weight_config.py` is validation-only.
 - `python/ot_scorer/validate_weight_config.py` is validation-only.
-- `python/ot_scorer/scorer.py` is not connected to config.
+- `python/ot_scorer/scorer.py` includes a separate explicit config-aware
+  function, but the default scorer path is not connected to config.
 - `python/ot_scorer/score.py` has no config option.
 - no-config fixture lock covers:
   - `deletion_case`
@@ -247,8 +247,8 @@ path unchanged. See
 
 ### Step 73: Implement Config-Aware Scorer Function Without Default Path Change
 
-If approved, implement a separate function that accepts a validated config but
-does not alter default scoring.
+Implemented as a separate function that accepts a validated config but does not
+alter default scoring.
 
 ### Step 74: Explicit CLI Option Design
 

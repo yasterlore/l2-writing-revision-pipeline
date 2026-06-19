@@ -19,9 +19,10 @@ Finally, it can read `ConstraintViolationSet` JSONL and write `CandidateScoreSet
 It can also summarize `ConstraintViolationSet` JSONL into count-only
 diagnostic summaries for synthetic wiring checks.
 
-It also defines hand-weight config schema models and a strict validation helper
-for future scoring-weight config files. Those configs are not connected to the
-scorer yet, so default scoring behavior is unchanged.
+It also defines hand-weight config schema models, a strict validation helper,
+and a separate explicit config-aware scorer function for unit-tested synthetic
+config experiments. That function is not connected to the scorer CLI, E2E
+pipeline, or summary collector, so default scoring behavior is unchanged.
 
 It also provides a validation CLI for those config files. The CLI prints only a
 safe count summary and does not print config bodies, score output, ranking

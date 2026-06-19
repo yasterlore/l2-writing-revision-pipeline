@@ -357,6 +357,19 @@ This rank is not a correctness prediction. It is a deterministic prototype order
 
 Candidate score outputs derived from real participant data must not be committed to this repository.
 
+### Explicit Config-Aware Function
+
+`python/ot_scorer/scorer.py` also exposes
+`score_constraint_violation_set_with_config(violation_set, config)` for
+unit-tested synthetic config experiments. It accepts a validated
+`HandWeightConfig` object and uses only active constraint weights from that
+object.
+
+This function is not connected to `score.py`, the synthetic E2E pipeline, or
+the summary collector. The default scorer path still does not load, discover,
+or import config at runtime, and default `CandidateScoreSet` output does not
+include config fields.
+
 ### No-Config Scoring Fixture Lock
 
 After generating the synthetic E2E outputs, run:

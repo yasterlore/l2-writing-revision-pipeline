@@ -7,8 +7,12 @@ from pathlib import Path
 
 from ot_scorer.loader import CandidateFeatureError
 from ot_scorer.score import run
-from ot_scorer.scorer import build_candidate_score_set
+from ot_scorer.scorer import (
+    build_candidate_score_set,
+    score_constraint_violation_set_with_config,
+)
 from ot_scorer.violation_set_loader import load_constraint_violation_sets
+from ot_scorer.weight_config import WeightConfigError, parse_hand_weight_config
 
 FIXTURE = Path(
     "tests/fixtures/synthetic/constraint_violations/valid/deletion_constraint_violations.jsonl"
@@ -82,6 +86,68 @@ class ScorerTests(unittest.TestCase):
         second = build_candidate_score_set(constraint_violation_set()).to_json_dict()
 
         self.assertEqual(first, second)
+
+    def test_config_aware_function_with_default_like_config_matches_default(self) -> None:
+        data = constraint_violation_set()
+        config = parse_hand_weight_config(default_like_config_dict())
+
+        default_score_set = build_candidate_score_set(data).to_json_dict()
+        config_score_set = score_constraint_violation_set_with_config(
+            data, config
+        ).to_json_dict()
+
+        self.assertEqual(config_score_set, default_score_set)
+        self.assertNotIn("config_schema_version", config_score_set)
+        self.assertNotIn("config_name", config_score_set)
+        self.assertNotIn("constraint_weights", config_score_set)
+
+    def test_config_aware_function_can_change_explicit_weight_only(self) -> None:
+        data = constraint_violation_set()
+        set_violation_count(data, 0, "NO-LEAKAGE-FLAG", 1)
+        config_data = default_like_config_dict()
+        config_data["config_name"] = "synthetic_unit_test_leakage_weight"
+        config_data["constraint_weights"][0]["weight"] = 5.0
+        config_data["constraint_weights"][0]["rationale"] = (
+            "Synthetic unit test config changes only the leakage weight."
+        )
+        config = parse_hand_weight_config(config_data)
+
+        default_score_set = build_candidate_score_set(data)
+        config_score_set = score_constraint_violation_set_with_config(data, config)
+        default_score = find_score(
+            default_score_set,
+            "synthetic_session_001:micro:3:cand:01:hold",
+        )
+        config_score = find_score(
+            config_score_set,
+            "synthetic_session_001:micro:3:cand:01:hold",
+        )
+
+        self.assertEqual(default_score.weighted_score, 1_000_000.0)
+        self.assertEqual(config_score.weighted_score, 5.0)
+        self.assertTrue(config_score.blocked)
+        self.assertEqual(config_score.block_reasons, ["NO-LEAKAGE-FLAG"])
+        self.assertEqual(
+            [score.candidate_id for score in config_score_set.candidate_scores],
+            [score.candidate_id for score in default_score_set.candidate_scores],
+        )
+
+    def test_config_aware_function_does_not_mutate_default_path(self) -> None:
+        data = constraint_violation_set()
+        config = parse_hand_weight_config(default_like_config_dict())
+        before = build_candidate_score_set(data).to_json_dict()
+
+        score_constraint_violation_set_with_config(data, config)
+        after = build_candidate_score_set(data).to_json_dict()
+
+        self.assertEqual(after, before)
+
+    def test_invalid_config_is_rejected_before_config_aware_scoring(self) -> None:
+        config_data = default_like_config_dict()
+        config_data["constraint_weights"][0]["rationale"] = ""
+
+        with self.assertRaises(WeightConfigError):
+            parse_hand_weight_config(config_data)
 
     def test_hold_local_grammar_tie_break_order(self) -> None:
         score_set = build_candidate_score_set(constraint_violation_set())
@@ -165,6 +231,13 @@ class ScorerTests(unittest.TestCase):
             self.assertIn("generation_rule", rows[0]["candidate_scores"][0])
             self.assertIn("action_family", rows[0]["candidate_scores"][0])
 
+    def test_score_cli_has_no_config_option(self) -> None:
+        source = Path("python/ot_scorer/score.py").read_text(encoding="utf-8")
+
+        self.assertNotIn("--config", source)
+        self.assertNotIn("--weight-config", source)
+        self.assertNotIn("load_hand_weight_config", source)
+
     def test_source_does_not_use_eval_exec_or_pickle(self) -> None:
         source_dir = Path("python/ot_scorer")
         source_text = "\n".join(
@@ -190,6 +263,87 @@ def set_violation_count(
             violation["observed"] = violation_count > 0
             return
     raise AssertionError(f"missing constraint: {constraint_id}")
+
+
+def find_score(score_set: object, candidate_id: str) -> object:
+    for score in score_set.candidate_scores:
+        if score.candidate_id == candidate_id:
+            return score
+    raise AssertionError(f"missing score: {candidate_id}")
+
+
+def default_like_config_dict() -> dict[str, object]:
+    return {
+        "config_schema_version": "hand_weight_config_schema_v0_1",
+        "config_name": "synthetic_unit_test_default_like",
+        "created_for": "synthetic scorer unit test only",
+        "default_behavior": "Default scorer path remains unchanged.",
+        "score_active_constraint_families": ["safety_blocking"],
+        "constraint_weights": [
+            config_weight("NO-LEAKAGE-FLAG", 1_000_000.0),
+            config_weight("NO-OBSERVED-EDIT-TEXT", 1_000_000.0),
+            config_weight("NO-UNSAFE-CANDIDATE", 1_000_000.0),
+        ],
+        "blocking_constraints": [
+            "NO-LEAKAGE-FLAG",
+            "NO-OBSERVED-EDIT-TEXT",
+            "NO-UNSAFE-CANDIDATE",
+        ],
+        "score_neutral_constraints": [
+            "HOLD-CANDIDATE",
+            "LOCAL-EDIT-CANDIDATE",
+            "GRAMMAR-PLACEHOLDER-CANDIDATE",
+            "PLACEHOLDER-CANDIDATE",
+        ],
+        "rationale": "Synthetic unit test config; not connected to default scoring.",
+        "no_oracle_review": {
+            "review_status": "synthetic unit test only",
+            "allowed_information": ["constraint_id", "violation_count"],
+            "forbidden_information": [
+                "final_text",
+                "observed_after_text",
+                "gold_label",
+                "expected action",
+                "real participant data",
+            ],
+        },
+        "synthetic_only_notice": (
+            "Synthetic unit test config only; no real participant data is used."
+        ),
+        "expected_action_usage_policy": (
+            "Expected actions are not used for scoring or weight tuning."
+        ),
+        "forbidden_information_policy": {
+            "forbidden_fields": [
+                "final_text",
+                "observed_after_text",
+                "gold_label",
+                "teacher_correction",
+            ],
+            "forbidden_path_parts": [
+                "manual_outputs",
+                "private_data",
+                "real_data",
+                "participant_data",
+            ],
+            "raw_text_policy": "Raw text patterns are not allowed in config.",
+        },
+    }
+
+
+def config_weight(constraint_id: str, weight: float) -> dict[str, object]:
+    return {
+        "constraint_id": constraint_id,
+        "constraint_family": "safety_blocking",
+        "weight": weight,
+        "active": True,
+        "rationale": "Synthetic unit test active safety weight.",
+        "no_oracle_safe_reason": "Uses no-oracle safety flags only.",
+        "expected_effect": "Candidate is blocked when violation_count is positive.",
+        "risk_note": "Synthetic unit test only; not a performance claim.",
+        "tests_required": ["default path unchanged"],
+        "last_reviewed": "2026-06-19",
+    }
 
 
 def constraint_violation_set() -> dict[str, object]:
