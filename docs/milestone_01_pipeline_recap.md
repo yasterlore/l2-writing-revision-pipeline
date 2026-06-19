@@ -354,3 +354,8 @@ The first evaluation schema prototype is synthetic-only.
 It compares `CandidateScoreSet` JSONL with synthetic expected action fixtures after scoring. These expected actions are not real gold labels, teacher corrections, or final corrected text.
 
 This prototype is for checking evaluation mechanics only. It does not support real participant evaluation, F1, calibration, selective prediction, or learner-state estimation.
+
+For later milestones, read:
+
+- [Milestone 02 synthetic evaluation recap](milestone_02_synthetic_evaluation_recap.md)
+- [Milestone 03 config-aware diagnostic infrastructure recap](milestone_03_config_aware_diagnostic_infrastructure_recap.md)

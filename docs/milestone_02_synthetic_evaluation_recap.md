@@ -293,6 +293,8 @@ Read:
 - `docs/synthetic_e2e_pipeline.md` for the E2E pipeline and summary collector.
 - `docs/03_no_oracle_policy.md` for no-oracle rules.
 - `docs/milestone_01_pipeline_recap.md` for the earlier pipeline foundation.
+- `docs/milestone_03_config_aware_diagnostic_infrastructure_recap.md` for the
+  later config-aware diagnostic infrastructure milestone.
 
 ## 11. Next Candidate Steps
 
