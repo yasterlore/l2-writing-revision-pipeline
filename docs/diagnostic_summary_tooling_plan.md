@@ -232,8 +232,10 @@ performance metrics.
 
 ### Step 54: Inspect Synthetic Diagnostic Distribution
 
-Use synthetic fixtures to inspect whether diagnostic constraints are being
-emitted as expected.
+Planned in
+[`synthetic_diagnostic_distribution_review_plan.md`](synthetic_diagnostic_distribution_review_plan.md):
+inspect count-only synthetic diagnostic distributions without reading raw JSONL,
+report bodies, per-episode text, expected actions, or performance metrics.
 
 ### Later: Scoring Review
 
