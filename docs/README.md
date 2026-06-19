@@ -15,6 +15,7 @@ Recommended entry points:
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md): Rust + Python synthetic E2E pipeline scripts.
 - [Scoring policy refinement plan](scoring_policy_refinement_plan.md): planned no-oracle-safe scorer improvements.
 - [Linguistic placeholder constraint plan](linguistic_placeholder_constraint_plan.md): design plan for future descriptive linguistic placeholder constraints.
+- [Non-leaky linguistic constraint design plan](non_leaky_linguistic_constraint_design_plan.md): design plan for future descriptive linguistic diagnostics using no-oracle-safe local pattern features.
 - [Local pattern feature plan](local_pattern_feature_plan.md): design plan for future no-oracle-safe local context abstractions.
 - [Local pattern feature schema v0.3 plan](local_pattern_feature_schema_v0_3_plan.md): implemented initial CandidateFeatureSet v0.3 field definitions.
 - [Local pattern diagnostic constraint plan](local_pattern_diagnostic_constraint_plan.md): design plan for descriptive diagnostics derived from v0.3 local pattern features.

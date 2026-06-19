@@ -191,6 +191,10 @@ Examples may include length or punctuation-adjacent flags, but only after privac
 See [Local pattern feature plan](local_pattern_feature_plan.md) before
 implementing any local context abstraction.
 
+For the next design layer that combines linguistic placeholder categories with
+no-oracle-safe local pattern features, see
+[Non-leaky linguistic constraint design plan](non_leaky_linguistic_constraint_design_plan.md).
+
 ### Step C: Design Interpretable Linguistic Constraints
 
 If richer linguistic constraints are added, each should have:

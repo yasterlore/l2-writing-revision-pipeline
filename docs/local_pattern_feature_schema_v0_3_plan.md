@@ -428,6 +428,10 @@ constraints only.
 See [Local pattern diagnostic constraint plan](local_pattern_diagnostic_constraint_plan.md)
 for the proposed constraint IDs, no-oracle boundary, and scoring non-goals.
 
+For future linguistic diagnostics that may use these v0.3 abstract fields
+without reintroducing raw text, see
+[Non-leaky linguistic constraint design plan](non_leaky_linguistic_constraint_design_plan.md).
+
 ### Later: Scoring Review
 
 Do not add these features to `weighted_score` until there is a separate
