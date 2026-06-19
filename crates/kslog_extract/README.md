@@ -54,7 +54,23 @@ The first version can extract:
 
 Normal typing is extracted as `Insertion` with `is_revision_like = false`. This preserves the observed event while distinguishing it from deletion, replacement, paste, and other revision-like behaviors.
 
-When `inserted_text` and `deleted_text` are both present, the event is classified as `Replacement` even if a selection span is available. The span is still preserved. `SelectionRangeEdit` is reserved for selection-based edits that are not already represented as replacement in this first version.
+Classification is heuristic and based only on observed event shape.
+
+Current priority:
+
+1. `CompositionCommit` for `composition_end` with observed `inserted_text`
+2. `Paste` for `event_type = paste` or `input_type = insertFromPaste`
+3. `SelectionRangeEdit` for non-collapsed `selection_start_before..selection_end_before` with text change
+4. `Replacement` for observed inserted and deleted text without a non-collapsed selection
+5. `Deletion`
+6. `Insertion`
+7. `Unsupported`
+
+`SelectionRangeEdit` is intentionally prioritized over `Replacement` when a non-collapsed selection is present. This makes selection-driven edits easy to find; inserted/deleted text is still preserved on the event.
+
+`Insertion` is marked `is_revision_like = true` only when it is selection-based or cursor-local. Cursor-local means `cursor_pos_before < doc_len_before`. Terminal ordinary typing remains `is_revision_like = false`.
+
+Paste and composition handling are minimal. Browser differences may still cause paste or IME behavior to appear as ordinary insertion or unsupported events.
 
 ## What This Crate Does Not Do Yet
 
@@ -66,6 +82,7 @@ When `inserted_text` and `deleted_text` are both present, the event is classifie
 - It does not run OT scoring.
 - It does not estimate learner state.
 - It does not use final corrected text, gold labels, teacher corrections, or post-hoc annotations.
+- It does not use replay output final text as a classification reason.
 
 ## Data Policy
 

@@ -428,8 +428,8 @@ mod tests {
         let episode = report
             .episodes
             .iter()
-            .find(|episode| episode.revision_kind == RevisionEventKind::Replacement)
-            .expect("replacement micro episode exists");
+            .find(|episode| episode.revision_kind == RevisionEventKind::SelectionRangeEdit)
+            .expect("selection-prioritized replacement micro episode exists");
         assert_eq!(episode.inserted_text.as_deref(), Some("go to"));
         assert_eq!(episode.deleted_text.as_deref(), Some("go"));
         assert_eq!(episode.local_context_after_observed.text, "I go to school.");

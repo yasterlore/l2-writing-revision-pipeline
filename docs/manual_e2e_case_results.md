@@ -158,6 +158,19 @@ The `paste` case passed the full pipeline but did not produce a `Paste` kind sum
 
 The `ime_composition_minimal` case passed the full pipeline but did not produce a `CompositionCommit` kind summary. This matches the current minimal IME interpretation limit.
 
+## Step 18 Classification Coverage Update
+
+`kslog_extract` now has a slightly broader first-pass heuristic:
+
+- non-collapsed selection edits are classified as `SelectionRangeEdit` before `Replacement`
+- cursor-local insertion is marked `is_revision_like = true` when `cursor_pos_before < doc_len_before`
+- paste can be detected from `event_type = paste` or `input_type = insertFromPaste`
+- `composition_end` with observed inserted text is classified as `CompositionCommit`
+
+These are observed-event classifications, not gold labels. They do not use final corrected text, teacher corrections, or other no-oracle-forbidden information.
+
+The Step 17 manual rerun results remain valid as replay compatibility evidence. Classification summaries should be regenerated with the updated extractor before claiming that the manual `selection_edit`, `cursor_movement`, paste, or IME coverage gaps are resolved.
+
 ## Failure Record Format
 
 Use this format if a case fails. Keep it summary-only.
