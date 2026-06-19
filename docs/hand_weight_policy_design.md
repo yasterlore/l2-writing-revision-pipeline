@@ -12,6 +12,9 @@ Hand-designed weights, if added later, must be interpretable safety and
 diagnostic policy choices. They must not be learned weights, performance
 claims, or tuning results from synthetic expected actions.
 
+Before any future config is connected to scoring, read
+[Default-unchanged config support design](default_unchanged_config_support_design.md).
+
 ## 1. Purpose
 
 The purpose of a hand-weight policy is to define how future initial weights

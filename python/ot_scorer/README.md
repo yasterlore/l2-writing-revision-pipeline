@@ -378,3 +378,5 @@ For future score-target constraint family selection, read
 `../../docs/score_target_constraint_family_selection_plan.md`.
 For future hand-weight config schema design, read
 `../../docs/hand_weight_config_schema_plan.md`.
+For the default-unchanged boundary before any future scorer config connection,
+read `../../docs/default_unchanged_config_support_design.md`.
