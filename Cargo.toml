@@ -1,5 +1,9 @@
 [workspace]
-members = ["crates/kslog_schema", "crates/kslog_validate"]
+members = [
+    "crates/kslog_schema",
+    "crates/kslog_validate",
+    "crates/kslog_replay",
+]
 resolver = "2"
 
 [workspace.package]
