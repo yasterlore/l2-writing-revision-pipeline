@@ -271,7 +271,8 @@ ranking diff smoke for the intentional weighted-score diff check.
 ### Step 81: Config-Enabled Summary Collector Design
 
 Design whether config-enabled summary should use a separate CSV, separate
-directory, explicit columns, or remain outside the collector.
+directory, explicit columns, or remain outside the collector. See
+[Config-enabled summary collector design](config_enabled_summary_collector_design.md).
 
 ### Step 82: Private Validation Design Later
 
@@ -286,3 +287,4 @@ public repository.
 - [Default-unchanged config support design](default_unchanged_config_support_design.md)
 - [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
+- [Config-enabled summary collector design](config_enabled_summary_collector_design.md)
