@@ -305,3 +305,5 @@ Good next steps:
 - create a private real-data readiness checklist before any real-data work
 
 Any future metric documentation should clearly separate synthetic connection checks from research performance claims.
+
+Before any private real-data trial, read `docs/private_real_data_readiness_checklist.md` and treat it as a Go / No-Go checklist, not as permission to use real data in this repository.

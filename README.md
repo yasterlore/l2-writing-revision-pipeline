@@ -20,6 +20,8 @@ All development and testing in this repository must use synthetic data only.
 
 Real participant data must never be committed, read, inspected, transformed, summarized, or written by Codex in this repository. Real-data testing may happen only after the full pipeline passes synthetic-data validation, and only in a private local or institution-approved environment.
 
+Before any private real-data trial, read `docs/private_real_data_readiness_checklist.md`. This checklist is not permission to use real data in this repository.
+
 ## Repository Map
 
 ```text
