@@ -45,6 +45,12 @@ Synthetic expected actions are not real gold labels, teacher corrections, or fin
 
 The evaluator writes one `EvaluationReport` JSON file.
 
+When connected through `scripts/run_synthetic_e2e_pipeline.sh`, the report is
+written to `tmp/synthetic_e2e/<case_name>/evaluation_report.json` only when an
+expected action JSONL path is provided. The expected action file is used after
+scoring and is not passed to candidate generation, feature extraction,
+constraint generation, or scoring.
+
 Summary fields:
 
 - `episodes_total`

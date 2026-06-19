@@ -15,8 +15,21 @@ scripts/run_synthetic_e2e_pipeline.sh tests/fixtures/synthetic/raw_events/valid/
 Usage:
 
 ```bash
-scripts/run_synthetic_e2e_pipeline.sh <input_raw_events.jsonl> <case_name>
+scripts/run_synthetic_e2e_pipeline.sh <input_raw_events.jsonl> <case_name> [expected_actions.jsonl]
 ```
+
+If `expected_actions.jsonl` is provided, the script runs the synthetic-only
+evaluation prototype after scoring:
+
+```bash
+scripts/run_synthetic_e2e_pipeline.sh \
+  tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl \
+  deletion_case_with_eval \
+  tests/fixtures/synthetic/expected_actions/valid/deletion_expected_actions.jsonl
+```
+
+If no expected action file is provided, the script behaves as before and stops
+after writing `candidate_scores.jsonl`.
 
 ## Summary Collector
 
@@ -33,6 +46,10 @@ scripts/run_synthetic_e2e_summary.sh tests/fixtures/synthetic/raw_events/valid
 ```
 
 The collector runs `scripts/run_synthetic_e2e_pipeline.sh` once per `.jsonl` file. The case name is the file stem.
+
+The collector intentionally uses the no-evaluation form of the pipeline. It is
+for connection smoke checks across raw-event fixtures, not expected-action
+comparison.
 
 It writes a CSV summary to:
 
@@ -94,6 +111,7 @@ If the directory already exists, this first version may overwrite files with the
 - `candidate_features.jsonl`
 - `constraint_violations.jsonl`
 - `candidate_scores.jsonl`
+- `evaluation_report.json` when optional synthetic evaluation is requested
 
 ## Pipeline Stages
 
@@ -117,6 +135,13 @@ If the directory already exists, this first version may overwrite files with the
    - Creates `CandidateScoreSet` JSONL with prototype score and deterministic rank.
    - This is not evaluation and not a correctness claim.
 
+6. Optional Python synthetic evaluation
+   - Runs only when an expected action JSONL file is supplied as the third argument.
+   - Creates `evaluation_report.json` in the same `tmp/synthetic_e2e/<case_name>/` directory.
+   - Uses expected actions only after scoring.
+   - Does not change candidate generation, features, constraints, scores, or ranks.
+   - Does not calculate F1, production accuracy, calibration, selective prediction, or learner-state estimates.
+
 ## Privacy Rules
 
 - Use synthetic data only.
@@ -127,10 +152,17 @@ If the directory already exists, this first version may overwrite files with the
 
 The script suppresses JSONL contents from stdout. It prints only stage summaries and output paths.
 
+When optional evaluation is enabled, stdout reports only `evaluation: ok` or
+`evaluation: fail` and the report path. The report is written under `tmp/` and
+must not be committed. Do not paste report contents or JSONL contents into docs.
+
 The summary collector also suppresses JSONL contents. It may count structural fields in `candidate_scores.jsonl`, but it does not print candidate descriptions, contexts, proposed edits, final text, or JSONL rows.
 
 ## What This Is Not
 
-This pipeline is not evaluation. It does not calculate F1, calibration, selective prediction, learner-state estimates, or model performance.
+This pipeline is not production evaluation. Its optional evaluation stage is only
+a synthetic expected-action connection check. It does not calculate F1,
+production accuracy, calibration, selective prediction, learner-state estimates,
+or model performance.
 
 The weighted score and rank are prototype outputs. They are deterministic analysis artifacts, not gold labels and not proof that a candidate is correct.
