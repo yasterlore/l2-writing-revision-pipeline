@@ -2,19 +2,68 @@
 set -eu
 
 usage() {
-  echo "Usage: scripts/run_synthetic_e2e_pipeline.sh <input_raw_events.jsonl> <case_name> [expected_actions.jsonl]" >&2
+  echo "Usage: scripts/run_synthetic_e2e_pipeline.sh <input_raw_events.jsonl> <case_name> [expected_actions.jsonl] [--weight-config <config.json>]" >&2
   echo "Runs the synthetic-only Rust + Python E2E pipeline without printing JSONL contents." >&2
   echo "If expected_actions.jsonl is provided, runs synthetic-only evaluation after scoring." >&2
+  echo "If --weight-config is provided, it must be explicit and named." >&2
 }
 
-if [ "$#" -lt 2 ] || [ "$#" -gt 3 ]; then
+unsafe_config_path() {
+  case "$1" in
+    *manual_outputs/* | *private_data/* | *real_data/* | *participant_data/* )
+      return 0
+      ;;
+    * )
+      return 1
+      ;;
+  esac
+}
+
+if [ "$#" -lt 2 ]; then
   usage
   exit 2
 fi
 
 input_path=$1
 case_name=$2
-expected_actions=${3:-}
+shift 2
+
+expected_actions=""
+weight_config=""
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --weight-config )
+      shift
+      if [ "$#" -eq 0 ] || [ "${1#--}" != "$1" ]; then
+        echo "--weight-config requires a config path" >&2
+        usage
+        exit 2
+      fi
+      if [ -n "$weight_config" ]; then
+        echo "--weight-config may be provided only once" >&2
+        usage
+        exit 2
+      fi
+      weight_config=$1
+      shift
+      ;;
+    --* )
+      echo "Unknown option: $1" >&2
+      usage
+      exit 2
+      ;;
+    * )
+      if [ -n "$expected_actions" ]; then
+        echo "Unexpected positional argument: $1" >&2
+        usage
+        exit 2
+      fi
+      expected_actions=$1
+      shift
+      ;;
+  esac
+done
 
 if [ ! -f "$input_path" ]; then
   echo "Input raw event JSONL does not exist: $input_path" >&2
@@ -26,6 +75,20 @@ if [ -n "$expected_actions" ] && [ ! -f "$expected_actions" ]; then
   echo "Expected action JSONL does not exist: $expected_actions" >&2
   usage
   exit 2
+fi
+
+if [ -n "$weight_config" ]; then
+  if unsafe_config_path "$weight_config"; then
+    echo "Unsafe weight config path: $weight_config" >&2
+    echo "content_suppressed: true" >&2
+    usage
+    exit 2
+  fi
+  if [ ! -f "$weight_config" ]; then
+    echo "Weight config JSON does not exist: $weight_config" >&2
+    usage
+    exit 2
+  fi
 fi
 
 case "$case_name" in
@@ -69,6 +132,11 @@ if [ -n "$expected_actions" ]; then
 else
   echo "evaluation: skipped"
 fi
+if [ -n "$weight_config" ]; then
+  echo "weight_config: requested"
+  echo "weight_config_path: $weight_config"
+  echo "config_enabled_e2e: explicit"
+fi
 echo "content_suppressed: true"
 
 run_step "safe view export" \
@@ -89,10 +157,19 @@ run_step "constraint generation" \
     --input "$candidate_features" \
     --output "$constraint_violations"
 
-run_step "scoring" \
-  env PYTHONPATH=python python3 -m ot_scorer.score \
-    --input "$constraint_violations" \
-    --output "$candidate_scores"
+if [ -n "$weight_config" ]; then
+  rm -f "$candidate_scores"
+  run_step "scoring" \
+    env PYTHONPATH=python python3 -m ot_scorer.score \
+      --input "$constraint_violations" \
+      --output "$candidate_scores" \
+      --weight-config "$weight_config"
+else
+  run_step "scoring" \
+    env PYTHONPATH=python python3 -m ot_scorer.score \
+      --input "$constraint_violations" \
+      --output "$candidate_scores"
+fi
 
 if [ -n "$expected_actions" ]; then
   run_step "evaluation" \
@@ -108,6 +185,9 @@ echo "candidate generation: ok"
 echo "feature extraction: ok"
 echo "constraint generation: ok"
 echo "scoring: ok"
+if [ -n "$weight_config" ]; then
+  echo "weight_config: used"
+fi
 if [ -n "$expected_actions" ]; then
   echo "evaluation: ok"
   echo "evaluation_report: $evaluation_report"

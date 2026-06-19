@@ -1,12 +1,13 @@
 # Config-Enabled E2E Design
 
-This document designs a possible future config-enabled synthetic E2E path.
+This document records the safety design for the optional config-enabled
+synthetic E2E path.
 
-It is a design document only. It does not connect config to the E2E pipeline,
-does not connect config to the summary collector, does not change default E2E
-behavior, does not change default weights, does not change the scoring formula,
-does not change deterministic tie-break behavior, and does not add F1,
-accuracy, calibration, or learner-state estimation.
+Status after Step 79: `scripts/run_synthetic_e2e_pipeline.sh` supports an
+optional explicit `--weight-config <config.json>` argument. The summary
+collector remains no-config. Default no-config E2E behavior, default weights,
+the scoring formula, deterministic tie-break behavior, F1, accuracy,
+calibration, and learner-state estimation are unchanged.
 
 This is not performance evaluation.
 
@@ -30,10 +31,12 @@ correctness, calibration, or learner-state estimation.
 
 ## 2. Current State
 
-Current state after Step 77:
+Current state after Step 79:
 
 - `python/ot_scorer/score.py` supports explicit `--weight-config <path>`.
-- `scripts/run_synthetic_e2e_pipeline.sh` still uses no-config scoring.
+- `scripts/run_synthetic_e2e_pipeline.sh` uses no-config scoring by default.
+- `scripts/run_synthetic_e2e_pipeline.sh` can pass `--weight-config` only when
+  the option is explicitly supplied.
 - `scripts/run_synthetic_e2e_summary.sh` still uses no-config scoring.
 - `scripts/check_explicit_config_ranking_diff.sh` compares no-config and
   explicit-config score outputs outside the E2E pipeline.
@@ -46,14 +49,14 @@ variables, or writes config metadata into default `CandidateScoreSet` output.
 
 ## 3. E2E Config Option Proposal
 
-Recommended future option:
+Implemented option:
 
 ```text
 scripts/run_synthetic_e2e_pipeline.sh <input_raw_events.jsonl> <case_name> [expected_actions.jsonl] [--weight-config <config.json>]
 ```
 
-This design recommends a named `--weight-config` option rather than a bare
-fourth positional argument.
+The E2E script uses a named `--weight-config` option rather than a bare fourth
+positional argument.
 
 Rationale:
 
@@ -80,7 +83,7 @@ scripts/run_synthetic_e2e_pipeline.sh \
   tests/fixtures/synthetic/expected_actions/valid/deletion_expected_actions.jsonl
 ```
 
-Future config-enabled calls should require the explicit option:
+Config-enabled calls require the explicit option:
 
 ```bash
 scripts/run_synthetic_e2e_pipeline.sh \
@@ -90,9 +93,8 @@ scripts/run_synthetic_e2e_pipeline.sh \
   --weight-config tests/fixtures/synthetic/hand_weight_configs/valid/current_default_like_config.json
 ```
 
-The summary collector should not receive config in the first config-enabled E2E
-implementation. If summary support is needed later, it should be designed as a
-separate step.
+The summary collector does not receive config. If summary support is needed
+later, it should be designed as a separate step.
 
 ## 4. Default E2E Unchanged Policy
 
@@ -131,10 +133,9 @@ Example:
 tmp/synthetic_e2e/deletion_case_config_smoke/
 ```
 
-Initial config-enabled E2E should keep the existing `CandidateScoreSet` schema.
-Do not add config metadata to score JSONL in the first E2E connection. If
-metadata is needed later, prefer a separate safe metadata report or a separately
-designed schema version.
+Config-enabled E2E keeps the existing `CandidateScoreSet` schema. It does not
+add config metadata to score JSONL. If metadata is needed later, prefer a
+separate safe metadata report or a separately designed schema version.
 
 Do not output:
 
@@ -202,9 +203,9 @@ decide whether to use:
 
 The default summary collector must remain a no-config synthetic wiring check.
 
-## 8. Tests Required Before Implementation
+## 8. Tests Required Before Further Implementation
 
-Before implementing config-enabled E2E, tests should cover:
+Before extending config-enabled E2E further, tests should continue to cover:
 
 - no-config E2E output unchanged
 - no-config fixture lock passes
@@ -252,8 +253,8 @@ evaluation report bodies, or score rows into docs.
 
 ### Step 79: Implement Optional Explicit Config-Enabled E2E Path
 
-If approved, add an explicit `--weight-config <path>` option to the single-case
-synthetic E2E script while preserving all no-config behavior.
+Implemented as explicit `--weight-config <path>` support in the single-case
+synthetic E2E script. No-config behavior remains the default.
 
 ### Step 80: Config-Enabled E2E Smoke Check
 

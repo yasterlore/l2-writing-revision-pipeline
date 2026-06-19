@@ -15,7 +15,7 @@ scripts/run_synthetic_e2e_pipeline.sh tests/fixtures/synthetic/raw_events/valid/
 Usage:
 
 ```bash
-scripts/run_synthetic_e2e_pipeline.sh <input_raw_events.jsonl> <case_name> [expected_actions.jsonl]
+scripts/run_synthetic_e2e_pipeline.sh <input_raw_events.jsonl> <case_name> [expected_actions.jsonl] [--weight-config <config.json>]
 ```
 
 If `expected_actions.jsonl` is provided, the script runs the synthetic-only
@@ -31,9 +31,32 @@ scripts/run_synthetic_e2e_pipeline.sh \
 If no expected action file is provided, the script behaves as before and stops
 after writing `candidate_scores.jsonl`.
 
-The current E2E script does not accept or pass a weight config. It remains a
-no-config pipeline by default. For the design boundary for any future optional
-config-enabled E2E path, see
+The current E2E script remains no-config by default. It accepts
+`--weight-config <config.json>` only as an explicit named option:
+
+```bash
+scripts/run_synthetic_e2e_pipeline.sh \
+  tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl \
+  deletion_case_config_smoke \
+  tests/fixtures/synthetic/expected_actions/valid/deletion_expected_actions.jsonl \
+  --weight-config tests/fixtures/synthetic/hand_weight_configs/valid/current_default_like_config.json
+```
+
+Without expected actions, the explicit config option can follow the case name:
+
+```bash
+scripts/run_synthetic_e2e_pipeline.sh \
+  tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl \
+  deletion_case_config_smoke \
+  --weight-config tests/fixtures/synthetic/hand_weight_configs/valid/current_default_like_config.json
+```
+
+Use a distinct `case_name` for config-enabled runs so no-config outputs are not
+overwritten. The script does not auto-discover config files, does not read
+config from environment variables, and rejects config paths under
+`manual_outputs/`, `private_data/`, `real_data/`, or `participant_data/`.
+
+For the safety design boundary for optional config-enabled E2E, see
 [`config_enabled_e2e_design.md`](config_enabled_e2e_design.md).
 
 ## Summary Collector
@@ -244,6 +267,9 @@ If the directory already exists, this first version may overwrite files with the
 5. Python weighted scoring prototype
    - Creates `CandidateScoreSet` JSONL with prototype score and deterministic rank.
    - This is not evaluation and not a correctness claim.
+   - Uses no-config scoring by default.
+   - Uses `score.py --weight-config` only when the single-case pipeline is
+     called with explicit `--weight-config <config.json>`.
 
 6. Optional Python synthetic evaluation
    - Runs only when an expected action JSONL file is supplied as the third argument.
