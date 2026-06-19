@@ -4,6 +4,10 @@ This document describes how the current OT-style scoring prototype works and how
 
 It is a design plan only. It does not implement new scoring logic, learned weights, F1, accuracy, calibration, or learner-state estimation.
 
+Before any future config support is connected to scoring, the no-config scoring
+fixture lock should be designed and implemented separately. See
+[No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md).
+
 ## 1. Current Scorer Role
 
 The current scorer lives in `python/ot_scorer/`.

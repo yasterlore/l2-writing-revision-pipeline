@@ -71,6 +71,8 @@ The following must remain identical for no-config execution:
 
 If config support is implemented later, tests must compare no-config output
 against current expected behavior before any config-enabled path is accepted.
+The planned fixture-lock approach is described in
+[No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md).
 
 ## 4. Future Config Connection Design Principles
 
@@ -141,6 +143,7 @@ Before config is connected to scoring, the following tests are required:
 - no-config scoring equals current expected fixture behavior
 - no-config synthetic E2E `candidate_scores.jsonl` behavior remains unchanged
 - no-config output schema remains unchanged
+- no-config score fixture lock passes
 - invalid config prevents scoring
 - forbidden fields are rejected
 - expected-action tuning config is rejected
@@ -166,6 +169,9 @@ change.
 Design the shape of a future option such as `--weight-config`.
 
 Do not implement it yet.
+
+Before implementing the option, add a no-config scoring fixture lock so the
+current default path is protected.
 
 ### Phase 2: Config-Aware Scorer Function
 
@@ -249,6 +255,7 @@ participant text, or private output into documentation.
 ## 10. What To Read Next
 
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
+- [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md)
 - [Hand-weight policy design](hand_weight_policy_design.md)
 - [Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md)
 - [Diagnostic-to-scoring boundary review](diagnostic_to_scoring_boundary_review.md)
