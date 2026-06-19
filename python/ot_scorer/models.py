@@ -1,0 +1,85 @@
+"""Dataclasses for candidate feature extraction."""
+
+from __future__ import annotations
+
+from dataclasses import asdict, dataclass
+from typing import Any
+
+FORBIDDEN_INPUT_FIELDS: frozenset[str] = frozenset(
+    {
+        "final_text",
+        "final_corrected_text",
+        "observed_after_text",
+        "local_context_after_observed",
+        "gold_label",
+        "teacher_correction",
+        "human_correction",
+        "post_hoc_annotation",
+        "target_label",
+        "answer_key",
+        "corrected_sentence",
+        "future_edit",
+        "future_context",
+        "inserted_text_observed",
+        "deleted_text_observed",
+    }
+)
+
+LOCAL_EDIT_ACTIONS: frozenset[str] = frozenset(
+    {
+        "local_insert_placeholder",
+        "local_delete_placeholder",
+        "local_replace_placeholder",
+    }
+)
+
+GRAMMAR_PLACEHOLDER_ACTIONS: frozenset[str] = frozenset(
+    {
+        "article_fix_placeholder",
+        "number_fix_placeholder",
+        "sva_fix_placeholder",
+        "tense_fix_placeholder",
+        "preposition_fix_placeholder",
+        "punctuation_fix_placeholder",
+    }
+)
+
+
+@dataclass(frozen=True)
+class CandidateFeature:
+    candidate_id: str
+    episode_id: str
+    action_type: str
+    generation_rule: str
+    no_oracle_safe: bool
+    uses_observed_edit_text: bool
+    action_family: str
+    is_placeholder: bool
+    is_hold: bool
+    is_local_edit: bool
+    is_grammar_placeholder: bool
+    candidate_description_length: int
+    feature_notes_count: int
+    leakage_flags: list[str]
+
+    def to_json_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class CandidateFeatureSet:
+    candidate_feature_set_id: str
+    candidate_set_id: str
+    episode_id: str
+    no_oracle_safe: bool
+    feature_schema_version: str
+    leakage_flags: list[str]
+    candidate_features: list[CandidateFeature]
+
+    def to_json_dict(self) -> dict[str, Any]:
+        data = asdict(self)
+        data["candidate_features"] = [
+            candidate_feature.to_json_dict()
+            for candidate_feature in self.candidate_features
+        ]
+        return data
