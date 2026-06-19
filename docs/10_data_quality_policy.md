@@ -52,6 +52,15 @@ The first revision-event extraction layer lives in `crates/kslog_extract/`. It c
 
 These records are observations, not correctness labels. Extraction must not use final corrected text, gold labels, teacher corrections, or post-hoc annotations.
 
+The first micro-episode construction layer lives in `crates/kslog_micro_episode/`. It packages extracted revision events with local context:
+
+- pre-edit `local_context_before`
+- observed post-edit `local_context_after_observed`
+- edit span and text fragments
+- cursor and document length metadata
+
+`local_context_after_observed` is retained for reconstruction checks and evaluation, but it is no-oracle unsafe for candidate generation and ranking. Micro-episode outputs may contain writing fragments and must not be committed when derived from real participant data.
+
 ## Derived Data Quality
 
 Derived artifacts should document:
