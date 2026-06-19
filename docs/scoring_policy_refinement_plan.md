@@ -293,6 +293,11 @@ Status: the initial article, number, SVA, tense, preposition, and punctuation
 placeholder constraints have been implemented as descriptive records with
 `violation_count=0`. They do not affect `weighted_score` or rank.
 
+The next design layer for non-leaky linguistic diagnostics is in
+[Non-leaky linguistic constraint design plan](non_leaky_linguistic_constraint_design_plan.md).
+It keeps these future constraints descriptive and outside scoring until a
+separate no-oracle scoring review exists.
+
 ### Step D: Document Initial Hand Weights
 
 If non-safety weights are introduced:
