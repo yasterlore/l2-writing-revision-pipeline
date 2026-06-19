@@ -30,6 +30,16 @@ The first Rust validator lives in `crates/kslog_validate/`. It currently checks:
 
 It intentionally does not replay text or validate the semantic consistency of `inserted_text`, `deleted_text`, and `diff_op`.
 
+The first Rust replay layer lives in `crates/kslog_replay/`. It checks replay-specific consistency after JSONL validation:
+
+- `doc_len_before` against current replayed character count
+- `doc_len_after` against updated replayed character count
+- cursor and selection bounds used by replay
+- selected text against `deleted_text` when present
+- non-placeholder replay hash labels when present
+
+Replay output may contain reconstructed writing. Do not commit replay output derived from real participant data.
+
 ## Derived Data Quality
 
 Derived artifacts should document:
