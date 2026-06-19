@@ -1,0 +1,50 @@
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build artifacts
+target/
+dist/
+build/
+coverage/
+htmlcov/
+
+# Dependency folders and environments
+node_modules/
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+
+# Real or private participant data: never commit
+private_data/
+real_data/
+participant_data/
+**/private_data/
+**/real_data/
+**/participant_data/
+*.real.jsonl
+*.private.jsonl
+*.real.json
+*.private.json
+*.participant.jsonl
+*.participant.json
+
+# Local secrets
+.env
+.env.*
+*.pem
+*.key
+*.token
