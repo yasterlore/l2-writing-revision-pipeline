@@ -324,6 +324,11 @@ justify a scoring policy.
 Select which constraint families may become score-active and which must remain
 descriptive or excluded.
 
+See
+[Score-target constraint family selection plan](score_target_constraint_family_selection_plan.md)
+for the narrower family-selection proposal. It does not change weights or
+ranking behavior.
+
 ### Step 64: Hand-Weight Config Schema Plan
 
 Design how weights would be represented in config without changing current
