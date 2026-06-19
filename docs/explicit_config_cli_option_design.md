@@ -219,7 +219,8 @@ It is not connected to the E2E pipeline or summary collector.
 ### Step 78: Config-Enabled E2E Design
 
 Design optional config-enabled E2E wiring separately. It must be explicit-only
-and no-config by default.
+and no-config by default. See
+[Config-enabled E2E design](config_enabled_e2e_design.md).
 
 ### Later: Private Validation Design
 
@@ -233,3 +234,4 @@ public repository.
 - [Default-unchanged config support design](default_unchanged_config_support_design.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md)
+- [Config-enabled E2E design](config_enabled_e2e_design.md)

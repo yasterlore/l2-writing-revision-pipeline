@@ -456,3 +456,5 @@ For the future config-aware scorer function boundary, read
 `../../docs/config_aware_scorer_function_design.md`.
 For the future explicit scorer config CLI boundary, read
 `../../docs/explicit_config_cli_option_design.md`.
+For optional explicit config-enabled E2E design, read
+`../../docs/config_enabled_e2e_design.md`.

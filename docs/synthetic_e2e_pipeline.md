@@ -31,6 +31,11 @@ scripts/run_synthetic_e2e_pipeline.sh \
 If no expected action file is provided, the script behaves as before and stops
 after writing `candidate_scores.jsonl`.
 
+The current E2E script does not accept or pass a weight config. It remains a
+no-config pipeline by default. For the design boundary for any future optional
+config-enabled E2E path, see
+[`config_enabled_e2e_design.md`](config_enabled_e2e_design.md).
+
 ## Summary Collector
 
 To run every synthetic valid raw-event fixture and print a summary-only table:
@@ -54,6 +59,10 @@ scripts/run_synthetic_e2e_summary.sh \
 ```
 
 The collector runs `scripts/run_synthetic_e2e_pipeline.sh` once per `.jsonl` file. The case name is the file stem.
+
+The summary collector is also no-config. It does not pass `--weight-config` to
+the scorer or to the single-case pipeline. Any future config-enabled summary
+behavior must be designed separately.
 
 The collector looks up each case name in the synthetic expected action registry.
 If the case is `active`, it passes the expected action fixture as the third
