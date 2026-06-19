@@ -52,3 +52,15 @@ Allowed responsibilities:
 Forbidden responsibility:
 
 - Authoritative raw-event validation.
+
+## Synthetic E2E Script
+
+`scripts/run_synthetic_e2e_pipeline.sh` connects the current Rust and Python prototype stages for synthetic fixtures:
+
+1. Rust safe-view export.
+2. Python candidate generation.
+3. Python candidate feature extraction.
+4. Python constraint violation generation.
+5. Python weighted scoring prototype.
+
+The script writes generated JSONL under `tmp/synthetic_e2e/<case_name>/`, which is Git-ignored. It prints summaries only and must not be used for production or real participant data in this repository.
