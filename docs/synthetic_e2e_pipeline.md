@@ -77,6 +77,21 @@ The collector reads registry metadata and checks paths through the Python
 registry helper. It does not print expected action JSONL contents or
 evaluation report contents.
 
+After each successful pipeline run, the collector also looks for:
+
+```text
+tmp/synthetic_e2e/<case_name>/constraint_violations.jsonl
+```
+
+When that file exists, it runs the diagnostic summary CLI and writes:
+
+```text
+tmp/synthetic_e2e/<case_name>/diagnostic_summary.json
+```
+
+This diagnostic summary is count-only. It is for synthetic wiring and
+diagnostic inspection, not model performance evaluation.
+
 It writes a CSV summary to:
 
 ```text
@@ -104,10 +119,23 @@ The collector records:
 - `evaluation_exact_match_count`
 - `evaluation_expected_found_count`
 - `evaluation_blocked_expected_count`
+- `diagnostic_summary_status`
+- `diagnostic_summary_path`
+- `diagnostic_total_constraints`
+- `diagnostic_descriptive_constraint_count`
+- `diagnostic_blocking_constraint_count`
+- `diagnostic_safety_constraint_count`
+- `diagnostic_local_pattern_constraint_count`
+- `diagnostic_linguistic_placeholder_constraint_count`
 - `content_suppressed`
 
 The collector reads only top-level summary counts from `evaluation_report.json`
 when an active case produced a report. It does not print report contents or
+per-episode details.
+
+The collector reads only top-level count fields from `diagnostic_summary.json`.
+It does not print diagnostic report bodies, raw constraint JSONL rows,
+candidate descriptions, proposed edits, local context, final text, or
 per-episode details.
 
 The collector is not production evaluation. It does not calculate F1, accuracy,
@@ -124,6 +152,12 @@ Evaluation statuses:
 - `skipped_pending`: case is registered as pending, so evaluation was not run.
 - `skipped_missing`: case is not in the registry, so evaluation was not run.
 - `skipped_no_registry`: reserved for runs without registry support.
+
+Diagnostic summary statuses:
+
+- `ok`: `constraint_violations.jsonl` existed and count-only diagnostic summary generation succeeded.
+- `fail`: diagnostic summary generation failed. This is reported separately from `pipeline_status`.
+- `skipped_missing_constraints`: no constraint violation file was available for that case.
 
 Expected action statuses:
 
@@ -171,6 +205,7 @@ If the directory already exists, this first version may overwrite files with the
 - `constraint_violations.jsonl`
 - `candidate_scores.jsonl`
 - `evaluation_report.json` when optional synthetic evaluation is requested
+- `diagnostic_summary.json` when the summary collector runs diagnostic aggregation
 
 ## Pipeline Stages
 
@@ -201,6 +236,13 @@ If the directory already exists, this first version may overwrite files with the
    - Does not change candidate generation, features, constraints, scores, or ranks.
    - Does not calculate F1, production accuracy, calibration, selective prediction, or learner-state estimates.
 
+7. Optional diagnostic summary aggregation in the collector
+   - Runs from `scripts/run_synthetic_e2e_summary.sh`, not from the single-case pipeline script.
+   - Reads `constraint_violations.jsonl` after the pipeline completes.
+   - Writes `diagnostic_summary.json` under `tmp/`.
+   - Records only count fields in `summary.csv`.
+   - Does not change feature extraction, constraint generation, scoring, ranking, or evaluation.
+
 ## Privacy Rules
 
 - Use synthetic data only.
@@ -220,6 +262,11 @@ The summary collector also suppresses JSONL contents. It may count structural fi
 For active evaluation cases, the summary collector may read top-level numeric
 fields from `evaluation_report.json`, but it does not print the report body,
 per-episode records, or any text fragments.
+
+For diagnostic aggregation, the summary collector may read top-level count
+fields from `diagnostic_summary.json`, but it does not print the report body,
+raw constraint JSONL rows, candidate descriptions, proposed edits, local
+context, or per-episode records.
 
 ## What This Is Not
 
