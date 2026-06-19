@@ -168,6 +168,9 @@ These counts are based on candidate metadata and abstract v0.3 local pattern
 features only. They are not grammatical correctness judgments and are not
 performance metrics.
 
+The synthetic E2E summary collector records the aggregate value as
+`diagnostic_non_leaky_linguistic_constraint_count` in `summary.csv`.
+
 ## 9. Safety Blocking Summary
 
 The summary may separately count safety constraints:

@@ -127,6 +127,7 @@ The collector records:
 - `diagnostic_safety_constraint_count`
 - `diagnostic_local_pattern_constraint_count`
 - `diagnostic_linguistic_placeholder_constraint_count`
+- `diagnostic_non_leaky_linguistic_constraint_count`
 - `content_suppressed`
 
 The collector reads only top-level summary counts from `evaluation_report.json`
@@ -137,6 +138,12 @@ The collector reads only top-level count fields from `diagnostic_summary.json`.
 It does not print diagnostic report bodies, raw constraint JSONL rows,
 candidate descriptions, proposed edits, local context, final text, or
 per-episode details.
+
+`diagnostic_non_leaky_linguistic_constraint_count` is the sum of top-level
+`non_leaky_linguistic_constraint_counts` values from `diagnostic_summary.json`.
+If that field is absent in an older diagnostic summary, the collector treats the
+count as `0`. This count is diagnostic wiring information, not grammatical
+correctness or model performance.
 
 The collector is not production evaluation. It does not calculate F1, accuracy,
 calibration, selective prediction, or learner-state estimates.
@@ -290,6 +297,9 @@ This script reads only the summary CSV. It checks column presence, at least one
 case, at least one `diagnostic_summary_status=ok` row, and parseable diagnostic
 count fields. It does not read raw JSONL, diagnostic summary bodies,
 per-episode detail, expected actions, final text, or local context.
+
+The smoke check also verifies that
+`diagnostic_non_leaky_linguistic_constraint_count` is present and numeric.
 
 The smoke check is not performance evaluation. It does not calculate F1,
 accuracy, calibration, grammatical correctness, ranking quality, or
