@@ -29,7 +29,7 @@ fi
 echo "Checking valid synthetic fixture/example data files for no-oracle forbidden fields..."
 
 check_files=$(
-  find examples/synthetic tests/fixtures/synthetic/raw_events/valid \
+  find examples/synthetic tests/fixtures/synthetic/raw_events/valid tests/fixtures/synthetic/safe_views/valid \
     -type f \( -name '*.jsonl' -o -name '*.json' \) -print 2>/dev/null || true
 )
 
