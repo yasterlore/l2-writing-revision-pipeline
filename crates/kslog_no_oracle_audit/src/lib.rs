@@ -5,7 +5,7 @@
 //! into no-oracle modeling contexts.
 
 use kslog_extract::RevisionEvent;
-use kslog_micro_episode::MicroEpisode;
+use kslog_micro_episode::{MicroEpisode, MicroEpisodeContext};
 use kslog_schema::RawEvent;
 
 pub const FORBIDDEN_FIELD_NAMES: &[&str] = &[
@@ -97,6 +97,26 @@ pub const MICRO_EPISODE_FIELD_NAMES: &[&str] = &[
     "quality_flags",
 ];
 
+pub const NO_ORACLE_SAFE_EPISODE_VIEW_FIELD_NAMES: &[&str] = &[
+    "episode_id",
+    "session_id",
+    "task_id",
+    "prompt_id",
+    "source_revision_event_id",
+    "source_seq",
+    "timestamp_ms",
+    "revision_kind",
+    "is_revision_like",
+    "local_context_before",
+    "cursor_pos_before",
+    "span_start",
+    "span_end",
+    "doc_len_before",
+    "inserted_text_observed",
+    "deleted_text_observed",
+    "quality_flags",
+];
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum NoOracleUseContext {
     ForArchival,
@@ -131,6 +151,84 @@ pub struct NoOracleAuditReport {
     pub use_context: NoOracleUseContext,
     pub checked_artifact_count: usize,
     pub issues: Vec<NoOracleAuditIssue>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct NoOracleSafeEpisodeViewOptions {
+    pub include_observed_edit_text: bool,
+}
+
+impl Default for NoOracleSafeEpisodeViewOptions {
+    fn default() -> Self {
+        Self {
+            include_observed_edit_text: true,
+        }
+    }
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct NoOracleSafeEpisodeView {
+    pub episode_id: String,
+    pub session_id: String,
+    pub task_id: String,
+    pub prompt_id: String,
+    pub source_revision_event_id: String,
+    pub source_seq: u64,
+    pub timestamp_ms: u64,
+    pub revision_kind: String,
+    pub is_revision_like: bool,
+    pub local_context_before: MicroEpisodeContext,
+    pub cursor_pos_before: Option<u32>,
+    pub span_start: Option<u32>,
+    pub span_end: Option<u32>,
+    pub doc_len_before: Option<u32>,
+    pub inserted_text_observed: Option<String>,
+    pub deleted_text_observed: Option<String>,
+    pub quality_flags: Vec<String>,
+}
+
+impl NoOracleSafeEpisodeView {
+    pub fn try_from_micro_episode(micro_episode: &MicroEpisode) -> Self {
+        Self::try_from_micro_episode_with_options(
+            micro_episode,
+            &NoOracleSafeEpisodeViewOptions::default(),
+        )
+    }
+
+    pub fn try_from_micro_episode_with_options(
+        micro_episode: &MicroEpisode,
+        options: &NoOracleSafeEpisodeViewOptions,
+    ) -> Self {
+        Self {
+            episode_id: micro_episode.micro_episode_id.clone(),
+            session_id: micro_episode.session_id.clone(),
+            task_id: micro_episode.task_id.clone(),
+            prompt_id: micro_episode.prompt_id.clone(),
+            source_revision_event_id: micro_episode.source_revision_event_id.clone(),
+            source_seq: micro_episode.source_seq,
+            timestamp_ms: micro_episode.timestamp_ms,
+            revision_kind: format!("{:?}", micro_episode.revision_kind),
+            is_revision_like: micro_episode.is_revision_like,
+            local_context_before: micro_episode.local_context_before.clone(),
+            cursor_pos_before: micro_episode.cursor_pos_before,
+            span_start: micro_episode.span_start,
+            span_end: micro_episode.span_end,
+            doc_len_before: micro_episode.doc_len_before,
+            inserted_text_observed: options
+                .include_observed_edit_text
+                .then(|| micro_episode.inserted_text.clone())
+                .flatten(),
+            deleted_text_observed: options
+                .include_observed_edit_text
+                .then(|| micro_episode.deleted_text.clone())
+                .flatten(),
+            quality_flags: micro_episode.quality_flags.clone(),
+        }
+    }
+
+    pub fn field_names() -> &'static [&'static str] {
+        NO_ORACLE_SAFE_EPISODE_VIEW_FIELD_NAMES
+    }
 }
 
 impl NoOracleAuditReport {
@@ -212,6 +310,26 @@ pub fn audit_micro_episode_for_candidate_generation(
     micro_episode: &MicroEpisode,
 ) -> NoOracleAuditReport {
     audit_micro_episode(micro_episode, NoOracleUseContext::ForCandidateGeneration)
+}
+
+pub fn audit_no_oracle_safe_episode_view(
+    safe_view: &NoOracleSafeEpisodeView,
+    use_context: NoOracleUseContext,
+) -> NoOracleAuditReport {
+    let mut report = audit_field_names(
+        NO_ORACLE_SAFE_EPISODE_VIEW_FIELD_NAMES,
+        use_context,
+        "NoOracleSafeEpisodeView",
+        Some(safe_view.episode_id.clone()),
+    );
+    report.checked_artifact_count = 1;
+    report
+}
+
+pub fn audit_no_oracle_safe_episode_view_for_candidate_generation(
+    safe_view: &NoOracleSafeEpisodeView,
+) -> NoOracleAuditReport {
+    audit_no_oracle_safe_episode_view(safe_view, NoOracleUseContext::ForCandidateGeneration)
 }
 
 pub fn audit_micro_episodes(
@@ -297,9 +415,11 @@ fn risk_level_for_forbidden_field(use_context: NoOracleUseContext) -> NoOracleRi
 mod tests {
     use super::{
         audit_field_names, audit_metadata_field_names, audit_micro_episode,
-        audit_micro_episode_for_candidate_generation, audit_micro_episodes, audit_raw_event,
-        audit_revision_event, NoOracleRiskLevel, NoOracleUseContext, MICRO_EPISODE_FIELD_NAMES,
-        RAW_EVENT_FIELD_NAMES, REVISION_EVENT_FIELD_NAMES,
+        audit_micro_episode_for_candidate_generation, audit_micro_episodes,
+        audit_no_oracle_safe_episode_view_for_candidate_generation, audit_raw_event,
+        audit_revision_event, NoOracleRiskLevel, NoOracleSafeEpisodeView,
+        NoOracleSafeEpisodeViewOptions, NoOracleUseContext, MICRO_EPISODE_FIELD_NAMES,
+        NO_ORACLE_SAFE_EPISODE_VIEW_FIELD_NAMES, RAW_EVENT_FIELD_NAMES, REVISION_EVENT_FIELD_NAMES,
     };
     use kslog_extract::extract_revision_events;
     use kslog_micro_episode::build_micro_episodes;
@@ -475,5 +595,116 @@ mod tests {
 
         assert!(audit.issues.is_empty());
         assert_eq!(audit.checked_artifact_count, 1);
+    }
+
+    #[test]
+    fn safe_view_can_be_created_from_synthetic_micro_episode() {
+        let events =
+            read_valid_fixture("tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl");
+        let report = build_micro_episodes(&events).expect("micro episodes build");
+        let episode = report
+            .episodes
+            .iter()
+            .find(|episode| episode.is_revision_like)
+            .expect("revision-like episode exists");
+
+        let safe_view = NoOracleSafeEpisodeView::try_from_micro_episode(episode);
+
+        assert_eq!(safe_view.episode_id, episode.micro_episode_id);
+        assert_eq!(safe_view.local_context_before, episode.local_context_before);
+        assert_eq!(safe_view.deleted_text_observed.as_deref(), Some("s"));
+    }
+
+    #[test]
+    fn safe_view_field_names_exclude_after_observed_context() {
+        assert!(!NoOracleSafeEpisodeView::field_names().contains(&"local_context_after_observed"));
+        assert!(!NO_ORACLE_SAFE_EPISODE_VIEW_FIELD_NAMES.contains(&"final_text"));
+        assert!(!NO_ORACLE_SAFE_EPISODE_VIEW_FIELD_NAMES.contains(&"observed_after_text"));
+        assert!(!NO_ORACLE_SAFE_EPISODE_VIEW_FIELD_NAMES.contains(&"gold_label"));
+        assert!(!NO_ORACLE_SAFE_EPISODE_VIEW_FIELD_NAMES.contains(&"teacher_correction"));
+    }
+
+    #[test]
+    fn safe_view_has_no_forbidden_field_names() {
+        let audit = audit_field_names(
+            NO_ORACLE_SAFE_EPISODE_VIEW_FIELD_NAMES,
+            NoOracleUseContext::ForCandidateGeneration,
+            "NoOracleSafeEpisodeView",
+            None,
+        );
+
+        assert!(audit.issues.is_empty());
+    }
+
+    #[test]
+    fn safe_view_is_not_major_issue_for_candidate_generation() {
+        let events =
+            read_valid_fixture("tests/fixtures/synthetic/raw_events/valid/replacement_case.jsonl");
+        let report = build_micro_episodes(&events).expect("micro episodes build");
+        let episode = report
+            .episodes
+            .iter()
+            .find(|episode| episode.is_revision_like)
+            .expect("revision-like episode exists");
+        let safe_view = NoOracleSafeEpisodeView::try_from_micro_episode(episode);
+
+        let audit = audit_no_oracle_safe_episode_view_for_candidate_generation(&safe_view);
+
+        assert!(!audit.has_unsafe_or_blocking_issues());
+        assert!(audit.issues.is_empty());
+    }
+
+    #[test]
+    fn safe_view_preserves_deterministic_episode_id() {
+        let events =
+            read_valid_fixture("tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl");
+        let report = build_micro_episodes(&events).expect("micro episodes build");
+        let episode = report
+            .episodes
+            .iter()
+            .find(|episode| episode.source_seq == 2)
+            .expect("seq 2 episode exists");
+
+        let safe_view = NoOracleSafeEpisodeView::try_from_micro_episode(episode);
+
+        assert_eq!(safe_view.episode_id, "synthetic_session_002:micro:2");
+    }
+
+    #[test]
+    fn observed_edit_text_can_be_excluded_from_safe_view() {
+        let events =
+            read_valid_fixture("tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl");
+        let report = build_micro_episodes(&events).expect("micro episodes build");
+        let episode = report
+            .episodes
+            .iter()
+            .find(|episode| episode.is_revision_like)
+            .expect("revision-like episode exists");
+        let options = NoOracleSafeEpisodeViewOptions {
+            include_observed_edit_text: false,
+        };
+
+        let safe_view =
+            NoOracleSafeEpisodeView::try_from_micro_episode_with_options(episode, &options);
+
+        assert!(safe_view.inserted_text_observed.is_none());
+        assert!(safe_view.deleted_text_observed.is_none());
+    }
+
+    #[test]
+    fn safe_view_creation_does_not_panic_on_non_revision_like_episode() {
+        let events =
+            read_valid_fixture("tests/fixtures/synthetic/raw_events/valid/simple_typing.jsonl");
+        let report = build_micro_episodes(&events).expect("micro episodes build");
+        let episode = report
+            .episodes
+            .iter()
+            .find(|episode| !episode.is_revision_like)
+            .expect("non-revision-like episode exists");
+
+        let safe_view = NoOracleSafeEpisodeView::try_from_micro_episode(episode);
+
+        assert!(!safe_view.is_revision_like);
+        assert_eq!(safe_view.local_context_before, episode.local_context_before);
     }
 }

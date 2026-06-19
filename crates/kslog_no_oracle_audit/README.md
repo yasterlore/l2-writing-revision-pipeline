@@ -17,6 +17,7 @@ Input:
 - `RawEvent`
 - `RevisionEvent`
 - `MicroEpisode`
+- `NoOracleSafeEpisodeView`
 - metadata field-name lists for synthetic tests or future adapters
 
 Output:
@@ -33,6 +34,14 @@ use kslog_no_oracle_audit::{
 };
 
 let report = audit_micro_episode(&episode, NoOracleUseContext::ForCandidateGeneration);
+```
+
+To create a candidate-generation-oriented safe view:
+
+```rust
+use kslog_no_oracle_audit::NoOracleSafeEpisodeView;
+
+let safe_view = NoOracleSafeEpisodeView::try_from_micro_episode(&episode);
 ```
 
 ## Test Method
@@ -64,6 +73,18 @@ The first version checks forbidden field names and use-context risks for:
 
 It also flags `MicroEpisode.local_context_after_observed` as unsafe for candidate generation, ranking, OT scoring, and learner-state estimation.
 
+## NoOracleSafeEpisodeView
+
+`MicroEpisode` is a broad representation for observation, replay verification, and evaluation. It contains `local_context_after_observed`, which is no-oracle unsafe for candidate generation and ranking.
+
+`NoOracleSafeEpisodeView` is a narrower view intended for candidate generation, ranking, and OT scoring inputs. It includes `local_context_before` and excludes `local_context_after_observed`.
+
+The safe view also excludes `final_text`, `observed_after_text`, `gold_label`, and teacher correction fields.
+
+`inserted_text_observed` and `deleted_text_observed` are retained by default because they describe the observed edit action. Depending on the prediction task, however, these can become target leakage. Use `NoOracleSafeEpisodeViewOptions { include_observed_edit_text: false }` when the model is supposed to predict the edit text itself.
+
+The safe view is not universally safe. It must be audited together with the exact prediction-task definition.
+
 ## Use Contexts
 
 `ForCandidateGeneration` and `ForRanking` are no-oracle modeling contexts. They must not use observed post-edit context or forbidden gold/future fields.
@@ -82,8 +103,10 @@ It also flags `MicroEpisode.local_context_after_observed` as unsafe for candidat
 - It does not estimate learner state.
 - It does not scan arbitrary serialized JSON files.
 - It does not replace human review of release artifacts.
+- It does not implement candidate generation from the safe view.
 
 ## Data Policy
 
 Audit reports may include artifact IDs and field names. Do not commit audit reports derived from real participant data unless they have passed institution-approved review.
 
+Safe view output may still contain writing fragments in `local_context_before`, `inserted_text_observed`, or `deleted_text_observed`. Do not commit safe view outputs derived from real participant data.

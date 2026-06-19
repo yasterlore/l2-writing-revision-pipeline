@@ -11,6 +11,8 @@ Use this checklist when adding implementation.
 - [ ] For raw event JSONL, checks basic `seq`, timestamp, cursor, and selection invariants before replay.
 - [ ] Runs no-oracle audit before candidate generation, ranking, OT scoring, or learner-state estimation.
 - [ ] Ensures `local_context_after_observed` is not used as candidate-generation or ranking input.
+- [ ] Uses `NoOracleSafeEpisodeView` or an equivalent narrowed view before candidate generation, ranking, or OT scoring.
+- [ ] Excludes observed edit text from safe views when the prediction target is the edit text itself.
 - [ ] Adds tests for invalid and adversarial input where applicable.
 - [ ] Does not hard-code secrets or personal data.
 - [ ] Does not introduce network access unless explicitly required.
