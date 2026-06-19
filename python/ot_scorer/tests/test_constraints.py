@@ -35,6 +35,7 @@ class ConstraintTests(unittest.TestCase):
             violation_set.constraint_violation_set_id,
             "synthetic_session_001:micro:3:candidate_set:features:constraints",
         )
+        self.assertEqual(violation_set.constraint_schema_version, "ot_constraint_schema_v0_2")
         self.assertEqual(len(violation_set.candidate_violations), 3)
         self.assertEqual(
             violation_set.candidate_violations[1].generation_rule,
@@ -100,6 +101,57 @@ class ConstraintTests(unittest.TestCase):
             find_violation(violation_set, 1, "PLACEHOLDER-CANDIDATE")["observed"]
         )
 
+    def test_identifies_structural_descriptive_constraints(self) -> None:
+        violation_set = build_constraint_violation_set(candidate_feature_set())
+
+        self.assertTrue(
+            find_violation(violation_set, 0, "HAS-GENERATION-RULE")["observed"]
+        )
+        self.assertTrue(
+            find_violation(violation_set, 0, "HAS-ACTION-FAMILY")["observed"]
+        )
+        self.assertTrue(
+            find_violation(violation_set, 0, "CANDIDATE-METADATA-COMPLETE")[
+                "observed"
+            ]
+        )
+        self.assertTrue(
+            find_violation(violation_set, 0, "HOLD-FAMILY-CANDIDATE")["observed"]
+        )
+        self.assertTrue(
+            find_violation(violation_set, 1, "LOCAL-EDIT-FAMILY-CANDIDATE")[
+                "observed"
+            ]
+        )
+        self.assertTrue(
+            find_violation(violation_set, 2, "GRAMMAR-FAMILY-CANDIDATE")[
+                "observed"
+            ]
+        )
+        self.assertTrue(
+            find_violation(violation_set, 1, "PLACEHOLDER-FAMILY-CANDIDATE")[
+                "observed"
+            ]
+        )
+        self.assertFalse(
+            find_violation(violation_set, 0, "SAFETY-RELEVANT-CANDIDATE")[
+                "observed"
+            ]
+        )
+        self.assertTrue(
+            find_violation(violation_set, 1, "CANDIDATE-FAMILY-BUCKET")[
+                "observed"
+            ]
+        )
+
+    def test_descriptive_constraints_have_zero_violation_count(self) -> None:
+        violation_set = build_constraint_violation_set(candidate_feature_set())
+        candidate = violation_set.to_json_dict()["candidate_violations"][1]
+
+        for violation in candidate["violations"]:
+            if violation["constraint_type"] == "descriptive":
+                self.assertEqual(violation["violation_count"], 0)
+
     def test_rejects_forbidden_field(self) -> None:
         with self.assertRaises(CandidateFeatureError):
             load_candidate_feature_sets(FORBIDDEN_FIXTURE)
@@ -147,7 +199,7 @@ def candidate_feature_set() -> dict[str, object]:
         "candidate_set_id": "synthetic_session_001:micro:3:candidate_set",
         "episode_id": "synthetic_session_001:micro:3",
         "no_oracle_safe": True,
-        "feature_schema_version": "candidate_feature_schema_v0_1",
+        "feature_schema_version": "candidate_feature_schema_v0_2",
         "leakage_flags": [],
         "candidate_features": [
             {

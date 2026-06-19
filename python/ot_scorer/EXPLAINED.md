@@ -86,6 +86,12 @@ Only non-content structural features are used in the first version.
 
 The constraint schema separates penalty constraints from descriptive constraints. Penalty constraints count leakage and unsafe-candidate problems. Descriptive constraints record candidate categories for future scoring experiments.
 
+The structural descriptive constraints include rule presence, action-family
+presence, metadata completeness, family membership, placeholder-family
+membership, safety relevance, and family-bucket presence. They are
+interpretation records only: their violation count is `0`, and they do not
+change `weighted_score` or rank.
+
 The scorer uses blocking constraints as safety gates. It does not learn from data and does not use gold labels.
 
 The score output includes `action_type` explicitly so evaluation does not need to infer candidate class from the string shape of `candidate_id`. It also carries `generation_rule` and `action_family` so later analysis can inspect why a candidate exists without adding candidate descriptions, proposed edit payloads, local context text, or observed edit text to the score output.

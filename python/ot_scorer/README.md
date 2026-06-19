@@ -133,6 +133,19 @@ Descriptive constraints record candidate type without adding a penalty in this v
 - `LOCAL-EDIT-CANDIDATE`
 - `GRAMMAR-PLACEHOLDER-CANDIDATE`
 - `PLACEHOLDER-CANDIDATE`
+- `HAS-GENERATION-RULE`
+- `HAS-ACTION-FAMILY`
+- `CANDIDATE-METADATA-COMPLETE`
+- `HOLD-FAMILY-CANDIDATE`
+- `LOCAL-EDIT-FAMILY-CANDIDATE`
+- `GRAMMAR-FAMILY-CANDIDATE`
+- `PLACEHOLDER-FAMILY-CANDIDATE`
+- `SAFETY-RELEVANT-CANDIDATE`
+- `CANDIDATE-FAMILY-BUCKET`
+
+These structural descriptive constraints are derived from
+`CandidateFeatureSet` metadata. Their `violation_count` is always `0`, and the
+weighted scorer does not add them to `weighted_score`.
 
 The output includes `violation_count`, `severity`, and `explanation`, but it does not include weights, weighted scores, ranks, candidate text, local context text, or observed edit text.
 

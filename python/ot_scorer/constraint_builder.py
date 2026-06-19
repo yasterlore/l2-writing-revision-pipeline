@@ -12,7 +12,7 @@ from ot_scorer.models import (
     ConstraintViolationSet,
 )
 
-CONSTRAINT_SCHEMA_VERSION = "ot_constraint_schema_v0_1"
+CONSTRAINT_SCHEMA_VERSION = "ot_constraint_schema_v0_2"
 
 CONSTRAINTS: tuple[Constraint, ...] = (
     Constraint(
@@ -56,6 +56,60 @@ CONSTRAINTS: tuple[Constraint, ...] = (
         constraint_type="descriptive",
         severity="info",
         explanation="Records whether the candidate is any placeholder candidate.",
+    ),
+    Constraint(
+        constraint_id="HAS-GENERATION-RULE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate has a generation rule.",
+    ),
+    Constraint(
+        constraint_id="HAS-ACTION-FAMILY",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate has an action family.",
+    ),
+    Constraint(
+        constraint_id="CANDIDATE-METADATA-COMPLETE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether required candidate metadata is complete.",
+    ),
+    Constraint(
+        constraint_id="HOLD-FAMILY-CANDIDATE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate belongs to the hold family.",
+    ),
+    Constraint(
+        constraint_id="LOCAL-EDIT-FAMILY-CANDIDATE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate belongs to the local-edit family.",
+    ),
+    Constraint(
+        constraint_id="GRAMMAR-FAMILY-CANDIDATE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate belongs to the grammar family.",
+    ),
+    Constraint(
+        constraint_id="PLACEHOLDER-FAMILY-CANDIDATE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate belongs to a placeholder family.",
+    ),
+    Constraint(
+        constraint_id="SAFETY-RELEVANT-CANDIDATE",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate has safety-relevant metadata.",
+    ),
+    Constraint(
+        constraint_id="CANDIDATE-FAMILY-BUCKET",
+        constraint_type="descriptive",
+        severity="info",
+        explanation="Records whether the candidate has a structural family bucket.",
     ),
 )
 
@@ -124,6 +178,51 @@ def build_candidate_constraint_violations(
             candidate_feature,
             "PLACEHOLDER-CANDIDATE",
             candidate_feature.get("is_placeholder") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "HAS-GENERATION-RULE",
+            candidate_feature.get("has_generation_rule") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "HAS-ACTION-FAMILY",
+            candidate_feature.get("has_action_family") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "CANDIDATE-METADATA-COMPLETE",
+            candidate_feature.get("candidate_metadata_complete") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "HOLD-FAMILY-CANDIDATE",
+            candidate_feature.get("is_hold_candidate") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "LOCAL-EDIT-FAMILY-CANDIDATE",
+            candidate_feature.get("is_local_edit_family_candidate") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "GRAMMAR-FAMILY-CANDIDATE",
+            candidate_feature.get("is_grammar_family_candidate") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "PLACEHOLDER-FAMILY-CANDIDATE",
+            candidate_feature.get("is_placeholder_candidate") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "SAFETY-RELEVANT-CANDIDATE",
+            candidate_feature.get("is_safety_relevant_candidate") is True,
+        ),
+        descriptive_violation(
+            candidate_feature,
+            "CANDIDATE-FAMILY-BUCKET",
+            bool(candidate_feature.get("candidate_family_bucket")),
         ),
     ]
     return CandidateConstraintViolations(
