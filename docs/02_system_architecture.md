@@ -37,6 +37,8 @@ Planned crates:
 
 `kslog_cli` is the initial command-line entry point for running validation, replay, revision-event extraction, micro-episode construction, no-oracle audit, and safe-view summary generation on synthetic JSONL fixtures.
 
+Rust also exports `NoOracleSafeEpisodeView` JSONL as the boundary between deterministic replay-derived structures and Python exploratory candidate-generation prototypes.
+
 ## Python
 
 Python is used in `python/` for exploratory research workflows.
@@ -53,6 +55,13 @@ Forbidden responsibility:
 
 - Authoritative raw-event validation.
 
+Current Python prototypes include:
+
+- `python/candidate_generation/`: placeholder `CandidateSet` generation from safe views.
+- `python/ot_scorer/`: candidate feature extraction, constraint violation records, and weighted scoring prototype.
+
+Python scoring outputs are prototype rankings, not correctness labels and not evaluation metrics.
+
 ## Synthetic E2E Script
 
 `scripts/run_synthetic_e2e_pipeline.sh` connects the current Rust and Python prototype stages for synthetic fixtures:
@@ -64,3 +73,5 @@ Forbidden responsibility:
 5. Python weighted scoring prototype.
 
 The script writes generated JSONL under `tmp/synthetic_e2e/<case_name>/`, which is Git-ignored. It prints summaries only and must not be used for production or real participant data in this repository.
+
+For a detailed milestone recap, see `docs/milestone_01_pipeline_recap.md`.

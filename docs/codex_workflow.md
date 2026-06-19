@@ -8,6 +8,7 @@ Codex work in this repository must respect the project boundaries.
 - Check whether the task touches real participant data. If yes, stop.
 - Prefer synthetic examples and fixtures only.
 - Avoid adding dependencies unless necessary.
+- For architecture orientation, read `docs/milestone_01_pipeline_recap.md`.
 
 ## During Implementation
 
@@ -47,3 +48,7 @@ The E2E smoke is a connection check only. It does not compute evaluation metrics
 The synthetic policy script checks public synthetic examples and valid fixtures for no-oracle forbidden fields. It intentionally excludes invalid fixtures because they include adversarial examples such as forbidden field names.
 
 Before opening a PR, run the same commands locally when possible.
+
+## Milestone Recaps
+
+Milestone recap documents summarize the current system state for humans before the next implementation phase. They should not contain JSONL bodies, real participant text, `tmp/` outputs, or `manual_outputs/` data.
