@@ -276,6 +276,10 @@ directory, explicit columns, or remain outside the collector. See
 
 ### Step 82: Private Validation Design Later
 
+Config-enabled summary and count-only observation notes are handled separately.
+For the safe human-review template, see
+[Config-enabled observation note template](templates/config_enabled_observation_note_template.md).
+
 Private validation remains separate and must not be implemented inside the
 public repository.
 
@@ -288,3 +292,4 @@ public repository.
 - [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Config-enabled summary collector design](config_enabled_summary_collector_design.md)
+- [Config-enabled observation note template](templates/config_enabled_observation_note_template.md)
