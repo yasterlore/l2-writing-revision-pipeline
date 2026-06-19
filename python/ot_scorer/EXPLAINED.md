@@ -19,6 +19,10 @@ Finally, it can read `ConstraintViolationSet` JSONL and write `CandidateScoreSet
 It can also summarize `ConstraintViolationSet` JSONL into count-only
 diagnostic summaries for synthetic wiring checks.
 
+It also defines hand-weight config schema models and a strict validation helper
+for future scoring-weight config files. Those configs are not connected to the
+scorer yet, so default scoring behavior is unchanged.
+
 ## 3. What this component does not do
 
 It does not implement evaluation, F1, calibration, selective prediction, learner-state estimation, or grammar correction.
@@ -42,6 +46,11 @@ Output from scoring: one `CandidateScoreSet` per JSONL line.
 Input for diagnostic summary: `ConstraintViolationSet` JSONL.
 
 Output from diagnostic summary: one JSON file with aggregate counts only.
+
+Input for hand-weight config validation: one synthetic config JSON file.
+
+Output from hand-weight config validation: typed dataclass models in memory.
+No `CandidateScoreSet` output is changed by this validation.
 
 The output is a feature schema for later experiments.
 
@@ -97,6 +106,12 @@ constraints, observed constraint IDs, local pattern diagnostic counts, and
 linguistic placeholder counts. It does not contain per-episode text detail or
 raw JSONL content.
 
+`HandWeightConfig` describes a future hand-weight config. It contains policy
+metadata, score-active family declarations, blocking constraints,
+score-neutral constraints, no-oracle review metadata, expected-action usage
+policy, and `ConstraintWeightEntry` records. The model is validation-only at
+this stage and is not used by `build_candidate_score_set`.
+
 ## 7. Theory behind the implementation
 
 The design separates feature extraction from scoring. This makes it possible to audit the input boundary before any model, ranker, or OT-style weighted constraint system is introduced.
@@ -132,6 +147,10 @@ but they do not decide whether a sentence is grammatically correct.
 The scorer uses blocking constraints as safety gates. It does not learn from data and does not use gold labels.
 
 The score output includes `action_type` explicitly so evaluation does not need to infer candidate class from the string shape of `candidate_id`. It also carries `generation_rule` and `action_family` so later analysis can inspect why a candidate exists without adding candidate descriptions, proposed edit payloads, local context text, or observed edit text to the score output.
+
+The hand-weight config validator is separate from scoring. It rejects unsafe
+or ambiguous config files before any future loader is connected, but it does
+not change weights, formula, blocking, or tie-break behavior.
 
 ## 8. Mathematical formulas, if any
 
@@ -199,6 +218,13 @@ exclusion, constraint generation, diagnostic summary counts,
 penalty/descriptive constraint behavior, scorer blocking, deterministic
 tie-break, unique ranks, and source scanning for `eval`, `exec`, and `pickle`.
 
+They also cover hand-weight config validation, including valid synthetic
+config loading, forbidden field rejection, duplicate constraint rejection,
+non-finite weight rejection, active-weight rationale requirements,
+no-oracle-safe reason requirements, unknown constraint rejection, unsafe path
+string rejection, synthetic-only notice requirements, expected-action tuning
+policy rejection, and default scoring behavior remaining unchanged.
+
 ## 15. Known limitations
 
 The features, constraints, and scores are prototype records. They are not enough to claim the best candidate is correct.
@@ -222,3 +248,5 @@ For future non-leaky linguistic diagnostic design, read
 `../../docs/non_leaky_linguistic_constraint_design_plan.md`.
 For the safe summary tooling for diagnostics, read
 `../../docs/diagnostic_summary_tooling_plan.md`.
+For future hand-weight config schema design, read
+`../../docs/hand_weight_config_schema_plan.md`.

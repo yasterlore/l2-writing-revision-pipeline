@@ -28,6 +28,16 @@ from ot_scorer.scorer import (
     build_candidate_score_set,
     build_candidate_score_sets,
 )
+from ot_scorer.weight_config import (
+    CONFIG_SCHEMA_VERSION,
+    ConstraintWeightEntry,
+    ForbiddenInformationPolicy,
+    HandWeightConfig,
+    NoOracleReviewInfo,
+    WeightConfigError,
+    load_hand_weight_config,
+    parse_hand_weight_config,
+)
 
 __all__ = [
     "CONSTRAINTS",
@@ -42,7 +52,13 @@ __all__ = [
     "ConstraintViolation",
     "ConstraintViolationSet",
     "ConstraintWeight",
+    "ConstraintWeightEntry",
+    "CONFIG_SCHEMA_VERSION",
+    "ForbiddenInformationPolicy",
+    "HandWeightConfig",
+    "NoOracleReviewInfo",
     "SCORING_POLICY_VERSION",
+    "WeightConfigError",
     "build_candidate_score_set",
     "build_candidate_score_sets",
     "build_feature_set",
@@ -50,6 +66,8 @@ __all__ = [
     "build_constraint_violation_set",
     "build_constraint_violation_sets",
     "load_candidate_sets",
+    "load_hand_weight_config",
+    "parse_hand_weight_config",
     "summarize_constraint_violation_file",
     "summarize_constraint_violation_sets",
 ]

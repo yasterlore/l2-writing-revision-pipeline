@@ -1,0 +1,51 @@
+{
+  "config_schema_version": "hand_weight_config_schema_v0_1",
+  "config_name": "invalid_missing_synthetic_notice",
+  "created_for": "synthetic invalid config",
+  "default_behavior": "Current default scoring remains unchanged.",
+  "score_active_constraint_families": [
+    "safety_blocking"
+  ],
+  "constraint_weights": [
+    {
+      "constraint_id": "NO-LEAKAGE-FLAG",
+      "constraint_family": "safety_blocking",
+      "weight": 1000000.0,
+      "active": true,
+      "rationale": "Synthetic invalid fixture.",
+      "no_oracle_safe_reason": "Uses no-oracle audit flags only.",
+      "expected_effect": "Blocks unsafe candidate.",
+      "risk_note": "Synthetic invalid fixture.",
+      "tests_required": [
+        "validator rejects missing synthetic notice"
+      ],
+      "last_reviewed": "2026-06-19"
+    }
+  ],
+  "blocking_constraints": [
+    "NO-LEAKAGE-FLAG"
+  ],
+  "score_neutral_constraints": [
+    "HOLD-CANDIDATE"
+  ],
+  "rationale": "Synthetic invalid fixture.",
+  "no_oracle_review": {
+    "review_status": "invalid",
+    "allowed_information": [
+      "constraint metadata"
+    ],
+    "forbidden_information": [
+      "future information"
+    ]
+  },
+  "expected_action_usage_policy": "Expected actions are not used for scoring or weight tuning.",
+  "forbidden_information_policy": {
+    "forbidden_fields": [
+      "final_text"
+    ],
+    "forbidden_path_parts": [
+      "manual_outputs"
+    ],
+    "raw_text_policy": "Raw text is not allowed."
+  }
+}
