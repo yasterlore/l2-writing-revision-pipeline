@@ -42,10 +42,14 @@ class EvaluationTests(unittest.TestCase):
     def test_loads_candidate_score_set_jsonl(self) -> None:
         score_sets = load_score_sets(SCORES_FIXTURE)
 
-        self.assertEqual(len(score_sets), 1)
+        self.assertEqual(len(score_sets), 2)
         self.assertEqual(
             score_sets[0]["candidate_score_set_id"],
-            "synthetic_session_001:micro:3:candidate_set:features:constraints:scores",
+            "synthetic_session_002:micro:1:candidate_set:features:constraints:scores",
+        )
+        self.assertEqual(
+            sum(len(score_set["candidate_scores"]) for score_set in score_sets),
+            12,
         )
 
     def test_loads_synthetic_expected_action_jsonl(self) -> None:
@@ -272,7 +276,8 @@ class EvaluationTests(unittest.TestCase):
             self.assertNotIn("accuracy", report_text.lower())
             self.assertNotIn("calibration", report_text.lower())
             report = json.loads(report_text)
-            self.assertEqual(report["exact_match_rate"], 1.0)
+            self.assertEqual(report["episodes_total"], 2)
+            self.assertEqual(report["exact_match_rate"], 0.0)
 
     def test_source_does_not_use_eval_exec_or_pickle(self) -> None:
         source_dir = Path("python/evaluation")
