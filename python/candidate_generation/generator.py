@@ -143,6 +143,15 @@ def generate_candidate_set(episode: dict[str, Any]) -> CandidateSet:
         candidate_set_id=f"{episode_id}:candidate_set",
         episode_id=episode_id,
         source_revision_event_id=episode.get("source_revision_event_id"),
+        local_context_before=dict(episode["local_context_before"]),
+        cursor_pos_before=optional_int(episode.get("cursor_pos_before")),
+        doc_len_before=optional_int(episode.get("doc_len_before")),
+        selection_start_before=optional_int(
+            episode.get("selection_start_before", episode.get("span_start"))
+        ),
+        selection_end_before=optional_int(
+            episode.get("selection_end_before", episode.get("span_end"))
+        ),
         no_oracle_safe=True,
         uses_observed_edit_text=False,
         observed_edit_text_policy="ignored_by_default",
@@ -187,3 +196,7 @@ def is_non_terminal_local_edit(episode: dict[str, Any]) -> bool:
     if not isinstance(cursor_pos_before, int) or not isinstance(doc_len_before, int):
         return False
     return cursor_pos_before < doc_len_before
+
+
+def optional_int(value: object) -> int | None:
+    return value if isinstance(value, int) else None

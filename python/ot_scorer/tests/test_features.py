@@ -38,7 +38,7 @@ class CandidateFeatureTests(unittest.TestCase):
         self.assertTrue(feature_set.no_oracle_safe)
         self.assertEqual(
             feature_set.feature_schema_version,
-            "candidate_feature_schema_v0_2",
+            "candidate_feature_schema_v0_3",
         )
         self.assertEqual(len(feature_set.candidate_features), 3)
 
@@ -100,6 +100,83 @@ class CandidateFeatureTests(unittest.TestCase):
         self.assertTrue(hold.has_action_family)
         self.assertFalse(hold.is_safety_relevant_candidate)
 
+    def test_local_pattern_features_are_present(self) -> None:
+        feature_set = build_feature_set(candidate_set())
+        hold = feature_set.candidate_features[0]
+
+        self.assertEqual(hold.context_before_length_bucket, "medium")
+        self.assertFalse(hold.cursor_at_document_start)
+        self.assertFalse(hold.cursor_at_document_end_before)
+        self.assertFalse(hold.selection_is_collapsed_before)
+        self.assertEqual(hold.selection_span_length_bucket, "short")
+        self.assertFalse(hold.left_context_ends_with_space)
+        self.assertTrue(hold.left_context_ends_with_punctuation)
+        self.assertEqual(hold.left_char_class, "punctuation")
+
+    def test_empty_context_has_none_left_char_class(self) -> None:
+        feature_set = build_feature_set(candidate_set_with_left_context(""))
+        hold = feature_set.candidate_features[0]
+
+        self.assertEqual(hold.context_before_length_bucket, "empty")
+        self.assertEqual(hold.left_char_class, "none")
+
+    def test_whitespace_ending_context(self) -> None:
+        feature_set = build_feature_set(candidate_set_with_left_context("Synthetic "))
+        hold = feature_set.candidate_features[0]
+
+        self.assertTrue(hold.left_context_ends_with_space)
+        self.assertEqual(hold.left_char_class, "whitespace")
+
+    def test_punctuation_ending_context(self) -> None:
+        feature_set = build_feature_set(candidate_set_with_left_context("Synthetic."))
+        hold = feature_set.candidate_features[0]
+
+        self.assertTrue(hold.left_context_ends_with_punctuation)
+        self.assertEqual(hold.left_char_class, "punctuation")
+
+    def test_digit_ending_context(self) -> None:
+        feature_set = build_feature_set(candidate_set_with_left_context("Synthetic1"))
+        hold = feature_set.candidate_features[0]
+
+        self.assertEqual(hold.left_char_class, "digit")
+
+    def test_uppercase_and_lowercase_ending_context(self) -> None:
+        uppercase = build_feature_set(candidate_set_with_left_context("Synthetic A"))
+        lowercase = build_feature_set(candidate_set_with_left_context("Synthetic a"))
+
+        self.assertEqual(
+            uppercase.candidate_features[0].left_char_class,
+            "uppercase_letter",
+        )
+        self.assertEqual(
+            lowercase.candidate_features[0].left_char_class,
+            "lowercase_letter",
+        )
+
+    def test_unicode_ime_smoke_context(self) -> None:
+        feature_set = build_feature_set(candidate_set_with_left_context("Synthetic あ"))
+        hold = feature_set.candidate_features[0]
+
+        self.assertEqual(hold.left_char_class, "other_letter")
+
+    def test_selection_collapsed_and_cursor_boundaries(self) -> None:
+        data = candidate_set()
+        data["selection_start_before"] = 0
+        data["selection_end_before"] = 0
+        data["cursor_pos_before"] = 0
+
+        feature_set = build_feature_set(data)
+        hold = feature_set.candidate_features[0]
+
+        self.assertTrue(hold.selection_is_collapsed_before)
+        self.assertEqual(hold.selection_span_length_bucket, "collapsed")
+        self.assertTrue(hold.cursor_at_document_start)
+
+        data["cursor_pos_before"] = data["doc_len_before"]
+        feature_set = build_feature_set(data)
+
+        self.assertTrue(feature_set.candidate_features[0].cursor_at_document_end_before)
+
     def test_safety_relevant_candidate_feature_is_structural(self) -> None:
         data = candidate_set()
         data["candidates"][0]["uses_observed_edit_text"] = True
@@ -124,6 +201,10 @@ class CandidateFeatureTests(unittest.TestCase):
             first_feature = rows[0]["candidate_features"][0]
             self.assertIn("candidate_metadata_complete", first_feature)
             self.assertIn("candidate_family_bucket", first_feature)
+            self.assertIn("context_before_length_bucket", first_feature)
+            self.assertIn("left_char_class", first_feature)
+            self.assertNotIn("local_context_before", first_feature)
+            self.assertNotIn("Synthetic local context.", output_text)
 
     def test_source_does_not_use_eval_exec_or_pickle(self) -> None:
         source_dir = Path("python/ot_scorer")
@@ -142,6 +223,17 @@ def candidate_set() -> dict[str, object]:
         "candidate_set_id": "synthetic_session_001:micro:3:candidate_set",
         "episode_id": "synthetic_session_001:micro:3",
         "source_revision_event_id": "synthetic_session_001:3",
+        "local_context_before": {
+            "text": "Synthetic local context.",
+            "anchor": 10,
+            "window_start": 0,
+            "window_end": 24,
+            "window_size": 30,
+        },
+        "cursor_pos_before": 10,
+        "doc_len_before": 24,
+        "selection_start_before": 9,
+        "selection_end_before": 10,
         "no_oracle_safe": True,
         "uses_observed_edit_text": False,
         "observed_edit_text_policy": "ignored_by_default",
@@ -194,6 +286,14 @@ def candidate_set() -> dict[str, object]:
             },
         ],
     }
+
+
+def candidate_set_with_left_context(text: str) -> dict[str, object]:
+    data = candidate_set()
+    local_context_before = data["local_context_before"]
+    assert isinstance(local_context_before, dict)
+    local_context_before["text"] = text
+    return data
 
 
 if __name__ == "__main__":

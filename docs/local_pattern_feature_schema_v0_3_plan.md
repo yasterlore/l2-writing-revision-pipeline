@@ -1,18 +1,18 @@
 # Local Pattern Feature Schema v0.3 Plan
 
-This document specifies the planned `CandidateFeatureSet` v0.3 local pattern
-feature schema.
+This document specifies the `CandidateFeatureSet` v0.3 local pattern feature
+schema.
 
-It is a design document only. It does not implement feature extraction,
-constraints, scoring changes, weights, F1, accuracy, calibration, or
-learner-state estimation.
+Step 48 implemented the feature extraction portion of this schema. It still
+does not implement new constraints, scoring changes, weights, F1, accuracy,
+calibration, or learner-state estimation.
 
 ## 1. Purpose
 
 `CandidateFeatureSet v0_2` contains structural candidate metadata such as
 `generation_rule`, `action_family`, and candidate-family flags.
 
-`CandidateFeatureSet v0_3` should add a small first set of no-oracle-safe local
+`CandidateFeatureSet v0_3` adds a small first set of no-oracle-safe local
 pattern features.
 
 The goal is to represent local pre-edit context shape without storing raw text.
@@ -28,7 +28,7 @@ Design principles:
 
 ## 2. Initial v0.3 Feature Candidates
 
-Initial fields:
+Implemented initial fields:
 
 - `context_before_length_bucket`
 - `cursor_at_document_start`
@@ -378,11 +378,43 @@ Initial tests should cover:
 
 All tests should use synthetic data only.
 
-## 9. Roadmap
+## 9. Implementation Status
+
+Step 48 implemented these fields in `python/ot_scorer`:
+
+- `context_before_length_bucket`
+- `cursor_at_document_start`
+- `cursor_at_document_end_before`
+- `selection_is_collapsed_before`
+- `selection_span_length_bucket`
+- `left_context_ends_with_space`
+- `left_context_ends_with_punctuation`
+- `left_char_class`
+
+The implementation stores only booleans and enum buckets in
+`CandidateFeatureSet`. It does not store raw `local_context_before`, selected
+text, candidate descriptions, proposed edit payloads, post-edit context,
+observed edit text, final text, expected actions, or teacher corrections.
+
+The current provisional thresholds are:
+
+- `context_before_length_bucket`: `empty` for `0`, `short` for `1..=10`,
+  `medium` for `11..=30`, and `long` for more than `30` characters.
+- `selection_span_length_bucket`: `collapsed` for `0`, `short` for `1..=5`,
+  `medium` for `6..=20`, and `long` for more than `20` characters.
+
+`left_char_class` uses Python string methods for whitespace, digit, and letter
+checks, and begins punctuation handling with ASCII punctuation. Unicode
+punctuation and grapheme-cluster boundaries remain known limitations.
+
+Constraint generation, scoring formula, weights, tie-break policy, and
+evaluation metrics are unchanged.
+
+## 10. Roadmap
 
 ### Step 48: Implement CandidateFeatureSet v0.3 Local Pattern Features
 
-Add the initial v0.3 fields to feature extraction.
+Completed: the initial v0.3 fields are now emitted by feature extraction.
 
 ### Step 49: Update Synthetic Fixtures and Tests
 
@@ -397,11 +429,10 @@ Connect selected local pattern fields to descriptive constraints only.
 Do not add these features to `weighted_score` until there is a separate
 scoring-policy design, no-oracle review, and synthetic smoke coverage.
 
-## 10. Non-Goals
+## 11. Non-Goals
 
 This plan does not:
 
-- implement local pattern features
 - implement constraints
 - change scoring
 - add weights
@@ -409,4 +440,3 @@ This plan does not:
 - implement F1, accuracy, calibration, or learner-state estimation
 - introduce real participant data
 - introduce real gold labels
-

@@ -245,7 +245,7 @@ def candidate_feature_set() -> dict[str, object]:
         "candidate_set_id": "synthetic_session_001:micro:3:candidate_set",
         "episode_id": "synthetic_session_001:micro:3",
         "no_oracle_safe": True,
-        "feature_schema_version": "candidate_feature_schema_v0_2",
+        "feature_schema_version": "candidate_feature_schema_v0_3",
         "leakage_flags": [],
         "candidate_features": [
             {
@@ -265,6 +265,7 @@ def candidate_feature_set() -> dict[str, object]:
                 "is_local_edit_family_candidate": False,
                 "is_hold_candidate": True,
                 "candidate_family_bucket": "hold",
+                **local_pattern_fields(),
                 "is_placeholder": False,
                 "is_hold": True,
                 "is_local_edit": False,
@@ -290,6 +291,7 @@ def candidate_feature_set() -> dict[str, object]:
                 "is_local_edit_family_candidate": True,
                 "is_hold_candidate": False,
                 "candidate_family_bucket": "local_edit",
+                **local_pattern_fields(),
                 "is_placeholder": True,
                 "is_hold": False,
                 "is_local_edit": True,
@@ -315,6 +317,7 @@ def candidate_feature_set() -> dict[str, object]:
                 "is_local_edit_family_candidate": False,
                 "is_hold_candidate": False,
                 "candidate_family_bucket": "grammar_placeholder",
+                **local_pattern_fields(),
                 "is_placeholder": True,
                 "is_hold": False,
                 "is_local_edit": False,
@@ -345,6 +348,7 @@ def grammar_placeholder_feature(action_type: str, generation_rule: str) -> dict[
         "is_local_edit_family_candidate": False,
         "is_hold_candidate": False,
         "candidate_family_bucket": "grammar_placeholder",
+        **local_pattern_fields(),
         "is_placeholder": True,
         "is_hold": False,
         "is_local_edit": False,
@@ -352,6 +356,19 @@ def grammar_placeholder_feature(action_type: str, generation_rule: str) -> dict[
         "candidate_description_length": 0,
         "feature_notes_count": 0,
         "leakage_flags": [],
+    }
+
+
+def local_pattern_fields() -> dict[str, object]:
+    return {
+        "context_before_length_bucket": "medium",
+        "cursor_at_document_start": False,
+        "cursor_at_document_end_before": False,
+        "selection_is_collapsed_before": False,
+        "selection_span_length_bucket": "short",
+        "left_context_ends_with_space": False,
+        "left_context_ends_with_punctuation": True,
+        "left_char_class": "punctuation",
     }
 
 

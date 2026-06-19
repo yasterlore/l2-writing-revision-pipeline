@@ -132,6 +132,8 @@ These are deliberate prototype choices:
 - linguistic constraints are not implemented
 - score output includes `action_type`
 - score output preserves `generation_rule` and `action_family` for interpretation
+- CandidateFeatureSet v0_3 includes no-oracle-safe local pattern buckets and
+  booleans, but scoring does not use them yet
 
 ## 5. No-Oracle Policy
 
@@ -200,11 +202,11 @@ Completed schema refinement:
 
 - preserve `generation_rule` through scorer output
 - preserve stable `action_family` through scorer output
+- add CandidateFeatureSet v0_3 local pattern features without storing raw text
 
 Possible future improvements:
 
-- enrich non-leaky candidate features
-- add local context pattern features that do not use post-edit context
+- connect local pattern features to descriptive diagnostics
 - separate safety constraints from linguistic constraints
 - define interpretable linguistic placeholder constraints
 - document any hand-designed non-safety weights

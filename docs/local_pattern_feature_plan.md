@@ -1,9 +1,10 @@
 # Local Pattern Feature Plan
 
-This document is a design plan for future no-oracle-safe local pattern features.
+This document is a design plan for no-oracle-safe local pattern features.
 
-It does not implement features, constraints, scoring changes, weights, F1,
-accuracy, calibration, or learner-state estimation.
+Step 48 implemented the first small `CandidateFeatureSet v0_3` feature subset.
+This document still does not implement constraints, scoring changes, weights,
+F1, accuracy, calibration, or learner-state estimation.
 
 ## 1. Purpose
 
@@ -67,7 +68,9 @@ policy explicitly defines a safe prediction task boundary.
 
 ## 4. Candidate Feature Ideas
 
-This section lists possible features only. They are not implemented yet.
+This section lists local pattern feature ideas. Step 48 implemented only the
+small initial subset named in the v0.3 schema plan; the remaining ideas are
+still future work.
 
 ### Position Features
 
@@ -178,7 +181,8 @@ have access to information that was unavailable at prediction time.
 
 ### Why No Performance Metrics Yet?
 
-These features are still a design proposal.
+These features are still prototype wiring, even where the initial v0.3 subset
+has been implemented.
 
 The project should first verify no-oracle boundaries and synthetic wiring before
 reporting any performance metric.
@@ -191,7 +195,7 @@ Define exact field names, bucket boundaries, Unicode handling, and no-oracle
 input boundaries.
 
 See [Local pattern feature schema v0.3 plan](local_pattern_feature_schema_v0_3_plan.md)
-for the initial proposed field definitions.
+for the implemented initial field definitions.
 
 ### Step B: Synthetic Fixture Update
 
@@ -200,8 +204,8 @@ selection, digits, uppercase letters, and sentence-boundary markers.
 
 ### Step C: Feature Extraction Implementation
 
-Implement the features from `NoOracleSafeEpisodeView` or an explicitly safe
-candidate input boundary.
+Completed for the initial v0.3 subset: feature extraction now emits boolean and
+bucket local pattern features without storing raw local context text.
 
 ### Step D: Descriptive Constraint Connection
 
@@ -223,7 +227,6 @@ must remain outside this repository and outside public CI.
 
 This plan does not:
 
-- implement local pattern features
 - implement constraints
 - change scoring
 - add weights
