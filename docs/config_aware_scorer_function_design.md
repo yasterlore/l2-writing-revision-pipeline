@@ -10,6 +10,12 @@ pipeline, or the summary collector. It does not change default weights, the
 default scoring formula, deterministic tie-break behavior, evaluation metrics,
 or learner-state estimation.
 
+Status after Step 74: config-aware scorer unit tests cover default snapshot
+stability, default-like config equivalence, explicit active weight behavior,
+unchanged tie-break behavior, unchanged blocking behavior, inactive weight
+handling, validator rejection before scoring, unchanged output schema, and
+forbidden-field absence. No CLI or E2E config connection was added.
+
 This is not performance evaluation.
 
 ## 1. Purpose
@@ -164,13 +170,16 @@ path or raw config JSON body.
 ## 8. Tests Required Before Implementation
 
 Before connecting the config-aware function to any CLI or pipeline path, tests
-should cover:
+should continue to cover:
 
 - default scorer output unchanged
 - no-config fixture lock passes
 - config-aware function requires a validated config object
 - invalid config cannot reach scoring
 - explicit config changes only intended weights
+- inactive config weights are ignored
+- config-aware tie-break matches the default tie-break policy
+- config-aware blocking behavior keeps blocked candidates behind unblocked ones
 - ranking diff summary is safe and count-only
 - default output schema unchanged
 - config metadata absent from default output
@@ -216,8 +225,9 @@ path, CLI, synthetic E2E pipeline, or summary collector.
 
 ### Step 74: Config-Aware Scorer Unit Tests
 
-Add tests for default unchanged behavior, validated-config requirements, and
-intentional synthetic-only config effects.
+Implemented additional tests for default unchanged behavior, validated-config
+requirements, inactive weight handling, output schema stability, and intentional
+synthetic-only config effects.
 
 ### Step 75: Explicit CLI Option Design
 

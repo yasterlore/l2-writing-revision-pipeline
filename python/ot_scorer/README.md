@@ -370,6 +370,12 @@ the summary collector. The default scorer path still does not load, discover,
 or import config at runtime, and default `CandidateScoreSet` output does not
 include config fields.
 
+Unit tests cover default snapshot stability, default-like config equivalence,
+explicit active weight behavior, inactive weight ignoring, unchanged tie-break
+and blocking behavior, output schema stability, and absence of forbidden fields.
+The no-config fixture lock remains the regression guard for E2E-derived locked
+score fixtures.
+
 ### No-Config Scoring Fixture Lock
 
 After generating the synthetic E2E outputs, run:

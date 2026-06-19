@@ -100,6 +100,55 @@ class ScorerTests(unittest.TestCase):
         self.assertNotIn("config_schema_version", config_score_set)
         self.assertNotIn("config_name", config_score_set)
         self.assertNotIn("constraint_weights", config_score_set)
+        assert_no_config_fields(self, config_score_set)
+
+    def test_default_function_output_snapshot_is_unchanged(self) -> None:
+        score_set = build_candidate_score_set(constraint_violation_set()).to_json_dict()
+
+        self.assertEqual(score_set["scoring_policy_version"], "weighted_ot_scorer_policy_v0_1")
+        self.assertEqual(
+            [
+                (
+                    score["candidate_id"],
+                    score["rank"],
+                    score["weighted_score"],
+                    score["blocked"],
+                    score["block_reasons"],
+                )
+                for score in score_set["candidate_scores"]
+            ],
+            [
+                (
+                    "synthetic_session_001:micro:3:cand:01:hold",
+                    1,
+                    0.0,
+                    False,
+                    [],
+                ),
+                (
+                    "synthetic_session_001:micro:3:cand:02:local_delete_placeholder",
+                    2,
+                    0.0,
+                    False,
+                    [],
+                ),
+                (
+                    "synthetic_session_001:micro:3:cand:03:article_fix_placeholder",
+                    3,
+                    0.0,
+                    False,
+                    [],
+                ),
+                (
+                    "synthetic_session_001:micro:3:cand:04:other_placeholder",
+                    4,
+                    0.0,
+                    False,
+                    [],
+                ),
+            ],
+        )
+        assert_no_config_fields(self, score_set)
 
     def test_config_aware_function_can_change_explicit_weight_only(self) -> None:
         data = constraint_violation_set()
@@ -131,6 +180,64 @@ class ScorerTests(unittest.TestCase):
             [score.candidate_id for score in config_score_set.candidate_scores],
             [score.candidate_id for score in default_score_set.candidate_scores],
         )
+        unchanged_default_score = find_score(
+            build_candidate_score_set(data),
+            "synthetic_session_001:micro:3:cand:01:hold",
+        )
+        self.assertEqual(unchanged_default_score.weighted_score, 1_000_000.0)
+
+    def test_config_aware_tie_break_matches_default_for_equal_scores(self) -> None:
+        data = constraint_violation_set()
+        config = parse_hand_weight_config(default_like_config_dict())
+
+        config_score_set = score_constraint_violation_set_with_config(data, config)
+
+        self.assertEqual(
+            [score.candidate_id for score in config_score_set.candidate_scores],
+            [
+                "synthetic_session_001:micro:3:cand:01:hold",
+                "synthetic_session_001:micro:3:cand:02:local_delete_placeholder",
+                "synthetic_session_001:micro:3:cand:03:article_fix_placeholder",
+                "synthetic_session_001:micro:3:cand:04:other_placeholder",
+            ],
+        )
+
+    def test_config_aware_blocking_keeps_unsafe_candidate_out_of_top_rank(self) -> None:
+        data = constraint_violation_set()
+        set_violation_count(data, 0, "NO-UNSAFE-CANDIDATE", 1)
+        config = parse_hand_weight_config(default_like_config_dict())
+
+        score_set = score_constraint_violation_set_with_config(data, config)
+        blocked_score = find_score(
+            score_set,
+            "synthetic_session_001:micro:3:cand:01:hold",
+        )
+
+        self.assertTrue(blocked_score.blocked)
+        self.assertIn("NO-UNSAFE-CANDIDATE", blocked_score.block_reasons)
+        self.assertGreater(blocked_score.rank, 1)
+        self.assertFalse(score_set.candidate_scores[0].blocked)
+
+    def test_config_aware_inactive_weight_is_ignored(self) -> None:
+        data = constraint_violation_set()
+        set_violation_count(data, 0, "HOLD-CANDIDATE", 1)
+        config_data = default_like_config_dict()
+        config_data["constraint_weights"].append(
+            config_weight("HOLD-CANDIDATE", 999.0, active=False)
+        )
+        config = parse_hand_weight_config(config_data)
+
+        score_set = score_constraint_violation_set_with_config(data, config)
+        hold_score = find_score(
+            score_set,
+            "synthetic_session_001:micro:3:cand:01:hold",
+        )
+
+        self.assertEqual(hold_score.weighted_score, 0.0)
+        self.assertEqual(
+            find_contribution_weight(hold_score, "HOLD-CANDIDATE"),
+            0.0,
+        )
 
     def test_config_aware_function_does_not_mutate_default_path(self) -> None:
         data = constraint_violation_set()
@@ -148,6 +255,26 @@ class ScorerTests(unittest.TestCase):
 
         with self.assertRaises(WeightConfigError):
             parse_hand_weight_config(config_data)
+
+    def test_unknown_active_constraint_is_rejected_before_config_aware_scoring(self) -> None:
+        config_data = default_like_config_dict()
+        config_data["constraint_weights"].append(
+            config_weight("SYNTHETIC-UNKNOWN-CONSTRAINT", 1.0)
+        )
+
+        with self.assertRaises(WeightConfigError):
+            parse_hand_weight_config(config_data)
+
+    def test_config_aware_output_schema_excludes_config_and_forbidden_fields(self) -> None:
+        data = constraint_violation_set()
+        config = parse_hand_weight_config(default_like_config_dict())
+
+        score_set = score_constraint_violation_set_with_config(
+            data, config
+        ).to_json_dict()
+
+        assert_no_config_fields(self, score_set)
+        assert_forbidden_output_fields_absent(self, score_set)
 
     def test_hold_local_grammar_tie_break_order(self) -> None:
         score_set = build_candidate_score_set(constraint_violation_set())
@@ -272,6 +399,53 @@ def find_score(score_set: object, candidate_id: str) -> object:
     raise AssertionError(f"missing score: {candidate_id}")
 
 
+def find_contribution_weight(score: object, constraint_id: str) -> float:
+    for contribution in score.constraint_contributions:
+        if contribution.constraint_id == constraint_id:
+            return contribution.weight
+    raise AssertionError(f"missing contribution: {constraint_id}")
+
+
+def assert_no_config_fields(
+    test_case: unittest.TestCase,
+    score_set: dict[str, object],
+) -> None:
+    forbidden_config_fields = [
+        "config_schema_version",
+        "config_name",
+        "config",
+        "weight_config",
+        "constraint_weights",
+        "score_active_constraint_families",
+    ]
+    serialized = json.dumps(score_set, ensure_ascii=False)
+    for field in forbidden_config_fields:
+        test_case.assertNotIn(field, score_set)
+        test_case.assertNotIn(f'"{field}"', serialized)
+
+
+def assert_forbidden_output_fields_absent(
+    test_case: unittest.TestCase,
+    score_set: dict[str, object],
+) -> None:
+    serialized = json.dumps(score_set, ensure_ascii=False)
+    forbidden_fragments = [
+        "final_text",
+        "observed_after_text",
+        "gold_label",
+        "teacher_correction",
+        "expected_action",
+        "raw_text",
+        "raw_local_context_before",
+        "local_context_before",
+        "local_context_after_observed",
+        "candidate_description",
+        "proposed_edit",
+    ]
+    for fragment in forbidden_fragments:
+        test_case.assertNotIn(fragment, serialized)
+
+
 def default_like_config_dict() -> dict[str, object]:
     return {
         "config_schema_version": "hand_weight_config_schema_v0_1",
@@ -331,12 +505,17 @@ def default_like_config_dict() -> dict[str, object]:
     }
 
 
-def config_weight(constraint_id: str, weight: float) -> dict[str, object]:
+def config_weight(
+    constraint_id: str,
+    weight: float,
+    *,
+    active: bool = True,
+) -> dict[str, object]:
     return {
         "constraint_id": constraint_id,
         "constraint_family": "safety_blocking",
         "weight": weight,
-        "active": True,
+        "active": active,
         "rationale": "Synthetic unit test active safety weight.",
         "no_oracle_safe_reason": "Uses no-oracle safety flags only.",
         "expected_effect": "Candidate is blocked when violation_count is positive.",
