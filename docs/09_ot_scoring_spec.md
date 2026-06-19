@@ -8,6 +8,8 @@ The initial Python feature schema and leakage audit lives in `python/ot_scorer/`
 
 The initial Python constraint schema prototype also lives in `python/ot_scorer/`.
 
+The initial weighted scorer prototype lives in `python/ot_scorer/score.py`.
+
 ## Planned Responsibility
 
 OT-inspired scorers will rank candidates using explicit constraints and documented weights.
@@ -113,9 +115,47 @@ Descriptive constraints have `violation_count=0` in this prototype. They are pre
 
 Constraint generation uses only `CandidateFeatureSet` structural fields. It must reject forbidden no-oracle field names and must not read context text, observed edit text, final text, gold labels, or teacher corrections.
 
+## Weighted OT Scorer Prototype
+
+`python/ot_scorer/score.py` converts `ConstraintViolationSet` JSONL into `CandidateScoreSet` JSONL.
+
+The score formula is:
+
+```text
+weighted_score(c) = sum_i w_i * v_i(c)
+```
+
+where:
+
+- `c` is a candidate.
+- `i` is a constraint index.
+- `w_i` is the prototype weight for constraint `i`.
+- `v_i(c)` is the candidate's violation count for constraint `i`.
+- `weighted_score(c)` is the total penalty score. Lower is better.
+
+Initial blocking constraints:
+
+- `NO-LEAKAGE-FLAG`
+- `NO-OBSERVED-EDIT-TEXT`
+- `NO-UNSAFE-CANDIDATE`
+
+These use weight `1_000_000.0` and mark a candidate as `blocked=true` when `violation_count > 0`.
+
+Descriptive constraints use weight `0.0` and are not added to the score.
+
+The weights are not learned. They are hand-designed safety defaults for the prototype.
+
+Blocked candidates are placed after unblocked candidates. Among equal-score unblocked candidates, tie-break is deterministic:
+
+1. hold
+2. local edit
+3. grammar placeholder
+4. other placeholder
+5. other
+
+The rank is a deterministic prototype order, not a correctness label or evaluation result.
+
 ## Current Non-Goals
 
-- No weighted OT scoring is implemented.
-- No weights are introduced.
-- No ranking is performed.
+- No evaluation, F1, calibration, or selective prediction is implemented.
 - No evaluation or learner-state estimation is performed.

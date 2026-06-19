@@ -139,3 +139,64 @@ class ConstraintViolationSet:
             for candidate_violation in self.candidate_violations
         ]
         return data
+
+
+@dataclass(frozen=True)
+class ConstraintWeight:
+    constraint_id: str
+    weight: float
+    is_blocking: bool
+    rationale: str
+
+    def to_json_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class ConstraintContribution:
+    constraint_id: str
+    constraint_type: str
+    violation_count: int
+    weight: float
+    contribution: float
+    observed: bool
+
+    def to_json_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class CandidateScore:
+    candidate_id: str
+    episode_id: str
+    weighted_score: float
+    blocked: bool
+    block_reasons: list[str]
+    rank: int
+    constraint_contributions: list[ConstraintContribution]
+    scoring_policy_version: str
+    no_oracle_safe: bool
+
+    def to_json_dict(self) -> dict[str, Any]:
+        data = asdict(self)
+        data["constraint_contributions"] = [
+            contribution.to_json_dict()
+            for contribution in self.constraint_contributions
+        ]
+        return data
+
+
+@dataclass(frozen=True)
+class CandidateScoreSet:
+    candidate_score_set_id: str
+    constraint_violation_set_id: str
+    episode_id: str
+    scoring_policy_version: str
+    candidate_scores: list[CandidateScore]
+
+    def to_json_dict(self) -> dict[str, Any]:
+        data = asdict(self)
+        data["candidate_scores"] = [
+            candidate_score.to_json_dict() for candidate_score in self.candidate_scores
+        ]
+        return data

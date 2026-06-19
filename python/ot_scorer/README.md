@@ -1,8 +1,8 @@
 # Candidate Feature Schema and Leakage Audit
 
-This module prepares simple no-oracle structural features from `CandidateSet` JSONL for future OT-inspired scoring experiments.
+This module prepares simple no-oracle structural features, constraint violations, and prototype weighted scores for future OT-inspired scoring experiments.
 
-It does not implement OT scoring, weights, ranking, evaluation, or learner-state estimation.
+It does not implement evaluation, F1, calibration, selective prediction, or learner-state estimation.
 
 ## Purpose
 
@@ -126,3 +126,66 @@ The output includes `violation_count`, `severity`, and `explanation`, but it doe
 ## Synthetic Data Only
 
 All fixtures are synthetic. Do not commit feature outputs derived from real participant data.
+
+## Weighted OT Scorer Prototype
+
+The scorer prototype reads `ConstraintViolationSet` JSONL and writes `CandidateScoreSet` JSONL.
+
+Run it from the repository root:
+
+```bash
+PYTHONPATH=python python3 -m ot_scorer.score \
+  --input tests/fixtures/synthetic/constraint_violations/valid/deletion_constraint_violations.jsonl \
+  --output tmp/candidate_scores.jsonl
+```
+
+Each candidate score contains:
+
+- `candidate_id`
+- `episode_id`
+- `weighted_score`
+- `blocked`
+- `block_reasons`
+- `rank`
+- `constraint_contributions`
+- `scoring_policy_version`
+- `no_oracle_safe`
+
+### Weighted Score
+
+The prototype uses:
+
+```text
+weighted_score(candidate) = sum(weight(constraint_id) * violation_count)
+```
+
+Blocking constraints have weight `1_000_000.0` and are treated as safety blockers:
+
+- `NO-LEAKAGE-FLAG`
+- `NO-OBSERVED-EDIT-TEXT`
+- `NO-UNSAFE-CANDIDATE`
+
+Descriptive constraints have weight `0.0`:
+
+- `HOLD-CANDIDATE`
+- `LOCAL-EDIT-CANDIDATE`
+- `GRAMMAR-PLACEHOLDER-CANDIDATE`
+- `PLACEHOLDER-CANDIDATE`
+
+These weights are hand-designed safety defaults, not learned values.
+
+### Blocking and Ranking Policy
+
+If a blocking constraint has `violation_count > 0`, the candidate is marked `blocked=true` and placed after unblocked candidates.
+
+Among unblocked candidates with the same score, tie-break is deterministic:
+
+1. hold
+2. local edit
+3. grammar placeholder
+4. other placeholder
+5. other
+
+This rank is not a correctness prediction. It is a deterministic prototype order for later experiments.
+
+Candidate score outputs derived from real participant data must not be committed to this repository.
