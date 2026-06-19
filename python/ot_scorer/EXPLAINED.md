@@ -105,6 +105,12 @@ belongs to article, number, subject-verb-agreement, tense, preposition, or
 punctuation placeholder families. They do not decide whether the grammar is
 correct.
 
+The local pattern diagnostic descriptive constraints record v0.3 local pattern
+feature states such as context-length bucket, cursor boundary, selection span
+bucket, whitespace/punctuation ending flags, and left-character class. They use
+only already-extracted no-oracle-safe buckets, booleans, and enums. They do not
+store or reconstruct raw local context text.
+
 The scorer uses blocking constraints as safety gates. It does not learn from data and does not use gold labels.
 
 The score output includes `action_type` explicitly so evaluation does not need to infer candidate class from the string shape of `candidate_id`. It also carries `generation_rule` and `action_family` so later analysis can inspect why a candidate exists without adding candidate descriptions, proposed edit payloads, local context text, or observed edit text to the score output.
@@ -168,9 +174,10 @@ text.
 Tests cover loading CandidateSet JSONL, feature-set construction, forbidden
 field rejection, post-edit context rejection, leakage flag detection,
 hold/local/grammar feature classification, v0.3 local pattern feature buckets
-and character classes, text-fragment exclusion, constraint generation,
-penalty/descriptive constraint behavior, scorer blocking, deterministic
-tie-break, unique ranks, and source scanning for `eval`, `exec`, and `pickle`.
+and character classes, local pattern diagnostic constraints, text-fragment
+exclusion, constraint generation, penalty/descriptive constraint behavior,
+scorer blocking, deterministic tie-break, unique ranks, and source scanning for
+`eval`, `exec`, and `pickle`.
 
 ## 15. Known limitations
 
@@ -189,5 +196,5 @@ For the no-oracle plan for local pattern features, read
 `../../docs/local_pattern_feature_plan.md`.
 For the implemented v0.3 local pattern feature schema, read
 `../../docs/local_pattern_feature_schema_v0_3_plan.md`.
-For the planned descriptive diagnostic constraints based on those fields, read
+For the descriptive diagnostic constraints based on those fields, read
 `../../docs/local_pattern_diagnostic_constraint_plan.md`.

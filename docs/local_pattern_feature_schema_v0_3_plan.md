@@ -422,7 +422,8 @@ Update synthetic fixtures and add targeted tests for each bucket and boolean.
 
 ### Step 50: Descriptive Diagnostic Constraints
 
-Connect selected local pattern fields to descriptive constraints only.
+Completed: selected local pattern fields are connected to descriptive
+constraints only.
 
 See [Local pattern diagnostic constraint plan](local_pattern_diagnostic_constraint_plan.md)
 for the proposed constraint IDs, no-oracle boundary, and scoring non-goals.

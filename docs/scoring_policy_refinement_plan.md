@@ -203,10 +203,11 @@ Completed schema refinement:
 - preserve `generation_rule` through scorer output
 - preserve stable `action_family` through scorer output
 - add CandidateFeatureSet v0_3 local pattern features without storing raw text
+- connect v0_3 local pattern features to descriptive diagnostics without
+  changing scoring
 
 Possible future improvements:
 
-- connect local pattern features to descriptive diagnostics
 - separate safety constraints from linguistic constraints
 - define interpretable linguistic placeholder constraints
 - document any hand-designed non-safety weights
@@ -260,7 +261,7 @@ The initial schema proposal is in
 
 The descriptive diagnostic constraint design is in
 [Local pattern diagnostic constraint plan](local_pattern_diagnostic_constraint_plan.md).
-These planned constraints should keep `violation_count=0` and should not affect
+These constraints keep `violation_count=0` and should not affect
 `weighted_score`, blocking, or tie-break behavior.
 
 ### Step C: Add Linguistic Placeholder Constraints

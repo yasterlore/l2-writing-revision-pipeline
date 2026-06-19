@@ -162,6 +162,27 @@ Descriptive constraints record candidate type without adding a penalty in this v
 - `TENSE-PLACEHOLDER-CANDIDATE`
 - `PREPOSITION-PLACEHOLDER-CANDIDATE`
 - `PUNCTUATION-PLACEHOLDER-CANDIDATE`
+- `CONTEXT-BEFORE-EMPTY`
+- `CONTEXT-BEFORE-SHORT`
+- `CONTEXT-BEFORE-MEDIUM`
+- `CONTEXT-BEFORE-LONG`
+- `CURSOR-AT-DOCUMENT-START`
+- `CURSOR-AT-DOCUMENT-END-BEFORE`
+- `SELECTION-COLLAPSED-BEFORE`
+- `SELECTION-NONCOLLAPSED-BEFORE`
+- `SELECTION-SPAN-SHORT`
+- `SELECTION-SPAN-MEDIUM`
+- `SELECTION-SPAN-LONG`
+- `LEFT-CONTEXT-ENDS-WITH-SPACE`
+- `LEFT-CONTEXT-ENDS-WITH-PUNCTUATION`
+- `LEFT-CHAR-CLASS-NONE`
+- `LEFT-CHAR-CLASS-WHITESPACE`
+- `LEFT-CHAR-CLASS-PUNCTUATION`
+- `LEFT-CHAR-CLASS-DIGIT`
+- `LEFT-CHAR-CLASS-UPPERCASE-LETTER`
+- `LEFT-CHAR-CLASS-LOWERCASE-LETTER`
+- `LEFT-CHAR-CLASS-OTHER-LETTER`
+- `LEFT-CHAR-CLASS-OTHER`
 
 These structural descriptive constraints are derived from
 `CandidateFeatureSet` metadata. Their `violation_count` is always `0`, and the
@@ -169,6 +190,10 @@ weighted scorer does not add them to `weighted_score`.
 
 The linguistic placeholder constraints record candidate families only. They do
 not judge grammatical correctness.
+
+The local pattern diagnostic constraints record `CandidateFeatureSet v0_3`
+bucket, boolean, and enum features only. They do not reintroduce raw
+`local_context_before` text and do not affect weighted scoring.
 
 The output includes `violation_count`, `severity`, and `explanation`, but it does not include weights, weighted scores, ranks, candidate text, local context text, or observed edit text.
 
@@ -259,5 +284,5 @@ For the no-oracle-safe local pattern feature design, read
 `../../docs/local_pattern_feature_plan.md`.
 For the implemented v0.3 local pattern field schema, read
 `../../docs/local_pattern_feature_schema_v0_3_plan.md`.
-For planned descriptive diagnostics derived from those fields, read
+For descriptive diagnostics derived from those fields, read
 `../../docs/local_pattern_diagnostic_constraint_plan.md`.

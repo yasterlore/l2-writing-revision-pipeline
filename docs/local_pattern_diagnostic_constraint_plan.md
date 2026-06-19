@@ -1,11 +1,11 @@
 # Local Pattern Diagnostic Constraint Plan
 
-This document plans descriptive diagnostic constraints derived from
+This document describes descriptive diagnostic constraints derived from
 `CandidateFeatureSet v0_3` local pattern features.
 
-It is a design document only. It does not implement constraints, change
-feature extraction, change scoring, add weights, add F1, add accuracy, add
-calibration, or implement learner-state estimation.
+Step 50 implemented the initial constraint-generation portion of this plan. It
+does not change feature extraction, change scoring, add weights, add F1, add
+accuracy, add calibration, or implement learner-state estimation.
 
 ## 1. Purpose
 
@@ -213,7 +213,8 @@ All tests should use synthetic fixtures only.
 
 ### Step 50: Implement Local Pattern Diagnostic Descriptive Constraints
 
-Add the diagnostic constraints listed in this plan to constraint generation.
+Completed: the diagnostic constraints listed in this plan are emitted by
+constraint generation as descriptive records with `violation_count = 0`.
 
 ### Step 51: Diagnostic Summary Tooling
 
@@ -232,9 +233,8 @@ separate scoring-policy design, no-oracle review, and synthetic smoke coverage.
 
 ## 10. Non-Goals
 
-This plan does not:
+This plan and implementation do not:
 
-- implement constraints
 - change feature extraction
 - change scoring
 - add weights
