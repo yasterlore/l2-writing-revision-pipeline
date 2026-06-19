@@ -268,6 +268,9 @@ fields from `diagnostic_summary.json`, but it does not print the report body,
 raw constraint JSONL rows, candidate descriptions, proposed edits, local
 context, or per-episode records.
 
+For safe interpretation of these count-only outputs, see
+[`synthetic_diagnostic_distribution_review_plan.md`](synthetic_diagnostic_distribution_review_plan.md).
+
 ## What This Is Not
 
 This pipeline is not production evaluation. Its optional evaluation stage is only
