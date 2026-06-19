@@ -16,6 +16,9 @@ It can also read `CandidateFeatureSet` JSONL and write `ConstraintViolationSet` 
 
 Finally, it can read `ConstraintViolationSet` JSONL and write `CandidateScoreSet` JSONL with prototype `weighted_score` and deterministic `rank`.
 
+It can also summarize `ConstraintViolationSet` JSONL into count-only
+diagnostic summaries for synthetic wiring checks.
+
 ## 3. What this component does not do
 
 It does not implement evaluation, F1, calibration, selective prediction, learner-state estimation, or grammar correction.
@@ -36,6 +39,10 @@ Input for scoring: one `ConstraintViolationSet` per JSONL line.
 
 Output from scoring: one `CandidateScoreSet` per JSONL line.
 
+Input for diagnostic summary: `ConstraintViolationSet` JSONL.
+
+Output from diagnostic summary: one JSON file with aggregate counts only.
+
 The output is a feature schema for later experiments.
 
 ## 5. Step-by-step mechanism
@@ -49,6 +56,7 @@ The output is a feature schema for later experiments.
 7. Optionally read feature sets and create unweighted constraint-violation records.
 8. Optionally read constraint records and compute prototype weighted scores.
 9. Assign deterministic ranks within each episode.
+10. Optionally summarize constraint records into count-only diagnostic JSON.
 
 ## 6. Important data structures
 
@@ -83,6 +91,11 @@ These fields are derived from candidate metadata, action taxonomy, and leakage f
 `generation_rule` records which candidate-generation rule produced the candidate. `action_family` records the broad candidate family, such as hold, local edit, grammar placeholder, or other. These fields are carried for interpretation and debugging; they do not change the score formula or rank policy.
 
 `CandidateScoreSet` groups candidate scores for one episode.
+
+`diagnostic_summary_schema_v0_1` records aggregate counts, such as total
+constraints, observed constraint IDs, local pattern diagnostic counts, and
+linguistic placeholder counts. It does not contain per-episode text detail or
+raw JSONL content.
 
 ## 7. Theory behind the implementation
 
@@ -169,15 +182,17 @@ Feature, constraint, and score output exclude candidate descriptions, proposed
 edit payloads, raw local context text, post-edit context, and observed edit
 text.
 
+Diagnostic summary output is count-only and also excludes those fields.
+
 ## 14. Tests added
 
 Tests cover loading CandidateSet JSONL, feature-set construction, forbidden
 field rejection, post-edit context rejection, leakage flag detection,
 hold/local/grammar feature classification, v0.3 local pattern feature buckets
 and character classes, local pattern diagnostic constraints, text-fragment
-exclusion, constraint generation, penalty/descriptive constraint behavior,
-scorer blocking, deterministic tie-break, unique ranks, and source scanning for
-`eval`, `exec`, and `pickle`.
+exclusion, constraint generation, diagnostic summary counts,
+penalty/descriptive constraint behavior, scorer blocking, deterministic
+tie-break, unique ranks, and source scanning for `eval`, `exec`, and `pickle`.
 
 ## 15. Known limitations
 
@@ -198,5 +213,5 @@ For the implemented v0.3 local pattern feature schema, read
 `../../docs/local_pattern_feature_schema_v0_3_plan.md`.
 For the descriptive diagnostic constraints based on those fields, read
 `../../docs/local_pattern_diagnostic_constraint_plan.md`.
-For the planned safe summary tooling for diagnostics, read
+For the safe summary tooling for diagnostics, read
 `../../docs/diagnostic_summary_tooling_plan.md`.

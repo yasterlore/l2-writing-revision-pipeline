@@ -1,12 +1,11 @@
 # Diagnostic Summary Tooling Plan
 
-This document plans summary-only tooling for descriptive diagnostics in
+This document describes summary-only tooling for descriptive diagnostics in
 `ConstraintViolationSet` JSONL.
 
-It is a design document only. It does not implement diagnostic summary tooling,
-change feature extraction, change constraint generation, change scoring, add
-weights, add F1, add accuracy, add calibration, or implement learner-state
-estimation.
+Step 52 implemented the first diagnostic summary CLI. It does not change
+feature extraction, change constraint generation, change scoring, add weights,
+add F1, add accuracy, add calibration, or implement learner-state estimation.
 
 ## 1. Purpose
 
@@ -96,6 +95,8 @@ a safe error without printing the offending value.
 ## 5. Output Policy
 
 Initial output can be JSON summary or CSV summary.
+
+The Step 52 implementation writes JSON summary output.
 
 Output location:
 
@@ -211,8 +212,9 @@ All tests should use synthetic fixtures only.
 
 ### Step 52: Implement Diagnostic Summary Tool
 
-Add a Python CLI that reads `ConstraintViolationSet` JSONL and writes a
-summary JSON or CSV file under `tmp/`.
+Completed: `python -m ot_scorer.summarize_diagnostics` reads
+`ConstraintViolationSet` JSONL and writes a summary JSON file under `tmp/` or
+another caller-provided path. Empty input produces a valid zero-count summary.
 
 ### Step 53: Connect Diagnostic Summary to Synthetic E2E Summary
 
@@ -232,9 +234,8 @@ plan.
 
 ## 12. Non-Goals
 
-This plan does not:
+This plan and implementation do not:
 
-- implement diagnostic summary tooling
 - change constraint generation
 - change scoring
 - add weights

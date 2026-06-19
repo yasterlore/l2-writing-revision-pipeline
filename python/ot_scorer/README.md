@@ -197,6 +197,28 @@ bucket, boolean, and enum features only. They do not reintroduce raw
 
 The output includes `violation_count`, `severity`, and `explanation`, but it does not include weights, weighted scores, ranks, candidate text, local context text, or observed edit text.
 
+## Diagnostic Summary Tool
+
+The diagnostic summary CLI reads `ConstraintViolationSet` JSONL and writes a
+count-only JSON summary.
+
+Run it from the repository root:
+
+```bash
+PYTHONPATH=python python3 -m ot_scorer.summarize_diagnostics \
+  --constraints tests/fixtures/synthetic/constraint_violations/valid/deletion_constraint_violations.jsonl \
+  --output tmp/diagnostic_summary/deletion_diagnostic_summary.json
+```
+
+The summary includes aggregate counts such as `total_constraint_sets`,
+`total_candidates`, `constraint_id_counts`, `local_pattern_constraint_counts`,
+and `linguistic_placeholder_constraint_counts`.
+
+It does not include raw JSONL lines, per-episode text detail, candidate
+descriptions, proposed edit payloads, local context text, observed edit text,
+final text, expected actions, F1, accuracy, calibration, or learner-state
+estimates. Empty input produces a valid zero-count summary.
+
 ## Synthetic Data Only
 
 All fixtures are synthetic. Do not commit feature outputs derived from real participant data.
