@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KSLog Synthetic Web Logger</title>
+  </head>
+  <body>
+    <main id="app" class="shell">
+      <section class="toolbar" aria-label="Logger controls">
+        <div>
+          <h1>KSLog Synthetic Logger</h1>
+          <p id="statusText">Ready. Synthetic metadata only.</p>
+        </div>
+        <div class="actions">
+          <button id="downloadButton" type="button">Download JSONL</button>
+          <button id="clearButton" type="button">Clear session</button>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Writing workspace">
+        <label for="writingArea">Synthetic free-writing textarea</label>
+        <textarea
+          id="writingArea"
+          spellcheck="false"
+          autocomplete="off"
+          autocapitalize="off"
+          placeholder="Type synthetic text here for local manual testing only."
+        ></textarea>
+      </section>
+
+      <section class="summary" aria-label="Logger summary">
+        <dl>
+          <div>
+            <dt>Events</dt>
+            <dd id="eventCount">0</dd>
+          </div>
+          <div>
+            <dt>Last event</dt>
+            <dd id="lastEventType">none</dd>
+          </div>
+          <div>
+            <dt>Session</dt>
+            <dd>synthetic_session_web_001</dd>
+          </div>
+          <div>
+            <dt>Network</dt>
+            <dd>disabled</dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+

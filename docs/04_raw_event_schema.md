@@ -114,3 +114,20 @@ Current synthetic raw event JSONL files live in:
 - `tests/fixtures/synthetic/raw_events/invalid/`
 
 The valid fixture lines are expected to deserialize as `RawEvent`. The invalid fixtures are reserved for future `kslog_validate` tests and include both schema-level invalid cases and cross-field invalid cases.
+
+## Web Logger Notes
+
+The initial TypeScript web logger lives in `apps/logger-web/`.
+
+It emits RawEvent-like JSONL from browser textarea events using synthetic metadata:
+
+- `synthetic_session_web_001`
+- `synthetic_writer_web_001`
+- `synthetic_task_web_freewrite_001`
+- `synthetic_prompt_web_001`
+
+The logger uses `Date.now()` for `timestamp_ms`, records selection/cursor/document length snapshots, and uses `synthetic_hash_*` placeholders for text hashes.
+
+The logger is an observation layer only. It must not implement validation, replay, revision-event extraction, micro-episode construction, no-oracle audit, candidate generation, or ranking.
+
+Downloaded JSONL can contain text fragments. Do not commit downloaded JSONL from real sessions to this repository.
