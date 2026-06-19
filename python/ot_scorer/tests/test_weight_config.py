@@ -21,6 +21,7 @@ from ot_scorer.weight_config import (
 VALID_CONFIG = Path(
     "tests/fixtures/synthetic/hand_weight_configs/valid/current_default_like_config.json"
 )
+VALID_CONFIG_DIR = Path("tests/fixtures/synthetic/hand_weight_configs/valid")
 INVALID_DIR = Path("tests/fixtures/synthetic/hand_weight_configs/invalid")
 CONSTRAINT_FIXTURE = Path(
     "tests/fixtures/synthetic/constraint_violations/valid/deletion_constraint_violations.jsonl"
@@ -44,6 +45,12 @@ class HandWeightConfigTests(unittest.TestCase):
             ],
         )
         self.assertTrue(all(entry.active for entry in config.constraint_weights))
+
+    def test_all_valid_config_fixtures_load(self) -> None:
+        for config_path in sorted(VALID_CONFIG_DIR.glob("*.json")):
+            with self.subTest(config_path=config_path.name):
+                config = load_hand_weight_config(config_path)
+                self.assertEqual(config.config_schema_version, CONFIG_SCHEMA_VERSION)
 
     def test_forbidden_field_is_rejected(self) -> None:
         self.assert_invalid_fixture("forbidden_field_config.json", "forbidden")

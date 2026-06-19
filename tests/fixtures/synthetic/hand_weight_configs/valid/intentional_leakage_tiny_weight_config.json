@@ -1,0 +1,104 @@
+{
+  "config_schema_version": "hand_weight_config_schema_v0_1",
+  "config_name": "synthetic_intentional_leakage_tiny_weight",
+  "created_for": "synthetic explicit config ranking diff smoke check only",
+  "default_behavior": "No-config scoring remains unchanged; this config is used only when explicitly supplied.",
+  "score_active_constraint_families": [
+    "safety_blocking"
+  ],
+  "constraint_weights": [
+    {
+      "constraint_id": "NO-LEAKAGE-FLAG",
+      "constraint_family": "safety_blocking",
+      "weight": 5.0,
+      "active": true,
+      "rationale": "Synthetic smoke config intentionally changes the leakage blocking weight so weighted_score diff wiring can be checked.",
+      "no_oracle_safe_reason": "Uses only the no-oracle leakage flag and violation count, not future, gold, or expected-action information.",
+      "expected_effect": "When a synthetic leakage violation is present, weighted_score differs from no-config scoring.",
+      "risk_note": "This fixture is not a performance policy and must not be used for real data tuning.",
+      "tests_required": [
+        "explicit config ranking diff smoke",
+        "defaults unchanged"
+      ],
+      "last_reviewed": "2026-06-20"
+    },
+    {
+      "constraint_id": "NO-OBSERVED-EDIT-TEXT",
+      "constraint_family": "safety_blocking",
+      "weight": 1000000.0,
+      "active": true,
+      "rationale": "Keeps observed-edit-text safety blocking aligned with current default behavior.",
+      "no_oracle_safe_reason": "Uses only the safety flag, not observed edit text.",
+      "expected_effect": "Candidate is blocked when violation_count is greater than zero.",
+      "risk_note": "Observed edit text can be target leakage for prediction-time scoring.",
+      "tests_required": [
+        "blocking behavior unchanged",
+        "defaults unchanged"
+      ],
+      "last_reviewed": "2026-06-20"
+    },
+    {
+      "constraint_id": "NO-UNSAFE-CANDIDATE",
+      "constraint_family": "safety_blocking",
+      "weight": 1000000.0,
+      "active": true,
+      "rationale": "Keeps unsafe-candidate blocking aligned with current default behavior.",
+      "no_oracle_safe_reason": "Uses only the no_oracle_safe safety flag.",
+      "expected_effect": "Candidate is blocked when violation_count is greater than zero.",
+      "risk_note": "Unsafe candidates must not compete with safe candidates.",
+      "tests_required": [
+        "blocking behavior unchanged",
+        "defaults unchanged"
+      ],
+      "last_reviewed": "2026-06-20"
+    }
+  ],
+  "blocking_constraints": [
+    "NO-LEAKAGE-FLAG",
+    "NO-OBSERVED-EDIT-TEXT",
+    "NO-UNSAFE-CANDIDATE"
+  ],
+  "score_neutral_constraints": [
+    "HOLD-CANDIDATE",
+    "LOCAL-EDIT-CANDIDATE",
+    "GRAMMAR-PLACEHOLDER-CANDIDATE",
+    "PLACEHOLDER-CANDIDATE"
+  ],
+  "rationale": "Synthetic smoke-test config for explicit config ranking diff checks only. It is not connected to default scoring and is not a performance claim.",
+  "no_oracle_review": {
+    "review_status": "synthetic smoke fixture only",
+    "allowed_information": [
+      "constraint_id",
+      "constraint_family",
+      "violation_count",
+      "no_oracle_safe flag",
+      "leakage flags"
+    ],
+    "forbidden_information": [
+      "final text",
+      "post-edit text",
+      "gold labels",
+      "teacher correction",
+      "expected actions",
+      "real participant data"
+    ]
+  },
+  "synthetic_only_notice": "Synthetic design fixture only; no real participant data is used.",
+  "expected_action_usage_policy": "Expected actions are not used for scoring or weight tuning.",
+  "forbidden_information_policy": {
+    "forbidden_fields": [
+      "final_text",
+      "observed_after_text",
+      "gold_label",
+      "teacher_correction",
+      "local_context_after_observed"
+    ],
+    "forbidden_path_parts": [
+      "manual_outputs",
+      "private_data",
+      "real_data",
+      "participant_data"
+    ],
+    "raw_text_policy": "Raw text patterns and local context strings are not allowed in config."
+  }
+}
