@@ -44,6 +44,7 @@ required_columns = [
     "diagnostic_safety_constraint_count",
     "diagnostic_local_pattern_constraint_count",
     "diagnostic_linguistic_placeholder_constraint_count",
+    "diagnostic_non_leaky_linguistic_constraint_count",
 ]
 
 numeric_columns = [
@@ -53,6 +54,7 @@ numeric_columns = [
     "diagnostic_safety_constraint_count",
     "diagnostic_local_pattern_constraint_count",
     "diagnostic_linguistic_placeholder_constraint_count",
+    "diagnostic_non_leaky_linguistic_constraint_count",
 ]
 
 with summary_path.open("r", encoding="utf-8", newline="") as handle:
@@ -148,6 +150,10 @@ print(
 print(
     "diagnostic_linguistic_placeholder_constraint_count: "
     f"{numeric_totals['diagnostic_linguistic_placeholder_constraint_count']}"
+)
+print(
+    "diagnostic_non_leaky_linguistic_constraint_count: "
+    f"{numeric_totals['diagnostic_non_leaky_linguistic_constraint_count']}"
 )
 print("performance_metrics_included: false")
 print("content_suppressed: true")

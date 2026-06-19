@@ -57,6 +57,7 @@ The review may inspect count-only fields:
 - `diagnostic_safety_constraint_count`
 - `diagnostic_local_pattern_constraint_count`
 - `diagnostic_linguistic_placeholder_constraint_count`
+- `diagnostic_non_leaky_linguistic_constraint_count`
 - per-case presence or absence of expected diagnostic categories
 - top constraint ID counts from `diagnostic_summary.json`, if needed
 
@@ -183,8 +184,9 @@ bodies, per-episode text, expected-action feedback, and performance claims.
 
 ### Step 57: Non-Leaky Linguistic Constraint Design
 
-Use the count-only diagnostic distribution to decide what additional
-no-oracle-safe linguistic constraints should be designed next.
+Status: initial non-leaky linguistic diagnostic constraints have been designed
+and implemented as descriptive records. The summary collector records their
+aggregate count in `diagnostic_non_leaky_linguistic_constraint_count`.
 
 ### Later: Scoring Reflection
 
