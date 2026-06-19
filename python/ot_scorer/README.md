@@ -241,3 +241,5 @@ Candidate score outputs derived from real participant data must not be committed
 For planned refinements and non-goals, read `../../docs/scoring_policy_refinement_plan.md`.
 For the future linguistic placeholder constraint boundary, read
 `../../docs/linguistic_placeholder_constraint_plan.md`.
+For future no-oracle-safe local pattern features, read
+`../../docs/local_pattern_feature_plan.md`.

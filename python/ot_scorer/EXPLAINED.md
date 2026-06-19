@@ -170,3 +170,5 @@ Read `docs/09_ot_scoring_spec.md`, `docs/08_candidate_generation_spec.md`, and `
 For the future scoring policy roadmap, read `../../docs/scoring_policy_refinement_plan.md`.
 For the beginner-friendly plan for linguistic placeholder constraints, read
 `../../docs/linguistic_placeholder_constraint_plan.md`.
+For the no-oracle plan for local pattern features, read
+`../../docs/local_pattern_feature_plan.md`.
