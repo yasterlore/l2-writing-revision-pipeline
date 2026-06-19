@@ -257,6 +257,11 @@ Do not use diagnostic summaries to tune weights or claim performance until
 there is a separate scoring-policy design, no-oracle review, and validation
 plan.
 
+Before any summary count is considered for scoring, read
+[`diagnostic_to_scoring_boundary_review.md`](diagnostic_to_scoring_boundary_review.md).
+Diagnostic summary counts are review inputs only; they are not performance
+metrics or direct weight-optimization targets.
+
 ## 13. Non-Goals
 
 This plan and implementation do not:

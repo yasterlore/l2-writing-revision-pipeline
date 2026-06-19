@@ -304,6 +304,11 @@ not affect `weighted_score`, blocking, or tie-break behavior.
 
 ### Step D: Document Initial Hand Weights
 
+Before any diagnostic family becomes score-active, read
+[Diagnostic-to-scoring boundary review](diagnostic_to_scoring_boundary_review.md).
+That review separates score-neutral diagnostics from possible future
+hand-weight inputs and lists information that must never enter scoring.
+
 If non-safety weights are introduced:
 
 - document each weight

@@ -231,6 +231,10 @@ Diagnostic observation alone must not change weights or ranking. Any future
 scoring use requires a separate no-oracle review, scoring policy update, and
 synthetic-only tests.
 
+The boundary for any future connection from diagnostics to scoring is reviewed
+in
+[`diagnostic_to_scoring_boundary_review.md`](diagnostic_to_scoring_boundary_review.md).
+
 ## 10. Implementation-Readiness Checklist
 
 Before implementing any future non-leaky linguistic diagnostic constraint,
@@ -276,6 +280,10 @@ performance.
 Only after descriptive diagnostics are stable, design a hand-weight policy.
 This should still use synthetic data only and should not use real participant
 data or expected actions as scoring feedback.
+
+Read
+[`diagnostic_to_scoring_boundary_review.md`](diagnostic_to_scoring_boundary_review.md)
+before selecting any diagnostic family as score-active.
 
 ### Later: Scoring Integration
 
