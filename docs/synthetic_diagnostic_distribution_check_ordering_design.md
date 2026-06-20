@@ -3,9 +3,9 @@
 This document describes the execution-order precondition for
 `scripts/check_synthetic_diagnostic_distribution.sh`.
 
-It is design documentation only. It does not change shell scripts, test code,
-implementation logic, scorer weights, scoring formula, deterministic tie-break
-behavior, E2E pipeline behavior, or fixtures.
+It records the ordering design and the minimal precondition check added after
+that design. It does not change scorer weights, scoring formula, deterministic
+tie-break behavior, E2E pipeline behavior, or fixtures.
 
 This is not performance evaluation.
 
@@ -26,6 +26,22 @@ The design should:
 
 The check is a count-only wiring and regression check, not a model-quality
 evaluation.
+
+## 1.1 Implementation Status
+
+The current script performs a minimal fail-closed precondition check before the
+distribution scan:
+
+- missing no-config summary path fails with a safe message
+- empty summary file fails with a safe message
+- missing or malformed header fails with a safe message
+- zero data rows fails as `reason=no_cases`
+- config-enabled summary paths are rejected for this no-config check
+- raw summary bodies, diagnostic JSON bodies, JSONL bodies, and score rows are
+  not printed
+
+The script still expects the no-config summary to be generated first by
+`scripts/run_synthetic_e2e_summary.sh`.
 
 ## 2. Problem Summary
 
@@ -91,17 +107,17 @@ count-only status, path, and row-count information.
 
 Future script hardening may include:
 
-- an explicit precondition check in
+- additional precondition coverage in
   `scripts/check_synthetic_diagnostic_distribution.sh`
-- summary file existence checks before parsing
-- safe row-count and case-count checks
+- more detailed safe row-count and case-count checks
 - clearer error wording for missing, empty, or partial summary files
 - a partial-output marker or completion marker
 - atomic write with temporary file and rename in the summary generator
 - a wrapper script that guarantees sequential ordering
 - documentation updates for CI ordering
 
-This document does not implement those changes.
+This document does not implement atomic writes, wrapper scripts, or summary
+generator changes.
 
 Any future hardening should keep output count-only and avoid raw report bodies.
 
