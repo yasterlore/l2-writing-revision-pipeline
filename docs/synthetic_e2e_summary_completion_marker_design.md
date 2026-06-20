@@ -36,8 +36,8 @@ Step 112 implemented the initial no-config summary manifest:
 - the marker contains safe count-only metadata only
 - if the summary run fails, the marker is not created
 - stale marker files are removed at the start of a new summary run
-- `scripts/check_synthetic_diagnostic_distribution.sh` does not yet require or
-  validate the marker
+- `scripts/check_synthetic_diagnostic_distribution.sh` now requires and
+  validates the marker before running distribution checks
 
 The marker remains no-config only and is not written under
 `tmp/synthetic_e2e_config_summary`.
@@ -55,14 +55,14 @@ Current state:
   `summary.manifest.json` after successful summary generation.
 - `scripts/check_synthetic_diagnostic_distribution.sh` reads the final
   no-config `summary.csv`.
-- The diagnostic distribution check does not require the marker yet.
+- The diagnostic distribution check requires the marker.
 - The diagnostic distribution check is no-config only.
 - Config-enabled summaries are generated separately under
   `tmp/synthetic_e2e_config_summary`.
 
 The atomic rename reduces partial-write risk. The marker records safe
-completion metadata for future checks, but marker-required validation is still
-future work.
+completion metadata, and the diagnostic distribution check now validates it as
+a precondition.
 
 ## 3. Remaining Risks
 
@@ -175,7 +175,8 @@ The recommended first marker shape is a manifest rather than an in-CSV status
 row because it preserves the existing `summary.csv` case-row schema.
 
 The initial marker file is now created by the no-config summary script on a
-successful run. Distribution-check marker validation is still future work.
+successful run. Distribution-check marker validation is implemented as a
+required precondition.
 
 ## 6. Marker: Allowed Information
 
@@ -217,8 +218,8 @@ The marker must not become a generated report body in disguise.
 Future integration should follow these boundaries:
 
 - the check reads only the final no-config `summary.csv`
-- the check may require a marker after a transition period
-- the check may compare marker `case_count` with the summary row count
+- the check requires a marker
+- the check compares marker `case_count` with the summary row count
 - the check may reject a stale marker when staleness is detectable
 - the check must not treat marker fields as performance evidence
 - the check continues to reject config-enabled summary paths

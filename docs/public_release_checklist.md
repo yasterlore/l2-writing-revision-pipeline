@@ -42,7 +42,7 @@ For future atomic-write and completion-marker hardening, see
 [synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md).
 For the future no-config summary marker or run-id manifest design, see
 [synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md).
-For future checker-side marker validation, see
+For checker-side marker validation, see
 [synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md).
 
 ## 2. Ignore Rules
