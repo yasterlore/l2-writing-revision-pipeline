@@ -38,6 +38,8 @@ For follow-up helper adoption boundaries, see
 [safe output scan helper adoption audit](safe_output_scan_helper_adoption_audit.md).
 For diagnostic distribution smoke ordering, run the no-config summary first;
 see [synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md).
+For future atomic-write and completion-marker hardening, see
+[synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md).
 
 ## 2. Ignore Rules
 
