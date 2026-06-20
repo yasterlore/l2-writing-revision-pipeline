@@ -125,6 +125,8 @@ additional summary generator changes.
 Any future hardening should keep output count-only and avoid raw report bodies.
 For the atomic-write and completion-marker design, see
 [Synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md).
+For the dedicated marker or run-id manifest design, see
+[Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md).
 
 ## 6. CI And Manual Run Guidance
 
@@ -223,6 +225,7 @@ It should be interpreted using ordering context, not ignored.
 
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md)
 - [Synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md)
+- [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md)
 - [Safe output scan helper adoption audit](safe_output_scan_helper_adoption_audit.md)
 - [Public release checklist](public_release_checklist.md)
 - [Milestone 03 final docs-only release review](milestone_03_final_docs_only_release_review.md)

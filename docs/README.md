@@ -51,6 +51,7 @@ Recommended entry points:
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md): safe review plan for count-only synthetic diagnostic distributions.
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md): ordering precondition for running the diagnostic distribution check after no-config summary generation.
 - [Synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md): future hardening design for atomic no-config summary writes and completion markers.
+- [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md): design for a future no-config summary manifest or completion marker; no marker is implemented.
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md): storage and sharing workflow for blank templates and private/local count-only notes.
 - [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md): exception-only checklist before considering any filled observation note for public repository sharing.
 - [Synthetic diagnostic observation note template](templates/synthetic_diagnostic_observation_note_template.md): count-only note template for safe human diagnostic review.
