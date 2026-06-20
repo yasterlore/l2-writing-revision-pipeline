@@ -180,6 +180,9 @@ If approval is granted, the implementation step should still verify:
 - output safety
 - no performance claim
 
+Before the implementation step begins, run the
+[metadata completeness fixture preflight check](metadata_completeness_fixture_preflight_check.md).
+
 ## 9. Bridge To Actual Fixture Implementation
 
 The future implementation step may check that approval exists, but it should
@@ -243,6 +246,7 @@ claims are not allowed as approval reasons.
 - [Metadata completeness value candidate proposal](metadata_completeness_value_candidate_proposal.md)
 - [Metadata completeness final value approval design](metadata_completeness_final_value_approval_design.md)
 - [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md)
+- [Metadata completeness fixture preflight check](metadata_completeness_fixture_preflight_check.md)
 - [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md)
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md)
 - [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md)

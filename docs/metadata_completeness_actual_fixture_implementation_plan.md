@@ -41,6 +41,8 @@ Before any actual fixture implementation begins, confirm:
   or a later equivalent proposal
 - the proposed value candidate approval checklist has been completed using
   [Metadata completeness value candidate approval checklist](metadata_completeness_value_candidate_approval_checklist.md)
+- the fixture preflight check is complete using
+  [Metadata completeness fixture preflight check](metadata_completeness_fixture_preflight_check.md)
 - no-config fixture lock is current and passing
 - config validation is expected to pass
 - output safety requirements are understood
@@ -243,6 +245,7 @@ Failing early keeps the experiment safer and easier to roll back.
 - [Metadata completeness final value approval design](metadata_completeness_final_value_approval_design.md)
 - [Metadata completeness value candidate proposal](metadata_completeness_value_candidate_proposal.md)
 - [Metadata completeness value candidate approval checklist](metadata_completeness_value_candidate_approval_checklist.md)
+- [Metadata completeness fixture preflight check](metadata_completeness_fixture_preflight_check.md)
 - [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md)
 - [Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md)
 - [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md)
