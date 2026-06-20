@@ -42,6 +42,9 @@ Step 112 implemented the initial no-config summary manifest:
 The marker remains no-config only and is not written under
 `tmp/synthetic_e2e_config_summary`.
 
+For the future checker-side validation design, see
+[Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md).
+
 ## 2. Current State
 
 Current state:
@@ -319,6 +322,7 @@ summary generation completed in a safe and orderly way.
 ## 13. Related Documents
 
 - [Synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md)
+- [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md)
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md)
