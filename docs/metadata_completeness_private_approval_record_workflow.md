@@ -194,6 +194,9 @@ Public docs or commit messages may say:
 - approval checked
 - approval completed, if that status is safe and separately reviewed
 
+For designing safe high-level status labels, use
+[public-safe approval existence marker design](public_safe_approval_existence_marker_design.md).
+
 Public docs or commit messages must not include:
 
 - filled approval body
@@ -247,6 +250,7 @@ claims are not allowed as approval reasons.
 - [Metadata completeness final value approval design](metadata_completeness_final_value_approval_design.md)
 - [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md)
 - [Metadata completeness fixture preflight check](metadata_completeness_fixture_preflight_check.md)
+- [Public-safe approval existence marker design](public_safe_approval_existence_marker_design.md)
 - [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md)
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md)
 - [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md)

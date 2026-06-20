@@ -37,6 +37,8 @@ step may begin.
 
 The preflight may confirm that a private/local approval record exists and has an
 acceptable status, but it must not copy the approval body into public docs.
+For public-safe status handling, use
+[public-safe approval existence marker design](public_safe_approval_existence_marker_design.md).
 
 The highest priority is protecting the no-config default path.
 
@@ -211,6 +213,7 @@ real-data claims are not allowed as reasons to proceed.
 ## 11. Related Documents
 
 - [Metadata completeness private approval record workflow](metadata_completeness_private_approval_record_workflow.md)
+- [Public-safe approval existence marker design](public_safe_approval_existence_marker_design.md)
 - [Metadata completeness value candidate approval checklist](metadata_completeness_value_candidate_approval_checklist.md)
 - [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md)
 - [Metadata completeness fixture readiness checklist](metadata_completeness_fixture_readiness_checklist.md)
