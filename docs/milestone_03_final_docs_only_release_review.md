@@ -73,6 +73,10 @@ Forbidden-term checks should remain strict while avoiding false positives from
 environment-dependent temporary paths. See
 [forbidden-term path-safety test hardening design](forbidden_term_path_safety_test_hardening_design.md).
 
+The diagnostic distribution check should run after the no-config summary
+collector completes. See
+[synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md).
+
 ## 4. Current Safety Boundary
 
 At this checkpoint:
