@@ -36,6 +36,8 @@ distribution scan:
 - empty summary file fails with a safe message
 - missing or malformed header fails with a safe message
 - zero data rows fails as `reason=no_cases`
+- missing, malformed, or invalid `summary.manifest.json` fails as a safe
+  precondition error
 - config-enabled summary paths are rejected for this no-config check
 - raw summary bodies, diagnostic JSON bodies, JSONL bodies, and score rows are
   not printed
@@ -44,8 +46,8 @@ The script still expects the no-config summary to be generated first by
 `scripts/run_synthetic_e2e_summary.sh`.
 That summary generator now writes through `summary.csv.tmp` and renames the
 completed temp file to `summary.csv`. It also writes a no-config
-`summary.manifest.json` after successful summary generation, but this
-distribution check does not require the marker yet.
+`summary.manifest.json` after successful summary generation. The distribution
+check now requires that marker before running distribution checks.
 
 ## 2. Problem Summary
 
@@ -116,12 +118,12 @@ Future script hardening may include:
 - more detailed safe row-count and case-count checks
 - clearer error wording for missing, empty, or partial summary files
 - a partial-output marker or completion marker
-- marker-required validation in the distribution check
+- further marker consistency checks, if needed
 - a wrapper script that guarantees sequential ordering
 - documentation updates for CI ordering
 
-This document does not implement marker-required validation, wrapper scripts,
-or additional summary generator changes.
+This document does not implement wrapper scripts or additional summary
+generator changes.
 
 Any future hardening should keep output count-only and avoid raw report bodies.
 For the atomic-write and completion-marker design, see

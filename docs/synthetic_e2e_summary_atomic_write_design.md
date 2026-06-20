@@ -64,10 +64,10 @@ to use safe count-only output.
 
 Still open:
 
-- distribution-check marker-required validation is not implemented yet
 - a downstream check can still read an older complete summary if one exists
 - the relationship between `summary.csv` and per-case diagnostic summaries is
-  only recorded as safe count metadata, not yet enforced by the checker
+  recorded as safe count metadata and checked at the summary row-count level;
+  deeper per-case run identity checks are still future work
 
 For the dedicated completion-marker design, see
 [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md).
