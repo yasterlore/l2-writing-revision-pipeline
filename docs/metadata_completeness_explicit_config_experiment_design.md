@@ -28,6 +28,8 @@ This is a design step before implementation, not an implementation step.
 
 If a future explicit config fixture is considered, read
 [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md).
+If a future tiny value is considered, read
+[Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md).
 
 ## 2. What Metadata Completeness Means
 
@@ -301,6 +303,7 @@ That is enough for a wiring smoke check. It is not performance evaluation.
 - [Score-active family selection revisit](score_active_family_selection_revisit.md)
 - [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md)
 - [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md)
+- [Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md)
 - [Hand-weight policy design](hand_weight_policy_design.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Explicit config ranking diff plan](explicit_config_ranking_diff_plan.md)

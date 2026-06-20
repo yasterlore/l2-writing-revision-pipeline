@@ -26,6 +26,9 @@ This document does not:
 
 The fixture, if ever created, should be synthetic-only and explicit-config only.
 
+Before selecting any concrete tiny value for that fixture, read
+[Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md).
+
 ## 2. Proposed Fixture Identity
 
 Possible future fixture identity:
@@ -345,6 +348,7 @@ breaks the experiment boundary.
 ## 11. Related Documents
 
 - [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md)
+- [Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md)
 - [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Score-active family selection revisit](score_active_family_selection_revisit.md)

@@ -23,6 +23,7 @@ Recommended entry points:
 - [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md): synthetic-only examples of safe rationale writing before any future hand-weight implementation.
 - [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md): design for a future optional explicit config experiment without changing no-config defaults.
 - [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md): design for a possible future metadata completeness config fixture; no actual fixture is added.
+- [Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md): design for future tiny weight range and review criteria without choosing a final value.
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md): schema design for future explicit hand-weight configuration.
 - [Default-unchanged config support design](default_unchanged_config_support_design.md): safety design for future config support without changing default scoring behavior.
 - [No-config scoring fixture lock plan](no_config_scoring_fixture_lock_plan.md): design plan for locking no-config scoring output before config support.
