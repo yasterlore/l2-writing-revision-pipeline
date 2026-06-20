@@ -44,6 +44,7 @@ Recommended entry points:
 - [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md): exception-only checklist before considering any filled observation note for public repository sharing.
 - [Synthetic diagnostic observation note template](templates/synthetic_diagnostic_observation_note_template.md): count-only note template for safe human diagnostic review.
 - [Config-enabled observation note template](templates/config_enabled_observation_note_template.md): count-only note template for safe human review of explicit config-enabled summaries.
+- [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md): blank approval record template for a future metadata completeness fixture review.
 - [Public release checklist](public_release_checklist.md): public GitHub readiness checklist.
 
 Do not paste JSONL contents, real participant text, private data, or production outputs into documentation.
