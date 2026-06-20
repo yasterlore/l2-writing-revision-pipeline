@@ -28,6 +28,9 @@ This document preserves these boundaries:
 Any future implementation must still pass final value approval before the value
 is placed into a fixture.
 
+Before any future approval decision, use
+[Metadata completeness value candidate approval checklist](metadata_completeness_value_candidate_approval_checklist.md).
+
 ## 2. Proposal Status
 
 Status:
@@ -233,6 +236,7 @@ the safety boundary established by the previous design documents.
 ## 12. Related Documents
 
 - [Metadata completeness final value approval design](metadata_completeness_final_value_approval_design.md)
+- [Metadata completeness value candidate approval checklist](metadata_completeness_value_candidate_approval_checklist.md)
 - [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md)
 - [Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md)
 - [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md)
