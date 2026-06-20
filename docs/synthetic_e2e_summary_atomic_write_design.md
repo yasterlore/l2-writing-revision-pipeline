@@ -66,6 +66,9 @@ Still open:
 - the relationship between `summary.csv` and per-case diagnostic summaries is
   not recorded in a run manifest
 
+For the dedicated completion-marker design, see
+[Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md).
+
 ## 3. Remaining Risks
 
 The remaining risks are ordering and consistency risks, not diagnostic
@@ -310,6 +313,7 @@ should stay count-only and safe.
 ## 12. Related Documents
 
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
+- [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md)
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md)
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md)
 - [Public release checklist](public_release_checklist.md)
