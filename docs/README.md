@@ -26,6 +26,7 @@ Recommended entry points:
 - [Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md): design for future tiny weight range and review criteria without choosing a final value.
 - [Metadata completeness fixture readiness checklist](metadata_completeness_fixture_readiness_checklist.md): pre-implementation checklist before any future metadata completeness config fixture.
 - [Metadata completeness final value approval design](metadata_completeness_final_value_approval_design.md): approval design for a future final tiny weight value; no value is chosen.
+- [Metadata completeness value candidate proposal](metadata_completeness_value_candidate_proposal.md): unapproved proposal for a possible future tiny value candidate; no fixture is added.
 - [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md): implementation plan for a future fixture step; no actual fixture is added.
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md): schema design for future explicit hand-weight configuration.
 - [Default-unchanged config support design](default_unchanged_config_support_design.md): safety design for future config support without changing default scoring behavior.

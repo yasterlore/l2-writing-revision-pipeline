@@ -34,6 +34,8 @@ For a blank approval record template, use
 [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md).
 For the future implementation-step sequence, read
 [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md).
+For an unapproved minimal value candidate proposal, read
+[Metadata completeness value candidate proposal](metadata_completeness_value_candidate_proposal.md).
 
 ## 2. Proposed Fixture Identity
 
@@ -358,6 +360,7 @@ breaks the experiment boundary.
 - [Metadata completeness fixture readiness checklist](metadata_completeness_fixture_readiness_checklist.md)
 - [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md)
 - [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md)
+- [Metadata completeness value candidate proposal](metadata_completeness_value_candidate_proposal.md)
 - [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Score-active family selection revisit](score_active_family_selection_revisit.md)
