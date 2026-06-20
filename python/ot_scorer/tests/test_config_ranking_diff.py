@@ -13,6 +13,7 @@ from ot_scorer.config_ranking_diff import (
     run_diff,
 )
 from ot_scorer.score import run as score_run
+from test_support.safe_output_scan import assert_no_forbidden_fragments
 
 CONSTRAINTS = Path(
     "tests/fixtures/synthetic/constraint_violations/valid/deletion_constraint_violations.jsonl"
@@ -179,8 +180,12 @@ def assert_safe_diff_output(
         "candidate_description",
         "proposed_edit",
     ]
-    for fragment in forbidden_fragments:
-        test_case.assertNotIn(fragment, output)
+    assert_no_forbidden_fragments(
+        test_case,
+        output,
+        forbidden_fragments,
+        normalize_paths=True,
+    )
 
 
 if __name__ == "__main__":

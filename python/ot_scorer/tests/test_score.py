@@ -16,6 +16,7 @@ from ot_scorer.scorer import (
 )
 from ot_scorer.violation_set_loader import load_constraint_violation_sets
 from ot_scorer.weight_config import WeightConfigError, parse_hand_weight_config
+from test_support.safe_output_scan import assert_no_forbidden_fragments
 
 FIXTURE = Path(
     "tests/fixtures/synthetic/constraint_violations/valid/deletion_constraint_violations.jsonl"
@@ -642,8 +643,12 @@ def assert_cli_failure_output_is_safe(
         "raw_text",
         "raw_local_context_before",
     ]
-    for fragment in forbidden_fragments:
-        test_case.assertNotIn(fragment, combined_output)
+    assert_no_forbidden_fragments(
+        test_case,
+        combined_output,
+        forbidden_fragments,
+        normalize_paths=True,
+    )
 
 
 def jsonl_rows(path: Path) -> list[dict[str, object]]:

@@ -17,6 +17,7 @@ from ot_scorer.weight_config import (
     load_hand_weight_config,
     parse_hand_weight_config,
 )
+from test_support.safe_output_scan import assert_no_forbidden_fragments
 
 VALID_CONFIG = Path(
     "tests/fixtures/synthetic/hand_weight_configs/valid/current_default_like_config.json"
@@ -204,8 +205,12 @@ def assert_cli_output_is_safe(
         "real_data/",
         "participant_data/",
     ]
-    for fragment in forbidden_fragments:
-        test_case.assertNotIn(fragment, combined_output)
+    assert_no_forbidden_fragments(
+        test_case,
+        combined_output,
+        forbidden_fragments,
+        normalize_paths=True,
+    )
 
 
 if __name__ == "__main__":
