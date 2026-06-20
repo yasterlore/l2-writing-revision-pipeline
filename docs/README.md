@@ -31,6 +31,7 @@ Recommended entry points:
 - [Metadata completeness private approval record workflow](metadata_completeness_private_approval_record_workflow.md): workflow for keeping any future filled approval record private/local by default.
 - [Metadata completeness fixture preflight check](metadata_completeness_fixture_preflight_check.md): final public-safe preflight before any future actual fixture implementation; no fixture is added.
 - [Public-safe approval existence marker design](public_safe_approval_existence_marker_design.md): design for safe high-level approval status handling without publishing approval bodies.
+- [Forbidden-term path-safety test hardening design](forbidden_term_path_safety_test_hardening_design.md): design for reducing path-derived false positives without weakening output-safety checks.
 - [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md): implementation plan for a future fixture step; no actual fixture is added.
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md): schema design for future explicit hand-weight configuration.
 - [Default-unchanged config support design](default_unchanged_config_support_design.md): safety design for future config support without changing default scoring behavior.

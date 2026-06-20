@@ -32,6 +32,9 @@ Note: documentation filenames such as `private_real_data_readiness_checklist.md`
 may contain the string `real_data`; that is a documentation path, not a data
 file. Review grep hits by path and file type.
 
+For path-derived false positives in forbidden-term checks, see
+[forbidden-term path-safety test hardening design](forbidden_term_path_safety_test_hardening_design.md).
+
 ## 2. Ignore Rules
 
 Confirm `.gitignore` blocks:
