@@ -71,6 +71,8 @@ Still open:
 
 For the dedicated completion-marker design, see
 [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md).
+For the future diagnostic distribution checker validation design, see
+[Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md).
 
 ## 3. Remaining Risks
 
@@ -317,6 +319,7 @@ should stay count-only and safe.
 
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
 - [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md)
+- [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md)
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md)
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md)
 - [Public release checklist](public_release_checklist.md)
