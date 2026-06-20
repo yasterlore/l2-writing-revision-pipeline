@@ -16,6 +16,10 @@ from evaluation.expected_action_registry import (
 )
 from evaluation.loader import EvaluationInputError, load_expected_actions, load_score_sets
 from evaluation.models import ExpectedAction
+from test_support.safe_output_scan import (
+    assert_no_forbidden_fragments,
+    normalize_environment_paths_for_scan,
+)
 
 SCORES_FIXTURE = Path(
     "tests/fixtures/synthetic/candidate_scores/valid/deletion_candidate_scores.jsonl"
@@ -264,9 +268,11 @@ class EvaluationTests(unittest.TestCase):
             summary = run(SCORES_FIXTURE, EXPECTED_FIXTURE, output)
 
             self.assertIn("evaluation: ok", summary)
-            self.assertNotIn("f1", summary.lower())
-            self.assertNotIn("accuracy", summary.lower())
-            self.assertNotIn("calibration", summary.lower())
+            assert_no_forbidden_fragments(
+                self,
+                normalize_environment_paths_for_scan(summary).lower(),
+                ["f1", "accuracy", "calibration"],
+            )
             report_text = output.read_text(encoding="utf-8")
             self.assertNotIn("final_text", report_text)
             self.assertNotIn("observed_after_text", report_text)

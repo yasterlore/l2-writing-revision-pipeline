@@ -12,6 +12,7 @@ from ot_scorer.score_fixture_lock import (
     ScoreFixtureLockError,
     run_lock_check,
 )
+from test_support.safe_output_scan import assert_no_forbidden_fragments
 
 SELECTION_EXPECTED = Path(
     "tests/fixtures/synthetic/candidate_scores/valid/selection_edit_candidate_scores.jsonl"
@@ -188,8 +189,12 @@ def assert_safe_cli_output(
         "expected_action_type",
         "exact_match",
     ]
-    for fragment in forbidden_fragments:
-        test_case.assertNotIn(fragment, combined_output)
+    assert_no_forbidden_fragments(
+        test_case,
+        combined_output,
+        forbidden_fragments,
+        normalize_paths=True,
+    )
 
 
 if __name__ == "__main__":

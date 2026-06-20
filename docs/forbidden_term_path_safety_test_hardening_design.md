@@ -1,11 +1,11 @@
 # Forbidden-Term Path-Safety Test Hardening Design
 
 This document designs how forbidden-term checks should distinguish content from
-environment-dependent filesystem paths.
+environment-dependent filesystem paths, and records the minimal test-helper
+implementation added after that design.
 
-It is design documentation only. It does not change implementation logic, test
-code, scorer weights, scoring formula, deterministic tie-break behavior, or any
-fixture.
+It does not change scorer logic, scorer weights, scoring formula, deterministic
+tie-break behavior, E2E pipeline logic, or any fixture.
 
 This is not performance evaluation.
 
@@ -23,8 +23,23 @@ The design should:
 - preserve rejection of real raw body leaks
 - avoid adding F1, accuracy, calibration, or learner-state estimation
 
-This document does not implement the hardening. Test code should be changed in
-a later step only after review.
+Step 105 implemented the first test-only helper for this design.
+
+## 1.1 Implementation Status
+
+The current implementation is intentionally narrow:
+
+- `python/test_support/safe_output_scan.py` provides
+  `normalize_environment_paths_for_scan(...)`
+- stdout/stderr-oriented safe-output assertions can normalize paths before
+  scanning forbidden fragments
+- generated JSONL/report bodies are not blanket-normalized
+- tests cover a temporary path containing a forbidden-looking substring and a
+  real forbidden body term that still fails
+- project-controlled output basenames remain visible to the scan
+
+This helper is for tests only. It does not alter production output, scorer
+behavior, E2E behavior, or config behavior.
 
 ## 2. Problem Summary
 
@@ -138,9 +153,9 @@ diagnostic summary bodies in docs should still be rejected.
 
 Future hardening may include:
 
-- helper function for path normalization
-- tests for temp paths containing forbidden-looking substrings
-- tests proving real forbidden body content still fails
+- additional helper coverage for path normalization edge cases
+- additional tests for temp paths containing forbidden-looking substrings
+- additional tests proving real forbidden body content still fails
 - tests proving policy/non-goal mentions are allowed only in approved contexts
 - tests for project-controlled basenames
 - avoiding broad regex scans on unnormalized absolute paths
@@ -167,7 +182,6 @@ Do not:
 - change the scoring formula
 - change tie-break behavior
 - change config fixtures
-- change test code in this documentation step
 
 ## 10. Beginner Explanation
 
