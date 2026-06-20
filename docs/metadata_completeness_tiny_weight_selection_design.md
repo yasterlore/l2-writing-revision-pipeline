@@ -27,6 +27,9 @@ This document preserves these boundaries:
 Any future value selection must happen in a separate reviewed implementation
 step.
 
+Before creating an actual metadata completeness fixture, use
+[Metadata completeness fixture readiness checklist](metadata_completeness_fixture_readiness_checklist.md).
+
 ## 2. Meaning Of A Tiny Weight
 
 A tiny metadata completeness weight would be a very small auxiliary signal.
@@ -302,6 +305,7 @@ If no-config output changes, the experiment boundary is broken.
 ## 10. Related Documents
 
 - [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md)
+- [Metadata completeness fixture readiness checklist](metadata_completeness_fixture_readiness_checklist.md)
 - [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md)
 - [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md)
 - [Hand-weight policy design](hand_weight_policy_design.md)

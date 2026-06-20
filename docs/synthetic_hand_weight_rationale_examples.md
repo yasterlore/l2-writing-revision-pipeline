@@ -475,5 +475,6 @@ scoring policy. That would break the boundary between evaluation and ranking.
 - [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md)
 - [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md)
 - [Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md)
+- [Metadata completeness fixture readiness checklist](metadata_completeness_fixture_readiness_checklist.md)
 - [Diagnostic-to-scoring boundary review](diagnostic_to_scoring_boundary_review.md)
 - [Default-unchanged config support design](default_unchanged_config_support_design.md)
