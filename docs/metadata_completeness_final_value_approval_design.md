@@ -31,6 +31,8 @@ approval itself.
 
 For an unapproved example candidate that may be reviewed later, see
 [Metadata completeness value candidate proposal](metadata_completeness_value_candidate_proposal.md).
+Before reviewing that candidate for approval, use
+[Metadata completeness value candidate approval checklist](metadata_completeness_value_candidate_approval_checklist.md).
 
 ## 2. Role Of Final Value Approval
 
@@ -246,6 +248,7 @@ rationale.
 - [Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md)
 - [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md)
 - [Metadata completeness value candidate proposal](metadata_completeness_value_candidate_proposal.md)
+- [Metadata completeness value candidate approval checklist](metadata_completeness_value_candidate_approval_checklist.md)
 - [Metadata completeness fixture readiness checklist](metadata_completeness_fixture_readiness_checklist.md)
 - [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md)
 - [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md)
