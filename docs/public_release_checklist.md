@@ -34,6 +34,8 @@ file. Review grep hits by path and file type.
 
 For path-derived false positives in forbidden-term checks, see
 [forbidden-term path-safety test hardening design](forbidden_term_path_safety_test_hardening_design.md).
+For follow-up helper adoption boundaries, see
+[safe output scan helper adoption audit](safe_output_scan_helper_adoption_audit.md).
 
 ## 2. Ignore Rules
 
