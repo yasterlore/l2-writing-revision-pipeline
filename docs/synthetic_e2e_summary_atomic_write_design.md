@@ -3,9 +3,9 @@
 This document designs future atomic-write and completion-marker hardening for
 the no-config synthetic E2E summary.
 
-It is design documentation only. It does not change shell scripts, test code,
-E2E summary generator logic, scorer logic, scorer weights, scoring formula,
-deterministic tie-break behavior, or fixtures.
+It records the atomic-write design and the initial temp-file rename
+implementation. It does not change test code, scorer logic, scorer weights,
+scoring formula, deterministic tie-break behavior, or fixtures.
 
 This is not performance evaluation.
 
@@ -28,24 +28,39 @@ This is the next design layer after the ordering and precondition hardening for
 
 It is not a performance evaluation and does not add metrics.
 
+## 1.1 Implementation Status
+
+Step 110 implemented the initial no-config summary atomic write behavior:
+
+- `scripts/run_synthetic_e2e_summary.sh` writes rows to
+  `tmp/synthetic_e2e_summary/summary.csv.tmp`
+- after summary generation completes, the script renames that temp file to
+  `tmp/synthetic_e2e_summary/summary.csv`
+- if the script exits before the rename, the temp file is removed when possible
+- existing `summary.csv` is not overwritten by an incomplete temp file
+- completion marker and wrapper script are still not implemented
+
+This implementation remains no-config only and does not touch
+`tmp/synthetic_e2e_config_summary`.
+
 ## 2. Current State
 
 Current no-config summary flow:
 
 1. `scripts/run_synthetic_e2e_summary.sh` generates
-   `tmp/synthetic_e2e_summary/summary.csv`.
+   `tmp/synthetic_e2e_summary/summary.csv` through a temporary
+   `summary.csv.tmp` file and final rename.
 2. `scripts/check_synthetic_diagnostic_distribution.sh` reads that no-config
    summary.
 3. Step 108 added fail-closed handling for missing, empty, malformed, and
    `no_cases` summaries.
+4. Step 110 added the initial temp-file atomic rename for the no-config summary.
 
 The distribution check now rejects config-enabled summary paths and continues
 to use safe count-only output.
 
 Still open:
 
-- the summary generator does not yet write through a temp file and atomic
-  rename
 - there is no completion marker
 - a downstream check can still read an older complete summary if one exists
 - the relationship between `summary.csv` and per-case diagnostic summaries is
@@ -154,7 +169,7 @@ Limits:
 
 ## 5. Recommended Initial Direction
 
-Recommended first hardening step:
+Recommended initial hardening step:
 
 1. Write no-config summary rows to `summary.csv.tmp`.
 2. Rename `summary.csv.tmp` to `summary.csv` only after the summary file is
@@ -167,8 +182,9 @@ Recommended first hardening step:
 
 This should remain no-config only for the existing summary collector.
 
-The initial completion marker can be optional. If added, it should contain only
-safe metadata and should not become a performance report.
+The temp-file rename portion is now implemented. The completion marker remains
+optional future work. If added, it should contain only safe metadata and should
+not become a performance report.
 
 ## 6. Completion Marker: Allowed Information
 

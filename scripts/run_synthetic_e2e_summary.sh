@@ -35,8 +35,11 @@ fi
 
 summary_dir="tmp/synthetic_e2e_summary"
 summary_csv="$summary_dir/summary.csv"
+summary_tmp="$summary_csv.tmp"
 file_list="$summary_dir/input_files.txt"
 mkdir -p "$summary_dir"
+rm -f "$summary_tmp"
+trap 'rm -f "$summary_tmp"' EXIT HUP INT TERM
 
 find "$input_dir" -maxdepth 1 -type f -name '*.jsonl' -print | sort > "$file_list"
 
@@ -45,7 +48,7 @@ if [ ! -s "$file_list" ]; then
   exit 2
 fi
 
-printf '%s\n' "case_name,pipeline_status,failed_stage,output_dir,score_sets_count,candidates_count,blocked_candidates_count,unblocked_candidates_count,rank1_available,evaluation_status,expected_action_status,expected_action_path,evaluation_report_exists,evaluation_summary_available,evaluation_episodes_total,evaluation_episodes_evaluated,evaluation_exact_match_count,evaluation_expected_found_count,evaluation_blocked_expected_count,diagnostic_summary_status,diagnostic_summary_path,diagnostic_total_constraints,diagnostic_descriptive_constraint_count,diagnostic_blocking_constraint_count,diagnostic_safety_constraint_count,diagnostic_local_pattern_constraint_count,diagnostic_linguistic_placeholder_constraint_count,diagnostic_non_leaky_linguistic_constraint_count,content_suppressed" > "$summary_csv"
+printf '%s\n' "case_name,pipeline_status,failed_stage,output_dir,score_sets_count,candidates_count,blocked_candidates_count,unblocked_candidates_count,rank1_available,evaluation_status,expected_action_status,expected_action_path,evaluation_report_exists,evaluation_summary_available,evaluation_episodes_total,evaluation_episodes_evaluated,evaluation_exact_match_count,evaluation_expected_found_count,evaluation_blocked_expected_count,diagnostic_summary_status,diagnostic_summary_path,diagnostic_total_constraints,diagnostic_descriptive_constraint_count,diagnostic_blocking_constraint_count,diagnostic_safety_constraint_count,diagnostic_local_pattern_constraint_count,diagnostic_linguistic_placeholder_constraint_count,diagnostic_non_leaky_linguistic_constraint_count,content_suppressed" > "$summary_tmp"
 
 echo "synthetic_e2e_summary: start"
 echo "input_dir: $input_dir"
@@ -124,7 +127,7 @@ while IFS= read -r input_file; do
       "$diagnostic_safety_constraint_count" \
       "$diagnostic_local_pattern_constraint_count" \
       "$diagnostic_linguistic_placeholder_constraint_count" \
-      "$diagnostic_non_leaky_linguistic_constraint_count" >> "$summary_csv"
+      "$diagnostic_non_leaky_linguistic_constraint_count" >> "$summary_tmp"
     printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %-10s %s\n' \
       "$case_name" \
       "$pipeline_status" \
@@ -305,7 +308,7 @@ print(",".join(str(value) for value in (
     "$diagnostic_safety_constraint_count" \
     "$diagnostic_local_pattern_constraint_count" \
     "$diagnostic_linguistic_placeholder_constraint_count" \
-    "$diagnostic_non_leaky_linguistic_constraint_count" >> "$summary_csv"
+    "$diagnostic_non_leaky_linguistic_constraint_count" >> "$summary_tmp"
 
   printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %-10s %s\n' \
     "$case_name" \
@@ -321,6 +324,9 @@ print(",".join(str(value) for value in (
     "$diagnostic_summary_status" \
     "$output_dir"
 done < "$file_list"
+
+mv "$summary_tmp" "$summary_csv"
+trap - EXIT HUP INT TERM
 
 echo "synthetic_e2e_summary: complete"
 echo "summary_csv: $summary_csv"
