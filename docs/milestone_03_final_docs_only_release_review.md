@@ -76,6 +76,8 @@ environment-dependent temporary paths. See
 The diagnostic distribution check should run after the no-config summary
 collector completes. See
 [synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md).
+Future hardening for atomic summary writes and completion markers is tracked in
+[synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md).
 
 ## 4. Current Safety Boundary
 
