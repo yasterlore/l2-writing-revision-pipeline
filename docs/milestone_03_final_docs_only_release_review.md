@@ -69,6 +69,10 @@ These checks are synthetic-only wiring, regression, and repository safety
 checks. They are not accuracy, F1, calibration, ranking quality, grammatical
 correctness, learner-state estimation, or production-readiness evidence.
 
+Forbidden-term checks should remain strict while avoiding false positives from
+environment-dependent temporary paths. See
+[forbidden-term path-safety test hardening design](forbidden_term_path_safety_test_hardening_design.md).
+
 ## 4. Current Safety Boundary
 
 At this checkpoint:
@@ -181,4 +185,5 @@ verify synthetic wiring, safe output boundaries, and regression behavior.
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md)
 - [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md)
 - [Config-enabled summary collector design](config_enabled_summary_collector_design.md)
+- [Forbidden-term path-safety test hardening design](forbidden_term_path_safety_test_hardening_design.md)
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md)

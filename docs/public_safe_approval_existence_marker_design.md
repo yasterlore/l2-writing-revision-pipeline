@@ -193,6 +193,10 @@ In a future implementation step:
 Scripts should not depend on private approval record contents. Human review is
 the boundary.
 
+If scripts or tests inspect status output, they should avoid treating
+environment-dependent temporary paths as approval content. See
+[forbidden-term path-safety test hardening design](forbidden_term_path_safety_test_hardening_design.md).
+
 ## 8. Revocation And Recheck Policy
 
 Approval may need recheck or revocation if assumptions change.
@@ -277,4 +281,5 @@ output safety policy changes, the approval should be rechecked.
 - [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md)
 - [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md)
 - [Metadata completeness value candidate approval checklist](metadata_completeness_value_candidate_approval_checklist.md)
+- [Forbidden-term path-safety test hardening design](forbidden_term_path_safety_test_hardening_design.md)
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md)
