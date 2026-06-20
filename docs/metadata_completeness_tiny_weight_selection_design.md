@@ -31,6 +31,8 @@ Before creating an actual metadata completeness fixture, use
 [Metadata completeness fixture readiness checklist](metadata_completeness_fixture_readiness_checklist.md).
 For the blank approval record shape, use
 [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md).
+For the future implementation-step sequence, read
+[Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md).
 
 ## 2. Meaning Of A Tiny Weight
 
@@ -309,6 +311,7 @@ If no-config output changes, the experiment boundary is broken.
 - [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md)
 - [Metadata completeness fixture readiness checklist](metadata_completeness_fixture_readiness_checklist.md)
 - [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md)
+- [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md)
 - [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md)
 - [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md)
 - [Hand-weight policy design](hand_weight_policy_design.md)
