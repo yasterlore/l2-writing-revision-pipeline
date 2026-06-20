@@ -34,7 +34,8 @@ Before any actual fixture implementation begins, confirm:
 
 - readiness checklist is complete
 - approval record is private/local or separately reviewed
-- final value selection is separately approved
+- final value selection is separately approved using
+  [Metadata completeness final value approval design](metadata_completeness_final_value_approval_design.md)
 - no-config fixture lock is current and passing
 - config validation is expected to pass
 - output safety requirements are understood
@@ -234,6 +235,7 @@ Failing early keeps the experiment safer and easier to roll back.
 
 - [Metadata completeness fixture readiness checklist](metadata_completeness_fixture_readiness_checklist.md)
 - [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md)
+- [Metadata completeness final value approval design](metadata_completeness_final_value_approval_design.md)
 - [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md)
 - [Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md)
 - [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md)
