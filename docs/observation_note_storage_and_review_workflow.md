@@ -39,6 +39,10 @@ This workflow applies to:
 Future private validation notes are separate. They require their own storage,
 privacy, access-control, and review design before any private validation work.
 
+Metadata completeness approval records are also private/local by default. For
+that specific workflow, use
+[metadata completeness private approval record workflow](metadata_completeness_private_approval_record_workflow.md).
+
 ## 3. Recommended Storage Policy
 
 ### Public Repository
@@ -245,5 +249,6 @@ Do not use expected actions as scoring feedback or config feedback.
 - [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md)
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md)
 - [Config-enabled summary collector design](config_enabled_summary_collector_design.md)
+- [Metadata completeness private approval record workflow](metadata_completeness_private_approval_record_workflow.md)
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md)
 - [No-oracle policy](03_no_oracle_policy.md)

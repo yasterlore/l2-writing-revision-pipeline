@@ -39,6 +39,7 @@ config_schema_version_candidate:
 - [ ] [Metadata completeness fixture readiness checklist](../metadata_completeness_fixture_readiness_checklist.md)
 - [ ] [Metadata completeness final value approval design](../metadata_completeness_final_value_approval_design.md)
 - [ ] [Metadata completeness value candidate approval checklist](../metadata_completeness_value_candidate_approval_checklist.md)
+- [ ] [Metadata completeness private approval record workflow](../metadata_completeness_private_approval_record_workflow.md)
 - [ ] [Metadata completeness actual fixture implementation plan](../metadata_completeness_actual_fixture_implementation_plan.md)
 - [ ] [Synthetic hand-weight rationale examples](../synthetic_hand_weight_rationale_examples.md)
 - [ ] [Hand-weight config schema plan](../hand_weight_config_schema_plan.md)

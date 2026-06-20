@@ -176,6 +176,11 @@ Repository owner approval:
 Do not include generated output bodies, config bodies, raw rows, exact-match
 details, or private paths in this format.
 
+Filled metadata completeness approval records should follow the same or stricter
+public-sharing review if public sharing is ever proposed. By default, use the
+[metadata completeness private approval record workflow](metadata_completeness_private_approval_record_workflow.md)
+and keep filled approval records private/local.
+
 ## 9. `.gitignore` And Directory Reminder
 
 The default private/local note directories are ignored:
@@ -208,6 +213,7 @@ Do not:
 ## 11. Related Documents
 
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md)
+- [Metadata completeness private approval record workflow](metadata_completeness_private_approval_record_workflow.md)
 - [Synthetic diagnostic observation note template](templates/synthetic_diagnostic_observation_note_template.md)
 - [Config-enabled observation note template](templates/config_enabled_observation_note_template.md)
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md)
