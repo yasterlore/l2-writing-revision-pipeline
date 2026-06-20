@@ -176,6 +176,8 @@ Do not create an actual approval record in this checklist.
 
 For where a future filled approval record should be stored, use
 [Metadata completeness private approval record workflow](metadata_completeness_private_approval_record_workflow.md).
+Before an actual fixture implementation starts, use
+[Metadata completeness fixture preflight check](metadata_completeness_fixture_preflight_check.md).
 
 ## 12. Rejection / Revise Checklist
 
@@ -244,6 +246,7 @@ approval reasons.
 - [Metadata completeness final value approval design](metadata_completeness_final_value_approval_design.md)
 - [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md)
 - [Metadata completeness private approval record workflow](metadata_completeness_private_approval_record_workflow.md)
+- [Metadata completeness fixture preflight check](metadata_completeness_fixture_preflight_check.md)
 - [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md)
 - [Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md)
 - [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md)

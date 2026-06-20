@@ -43,6 +43,8 @@ For the future implementation-step sequence, read
 [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md).
 For the future final value approval process, read
 [Metadata completeness final value approval design](metadata_completeness_final_value_approval_design.md).
+Before any actual fixture implementation begins, use
+[Metadata completeness fixture preflight check](metadata_completeness_fixture_preflight_check.md).
 
 ## 3. Readiness Checklist
 
@@ -298,6 +300,7 @@ this stage.
 - [Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md)
 - [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md)
 - [Metadata completeness final value approval design](metadata_completeness_final_value_approval_design.md)
+- [Metadata completeness fixture preflight check](metadata_completeness_fixture_preflight_check.md)
 - [Metadata completeness actual fixture implementation plan](metadata_completeness_actual_fixture_implementation_plan.md)
 - [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
