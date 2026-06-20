@@ -43,8 +43,9 @@ distribution scan:
 The script still expects the no-config summary to be generated first by
 `scripts/run_synthetic_e2e_summary.sh`.
 That summary generator now writes through `summary.csv.tmp` and renames the
-completed temp file to `summary.csv`; completion markers are not implemented
-yet.
+completed temp file to `summary.csv`. It also writes a no-config
+`summary.manifest.json` after successful summary generation, but this
+distribution check does not require the marker yet.
 
 ## 2. Problem Summary
 
@@ -115,12 +116,12 @@ Future script hardening may include:
 - more detailed safe row-count and case-count checks
 - clearer error wording for missing, empty, or partial summary files
 - a partial-output marker or completion marker
-- completion marker support in the summary generator
+- marker-required validation in the distribution check
 - a wrapper script that guarantees sequential ordering
 - documentation updates for CI ordering
 
-This document does not implement completion markers, wrapper scripts, or
-additional summary generator changes.
+This document does not implement marker-required validation, wrapper scripts,
+or additional summary generator changes.
 
 Any future hardening should keep output count-only and avoid raw report bodies.
 For the atomic-write and completion-marker design, see

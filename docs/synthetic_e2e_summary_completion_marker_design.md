@@ -3,8 +3,8 @@
 This document designs a future completion marker or run-id manifest for the
 no-config synthetic E2E summary.
 
-It is design documentation only. It does not change shell scripts, tests, E2E
-summary generator logic, scorer logic, scorer weights, scoring formula,
+It records the marker design and the initial no-config marker implementation.
+It does not change tests, scorer logic, scorer weights, scoring formula,
 deterministic tie-break behavior, or fixtures.
 
 This is not performance evaluation.
@@ -25,21 +25,41 @@ The design aims to:
 
 The marker is a reliability and ordering aid. It is not a model-quality signal.
 
+## 1.1 Implementation Status
+
+Step 112 implemented the initial no-config summary manifest:
+
+- `scripts/run_synthetic_e2e_summary.sh` writes
+  `tmp/synthetic_e2e_summary/summary.manifest.json.tmp`
+- after a successful no-config summary run, the temp marker is renamed to
+  `tmp/synthetic_e2e_summary/summary.manifest.json`
+- the marker contains safe count-only metadata only
+- if the summary run fails, the marker is not created
+- stale marker files are removed at the start of a new summary run
+- `scripts/check_synthetic_diagnostic_distribution.sh` does not yet require or
+  validate the marker
+
+The marker remains no-config only and is not written under
+`tmp/synthetic_e2e_config_summary`.
+
 ## 2. Current State
 
 Current state:
 
 - `scripts/run_synthetic_e2e_summary.sh` writes to `summary.csv.tmp` and then
   renames the completed file to `summary.csv`.
-- Completion marker or run-id manifest support is not implemented.
+- `scripts/run_synthetic_e2e_summary.sh` also writes a safe
+  `summary.manifest.json` after successful summary generation.
 - `scripts/check_synthetic_diagnostic_distribution.sh` reads the final
   no-config `summary.csv`.
+- The diagnostic distribution check does not require the marker yet.
 - The diagnostic distribution check is no-config only.
 - Config-enabled summaries are generated separately under
   `tmp/synthetic_e2e_config_summary`.
 
-The atomic rename reduces partial-write risk. It does not prove that a final
-summary belongs to the current intended run.
+The atomic rename reduces partial-write risk. The marker records safe
+completion metadata for future checks, but marker-required validation is still
+future work.
 
 ## 3. Remaining Risks
 
@@ -151,7 +171,8 @@ Recommended initial direction:
 The recommended first marker shape is a manifest rather than an in-CSV status
 row because it preserves the existing `summary.csv` case-row schema.
 
-No marker file is created by this design document.
+The initial marker file is now created by the no-config summary script on a
+successful run. Distribution-check marker validation is still future work.
 
 ## 6. Marker: Allowed Information
 
