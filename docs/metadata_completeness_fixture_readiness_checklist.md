@@ -229,8 +229,11 @@ default scorer path, no-config summaries, or no-config fixture locks.
 
 ## 9. Approval Record Template
 
-Do not fill this template in this document. It is a blank shape for a future
-approval record.
+For a dedicated blank template, use
+[Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md).
+
+Do not fill the template in this document. The shape below is a reminder for a
+future approval record.
 
 ```text
 reviewer:
@@ -288,6 +291,7 @@ this stage.
 - [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md)
 - [Metadata completeness config fixture design](metadata_completeness_config_fixture_design.md)
 - [Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md)
+- [Metadata completeness fixture approval record template](templates/metadata_completeness_fixture_approval_record_template.md)
 - [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md)
 - [Hand-weight config schema plan](hand_weight_config_schema_plan.md)
 - [Score-active family selection revisit](score_active_family_selection_revisit.md)
