@@ -36,10 +36,12 @@ fi
 summary_dir="tmp/synthetic_e2e_summary"
 summary_csv="$summary_dir/summary.csv"
 summary_tmp="$summary_csv.tmp"
+summary_manifest="$summary_dir/summary.manifest.json"
+summary_manifest_tmp="$summary_manifest.tmp"
 file_list="$summary_dir/input_files.txt"
 mkdir -p "$summary_dir"
-rm -f "$summary_tmp"
-trap 'rm -f "$summary_tmp"' EXIT HUP INT TERM
+rm -f "$summary_tmp" "$summary_manifest_tmp" "$summary_manifest"
+trap 'rm -f "$summary_tmp" "$summary_manifest_tmp"' EXIT HUP INT TERM
 
 find "$input_dir" -maxdepth 1 -type f -name '*.jsonl' -print | sort > "$file_list"
 
@@ -59,6 +61,8 @@ printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %-10s %s\n' \
   "case_name" "status" "failed_stage" "sets" "candidates" "blocked" "unblocked" "rank1" "evaluation" "expected" "diagnostic" "output_dir"
 
 overall_status=0
+case_count=0
+diagnostic_summary_count=0
 
 while IFS= read -r input_file; do
   file_name=$(basename "$input_file")
@@ -128,6 +132,7 @@ while IFS= read -r input_file; do
       "$diagnostic_local_pattern_constraint_count" \
       "$diagnostic_linguistic_placeholder_constraint_count" \
       "$diagnostic_non_leaky_linguistic_constraint_count" >> "$summary_tmp"
+    case_count=$((case_count + 1))
     printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %-10s %s\n' \
       "$case_name" \
       "$pipeline_status" \
@@ -309,6 +314,10 @@ print(",".join(str(value) for value in (
     "$diagnostic_local_pattern_constraint_count" \
     "$diagnostic_linguistic_placeholder_constraint_count" \
     "$diagnostic_non_leaky_linguistic_constraint_count" >> "$summary_tmp"
+  case_count=$((case_count + 1))
+  if [ "$diagnostic_summary_status" = "ok" ]; then
+    diagnostic_summary_count=$((diagnostic_summary_count + 1))
+  fi
 
   printf '%-32s %-8s %-22s %-5s %-10s %-8s %-10s %-8s %-18s %-8s %-10s %s\n' \
     "$case_name" \
@@ -326,10 +335,44 @@ print(",".join(str(value) for value in (
 done < "$file_list"
 
 mv "$summary_tmp" "$summary_csv"
+if [ "$overall_status" -eq 0 ]; then
+  completed_at=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+  run_timestamp=$(date -u '+%Y%m%dT%H%M%SZ')
+  run_id="synthetic_e2e_summary_${run_timestamp}_pid_$$"
+  python3 -c 'import json, sys
+path, run_id, completed_at, summary_path, case_count, diagnostic_summary_count = sys.argv[1:]
+manifest = {
+    "run_id": run_id,
+    "completed_at": completed_at,
+    "summary_path": summary_path,
+    "case_count": int(case_count),
+    "diagnostic_summary_count": int(diagnostic_summary_count),
+    "content_suppressed": True,
+    "no_config_summary": True,
+    "generator_script": "scripts/run_synthetic_e2e_summary.sh",
+    "summary_schema_version": "synthetic_e2e_summary_v0_1",
+}
+with open(path, "w", encoding="utf-8") as handle:
+    json.dump(manifest, handle, sort_keys=True, indent=2)
+    handle.write("\n")
+' \
+    "$summary_manifest_tmp" \
+    "$run_id" \
+    "$completed_at" \
+    "$summary_csv" \
+    "$case_count" \
+    "$diagnostic_summary_count"
+  mv "$summary_manifest_tmp" "$summary_manifest"
+fi
 trap - EXIT HUP INT TERM
 
 echo "synthetic_e2e_summary: complete"
 echo "summary_csv: $summary_csv"
+if [ "$overall_status" -eq 0 ]; then
+  echo "summary_manifest: $summary_manifest"
+else
+  echo "summary_manifest: skipped_run_failed"
+fi
 echo "content_suppressed: true"
 echo "evaluation_metrics_included: false"
 echo "evaluation_report_contents_suppressed: true"

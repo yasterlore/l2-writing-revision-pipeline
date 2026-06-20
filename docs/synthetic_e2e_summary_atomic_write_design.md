@@ -39,6 +39,8 @@ Step 110 implemented the initial no-config summary atomic write behavior:
 - if the script exits before the rename, the temp file is removed when possible
 - existing `summary.csv` is not overwritten by an incomplete temp file
 - completion marker and wrapper script are still not implemented
+- Step 112 adds a no-config `summary.manifest.json` marker after successful
+  summary generation; wrapper script support is still not implemented
 
 This implementation remains no-config only and does not touch
 `tmp/synthetic_e2e_config_summary`.
@@ -55,16 +57,17 @@ Current no-config summary flow:
 3. Step 108 added fail-closed handling for missing, empty, malformed, and
    `no_cases` summaries.
 4. Step 110 added the initial temp-file atomic rename for the no-config summary.
+5. Step 112 added a safe no-config `summary.manifest.json` completion marker.
 
 The distribution check now rejects config-enabled summary paths and continues
 to use safe count-only output.
 
 Still open:
 
-- there is no completion marker
+- distribution-check marker-required validation is not implemented yet
 - a downstream check can still read an older complete summary if one exists
 - the relationship between `summary.csv` and per-case diagnostic summaries is
-  not recorded in a run manifest
+  only recorded as safe count metadata, not yet enforced by the checker
 
 For the dedicated completion-marker design, see
 [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md).
