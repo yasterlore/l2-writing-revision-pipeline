@@ -20,6 +20,8 @@ For synthetic-only examples of safe rationale writing, read
 [Synthetic hand-weight rationale examples](synthetic_hand_weight_rationale_examples.md).
 For the metadata completeness explicit-config experiment design, read
 [Metadata completeness explicit config experiment design](metadata_completeness_explicit_config_experiment_design.md).
+For future tiny metadata-completeness value selection criteria, read
+[Metadata completeness tiny weight selection design](metadata_completeness_tiny_weight_selection_design.md).
 
 ## 1. Purpose
 
