@@ -152,13 +152,17 @@ From the repository root, run the collector:
 scripts/run_synthetic_e2e_summary.sh
 ```
 
-Then inspect only safe counts:
+Then run or inspect only safe counts:
 
 - confirm that `summary.csv` exists under `tmp/synthetic_e2e_summary/`
 - confirm that each case has `diagnostic_summary_status`
 - check count columns, not JSONL contents
 - optionally inspect top-level count keys in
   `tmp/synthetic_e2e/<case_name>/diagnostic_summary.json`
+
+If using `scripts/check_synthetic_diagnostic_distribution.sh`, run it only
+after `scripts/run_synthetic_e2e_summary.sh` has completed. See
+[Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md).
 
 Do not open or paste raw JSONL files. Do not copy generated report bodies into
 docs.
@@ -174,6 +178,9 @@ at least one case has `diagnostic_summary_status=ok`, and diagnostic count
 fields are parseable. It prints count-only summary information and does not
 print raw CSV bodies, diagnostic summary bodies, raw JSONL, per-episode detail,
 or performance metrics.
+
+For ordering preconditions and `no_cases` interpretation, see
+[Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md).
 
 ### Step 56: Synthetic Diagnostic Observation Note Template
 

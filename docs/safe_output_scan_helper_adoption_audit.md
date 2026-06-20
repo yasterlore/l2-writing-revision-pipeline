@@ -142,6 +142,10 @@ Future adoption may be considered for:
 - future approval or observation-note safety tests that inspect safe command
   summaries rather than note bodies
 
+For `check_synthetic_diagnostic_distribution.sh`, the known `no_cases` risk is
+primarily an execution-order precondition, not a path-normalization issue. See
+[Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md).
+
 No code changes are made in this audit.
 
 ## 7. No-Go Adoption Points
@@ -246,6 +250,7 @@ The helper reduces the first without weakening detection of the second.
 ## 11. Related Documents
 
 - [Forbidden-term path-safety test hardening design](forbidden_term_path_safety_test_hardening_design.md)
+- [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
 - [Public release checklist](public_release_checklist.md)
 - [Public-safe approval existence marker design](public_safe_approval_existence_marker_design.md)
 - [No-oracle policy](03_no_oracle_policy.md)
