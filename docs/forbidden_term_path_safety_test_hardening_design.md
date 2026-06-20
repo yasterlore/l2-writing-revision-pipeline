@@ -165,6 +165,10 @@ Future hardening may include:
 The implementation should be small and focused. It should not weaken the
 forbidden-term policy.
 
+For a focused audit of where the current helper should and should not be
+adopted, see
+[safe output scan helper adoption audit](safe_output_scan_helper_adoption_audit.md).
+
 ## 9. What Not To Do Yet
 
 Do not:
@@ -223,5 +227,6 @@ not contain the forbidden-looking substring, the same test can pass.
 - [Public-safe approval existence marker design](public_safe_approval_existence_marker_design.md)
 - [Milestone 03 final docs-only release review](milestone_03_final_docs_only_release_review.md)
 - [Public release checklist](public_release_checklist.md)
+- [Safe output scan helper adoption audit](safe_output_scan_helper_adoption_audit.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md)
