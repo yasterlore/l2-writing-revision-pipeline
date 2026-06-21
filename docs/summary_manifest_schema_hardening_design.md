@@ -55,6 +55,8 @@ For the allowed-key validation design, see
 [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md).
 For the shared schema constants design, see
 [Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md).
+For the future sync check design, see
+[Summary manifest schema sync check design](summary_manifest_schema_sync_check_design.md).
 
 ## 2. Current Manifest State
 
@@ -365,6 +367,7 @@ content. They should be used only when they make validation meaningfully safer.
 - [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md)
 - [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md)
 - [Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md)
+- [Summary manifest schema sync check design](summary_manifest_schema_sync_check_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
 - [Synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md)
 - [Public release checklist](public_release_checklist.md)

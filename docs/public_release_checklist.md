@@ -53,6 +53,8 @@ checked by the diagnostic distribution smoke, and unknown manifest keys fail
 closed for the current manifest schema.
 The generator and checker share the current manifest schema constants from
 `scripts/lib/summary_manifest_schema.sh`.
+For a future schema constants sync check, see
+[summary manifest schema sync check design](summary_manifest_schema_sync_check_design.md).
 
 ## 2. Ignore Rules
 
