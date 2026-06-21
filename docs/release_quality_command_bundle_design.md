@@ -227,6 +227,8 @@ Any CI integration should be reviewed separately.
 For a dedicated design of future CI integration for
 `scripts/check_release_quality.sh`, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
+For a first manual GitHub Actions workflow option, see
+[release-quality manual workflow design](release_quality_manual_workflow_design.md).
 
 ## 9. Wrapper Script Design
 
@@ -283,5 +285,6 @@ metadata, repository health, and regression boundaries.
 - [Summary manifest schema sync check design](summary_manifest_schema_sync_check_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md)
+- [Release-quality manual workflow design](release_quality_manual_workflow_design.md)
 - [Public release checklist](public_release_checklist.md)
 - [Milestone 03 final docs-only release review](milestone_03_final_docs_only_release_review.md)

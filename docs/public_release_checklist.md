@@ -66,6 +66,8 @@ For the current normal success-path wrapper, run
 dedicated project command is added later.
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
+For a future manual GitHub Actions workflow option, see
+[release-quality manual workflow design](release_quality_manual_workflow_design.md).
 
 ## 2. Ignore Rules
 
