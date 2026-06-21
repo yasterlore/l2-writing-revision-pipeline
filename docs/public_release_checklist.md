@@ -46,6 +46,8 @@ For checker-side marker validation, see
 [synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md).
 For future manifest schema hardening, see
 [summary manifest schema hardening design](summary_manifest_schema_hardening_design.md).
+The current no-config manifest includes a required `manifest_schema_version`
+checked by the diagnostic distribution smoke.
 
 ## 2. Ignore Rules
 
