@@ -1,9 +1,9 @@
 # Release-Quality Command Bundle Design
 
-This document is design documentation only. It does not create a wrapper
-script, change CI workflows, change shell scripts, change test code, or change
-summary generation, scoring logic, scorer weights, formulas, or tie-break
-policy.
+This document is design documentation and implementation notes for the
+release-quality command bundle. Step 125 adds the first minimal wrapper script,
+but this document does not change CI workflows, test code, summary generation,
+scoring logic, scorer weights, formulas, or tie-break policy.
 
 It is not a performance evaluation. It does not approve real-data processing,
 private validation, learner-state estimation, or expected-action tuning.
@@ -138,9 +138,9 @@ the checks are shell-first and mostly independent.
 
 ## 5. Recommended Approach
 
-Initial recommendation:
+Initial recommendation from Step 124:
 
-- keep a docs-only checklist for now
+- keep a docs-only checklist until the order is reviewed
 - consider a shell wrapper script next
 - defer CI workflow integration to a later step
 - introduce Makefile or Python orchestration only if the bundle becomes hard to
@@ -148,8 +148,15 @@ Initial recommendation:
 - keep no-config summary checks and config-enabled summary checks separate
 - keep logs safe and body-suppressed
 
-The first future implementation candidate is a shell wrapper because it can
-preserve the existing commands and enforce the critical summary ordering.
+Step 125 implements the first shell wrapper:
+
+```bash
+scripts/check_release_quality.sh
+```
+
+The wrapper preserves the existing command surfaces, runs normal success-path
+checks sequentially, and enforces the critical no-config summary ordering. It
+does not add CI integration or expected-failure regression phases.
 
 ## 6. Fail-Fast Policy
 
@@ -217,9 +224,9 @@ Future CI guidance:
 
 Any CI integration should be reviewed separately.
 
-## 9. Future Wrapper Script Design
+## 9. Wrapper Script Design
 
-A future wrapper could be named:
+The initial wrapper is named:
 
 ```bash
 scripts/check_release_quality.sh
@@ -238,6 +245,14 @@ It should:
 - avoid changing scorer, pipeline, or config behavior
 
 The wrapper should not become a performance report.
+
+Markdown link checking remains a manual step in the wrapper because there is no
+existing project command dedicated to it. The wrapper prints a safe note rather
+than introducing a new checker.
+
+Conflict marker grep is included as a normal success-path hygiene check. It
+excludes `.git`, `target`, `node_modules`, `tmp`, and generated web build
+directories, and reports only file and line locations when markers are found.
 
 ## 10. Beginner Notes
 

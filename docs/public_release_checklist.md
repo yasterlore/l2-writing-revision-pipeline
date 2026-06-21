@@ -61,6 +61,9 @@ For release-quality ordering and future CI placement of that command, see
 [summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md).
 For a broader future release-quality command bundle order, see
 [release-quality command bundle design](release_quality_command_bundle_design.md).
+For the current normal success-path wrapper, run
+`scripts/check_release_quality.sh`; Markdown link check remains manual unless a
+dedicated project command is added later.
 
 ## 2. Ignore Rules
 
@@ -183,7 +186,11 @@ summaries.
 
 ## 7. Checks To Run
 
+The wrapper covers the normal success-path command bundle. The individual
+commands remain useful as a manual fallback or for targeted reruns.
+
 ```bash
+scripts/check_release_quality.sh
 cargo fmt --all -- --check
 cargo test --workspace
 cargo clippy --workspace -- -D warnings
