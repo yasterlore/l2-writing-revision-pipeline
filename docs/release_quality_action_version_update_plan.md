@@ -188,3 +188,20 @@ local shell checks alone.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md)
 - [Release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 13. Step 134 Implementation Status
+
+Step 134 applies the planned minimal update to
+`.github/workflows/release-quality.yml` only:
+
+- `actions/checkout@v4` -> `actions/checkout@v7`
+- `actions/setup-python@v5` -> `actions/setup-python@v6`
+- `actions/setup-node@v4` -> `actions/setup-node@v6`
+
+The workflow keeps `workflow_dispatch` only, keeps artifact upload absent, keeps
+the `scripts/check_release_quality.sh` command, and does not change
+`.github/workflows/ci.yml`.
+
+After this update is pushed, run the manual GitHub Actions workflow again and
+record whether the Node.js runtime warning is removed, reduced, unchanged, or
+changed. Do not paste raw workflow logs into docs.

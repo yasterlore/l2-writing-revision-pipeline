@@ -173,6 +173,9 @@ For a later implementation step:
 
 For the implementation planning step before editing workflow files, see
 [release-quality action version update plan](release_quality_action_version_update_plan.md).
+Step 134 implements the minimal release-quality workflow action-version update
+described there; a follow-up manual remote run is still required to confirm the
+warning status.
 
 ## 10. Beginner Notes
 

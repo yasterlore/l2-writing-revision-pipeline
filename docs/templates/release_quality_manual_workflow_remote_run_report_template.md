@@ -124,6 +124,8 @@ Decision note:
 - Docs to update:
 - Next step:
 - GitHub Actions warning follow-up, if any:
+- Node runtime warning status: removed / reduced / unchanged / changed / not
+  checked
 
 Notes:
 
