@@ -211,6 +211,8 @@ Step 128 implementation status:
 
 For the first remote GitHub Actions run after implementation, use the
 [release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md).
+After the run, record only a safe high-level summary using the
+[release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md).
 
 ## 11. Beginner Notes
 
@@ -233,6 +235,7 @@ not generated data bodies.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md)
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md)
+- [Release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md)
 - [Summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md)
 - [Public release checklist](public_release_checklist.md)
 - [Milestone 03 final docs-only release review](milestone_03_final_docs_only_release_review.md)

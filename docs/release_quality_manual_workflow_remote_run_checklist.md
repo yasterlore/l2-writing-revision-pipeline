@@ -128,6 +128,9 @@ Do not paste raw GitHub Actions logs into public docs. A concise public note may
 say that the manual release-quality workflow ran successfully if separately
 reviewed.
 
+For a blank safe reporting format, use the
+[release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md).
+
 ## 8. Failure Record Policy
 
 For a failed first remote run, record only:
@@ -177,4 +180,5 @@ history.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md)
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md)
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
+- [Release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md)
 - [Public release checklist](public_release_checklist.md)
