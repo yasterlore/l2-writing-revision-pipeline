@@ -206,6 +206,7 @@ pretending that implementation or performance evaluation has already happened.
 ## Related Documents
 
 - [Learner-state input representation design](learner_state_input_representation_design.md)
+- [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md)
 - [Milestone 05 status marker](status/milestone_05_status.md)
 - [No-oracle policy](03_no_oracle_policy.md)
