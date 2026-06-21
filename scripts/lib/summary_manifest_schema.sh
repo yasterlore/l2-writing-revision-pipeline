@@ -1,0 +1,34 @@
+#!/usr/bin/env sh
+# Shared safe/count-only schema constants for no-config synthetic E2E summary manifests.
+
+SUMMARY_MANIFEST_SCHEMA_VERSION="1.0"
+SUMMARY_MANIFEST_SUMMARY_SCHEMA_VERSION="synthetic_e2e_summary_v0_1"
+SUMMARY_MANIFEST_GENERATOR_SCRIPT="scripts/run_synthetic_e2e_summary.sh"
+SUMMARY_MANIFEST_CONTENT_SUPPRESSED="true"
+SUMMARY_MANIFEST_NO_CONFIG_SUMMARY="true"
+
+SUMMARY_MANIFEST_ALLOWED_KEYS='manifest_schema_version
+run_id
+completed_at
+summary_path
+case_count
+diagnostic_summary_count
+content_suppressed
+no_config_summary
+generator_script
+summary_schema_version'
+
+SUMMARY_MANIFEST_FORBIDDEN_KEYS='raw_summary_body
+diagnostic_summary_body
+jsonl_body
+candidate_score_rows
+raw_text
+expected_action_details
+config_body
+final_text
+observed_after_text
+gold_label
+performance_metrics
+f1
+accuracy
+calibration'

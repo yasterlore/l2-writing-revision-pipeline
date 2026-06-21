@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
 set -eu
 
+script_dir=$(CDPATH= cd "$(dirname "$0")" && pwd)
+. "$script_dir/lib/summary_manifest_schema.sh"
+
 usage() {
   echo "Usage: scripts/run_synthetic_e2e_summary.sh [input_dir] [registry.json]" >&2
   echo "Runs synthetic raw-event fixtures through the E2E pipeline and prints summary only." >&2
@@ -340,9 +343,19 @@ if [ "$overall_status" -eq 0 ]; then
   run_timestamp=$(date -u '+%Y%m%dT%H%M%SZ')
   run_id="synthetic_e2e_summary_${run_timestamp}_pid_$$"
   python3 -c 'import json, sys
-path, run_id, completed_at, summary_path, case_count, diagnostic_summary_count = sys.argv[1:]
+(
+    path,
+    run_id,
+    completed_at,
+    summary_path,
+    case_count,
+    diagnostic_summary_count,
+    manifest_schema_version,
+    generator_script,
+    summary_schema_version,
+) = sys.argv[1:]
 manifest = {
-    "manifest_schema_version": "1.0",
+    "manifest_schema_version": manifest_schema_version,
     "run_id": run_id,
     "completed_at": completed_at,
     "summary_path": summary_path,
@@ -350,8 +363,8 @@ manifest = {
     "diagnostic_summary_count": int(diagnostic_summary_count),
     "content_suppressed": True,
     "no_config_summary": True,
-    "generator_script": "scripts/run_synthetic_e2e_summary.sh",
-    "summary_schema_version": "synthetic_e2e_summary_v0_1",
+    "generator_script": generator_script,
+    "summary_schema_version": summary_schema_version,
 }
 with open(path, "w", encoding="utf-8") as handle:
     json.dump(manifest, handle, sort_keys=True, indent=2)
@@ -362,7 +375,10 @@ with open(path, "w", encoding="utf-8") as handle:
     "$completed_at" \
     "$summary_csv" \
     "$case_count" \
-    "$diagnostic_summary_count"
+    "$diagnostic_summary_count" \
+    "$SUMMARY_MANIFEST_SCHEMA_VERSION" \
+    "$SUMMARY_MANIFEST_GENERATOR_SCRIPT" \
+    "$SUMMARY_MANIFEST_SUMMARY_SCHEMA_VERSION"
   mv "$summary_manifest_tmp" "$summary_manifest"
 fi
 trap - EXIT HUP INT TERM
