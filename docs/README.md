@@ -64,6 +64,7 @@ Recommended entry points:
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.
 - [GitHub Actions Node deprecation warning handling design](actions_node_deprecation_warning_handling_design.md): design for tracking and planning action-version updates after a manual workflow Node runtime warning.
 - [Release-quality action version update plan](release_quality_action_version_update_plan.md): plan for a future minimal action-version update of the manual release-quality workflow.
+- [Release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md): safe record workflow for remote-run results after action-version updates.
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md): storage and sharing workflow for blank templates and private/local count-only notes.
 - [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md): exception-only checklist before considering any filled observation note for public repository sharing.
 - [Synthetic diagnostic observation note template](templates/synthetic_diagnostic_observation_note_template.md): count-only note template for safe human diagnostic review.

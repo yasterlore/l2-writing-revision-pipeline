@@ -205,3 +205,5 @@ the `scripts/check_release_quality.sh` command, and does not change
 After this update is pushed, run the manual GitHub Actions workflow again and
 record whether the Node.js runtime warning is removed, reduced, unchanged, or
 changed. Do not paste raw workflow logs into docs.
+For safe recording after the remote run, use
+[release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md).
