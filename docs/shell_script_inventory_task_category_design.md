@@ -194,6 +194,8 @@ The adoption and safety review is documented in
 [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md).
 Parallel execution and shared `tmp/` output safety are documented in
 [Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md).
+Step 151 added minimal Make-level sequential guidance without changing the
+underlying shell scripts.
 
 ## 8. Scripts To Keep As Shell
 

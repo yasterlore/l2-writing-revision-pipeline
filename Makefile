@@ -12,8 +12,12 @@
 .PHONY: check-fixtures
 .PHONY: check-all
 
+# Shared tmp outputs are not safe for parallel summary-flow checks.
+.NOTPARALLEL:
+
 help:
 	@echo "Available targets:"
+	@echo "  note: do not use make -j with summary-flow targets"
 	@echo "  check-release-quality        Run the normal release-quality wrapper"
 	@echo "  check-summary-flow           Run summary, manifest sync, and diagnostic distribution"
 	@echo "  check-summary                Generate the synthetic E2E summary"
