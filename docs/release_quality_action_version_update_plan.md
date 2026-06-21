@@ -207,3 +207,6 @@ record whether the Node.js runtime warning is removed, reduced, unchanged, or
 changed. Do not paste raw workflow logs into docs.
 For safe recording after the remote run, use
 [release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md).
+For the separate review of the existing push/pull-request CI workflow, use
+[existing CI action versions audit design](existing_ci_action_versions_audit_design.md)
+before changing `.github/workflows/ci.yml`.
