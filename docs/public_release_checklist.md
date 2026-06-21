@@ -97,6 +97,9 @@ Before implementing a learner-state sequence exporter, review the
 Before implementing learner-state sequence schema code or exporter files, review
 the
 [learner-state sequence schema design](learner_state_sequence_schema_design.md).
+Before implementing learner-state sequence audit code or trusting exporter
+output, review the
+[learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md).
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
 For a future manual GitHub Actions workflow option, see

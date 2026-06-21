@@ -240,6 +240,11 @@ Step 159 follow-up: see
 [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
 for the feature row, label row, and manifest separation plan.
 
+Step 160 follow-up: see
+[Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
+for the planned fail-closed audit before any future sequence exporter output is
+trusted.
+
 ## 13. Beginner Notes
 
 An input representation is the shape of the data a future model is allowed to
@@ -267,6 +272,7 @@ definition and representation are still being designed.
 
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
+- [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Synthetic data policy](12_synthetic_data_policy.md)
