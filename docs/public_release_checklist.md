@@ -94,6 +94,10 @@ For the consolidated CI maintenance checkpoint, see
 [milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md).
 Before treating Milestone 04 docs as release-ready, review
 [milestone 04 final docs-only release review](milestone_04_final_docs_only_release_review.md).
+Before creating any short public status marker for Milestone 04, use
+[milestone 04 status marker design](milestone_04_status_marker_design.md);
+the marker must not include raw logs, run URLs with private context, or
+performance claims.
 
 ## 2. Ignore Rules
 
@@ -142,6 +146,7 @@ Confirm docs link to:
 - `docs/milestone_03_final_docs_only_release_review.md`
 - `docs/milestone_04_ci_maintenance_recap.md`
 - `docs/milestone_04_final_docs_only_release_review.md`
+- `docs/milestone_04_status_marker_design.md`
 - `docs/private_real_data_readiness_checklist.md`
 - `docs/observation_note_storage_and_review_workflow.md`
 - `docs/filled_observation_note_public_sharing_checklist.md`

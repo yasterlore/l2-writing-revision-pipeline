@@ -159,6 +159,8 @@ Known remaining non-blocking items:
 
 These are maintenance follow-ups. They are not blockers for this docs-only
 Milestone 04 release review.
+For a future short public-safe status marker that summarizes this review state,
+see [milestone 04 status marker design](milestone_04_status_marker_design.md).
 
 ## 9. Release Readiness Judgment
 
@@ -201,6 +203,7 @@ accurate.
 ## Related Documents
 
 - [Milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md)
+- [Milestone 04 status marker design](milestone_04_status_marker_design.md)
 - [GitHub Actions Node deprecation warning handling design](actions_node_deprecation_warning_handling_design.md)
 - [Existing CI action versions audit design](existing_ci_action_versions_audit_design.md)
 - [Existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md)
