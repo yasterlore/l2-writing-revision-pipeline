@@ -44,11 +44,17 @@ Step 118 implemented strict allowed-key validation for
 - explicit forbidden body-like keys remain a separate fail-closed reason
 - the manifest body is not printed
 
+Step 120 moved the current manifest schema constants into
+`scripts/lib/summary_manifest_schema.sh` so the generator and checker can share
+the same version and key lists.
+
 Summary hash, per-case diagnostic consistency hardening, and wrapper scripts
 are still future work.
 
 For the allowed-key validation design, see
 [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md).
+For the shared schema constants design, see
+[Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md).
 
 ## 2. Current Manifest State
 
@@ -358,6 +364,7 @@ content. They should be used only when they make validation meaningfully safer.
 - [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md)
 - [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md)
 - [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md)
+- [Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
 - [Synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md)
 - [Public release checklist](public_release_checklist.md)

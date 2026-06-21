@@ -51,6 +51,8 @@ For future strict manifest allowed-key validation, see
 The current no-config manifest includes a required `manifest_schema_version`
 checked by the diagnostic distribution smoke, and unknown manifest keys fail
 closed for the current manifest schema.
+The generator and checker share the current manifest schema constants from
+`scripts/lib/summary_manifest_schema.sh`.
 
 ## 2. Ignore Rules
 
