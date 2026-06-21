@@ -78,6 +78,8 @@ If the remote run succeeds with a GitHub Actions Node runtime warning, track it
 with
 [GitHub Actions Node deprecation warning handling design](actions_node_deprecation_warning_handling_design.md)
 before changing workflow files.
+Before editing action versions, use the
+[release-quality action version update plan](release_quality_action_version_update_plan.md).
 
 ## 2. Ignore Rules
 

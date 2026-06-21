@@ -152,6 +152,8 @@ Use the first remote run result to choose the next action:
   release-quality review
 - remote run passes with a GitHub Actions Node runtime warning: track it with
   [GitHub Actions Node deprecation warning handling design](actions_node_deprecation_warning_handling_design.md)
+  and plan any action-version change with
+  [release-quality action version update plan](release_quality_action_version_update_plan.md)
 - setup failure: revise workflow setup in a separate implementation step
 - wrapper failure only in Actions: investigate environment differences
 - unsafe logs: stop and revise output safety before further remote runs
@@ -184,4 +186,5 @@ history.
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
 - [Release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md)
 - [GitHub Actions Node deprecation warning handling design](actions_node_deprecation_warning_handling_design.md)
+- [Release-quality action version update plan](release_quality_action_version_update_plan.md)
 - [Public release checklist](public_release_checklist.md)
