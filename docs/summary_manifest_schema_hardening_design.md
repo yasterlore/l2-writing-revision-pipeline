@@ -44,12 +44,20 @@ Step 118 implemented strict allowed-key validation for
 - explicit forbidden body-like keys remain a separate fail-closed reason
 - the manifest body is not printed
 
+Step 120 moved the current manifest schema constants into
+`scripts/lib/summary_manifest_schema.sh` so the generator and checker can share
+the same version and key lists.
+
 Summary hash, per-case diagnostic consistency hardening, and wrapper scripts
 are still future work.
 
 For the allowed-key validation design, see
 [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md).
+<<<<<<< HEAD
 For the follow-up design on centralizing manifest schema constants, see
+=======
+For the shared schema constants design, see
+>>>>>>> step120-summary-manifest-shared-schema-constants
 [Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md).
 
 ## 2. Current Manifest State

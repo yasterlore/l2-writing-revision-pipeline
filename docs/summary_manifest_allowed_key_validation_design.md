@@ -34,8 +34,16 @@ Step 118 implemented the initial checker-side allowed-key validation for
 Summary hash, per-case diagnostic consistency hardening, and wrapper scripts
 remain future work.
 
+<<<<<<< HEAD
 For future work on moving manifest schema constants out of individual scripts,
 see [Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md).
+=======
+Step 120 moved the current allowed-key and forbidden-key constants into
+`scripts/lib/summary_manifest_schema.sh` without changing the manifest schema.
+
+For the shared schema constants design, see
+[Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md).
+>>>>>>> step120-summary-manifest-shared-schema-constants
 
 ## 2. Current Manifest Fields
 
