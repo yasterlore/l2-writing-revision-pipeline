@@ -65,6 +65,8 @@ For a staged response to shell-script orchestration risk, see
 [orchestration modernization design](orchestration_modernization_design.md);
 do not introduce a task runner or scheduler without a separate implementation
 step.
+Before designing a Makefile or justfile target set, review
+[shell script inventory and task category design](shell_script_inventory_task_category_design.md).
 For the current normal success-path wrapper, run
 `scripts/check_release_quality.sh`; Markdown link check remains manual unless a
 dedicated project command is added later.
