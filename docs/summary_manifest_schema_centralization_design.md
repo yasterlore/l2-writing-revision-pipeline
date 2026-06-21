@@ -1,27 +1,16 @@
 # Summary Manifest Schema Centralization Design
 
-<<<<<<< HEAD
-This document is design documentation only. It does not change shell scripts,
-test code, summary generation, scoring logic, scorer weights, formulas, or
-tie-break policy.
-=======
 This document records the design and initial implementation for centralizing
 safe/count-only schema constants for the no-config synthetic E2E summary
 manifest.
->>>>>>> step120-summary-manifest-shared-schema-constants
 
 It is not a performance evaluation. It does not approve real-data processing,
 private validation, or any tuning workflow.
 
 ## 1. Purpose
 
-<<<<<<< HEAD
-The purpose of this design is to decide how summary manifest schema constants
-should be centralized in the future.
-=======
 The purpose of this design is to define where summary manifest schema constants
 should live and how the generator, checker, docs, and tests should stay aligned.
->>>>>>> step120-summary-manifest-shared-schema-constants
 
 The goals are:
 
@@ -31,16 +20,13 @@ The goals are:
 - preserve output safety, privacy, and no-oracle boundaries
 - keep the manifest as reliability metadata, not a report body
 
-<<<<<<< HEAD
-This design does not implement schema centralization yet.
-=======
 ## 1.1 Implementation Status
 
 Step 120 implemented the initial shared shell constants file:
 
 - `scripts/lib/summary_manifest_schema.sh` defines the current manifest schema
-  version, summary schema version, expected generator script, allowed keys, and
-  forbidden keys
+  version, summary schema version, expected generator script, expected safe
+  boolean values, allowed keys, and forbidden keys
 - `scripts/run_synthetic_e2e_summary.sh` uses the shared version and schema
   constants when writing the no-config manifest
 - `scripts/check_synthetic_diagnostic_distribution.sh` uses the shared version,
@@ -50,7 +36,6 @@ Step 120 implemented the initial shared shell constants file:
 
 Summary hash, per-case diagnostic consistency hardening, and wrapper scripts
 remain future work.
->>>>>>> step120-summary-manifest-shared-schema-constants
 
 ## 2. Current State
 
@@ -60,12 +45,8 @@ Current no-config summary manifest state:
   `tmp/synthetic_e2e_summary/summary.manifest.json`
 - `scripts/check_synthetic_diagnostic_distribution.sh` validates that manifest
 - `manifest_schema_version` is `1.0`
-<<<<<<< HEAD
-- allowed keys are currently hardcoded in the diagnostic distribution checker
-=======
 - manifest schema constants are centralized in
   `scripts/lib/summary_manifest_schema.sh`
->>>>>>> step120-summary-manifest-shared-schema-constants
 - docs list the current fields and explain the safe/count-only intent
 - config-enabled summary output is separate and is not connected to this
   manifest
@@ -118,17 +99,10 @@ acceptable for a tiny schema, but weaker once future fields are added.
 ### Option B: Shared Shell Constants File
 
 Create a shared shell file such as
-<<<<<<< HEAD
-`scripts/lib/summary_manifest_schema.sh` in a future implementation step.
-
-This keeps the shell-first workflow simple. The generator and checker can source
-the same version and key lists. It is a practical first step for this project.
-=======
 `scripts/lib/summary_manifest_schema.sh`.
 
 This keeps the shell-first workflow simple. The generator and checker can source
 the same version and key lists. Step 120 implements this initial option.
->>>>>>> step120-summary-manifest-shared-schema-constants
 
 ### Option C: JSON Schema File
 
@@ -155,30 +129,13 @@ schema changes often enough to justify generation.
 
 ## 5. Recommended Approach
 
-<<<<<<< HEAD
-The recommended initial approach is Option B: shared shell constants.
-=======
 The recommended initial approach is Option B: shared shell constants. Step 120
 implements this approach.
->>>>>>> step120-summary-manifest-shared-schema-constants
 
 Reasons:
 
 - the current summary generation and distribution checks are shell-first
 - the schema is small
-<<<<<<< HEAD
-- a shared shell file can reduce duplication with minimal moving parts
-- it avoids introducing a Python validator before there is a clear need
-- it can later be replaced or wrapped by a Python helper if validation grows
-
-Recommended future shape:
-
-- define `SUMMARY_MANIFEST_SCHEMA_VERSION`
-- define the allowed keys for schema version `1.0`
-- define forbidden body-like keys
-- define expected safe booleans and generator script
-- keep docs aligned with those constants
-=======
 - a shared shell file reduces duplication with minimal moving parts
 - it avoids introducing a Python validator before there is a clear need
 - it can later be replaced or wrapped by a Python helper if validation grows
@@ -192,7 +149,6 @@ The implemented initial shape defines:
 - `SUMMARY_MANIFEST_NO_CONFIG_SUMMARY`
 - `SUMMARY_MANIFEST_ALLOWED_KEYS`
 - `SUMMARY_MANIFEST_FORBIDDEN_KEYS`
->>>>>>> step120-summary-manifest-shared-schema-constants
 
 A JSON schema document may still be useful as public documentation later, but it
 should not become a source of unsafe body content. Raw output bodies do not
