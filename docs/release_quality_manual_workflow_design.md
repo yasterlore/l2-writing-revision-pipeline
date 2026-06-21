@@ -1,8 +1,10 @@
 # Release-Quality Manual Workflow Design
 
-This document is design documentation only. It does not create or modify
-GitHub Actions workflows, shell scripts, test code, summary generation, scoring
-logic, scorer weights, formulas, or tie-break policy.
+This document is design documentation and implementation notes for the manual
+release-quality GitHub Actions workflow. Step 128 adds the first
+`workflow_dispatch` workflow, but this document does not change shell scripts,
+test code, summary generation, scoring logic, scorer weights, formulas, or
+tie-break policy.
 
 It is not a performance evaluation. It does not approve real-data processing,
 private validation, learner-state estimation, or expected-action tuning.
@@ -30,10 +32,11 @@ Current state:
   project command exists yet
 - expected-failure regression checks are outside the wrapper unless already
   encapsulated in existing safe scripts
-- no release-quality GitHub Actions workflow exists yet
+- `.github/workflows/release-quality.yml` exists as a manual
+  `workflow_dispatch` workflow
 
-The current wrapper is useful locally, but it is not yet available as a manual
-remote workflow run.
+The current wrapper is available locally and through a manual GitHub Actions
+workflow. It is not part of automatic PR CI.
 
 ## 3. Why Use A Manual Workflow
 
@@ -51,12 +54,15 @@ full CI.
 
 ## 4. Workflow Trigger Design
 
-Initial recommendation:
+Initial recommendation from Step 127:
 
 - use `workflow_dispatch`
 - do not add `pull_request` initially
 - do not add `push` initially
 - keep `schedule` or nightly runs as a future option
+
+Step 128 implements the initial workflow with `workflow_dispatch` only. It does
+not add `pull_request`, `push`, or `schedule` triggers.
 
 Optional branch input is not required at first because GitHub Actions manual
 runs can already choose a branch from the UI. If a future workflow needs an
@@ -82,27 +88,34 @@ A future workflow should include:
 - executable permission check for `scripts/check_release_quality.sh`
 - optional cache setup only after the uncached workflow is understood
 
+Step 128 uses:
+
+- `actions/checkout@v4`
+- `actions/setup-python@v5` with Python 3.11
+- `dtolnay/rust-toolchain@stable` with rustfmt and clippy
+- `actions/setup-node@v4` with Node 22 and npm cache for logger-web
+- `npm ci` under `apps/logger-web`
+- `scripts/check_release_quality.sh` from repository root
+
 The workflow should not require private data, real participant data, secrets, or
 network calls beyond normal dependency setup.
 
 ## 6. Command To Run
 
-Initial command:
+Implemented command:
 
 ```bash
 scripts/check_release_quality.sh
 ```
 
-Before that command, the workflow should install dependencies. If executable
-permissions are unreliable across platforms, the workflow may include:
+Before that command, the workflow installs dependencies. It also includes:
 
 ```bash
 chmod +x scripts/check_release_quality.sh
 ```
 
 Markdown link check remains the wrapper's manual note until a dedicated project
-command exists. Expected-failure tests should not be added to the workflow
-unless they are introduced through a separate reviewed safe script.
+command exists. Expected-failure tests are not added to the workflow.
 
 ## 7. Safe Logs Policy
 
@@ -186,6 +199,15 @@ Before implementation:
 - confirm whether branch protection should ignore or require this manual
   workflow
 - update the public release checklist after implementation
+
+Step 128 implementation status:
+
+- `.github/workflows/release-quality.yml` added
+- trigger is `workflow_dispatch` only
+- dependency setup is included
+- wrapper runs from repository root
+- no artifact upload is configured
+- public release checklist is updated
 
 ## 11. Beginner Notes
 

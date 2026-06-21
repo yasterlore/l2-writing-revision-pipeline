@@ -1,0 +1,43 @@
+name: Release Quality
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release-quality:
+    name: Release quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/logger-web/package-lock.json
+
+      - name: Install logger-web dependencies
+        working-directory: apps/logger-web
+        run: npm ci
+
+      - name: Ensure release-quality wrapper is executable
+        run: chmod +x scripts/check_release_quality.sh
+
+      - name: Run release-quality wrapper
+        run: scripts/check_release_quality.sh
