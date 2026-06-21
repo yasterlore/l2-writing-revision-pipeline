@@ -34,6 +34,12 @@ Step 118 implemented the initial checker-side allowed-key validation for
 Summary hash, per-case diagnostic consistency hardening, and wrapper scripts
 remain future work.
 
+Step 120 moved the current allowed-key and forbidden-key constants into
+`scripts/lib/summary_manifest_schema.sh` without changing the manifest schema.
+
+For the shared schema constants design, see
+[Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md).
+
 ## 2. Current Manifest Fields
 
 The current no-config summary manifest fields are:
@@ -252,6 +258,7 @@ safety because new fields cannot appear quietly.
 ## 12. Related Documents
 
 - [Summary manifest schema hardening design](summary_manifest_schema_hardening_design.md)
+- [Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md)
 - [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md)
 - [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)

@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
 set -eu
 
+script_dir=$(CDPATH= cd "$(dirname "$0")" && pwd)
+. "$script_dir/lib/summary_manifest_schema.sh"
+
 usage() {
   echo "Usage: scripts/check_synthetic_diagnostic_distribution.sh [summary.csv]" >&2
   echo "Checks count-only synthetic diagnostic summary wiring. This is not performance evaluation." >&2
@@ -53,45 +56,31 @@ if [ ! -s "$summary_csv" ]; then
   exit 2
 fi
 
+SUMMARY_MANIFEST_SCHEMA_VERSION="$SUMMARY_MANIFEST_SCHEMA_VERSION" \
+SUMMARY_MANIFEST_ALLOWED_KEYS="$SUMMARY_MANIFEST_ALLOWED_KEYS" \
+SUMMARY_MANIFEST_FORBIDDEN_KEYS="$SUMMARY_MANIFEST_FORBIDDEN_KEYS" \
+SUMMARY_MANIFEST_GENERATOR_SCRIPT="$SUMMARY_MANIFEST_GENERATOR_SCRIPT" \
 python3 - "$summary_csv" "$summary_manifest" "$expected_summary_csv" <<'PY'
 import csv
 import json
+import os
 import sys
 from pathlib import Path
 
 summary_path = Path(sys.argv[1])
 marker_path = Path(sys.argv[2])
 expected_summary_path = sys.argv[3]
-expected_manifest_schema_version = "1.0"
-
+expected_manifest_schema_version = os.environ["SUMMARY_MANIFEST_SCHEMA_VERSION"]
+expected_generator_script = os.environ["SUMMARY_MANIFEST_GENERATOR_SCRIPT"]
 forbidden_marker_keys = {
-    "raw_summary_body",
-    "diagnostic_summary_body",
-    "jsonl_body",
-    "candidate_score_rows",
-    "raw_text",
-    "expected_action_details",
-    "config_body",
-    "final_text",
-    "observed_after_text",
-    "gold_label",
-    "performance_metrics",
-    "f1",
-    "accuracy",
-    "calibration",
+    key.strip()
+    for key in os.environ["SUMMARY_MANIFEST_FORBIDDEN_KEYS"].splitlines()
+    if key.strip()
 }
-
 allowed_marker_keys_v1 = {
-    "manifest_schema_version",
-    "run_id",
-    "completed_at",
-    "summary_path",
-    "case_count",
-    "diagnostic_summary_count",
-    "content_suppressed",
-    "no_config_summary",
-    "generator_script",
-    "summary_schema_version",
+    key.strip()
+    for key in os.environ["SUMMARY_MANIFEST_ALLOWED_KEYS"].splitlines()
+    if key.strip()
 }
 
 
@@ -250,7 +239,7 @@ if marker.get("summary_path") != expected_summary_path:
         expected_summary_csv=expected_summary_path,
     )
 
-if marker.get("generator_script") != "scripts/run_synthetic_e2e_summary.sh":
+if marker.get("generator_script") != expected_generator_script:
     fail_precondition(
         "summary_manifest_unexpected_generator_script",
         summary_csv=summary_path,
