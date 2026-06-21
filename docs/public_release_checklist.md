@@ -90,6 +90,8 @@ For the short public-safe Milestone 05 marker, see
 Before returning to research-pipeline implementation after Makefile adoption,
 review the
 [research pipeline next-phase plan](research_pipeline_next_phase_plan.md).
+Before implementing any learner-state estimator, review the
+[learner-state input representation design](learner_state_input_representation_design.md).
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
 For a future manual GitHub Actions workflow option, see
