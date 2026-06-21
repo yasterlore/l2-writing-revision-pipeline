@@ -369,6 +369,7 @@ orchestrator only when the project has a real need.
 - [Task runner selection design](task_runner_selection_design.md)
 - [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md)
 - [Milestone 05 final docs-only release review](milestone_05_final_docs_only_release_review.md)
+- [Milestone 05 status marker design](milestone_05_status_marker_design.md)
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md)
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md)
 - [Milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md)

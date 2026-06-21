@@ -204,6 +204,7 @@ requirements.
 ## Related Documents
 
 - [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md)
+- [Milestone 05 status marker design](milestone_05_status_marker_design.md)
 - [Orchestration modernization design](orchestration_modernization_design.md)
 - [Task runner selection design](task_runner_selection_design.md)
 - [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md)

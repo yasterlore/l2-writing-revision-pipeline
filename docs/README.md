@@ -14,6 +14,7 @@ Recommended entry points:
 - [Milestone 04 status marker design](milestone_04_status_marker_design.md): design and implementation notes for the public-safe Milestone 04 status marker.
 - [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md): recap of shell orchestration modernization, Makefile thin entrypoints, and sequential safety guidance.
 - [Milestone 05 final docs-only release review](milestone_05_final_docs_only_release_review.md): final docs-only readiness review for Milestone 05 Makefile orchestration documentation.
+- [Milestone 05 status marker design](milestone_05_status_marker_design.md): design for a future short public-safe Milestone 05 Makefile orchestration status marker.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -73,6 +74,7 @@ Recommended entry points:
 - [Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md): design for avoiding parallel execution and shared `tmp/` output hazards around summary-flow targets.
 - [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md): consolidated Step 145-151 orchestration modernization recap.
 - [Milestone 05 final docs-only release review](milestone_05_final_docs_only_release_review.md): docs-only final review for Milestone 05 release-readiness.
+- [Milestone 05 status marker design](milestone_05_status_marker_design.md): design for a future short public-safe Milestone 05 status marker.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.
