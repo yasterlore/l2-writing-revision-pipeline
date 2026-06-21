@@ -1,10 +1,11 @@
 # Milestone 04 Status Marker Design
 
-This document designs a future public-safe status marker for Milestone 04 CI
+This document designs the public-safe status marker for Milestone 04 CI
 maintenance documentation.
 
-It is design documentation only. It does not create the status marker file, does
-not change workflows, and does not make any research-performance claim.
+It is design documentation and implementation notes. The implemented marker is
+[Milestone 04 status](status/milestone_04_status.md). This document does not
+change workflows and does not make any research-performance claim.
 
 ## 1. Purpose
 
@@ -22,6 +23,8 @@ Current Milestone 04 documentation state:
 
 - the Milestone 04 CI maintenance recap has been created
 - the Milestone 04 final docs-only release review has been created
+- the short public-safe status marker has been created at
+  `docs/status/milestone_04_status.md`
 - the release-quality manual workflow remote run has been confirmed at a safe
   high level as Success
 - the existing CI remote run has been confirmed at a safe high level as Success
@@ -64,11 +67,11 @@ Candidate E: no marker; rely only on the final review document
 
 ## 4. Recommended Approach
 
-The initial recommendation is to create a short dedicated status marker in a
-future step, preferably at `docs/status/milestone_04_status.md`.
+The implemented approach is a short dedicated status marker at
+`docs/status/milestone_04_status.md`.
 
-The README should only link to the marker. The public release checklist and the
-final docs-only release review should also link to it once the marker exists.
+The README links to the marker. The public release checklist, recap, final
+docs-only release review, and this design document also link to it.
 
 The marker should:
 
@@ -79,8 +82,8 @@ The marker should:
 - avoid any claim about research quality, scorer quality, model validity,
   production readiness, or data-collection readiness
 
-If the project prefers not to introduce `docs/status/` yet,
-`docs/milestone_04_release_quality_status.md` is an acceptable fallback.
+The marker is intentionally short. Longer context remains in the recap, final
+review, and checklist.
 
 ## 5. Items Allowed In The Marker
 
@@ -135,14 +138,14 @@ Avoid wording such as:
 - "performance validated"
 - "accuracy confirmed"
 
-If a future marker mentions success, the sentence should make the scope clear.
+If the marker mentions success, the sentence should make the scope clear.
 For example, it may say that the release-quality workflow maintenance checks
 completed, but it must not imply that scoring behavior or research conclusions
 were validated.
 
 ## 8. Verification Before Creating The Marker
 
-Before creating the status marker, verify:
+Before updating the status marker, verify:
 
 - the README link path is correct
 - the Milestone 04 final docs-only release review exists
@@ -156,9 +159,8 @@ Before creating the status marker, verify:
 
 ## 9. Future Implementation Checklist
 
-Future marker implementation should:
+Future marker maintenance should:
 
-- create the marker file
 - update the README link
 - update the public release checklist link
 - link from the final docs-only release review
@@ -187,4 +189,5 @@ is enough for release-maintenance status.
 
 - [Milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md)
 - [Milestone 04 final docs-only release review](milestone_04_final_docs_only_release_review.md)
+- [Milestone 04 status](status/milestone_04_status.md)
 - [Public release checklist](public_release_checklist.md)
