@@ -50,6 +50,13 @@ Before starting the first remote run, confirm:
 - [ ] No trigger other than `workflow_dispatch` is configured.
 - [ ] No artifact upload step is configured.
 
+After an action-version update, also confirm:
+
+- [ ] Updated action versions are present in the workflow.
+- [ ] The workflow still has only `workflow_dispatch`.
+- [ ] The remote run warning status is recorded safely as removed, reduced,
+  unchanged, or changed.
+
 If any item is unclear, stop before the remote run and revise the workflow
 design or implementation in a separate step.
 

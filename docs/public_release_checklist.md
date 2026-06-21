@@ -80,6 +80,8 @@ with
 before changing workflow files.
 Before editing action versions, use the
 [release-quality action version update plan](release_quality_action_version_update_plan.md).
+After action-version updates, rerun the manual workflow and record only the safe
+warning status summary.
 
 ## 2. Ignore Rules
 
