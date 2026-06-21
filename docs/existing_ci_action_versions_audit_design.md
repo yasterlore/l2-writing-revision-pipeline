@@ -41,7 +41,7 @@ Current actions used by `.github/workflows/ci.yml`:
 
 | Workflow | Job | Action | Owner Type | Purpose | Warning Relevance |
 | --- | --- | --- | --- | --- | --- |
-| `CI` | `Rust workspace` | `actions/checkout@v4` | GitHub-owned | Checks out the repository before Rust and policy checks | Potentially relevant to GitHub Actions Node runtime deprecation warnings because it is a JavaScript action |
+| `CI` | `Rust workspace` | `actions/checkout@v7` | GitHub-owned | Checks out the repository before Rust and policy checks | Updated in Step 138 to match the release-quality workflow's confirmed stable major and reduce Node runtime warning maintenance risk |
 | `CI` | `Rust workspace` | `dtolnay/rust-toolchain@stable` | third-party | Installs stable Rust with `rustfmt` and `clippy` components | Not one of the GitHub-owned actions noted in the release-quality warning; review separately before changing |
 
 The workflow also runs shell commands for formatting, tests, clippy, synthetic
@@ -54,8 +54,10 @@ record only a short safe summary.
 
 ## 4. Warning Risk Assessment
 
-`actions/checkout@v4` is the main action in existing CI that may be relevant to
-GitHub Actions Node runtime warnings. If GitHub-hosted runners force older
+`actions/checkout@v7` is the GitHub-owned checkout action in existing CI after
+the Step 138 minimal update. It had previously been `actions/checkout@v4`, which
+was the main action in existing CI that could be relevant to GitHub Actions Node
+runtime warnings. If GitHub-hosted runners force older
 internal action runtimes onto a newer Node runtime, CI can still succeed while
 showing a maintenance warning.
 
@@ -120,10 +122,27 @@ Initial recommendation:
 - after any `ci.yml` update, verify via remote CI or PR checks and record only a
   safe warning-status summary
 
-For the currently observed inventory, that means `actions/checkout@v4` is the
-first candidate for a future GitHub-owned action update. The Rust toolchain
-action should not be updated merely because a GitHub-owned Node runtime warning
-was seen elsewhere.
+Step 138 applied the initial minimal update by changing only
+`actions/checkout@v4` to `actions/checkout@v7` in `.github/workflows/ci.yml`.
+The Rust toolchain action remains unchanged and should not be updated merely
+because a GitHub-owned Node runtime warning was seen elsewhere.
+
+## Step 138 Implementation Status
+
+Step 138 updates only the GitHub-owned checkout action in the existing CI
+workflow:
+
+- `.github/workflows/ci.yml`: `actions/checkout@v4` -> `actions/checkout@v7`
+- `.github/workflows/release-quality.yml`: unchanged
+- `dtolnay/rust-toolchain@stable`: unchanged
+- `push` and `pull_request` triggers: unchanged
+- artifact upload: still absent
+- job name, Rust commands, policy check, and smoke checks: unchanged
+
+The update is workflow maintenance only. It does not change scorer logic,
+scoring formula, tie-break behavior, manifest schema, fixtures, or synthetic E2E
+logic. Remote CI or PR checks should still be used to confirm GitHub-hosted
+runner behavior after the update.
 
 ## 7. Verification Plan
 
