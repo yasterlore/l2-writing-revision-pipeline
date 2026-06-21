@@ -39,6 +39,9 @@ Step 120 moved the current allowed-key and forbidden-key constants into
 
 For the shared schema constants design, see
 [Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md).
+For the future sync check design that verifies generated manifests against
+shared constants, see
+[Summary manifest schema sync check design](summary_manifest_schema_sync_check_design.md).
 
 ## 2. Current Manifest Fields
 
@@ -259,6 +262,7 @@ safety because new fields cannot appear quietly.
 
 - [Summary manifest schema hardening design](summary_manifest_schema_hardening_design.md)
 - [Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md)
+- [Summary manifest schema sync check design](summary_manifest_schema_sync_check_design.md)
 - [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md)
 - [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)

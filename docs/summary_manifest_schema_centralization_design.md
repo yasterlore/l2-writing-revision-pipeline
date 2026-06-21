@@ -37,6 +37,10 @@ Step 120 implemented the initial shared shell constants file:
 Summary hash, per-case diagnostic consistency hardening, and wrapper scripts
 remain future work.
 
+For the follow-up design on verifying that shared constants, generated
+manifests, and checker expectations stay aligned, see
+[Summary manifest schema sync check design](summary_manifest_schema_sync_check_design.md).
+
 ## 2. Current State
 
 Current no-config summary manifest state:
@@ -264,6 +268,7 @@ private content.
 
 - [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md)
 - [Summary manifest schema hardening design](summary_manifest_schema_hardening_design.md)
+- [Summary manifest schema sync check design](summary_manifest_schema_sync_check_design.md)
 - [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md)
 - [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
