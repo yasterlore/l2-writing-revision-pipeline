@@ -145,6 +145,8 @@ logic. Remote CI or PR checks should still be used to confirm GitHub-hosted
 runner behavior after the update.
 For the safe record workflow after that remote CI or PR check, see
 [existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md).
+For the consolidated CI maintenance recap after remote confirmations, see
+[milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md).
 
 ## 7. Verification Plan
 
@@ -231,5 +233,6 @@ behavior can appear only on GitHub-hosted runners.
 - [Release-quality action version update plan](release_quality_action_version_update_plan.md)
 - [Release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md)
 - [Existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md)
+- [Milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md)
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md)
 - [Public release checklist](public_release_checklist.md)

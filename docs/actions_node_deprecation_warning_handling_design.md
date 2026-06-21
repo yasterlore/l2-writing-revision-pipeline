@@ -185,6 +185,8 @@ the `ci.yml` checkout action to the same confirmed stable major used by the
 release-quality workflow.
 For the safe recording policy after the existing CI remote run, see
 [existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md).
+For the consolidated Steps 132-140 checkpoint, see
+[milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md).
 
 ## 10. Beginner Notes
 
@@ -209,5 +211,6 @@ local shell checks.
 - [Release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md)
 - [Existing CI action versions audit design](existing_ci_action_versions_audit_design.md)
 - [Existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md)
+- [Milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md)
 - [Release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md)
 - [Public release checklist](public_release_checklist.md)
