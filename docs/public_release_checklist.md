@@ -57,6 +57,8 @@ For a future schema constants sync check, see
 [summary manifest schema sync check design](summary_manifest_schema_sync_check_design.md).
 Run `scripts/check_summary_manifest_schema_sync.sh` after generating the
 no-config summary manifest.
+For release-quality ordering and future CI placement of that command, see
+[summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md).
 
 ## 2. Ignore Rules
 

@@ -43,6 +43,9 @@ file. Step 122 implemented `scripts/check_summary_manifest_schema_sync.sh` as a
 small shell smoke script that verifies generated manifest metadata against those
 shared constants.
 
+For release-quality command ordering and future CI placement, see
+[summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md).
+
 ## 3. Why A Sync Check Is Needed
 
 A sync check is useful because:
@@ -253,4 +256,5 @@ alignment.
 - [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md)
 - [Summary manifest schema hardening design](summary_manifest_schema_hardening_design.md)
 - [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md)
+- [Summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md)
 - [Public release checklist](public_release_checklist.md)

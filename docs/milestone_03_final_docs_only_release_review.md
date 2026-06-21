@@ -78,6 +78,8 @@ collector completes. See
 [synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md).
 Future hardening for atomic summary writes and completion markers is tracked in
 [synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md).
+Summary manifest schema sync release integration is tracked in
+[summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md).
 
 ## 4. Current Safety Boundary
 
@@ -192,4 +194,5 @@ verify synthetic wiring, safe output boundaries, and regression behavior.
 - [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md)
 - [Config-enabled summary collector design](config_enabled_summary_collector_design.md)
 - [Forbidden-term path-safety test hardening design](forbidden_term_path_safety_test_hardening_design.md)
+- [Summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md)
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md)
