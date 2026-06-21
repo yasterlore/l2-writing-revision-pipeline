@@ -10,7 +10,8 @@ Recommended entry points:
 - [Milestone 03 final docs-only release review](milestone_03_final_docs_only_release_review.md): internal release-quality checkpoint; not a formal public release.
 - [Milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md): recap of GitHub Actions Node runtime warning handling, release-quality workflow updates, existing CI checkout update, and safe remote-run recording policy.
 - [Milestone 04 final docs-only release review](milestone_04_final_docs_only_release_review.md): final docs-only readiness review for Milestone 04 CI maintenance documentation.
-- [Milestone 04 status marker design](milestone_04_status_marker_design.md): design for a future public-safe status marker after the Milestone 04 docs-only release review.
+- [Milestone 04 status marker](status/milestone_04_status.md): short public-safe status marker for the Milestone 04 docs-only release review.
+- [Milestone 04 status marker design](milestone_04_status_marker_design.md): design and implementation notes for the public-safe Milestone 04 status marker.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -72,7 +73,8 @@ Recommended entry points:
 - [Existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md): safe record workflow for remote CI results after the existing CI checkout action update.
 - [Milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md): consolidated Step 132-140 CI maintenance recap.
 - [Milestone 04 final docs-only release review](milestone_04_final_docs_only_release_review.md): docs-only final review for Milestone 04 release-readiness.
-- [Milestone 04 status marker design](milestone_04_status_marker_design.md): design for a future short public-safe Milestone 04 status marker; no marker file is created yet.
+- [Milestone 04 status marker](status/milestone_04_status.md): short public-safe status marker for Milestone 04 workflow maintenance documentation.
+- [Milestone 04 status marker design](milestone_04_status_marker_design.md): design and implementation notes for the short public-safe Milestone 04 status marker.
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md): storage and sharing workflow for blank templates and private/local count-only notes.
 - [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md): exception-only checklist before considering any filled observation note for public repository sharing.
 - [Synthetic diagnostic observation note template](templates/synthetic_diagnostic_observation_note_template.md): count-only note template for safe human diagnostic review.
