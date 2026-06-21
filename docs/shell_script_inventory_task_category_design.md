@@ -246,6 +246,8 @@ Low priority:
 ## 11. Relation To Makefile / Justfile
 
 This inventory is input to the next task-runner design step.
+The Makefile vs justfile selection is documented in
+[task runner selection design](task_runner_selection_design.md).
 
 The recommended migration model is:
 
@@ -277,6 +279,7 @@ safe synthetic-only behavior that already works.
 ## Related Documents
 
 - [Orchestration modernization design](orchestration_modernization_design.md)
+- [Task runner selection design](task_runner_selection_design.md)
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
 - [Summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)

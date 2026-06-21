@@ -261,6 +261,8 @@ Short-term work should remain docs-only or low-risk:
 
 The current script inventory and task category design is documented in
 [shell script inventory and task category design](shell_script_inventory_task_category_design.md).
+The Makefile vs justfile selection is documented in
+[task runner selection design](task_runner_selection_design.md).
 
 ## 8. Medium-Term Roadmap
 
@@ -359,6 +361,7 @@ orchestrator only when the project has a real need.
 
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
 - [Shell script inventory and task category design](shell_script_inventory_task_category_design.md)
+- [Task runner selection design](task_runner_selection_design.md)
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md)
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md)
 - [Milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md)
