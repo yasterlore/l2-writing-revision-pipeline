@@ -85,6 +85,8 @@ Before treating Milestone 05 docs as release-ready, review
 [Milestone 05 final docs-only release review](milestone_05_final_docs_only_release_review.md).
 Before creating a short public-safe Milestone 05 marker, review
 [Milestone 05 status marker design](milestone_05_status_marker_design.md).
+For the short public-safe Milestone 05 marker, see
+[Milestone 05 status](status/milestone_05_status.md).
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
 For a future manual GitHub Actions workflow option, see
