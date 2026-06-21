@@ -9,8 +9,8 @@ private validation, or any tuning workflow.
 
 ## 1. Purpose
 
-The purpose of this design is to define a future sync check for the no-config
-summary manifest schema constants.
+The purpose of this design is to define a sync check for the no-config summary
+manifest schema constants.
 
 The sync check should reduce drift between:
 
@@ -39,9 +39,9 @@ Current components:
   schema-related docs and the public release checklist
 
 Step 120 centralized the current manifest schema constants in the shared shell
-file. The generator and checker source that file, but there is not yet a
-dedicated check that verifies generated manifest metadata and docs-facing schema
-expectations are in sync.
+file. Step 122 implemented `scripts/check_summary_manifest_schema_sync.sh` as a
+small shell smoke script that verifies generated manifest metadata against those
+shared constants.
 
 ## 3. Why A Sync Check Is Needed
 
@@ -157,11 +157,18 @@ The sync check must not print:
 Safe status, safe paths, counts, field names, and reason codes are acceptable
 when they do not reveal generated bodies.
 
-## 8. Future Implementation Options
+## 8. Implementation Status And Future Options
 
-Future implementation options:
+Step 122 implements the initial shell smoke script:
 
-- add `scripts/check_summary_manifest_schema_sync.sh`
+- `scripts/check_summary_manifest_schema_sync.sh`
+- sources `scripts/lib/summary_manifest_schema.sh`
+- parses the generated no-config manifest with Python
+- compares keys, versions, expected values, and forbidden-key absence
+- prints only safe status, path, key counts, and case counts
+
+Future options:
+
 - add a Python unittest under `python/test_support/tests/`
 - use both only if each covers a distinct need
 - let the public release checklist call the script once it exists

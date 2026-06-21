@@ -55,6 +55,8 @@ The generator and checker share the current manifest schema constants from
 `scripts/lib/summary_manifest_schema.sh`.
 For a future schema constants sync check, see
 [summary manifest schema sync check design](summary_manifest_schema_sync_check_design.md).
+Run `scripts/check_summary_manifest_schema_sync.sh` after generating the
+no-config summary manifest.
 
 ## 2. Ignore Rules
 
