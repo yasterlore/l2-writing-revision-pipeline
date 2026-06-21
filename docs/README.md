@@ -21,6 +21,7 @@ Recommended entry points:
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md): synthetic-only sequence dataset design for future learner-state inputs.
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md): feature, label, and manifest schema design for future synthetic learner-state sequence datasets.
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md): fail-closed audit design for future sequence features, labels, manifests, splits, joins, and public output.
+- [Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md): design for future valid/invalid synthetic audit fixtures and safe audit result schema.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -87,6 +88,7 @@ Recommended entry points:
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md): design for participant/session/task sequence hierarchy, split boundaries, and label-feature separation.
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md): design for separating future sequence feature rows, label rows, and manifest metadata.
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md): design for fail-closed no-oracle audits before future sequence exporter output is trusted.
+- [Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md): design for future audit fixtures, fail-closed expected results, and safe audit report fields.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.

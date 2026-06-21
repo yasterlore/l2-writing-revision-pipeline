@@ -306,6 +306,11 @@ Recommended order:
 If exporter implementation depends on audit behavior, Step 162 may remain a
 design step and audit implementation can move earlier.
 
+Step 161 follow-up: see
+[Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md)
+for the future valid and invalid synthetic fixture families, expected
+fail-closed results, and safe audit result schema.
+
 ## 16. Beginner Notes
 
 An audit is a check that looks for unsafe or invalid data before later tools
@@ -327,6 +332,7 @@ assuming they are safe.
 ## Related Documents
 
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
+- [Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md)
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Learner-state input representation design](learner_state_input_representation_design.md)
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md)

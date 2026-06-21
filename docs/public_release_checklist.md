@@ -100,6 +100,9 @@ the
 Before implementing learner-state sequence audit code or trusting exporter
 output, review the
 [learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md).
+Before creating learner-state sequence audit fixture files or audit result
+schemas, review the
+[learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md).
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
 For a future manual GitHub Actions workflow option, see
