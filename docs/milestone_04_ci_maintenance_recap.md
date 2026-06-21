@@ -232,6 +232,8 @@ Possible future work:
 - inspect third-party action release notes if warnings appear
 - plan a project Markdown link checker separately
 - decide whether selected release-quality checks should move into PR CI
+- evaluate top-level orchestration modernization without replacing working
+  scripts prematurely
 - keep the manual release-quality workflow as the full check path
 - schedule periodic action version audits
 - continue recording remote-run results only as safe high-level summaries
@@ -272,6 +274,7 @@ on push and pull request and focuses on Rust-centered checks.
 - [Release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md)
 - [Existing CI action versions audit design](existing_ci_action_versions_audit_design.md)
 - [Existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md)
+- [Orchestration modernization design](orchestration_modernization_design.md)
 - [Milestone 04 final docs-only release review](milestone_04_final_docs_only_release_review.md)
 - [Milestone 04 status](status/milestone_04_status.md)
 - [Milestone 04 status marker design](milestone_04_status_marker_design.md)
