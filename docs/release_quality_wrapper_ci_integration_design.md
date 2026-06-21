@@ -115,6 +115,8 @@ Node dependencies are available.
 
 For the manual `workflow_dispatch` version of that option, see
 [release-quality manual workflow design](release_quality_manual_workflow_design.md).
+Step 128 implements that manual workflow without connecting the full wrapper to
+automatic PR CI.
 
 ## 6. Order CI Must Preserve
 
