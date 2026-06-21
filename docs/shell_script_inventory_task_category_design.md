@@ -188,8 +188,8 @@ Future Makefile / justfile target candidates:
 - `check-all`: run the normal success-path release-quality bundle or compose
   its targets carefully
 
-The first task-runner design should prefer targets that call existing scripts,
-not targets that duplicate script logic.
+Step 148 implemented these categories as thin Makefile targets. The targets
+call existing scripts and commands rather than duplicating script logic.
 
 ## 8. Scripts To Keep As Shell
 
@@ -245,9 +245,11 @@ Low priority:
 
 ## 11. Relation To Makefile / Justfile
 
-This inventory is input to the next task-runner design step.
+This inventory was input to the task-runner design step.
 The Makefile vs justfile selection is documented in
 [task runner selection design](task_runner_selection_design.md).
+The initial thin `Makefile` entrypoint now exists and keeps the scripts as the
+compatibility layer.
 
 The recommended migration model is:
 

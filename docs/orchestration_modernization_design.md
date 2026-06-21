@@ -263,6 +263,9 @@ The current script inventory and task category design is documented in
 [shell script inventory and task category design](shell_script_inventory_task_category_design.md).
 The Makefile vs justfile selection is documented in
 [task runner selection design](task_runner_selection_design.md).
+Step 148 added a thin `Makefile` entrypoint for common checks. The Makefile
+calls existing scripts and commands; it does not replace script internals or
+change workflow behavior.
 
 ## 8. Medium-Term Roadmap
 

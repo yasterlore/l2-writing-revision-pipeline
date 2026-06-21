@@ -3,9 +3,11 @@
 This document compares Makefile and justfile as lightweight task-runner options
 for this repository.
 
-It is design documentation only. It does not create a Makefile, justfile, task
-runner, Airflow, Dagster, workflow change, script change, test change, or
-implementation change. It is not a performance evaluation.
+This began as design documentation. Step 148 implemented a thin Makefile
+entrypoint that calls existing scripts and commands without moving script logic
+into Make. It does not create a justfile, Airflow, Dagster, workflow change,
+script change, test change, scorer change, manifest schema change, or
+performance evaluation.
 
 ## 1. Purpose
 
@@ -161,9 +163,20 @@ Recommended initial shape:
 justfile remains a good alternative if the project later prioritizes recipe
 readability over dependency minimization.
 
+Step 148 implementation status:
+
+- `Makefile` now exists as a thin top-level command surface.
+- `make help` lists the implemented targets.
+- `make check-release-quality` calls `scripts/check_release_quality.sh`.
+- `make check-summary-flow` preserves the required summary, manifest sync, and
+  diagnostic distribution order.
+- `make check-all` delegates to `check-release-quality` to avoid duplicating the
+  release-quality command bundle.
+- Existing shell scripts remain available and unchanged.
+
 ## 8. Initial Target Candidates
 
-Initial target candidates for a future Makefile or justfile:
+Initial target candidates implemented in the Step 148 Makefile:
 
 - `check-release-quality`
 - `check-summary-flow`
@@ -175,6 +188,7 @@ Initial target candidates for a future Makefile or justfile:
 - `check-rust`
 - `check-logger`
 - `check-policy`
+- `check-fixtures`
 - `check-all`
 
 Suggested dependency shape:
@@ -185,7 +199,8 @@ Suggested dependency shape:
 - `check-all` should initially avoid duplicating too much wrapper behavior
   unless the target order is explicitly documented
 
-No targets are implemented in this step.
+The implemented targets remain thin wrappers. They do not print generated body
+contents and do not replace the existing scripts.
 
 ## 9. Migration Safety Rules
 
