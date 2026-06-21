@@ -70,7 +70,8 @@ Before designing a Makefile or justfile target set, review
 Before implementing a task runner, review
 [task runner selection design](task_runner_selection_design.md).
 For the current normal success-path wrapper, run
-`scripts/check_release_quality.sh`; Markdown link check remains manual unless a
+`scripts/check_release_quality.sh` or the thin Makefile alias
+`make check-release-quality`; Markdown link check remains manual unless a
 dedicated project command is added later.
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
