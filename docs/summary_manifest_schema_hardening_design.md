@@ -53,11 +53,7 @@ are still future work.
 
 For the allowed-key validation design, see
 [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md).
-<<<<<<< HEAD
-For the follow-up design on centralizing manifest schema constants, see
-=======
 For the shared schema constants design, see
->>>>>>> step120-summary-manifest-shared-schema-constants
 [Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md).
 
 ## 2. Current Manifest State
