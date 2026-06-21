@@ -3,11 +3,14 @@
 This document designs a future public-safe status marker for Milestone 05
 Makefile orchestration documentation.
 
-It is design documentation only. It does not create the status marker file,
-change the Makefile, add or remove Makefile targets, add a justfile, add
-Airflow or Dagster, change workflows, change scripts, change tests, change
-implementation logic, change scorer logic, change the manifest schema, or
-evaluate performance.
+It is design documentation only. It does not change the Makefile, add or
+remove Makefile targets, add a justfile, add Airflow or Dagster, change
+workflows, change scripts, change tests, change implementation logic, change
+scorer logic, change the manifest schema, or evaluate performance.
+
+Step 155 implementation note: the short marker has been created at
+[docs/status/milestone_05_status.md](status/milestone_05_status.md). The
+boundaries in this design remain the maintenance rules for future updates.
 
 ## 1. Purpose
 
@@ -33,9 +36,11 @@ Current state:
 - The Makefile thin entrypoint exists.
 - `.NOTPARALLEL` and `make help` summary-flow guidance are implemented.
 - Public docs do not include raw logs or actual filled run reports.
-- The future status marker file has not been created yet.
+- The short status marker now exists at
+  [docs/status/milestone_05_status.md](status/milestone_05_status.md).
 
-This document only designs that future marker.
+This document records the marker design and the rules for future marker
+updates.
 
 ## 3. Status Marker Options
 
@@ -104,7 +109,7 @@ Cons:
 ## 4. Recommended Approach
 
 Initial recommendation: create a short dedicated status marker at
-`docs/status/milestone_05_status.md` in a later step.
+`docs/status/milestone_05_status.md`. Step 155 implemented this marker.
 
 Recommended boundaries:
 
@@ -196,7 +201,7 @@ Before creating the marker file, verify:
 
 ## 9. Future Implementation Checklist
 
-Future implementation steps:
+Implementation checklist:
 
 - create `docs/status/milestone_05_status.md`
 - update README link
@@ -228,6 +233,7 @@ heavier orchestration needs actually appear.
 
 ## Related Documents
 
+- [Milestone 05 status marker](status/milestone_05_status.md)
 - [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md)
 - [Milestone 05 final docs-only release review](milestone_05_final_docs_only_release_review.md)
 - [Orchestration modernization design](orchestration_modernization_design.md)
