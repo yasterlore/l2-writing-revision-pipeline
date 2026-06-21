@@ -59,6 +59,7 @@ Recommended entry points:
 - [Summary manifest schema sync check design](summary_manifest_schema_sync_check_design.md): design for a future safe check that shared manifest constants, generated manifests, and checker expectations stay aligned.
 - [Summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md): design for adding the manifest schema sync check to future release-quality command flow.
 - [Release-quality command bundle design](release_quality_command_bundle_design.md): design and implementation notes for the normal success-path release-quality wrapper script.
+- [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md): storage and sharing workflow for blank templates and private/local count-only notes.
 - [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md): exception-only checklist before considering any filled observation note for public repository sharing.
 - [Synthetic diagnostic observation note template](templates/synthetic_diagnostic_observation_note_template.md): count-only note template for safe human diagnostic review.

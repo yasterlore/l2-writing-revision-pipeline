@@ -64,6 +64,8 @@ For a broader future release-quality command bundle order, see
 For the current normal success-path wrapper, run
 `scripts/check_release_quality.sh`; Markdown link check remains manual unless a
 dedicated project command is added later.
+For future CI integration of that wrapper, see
+[release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
 
 ## 2. Ignore Rules
 
