@@ -59,6 +59,8 @@ Run `scripts/check_summary_manifest_schema_sync.sh` after generating the
 no-config summary manifest.
 For release-quality ordering and future CI placement of that command, see
 [summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md).
+For a broader future release-quality command bundle order, see
+[release-quality command bundle design](release_quality_command_bundle_design.md).
 
 ## 2. Ignore Rules
 

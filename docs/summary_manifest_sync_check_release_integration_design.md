@@ -215,6 +215,10 @@ Possible future work:
 Any future integration should update the public release checklist and preserve
 safe-output behavior.
 
+For the broader command ordering that would contain this sync check alongside
+Python, Rust, TypeScript, config, and repository hygiene checks, see
+[release-quality command bundle design](release_quality_command_bundle_design.md).
+
 ## 11. Beginner Notes
 
 Release integration means deciding where a check belongs in the list of commands
@@ -237,4 +241,5 @@ schema constants agree.
 - [Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md)
 - [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
+- [Release-quality command bundle design](release_quality_command_bundle_design.md)
 - [Public release checklist](public_release_checklist.md)
