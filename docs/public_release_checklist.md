@@ -72,6 +72,8 @@ The current manual workflow is `.github/workflows/release-quality.yml` and can
 run the release-quality wrapper from GitHub Actions on demand.
 Before relying on its first remote run, use the
 [release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md).
+After the first remote run, record only safe high-level status with the blank
+[release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md).
 
 ## 2. Ignore Rules
 
