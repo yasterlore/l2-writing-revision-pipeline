@@ -75,6 +75,8 @@ For the current normal success-path wrapper, run
 dedicated project command is added later.
 Before expanding Makefile usage, review
 [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md).
+For summary-flow parallel execution and shared `tmp/` output guidance, review
+[Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md).
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
 For a future manual GitHub Actions workflow option, see
