@@ -342,6 +342,7 @@ if [ "$overall_status" -eq 0 ]; then
   python3 -c 'import json, sys
 path, run_id, completed_at, summary_path, case_count, diagnostic_summary_count = sys.argv[1:]
 manifest = {
+    "manifest_schema_version": "1.0",
     "run_id": run_id,
     "completed_at": completed_at,
     "summary_path": summary_path,

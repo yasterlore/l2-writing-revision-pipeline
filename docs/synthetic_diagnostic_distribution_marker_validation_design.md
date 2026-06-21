@@ -34,6 +34,7 @@ Step 114 implemented required marker validation in
 - `summary.manifest.json` is now a required no-config precondition
 - missing, malformed, invalid, or body-like marker fields fail closed
 - marker `case_count` must match the summary data-row count
+- marker `manifest_schema_version` must be `1.0`
 - config-enabled summary paths remain rejected
 - marker JSON body and summary CSV body are not printed
 
@@ -78,6 +79,7 @@ Current validation checks:
 
 - marker file exists
 - marker is valid JSON
+- `manifest_schema_version` is `1.0`
 - `content_suppressed` is `true`
 - `no_config_summary` is `true`
 - `case_count` is an integer greater than 0

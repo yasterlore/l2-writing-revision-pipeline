@@ -62,6 +62,7 @@ from pathlib import Path
 summary_path = Path(sys.argv[1])
 marker_path = Path(sys.argv[2])
 expected_summary_path = sys.argv[3]
+expected_manifest_schema_version = "1.0"
 
 forbidden_marker_keys = {
     "raw_summary_body",
@@ -180,6 +181,15 @@ if marker.get("content_suppressed") is not True:
         "summary_manifest_content_suppressed_not_true",
         summary_csv=summary_path,
         summary_manifest=marker_path,
+    )
+
+manifest_schema_version = marker.get("manifest_schema_version")
+if manifest_schema_version != expected_manifest_schema_version:
+    fail_precondition(
+        "summary_manifest_unexpected_manifest_schema_version",
+        summary_csv=summary_path,
+        summary_manifest=marker_path,
+        expected_manifest_schema_version=expected_manifest_schema_version,
     )
 
 if marker.get("no_config_summary") is not True:
@@ -312,6 +322,7 @@ if not ok_rows:
 print("synthetic_diagnostic_distribution_check: ok")
 print(f"summary_csv: {summary_path}")
 print(f"summary_manifest: {marker_path}")
+print(f"manifest_schema_version: {manifest_schema_version}")
 print(f"cases: {len(rows)}")
 print(f"marker_case_count: {case_count}")
 print(f"diagnostic_ok_cases: {len(ok_rows)}")

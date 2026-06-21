@@ -34,6 +34,8 @@ Step 112 implemented the initial no-config summary manifest:
 - after a successful no-config summary run, the temp marker is renamed to
   `tmp/synthetic_e2e_summary/summary.manifest.json`
 - the marker contains safe count-only metadata only
+- the marker includes `manifest_schema_version="1.0"` for manifest JSON schema
+  compatibility
 - if the summary run fails, the marker is not created
 - stale marker files are removed at the start of a new summary run
 - `scripts/check_synthetic_diagnostic_distribution.sh` now requires and
@@ -185,6 +187,7 @@ required precondition.
 Allowed marker fields:
 
 - `run_id`
+- `manifest_schema_version`
 - `completed_at`
 - `summary_path`
 - `case_count`
