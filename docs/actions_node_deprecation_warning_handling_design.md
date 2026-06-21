@@ -178,6 +178,8 @@ described there; a follow-up manual remote run is still required to confirm the
 warning status.
 For the safe recording policy after that remote run, see
 [release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md).
+For the separate existing CI action-version audit before changing `ci.yml`, see
+[existing CI action versions audit design](existing_ci_action_versions_audit_design.md).
 
 ## 10. Beginner Notes
 
@@ -200,5 +202,6 @@ local shell checks.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md)
 - [Release-quality action version update plan](release_quality_action_version_update_plan.md)
 - [Release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md)
+- [Existing CI action versions audit design](existing_ci_action_versions_audit_design.md)
 - [Release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md)
 - [Public release checklist](public_release_checklist.md)
