@@ -257,6 +257,11 @@ Recommended order:
 
 Exporter implementation should wait until schema and audit design are complete.
 
+Step 159 follow-up: see
+[Learner-state sequence schema design](learner_state_sequence_schema_design.md)
+for the planned feature row, label row, manifest, join-key, and versioning
+schema boundaries.
+
 ## 14. Beginner Notes
 
 A sequence dataset is a dataset where records are ordered. Here, the records
@@ -280,6 +285,7 @@ sequence rules, and audits are still being defined.
 ## Related Documents
 
 - [Learner-state input representation design](learner_state_input_representation_design.md)
+- [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Synthetic data policy](12_synthetic_data_policy.md)
