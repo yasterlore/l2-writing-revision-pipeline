@@ -132,6 +132,8 @@ For the dedicated marker or run-id manifest design, see
 [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md).
 For checker-side marker validation design, see
 [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md).
+For future manifest schema hardening, see
+[Summary manifest schema hardening design](summary_manifest_schema_hardening_design.md).
 
 ## 6. CI And Manual Run Guidance
 
@@ -232,6 +234,7 @@ It should be interpreted using ordering context, not ignored.
 - [Synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md)
 - [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md)
 - [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md)
+- [Summary manifest schema hardening design](summary_manifest_schema_hardening_design.md)
 - [Safe output scan helper adoption audit](safe_output_scan_helper_adoption_audit.md)
 - [Public release checklist](public_release_checklist.md)
 - [Milestone 03 final docs-only release review](milestone_03_final_docs_only_release_review.md)

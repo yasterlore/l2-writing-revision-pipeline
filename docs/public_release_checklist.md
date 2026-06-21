@@ -44,6 +44,8 @@ For the future no-config summary marker or run-id manifest design, see
 [synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md).
 For checker-side marker validation, see
 [synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md).
+For future manifest schema hardening, see
+[summary manifest schema hardening design](summary_manifest_schema_hardening_design.md).
 
 ## 2. Ignore Rules
 

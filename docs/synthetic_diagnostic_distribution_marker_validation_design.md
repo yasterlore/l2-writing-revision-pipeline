@@ -39,6 +39,9 @@ Step 114 implemented required marker validation in
 
 This implementation remains no-config only.
 
+For future stricter manifest schema options, see
+[Summary manifest schema hardening design](summary_manifest_schema_hardening_design.md).
+
 ## 2. Current State
 
 Current state:
@@ -217,6 +220,7 @@ status and count fields instead of dumping file contents.
 ## 11. Related Documents
 
 - [Synthetic E2E summary completion marker design](synthetic_e2e_summary_completion_marker_design.md)
+- [Summary manifest schema hardening design](summary_manifest_schema_hardening_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
 - [Synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md)
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md)
