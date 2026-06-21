@@ -187,6 +187,8 @@ For the safe recording policy after the existing CI remote run, see
 [existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md).
 For the consolidated Steps 132-140 checkpoint, see
 [milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md).
+For the final docs-only release-readiness review, see
+[milestone 04 final docs-only release review](milestone_04_final_docs_only_release_review.md).
 
 ## 10. Beginner Notes
 
@@ -212,5 +214,6 @@ local shell checks.
 - [Existing CI action versions audit design](existing_ci_action_versions_audit_design.md)
 - [Existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md)
 - [Milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md)
+- [Milestone 04 final docs-only release review](milestone_04_final_docs_only_release_review.md)
 - [Release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md)
 - [Public release checklist](public_release_checklist.md)

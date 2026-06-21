@@ -238,6 +238,8 @@ Possible future work:
 
 Any future public record should avoid raw logs, run URLs with private context,
 body dumps, and performance claims.
+For the final docs-only release-readiness review of this milestone, see
+[milestone 04 final docs-only release review](milestone_04_final_docs_only_release_review.md).
 
 ## 11. Beginner Notes
 
@@ -266,4 +268,5 @@ on push and pull request and focuses on Rust-centered checks.
 - [Release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md)
 - [Existing CI action versions audit design](existing_ci_action_versions_audit_design.md)
 - [Existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md)
+- [Milestone 04 final docs-only release review](milestone_04_final_docs_only_release_review.md)
 - [Public release checklist](public_release_checklist.md)
