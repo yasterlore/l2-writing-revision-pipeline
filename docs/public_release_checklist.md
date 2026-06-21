@@ -88,6 +88,8 @@ Before changing existing push/pull-request CI action versions, use
 [existing CI action versions audit design](existing_ci_action_versions_audit_design.md).
 The current existing CI checkout action has been minimally updated; confirm the
 next remote CI or PR run with a safe warning-status summary only.
+Before adding any public note about that remote CI run, use
+[existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md).
 
 ## 2. Ignore Rules
 
