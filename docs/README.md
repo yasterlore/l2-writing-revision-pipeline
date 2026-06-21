@@ -61,6 +61,7 @@ Recommended entry points:
 - [Release-quality command bundle design](release_quality_command_bundle_design.md): design and implementation notes for the normal success-path release-quality wrapper script.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
+- [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md): storage and sharing workflow for blank templates and private/local count-only notes.
 - [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md): exception-only checklist before considering any filled observation note for public repository sharing.
 - [Synthetic diagnostic observation note template](templates/synthetic_diagnostic_observation_note_template.md): count-only note template for safe human diagnostic review.

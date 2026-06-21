@@ -70,6 +70,8 @@ For a future manual GitHub Actions workflow option, see
 [release-quality manual workflow design](release_quality_manual_workflow_design.md).
 The current manual workflow is `.github/workflows/release-quality.yml` and can
 run the release-quality wrapper from GitHub Actions on demand.
+Before relying on its first remote run, use the
+[release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md).
 
 ## 2. Ignore Rules
 
