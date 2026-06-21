@@ -117,6 +117,8 @@ For the manual `workflow_dispatch` version of that option, see
 [release-quality manual workflow design](release_quality_manual_workflow_design.md).
 Step 128 implements that manual workflow without connecting the full wrapper to
 automatic PR CI.
+Before relying on the first remote run of that workflow, use the
+[release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md).
 
 ## 6. Order CI Must Preserve
 
@@ -230,6 +232,7 @@ failure handling harder to understand.
 
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md)
+- [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md)
 - [Summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
 - [Public release checklist](public_release_checklist.md)
