@@ -40,6 +40,8 @@ remain future work.
 For the follow-up design on verifying that shared constants, generated
 manifests, and checker expectations stay aligned, see
 [Summary manifest schema sync check design](summary_manifest_schema_sync_check_design.md).
+Step 122 implements the initial shell smoke sync check as
+`scripts/check_summary_manifest_schema_sync.sh`.
 
 ## 2. Current State
 
