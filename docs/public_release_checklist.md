@@ -73,6 +73,8 @@ For the current normal success-path wrapper, run
 `scripts/check_release_quality.sh` or the thin Makefile alias
 `make check-release-quality`; Markdown link check remains manual unless a
 dedicated project command is added later.
+Before expanding Makefile usage, review
+[Makefile entrypoint safety review](makefile_entrypoint_safety_review.md).
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
 For a future manual GitHub Actions workflow option, see

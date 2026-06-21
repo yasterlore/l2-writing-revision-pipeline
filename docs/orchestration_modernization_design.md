@@ -266,6 +266,8 @@ The Makefile vs justfile selection is documented in
 Step 148 added a thin `Makefile` entrypoint for common checks. The Makefile
 calls existing scripts and commands; it does not replace script internals or
 change workflow behavior.
+The Makefile adoption and safety review is documented in
+[Makefile entrypoint safety review](makefile_entrypoint_safety_review.md).
 
 ## 8. Medium-Term Roadmap
 
