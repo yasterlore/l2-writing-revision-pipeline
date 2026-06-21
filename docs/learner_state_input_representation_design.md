@@ -232,6 +232,10 @@ Recommended next steps:
 The order may be adjusted, but estimator implementation should wait until the
 sequence dataset design, input schema, and no-oracle audit plan are complete.
 
+Step 158 follow-up: see
+[Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
+for the next sequence-level planning document.
+
 ## 13. Beginner Notes
 
 An input representation is the shape of the data a future model is allowed to
@@ -257,6 +261,7 @@ definition and representation are still being designed.
 
 ## Related Documents
 
+- [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Synthetic data policy](12_synthetic_data_policy.md)
