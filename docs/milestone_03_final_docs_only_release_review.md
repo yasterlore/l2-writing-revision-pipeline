@@ -80,6 +80,8 @@ Future hardening for atomic summary writes and completion markers is tracked in
 [synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md).
 Summary manifest schema sync release integration is tracked in
 [summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md).
+Future release-quality command bundle ordering is tracked in
+[release-quality command bundle design](release_quality_command_bundle_design.md).
 
 ## 4. Current Safety Boundary
 
@@ -195,4 +197,5 @@ verify synthetic wiring, safe output boundaries, and regression behavior.
 - [Config-enabled summary collector design](config_enabled_summary_collector_design.md)
 - [Forbidden-term path-safety test hardening design](forbidden_term_path_safety_test_hardening_design.md)
 - [Summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md)
+- [Release-quality command bundle design](release_quality_command_bundle_design.md)
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md)
