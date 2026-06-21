@@ -161,6 +161,10 @@ Recommended Step 157 candidates:
 
 Preferred next step: learner-state input representation design.
 
+Step 157 follow-up: see
+[Learner-state input representation design](learner_state_input_representation_design.md)
+for the first detailed design step after this next-phase plan.
+
 ## 9. Migration / Dependency Considerations
 
 The Makefile entrypoint does not change research implementation behavior.
@@ -201,6 +205,7 @@ pretending that implementation or performance evaluation has already happened.
 
 ## Related Documents
 
+- [Learner-state input representation design](learner_state_input_representation_design.md)
 - [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md)
 - [Milestone 05 status marker](status/milestone_05_status.md)
 - [No-oracle policy](03_no_oracle_policy.md)
