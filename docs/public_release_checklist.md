@@ -78,6 +78,9 @@ Before expanding Makefile usage, review
 For summary-flow parallel execution and shared `tmp/` output guidance, review
 [Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md).
 Use `make check-summary-flow` rather than parallel summary-related targets.
+For the consolidated Step 145-151 Makefile adoption and orchestration
+modernization checkpoint, see
+[Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md).
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
 For a future manual GitHub Actions workflow option, see

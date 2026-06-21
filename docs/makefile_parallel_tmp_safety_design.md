@@ -273,4 +273,5 @@ checks. Heavier orchestration can wait until the need is real.
 - [Task runner selection design](task_runner_selection_design.md)
 - [Shell script inventory and task category design](shell_script_inventory_task_category_design.md)
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
+- [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md)
 - [Public release checklist](public_release_checklist.md)
