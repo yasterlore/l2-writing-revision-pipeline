@@ -113,6 +113,9 @@ For the next implementation step, the smallest safe CI integration would be a
 dedicated optional or manual job that runs the wrapper after Python, Rust, and
 Node dependencies are available.
 
+For the manual `workflow_dispatch` version of that option, see
+[release-quality manual workflow design](release_quality_manual_workflow_design.md).
+
 ## 6. Order CI Must Preserve
 
 A future CI job must preserve this order:
@@ -224,6 +227,7 @@ failure handling harder to understand.
 ## 12. Related Documents
 
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
+- [Release-quality manual workflow design](release_quality_manual_workflow_design.md)
 - [Summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
 - [Public release checklist](public_release_checklist.md)

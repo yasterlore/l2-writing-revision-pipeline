@@ -84,6 +84,8 @@ Future release-quality command bundle ordering is tracked in
 [release-quality command bundle design](release_quality_command_bundle_design.md).
 Future CI integration for the release-quality wrapper is tracked in
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
+The manual GitHub Actions workflow option is tracked in
+[release-quality manual workflow design](release_quality_manual_workflow_design.md).
 
 ## 4. Current Safety Boundary
 
@@ -201,4 +203,5 @@ verify synthetic wiring, safe output boundaries, and regression behavior.
 - [Summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md)
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md)
+- [Release-quality manual workflow design](release_quality_manual_workflow_design.md)
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md)
