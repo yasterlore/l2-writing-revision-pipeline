@@ -35,6 +35,7 @@ Step 114 implemented required marker validation in
 - missing, malformed, invalid, or body-like marker fields fail closed
 - marker `case_count` must match the summary data-row count
 - marker `manifest_schema_version` must be `1.0`
+- marker keys must be allowed for `manifest_schema_version="1.0"`
 - config-enabled summary paths remain rejected
 - marker JSON body and summary CSV body are not printed
 
@@ -42,7 +43,7 @@ This implementation remains no-config only.
 
 For future stricter manifest schema options, see
 [Summary manifest schema hardening design](summary_manifest_schema_hardening_design.md).
-For the follow-up design on rejecting unknown manifest keys, see
+For the implemented design on rejecting unknown manifest keys, see
 [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md).
 
 ## 2. Current State
@@ -82,6 +83,7 @@ Current validation checks:
 - marker file exists
 - marker is valid JSON
 - `manifest_schema_version` is `1.0`
+- all manifest keys are allowed for version `1.0`
 - `content_suppressed` is `true`
 - `no_config_summary` is `true`
 - `case_count` is an integer greater than 0

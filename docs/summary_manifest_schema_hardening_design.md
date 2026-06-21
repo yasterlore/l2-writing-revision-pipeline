@@ -37,11 +37,17 @@ Step 116 implemented the initial manifest schema-version hardening:
 - `summary_schema_version` remains separate and describes the summary CSV
   schema compatibility
 
+Step 118 implemented strict allowed-key validation for
+`manifest_schema_version="1.0"` in the diagnostic distribution checker:
+
+- unknown manifest keys fail closed as precondition errors
+- explicit forbidden body-like keys remain a separate fail-closed reason
+- the manifest body is not printed
+
 Summary hash, per-case diagnostic consistency hardening, and wrapper scripts
 are still future work.
 
-For the follow-up design that narrows `manifest_schema_version="1.0"` to a
-strict allowed-key list, see
+For the allowed-key validation design, see
 [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md).
 
 ## 2. Current Manifest State
@@ -74,6 +80,7 @@ The diagnostic distribution check currently validates:
 - manifest file exists
 - manifest is valid JSON
 - `manifest_schema_version` is the expected value
+- all keys are allowed for `manifest_schema_version="1.0"`
 - `content_suppressed` is `true`
 - `no_config_summary` is `true`
 - `case_count` is an integer greater than 0

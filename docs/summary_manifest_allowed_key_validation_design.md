@@ -21,7 +21,18 @@ The goals are:
   accident
 - preserve output safety, privacy, and no-oracle boundaries
 
-This design does not implement allowed-key validation yet.
+Step 118 implemented the initial checker-side allowed-key validation for
+`manifest_schema_version="1.0"`:
+
+- `scripts/check_synthetic_diagnostic_distribution.sh` rejects unknown manifest
+  keys as precondition failures
+- explicit forbidden body-like keys still fail with the forbidden-key reason
+  before the unknown-key check
+- the manifest schema itself is unchanged
+- the checker does not print the manifest body
+
+Summary hash, per-case diagnostic consistency hardening, and wrapper scripts
+remain future work.
 
 ## 2. Current Manifest Fields
 
@@ -49,6 +60,7 @@ The diagnostic distribution check currently validates:
 - required marker exists
 - marker is valid JSON
 - `manifest_schema_version` has the expected value
+- all marker keys are in the allowed-key list for version `1.0`
 - `content_suppressed` is `true`
 - `no_config_summary` is `true`
 - `case_count` is an integer greater than zero
@@ -182,6 +194,8 @@ Recommended behavior:
 - if the key is body-like or explicitly forbidden, fail with the forbidden-key
   reason
 - do not silently ignore unknown keys
+
+Step 118 implements this policy for `manifest_schema_version="1.0"`.
 
 This policy makes schema drift visible while keeping stdout/stderr safe.
 

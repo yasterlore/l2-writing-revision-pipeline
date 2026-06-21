@@ -49,7 +49,8 @@ For future manifest schema hardening, see
 For future strict manifest allowed-key validation, see
 [summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md).
 The current no-config manifest includes a required `manifest_schema_version`
-checked by the diagnostic distribution smoke.
+checked by the diagnostic distribution smoke, and unknown manifest keys fail
+closed for the current manifest schema.
 
 ## 2. Ignore Rules
 
