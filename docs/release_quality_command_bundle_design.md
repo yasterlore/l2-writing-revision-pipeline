@@ -259,6 +259,9 @@ than introducing a new checker.
 Conflict marker grep is included as a normal success-path hygiene check. It
 excludes `.git`, `target`, `node_modules`, `tmp`, and generated web build
 directories, and reports only file and line locations when markers are found.
+For a broader staged plan to reduce shell orchestration risk without replacing
+the existing scripts immediately, see
+[orchestration modernization design](orchestration_modernization_design.md).
 
 ## 10. Beginner Notes
 
@@ -286,5 +289,6 @@ metadata, repository health, and regression boundaries.
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md)
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md)
+- [Orchestration modernization design](orchestration_modernization_design.md)
 - [Public release checklist](public_release_checklist.md)
 - [Milestone 03 final docs-only release review](milestone_03_final_docs_only_release_review.md)

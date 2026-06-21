@@ -61,6 +61,10 @@ For release-quality ordering and future CI placement of that command, see
 [summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md).
 For a broader future release-quality command bundle order, see
 [release-quality command bundle design](release_quality_command_bundle_design.md).
+For a staged response to shell-script orchestration risk, see
+[orchestration modernization design](orchestration_modernization_design.md);
+do not introduce a task runner or scheduler without a separate implementation
+step.
 For the current normal success-path wrapper, run
 `scripts/check_release_quality.sh`; Markdown link check remains manual unless a
 dedicated project command is added later.
