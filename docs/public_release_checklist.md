@@ -82,6 +82,8 @@ Before editing action versions, use the
 [release-quality action version update plan](release_quality_action_version_update_plan.md).
 After action-version updates, rerun the manual workflow and record only the safe
 warning status summary.
+Before adding any public note about that rerun, use
+[release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md).
 
 ## 2. Ignore Rules
 

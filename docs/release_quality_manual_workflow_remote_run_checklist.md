@@ -137,6 +137,9 @@ reviewed.
 
 For a blank safe reporting format, use the
 [release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md).
+For action-update follow-up runs, use the
+[release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md)
+before deciding whether anything should be public.
 
 ## 8. Failure Record Policy
 
@@ -194,4 +197,5 @@ history.
 - [Release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md)
 - [GitHub Actions Node deprecation warning handling design](actions_node_deprecation_warning_handling_design.md)
 - [Release-quality action version update plan](release_quality_action_version_update_plan.md)
+- [Release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md)
 - [Public release checklist](public_release_checklist.md)

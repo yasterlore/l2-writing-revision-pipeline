@@ -176,6 +176,8 @@ For the implementation planning step before editing workflow files, see
 Step 134 implements the minimal release-quality workflow action-version update
 described there; a follow-up manual remote run is still required to confirm the
 warning status.
+For the safe recording policy after that remote run, see
+[release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md).
 
 ## 10. Beginner Notes
 
@@ -197,5 +199,6 @@ local shell checks.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md)
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md)
 - [Release-quality action version update plan](release_quality_action_version_update_plan.md)
+- [Release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md)
 - [Release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md)
 - [Public release checklist](public_release_checklist.md)
