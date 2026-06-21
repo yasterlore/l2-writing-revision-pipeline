@@ -86,6 +86,8 @@ Before adding any public note about that rerun, use
 [release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md).
 Before changing existing push/pull-request CI action versions, use
 [existing CI action versions audit design](existing_ci_action_versions_audit_design.md).
+The current existing CI checkout action has been minimally updated; confirm the
+next remote CI or PR run with a safe warning-status summary only.
 
 ## 2. Ignore Rules
 

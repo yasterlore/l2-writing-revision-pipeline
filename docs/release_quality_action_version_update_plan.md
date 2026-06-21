@@ -210,3 +210,5 @@ For safe recording after the remote run, use
 For the separate review of the existing push/pull-request CI workflow, use
 [existing CI action versions audit design](existing_ci_action_versions_audit_design.md)
 before changing `.github/workflows/ci.yml`.
+Step 138 then updates only `ci.yml`'s GitHub-owned checkout action, separately
+from the release-quality workflow action-version update.

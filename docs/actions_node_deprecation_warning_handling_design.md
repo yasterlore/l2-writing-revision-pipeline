@@ -180,6 +180,9 @@ For the safe recording policy after that remote run, see
 [release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md).
 For the separate existing CI action-version audit before changing `ci.yml`, see
 [existing CI action versions audit design](existing_ci_action_versions_audit_design.md).
+Step 138 applies the corresponding minimal existing CI update by changing only
+the `ci.yml` checkout action to the same confirmed stable major used by the
+release-quality workflow.
 
 ## 10. Beginner Notes
 
