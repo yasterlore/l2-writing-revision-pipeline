@@ -212,6 +212,7 @@ research performance result.
 ## Related Documents
 
 - [Milestone 05 final docs-only release review](milestone_05_final_docs_only_release_review.md)
+- [Milestone 05 status marker design](milestone_05_status_marker_design.md)
 - [Orchestration modernization design](orchestration_modernization_design.md)
 - [Shell script inventory and task category design](shell_script_inventory_task_category_design.md)
 - [Task runner selection design](task_runner_selection_design.md)
