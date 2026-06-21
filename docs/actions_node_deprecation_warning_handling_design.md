@@ -183,6 +183,8 @@ For the separate existing CI action-version audit before changing `ci.yml`, see
 Step 138 applies the corresponding minimal existing CI update by changing only
 the `ci.yml` checkout action to the same confirmed stable major used by the
 release-quality workflow.
+For the safe recording policy after the existing CI remote run, see
+[existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md).
 
 ## 10. Beginner Notes
 
@@ -206,5 +208,6 @@ local shell checks.
 - [Release-quality action version update plan](release_quality_action_version_update_plan.md)
 - [Release-quality action update remote-run record workflow](release_quality_action_update_remote_run_record_workflow.md)
 - [Existing CI action versions audit design](existing_ci_action_versions_audit_design.md)
+- [Existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md)
 - [Release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md)
 - [Public release checklist](public_release_checklist.md)
