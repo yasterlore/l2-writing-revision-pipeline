@@ -81,6 +81,8 @@ Use `make check-summary-flow` rather than parallel summary-related targets.
 For the consolidated Step 145-151 Makefile adoption and orchestration
 modernization checkpoint, see
 [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md).
+Before treating Milestone 05 docs as release-ready, review
+[Milestone 05 final docs-only release review](milestone_05_final_docs_only_release_review.md).
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
 For a future manual GitHub Actions workflow option, see
