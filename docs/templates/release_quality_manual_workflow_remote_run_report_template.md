@@ -123,6 +123,7 @@ Decision note:
 - Local command to rerun:
 - Docs to update:
 - Next step:
+- GitHub Actions warning follow-up, if any:
 
 Notes:
 
@@ -161,4 +162,5 @@ Keep public records high-level so the repository history remains safe to share.
 
 - [Release-quality manual workflow remote-run checklist](../release_quality_manual_workflow_remote_run_checklist.md)
 - [Release-quality manual workflow design](../release_quality_manual_workflow_design.md)
+- [GitHub Actions Node deprecation warning handling design](../actions_node_deprecation_warning_handling_design.md)
 - [Public release checklist](../public_release_checklist.md)

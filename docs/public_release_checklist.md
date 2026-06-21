@@ -74,6 +74,10 @@ Before relying on its first remote run, use the
 [release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md).
 After the first remote run, record only safe high-level status with the blank
 [release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md).
+If the remote run succeeds with a GitHub Actions Node runtime warning, track it
+with
+[GitHub Actions Node deprecation warning handling design](actions_node_deprecation_warning_handling_design.md)
+before changing workflow files.
 
 ## 2. Ignore Rules
 
