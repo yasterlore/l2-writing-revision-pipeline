@@ -3,10 +3,11 @@
 This document describes parallel execution and shared `tmp/` output safety for
 the thin Makefile entrypoint introduced in Step 148.
 
-It is design documentation only. It does not change the Makefile, add or remove
-Makefile targets, add `.NOTPARALLEL`, add lock files, isolate temp directories,
-change scripts, change workflows, change tests, change scorer logic, change the
-manifest schema, or evaluate performance.
+This began as design documentation. Step 151 implemented minimal Makefile
+sequential safety guidance by adding `.NOTPARALLEL` and a short `make help`
+warning. It does not add or remove Makefile targets, add lock files, isolate
+temp directories, change scripts, change workflows, change tests, change scorer
+logic, change the manifest schema, or evaluate performance.
 
 ## 1. Purpose
 
@@ -31,8 +32,10 @@ Current state:
   `summary -> manifest sync -> diagnostic distribution`.
 - `tmp/synthetic_e2e_summary/` is generated and then read by follow-up checks.
 - `check-release-quality` calls the existing release-quality wrapper script.
-- Makefile targets and shell scripts do not currently enforce global parallel
-  safety.
+- Makefile now uses `.NOTPARALLEL` as a Make-level guard against accidental
+  parallel target execution.
+- `make help` warns not to use `make -j` with summary-flow targets.
+- shell scripts do not currently enforce global parallel safety outside Make.
 - GitHub Actions workflows still call their existing commands and are not
   switched to Makefile targets.
 
@@ -194,8 +197,8 @@ Initial recommendation:
 - do not use `make -j` for summary-flow targets
 - keep `scripts/check_release_quality.sh` and `make check-release-quality` as
   the normal release-quality path
-- consider adding `.NOTPARALLEL` or explicit sequential guidance to the
-  Makefile in a later implementation step
+- use the Step 151 `.NOTPARALLEL` and help guidance as the initial Make-level
+  protection
 - keep current atomic write and marker validation behavior
 - defer lock files and per-run temp directory isolation until the need is
   clearer
@@ -239,8 +242,8 @@ Recommended developer workflow:
 
 Future implementation options to evaluate:
 
-- add `.NOTPARALLEL` to the Makefile
-- add Makefile comments for sequential-only summary targets
+- decide whether additional Makefile comments for sequential-only summary
+  targets are needed
 - add public release checklist guidance for `make check-summary-flow`
 - decide whether a summary-flow lock file is worth the added complexity
 - decide whether per-run temp directory isolation is needed

@@ -178,6 +178,8 @@ The post-adoption safety review is documented in
 [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md).
 Parallel execution and shared `tmp/` output safety are documented in
 [Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md).
+Step 151 added `.NOTPARALLEL` and a short help warning without changing target
+names or script behavior.
 
 ## 8. Initial Target Candidates
 

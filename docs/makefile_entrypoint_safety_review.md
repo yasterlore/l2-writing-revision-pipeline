@@ -89,6 +89,8 @@ delegating to `check-release-quality`.
 
 The Makefile should not be treated as parallel-safe orchestration. Dependent
 checks should be run through the explicit ordered targets.
+Step 151 added Make-level sequential guidance with `.NOTPARALLEL` and a short
+`make help` warning.
 Parallel execution and shared `tmp/` output risks are documented in
 [Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md).
 
