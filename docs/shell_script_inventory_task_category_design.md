@@ -192,6 +192,8 @@ Step 148 implemented these categories as thin Makefile targets. The targets
 call existing scripts and commands rather than duplicating script logic.
 The adoption and safety review is documented in
 [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md).
+Parallel execution and shared `tmp/` output safety are documented in
+[Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md).
 
 ## 8. Scripts To Keep As Shell
 
@@ -254,6 +256,8 @@ The initial thin `Makefile` entrypoint now exists and keeps the scripts as the
 compatibility layer.
 The Makefile adoption review is documented in
 [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md).
+The parallel execution and shared `tmp/` output design is documented in
+[Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md).
 
 The recommended migration model is:
 

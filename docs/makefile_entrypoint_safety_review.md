@@ -89,6 +89,8 @@ delegating to `check-release-quality`.
 
 The Makefile should not be treated as parallel-safe orchestration. Dependent
 checks should be run through the explicit ordered targets.
+Parallel execution and shared `tmp/` output risks are documented in
+[Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md).
 
 ## 6. Adoption Guidance
 
@@ -193,4 +195,5 @@ are related, but they should move in separate, controlled steps.
 - [Shell script inventory and task category design](shell_script_inventory_task_category_design.md)
 - [Orchestration modernization design](orchestration_modernization_design.md)
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
+- [Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md)
 - [Public release checklist](public_release_checklist.md)

@@ -68,6 +68,7 @@ Recommended entry points:
 - [Task runner selection design](task_runner_selection_design.md): Makefile vs justfile comparison and initial task-runner recommendation.
 - `make help`: thin Makefile entrypoint for existing checks, including `make check-release-quality` and `make check-summary-flow`.
 - [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md): adoption and safety review for the thin Makefile command surface.
+- [Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md): design for avoiding parallel execution and shared `tmp/` output hazards around summary-flow targets.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.

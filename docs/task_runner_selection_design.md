@@ -176,6 +176,8 @@ Step 148 implementation status:
 
 The post-adoption safety review is documented in
 [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md).
+Parallel execution and shared `tmp/` output safety are documented in
+[Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md).
 
 ## 8. Initial Target Candidates
 
@@ -275,4 +277,5 @@ pipeline architecture.
 - [Shell script inventory and task category design](shell_script_inventory_task_category_design.md)
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
 - [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md)
+- [Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md)
 - [Public release checklist](public_release_checklist.md)
