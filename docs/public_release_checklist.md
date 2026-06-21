@@ -87,6 +87,9 @@ Before creating a short public-safe Milestone 05 marker, review
 [Milestone 05 status marker design](milestone_05_status_marker_design.md).
 For the short public-safe Milestone 05 marker, see
 [Milestone 05 status](status/milestone_05_status.md).
+Before returning to research-pipeline implementation after Makefile adoption,
+review the
+[research pipeline next-phase plan](research_pipeline_next_phase_plan.md).
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
 For a future manual GitHub Actions workflow option, see
