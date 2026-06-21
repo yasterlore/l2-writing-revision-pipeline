@@ -281,4 +281,5 @@ pipeline architecture.
 - [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md)
 - [Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md)
 - [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md)
+- [Milestone 05 final docs-only release review](milestone_05_final_docs_only_release_review.md)
 - [Public release checklist](public_release_checklist.md)
