@@ -81,6 +81,19 @@ forbidden_marker_keys = {
     "calibration",
 }
 
+allowed_marker_keys_v1 = {
+    "manifest_schema_version",
+    "run_id",
+    "completed_at",
+    "summary_path",
+    "case_count",
+    "diagnostic_summary_count",
+    "content_suppressed",
+    "no_config_summary",
+    "generator_script",
+    "summary_schema_version",
+}
+
 
 def fail_precondition(reason, **details):
     print("synthetic_diagnostic_distribution_check: fail", file=sys.stderr)
@@ -176,13 +189,6 @@ if forbidden_present:
         first_forbidden_key=forbidden_present[0],
     )
 
-if marker.get("content_suppressed") is not True:
-    fail_precondition(
-        "summary_manifest_content_suppressed_not_true",
-        summary_csv=summary_path,
-        summary_manifest=marker_path,
-    )
-
 manifest_schema_version = marker.get("manifest_schema_version")
 if manifest_schema_version != expected_manifest_schema_version:
     fail_precondition(
@@ -190,6 +196,23 @@ if manifest_schema_version != expected_manifest_schema_version:
         summary_csv=summary_path,
         summary_manifest=marker_path,
         expected_manifest_schema_version=expected_manifest_schema_version,
+    )
+
+unknown_marker_keys = sorted(set(marker) - allowed_marker_keys_v1)
+if unknown_marker_keys:
+    fail_precondition(
+        "unknown_summary_manifest_key",
+        summary_csv=summary_path,
+        summary_manifest=marker_path,
+        unknown_keys_count=len(unknown_marker_keys),
+        first_unknown_key=unknown_marker_keys[0],
+    )
+
+if marker.get("content_suppressed") is not True:
+    fail_precondition(
+        "summary_manifest_content_suppressed_not_true",
+        summary_csv=summary_path,
+        summary_manifest=marker_path,
     )
 
 if marker.get("no_config_summary") is not True:
