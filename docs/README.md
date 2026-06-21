@@ -19,6 +19,7 @@ Recommended entry points:
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md): post-Makefile planning for returning to the synthetic-only research pipeline.
 - [Learner-state input representation design](learner_state_input_representation_design.md): no-oracle-safe input representation design before any learner-state estimator implementation.
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md): synthetic-only sequence dataset design for future learner-state inputs.
+- [Learner-state sequence schema design](learner_state_sequence_schema_design.md): feature, label, and manifest schema design for future synthetic learner-state sequence datasets.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -83,6 +84,7 @@ Recommended entry points:
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md): planning document for the next synthetic-only research-pipeline phase after Makefile adoption.
 - [Learner-state input representation design](learner_state_input_representation_design.md): design for safe learner-state input units, sources, sequence construction, and audit needs.
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md): design for participant/session/task sequence hierarchy, split boundaries, and label-feature separation.
+- [Learner-state sequence schema design](learner_state_sequence_schema_design.md): design for separating future sequence feature rows, label rows, and manifest metadata.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.

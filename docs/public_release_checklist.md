@@ -94,6 +94,9 @@ Before implementing any learner-state estimator, review the
 [learner-state input representation design](learner_state_input_representation_design.md).
 Before implementing a learner-state sequence exporter, review the
 [synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md).
+Before implementing learner-state sequence schema code or exporter files, review
+the
+[learner-state sequence schema design](learner_state_sequence_schema_design.md).
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
 For a future manual GitHub Actions workflow option, see
