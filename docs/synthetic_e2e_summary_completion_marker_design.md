@@ -48,6 +48,8 @@ For the future checker-side validation design, see
 [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md).
 For future manifest schema hardening, see
 [Summary manifest schema hardening design](summary_manifest_schema_hardening_design.md).
+For the follow-up design on strict allowed keys for the manifest, see
+[Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md).
 
 ## 2. Current State
 
@@ -330,6 +332,7 @@ summary generation completed in a safe and orderly way.
 - [Synthetic E2E summary atomic write design](synthetic_e2e_summary_atomic_write_design.md)
 - [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md)
 - [Summary manifest schema hardening design](summary_manifest_schema_hardening_design.md)
+- [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md)
 - [Synthetic diagnostic distribution check ordering design](synthetic_diagnostic_distribution_check_ordering_design.md)
 - [Synthetic diagnostic distribution review plan](synthetic_diagnostic_distribution_review_plan.md)
 - [Synthetic E2E pipeline](synthetic_e2e_pipeline.md)
