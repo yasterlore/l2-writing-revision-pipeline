@@ -171,6 +171,9 @@ For a later implementation step:
 - record safe result with the remote-run report template
 - confirm the Node.js deprecation warning is removed or reduced
 
+For the implementation planning step before editing workflow files, see
+[release-quality action version update plan](release_quality_action_version_update_plan.md).
+
 ## 10. Beginner Notes
 
 A GitHub Actions Node runtime warning is about the JavaScript runtime used by an
@@ -190,5 +193,6 @@ local shell checks.
 
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md)
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md)
+- [Release-quality action version update plan](release_quality_action_version_update_plan.md)
 - [Release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md)
 - [Public release checklist](public_release_checklist.md)

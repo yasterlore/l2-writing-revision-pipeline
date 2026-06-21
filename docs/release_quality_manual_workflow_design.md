@@ -216,6 +216,8 @@ After the run, record only a safe high-level summary using the
 If the remote run succeeds but GitHub Actions reports a Node runtime warning,
 track it with
 [GitHub Actions Node deprecation warning handling design](actions_node_deprecation_warning_handling_design.md).
+Before changing action versions, use the
+[release-quality action version update plan](release_quality_action_version_update_plan.md).
 
 ## 11. Beginner Notes
 
@@ -240,6 +242,7 @@ not generated data bodies.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md)
 - [Release-quality manual workflow remote-run report template](templates/release_quality_manual_workflow_remote_run_report_template.md)
 - [GitHub Actions Node deprecation warning handling design](actions_node_deprecation_warning_handling_design.md)
+- [Release-quality action version update plan](release_quality_action_version_update_plan.md)
 - [Summary manifest sync check release integration design](summary_manifest_sync_check_release_integration_design.md)
 - [Public release checklist](public_release_checklist.md)
 - [Milestone 03 final docs-only release review](milestone_03_final_docs_only_release_review.md)
