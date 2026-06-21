@@ -298,15 +298,21 @@ by this design.
 
 Recommended order:
 
-1. Step 162: create synthetic audit fixture files
-2. Step 163: implement learner-state sequence audit
-3. Step 164: audit fixture smoke tests
-4. Step 165: minimal synthetic sequence exporter design or implementation
-5. Later: selective prediction / calibration design
-6. Later: estimator prototype
+1. Step 162: synthetic learner-state audit fixture files design
+2. Step 163: create synthetic audit fixture files
+3. Step 164: implement learner-state sequence audit
+4. Step 165: audit fixture smoke tests
+5. Step 166: minimal synthetic sequence exporter design or implementation
+6. Later: selective prediction / calibration design
+7. Later: estimator prototype
 
 If fixture creation needs another preflight, Step 162 may remain docs-only and
 fixture files can be added in a later implementation step.
+
+Step 162 follow-up: see
+[Learner-state sequence audit fixture files design](learner_state_sequence_audit_fixture_files_design.md)
+for the fixture root, directory structure, file set, and naming plan before any
+fixture files are created.
 
 ## 17. Beginner Notes
 
@@ -327,6 +333,7 @@ bad habit that would be unsafe when private data readiness is reviewed later.
 ## Related Documents
 
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
+- [Learner-state sequence audit fixture files design](learner_state_sequence_audit_fixture_files_design.md)
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Learner-state input representation design](learner_state_input_representation_design.md)

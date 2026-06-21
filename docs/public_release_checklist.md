@@ -103,6 +103,9 @@ output, review the
 Before creating learner-state sequence audit fixture files or audit result
 schemas, review the
 [learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md).
+Before adding learner-state sequence audit fixture directories or files, review
+the
+[learner-state sequence audit fixture files design](learner_state_sequence_audit_fixture_files_design.md).
 For future CI integration of that wrapper, see
 [release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md).
 For a future manual GitHub Actions workflow option, see
