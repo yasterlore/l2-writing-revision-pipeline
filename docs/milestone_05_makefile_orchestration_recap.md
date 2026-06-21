@@ -212,6 +212,7 @@ research performance result.
 ## Related Documents
 
 - [Milestone 05 status marker](status/milestone_05_status.md)
+- [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md)
 - [Milestone 05 final docs-only release review](milestone_05_final_docs_only_release_review.md)
 - [Milestone 05 status marker design](milestone_05_status_marker_design.md)
 - [Orchestration modernization design](orchestration_modernization_design.md)

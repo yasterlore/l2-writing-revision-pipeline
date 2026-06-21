@@ -16,6 +16,7 @@ Recommended entry points:
 - [Milestone 05 final docs-only release review](milestone_05_final_docs_only_release_review.md): final docs-only readiness review for Milestone 05 Makefile orchestration documentation.
 - [Milestone 05 status marker](status/milestone_05_status.md): short public-safe status marker for the Milestone 05 docs-only release review.
 - [Milestone 05 status marker design](milestone_05_status_marker_design.md): design for a future short public-safe Milestone 05 Makefile orchestration status marker.
+- [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md): post-Makefile planning for returning to the synthetic-only research pipeline.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -77,6 +78,7 @@ Recommended entry points:
 - [Milestone 05 final docs-only release review](milestone_05_final_docs_only_release_review.md): docs-only final review for Milestone 05 release-readiness.
 - [Milestone 05 status marker](status/milestone_05_status.md): short public-safe status marker for Milestone 05 Makefile orchestration documentation.
 - [Milestone 05 status marker design](milestone_05_status_marker_design.md): design for a future short public-safe Milestone 05 status marker.
+- [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md): planning document for the next synthetic-only research-pipeline phase after Makefile adoption.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.
