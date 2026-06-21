@@ -90,6 +90,8 @@ The current existing CI checkout action has been minimally updated; confirm the
 next remote CI or PR run with a safe warning-status summary only.
 Before adding any public note about that remote CI run, use
 [existing CI checkout update remote-run record workflow](existing_ci_checkout_update_remote_run_record_workflow.md).
+For the consolidated CI maintenance checkpoint, see
+[milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md).
 
 ## 2. Ignore Rules
 
@@ -136,6 +138,7 @@ Confirm docs link to:
 - `docs/milestone_02_synthetic_evaluation_recap.md`
 - `docs/milestone_03_config_aware_diagnostic_infrastructure_recap.md`
 - `docs/milestone_03_final_docs_only_release_review.md`
+- `docs/milestone_04_ci_maintenance_recap.md`
 - `docs/private_real_data_readiness_checklist.md`
 - `docs/observation_note_storage_and_review_workflow.md`
 - `docs/filled_observation_note_public_sharing_checklist.md`
