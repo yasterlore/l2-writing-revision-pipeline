@@ -262,6 +262,11 @@ Step 159 follow-up: see
 for the planned feature row, label row, manifest, join-key, and versioning
 schema boundaries.
 
+Step 160 follow-up: see
+[Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
+for the future fail-closed audit of sequence features, labels, manifests,
+splits, joins, paths, and public output.
+
 ## 14. Beginner Notes
 
 A sequence dataset is a dataset where records are ordered. Here, the records
@@ -286,6 +291,7 @@ sequence rules, and audits are still being defined.
 
 - [Learner-state input representation design](learner_state_input_representation_design.md)
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
+- [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Synthetic data policy](12_synthetic_data_policy.md)
