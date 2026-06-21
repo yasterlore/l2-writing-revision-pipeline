@@ -55,6 +55,7 @@ Recommended entry points:
 - [Synthetic diagnostic distribution marker validation design](synthetic_diagnostic_distribution_marker_validation_design.md): design for future fail-closed validation of the no-config summary marker by the distribution check.
 - [Summary manifest schema hardening design](summary_manifest_schema_hardening_design.md): design for future stricter no-config summary manifest fields and stale-marker checks.
 - [Summary manifest allowed-key validation design](summary_manifest_allowed_key_validation_design.md): design for future strict allowed-key validation of safe no-config summary manifest metadata.
+- [Summary manifest schema centralization design](summary_manifest_schema_centralization_design.md): design for future shared manifest schema constants across generator, checker, docs, and tests.
 - [Observation note storage and review workflow](observation_note_storage_and_review_workflow.md): storage and sharing workflow for blank templates and private/local count-only notes.
 - [Filled observation note public-sharing checklist](filled_observation_note_public_sharing_checklist.md): exception-only checklist before considering any filled observation note for public repository sharing.
 - [Synthetic diagnostic observation note template](templates/synthetic_diagnostic_observation_note_template.md): count-only note template for safe human diagnostic review.
