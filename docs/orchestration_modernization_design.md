@@ -367,6 +367,7 @@ orchestrator only when the project has a real need.
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
 - [Shell script inventory and task category design](shell_script_inventory_task_category_design.md)
 - [Task runner selection design](task_runner_selection_design.md)
+- [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md)
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md)
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md)
 - [Milestone 04 CI maintenance recap](milestone_04_ci_maintenance_recap.md)

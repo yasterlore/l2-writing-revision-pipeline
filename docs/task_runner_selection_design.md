@@ -280,4 +280,5 @@ pipeline architecture.
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
 - [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md)
 - [Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md)
+- [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md)
 - [Public release checklist](public_release_checklist.md)
