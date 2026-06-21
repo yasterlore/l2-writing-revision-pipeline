@@ -250,10 +250,11 @@ Recommended order:
 
 1. Step 159: learner-state sequence schema design
 2. Step 160: learner-state sequence no-oracle audit design
-3. Step 161: minimal synthetic sequence exporter implementation
-4. Step 162: sequence dataset smoke tests
-5. Later: selective prediction / calibration design
-6. Later: estimator prototype
+3. Step 161: learner-state sequence audit fixtures / result schema design
+4. Step 162: minimal synthetic sequence exporter design or implementation
+5. Step 163: sequence dataset smoke tests
+6. Later: selective prediction / calibration design
+7. Later: estimator prototype
 
 Exporter implementation should wait until schema and audit design are complete.
 
@@ -266,6 +267,10 @@ Step 160 follow-up: see
 [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 for the future fail-closed audit of sequence features, labels, manifests,
 splits, joins, paths, and public output.
+
+Step 161 follow-up: see
+[Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md)
+for the future audit fixture families and safe audit result schema.
 
 ## 14. Beginner Notes
 
@@ -292,6 +297,7 @@ sequence rules, and audits are still being defined.
 - [Learner-state input representation design](learner_state_input_representation_design.md)
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
+- [Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md)
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Synthetic data policy](12_synthetic_data_policy.md)
