@@ -501,6 +501,12 @@ The fixture design step must not create fixture files, implement calibration,
 compute ECE/AURCC/F1/accuracy, paste logits or probability row dumps, paste
 JSONL row bodies, expose expected action bodies, use real data, or claim
 performance.
+After creating calibration / selective prediction fixture files, review the
+[selective prediction fixture root](../tests/fixtures/learner_state_selective_prediction/README.md)
+and confirm it is synthetic-only, separates prediction rows from label rows,
+keeps expected actions label-side except intentional invalid leakage cases,
+uses count-only split metadata and expected validation results, includes no
+real participant data or private paths, and does not claim model performance.
 
 ## 7. Checks To Run
 

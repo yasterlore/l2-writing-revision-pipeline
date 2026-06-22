@@ -54,7 +54,8 @@ Rationale:
 - avoids placing JSONL examples in docs
 - leaves estimator input fixtures as a separate upstream boundary
 
-This step does not create the directory.
+Step206 did not create the directory. Step207 creates this directory as the
+initial synthetic-only fixture root.
 
 ## 4. Fixture Case Structure
 
@@ -77,8 +78,12 @@ tests/fixtures/learner_state_selective_prediction/
 ```
 
 Initial fixture creation should start with one valid case and a small set of
-representative invalid cases. The list above is a design target, not a file
-creation request.
+representative invalid cases.
+
+Step207 implements this initial fixture set with one valid fixture and seven
+representative invalid fixtures. The files are fixture data only; no
+calibration validator, selective prediction code, learner-state estimator, or
+metric computation is added.
 
 ## 5. Fixture File Set
 
@@ -444,6 +449,7 @@ original estimator input rows are safe.
 ## 19. Related Documents
 
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
+- [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Milestone 08 learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md)
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)

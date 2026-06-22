@@ -329,6 +329,12 @@ split metadata, calibration policies, expected validation results, and
 fail-closed reason codes. It does not create fixture files or implement
 calibration, selective prediction, an estimator, or metric computation.
 
+Step207 adds the initial synthetic fixture root at
+`tests/fixtures/learner_state_selective_prediction/` with separated
+prediction rows, label rows, split metadata, calibration policy files, and
+expected validation result files. It still does not implement calibration,
+selective prediction, an estimator, or metrics.
+
 ## 16. What This Does NOT Do
 
 This design does not:
@@ -371,6 +377,7 @@ leakage-checked.
 
 - [Milestone 08 learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md)
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
+- [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)

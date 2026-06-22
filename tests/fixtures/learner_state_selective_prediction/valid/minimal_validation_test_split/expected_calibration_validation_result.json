@@ -1,0 +1,24 @@
+{
+  "validation_status": "pass",
+  "expected_failure_reason": null,
+  "expected_failure_category": null,
+  "expected_stage": "calibration_fixture_validation",
+  "expected_prediction_row_count": 4,
+  "expected_label_row_count": 4,
+  "expected_split_counts": {
+    "validation": {
+      "prediction_rows": 2,
+      "label_rows": 2,
+      "participants": 1
+    },
+    "test": {
+      "prediction_rows": 2,
+      "label_rows": 2,
+      "participants": 1
+    }
+  },
+  "expected_policy_status": "safe",
+  "content_suppressed": true,
+  "no_raw_rows": true,
+  "synthetic_only": true
+}

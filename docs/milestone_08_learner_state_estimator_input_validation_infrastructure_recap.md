@@ -284,6 +284,13 @@ label rows, split metadata, calibration policies, expected validation results,
 and fail-closed reason codes. It does not create fixture files, implement
 calibration, implement selective prediction, or compute metrics.
 
+Step207 adds the initial
+[selective prediction fixture root](../tests/fixtures/learner_state_selective_prediction/README.md)
+with one valid calibration/selective prediction fixture and seven
+representative invalid fixtures. The fixtures remain synthetic-only and are not
+performance evidence; no calibration validator, estimator, or metric code is
+added.
+
 ## 12. Release/Public Status
 
 Public-safe documentation now exists for:
@@ -300,6 +307,7 @@ Public-safe documentation now exists for:
 - remote/manual release-quality status marker
 - this Milestone 08 recap
 - selective prediction / calibration design and fixture design
+- initial selective prediction / calibration fixture files
 
 Release-quality now includes estimator input validation through the standalone
 Makefile target.

@@ -21,6 +21,7 @@ Recommended entry points:
 - [Milestone 08 learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md): recap of estimator input contracts, fixtures, validator/loader, CLI, Makefile/release-quality integration, and remote run status.
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md): docs-only design for confidence, abstention, validation/test label use, ECE, AURCC, and no-oracle boundaries before any estimator prototype.
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md): docs-only fixture-root, file-set, expected-result, and reason-code design for future confidence/calibration validation.
+- [Selective prediction and calibration fixtures](../tests/fixtures/learner_state_selective_prediction/README.md): initial synthetic-only prediction/label/split/policy fixtures for future calibration validation.
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md): docs-only contract for future estimator inputs from audited exporter outputs; no estimator or metric is implemented.
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md): docs-only fixture and validation-contract plan for future estimator input loader tests.
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md): initial synthetic exported-shape fixture root for future estimator input validation.
@@ -84,6 +85,7 @@ Recommended entry points:
 - [Learner-state estimator input release-quality remote run status](status/learner_state_estimator_input_release_quality_remote_run_status.md): metadata-only status marker for the successful remote/manual Release Quality run including estimator input validation.
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md): future confidence and abstention policy; no calibration code, estimator, or metric computation is added.
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md): future synthetic fixture plan for prediction rows, labels, splits, policies, expected results, and no-test-tuning checks.
+- [Selective prediction and calibration fixtures](../tests/fixtures/learner_state_selective_prediction/README.md): synthetic fixture root with one valid fixture and seven fail-closed invalid fixture targets.
 - `python/learner_state/estimator_input.py`: minimal validator/loader for the synthetic estimator input fixtures; it validates joins, counts, splits, schema versions, and no-oracle boundaries without training an estimator.
 - `python/learner_state/tests/test_estimator_input.py`: unit tests that exercise expected validation results without printing fixture row bodies.
 - `python -m learner_state.estimator_input`: minimal safe CLI for estimator input fixture-case/root validation; release-quality now reaches it through the standalone Makefile target.
@@ -186,6 +188,7 @@ Recommended entry points:
 - [Milestone 08 learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md): public-safe recap of estimator input validation fixtures, validator/loader, CLI, Makefile/release-quality integration, and remote status.
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md): docs-only plan for confidence, abstention, temperature scaling, ECE, AURCC, split policy, and output safety.
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md): docs-only plan for future synthetic calibration/selective prediction fixtures; no fixture files or metric code are added.
+- [Selective prediction and calibration fixtures](../tests/fixtures/learner_state_selective_prediction/README.md): initial synthetic prediction rows, labels, split metadata, calibration policies, and expected validation result contracts.
 - `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader; no learner-state estimator, training loop, calibration, or metrics are added.
 - `python/learner_state/tests/test_estimator_input.py`: validator tests covering expected-result matching and safe validation metadata.
 - `python/learner_state/tests/test_estimator_input_cli.py`: validator CLI tests covering safe output, JSON output, fixture-root matching, and exit codes.

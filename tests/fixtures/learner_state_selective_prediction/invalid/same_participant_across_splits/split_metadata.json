@@ -1,0 +1,29 @@
+{
+  "split_metadata_schema_version": "learner_state_selective_split_metadata_v0.1",
+  "synthetic_only": true,
+  "content_suppressed": true,
+  "learner_disjoint": false,
+  "label_dependent_split": false,
+  "splits": {
+    "validation": {
+      "prediction_rows": 1,
+      "label_rows": 1,
+      "participants": 1
+    },
+    "test": {
+      "prediction_rows": 1,
+      "label_rows": 1,
+      "participants": 1
+    }
+  },
+  "participant_overlap": [
+    {
+      "synthetic_participant_id": "synthetic_sp_participant_overlap_051",
+      "splits": [
+        "validation",
+        "test"
+      ]
+    }
+  ],
+  "row_bodies_included": false
+}

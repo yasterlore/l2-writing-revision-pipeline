@@ -1,0 +1,15 @@
+{
+  "policy_schema_version": "learner_state_calibration_policy_v0.1",
+  "confidence_definition": "max_softmax_probability",
+  "temperature_selection_method": "validation_only_candidate",
+  "temperature_tuning_split": "validation",
+  "threshold_selection_method": "fixed_abstention_rate",
+  "threshold_tuning_split": "validation",
+  "allowed_abstention_rate": 0.25,
+  "validation_only_tuning": true,
+  "test_tuning_forbidden": true,
+  "frozen_policy_required": true,
+  "synthetic_only": true,
+  "metric_results_included": false,
+  "raw_output_included": false
+}
