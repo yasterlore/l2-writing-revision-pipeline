@@ -315,6 +315,11 @@ case with `expected_audit_result.json`. It does not add a CLI, Makefile target,
 release-quality integration, sequence exporter, learner-state estimator, model,
 metric, or scorer change.
 
+Step 166 follow-up: see
+[Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
+for the future command-line interface, safe stdout/JSON result policy, exit
+codes, fixture-root mode, and Makefile/release-quality integration timing.
+
 ## 15. Beginner Notes
 
 An audit implementation is the code that checks whether a dataset is safe
@@ -341,6 +346,7 @@ generation.
 - [Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md)
 - [Learner-state sequence audit fixture files design](learner_state_sequence_audit_fixture_files_design.md)
 - [Learner-state sequence audit fixture files](../tests/fixtures/learner_state_sequence_audit/README.md)
+- [Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Learner-state input representation design](learner_state_input_representation_design.md)
