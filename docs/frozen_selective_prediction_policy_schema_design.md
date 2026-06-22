@@ -432,6 +432,12 @@ as a docs-only plan for future validator ordering, safe validation result
 metadata, expected-result matching, recursive forbidden scans, path safety,
 and test-derived tuning checks.
 
+Step224 adds `python/learner_state/frozen_policy_validation.py` as a minimal
+synthetic-only validator for the frozen policy fixtures. It validates schema
+version, required fields, no-oracle safety boundaries, test-derived tuning,
+numeric ranges, and expected-result matching without implementing
+calibration, selective prediction, CLI, or metric computation.
+
 ## 19. What This Does Not Prove
 
 This schema design does not prove:

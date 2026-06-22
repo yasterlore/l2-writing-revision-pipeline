@@ -379,7 +379,9 @@ scoring feedback.
 
 Recommended next steps:
 
-1. Step224: minimal frozen policy validator implementation.
+1. Step224: minimal frozen policy validator implementation. Completed with
+   `python/learner_state/frozen_policy_validation.py` and fixture-based
+   tests in `python/learner_state/tests/test_frozen_policy_validation.py`.
 2. Step225: frozen policy validator CLI design / implementation.
 3. Step226: Makefile target design / implementation.
 4. Step227: release-quality integration design / implementation.
@@ -391,9 +393,8 @@ computation, release-quality wiring, and real-data readiness.
 
 ## 18. What This Does Not Do
 
-This document does not:
+This design and its Step224 implementation do not:
 
-- implement a validator
 - implement calibration
 - implement selective prediction
 - create new fixtures
@@ -431,6 +432,8 @@ unsafe inputs instead of guessing that they are acceptable.
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
 - [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md)
+- `python/learner_state/frozen_policy_validation.py`
+- `python/learner_state/tests/test_frozen_policy_validation.py`
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)

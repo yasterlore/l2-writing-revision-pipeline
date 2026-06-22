@@ -625,6 +625,12 @@ JSON, unknown schema versions, missing required fields, recursive forbidden
 fields, test-derived temperature or threshold, unsafe safety booleans,
 invalid split policy, invalid count summaries, and performance claims while
 emitting only safe metadata.
+For Step224, confirm
+`python/learner_state/frozen_policy_validation.py` and
+`python/learner_state/tests/test_frozen_policy_validation.py` validate only
+synthetic frozen policy fixtures, return safe metadata, suppress policy
+bodies, do not implement a CLI or Makefile target, do not compute calibration
+or metrics, and do not claim model performance or real-data readiness.
 
 ## 7. Checks To Run
 

@@ -403,6 +403,10 @@ Step223 adds the
 as a docs-only fail-closed plan for validating frozen policy artifacts before
 future scaffold outputs are consumed by test evaluation.
 
+Step224 adds the minimal `python/learner_state/frozen_policy_validation.py`
+validator for synthetic frozen policy fixtures. Future scaffold work should
+call this boundary before treating a frozen policy artifact as safe.
+
 ## 16. Testing Plan For Future Implementation
 
 Future tests should cover:
