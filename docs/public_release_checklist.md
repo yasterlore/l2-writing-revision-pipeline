@@ -631,6 +631,12 @@ For Step224, confirm
 synthetic frozen policy fixtures, return safe metadata, suppress policy
 bodies, do not implement a CLI or Makefile target, do not compute calibration
 or metrics, and do not claim model performance or real-data readiness.
+Before implementing a frozen policy validator CLI, review
+[frozen policy validator CLI design](frozen_policy_validator_cli_design.md)
+and confirm fixture-case/root modes, expected-result matching, exit codes,
+human output, JSON output, and path-safety behavior remain safe and do not
+print policy bodies, logits dumps, private path values, raw rows, metric
+bodies, raw learner text, or performance claims.
 
 ## 7. Checks To Run
 

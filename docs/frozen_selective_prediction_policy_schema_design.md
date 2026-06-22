@@ -438,6 +438,11 @@ version, required fields, no-oracle safety boundaries, test-derived tuning,
 numeric ranges, and expected-result matching without implementing
 calibration, selective prediction, CLI, or metric computation.
 
+Step225 adds the
+[frozen policy validator CLI design](frozen_policy_validator_cli_design.md)
+as a docs-only plan for future command-line fixture validation, safe
+human/JSON output, expected-result matching, and exit-code behavior.
+
 ## 19. What This Does Not Prove
 
 This schema design does not prove:
@@ -485,6 +490,7 @@ safe-output boundaries.
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
+- [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md)
 - [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
 - [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)
