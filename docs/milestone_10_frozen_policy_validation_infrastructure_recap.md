@@ -287,8 +287,9 @@ metric computation.
 
 Recommended priority order:
 
-1. Frozen policy generation scaffold design: define how a scaffold would write
-   a safe metadata-only frozen policy artifact after validator pass.
+1. Frozen policy generation scaffold design: completed in Step234 as a
+   docs-only plan for writing a safe metadata-only frozen policy artifact
+   after validator pass.
 2. Calibration scaffold fixture design: define synthetic inputs and expected
    outputs for validation-only calibration scaffold work.
 3. Validation-only temperature scaling scaffold design: specify how future
@@ -351,6 +352,8 @@ calibrated, production-ready, or real-data-ready.
 ## 15. Update History
 
 - Step233: initial Milestone 10 recap creation.
+- Step234: linked the frozen policy generation scaffold design as the next
+  staged docs-only follow-up.
 
 ## Related Documents
 
@@ -363,5 +366,6 @@ calibrated, production-ready, or real-data-ready.
 - [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md)
 - [Frozen policy release-quality remote run record workflow](frozen_policy_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy release-quality remote run status](status/learner_state_frozen_policy_release_quality_remote_run_status.md)
+- [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md)
 - [Public release checklist](public_release_checklist.md)

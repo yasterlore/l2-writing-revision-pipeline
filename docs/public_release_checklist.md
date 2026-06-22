@@ -689,6 +689,15 @@ wrapper, Makefile, Python, test, or fixture changes. The recap must keep the
 public-safe boundary: no raw logs, full job output, frozen policy artifact
 bodies, JSON bodies, raw rows, logits/probability dumps, private paths, raw
 learner text, generated feature/label/manifest bodies, or performance claims.
+For Step234, review the
+[frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
+and confirm it remains docs-only: no generator, calibration code, selective
+prediction code, estimator code, metric computation, workflow change, wrapper
+change, Makefile change, Python change, test change, or fixture change is
+introduced. The design must not paste frozen policy artifact bodies, JSON
+bodies, raw rows, logits/probability dumps, label/split/calibration policy
+bodies, private paths, raw learner text, GitHub raw logs, or performance
+claims.
 
 ## 7. Checks To Run
 

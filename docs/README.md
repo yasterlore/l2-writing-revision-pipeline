@@ -41,6 +41,7 @@ Recommended entry points:
 - [Frozen policy release-quality remote run record workflow](frozen_policy_release_quality_remote_run_record_workflow.md): Step231 public-safe metadata-only recording workflow design for a future manual Release Quality run that includes frozen policy validation.
 - [Learner-state frozen policy release-quality remote run status](status/learner_state_frozen_policy_release_quality_remote_run_status.md): metadata-only status marker for the successful remote/manual Release Quality run including frozen policy validation.
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md): public-safe recap of frozen policy validation fixtures, validator/loader, CLI, Makefile/release-quality integration, and remote status.
+- [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md): docs-only Step234 plan for future safe generation of frozen policy metadata after selective prediction validation and before test evaluation.
 - `make check-learner-state-frozen-policy`: smoke target for synthetic frozen selective prediction policy validation; release-quality now calls it through the wrapper.
 - `python/learner_state/frozen_policy_validation.py`: minimal frozen selective prediction policy validator and safe CLI returning metadata only; the standalone Makefile target exists, but calibration, selective prediction, estimator, and metric computation are not implemented.
 - `python/learner_state/tests/test_frozen_policy_validation.py`: fixture-based tests for one valid frozen policy fixture and eleven fail-closed invalid frozen policy fixtures.
@@ -131,6 +132,7 @@ Recommended entry points:
 - [Frozen policy release-quality remote run record workflow](frozen_policy_release_quality_remote_run_record_workflow.md): Step231 design for recording only high-level, public-safe metadata from a future manual Release Quality run that includes frozen policy validation.
 - [Learner-state frozen policy release-quality remote run status](status/learner_state_frozen_policy_release_quality_remote_run_status.md): Step232 public-safe status marker for the successful remote/manual Release Quality run including frozen policy validation.
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md): Step233 recap of frozen policy validation infrastructure and safety boundaries.
+- [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md): Step234 docs-only design for a future generator that constructs safe frozen policy artifacts from validated selective prediction inputs.
 - `make check-learner-state-frozen-policy`: Step228 standalone target for the synthetic frozen policy fixture root; Step230 adds it to release-quality.
 - `python/learner_state/frozen_policy_validation.py`: Step224 minimal validator/loader and Step226 safe CLI for synthetic frozen policy fixtures; Step228 adds the standalone Makefile target, while scaffold code is not added.
 - `python/learner_state/tests/test_frozen_policy_validation.py`: unit tests for expected-result matching and safe validation metadata.
@@ -253,6 +255,7 @@ Recommended entry points:
 - [Frozen policy release-quality remote run record workflow](frozen_policy_release_quality_remote_run_record_workflow.md): metadata-only workflow for recording a future remote/manual Release Quality run that includes frozen policy validation.
 - [Learner-state frozen policy release-quality remote run status](status/learner_state_frozen_policy_release_quality_remote_run_status.md): status marker recording the successful remote/manual Release Quality run with frozen policy validation included.
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md): consolidated recap of frozen policy validation infrastructure and non-goals.
+- [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md): docs-only scaffold design for future safe frozen policy artifact generation; no generator, calibration, estimator, metrics, or fixture files are added.
 - `make check-learner-state-frozen-policy`: frozen policy validator smoke target now included in release-quality.
 - `python/learner_state/frozen_policy_validation.py`: minimal safe frozen policy validator and CLI for the synthetic fixture root.
 - `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader; no learner-state estimator, training loop, calibration, or metrics are added.

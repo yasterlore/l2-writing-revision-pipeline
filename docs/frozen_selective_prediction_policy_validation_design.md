@@ -447,6 +447,7 @@ unsafe inputs instead of guessing that they are acceptable.
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md)
 - [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md)
 - [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md)
+- [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - `python/learner_state/frozen_policy_validation.py`
 - `python/learner_state/tests/test_frozen_policy_validation.py`
 - `python/learner_state/tests/test_frozen_policy_validation_cli.py`
