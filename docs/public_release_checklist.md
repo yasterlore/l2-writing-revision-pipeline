@@ -531,6 +531,13 @@ human output, safe JSON output, path safety, and future Makefile/release-quality
 staging are documented. The CLI design step must not implement the CLI, add a
 Makefile target, change release-quality, compute metrics, expose row/logit or
 policy bodies, use real data, or claim performance.
+After implementing the minimal calibration / selective prediction validator
+CLI, confirm `python -m learner_state.selective_prediction_validation` supports
+fixture-case, fixture-root, and safe JSON modes; reports 8 matched fixture
+cases for the synthetic fixture root; exits `0` for intentional invalid
+fixtures when expected results match; exits safely for usage/input/mismatch
+cases; avoids row, label, policy, split, logits, and probability body output;
+and does not add a Makefile target or release-quality integration yet.
 
 ## 7. Checks To Run
 

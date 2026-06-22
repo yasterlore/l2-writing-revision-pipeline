@@ -371,10 +371,11 @@ Recommended future order:
 1. Step209: minimal calibration / selective prediction fixture validator
    implementation.
 2. Step210: optional CLI design.
-3. Step211: Makefile target design.
-4. Step212: release-quality integration design.
-5. Step213: selective prediction / calibration scaffold design.
-6. Step214: minimal learner-state estimator prototype design.
+3. Step211: minimal CLI implementation.
+4. Step212: Makefile target design.
+5. Step213: release-quality integration design.
+6. Step214: selective prediction / calibration scaffold design.
+7. Step215: minimal learner-state estimator prototype design.
 
 Keep these steps separate. Do not combine validator implementation, estimator
 training, metric computation, and release-quality integration in one step.
@@ -395,6 +396,13 @@ as a docs-only plan for a future safe
 fixture-case/root modes, exit codes, safe human/JSON output, expected-result
 matching, and path-safety behavior. It does not implement the CLI or connect a
 Makefile target or release-quality wrapper.
+
+Step211 implements the minimal safe CLI entrypoint in
+`python/learner_state/selective_prediction_validation.py` and adds CLI tests
+in `python/learner_state/tests/test_selective_prediction_validation_cli.py`.
+The CLI supports fixture-case mode, fixture-root mode, safe JSON output, and
+expected-result matching. It does not add a Makefile target or release-quality
+integration.
 
 ## 16. What This Does NOT Do
 
