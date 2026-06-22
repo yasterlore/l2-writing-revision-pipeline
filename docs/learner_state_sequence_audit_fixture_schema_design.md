@@ -319,6 +319,11 @@ Step 163 follow-up: initial synthetic fixture files have been added under
 They are small valid/invalid audit inputs for future audit implementation and
 are not model, metric, exporter, or scorer changes.
 
+Step 164 follow-up: see
+[Learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md)
+for the future fixture expected-result comparison policy and safe audit result
+handling.
+
 ## 17. Beginner Notes
 
 A fixture is a small example file used to test behavior.

@@ -271,6 +271,10 @@ remains synthetic-only and that public docs describe fixture case names,
 categories, and reason codes without copying JSONL rows, manifest bodies, raw
 text, or label contents.
 
+Before adding learner-state sequence audit code, review the
+[learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md)
+and confirm that future output remains safe, count-only, and fail-closed.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

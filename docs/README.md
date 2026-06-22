@@ -24,6 +24,7 @@ Recommended entry points:
 - [Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md): design for future valid/invalid synthetic audit fixtures and safe audit result schema.
 - [Learner-state sequence audit fixture files design](learner_state_sequence_audit_fixture_files_design.md): placement, naming, and file-organization design before creating synthetic audit fixture files.
 - [Learner-state sequence audit fixture files](../tests/fixtures/learner_state_sequence_audit/README.md): initial synthetic-only valid/invalid fixture files for a future learner-state sequence no-oracle audit.
+- [Learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md): docs-only implementation plan for a future fail-closed audit module and fixture expected-result matching.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -93,6 +94,7 @@ Recommended entry points:
 - [Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md): design for future audit fixtures, fail-closed expected results, and safe audit report fields.
 - [Learner-state sequence audit fixture files design](learner_state_sequence_audit_fixture_files_design.md): design for future fixture root, directory structure, naming, and expected-result files.
 - [Learner-state sequence audit fixture files](../tests/fixtures/learner_state_sequence_audit/README.md): synthetic-only fixture root for future learner-state sequence audit implementation.
+- [Learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md): design for the future Python-first audit module, safe output, and fixture expected-result checks.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.
