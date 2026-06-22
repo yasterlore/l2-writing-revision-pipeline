@@ -568,6 +568,14 @@ calibration validation`, calls
 fixture cases, emits safe summary only, creates no tmp output for this target,
 and avoids row/logit/probability/policy/split body output or performance
 metrics.
+Before recording a remote/manual Release Quality run that includes selective
+prediction calibration validation, review
+[selective prediction release-quality remote run record workflow](selective_prediction_release_quality_remote_run_record_workflow.md)
+and confirm the record will include only high-level metadata, count-only
+fixture summaries, included-check flags, and log-safety review results. The
+record workflow design step must not create a status marker, change workflows,
+paste raw GitHub Actions logs, include row/policy/split/logits bodies, or make
+performance or real-data readiness claims.
 
 ## 7. Checks To Run
 
