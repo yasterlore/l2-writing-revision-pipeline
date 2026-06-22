@@ -35,6 +35,7 @@ Recommended entry points:
 - [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md): initial synthetic-only frozen policy fixtures with one valid case, eleven intentional invalid cases, and safe expected validation result metadata.
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md): docs-only validation order, safe result schema, reason-code mapping, recursive forbidden scan, and expected-result matching plan for frozen policy artifacts.
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md): design and Step226 implementation status for the safe `python -m learner_state.frozen_policy_validation` CLI, fixture-root matching, exit codes, and safe JSON/human output.
+- [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md): docs-only target name, command, logging, tmp policy, and release-quality staging plan for the frozen policy validator CLI.
 - `python/learner_state/frozen_policy_validation.py`: minimal frozen selective prediction policy validator and safe CLI returning metadata only; no Makefile target, calibration, selective prediction, estimator, or metric computation is implemented.
 - `python/learner_state/tests/test_frozen_policy_validation.py`: fixture-based tests for one valid frozen policy fixture and eleven fail-closed invalid frozen policy fixtures.
 - `python/learner_state/tests/test_frozen_policy_validation_cli.py`: CLI tests for frozen policy fixture-case/root modes, safe JSON, usage errors, and expected-result mismatch handling.
@@ -119,6 +120,7 @@ Recommended entry points:
 - [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md): Step222 synthetic fixture root for future frozen policy validator work; no validator, scaffold, estimator, or metric computation is added.
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md): Step223 docs-only plan for future frozen policy validator ordering, safe outputs, fixture matching, and fail-closed safety checks.
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md): Step225 CLI plan and Step226 implementation status for fixture-case/root modes, expected-result matching, JSON output, and exit-code behavior.
+- [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md): Step227 docs-only design for a future `check-learner-state-frozen-policy` target; Makefile and release-quality are not changed.
 - `python/learner_state/frozen_policy_validation.py`: Step224 minimal validator/loader and Step226 safe CLI for synthetic frozen policy fixtures; no Makefile target or scaffold code is added.
 - `python/learner_state/tests/test_frozen_policy_validation.py`: unit tests for expected-result matching and safe validation metadata.
 - `python/learner_state/tests/test_frozen_policy_validation_cli.py`: unit tests that exercise the frozen policy validator CLI without printing policy bodies, raw rows, logits dumps, private paths, or metric bodies.
@@ -235,6 +237,7 @@ Recommended entry points:
 - [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md): synthetic frozen policy fixture root with safe expected validation result metadata.
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md): docs-only future validator design for frozen policy artifacts; no validator code is added.
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md): CLI design and Step226 status for the frozen policy validator; Makefile target and release-quality integration are not added.
+- [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md): future Makefile target design for the frozen policy validator CLI; no target is added yet.
 - `python/learner_state/frozen_policy_validation.py`: minimal safe frozen policy validator and CLI for the synthetic fixture root.
 - `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader; no learner-state estimator, training loop, calibration, or metrics are added.
 - `python/learner_state/tests/test_estimator_input.py`: validator tests covering expected-result matching and safe validation metadata.

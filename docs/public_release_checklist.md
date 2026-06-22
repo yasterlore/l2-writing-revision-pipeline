@@ -643,6 +643,12 @@ fixture-focused CLI, `python/learner_state/tests/test_frozen_policy_validation_c
 exercises usage errors, expected-result matching, and safe JSON output, and
 no Makefile target, release-quality wrapper, workflow, calibration scaffold,
 metric computation, or frozen policy generation is added.
+Before implementing a frozen policy validator Makefile target, review
+[frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md)
+and confirm the future target will call only the safe fixture-root CLI, print
+human count/reason-code summary only, avoid `tmp/` and `manual_outputs/`, and
+not modify release-quality, workflows, calibration, selective prediction,
+estimator code, or metric computation in the target implementation step.
 
 ## 7. Checks To Run
 
