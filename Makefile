@@ -11,6 +11,7 @@
 .PHONY: check-policy
 .PHONY: check-fixtures
 .PHONY: check-learner-state-audit-fixtures
+.PHONY: check-learner-state-exporter-cli
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -31,6 +32,7 @@ help:
 	@echo "  check-policy                 Run synthetic policy checks"
 	@echo "  check-fixtures               Run fixture/config validation checks"
 	@echo "  check-learner-state-audit-fixtures  Audit synthetic learner-state fixtures"
+	@echo "  check-learner-state-exporter-cli  Smoke-test learner-state exporter CLI"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -78,6 +80,11 @@ check-fixtures:
 
 check-learner-state-audit-fixtures:
 	PYTHONPATH=python python3 -m learner_state.sequence_audit --fixture-root tests/fixtures/learner_state_sequence_audit
+
+check-learner-state-exporter-cli:
+	rm -rf tmp/learner_state_sequence_exporter_smoke
+	PYTHONPATH=python python3 -m learner_state.sequence_exporter --input-fixture tests/fixtures/learner_state_sequence_exporter/valid/minimal_single_participant --output-dir tmp/learner_state_sequence_exporter_smoke/minimal_single_participant
+	PYTHONPATH=python python3 -m learner_state.sequence_exporter --input-fixture tests/fixtures/learner_state_sequence_exporter/valid/past_window_boundary_reset --output-dir tmp/learner_state_sequence_exporter_smoke/past_window_boundary_reset
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality

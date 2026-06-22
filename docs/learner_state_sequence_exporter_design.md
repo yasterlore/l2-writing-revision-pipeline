@@ -381,6 +381,11 @@ for the future standalone Makefile smoke target plan. The design recommends a
 tmp-only output root, safe human summaries, no generated body logging, and no
 immediate release-quality or CI integration.
 
+Step 185 follow-up: `make check-learner-state-exporter-cli` is implemented as a
+standalone smoke target for the minimal and past-window synthetic exporter
+fixtures. It writes only under `tmp/learner_state_sequence_exporter_smoke/` and
+is not yet part of release-quality or CI.
+
 ## 15. Relation To Existing Pipeline
 
 The exporter sits between existing safe synthetic pipeline components and future

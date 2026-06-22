@@ -315,6 +315,11 @@ for the docs-only plan for a future standalone exporter CLI smoke target,
 including target name, tmp output policy, cleanup policy, safe logging, and
 release-quality timing. That follow-up does not modify the Makefile or wrapper.
 
+Step 185 follow-up: `make check-learner-state-exporter-cli` is now available as
+a standalone smoke target. It exports the minimal and past-window synthetic
+valid fixtures under `tmp/learner_state_sequence_exporter_smoke/`, prints only
+safe CLI summaries, and remains outside release-quality and CI.
+
 ## 14. No-Oracle / Synthetic-Only Policy
 
 The CLI must preserve:

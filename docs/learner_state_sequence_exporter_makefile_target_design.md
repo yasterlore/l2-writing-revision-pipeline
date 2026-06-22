@@ -3,11 +3,11 @@
 This document designs a future Makefile target for the learner-state sequence
 exporter CLI.
 
-This is design documentation only. It does not add a Makefile target, modify
-the Makefile, change the release-quality wrapper, change CI workflows, change
-shell scripts, change exporter code, change tests, change audit code, or change
-fixture files. It is not a performance evaluation and is not a real-data
-readiness claim.
+This was design documentation before Step 185. Step 185 implements the
+standalone Makefile target described here, while leaving the release-quality
+wrapper, CI workflows, shell scripts, exporter code, tests, audit code, and
+fixture files unchanged. It is not a performance evaluation and is not a
+real-data readiness claim.
 
 ## 1. Purpose
 
@@ -41,9 +41,29 @@ Current state:
   `manifest.json` to a caller-provided output directory.
 - The CLI runs audit-after-export and checks safe expected-output contract
   metadata.
-- No Makefile target exists for the exporter CLI.
+- Step 185 adds the standalone `check-learner-state-exporter-cli` Makefile
+  target for exporter CLI smoke checks.
 - No release-quality wrapper integration exists for the exporter CLI.
 - No CI workflow integration exists for the exporter CLI.
+
+## Step 185 Implementation Status
+
+Step 185 adds `check-learner-state-exporter-cli` to the Makefile.
+
+Implemented target behavior:
+
+- removes only `tmp/learner_state_sequence_exporter_smoke`
+- exports `valid/minimal_single_participant`
+- exports `valid/past_window_boundary_reset`
+- writes generated outputs under `tmp/learner_state_sequence_exporter_smoke/`
+- relies on the exporter CLI to run audit-after-export and contract checks
+- prints only the CLI safe human summaries
+
+The target is standalone. It is not wired into `check-release-quality`,
+`check-all`, the release-quality wrapper, or CI workflows. It does not change
+exporter code, tests, audit code, fixture files, learner-state estimator
+behavior, models, metrics, candidate generation, scoring, tie-breaks, or
+manifest schemas.
 
 ## 3. Makefile Target Use Cases
 

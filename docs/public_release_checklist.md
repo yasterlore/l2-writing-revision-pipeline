@@ -357,6 +357,11 @@ and confirm the target remains standalone initially, writes only under a
 dedicated `tmp/` smoke output root, avoids fixture roots and private/real-data
 paths, does not cat generated files, and is not added directly to
 release-quality or CI before log safety review.
+After adding `make check-learner-state-exporter-cli`, confirm it remains a
+standalone target, writes only under
+`tmp/learner_state_sequence_exporter_smoke/`, prints only exporter CLI safe
+summaries, does not cat generated feature/label/manifest files, and is not yet
+called by the release-quality wrapper or CI workflows.
 
 ## 7. Checks To Run
 
