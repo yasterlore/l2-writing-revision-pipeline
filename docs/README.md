@@ -19,6 +19,7 @@ Recommended entry points:
 - [Milestone 06 learner-state audit infrastructure recap](milestone_06_learner_state_audit_infrastructure_recap.md): recap of learner-state audit fixtures, module, CLI, Makefile/release-quality integration, and remote run status.
 - [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md): recap of synthetic exporter fixtures, minimal exporter, CLI, Makefile/release-quality integration, and remote run status.
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md): docs-only contract for future estimator inputs from audited exporter outputs; no estimator or metric is implemented.
+- [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md): docs-only fixture and validation-contract plan for future estimator input loader tests.
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md): docs-only design for future synthetic feature/label/manifest export with audit integration.
 - [Learner-state sequence exporter input fixture design](learner_state_sequence_exporter_input_fixture_design.md): docs-only design for future synthetic exporter input fixtures and expected output contracts.
 - [Learner-state sequence exporter input fixtures](../tests/fixtures/learner_state_sequence_exporter/README.md): initial synthetic-only input fixture root for a future sequence exporter.
@@ -60,6 +61,7 @@ Recommended entry points:
 - [Learner-state exporter release-quality remote run record workflow](learner_state_exporter_release_quality_remote_run_record_workflow.md): safe metadata-only workflow for recording a remote/manual Release Quality run that includes exporter CLI smoke.
 - [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md): consolidated Step 175-189 recap of learner-state sequence exporter infrastructure and safety boundaries.
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md): next-stage docs-only input contract for future synthetic-only learner-state estimator loading.
+- [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md): fixture-root, case structure, expected validation result, and reason-code design before adding estimator input fixtures.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -149,6 +151,7 @@ Recommended entry points:
 - [Learner-state exporter release-quality remote run record workflow](learner_state_exporter_release_quality_remote_run_record_workflow.md): public-safe remote/manual run recording policy after exporter CLI smoke wrapper integration.
 - [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md): public-safe recap of exporter fixtures, module, CLI, Makefile/release-quality integration, and remote status.
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md): safe feature/label/manifest consumption contract before any learner-state estimator implementation.
+- [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md): design for future synthetic estimator input fixtures that validate joins, grouping, splits, and leakage checks.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.

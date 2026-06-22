@@ -260,14 +260,20 @@ with a dataset that appears training-ready.
 Recommended order:
 
 1. Step192: estimator input contract fixture design.
-2. Step193: estimator input validation design.
-3. Step194: minimal estimator input loader implementation.
-4. Step195: loader tests with exporter outputs.
-5. Step196: selective prediction / calibration design.
-6. Step197: estimator prototype design.
+2. Step193: create initial estimator input fixtures.
+3. Step194: estimator input validation design.
+4. Step195: minimal estimator input loader implementation.
+5. Step196: loader tests with exporter outputs.
+6. Step197: selective prediction / calibration design.
+7. Step198: estimator prototype design.
 
 The roadmap intentionally keeps validation and loader work separate from model
 training and metrics.
+
+Step192 adds the
+[learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
+for future synthetic exported-shape fixtures and expected validation result
+contracts. It does not create fixture files or implement a loader.
 
 ## 16. Relation to Existing Pipeline
 
@@ -328,6 +334,7 @@ loading, model behavior, and metric interpretation.
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
+- [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
 - [Learner-state input representation design](learner_state_input_representation_design.md)
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Public release checklist](public_release_checklist.md)
