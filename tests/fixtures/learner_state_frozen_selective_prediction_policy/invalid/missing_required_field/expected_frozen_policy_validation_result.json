@@ -1,0 +1,13 @@
+{
+  "validation_status": "fail",
+  "expected_failure_reason": "missing_required_field",
+  "expected_failure_category": "schema_required_field",
+  "expected_stage": "required_fields",
+  "expected_policy_schema_version": "frozen_selective_prediction_policy_schema_v0_1",
+  "expected_policy_status": "unsafe_missing_required_field",
+  "content_suppressed": true,
+  "no_raw_rows": true,
+  "synthetic_only": true,
+  "no_oracle_checked": true,
+  "test_tuning_checked": true
+}

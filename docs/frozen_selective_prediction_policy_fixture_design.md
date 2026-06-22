@@ -324,7 +324,10 @@ status, reason codes, counts, and safety booleans only.
 
 Recommended future order:
 
-1. Step222: create initial frozen policy fixtures.
+1. Step222: create initial frozen policy fixtures. Completed with one valid
+   synthetic fixture, eleven intentional invalid fixtures, and safe expected
+   validation result metadata under
+   `tests/fixtures/learner_state_frozen_selective_prediction_policy/`.
 2. Step223: frozen policy validation design.
 3. Step224: minimal frozen policy validator implementation.
 4. Step225: frozen policy validator CLI design / implementation.
@@ -339,11 +342,10 @@ computation, and real-data readiness in one step.
 
 This fixture design does not:
 
-- create fixture files
 - implement a validator
 - implement calibration
 - implement selective prediction
-- create a frozen policy artifact
+- create a frozen policy artifact from model output
 - train a learner-state estimator
 - compute F1
 - compute accuracy
@@ -381,6 +383,7 @@ future policy artifact matched the expected schema and safety boundaries.
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
 - [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
 - [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)
+- [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md)
 - [Selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Synthetic data policy](12_synthetic_data_policy.md)

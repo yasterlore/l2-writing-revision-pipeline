@@ -320,6 +320,13 @@ as a docs-only plan for future synthetic frozen policy artifact fixtures,
 valid/invalid cases, expected validation results, failure reason codes, and
 validation checks. It does not create fixture files or implement a validator.
 
+Step222 creates the initial synthetic frozen policy fixture root:
+`tests/fixtures/learner_state_frozen_selective_prediction_policy/`. The root
+contains one valid fixture, eleven intentional invalid fixtures, and
+count/reason-code-only expected validation result files. This is post-recap
+fixture groundwork and does not implement frozen policy validation,
+calibration, estimator training, or metric computation.
+
 ## 12. Release/Public Status
 
 Public-safe documentation now exists for:

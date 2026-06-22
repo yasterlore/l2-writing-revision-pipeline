@@ -420,6 +420,12 @@ as a docs-only plan for a future synthetic fixture root, valid and invalid
 frozen policy artifact cases, expected validation results, reason codes, and
 validation checks. It does not create fixture files or implement a validator.
 
+Step222 creates the initial synthetic fixture root at
+`tests/fixtures/learner_state_frozen_selective_prediction_policy/` with one
+valid frozen policy fixture, eleven intentional invalid fixture cases, and
+safe expected validation result metadata. It still does not implement a frozen
+policy validator, calibration scaffold, estimator, or metric computation.
+
 ## 19. What This Does Not Prove
 
 This schema design does not prove:

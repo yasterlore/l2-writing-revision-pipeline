@@ -611,6 +611,13 @@ validation result contract, failure reason codes, and future validation checks
 remain synthetic-only and exclude frozen artifact bodies, raw rows, logits
 dumps, label bodies, policy/split bodies, private paths, performance claims,
 real data, and production readiness claims.
+For Step222, confirm the initial synthetic frozen policy fixture root
+`tests/fixtures/learner_state_frozen_selective_prediction_policy/` contains
+only fixture artifacts and safe expected validation result metadata, with no
+validator implementation, no calibration scaffold, no raw rows, no logits
+dumps except the intentional invalid fixture, no private path except the
+intentional invalid fixture, and no performance claim except the intentional
+invalid fixture.
 
 ## 7. Checks To Run
 
