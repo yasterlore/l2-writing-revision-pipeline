@@ -22,6 +22,7 @@ Recommended entry points:
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md): docs-only fixture and validation-contract plan for future estimator input loader tests.
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md): initial synthetic exported-shape fixture root for future estimator input validation.
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md): validator order, safe result schema, reason-code mapping, fixture matching plan, and Step195 implementation status.
+- [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md): docs-only design for a future safe `python -m learner_state.estimator_input` interface; no CLI is implemented yet.
 - `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader returning safe count/reason-code metadata; no estimator model or metric is implemented.
 - `python/learner_state/tests/test_estimator_input.py`: fixture-based validator tests for one valid case and eight fail-closed invalid cases.
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md): docs-only design for future synthetic feature/label/manifest export with audit integration.
@@ -68,6 +69,7 @@ Recommended entry points:
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md): fixture-root, case structure, expected validation result, and reason-code design before adding estimator input fixtures.
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md): synthetic valid/invalid exported-shape fixtures for future fail-closed estimator input loader validation.
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md): validation scope, failure policy, and Step195 implementation status for the estimator input validator/loader.
+- [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md): future CLI modes, exit codes, fixture-root expected-result matching, and safe output policy.
 - `python/learner_state/estimator_input.py`: minimal validator/loader for the synthetic estimator input fixtures; it validates joins, counts, splits, schema versions, and no-oracle boundaries without training an estimator.
 - `python/learner_state/tests/test_estimator_input.py`: unit tests that exercise expected validation results without printing fixture row bodies.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
@@ -162,6 +164,7 @@ Recommended entry points:
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md): design for future synthetic estimator input fixtures that validate joins, grouping, splits, and leakage checks.
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md): initial synthetic-only fixture root now exercised by the minimal estimator input validator/loader.
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md): planned validation order, safe result schema, fixture expected-result matching, and no-oracle checks.
+- [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md): docs-only design for future command-line validation over the Step195 API.
 - `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader; no learner-state estimator, training loop, calibration, or metrics are added.
 - `python/learner_state/tests/test_estimator_input.py`: validator tests covering expected-result matching and safe validation metadata.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.

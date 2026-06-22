@@ -13,6 +13,12 @@ implementation returns safe validation metadata, checks the Step193 fixtures,
 and matches `expected_input_validation_result.json` without printing row
 bodies.
 
+Step196 follow-up: the future command-line interface for this validator is
+designed in
+[learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md).
+No CLI, Makefile target, release-quality integration, or workflow change is
+implemented by that design step.
+
 This document remains the design reference for validation. The implementation
 does not add a learner-state estimator, estimator training code, selective
 prediction, calibration, a new model, or a new metric. It is not performance
@@ -362,6 +368,7 @@ not a silent pass.
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
+- [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md)
 - `python/learner_state/estimator_input.py`
 - `python/learner_state/tests/test_estimator_input.py`
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
