@@ -462,11 +462,14 @@ followed the synthetic fixture contract and safety boundaries.
   under `tests/fixtures/learner_state_frozen_policy_generation/`.
 - Step238: linked the minimal frozen policy generation fixture validator;
   fixture files remain unchanged.
+- Step239: linked the frozen policy generation validator CLI design as the
+  next docs-only interface plan.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
+- [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - `python/learner_state/frozen_policy_generation_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_validation.py`

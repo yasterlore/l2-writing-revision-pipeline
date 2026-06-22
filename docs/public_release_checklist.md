@@ -726,6 +726,15 @@ CLI or Makefile target, do not modify release-quality or workflows, do not
 change fixture files, do not implement generator/calibration/selective
 prediction logic, do not compute metrics, and do not claim model performance
 or real-data readiness.
+For Step239, review the
+[frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
+and confirm it remains docs-only: no CLI, generator, scaffold, Makefile target,
+release-quality wrapper change, workflow change, Python code, tests, or
+fixture changes are introduced. The design must specify fixture-case/root
+modes, exit codes, safe human output, safe JSON output, path safety, and
+expected-result matching without printing request bodies, input pointer
+bodies, generated artifact bodies, raw rows, logits/probability dumps,
+private paths, raw learner text, raw GitHub logs, or performance claims.
 
 ## 7. Checks To Run
 
