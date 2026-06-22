@@ -338,9 +338,10 @@ Recommended future order:
 6. Step227: frozen policy validator Makefile target design. Completed as
    docs-only in
    [frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md).
-7. Step228: Makefile target implementation / release-quality integration
-   design.
-8. Step229: calibration scaffold fixture design.
+7. Step228: Makefile target implementation. Completed with
+   `make check-learner-state-frozen-policy`; release-quality is unchanged.
+8. Step229: release-quality integration design / implementation.
+9. Step230: calibration scaffold fixture design.
 
 Keep each step narrow. Do not combine fixture creation, validator
 implementation, scaffold implementation, estimator training, metric
