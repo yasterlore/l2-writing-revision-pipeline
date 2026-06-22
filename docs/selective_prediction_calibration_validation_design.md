@@ -388,6 +388,14 @@ fields, and expected validation results, and returns safe count/reason-code
 metadata only. It does not implement calibration, selective prediction,
 metric computation, an estimator, or real-data handling.
 
+Step210 adds the
+[selective prediction calibration validator CLI design](selective_prediction_calibration_validator_cli_design.md)
+as a docs-only plan for a future safe
+`python -m learner_state.selective_prediction_validation` command. It defines
+fixture-case/root modes, exit codes, safe human/JSON output, expected-result
+matching, and path-safety behavior. It does not implement the CLI or connect a
+Makefile target or release-quality wrapper.
+
 ## 16. What This Does NOT Do
 
 This design and the Step209 minimal validator do not:
@@ -430,6 +438,7 @@ instead of being treated as valid.
 
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
+- [Selective prediction calibration validator CLI design](selective_prediction_calibration_validator_cli_design.md)
 - [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [No-oracle policy](03_no_oracle_policy.md)
