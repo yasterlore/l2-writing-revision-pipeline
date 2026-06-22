@@ -415,6 +415,13 @@ Step213 implements the standalone Makefile target
 prediction fixture root. It does not connect release-quality, change
 workflows, change fixtures, implement calibration, or compute metrics.
 
+Step219 adds the
+[selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
+as a docs-only plan for the future scaffold that should call or require this
+validator before freezing validation-only temperature/threshold policy. It
+does not implement scaffold code, calibration, selective prediction, metrics,
+or estimator training.
+
 ## 16. What This Does NOT Do
 
 This design and the Step209 minimal validator do not:
@@ -459,6 +466,7 @@ instead of being treated as valid.
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
 - [Selective prediction calibration validator CLI design](selective_prediction_calibration_validator_cli_design.md)
 - [Selective prediction calibration validator Makefile target design](selective_prediction_calibration_validator_makefile_target_design.md)
+- [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [No-oracle policy](03_no_oracle_policy.md)
