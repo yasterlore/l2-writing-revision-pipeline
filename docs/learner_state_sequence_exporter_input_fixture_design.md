@@ -313,6 +313,12 @@ safe episode inputs, candidate summaries, diagnostic counts, synthetic
 evaluation labels, grouping metadata, split metadata, and a safe expected output
 contract. Public docs still do not copy fixture row bodies.
 
+Step 178 implementation note: the minimal exporter module now consumes this
+fixture and writes generated sequence outputs only to a caller-provided output
+directory, such as a test temporary directory. The generated files are audited
+by `learner_state.sequence_audit`, and tests compare safe contract metadata
+rather than full generated JSONL bodies.
+
 ## 14. Beginner Notes
 
 An input fixture is a small synthetic test case that a future exporter can read.

@@ -332,6 +332,16 @@ available at
 It is an input fixture root only; no exporter implementation or generated
 sequence output files are added by that step.
 
+Step 178 implementation note: the minimal Python exporter module now exists at
+`python/learner_state/sequence_exporter.py`, with tests under
+`python/learner_state/tests/test_sequence_exporter.py`. It reads the
+`valid/minimal_single_participant` synthetic input fixture, writes separated
+`features.jsonl`, `labels.jsonl`, and `manifest.json` files to a caller-provided
+output directory, runs the existing learner-state sequence audit on those
+generated files, and checks safe expected-output contract metadata. No CLI,
+Makefile target, release-quality integration, estimator, model, or metric is
+added by this step.
+
 ## 15. Relation To Existing Pipeline
 
 The exporter sits between existing safe synthetic pipeline components and future

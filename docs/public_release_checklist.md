@@ -323,6 +323,10 @@ After creating exporter input fixtures, confirm
 [`tests/fixtures/learner_state_sequence_exporter/`](../tests/fixtures/learner_state_sequence_exporter/README.md)
 remains synthetic-only and contains no raw learner text, private paths,
 real participant data, future fields, or label fields in feature-side inputs.
+After implementing the minimal exporter module, run the normal Python tests and
+confirm generated exporter outputs are written only to temporary or explicit
+output directories, pass the learner-state sequence audit, and do not print
+generated JSONL rows, labels, manifest bodies, or private paths.
 
 ## 7. Checks To Run
 
