@@ -189,6 +189,11 @@ metadata output. It does not add a Makefile target, release-quality wrapper
 integration, CI workflow changes, sequence exporter, learner-state estimator,
 model, metric, or scorer change.
 
+Step 168 follow-up: see
+[Learner-state sequence audit CLI integration design](learner_state_sequence_audit_cli_integration_design.md)
+for the staged plan to connect the CLI to a future Makefile target,
+release-quality wrapper, and CI consideration while preserving safe output.
+
 ## 10. Failure Policy
 
 The CLI should fail safely on:
@@ -263,6 +268,7 @@ targets are easy to run repeatedly and should be boringly predictable.
 
 ## Related Documents
 
+- [Learner-state sequence audit CLI integration design](learner_state_sequence_audit_cli_integration_design.md)
 - [Learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md)

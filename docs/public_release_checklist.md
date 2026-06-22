@@ -283,6 +283,9 @@ and confirm stdout, JSON output, and exit codes remain safe and count-only.
 After CLI implementation, run CLI smoke tests through the normal Python test
 command and confirm CLI stdout/stderr do not include JSONL rows, manifest
 bodies, label contents, raw text, private paths, or expected action bodies.
+Before connecting the CLI to Makefile, release-quality, or CI, review the
+[learner-state sequence audit CLI integration design](learner_state_sequence_audit_cli_integration_design.md)
+and confirm staged integration keeps logs safe and count-only.
 
 ## 7. Checks To Run
 
