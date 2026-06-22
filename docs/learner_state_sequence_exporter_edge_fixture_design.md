@@ -324,6 +324,15 @@ Recommended next steps:
 Possible adjustment: implement the highest-priority invalid fixtures first and
 delay CLI work until fail-closed exporter behavior is stable.
 
+Step 180 implementation note: the initial exporter edge-case fixture files now
+exist under
+[`tests/fixtures/learner_state_sequence_exporter/`](../tests/fixtures/learner_state_sequence_exporter/README.md).
+The added cases are `valid/past_window_boundary_reset/` plus invalid
+`missing_safe_episodes/`, `malformed_jsonl/`, `empty_input/`,
+`unknown_schema_version/`, and `label_in_feature_input/`. They are synthetic
+fixture files for future tests only; exporter code, exporter tests, audit code,
+Makefile, workflow, and release-quality wrapper behavior are unchanged.
+
 ## 14. Beginner Notes
 
 An edge-case fixture is a small synthetic test case designed to exercise an

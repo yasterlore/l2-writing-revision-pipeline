@@ -1,0 +1,32 @@
+{
+  "metadata_schema_version": "exporter_synthetic_metadata_v0.1",
+  "source_description": "synthetic exporter invalid fixture with one malformed JSONL line",
+  "synthetic_only": true,
+  "content_suppressed": true,
+  "source_text_suppressed": true,
+  "private_paths_included": false,
+  "participants": [
+    {
+      "synthetic_participant_id": "syn-p902",
+      "synthetic_session_ids": [
+        "syn-s902"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "synthetic_participant_id": "syn-p902",
+      "synthetic_session_id": "syn-s902",
+      "synthetic_task_ids": [
+        "syn-t902"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "synthetic_session_id": "syn-s902",
+      "synthetic_task_id": "syn-t902",
+      "episode_count": 1
+    }
+  ]
+}

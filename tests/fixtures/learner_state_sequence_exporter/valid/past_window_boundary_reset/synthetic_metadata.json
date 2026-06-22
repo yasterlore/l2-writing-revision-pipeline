@@ -1,0 +1,42 @@
+{
+  "metadata_schema_version": "exporter_synthetic_metadata_v0.1",
+  "source_description": "synthetic exporter edge fixture for task-boundary past-window reset",
+  "synthetic_only": true,
+  "content_suppressed": true,
+  "source_text_suppressed": true,
+  "private_paths_included": false,
+  "participants": [
+    {
+      "synthetic_participant_id": "syn-p010",
+      "synthetic_session_ids": [
+        "syn-s010"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "synthetic_participant_id": "syn-p010",
+      "synthetic_session_id": "syn-s010",
+      "synthetic_task_ids": [
+        "syn-t010a",
+        "syn-t010b"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "synthetic_session_id": "syn-s010",
+      "synthetic_task_id": "syn-t010a",
+      "episode_count": 2
+    },
+    {
+      "synthetic_session_id": "syn-s010",
+      "synthetic_task_id": "syn-t010b",
+      "episode_count": 2
+    }
+  ],
+  "past_window_boundary_expectation": {
+    "reset_at_task_boundary": true,
+    "first_episode_in_each_task_has_no_task_local_previous_episode": true
+  }
+}

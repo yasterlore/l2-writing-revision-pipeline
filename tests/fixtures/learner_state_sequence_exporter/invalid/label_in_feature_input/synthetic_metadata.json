@@ -1,0 +1,32 @@
+{
+  "metadata_schema_version": "exporter_synthetic_metadata_v0.1",
+  "source_description": "synthetic exporter invalid fixture with evaluation label leakage in feature-side input",
+  "synthetic_only": true,
+  "content_suppressed": true,
+  "source_text_suppressed": true,
+  "private_paths_included": false,
+  "participants": [
+    {
+      "synthetic_participant_id": "syn-p905",
+      "synthetic_session_ids": [
+        "syn-s905"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "synthetic_participant_id": "syn-p905",
+      "synthetic_session_id": "syn-s905",
+      "synthetic_task_ids": [
+        "syn-t905"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "synthetic_session_id": "syn-s905",
+      "synthetic_task_id": "syn-t905",
+      "episode_count": 1
+    }
+  ]
+}

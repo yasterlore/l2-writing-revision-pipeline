@@ -349,6 +349,12 @@ reason codes, safe contract expansion, and test expansion priorities. That
 follow-up remains docs-only and does not create edge-case fixtures or modify the
 exporter.
 
+Step 180 follow-up: initial synthetic exporter edge-case fixture files have
+been added under
+[`tests/fixtures/learner_state_sequence_exporter/`](../tests/fixtures/learner_state_sequence_exporter/README.md)
+for future fail-closed tests. The exporter implementation and tests are not
+changed by that fixture-only step.
+
 ## 15. Relation To Existing Pipeline
 
 The exporter sits between existing safe synthetic pipeline components and future

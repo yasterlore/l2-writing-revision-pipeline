@@ -325,6 +325,11 @@ for future exporter-specific valid/invalid fixtures, safe failure reason codes,
 and test expansion guidance. That follow-up is docs-only and does not create
 additional fixture files.
 
+Step 180 follow-up: the exporter fixture root now also contains initial
+synthetic edge-case fixtures for future fail-closed exporter tests. Public docs
+continue to describe only fixture categories and safe contracts, not JSONL row
+bodies or malformed-line contents.
+
 ## 14. Beginner Notes
 
 An input fixture is a small synthetic test case that a future exporter can read.

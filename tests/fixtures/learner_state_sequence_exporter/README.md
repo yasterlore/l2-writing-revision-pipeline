@@ -16,4 +16,13 @@ Fixture policy:
 - no fixture body copied into docs
 - no performance evidence
 
-The initial fixture is `valid/minimal_single_participant/`.
+Current fixture families:
+
+- `valid/minimal_single_participant/`: minimal valid synthetic input fixture.
+- `valid/past_window_boundary_reset/`: valid edge fixture for future
+  past-only window reset tests across task boundaries.
+- `invalid/`: synthetic edge fixtures for future fail-closed exporter tests.
+
+Invalid fixtures are intentionally unsafe or incomplete in one narrow way.
+They are not performance evidence, and their expected failures should be
+reported with safe reason codes rather than row bodies.

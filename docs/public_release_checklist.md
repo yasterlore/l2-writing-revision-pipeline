@@ -331,6 +331,11 @@ Before adding exporter edge-case fixtures or tests, review
 [learner-state sequence exporter edge fixture design](learner_state_sequence_exporter_edge_fixture_design.md)
 and confirm planned cases remain synthetic-only, safe-failing, no-oracle, and
 do not copy fixture rows or generated output bodies into docs.
+After adding exporter edge-case fixtures, confirm
+[`tests/fixtures/learner_state_sequence_exporter/`](../tests/fixtures/learner_state_sequence_exporter/README.md)
+contains only synthetic fixture material, keeps intentional invalid cases
+narrow, and does not introduce raw learner text, private paths, real participant
+data, or public fixture body dumps.
 
 ## 7. Checks To Run
 
