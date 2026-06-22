@@ -308,6 +308,10 @@ estimator, or metric implementation.
 After wrapper integration, a manual or remote Release Quality run may be
 recorded with public-safe metadata only.
 
+Step216 follow-up: the remote/manual Release Quality run recording workflow
+for the selective prediction calibration validation section is defined in
+[Selective prediction release-quality remote run record workflow](selective_prediction_release_quality_remote_run_record_workflow.md).
+
 Allowed record fields:
 
 - workflow name
@@ -387,5 +391,6 @@ expected fixture results.
 - [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
 - [Selective prediction calibration validator CLI design](selective_prediction_calibration_validator_cli_design.md)
 - [Selective prediction calibration validator Makefile target design](selective_prediction_calibration_validator_makefile_target_design.md)
+- [Selective prediction release-quality remote run record workflow](selective_prediction_release_quality_remote_run_record_workflow.md)
 - [Learner-state estimator input release-quality integration design](learner_state_estimator_input_release_quality_integration_design.md)
 - [Public release checklist](public_release_checklist.md)
