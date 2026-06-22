@@ -48,7 +48,7 @@ Current state:
 - fixture-based unittest exists in
   `python/learner_state/tests/test_frozen_policy_generation_validation.py`
 - CLI exists as of Step240
-- Makefile target does not exist yet
+- Makefile target exists as `make check-learner-state-frozen-policy-generation`
 - release-quality integration does not exist yet
 
 Current Python API:
@@ -411,6 +411,9 @@ accidentally expose raw rows, labels, logits, paths, or misleading metrics.
   `python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`.
 - Step241: linked the frozen policy generation validator Makefile target
   design as the next docs-only orchestration plan.
+- Step242: standalone Makefile target
+  `make check-learner-state-frozen-policy-generation` implemented; release-quality
+  wrapper and workflows remain unchanged.
 
 ## Related Documents
 

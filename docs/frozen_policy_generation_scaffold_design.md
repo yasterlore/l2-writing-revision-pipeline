@@ -435,6 +435,8 @@ real-data-ready.
   implementation.
 - Step241: linked the frozen policy generation validator Makefile target
   design.
+- Step242: linked the standalone generation validator Makefile target
+  implementation status; generator scaffold remains unimplemented.
 
 ## Related Documents
 

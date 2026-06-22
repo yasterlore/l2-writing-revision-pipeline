@@ -470,6 +470,8 @@ followed the synthetic fixture contract and safety boundaries.
   implementation; fixture files remain unchanged.
 - Step241: linked the frozen policy generation validator Makefile target
   design; fixture files remain unchanged.
+- Step242: linked the standalone generation validator Makefile target
+  implementation status; fixture files remain unchanged.
 
 ## Related Documents
 
