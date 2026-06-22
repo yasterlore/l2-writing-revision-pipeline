@@ -26,3 +26,6 @@ Related recap:
 
 - [Milestone 06 learner-state audit infrastructure recap](../milestone_06_learner_state_audit_infrastructure_recap.md):
   broader recap of the learner-state audit infrastructure milestone.
+- [Milestone 07 learner-state sequence exporter infrastructure recap](../milestone_07_learner_state_sequence_exporter_infrastructure_recap.md):
+  broader recap of the learner-state sequence exporter infrastructure
+  milestone.
