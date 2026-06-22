@@ -314,10 +314,13 @@ If input validation fails, calibration and selective prediction should not run.
 Recommended future order:
 
 1. Step206: calibration and selective prediction fixture design.
-2. Step207: estimator prototype design.
-3. Step208: minimal synthetic estimator prototype implementation.
-4. Step209: validation-only calibration scaffold design.
-5. Step210: selective prediction evaluation design.
+2. Step207: initial calibration and selective prediction fixture files.
+3. Step208: calibration and selective prediction validation design.
+4. Step209: minimal calibration and selective prediction fixture validator
+   implementation.
+5. Step210: validation-only calibration / selective prediction scaffold
+   design.
+6. Step211: minimal learner-state estimator prototype design.
 
 Keep each step narrow. Do not combine estimator training, calibration metrics,
 real-data readiness, and production data pipeline work in one step.
@@ -334,6 +337,13 @@ Step207 adds the initial synthetic fixture root at
 prediction rows, label rows, split metadata, calibration policy files, and
 expected validation result files. It still does not implement calibration,
 selective prediction, an estimator, or metrics.
+
+Step208 adds the
+[selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
+as a docs-only plan for future fixture validation. It defines validation
+order, safe result metadata, expected-result matching, prediction/label joins,
+split checks, calibration policy checks, test tuning leakage checks, and
+no-oracle checks without implementing code.
 
 ## 16. What This Does NOT Do
 
@@ -377,6 +387,7 @@ leakage-checked.
 
 - [Milestone 08 learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md)
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
+- [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
 - [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
