@@ -745,6 +745,18 @@ modes, exit codes, safe human output, safe JSON output, path safety, and
 expected-result matching without printing request bodies, input pointer
 bodies, generated artifact bodies, raw rows, logits/probability dumps,
 private paths, raw learner text, raw GitHub logs, or performance claims.
+For Step240, confirm the minimal CLI implementation in
+`python/learner_state/frozen_policy_generation_validation.py` and
+`python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`
+validates only synthetic frozen policy generation fixtures, returns safe
+metadata, supports fixture-case/root modes and JSON output, treats intentional
+invalid fixtures as success when expected results match, and does not print
+request bodies, input pointer bodies, generated artifact bodies, raw rows,
+logits/probability dumps, private paths, raw learner text, raw GitHub logs, or
+performance claims. This step must not add a Makefile target, release-quality
+wrapper change, workflow change, generator code, calibration/selective
+prediction logic, metric computation, fixture changes, or real-data readiness
+claims.
 
 ## 7. Checks To Run
 
