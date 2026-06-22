@@ -220,6 +220,11 @@ Recommended next steps:
 Each step should keep implementation changes narrow and rerun the safe-output
 checks before broader integration.
 
+Step 169 implementation note: `make check-learner-state-audit-fixtures` now
+runs the CLI fixture-root mode with safe human summary output. The target is
+not wired into `check-release-quality`, `check-all`, the release-quality
+wrapper, or CI.
+
 ## 12. Beginner Notes
 
 Integration means connecting a tool that already works by itself to the common

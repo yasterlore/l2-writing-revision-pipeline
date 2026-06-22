@@ -300,6 +300,7 @@ cargo clippy --workspace -- -D warnings
 scripts/check_synthetic_policy.sh
 PYTHONPATH=python python3 -m unittest discover -s python
 PYTHONPATH=python python3 -m compileall python
+make check-learner-state-audit-fixtures
 cd apps/logger-web && npm run typecheck
 cd apps/logger-web && npm test
 cd apps/logger-web && npm run build

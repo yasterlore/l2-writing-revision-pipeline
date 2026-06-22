@@ -10,6 +10,7 @@
 .PHONY: check-logger
 .PHONY: check-policy
 .PHONY: check-fixtures
+.PHONY: check-learner-state-audit-fixtures
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -29,6 +30,7 @@ help:
 	@echo "  check-logger                 Run logger-web typecheck, test, and build"
 	@echo "  check-policy                 Run synthetic policy checks"
 	@echo "  check-fixtures               Run fixture/config validation checks"
+	@echo "  check-learner-state-audit-fixtures  Audit synthetic learner-state fixtures"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -73,6 +75,9 @@ check-fixtures:
 	scripts/check_no_config_scoring_fixture_lock.sh
 	scripts/check_hand_weight_config_validation.sh
 	scripts/check_explicit_config_ranking_diff.sh
+
+check-learner-state-audit-fixtures:
+	PYTHONPATH=python python3 -m learner_state.sequence_audit --fixture-root tests/fixtures/learner_state_sequence_audit
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality
