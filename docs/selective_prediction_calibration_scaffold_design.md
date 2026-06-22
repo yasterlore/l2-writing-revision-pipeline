@@ -369,11 +369,12 @@ prototype or evaluation work.
 Recommended future order:
 
 1. Step220: frozen policy artifact schema design.
-2. Step221: calibration scaffold fixture design.
-3. Step222: minimal validation-only calibration scaffold implementation.
-4. Step223: threshold policy scaffold implementation.
-5. Step224: safe summary / manifest design.
-6. Step225: minimal learner-state estimator prototype design.
+2. Step221: frozen policy fixture design.
+3. Step222: frozen policy validator design.
+4. Step223: minimal frozen policy validator implementation.
+5. Step224: calibration scaffold fixture design.
+6. Step225: minimal validation-only calibration scaffold implementation.
+7. Step226: threshold policy scaffold implementation.
 
 Keep these steps narrow. Do not combine scaffold implementation, estimator
 training, metric computation, release-quality integration, and real-data
@@ -384,6 +385,12 @@ Step220 adds the
 as a docs-only schema plan for `frozen_selective_prediction_policy.json`.
 It still does not implement calibration, selective prediction, frozen policy
 generation, estimator training, or metric computation.
+
+Step221 adds the
+[frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
+as a docs-only plan for future valid and invalid frozen policy fixtures. It
+does not create fixture files, implement a frozen policy validator, or
+generate artifacts.
 
 ## 16. Testing Plan For Future Implementation
 
@@ -460,6 +467,7 @@ boundaries, no-oracle policy, and safe output rules.
 - [Learner-state selective prediction release-quality remote run status](status/learner_state_selective_prediction_release_quality_remote_run_status.md)
 - [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
+- [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
 - [Selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Synthetic data policy](12_synthetic_data_policy.md)

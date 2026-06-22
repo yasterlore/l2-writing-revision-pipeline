@@ -314,6 +314,12 @@ as a docs-only schema plan for the future
 optional, and forbidden fields plus validation-only provenance rules, without
 creating an artifact file or implementing scaffold code.
 
+Step221 adds the
+[frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
+as a docs-only plan for future synthetic frozen policy artifact fixtures,
+valid/invalid cases, expected validation results, failure reason codes, and
+validation checks. It does not create fixture files or implement a validator.
+
 ## 12. Release/Public Status
 
 Public-safe documentation now exists for:
@@ -381,6 +387,7 @@ validator path ran, matched expected results, and kept output safe.
 - [Learner-state selective prediction release-quality remote run status](status/learner_state_selective_prediction_release_quality_remote_run_status.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
+- [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
 - [Selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Milestone 08 learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md)
 - [Public release checklist](public_release_checklist.md)
