@@ -523,6 +523,14 @@ exercise the synthetic fixture root with safe count/reason-code metadata only,
 match all expected validation results, avoid row/policy/split body output, and
 do not implement calibration, selective prediction, model training, metric
 computation, real-data handling, or performance claims.
+Before implementing a calibration / selective prediction validator CLI,
+review
+[selective prediction calibration validator CLI design](selective_prediction_calibration_validator_cli_design.md)
+and confirm CLI modes, exit codes, fixture-root expected-result matching, safe
+human output, safe JSON output, path safety, and future Makefile/release-quality
+staging are documented. The CLI design step must not implement the CLI, add a
+Makefile target, change release-quality, compute metrics, expose row/logit or
+policy bodies, use real data, or claim performance.
 
 ## 7. Checks To Run
 

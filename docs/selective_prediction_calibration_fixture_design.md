@@ -419,6 +419,12 @@ The validator exercises this fixture root through safe count/reason-code
 metadata and expected-result matching. It does not compute calibration
 metrics, train a model, or expose row bodies.
 
+Step210 adds the
+[selective prediction calibration validator CLI design](selective_prediction_calibration_validator_cli_design.md)
+for a future safe command-line wrapper around the validator API. The CLI is
+not implemented in Step210, and no Makefile target or release-quality
+integration is added.
+
 ## 17. What This Does NOT Do
 
 This design does not:
@@ -466,6 +472,7 @@ original estimator input rows are safe.
 
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
 - [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
+- [Selective prediction calibration validator CLI design](selective_prediction_calibration_validator_cli_design.md)
 - [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Milestone 08 learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md)
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
