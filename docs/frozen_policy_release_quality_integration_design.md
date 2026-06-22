@@ -1,43 +1,27 @@
 # Frozen Policy Release-Quality Integration Design
 
-This document designs future release-quality wrapper integration for the
-synthetic frozen policy validator Makefile target.
+This document records the release-quality wrapper integration design and
+Step230 implementation status for the synthetic frozen policy validator
+Makefile target.
 
-It is documentation only. It does not change the release-quality wrapper,
-GitHub Actions workflows, Makefile, shell scripts, validator code, fixtures,
-calibration code, selective prediction code, learner-state estimator code,
-training code, model code, metric computation, candidate generation, OT
+Step230 adds `make check-learner-state-frozen-policy` to
+`scripts/check_release_quality.sh` only. It does not change GitHub Actions
+workflows, Makefile, Python code, tests, fixtures, calibration code,
+selective prediction code, frozen policy generation scaffold, learner-state
+estimator code, training code, metric computation, candidate generation, OT
 scoring, scoring formula, tie-break logic, or manifest schemas. It is not a
 performance evaluation and is not a real-data readiness claim.
 
 ## 1. Purpose
 
-The purpose of this document is to define how
-`make check-learner-state-frozen-policy` should be integrated into
-`make check-release-quality` in a future implementation step.
+The purpose of this document is to define and record how
+`make check-learner-state-frozen-policy` is integrated into the release-quality
+wrapper.
 
-The design covers:
-
-- wrapper insertion point
-- wrapper command
-- release-quality label
-- expected wrapper behavior
-- log safety review
-- failure interpretation
-- remote/manual run record policy
-- relation to existing release-quality checks
-- testing plan for future implementation
-
-The integration must preserve the current safety boundary:
-
-- synthetic-only fixtures
-- safe count/reason-code output only
-- no frozen policy body
-- no raw rows
-- no logits or probability dump
-- no private paths
-- no raw learner text
-- no performance metrics or claims
+The integration keeps the frozen policy validator inside the existing
+synthetic-only learner-state check sequence and preserves safe count-only
+logging. It does not expose frozen policy bodies, raw rows, logits dumps,
+private paths, raw learner text, or performance metric bodies.
 
 ## 2. Current State
 
@@ -58,16 +42,19 @@ Current assets:
   - `input_error_cases=0`
 - target output is safe human summary only
 - target creates no tmp output
-- release-quality integration does not exist yet
-- GitHub Actions workflow change does not exist yet
+- Step230 release-quality wrapper integration is present
+- workflow change is not present
 
 The target is an artifact-contract smoke check. It does not fit calibration,
 make selective prediction decisions, train a learner-state estimator, compute
 metrics, or handle real data.
 
-## 3. Proposed Wrapper Insertion Point
+## 3. Wrapper Insertion Point
 
-Recommended insertion order inside the learner-state release-quality checks:
+Step230 places the frozen policy check immediately after selective prediction
+calibration validation and before config/scoring smoke checks.
+
+The learner-state sequence in the wrapper is:
 
 1. learner-state audit fixtures
 2. learner-state exporter CLI smoke
@@ -75,11 +62,6 @@ Recommended insertion order inside the learner-state release-quality checks:
 4. learner-state selective prediction calibration validation
 5. learner-state frozen policy validation
 6. config and scoring smoke checks
-
-Recommended placement in `scripts/check_release_quality.sh`:
-
-- after `make check-learner-state-selective-prediction`
-- before `section "config and scoring smoke checks"`
 
 Rationale:
 
@@ -92,64 +74,37 @@ Rationale:
   contract that would be consumed after validation-only tuning
 - config/scoring smoke checks are a separate downstream command family
 
-This order keeps the learner-state checks in a readable progression from
-upstream sequence safety toward downstream frozen policy artifact safety.
+## 4. Wrapper Command
 
-Alternative placements:
-
-- after estimator input validation: acceptable, but frozen policy validation
-  is more naturally downstream of selective prediction calibration validation
-- after config/scoring smoke checks: not recommended, because frozen policy is
-  a learner-state validation boundary rather than a scoring smoke check
-- before selective prediction calibration validation: not recommended, because
-  the frozen policy artifact is meant to depend on validated prediction,
-  label, split, and policy inputs
-
-## 4. Proposed Wrapper Command
-
-Recommended command:
+Step230 wrapper command:
 
 ```bash
 make check-learner-state-frozen-policy
 ```
 
-The wrapper should call the Makefile target rather than the Python module
-directly.
+The wrapper calls the Makefile target rather than the Python module directly.
+This keeps the developer command and release-quality command aligned, avoids
+duplicating the long Python invocation, and keeps future fixture-root or flag
+changes localized to the Makefile.
 
-Reasons:
-
-- the standalone Makefile target has already been reviewed for safe output
-- developers and CI use the same command entrypoint
-- the wrapper remains readable
-- the long Python module invocation is not duplicated
-- future fixture-root or flag changes can stay localized to the Makefile
-- output policy is documented at the target boundary
-
-The wrapper should not pass `--json` initially. Human summary is short,
+The wrapper does not use `--json`. The human summary is short,
 developer-readable, and already suppresses policy bodies, rows, logits dumps,
 and private paths.
 
-## 5. Proposed Wrapper Label
+## 5. Wrapper Label
 
-Recommended wrapper section label:
+Step230 wrapper section label:
 
 ```text
 release_quality_check: learner-state frozen policy validation
 ```
 
-Recommended wrapper stanza:
-
-```sh
-section "learner-state frozen policy validation"
-run make check-learner-state-frozen-policy
-```
-
-The label should not mention performance, calibration quality, model quality,
-or real-data readiness.
+The label intentionally does not mention performance, calibration quality,
+model quality, or real-data readiness.
 
 ## 6. Expected Wrapper Behavior
 
-Expected behavior after future integration:
+Expected behavior:
 
 - target pass: release-quality continues
 - target fail: release-quality fails through existing fail-fast behavior
@@ -181,18 +136,20 @@ Allowed in release-quality logs:
 
 - wrapper section label
 - command line
-- fixture-root safe summary
+- mode
 - total cases
 - matched cases
 - mismatched cases
 - input error cases
 - reason-code counts
 - safety flags
+- `content_suppressed`
+- `no_raw_rows`
 - intentional invalid fixture reason codes
 
 Forbidden in release-quality logs:
 
-- full frozen policy body
+- full frozen policy artifact body
 - raw prediction rows
 - raw label rows
 - logits dump
@@ -205,9 +162,8 @@ Forbidden in release-quality logs:
 - real data paths
 - raw learner text
 - performance metric body
-- F1 / accuracy / ECE / AURCC claims
-- full job output copied into docs
 - raw GitHub Actions logs copied into docs
+- full job output copied into docs
 
 Intentional invalid fixture reason codes may appear because they are part of
 the safe summary. Intentional invalid fixture bodies must not appear. The
@@ -244,7 +200,7 @@ contracts only.
 
 ## 9. Remote / Manual Run Record Future
 
-After future release-quality integration, a remote/manual run record should
+After this wrapper integration, a future remote/manual run record should
 capture high-level metadata only.
 
 Safe metadata to record:
@@ -288,7 +244,7 @@ markers.
 
 ## 10. Relation To Existing Release-Quality Checks
 
-The learner-state release-quality progression should be:
+The learner-state release-quality progression is:
 
 - learner-state audit: checks synthetic sequence audit fixture contracts and
   no-oracle boundaries
@@ -311,17 +267,16 @@ evaluation, or model performance reporting.
 Current status:
 
 - Makefile target already exists
-- release-quality wrapper is not changed yet
+- release-quality wrapper integration is present
 - workflow is not changed
 
-Future implementation should modify only `scripts/check_release_quality.sh` if
-possible. The GitHub Actions release-quality workflow likely does not need a
-direct YAML change because it already calls the wrapper. That assumption should
-be verified during the implementation step.
+Step230 modifies only `scripts/check_release_quality.sh` plus documentation.
+The GitHub Actions release-quality workflow does not need a direct YAML change
+because it already calls the wrapper.
 
-## 12. Testing Plan For Future Implementation
+## 12. Testing Plan
 
-Future implementation checks:
+Implementation checks:
 
 - `make check-learner-state-frozen-policy` passes
 - `make check-release-quality` includes
@@ -330,8 +285,7 @@ Future implementation checks:
 - wrapper output contains the safe 12-case matched summary
 - wrapper output does not contain policy body, raw rows, logits dump, private
   paths, raw learner text, or performance metric bodies
-- `git diff -- .github/workflows/release-quality.yml` has no diff unless a
-  workflow change is explicitly required
+- `git diff -- .github/workflows/release-quality.yml` has no diff
 - wrapper diff is limited to the new check stanza
 - Python tests pass
 - all existing release-quality checks pass
@@ -363,11 +317,13 @@ This integration is not:
 
 ## 14. What This Does NOT Do
 
-This design does not:
+This design and implementation do not:
 
-- integrate the release-quality wrapper
 - change workflows
 - change Makefile
+- change Python code
+- change tests
+- change fixtures
 - implement calibration
 - implement selective prediction
 - generate frozen policy artifacts
@@ -381,12 +337,12 @@ This design does not:
 Release-quality is the project's local bundle of checks that should pass
 before treating a change as release-ready for this synthetic-only pipeline.
 
-The standalone target comes first because it lets developers review the exact
-command and log output in isolation. After that output is known to be safe, a
-later step can add the same target to release-quality.
+The standalone target came first because it let developers review the exact
+command and log output in isolation. After that output was known to be safe,
+Step230 added the same target to release-quality.
 
-The wrapper should call the Makefile target instead of the Python command
-directly because Makefile becomes the shared entrypoint for developers and CI.
+The wrapper calls the Makefile target instead of the Python command directly
+because Makefile is the shared entrypoint for developers and automation.
 That avoids duplicating long command arguments in multiple places.
 
 Log safety review matters because frozen policy fixtures intentionally include
