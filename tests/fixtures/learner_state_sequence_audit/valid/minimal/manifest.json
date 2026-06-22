@@ -1,0 +1,29 @@
+{
+  "manifest_schema_version": "learner_state_sequence_manifest_v0_1",
+  "dataset_schema_version": "learner_state_sequence_dataset_v0_1",
+  "created_by": "synthetic_fixture",
+  "synthetic_only": true,
+  "no_oracle_checked": "planned",
+  "content_suppressed": true,
+  "feature_file": "features.jsonl",
+  "label_file": "labels.jsonl",
+  "row_counts": {
+    "features": 1,
+    "labels": 1
+  },
+  "entity_counts": {
+    "participants": 1,
+    "sessions": 1,
+    "tasks": 1,
+    "episodes": 1
+  },
+  "split_metadata_summary": {
+    "train": {
+      "participants": 1,
+      "tasks": 1,
+      "episodes": 1
+    }
+  },
+  "forbidden_fields_absent": true,
+  "notes": "Synthetic minimal valid fixture; manifest is count-only."
+}

@@ -265,6 +265,12 @@ Configs must not be tuned from expected actions. Config-enabled E2E and
 config-enabled summaries must remain explicit and separate from no-config
 summaries.
 
+For learner-state sequence audit fixtures, confirm that
+[`tests/fixtures/learner_state_sequence_audit/`](../tests/fixtures/learner_state_sequence_audit/README.md)
+remains synthetic-only and that public docs describe fixture case names,
+categories, and reason codes without copying JSONL rows, manifest bodies, raw
+text, or label contents.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

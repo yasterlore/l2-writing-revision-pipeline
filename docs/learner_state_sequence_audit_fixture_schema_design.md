@@ -314,6 +314,11 @@ Step 162 follow-up: see
 for the fixture root, directory structure, file set, and naming plan before any
 fixture files are created.
 
+Step 163 follow-up: initial synthetic fixture files have been added under
+[`tests/fixtures/learner_state_sequence_audit/`](../tests/fixtures/learner_state_sequence_audit/README.md).
+They are small valid/invalid audit inputs for future audit implementation and
+are not model, metric, exporter, or scorer changes.
+
 ## 17. Beginner Notes
 
 A fixture is a small example file used to test behavior.

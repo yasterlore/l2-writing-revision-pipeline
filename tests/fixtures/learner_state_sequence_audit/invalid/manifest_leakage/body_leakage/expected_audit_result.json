@@ -1,0 +1,10 @@
+{
+  "audit_schema_version": "learner_state_sequence_audit_result_v0_1",
+  "audit_status": "fail",
+  "expected_failure_code": "manifest_body_leakage",
+  "expected_violation_category": "manifest_leakage",
+  "expected_violation_count_min": 1,
+  "content_suppressed": true,
+  "no_raw_rows": true,
+  "synthetic_only_expected": true
+}

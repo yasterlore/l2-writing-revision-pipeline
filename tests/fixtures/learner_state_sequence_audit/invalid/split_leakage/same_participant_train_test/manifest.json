@@ -1,0 +1,36 @@
+{
+  "manifest_schema_version": "learner_state_sequence_manifest_v0_1",
+  "dataset_schema_version": "learner_state_sequence_dataset_v0_1",
+  "created_by": "synthetic_fixture",
+  "synthetic_only": true,
+  "no_oracle_checked": "planned",
+  "content_suppressed": true,
+  "feature_file": "features.jsonl",
+  "label_file": "labels.jsonl",
+  "row_counts": {
+    "features": 2,
+    "labels": 2
+  },
+  "entity_counts": {
+    "participants": 1,
+    "sessions": 2,
+    "tasks": 2,
+    "episodes": 2
+  },
+  "split_metadata_summary": {
+    "train": {
+      "participants": 1
+    },
+    "test": {
+      "participants": 1
+    }
+  },
+  "split_membership": {
+    "train": [
+      "synthetic_participant_overlap_001"
+    ],
+    "test": [
+      "synthetic_participant_overlap_001"
+    ]
+  }
+}

@@ -316,6 +316,11 @@ Step 162 follow-up: see
 [Learner-state sequence audit fixture files design](learner_state_sequence_audit_fixture_files_design.md)
 for the future fixture root, directory structure, naming, and file set.
 
+Step 163 follow-up: the initial synthetic audit fixture files are available at
+[`tests/fixtures/learner_state_sequence_audit/`](../tests/fixtures/learner_state_sequence_audit/README.md).
+They define future pass/fail expectations only; audit code and exporter logic
+are still intentionally unimplemented.
+
 ## 16. Beginner Notes
 
 An audit is a check that looks for unsafe or invalid data before later tools
