@@ -311,6 +311,12 @@ Recommended future sequence:
 Release-quality should not be connected until the CLI is implemented and its
 human and JSON outputs are confirmed safe.
 
+Step227 adds the
+[frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md)
+as a docs-only plan for wrapping the safe fixture-root CLI in a future
+`make check-learner-state-frozen-policy` target. The target is not implemented
+in Step227, and release-quality remains unchanged.
+
 ## 15. No-Oracle / Synthetic-Only Boundary
 
 The frozen policy is a synthetic-only metadata artifact. Intentional invalid
@@ -369,6 +375,7 @@ unsafe content that caused the failure.
 - [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md)
+- [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Synthetic data policy](12_synthetic_data_policy.md)

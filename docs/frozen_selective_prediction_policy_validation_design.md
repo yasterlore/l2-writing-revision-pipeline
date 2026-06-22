@@ -387,9 +387,12 @@ Recommended next steps:
 3. Step226: minimal frozen policy validator CLI implementation. Completed in
    `python/learner_state/frozen_policy_validation.py` with tests in
    `python/learner_state/tests/test_frozen_policy_validation_cli.py`.
-4. Step227: Makefile target design / implementation.
-5. Step228: release-quality integration design / implementation.
-6. Step229: calibration scaffold fixture design.
+4. Step227: frozen policy validator Makefile target design. Completed as
+   docs-only in
+   [frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md).
+5. Step228: Makefile target implementation.
+6. Step229: release-quality integration design / implementation.
+7. Step230: calibration scaffold fixture design.
 
 Keep each step narrow. Do not combine frozen policy validation, calibration
 implementation, selective prediction decisions, estimator training, metric
@@ -437,6 +440,7 @@ unsafe inputs instead of guessing that they are acceptable.
 - [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
 - [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md)
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md)
+- [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md)
 - `python/learner_state/frozen_policy_validation.py`
 - `python/learner_state/tests/test_frozen_policy_validation.py`
 - `python/learner_state/tests/test_frozen_policy_validation_cli.py`
