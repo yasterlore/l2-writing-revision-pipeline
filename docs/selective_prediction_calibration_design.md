@@ -322,6 +322,13 @@ Recommended future order:
 Keep each step narrow. Do not combine estimator training, calibration metrics,
 real-data readiness, and production data pipeline work in one step.
 
+Step206 adds the
+[selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
+as a docs-only fixture plan for future synthetic prediction rows, labels,
+split metadata, calibration policies, expected validation results, and
+fail-closed reason codes. It does not create fixture files or implement
+calibration, selective prediction, an estimator, or metric computation.
+
 ## 16. What This Does NOT Do
 
 This design does not:
@@ -363,6 +370,7 @@ leakage-checked.
 ## 18. Related Documents
 
 - [Milestone 08 learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md)
+- [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
