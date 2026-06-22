@@ -85,6 +85,12 @@ representative invalid fixtures. The files are fixture data only; no
 calibration validator, selective prediction code, learner-state estimator, or
 metric computation is added.
 
+Step208 adds the
+[selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
+for future fixture validation order, safe result schema, expected-result
+matching, join checks, split checks, calibration policy checks, test tuning
+leakage checks, and no-oracle checks. It does not implement the validator.
+
 ## 5. Fixture File Set
 
 Each fixture case should eventually contain:
@@ -449,6 +455,7 @@ original estimator input rows are safe.
 ## 19. Related Documents
 
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
+- [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
 - [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Milestone 08 learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md)
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)

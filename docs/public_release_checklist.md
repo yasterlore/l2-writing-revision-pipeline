@@ -507,6 +507,15 @@ and confirm it is synthetic-only, separates prediction rows from label rows,
 keeps expected actions label-side except intentional invalid leakage cases,
 uses count-only split metadata and expected validation results, includes no
 real participant data or private paths, and does not claim model performance.
+Before implementing any calibration / selective prediction fixture validator,
+review
+[selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
+and confirm validation order, safe result schema, failure reason codes,
+expected-result matching, prediction/label joins, split validation,
+calibration policy checks, test tuning leakage checks, no-oracle checks, and
+safe output policy are documented. The validation design step must not
+implement validator code, calibration, selective prediction, model training,
+metric computation, real-data handling, or performance claims.
 
 ## 7. Checks To Run
 
