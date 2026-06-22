@@ -229,6 +229,13 @@ Recommended next steps:
 
 The implementation step should not edit CI workflows or audit code.
 
+Step 171 implementation note: the release-quality wrapper now includes a
+`learner-state audit fixtures` section after Python unittest/compileall and
+before config/scoring smoke checks. The section calls
+`make check-learner-state-audit-fixtures` and relies on the target's safe human
+summary output. CI workflows, Makefile target definitions, audit code, and
+fixture files remain unchanged.
+
 ## 13. Beginner Notes
 
 The release-quality wrapper is a script that runs the normal set of checks used

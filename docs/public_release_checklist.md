@@ -290,6 +290,10 @@ Before adding the learner-state audit Makefile target to the release-quality
 wrapper, review the
 [learner-state sequence audit release-quality integration design](learner_state_sequence_audit_release_quality_integration_design.md)
 and confirm wrapper logs remain safe and count-only.
+After wrapper integration, confirm `scripts/check_release_quality.sh` runs the
+learner-state audit fixture check through the Makefile target without printing
+JSONL rows, manifest bodies, label bodies, private paths, or expected action
+bodies.
 
 ## 7. Checks To Run
 
