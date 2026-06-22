@@ -296,28 +296,31 @@ Recommended priority order:
 3. Initial frozen policy generation fixture files: completed in Step236 as
    synthetic-only request, pointer, expected-generation-result, and expected
    frozen-policy-validation-result metadata fixtures.
-4. Minimal frozen policy generation fixture validator implementation:
+4. Frozen policy generation validation design: completed in Step237 as a
+   docs-only plan for fixture validation order, safe result schema,
+   reason-code mapping, and expected-result matching.
+5. Minimal frozen policy generation fixture validator implementation:
    completed in Step238 as a safe Python loader/validator for synthetic
    generation fixtures. It still does not implement generation, calibration,
    CLI, Makefile target, release-quality integration, or metric computation.
-5. Frozen policy generation validator CLI design: completed in Step239 as a
+6. Frozen policy generation validator CLI design: completed in Step239 as a
    docs-only plan for fixture-case/root execution, exit codes, safe human
    output, safe JSON output, and expected-result matching.
-6. Calibration scaffold fixture design: define synthetic inputs and expected
+7. Calibration scaffold fixture design: define synthetic inputs and expected
    outputs for validation-only calibration scaffold work.
-7. Validation-only temperature scaling scaffold design: specify how future
+8. Validation-only temperature scaling scaffold design: specify how future
    validation labels may choose temperature without test-label tuning.
-8. Fixed abstention threshold scaffold design: specify validation-only
+9. Fixed abstention threshold scaffold design: specify validation-only
    threshold selection for a frozen abstention policy.
-9. Safe frozen policy generation implementation: create minimal synthetic-only
+10. Safe frozen policy generation implementation: create minimal synthetic-only
    generation after the design and fixtures are stable.
-10. Calibration scaffold implementation: implement only after safe inputs,
+11. Calibration scaffold implementation: implement only after safe inputs,
    frozen policy schema, and validator boundaries remain stable.
-11. Remote run record workflow reuse: keep future remote records metadata-only
+12. Remote run record workflow reuse: keep future remote records metadata-only
    and count-only.
-12. Minimal learner-state estimator prototype design: plan only after the
+13. Minimal learner-state estimator prototype design: plan only after the
    calibration and frozen policy contract layers are stable.
-13. Real-data readiness review: postpone to a private or institution-approved
+14. Real-data readiness review: postpone to a private or institution-approved
    review path.
 
 Future work should stay staged. It should not combine real-data readiness,
@@ -370,6 +373,7 @@ calibrated, production-ready, or real-data-ready.
 - Step235: linked the frozen policy generation fixture design as the next
   synthetic fixture planning follow-up.
 - Step236: linked the initial frozen policy generation fixture root.
+- Step237: linked the frozen policy generation validation design.
 - Step238: linked the minimal frozen policy generation fixture validator
   implementation.
 - Step239: linked the frozen policy generation validator CLI design.

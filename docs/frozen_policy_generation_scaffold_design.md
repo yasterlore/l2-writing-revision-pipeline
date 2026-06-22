@@ -361,12 +361,14 @@ Recommended staging:
    design for this stage.
 3. Create initial synthetic generator fixtures. Step236 adds metadata-only
    fixture files for this stage.
-4. Design and implement minimal generation fixture validation. Step238 adds
-   the safe fixture validator implementation.
-5. Design the safe generation validator CLI. Step239 adds the docs-only CLI
+4. Design generation fixture validation. Step237 adds the docs-only validation
    design for this stage.
-6. Implement minimal generator with fixture tests.
-7. Add a safe CLI implementation.
+5. Implement minimal generation fixture validation. Step238 adds
+   the safe fixture validator implementation.
+6. Design the safe generation validator CLI. Step239 adds the docs-only CLI
+   design for this stage.
+7. Implement minimal generator with fixture tests after validator behavior is
+   stable.
 8. Add a standalone Makefile target.
 9. Review output/log safety.
 10. Integrate into release-quality only after standalone safety is stable.
@@ -423,6 +425,7 @@ real-data-ready.
 - Step235: linked the frozen policy generation fixture design as the next
   docs-only planning step.
 - Step236: linked the initial frozen policy generation fixture root.
+- Step237: linked the frozen policy generation validation design.
 - Step238: linked the minimal frozen policy generation fixture validator
   implementation.
 - Step239: linked the frozen policy generation validator CLI design.

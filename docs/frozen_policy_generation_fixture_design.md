@@ -464,6 +464,8 @@ followed the synthetic fixture contract and safety boundaries.
   fixture files remain unchanged.
 - Step239: linked the frozen policy generation validator CLI design as the
   next docs-only interface plan.
+- Step237: linked the frozen policy generation validation design as the next
+  docs-only planning step before validator implementation.
 
 ## Related Documents
 
