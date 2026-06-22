@@ -409,6 +409,8 @@ accidentally expose raw rows, labels, logits, paths, or misleading metrics.
   `python/learner_state/frozen_policy_generation_validation.py`, with CLI
   tests in
   `python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`.
+- Step241: linked the frozen policy generation validator Makefile target
+  design as the next docs-only orchestration plan.
 
 ## Related Documents
 
@@ -416,6 +418,7 @@ accidentally expose raw rows, labels, logits, paths, or misleading metrics.
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
+- [Frozen policy generation validator Makefile target design](frozen_policy_generation_validator_makefile_target_design.md)
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
 - `python/learner_state/frozen_policy_generation_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_validation.py`

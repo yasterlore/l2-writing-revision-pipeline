@@ -359,9 +359,13 @@ Recommended staged roadmap:
    matching, and safe JSON/human output.
 3. Step240: CLI implementation. Completed as a minimal safe
    `python -m learner_state.frozen_policy_generation_validation` wrapper.
-4. Step241: Makefile target design and implementation.
-5. Step242: release-quality integration design and implementation.
-6. Step243: frozen policy generation scaffold implementation design.
+4. Step241: Makefile target design. Completed as a docs-only target name,
+   command, help text, logging policy, tmp policy, and release-quality staging
+   plan.
+5. Step242: Makefile target implementation and release-quality integration
+   design.
+6. Step243: release-quality integration implementation.
+7. Step244: frozen policy generation scaffold implementation design.
 
 Each stage should preserve synthetic-only fixtures, safe output, and no metric
 or performance claims.
@@ -405,12 +409,15 @@ is not evidence that a model is accurate, calibrated, or ready for real data.
   next docs-only interface plan.
 - Step240: linked the minimal frozen policy generation validator CLI
   implementation.
+- Step241: linked the frozen policy generation validator Makefile target
+  design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
+- [Frozen policy generation validator Makefile target design](frozen_policy_generation_validator_makefile_target_design.md)
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)

@@ -433,6 +433,8 @@ real-data-ready.
 - Step239: linked the frozen policy generation validator CLI design.
 - Step240: linked the minimal frozen policy generation validator CLI
   implementation.
+- Step241: linked the frozen policy generation validator Makefile target
+  design.
 
 ## Related Documents
 
@@ -442,6 +444,7 @@ real-data-ready.
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
+- [Frozen policy generation validator Makefile target design](frozen_policy_generation_validator_makefile_target_design.md)
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - `python/learner_state/frozen_policy_generation_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`

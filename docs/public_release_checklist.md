@@ -757,6 +757,17 @@ performance claims. This step must not add a Makefile target, release-quality
 wrapper change, workflow change, generator code, calibration/selective
 prediction logic, metric computation, fixture changes, or real-data readiness
 claims.
+For Step241, review the
+[frozen policy generation validator Makefile target design](frozen_policy_generation_validator_makefile_target_design.md)
+and confirm it remains docs-only: no Makefile target, Makefile change,
+release-quality wrapper change, workflow change, Python code change, test
+change, fixture change, generator code, calibration/selective prediction
+logic, metric computation, or real-data readiness claim is introduced. The
+design must specify target name, command, help text, exit-code behavior, safe
+logging, tmp/output policy, and future release-quality staging without
+printing request bodies, input pointer bodies, generated artifact bodies, raw
+rows, logits/probability dumps, private paths, raw learner text, raw GitHub
+logs, or performance claims.
 
 ## 7. Checks To Run
 
