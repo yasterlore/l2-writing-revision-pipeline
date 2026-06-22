@@ -396,6 +396,7 @@ leakage-checked.
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
 - [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
 - [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
+- [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)

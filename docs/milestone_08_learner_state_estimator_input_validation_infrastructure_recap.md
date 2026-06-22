@@ -355,5 +355,6 @@ validator path ran, matched expected results, and kept output safe.
 - [Learner-state estimator input release-quality remote run status](status/learner_state_estimator_input_release_quality_remote_run_status.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
+- [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)
 - [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md)
 - [Public release checklist](public_release_checklist.md)

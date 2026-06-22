@@ -38,3 +38,6 @@ Related recap:
 - [Milestone 08 learner-state estimator input validation infrastructure recap](../milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md):
   broader recap of the learner-state estimator input validation infrastructure
   milestone.
+- [Milestone 09 selective prediction validation infrastructure recap](../milestone_09_selective_prediction_validation_infrastructure_recap.md):
+  broader recap of the selective prediction validation infrastructure
+  milestone.
