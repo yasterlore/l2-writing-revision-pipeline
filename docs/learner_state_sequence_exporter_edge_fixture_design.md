@@ -333,6 +333,15 @@ The added cases are `valid/past_window_boundary_reset/` plus invalid
 fixture files for future tests only; exporter code, exporter tests, audit code,
 Makefile, workflow, and release-quality wrapper behavior are unchanged.
 
+Step 181 implementation note: exporter edge-case tests now exercise the Step
+180 fixtures. The tests export `valid/past_window_boundary_reset/`, verify
+safe/count-only generated outputs, confirm learner-state sequence audit success,
+and check task-boundary past-window reset behavior. The invalid fixtures are
+loaded through fail-closed exporter failure handling and compared with their
+safe `expected_failure_contract.json` reason codes. Test failure summaries do
+not include JSONL row bodies, malformed-line bodies, label bodies, manifest
+bodies, or private paths.
+
 ## 14. Beginner Notes
 
 An edge-case fixture is a small synthetic test case designed to exercise an

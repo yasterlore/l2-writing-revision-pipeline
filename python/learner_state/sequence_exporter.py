@@ -25,10 +25,17 @@ LABELS_SOURCE_FILE = "labels_source.jsonl"
 SYNTHETIC_METADATA_FILE = "synthetic_metadata.json"
 SPLIT_METADATA_FILE = "split_metadata.json"
 EXPECTED_OUTPUT_CONTRACT_FILE = "expected_output_contract.json"
+EXPECTED_FAILURE_CONTRACT_FILE = "expected_failure_contract.json"
 
 FEATURES_OUTPUT_FILE = "features.jsonl"
 LABELS_OUTPUT_FILE = "labels.jsonl"
 MANIFEST_OUTPUT_FILE = "manifest.json"
+
+SAFE_EPISODE_INPUT_SCHEMA_VERSION = "exporter_input_safe_episode_v0.1"
+CANDIDATE_SCORE_SCHEMA_VERSION = "candidate_score_summary_v0.1"
+LABEL_SOURCE_SCHEMA_VERSION = "synthetic_label_source_v0.1"
+SYNTHETIC_METADATA_SCHEMA_VERSION = "exporter_synthetic_metadata_v0.1"
+SPLIT_METADATA_SCHEMA_VERSION = "synthetic_split_metadata_v0.1"
 
 FORBIDDEN_FEATURE_KEYS = {
     "expected_action",
@@ -94,6 +101,49 @@ class ExportResult:
         }
 
 
+@dataclass(frozen=True)
+class ExportFailureSummary:
+    export_status: str
+    reason_codes: list[str]
+    failure_categories: list[str]
+    stage: str
+    content_suppressed: bool = True
+    no_raw_rows: bool = True
+    synthetic_only_checked: bool = True
+
+    def to_safe_dict(self) -> dict[str, Any]:
+        return {
+            "export_status": self.export_status,
+            "reason_codes": self.reason_codes,
+            "failure_categories": self.failure_categories,
+            "stage": self.stage,
+            "content_suppressed": self.content_suppressed,
+            "no_raw_rows": self.no_raw_rows,
+            "synthetic_only_checked": self.synthetic_only_checked,
+        }
+
+
+class ExporterFailure(Exception):
+    """Safe fail-closed exporter failure without raw input content."""
+
+    def __init__(
+        self,
+        reason_code: str,
+        failure_category: str,
+        stage: str = "input_validation",
+    ) -> None:
+        self.summary = ExportFailureSummary(
+            export_status="fail",
+            reason_codes=[reason_code],
+            failure_categories=[failure_category],
+            stage=stage,
+        )
+        super().__init__(
+            "sequence_export_failed:"
+            f"stage={stage};category={failure_category};reason={reason_code}"
+        )
+
+
 def export_sequence_from_fixture(
     input_case_dir: str | Path,
     output_dir: str | Path,
@@ -120,7 +170,6 @@ def load_exporter_input_fixture(input_case_dir: str | Path) -> ExporterInputBund
         "synthetic_metadata",
     )
     split_metadata = _load_json(case_dir / SPLIT_METADATA_FILE, "split_metadata")
-    expected_output_contract = load_expected_output_contract(case_dir)
 
     _validate_exporter_inputs(
         safe_episodes=safe_episodes,
@@ -129,6 +178,7 @@ def load_exporter_input_fixture(input_case_dir: str | Path) -> ExporterInputBund
         synthetic_metadata=synthetic_metadata,
         split_metadata=split_metadata,
     )
+    expected_output_contract = load_expected_output_contract(case_dir)
 
     return ExporterInputBundle(
         safe_episodes=safe_episodes,
@@ -142,10 +192,17 @@ def load_exporter_input_fixture(input_case_dir: str | Path) -> ExporterInputBund
 
 
 def load_expected_output_contract(input_case_dir: str | Path) -> dict[str, Any]:
-    return _load_json(
-        Path(input_case_dir) / EXPECTED_OUTPUT_CONTRACT_FILE,
-        "expected_output_contract",
-    )
+    path = Path(input_case_dir) / EXPECTED_OUTPUT_CONTRACT_FILE
+    if not path.exists():
+        _fail("missing_contract", "expected_output_contract")
+    return _load_json(path, "expected_output_contract")
+
+
+def load_expected_failure_contract(input_case_dir: str | Path) -> dict[str, Any]:
+    path = Path(input_case_dir) / EXPECTED_FAILURE_CONTRACT_FILE
+    if not path.exists():
+        _fail("missing_contract", "expected_failure_contract")
+    return _load_json(path, "expected_failure_contract")
 
 
 def write_sequence_outputs(
@@ -247,7 +304,8 @@ def _build_feature_rows(bundle: ExporterInputBundle) -> list[dict[str, Any]]:
     if not isinstance(diagnostic_counts, dict):
         diagnostic_counts = {}
 
-    seen_family_counts: dict[str, int] = {}
+    seen_task_episode_counts: dict[tuple[str, str, str], int] = {}
+    seen_family_counts: dict[tuple[str, str, str, str], int] = {}
     rows: list[dict[str, Any]] = []
 
     for episode in sorted(
@@ -271,15 +329,20 @@ def _build_feature_rows(bundle: ExporterInputBundle) -> list[dict[str, Any]]:
             raise AssertionError("missing_label_source_for_episode")
 
         participant_id = _required_str(episode, "synthetic_participant_id")
+        session_id = _required_str(episode, "synthetic_session_id")
+        task_id = _required_str(episode, "synthetic_task_id")
         top_family = candidate.get("top_ranked_candidate_family")
         top_family_str = top_family if isinstance(top_family, str) else "unknown"
-        previous_count = seen_family_counts.get(top_family_str, 0)
+        task_key = (participant_id, session_id, task_id)
+        family_key = (*task_key, top_family_str)
+        previous_task_episode_count = seen_task_episode_counts.get(task_key, 0)
+        previous_count = seen_family_counts.get(family_key, 0)
 
         row = {
             "feature_schema_version": FEATURE_SCHEMA_VERSION,
             "synthetic_participant_id": participant_id,
-            "synthetic_session_id": _required_str(episode, "synthetic_session_id"),
-            "synthetic_task_id": _required_str(episode, "synthetic_task_id"),
+            "synthetic_session_id": session_id,
+            "synthetic_task_id": task_id,
             "micro_episode_id": _required_str(episode, "micro_episode_id"),
             "episode_order_index": _required_int(episode, "episode_order_index"),
             "split_id": split_by_participant.get(participant_id, "train"),
@@ -300,12 +363,13 @@ def _build_feature_rows(bundle: ExporterInputBundle) -> list[dict[str, Any]]:
             ),
             "diagnostic_count_features": diagnostic_counts,
             "past_only_window_features": {
-                "previous_episode_count": len(rows),
+                "previous_episode_count": previous_task_episode_count,
                 "previous_same_top_family_count": previous_count,
             },
         }
         rows.append(row)
-        seen_family_counts[top_family_str] = previous_count + 1
+        seen_task_episode_counts[task_key] = previous_task_episode_count + 1
+        seen_family_counts[family_key] = previous_count + 1
 
     return rows
 
@@ -441,28 +505,54 @@ def _validate_exporter_inputs(
     split_metadata: dict[str, Any],
 ) -> None:
     if not safe_episodes:
-        raise AssertionError("empty_safe_episodes")
+        _fail("empty_input", "input_cardinality")
     if not candidate_scores:
-        raise AssertionError("empty_candidate_scores")
+        _fail("empty_input", "input_cardinality")
     if not labels_source:
-        raise AssertionError("empty_labels_source")
+        _fail("empty_input", "input_cardinality")
     if synthetic_metadata.get("synthetic_only") is not True:
-        raise AssertionError("synthetic_metadata_not_synthetic_only")
+        _fail("exporter_forbidden_field", "synthetic_metadata")
     if synthetic_metadata.get("content_suppressed") is not True:
-        raise AssertionError("synthetic_metadata_not_content_suppressed")
+        _fail("exporter_forbidden_field", "synthetic_metadata")
     if split_metadata.get("label_derived") is True:
-        raise AssertionError("split_metadata_label_derived")
+        _fail("exporter_split_leakage", "split_metadata")
     if split_metadata.get("outcome_derived") is True:
-        raise AssertionError("split_metadata_outcome_derived")
+        _fail("exporter_split_leakage", "split_metadata")
+    _assert_schema_version(
+        synthetic_metadata,
+        "metadata_schema_version",
+        SYNTHETIC_METADATA_SCHEMA_VERSION,
+    )
+    _assert_schema_version(
+        split_metadata,
+        "split_schema_version",
+        SPLIT_METADATA_SCHEMA_VERSION,
+    )
     for row in safe_episodes:
+        _assert_schema_version(
+            row,
+            "input_schema_version",
+            SAFE_EPISODE_INPUT_SCHEMA_VERSION,
+        )
         _assert_no_forbidden_feature_keys(row, "safe_episodes")
     for row in candidate_scores:
+        _assert_schema_version(
+            row,
+            "candidate_score_schema_version",
+            CANDIDATE_SCORE_SCHEMA_VERSION,
+        )
         _assert_no_forbidden_feature_keys(row, "candidate_scores")
+    for row in labels_source:
+        _assert_schema_version(
+            row,
+            "label_schema_version",
+            LABEL_SOURCE_SCHEMA_VERSION,
+        )
 
 
 def _load_jsonl(path: Path, file_role: str) -> list[dict[str, Any]]:
     if not path.exists():
-        raise AssertionError(f"missing_{file_role}")
+        _fail("missing_input_file", "input_file_presence")
     rows: list[dict[str, Any]] = []
     try:
         with path.open(encoding="utf-8") as handle:
@@ -471,25 +561,25 @@ def _load_jsonl(path: Path, file_role: str) -> list[dict[str, Any]]:
                     continue
                 row = json.loads(line)
                 if not isinstance(row, dict):
-                    raise AssertionError(f"malformed_{file_role}")
+                    _fail("malformed_input", "jsonl_parse")
                 rows.append(row)
     except json.JSONDecodeError as exc:
-        raise AssertionError(f"malformed_{file_role}") from exc
+        raise ExporterFailure("malformed_input", "jsonl_parse") from exc
     if not rows:
-        raise AssertionError(f"empty_{file_role}")
+        _fail("empty_input", "input_cardinality")
     return rows
 
 
 def _load_json(path: Path, file_role: str) -> dict[str, Any]:
     if not path.exists():
-        raise AssertionError(f"missing_{file_role}")
+        _fail("missing_input_file", "input_file_presence")
     try:
         with path.open(encoding="utf-8") as handle:
             data = json.load(handle)
     except json.JSONDecodeError as exc:
-        raise AssertionError(f"malformed_{file_role}") from exc
+        raise ExporterFailure("malformed_input", "json_parse") from exc
     if not isinstance(data, dict):
-        raise AssertionError(f"malformed_{file_role}")
+        _fail("malformed_input", "json_parse")
     return data
 
 
@@ -555,8 +645,35 @@ def _assert_no_forbidden_feature_keys(row: dict[str, Any], file_role: str) -> No
     keys = set(_nested_keys(row))
     forbidden = keys & FORBIDDEN_FEATURE_KEYS
     if forbidden:
-        safe_names = ",".join(sorted(forbidden))
-        raise AssertionError(f"forbidden_feature_key:{file_role}:{safe_names}")
+        label_keys = {
+            "expected_action",
+            "expected_action_family",
+            "expected_action_type",
+            "label_source",
+        }
+        category = (
+            "label_in_feature_input"
+            if forbidden & label_keys
+            else f"{file_role}_forbidden_field"
+        )
+        _fail("exporter_forbidden_field", category)
+
+
+def _assert_schema_version(
+    row: dict[str, Any],
+    key: str,
+    expected_version: str,
+) -> None:
+    if row.get(key) != expected_version:
+        _fail("unknown_input_schema_version", "schema_version")
+
+
+def _fail(
+    reason_code: str,
+    failure_category: str,
+    stage: str = "input_validation",
+) -> None:
+    raise ExporterFailure(reason_code, failure_category, stage)
 
 
 def _nested_keys(value: Any) -> list[str]:
