@@ -414,6 +414,12 @@ Keep each step narrow. Do not combine artifact schema, validator
 implementation, calibration scaffold, estimator training, metric computation,
 release-quality integration, and real-data readiness in one step.
 
+Step221 adds the
+[frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
+as a docs-only plan for a future synthetic fixture root, valid and invalid
+frozen policy artifact cases, expected validation results, reason codes, and
+validation checks. It does not create fixture files or implement a validator.
+
 ## 19. What This Does Not Prove
 
 This schema design does not prove:
@@ -459,6 +465,7 @@ safe-output boundaries.
 
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
+- [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
 - [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
 - [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)

@@ -604,6 +604,13 @@ threshold provenance, requires explicit schema versioning, excludes raw rows,
 label bodies, logits/probability dumps, policy/split body dumps, test-derived
 tuning traces, private paths, performance claims, real data, and production
 readiness claims.
+Before creating frozen selective prediction policy fixture files, review
+[frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
+and confirm the planned fixture root, valid and invalid cases, expected
+validation result contract, failure reason codes, and future validation checks
+remain synthetic-only and exclude frozen artifact bodies, raw rows, logits
+dumps, label bodies, policy/split bodies, private paths, performance claims,
+real data, and production readiness claims.
 
 ## 7. Checks To Run
 
