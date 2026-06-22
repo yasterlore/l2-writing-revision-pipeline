@@ -18,3 +18,8 @@ Available markers:
 - [Learner-state audit release-quality remote run status](learner_state_audit_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after learner-state audit fixture
   integration.
+
+Related recap:
+
+- [Milestone 06 learner-state audit infrastructure recap](../milestone_06_learner_state_audit_infrastructure_recap.md):
+  broader recap of the learner-state audit infrastructure milestone.

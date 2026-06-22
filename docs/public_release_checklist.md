@@ -304,6 +304,11 @@ The public-safe remote/manual status marker is
 [learner-state audit release-quality remote run status](status/learner_state_audit_release_quality_remote_run_status.md);
 it records workflow success and learner-state audit fixture inclusion without
 copying raw logs or output bodies.
+For the broader learner-state audit infrastructure recap, review
+[Milestone 06 learner-state audit infrastructure recap](milestone_06_learner_state_audit_infrastructure_recap.md)
+and confirm it does not claim model performance, learner-state estimator
+correctness, real-data readiness, production data collection validity, or new
+metric evidence.
 
 ## 7. Checks To Run
 
