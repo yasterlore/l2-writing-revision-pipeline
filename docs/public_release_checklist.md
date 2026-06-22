@@ -666,6 +666,14 @@ For Step230, confirm `make check-release-quality` includes
 safe human summary only, and leaves workflows, Makefile, Python code, tests,
 fixtures, calibration, selective prediction, frozen policy generation,
 estimator code, and metric computation unchanged.
+For Step231, review
+[frozen policy release-quality remote run record workflow](frozen_policy_release_quality_remote_run_record_workflow.md)
+before creating any remote/manual Release Quality status marker. Confirm the
+future marker will record only public-safe metadata and count-only summaries,
+will not paste raw GitHub Actions logs or full job output, will not include
+frozen policy artifact bodies, JSON bodies, raw rows, logits/probability dumps,
+private paths, raw learner text, or performance metric bodies, and will not
+change workflows, wrapper scripts, Makefile, Python code, tests, or fixtures.
 
 ## 7. Checks To Run
 

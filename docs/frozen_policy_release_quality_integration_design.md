@@ -242,6 +242,12 @@ The remote/manual run record should follow the existing public-safe pattern
 used by estimator input and selective prediction release-quality status
 markers.
 
+Step231 follow-up: the remote/manual run recording workflow is documented in
+[Frozen policy release-quality remote run record workflow](frozen_policy_release_quality_remote_run_record_workflow.md).
+It defines the future status marker path, allowed metadata, forbidden log/body
+content, safety review, failure handling, and public checklist relationship.
+It does not create the status marker or run the remote workflow.
+
 ## 10. Relation To Existing Release-Quality Checks
 
 The learner-state release-quality progression is:
@@ -362,3 +368,4 @@ measured.
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md)
 - [Selective prediction calibration release-quality integration design](selective_prediction_calibration_release_quality_integration_design.md)
+- [Frozen policy release-quality remote run record workflow](frozen_policy_release_quality_remote_run_record_workflow.md)

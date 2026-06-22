@@ -28,6 +28,13 @@ Available markers:
   remote/manual release-quality wrapper status after learner-state selective
   prediction calibration validation integration.
 
+Future marker guidance:
+
+- Use `learner_state_frozen_policy_release_quality_remote_run_status.md` for
+  the future frozen policy Release Quality status marker if the remote/manual
+  run logs pass public-safety review. Do not add the marker until the remote
+  run has happened and only count-only metadata is available.
+
 Related recap:
 
 - [Milestone 06 learner-state audit infrastructure recap](../milestone_06_learner_state_audit_infrastructure_recap.md):
