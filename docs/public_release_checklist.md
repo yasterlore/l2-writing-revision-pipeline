@@ -345,6 +345,12 @@ Before implementing an exporter CLI, review
 and confirm the future command requires safe output handling, explicit output
 directory policy, audit-after-export, safe exit codes, and no generated body
 logging.
+After implementing the exporter CLI, confirm
+`python -m learner_state.sequence_exporter` supports only synthetic fixture
+input mode for now, writes to explicit safe output directories, reports only
+safe human or JSON summaries, fails closed for invalid fixtures and unsafe
+output paths, and does not print generated JSONL rows, label bodies, manifest
+bodies, malformed-line contents, private paths, or raw logs.
 
 ## 7. Checks To Run
 

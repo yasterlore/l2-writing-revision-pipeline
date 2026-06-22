@@ -368,6 +368,13 @@ for the future safe command-line interface scope, argument design, output
 directory policy, exit codes, audit integration, contract handling, and logging
 policy. That follow-up is docs-only and does not implement the CLI.
 
+Step 183 follow-up: the minimal `python -m learner_state.sequence_exporter`
+CLI is implemented with explicit `--input-fixture` and `--output-dir`
+arguments, optional `--json`, safe human/JSON summaries, output-directory
+guards, audit-after-export reporting, and CLI tests. It does not add a Makefile
+target, release-quality integration, CI workflow integration, estimator, model,
+metric, or real-data handling.
+
 ## 15. Relation To Existing Pipeline
 
 The exporter sits between existing safe synthetic pipeline components and future

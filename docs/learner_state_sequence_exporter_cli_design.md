@@ -1,12 +1,13 @@
 # Learner-State Sequence Exporter CLI Design
 
-This document designs a future safe command-line interface for the
-learner-state sequence exporter.
+This document designs the safe command-line interface for the learner-state
+sequence exporter.
 
-This is design documentation only. It does not implement the CLI, change
-exporter code, change exporter tests, change audit code, change fixtures,
-change Makefile, change workflows, or change the release-quality wrapper. It is
-not a performance evaluation and is not a real-data readiness claim.
+This was design documentation before Step 183. Step 183 implements the minimal
+CLI described here, while leaving Makefile, workflow, release-quality wrapper,
+shell script, audit code, fixture, estimator, model, and metric behavior
+unchanged. It is not a performance evaluation and is not a real-data readiness
+claim.
 
 ## 1. Purpose
 
@@ -41,9 +42,34 @@ Current state:
 - The exporter can write separated `features.jsonl`, `labels.jsonl`, and
   `manifest.json` to a caller-provided output directory.
 - Generated outputs are audited by `learner_state.sequence_audit`.
-- The exporter CLI does not exist yet.
+- Step 183 adds the minimal `python -m learner_state.sequence_exporter` CLI.
 - No Makefile target or release-quality integration exists for the exporter
   CLI.
+
+## Step 183 Implementation Status
+
+Step 183 implements the minimal CLI entrypoint in
+`python/learner_state/sequence_exporter.py` and CLI tests in
+`python/learner_state/tests/test_sequence_exporter_cli.py`.
+
+Implemented scope:
+
+- `--input-fixture <case_dir>`
+- `--output-dir <dir>`
+- `--json`
+- `--help`
+- explicit output directory requirement
+- fail-closed handling for existing generated output files
+- fail-closed handling for fixture-root and unsafe output paths
+- safe human summaries
+- safe JSON summaries
+- contract and audit result reporting through safe metadata only
+
+The CLI still does not add a Makefile target, release-quality integration, CI
+workflow integration, shell wrapper, learner-state estimator, model, metric, or
+real-data handling. Public docs must continue to avoid generated JSONL bodies,
+label bodies, manifest bodies, malformed-line bodies, private paths, and raw
+logs.
 
 ## 3. CLI Use Cases
 
@@ -60,7 +86,7 @@ Candidate use cases:
 | Safe JSON summary | Machine-readable wrapper/test output | Yes |
 | Human safe summary | Local developer use | Yes |
 
-Initial CLI scope should be:
+Implemented initial CLI scope is:
 
 - one `--input-fixture` directory
 - one explicit `--output-dir`
@@ -104,7 +130,7 @@ Initial recommendation:
 - no color output initially
 - no explicit `--overwrite` initially unless tests need it
 
-The first implementation should keep the CLI small and easy to review.
+The first implementation keeps the CLI small and easy to review.
 
 ## 5. Output Directory Policy
 
@@ -160,18 +186,17 @@ Forbidden output:
 
 ## 7. Exit Code Design
 
-Recommended exit codes:
+Implemented exit code policy:
 
 - `0`: export succeeded, audit passed, and contract check passed when required
 - `1`: export or audit failed due to input safety, no-oracle, or audit violation
 - `2`: usage error, missing required argument, missing path, or malformed input
 - `3`: expected output contract mismatch
 
-Possible implementation detail:
-
-- fail-closed exporter validation errors may initially map to `1`
-- CLI argument parsing and nonexistent command paths should map to `2`
-- contract mismatches should map to `3`
+- missing input files and malformed input map to `2`
+- other fail-closed exporter validation errors map to `1`
+- unsafe output paths and existing output files map to `1`
+- contract mismatches map to `3`
 
 The command must not silently pass unknown failures.
 
@@ -251,9 +276,9 @@ Path policy:
 Future real-data handling, if ever considered, needs a separate readiness
 review and should not reuse this public fixture CLI path.
 
-## 12. Tests Future Plan
+## 12. Tests
 
-Future CLI tests should cover:
+CLI tests now cover:
 
 - `--help`
 - minimal fixture export exits `0`
@@ -262,25 +287,24 @@ Future CLI tests should cover:
 - `--json` output is parseable safe JSON
 - existing output directory behavior
 - missing required arguments exit nonzero
-- contract mismatch exits `3`
+- unsafe output path failure
 - stdout/stderr do not contain raw rows
 - stdout/stderr do not contain malformed-line bodies
 - stdout/stderr do not contain label bodies or manifest bodies
 - stdout/stderr do not expose private absolute paths
 
-The tests should use temporary output directories only.
+The tests use temporary output directories only.
 
 ## 13. Makefile / Release-Quality Future Plan
 
 Recommended staged plan:
 
-1. Step 183: exporter CLI implementation.
-2. Step 184: exporter CLI tests.
-3. Step 185: Makefile target design.
-4. Step 186: Makefile target implementation.
-5. Step 187: release-quality integration review.
-6. Later: optional release-quality wrapper integration after CLI tests are
-   stable.
+1. Step 183: exporter CLI implementation and CLI tests.
+2. Step 184: Makefile target design.
+3. Step 185: Makefile target implementation.
+4. Step 186: release-quality integration review.
+5. Later: optional release-quality wrapper integration after CLI behavior
+   remains stable.
 
 The exporter CLI should not be added directly to release-quality until the
 command behavior, exit codes, and log safety have stabilized.
