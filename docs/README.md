@@ -21,7 +21,9 @@ Recommended entry points:
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md): docs-only contract for future estimator inputs from audited exporter outputs; no estimator or metric is implemented.
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md): docs-only fixture and validation-contract plan for future estimator input loader tests.
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md): initial synthetic exported-shape fixture root for future estimator input validation.
-- [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md): docs-only validator order, safe result schema, reason-code mapping, and fixture matching plan.
+- [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md): validator order, safe result schema, reason-code mapping, fixture matching plan, and Step195 implementation status.
+- `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader returning safe count/reason-code metadata; no estimator model or metric is implemented.
+- `python/learner_state/tests/test_estimator_input.py`: fixture-based validator tests for one valid case and eight fail-closed invalid cases.
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md): docs-only design for future synthetic feature/label/manifest export with audit integration.
 - [Learner-state sequence exporter input fixture design](learner_state_sequence_exporter_input_fixture_design.md): docs-only design for future synthetic exporter input fixtures and expected output contracts.
 - [Learner-state sequence exporter input fixtures](../tests/fixtures/learner_state_sequence_exporter/README.md): initial synthetic-only input fixture root for a future sequence exporter.
@@ -65,7 +67,9 @@ Recommended entry points:
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md): next-stage docs-only input contract for future synthetic-only learner-state estimator loading.
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md): fixture-root, case structure, expected validation result, and reason-code design before adding estimator input fixtures.
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md): synthetic valid/invalid exported-shape fixtures for future fail-closed estimator input loader validation.
-- [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md): validation scope and failure policy before implementing the estimator input validator/loader.
+- [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md): validation scope, failure policy, and Step195 implementation status for the estimator input validator/loader.
+- `python/learner_state/estimator_input.py`: minimal validator/loader for the synthetic estimator input fixtures; it validates joins, counts, splits, schema versions, and no-oracle boundaries without training an estimator.
+- `python/learner_state/tests/test_estimator_input.py`: unit tests that exercise expected validation results without printing fixture row bodies.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -156,8 +160,10 @@ Recommended entry points:
 - [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md): public-safe recap of exporter fixtures, module, CLI, Makefile/release-quality integration, and remote status.
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md): safe feature/label/manifest consumption contract before any learner-state estimator implementation.
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md): design for future synthetic estimator input fixtures that validate joins, grouping, splits, and leakage checks.
-- [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md): initial synthetic-only fixture root for future estimator input validation; no loader is implemented yet.
+- [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md): initial synthetic-only fixture root now exercised by the minimal estimator input validator/loader.
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md): planned validation order, safe result schema, fixture expected-result matching, and no-oracle checks.
+- `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader; no learner-state estimator, training loop, calibration, or metrics are added.
+- `python/learner_state/tests/test_estimator_input.py`: validator tests covering expected-result matching and safe validation metadata.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.

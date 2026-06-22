@@ -6,10 +6,17 @@ expected-result matching, sequence grouping checks, split checks, and
 no-oracle/leakage checks to apply before any estimator input loader or
 learner-state estimator is implemented.
 
-This is design documentation only. It does not implement an estimator input
-validator, estimator input loader, learner-state estimator, estimator training
-code, selective prediction, calibration, a new model, or a new metric. It is
-not performance evaluation and it is not a real-data readiness claim.
+Step195 follow-up: the minimal synthetic-only estimator input validator/loader
+is implemented in `python/learner_state/estimator_input.py`, with fixture-based
+tests in `python/learner_state/tests/test_estimator_input.py`. The
+implementation returns safe validation metadata, checks the Step193 fixtures,
+and matches `expected_input_validation_result.json` without printing row
+bodies.
+
+This document remains the design reference for validation. The implementation
+does not add a learner-state estimator, estimator training code, selective
+prediction, calibration, a new model, or a new metric. It is not performance
+evaluation and it is not a real-data readiness claim.
 
 ## 1. Purpose
 
@@ -51,6 +58,10 @@ Current learner-state estimator input assets:
   - `invalid/unknown_schema_version/`
 - expected validation contract file:
   - `expected_input_validation_result.json`
+- implementation:
+  - `python/learner_state/estimator_input.py`
+- tests:
+  - `python/learner_state/tests/test_estimator_input.py`
 
 The fixture files are synthetic-only and exported-shape. Public docs should
 refer to file names, counts, and reason codes, not row bodies.
@@ -319,8 +330,8 @@ formula, tie-breaks, or manifest schema.
 
 Recommended order:
 
-1. Step195: minimal estimator input validator/loader implementation.
-2. Step196: fixture-based validator tests.
+1. Step195: minimal estimator input validator/loader implementation. Complete.
+2. Step196: broader fixture-based validator tests or CLI design review.
 3. Step197: optional CLI design for estimator input validation.
 4. Step198: selective prediction / calibration design.
 5. Step199: estimator prototype design.
@@ -351,6 +362,8 @@ not a silent pass.
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
+- `python/learner_state/estimator_input.py`
+- `python/learner_state/tests/test_estimator_input.py`
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Public release checklist](public_release_checklist.md)

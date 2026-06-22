@@ -347,6 +347,8 @@ loading, model behavior, and metric interpretation.
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
+- `python/learner_state/estimator_input.py`
+- `python/learner_state/tests/test_estimator_input.py`
 - [Learner-state input representation design](learner_state_input_representation_design.md)
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Public release checklist](public_release_checklist.md)

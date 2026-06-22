@@ -417,6 +417,12 @@ and confirm validation order, safe result schema, reason-code mapping,
 fixture expected-result matching, split checks, and no-oracle checks are
 documented without adding model training, metrics, calibration, or real-data
 readiness claims.
+After implementing the minimal estimator input validator/loader, review
+`python/learner_state/estimator_input.py` and
+`python/learner_state/tests/test_estimator_input.py`; confirm they return only
+safe count/reason-code metadata, exercise all Step193 fixture contracts, do not
+print JSONL row bodies or manifest bodies, and do not add estimator training,
+metrics, calibration, or real-data readiness claims.
 
 ## 7. Checks To Run
 
