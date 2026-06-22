@@ -458,6 +458,16 @@ run `make check-release-quality` and confirm the wrapper calls
 exporter CLI checks, reports 9 matched synthetic estimator input fixture cases,
 prints only safe count/reason-code summaries, creates no estimator-input tmp
 output, and leaves GitHub Actions workflows unchanged.
+Before recording any remote/manual Release Quality result after estimator input
+validation wrapper integration, review
+[learner-state estimator input release-quality remote run record workflow](learner_state_estimator_input_release_quality_remote_run_record_workflow.md)
+and record only public-safe metadata: workflow/job name, branch, commit short
+hash, status, duration if available, artifact presence, inclusion of audit,
+exporter, and estimator input validation checks, count-only matched-case
+summary if visible, and log safety review status. Do not paste raw GitHub
+Actions logs, JSONL rows, fixture row contents, generated output bodies, label
+or manifest bodies, expected action bodies, private paths, or performance
+metrics.
 
 ## 7. Checks To Run
 

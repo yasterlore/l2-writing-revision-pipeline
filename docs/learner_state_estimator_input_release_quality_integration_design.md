@@ -16,6 +16,10 @@ fixture check and exporter CLI smoke check. The wrapper integration keeps the
 Makefile target unchanged, creates no estimator-input tmp output, prints only
 safe human summary output, and leaves GitHub Actions workflows unchanged.
 
+Step202 follow-up: the remote/manual Release Quality run recording policy for
+this integration is documented in
+[Learner-state estimator input release-quality remote run record workflow](learner_state_estimator_input_release_quality_remote_run_record_workflow.md).
+
 ## 1. Purpose
 
 The purpose of this document is to decide how
@@ -279,9 +283,11 @@ production-ready.
 Recommended next steps:
 
 1. Step201: release-quality wrapper integration implementation.
-2. Step202: local release-quality run and log safety review.
-3. Step203: optional remote/manual release-quality run record.
-4. Step204: Milestone 08 recap or selective prediction/calibration design.
+2. Step202: remote/manual release-quality run record workflow design.
+3. Step203: run the manual Release Quality workflow and create a public-safe
+   run record or private/local note.
+4. Step204: optional status marker update, Milestone 08 recap, or selective
+   prediction/calibration design.
 
 The wrapper integration should remain small: add the Makefile target command
 near the existing learner-state audit/exporter checks and leave workflows
@@ -351,6 +357,7 @@ contracts, and kept output safe.
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md)
 - [Learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md)
+- [Learner-state estimator input release-quality remote run record workflow](learner_state_estimator_input_release_quality_remote_run_record_workflow.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
 - [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md)
 - [Public release checklist](public_release_checklist.md)
