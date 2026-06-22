@@ -194,6 +194,10 @@ Step 168 follow-up: see
 for the staged plan to connect the CLI to a future Makefile target,
 release-quality wrapper, and CI consideration while preserving safe output.
 
+Step 169 follow-up: the first integration step adds
+`make check-learner-state-audit-fixtures` as a manual Makefile target. It is
+not part of the release-quality wrapper or CI.
+
 ## 10. Failure Policy
 
 The CLI should fail safely on:

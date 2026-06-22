@@ -81,7 +81,7 @@ Recommended entry points:
 - [Orchestration modernization design](orchestration_modernization_design.md): staged plan for reducing shell orchestration risk without introducing heavy schedulers prematurely.
 - [Shell script inventory and task category design](shell_script_inventory_task_category_design.md): inventory of current shell scripts and future task-runner target candidates.
 - [Task runner selection design](task_runner_selection_design.md): Makefile vs justfile comparison and initial task-runner recommendation.
-- `make help`: thin Makefile entrypoint for existing checks, including `make check-release-quality` and `make check-summary-flow`.
+- `make help`: thin Makefile entrypoint for existing checks, including `make check-release-quality`, `make check-summary-flow`, and `make check-learner-state-audit-fixtures`.
 - [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md): adoption and safety review for the thin Makefile command surface.
 - [Makefile parallel/tmp safety design](makefile_parallel_tmp_safety_design.md): design for avoiding parallel execution and shared `tmp/` output hazards around summary-flow targets.
 - [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md): consolidated Step 145-151 orchestration modernization recap.
