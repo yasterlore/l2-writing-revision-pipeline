@@ -203,6 +203,14 @@ Recommended next steps:
 No workflow, Makefile, wrapper, audit-code, fixture, scorer, or model changes
 are part of this record workflow document.
 
+Step 173 implementation note: a short public-safe status marker now records the
+manual Release Quality workflow run #3 as successful after learner-state audit
+fixture wrapper integration. See
+[learner-state audit release-quality remote run status](status/learner_state_audit_release_quality_remote_run_status.md).
+The marker records only safe high-level metadata and does not include raw logs,
+fixture rows, label bodies, manifest bodies, private paths, or performance
+claims.
+
 ## 11. Beginner Notes
 
 A remote/manual workflow is a GitHub Actions run started by a person through
