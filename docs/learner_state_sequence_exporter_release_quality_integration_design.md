@@ -103,6 +103,11 @@ Rationale:
 The integration remains staged: Step187 adds the target to the wrapper only,
 without CI workflow edits.
 
+Step188 follow-up: see
+[Learner-state exporter release-quality remote run record workflow](learner_state_exporter_release_quality_remote_run_record_workflow.md)
+for the public-safe recording policy before running the existing manual
+Release Quality workflow after exporter CLI smoke wrapper integration.
+
 ## 4. Recommended Wrapper Position
 
 Recommended position:
@@ -335,5 +340,6 @@ model performance.
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
 - [Learner-state sequence exporter CLI design](learner_state_sequence_exporter_cli_design.md)
 - [Learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md)
+- [Learner-state exporter release-quality remote run record workflow](learner_state_exporter_release_quality_remote_run_record_workflow.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Public release checklist](public_release_checklist.md)

@@ -28,6 +28,7 @@ Recommended entry points:
 - [Learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md): target design and Step187 wrapper-integration status for exporter CLI smoke checks and tmp output policy.
 - `make check-learner-state-exporter-cli`: exporter CLI smoke target for synthetic valid fixtures; release-quality now calls it through the wrapper.
 - [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md): wrapper position, tmp-output, logging, CI, and Step187 status for exporter CLI release-quality integration.
+- [Learner-state exporter release-quality remote run record workflow](learner_state_exporter_release_quality_remote_run_record_workflow.md): public-safe recording policy for the manual Release Quality run after exporter CLI smoke wrapper integration.
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md): post-Makefile planning for returning to the synthetic-only research pipeline.
 - [Learner-state input representation design](learner_state_input_representation_design.md): no-oracle-safe input representation design before any learner-state estimator implementation.
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md): synthetic-only sequence dataset design for future learner-state inputs.
@@ -53,6 +54,7 @@ Recommended entry points:
 - [Learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md): target name, command shape, cleanup policy, and release-quality wrapper status for exporter CLI smoke checks.
 - `make check-learner-state-exporter-cli`: target that exports minimal and past-window synthetic fixtures under `tmp/learner_state_sequence_exporter_smoke/`; release-quality wrapper integration is now present.
 - [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md): wrapper position, tmp-output, logging, CI, risk plan, and Step187 status for exporter CLI release-quality integration.
+- [Learner-state exporter release-quality remote run record workflow](learner_state_exporter_release_quality_remote_run_record_workflow.md): safe metadata-only workflow for recording a remote/manual Release Quality run that includes exporter CLI smoke.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -139,6 +141,7 @@ Recommended entry points:
 - [Learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md): design and implementation status for the exporter CLI smoke Makefile target.
 - `make check-learner-state-exporter-cli`: synthetic exporter CLI smoke check now included in the release-quality wrapper.
 - [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md): release-quality wrapper integration design and Step187 status through the standalone Makefile target.
+- [Learner-state exporter release-quality remote run record workflow](learner_state_exporter_release_quality_remote_run_record_workflow.md): public-safe remote/manual run recording policy after exporter CLI smoke wrapper integration.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.

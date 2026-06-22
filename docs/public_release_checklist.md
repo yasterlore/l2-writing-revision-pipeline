@@ -373,6 +373,13 @@ confirm the wrapper calls `make check-learner-state-exporter-cli` after the
 learner-state audit fixture check, keeps cleanup scoped to the Makefile
 target's narrow `tmp/learner_state_sequence_exporter_smoke/` root, does not cat
 generated files, and leaves CI workflows unchanged.
+Before recording a remote/manual Release Quality run after exporter CLI smoke
+wrapper integration, review
+[learner-state exporter release-quality remote run record workflow](learner_state_exporter_release_quality_remote_run_record_workflow.md)
+and confirm the public record will include only metadata, will not paste raw
+GitHub Actions logs, will not include generated feature/label/manifest bodies,
+will note artifact presence, and will avoid performance or real-data readiness
+claims.
 
 ## 7. Checks To Run
 
