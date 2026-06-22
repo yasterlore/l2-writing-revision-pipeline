@@ -330,6 +330,8 @@ not expose the underlying rows.
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
+- `python/learner_state/estimator_input.py`
+- `python/learner_state/tests/test_estimator_input.py`
 - [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md)
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
