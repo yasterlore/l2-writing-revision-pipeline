@@ -357,17 +357,22 @@ and confirm the target remains standalone initially, writes only under a
 dedicated `tmp/` smoke output root, avoids fixture roots and private/real-data
 paths, does not cat generated files, and is not added directly to
 release-quality or CI before log safety review.
-After adding `make check-learner-state-exporter-cli`, confirm it remains a
-standalone target, writes only under
+After adding `make check-learner-state-exporter-cli`, confirm it writes only
+under
 `tmp/learner_state_sequence_exporter_smoke/`, prints only exporter CLI safe
-summaries, does not cat generated feature/label/manifest files, and is not yet
-called by the release-quality wrapper or CI workflows.
+summaries, does not cat generated feature/label/manifest files, and is not
+called directly by CI workflows.
 Before integrating the exporter CLI target into release-quality, review
 [learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md)
 and confirm the wrapper will call `make check-learner-state-exporter-cli`
 rather than duplicating CLI arguments, will keep `tmp/` cleanup narrow, will not
 cat generated files, and will not change CI workflows directly in the first
 integration step.
+After integrating the exporter CLI target into the release-quality wrapper,
+confirm the wrapper calls `make check-learner-state-exporter-cli` after the
+learner-state audit fixture check, keeps cleanup scoped to the Makefile
+target's narrow `tmp/learner_state_sequence_exporter_smoke/` root, does not cat
+generated files, and leaves CI workflows unchanged.
 
 ## 7. Checks To Run
 
