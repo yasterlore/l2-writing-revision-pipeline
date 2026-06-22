@@ -1,12 +1,14 @@
 # Selective Prediction Calibration Validator Makefile Target Design
 
-This document designs a future Makefile target for running the synthetic
-selective prediction calibration validator CLI.
+This document designs the Makefile target for running the synthetic selective
+prediction calibration validator CLI and records the Step213 implementation
+status.
 
-It is docs-only. It does not add a Makefile target, change release-quality,
-change workflows, implement calibration, implement selective prediction,
-train an estimator, compute metrics, use real data, or claim real-data
-readiness. It is not a performance evaluation.
+The Step212 version was docs-only. Step213 adds only the Makefile target and
+help text. It does not change release-quality, change workflows, implement
+calibration, implement selective prediction, train an estimator, compute
+metrics, use real data, or claim real-data readiness. It is not a performance
+evaluation.
 
 ## 1. Purpose
 
@@ -51,9 +53,17 @@ Current assets:
 - no raw rows, logits body, probability body, split body, or policy body are
   printed
 
+Step213 implementation status:
+
+- Makefile target exists.
+- `make help` includes the target.
+- standalone target passes with 8 matched fixture cases.
+- target creates no tmp output.
+- release-quality wrapper integration is not present yet.
+- workflow integration is not present.
+
 Not present yet:
 
-- Makefile target
 - release-quality wrapper integration
 - workflow integration
 
@@ -258,9 +268,18 @@ Likely future wrapper placement:
 The release-quality wrapper should not be changed during the target design
 step.
 
+Step213 implementation:
+
+- adds `.PHONY: check-learner-state-selective-prediction`
+- adds the Makefile help line
+- adds the standalone target command
+- does not add the target to `check-release-quality`
+- does not change `check-all`
+- does not change workflows or wrapper scripts
+
 ## 12. Testing Plan for Future Implementation
 
-Future implementation checks:
+Implementation checks:
 
 - `make help` includes the new target
 - target exits `0`
@@ -298,9 +317,8 @@ safe results. It does not mean calibration quality or model correctness.
 
 ## 14. What This Does NOT Do
 
-This document does not:
+This document and Step213 implementation do not:
 
-- implement a Makefile target
 - integrate release-quality
 - change workflows
 - implement calibration
@@ -333,6 +351,10 @@ deserve a separate safety review. First the target should pass standalone.
 
 Success is not performance evidence. It only confirms that synthetic fixture
 validation and expected-result matching worked.
+
+Step213 makes this shortcut available as
+`make check-learner-state-selective-prediction`. It remains standalone until a
+separate release-quality integration step is designed and implemented.
 
 ## 16. Related Documents
 

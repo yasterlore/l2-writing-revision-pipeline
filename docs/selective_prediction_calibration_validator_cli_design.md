@@ -403,6 +403,10 @@ recommends `check-learner-state-selective-prediction`, the fixture-root CLI
 command, safe human summary output, no tmp output, and no release-quality
 connection in the design step.
 
+Step213 implements the standalone Makefile target
+`check-learner-state-selective-prediction`. Release-quality wrapper and
+workflow integration remain separate future work.
+
 ## 15. No-Oracle / Synthetic-Only Boundary
 
 The CLI must preserve these boundaries:
@@ -426,7 +430,6 @@ not mean calibration quality, model correctness, or estimator performance.
 
 This document and Step211 implementation do not:
 
-- add a Makefile target
 - change release-quality
 - change workflows
 - implement calibration
