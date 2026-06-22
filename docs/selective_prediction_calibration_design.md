@@ -345,6 +345,13 @@ order, safe result metadata, expected-result matching, prediction/label joins,
 split checks, calibration policy checks, test tuning leakage checks, and
 no-oracle checks without implementing code.
 
+Step209 adds the minimal synthetic-only fixture validator in
+`python/learner_state/selective_prediction_validation.py` with fixture-based
+tests in `python/learner_state/tests/test_selective_prediction_validation.py`.
+It validates fixture safety and expected results with safe count/reason-code
+metadata only. It still does not implement calibration, selective prediction,
+an estimator, or metric computation.
+
 ## 16. What This Does NOT Do
 
 This design does not:

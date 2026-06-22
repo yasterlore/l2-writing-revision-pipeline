@@ -402,12 +402,22 @@ Recommended future order:
 1. Step207: create initial calibration / selective prediction fixtures.
 2. Step208: calibration / selective prediction validation design.
 3. Step209: minimal calibration fixture validator implementation.
-4. Step210: selective prediction / calibration scaffold design.
-5. Step211: minimal learner-state estimator prototype design.
+4. Step210: optional CLI design.
+5. Step211: Makefile target design.
+6. Step212: release-quality integration design.
+7. Step213: selective prediction / calibration scaffold design.
+8. Step214: minimal learner-state estimator prototype design.
 
 Keep implementation steps narrow. Do not combine fixture creation, validation
 logic, estimator modeling, metric computation, and release-quality integration
 in one step.
+
+Step209 adds a minimal synthetic-only fixture validator at
+`python/learner_state/selective_prediction_validation.py` with fixture-based
+tests in `python/learner_state/tests/test_selective_prediction_validation.py`.
+The validator exercises this fixture root through safe count/reason-code
+metadata and expected-result matching. It does not compute calibration
+metrics, train a model, or expose row bodies.
 
 ## 17. What This Does NOT Do
 
