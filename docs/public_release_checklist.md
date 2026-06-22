@@ -538,6 +538,14 @@ cases for the synthetic fixture root; exits `0` for intentional invalid
 fixtures when expected results match; exits safely for usage/input/mismatch
 cases; avoids row, label, policy, split, logits, and probability body output;
 and does not add a Makefile target or release-quality integration yet.
+Before adding a selective prediction calibration validator Makefile target,
+review
+[selective prediction calibration validator Makefile target design](selective_prediction_calibration_validator_makefile_target_design.md)
+and confirm the target name, fixture-root command, safe human output,
+exit-code behavior, no-tmp-output policy, relation to existing learner-state
+targets, and release-quality staging are documented. The design step must not
+change Makefile, release-quality, workflows, fixtures, validator code, tests,
+or compute calibration metrics.
 
 ## 7. Checks To Run
 

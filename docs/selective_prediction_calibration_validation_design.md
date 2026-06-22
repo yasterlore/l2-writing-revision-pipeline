@@ -373,9 +373,10 @@ Recommended future order:
 2. Step210: optional CLI design.
 3. Step211: minimal CLI implementation.
 4. Step212: Makefile target design.
-5. Step213: release-quality integration design.
-6. Step214: selective prediction / calibration scaffold design.
-7. Step215: minimal learner-state estimator prototype design.
+5. Step213: Makefile target implementation.
+6. Step214: release-quality integration design.
+7. Step215: selective prediction / calibration scaffold design.
+8. Step216: minimal learner-state estimator prototype design.
 
 Keep these steps separate. Do not combine validator implementation, estimator
 training, metric computation, and release-quality integration in one step.
@@ -403,6 +404,11 @@ in `python/learner_state/tests/test_selective_prediction_validation_cli.py`.
 The CLI supports fixture-case mode, fixture-root mode, safe JSON output, and
 expected-result matching. It does not add a Makefile target or release-quality
 integration.
+
+Step212 adds the
+[selective prediction calibration validator Makefile target design](selective_prediction_calibration_validator_makefile_target_design.md)
+as a docs-only plan for a future standalone target. It does not change
+Makefile, release-quality, workflows, fixtures, validator code, or tests.
 
 ## 16. What This Does NOT Do
 
@@ -447,6 +453,7 @@ instead of being treated as valid.
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
 - [Selective prediction calibration validator CLI design](selective_prediction_calibration_validator_cli_design.md)
+- [Selective prediction calibration validator Makefile target design](selective_prediction_calibration_validator_makefile_target_design.md)
 - [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [No-oracle policy](03_no_oracle_policy.md)

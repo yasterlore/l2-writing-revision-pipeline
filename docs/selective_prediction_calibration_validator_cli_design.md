@@ -396,6 +396,13 @@ Future staged work:
 Initial release-quality integration should not call the long CLI command
 directly. A Makefile target should own the command shape once it exists.
 
+Step212 adds the
+[selective prediction calibration validator Makefile target design](selective_prediction_calibration_validator_makefile_target_design.md)
+as a docs-only plan for a future standalone Makefile smoke target. It
+recommends `check-learner-state-selective-prediction`, the fixture-root CLI
+command, safe human summary output, no tmp output, and no release-quality
+connection in the design step.
+
 ## 15. No-Oracle / Synthetic-Only Boundary
 
 The CLI must preserve these boundaries:
@@ -460,6 +467,7 @@ contract behaved as expected.
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
 - [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
+- [Selective prediction calibration validator Makefile target design](selective_prediction_calibration_validator_makefile_target_design.md)
 - [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Public release checklist](public_release_checklist.md)
