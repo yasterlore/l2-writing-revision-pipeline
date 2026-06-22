@@ -235,6 +235,13 @@ Forbidden artifact content:
 The frozen policy is a reproducibility artifact for future synthetic-only
 experiments. It is not a performance certificate.
 
+Step220 expands this section in the
+[frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md).
+That follow-up document defines the recommended filename, schema version,
+required fields, optional fields, forbidden fields, validation-only provenance,
+and future artifact validation checks. It does not create an artifact file or
+implement scaffold code.
+
 ## 10. Safe Reporting Design
 
 Safe scaffold reporting should include only:
@@ -372,6 +379,12 @@ Keep these steps narrow. Do not combine scaffold implementation, estimator
 training, metric computation, release-quality integration, and real-data
 readiness in one step.
 
+Step220 adds the
+[frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
+as a docs-only schema plan for `frozen_selective_prediction_policy.json`.
+It still does not implement calibration, selective prediction, frozen policy
+generation, estimator training, or metric computation.
+
 ## 16. Testing Plan For Future Implementation
 
 Future tests should cover:
@@ -446,6 +459,7 @@ boundaries, no-oracle policy, and safe output rules.
 - [Selective prediction release-quality remote run record workflow](selective_prediction_release_quality_remote_run_record_workflow.md)
 - [Learner-state selective prediction release-quality remote run status](status/learner_state_selective_prediction_release_quality_remote_run_status.md)
 - [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)
+- [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Synthetic data policy](12_synthetic_data_policy.md)
