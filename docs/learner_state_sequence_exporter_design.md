@@ -444,6 +444,10 @@ episodes.
 The exporter is not a model. It prepares safe synthetic data. It does not learn,
 predict, score research performance, or validate learner-state quality.
 
+For the downstream contract that defines how a future estimator may consume
+audited exporter outputs, see
+[Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md).
+
 ## 18. Related Documents
 
 - [Milestone 06 learner-state audit infrastructure recap](milestone_06_learner_state_audit_infrastructure_recap.md)
@@ -457,4 +461,5 @@ predict, score research performance, or validate learner-state quality.
 - [Learner-state sequence exporter input fixture design](learner_state_sequence_exporter_input_fixture_design.md)
 - [Learner-state sequence exporter edge fixture design](learner_state_sequence_exporter_edge_fixture_design.md)
 - [Learner-state sequence exporter CLI design](learner_state_sequence_exporter_cli_design.md)
+- [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
 - [Public release checklist](public_release_checklist.md)
