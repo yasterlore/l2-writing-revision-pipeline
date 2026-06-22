@@ -13,11 +13,12 @@ implementation returns safe validation metadata, checks the Step193 fixtures,
 and matches `expected_input_validation_result.json` without printing row
 bodies.
 
-Step196 follow-up: the future command-line interface for this validator is
-designed in
+Step196 follow-up: the command-line interface design for this validator is
+recorded in
 [learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md).
-No CLI, Makefile target, release-quality integration, or workflow change is
-implemented by that design step.
+Step197 implements the minimal `python -m learner_state.estimator_input` CLI
+and `python/learner_state/tests/test_estimator_input_cli.py`. No Makefile
+target, release-quality integration, or workflow change is added by Step197.
 
 This document remains the design reference for validation. The implementation
 does not add a learner-state estimator, estimator training code, selective
@@ -371,6 +372,7 @@ not a silent pass.
 - [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md)
 - `python/learner_state/estimator_input.py`
 - `python/learner_state/tests/test_estimator_input.py`
+- `python/learner_state/tests/test_estimator_input_cli.py`
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Public release checklist](public_release_checklist.md)

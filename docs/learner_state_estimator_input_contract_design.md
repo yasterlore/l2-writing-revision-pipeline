@@ -350,6 +350,7 @@ loading, model behavior, and metric interpretation.
 - [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md)
 - `python/learner_state/estimator_input.py`
 - `python/learner_state/tests/test_estimator_input.py`
+- `python/learner_state/tests/test_estimator_input_cli.py`
 - [Learner-state input representation design](learner_state_input_representation_design.md)
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Public release checklist](public_release_checklist.md)

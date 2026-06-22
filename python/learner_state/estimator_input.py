@@ -7,7 +7,9 @@ validation, and safe metadata summaries; it does not train or evaluate a model.
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -262,6 +264,279 @@ def discover_estimator_input_fixture_cases(root: str | Path) -> list[Path]:
         path.parent
         for path in root_path.rglob(EXPECTED_INPUT_VALIDATION_RESULT_FILE)
         if path.is_file()
+    )
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Validate synthetic learner-state estimator input fixtures with "
+            "safe count/reason-code output."
+        )
+    )
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument(
+        "--fixture-case",
+        help="Synthetic estimator input fixture case directory.",
+    )
+    mode.add_argument(
+        "--fixture-root",
+        help="Synthetic estimator input fixture root directory.",
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit a safe JSON summary instead of a human summary.",
+    )
+    args = parser.parse_args(argv)
+    return _run_cli(args)
+
+
+def _run_cli(args: argparse.Namespace) -> int:
+    json_output = bool(args.json)
+    if args.fixture_case:
+        summary, exit_code = _run_cli_fixture_case(Path(args.fixture_case))
+    else:
+        summary, exit_code = _run_cli_fixture_root(Path(args.fixture_root))
+    _emit_cli_summary(summary, json_output)
+    return exit_code
+
+
+def _run_cli_fixture_case(case_dir: Path) -> tuple[dict[str, Any], int]:
+    result = validate_estimator_input_fixture(case_dir)
+    expected_path = case_dir / EXPECTED_INPUT_VALIDATION_RESULT_FILE
+    if expected_path.exists():
+        try:
+            expected = load_expected_input_validation_result(case_dir)
+        except EstimatorInputValidationFailure as exc:
+            return _input_error_summary("fixture_case", exc), 2
+        mismatches = compare_validation_result_to_expected(result, expected)
+        summary = _single_case_summary(case_dir, result, mismatches)
+        return summary, 3 if mismatches else 0
+
+    summary = _single_case_summary(case_dir, result, [])
+    if result.validation_status == "pass":
+        summary["expected_result_matched"] = False
+        return summary, 0
+    if _is_usage_like_result(result):
+        summary["validation_status"] = "input_error"
+        summary["expected_result_matched"] = False
+        return summary, 2
+    summary["expected_result_matched"] = False
+    return summary, 1
+
+
+def _run_cli_fixture_root(root_dir: Path) -> tuple[dict[str, Any], int]:
+    try:
+        _assert_path_safe(root_dir)
+    except EstimatorInputValidationFailure as exc:
+        return _input_error_summary("fixture_root", exc), 2
+    if not root_dir.exists() or not root_dir.is_dir():
+        return _input_error_summary(
+            "fixture_root",
+            EstimatorInputValidationFailure(
+                "missing_input_file",
+                "input_file_presence",
+                file_role="fixture_root",
+            ),
+        ), 2
+
+    cases = discover_estimator_input_fixture_cases(root_dir)
+    if not cases:
+        return _input_error_summary(
+            "fixture_root",
+            EstimatorInputValidationFailure(
+                "missing_input_file",
+                "fixture_discovery",
+                file_role=EXPECTED_INPUT_VALIDATION_RESULT_FILE,
+            ),
+        ), 2
+
+    matched_cases = 0
+    mismatched_cases = 0
+    input_error_cases = 0
+    reason_code_counts: dict[str, int] = {}
+    case_summaries: list[dict[str, Any]] = []
+
+    for case_dir in cases:
+        result = validate_estimator_input_fixture(case_dir)
+        for reason_code in result.reason_codes:
+            reason_code_counts[reason_code] = reason_code_counts.get(reason_code, 0) + 1
+        try:
+            expected = load_expected_input_validation_result(case_dir)
+        except EstimatorInputValidationFailure as exc:
+            input_error_cases += 1
+            case_summaries.append(_safe_case_error(case_dir, exc))
+            continue
+
+        mismatches = compare_validation_result_to_expected(result, expected)
+        if mismatches:
+            mismatched_cases += 1
+        else:
+            matched_cases += 1
+        case_summaries.append(_safe_case_summary(case_dir, result, mismatches))
+
+    summary = {
+        "mode": "fixture_root",
+        "total_cases": len(cases),
+        "matched_cases": matched_cases,
+        "mismatched_cases": mismatched_cases,
+        "input_error_cases": input_error_cases,
+        "reason_code_counts": {
+            key: reason_code_counts[key] for key in sorted(reason_code_counts)
+        },
+        "case_summaries": case_summaries,
+        "content_suppressed": True,
+        "no_raw_rows": True,
+        "synthetic_only_checked": True,
+        "no_oracle_checked": True,
+    }
+    if input_error_cases:
+        return summary, 2
+    if mismatched_cases:
+        return summary, 3
+    return summary, 0
+
+
+def _single_case_summary(
+    case_dir: Path,
+    result: EstimatorInputValidationResult,
+    mismatches: list[EstimatorInputValidationMismatch],
+) -> dict[str, Any]:
+    return {
+        "mode": "fixture_case",
+        "case": _safe_case_label(case_dir),
+        **result.to_safe_dict(),
+        "expected_result_matched": not mismatches,
+        "mismatch_fields": [mismatch.field_name for mismatch in mismatches],
+    }
+
+
+def _safe_case_summary(
+    case_dir: Path,
+    result: EstimatorInputValidationResult,
+    mismatches: list[EstimatorInputValidationMismatch],
+) -> dict[str, Any]:
+    return {
+        "case": _safe_case_label(case_dir),
+        "validation_status": result.validation_status,
+        "reason_codes": list(result.reason_codes),
+        "feature_row_count": result.feature_row_count,
+        "label_row_count": result.label_row_count,
+        "sequence_count": result.sequence_count,
+        "expected_result_matched": not mismatches,
+        "mismatch_fields": [mismatch.field_name for mismatch in mismatches],
+    }
+
+
+def _safe_case_error(
+    case_dir: Path,
+    exc: EstimatorInputValidationFailure,
+) -> dict[str, Any]:
+    return {
+        "case": _safe_case_label(case_dir),
+        "validation_status": "input_error",
+        "reason_codes": [exc.reason_code],
+        "failure_categories": [exc.failure_category],
+        "expected_result_matched": False,
+    }
+
+
+def _input_error_summary(
+    mode: str,
+    exc: EstimatorInputValidationFailure,
+) -> dict[str, Any]:
+    return {
+        "mode": mode,
+        "validation_status": "input_error",
+        "reason_codes": [exc.reason_code],
+        "failure_categories": [exc.failure_category],
+        "failed_checks": [
+            {
+                "stage": exc.stage,
+                "check_name": exc.check_name,
+                "file_role": exc.file_role,
+                "reason_code": exc.reason_code,
+                "failure_category": exc.failure_category,
+            }
+        ],
+        "content_suppressed": True,
+        "no_raw_rows": True,
+        "synthetic_only_checked": True,
+        "no_oracle_checked": True,
+    }
+
+
+def _emit_cli_summary(summary: dict[str, Any], json_output: bool) -> None:
+    if json_output:
+        sys.stdout.write(json.dumps(summary, sort_keys=True))
+        sys.stdout.write("\n")
+        return
+    for key in _human_summary_keys(summary):
+        sys.stdout.write(f"{key}={_format_summary_value(summary.get(key))}\n")
+
+
+def _human_summary_keys(summary: dict[str, Any]) -> list[str]:
+    preferred = [
+        "mode",
+        "case",
+        "validation_status",
+        "reason_codes",
+        "failed_checks",
+        "feature_row_count",
+        "label_row_count",
+        "sequence_count",
+        "split_counts",
+        "expected_result_matched",
+        "mismatch_fields",
+        "total_cases",
+        "matched_cases",
+        "mismatched_cases",
+        "input_error_cases",
+        "reason_code_counts",
+        "content_suppressed",
+        "no_raw_rows",
+        "synthetic_only_checked",
+        "no_oracle_checked",
+    ]
+    return [key for key in preferred if key in summary]
+
+
+def _format_summary_value(value: Any) -> str:
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if isinstance(value, list):
+        if not value:
+            return "none"
+        if all(isinstance(item, str) for item in value):
+            return ",".join(value)
+        return json.dumps(value, sort_keys=True, separators=(",", ":"))
+    if isinstance(value, dict):
+        if not value:
+            return "none"
+        return json.dumps(value, sort_keys=True, separators=(",", ":"))
+    if value is None:
+        return "none"
+    return str(value)
+
+
+def _safe_case_label(case_dir: Path) -> str:
+    parts = case_dir.parts
+    if len(parts) >= 2 and parts[-2] in {"valid", "invalid"}:
+        return f"{parts[-2]}/{parts[-1]}"
+    return case_dir.name or "unknown_case"
+
+
+def _is_usage_like_result(result: EstimatorInputValidationResult) -> bool:
+    return any(
+        reason_code
+        in {
+            "missing_input_file",
+            "malformed_input",
+            "unsafe_path",
+            "empty_input",
+        }
+        for reason_code in result.reason_codes
     )
 
 
@@ -613,3 +888,7 @@ def _safe_str(value: Any) -> str:
 
 def _safe_int(value: Any) -> int:
     return value if isinstance(value, int) else -1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
