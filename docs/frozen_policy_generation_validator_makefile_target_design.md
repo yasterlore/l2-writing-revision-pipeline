@@ -1,14 +1,14 @@
 # Frozen Policy Generation Validator Makefile Target Design
 
-This document designs a future Makefile target for running the frozen policy
-generation validator CLI.
+This document designs and records the Step242 implementation status for the
+Makefile target that runs the frozen policy generation validator CLI.
 
-It is documentation only. It does not implement a Makefile target, generator,
-frozen policy generation scaffold, release-quality integration, GitHub Actions
-workflow change, Python code change, test change, fixture change, calibration,
-selective prediction, learner-state estimator, estimator training, new model,
-or metric computation. It is not a performance evaluation and is not a
-real-data readiness claim.
+It is primarily a design record. Step242 implements only the standalone
+Makefile target. It does not implement a generator, frozen policy generation
+scaffold, release-quality integration, GitHub Actions workflow change, Python
+code change, test change, fixture change, calibration, selective prediction,
+learner-state estimator, estimator training, new model, or metric computation.
+It is not a performance evaluation and is not a real-data readiness claim.
 
 Public docs must not include raw GitHub Actions logs, full job output, copied
 log blocks, screenshots containing raw logs, frozen policy artifact bodies,
@@ -19,8 +19,8 @@ text, or real participant data.
 
 ## 1. Purpose
 
-The purpose of this document is to design a safe Makefile target for the
-Step240 frozen policy generation validator CLI.
+The purpose of this document is to design and record the safe standalone
+Makefile target for the Step240 frozen policy generation validator CLI.
 
 The target should let developers run fixture-root validation with a short
 command, while preserving the same safe output policy as the CLI. It should
@@ -42,7 +42,7 @@ Current state:
 - output is safe summary only
 - no request body, generated artifact body, raw rows, logits dump, or private
   path is printed
-- Makefile target does not exist yet
+- Makefile target exists as `make check-learner-state-frozen-policy-generation`
 - release-quality integration does not exist yet
 
 ## 3. Proposed Target Name
@@ -57,7 +57,7 @@ Candidate target names:
 | `check-frozen-policy-generation-fixtures` | Clear that fixtures are involved, but less aligned with existing learner-state target names. |
 | `check-learner-state-generation-policy` | Ambiguous; it could be read as generation policy rather than frozen policy generation validation. |
 
-Recommended target:
+Implemented target:
 
 ```text
 check-learner-state-frozen-policy-generation
@@ -72,7 +72,7 @@ Rationale:
 
 ## 4. Proposed Command
 
-Recommended command:
+Implemented command:
 
 ```bash
 PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_validation \
@@ -94,7 +94,7 @@ but the first Makefile target does not need it.
 
 ## 5. Help Text
 
-Recommended `make help` text:
+Implemented `make help` text:
 
 ```text
 check-learner-state-frozen-policy-generation  Smoke-test frozen policy generation fixture validation
@@ -216,19 +216,17 @@ Release-quality integration is not part of this step.
 
 Recommended future sequence:
 
-1. Implement the standalone Makefile target.
-2. Confirm `make help` includes the target.
-3. Confirm the target exits `0` and reports thirteen matched cases.
-4. Review stdout/stderr for body and path safety.
-5. Design release-quality integration.
-6. Add the wrapper call only after the standalone target is stable.
+1. Confirm the standalone target stays stable.
+2. Review stdout/stderr for body and path safety.
+3. Design release-quality integration.
+4. Add the wrapper call only after the standalone target is stable.
 
 Likely future placement is near the learner-state checks, after frozen policy
 validation and before config/scoring smoke checks. Do not connect it now.
 
-## 12. Testing Plan For Future Implementation
+## 12. Testing Plan For Standalone Implementation
 
-Future implementation checks:
+Standalone implementation checks:
 
 - `make help` includes `check-learner-state-frozen-policy-generation`
 - `make check-learner-state-frozen-policy-generation` exits `0`
@@ -264,10 +262,8 @@ Passing the target means only that fixture expected-result matching passed.
 
 ## 14. What This Does NOT Do
 
-This document does not:
+This step does not:
 
-- implement a Makefile target
-- modify `Makefile`
 - integrate release-quality
 - modify GitHub Actions workflows
 - implement generator code
@@ -301,6 +297,9 @@ contract and expected-result matching behaved as designed.
 
 - Step241: initial frozen policy generation validator Makefile target design
   creation.
+- Step242: implemented `make check-learner-state-frozen-policy-generation`
+  as a standalone smoke target. Release-quality wrapper and workflows remain
+  unchanged.
 
 ## Related Documents
 

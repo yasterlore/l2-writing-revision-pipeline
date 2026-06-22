@@ -15,6 +15,7 @@
 .PHONY: check-learner-state-estimator-input
 .PHONY: check-learner-state-selective-prediction
 .PHONY: check-learner-state-frozen-policy
+.PHONY: check-learner-state-frozen-policy-generation
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -39,6 +40,7 @@ help:
 	@echo "  check-learner-state-estimator-input  Smoke-test learner-state estimator input validation"
 	@echo "  check-learner-state-selective-prediction  Smoke-test selective prediction calibration validation"
 	@echo "  check-learner-state-frozen-policy  Smoke-test frozen selective prediction policy validation"
+	@echo "  check-learner-state-frozen-policy-generation  Smoke-test frozen policy generation fixture validation"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -100,6 +102,9 @@ check-learner-state-selective-prediction:
 
 check-learner-state-frozen-policy:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_validation --fixture-root tests/fixtures/learner_state_frozen_selective_prediction_policy
+
+check-learner-state-frozen-policy-generation:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality

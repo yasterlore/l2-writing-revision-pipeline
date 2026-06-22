@@ -768,6 +768,14 @@ logging, tmp/output policy, and future release-quality staging without
 printing request bodies, input pointer bodies, generated artifact bodies, raw
 rows, logits/probability dumps, private paths, raw learner text, raw GitHub
 logs, or performance claims.
+For Step242, confirm `make check-learner-state-frozen-policy-generation`
+exists, appears in `make help`, reports thirteen matched synthetic generation
+fixture cases, creates no `tmp/` output, prints only safe human summary
+metadata, and leaves the release-quality wrapper, workflows, Python code,
+tests, and fixtures unchanged. The target must not print request bodies, input
+pointer bodies, generated artifact bodies, raw rows, logits/probability dumps,
+private paths, raw learner text, raw GitHub logs, or performance claims, and
+it remains outside release-quality until a separate integration review.
 
 ## 7. Checks To Run
 

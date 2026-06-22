@@ -362,9 +362,10 @@ Recommended staged roadmap:
 4. Step241: Makefile target design. Completed as a docs-only target name,
    command, help text, logging policy, tmp policy, and release-quality staging
    plan.
-5. Step242: Makefile target implementation and release-quality integration
-   design.
-6. Step243: release-quality integration implementation.
+5. Step242: Makefile target implementation. Completed as a standalone smoke
+   target; release-quality remains unchanged.
+6. Step243: release-quality integration design.
+7. Step244: release-quality integration implementation.
 7. Step244: frozen policy generation scaffold implementation design.
 
 Each stage should preserve synthetic-only fixtures, safe output, and no metric
@@ -411,6 +412,8 @@ is not evidence that a model is accurate, calibrated, or ready for real data.
   implementation.
 - Step241: linked the frozen policy generation validator Makefile target
   design.
+- Step242: linked the standalone Makefile target implementation status for
+  `make check-learner-state-frozen-policy-generation`.
 
 ## Related Documents
 
