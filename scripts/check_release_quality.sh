@@ -103,6 +103,9 @@ run make check-learner-state-audit-fixtures
 section "learner-state exporter CLI smoke"
 run make check-learner-state-exporter-cli
 
+section "learner-state estimator input validation"
+run make check-learner-state-estimator-input
+
 section "config and scoring smoke checks"
 run scripts/check_config_enabled_summary_smoke.sh
 run scripts/check_config_enabled_e2e_smoke.sh

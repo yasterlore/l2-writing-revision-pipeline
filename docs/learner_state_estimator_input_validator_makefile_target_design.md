@@ -22,6 +22,10 @@ for the docs-only plan for future wrapper integration. That design recommends
 calling this Makefile target from the release-quality wrapper after the
 learner-state audit fixture and exporter CLI smoke checks.
 
+Step201 follow-up: the release-quality wrapper now calls
+`make check-learner-state-estimator-input` after the audit fixture and exporter
+CLI smoke checks. The target command itself is unchanged.
+
 ## 1. Purpose
 
 The purpose of this document is to define how a future Makefile target should

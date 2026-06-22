@@ -452,6 +452,12 @@ and confirm the wrapper will call `make check-learner-state-estimator-input`
 after the learner-state audit and exporter CLI checks, will not add tmp cleanup
 or artifacts, will not cat fixture files, and will leave GitHub Actions
 workflows unchanged in the first integration step.
+After integrating the estimator input validator target into release-quality,
+run `make check-release-quality` and confirm the wrapper calls
+`make check-learner-state-estimator-input` after the learner-state audit and
+exporter CLI checks, reports 9 matched synthetic estimator input fixture cases,
+prints only safe count/reason-code summaries, creates no estimator-input tmp
+output, and leaves GitHub Actions workflows unchanged.
 
 ## 7. Checks To Run
 
