@@ -20,6 +20,11 @@ Step199 follow-up: the standalone `make check-learner-state-estimator-input`
 target now calls this CLI in fixture-root mode. The target is not connected to
 release-quality or GitHub Actions.
 
+Step200 follow-up: see
+[Learner-state estimator input release-quality integration design](learner_state_estimator_input_release_quality_integration_design.md)
+for the docs-only plan to connect the standalone Makefile target to the
+release-quality wrapper in a future implementation step.
+
 This document remains the CLI design reference. Step197 does not add a
 Makefile target, release-quality integration, workflow change, learner-state
 estimator, estimator training code, selective prediction, calibration, a new
@@ -400,7 +405,7 @@ Recommended future order:
 2. Step198: design a standalone Makefile target for fixture-root validation.
 3. Step199: implement the standalone Makefile target after CLI log safety
    review. Complete.
-4. Step200: design release-quality wrapper integration.
+4. Step200: design release-quality wrapper integration. Complete.
 5. Later: run remote/manual release-quality and record public-safe status if
    integrated.
 
@@ -469,6 +474,7 @@ what passed or failed, not show the underlying data.
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md)
+- [Learner-state estimator input release-quality integration design](learner_state_estimator_input_release_quality_integration_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
 - `python/learner_state/estimator_input.py`
 - `python/learner_state/tests/test_estimator_input_cli.py`

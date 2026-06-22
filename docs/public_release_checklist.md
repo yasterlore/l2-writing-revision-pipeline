@@ -445,6 +445,13 @@ After adding the estimator input validator Makefile target, run
 synthetic fixture cases, prints only safe count/reason-code summaries, creates
 no tmp output, and remains outside the release-quality wrapper and GitHub
 Actions workflows.
+Before integrating the estimator input validator target into release-quality,
+review
+[learner-state estimator input release-quality integration design](learner_state_estimator_input_release_quality_integration_design.md)
+and confirm the wrapper will call `make check-learner-state-estimator-input`
+after the learner-state audit and exporter CLI checks, will not add tmp cleanup
+or artifacts, will not cat fixture files, and will leave GitHub Actions
+workflows unchanged in the first integration step.
 
 ## 7. Checks To Run
 

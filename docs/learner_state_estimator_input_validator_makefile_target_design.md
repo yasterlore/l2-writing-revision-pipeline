@@ -16,6 +16,12 @@ in fixture-root mode, prints only the CLI safe human summary, creates no tmp
 outputs, and remains outside the release-quality wrapper and GitHub Actions
 workflows.
 
+Step200 follow-up: see
+[Learner-state estimator input release-quality integration design](learner_state_estimator_input_release_quality_integration_design.md)
+for the docs-only plan for future wrapper integration. That design recommends
+calling this Makefile target from the release-quality wrapper after the
+learner-state audit fixture and exporter CLI smoke checks.
+
 ## 1. Purpose
 
 The purpose of this document is to define how a future Makefile target should
@@ -366,6 +372,7 @@ CLI and Makefile layers.
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md)
+- [Learner-state estimator input release-quality integration design](learner_state_estimator_input_release_quality_integration_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
 - `python/learner_state/estimator_input.py`
 - `python/learner_state/tests/test_estimator_input.py`
