@@ -300,6 +300,10 @@ integration, review the
 and record only safe high-level status. Do not paste raw workflow logs,
 fixture rows, label bodies, manifest bodies, private paths, expected action
 bodies, or performance claims into public docs.
+The public-safe remote/manual status marker is
+[learner-state audit release-quality remote run status](status/learner_state_audit_release_quality_remote_run_status.md);
+it records workflow success and learner-state audit fixture inclusion without
+copying raw logs or output bodies.
 
 ## 7. Checks To Run
 
