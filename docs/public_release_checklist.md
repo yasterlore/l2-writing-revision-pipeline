@@ -362,6 +362,12 @@ standalone target, writes only under
 `tmp/learner_state_sequence_exporter_smoke/`, prints only exporter CLI safe
 summaries, does not cat generated feature/label/manifest files, and is not yet
 called by the release-quality wrapper or CI workflows.
+Before integrating the exporter CLI target into release-quality, review
+[learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md)
+and confirm the wrapper will call `make check-learner-state-exporter-cli`
+rather than duplicating CLI arguments, will keep `tmp/` cleanup narrow, will not
+cat generated files, and will not change CI workflows directly in the first
+integration step.
 
 ## 7. Checks To Run
 
