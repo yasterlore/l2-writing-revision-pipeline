@@ -185,6 +185,13 @@ Planned future status marker fields:
 
 Step216 does not create this status marker.
 
+Step217 follow-up: the public-safe remote/manual run status marker is
+available at
+[Learner-state selective prediction release-quality remote run status](status/learner_state_selective_prediction_release_quality_remote_run_status.md).
+It records only metadata and count-only summaries; it does not include raw
+GitHub Actions logs, full job output, prediction rows, label rows, policy
+bodies, split bodies, logits/probability dumps, or generated output bodies.
+
 ## 8. Log Safety Review Checklist
 
 Before creating a public-safe status marker, review the remote logs for these
@@ -329,4 +336,5 @@ validation section, and matched the expected synthetic fixture results.
 - [Selective prediction calibration fixture design](selective_prediction_calibration_fixture_design.md)
 - [Selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Learner-state estimator input release-quality remote run record workflow](learner_state_estimator_input_release_quality_remote_run_record_workflow.md)
+- [Learner-state selective prediction release-quality remote run status](status/learner_state_selective_prediction_release_quality_remote_run_status.md)
 - [Public release checklist](public_release_checklist.md)

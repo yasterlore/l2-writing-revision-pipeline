@@ -24,6 +24,9 @@ Available markers:
 - [Learner-state estimator input release-quality remote run status](learner_state_estimator_input_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after learner-state estimator
   input validation integration.
+- [Learner-state selective prediction release-quality remote run status](learner_state_selective_prediction_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after learner-state selective
+  prediction calibration validation integration.
 
 Related recap:
 

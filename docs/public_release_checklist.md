@@ -576,6 +576,13 @@ fixture summaries, included-check flags, and log-safety review results. The
 record workflow design step must not create a status marker, change workflows,
 paste raw GitHub Actions logs, include row/policy/split/logits bodies, or make
 performance or real-data readiness claims.
+After recording the selective prediction calibration validation remote/manual
+Release Quality result, confirm the public-safe status marker
+[learner-state selective prediction release-quality remote run status](status/learner_state_selective_prediction_release_quality_remote_run_status.md)
+contains only metadata and count-only summaries, records 8 matched selective
+prediction fixture cases, excludes raw logs and full job output, excludes
+prediction/label/policy/split/logits bodies, and does not claim model
+performance, calibration quality, or real-data readiness.
 
 ## 7. Checks To Run
 
