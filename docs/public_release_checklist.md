@@ -340,6 +340,11 @@ After adding exporter edge-case tests, confirm invalid fixtures fail closed with
 safe reason codes, valid edge fixtures pass audit, failure summaries do not
 print raw row bodies or malformed-line contents, and generated outputs remain in
 temporary or explicit caller-provided directories.
+Before implementing an exporter CLI, review
+[learner-state sequence exporter CLI design](learner_state_sequence_exporter_cli_design.md)
+and confirm the future command requires safe output handling, explicit output
+directory policy, audit-after-export, safe exit codes, and no generated body
+logging.
 
 ## 7. Checks To Run
 
