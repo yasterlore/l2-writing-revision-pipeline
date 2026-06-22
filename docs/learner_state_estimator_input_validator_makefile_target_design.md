@@ -1,13 +1,20 @@
 # Learner-State Estimator Input Validator Makefile Target Design
 
-This document designs a future Makefile target for the learner-state estimator
-input validator CLI.
+This document designs the Makefile target for the learner-state estimator input
+validator CLI.
 
-It is documentation only. It does not add the Makefile target, change
-release-quality wrapper behavior, change GitHub Actions workflows, implement a
-learner-state estimator, implement estimator training, add selective
-prediction, add calibration, add a model, or add metrics. It is not a
-performance evaluation and is not a real-data readiness claim.
+This was documentation-only before Step199. Step199 implements the standalone
+Makefile target described here, while leaving the release-quality wrapper,
+GitHub Actions workflows, learner-state estimator, estimator training,
+selective prediction, calibration, models, metrics, sequence exporter, audit
+code, and fixture files unchanged. It is not a performance evaluation and is
+not a real-data readiness claim.
+
+Step199 follow-up: the standalone `check-learner-state-estimator-input`
+Makefile target is now implemented. It calls the estimator input validator CLI
+in fixture-root mode, prints only the CLI safe human summary, creates no tmp
+outputs, and remains outside the release-quality wrapper and GitHub Actions
+workflows.
 
 ## 1. Purpose
 
@@ -44,7 +51,8 @@ Current state:
 - Fixture-root validation currently discovers 9 cases and matches all expected
   validation results.
 - CLI output is safe count/reason-code metadata only.
-- Makefile target for the estimator input validator does not exist yet.
+- Step199 adds the standalone `check-learner-state-estimator-input` Makefile
+  target.
 - Release-quality integration for this validator CLI does not exist yet.
 
 The validator is not a learner-state estimator. It validates exported-shape
@@ -285,12 +293,34 @@ Safety boundary:
 The Makefile target should only confirm the validator CLI can exercise these
 synthetic fixture contracts safely.
 
+## Step199 Implementation Status
+
+Step199 adds the standalone Makefile target:
+
+```text
+check-learner-state-estimator-input
+```
+
+Implemented target command:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.estimator_input --fixture-root tests/fixtures/learner_state_estimator_input
+```
+
+Implemented behavior:
+
+- discovers the synthetic estimator input fixture root through the CLI
+- compares all expected validation results
+- passes when all 9 cases match
+- prints only safe human summary output
+- creates no tmp output
+- performs no cleanup
+- leaves release-quality wrapper and workflows unchanged
+
 ## 14. What This Does NOT Do
 
-This design does not:
+This design and Step199 target do not:
 
-- implement the Makefile target
-- change the Makefile
 - integrate release-quality
 - change GitHub Actions workflows
 - change shell scripts

@@ -16,6 +16,10 @@ design recommends `check-learner-state-estimator-input` calling fixture-root
 validation with safe human output, without adding the target or connecting it
 to release-quality in this step.
 
+Step199 follow-up: the standalone `make check-learner-state-estimator-input`
+target now calls this CLI in fixture-root mode. The target is not connected to
+release-quality or GitHub Actions.
+
 This document remains the CLI design reference. Step197 does not add a
 Makefile target, release-quality integration, workflow change, learner-state
 estimator, estimator training code, selective prediction, calibration, a new
@@ -74,7 +78,8 @@ Current assets:
 - CLI exists as `python -m learner_state.estimator_input`.
 - CLI tests exist:
   - `python/learner_state/tests/test_estimator_input_cli.py`
-- Makefile target does not exist yet.
+- Standalone Makefile target exists:
+  - `make check-learner-state-estimator-input`
 - Release-quality integration does not exist yet.
 
 The existing module is a validator/loader only. It does not implement a
@@ -381,19 +386,21 @@ Future additions may cover malformed fixture inputs and validation-only mode if
 those modes are added later.
 
 Tests should remain synthetic-only and should not add model training, metrics,
-calibration, Makefile targets, or release-quality integration.
+calibration, or release-quality integration. The standalone Makefile target is
+covered separately by Step199.
 
 ## 14. Makefile / Release-Quality Future
 
-This step should not add a Makefile target or release-quality integration.
+Step199 adds a standalone Makefile target. Release-quality integration remains
+future work.
 
 Recommended future order:
 
 1. Step197: implement minimal estimator input validator CLI. Complete.
 2. Step198: design a standalone Makefile target for fixture-root validation.
 3. Step199: implement the standalone Makefile target after CLI log safety
-   review.
-4. Later: design release-quality wrapper integration.
+   review. Complete.
+4. Step200: design release-quality wrapper integration.
 5. Later: run remote/manual release-quality and record public-safe status if
    integrated.
 
