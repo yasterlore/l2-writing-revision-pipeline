@@ -375,6 +375,12 @@ guards, audit-after-export reporting, and CLI tests. It does not add a Makefile
 target, release-quality integration, CI workflow integration, estimator, model,
 metric, or real-data handling.
 
+Step 184 follow-up: see
+[Learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md)
+for the future standalone Makefile smoke target plan. The design recommends a
+tmp-only output root, safe human summaries, no generated body logging, and no
+immediate release-quality or CI integration.
+
 ## 15. Relation To Existing Pipeline
 
 The exporter sits between existing safe synthetic pipeline components and future
