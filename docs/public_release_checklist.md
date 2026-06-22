@@ -386,6 +386,12 @@ confirm the status marker
 records only high-level metadata, confirms learner-state audit fixture and
 exporter CLI smoke inclusion, keeps generated output bodies out of docs, and
 does not make model-performance or real-data readiness claims.
+For the Milestone 07 recap, review
+[learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md)
+and confirm it summarizes exporter infrastructure with public-safe metadata
+only, does not paste raw workflow logs or generated output bodies, and does not
+claim model performance, estimator correctness, production readiness, or
+real-data readiness.
 
 ## 7. Checks To Run
 

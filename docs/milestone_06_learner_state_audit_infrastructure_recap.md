@@ -180,6 +180,11 @@ sources, output files, processing order, past-only window features, audit
 integration, and safe output policy. It remains design-only and does not
 implement an exporter.
 
+Step 190 follow-up: the
+[Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md)
+summarizes the completed synthetic exporter fixture, module, CLI, Makefile,
+release-quality, and remote-status work that followed this audit milestone.
+
 ## 10. Release/Public Status
 
 Public-safe documentation now exists for:
@@ -240,5 +245,6 @@ validity.
 - [Learner-state audit release-quality remote-run record workflow](learner_state_audit_release_quality_remote_run_record_workflow.md)
 - [Learner-state audit release-quality remote run status](status/learner_state_audit_release_quality_remote_run_status.md)
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
+- [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md)
 - [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md)
 - [Public release checklist](public_release_checklist.md)

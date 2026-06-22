@@ -17,6 +17,7 @@ Recommended entry points:
 - [Milestone 05 status marker](status/milestone_05_status.md): short public-safe status marker for the Milestone 05 docs-only release review.
 - [Milestone 05 status marker design](milestone_05_status_marker_design.md): design for a future short public-safe Milestone 05 Makefile orchestration status marker.
 - [Milestone 06 learner-state audit infrastructure recap](milestone_06_learner_state_audit_infrastructure_recap.md): recap of learner-state audit fixtures, module, CLI, Makefile/release-quality integration, and remote run status.
+- [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md): recap of synthetic exporter fixtures, minimal exporter, CLI, Makefile/release-quality integration, and remote run status.
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md): docs-only design for future synthetic feature/label/manifest export with audit integration.
 - [Learner-state sequence exporter input fixture design](learner_state_sequence_exporter_input_fixture_design.md): docs-only design for future synthetic exporter input fixtures and expected output contracts.
 - [Learner-state sequence exporter input fixtures](../tests/fixtures/learner_state_sequence_exporter/README.md): initial synthetic-only input fixture root for a future sequence exporter.
@@ -29,6 +30,7 @@ Recommended entry points:
 - `make check-learner-state-exporter-cli`: exporter CLI smoke target for synthetic valid fixtures; release-quality now calls it through the wrapper.
 - [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md): wrapper position, tmp-output, logging, CI, and Step187 status for exporter CLI release-quality integration.
 - [Learner-state exporter release-quality remote run record workflow](learner_state_exporter_release_quality_remote_run_record_workflow.md): public-safe recording policy for the manual Release Quality run after exporter CLI smoke wrapper integration.
+- [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md): public-safe recap of the learner-state sequence exporter infrastructure milestone.
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md): post-Makefile planning for returning to the synthetic-only research pipeline.
 - [Learner-state input representation design](learner_state_input_representation_design.md): no-oracle-safe input representation design before any learner-state estimator implementation.
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md): synthetic-only sequence dataset design for future learner-state inputs.
@@ -55,6 +57,7 @@ Recommended entry points:
 - `make check-learner-state-exporter-cli`: target that exports minimal and past-window synthetic fixtures under `tmp/learner_state_sequence_exporter_smoke/`; release-quality wrapper integration is now present.
 - [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md): wrapper position, tmp-output, logging, CI, risk plan, and Step187 status for exporter CLI release-quality integration.
 - [Learner-state exporter release-quality remote run record workflow](learner_state_exporter_release_quality_remote_run_record_workflow.md): safe metadata-only workflow for recording a remote/manual Release Quality run that includes exporter CLI smoke.
+- [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md): consolidated Step 175-189 recap of learner-state sequence exporter infrastructure and safety boundaries.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -142,6 +145,7 @@ Recommended entry points:
 - `make check-learner-state-exporter-cli`: synthetic exporter CLI smoke check now included in the release-quality wrapper.
 - [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md): release-quality wrapper integration design and Step187 status through the standalone Makefile target.
 - [Learner-state exporter release-quality remote run record workflow](learner_state_exporter_release_quality_remote_run_record_workflow.md): public-safe remote/manual run recording policy after exporter CLI smoke wrapper integration.
+- [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md): public-safe recap of exporter fixtures, module, CLI, Makefile/release-quality integration, and remote status.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.
