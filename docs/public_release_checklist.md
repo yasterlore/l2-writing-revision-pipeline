@@ -583,6 +583,12 @@ contains only metadata and count-only summaries, records 8 matched selective
 prediction fixture cases, excludes raw logs and full job output, excludes
 prediction/label/policy/split/logits bodies, and does not claim model
 performance, calibration quality, or real-data readiness.
+For the Milestone 09 recap, review
+[milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)
+and confirm it summarizes the selective prediction/calibration validation
+infrastructure, remote run status, safety boundaries, non-goals, and next
+research/development candidates without raw logs, row bodies, policy/split
+bodies, logits dumps, performance claims, or real-data readiness claims.
 
 ## 7. Checks To Run
 
