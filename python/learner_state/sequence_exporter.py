@@ -7,7 +7,9 @@ the learner-state sequence audit before returning success.
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -30,6 +32,22 @@ EXPECTED_FAILURE_CONTRACT_FILE = "expected_failure_contract.json"
 FEATURES_OUTPUT_FILE = "features.jsonl"
 LABELS_OUTPUT_FILE = "labels.jsonl"
 MANIFEST_OUTPUT_FILE = "manifest.json"
+OUTPUT_FILE_NAMES = frozenset(
+    {
+        FEATURES_OUTPUT_FILE,
+        LABELS_OUTPUT_FILE,
+        MANIFEST_OUTPUT_FILE,
+    }
+)
+EXPORTER_FIXTURE_ROOT = Path("tests/fixtures/learner_state_sequence_exporter")
+UNSAFE_CLI_PATH_PARTS = frozenset(
+    {
+        "manual_outputs",
+        "private_data",
+        "real_data",
+        "participant_data",
+    }
+)
 
 SAFE_EPISODE_INPUT_SCHEMA_VERSION = "exporter_input_safe_episode_v0.1"
 CANDIDATE_SCORE_SCHEMA_VERSION = "candidate_score_summary_v0.1"
@@ -292,6 +310,173 @@ def compare_export_result_to_contract(
             "label_row_count": result.label_row_count,
         }
         raise AssertionError(f"export_expected_contract_mismatch: {safe_summary}")
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Export a synthetic learner-state sequence fixture to separated "
+            "features, labels, and manifest files."
+        )
+    )
+    parser.add_argument(
+        "--input-fixture",
+        required=True,
+        help="Synthetic exporter fixture case directory.",
+    )
+    parser.add_argument(
+        "--output-dir",
+        required=True,
+        help="Directory for generated sequence outputs.",
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit a safe JSON summary instead of a human summary.",
+    )
+    args = parser.parse_args(argv)
+    return _run_cli(args)
+
+
+def _run_cli(args: argparse.Namespace) -> int:
+    input_fixture = Path(args.input_fixture)
+    output_dir = Path(args.output_dir)
+    json_output = bool(args.json)
+
+    path_failure = _validate_cli_paths(input_fixture, output_dir)
+    if path_failure is not None:
+        _emit_cli_summary(path_failure.to_safe_dict(), json_output)
+        return 1
+
+    try:
+        result = export_sequence_from_fixture(input_fixture, output_dir)
+    except ExporterFailure as exc:
+        summary = exc.summary.to_safe_dict()
+        _emit_cli_summary(summary, json_output)
+        return _failure_exit_code(exc.summary)
+    except AssertionError as exc:
+        summary = _assertion_failure_summary(exc).to_safe_dict()
+        _emit_cli_summary(summary, json_output)
+        reason_codes = summary.get("reason_codes", [])
+        if isinstance(reason_codes, list) and "contract_mismatch" in reason_codes:
+            return 3
+        return 1
+
+    _emit_cli_summary(_success_cli_summary(result), json_output)
+    return 0
+
+
+def _validate_cli_paths(
+    input_fixture: Path,
+    output_dir: Path,
+) -> ExportFailureSummary | None:
+    if _has_unsafe_cli_path_part(input_fixture):
+        return _cli_failure_summary("unsafe_input_path", "path_safety")
+    if _has_unsafe_cli_path_part(output_dir):
+        return _cli_failure_summary("unsafe_output_path", "path_safety")
+    if _is_under_exporter_fixture_root(output_dir):
+        return _cli_failure_summary("unsafe_output_path", "path_safety")
+    for file_name in sorted(OUTPUT_FILE_NAMES):
+        if (output_dir / file_name).exists():
+            return _cli_failure_summary("existing_output_files", "output_directory")
+    return None
+
+
+def _success_cli_summary(result: ExportResult) -> dict[str, Any]:
+    summary = result.to_safe_dict()
+    summary["mode"] = "export"
+    summary["reason_codes"] = result.audit_reason_codes
+    summary["path_safety_checked"] = True
+    return summary
+
+
+def _assertion_failure_summary(exc: AssertionError) -> ExportFailureSummary:
+    message = str(exc)
+    if message.startswith("export_expected_contract_mismatch"):
+        return _cli_failure_summary(
+            "contract_mismatch",
+            "expected_output_contract",
+            stage="contract_check",
+        )
+    if message.startswith("sequence_export_audit_failed"):
+        return _cli_failure_summary(
+            "audit_failed_after_export",
+            "output_audit",
+            stage="audit",
+        )
+    return _cli_failure_summary("export_failed", "export")
+
+
+def _cli_failure_summary(
+    reason_code: str,
+    failure_category: str,
+    *,
+    stage: str = "cli",
+) -> ExportFailureSummary:
+    return ExportFailureSummary(
+        export_status="fail",
+        reason_codes=[reason_code],
+        failure_categories=[failure_category],
+        stage=stage,
+    )
+
+
+def _failure_exit_code(summary: ExportFailureSummary) -> int:
+    usage_like_codes = {
+        "missing_input_file",
+        "malformed_input",
+    }
+    if any(reason_code in usage_like_codes for reason_code in summary.reason_codes):
+        return 2
+    return 1
+
+
+def _emit_cli_summary(summary: dict[str, Any], json_output: bool) -> None:
+    safe_summary = {"mode": "export", **summary}
+    if json_output:
+        sys.stdout.write(json.dumps(safe_summary, sort_keys=True))
+        sys.stdout.write("\n")
+        return
+    for key in _human_summary_keys(safe_summary):
+        sys.stdout.write(f"{key}={_format_summary_value(safe_summary.get(key))}\n")
+
+
+def _human_summary_keys(summary: dict[str, Any]) -> list[str]:
+    preferred = [
+        "mode",
+        "export_status",
+        "feature_row_count",
+        "label_row_count",
+        "audit_status",
+        "reason_codes",
+        "content_suppressed",
+        "no_raw_rows",
+        "synthetic_only",
+        "synthetic_only_checked",
+        "path_safety_checked",
+        "stage",
+    ]
+    return [key for key in preferred if key in summary]
+
+
+def _format_summary_value(value: Any) -> str:
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if isinstance(value, list):
+        return ",".join(str(item) for item in value) if value else "none"
+    if value is None:
+        return "none"
+    return str(value)
+
+
+def _has_unsafe_cli_path_part(path: Path) -> bool:
+    return bool(set(path.parts) & UNSAFE_CLI_PATH_PARTS)
+
+
+def _is_under_exporter_fixture_root(output_dir: Path) -> bool:
+    fixture_root = EXPORTER_FIXTURE_ROOT.resolve(strict=False)
+    resolved_output = output_dir.resolve(strict=False)
+    return resolved_output == fixture_root or fixture_root in resolved_output.parents
 
 
 def _build_feature_rows(bundle: ExporterInputBundle) -> list[dict[str, Any]]:
@@ -687,3 +872,7 @@ def _nested_keys(value: Any) -> list[str]:
         for child in value:
             keys.extend(_nested_keys(child))
     return keys
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
