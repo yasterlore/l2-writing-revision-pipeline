@@ -277,6 +277,9 @@ and confirm that future output remains safe, count-only, and fail-closed.
 After audit code is present, run the learner-state sequence audit fixture tests
 through the normal Python test command and confirm they do not print JSONL row
 bodies, manifest bodies, raw text, private paths, or label contents.
+Before adding a learner-state sequence audit CLI, review the
+[learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
+and confirm stdout, JSON output, and exit codes remain safe and count-only.
 
 ## 7. Checks To Run
 

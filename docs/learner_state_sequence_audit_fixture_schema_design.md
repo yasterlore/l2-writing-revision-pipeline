@@ -328,6 +328,11 @@ Step 165 follow-up: fixture expected-result comparison is now covered by the
 minimal Python audit module tests. Test failures should remain safe and should
 not print fixture row bodies.
 
+Step 166 follow-up: see
+[Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
+for how future fixture-root CLI mode should compare expected results while
+printing only safe aggregate summaries.
+
 ## 17. Beginner Notes
 
 A fixture is a small example file used to test behavior.
@@ -348,6 +353,7 @@ bad habit that would be unsafe when private data readiness is reviewed later.
 
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Learner-state sequence audit fixture files design](learner_state_sequence_audit_fixture_files_design.md)
+- [Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Learner-state input representation design](learner_state_input_representation_design.md)

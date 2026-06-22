@@ -330,6 +330,10 @@ Step 165 follow-up: the minimal Python audit module now exercises the initial
 synthetic fixture cases and returns safe count-only `AuditResult` metadata. CLI
 and Makefile integration remain future work.
 
+Step 166 follow-up: see
+[Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
+for the planned safe command-line surface over the audit module.
+
 ## 16. Beginner Notes
 
 An audit is a check that looks for unsafe or invalid data before later tools
@@ -353,6 +357,7 @@ assuming they are safe.
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
 - [Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md)
 - [Learner-state sequence audit fixture files design](learner_state_sequence_audit_fixture_files_design.md)
+- [Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Learner-state input representation design](learner_state_input_representation_design.md)
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md)
