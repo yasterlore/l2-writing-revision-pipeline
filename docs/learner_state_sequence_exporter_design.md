@@ -342,6 +342,13 @@ generated files, and checks safe expected-output contract metadata. No CLI,
 Makefile target, release-quality integration, estimator, model, or metric is
 added by this step.
 
+Step 179 follow-up: see
+[Learner-state sequence exporter edge fixture design](learner_state_sequence_exporter_edge_fixture_design.md)
+for the future valid/invalid edge-case fixture plan, exporter-specific failure
+reason codes, safe contract expansion, and test expansion priorities. That
+follow-up remains docs-only and does not create edge-case fixtures or modify the
+exporter.
+
 ## 15. Relation To Existing Pipeline
 
 The exporter sits between existing safe synthetic pipeline components and future
@@ -411,4 +418,5 @@ predict, score research performance, or validate learner-state quality.
 - [Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
 - [Learner-state audit release-quality remote run status](status/learner_state_audit_release_quality_remote_run_status.md)
 - [Learner-state sequence exporter input fixture design](learner_state_sequence_exporter_input_fixture_design.md)
+- [Learner-state sequence exporter edge fixture design](learner_state_sequence_exporter_edge_fixture_design.md)
 - [Public release checklist](public_release_checklist.md)
