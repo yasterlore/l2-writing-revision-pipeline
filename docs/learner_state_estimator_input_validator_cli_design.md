@@ -3,10 +3,17 @@
 This document designs a future safe command-line interface for the
 learner-state estimator input validator.
 
-This is design documentation only. It does not implement a CLI, Makefile
-target, release-quality integration, learner-state estimator, estimator
-training code, selective prediction, calibration, a new model, or a new metric.
-It is not performance evaluation and it is not a real-data readiness claim.
+Step197 follow-up: the minimal CLI is implemented as
+`PYTHONPATH=python python3 -m learner_state.estimator_input`, with CLI tests in
+`python/learner_state/tests/test_estimator_input_cli.py`. The implementation
+supports fixture-case mode, fixture-root mode, safe JSON output, help, default
+expected-result matching, and safe count/reason-code summaries.
+
+This document remains the CLI design reference. Step197 does not add a
+Makefile target, release-quality integration, workflow change, learner-state
+estimator, estimator training code, selective prediction, calibration, a new
+model, or a new metric. It is not performance evaluation and it is not a
+real-data readiness claim.
 
 ## 1. Purpose
 
@@ -57,7 +64,9 @@ Current assets:
   - `invalid/unknown_schema_version/`
 - Fixture-based unittest coverage exists:
   - `python/learner_state/tests/test_estimator_input.py`
-- CLI does not exist yet.
+- CLI exists as `python -m learner_state.estimator_input`.
+- CLI tests exist:
+  - `python/learner_state/tests/test_estimator_input_cli.py`
 - Makefile target does not exist yet.
 - Release-quality integration does not exist yet.
 
@@ -74,7 +83,7 @@ Candidate entrypoints:
 | `PYTHONPATH=python python3 -m learner_state.estimator_input` | Keeps CLI beside the existing validator API; mirrors the exporter CLI pattern; easy to discover | Adds argument parsing to the module |
 | `PYTHONPATH=python python3 -m learner_state.estimator_input_cli` | Keeps the validator module smaller; separates CLI wiring from API logic | Adds another module and import surface |
 
-Initial recommendation:
+Implemented initial entrypoint:
 
 Use `PYTHONPATH=python python3 -m learner_state.estimator_input`.
 
@@ -88,7 +97,7 @@ Rationale:
 
 ## 4. CLI Modes
 
-Required initial modes:
+Implemented initial modes:
 
 - single fixture case mode:
   - `--fixture-case <case_dir>`
@@ -106,7 +115,7 @@ Optional future arguments:
 - `--validation-only`
 - `--no-color`
 
-Initial recommendation:
+Implemented initial behavior:
 
 - Support exactly one of `--fixture-case` or `--fixture-root`.
 - In fixture case mode, compare `expected_input_validation_result.json` by
@@ -344,9 +353,9 @@ The Python API remains the primary implementation surface. CLI tests should
 exercise argument parsing, output safety, JSON safety, exit codes, and
 fixture-root orchestration without duplicating validation logic.
 
-## 13. Testing Plan For Future Implementation
+## 13. Testing Plan And Implementation Status
 
-Future CLI tests should cover:
+Step197 CLI tests cover:
 
 - `--help`
 - valid single case exits `0`
@@ -354,13 +363,15 @@ Future CLI tests should cover:
 - fixture-root mode exits `0` with all 9 cases matched
 - `--json` output is parseable and safe
 - missing fixture path exits `2`
-- malformed or missing input exits `2`
 - expected-result mismatch exits `3`
 - no raw rows in stdout/stderr
 - no full manifest body in stdout/stderr
 - no label body in stdout/stderr
 - no private absolute paths in stdout/stderr
 - deterministic fixture discovery order
+
+Future additions may cover malformed fixture inputs and validation-only mode if
+those modes are added later.
 
 Tests should remain synthetic-only and should not add model training, metrics,
 calibration, Makefile targets, or release-quality integration.
@@ -371,7 +382,7 @@ This step should not add a Makefile target or release-quality integration.
 
 Recommended future order:
 
-1. Step197: implement minimal estimator input validator CLI.
+1. Step197: implement minimal estimator input validator CLI. Complete.
 2. Step198: design a standalone Makefile target for fixture-root validation.
 3. Step199: implement the standalone Makefile target after CLI log safety
    review.
@@ -444,6 +455,8 @@ what passed or failed, not show the underlying data.
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
+- `python/learner_state/estimator_input.py`
+- `python/learner_state/tests/test_estimator_input_cli.py`
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Public release checklist](public_release_checklist.md)

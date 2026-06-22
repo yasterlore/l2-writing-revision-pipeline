@@ -428,6 +428,12 @@ Before implementing an estimator input validator CLI, review
 and confirm the CLI plan uses fixture-root expected-result matching, safe human
 and JSON summaries, stable exit codes, path safety, no raw row or manifest
 body output, and no Makefile/release-quality connection in the design step.
+After implementing the minimal estimator input validator CLI, run
+`PYTHONPATH=python python3 -m learner_state.estimator_input --fixture-root tests/fixtures/learner_state_estimator_input`
+and the CLI unittest. Confirm stdout/stderr contain only safe statuses, counts,
+reason codes, and matched-case summaries; do not add generated row bodies,
+Makefile targets, release-quality integration, model training, metrics,
+calibration, or real-data readiness claims.
 
 ## 7. Checks To Run
 
