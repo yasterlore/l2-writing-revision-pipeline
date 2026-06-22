@@ -382,10 +382,12 @@ Recommended next steps:
 1. Step224: minimal frozen policy validator implementation. Completed with
    `python/learner_state/frozen_policy_validation.py` and fixture-based
    tests in `python/learner_state/tests/test_frozen_policy_validation.py`.
-2. Step225: frozen policy validator CLI design / implementation.
-3. Step226: Makefile target design / implementation.
-4. Step227: release-quality integration design / implementation.
-5. Step228: calibration scaffold fixture design.
+2. Step225: frozen policy validator CLI design. Completed as docs-only in
+   [frozen policy validator CLI design](frozen_policy_validator_cli_design.md).
+3. Step226: minimal frozen policy validator CLI implementation.
+4. Step227: Makefile target design / implementation.
+5. Step228: release-quality integration design / implementation.
+6. Step229: calibration scaffold fixture design.
 
 Keep each step narrow. Do not combine frozen policy validation, calibration
 implementation, selective prediction decisions, estimator training, metric
@@ -432,6 +434,7 @@ unsafe inputs instead of guessing that they are acceptable.
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
 - [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md)
+- [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md)
 - `python/learner_state/frozen_policy_validation.py`
 - `python/learner_state/tests/test_frozen_policy_validation.py`
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
