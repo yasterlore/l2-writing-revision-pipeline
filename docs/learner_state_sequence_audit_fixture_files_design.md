@@ -281,6 +281,15 @@ Recommended order:
 If fixture creation exposes ambiguity in file names or expected result fields,
 add one more docs-only preflight before implementation.
 
+Step 163 implementation note: the initial synthetic-only fixture files now live
+under
+[`tests/fixtures/learner_state_sequence_audit/`](../tests/fixtures/learner_state_sequence_audit/README.md).
+The initial set includes one valid minimal fixture and representative invalid
+fixtures for forbidden fields, label-feature separation, future leakage, split
+leakage, unsafe paths, manifest body leakage, schema-version absence, and unsafe
+join keys. Public docs should continue to reference fixture case names and
+reason codes only; do not paste JSONL row bodies or manifest bodies into docs.
+
 ## 14. Beginner Notes
 
 A fixture file is a small test input saved in the repository.
