@@ -329,7 +329,8 @@ Recommended future order:
    validation result metadata under
    `tests/fixtures/learner_state_frozen_selective_prediction_policy/`.
 2. Step223: frozen policy validation design.
-3. Step224: minimal frozen policy validator implementation.
+3. Step224: minimal frozen policy validator implementation. Completed with
+   `python/learner_state/frozen_policy_validation.py` and fixture-based tests.
 4. Step225: frozen policy validator CLI design / implementation.
 5. Step226: Makefile target / release-quality integration.
 6. Step227: calibration scaffold fixture design.
