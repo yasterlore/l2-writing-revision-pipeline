@@ -36,6 +36,11 @@ calling this Makefile target from the wrapper after Python checks and the
 learner-state audit fixture check, while keeping generated output under the
 same narrow `tmp/` smoke root and avoiding direct CI edits initially.
 
+Step 187 follow-up: the release-quality wrapper now calls
+`make check-learner-state-exporter-cli` after the learner-state audit fixture
+check and before config/scoring smoke checks. The Makefile target behavior is
+unchanged, and CI workflows are still unchanged.
+
 ## 2. Current State
 
 Current state:
@@ -50,7 +55,8 @@ Current state:
   metadata.
 - Step 185 adds the standalone `check-learner-state-exporter-cli` Makefile
   target for exporter CLI smoke checks.
-- No release-quality wrapper integration exists for the exporter CLI.
+- Step187 adds release-quality wrapper integration by calling the Makefile
+  target from `scripts/check_release_quality.sh`.
 - No CI workflow integration exists for the exporter CLI.
 
 ## Step 185 Implementation Status
@@ -66,11 +72,11 @@ Implemented target behavior:
 - relies on the exporter CLI to run audit-after-export and contract checks
 - prints only the CLI safe human summaries
 
-The target is standalone. It is not wired into `check-release-quality`,
-`check-all`, the release-quality wrapper, or CI workflows. It does not change
-exporter code, tests, audit code, fixture files, learner-state estimator
-behavior, models, metrics, candidate generation, scoring, tie-breaks, or
-manifest schemas.
+The target remains the single Makefile entrypoint for exporter CLI smoke
+checks. Step187 wires it into the release-quality wrapper, but does not change
+the target command, exporter code, tests, audit code, fixture files,
+learner-state estimator behavior, models, metrics, candidate generation,
+scoring, tie-breaks, manifest schemas, or CI workflows.
 
 ## 3. Makefile Target Use Cases
 

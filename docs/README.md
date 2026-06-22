@@ -25,9 +25,9 @@ Recommended entry points:
 - [Learner-state sequence exporter edge fixtures](../tests/fixtures/learner_state_sequence_exporter/README.md): synthetic-only valid/invalid edge fixtures for future exporter fail-closed tests.
 - `python/learner_state/tests/test_sequence_exporter.py`: exporter tests covering minimal export, edge fixture export, and fail-closed invalid fixture handling.
 - [Learner-state sequence exporter CLI design](learner_state_sequence_exporter_cli_design.md): design and Step183 status for the safe `python -m learner_state.sequence_exporter` interface.
-- [Learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md): docs-only plan for a future standalone exporter CLI smoke target and tmp output policy.
-- `make check-learner-state-exporter-cli`: standalone exporter CLI smoke target for synthetic valid fixtures; not part of release-quality yet.
-- [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md): docs-only plan for future wrapper integration of the exporter CLI smoke target.
+- [Learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md): target design and Step187 wrapper-integration status for exporter CLI smoke checks and tmp output policy.
+- `make check-learner-state-exporter-cli`: exporter CLI smoke target for synthetic valid fixtures; release-quality now calls it through the wrapper.
+- [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md): wrapper position, tmp-output, logging, CI, and Step187 status for exporter CLI release-quality integration.
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md): post-Makefile planning for returning to the synthetic-only research pipeline.
 - [Learner-state input representation design](learner_state_input_representation_design.md): no-oracle-safe input representation design before any learner-state estimator implementation.
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md): synthetic-only sequence dataset design for future learner-state inputs.
@@ -50,9 +50,9 @@ Recommended entry points:
 - [Learner-state sequence exporter edge fixtures](../tests/fixtures/learner_state_sequence_exporter/README.md): fixture root now includes initial edge cases for future fail-closed exporter coverage.
 - `python/learner_state/tests/test_sequence_exporter.py`: synthetic-only exporter unit tests, including edge-case fixture reason-code checks.
 - [Learner-state sequence exporter CLI design](learner_state_sequence_exporter_cli_design.md): CLI scope, arguments, output policy, exit codes, audit integration, and Step183 implementation status.
-- [Learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md): future target name, command shape, cleanup policy, and release-quality timing for exporter CLI smoke checks.
-- `make check-learner-state-exporter-cli`: standalone target that exports minimal and past-window synthetic fixtures under `tmp/learner_state_sequence_exporter_smoke/`.
-- [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md): wrapper position, tmp-output, logging, CI, and risk plan for future exporter CLI release-quality integration.
+- [Learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md): target name, command shape, cleanup policy, and release-quality wrapper status for exporter CLI smoke checks.
+- `make check-learner-state-exporter-cli`: target that exports minimal and past-window synthetic fixtures under `tmp/learner_state_sequence_exporter_smoke/`; release-quality wrapper integration is now present.
+- [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md): wrapper position, tmp-output, logging, CI, risk plan, and Step187 status for exporter CLI release-quality integration.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -135,10 +135,10 @@ Recommended entry points:
 - [Learner-state sequence exporter edge fixture design](learner_state_sequence_exporter_edge_fixture_design.md): design for future exporter-specific edge-case fixtures and fail-closed test expansion.
 - [Learner-state sequence exporter edge fixtures](../tests/fixtures/learner_state_sequence_exporter/README.md): synthetic valid/invalid fixtures for future exporter edge-case tests.
 - `python/learner_state/tests/test_sequence_exporter.py`: tests for valid exporter outputs, audit integration, task-boundary window reset, and invalid fixture fail-closed behavior.
-- [Learner-state sequence exporter CLI design](learner_state_sequence_exporter_cli_design.md): design and implementation status for safe exporter command-line usage before any Makefile or release-quality integration.
-- [Learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md): docs-only design for adding a future standalone Makefile smoke target without changing release-quality yet.
-- `make check-learner-state-exporter-cli`: standalone synthetic exporter CLI smoke check; release-quality integration remains a later review.
-- [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md): docs-only design for future release-quality wrapper integration through the standalone Makefile target.
+- [Learner-state sequence exporter CLI design](learner_state_sequence_exporter_cli_design.md): design and implementation status for safe exporter command-line usage and downstream Makefile/release-quality integration.
+- [Learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md): design and implementation status for the exporter CLI smoke Makefile target.
+- `make check-learner-state-exporter-cli`: synthetic exporter CLI smoke check now included in the release-quality wrapper.
+- [Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md): release-quality wrapper integration design and Step187 status through the standalone Makefile target.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.

@@ -1,18 +1,20 @@
 # Learner-State Sequence Exporter Release-Quality Integration Design
 
-This document designs a future release-quality wrapper integration for the
-learner-state sequence exporter CLI Makefile target.
+This document records the release-quality wrapper integration plan and Step187
+implementation status for the learner-state sequence exporter CLI Makefile
+target.
 
-This is integration design documentation only. It does not change the
-release-quality wrapper, Makefile, CI workflows, shell scripts, exporter code,
-exporter tests, audit code, or fixture files. It is not a performance
-evaluation and is not a real-data readiness claim.
+This was integration design documentation before Step 187. Step 187 implements
+the wrapper integration described here, while leaving the Makefile, CI
+workflows, exporter code, exporter tests, audit code, and fixture files
+unchanged. It is not a performance evaluation and is not a real-data readiness
+claim.
 
 ## 1. Purpose
 
-The purpose of this document is to decide how `make
-check-learner-state-exporter-cli` should be integrated into the release-quality
-wrapper if the project chooses to do so.
+The purpose of this document is to define how `make
+check-learner-state-exporter-cli` is integrated into the release-quality
+wrapper while preserving safe output and synthetic-only boundaries.
 
 The design covers:
 
@@ -46,8 +48,29 @@ Current state:
   `tmp/learner_state_sequence_exporter_smoke/`.
 - The target relies on exporter CLI audit-after-export and expected-output
   contract checks.
-- Release-quality wrapper integration does not exist yet.
+- Step 187 adds release-quality wrapper integration through the Makefile
+  target.
 - CI workflow integration does not exist yet.
+
+## Step 187 Implementation Status
+
+Step 187 adds a `learner-state exporter CLI smoke` section to
+`scripts/check_release_quality.sh`.
+
+Implemented wrapper behavior:
+
+- calls `make check-learner-state-exporter-cli`
+- runs after `make check-learner-state-audit-fixtures`
+- runs before config and scoring smoke checks
+- relies on the Makefile target for narrow cleanup of
+  `tmp/learner_state_sequence_exporter_smoke/`
+- prints only the exporter CLI safe human summaries
+- does not cat generated `features.jsonl`, `labels.jsonl`, or `manifest.json`
+
+The integration does not change CI workflows, Makefile target behavior,
+exporter code, exporter tests, audit code, fixture files, learner-state
+estimator behavior, models, metrics, candidate generation, scoring, tie-breaks,
+or manifest schemas.
 
 ## 3. Integration Candidates
 
@@ -64,9 +87,9 @@ Candidate approaches:
 Recommended option:
 
 ```text
-Add make check-learner-state-exporter-cli to the release-quality wrapper, after
-one more explicit local review, by calling the Makefile target rather than the
-CLI directly.
+Add `make check-learner-state-exporter-cli` to the release-quality wrapper by
+calling the Makefile target rather than the CLI directly. Step187 implements
+this integration.
 ```
 
 Rationale:
@@ -77,8 +100,8 @@ Rationale:
 - The wrapper should not duplicate exporter CLI arguments.
 - The wrapper logs remain short because the CLI prints safe summaries only.
 
-The integration should still be staged. The next implementation step should add
-the target to the wrapper only, without CI workflow edits.
+The integration remains staged: Step187 adds the target to the wrapper only,
+without CI workflow edits.
 
 ## 4. Recommended Wrapper Position
 

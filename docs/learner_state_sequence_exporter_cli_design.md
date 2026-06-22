@@ -326,6 +326,11 @@ for the docs-only wrapper integration plan. It recommends using the standalone
 Makefile target from the wrapper rather than duplicating CLI arguments, with no
 direct CI workflow edit initially.
 
+Step 187 follow-up: the release-quality wrapper now runs
+`make check-learner-state-exporter-cli`. The wrapper integration uses the
+Makefile target path, keeps generated outputs under the existing narrow `tmp/`
+smoke root, and does not change CI workflows.
+
 ## 14. No-Oracle / Synthetic-Only Policy
 
 The CLI must preserve:
