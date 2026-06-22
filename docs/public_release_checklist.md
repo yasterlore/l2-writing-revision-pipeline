@@ -411,6 +411,12 @@ and confirm all cases are synthetic-only, JSON/JSONL parseable, expected
 validation result files are count/reason-code only, invalid forbidden-field
 cases are intentional, and no generated body or real participant data is added
 to docs.
+Before implementing an estimator input validator or loader, review
+[learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
+and confirm validation order, safe result schema, reason-code mapping,
+fixture expected-result matching, split checks, and no-oracle checks are
+documented without adding model training, metrics, calibration, or real-data
+readiness claims.
 
 ## 7. Checks To Run
 
