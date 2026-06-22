@@ -206,12 +206,12 @@ contract in the same validation-only calibration path. It is not part of
 
 ## 11. Release-Quality Future
 
-This step does not connect release-quality. Step228 adds only the standalone
-Makefile target and leaves `scripts/check_release_quality.sh` unchanged.
+Step228 added only the standalone Makefile target and left
+`scripts/check_release_quality.sh` unchanged. Step230 later integrates the
+target into the release-quality wrapper through
+[frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md).
 
-After Makefile target implementation and a log-safety review, a future
-release-quality integration design should decide where to place the target.
-The likely placement is near the learner-state checks:
+The implemented placement is near the learner-state checks:
 
 1. learner-state audit fixtures
 2. learner-state exporter CLI smoke
@@ -220,8 +220,7 @@ The likely placement is near the learner-state checks:
 5. learner-state frozen policy validation
 6. config/scoring smoke checks
 
-Do not connect it in the Makefile target implementation step. The wrapper
-should only be changed after the standalone target has proven safe output.
+The wrapper connection happens after the standalone target proves safe output.
 
 ## 12. Testing Plan For Future Implementation
 
@@ -288,9 +287,8 @@ module command.
 This target should not create `tmp/` output because it only validates existing
 synthetic fixture files. It reads the fixture root and prints a safe summary.
 
-Release-quality should not include the target immediately because wrapper
-integration should happen only after the standalone target's output is
-reviewed for log safety.
+Release-quality now includes the target through the wrapper integration step,
+after the standalone target's output was reviewed for log safety.
 
 Success means the synthetic fixture contract and expected-result matching are
 working. It does not mean model performance is good, calibration quality is
@@ -298,6 +296,7 @@ validated, or real-data readiness has been established.
 
 ## 16. Related Documents
 
+- [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md)
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md)
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
