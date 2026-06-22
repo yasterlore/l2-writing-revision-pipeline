@@ -22,6 +22,11 @@ Step238 implements the minimal fixture validator in
 implementation validates only synthetic fixture metadata and returns only safe
 metadata summaries.
 
+Step240 adds the minimal safe CLI entrypoint to the same module with tests in
+`python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`.
+It still does not add generator code, a Makefile target, release-quality
+integration, workflow changes, calibration, selective prediction, or metrics.
+
 ## 1. Purpose
 
 The purpose of this document is to define how frozen policy generation
@@ -349,7 +354,8 @@ Recommended next steps:
 1. Step239: frozen policy generation validator CLI design. Completed as a
    docs-only design for fixture-case/root modes, exit codes, expected-result
    matching, and safe JSON/human output.
-2. Step240: CLI implementation.
+2. Step240: CLI implementation. Completed as a minimal safe
+   `python -m learner_state.frozen_policy_generation_validation` wrapper.
 3. Step241: Makefile target design and implementation.
 4. Step242: release-quality integration design and implementation.
 5. Step243: frozen policy generation scaffold implementation design.
@@ -400,6 +406,8 @@ metadata follows the bridge contract.
 - Step237: initial frozen policy generation validation design.
 - Step238: minimal Python fixture validator and fixture-based tests added.
 - Step239: linked the frozen policy generation validator CLI design.
+- Step240: linked the minimal frozen policy generation validator CLI
+  implementation.
 
 ## Related Documents
 
@@ -411,4 +419,5 @@ metadata follows the bridge contract.
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - `python/learner_state/frozen_policy_generation_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`
 - [Public release checklist](public_release_checklist.md)

@@ -1,14 +1,17 @@
 # Frozen Policy Generation Validator CLI Design
 
-This document designs a future CLI for frozen policy generation fixture
-validation.
+This document designs the CLI for frozen policy generation fixture validation
+and records the Step240 minimal implementation status.
 
-It is documentation only. It does not implement a CLI, generator, frozen
-policy generation scaffold, Makefile target, release-quality integration,
-GitHub Actions workflow change, Python code change, test change, fixture
-change, calibration, selective prediction, learner-state estimator, estimator
-training, new model, or metric computation. It is not a performance evaluation
-and is not a real-data readiness claim.
+Step240 implements the minimal CLI entrypoint in
+`python/learner_state/frozen_policy_generation_validation.py` and adds CLI
+tests in
+`python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`.
+It does not implement a generator, frozen policy generation scaffold, Makefile
+target, release-quality integration, GitHub Actions workflow change,
+calibration, selective prediction, learner-state estimator, estimator
+training, new model, or metric computation. It is not a performance
+evaluation and is not a real-data readiness claim.
 
 Public docs must not include raw GitHub Actions logs, full job output, copied
 log blocks, screenshots containing raw logs, frozen policy artifact bodies,
@@ -44,7 +47,7 @@ Current state:
   `python/learner_state/frozen_policy_generation_validation.py`
 - fixture-based unittest exists in
   `python/learner_state/tests/test_frozen_policy_generation_validation.py`
-- CLI does not exist yet
+- CLI exists as of Step240
 - Makefile target does not exist yet
 - release-quality integration does not exist yet
 
@@ -343,13 +346,11 @@ Not in this step:
 
 Future sequence:
 
-1. implement CLI
-2. add CLI tests
-3. design and implement standalone Makefile target
-4. review CLI/target log safety
-5. integrate into release-quality only after standalone behavior is stable
+1. design and implement standalone Makefile target
+2. review CLI/target log safety
+3. integrate into release-quality only after standalone behavior is stable
 
-Do not connect the CLI to release-quality in the design step.
+Do not connect the CLI to release-quality in Step240.
 
 ## 15. No-Oracle / Synthetic-Only Boundary
 
@@ -369,9 +370,8 @@ Boundaries:
 
 ## 16. What This Does Not Do
 
-This document does not:
+Step240 does not:
 
-- implement CLI
 - implement generator
 - implement frozen policy generation scaffold
 - implement calibration
@@ -379,11 +379,10 @@ This document does not:
 - train an estimator
 - compute metrics
 - use real data
+- add a Makefile target
 - change release-quality
 - change workflows
 - change Makefile
-- change Python code
-- change tests
 - change fixtures
 
 ## 17. Beginner Notes
@@ -406,6 +405,10 @@ accidentally expose raw rows, labels, logits, paths, or misleading metrics.
 ## 18. Update History
 
 - Step239: initial frozen policy generation validator CLI design creation.
+- Step240: minimal CLI implementation added to
+  `python/learner_state/frozen_policy_generation_validation.py`, with CLI
+  tests in
+  `python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`.
 
 ## Related Documents
 
@@ -416,4 +419,5 @@ accidentally expose raw rows, labels, logits, paths, or misleading metrics.
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
 - `python/learner_state/frozen_policy_generation_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`
 - [Public release checklist](public_release_checklist.md)

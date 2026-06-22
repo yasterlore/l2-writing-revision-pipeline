@@ -464,6 +464,8 @@ followed the synthetic fixture contract and safety boundaries.
   fixture files remain unchanged.
 - Step239: linked the frozen policy generation validator CLI design as the
   next docs-only interface plan.
+- Step240: linked the minimal frozen policy generation validator CLI
+  implementation; fixture files remain unchanged.
 
 ## Related Documents
 
@@ -473,6 +475,7 @@ followed the synthetic fixture contract and safety boundaries.
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - `python/learner_state/frozen_policy_generation_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)

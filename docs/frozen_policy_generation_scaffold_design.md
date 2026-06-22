@@ -365,8 +365,9 @@ Recommended staging:
    the safe fixture validator implementation.
 5. Design the safe generation validator CLI. Step239 adds the docs-only CLI
    design for this stage.
-6. Implement minimal generator with fixture tests.
-7. Add a safe CLI implementation.
+6. Implement the safe generation validator CLI. Step240 adds the minimal CLI
+   implementation and tests for this stage.
+7. Implement minimal generator with fixture tests.
 8. Add a standalone Makefile target.
 9. Review output/log safety.
 10. Integrate into release-quality only after standalone safety is stable.
@@ -426,6 +427,8 @@ real-data-ready.
 - Step238: linked the minimal frozen policy generation fixture validator
   implementation.
 - Step239: linked the frozen policy generation validator CLI design.
+- Step240: linked the minimal frozen policy generation validator CLI
+  implementation.
 
 ## Related Documents
 
@@ -437,6 +440,7 @@ real-data-ready.
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - `python/learner_state/frozen_policy_generation_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md)
