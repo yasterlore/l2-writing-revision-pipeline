@@ -1,0 +1,14 @@
+{
+  "content_suppressed": true,
+  "expected_failure_category": "frozen_policy_validator_gate",
+  "expected_failure_reason": "frozen_policy_validator_failure",
+  "expected_policy_schema_version": null,
+  "expected_policy_status": "not_written_or_rejected",
+  "expected_stage": "frozen_policy_validation",
+  "fixture_case_id": "invalid/frozen_policy_validator_failure",
+  "no_oracle_checked": true,
+  "no_raw_rows": true,
+  "synthetic_only": true,
+  "test_tuning_checked": true,
+  "validation_status": "fail"
+}

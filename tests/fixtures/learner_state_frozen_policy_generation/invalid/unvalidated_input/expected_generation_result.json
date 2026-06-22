@@ -1,0 +1,13 @@
+{
+  "content_suppressed": true,
+  "expected_failure_category": "input_validation_gate",
+  "expected_failure_reason": "unvalidated_input",
+  "expected_frozen_policy_validation_status": "not_applicable",
+  "expected_output_status": "not_written",
+  "expected_stage": "selective_prediction_validation_gate",
+  "generation_status": "fail",
+  "no_oracle_checked": true,
+  "no_raw_rows": true,
+  "synthetic_only": true,
+  "test_tuning_checked": true
+}

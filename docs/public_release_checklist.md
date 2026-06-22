@@ -708,6 +708,15 @@ safe fixture pointers and expected-result metadata only, without pasting
 prediction rows, label rows, generated frozen policy bodies, JSON bodies,
 logits/probability dumps, private paths, raw learner text, GitHub raw logs, or
 performance claims.
+For Step236, review the
+[frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
+and confirm the new files are synthetic-only metadata fixtures for future
+generator work. They must not include raw prediction/label bodies, generated
+frozen policy artifact bodies, logits/probability dumps, private paths except
+the intentional invalid output-path fixture, raw learner text, GitHub raw logs,
+or performance evidence. This step must not add generator code, validator code,
+CLI, Makefile targets, release-quality integration, workflow changes, Python
+tests, or changes to existing fixtures.
 
 ## 7. Checks To Run
 

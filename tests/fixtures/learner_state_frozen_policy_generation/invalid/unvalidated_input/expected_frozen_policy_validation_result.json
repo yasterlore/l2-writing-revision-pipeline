@@ -1,0 +1,14 @@
+{
+  "content_suppressed": true,
+  "expected_failure_category": null,
+  "expected_failure_reason": null,
+  "expected_policy_schema_version": null,
+  "expected_policy_status": "not_written_or_rejected",
+  "expected_stage": null,
+  "fixture_case_id": "invalid/unvalidated_input",
+  "no_oracle_checked": true,
+  "no_raw_rows": true,
+  "synthetic_only": true,
+  "test_tuning_checked": true,
+  "validation_status": "not_applicable"
+}
