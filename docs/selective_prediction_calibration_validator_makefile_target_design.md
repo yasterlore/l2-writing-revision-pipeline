@@ -363,6 +363,11 @@ target after estimator input validation and before config/scoring smoke checks.
 It does not change the wrapper, workflows, Makefile, scripts, tests, code, or
 fixtures.
 
+Step215 implements that wrapper integration by adding the standalone target
+after estimator input validation and before config/scoring smoke checks in
+`scripts/check_release_quality.sh`. Makefile, workflows, code, tests, and
+fixtures remain unchanged.
+
 ## 16. Related Documents
 
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)

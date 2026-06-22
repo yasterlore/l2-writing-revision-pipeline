@@ -1,19 +1,21 @@
 # Selective Prediction Calibration Release-Quality Integration Design
 
-This document designs future release-quality wrapper integration for the
-synthetic selective prediction calibration validator Makefile target.
+This document designs release-quality wrapper integration for the synthetic
+selective prediction calibration validator Makefile target and records the
+Step215 implementation status.
 
-It is docs-only. It does not change the release-quality wrapper, workflows,
-Makefile, scripts, code, tests, or fixtures. It does not implement
-calibration, selective prediction, estimator training, metric computation, or
-real-data handling. It is not a performance evaluation and is not a real-data
-readiness claim.
+The Step214 version was docs-only. Step215 adds the wrapper call only through
+the existing Makefile target. It does not change workflows, Makefile, code,
+tests, fixtures, or scripts other than `scripts/check_release_quality.sh`. It
+does not implement calibration, selective prediction, estimator training,
+metric computation, or real-data handling. It is not a performance evaluation
+and is not a real-data readiness claim.
 
 ## 1. Purpose
 
 The purpose of this document is to define how the standalone target
 `make check-learner-state-selective-prediction` should be integrated into
-`scripts/check_release_quality.sh` in a future step.
+`scripts/check_release_quality.sh`.
 
 The design covers:
 
@@ -59,9 +61,19 @@ Current assets:
 - target output is safe human summary only
 - target creates no tmp output
 
+Step215 implementation status:
+
+- release-quality wrapper integration is present
+- wrapper calls `make check-learner-state-selective-prediction`
+- placement is after learner-state estimator input validation and before
+  config/scoring smoke checks
+- output remains the target's safe human summary
+- workflow integration is not present
+- remote/manual run record for this target inside release-quality is not
+  present yet
+
 Not present yet:
 
-- release-quality wrapper integration
 - workflow integration
 - remote/manual run record for this target inside release-quality
 
@@ -139,6 +151,9 @@ run make check-learner-state-selective-prediction
 
 The label should not imply metric computation, calibration quality, model
 training, or performance evaluation.
+
+Step215 implements this stanza in `scripts/check_release_quality.sh` without
+changing the Makefile, workflows, code, tests, or fixtures.
 
 ## 6. Expected Wrapper Behavior
 
@@ -331,12 +346,11 @@ with that output. Record only a private/local remediation note if needed.
 
 ## 13. What This Does NOT Do
 
-This document does not:
+This document and Step215 implementation do not:
 
-- integrate the release-quality wrapper
 - change workflows
 - change Makefile
-- change scripts
+- change scripts other than the minimal release-quality wrapper stanza
 - implement calibration
 - implement selective prediction
 - train an estimator

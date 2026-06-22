@@ -106,6 +106,9 @@ run make check-learner-state-exporter-cli
 section "learner-state estimator input validation"
 run make check-learner-state-estimator-input
 
+section "learner-state selective prediction calibration validation"
+run make check-learner-state-selective-prediction
+
 section "config and scoring smoke checks"
 run scripts/check_config_enabled_summary_smoke.sh
 run scripts/check_config_enabled_e2e_smoke.sh

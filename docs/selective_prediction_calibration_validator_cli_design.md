@@ -412,6 +412,10 @@ Step214 adds the
 as a docs-only plan for future wrapper placement, command choice, logging
 safety, runtime impact, and remote/manual run recording policy.
 
+Step215 connects the standalone Makefile target to the release-quality wrapper
+through that design. The CLI itself remains unchanged, and workflow
+integration remains separate future work.
+
 ## 15. No-Oracle / Synthetic-Only Boundary
 
 The CLI must preserve these boundaries:
