@@ -380,6 +380,12 @@ and confirm the public record will include only metadata, will not paste raw
 GitHub Actions logs, will not include generated feature/label/manifest bodies,
 will note artifact presence, and will avoid performance or real-data readiness
 claims.
+After recording the exporter CLI smoke remote/manual Release Quality run,
+confirm the status marker
+[learner-state exporter release-quality remote run status](status/learner_state_exporter_release_quality_remote_run_status.md)
+records only high-level metadata, confirms learner-state audit fixture and
+exporter CLI smoke inclusion, keeps generated output bodies out of docs, and
+does not make model-performance or real-data readiness claims.
 
 ## 7. Checks To Run
 
