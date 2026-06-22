@@ -254,6 +254,10 @@ Forbidden output:
 
 Public output should be safe even when the audit fails.
 
+For the future exporter boundary that should call this audit on generated
+feature, label, and manifest files, see
+[Learner-state sequence exporter design](learner_state_sequence_exporter_design.md).
+
 ## 13. Failure Policy
 
 The audit should fail closed.

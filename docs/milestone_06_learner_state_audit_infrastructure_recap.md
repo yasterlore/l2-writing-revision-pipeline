@@ -173,6 +173,13 @@ Recommended priority order:
 The next implementation should remain narrowly scoped and should not combine
 exporter, estimator, metric, and real-data readiness in one step.
 
+Step 175 follow-up: the
+[learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
+now defines the future synthetic-only exporter boundary, including input
+sources, output files, processing order, past-only window features, audit
+integration, and safe output policy. It remains design-only and does not
+implement an exporter.
+
 ## 10. Release/Public Status
 
 Public-safe documentation now exists for:
@@ -232,5 +239,6 @@ validity.
 - [Learner-state sequence audit release-quality integration design](learner_state_sequence_audit_release_quality_integration_design.md)
 - [Learner-state audit release-quality remote-run record workflow](learner_state_audit_release_quality_remote_run_record_workflow.md)
 - [Learner-state audit release-quality remote run status](status/learner_state_audit_release_quality_remote_run_status.md)
+- [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
 - [Milestone 05 Makefile orchestration recap](milestone_05_makefile_orchestration_recap.md)
 - [Public release checklist](public_release_checklist.md)

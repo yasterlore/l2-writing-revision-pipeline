@@ -309,6 +309,11 @@ For the broader learner-state audit infrastructure recap, review
 and confirm it does not claim model performance, learner-state estimator
 correctness, real-data readiness, production data collection validity, or new
 metric evidence.
+Before implementing a learner-state sequence exporter, review
+[learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
+and confirm the future exporter keeps features, labels, and manifests separate,
+runs the learner-state sequence audit, uses past-only windows, and emits only
+safe/count-only summaries.
 
 ## 7. Checks To Run
 
