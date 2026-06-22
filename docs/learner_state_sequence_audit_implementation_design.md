@@ -307,6 +307,14 @@ Recommended order:
 If fixture test output safety is not easy to guarantee, add a safe-output test
 helper step before Makefile or release-quality integration.
 
+Step 165 implementation note: the minimal Python audit module is implemented in
+`python/learner_state/sequence_audit.py` with fixture tests under
+`python/learner_state/tests/`. It reads synthetic fixture feature, label, and
+manifest files, returns safe `AuditResult` metadata, and compares each fixture
+case with `expected_audit_result.json`. It does not add a CLI, Makefile target,
+release-quality integration, sequence exporter, learner-state estimator, model,
+metric, or scorer change.
+
 ## 15. Beginner Notes
 
 An audit implementation is the code that checks whether a dataset is safe
