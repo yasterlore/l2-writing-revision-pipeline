@@ -320,6 +320,12 @@ a standalone smoke target. It exports the minimal and past-window synthetic
 valid fixtures under `tmp/learner_state_sequence_exporter_smoke/`, prints only
 safe CLI summaries, and remains outside release-quality and CI.
 
+Step 186 follow-up: see
+[Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md)
+for the docs-only wrapper integration plan. It recommends using the standalone
+Makefile target from the wrapper rather than duplicating CLI arguments, with no
+direct CI workflow edit initially.
+
 ## 14. No-Oracle / Synthetic-Only Policy
 
 The CLI must preserve:

@@ -29,6 +29,13 @@ The target should remain a thin local smoke command. It should not introduce a
 learner-state estimator, model, metric, real-data path, production pipeline, or
 new scoring behavior.
 
+Step 186 follow-up: see
+[Learner-state sequence exporter release-quality integration design](learner_state_sequence_exporter_release_quality_integration_design.md)
+for the docs-only plan for future wrapper integration. That design recommends
+calling this Makefile target from the wrapper after Python checks and the
+learner-state audit fixture check, while keeping generated output under the
+same narrow `tmp/` smoke root and avoiding direct CI edits initially.
+
 ## 2. Current State
 
 Current state:
