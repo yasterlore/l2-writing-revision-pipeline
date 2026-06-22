@@ -423,6 +423,11 @@ After implementing the minimal estimator input validator/loader, review
 safe count/reason-code metadata, exercise all Step193 fixture contracts, do not
 print JSONL row bodies or manifest bodies, and do not add estimator training,
 metrics, calibration, or real-data readiness claims.
+Before implementing an estimator input validator CLI, review
+[learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md)
+and confirm the CLI plan uses fixture-root expected-result matching, safe human
+and JSON summaries, stable exit codes, path safety, no raw row or manifest
+body output, and no Makefile/release-quality connection in the design step.
 
 ## 7. Checks To Run
 
