@@ -1,0 +1,32 @@
+{
+  "metadata_schema_version": "exporter_synthetic_metadata_v0.1",
+  "source_description": "minimal synthetic exporter input fixture",
+  "synthetic_only": true,
+  "content_suppressed": true,
+  "participants": [
+    {
+      "synthetic_participant_id": "syn-p001",
+      "synthetic_session_ids": [
+        "syn-s001"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "synthetic_session_id": "syn-s001",
+      "synthetic_participant_id": "syn-p001",
+      "synthetic_task_ids": [
+        "syn-t001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "synthetic_task_id": "syn-t001",
+      "synthetic_session_id": "syn-s001",
+      "episode_count": 3
+    }
+  ],
+  "raw_text_included": false,
+  "private_paths_included": false
+}
