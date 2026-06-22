@@ -1,0 +1,13 @@
+{
+  "validation_status": "fail",
+  "expected_failure_reason": "test_temperature_tuning",
+  "expected_failure_category": "test_tuning_leakage",
+  "expected_stage": "temperature_provenance",
+  "expected_policy_schema_version": "frozen_selective_prediction_policy_schema_v0_1",
+  "expected_policy_status": "unsafe_test_temperature_tuning",
+  "content_suppressed": true,
+  "no_raw_rows": true,
+  "synthetic_only": true,
+  "no_oracle_checked": true,
+  "test_tuning_checked": true
+}

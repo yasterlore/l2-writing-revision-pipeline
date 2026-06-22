@@ -1,0 +1,55 @@
+{
+  "policy_schema_version": "frozen_selective_prediction_policy_schema_v0_1",
+  "policy_id": "synthetic_frozen_policy_test_derived_threshold",
+  "source_fixture_id": "learner_state_selective_prediction/valid/minimal_validation_test_split",
+  "created_by_step": "step222_intentional_invalid",
+  "synthetic_only": true,
+  "content_suppressed": true,
+  "no_raw_rows": true,
+  "no_oracle_checked": true,
+  "test_tuning_forbidden": true,
+  "confidence_definition": "max_softmax_probability",
+  "confidence_is_calibrated": false,
+  "temperature": 1.0,
+  "temperature_source_split": "none_identity",
+  "temperature_selection_method": "none_identity",
+  "threshold": 0.68,
+  "threshold_source_split": "test",
+  "threshold_selection_method": "test_risk_target",
+  "allowed_abstention_rate": 0.25,
+  "label_space_version": "synthetic_action_family_v0_1",
+  "split_policy_summary": {
+    "learner_disjoint": true,
+    "validation_used_for_tuning": true,
+    "test_used_for_tuning": true,
+    "test_evaluation_future_only": false,
+    "label_dependent_split": false,
+    "outcome_dependent_split": false
+  },
+  "validation_input_summary": {
+    "fixture_case_id": "invalid/test_derived_threshold",
+    "validation_prediction_count": 2,
+    "validation_label_count": 2,
+    "validation_participant_count": 2,
+    "split_counts": {
+      "validation": 2,
+      "test": 2
+    },
+    "prediction_label_join_complete": true,
+    "content_suppressed": true,
+    "no_raw_rows": true
+  },
+  "safety_review": {
+    "synthetic_only": true,
+    "no_oracle_checked": true,
+    "test_tuning_forbidden": true,
+    "no_raw_rows": true,
+    "content_suppressed": true,
+    "no_private_paths": true,
+    "prediction_label_separated": true,
+    "expected_action_not_in_prediction_rows": true,
+    "future_leakage_checked": true,
+    "raw_learner_text_absent": true,
+    "performance_claims_absent": true
+  }
+}

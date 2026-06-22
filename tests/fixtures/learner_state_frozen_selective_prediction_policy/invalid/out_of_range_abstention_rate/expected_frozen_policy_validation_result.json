@@ -1,0 +1,13 @@
+{
+  "validation_status": "fail",
+  "expected_failure_reason": "invalid_abstention_rate",
+  "expected_failure_category": "numeric_range",
+  "expected_stage": "abstention_rate_validation",
+  "expected_policy_schema_version": "frozen_selective_prediction_policy_schema_v0_1",
+  "expected_policy_status": "unsafe_invalid_abstention_rate",
+  "content_suppressed": true,
+  "no_raw_rows": true,
+  "synthetic_only": true,
+  "no_oracle_checked": true,
+  "test_tuning_checked": true
+}

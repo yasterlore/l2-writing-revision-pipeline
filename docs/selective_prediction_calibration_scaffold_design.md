@@ -392,6 +392,12 @@ as a docs-only plan for future valid and invalid frozen policy fixtures. It
 does not create fixture files, implement a frozen policy validator, or
 generate artifacts.
 
+Step222 creates the initial synthetic fixture root at
+`tests/fixtures/learner_state_frozen_selective_prediction_policy/` so future
+frozen policy validation can be tested against one valid fixture and eleven
+intentional invalid fixtures without using real data, raw rows, logits dumps,
+or performance claims.
+
 ## 16. Testing Plan For Future Implementation
 
 Future tests should cover:

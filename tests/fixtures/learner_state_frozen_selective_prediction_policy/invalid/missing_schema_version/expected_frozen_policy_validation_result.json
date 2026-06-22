@@ -1,0 +1,13 @@
+{
+  "validation_status": "fail",
+  "expected_failure_reason": "missing_schema_version",
+  "expected_failure_category": "schema_version",
+  "expected_stage": "schema_version",
+  "expected_policy_schema_version": null,
+  "expected_policy_status": "unsafe_missing_schema_version",
+  "content_suppressed": true,
+  "no_raw_rows": true,
+  "synthetic_only": true,
+  "no_oracle_checked": true,
+  "test_tuning_checked": true
+}
