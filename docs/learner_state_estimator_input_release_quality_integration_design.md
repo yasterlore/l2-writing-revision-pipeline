@@ -10,6 +10,12 @@ sequence exporter, audit code, fixture files, candidate generation, OT scoring,
 scoring formula, tie-break logic, or manifest schemas. It is not a performance
 evaluation and is not a real-data readiness claim.
 
+Step201 follow-up: the release-quality wrapper now calls
+`make check-learner-state-estimator-input` after the learner-state audit
+fixture check and exporter CLI smoke check. The wrapper integration keeps the
+Makefile target unchanged, creates no estimator-input tmp output, prints only
+safe human summary output, and leaves GitHub Actions workflows unchanged.
+
 ## 1. Purpose
 
 The purpose of this document is to decide how
@@ -47,7 +53,8 @@ Current state:
 - Fixture-root validation reports 9 cases matched and 0 mismatches.
 - The target creates no tmp output.
 - The target prints safe human summary output only.
-- Release-quality wrapper integration does not exist yet.
+- Step201 adds release-quality wrapper integration by calling the Makefile
+  target.
 - GitHub Actions workflow integration does not exist yet.
 
 The current target is a validator smoke check only. It does not train an
@@ -280,12 +287,29 @@ The wrapper integration should remain small: add the Makefile target command
 near the existing learner-state audit/exporter checks and leave workflows
 unchanged.
 
+## Step201 Implementation Status
+
+Step201 adds this command to `scripts/check_release_quality.sh`:
+
+```bash
+make check-learner-state-estimator-input
+```
+
+Implemented wrapper order:
+
+1. `make check-learner-state-audit-fixtures`
+2. `make check-learner-state-exporter-cli`
+3. `make check-learner-state-estimator-input`
+4. config and scoring smoke checks
+
+The wrapper does not add tmp cleanup, does not cat fixture files, does not
+write validation result files, does not create artifacts, and does not use
+`--json`. Success remains a synthetic fixture-root validator smoke pass only.
+
 ## 15. What This Does NOT Do
 
-This design does not:
+This design and Step201 integration do not:
 
-- implement wrapper integration
-- change `scripts/check_release_quality.sh`
 - change the Makefile
 - change GitHub Actions workflows
 - change shell scripts

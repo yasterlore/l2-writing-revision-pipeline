@@ -25,6 +25,10 @@ Step200 follow-up: see
 for the docs-only plan to connect the standalone Makefile target to the
 release-quality wrapper in a future implementation step.
 
+Step201 follow-up: release-quality wrapper integration now calls the
+standalone Makefile target, which in turn calls this CLI in fixture-root mode.
+The CLI behavior and arguments are unchanged.
+
 This document remains the CLI design reference. Step197 does not add a
 Makefile target, release-quality integration, workflow change, learner-state
 estimator, estimator training code, selective prediction, calibration, a new
@@ -406,7 +410,8 @@ Recommended future order:
 3. Step199: implement the standalone Makefile target after CLI log safety
    review. Complete.
 4. Step200: design release-quality wrapper integration. Complete.
-5. Later: run remote/manual release-quality and record public-safe status if
+5. Step201: implement release-quality wrapper integration. Complete.
+6. Later: run remote/manual release-quality and record public-safe status if
    integrated.
 
 Do not connect the CLI to release-quality before local CLI log safety and
