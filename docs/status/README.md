@@ -44,3 +44,5 @@ Related recap:
 - [Milestone 09 selective prediction validation infrastructure recap](../milestone_09_selective_prediction_validation_infrastructure_recap.md):
   broader recap of the selective prediction validation infrastructure
   milestone.
+- [Milestone 10 frozen policy validation infrastructure recap](../milestone_10_frozen_policy_validation_infrastructure_recap.md):
+  broader recap of the frozen policy validation infrastructure milestone.

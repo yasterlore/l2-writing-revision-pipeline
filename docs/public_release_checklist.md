@@ -682,6 +682,13 @@ Release Quality run, confirms frozen policy validation was included with
 copied log blocks, frozen policy artifact bodies, JSON bodies, raw rows,
 logits/probability dumps, private paths, raw learner text, or performance
 metric bodies.
+For the Milestone 10 recap, review
+[milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
+and confirm it summarizes Step220 through Step232 without adding workflow,
+wrapper, Makefile, Python, test, or fixture changes. The recap must keep the
+public-safe boundary: no raw logs, full job output, frozen policy artifact
+bodies, JSON bodies, raw rows, logits/probability dumps, private paths, raw
+learner text, generated feature/label/manifest bodies, or performance claims.
 
 ## 7. Checks To Run
 

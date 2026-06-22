@@ -327,6 +327,11 @@ count/reason-code-only expected validation result files. This is post-recap
 fixture groundwork and does not implement frozen policy validation,
 calibration, estimator training, or metric computation.
 
+Milestone 10 follow-up: [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
+summarizes the subsequent frozen policy schema, fixtures, validator, CLI,
+Makefile target, release-quality integration, and remote status marker work
+from Step220 through Step232.
+
 ## 12. Release/Public Status
 
 Public-safe documentation now exists for:
@@ -395,6 +400,7 @@ validator path ran, matched expected results, and kept output safe.
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
+- [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
 - [Selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Milestone 08 learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md)
 - [Public release checklist](public_release_checklist.md)
