@@ -434,6 +434,12 @@ and the CLI unittest. Confirm stdout/stderr contain only safe statuses, counts,
 reason codes, and matched-case summaries; do not add generated row bodies,
 Makefile targets, release-quality integration, model training, metrics,
 calibration, or real-data readiness claims.
+Before adding an estimator input validator Makefile target, review
+[learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md)
+and confirm the target will call fixture-root validation with safe human
+summary output, will not create tmp outputs, will not cat feature/label or
+manifest bodies, and will remain standalone until a separate release-quality
+integration review.
 
 ## 7. Checks To Run
 

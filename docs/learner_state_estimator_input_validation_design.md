@@ -338,10 +338,14 @@ formula, tie-breaks, or manifest schema.
 Recommended order:
 
 1. Step195: minimal estimator input validator/loader implementation. Complete.
-2. Step196: broader fixture-based validator tests or CLI design review.
-3. Step197: optional CLI design for estimator input validation.
-4. Step198: selective prediction / calibration design.
-5. Step199: estimator prototype design.
+2. Step196: estimator input validator CLI design. Complete.
+3. Step197: minimal estimator input validator CLI implementation. Complete.
+4. Step198: estimator input validator Makefile target design. Complete.
+5. Step199: standalone Makefile target implementation.
+6. Later: release-quality integration design after local target log-safety
+   review.
+7. Later: selective prediction / calibration design.
+8. Later: estimator prototype design.
 
 The first implementation should remain a synthetic-only validator/loader. It
 should not introduce model training, metrics, calibration, or real-data
@@ -370,6 +374,7 @@ not a silent pass.
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
 - [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md)
+- [Learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md)
 - `python/learner_state/estimator_input.py`
 - `python/learner_state/tests/test_estimator_input.py`
 - `python/learner_state/tests/test_estimator_input_cli.py`

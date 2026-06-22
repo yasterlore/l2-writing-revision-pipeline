@@ -9,6 +9,13 @@ Step197 follow-up: the minimal CLI is implemented as
 supports fixture-case mode, fixture-root mode, safe JSON output, help, default
 expected-result matching, and safe count/reason-code summaries.
 
+Step198 follow-up: see
+[Learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md)
+for the docs-only plan for a future standalone Makefile smoke target. That
+design recommends `check-learner-state-estimator-input` calling fixture-root
+validation with safe human output, without adding the target or connecting it
+to release-quality in this step.
+
 This document remains the CLI design reference. Step197 does not add a
 Makefile target, release-quality integration, workflow change, learner-state
 estimator, estimator training code, selective prediction, calibration, a new
@@ -454,6 +461,7 @@ what passed or failed, not show the underlying data.
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
+- [Learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
 - `python/learner_state/estimator_input.py`
 - `python/learner_state/tests/test_estimator_input_cli.py`
