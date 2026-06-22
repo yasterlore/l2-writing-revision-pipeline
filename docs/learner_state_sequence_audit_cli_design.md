@@ -198,6 +198,11 @@ Step 169 follow-up: the first integration step adds
 `make check-learner-state-audit-fixtures` as a manual Makefile target. It is
 not part of the release-quality wrapper or CI.
 
+Step 170 follow-up: see
+[Learner-state sequence audit release-quality integration design](learner_state_sequence_audit_release_quality_integration_design.md)
+for the docs-only plan to add the Makefile target to the release-quality
+wrapper later without changing CI directly.
+
 ## 10. Failure Policy
 
 The CLI should fail safely on:
@@ -273,6 +278,7 @@ targets are easy to run repeatedly and should be boringly predictable.
 ## Related Documents
 
 - [Learner-state sequence audit CLI integration design](learner_state_sequence_audit_cli_integration_design.md)
+- [Learner-state sequence audit release-quality integration design](learner_state_sequence_audit_release_quality_integration_design.md)
 - [Learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md)
