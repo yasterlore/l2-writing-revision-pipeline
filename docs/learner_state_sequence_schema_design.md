@@ -245,6 +245,9 @@ Public docs should not paste row dumps, full JSONL bodies, raw text, label
 bodies, candidate bodies, score rows, or generated output bodies. Public
 documentation should use count-only summaries and schema field names.
 
+For the future exporter boundary that would generate these files, see
+[Learner-state sequence exporter design](learner_state_sequence_exporter_design.md).
+
 ## 11. Validation / Audit Design
 
 Future implementation should include audits before any sequence exporter output
