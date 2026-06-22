@@ -327,6 +327,10 @@ After implementing the minimal exporter module, run the normal Python tests and
 confirm generated exporter outputs are written only to temporary or explicit
 output directories, pass the learner-state sequence audit, and do not print
 generated JSONL rows, labels, manifest bodies, or private paths.
+Before adding exporter edge-case fixtures or tests, review
+[learner-state sequence exporter edge fixture design](learner_state_sequence_exporter_edge_fixture_design.md)
+and confirm planned cases remain synthetic-only, safe-failing, no-oracle, and
+do not copy fixture rows or generated output bodies into docs.
 
 ## 7. Checks To Run
 

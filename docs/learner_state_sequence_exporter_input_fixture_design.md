@@ -319,6 +319,12 @@ directory, such as a test temporary directory. The generated files are audited
 by `learner_state.sequence_audit`, and tests compare safe contract metadata
 rather than full generated JSONL bodies.
 
+Step 179 follow-up: see
+[Learner-state sequence exporter edge fixture design](learner_state_sequence_exporter_edge_fixture_design.md)
+for future exporter-specific valid/invalid fixtures, safe failure reason codes,
+and test expansion guidance. That follow-up is docs-only and does not create
+additional fixture files.
+
 ## 14. Beginner Notes
 
 An input fixture is a small synthetic test case that a future exporter can read.
@@ -345,5 +351,6 @@ in features, a future model could learn the answer directly.
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Learner-state sequence audit fixture files design](learner_state_sequence_audit_fixture_files_design.md)
+- [Learner-state sequence exporter edge fixture design](learner_state_sequence_exporter_edge_fixture_design.md)
 - [Milestone 06 learner-state audit infrastructure recap](milestone_06_learner_state_audit_infrastructure_recap.md)
 - [Public release checklist](public_release_checklist.md)
