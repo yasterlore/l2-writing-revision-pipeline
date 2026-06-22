@@ -122,7 +122,11 @@ Recommended entry points:
 - [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md): Step222 synthetic fixture root for future frozen policy validator work; no validator, scaffold, estimator, or metric computation is added.
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md): Step223 docs-only plan for future frozen policy validator ordering, safe outputs, fixture matching, and fail-closed safety checks.
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md): Step225 CLI plan and Step226 implementation status for fixture-case/root modes, expected-result matching, JSON output, and exit-code behavior.
+<<<<<<< Updated upstream
 - [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md): Step227 design and Step228 implementation status for `check-learner-state-frozen-policy`; release-quality is not changed.
+=======
+- [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md): Step227 design and Step228 implementation status for `check-learner-state-frozen-policy`; Step230 adds release-quality wrapper integration.
+>>>>>>> Stashed changes
 - [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md): Step229/Step230 design and implementation status for adding the standalone target to the release-quality wrapper.
 - `make check-learner-state-frozen-policy`: Step228 standalone target for the synthetic frozen policy fixture root; Step230 adds it to release-quality.
 - `python/learner_state/frozen_policy_validation.py`: Step224 minimal validator/loader and Step226 safe CLI for synthetic frozen policy fixtures; Step228 adds the standalone Makefile target, while scaffold code is not added.
