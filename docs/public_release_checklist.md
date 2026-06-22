@@ -717,6 +717,15 @@ the intentional invalid output-path fixture, raw learner text, GitHub raw logs,
 or performance evidence. This step must not add generator code, validator code,
 CLI, Makefile targets, release-quality integration, workflow changes, Python
 tests, or changes to existing fixtures.
+For Step238, confirm
+`python/learner_state/frozen_policy_generation_validation.py` and
+`python/learner_state/tests/test_frozen_policy_generation_validation.py`
+validate only synthetic frozen policy generation fixtures, return safe
+metadata, suppress request/input/generated-artifact bodies, do not implement a
+CLI or Makefile target, do not modify release-quality or workflows, do not
+change fixture files, do not implement generator/calibration/selective
+prediction logic, do not compute metrics, and do not claim model performance
+or real-data readiness.
 
 ## 7. Checks To Run
 

@@ -44,6 +44,9 @@ Recommended entry points:
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md): docs-only Step234 plan for future safe generation of frozen policy metadata after selective prediction validation and before test evaluation.
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md): docs-only Step235 plan for future synthetic generation fixture cases, request files, input pointers, expected results, and fail-closed reason codes.
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md): Step236 synthetic metadata fixture root for future frozen policy generation scaffold and validator work; no generator code is added.
+- [Frozen policy generation validation design](frozen_policy_generation_validation_design.md): Step237 design and Step238 implementation status for safe generation request, input pointer, and expected-result validation.
+- `python/learner_state/frozen_policy_generation_validation.py`: Step238 minimal safe loader/validator for frozen policy generation fixtures; no generator, CLI, calibration, or metrics are added.
+- `python/learner_state/tests/test_frozen_policy_generation_validation.py`: fixture-based tests for three valid generation cases and ten fail-closed invalid generation cases.
 - `make check-learner-state-frozen-policy`: smoke target for synthetic frozen selective prediction policy validation; release-quality now calls it through the wrapper.
 - `python/learner_state/frozen_policy_validation.py`: minimal frozen selective prediction policy validator and safe CLI returning metadata only; the standalone Makefile target exists, but calibration, selective prediction, estimator, and metric computation are not implemented.
 - `python/learner_state/tests/test_frozen_policy_validation.py`: fixture-based tests for one valid frozen policy fixture and eleven fail-closed invalid frozen policy fixtures.
@@ -137,6 +140,7 @@ Recommended entry points:
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md): Step234 docs-only design for a future generator that constructs safe frozen policy artifacts from validated selective prediction inputs.
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md): Step235 docs-only design for future synthetic fixtures that connect selective prediction input validation to frozen policy artifact validation.
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md): Step236 initial synthetic-only request, pointer, and expected-result metadata fixtures for future generator validation.
+- [Frozen policy generation validation design](frozen_policy_generation_validation_design.md): Step237/Step238 validation design and minimal implementation status for synthetic generation fixtures.
 - `make check-learner-state-frozen-policy`: Step228 standalone target for the synthetic frozen policy fixture root; Step230 adds it to release-quality.
 - `python/learner_state/frozen_policy_validation.py`: Step224 minimal validator/loader and Step226 safe CLI for synthetic frozen policy fixtures; Step228 adds the standalone Makefile target, while scaffold code is not added.
 - `python/learner_state/tests/test_frozen_policy_validation.py`: unit tests for expected-result matching and safe validation metadata.
@@ -262,6 +266,7 @@ Recommended entry points:
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md): docs-only scaffold design for future safe frozen policy artifact generation; no generator, calibration, estimator, metrics, or fixture files are added.
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md): docs-only fixture-root and case design for future frozen policy generation tests; Step236 now adds the initial fixture files.
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md): initial metadata-only fixture files for future frozen policy generation tests; no generated artifact bodies are stored.
+- [Frozen policy generation validation design](frozen_policy_generation_validation_design.md): validation order and Step238 minimal fixture validator status; no generator or CLI is added.
 - `make check-learner-state-frozen-policy`: frozen policy validator smoke target now included in release-quality.
 - `python/learner_state/frozen_policy_validation.py`: minimal safe frozen policy validator and CLI for the synthetic fixture root.
 - `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader; no learner-state estimator, training loop, calibration, or metrics are added.
