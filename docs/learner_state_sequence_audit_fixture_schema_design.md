@@ -324,6 +324,10 @@ Step 164 follow-up: see
 for the future fixture expected-result comparison policy and safe audit result
 handling.
 
+Step 165 follow-up: fixture expected-result comparison is now covered by the
+minimal Python audit module tests. Test failures should remain safe and should
+not print fixture row bodies.
+
 ## 17. Beginner Notes
 
 A fixture is a small example file used to test behavior.

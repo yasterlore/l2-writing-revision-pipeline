@@ -274,6 +274,9 @@ text, or label contents.
 Before adding learner-state sequence audit code, review the
 [learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md)
 and confirm that future output remains safe, count-only, and fail-closed.
+After audit code is present, run the learner-state sequence audit fixture tests
+through the normal Python test command and confirm they do not print JSONL row
+bodies, manifest bodies, raw text, private paths, or label contents.
 
 ## 7. Checks To Run
 

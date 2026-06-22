@@ -326,6 +326,10 @@ Step 164 follow-up: see
 for the future module layout, CLI/API, fail-closed input handling, safe output,
 and fixture expected-result matching plan.
 
+Step 165 follow-up: the minimal Python audit module now exercises the initial
+synthetic fixture cases and returns safe count-only `AuditResult` metadata. CLI
+and Makefile integration remain future work.
+
 ## 16. Beginner Notes
 
 An audit is a check that looks for unsafe or invalid data before later tools
