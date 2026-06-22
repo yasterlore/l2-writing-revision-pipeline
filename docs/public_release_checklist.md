@@ -516,6 +516,13 @@ calibration policy checks, test tuning leakage checks, no-oracle checks, and
 safe output policy are documented. The validation design step must not
 implement validator code, calibration, selective prediction, model training,
 metric computation, real-data handling, or performance claims.
+After implementing the minimal calibration / selective prediction fixture
+validator, confirm `python/learner_state/selective_prediction_validation.py`
+and `python/learner_state/tests/test_selective_prediction_validation.py`
+exercise the synthetic fixture root with safe count/reason-code metadata only,
+match all expected validation results, avoid row/policy/split body output, and
+do not implement calibration, selective prediction, model training, metric
+computation, real-data handling, or performance claims.
 
 ## 7. Checks To Run
 

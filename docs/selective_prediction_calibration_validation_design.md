@@ -1,12 +1,14 @@
 # Selective Prediction and Calibration Validation Design
 
 This document designs validation for the synthetic selective prediction and
-calibration fixtures before any validator implementation exists.
+calibration fixtures. Step209 adds the first minimal validator implementation
+for this design while keeping calibration, selective prediction, estimator
+training, and metric computation out of scope.
 
-It is docs-only. It does not implement a validator, selective prediction,
-calibration, a learner-state estimator, estimator training, a new model, F1,
-accuracy, ECE, AURCC, or real-data handling. It is not a performance
-evaluation and is not a real-data readiness claim.
+The design itself is not selective prediction, calibration, a learner-state
+estimator, estimator training, a new model, F1, accuracy, ECE, AURCC, or
+real-data handling. It is not a performance evaluation and is not a real-data
+readiness claim.
 
 ## 1. Purpose
 
@@ -368,20 +370,28 @@ Recommended future order:
 
 1. Step209: minimal calibration / selective prediction fixture validator
    implementation.
-2. Step210: fixture-based validator tests.
-3. Step211: optional CLI design.
-4. Step212: Makefile target design.
+2. Step210: optional CLI design.
+3. Step211: Makefile target design.
+4. Step212: release-quality integration design.
 5. Step213: selective prediction / calibration scaffold design.
 6. Step214: minimal learner-state estimator prototype design.
 
 Keep these steps separate. Do not combine validator implementation, estimator
 training, metric computation, and release-quality integration in one step.
 
+Step209 adds
+`python/learner_state/selective_prediction_validation.py` and
+`python/learner_state/tests/test_selective_prediction_validation.py`. The
+implementation loads synthetic fixture files, validates schema versions,
+policy flags, prediction/label joins, split boundaries, no-oracle leakage
+fields, and expected validation results, and returns safe count/reason-code
+metadata only. It does not implement calibration, selective prediction,
+metric computation, an estimator, or real-data handling.
+
 ## 16. What This Does NOT Do
 
-This design does not:
+This design and the Step209 minimal validator do not:
 
-- implement a validator
 - implement calibration
 - implement selective prediction
 - train a model
