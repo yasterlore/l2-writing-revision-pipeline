@@ -325,6 +325,10 @@ Step 167 follow-up: the minimal CLI now exposes the audit module through
 fixture-root modes. Makefile and release-quality integration remain future
 work.
 
+Step 168 follow-up: see
+[Learner-state sequence audit CLI integration design](learner_state_sequence_audit_cli_integration_design.md)
+for the staged Makefile, release-quality wrapper, and CI integration plan.
+
 ## 15. Beginner Notes
 
 An audit implementation is the code that checks whether a dataset is safe
@@ -352,6 +356,7 @@ generation.
 - [Learner-state sequence audit fixture files design](learner_state_sequence_audit_fixture_files_design.md)
 - [Learner-state sequence audit fixture files](../tests/fixtures/learner_state_sequence_audit/README.md)
 - [Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
+- [Learner-state sequence audit CLI integration design](learner_state_sequence_audit_cli_integration_design.md)
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Learner-state input representation design](learner_state_input_representation_design.md)
