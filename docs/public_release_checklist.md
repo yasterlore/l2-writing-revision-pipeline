@@ -280,6 +280,9 @@ bodies, manifest bodies, raw text, private paths, or label contents.
 Before adding a learner-state sequence audit CLI, review the
 [learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
 and confirm stdout, JSON output, and exit codes remain safe and count-only.
+After CLI implementation, run CLI smoke tests through the normal Python test
+command and confirm CLI stdout/stderr do not include JSONL rows, manifest
+bodies, label contents, raw text, private paths, or expected action bodies.
 
 ## 7. Checks To Run
 

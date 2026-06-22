@@ -6,7 +6,10 @@ raw rows, raw text, label bodies, or candidate score rows in ``AuditResult``.
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
+from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
@@ -77,6 +80,13 @@ UNSAFE_ABSOLUTE_PREFIXES = (
     "/Users/",
     "/home/",
 )
+
+INPUT_ERROR_REASON_CODES = {
+    "missing_input",
+    "malformed_input",
+    "empty_input",
+    "no_cases",
+}
 
 REAL_PARTICIPANT_ID = "real_participant_id"
 
@@ -160,6 +170,21 @@ def audit_sequence_dataset(
     failed_checks: list[FailedCheck] = []
     checked_files_count = 0
 
+    for file_role, path in [
+        ("features", Path(features_path)),
+        ("labels", Path(labels_path)),
+        ("manifest", Path(manifest_path)),
+    ]:
+        if _is_unsafe_path_like(str(path)):
+            failed_checks.append(
+                _failed(
+                    "synthetic_only_path",
+                    "unsafe_path",
+                    file_role,
+                    "source_path",
+                )
+            )
+
     features, ok = _load_jsonl(Path(features_path), "features", failed_checks)
     checked_files_count += 1 if ok else 0
     labels, ok = _load_jsonl(Path(labels_path), "labels", failed_checks)
@@ -190,6 +215,11 @@ def audit_fixture_case(case_dir: str | Path) -> AuditResult:
         case_path / "labels.jsonl",
         case_path / "manifest.json",
     )
+
+
+def discover_fixture_case_dirs(fixture_root: str | Path) -> list[Path]:
+    root = Path(fixture_root)
+    return sorted(path.parent for path in root.rglob("expected_audit_result.json"))
 
 
 def load_expected_audit_result(case_dir: str | Path) -> dict[str, Any]:
@@ -564,3 +594,232 @@ def _failed(
         check=check,
     )
 
+
+def main(argv: list[str] | None = None) -> int:
+    parser = _build_arg_parser()
+    args = parser.parse_args(argv)
+
+    selected_modes = [
+        args.fixture_case is not None,
+        args.fixture_root is not None,
+        any(value is not None for value in [args.features, args.labels, args.manifest]),
+    ]
+    if sum(selected_modes) != 1:
+        parser.error(
+            "choose exactly one mode: dataset paths, --fixture-case, or --fixture-root"
+        )
+
+    if any(value is not None for value in [args.features, args.labels, args.manifest]):
+        if not all(
+            value is not None
+            for value in [args.features, args.labels, args.manifest]
+        ):
+            parser.error("dataset mode requires --features, --labels, and --manifest")
+        return _run_dataset_mode(args)
+
+    if args.fixture_case is not None:
+        return _run_fixture_case_mode(args)
+
+    return _run_fixture_root_mode(args)
+
+
+def _build_arg_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="Safely audit synthetic learner-state sequence inputs.",
+    )
+    parser.add_argument("--features", type=Path, help="feature JSONL path")
+    parser.add_argument("--labels", type=Path, help="label JSONL path")
+    parser.add_argument("--manifest", type=Path, help="manifest JSON path")
+    parser.add_argument("--fixture-case", type=Path, help="fixture case directory")
+    parser.add_argument("--fixture-root", type=Path, help="fixture root directory")
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="print a safe JSON result instead of a human summary",
+    )
+    return parser
+
+
+def _run_dataset_mode(args: argparse.Namespace) -> int:
+    result = audit_sequence_dataset(args.features, args.labels, args.manifest)
+    _print_result(result, json_output=args.json)
+    if result.audit_status == "pass":
+        return 0
+    if _has_input_error(result):
+        return 2
+    return 1
+
+
+def _run_fixture_case_mode(args: argparse.Namespace) -> int:
+    try:
+        result = audit_fixture_case(args.fixture_case)
+        expected = load_expected_audit_result(args.fixture_case)
+        compare_audit_result_to_expected(result, expected)
+    except (OSError, json.JSONDecodeError):
+        summary = _safe_fixture_case_summary(
+            match_status="input_error",
+            audit_status="fail",
+            reason_codes=["malformed_input"],
+            violation_count=1,
+        )
+        _print_mapping(summary, json_output=args.json)
+        return 2
+    except AssertionError:
+        summary = _safe_fixture_case_summary(
+            match_status="mismatch",
+            audit_status="fail",
+            reason_codes=["expected_result_mismatch"],
+            violation_count=1,
+        )
+        _print_mapping(summary, json_output=args.json)
+        return 3
+
+    summary = _safe_fixture_case_summary(
+        match_status="matched",
+        audit_status=result.audit_status,
+        reason_codes=result.reason_codes,
+        violation_count=result.violation_count,
+        checked_files_count=result.checked_files_count,
+    )
+    _print_mapping(summary, json_output=args.json)
+    return 0
+
+
+def _run_fixture_root_mode(args: argparse.Namespace) -> int:
+    case_dirs = discover_fixture_case_dirs(args.fixture_root)
+    if not case_dirs:
+        summary = _safe_fixture_root_summary(
+            total_cases=0,
+            matched_cases=0,
+            mismatched_cases=0,
+            reason_code_counts={"no_cases": 1},
+            aggregate_status="fail",
+        )
+        _print_mapping(summary, json_output=args.json)
+        return 2
+
+    matched_cases = 0
+    mismatched_cases = 0
+    input_error_cases = 0
+    reason_code_counts: Counter[str] = Counter()
+
+    for case_dir in case_dirs:
+        try:
+            result = audit_fixture_case(case_dir)
+            expected = load_expected_audit_result(case_dir)
+            compare_audit_result_to_expected(result, expected)
+        except (OSError, json.JSONDecodeError):
+            input_error_cases += 1
+            reason_code_counts["malformed_input"] += 1
+            continue
+        except AssertionError:
+            mismatched_cases += 1
+            reason_code_counts["expected_result_mismatch"] += 1
+            continue
+        matched_cases += 1
+        reason_code_counts.update(result.reason_codes)
+
+    aggregate_status = "pass"
+    exit_code = 0
+    if input_error_cases:
+        aggregate_status = "fail"
+        exit_code = 2
+    elif mismatched_cases:
+        aggregate_status = "fail"
+        exit_code = 3
+
+    summary = _safe_fixture_root_summary(
+        total_cases=len(case_dirs),
+        matched_cases=matched_cases,
+        mismatched_cases=mismatched_cases,
+        reason_code_counts=dict(sorted(reason_code_counts.items())),
+        aggregate_status=aggregate_status,
+        input_error_cases=input_error_cases,
+    )
+    _print_mapping(summary, json_output=args.json)
+    return exit_code
+
+
+def _print_result(result: AuditResult, *, json_output: bool) -> None:
+    if json_output:
+        print(json.dumps(result.to_dict(), sort_keys=True))
+        return
+    summary = {
+        "audit_status": result.audit_status,
+        "violation_count": result.violation_count,
+        "reason_codes": ",".join(result.reason_codes) if result.reason_codes else "none",
+        "checked_files_count": result.checked_files_count,
+        "content_suppressed": _bool_text(result.content_suppressed),
+        "no_raw_rows": _bool_text(result.no_raw_rows),
+    }
+    _print_mapping(summary, json_output=False)
+
+
+def _print_mapping(data: dict[str, Any], *, json_output: bool) -> None:
+    if json_output:
+        print(json.dumps(data, sort_keys=True))
+        return
+    for key, value in data.items():
+        if isinstance(value, bool):
+            value = _bool_text(value)
+        elif isinstance(value, list):
+            value = ",".join(str(item) for item in value) if value else "none"
+        elif isinstance(value, dict):
+            value = ",".join(f"{k}:{v}" for k, v in sorted(value.items())) or "none"
+        print(f"{key}={value}")
+
+
+def _safe_fixture_case_summary(
+    *,
+    match_status: str,
+    audit_status: str,
+    reason_codes: list[str],
+    violation_count: int,
+    checked_files_count: int = 0,
+) -> dict[str, Any]:
+    return {
+        "mode": "fixture_case",
+        "match_status": match_status,
+        "audit_status": audit_status,
+        "violation_count": violation_count,
+        "reason_codes": reason_codes,
+        "checked_files_count": checked_files_count,
+        "content_suppressed": True,
+        "no_raw_rows": True,
+    }
+
+
+def _safe_fixture_root_summary(
+    *,
+    total_cases: int,
+    matched_cases: int,
+    mismatched_cases: int,
+    reason_code_counts: dict[str, int],
+    aggregate_status: str,
+    input_error_cases: int = 0,
+) -> dict[str, Any]:
+    return {
+        "mode": "fixture_root",
+        "audit_status": aggregate_status,
+        "total_cases": total_cases,
+        "matched_cases": matched_cases,
+        "mismatched_cases": mismatched_cases,
+        "input_error_cases": input_error_cases,
+        "reason_code_counts": reason_code_counts,
+        "content_suppressed": True,
+        "no_raw_rows": True,
+    }
+
+
+def _has_input_error(result: AuditResult) -> bool:
+    return any(
+        reason_code in INPUT_ERROR_REASON_CODES for reason_code in result.reason_codes
+    )
+
+
+def _bool_text(value: bool) -> str:
+    return "true" if value else "false"
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

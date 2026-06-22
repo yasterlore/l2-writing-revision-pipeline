@@ -320,6 +320,11 @@ Step 166 follow-up: see
 for the future command-line interface, safe stdout/JSON result policy, exit
 codes, fixture-root mode, and Makefile/release-quality integration timing.
 
+Step 167 follow-up: the minimal CLI now exposes the audit module through
+`python -m learner_state.sequence_audit` with dataset, fixture-case, and
+fixture-root modes. Makefile and release-quality integration remain future
+work.
+
 ## 15. Beginner Notes
 
 An audit implementation is the code that checks whether a dataset is safe
