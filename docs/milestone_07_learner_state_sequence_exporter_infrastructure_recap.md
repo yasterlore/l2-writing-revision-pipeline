@@ -214,6 +214,12 @@ as the next docs-only handoff from exporter outputs to future estimator input
 loading. It remains synthetic-only and does not implement an estimator,
 training loop, selective prediction, calibration, or performance metric.
 
+Step192 adds the
+[learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
+as a docs-only plan for future synthetic exported-shape fixtures and expected
+validation result contracts. It does not create fixtures or implement an
+estimator input loader.
+
 ## 11. Release/Public Status
 
 Public-safe documentation now exists for:
@@ -272,5 +278,6 @@ learner-state validity.
 - [Learner-state exporter release-quality remote run record workflow](learner_state_exporter_release_quality_remote_run_record_workflow.md)
 - [Learner-state exporter release-quality remote run status](status/learner_state_exporter_release_quality_remote_run_status.md)
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
+- [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Public release checklist](public_release_checklist.md)

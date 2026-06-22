@@ -399,6 +399,12 @@ and confirm it keeps features and labels separated, treats expected action as
 evaluation/training target only, forbids future leakage and raw text, avoids
 generated output bodies in docs, and does not claim performance or real-data
 readiness.
+Before creating estimator input fixture files, review
+[learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
+and confirm the fixture plan is synthetic-only, uses exported-shape
+feature/label/manifest files, keeps expected validation results count-only,
+avoids row body examples, and tests join, sequence, split, and leakage
+boundaries without making performance or real-data readiness claims.
 
 ## 7. Checks To Run
 
