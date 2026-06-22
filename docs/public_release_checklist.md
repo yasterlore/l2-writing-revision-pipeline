@@ -314,6 +314,11 @@ Before implementing a learner-state sequence exporter, review
 and confirm the future exporter keeps features, labels, and manifests separate,
 runs the learner-state sequence audit, uses past-only windows, and emits only
 safe/count-only summaries.
+Before creating exporter input fixture files, review
+[learner-state sequence exporter input fixture design](learner_state_sequence_exporter_input_fixture_design.md)
+and confirm the fixture contract keeps safe episode inputs, candidate scores,
+diagnostics, synthetic labels, grouping metadata, and expected output contracts
+separate without copying fixture bodies into docs.
 
 ## 7. Checks To Run
 

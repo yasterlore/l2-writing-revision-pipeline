@@ -320,6 +320,12 @@ Possible adjustment: add extra audit fixtures for malformed input, empty input,
 unknown version, and multi-violation cases before Step 177 if the exporter
 needs stronger fail-closed coverage first.
 
+Step 176 follow-up: see
+[Learner-state sequence exporter input fixture design](learner_state_sequence_exporter_input_fixture_design.md)
+for the future fixture root, input file set, minimal valid input contract,
+expected output contract, and distinction between exporter input fixtures and
+audit fixtures.
+
 ## 15. Relation To Existing Pipeline
 
 The exporter sits between existing safe synthetic pipeline components and future
@@ -388,4 +394,5 @@ predict, score research performance, or validate learner-state quality.
 - [Learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md)
 - [Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
 - [Learner-state audit release-quality remote run status](status/learner_state_audit_release_quality_remote_run_status.md)
+- [Learner-state sequence exporter input fixture design](learner_state_sequence_exporter_input_fixture_design.md)
 - [Public release checklist](public_release_checklist.md)
