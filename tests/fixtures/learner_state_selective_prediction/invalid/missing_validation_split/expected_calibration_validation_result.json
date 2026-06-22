@@ -1,0 +1,19 @@
+{
+  "validation_status": "fail",
+  "expected_failure_reason": "missing_validation_split",
+  "expected_failure_category": "split",
+  "expected_stage": "calibration_fixture_validation",
+  "expected_prediction_row_count": 2,
+  "expected_label_row_count": 2,
+  "expected_split_counts": {
+    "test": {
+      "prediction_rows": 2,
+      "label_rows": 2,
+      "participants": 2
+    }
+  },
+  "expected_policy_status": "unsafe_missing_validation_split",
+  "content_suppressed": true,
+  "no_raw_rows": true,
+  "synthetic_only": true
+}

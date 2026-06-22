@@ -1,0 +1,16 @@
+{
+  "split_metadata_schema_version": "learner_state_selective_split_metadata_v0.1",
+  "synthetic_only": true,
+  "content_suppressed": true,
+  "learner_disjoint": true,
+  "label_dependent_split": false,
+  "splits": {
+    "test": {
+      "prediction_rows": 2,
+      "label_rows": 2,
+      "participants": 2
+    }
+  },
+  "participant_overlap": [],
+  "row_bodies_included": false
+}

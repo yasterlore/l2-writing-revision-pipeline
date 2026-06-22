@@ -1,0 +1,24 @@
+{
+  "validation_status": "fail",
+  "expected_failure_reason": "split_leakage",
+  "expected_failure_category": "split",
+  "expected_stage": "calibration_fixture_validation",
+  "expected_prediction_row_count": 2,
+  "expected_label_row_count": 2,
+  "expected_split_counts": {
+    "validation": {
+      "prediction_rows": 1,
+      "label_rows": 1,
+      "participants": 1
+    },
+    "test": {
+      "prediction_rows": 1,
+      "label_rows": 1,
+      "participants": 1
+    }
+  },
+  "expected_policy_status": "unsafe_split_leakage",
+  "content_suppressed": true,
+  "no_raw_rows": true,
+  "synthetic_only": true
+}
