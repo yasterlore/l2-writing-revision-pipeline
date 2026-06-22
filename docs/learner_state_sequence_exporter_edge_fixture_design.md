@@ -342,6 +342,12 @@ safe `expected_failure_contract.json` reason codes. Test failure summaries do
 not include JSONL row bodies, malformed-line bodies, label bodies, manifest
 bodies, or private paths.
 
+Step 182 follow-up: see
+[Learner-state sequence exporter CLI design](learner_state_sequence_exporter_cli_design.md)
+for the future command-line interface design over the tested exporter module.
+The CLI design keeps edge fixture behavior synthetic-only and defers Makefile
+and release-quality integration until after CLI implementation and tests.
+
 ## 14. Beginner Notes
 
 An edge-case fixture is a small synthetic test case designed to exercise an
@@ -368,5 +374,6 @@ contents.
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md)
+- [Learner-state sequence exporter CLI design](learner_state_sequence_exporter_cli_design.md)
 - [Milestone 06 learner-state audit infrastructure recap](milestone_06_learner_state_audit_infrastructure_recap.md)
 - [Public release checklist](public_release_checklist.md)

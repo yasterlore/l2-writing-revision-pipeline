@@ -362,6 +362,12 @@ unknown input schema version, and feature-side label leakage. This remains
 synthetic-only and does not add a CLI, Makefile target, release-quality
 integration, estimator, model, or metric.
 
+Step 182 follow-up: see
+[Learner-state sequence exporter CLI design](learner_state_sequence_exporter_cli_design.md)
+for the future safe command-line interface scope, argument design, output
+directory policy, exit codes, audit integration, contract handling, and logging
+policy. That follow-up is docs-only and does not implement the CLI.
+
 ## 15. Relation To Existing Pipeline
 
 The exporter sits between existing safe synthetic pipeline components and future
@@ -432,4 +438,5 @@ predict, score research performance, or validate learner-state quality.
 - [Learner-state audit release-quality remote run status](status/learner_state_audit_release_quality_remote_run_status.md)
 - [Learner-state sequence exporter input fixture design](learner_state_sequence_exporter_input_fixture_design.md)
 - [Learner-state sequence exporter edge fixture design](learner_state_sequence_exporter_edge_fixture_design.md)
+- [Learner-state sequence exporter CLI design](learner_state_sequence_exporter_cli_design.md)
 - [Public release checklist](public_release_checklist.md)
