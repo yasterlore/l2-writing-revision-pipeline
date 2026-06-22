@@ -300,21 +300,24 @@ Recommended priority order:
    completed in Step238 as a safe Python loader/validator for synthetic
    generation fixtures. It still does not implement generation, calibration,
    CLI, Makefile target, release-quality integration, or metric computation.
-5. Calibration scaffold fixture design: define synthetic inputs and expected
+5. Frozen policy generation validator CLI design: completed in Step239 as a
+   docs-only plan for fixture-case/root execution, exit codes, safe human
+   output, safe JSON output, and expected-result matching.
+6. Calibration scaffold fixture design: define synthetic inputs and expected
    outputs for validation-only calibration scaffold work.
-6. Validation-only temperature scaling scaffold design: specify how future
+7. Validation-only temperature scaling scaffold design: specify how future
    validation labels may choose temperature without test-label tuning.
-7. Fixed abstention threshold scaffold design: specify validation-only
+8. Fixed abstention threshold scaffold design: specify validation-only
    threshold selection for a frozen abstention policy.
-8. Safe frozen policy generation implementation: create minimal synthetic-only
+9. Safe frozen policy generation implementation: create minimal synthetic-only
    generation after the design and fixtures are stable.
-9. Calibration scaffold implementation: implement only after safe inputs,
+10. Calibration scaffold implementation: implement only after safe inputs,
    frozen policy schema, and validator boundaries remain stable.
-10. Remote run record workflow reuse: keep future remote records metadata-only
+11. Remote run record workflow reuse: keep future remote records metadata-only
    and count-only.
-11. Minimal learner-state estimator prototype design: plan only after the
+12. Minimal learner-state estimator prototype design: plan only after the
    calibration and frozen policy contract layers are stable.
-12. Real-data readiness review: postpone to a private or institution-approved
+13. Real-data readiness review: postpone to a private or institution-approved
    review path.
 
 Future work should stay staged. It should not combine real-data readiness,
@@ -369,6 +372,7 @@ calibrated, production-ready, or real-data-ready.
 - Step236: linked the initial frozen policy generation fixture root.
 - Step238: linked the minimal frozen policy generation fixture validator
   implementation.
+- Step239: linked the frozen policy generation validator CLI design.
 
 ## Related Documents
 
@@ -384,6 +388,7 @@ calibrated, production-ready, or real-data-ready.
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
+- [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - `python/learner_state/frozen_policy_generation_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_validation.py`

@@ -363,12 +363,14 @@ Recommended staging:
    fixture files for this stage.
 4. Design and implement minimal generation fixture validation. Step238 adds
    the safe fixture validator implementation.
-5. Implement minimal generator with fixture tests.
-6. Add a safe CLI design and implementation.
-7. Add a standalone Makefile target.
-8. Review output/log safety.
-9. Integrate into release-quality only after standalone safety is stable.
-10. Record a public-safe remote/manual run status if integrated later.
+5. Design the safe generation validator CLI. Step239 adds the docs-only CLI
+   design for this stage.
+6. Implement minimal generator with fixture tests.
+7. Add a safe CLI implementation.
+8. Add a standalone Makefile target.
+9. Review output/log safety.
+10. Integrate into release-quality only after standalone safety is stable.
+11. Record a public-safe remote/manual run status if integrated later.
 
 This mirrors the Milestone 10 pattern and keeps release-quality from running
 unstable generation code too early.
@@ -423,6 +425,7 @@ real-data-ready.
 - Step236: linked the initial frozen policy generation fixture root.
 - Step238: linked the minimal frozen policy generation fixture validator
   implementation.
+- Step239: linked the frozen policy generation validator CLI design.
 
 ## Related Documents
 
@@ -431,6 +434,7 @@ real-data-ready.
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
+- [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - `python/learner_state/frozen_policy_generation_validation.py`
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)

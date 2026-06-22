@@ -346,7 +346,9 @@ validator does not duplicate calibration computation or metric computation.
 
 Recommended next steps:
 
-1. Step239: frozen policy generation validator CLI design.
+1. Step239: frozen policy generation validator CLI design. Completed as a
+   docs-only design for fixture-case/root modes, exit codes, expected-result
+   matching, and safe JSON/human output.
 2. Step240: CLI implementation.
 3. Step241: Makefile target design and implementation.
 4. Step242: release-quality integration design and implementation.
@@ -397,12 +399,14 @@ metadata follows the bridge contract.
 
 - Step237: initial frozen policy generation validation design.
 - Step238: minimal Python fixture validator and fixture-based tests added.
+- Step239: linked the frozen policy generation validator CLI design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
+- [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - `python/learner_state/frozen_policy_generation_validation.py`
