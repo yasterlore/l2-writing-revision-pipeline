@@ -637,6 +637,12 @@ and confirm fixture-case/root modes, expected-result matching, exit codes,
 human output, JSON output, and path-safety behavior remain safe and do not
 print policy bodies, logits dumps, private path values, raw rows, metric
 bodies, raw learner text, or performance claims.
+For Step226, confirm
+`python/learner_state/frozen_policy_validation.py` exposes only a safe
+fixture-focused CLI, `python/learner_state/tests/test_frozen_policy_validation_cli.py`
+exercises usage errors, expected-result matching, and safe JSON output, and
+no Makefile target, release-quality wrapper, workflow, calibration scaffold,
+metric computation, or frozen policy generation is added.
 
 ## 7. Checks To Run
 
