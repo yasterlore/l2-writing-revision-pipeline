@@ -560,6 +560,14 @@ interpretation, output/logging safety, runtime impact, and remote/manual run
 record policy are documented. The design step must not change the wrapper,
 workflow, Makefile, scripts, code, tests, fixtures, or compute calibration
 metrics.
+After integrating the selective prediction calibration validator target into
+release-quality, run `make check-release-quality` and confirm the wrapper
+includes `release_quality_check: learner-state selective prediction
+calibration validation`, calls
+`make check-learner-state-selective-prediction`, reports 8 matched synthetic
+fixture cases, emits safe summary only, creates no tmp output for this target,
+and avoids row/logit/probability/policy/split body output or performance
+metrics.
 
 ## 7. Checks To Run
 
