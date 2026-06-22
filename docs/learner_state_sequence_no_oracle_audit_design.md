@@ -321,6 +321,11 @@ Step 163 follow-up: the initial synthetic audit fixture files are available at
 They define future pass/fail expectations only; audit code and exporter logic
 are still intentionally unimplemented.
 
+Step 164 follow-up: see
+[Learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md)
+for the future module layout, CLI/API, fail-closed input handling, safe output,
+and fixture expected-result matching plan.
+
 ## 16. Beginner Notes
 
 An audit is a check that looks for unsafe or invalid data before later tools

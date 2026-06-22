@@ -290,6 +290,11 @@ leakage, unsafe paths, manifest body leakage, schema-version absence, and unsafe
 join keys. Public docs should continue to reference fixture case names and
 reason codes only; do not paste JSONL row bodies or manifest bodies into docs.
 
+Step 164 follow-up: see
+[Learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md)
+for how a future audit module should load these fixtures, compare expected
+results, and keep failure output safe.
+
 ## 14. Beginner Notes
 
 A fixture file is a small test input saved in the repository.
