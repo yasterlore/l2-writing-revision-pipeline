@@ -321,6 +321,12 @@ Future fixture candidates:
 
 This step does not create fixture files.
 
+Step235 expands this fixture planning in the
+[frozen policy generation fixture design](frozen_policy_generation_fixture_design.md).
+It defines the future fixture root, valid/invalid case structure, request and
+pointer files, expected generation result metadata, and reason-code mapping
+without creating fixtures.
+
 ## 16. Testing Plan For Future Implementation
 
 Future tests should cover:
@@ -347,7 +353,8 @@ Do not add generator checks to release-quality yet.
 Recommended staging:
 
 1. Design the generator scaffold.
-2. Design synthetic generator fixtures.
+2. Design synthetic generator fixtures. Step235 adds the docs-only fixture
+   design for this stage.
 3. Implement minimal generator with fixture tests.
 4. Add a safe CLI design and implementation.
 5. Add a standalone Makefile target.
@@ -403,12 +410,15 @@ real-data-ready.
 ## 20. Update History
 
 - Step234: initial frozen policy generation scaffold design creation.
+- Step235: linked the frozen policy generation fixture design as the next
+  docs-only planning step.
 
 ## Related Documents
 
 - [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
+- [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md)
