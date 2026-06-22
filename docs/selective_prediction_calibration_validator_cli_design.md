@@ -407,6 +407,11 @@ Step213 implements the standalone Makefile target
 `check-learner-state-selective-prediction`. Release-quality wrapper and
 workflow integration remain separate future work.
 
+Step214 adds the
+[selective prediction calibration release-quality integration design](selective_prediction_calibration_release_quality_integration_design.md)
+as a docs-only plan for future wrapper placement, command choice, logging
+safety, runtime impact, and remote/manual run recording policy.
+
 ## 15. No-Oracle / Synthetic-Only Boundary
 
 The CLI must preserve these boundaries:
@@ -471,6 +476,7 @@ contract behaved as expected.
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
 - [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
 - [Selective prediction calibration validator Makefile target design](selective_prediction_calibration_validator_makefile_target_design.md)
+- [Selective prediction calibration release-quality integration design](selective_prediction_calibration_release_quality_integration_design.md)
 - [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Public release checklist](public_release_checklist.md)

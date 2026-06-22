@@ -356,12 +356,20 @@ Step213 makes this shortcut available as
 `make check-learner-state-selective-prediction`. It remains standalone until a
 separate release-quality integration step is designed and implemented.
 
+Step214 adds the
+[selective prediction calibration release-quality integration design](selective_prediction_calibration_release_quality_integration_design.md)
+as a docs-only plan for future wrapper integration. It recommends placing the
+target after estimator input validation and before config/scoring smoke checks.
+It does not change the wrapper, workflows, Makefile, scripts, tests, code, or
+fixtures.
+
 ## 16. Related Documents
 
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
 - [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
 - [Selective prediction calibration validator CLI design](selective_prediction_calibration_validator_cli_design.md)
+- [Selective prediction calibration release-quality integration design](selective_prediction_calibration_release_quality_integration_design.md)
 - [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md)
 - [Public release checklist](public_release_checklist.md)
