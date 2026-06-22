@@ -277,6 +277,13 @@ as a docs-only policy for future confidence, abstention, temperature scaling,
 ECE, AURCC, split usage, and no-oracle boundaries. It does not implement a
 model, calibration, or metric computation.
 
+Step206 adds the
+[selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
+as a docs-only plan for future synthetic prediction/confidence fixtures,
+label rows, split metadata, calibration policies, expected validation results,
+and fail-closed reason codes. It does not create fixture files, implement
+calibration, implement selective prediction, or compute metrics.
+
 ## 12. Release/Public Status
 
 Public-safe documentation now exists for:
@@ -292,6 +299,7 @@ Public-safe documentation now exists for:
 - remote/manual run record workflow
 - remote/manual release-quality status marker
 - this Milestone 08 recap
+- selective prediction / calibration design and fixture design
 
 Release-quality now includes estimator input validation through the standalone
 Makefile target.

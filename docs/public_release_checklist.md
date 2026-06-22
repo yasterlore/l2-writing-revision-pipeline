@@ -492,6 +492,15 @@ threshold selection, ECE, AURCC, risk-coverage reporting, split policy, and
 no-oracle boundaries are documented. The design step must not add metric
 computation, estimator training, model code, real-data handling, generated row
 bodies, raw learner text, raw GitHub Actions logs, or performance claims.
+Before creating any calibration or selective prediction fixture files, review
+[selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
+and confirm the fixture root, case structure, prediction row policy, label row
+policy, split metadata, calibration policy config, expected validation result
+fields, failure reason codes, and no-test-tuning boundaries are documented.
+The fixture design step must not create fixture files, implement calibration,
+compute ECE/AURCC/F1/accuracy, paste logits or probability row dumps, paste
+JSONL row bodies, expose expected action bodies, use real data, or claim
+performance.
 
 ## 7. Checks To Run
 
