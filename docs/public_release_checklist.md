@@ -484,6 +484,14 @@ status, synthetic-only boundaries, no-oracle constraints, non-goals, and next
 research/development candidates. It must not claim estimator correctness,
 model performance, calibration quality, real-data readiness, or production
 data-collection readiness.
+Before implementing any selective prediction, calibration, confidence
+thresholding, ECE, AURCC, F1, or learner-state estimator prototype, review
+[selective prediction and calibration design](selective_prediction_calibration_design.md)
+and confirm validation labels, test labels, confidence, temperature scaling,
+threshold selection, ECE, AURCC, risk-coverage reporting, split policy, and
+no-oracle boundaries are documented. The design step must not add metric
+computation, estimator training, model code, real-data handling, generated row
+bodies, raw learner text, raw GitHub Actions logs, or performance claims.
 
 ## 7. Checks To Run
 

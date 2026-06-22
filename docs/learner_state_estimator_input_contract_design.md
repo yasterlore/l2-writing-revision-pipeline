@@ -212,6 +212,11 @@ Selective prediction and calibration are later stages.
 A separate calibration design should define how confidence, validation labels,
 test labels, and public reporting are handled before any implementation.
 
+Step205 adds that follow-up as
+[selective prediction and calibration design](selective_prediction_calibration_design.md).
+It remains docs-only and does not implement confidence scoring, calibration,
+ECE, AURCC, or any learner-state estimator.
+
 ## 13. Output Safety
 
 Future estimator input validation should emit only:
@@ -348,6 +353,7 @@ loading, model behavior, and metric interpretation.
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md)
+- [Selective prediction and calibration design](selective_prediction_calibration_design.md)
 - `python/learner_state/estimator_input.py`
 - `python/learner_state/tests/test_estimator_input.py`
 - `python/learner_state/tests/test_estimator_input_cli.py`
