@@ -355,6 +355,13 @@ been added under
 for future fail-closed tests. The exporter implementation and tests are not
 changed by that fixture-only step.
 
+Step 181 follow-up: exporter edge-case tests now cover the initial valid
+task-boundary fixture and invalid fail-closed fixtures. The exporter has minimal
+safe failure reason handling for missing input, malformed input, empty input,
+unknown input schema version, and feature-side label leakage. This remains
+synthetic-only and does not add a CLI, Makefile target, release-quality
+integration, estimator, model, or metric.
+
 ## 15. Relation To Existing Pipeline
 
 The exporter sits between existing safe synthetic pipeline components and future

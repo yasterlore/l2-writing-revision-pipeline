@@ -336,6 +336,10 @@ After adding exporter edge-case fixtures, confirm
 contains only synthetic fixture material, keeps intentional invalid cases
 narrow, and does not introduce raw learner text, private paths, real participant
 data, or public fixture body dumps.
+After adding exporter edge-case tests, confirm invalid fixtures fail closed with
+safe reason codes, valid edge fixtures pass audit, failure summaries do not
+print raw row bodies or malformed-line contents, and generated outputs remain in
+temporary or explicit caller-provided directories.
 
 ## 7. Checks To Run
 

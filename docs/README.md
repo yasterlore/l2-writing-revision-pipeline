@@ -23,6 +23,7 @@ Recommended entry points:
 - `python/learner_state/sequence_exporter.py`: minimal synthetic-only exporter module that writes separated feature, label, and manifest outputs to caller-provided output directories and audits them.
 - [Learner-state sequence exporter edge fixture design](learner_state_sequence_exporter_edge_fixture_design.md): docs-only plan for future exporter edge-case fixtures and test expansion.
 - [Learner-state sequence exporter edge fixtures](../tests/fixtures/learner_state_sequence_exporter/README.md): synthetic-only valid/invalid edge fixtures for future exporter fail-closed tests.
+- `python/learner_state/tests/test_sequence_exporter.py`: exporter tests covering minimal export, edge fixture export, and fail-closed invalid fixture handling.
 - [Research pipeline next-phase plan](research_pipeline_next_phase_plan.md): post-Makefile planning for returning to the synthetic-only research pipeline.
 - [Learner-state input representation design](learner_state_input_representation_design.md): no-oracle-safe input representation design before any learner-state estimator implementation.
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md): synthetic-only sequence dataset design for future learner-state inputs.
@@ -43,6 +44,7 @@ Recommended entry points:
 - `python/learner_state/sequence_exporter.py`: minimal exporter implementation for the synthetic fixture path; no CLI or estimator is added.
 - [Learner-state sequence exporter edge fixture design](learner_state_sequence_exporter_edge_fixture_design.md): future valid/invalid exporter fixture coverage and safe failure-reason planning.
 - [Learner-state sequence exporter edge fixtures](../tests/fixtures/learner_state_sequence_exporter/README.md): fixture root now includes initial edge cases for future fail-closed exporter coverage.
+- `python/learner_state/tests/test_sequence_exporter.py`: synthetic-only exporter unit tests, including edge-case fixture reason-code checks.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -124,6 +126,7 @@ Recommended entry points:
 - `python/learner_state/sequence_exporter.py`: minimal module implementation for exporting the synthetic input fixture to audited sequence outputs.
 - [Learner-state sequence exporter edge fixture design](learner_state_sequence_exporter_edge_fixture_design.md): design for future exporter-specific edge-case fixtures and fail-closed test expansion.
 - [Learner-state sequence exporter edge fixtures](../tests/fixtures/learner_state_sequence_exporter/README.md): synthetic valid/invalid fixtures for future exporter edge-case tests.
+- `python/learner_state/tests/test_sequence_exporter.py`: tests for valid exporter outputs, audit integration, task-boundary window reset, and invalid fixture fail-closed behavior.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.
