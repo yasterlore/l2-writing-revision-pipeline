@@ -27,6 +27,6 @@
       "episode_count": 3
     }
   ],
-  "raw_text_included": false,
+  "source_text_suppressed": true,
   "private_paths_included": false
 }
