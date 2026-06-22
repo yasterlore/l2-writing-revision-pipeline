@@ -18,6 +18,9 @@ Available markers:
 - [Learner-state audit release-quality remote run status](learner_state_audit_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after learner-state audit fixture
   integration.
+- [Learner-state exporter release-quality remote run status](learner_state_exporter_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after learner-state exporter CLI
+  smoke integration.
 
 Related recap:
 

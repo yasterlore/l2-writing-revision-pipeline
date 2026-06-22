@@ -191,6 +191,11 @@ Recommended next steps:
 
 Do not treat the remote run as performance evidence or real-data readiness.
 
+Step189 follow-up: a public-safe status marker is available at
+[Learner-state exporter release-quality remote run status](status/learner_state_exporter_release_quality_remote_run_status.md).
+It records only metadata and count-only summaries; it does not include raw
+GitHub Actions logs or generated output bodies.
+
 ## 11. Beginner Notes
 
 A remote/manual workflow is a GitHub Actions job that is started manually from
