@@ -23,7 +23,7 @@ Recommended entry points:
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md): initial synthetic exported-shape fixture root for future estimator input validation.
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md): validator order, safe result schema, reason-code mapping, fixture matching plan, and Step195 implementation status.
 - [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md): design and Step197 status for the safe `python -m learner_state.estimator_input` interface.
-- [Learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md): docs-only target name, command, safe logging, and release-quality staging plan for a future estimator input validator Makefile smoke check.
+- [Learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md): target name, command, safe logging, Step199 implementation status, and release-quality staging plan for the estimator input validator Makefile smoke check.
 - `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader returning safe count/reason-code metadata; no estimator model or metric is implemented.
 - `python/learner_state/tests/test_estimator_input.py`: fixture-based validator tests for one valid case and eight fail-closed invalid cases.
 - `python/learner_state/tests/test_estimator_input_cli.py`: CLI tests for fixture-case/root modes, safe JSON, usage errors, and expected-result mismatch handling.
@@ -72,10 +72,10 @@ Recommended entry points:
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md): synthetic valid/invalid exported-shape fixtures for future fail-closed estimator input loader validation.
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md): validation scope, failure policy, and Step195 implementation status for the estimator input validator/loader.
 - [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md): future CLI modes, exit codes, fixture-root expected-result matching, and safe output policy.
-- [Learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md): standalone Makefile target design for running the validator CLI over the estimator input fixture root; no target is added yet.
+- [Learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md): standalone Makefile target design and Step199 implementation status for running the validator CLI over the estimator input fixture root.
 - `python/learner_state/estimator_input.py`: minimal validator/loader for the synthetic estimator input fixtures; it validates joins, counts, splits, schema versions, and no-oracle boundaries without training an estimator.
 - `python/learner_state/tests/test_estimator_input.py`: unit tests that exercise expected validation results without printing fixture row bodies.
-- `python -m learner_state.estimator_input`: minimal safe CLI for estimator input fixture-case/root validation; no Makefile target or release-quality integration is added yet.
+- `python -m learner_state.estimator_input`: minimal safe CLI for estimator input fixture-case/root validation; the standalone Makefile target exists, but release-quality integration is not added yet.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -169,10 +169,11 @@ Recommended entry points:
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md): initial synthetic-only fixture root now exercised by the minimal estimator input validator/loader.
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md): planned validation order, safe result schema, fixture expected-result matching, and no-oracle checks.
 - [Learner-state estimator input validator CLI design](learner_state_estimator_input_validator_cli_design.md): docs-only design for future command-line validation over the Step195 API.
-- [Learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md): docs-only plan for a future `make` smoke target around the validator CLI.
+- [Learner-state estimator input validator Makefile target design](learner_state_estimator_input_validator_makefile_target_design.md): design and Step199 status for the standalone `make` smoke target around the validator CLI.
 - `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader; no learner-state estimator, training loop, calibration, or metrics are added.
 - `python/learner_state/tests/test_estimator_input.py`: validator tests covering expected-result matching and safe validation metadata.
 - `python/learner_state/tests/test_estimator_input_cli.py`: validator CLI tests covering safe output, JSON output, fixture-root matching, and exit codes.
+- `make check-learner-state-estimator-input`: standalone validator CLI smoke target for the synthetic estimator input fixture root; not yet wired into release-quality.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.

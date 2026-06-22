@@ -12,6 +12,7 @@
 .PHONY: check-fixtures
 .PHONY: check-learner-state-audit-fixtures
 .PHONY: check-learner-state-exporter-cli
+.PHONY: check-learner-state-estimator-input
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -33,6 +34,7 @@ help:
 	@echo "  check-fixtures               Run fixture/config validation checks"
 	@echo "  check-learner-state-audit-fixtures  Audit synthetic learner-state fixtures"
 	@echo "  check-learner-state-exporter-cli  Smoke-test learner-state exporter CLI"
+	@echo "  check-learner-state-estimator-input  Smoke-test learner-state estimator input validation"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -85,6 +87,9 @@ check-learner-state-exporter-cli:
 	rm -rf tmp/learner_state_sequence_exporter_smoke
 	PYTHONPATH=python python3 -m learner_state.sequence_exporter --input-fixture tests/fixtures/learner_state_sequence_exporter/valid/minimal_single_participant --output-dir tmp/learner_state_sequence_exporter_smoke/minimal_single_participant
 	PYTHONPATH=python python3 -m learner_state.sequence_exporter --input-fixture tests/fixtures/learner_state_sequence_exporter/valid/past_window_boundary_reset --output-dir tmp/learner_state_sequence_exporter_smoke/past_window_boundary_reset
+
+check-learner-state-estimator-input:
+	PYTHONPATH=python python3 -m learner_state.estimator_input --fixture-root tests/fixtures/learner_state_estimator_input
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality

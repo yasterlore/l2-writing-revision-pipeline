@@ -440,6 +440,11 @@ and confirm the target will call fixture-root validation with safe human
 summary output, will not create tmp outputs, will not cat feature/label or
 manifest bodies, and will remain standalone until a separate release-quality
 integration review.
+After adding the estimator input validator Makefile target, run
+`make check-learner-state-estimator-input` and confirm it reports 9 matched
+synthetic fixture cases, prints only safe count/reason-code summaries, creates
+no tmp output, and remains outside the release-quality wrapper and GitHub
+Actions workflows.
 
 ## 7. Checks To Run
 

@@ -341,8 +341,8 @@ Recommended order:
 2. Step196: estimator input validator CLI design. Complete.
 3. Step197: minimal estimator input validator CLI implementation. Complete.
 4. Step198: estimator input validator Makefile target design. Complete.
-5. Step199: standalone Makefile target implementation.
-6. Later: release-quality integration design after local target log-safety
+5. Step199: standalone Makefile target implementation. Complete.
+6. Step200: release-quality integration design after local target log-safety
    review.
 7. Later: selective prediction / calibration design.
 8. Later: estimator prototype design.
