@@ -307,20 +307,19 @@ Recommended future sequence:
 2. design a Makefile target. Completed in Step227.
 3. implement the Makefile target. Completed in Step228.
 4. review log safety.
-5. design and implement release-quality integration.
+5. design and implement release-quality integration. Completed in Step230 via
+   [frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md).
 
-Release-quality should not be connected until the CLI is implemented and its
-human and JSON outputs are confirmed safe.
+Release-quality is connected only after the CLI and standalone Makefile target
+have safe human and JSON outputs.
 
 Step227 adds the
 [frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md)
 as a docs-only plan for wrapping the safe fixture-root CLI in a future
 `make check-learner-state-frozen-policy` target. Step228 implements that
-standalone target, and release-quality remains unchanged.
+standalone target.
 
-Step228 implements the standalone Makefile target. Release-quality remains
-unchanged; the target should be reviewed separately before wrapper
-integration.
+Step230 integrates the standalone target into the release-quality wrapper.
 
 ## 15. No-Oracle / Synthetic-Only Boundary
 
@@ -344,8 +343,6 @@ The CLI must not:
 
 This document and Step226 implementation do not:
 
-- add a Makefile target
-- change release-quality
 - implement calibration
 - implement selective prediction
 - generate frozen policy artifacts
@@ -381,6 +378,7 @@ unsafe content that caused the failure.
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md)
 - [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md)
+- [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Synthetic data policy](12_synthetic_data_policy.md)

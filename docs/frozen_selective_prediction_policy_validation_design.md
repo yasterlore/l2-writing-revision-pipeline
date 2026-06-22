@@ -391,9 +391,13 @@ Recommended next steps:
    docs-only in
    [frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md).
 5. Step228: Makefile target implementation. Completed with
-   `make check-learner-state-frozen-policy`; release-quality is unchanged.
-6. Step229: release-quality integration design / implementation.
-7. Step230: calibration scaffold fixture design.
+   `make check-learner-state-frozen-policy`.
+6. Step229: release-quality integration design. Recorded in
+   [frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md).
+7. Step230: release-quality wrapper integration implementation. Completed by
+   adding `make check-learner-state-frozen-policy` after selective prediction
+   calibration validation and before config/scoring smoke checks.
+8. Step231: calibration scaffold fixture design.
 
 Keep each step narrow. Do not combine frozen policy validation, calibration
 implementation, selective prediction decisions, estimator training, metric
@@ -442,6 +446,7 @@ unsafe inputs instead of guessing that they are acceptable.
 - [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md)
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md)
 - [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md)
+- [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md)
 - `python/learner_state/frozen_policy_validation.py`
 - `python/learner_state/tests/test_frozen_policy_validation.py`
 - `python/learner_state/tests/test_frozen_policy_validation_cli.py`
