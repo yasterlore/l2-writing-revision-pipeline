@@ -312,6 +312,10 @@ Step216 follow-up: the remote/manual Release Quality run recording workflow
 for the selective prediction calibration validation section is defined in
 [Selective prediction release-quality remote run record workflow](selective_prediction_release_quality_remote_run_record_workflow.md).
 
+Step217 follow-up: the successful public-safe remote/manual run status marker
+is available at
+[Learner-state selective prediction release-quality remote run status](status/learner_state_selective_prediction_release_quality_remote_run_status.md).
+
 Allowed record fields:
 
 - workflow name
@@ -392,5 +396,6 @@ expected fixture results.
 - [Selective prediction calibration validator CLI design](selective_prediction_calibration_validator_cli_design.md)
 - [Selective prediction calibration validator Makefile target design](selective_prediction_calibration_validator_makefile_target_design.md)
 - [Selective prediction release-quality remote run record workflow](selective_prediction_release_quality_remote_run_record_workflow.md)
+- [Learner-state selective prediction release-quality remote run status](status/learner_state_selective_prediction_release_quality_remote_run_status.md)
 - [Learner-state estimator input release-quality integration design](learner_state_estimator_input_release_quality_integration_design.md)
 - [Public release checklist](public_release_checklist.md)
