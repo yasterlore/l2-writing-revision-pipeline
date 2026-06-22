@@ -87,6 +87,14 @@ records.
 
 This Step231 document does not create the status marker.
 
+Step232 follow-up: the public-safe status marker is available at
+[Learner-state frozen policy release-quality remote run status](status/learner_state_frozen_policy_release_quality_remote_run_status.md).
+It records only metadata and count-only summaries for the successful remote
+Release Quality run; it does not include raw GitHub Actions logs, full job
+output, copied log blocks, frozen policy artifact bodies, JSON bodies, raw
+rows, logits/probability dumps, private paths, raw learner text, or
+performance metric bodies.
+
 ## 5. Metadata To Record
 
 A future public-safe status marker may record:
