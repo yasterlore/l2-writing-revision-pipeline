@@ -649,6 +649,11 @@ and confirm the future target will call only the safe fixture-root CLI, print
 human count/reason-code summary only, avoid `tmp/` and `manual_outputs/`, and
 not modify release-quality, workflows, calibration, selective prediction,
 estimator code, or metric computation in the target implementation step.
+For Step228, confirm `make check-learner-state-frozen-policy` exists, reports
+12 matched synthetic frozen policy fixture cases, emits safe human summary
+only, creates no `tmp/` output, and leaves release-quality wrapper, workflows,
+scripts, fixtures, validator code, calibration, selective prediction,
+estimator code, and metric computation unchanged.
 
 ## 7. Checks To Run
 

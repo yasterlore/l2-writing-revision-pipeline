@@ -7,9 +7,12 @@ prediction policy validator CLI. The target should make the safe fixture-root
 validation command easy to run locally without exposing frozen policy bodies,
 raw rows, logits dumps, private paths, or metric bodies.
 
-This is a docs-only design. It does not implement a Makefile target, change
-release-quality, change workflows, implement calibration, implement selective
-prediction, compute metrics, or claim real-data readiness.
+Step228 implements the target described here as
+`make check-learner-state-frozen-policy`.
+
+This design and implementation do not change release-quality, change
+workflows, implement calibration, implement selective prediction, compute
+metrics, or claim real-data readiness.
 
 ## 2. Current State
 
@@ -24,7 +27,7 @@ Current assets:
 - fixture-root validation currently gives 12 matched cases:
   `total_cases=12`, `matched_cases=12`, `mismatched_cases=0`, and
   `input_error_cases=0`
-- Makefile target does not exist yet
+- Makefile target exists as `check-learner-state-frozen-policy`
 - release-quality integration does not exist yet
 
 The current CLI output is a safe summary only. It does not print policy
@@ -203,7 +206,8 @@ contract in the same validation-only calibration path. It is not part of
 
 ## 11. Release-Quality Future
 
-This step does not connect release-quality.
+This step does not connect release-quality. Step228 adds only the standalone
+Makefile target and leaves `scripts/check_release_quality.sh` unchanged.
 
 After Makefile target implementation and a log-safety review, a future
 release-quality integration design should decide where to place the target.
@@ -216,8 +220,8 @@ The likely placement is near the learner-state checks:
 5. learner-state frozen policy validation
 6. config/scoring smoke checks
 
-Do not connect it in the Makefile target design step. The wrapper should only
-be changed after the standalone target has proven safe output.
+Do not connect it in the Makefile target implementation step. The wrapper
+should only be changed after the standalone target has proven safe output.
 
 ## 12. Testing Plan For Future Implementation
 

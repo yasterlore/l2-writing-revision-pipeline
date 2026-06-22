@@ -29,7 +29,7 @@ Current assets:
 - fixture-based unittest exists in
   `python/learner_state/tests/test_frozen_policy_validation.py`
 - CLI exists at `python -m learner_state.frozen_policy_validation`
-- Makefile target does not exist yet
+- Makefile target exists as `check-learner-state-frozen-policy`
 - release-quality integration does not exist yet
 
 The validator API is already the implementation surface. The CLI should wrap
@@ -298,13 +298,14 @@ print policy content.
 
 ## 14. Makefile / Release-Quality Future
 
-This step does not add a Makefile target and does not modify release-quality.
+Step228 adds the standalone Makefile target and does not modify
+release-quality.
 
 Recommended future sequence:
 
 1. minimal CLI and CLI tests. Completed in Step226.
-2. design a Makefile target.
-3. implement the Makefile target.
+2. design a Makefile target. Completed in Step227.
+3. implement the Makefile target. Completed in Step228.
 4. review log safety.
 5. design and implement release-quality integration.
 
@@ -314,8 +315,12 @@ human and JSON outputs are confirmed safe.
 Step227 adds the
 [frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md)
 as a docs-only plan for wrapping the safe fixture-root CLI in a future
-`make check-learner-state-frozen-policy` target. The target is not implemented
-in Step227, and release-quality remains unchanged.
+`make check-learner-state-frozen-policy` target. Step228 implements that
+standalone target, and release-quality remains unchanged.
+
+Step228 implements the standalone Makefile target. Release-quality remains
+unchanged; the target should be reviewed separately before wrapper
+integration.
 
 ## 15. No-Oracle / Synthetic-Only Boundary
 
