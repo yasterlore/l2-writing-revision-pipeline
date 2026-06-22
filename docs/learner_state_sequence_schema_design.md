@@ -250,6 +250,9 @@ For the future exporter boundary that would generate these files, see
 For the future synthetic input fixture contract that would feed that exporter,
 see
 [Learner-state sequence exporter input fixture design](learner_state_sequence_exporter_input_fixture_design.md).
+For the downstream contract that would consume audited exporter outputs before
+any estimator implementation, see
+[Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md).
 
 ## 11. Validation / Audit Design
 
@@ -297,8 +300,9 @@ Recommended order:
 4. Step 163: create synthetic audit fixture files
 5. Step 164: synthetic sequence exporter design or implementation
 6. Step 165: schema fixtures / smoke tests
-7. Later: selective prediction / calibration design
-8. Later: estimator prototype
+7. Step 191: learner-state estimator input contract design
+8. Later: selective prediction / calibration design
+9. Later: estimator prototype
 
 If implementation risk is high, Step 162 may remain a separate exporter design
 step before code is added.

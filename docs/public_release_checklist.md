@@ -392,6 +392,13 @@ and confirm it summarizes exporter infrastructure with public-safe metadata
 only, does not paste raw workflow logs or generated output bodies, and does not
 claim model performance, estimator correctness, production readiness, or
 real-data readiness.
+Before implementing any learner-state estimator input loader, training loop,
+selective prediction, or calibration work, review
+[learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
+and confirm it keeps features and labels separated, treats expected action as
+evaluation/training target only, forbids future leakage and raw text, avoids
+generated output bodies in docs, and does not claim performance or real-data
+readiness.
 
 ## 7. Checks To Run
 
