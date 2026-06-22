@@ -410,6 +410,11 @@ Step212 adds the
 as a docs-only plan for a future standalone target. It does not change
 Makefile, release-quality, workflows, fixtures, validator code, or tests.
 
+Step213 implements the standalone Makefile target
+`check-learner-state-selective-prediction` for the synthetic selective
+prediction fixture root. It does not connect release-quality, change
+workflows, change fixtures, implement calibration, or compute metrics.
+
 ## 16. What This Does NOT Do
 
 This design and the Step209 minimal validator do not:

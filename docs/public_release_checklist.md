@@ -546,6 +546,12 @@ exit-code behavior, no-tmp-output policy, relation to existing learner-state
 targets, and release-quality staging are documented. The design step must not
 change Makefile, release-quality, workflows, fixtures, validator code, tests,
 or compute calibration metrics.
+After adding the selective prediction calibration validator Makefile target,
+run `make check-learner-state-selective-prediction` and confirm the target
+reports 8 matched fixture cases, prints safe human summary only, creates no
+tmp output, avoids row/logit/probability/policy/split body output, and remains
+outside the release-quality wrapper and GitHub workflows until a separate
+integration step.
 
 ## 7. Checks To Run
 

@@ -13,6 +13,7 @@
 .PHONY: check-learner-state-audit-fixtures
 .PHONY: check-learner-state-exporter-cli
 .PHONY: check-learner-state-estimator-input
+.PHONY: check-learner-state-selective-prediction
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -35,6 +36,7 @@ help:
 	@echo "  check-learner-state-audit-fixtures  Audit synthetic learner-state fixtures"
 	@echo "  check-learner-state-exporter-cli  Smoke-test learner-state exporter CLI"
 	@echo "  check-learner-state-estimator-input  Smoke-test learner-state estimator input validation"
+	@echo "  check-learner-state-selective-prediction  Smoke-test selective prediction calibration validation"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -90,6 +92,9 @@ check-learner-state-exporter-cli:
 
 check-learner-state-estimator-input:
 	PYTHONPATH=python python3 -m learner_state.estimator_input --fixture-root tests/fixtures/learner_state_estimator_input
+
+check-learner-state-selective-prediction:
+	PYTHONPATH=python python3 -m learner_state.selective_prediction_validation --fixture-root tests/fixtures/learner_state_selective_prediction
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality
