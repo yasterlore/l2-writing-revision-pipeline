@@ -1,0 +1,18 @@
+{
+  "diagnostic_summary_schema_version": "diagnostic_count_summary_v0.1",
+  "synthetic_only": true,
+  "content_suppressed": true,
+  "synthetic_participant_count": 1,
+  "synthetic_session_count": 1,
+  "synthetic_task_count": 2,
+  "episode_count": 4,
+  "diagnostic_counts": {
+    "article": 1,
+    "hold": 1,
+    "noun_number": 1,
+    "sva": 1
+  },
+  "row_bodies_included": false,
+  "candidate_rows_included": false,
+  "performance_metrics_included": false
+}

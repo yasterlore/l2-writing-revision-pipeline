@@ -1,0 +1,10 @@
+{
+  "contract_schema_version": "exporter_expected_failure_contract_v0.1",
+  "expected_status": "fail",
+  "expected_failure_reason": "malformed_input",
+  "expected_failure_category": "jsonl_parse",
+  "expected_stage": "input_validation",
+  "content_suppressed": true,
+  "no_raw_rows": true,
+  "synthetic_only": true
+}

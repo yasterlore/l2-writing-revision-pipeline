@@ -1,0 +1,32 @@
+{
+  "metadata_schema_version": "exporter_synthetic_metadata_v0.1",
+  "source_description": "synthetic exporter invalid fixture with missing safe episode input file",
+  "synthetic_only": true,
+  "content_suppressed": true,
+  "source_text_suppressed": true,
+  "private_paths_included": false,
+  "participants": [
+    {
+      "synthetic_participant_id": "syn-p901",
+      "synthetic_session_ids": [
+        "syn-s901"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "synthetic_participant_id": "syn-p901",
+      "synthetic_session_id": "syn-s901",
+      "synthetic_task_ids": [
+        "syn-t901"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "synthetic_session_id": "syn-s901",
+      "synthetic_task_id": "syn-t901",
+      "episode_count": 1
+    }
+  ]
+}

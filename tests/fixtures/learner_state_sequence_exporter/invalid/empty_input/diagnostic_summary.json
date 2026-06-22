@@ -1,0 +1,13 @@
+{
+  "diagnostic_summary_schema_version": "diagnostic_count_summary_v0.1",
+  "synthetic_only": true,
+  "content_suppressed": true,
+  "synthetic_participant_count": 1,
+  "synthetic_session_count": 1,
+  "synthetic_task_count": 1,
+  "episode_count": 0,
+  "diagnostic_counts": {},
+  "row_bodies_included": false,
+  "candidate_rows_included": false,
+  "performance_metrics_included": false
+}
