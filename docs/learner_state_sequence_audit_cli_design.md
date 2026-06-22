@@ -182,6 +182,13 @@ Recommended order:
 Makefile and release-quality integration should not happen before CLI output
 safety is tested.
 
+Step 167 implementation note: the minimal CLI is implemented on
+`python -m learner_state.sequence_audit` with dataset, fixture-case, and
+fixture-root modes. It supports default safe human summaries and `--json` safe
+metadata output. It does not add a Makefile target, release-quality wrapper
+integration, CI workflow changes, sequence exporter, learner-state estimator,
+model, metric, or scorer change.
+
 ## 10. Failure Policy
 
 The CLI should fail safely on:
