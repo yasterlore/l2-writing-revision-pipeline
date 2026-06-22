@@ -367,22 +367,31 @@ not row contents.
 
 ## 14. Makefile / Release-Quality Future
 
-Not in this step:
+Step211 implementation status:
 
-- no CLI implementation
+- CLI implementation added in
+  `python/learner_state/selective_prediction_validation.py`
+- CLI tests added in
+  `python/learner_state/tests/test_selective_prediction_validation_cli.py`
+- fixture-case mode implemented
+- fixture-root mode implemented
+- safe JSON output implemented
+- expected-result matching is default when expected files are present
+- intentional invalid fixtures exit `0` when expected results match
+
+Still not in this step:
+
 - no Makefile target
 - no release-quality wrapper change
 - no workflow change
 
 Future staged work:
 
-1. Implement the CLI.
-2. Add CLI tests.
-3. Design a Makefile target.
-4. Implement the Makefile target.
-5. Review CLI log safety.
-6. Design release-quality integration.
-7. Integrate through the Makefile target if safe.
+1. Design a Makefile target.
+2. Implement the Makefile target.
+3. Review CLI log safety.
+4. Design release-quality integration.
+5. Integrate through the Makefile target if safe.
 
 Initial release-quality integration should not call the long CLI command
 directly. A Makefile target should own the command shape once it exists.
@@ -408,10 +417,8 @@ not mean calibration quality, model correctness, or estimator performance.
 
 ## 16. What This Does NOT Do
 
-This document does not:
+This document and Step211 implementation do not:
 
-- implement the CLI
-- add CLI tests
 - add a Makefile target
 - change release-quality
 - change workflows
