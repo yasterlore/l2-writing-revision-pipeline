@@ -11,9 +11,10 @@ Step226 implements the minimal CLI described here in
 `python/learner_state/frozen_policy_validation.py` and adds CLI tests in
 `python/learner_state/tests/test_frozen_policy_validation_cli.py`.
 
-This design and implementation do not add a Makefile target, release-quality
-integration, calibration, selective prediction, estimator training, metric
-computation, or real-data readiness.
+Step226 itself does not add a Makefile target, release-quality integration,
+calibration, selective prediction, estimator training, metric computation, or
+real-data readiness. Later follow-up sections record Step228 Makefile target
+implementation and Step229 release-quality integration design status.
 
 ## 2. Current State
 
@@ -307,7 +308,9 @@ Recommended future sequence:
 2. design a Makefile target. Completed in Step227.
 3. implement the Makefile target. Completed in Step228.
 4. review log safety.
-5. design and implement release-quality integration.
+5. design release-quality integration. Completed as docs-only in
+   [frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md).
+6. implement release-quality integration in a separate step.
 
 Release-quality should not be connected until the CLI is implemented and its
 human and JSON outputs are confirmed safe.
@@ -321,6 +324,10 @@ standalone target, and release-quality remains unchanged.
 Step228 implements the standalone Makefile target. Release-quality remains
 unchanged; the target should be reviewed separately before wrapper
 integration.
+
+Step229 adds the
+[frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md)
+as a docs-only plan. It does not change the wrapper or workflows.
 
 ## 15. No-Oracle / Synthetic-Only Boundary
 
@@ -344,7 +351,6 @@ The CLI must not:
 
 This document and Step226 implementation do not:
 
-- add a Makefile target
 - change release-quality
 - implement calibration
 - implement selective prediction
@@ -381,6 +387,7 @@ unsafe content that caused the failure.
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Frozen selective prediction policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md)
 - [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md)
+- [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Synthetic data policy](12_synthetic_data_policy.md)

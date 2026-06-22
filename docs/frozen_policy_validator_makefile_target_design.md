@@ -209,8 +209,9 @@ contract in the same validation-only calibration path. It is not part of
 This step does not connect release-quality. Step228 adds only the standalone
 Makefile target and leaves `scripts/check_release_quality.sh` unchanged.
 
-After Makefile target implementation and a log-safety review, a future
-release-quality integration design should decide where to place the target.
+After Makefile target implementation and a log-safety review,
+[frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md)
+decides where the target should be placed in a future wrapper implementation.
 The likely placement is near the learner-state checks:
 
 1. learner-state audit fixtures
@@ -221,7 +222,8 @@ The likely placement is near the learner-state checks:
 6. config/scoring smoke checks
 
 Do not connect it in the Makefile target implementation step. The wrapper
-should only be changed after the standalone target has proven safe output.
+should only be changed after the standalone target has proven safe output and
+the release-quality integration design has been reviewed.
 
 ## 12. Testing Plan For Future Implementation
 
@@ -298,6 +300,7 @@ validated, or real-data readiness has been established.
 
 ## 16. Related Documents
 
+- [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md)
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md)
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)

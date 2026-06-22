@@ -37,6 +37,7 @@ Recommended entry points:
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md): design and Step226 implementation status for the safe `python -m learner_state.frozen_policy_validation` CLI, fixture-root matching, exit codes, and safe JSON/human output.
 - [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md): target name, command, logging, tmp policy, Step228 implementation status, and release-quality staging plan for the frozen policy validator CLI.
 - `make check-learner-state-frozen-policy`: smoke target for synthetic frozen selective prediction policy validation; release-quality does not call it yet.
+- [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md): docs-only Step229 plan for future wrapper placement, command choice, log safety, failure meaning, and remote-run recording policy for the frozen policy validator target.
 - `python/learner_state/frozen_policy_validation.py`: minimal frozen selective prediction policy validator and safe CLI returning metadata only; the standalone Makefile target exists, but calibration, selective prediction, estimator, and metric computation are not implemented.
 - `python/learner_state/tests/test_frozen_policy_validation.py`: fixture-based tests for one valid frozen policy fixture and eleven fail-closed invalid frozen policy fixtures.
 - `python/learner_state/tests/test_frozen_policy_validation_cli.py`: CLI tests for frozen policy fixture-case/root modes, safe JSON, usage errors, and expected-result mismatch handling.
@@ -123,6 +124,7 @@ Recommended entry points:
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md): Step225 CLI plan and Step226 implementation status for fixture-case/root modes, expected-result matching, JSON output, and exit-code behavior.
 - [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md): Step227 design and Step228 implementation status for `check-learner-state-frozen-policy`; release-quality is not changed.
 - `make check-learner-state-frozen-policy`: Step228 standalone target for the synthetic frozen policy fixture root; it emits safe human summary only.
+- [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md): Step229 docs-only design for adding the standalone target after selective prediction calibration validation and before config/scoring smoke checks.
 - `python/learner_state/frozen_policy_validation.py`: Step224 minimal validator/loader and Step226 safe CLI for synthetic frozen policy fixtures; Step228 adds the standalone Makefile target, while scaffold code is not added.
 - `python/learner_state/tests/test_frozen_policy_validation.py`: unit tests for expected-result matching and safe validation metadata.
 - `python/learner_state/tests/test_frozen_policy_validation_cli.py`: unit tests that exercise the frozen policy validator CLI without printing policy bodies, raw rows, logits dumps, private paths, or metric bodies.
@@ -241,6 +243,7 @@ Recommended entry points:
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md): CLI design and Step226 status for the frozen policy validator; Step228 adds the standalone Makefile target, while release-quality integration is not added.
 - [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md): Makefile target design and Step228 standalone target status for the frozen policy validator CLI.
 - `make check-learner-state-frozen-policy`: frozen policy validator smoke target; not yet integrated into release-quality.
+- [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md): future release-quality wrapper integration design for the frozen policy validator target; no wrapper or workflow change is made in Step229.
 - `python/learner_state/frozen_policy_validation.py`: minimal safe frozen policy validator and CLI for the synthetic fixture root.
 - `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader; no learner-state estimator, training loop, calibration, or metrics are added.
 - `python/learner_state/tests/test_estimator_input.py`: validator tests covering expected-result matching and safe validation metadata.

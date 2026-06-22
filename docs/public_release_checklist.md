@@ -654,6 +654,15 @@ For Step228, confirm `make check-learner-state-frozen-policy` exists, reports
 only, creates no `tmp/` output, and leaves release-quality wrapper, workflows,
 scripts, fixtures, validator code, calibration, selective prediction,
 estimator code, and metric computation unchanged.
+Before integrating the frozen policy validator target into release-quality,
+review
+[frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md)
+and confirm the future wrapper placement, Makefile target command, log safety
+policy, failure interpretation, remote/manual run record policy, and
+synthetic-only/no-oracle boundary are documented. The design step must not
+change release-quality, workflows, Makefile, scripts, tests, fixtures,
+validator code, calibration, selective prediction, frozen policy generation,
+estimator code, or metric computation.
 
 ## 7. Checks To Run
 
