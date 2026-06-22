@@ -280,6 +280,11 @@ that design. The fixtures are exported-shape files plus count/reason-code
 expected validation results; they do not add an estimator input loader or
 validator.
 
+Step194 adds the
+[learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
+to define validation order, safe result metadata, fixture expected-result
+matching, and fail-closed reason codes before implementation.
+
 ## 16. Relation to Existing Pipeline
 
 This contract sits after the learner-state sequence exporter and audit:
@@ -341,6 +346,7 @@ loading, model behavior, and metric interpretation.
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
+- [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Learner-state input representation design](learner_state_input_representation_design.md)
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Public release checklist](public_release_checklist.md)

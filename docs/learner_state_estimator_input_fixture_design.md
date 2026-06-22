@@ -299,6 +299,11 @@ Step193 implements the initial fixture files and root README. The next step
 should design validation behavior before any loader, estimator, training code,
 selective prediction, calibration, or metric work is added.
 
+Step194 adds the
+[learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
+for validation order, safe result schema, fixture expected-result matching, and
+fail-closed reason-code policy.
+
 ## 15. Beginner Notes
 
 An estimator input fixture is a small synthetic test folder that looks like the
@@ -324,6 +329,7 @@ not expose the underlying rows.
 
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
+- [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md)
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
