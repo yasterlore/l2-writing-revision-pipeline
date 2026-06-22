@@ -484,6 +484,7 @@ boundaries, no-oracle policy, and safe output rules.
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
+- [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
