@@ -596,6 +596,14 @@ fixtures, use validation-only temperature/threshold selection, freeze policy
 metadata before test evaluation, emit safe summaries only, and avoid raw rows,
 label bodies, logits dumps, policy/split bodies, metric claims, real data, or
 production readiness claims.
+Before creating any frozen selective prediction policy artifact or validator,
+review
+[frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
+and confirm the future artifact schema records validation-only temperature and
+threshold provenance, requires explicit schema versioning, excludes raw rows,
+label bodies, logits/probability dumps, policy/split body dumps, test-derived
+tuning traces, private paths, performance claims, real data, and production
+readiness claims.
 
 ## 7. Checks To Run
 

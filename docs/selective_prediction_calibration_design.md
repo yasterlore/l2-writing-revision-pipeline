@@ -359,6 +359,13 @@ prediction fixtures, freeze validation-only temperature/threshold policy, and
 return safe summaries. It still does not implement calibration, selective
 prediction, an estimator, or metric computation.
 
+Step220 adds the
+[frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
+as a docs-only plan for the future frozen policy artifact that records
+validation-only temperature and threshold provenance. It does not create the
+artifact file or implement calibration, selective prediction, an estimator, or
+metric computation.
+
 ## 16. What This Does NOT Do
 
 This design does not:
@@ -405,6 +412,7 @@ leakage-checked.
 - [Initial selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
+- [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
 - [Learner-state estimator input validation design](learner_state_estimator_input_validation_design.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
