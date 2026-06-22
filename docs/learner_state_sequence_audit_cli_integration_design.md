@@ -230,6 +230,10 @@ Step 170 follow-up: see
 for the future wrapper placement, command choice, logging policy, and risk
 review before adding the Makefile target to the release-quality wrapper.
 
+Step 171 follow-up: the release-quality wrapper now calls
+`make check-learner-state-audit-fixtures` after Python checks and before
+config/scoring smoke checks. CI workflows remain unchanged.
+
 ## 12. Beginner Notes
 
 Integration means connecting a tool that already works by itself to the common
