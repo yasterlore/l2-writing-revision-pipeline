@@ -38,6 +38,7 @@ Recommended entry points:
 - [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md): target name, command, logging, tmp policy, Step228 implementation status, and release-quality staging plan for the frozen policy validator CLI.
 - [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md): Step230 wrapper integration status for adding the frozen policy validator target after selective prediction calibration validation and before config/scoring smoke checks.
 - [Frozen policy release-quality remote run record workflow](frozen_policy_release_quality_remote_run_record_workflow.md): Step231 public-safe metadata-only recording workflow design for a future manual Release Quality run that includes frozen policy validation.
+- [Learner-state frozen policy release-quality remote run status](status/learner_state_frozen_policy_release_quality_remote_run_status.md): metadata-only status marker for the successful remote/manual Release Quality run including frozen policy validation.
 - `make check-learner-state-frozen-policy`: smoke target for synthetic frozen selective prediction policy validation; release-quality now calls it through the wrapper.
 - `python/learner_state/frozen_policy_validation.py`: minimal frozen selective prediction policy validator and safe CLI returning metadata only; the standalone Makefile target exists, but calibration, selective prediction, estimator, and metric computation are not implemented.
 - `python/learner_state/tests/test_frozen_policy_validation.py`: fixture-based tests for one valid frozen policy fixture and eleven fail-closed invalid frozen policy fixtures.
@@ -126,6 +127,7 @@ Recommended entry points:
 - [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md): Step227 design and Step228 implementation status for `check-learner-state-frozen-policy`; Step230 adds release-quality wrapper integration.
 - [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md): Step229/Step230 design and implementation status for adding the standalone target to the release-quality wrapper.
 - [Frozen policy release-quality remote run record workflow](frozen_policy_release_quality_remote_run_record_workflow.md): Step231 design for recording only high-level, public-safe metadata from a future manual Release Quality run that includes frozen policy validation.
+- [Learner-state frozen policy release-quality remote run status](status/learner_state_frozen_policy_release_quality_remote_run_status.md): Step232 public-safe status marker for the successful remote/manual Release Quality run including frozen policy validation.
 - `make check-learner-state-frozen-policy`: Step228 standalone target for the synthetic frozen policy fixture root; Step230 adds it to release-quality.
 - `python/learner_state/frozen_policy_validation.py`: Step224 minimal validator/loader and Step226 safe CLI for synthetic frozen policy fixtures; Step228 adds the standalone Makefile target, while scaffold code is not added.
 - `python/learner_state/tests/test_frozen_policy_validation.py`: unit tests for expected-result matching and safe validation metadata.
@@ -246,6 +248,7 @@ Recommended entry points:
 - [Frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md): Makefile target design and Step228 standalone target status for the frozen policy validator CLI.
 - [Frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md): wrapper placement, command choice, log safety, failure meaning, and Step230 implementation status for the frozen policy validator target.
 - [Frozen policy release-quality remote run record workflow](frozen_policy_release_quality_remote_run_record_workflow.md): metadata-only workflow for recording a future remote/manual Release Quality run that includes frozen policy validation.
+- [Learner-state frozen policy release-quality remote run status](status/learner_state_frozen_policy_release_quality_remote_run_status.md): status marker recording the successful remote/manual Release Quality run with frozen policy validation included.
 - `make check-learner-state-frozen-policy`: frozen policy validator smoke target now included in release-quality.
 - `python/learner_state/frozen_policy_validation.py`: minimal safe frozen policy validator and CLI for the synthetic fixture root.
 - `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader; no learner-state estimator, training loop, calibration, or metrics are added.

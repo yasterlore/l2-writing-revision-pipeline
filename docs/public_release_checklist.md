@@ -674,6 +674,14 @@ will not paste raw GitHub Actions logs or full job output, will not include
 frozen policy artifact bodies, JSON bodies, raw rows, logits/probability dumps,
 private paths, raw learner text, or performance metric bodies, and will not
 change workflows, wrapper scripts, Makefile, Python code, tests, or fixtures.
+For Step232, confirm the public-safe status marker
+[learner-state frozen policy release-quality remote run status](status/learner_state_frozen_policy_release_quality_remote_run_status.md)
+records only metadata and count-only summaries for the successful remote
+Release Quality run, confirms frozen policy validation was included with
+12 matched fixture cases, and does not include raw logs, full job output,
+copied log blocks, frozen policy artifact bodies, JSON bodies, raw rows,
+logits/probability dumps, private paths, raw learner text, or performance
+metric bodies.
 
 ## 7. Checks To Run
 
