@@ -552,6 +552,14 @@ reports 8 matched fixture cases, prints safe human summary only, creates no
 tmp output, avoids row/logit/probability/policy/split body output, and remains
 outside the release-quality wrapper and GitHub workflows until a separate
 integration step.
+Before integrating the selective prediction calibration validator target into
+release-quality, review
+[selective prediction calibration release-quality integration design](selective_prediction_calibration_release_quality_integration_design.md)
+and confirm wrapper placement, command choice, section label, failure
+interpretation, output/logging safety, runtime impact, and remote/manual run
+record policy are documented. The design step must not change the wrapper,
+workflow, Makefile, scripts, code, tests, fixtures, or compute calibration
+metrics.
 
 ## 7. Checks To Run
 
