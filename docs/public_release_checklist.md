@@ -589,6 +589,13 @@ and confirm it summarizes the selective prediction/calibration validation
 infrastructure, remote run status, safety boundaries, non-goals, and next
 research/development candidates without raw logs, row bodies, policy/split
 bodies, logits dumps, performance claims, or real-data readiness claims.
+Before implementing any selective prediction / calibration scaffold, review
+[selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
+and confirm the future scaffold will consume only validator-passed synthetic
+fixtures, use validation-only temperature/threshold selection, freeze policy
+metadata before test evaluation, emit safe summaries only, and avoid raw rows,
+label bodies, logits dumps, policy/split bodies, metric claims, real data, or
+production readiness claims.
 
 ## 7. Checks To Run
 

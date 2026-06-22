@@ -300,6 +300,13 @@ The next step should stay narrow. It should not combine estimator training,
 metric computation, real-data readiness, and production pipeline work in one
 step.
 
+Step219 adds the
+[selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
+as a docs-only plan for the future validation-only temperature/threshold
+scaffold, frozen policy artifact, safe summary boundary, and no-test-tuning
+rules. It does not implement calibration, selective prediction, estimator
+training, metric computation, or real-data handling.
+
 ## 12. Release/Public Status
 
 Public-safe documentation now exists for:
@@ -365,6 +372,7 @@ validator path ran, matched expected results, and kept output safe.
 - [Selective prediction calibration release-quality integration design](selective_prediction_calibration_release_quality_integration_design.md)
 - [Selective prediction release-quality remote run record workflow](selective_prediction_release_quality_remote_run_record_workflow.md)
 - [Learner-state selective prediction release-quality remote run status](status/learner_state_selective_prediction_release_quality_remote_run_status.md)
+- [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [Milestone 08 learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md)
 - [Public release checklist](public_release_checklist.md)
