@@ -1,5 +1,32 @@
 # Frozen Policy Generation Validation Design
 
+This document designs validation for frozen policy generation fixtures.
+
+It is documentation only for the design portion, with Step238 implementation
+status noted below. It does not implement a generator, frozen policy generation
+scaffold, Makefile target, release-quality integration, workflow change,
+calibration, selective prediction, learner-state estimator, estimator
+training, new model, or metric computation. It is not a performance evaluation
+and is not a real-data readiness claim.
+
+Public docs must not include raw GitHub Actions logs, full job output, copied
+log blocks, screenshots containing raw logs, frozen policy artifact bodies,
+JSON bodies, request bodies, policy bodies, raw rows, logits/probability
+dumps, label bodies, split bodies, calibration policy bodies, generated
+feature/label/manifest bodies, private paths, raw learner text, or real
+participant data.
+
+Step238 implements the minimal fixture validator in
+`python/learner_state/frozen_policy_generation_validation.py` with tests in
+`python/learner_state/tests/test_frozen_policy_generation_validation.py`. That
+implementation validates only synthetic fixture metadata and returns only safe
+metadata summaries.
+
+Step240 adds the minimal safe CLI entrypoint to the same module with tests in
+`python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`.
+It still does not add generator code, a Makefile target, release-quality
+integration, workflow changes, calibration, selective prediction, or metrics.
+
 ## 1. Purpose
 
 This document defines the validation design for frozen policy generation
@@ -326,8 +353,12 @@ their responsibilities, and should never bypass the frozen policy validator.
 Recommended staged roadmap:
 
 1. Step238: minimal frozen policy generation fixture validator implementation.
-2. Step239: frozen policy generation validator CLI design.
-3. Step240: CLI implementation.
+   Completed as a safe Python loader/validator with fixture-based tests.
+2. Step239: frozen policy generation validator CLI design. Completed as a
+   docs-only design for fixture-case/root modes, exit codes, expected-result
+   matching, and safe JSON/human output.
+3. Step240: CLI implementation. Completed as a minimal safe
+   `python -m learner_state.frozen_policy_generation_validation` wrapper.
 4. Step241: Makefile target design and implementation.
 5. Step242: release-quality integration design and implementation.
 6. Step243: frozen policy generation scaffold implementation design.
@@ -372,6 +403,8 @@ is not evidence that a model is accurate, calibrated, or ready for real data.
   `python/learner_state/tests/test_frozen_policy_generation_validation.py`.
 - Step239: linked the frozen policy generation validator CLI design as the
   next docs-only interface plan.
+- Step240: linked the minimal frozen policy generation validator CLI
+  implementation.
 
 ## Related Documents
 
@@ -384,3 +417,5 @@ is not evidence that a model is accurate, calibrated, or ready for real data.
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
 - `python/learner_state/frozen_policy_generation_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`
+- [Public release checklist](public_release_checklist.md)
