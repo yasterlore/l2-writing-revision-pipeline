@@ -405,6 +405,12 @@ and confirm the fixture plan is synthetic-only, uses exported-shape
 feature/label/manifest files, keeps expected validation results count-only,
 avoids row body examples, and tests join, sequence, split, and leakage
 boundaries without making performance or real-data readiness claims.
+After creating estimator input fixture files, review the
+[learner-state estimator input fixture root](../tests/fixtures/learner_state_estimator_input/README.md)
+and confirm all cases are synthetic-only, JSON/JSONL parseable, expected
+validation result files are count/reason-code only, invalid forbidden-field
+cases are intentional, and no generated body or real participant data is added
+to docs.
 
 ## 7. Checks To Run
 

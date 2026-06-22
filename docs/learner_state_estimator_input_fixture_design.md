@@ -80,6 +80,11 @@ tests/fixtures/learner_state_estimator_input/
 
 This step does not create these directories.
 
+Step193 creates the initial fixture root at
+`tests/fixtures/learner_state_estimator_input/` with one valid minimal case and
+eight representative invalid cases. The committed fixtures contain synthetic
+rows only; this document still avoids showing row bodies.
+
 ## 5. Fixture File Set
 
 Each future fixture case should contain:
@@ -290,6 +295,10 @@ Recommended order:
 The roadmap intentionally keeps fixture creation and validation design ahead of
 estimator implementation.
 
+Step193 implements the initial fixture files and root README. The next step
+should design validation behavior before any loader, estimator, training code,
+selective prediction, calibration, or metric work is added.
+
 ## 15. Beginner Notes
 
 An estimator input fixture is a small synthetic test folder that looks like the
@@ -314,6 +323,7 @@ not expose the underlying rows.
 ## 16. Related Documents
 
 - [Learner-state estimator input contract design](learner_state_estimator_input_contract_design.md)
+- [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
 - [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md)
 - [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md)
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
