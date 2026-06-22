@@ -659,10 +659,13 @@ review
 [frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md)
 and confirm the future wrapper placement, Makefile target command, log safety
 policy, failure interpretation, remote/manual run record policy, and
-synthetic-only/no-oracle boundary are documented. The design step must not
-change release-quality, workflows, Makefile, scripts, tests, fixtures,
-validator code, calibration, selective prediction, frozen policy generation,
-estimator code, or metric computation.
+synthetic-only/no-oracle boundary are documented.
+For Step230, confirm `make check-release-quality` includes
+`release_quality_check: learner-state frozen policy validation`, reports
+12 matched synthetic frozen policy fixture cases through the target, emits
+safe human summary only, and leaves workflows, Makefile, Python code, tests,
+fixtures, calibration, selective prediction, frozen policy generation,
+estimator code, and metric computation unchanged.
 
 ## 7. Checks To Run
 

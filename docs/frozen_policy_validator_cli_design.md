@@ -11,10 +11,9 @@ Step226 implements the minimal CLI described here in
 `python/learner_state/frozen_policy_validation.py` and adds CLI tests in
 `python/learner_state/tests/test_frozen_policy_validation_cli.py`.
 
-Step226 itself does not add a Makefile target, release-quality integration,
-calibration, selective prediction, estimator training, metric computation, or
-real-data readiness. Later follow-up sections record Step228 Makefile target
-implementation and Step229 release-quality integration design status.
+This design and implementation do not add a Makefile target, release-quality
+integration, calibration, selective prediction, estimator training, metric
+computation, or real-data readiness.
 
 ## 2. Current State
 
@@ -308,26 +307,19 @@ Recommended future sequence:
 2. design a Makefile target. Completed in Step227.
 3. implement the Makefile target. Completed in Step228.
 4. review log safety.
-5. design release-quality integration. Completed as docs-only in
+5. design and implement release-quality integration. Completed in Step230 via
    [frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md).
-6. implement release-quality integration in a separate step.
 
-Release-quality should not be connected until the CLI is implemented and its
-human and JSON outputs are confirmed safe.
+Release-quality is connected only after the CLI and standalone Makefile target
+have safe human and JSON outputs.
 
 Step227 adds the
 [frozen policy validator Makefile target design](frozen_policy_validator_makefile_target_design.md)
 as a docs-only plan for wrapping the safe fixture-root CLI in a future
 `make check-learner-state-frozen-policy` target. Step228 implements that
-standalone target, and release-quality remains unchanged.
+standalone target.
 
-Step228 implements the standalone Makefile target. Release-quality remains
-unchanged; the target should be reviewed separately before wrapper
-integration.
-
-Step229 adds the
-[frozen policy release-quality integration design](frozen_policy_release_quality_integration_design.md)
-as a docs-only plan. It does not change the wrapper or workflows.
+Step230 integrates the standalone target into the release-quality wrapper.
 
 ## 15. No-Oracle / Synthetic-Only Boundary
 
@@ -351,7 +343,6 @@ The CLI must not:
 
 This document and Step226 implementation do not:
 
-- change release-quality
 - implement calibration
 - implement selective prediction
 - generate frozen policy artifacts
