@@ -398,6 +398,11 @@ frozen policy validation can be tested against one valid fixture and eleven
 intentional invalid fixtures without using real data, raw rows, logits dumps,
 or performance claims.
 
+Step223 adds the
+[frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
+as a docs-only fail-closed plan for validating frozen policy artifacts before
+future scaffold outputs are consumed by test evaluation.
+
 ## 16. Testing Plan For Future Implementation
 
 Future tests should cover:
@@ -474,6 +479,7 @@ boundaries, no-oracle policy, and safe output rules.
 - [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
+- [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Selective prediction fixtures](../tests/fixtures/learner_state_selective_prediction/README.md)
 - [No-oracle policy](03_no_oracle_policy.md)
 - [Synthetic data policy](12_synthetic_data_policy.md)

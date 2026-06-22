@@ -426,6 +426,12 @@ valid frozen policy fixture, eleven intentional invalid fixture cases, and
 safe expected validation result metadata. It still does not implement a frozen
 policy validator, calibration scaffold, estimator, or metric computation.
 
+Step223 adds the
+[frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
+as a docs-only plan for future validator ordering, safe validation result
+metadata, expected-result matching, recursive forbidden scans, path safety,
+and test-derived tuning checks.
+
 ## 19. What This Does Not Prove
 
 This schema design does not prove:
@@ -472,6 +478,7 @@ safe-output boundaries.
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
+- [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md)
 - [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)

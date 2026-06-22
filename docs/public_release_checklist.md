@@ -618,6 +618,13 @@ validator implementation, no calibration scaffold, no raw rows, no logits
 dumps except the intentional invalid fixture, no private path except the
 intentional invalid fixture, and no performance claim except the intentional
 invalid fixture.
+Before implementing a frozen selective prediction policy validator, review
+[frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
+and confirm the future validator will fail closed on unsafe paths, malformed
+JSON, unknown schema versions, missing required fields, recursive forbidden
+fields, test-derived temperature or threshold, unsafe safety booleans,
+invalid split policy, invalid count summaries, and performance claims while
+emitting only safe metadata.
 
 ## 7. Checks To Run
 

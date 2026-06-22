@@ -379,6 +379,7 @@ future policy artifact matched the expected schema and safety boundaries.
 ## 17. Related Documents
 
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
+- [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
 - [Selective prediction and calibration validation design](selective_prediction_calibration_validation_design.md)
