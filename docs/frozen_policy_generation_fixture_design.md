@@ -460,10 +460,13 @@ followed the synthetic fixture contract and safety boundaries.
 - Step235: initial frozen policy generation fixture design creation.
 - Step236: initial synthetic frozen policy generation fixture files created
   under `tests/fixtures/learner_state_frozen_policy_generation/`.
+- Step237: linked the frozen policy generation validation design as the next
+  docs-only planning step before validator implementation.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
+- [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)

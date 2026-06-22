@@ -717,6 +717,16 @@ the intentional invalid output-path fixture, raw learner text, GitHub raw logs,
 or performance evidence. This step must not add generator code, validator code,
 CLI, Makefile targets, release-quality integration, workflow changes, Python
 tests, or changes to existing fixtures.
+For Step237, review the
+[frozen policy generation validation design](frozen_policy_generation_validation_design.md)
+and confirm it remains docs-only: no generation validator, generator code,
+CLI, Makefile target, release-quality wrapper change, workflow change, Python
+code, tests, or fixture changes are introduced. The design must describe safe
+metadata-only validation order, result schema, reason-code mapping,
+expected-result matching, input pointer checks, and forbidden-field scans
+without pasting request bodies, generated artifact bodies, JSON bodies, raw
+rows, logits/probability dumps, private paths, raw learner text, GitHub raw
+logs, or performance claims.
 
 ## 7. Checks To Run
 

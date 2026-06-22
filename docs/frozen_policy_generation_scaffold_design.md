@@ -361,12 +361,16 @@ Recommended staging:
    design for this stage.
 3. Create initial synthetic generator fixtures. Step236 adds metadata-only
    fixture files for this stage.
-4. Implement minimal generator with fixture tests.
-5. Add a safe CLI design and implementation.
-6. Add a standalone Makefile target.
-7. Review output/log safety.
-8. Integrate into release-quality only after standalone safety is stable.
-9. Record a public-safe remote/manual run status if integrated later.
+4. Design generation fixture validation. Step237 adds the docs-only validation
+   design for this stage.
+5. Implement minimal generation fixture validator.
+6. Implement minimal generator with fixture tests after validator behavior is
+   stable.
+7. Add a safe CLI design and implementation.
+8. Add a standalone Makefile target.
+9. Review output/log safety.
+10. Integrate into release-quality only after standalone safety is stable.
+11. Record a public-safe remote/manual run status if integrated later.
 
 This mirrors the Milestone 10 pattern and keeps release-quality from running
 unstable generation code too early.
@@ -419,6 +423,7 @@ real-data-ready.
 - Step235: linked the frozen policy generation fixture design as the next
   docs-only planning step.
 - Step236: linked the initial frozen policy generation fixture root.
+- Step237: linked the frozen policy generation validation design.
 
 ## Related Documents
 
@@ -426,6 +431,7 @@ real-data-ready.
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
+- [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
