@@ -32,3 +32,6 @@ Related recap:
 - [Milestone 07 learner-state sequence exporter infrastructure recap](../milestone_07_learner_state_sequence_exporter_infrastructure_recap.md):
   broader recap of the learner-state sequence exporter infrastructure
   milestone.
+- [Milestone 08 learner-state estimator input validation infrastructure recap](../milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md):
+  broader recap of the learner-state estimator input validation infrastructure
+  milestone.

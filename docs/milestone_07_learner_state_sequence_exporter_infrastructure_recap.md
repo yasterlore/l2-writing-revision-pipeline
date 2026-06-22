@@ -220,6 +220,11 @@ as a docs-only plan for future synthetic exported-shape fixtures and expected
 validation result contracts. It does not create fixtures or implement an
 estimator input loader.
 
+Milestone 08 follow-up: the
+[learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md)
+summarizes the completed estimator input contract, fixtures, validator/loader,
+CLI, Makefile target, release-quality integration, and remote run status.
+
 ## 11. Release/Public Status
 
 Public-safe documentation now exists for:

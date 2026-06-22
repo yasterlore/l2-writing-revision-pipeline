@@ -476,6 +476,14 @@ estimator input summaries, log safety review status, scope limitations, and
 non-goals. It must not include raw logs, JSONL row bodies, feature or label
 rows, generated manifest bodies, expected action bodies, private paths, or
 performance metrics.
+After completing the estimator input validation infrastructure milestone,
+review
+[Milestone 08 learner-state estimator input validation infrastructure recap](milestone_08_learner_state_estimator_input_validation_infrastructure_recap.md)
+and confirm it summarizes only public-safe components, safe/count-only remote
+status, synthetic-only boundaries, no-oracle constraints, non-goals, and next
+research/development candidates. It must not claim estimator correctness,
+model performance, calibration quality, real-data readiness, or production
+data-collection readiness.
 
 ## 7. Checks To Run
 
