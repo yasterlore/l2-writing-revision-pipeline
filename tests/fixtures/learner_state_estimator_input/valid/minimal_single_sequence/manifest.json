@@ -1,0 +1,39 @@
+{
+  "manifest_schema_version": "learner_state_sequence_manifest_v0.1",
+  "dataset_schema_version": "learner_state_estimator_input_fixture_v0.1",
+  "feature_schema_version": "learner_state_feature_v0.1",
+  "label_schema_version": "learner_state_label_v0.1",
+  "synthetic_only": true,
+  "content_suppressed": true,
+  "feature_row_count": 3,
+  "label_row_count": 3,
+  "synthetic_participant_count": 1,
+  "synthetic_session_count": 1,
+  "synthetic_task_count": 1,
+  "sequence_count": 1,
+  "episode_count": 3,
+  "join_key_fields": [
+    "synthetic_participant_id",
+    "synthetic_session_id",
+    "synthetic_task_id",
+    "micro_episode_id",
+    "episode_order_index"
+  ],
+  "split_counts": {
+    "train": {
+      "feature_rows": 3,
+      "label_rows": 3,
+      "participants": 1,
+      "sequences": 1
+    }
+  },
+  "split_membership": {
+    "train": [
+      "synthetic_estimator_participant_001"
+    ]
+  },
+  "no_raw_rows": true,
+  "source_text_suppressed": true,
+  "label_contents_included": false,
+  "feature_rows_included": false
+}

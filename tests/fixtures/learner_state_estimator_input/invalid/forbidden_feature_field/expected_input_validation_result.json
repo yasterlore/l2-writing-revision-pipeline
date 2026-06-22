@@ -1,0 +1,14 @@
+{
+  "validation_result_schema_version": "learner_state_estimator_input_validation_result_v0.1",
+  "validation_status": "fail",
+  "expected_failure_reason": "forbidden_feature_field",
+  "expected_failure_category": "forbidden_field",
+  "expected_stage": "input_validation",
+  "expected_sequence_count": 1,
+  "expected_feature_row_count": 2,
+  "expected_label_row_count": 2,
+  "expected_split_counts": {"train": {"feature_rows": 2, "label_rows": 2, "participants": 1, "sequences": 1}},
+  "content_suppressed": true,
+  "no_raw_rows": true,
+  "synthetic_only": true
+}

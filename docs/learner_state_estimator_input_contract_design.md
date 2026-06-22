@@ -275,6 +275,11 @@ Step192 adds the
 for future synthetic exported-shape fixtures and expected validation result
 contracts. It does not create fixture files or implement a loader.
 
+Step193 creates the initial synthetic estimator input fixture root described by
+that design. The fixtures are exported-shape files plus count/reason-code
+expected validation results; they do not add an estimator input loader or
+validator.
+
 ## 16. Relation to Existing Pipeline
 
 This contract sits after the learner-state sequence exporter and audit:
@@ -335,6 +340,7 @@ loading, model behavior, and metric interpretation.
 - [Learner-state sequence schema design](learner_state_sequence_schema_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Learner-state estimator input fixture design](learner_state_estimator_input_fixture_design.md)
+- [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
 - [Learner-state input representation design](learner_state_input_representation_design.md)
 - [Synthetic learner-state sequence dataset design](synthetic_learner_state_sequence_dataset_design.md)
 - [Public release checklist](public_release_checklist.md)
