@@ -236,6 +236,13 @@ before config/scoring smoke checks. The section calls
 summary output. CI workflows, Makefile target definitions, audit code, and
 fixture files remain unchanged.
 
+Step 172 follow-up: see the
+[learner-state audit release-quality remote-run record workflow](learner_state_audit_release_quality_remote_run_record_workflow.md)
+for how to safely record a future manual GitHub Actions release-quality run
+after this wrapper integration. The record workflow permits only safe
+high-level status and forbids raw logs, fixture rows, label bodies, manifest
+bodies, private paths, and performance claims.
+
 ## 13. Beginner Notes
 
 The release-quality wrapper is a script that runs the normal set of checks used
@@ -263,6 +270,7 @@ workflow later.
 - [Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
 - [Learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
+- [Learner-state audit release-quality remote-run record workflow](learner_state_audit_release_quality_remote_run_record_workflow.md)
 - [Learner-state sequence audit fixture files](../tests/fixtures/learner_state_sequence_audit/README.md)
 - [Release-quality command bundle design](release_quality_command_bundle_design.md)
 - [Makefile entrypoint safety review](makefile_entrypoint_safety_review.md)

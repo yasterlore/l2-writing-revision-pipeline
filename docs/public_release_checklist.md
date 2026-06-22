@@ -294,6 +294,12 @@ After wrapper integration, confirm `scripts/check_release_quality.sh` runs the
 learner-state audit fixture check through the Makefile target without printing
 JSONL rows, manifest bodies, label bodies, private paths, or expected action
 bodies.
+Before recording any remote/manual release-quality result after this wrapper
+integration, review the
+[learner-state audit release-quality remote-run record workflow](learner_state_audit_release_quality_remote_run_record_workflow.md)
+and record only safe high-level status. Do not paste raw workflow logs,
+fixture rows, label bodies, manifest bodies, private paths, expected action
+bodies, or performance claims into public docs.
 
 ## 7. Checks To Run
 

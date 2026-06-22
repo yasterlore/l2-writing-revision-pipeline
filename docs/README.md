@@ -28,6 +28,7 @@ Recommended entry points:
 - [Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md): docs-only design for a future safe command-line interface over the learner-state sequence audit module.
 - [Learner-state sequence audit CLI integration design](learner_state_sequence_audit_cli_integration_design.md): docs-only plan for staged Makefile, release-quality, and CI integration of the safe audit CLI.
 - [Learner-state sequence audit release-quality integration design](learner_state_sequence_audit_release_quality_integration_design.md): docs-only plan for future release-quality wrapper integration through the Makefile target.
+- [Learner-state audit release-quality remote-run record workflow](learner_state_audit_release_quality_remote_run_record_workflow.md): public-safe record workflow for the manual release-quality run after learner-state audit wrapper integration.
 - [System architecture](02_system_architecture.md): language boundaries and component layout.
 - [No-oracle policy](03_no_oracle_policy.md): no-oracle rules for candidate generation, ranking, scoring, and learner-state work.
 - [Data quality policy](10_data_quality_policy.md): validation and data-quality rules.
@@ -101,6 +102,7 @@ Recommended entry points:
 - [Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md): design for future CLI modes, safe stdout/JSON output, exit codes, and integration timing.
 - [Learner-state sequence audit CLI integration design](learner_state_sequence_audit_cli_integration_design.md): staged integration plan for future Makefile target, release-quality wrapper, and CI consideration.
 - [Learner-state sequence audit release-quality integration design](learner_state_sequence_audit_release_quality_integration_design.md): staged plan for future wrapper placement, command choice, and safe log policy.
+- [Learner-state audit release-quality remote-run record workflow](learner_state_audit_release_quality_remote_run_record_workflow.md): safe recording policy for remote/manual release-quality results after wrapper integration.
 - [Release-quality wrapper CI integration design](release_quality_wrapper_ci_integration_design.md): design for future CI integration of the release-quality wrapper without changing workflows yet.
 - [Release-quality manual workflow design](release_quality_manual_workflow_design.md): design and implementation notes for the manual `workflow_dispatch` release-quality GitHub Actions workflow.
 - [Release-quality manual workflow remote-run checklist](release_quality_manual_workflow_remote_run_checklist.md): checklist for the first GitHub Actions remote run of the manual release-quality workflow.
