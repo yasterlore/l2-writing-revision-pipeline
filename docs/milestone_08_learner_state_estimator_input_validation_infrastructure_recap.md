@@ -271,6 +271,12 @@ Recommended priority order:
 The next step should stay narrow. It should not combine estimator, metrics,
 real-data readiness, and production pipeline work in one step.
 
+Step205 adds the
+[selective prediction and calibration design](selective_prediction_calibration_design.md)
+as a docs-only policy for future confidence, abstention, temperature scaling,
+ECE, AURCC, split usage, and no-oracle boundaries. It does not implement a
+model, calibration, or metric computation.
+
 ## 12. Release/Public Status
 
 Public-safe documentation now exists for:
@@ -332,5 +338,6 @@ validator path ran, matched expected results, and kept output safe.
 - [Learner-state estimator input release-quality remote run record workflow](learner_state_estimator_input_release_quality_remote_run_record_workflow.md)
 - [Learner-state estimator input release-quality remote run status](status/learner_state_estimator_input_release_quality_remote_run_status.md)
 - [Learner-state estimator input fixtures](../tests/fixtures/learner_state_estimator_input/README.md)
+- [Selective prediction and calibration design](selective_prediction_calibration_design.md)
 - [Milestone 07 learner-state sequence exporter infrastructure recap](milestone_07_learner_state_sequence_exporter_infrastructure_recap.md)
 - [Public release checklist](public_release_checklist.md)
