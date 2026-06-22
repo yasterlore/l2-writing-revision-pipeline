@@ -319,6 +319,10 @@ Before creating exporter input fixture files, review
 and confirm the fixture contract keeps safe episode inputs, candidate scores,
 diagnostics, synthetic labels, grouping metadata, and expected output contracts
 separate without copying fixture bodies into docs.
+After creating exporter input fixtures, confirm
+[`tests/fixtures/learner_state_sequence_exporter/`](../tests/fixtures/learner_state_sequence_exporter/README.md)
+remains synthetic-only and contains no raw learner text, private paths,
+real participant data, future fields, or label fields in feature-side inputs.
 
 ## 7. Checks To Run
 

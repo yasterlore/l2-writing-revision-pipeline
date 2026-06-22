@@ -326,6 +326,12 @@ for the future fixture root, input file set, minimal valid input contract,
 expected output contract, and distinction between exporter input fixtures and
 audit fixtures.
 
+Step 177 follow-up: the initial synthetic exporter input fixture root is now
+available at
+[`tests/fixtures/learner_state_sequence_exporter/`](../tests/fixtures/learner_state_sequence_exporter/README.md).
+It is an input fixture root only; no exporter implementation or generated
+sequence output files are added by that step.
+
 ## 15. Relation To Existing Pipeline
 
 The exporter sits between existing safe synthetic pipeline components and future

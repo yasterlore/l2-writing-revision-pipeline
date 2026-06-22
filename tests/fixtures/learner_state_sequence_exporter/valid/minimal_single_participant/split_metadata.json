@@ -1,0 +1,34 @@
+{
+  "split_schema_version": "synthetic_split_metadata_v0.1",
+  "split_family": "learner_disjoint",
+  "assignment_source": "synthetic_grouping_only",
+  "split_assignments": [
+    {
+      "synthetic_participant_id": "syn-p001",
+      "split_id": "train"
+    }
+  ],
+  "split_counts": {
+    "train": {
+      "synthetic_participant_count": 1,
+      "synthetic_session_count": 1,
+      "synthetic_task_count": 1,
+      "episode_count": 3
+    },
+    "validation": {
+      "synthetic_participant_count": 0,
+      "synthetic_session_count": 0,
+      "synthetic_task_count": 0,
+      "episode_count": 0
+    },
+    "test": {
+      "synthetic_participant_count": 0,
+      "synthetic_session_count": 0,
+      "synthetic_task_count": 0,
+      "episode_count": 0
+    }
+  },
+  "label_derived": false,
+  "outcome_derived": false,
+  "participant_overlap_across_splits": false
+}

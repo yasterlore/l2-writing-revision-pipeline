@@ -305,6 +305,14 @@ Recommended next steps:
 Possible adjustment: add malformed/empty/unknown-version audit fixtures before
 exporter implementation if fail-closed coverage needs to be broadened first.
 
+Step 177 implementation note: the initial synthetic exporter input fixture root
+now exists at
+[`tests/fixtures/learner_state_sequence_exporter/`](../tests/fixtures/learner_state_sequence_exporter/README.md).
+The first case is `valid/minimal_single_participant/` and contains separated
+safe episode inputs, candidate summaries, diagnostic counts, synthetic
+evaluation labels, grouping metadata, split metadata, and a safe expected output
+contract. Public docs still do not copy fixture row bodies.
+
 ## 14. Beginner Notes
 
 An input fixture is a small synthetic test case that a future exporter can read.

@@ -1,0 +1,22 @@
+{
+  "contract_schema_version": "exporter_expected_output_contract_v0.1",
+  "expected_feature_row_count": 3,
+  "expected_label_row_count": 3,
+  "expected_participant_count": 1,
+  "expected_session_count": 1,
+  "expected_task_count": 1,
+  "expected_episode_count": 3,
+  "expected_manifest_synthetic_only": true,
+  "expected_manifest_content_suppressed": true,
+  "expected_audit_status": "pass",
+  "expected_no_raw_rows": true,
+  "expected_absent_reason_codes": [],
+  "expected_schema_versions": {
+    "feature": "learner_state_feature_v0.1",
+    "label": "learner_state_label_v0.1",
+    "manifest": "learner_state_sequence_manifest_v0.1"
+  },
+  "full_feature_body_included": false,
+  "full_label_body_included": false,
+  "manifest_body_dump_included": false
+}
