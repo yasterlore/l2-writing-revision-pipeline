@@ -225,6 +225,11 @@ runs the CLI fixture-root mode with safe human summary output. The target is
 not wired into `check-release-quality`, `check-all`, the release-quality
 wrapper, or CI.
 
+Step 170 follow-up: see
+[Learner-state sequence audit release-quality integration design](learner_state_sequence_audit_release_quality_integration_design.md)
+for the future wrapper placement, command choice, logging policy, and risk
+review before adding the Makefile target to the release-quality wrapper.
+
 ## 12. Beginner Notes
 
 Integration means connecting a tool that already works by itself to the common
@@ -248,6 +253,7 @@ count-only logs before any real-data readiness work is considered.
 ## Related Documents
 
 - [Learner-state sequence audit CLI design](learner_state_sequence_audit_cli_design.md)
+- [Learner-state sequence audit release-quality integration design](learner_state_sequence_audit_release_quality_integration_design.md)
 - [Learner-state sequence audit implementation design](learner_state_sequence_audit_implementation_design.md)
 - [Learner-state sequence no-oracle audit design](learner_state_sequence_no_oracle_audit_design.md)
 - [Learner-state sequence audit fixture/schema design](learner_state_sequence_audit_fixture_schema_design.md)

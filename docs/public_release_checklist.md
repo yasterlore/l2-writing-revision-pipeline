@@ -286,6 +286,10 @@ bodies, label contents, raw text, private paths, or expected action bodies.
 Before connecting the CLI to Makefile, release-quality, or CI, review the
 [learner-state sequence audit CLI integration design](learner_state_sequence_audit_cli_integration_design.md)
 and confirm staged integration keeps logs safe and count-only.
+Before adding the learner-state audit Makefile target to the release-quality
+wrapper, review the
+[learner-state sequence audit release-quality integration design](learner_state_sequence_audit_release_quality_integration_design.md)
+and confirm wrapper logs remain safe and count-only.
 
 ## 7. Checks To Run
 
