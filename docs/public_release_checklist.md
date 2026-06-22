@@ -468,6 +468,14 @@ summary if visible, and log safety review status. Do not paste raw GitHub
 Actions logs, JSONL rows, fixture row contents, generated output bodies, label
 or manifest bodies, expected action bodies, private paths, or performance
 metrics.
+After recording the estimator input validation remote/manual Release Quality
+run, review
+[learner-state estimator input release-quality remote run status](status/learner_state_estimator_input_release_quality_remote_run_status.md)
+and confirm it includes only high-level metadata, count-only audit/exporter/
+estimator input summaries, log safety review status, scope limitations, and
+non-goals. It must not include raw logs, JSONL row bodies, feature or label
+rows, generated manifest bodies, expected action bodies, private paths, or
+performance metrics.
 
 ## 7. Checks To Run
 

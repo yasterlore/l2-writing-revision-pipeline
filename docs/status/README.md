@@ -21,6 +21,9 @@ Available markers:
 - [Learner-state exporter release-quality remote run status](learner_state_exporter_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after learner-state exporter CLI
   smoke integration.
+- [Learner-state estimator input release-quality remote run status](learner_state_estimator_input_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after learner-state estimator
+  input validation integration.
 
 Related recap:
 
