@@ -257,6 +257,9 @@ Public output should be safe even when the audit fails.
 For the future exporter boundary that should call this audit on generated
 feature, label, and manifest files, see
 [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md).
+For the future upstream fixture contract that should feed the exporter without
+mixing labels, future fields, or raw bodies into feature-like inputs, see
+[Learner-state sequence exporter input fixture design](learner_state_sequence_exporter_input_fixture_design.md).
 
 ## 13. Failure Policy
 

@@ -247,6 +247,9 @@ documentation should use count-only summaries and schema field names.
 
 For the future exporter boundary that would generate these files, see
 [Learner-state sequence exporter design](learner_state_sequence_exporter_design.md).
+For the future synthetic input fixture contract that would feed that exporter,
+see
+[Learner-state sequence exporter input fixture design](learner_state_sequence_exporter_input_fixture_design.md).
 
 ## 11. Validation / Audit Design
 
