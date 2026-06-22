@@ -1,0 +1,14 @@
+{
+  "content_suppressed": true,
+  "expected_failure_category": null,
+  "expected_failure_reason": null,
+  "expected_policy_schema_version": "frozen_selective_prediction_policy_schema_v0_1",
+  "expected_policy_status": "safe_generated_policy_expected",
+  "expected_stage": null,
+  "fixture_case_id": "valid/identity_temperature_fixed_threshold",
+  "no_oracle_checked": true,
+  "no_raw_rows": true,
+  "synthetic_only": true,
+  "test_tuning_checked": true,
+  "validation_status": "pass"
+}

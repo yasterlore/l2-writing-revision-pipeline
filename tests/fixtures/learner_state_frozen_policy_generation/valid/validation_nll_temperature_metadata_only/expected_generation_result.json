@@ -1,0 +1,13 @@
+{
+  "content_suppressed": true,
+  "expected_failure_category": null,
+  "expected_failure_reason": null,
+  "expected_frozen_policy_validation_status": "pass",
+  "expected_output_status": "safe_metadata_expected",
+  "expected_stage": null,
+  "generation_status": "pass",
+  "no_oracle_checked": true,
+  "no_raw_rows": true,
+  "synthetic_only": true,
+  "test_tuning_checked": true
+}

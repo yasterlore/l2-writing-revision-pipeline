@@ -327,6 +327,10 @@ It defines the future fixture root, valid/invalid case structure, request and
 pointer files, expected generation result metadata, and reason-code mapping
 without creating fixtures.
 
+Step236 creates the initial fixture metadata under
+`tests/fixtures/learner_state_frozen_policy_generation/` without adding
+generator code, generated policy artifacts, or release-quality integration.
+
 ## 16. Testing Plan For Future Implementation
 
 Future tests should cover:
@@ -355,12 +359,14 @@ Recommended staging:
 1. Design the generator scaffold.
 2. Design synthetic generator fixtures. Step235 adds the docs-only fixture
    design for this stage.
-3. Implement minimal generator with fixture tests.
-4. Add a safe CLI design and implementation.
-5. Add a standalone Makefile target.
-6. Review output/log safety.
-7. Integrate into release-quality only after standalone safety is stable.
-8. Record a public-safe remote/manual run status if integrated later.
+3. Create initial synthetic generator fixtures. Step236 adds metadata-only
+   fixture files for this stage.
+4. Implement minimal generator with fixture tests.
+5. Add a safe CLI design and implementation.
+6. Add a standalone Makefile target.
+7. Review output/log safety.
+8. Integrate into release-quality only after standalone safety is stable.
+9. Record a public-safe remote/manual run status if integrated later.
 
 This mirrors the Milestone 10 pattern and keeps release-quality from running
 unstable generation code too early.
@@ -412,6 +418,7 @@ real-data-ready.
 - Step234: initial frozen policy generation scaffold design creation.
 - Step235: linked the frozen policy generation fixture design as the next
   docs-only planning step.
+- Step236: linked the initial frozen policy generation fixture root.
 
 ## Related Documents
 
@@ -419,6 +426,7 @@ real-data-ready.
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
+- [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md)

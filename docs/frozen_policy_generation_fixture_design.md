@@ -35,8 +35,9 @@ synthetic-only inputs, that it can:
 - refuse unsafe generation attempts fail-closed
 - report only safe expected generation metadata
 
-This document does not create the fixture root, fixture directories, fixture
-files, generated artifacts, or validator/generator code.
+Step236 creates the initial synthetic fixture root and metadata files described
+by this design. It still does not create generated artifacts or
+validator/generator code.
 
 ## 2. One-Sentence Summary
 
@@ -71,7 +72,9 @@ Reason:
   artifact expectations
 - avoids very long path names
 
-This step does not create the root.
+Step236 creates the root with initial synthetic-only fixture metadata:
+
+- [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 
 ## 4. Fixture Case Structure
 
@@ -95,8 +98,9 @@ Future invalid fixture candidates:
 - `invalid/frozen_policy_validator_failure/`
 
 The invalid fixtures are synthetic safety cases. They should be used to ensure
-the generator refuses unsafe requests or unsafe generated artifacts. This
-document does not create these directories.
+the generator refuses unsafe requests or unsafe generated artifacts. Step236
+creates the initial valid and invalid directories as metadata-only fixture
+cases.
 
 ## 5. Fixture File Set
 
@@ -109,6 +113,9 @@ Future per-case files:
 | `expected_frozen_policy_validation_result.json` | Safe expected result for the generated artifact after frozen policy validation |
 | `expected_generation_result.json` | Safe expected result for generator behavior and failure reason matching |
 | `README.md` | Optional short case or root explanation |
+
+Step236 fixture files are safe metadata files only. They do not include
+generated frozen policy artifact bodies.
 
 The fixture files should not duplicate prediction rows, label rows, split
 metadata bodies, calibration policy bodies, logits/probability dumps, frozen
@@ -451,10 +458,13 @@ followed the synthetic fixture contract and safety boundaries.
 ## 19. Update History
 
 - Step235: initial frozen policy generation fixture design creation.
+- Step236: initial synthetic frozen policy generation fixture files created
+  under `tests/fixtures/learner_state_frozen_policy_generation/`.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
+- [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Frozen selective prediction policy schema design](frozen_selective_prediction_policy_schema_design.md)

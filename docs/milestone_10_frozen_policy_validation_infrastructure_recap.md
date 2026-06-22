@@ -293,21 +293,24 @@ Recommended priority order:
 2. Frozen policy generation fixture design: completed in Step235 as a
    docs-only plan for future synthetic generator requests, input pointers,
    expected generation results, and fail-closed generation reason codes.
-3. Calibration scaffold fixture design: define synthetic inputs and expected
+3. Initial frozen policy generation fixture files: completed in Step236 as
+   synthetic-only request, pointer, expected-generation-result, and expected
+   frozen-policy-validation-result metadata fixtures.
+4. Calibration scaffold fixture design: define synthetic inputs and expected
    outputs for validation-only calibration scaffold work.
-4. Validation-only temperature scaling scaffold design: specify how future
+5. Validation-only temperature scaling scaffold design: specify how future
    validation labels may choose temperature without test-label tuning.
-5. Fixed abstention threshold scaffold design: specify validation-only
+6. Fixed abstention threshold scaffold design: specify validation-only
    threshold selection for a frozen abstention policy.
-6. Safe frozen policy generation implementation: create minimal synthetic-only
+7. Safe frozen policy generation implementation: create minimal synthetic-only
    generation after the design and fixtures are stable.
-7. Calibration scaffold implementation: implement only after safe inputs,
+8. Calibration scaffold implementation: implement only after safe inputs,
    frozen policy schema, and validator boundaries remain stable.
-8. Remote run record workflow reuse: keep future remote records metadata-only
+9. Remote run record workflow reuse: keep future remote records metadata-only
    and count-only.
-9. Minimal learner-state estimator prototype design: plan only after the
+10. Minimal learner-state estimator prototype design: plan only after the
    calibration and frozen policy contract layers are stable.
-10. Real-data readiness review: postpone to a private or institution-approved
+11. Real-data readiness review: postpone to a private or institution-approved
    review path.
 
 Future work should stay staged. It should not combine real-data readiness,
@@ -359,6 +362,7 @@ calibrated, production-ready, or real-data-ready.
   staged docs-only follow-up.
 - Step235: linked the frozen policy generation fixture design as the next
   synthetic fixture planning follow-up.
+- Step236: linked the initial frozen policy generation fixture root.
 
 ## Related Documents
 
@@ -373,5 +377,6 @@ calibrated, production-ready, or real-data-ready.
 - [Learner-state frozen policy release-quality remote run status](status/learner_state_frozen_policy_release_quality_remote_run_status.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
+- [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)
 - [Frozen policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md)
 - [Public release checklist](public_release_checklist.md)

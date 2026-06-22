@@ -1,0 +1,42 @@
+{
+  "content_suppressed": true,
+  "generation_request_schema_version": "frozen_policy_generation_request_schema_v0_1",
+  "output_policy": {
+    "do_not_write_manual_run_outputs": true,
+    "expected_artifact_filename": "frozen_selective_prediction_policy.json",
+    "output_path_policy": "fixture_relative_only",
+    "require_frozen_policy_validator_pass": true,
+    "write_artifact": true
+  },
+  "request_id": "synthetic_generation_identity_temperature_fixed_abstention_rate",
+  "safety_policy": {
+    "forbid_label_body": true,
+    "forbid_model_score_vector_dump": true,
+    "forbid_metric_claims": true,
+    "forbid_policy_body_dump": true,
+    "forbid_private_paths": true,
+    "forbid_probability_vectors": true,
+    "forbid_content_rows": true,
+    "forbid_test_tuning": true,
+    "require_learner_disjoint_split": true,
+    "require_selective_prediction_validator_pass": true,
+    "require_validation_split": true
+  },
+  "source_selective_prediction_fixture": "tests/fixtures/learner_state_selective_prediction/valid/minimal_validation_test_split",
+  "synthetic_only": true,
+  "temperature_policy": {
+    "metadata_only": true,
+    "selection_method": "none_identity",
+    "source_split": "none_identity",
+    "temperature_value": 1.0,
+    "validation_only": true
+  },
+  "threshold_policy": {
+    "allowed_abstention_rate": 0.1,
+    "metadata_only": true,
+    "selection_method": "fixed_abstention_rate",
+    "source_split": "validation",
+    "threshold_value": 0.65,
+    "validation_only": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "content_suppressed": true,
+  "expected_selective_prediction_validation_status": "pass",
+  "label_in_prediction_row_expected": false,
+  "learner_disjoint_expected": true,
+  "no_raw_rows": true,
+  "pointer_id": "synthetic_pointer_private_path_output",
+  "pointer_schema_version": "frozen_policy_generation_input_pointer_schema_v0_1",
+  "source_selective_prediction_fixture": "tests/fixtures/learner_state_selective_prediction/valid/minimal_validation_test_split",
+  "test_tuning_expected": false,
+  "validation_split_available": true
+}

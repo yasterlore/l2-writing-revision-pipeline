@@ -1,0 +1,13 @@
+{
+  "content_suppressed": true,
+  "expected_failure_category": "test_tuning_leakage",
+  "expected_failure_reason": "test_threshold_tuning",
+  "expected_frozen_policy_validation_status": "not_applicable",
+  "expected_output_status": "not_written",
+  "expected_stage": "threshold_policy",
+  "generation_status": "fail",
+  "no_oracle_checked": true,
+  "no_raw_rows": true,
+  "synthetic_only": true,
+  "test_tuning_checked": true
+}

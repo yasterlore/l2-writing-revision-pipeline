@@ -1,0 +1,13 @@
+{
+  "content_suppressed": true,
+  "expected_failure_category": "performance_claim",
+  "expected_failure_reason": "performance_claim_in_generated_policy",
+  "expected_frozen_policy_validation_status": "not_applicable",
+  "expected_output_status": "not_written",
+  "expected_stage": "pre_write_safety_scan",
+  "generation_status": "fail",
+  "no_oracle_checked": true,
+  "no_raw_rows": true,
+  "synthetic_only": true,
+  "test_tuning_checked": true
+}
