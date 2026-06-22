@@ -2,14 +2,18 @@
 
 ## 1. Purpose
 
-This document designs a future CLI for the frozen selective prediction policy
+This document records the CLI design for the frozen selective prediction policy
 validator. The goal is to make the synthetic frozen policy fixture validation
 safe to run with `python -m`, while preserving fixture-root expected-result
 matching, safe human output, safe JSON output, and clear exit codes.
 
-This is not an implementation. It does not add a CLI, Makefile target,
-release-quality integration, calibration, selective prediction, estimator
-training, metric computation, or real-data readiness.
+Step226 implements the minimal CLI described here in
+`python/learner_state/frozen_policy_validation.py` and adds CLI tests in
+`python/learner_state/tests/test_frozen_policy_validation_cli.py`.
+
+This design and implementation do not add a Makefile target, release-quality
+integration, calibration, selective prediction, estimator training, metric
+computation, or real-data readiness.
 
 ## 2. Current State
 
@@ -24,7 +28,7 @@ Current assets:
 - eleven intentional invalid fixtures exist under `invalid/`
 - fixture-based unittest exists in
   `python/learner_state/tests/test_frozen_policy_validation.py`
-- CLI does not exist yet
+- CLI exists at `python -m learner_state.frozen_policy_validation`
 - Makefile target does not exist yet
 - release-quality integration does not exist yet
 
@@ -45,7 +49,7 @@ Alternative:
 PYTHONPATH=python python3 -m learner_state.frozen_policy_validation_cli
 ```
 
-The initial recommendation is to add `main()` to
+Step226 follows the recommendation and adds `main()` to
 `python/learner_state/frozen_policy_validation.py`, matching the existing
 module-style pattern used by nearby learner-state validators. This keeps the
 public CLI close to the public API and avoids another small forwarding module.
@@ -265,12 +269,12 @@ Validation logic should remain in the API. CLI helpers should only handle
 argument parsing, fixture-case/root orchestration, expected-result matching,
 safe summary formatting, JSON serialization, and exit code translation.
 
-CLI tests should be added separately in the future. The API remains the
+CLI tests should stay separate from the API fixture tests. The API remains the
 primary implementation surface for unit tests and future scaffold integration.
 
-## 13. Testing Plan For Future Implementation
+## 13. Testing Plan
 
-Future CLI tests should cover:
+Step226 adds fixture-based CLI tests that cover:
 
 - `--help` exits `0`
 - valid single case exits `0`
@@ -298,12 +302,11 @@ This step does not add a Makefile target and does not modify release-quality.
 
 Recommended future sequence:
 
-1. implement minimal CLI
-2. add CLI tests and log-safety assertions
-3. design a Makefile target
-4. implement the Makefile target
-5. review log safety
-6. design and implement release-quality integration
+1. minimal CLI and CLI tests. Completed in Step226.
+2. design a Makefile target.
+3. implement the Makefile target.
+4. review log safety.
+5. design and implement release-quality integration.
 
 Release-quality should not be connected until the CLI is implemented and its
 human and JSON outputs are confirmed safe.
@@ -328,9 +331,8 @@ The CLI must not:
 
 ## 16. What This Does Not Do
 
-This document does not:
+This document and Step226 implementation do not:
 
-- implement CLI
 - add a Makefile target
 - change release-quality
 - implement calibration

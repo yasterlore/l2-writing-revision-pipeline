@@ -443,6 +443,13 @@ Step225 adds the
 as a docs-only plan for future command-line fixture validation, safe
 human/JSON output, expected-result matching, and exit-code behavior.
 
+Step226 implements that minimal CLI in
+`python/learner_state/frozen_policy_validation.py` and adds
+`python/learner_state/tests/test_frozen_policy_validation_cli.py`. The CLI
+still validates only synthetic fixtures and does not create frozen policy
+artifacts, compute calibration metrics, or connect to Makefile or
+release-quality.
+
 ## 19. What This Does Not Prove
 
 This schema design does not prove:
