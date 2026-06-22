@@ -309,6 +309,12 @@ Recommended staged plan:
 The exporter CLI should not be added directly to release-quality until the
 command behavior, exit codes, and log safety have stabilized.
 
+Step 184 follow-up: see
+[Learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md)
+for the docs-only plan for a future standalone exporter CLI smoke target,
+including target name, tmp output policy, cleanup policy, safe logging, and
+release-quality timing. That follow-up does not modify the Makefile or wrapper.
+
 ## 14. No-Oracle / Synthetic-Only Policy
 
 The CLI must preserve:

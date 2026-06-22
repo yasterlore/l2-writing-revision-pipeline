@@ -351,6 +351,12 @@ input mode for now, writes to explicit safe output directories, reports only
 safe human or JSON summaries, fails closed for invalid fixtures and unsafe
 output paths, and does not print generated JSONL rows, label bodies, manifest
 bodies, malformed-line contents, private paths, or raw logs.
+Before adding an exporter CLI Makefile target, review
+[learner-state sequence exporter Makefile target design](learner_state_sequence_exporter_makefile_target_design.md)
+and confirm the target remains standalone initially, writes only under a
+dedicated `tmp/` smoke output root, avoids fixture roots and private/real-data
+paths, does not cat generated files, and is not added directly to
+release-quality or CI before log safety review.
 
 ## 7. Checks To Run
 
