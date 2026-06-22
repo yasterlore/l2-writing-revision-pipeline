@@ -698,6 +698,16 @@ introduced. The design must not paste frozen policy artifact bodies, JSON
 bodies, raw rows, logits/probability dumps, label/split/calibration policy
 bodies, private paths, raw learner text, GitHub raw logs, or performance
 claims.
+For Step235, review the
+[frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
+and confirm it remains docs-only: no fixture root, fixture files, generator,
+calibration code, selective prediction code, estimator code, metric
+computation, workflow change, wrapper change, Makefile change, Python change,
+test change, or existing fixture change is introduced. The design must use
+safe fixture pointers and expected-result metadata only, without pasting
+prediction rows, label rows, generated frozen policy bodies, JSON bodies,
+logits/probability dumps, private paths, raw learner text, GitHub raw logs, or
+performance claims.
 
 ## 7. Checks To Run
 

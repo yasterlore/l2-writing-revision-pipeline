@@ -496,6 +496,7 @@ safe-output boundaries.
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
+- [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen selective prediction policy fixture design](frozen_selective_prediction_policy_fixture_design.md)
 - [Frozen selective prediction policy validation design](frozen_selective_prediction_policy_validation_design.md)
 - [Frozen policy validator CLI design](frozen_policy_validator_cli_design.md)

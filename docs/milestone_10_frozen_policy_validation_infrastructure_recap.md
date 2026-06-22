@@ -290,21 +290,24 @@ Recommended priority order:
 1. Frozen policy generation scaffold design: completed in Step234 as a
    docs-only plan for writing a safe metadata-only frozen policy artifact
    after validator pass.
-2. Calibration scaffold fixture design: define synthetic inputs and expected
+2. Frozen policy generation fixture design: completed in Step235 as a
+   docs-only plan for future synthetic generator requests, input pointers,
+   expected generation results, and fail-closed generation reason codes.
+3. Calibration scaffold fixture design: define synthetic inputs and expected
    outputs for validation-only calibration scaffold work.
-3. Validation-only temperature scaling scaffold design: specify how future
+4. Validation-only temperature scaling scaffold design: specify how future
    validation labels may choose temperature without test-label tuning.
-4. Fixed abstention threshold scaffold design: specify validation-only
+5. Fixed abstention threshold scaffold design: specify validation-only
    threshold selection for a frozen abstention policy.
-5. Safe frozen policy generation implementation: create minimal synthetic-only
+6. Safe frozen policy generation implementation: create minimal synthetic-only
    generation after the design and fixtures are stable.
-6. Calibration scaffold implementation: implement only after safe inputs,
+7. Calibration scaffold implementation: implement only after safe inputs,
    frozen policy schema, and validator boundaries remain stable.
-7. Remote run record workflow reuse: keep future remote records metadata-only
+8. Remote run record workflow reuse: keep future remote records metadata-only
    and count-only.
-8. Minimal learner-state estimator prototype design: plan only after the
+9. Minimal learner-state estimator prototype design: plan only after the
    calibration and frozen policy contract layers are stable.
-9. Real-data readiness review: postpone to a private or institution-approved
+10. Real-data readiness review: postpone to a private or institution-approved
    review path.
 
 Future work should stay staged. It should not combine real-data readiness,
@@ -354,6 +357,8 @@ calibrated, production-ready, or real-data-ready.
 - Step233: initial Milestone 10 recap creation.
 - Step234: linked the frozen policy generation scaffold design as the next
   staged docs-only follow-up.
+- Step235: linked the frozen policy generation fixture design as the next
+  synthetic fixture planning follow-up.
 
 ## Related Documents
 
@@ -367,5 +372,6 @@ calibrated, production-ready, or real-data-ready.
 - [Frozen policy release-quality remote run record workflow](frozen_policy_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy release-quality remote run status](status/learner_state_frozen_policy_release_quality_remote_run_status.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
+- [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy fixtures](../tests/fixtures/learner_state_frozen_selective_prediction_policy/README.md)
 - [Public release checklist](public_release_checklist.md)
