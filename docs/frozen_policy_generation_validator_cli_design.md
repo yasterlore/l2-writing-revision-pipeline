@@ -414,9 +414,12 @@ accidentally expose raw rows, labels, logits, paths, or misleading metrics.
 - Step242: standalone Makefile target
   `make check-learner-state-frozen-policy-generation` implemented; release-quality
   wrapper and workflows remain unchanged.
+- Step243: linked the frozen policy generation release-quality integration
+  design; CLI behavior remains unchanged.
 
 ## Related Documents
 
+- [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation fixtures](../tests/fixtures/learner_state_frozen_policy_generation/README.md)

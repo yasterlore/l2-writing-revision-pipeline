@@ -776,6 +776,18 @@ tests, and fixtures unchanged. The target must not print request bodies, input
 pointer bodies, generated artifact bodies, raw rows, logits/probability dumps,
 private paths, raw learner text, raw GitHub logs, or performance claims, and
 it remains outside release-quality until a separate integration review.
+For Step243, review the
+[frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
+and confirm it remains docs-only: no release-quality wrapper change, workflow
+change, Makefile change, Python code change, test change, fixture change,
+generator code, calibration/selective prediction logic, metric computation, or
+real-data readiness claim is introduced. The design must specify wrapper
+placement after frozen policy validation and before config/scoring smoke
+checks, wrapper command, label, log-safety policy, failure interpretation,
+remote/manual run recording policy, and future implementation tests without
+printing request bodies, input pointer bodies, generated artifact bodies, raw
+rows, logits/probability dumps, private paths, raw learner text, raw GitHub
+logs, or performance claims.
 
 ## 7. Checks To Run
 
