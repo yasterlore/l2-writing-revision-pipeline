@@ -1340,6 +1340,22 @@ request/pointer bodies, expected result bodies, artifact bodies, generated
 policy bodies, raw rows, logits, private paths, raw learner text, or
 performance claims.
 
+For Step283, review
+`python/learner_state/frozen_policy_generation_generator_scaffold_fixture_validation.py`,
+`python/learner_state/tests/test_frozen_policy_generation_generator_scaffold_fixture_validation_cli.py`,
+and the
+[frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md).
+Confirm the CLI is only a safe metadata-only wrapper over the existing
+validator APIs: no Makefile target, release-quality wrapper change, GitHub
+Actions workflow change, fixture change, generator code, artifact-body
+generation, artifact file writing, calibration/selective prediction logic,
+estimator work, metric computation, real-data use, or real-data readiness
+claim is introduced. Confirm root and case modes expose only safe human/JSON
+summaries, preserve the exit-code boundary, and avoid raw logs,
+request/pointer bodies, expected result bodies, artifact bodies, generated
+policy bodies, raw rows, logits, private paths, raw learner text, and
+performance claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

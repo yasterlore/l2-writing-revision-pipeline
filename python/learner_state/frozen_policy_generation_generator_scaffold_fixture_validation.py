@@ -7,7 +7,9 @@ calibration, run selective prediction, train an estimator, or compute metrics.
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -57,6 +59,24 @@ EXPECTED_INVALID_REASONS = {
     "invalid/test_threshold_tuning": "test_threshold_tuning",
     "invalid/unknown_schema_version": "unknown_schema_version",
     "invalid/unvalidated_input": "unvalidated_input",
+}
+
+EXPECTED_INVALID_FAILED_CHECKS = {
+    "artifact_file_writing_not_allowed": "generated_artifact_written",
+    "generated_artifact_body_leakage": "artifact_body_suppressed",
+    "logits_dump_carryover": "no_logits_dump",
+    "missing_required_field": "required_metadata_field",
+    "missing_validation_reference": "validation_reference_ids",
+    "performance_claim_in_generated_policy": "no_performance_claims",
+    "pointer_body_leakage": "pointer_body_suppressed",
+    "private_path_output": "no_private_paths",
+    "raw_rows_carryover": "no_raw_rows",
+    "request_body_leakage": "request_body_suppressed",
+    "scoring_feedback_violation": "scoring_feedback_checked",
+    "test_temperature_tuning": "temperature_policy_source",
+    "test_threshold_tuning": "threshold_policy_source",
+    "unknown_schema_version": "schema_version",
+    "unvalidated_input": "validated_input_status",
 }
 
 REQUIRED_FILES = (
@@ -859,10 +879,20 @@ def _build_expected_contract_result(
     artifact_flags = dict(expected.get("artifact_flags", {}))
     safety_flags = dict(expected.get("safety_flags", {}))
     count_summary = dict(expected.get("count_summary", {}))
+    reason_codes = (
+        []
+        if fixture.case_category == "valid"
+        else [EXPECTED_INVALID_REASONS.get(fixture.case_label, "unknown_fixture_case")]
+    )
+    failed_checks = [
+        EXPECTED_INVALID_FAILED_CHECKS[reason]
+        for reason in reason_codes
+        if reason in EXPECTED_INVALID_FAILED_CHECKS
+    ]
     return GeneratorScaffoldFixtureValidationResult(
-        generation_status=expected.get("generation_status"),
-        reason_codes=list(expected.get("reason_codes", [])),
-        failed_checks=list(expected.get("failed_checks", [])),
+        generation_status="pass" if fixture.case_category == "valid" else "fail",
+        reason_codes=reason_codes,
+        failed_checks=failed_checks,
         failure_categories=(
             []
             if expected.get("generation_status") == "pass"
@@ -996,3 +1026,181 @@ def _safe_scalar_or_collection(value: Any) -> Any:
             if isinstance(item, (str, int, float, bool)) or item is None
         }
     return type(value).__name__
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Validate synthetic frozen policy generation generator scaffold "
+            "fixtures with safe metadata-only output."
+        )
+    )
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument(
+        "--fixture-root",
+        type=Path,
+        help="Synthetic generator scaffold fixture root to validate.",
+    )
+    group.add_argument(
+        "--fixture-case",
+        type=Path,
+        help="Single synthetic generator scaffold fixture case to validate.",
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit safe machine-readable summary JSON.",
+    )
+
+    try:
+        args = parser.parse_args(argv)
+        selected_path = args.fixture_root or args.fixture_case
+        if _is_unsafe_cli_path(selected_path):
+            _emit_cli_payload(_cli_input_error_payload("unsafe_path"), args.json)
+            return 2
+        if args.fixture_root is not None:
+            return _run_fixture_root_cli(args.fixture_root, args.json)
+        return _run_fixture_case_cli(args.fixture_case, args.json)
+    except SystemExit:
+        raise
+    except Exception:
+        _emit_cli_payload(_cli_input_error_payload("internal_error"), False)
+        return 1
+
+
+def _run_fixture_root_cli(fixture_root: Path, json_output: bool) -> int:
+    result = validate_generator_scaffold_fixture_root(fixture_root)
+    payload = summarize_generator_scaffold_fixture_validation_result(result)
+    _emit_cli_payload(payload, json_output)
+    if result.input_error_cases:
+        return 2
+    if result.mismatched_cases:
+        return 3
+    return 0
+
+
+def _run_fixture_case_cli(fixture_case: Path, json_output: bool) -> int:
+    result = validate_generator_scaffold_fixture_case(fixture_case)
+    payload = result.to_safe_dict()
+    payload["mode"] = "fixture_case"
+    payload["case_label"] = _safe_case_label(fixture_case)
+    payload["category"] = result.case_category or _safe_case_category(fixture_case)
+    payload["expected_status"] = _expected_status_for_case(fixture_case)
+
+    if result.generation_status == "input_error":
+        payload["matched"] = False
+        payload["expected_result_matched"] = False
+        payload["mismatch_count"] = 0
+        payload["mismatch_fields"] = []
+        _emit_cli_payload(payload, json_output)
+        return 2
+
+    try:
+        expected = load_expected_generator_scaffold_result(fixture_case)
+        mismatches = compare_generator_scaffold_fixture_to_expected(result, expected)
+    except (OSError, json.JSONDecodeError, ValueError):
+        payload.update(_cli_input_error_payload("malformed_expected_result"))
+        payload["mode"] = "fixture_case"
+        payload["case_label"] = _safe_case_label(fixture_case)
+        payload["category"] = result.case_category or _safe_case_category(fixture_case)
+        payload["expected_status"] = _expected_status_for_case(fixture_case)
+        payload["matched"] = False
+        payload["expected_result_matched"] = False
+        payload["mismatch_count"] = 0
+        payload["mismatch_fields"] = []
+        _emit_cli_payload(payload, json_output)
+        return 2
+
+    payload["matched"] = not mismatches
+    payload["expected_result_matched"] = not mismatches
+    payload["mismatch_count"] = len(mismatches)
+    payload["mismatch_fields"] = [mismatch.field_name for mismatch in mismatches]
+    payload["mismatches"] = [_safe_mismatch_summary(mismatch) for mismatch in mismatches]
+    _emit_cli_payload(payload, json_output)
+    return 0 if not mismatches else 3
+
+
+def _safe_mismatch_summary(
+    mismatch: GeneratorScaffoldFixtureComparisonResult,
+) -> dict[str, Any]:
+    return {
+        "field_name": mismatch.field_name,
+        "expected_value": _safe_scalar_or_collection(mismatch.expected_value),
+        "actual_value": _safe_scalar_or_collection(mismatch.actual_value),
+    }
+
+
+def _cli_input_error_payload(reason_code: str) -> dict[str, Any]:
+    return {
+        "validation_schema_version": VALIDATION_SCHEMA_VERSION,
+        "mode": "input_error",
+        "generation_status": "input_error",
+        "validation_status": "input_error",
+        "reason_codes": [reason_code],
+        "failed_checks": [reason_code],
+        "content_suppressed": True,
+        "no_raw_rows": True,
+        "no_logits_dump": True,
+        "no_private_paths": True,
+        "synthetic_only_checked": True,
+        "no_oracle_checked": True,
+        "artifact_policy_checked": True,
+        "body_suppression_checked": True,
+        "file_writing_checked": True,
+    }
+
+
+def _emit_cli_payload(payload: dict[str, Any], json_output: bool) -> None:
+    if json_output:
+        print(json.dumps(payload, sort_keys=True))
+        return
+    for key in sorted(payload):
+        value = payload[key]
+        if isinstance(value, bool):
+            value_text = "true" if value else "false"
+        elif isinstance(value, (list, tuple)):
+            value_text = ",".join(str(item) for item in value) if value else "none"
+        elif isinstance(value, dict):
+            value_text = json.dumps(value, sort_keys=True, separators=(",", ":"))
+        else:
+            value_text = str(value)
+        print(f"{key}={value_text}")
+
+
+def _is_unsafe_cli_path(path: Path) -> bool:
+    path_text = str(path)
+    unsafe_parts = {"real_data", "participant_data", "private_data", "manual_outputs"}
+    if set(Path(path).parts).intersection(unsafe_parts):
+        return True
+    return any(part in path_text for part in unsafe_parts)
+
+
+def _safe_case_label(path: Path) -> str:
+    parts = Path(path).parts
+    for marker in ("valid", "invalid"):
+        if marker in parts:
+            index = parts.index(marker)
+            return "/".join(parts[index:])
+    return Path(path).name
+
+
+def _safe_case_category(path: Path) -> str | None:
+    parts = Path(path).parts
+    if "valid" in parts:
+        return "valid"
+    if "invalid" in parts:
+        return "invalid"
+    return None
+
+
+def _expected_status_for_case(path: Path) -> str | None:
+    category = _safe_case_category(path)
+    if category == "valid":
+        return "pass"
+    if category == "invalid":
+        return "fail"
+    return None
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

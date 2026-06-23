@@ -380,6 +380,12 @@ It remains docs-only and does not introduce CLI code, Makefile target,
 release-quality generator integration, generator code, artifact body
 generation, artifact file writing, metrics, or real-data readiness.
 
+Step283 implements the safe CLI for the metadata-only generator scaffold
+fixture validator and adds focused CLI tests. It still does not introduce a
+Makefile target, release-quality generator integration, generator code,
+artifact body generation, artifact file writing, metrics, workflow changes, or
+real-data readiness.
+
 ## 14. Beginner-Friendly Explanation
 
 Runtime infrastructure is the code, tests, CLI, Makefile target, release-quality
@@ -422,6 +428,9 @@ written, no artifact body is produced, and no performance metric is computed.
   status before CLI, Makefile, release-quality, or generator implementation.
 - Step282: linked the generator scaffold fixture validator CLI design as the
   next docs-only boundary before CLI implementation.
+- Step283: linked the generator scaffold fixture validator CLI implementation
+  status before Makefile, release-quality, workflow, or generator
+  implementation.
 
 ## Related Documents
 

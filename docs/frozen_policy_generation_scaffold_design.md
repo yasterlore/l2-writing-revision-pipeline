@@ -691,6 +691,11 @@ It keeps CLI implementation, Makefile targets, release-quality integration,
 generator code, artifact body generation, artifact writing, metrics, and
 real-data behavior out of scope.
 
+Step283 implements that safe CLI boundary for the fixture validator. It keeps
+the generator scaffold itself unimplemented and does not add Makefile targets,
+release-quality integration, artifact body generation, artifact writing,
+metrics, fixtures, or workflow changes.
+
 ## 21. Update History
 
 - Step234: initial frozen policy generation scaffold design creation.
@@ -737,6 +742,10 @@ real-data behavior out of scope.
   implementation, Makefile target, release-quality generator integration,
   generator code, artifact body generation, artifact writing, metrics, and
   real-data behavior remain out of scope.
+- Step283: linked the metadata-only fixture validator CLI implementation;
+  Makefile target, release-quality generator integration, generator code,
+  artifact body generation, artifact writing, metrics, fixtures, and workflow
+  changes remain out of scope.
 
 ## Related Documents
 
