@@ -377,8 +377,6 @@ if the boundary is not enforced.
 
 Recommended next steps:
 
-- CLI implementation
-- CLI tests
 - Makefile target design
 - Makefile target implementation
 - release-quality integration design
@@ -389,8 +387,15 @@ work.
 ## 18. Docs Update
 
 This Step282 document links the implemented metadata-only fixture validator to
-a future CLI boundary. It does not add code, tests, fixtures, Makefile targets,
-wrapper changes, workflow changes, artifact bodies, generated policy bodies,
+a future CLI boundary.
+
+Step283 implements that CLI boundary in
+`python/learner_state/frozen_policy_generation_generator_scaffold_fixture_validation.py`
+and adds focused CLI tests at
+`python/learner_state/tests/test_frozen_policy_generation_generator_scaffold_fixture_validation_cli.py`.
+The implementation is still a thin validator wrapper only: it does not add a
+Makefile target, release-quality wrapper change, workflow change, fixture
+change, generator code, artifact body generation, artifact file writing,
 metrics, or real-data readiness.
 
 Related docs:
@@ -406,3 +411,6 @@ Related docs:
 
 - Step282: initial docs-only CLI design for the metadata-only generator
   scaffold fixture validator.
+- Step283: recorded CLI implementation status and focused CLI tests for safe
+  root/case human and JSON summaries; Makefile, release-quality, workflow,
+  generator, artifact body, and artifact writing remain out of scope.

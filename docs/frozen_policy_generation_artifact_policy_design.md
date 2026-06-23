@@ -408,6 +408,11 @@ The artifact policy remains unchanged: CLI output must stay metadata-only,
 must not expose request/pointer/expected-result bodies, must not expose
 artifact bodies or generated policy bodies, and must not write files.
 
+Step283 implements that CLI while preserving the same artifact policy:
+metadata-only summaries, no artifact body, no generated policy body, no file
+writing, no Makefile target, no release-quality integration, and no generator
+execution.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)

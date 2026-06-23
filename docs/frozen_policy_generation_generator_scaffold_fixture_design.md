@@ -468,6 +468,11 @@ The CLI design keeps output metadata-only and does not implement CLI code,
 Makefile targets, release-quality integration, generator code, artifact body
 generation, or artifact writing.
 
+Step283 implements that safe validator CLI and focused tests. The fixture root
+itself remains unchanged, and the CLI still does not run a generator, write
+artifacts, expose fixture bodies, add a Makefile target, or change
+release-quality.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)

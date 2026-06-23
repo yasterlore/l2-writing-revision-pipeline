@@ -636,6 +636,11 @@ That design covers entrypoint, arguments, exit codes, safe human/JSON output,
 no-body-leakage policy, future CLI tests, and staged Makefile/release-quality
 integration. It does not implement CLI code or change the validator module.
 
+Step283 implements the CLI entrypoint in the validator module and adds focused
+CLI tests. The CLI remains metadata-only and does not execute a generator,
+write artifacts, expose request/pointer/expected-result bodies, add a Makefile
+target, change release-quality, or change workflows.
+
 Related docs:
 
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
@@ -654,3 +659,6 @@ Related docs:
   integration, generator code, and artifact writing remain out of scope.
 - Step282: linked the docs-only CLI design for safe terminal execution of the
   implemented validator; CLI implementation remains future work.
+- Step283: recorded CLI implementation status; Makefile target,
+  release-quality integration, workflow changes, generator code, artifact body
+  generation, and artifact writing remain future work.
