@@ -549,12 +549,22 @@ Recommended next step:
 If uncertainty remains about expected result matching, choose scaffold fixture
 validator design first.
 
+Step250 implements the initial scaffold fixture root at
+`tests/fixtures/learner_state_frozen_policy_generation_scaffold/`.
+It adds three valid metadata-only dry-run cases and eight representative
+invalid metadata-only cases. Scaffold code, scaffold fixture validation code,
+generator code, CLI, Makefile targets, release-quality wrapper changes,
+workflow changes, Python tests, and existing fixtures remain unchanged.
+
 ## 20. Update History
 
 - Step249: initial frozen policy generation scaffold fixture design.
+- Step250: initial scaffold fixture files created under
+  `tests/fixtures/learner_state_frozen_policy_generation_scaffold/`.
 
 ## Related Documents
 
+- [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)

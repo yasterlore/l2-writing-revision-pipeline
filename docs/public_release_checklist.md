@@ -866,6 +866,20 @@ release-quality staging without copying raw logs, request bodies, input
 pointer bodies, generated artifact bodies, frozen policy artifact bodies, JSON
 bodies, raw rows, logits/probability dumps, private paths, raw learner text,
 or performance claims.
+For Step250, review the initial
+[frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
+and confirm the change is fixture-only: no scaffold code, scaffold fixture
+validator, generator code, CLI, Makefile change, wrapper change, workflow
+change, Python code change, Python test change, existing fixture change,
+calibration/selective prediction logic, estimator work, metric computation,
+real-data use, or real-data readiness claim is introduced. The fixture root
+must contain only synthetic metadata files for the initial valid and invalid
+cases, with `generation_request.json`, `input_fixture_pointer.json`, and
+`expected_scaffold_result.json` per case. It must not include raw logs, request
+body dumps, input pointer body dumps, generated artifact bodies, frozen policy
+artifact bodies, raw rows, logits/probability dumps, label bodies, split
+bodies, calibration policy bodies, private paths, raw learner text, real
+participant data, or performance evidence.
 
 ## 7. Checks To Run
 

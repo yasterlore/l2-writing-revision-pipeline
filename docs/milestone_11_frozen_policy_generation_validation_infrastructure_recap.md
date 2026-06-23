@@ -277,6 +277,12 @@ Step249 expands that safer next step in the
 [frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md),
 still without creating fixture files or scaffold code.
 
+Step250 creates the initial synthetic-only scaffold fixture root at
+`tests/fixtures/learner_state_frozen_policy_generation_scaffold/`.
+The new fixture files are metadata-only and do not add scaffold code,
+generator code, CLI, Makefile targets, release-quality changes, workflow
+changes, Python tests, or existing fixture changes.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, CLI commands,
@@ -309,12 +315,14 @@ calibration method works well.
   as the next docs-only safety boundary before scaffold code.
 - Step249: linked the frozen policy generation scaffold fixture design as the
   next docs-only fixture contract.
+- Step250: linked the initial scaffold fixture root implementation.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
+- [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

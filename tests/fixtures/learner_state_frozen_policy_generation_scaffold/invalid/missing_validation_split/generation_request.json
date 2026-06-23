@@ -1,0 +1,35 @@
+{
+  "request_schema_version": "frozen_policy_generation_scaffold_request_schema_v0_1",
+  "request_id": "synthetic_scaffold_missing_validation_split",
+  "generation_mode": "scaffold_dry_run",
+  "dry_run": true,
+  "temperature_policy": {
+    "method": "none_identity",
+    "source_split": "none_identity",
+    "status": "pass"
+  },
+  "threshold_policy": {
+    "method": "fixed_confidence_threshold",
+    "source_split": "validation",
+    "status": "blocked"
+  },
+  "abstention_policy": {
+    "method": "fixed_confidence_threshold",
+    "source_split": "validation",
+    "status": "blocked"
+  },
+  "output_policy": {
+    "artifact_write_mode": "dry_run_metadata_only",
+    "would_write_artifact": false,
+    "artifact_body_suppressed": true,
+    "status": "blocked"
+  },
+  "validation_split_source": "missing",
+  "synthetic_only": true,
+  "no_oracle": true,
+  "no_body_dump": true,
+  "no_raw_rows": true,
+  "no_logits_dump": true,
+  "metadata_only": true,
+  "expected_failure_marker": "missing_validation_split"
+}

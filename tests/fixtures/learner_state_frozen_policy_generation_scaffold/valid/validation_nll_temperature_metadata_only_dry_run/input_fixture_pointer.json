@@ -1,0 +1,13 @@
+{
+  "pointer_schema_version": "frozen_policy_generation_scaffold_pointer_schema_v0_1",
+  "fixture_family": "learner_state_frozen_policy_generation",
+  "fixture_case_label": "valid/validation_nll_temperature_metadata_only_dry_run",
+  "input_validation_status": "pass",
+  "validation_split_available": true,
+  "selective_prediction_validation_status": "pass",
+  "frozen_policy_validation_status": "pass",
+  "relative_fixture_reference": "learner_state_frozen_policy_generation/valid/validation_nll_temperature_metadata_only",
+  "synthetic_only": true,
+  "no_oracle": true,
+  "metadata_only": true
+}
