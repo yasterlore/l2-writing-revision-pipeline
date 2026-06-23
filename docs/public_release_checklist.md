@@ -788,6 +788,15 @@ remote/manual run recording policy, and future implementation tests without
 printing request bodies, input pointer bodies, generated artifact bodies, raw
 rows, logits/probability dumps, private paths, raw learner text, raw GitHub
 logs, or performance claims.
+For Step244, confirm `make check-release-quality` includes
+`release_quality_check: learner-state frozen policy generation validation`,
+calls `make check-learner-state-frozen-policy-generation` after frozen policy
+validation and before config/scoring smoke checks, reports thirteen matched
+synthetic generation fixture cases, and keeps workflow YAML, Makefile, Python
+code, tests, and fixtures unchanged. The wrapper output must remain safe:
+request bodies, input pointer bodies, generated artifact bodies, raw rows,
+logits/probability dumps, private paths, raw learner text, raw GitHub logs,
+and performance claims must not be copied into docs or logs.
 
 ## 7. Checks To Run
 

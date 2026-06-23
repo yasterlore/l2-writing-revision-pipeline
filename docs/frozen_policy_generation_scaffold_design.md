@@ -439,6 +439,8 @@ real-data-ready.
   implementation status; generator scaffold remains unimplemented.
 - Step243: linked the release-quality integration design; generator scaffold
   remains unimplemented.
+- Step244: linked the release-quality wrapper integration status; generator
+  scaffold remains unimplemented.
 
 ## Related Documents
 

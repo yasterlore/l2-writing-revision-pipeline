@@ -302,6 +302,8 @@ contract and expected-result matching behaved as designed.
   unchanged.
 - Step243: linked the release-quality integration design as the next
   docs-only wrapper planning step.
+- Step244: linked the release-quality wrapper integration status; the
+  standalone target is now called by `make check-release-quality`.
 
 ## Related Documents
 
