@@ -1275,6 +1275,20 @@ implications, release-quality staging, and non-proofs without raw logs,
 request/pointer bodies, artifact bodies, JSON bodies, raw rows, logits,
 private paths, raw learner text, or performance claims.
 
+For Step279, review the
+[frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
+and confirm the fixture root is synthetic-only and metadata-only: no GitHub
+Actions workflow change, release-quality wrapper change, Makefile change,
+Python code change, Python test change, generator code, fixture validator code,
+artifact-body generation, artifact file writing, calibration/selective
+prediction logic, estimator work, metric computation, real-data use, or
+real-data readiness claim is introduced. Confirm the root includes three valid
+cases, fifteen fail-closed invalid marker cases, required request/pointer/
+expected-result files, fixed schema-version labels, required artifact flags,
+required safety flags, body-free count summaries, and no raw logs, request
+bodies, pointer bodies, artifact bodies, generated policy bodies, raw rows,
+logits, private paths, raw learner text, or performance claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

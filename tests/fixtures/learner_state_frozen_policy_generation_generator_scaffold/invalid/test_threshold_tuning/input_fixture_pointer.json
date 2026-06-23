@@ -1,0 +1,15 @@
+{
+  "expected_failure_marker": "test_threshold_tuning",
+  "fixture_label": "invalid/test_threshold_tuning",
+  "frozen_policy_validation_label": "learner_state_frozen_selective_prediction_policy/valid/fixed_threshold_policy",
+  "no_logits_dump": true,
+  "no_private_paths": true,
+  "no_raw_rows": true,
+  "notes": "safe label pointer only; no source body is embedded",
+  "pointer_id": "invalid/test_threshold_tuning",
+  "schema_version": "frozen_policy_generation_generator_scaffold_pointer_v0.1",
+  "selective_prediction_validation_label": "learner_state_selective_prediction/valid/fixed_temperature_validation_only",
+  "source_kind": "synthetic_metadata_only_fixture",
+  "synthetic_only": true,
+  "validation_fixture_label": "learner_state_frozen_policy_generation/valid/identity_temperature_fixed_threshold"
+}

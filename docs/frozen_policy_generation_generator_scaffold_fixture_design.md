@@ -442,8 +442,17 @@ Recommended sequence:
 The next safest step is fixture creation, still using synthetic-only,
 metadata-only content and no artifact body or file writing.
 
+Step279 creates that fixture root at
+`tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/`.
+The created fixtures stay metadata-only and synthetic-only. They include three
+valid cases and fifteen fail-closed invalid marker cases. They do not include
+artifact bodies, generated policy bodies, raw rows, logits, private paths, raw
+learner text, real participant data, generator code, artifact file writing, or
+validator code.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)

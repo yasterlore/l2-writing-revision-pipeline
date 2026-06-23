@@ -386,8 +386,15 @@ It keeps fixture creation, generator implementation, artifact body generation,
 artifact file writing, metrics, real-data use, and release-quality generator
 integration out of scope.
 
+Step279 creates the corresponding metadata-only fixture root at
+`tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/`.
+The fixture root keeps artifact body generation, generated policy bodies,
+artifact file writing, metrics, real-data use, and generator implementation out
+of scope.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)

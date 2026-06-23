@@ -1,0 +1,15 @@
+{
+  "expected_failure_marker": "missing_validation_reference",
+  "fixture_label": "invalid/missing_validation_reference",
+  "frozen_policy_validation_label": "missing_frozen_policy_validation_reference_marker_only",
+  "no_logits_dump": true,
+  "no_private_paths": true,
+  "no_raw_rows": true,
+  "notes": "safe label pointer only; no source body is embedded",
+  "pointer_id": "invalid/missing_validation_reference",
+  "schema_version": "frozen_policy_generation_generator_scaffold_pointer_v0.1",
+  "selective_prediction_validation_label": "missing_selective_prediction_validation_reference_marker_only",
+  "source_kind": "synthetic_metadata_only_fixture",
+  "synthetic_only": true,
+  "validation_fixture_label": "missing_validation_reference_marker_only"
+}

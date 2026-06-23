@@ -1,0 +1,52 @@
+{
+  "artifact_flags": {
+    "artifact_body_suppressed": true,
+    "artifact_file_path_available": false,
+    "artifact_manifest_available": false,
+    "artifact_validation_summary_available": true,
+    "generated_artifact_body_available": false,
+    "generated_artifact_written": false
+  },
+  "artifact_id": "synthetic_artifact_request_body_leakage_metadata_v0_1",
+  "count_summary": {
+    "artifact_metadata_field_count": 0,
+    "body_field_count": 0,
+    "logits_dump_count": 0,
+    "performance_metric_count": 0,
+    "private_path_count": 0,
+    "raw_row_count": 0,
+    "validation_reference_count": 3
+  },
+  "failed_checks": [
+    "request_body_suppressed"
+  ],
+  "generation_status": "fail",
+  "generator_version": "frozen_policy_generator_scaffold_v0_1",
+  "pointer_id": "invalid/request_body_leakage",
+  "policy_id": "synthetic_policy_request_body_leakage_metadata_v0_1",
+  "reason_codes": [
+    "request_body_leakage"
+  ],
+  "request_id": "synthetic_generator_scaffold_request_body_leakage",
+  "safe_summary": "fail_closed_metadata_only_generator_scaffold_result",
+  "safety_flags": {
+    "artifact_policy_checked": true,
+    "body_suppression_checked": true,
+    "content_suppressed": true,
+    "file_writing_checked": true,
+    "no_logits_dump": true,
+    "no_oracle_checked": true,
+    "no_performance_claims": true,
+    "no_private_paths": true,
+    "no_raw_rows": true,
+    "scoring_feedback_checked": true,
+    "synthetic_only_checked": true,
+    "test_tuning_checked": true
+  },
+  "schema_version": "frozen_policy_generation_generator_scaffold_result_v0.1",
+  "validation_reference_ids": [
+    "learner_state_frozen_policy_generation/valid/identity_temperature_fixed_threshold",
+    "learner_state_frozen_selective_prediction_policy/valid/fixed_threshold_policy",
+    "learner_state_selective_prediction/valid/fixed_temperature_validation_only"
+  ]
+}
