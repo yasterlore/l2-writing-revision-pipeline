@@ -433,8 +433,14 @@ Step286 designs future release-quality integration for that target:
 The artifact policy remains unchanged: wrapper logs and future status markers
 must stay metadata-only and body-free.
 
+Step288 designs the future remote/manual Release Quality run record workflow:
+[Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md).
+The artifact policy remains unchanged: no artifact body, generated policy body,
+raw rows, logits, private paths, or raw logs should be recorded.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
 - [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)

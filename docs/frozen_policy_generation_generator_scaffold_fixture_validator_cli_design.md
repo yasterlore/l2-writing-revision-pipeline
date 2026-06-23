@@ -412,8 +412,13 @@ Step286 designs the future release-quality integration for that target:
 The design keeps wrapper implementation out of scope and preserves the
 metadata-only CLI boundary.
 
+Step288 adds the future remote/manual Release Quality run record workflow:
+[Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md).
+CLI summaries remain safe inputs to future pass-only/count-only status markers.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
