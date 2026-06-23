@@ -537,13 +537,19 @@ Recommended next step:
 The safer next step is scaffold fixture design, because it fixes expected
 input and output metadata before any scaffold code is added.
 
+Step249 defines that next fixture contract in the
+[frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md).
+
 ## 21. Update History
 
 - Step248: initial frozen policy generation scaffold implementation design.
+- Step249: linked the frozen policy generation scaffold fixture design as the
+  next docs-only fixture contract before scaffold code.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
+- [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

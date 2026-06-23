@@ -851,6 +851,21 @@ copying raw logs, request bodies, input pointer bodies, generated artifact
 bodies, frozen policy artifact bodies, JSON bodies, raw rows,
 logits/probability dumps, private paths, raw learner text, or performance
 claims.
+For Step249, review the
+[frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
+and confirm it is docs-only: no fixture files, existing fixture changes,
+scaffold code, generator code, CLI, Makefile change, wrapper change, workflow
+change, Python code change, test change, calibration/selective prediction
+logic, estimator work, metric computation, real-data use, or real-data
+readiness claim is introduced. The design must describe the future scaffold
+fixture root, directory structure, required case files, valid and invalid
+cases, expected scaffold result contract, request and pointer fixture
+contracts, safe output policy, reason-code mapping, relation to existing
+generation validation fixtures, future implementation path, testing plan, and
+release-quality staging without copying raw logs, request bodies, input
+pointer bodies, generated artifact bodies, frozen policy artifact bodies, JSON
+bodies, raw rows, logits/probability dumps, private paths, raw learner text,
+or performance claims.
 
 ## 7. Checks To Run
 

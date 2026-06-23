@@ -273,6 +273,10 @@ Step248 expands the first next step in the
 It remains docs-only and recommends scaffold fixture design as the safer next
 step before scaffold code is added.
 
+Step249 expands that safer next step in the
+[frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md),
+still without creating fixture files or scaffold code.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, CLI commands,
@@ -303,11 +307,14 @@ calibration method works well.
 - Step247: initial frozen policy generation validation infrastructure recap.
 - Step248: linked the frozen policy generation scaffold implementation design
   as the next docs-only safety boundary before scaffold code.
+- Step249: linked the frozen policy generation scaffold fixture design as the
+  next docs-only fixture contract.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
+- [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
