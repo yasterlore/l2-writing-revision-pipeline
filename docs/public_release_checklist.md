@@ -1128,6 +1128,23 @@ human/JSON output. Confirm it does not copy request bodies, pointer bodies,
 expected scaffold result bodies, generated or frozen policy artifact bodies,
 JSON bodies, raw rows, logits/probability dumps, private paths, raw learner
 text, or performance claims.
+For Step268, review `python/learner_state/frozen_policy_generation.py`,
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_cli.py`,
+and the linked runtime CLI design doc. Confirm the change is limited to a
+minimal runtime CLI implementation plus focused tests and docs updates: no
+GitHub Actions workflow change, release-quality wrapper change, Makefile target
+change, fixture change, generator code, artifact-body generation, artifact
+file writing, calibration/selective prediction logic, estimator work, metric
+computation, real-data use, or real-data readiness claim is introduced.
+Confirm the CLI remains a thin wrapper around
+`run_frozen_policy_generation_scaffold` and
+`summarize_frozen_policy_generation_scaffold_result`, supports `--request`,
+`--pointer`, `--json`, and `--help`, returns exit `0` for safe runtime pass or
+fail results, returns exit `2` for usage/input/path-before-load errors, and
+emits safe metadata-only human/JSON summaries. Confirm it does not print
+request bodies, pointer bodies, expected scaffold result bodies, generated or
+frozen policy artifact bodies, JSON bodies, raw rows, logits/probability dumps,
+private paths, raw learner text, or performance claims.
 
 ## 7. Checks To Run
 

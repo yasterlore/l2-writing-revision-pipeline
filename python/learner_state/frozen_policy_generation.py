@@ -8,7 +8,9 @@ inspect real participant data.
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -140,6 +142,30 @@ BODY_PAYLOAD_KEYS = frozenset(
         "observed_after_text",
         "gold_label",
     }
+)
+
+CLI_SAFE_SUMMARY_FIELDS = (
+    "mode",
+    "validation_schema_version",
+    "scaffold_status",
+    "reason_codes",
+    "failed_checks",
+    "request_id",
+    "pointer_id",
+    "validation_reference_ids",
+    "content_suppressed",
+    "artifact_body_suppressed",
+    "no_raw_rows",
+    "no_logits_dump",
+    "no_private_paths",
+    "no_performance_claims",
+    "synthetic_only_checked",
+    "no_oracle_checked",
+    "test_tuning_checked",
+    "scoring_feedback_checked",
+    "generated_artifact_written",
+    "generated_artifact_body_available",
+    "safe_summary",
 )
 
 
@@ -646,3 +672,91 @@ def _contains_payload_key(value: Any) -> bool:
     elif isinstance(value, list):
         return any(_contains_payload_key(item) for item in value)
     return False
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Run the synthetic frozen policy generation scaffold runtime "
+            "with safe metadata-only output."
+        )
+    )
+    parser.add_argument(
+        "--request",
+        type=Path,
+        help="Synthetic generation_request.json path.",
+    )
+    parser.add_argument(
+        "--pointer",
+        type=Path,
+        help="Synthetic input_fixture_pointer.json path.",
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit a safe JSON summary instead of a human summary.",
+    )
+    args = parser.parse_args(argv)
+
+    if (args.request is None) != (args.pointer is None):
+        parser.error("--request and --pointer must be provided together")
+    if args.request is None or args.pointer is None:
+        parser.error("--request and --pointer are required")
+
+    if _path_has_unsafe_part(args.request) or _path_has_unsafe_part(args.pointer):
+        payload = _cli_input_error_payload("unsafe_path")
+        _emit_cli_payload(payload, args.json)
+        return 2
+
+    try:
+        result = run_frozen_policy_generation_scaffold(args.request, args.pointer)
+        payload = _runtime_result_to_cli_payload(result)
+        _emit_cli_payload(payload, args.json)
+        if result.scaffold_status == "input_error":
+            return 2
+        return 0
+    except Exception:
+        payload = _cli_input_error_payload("scaffold_runtime_internal_error")
+        _emit_cli_payload(payload, args.json)
+        return 1
+
+
+def _runtime_result_to_cli_payload(
+    result: FrozenPolicyGenerationScaffoldResult,
+) -> dict[str, Any]:
+    summary = summarize_frozen_policy_generation_scaffold_result(result)
+    summary["mode"] = "scaffold_runtime"
+    return {key: summary.get(key) for key in CLI_SAFE_SUMMARY_FIELDS}
+
+
+def _cli_input_error_payload(reason_code: str) -> dict[str, Any]:
+    result = FrozenPolicyGenerationScaffoldResult(
+        scaffold_status="input_error",
+        reason_codes=(reason_code,),
+        failed_checks=(reason_code,),
+        safety_status="fail_closed",
+    )
+    return _runtime_result_to_cli_payload(result)
+
+
+def _emit_cli_payload(payload: dict[str, Any], json_output: bool) -> None:
+    if json_output:
+        print(json.dumps(payload, sort_keys=True))
+        return
+    for key in CLI_SAFE_SUMMARY_FIELDS:
+        if key not in payload:
+            continue
+        value = payload[key]
+        if isinstance(value, bool):
+            value_text = "true" if value else "false"
+        elif isinstance(value, (list, tuple)):
+            value_text = ",".join(str(item) for item in value) if value else "none"
+        elif value is None:
+            value_text = "none"
+        else:
+            value_text = str(value)
+        print(f"{key}={value_text}")
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

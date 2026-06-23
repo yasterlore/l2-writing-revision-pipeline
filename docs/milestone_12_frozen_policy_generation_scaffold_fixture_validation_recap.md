@@ -334,6 +334,14 @@ not implement CLI behavior, runtime Makefile targets, release-quality runtime
 integration, generator code, artifact writing, metric computation, real-data
 use, or performance claims.
 
+Step268 adds the minimal runtime CLI in
+`python/learner_state/frozen_policy_generation.py`, with tests in
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_cli.py`.
+The CLI runs the scaffold runtime over one request/pointer pair and emits safe
+metadata-only human or JSON summaries. It still does not add runtime Makefile
+targets, release-quality runtime integration, generator code, artifact writing,
+metric computation, real-data use, or performance claims.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, commands, and
@@ -374,6 +382,9 @@ checks matched expected metadata.
   behavior out of scope.
 - Step267: linked the runtime CLI design while keeping implementation,
   Makefile, release-quality, generator, and artifact behavior out of scope.
+- Step268: linked the runtime CLI implementation while keeping Makefile,
+  release-quality, generator, artifact writing, metrics, and real-data behavior
+  out of scope.
 
 ## Related Documents
 

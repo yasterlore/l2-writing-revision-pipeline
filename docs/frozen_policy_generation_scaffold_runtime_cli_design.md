@@ -305,7 +305,6 @@ The CLI must not use or print:
 
 This design does not:
 
-- implement the runtime CLI
 - write artifacts
 - implement generator code
 - add a Makefile target
@@ -315,6 +314,20 @@ This design does not:
 - compute metrics
 - use real data
 - prove performance
+
+Step268 implementation status:
+
+The minimal runtime CLI now exists in
+`python/learner_state/frozen_policy_generation.py` and is exercised by
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_cli.py`.
+The entrypoint is `PYTHONPATH=python python3 -m
+learner_state.frozen_policy_generation`. It supports `--request`, `--pointer`,
+`--json`, and `--help`, and emits only safe metadata-only summaries.
+
+The implementation still does not add a runtime Makefile target,
+release-quality runtime integration, GitHub Actions workflow changes, fixture
+changes, generator code, artifact file writing, artifact body generation,
+metric computation, real-data use, or performance claims.
 
 ## 16. Beginner-Friendly Explanation
 
@@ -356,6 +369,7 @@ Generator implementation should remain a separate later stage.
 
 - Step267: initial docs-only frozen policy generation scaffold runtime CLI
   design.
+- Step268: recorded the minimal runtime CLI implementation status.
 
 ## Related Documents
 
@@ -368,4 +382,5 @@ Generator implementation should remain a separate later stage.
 - `python/learner_state/frozen_policy_generation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime.py`
 - `python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_fixture_compatibility.py`
+- `python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_cli.py`
 - [Public release checklist](public_release_checklist.md)

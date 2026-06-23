@@ -628,6 +628,16 @@ API, with safe metadata-only human and JSON summaries. It remains docs-only and
 does not implement CLI behavior, artifact writing, generator code, Makefile
 targets, or release-quality runtime integration.
 
+Step268 implementation status:
+
+The minimal runtime CLI is now implemented in
+`python/learner_state/frozen_policy_generation.py`, with tests in
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_cli.py`.
+It remains a thin wrapper around the runtime API, returns safe metadata-only
+human or JSON summaries, and does not add generator behavior, artifact writing,
+runtime Makefile targets, release-quality runtime integration, metric
+computation, real-data use, or performance claims.
+
 ## 22. Update History
 
 - Step262: initial docs-only scaffold runtime API design.
@@ -639,6 +649,7 @@ targets, or release-quality runtime integration.
 - Step266: recorded the runtime fixture compatibility tests implementation
   status.
 - Step267: linked the docs-only runtime CLI design.
+- Step268: recorded the minimal runtime CLI implementation status.
 
 ## Related Documents
 
