@@ -377,7 +377,6 @@ if the boundary is not enforced.
 
 Recommended next steps:
 
-- Makefile target design
 - Makefile target implementation
 - release-quality integration design
 
@@ -398,8 +397,15 @@ Makefile target, release-quality wrapper change, workflow change, fixture
 change, generator code, artifact body generation, artifact file writing,
 metrics, or real-data readiness.
 
+Step284 designs the future standalone Makefile target for this CLI at
+[Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md).
+It remains docs-only and does not add the target, release-quality integration,
+workflow changes, generator code, artifact writing, or artifact body
+generation.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
@@ -414,3 +420,6 @@ Related docs:
 - Step283: recorded CLI implementation status and focused CLI tests for safe
   root/case human and JSON summaries; Makefile, release-quality, workflow,
   generator, artifact body, and artifact writing remain out of scope.
+- Step284: linked the docs-only Makefile target design; target
+  implementation, release-quality integration, workflow changes, generator
+  code, artifact body generation, and artifact writing remain future work.
