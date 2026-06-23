@@ -1371,6 +1371,19 @@ request/pointer bodies, expected result bodies, artifact bodies, generated
 policy bodies, raw rows, logits, private paths, raw learner text, or
 performance claims.
 
+For Step285, review `Makefile` and the
+[frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md).
+Confirm the change is limited to the standalone Makefile target, help text,
+and docs: no release-quality wrapper change, GitHub Actions workflow change,
+Python code change, Python test change, fixture change, generator code,
+artifact-body generation, artifact file writing, calibration/selective
+prediction logic, estimator work, metric computation, real-data use, or
+real-data readiness claim is introduced. Confirm the target runs the safe CLI
+root mode, exits `0`, reports 18 matched metadata-only cases, creates no tmp
+output, writes no artifacts, and avoids raw logs, request/pointer bodies,
+expected result bodies, artifact bodies, generated policy bodies, raw rows,
+logits, private paths, raw learner text, and performance claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

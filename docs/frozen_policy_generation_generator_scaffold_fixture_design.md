@@ -479,6 +479,11 @@ fixture root:
 The design does not change fixtures, add the target, integrate
 release-quality, run a generator, or write artifacts.
 
+Step285 implements the standalone Makefile target for validating this fixture
+root through the safe CLI. The fixture files remain unchanged, and the target
+does not run a generator, write artifacts, expose fixture bodies, or integrate
+release-quality.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)

@@ -37,8 +37,8 @@ Current state:
 - generator scaffold fixtures exist
 - generator scaffold fixture validator module exists
 - generator scaffold fixture validator unit tests exist
-- CLI does not exist yet
-- Makefile target does not exist yet
+- CLI exists as of Step283
+- standalone Makefile target exists as of Step285
 - release-quality integration does not exist yet
 - generator does not exist
 - artifact writer does not exist
@@ -403,6 +403,10 @@ It remains docs-only and does not add the target, release-quality integration,
 workflow changes, generator code, artifact writing, or artifact body
 generation.
 
+Step285 implements that standalone Makefile target without adding it to
+release-quality and without changing workflows, Python code, tests, fixtures,
+generator code, artifact writing, or artifact body generation.
+
 Related docs:
 
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
@@ -423,3 +427,5 @@ Related docs:
 - Step284: linked the docs-only Makefile target design; target
   implementation, release-quality integration, workflow changes, generator
   code, artifact body generation, and artifact writing remain future work.
+- Step285: recorded standalone Makefile target implementation status;
+  release-quality integration and workflow changes remain future work.

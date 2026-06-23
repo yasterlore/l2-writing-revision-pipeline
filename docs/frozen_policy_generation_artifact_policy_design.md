@@ -416,8 +416,17 @@ execution.
 Step284 designs the future Makefile target for that CLI while preserving the
 same artifact policy:
 [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md).
+
+Step285 implements that standalone Makefile target without changing the
+artifact policy: release-quality integration remains future work, and the
+target still runs only metadata-only fixture validation with no artifact body,
+no generated policy body, no file writing, and no generator execution.
 The design does not add the target, release-quality integration, generator
 execution, artifact body generation, generated policy bodies, or file writing.
+
+Step285 implements the standalone Makefile target while preserving the same
+artifact policy: no generator execution, no artifact body, no generated policy
+body, no file writing, and no release-quality integration.
 
 ## Related Documents
 
