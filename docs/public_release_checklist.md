@@ -960,6 +960,19 @@ computation, real-data use, or real-data readiness claim is introduced. The
 target must call the scaffold fixture validator CLI in fixture-root mode, print
 safe human summary only, avoid tmp/manual output creation, and remain outside
 release-quality until a later integration step.
+For Step257, review the
+[frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
+and confirm it is docs-only: no release-quality wrapper change, GitHub Actions
+workflow change, Makefile change, Python code change, Python test change,
+fixture change, scaffold runtime code, generator code, calibration/selective
+prediction logic, estimator work, metric computation, real-data use, or
+real-data readiness claim is introduced. The design must cover wrapper
+insertion point, command, label, expected wrapper behavior, log safety, failure
+interpretation, relation to existing release-quality checks, future tests,
+future status-marker policy, and non-goals without copying raw logs, request
+bodies, input pointer bodies, artifact bodies, JSON bodies, raw rows,
+logits/probability dumps, private paths, raw learner text, or performance
+claims.
 
 ## 7. Checks To Run
 

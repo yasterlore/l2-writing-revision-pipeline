@@ -307,6 +307,10 @@ and generator code out of scope.
 Step256 implements the standalone Makefile target for scaffold fixture
 contract validation. Release-quality wrapper integration remains future work.
 
+Step257 designs that future release-quality wrapper integration. It specifies
+the proposed wrapper placement and log-safety boundary while leaving wrapper
+implementation and workflow changes for later.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, CLI commands,
@@ -347,6 +351,8 @@ calibration method works well.
 - Step255: linked the scaffold fixture validator Makefile target design.
 - Step256: linked the scaffold fixture validator Makefile target
   implementation status.
+- Step257: linked the scaffold fixture validator release-quality integration
+  design.
 
 ## Related Documents
 
@@ -357,6 +363,7 @@ calibration method works well.
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

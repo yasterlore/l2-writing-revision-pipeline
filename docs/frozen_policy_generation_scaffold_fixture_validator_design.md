@@ -403,6 +403,11 @@ Step256 implements the standalone Makefile target for the CLI. It does not add
 release-quality wrapper integration, workflow changes, Python changes, fixture
 changes, scaffold runtime code, or generator code.
 
+Step257 designs the future release-quality wrapper integration for that target.
+It keeps wrapper implementation, workflow changes, Makefile changes, Python
+changes, fixture changes, scaffold runtime code, and generator code out of
+scope.
+
 ## 18. Beginner-Friendly Explanation
 
 A fixture validator is a checker for test-case files. It asks whether the
@@ -450,6 +455,7 @@ Reason:
   design.
 - Step256: linked the standalone scaffold fixture validator Makefile target
   implementation status.
+- Step257: linked the docs-only release-quality integration design.
 
 ## Related Documents
 
@@ -457,6 +463,7 @@ Reason:
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation.py`
