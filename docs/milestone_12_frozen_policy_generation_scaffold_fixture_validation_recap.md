@@ -312,6 +312,12 @@ This is still not a generator: it does not create artifact bodies, write
 artifact files, add a runtime CLI, add a runtime Makefile target, or change
 release-quality integration.
 
+Step265 adds
+[Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md).
+That document describes how future tests should compare runtime skeleton
+results with existing scaffold fixture expected results through the scaffold
+fixture validator contract, without implementing tests yet.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, commands, and
@@ -345,12 +351,15 @@ checks matched expected metadata.
   as the final docs-only contract check before runtime implementation.
 - Step264: linked the minimal scaffold runtime API skeleton implementation
   while keeping generator and artifact behavior out of scope.
+- Step265: linked the runtime fixture compatibility test design as the next
+  contract-check step before runtime CLI or Makefile work.
 
 ## Related Documents
 
 - [Milestone 11 frozen policy generation validation infrastructure recap](milestone_11_frozen_policy_generation_validation_infrastructure_recap.md)
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
+- [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)

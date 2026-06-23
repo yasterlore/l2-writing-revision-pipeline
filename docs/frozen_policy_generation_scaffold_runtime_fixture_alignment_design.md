@@ -328,16 +328,25 @@ ordering, explicit safety booleans, and suppressed artifact-body flags. Focused
 runtime tests cover the current synthetic valid and invalid scaffold fixture
 cases without changing fixture files or adding generator behavior.
 
+Step265 follow-up:
+
+[Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
+turns this field/reason-code alignment into a future test plan. The planned
+tests should use the scaffold fixture validator contract as the runtime test
+oracle while keeping output body-free and synthetic-only.
+
 ## 15. Update History
 
 - Step263: initial docs-only runtime API and scaffold fixture validator
   alignment design.
 - Step264: linked the minimal scaffold runtime API skeleton implementation
   status.
+- Step265: linked the docs-only runtime fixture compatibility test design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
+- [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
