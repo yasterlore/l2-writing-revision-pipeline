@@ -1000,6 +1000,22 @@ without copying raw logs, request bodies, input pointer bodies, expected
 scaffold result bodies, artifact bodies, JSON bodies, raw rows,
 logits/probability dumps, private paths, raw learner text, or performance
 claims.
+For Step260, review the
+[learner-state frozen policy generation scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md)
+and confirm it records only public-safe metadata and count-only summaries:
+workflow/job identity, branch/commit, success status, wrapper inclusion,
+scaffold fixture validator target inclusion, `total_cases=11`,
+`matched_cases=11`, `mismatched_cases=0`, `input_error_cases=0`,
+`content_suppressed=true`, `no_raw_rows=true`, related learner-state check
+counts, safety review, interpretation, non-goals, and next actions. Confirm
+there is no GitHub Actions workflow change, release-quality wrapper change,
+Makefile change, Python code change, Python test change, fixture change,
+scaffold runtime code, generator code, calibration/selective prediction
+logic, estimator work, metric computation, real-data use, or real-data
+readiness claim. Confirm the marker does not copy raw logs, full job output,
+request bodies, input pointer bodies, expected scaffold result bodies,
+artifact bodies, JSON bodies, raw rows, logits/probability dumps, private
+paths, raw learner text, or performance claims.
 
 ## 7. Checks To Run
 

@@ -318,6 +318,10 @@ fixture files remain unchanged.
 Step259 designs the future remote/manual Release Quality run record workflow
 for that wrapper integration. It does not create the actual status marker.
 
+Step260 creates the public-safe remote/manual Release Quality status marker
+for scaffold fixture validator integration. It records metadata and count-only
+summaries without raw logs or fixture bodies.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, CLI commands,
@@ -364,6 +368,8 @@ calibration method works well.
   integration implementation status.
 - Step259: linked the scaffold fixture validator remote/manual Release Quality
   run record workflow design.
+- Step260: linked the scaffold fixture validator remote/manual Release Quality
+  status marker.
 
 ## Related Documents
 
@@ -376,6 +382,7 @@ calibration method works well.
 - [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation scaffold fixture validator release-quality remote run record workflow](frozen_policy_generation_scaffold_fixture_validator_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

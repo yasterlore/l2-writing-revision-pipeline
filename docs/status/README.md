@@ -33,13 +33,9 @@ Available markers:
 - [Learner-state frozen policy generation release-quality remote run status](learner_state_frozen_policy_generation_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after learner-state frozen
   policy generation validation integration.
-
-Future marker path:
-
-- `docs/status/learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md`:
-  planned public-safe metadata-only marker for a future remote/manual Release
-  Quality run after scaffold fixture validator wrapper integration. The marker
-  is not created yet.
+- [Learner-state frozen policy generation scaffold fixture release-quality remote run status](learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after scaffold fixture validator
+  integration.
 
 Related recap:
 

@@ -314,6 +314,16 @@ The remote/manual run record workflow is defined in
 It designs a future count-only status marker path and does not create the
 actual status marker.
 
+Step260 follow-up:
+
+The public-safe status marker is available at
+[Learner-state frozen policy generation scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md).
+It records only metadata and count-only summaries for the successful remote
+Release Quality run. It does not include raw GitHub Actions logs, full job
+output, copied log blocks, request bodies, pointer bodies, expected scaffold
+result bodies, artifact bodies, JSON bodies, raw rows, logits/probability
+dumps, private paths, raw learner text, or performance metric bodies.
+
 ## 14. What This Does NOT Do
 
 This design and the Step258 integration do not:
@@ -379,6 +389,8 @@ Reason:
   scaffold fixture validator Makefile target.
 - Step259: linked the docs-only remote/manual Release Quality run record
   workflow design for a future count-only status marker.
+- Step260: linked the public-safe remote/manual Release Quality status marker
+  for scaffold fixture validator integration.
 
 ## Related Documents
 
@@ -390,4 +402,5 @@ Reason:
 - [Milestone 11 frozen policy generation validation infrastructure recap](milestone_11_frozen_policy_generation_validation_infrastructure_recap.md)
 - [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
 - [Frozen policy generation scaffold fixture validator release-quality remote run record workflow](frozen_policy_generation_scaffold_fixture_validator_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md)
 - [Public release checklist](public_release_checklist.md)
