@@ -577,13 +577,23 @@ contract validation, not publishing policies.
 The runtime should align with invalid fixtures and reason codes so unsafe cases
 continue to fail for the expected reasons.
 
+Step263 follow-up:
+
+[Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
+checks how the future `FrozenPolicyGenerationScaffoldResult` contract should
+align with the existing `expected_scaffold_result.json` fields and scaffold
+fixture validator comparison rules before runtime code is implemented.
+
 ## 22. Update History
 
 - Step262: initial docs-only scaffold runtime API design.
+- Step263: linked the runtime API / scaffold fixture validator alignment
+  design.
 
 ## Related Documents
 
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
+- [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)

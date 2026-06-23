@@ -1049,6 +1049,23 @@ the design does not copy raw logs, full job output, generation request bodies,
 input pointer bodies, expected scaffold result bodies, generated or frozen
 policy artifact bodies, JSON bodies, raw rows, logits/probability dumps,
 private paths, raw learner text, or performance claims.
+For Step263, review the
+[frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
+and confirm it is docs-only: no GitHub Actions workflow change,
+release-quality wrapper change, Makefile change, Python code change, Python
+test change, fixture change, scaffold runtime code, generator code,
+calibration/selective prediction logic, estimator work, metric computation,
+real-data use, or real-data readiness claim is introduced. Confirm the design
+uses path-only / field-name-only contract summaries, aligns future
+`FrozenPolicyGenerationScaffoldResult` fields with existing
+`expected_scaffold_result.json` fields, maps current invalid reason codes
+without aliases, defines valid/invalid/input-error boundaries, lists safety
+flag alignment, mismatch risks, implementation constraints, testing
+implications, and release-quality implications. Confirm it does not copy raw
+logs, full job output, generation request bodies, input pointer bodies,
+expected scaffold result bodies, generated or frozen policy artifact bodies,
+JSON bodies, raw rows, logits/probability dumps, private paths, raw learner
+text, or performance claims.
 
 ## 7. Checks To Run
 
