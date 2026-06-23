@@ -370,6 +370,8 @@ Recommended staged roadmap:
 8. Step245: frozen policy generation scaffold implementation design.
 9. Step248: scaffold implementation design completed as docs-only safety
    boundary planning.
+10. Step249: scaffold fixture design completed as docs-only fixture-contract
+    planning.
 
 Each stage should preserve synthetic-only fixtures, safe output, and no metric
 or performance claims.
@@ -423,10 +425,13 @@ is not evidence that a model is accurate, calibrated, or ready for real data.
   standalone generation validator target.
 - Step248: linked the frozen policy generation scaffold implementation design;
   validator behavior remains unchanged.
+- Step249: linked the frozen policy generation scaffold fixture design;
+  validator behavior and fixtures remain unchanged.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
+- [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
