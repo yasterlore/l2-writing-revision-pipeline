@@ -311,6 +311,9 @@ A status marker should be a separate later step because remote/manual
 Release Quality results need careful public-safe recording without raw logs or
 body content.
 
+The remote/manual recording workflow is designed in
+[Frozen policy generation scaffold runtime release-quality remote run record workflow](frozen_policy_generation_scaffold_runtime_release_quality_remote_run_record_workflow.md).
+
 ## 16. Step272 Implementation Status
 
 Step272 adds the standalone runtime target to `scripts/check_release_quality.sh`
@@ -355,7 +358,7 @@ body generation, metric computation, real-data use, or performance claims.
 
 Recommended next step:
 
-- remote/manual run record workflow design if needed
+- remote/manual run record workflow design
 
 Then proceed with:
 
@@ -368,6 +371,8 @@ Generator implementation should remain separate.
 - Step271: initial docs-only runtime release-quality integration design.
 - Step272: recorded the release-quality wrapper integration implementation
   status.
+- Step273: linked the docs-only runtime Release Quality remote/manual run
+  record workflow design.
 
 ## Related Documents
 
@@ -376,6 +381,7 @@ Generator implementation should remain separate.
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
+- [Frozen policy generation scaffold runtime release-quality remote run record workflow](frozen_policy_generation_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Public release checklist](public_release_checklist.md)

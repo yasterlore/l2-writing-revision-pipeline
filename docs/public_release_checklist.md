@@ -1192,6 +1192,18 @@ estimator work, metric computation, real-data use, or real-data readiness
 claim is introduced. Confirm the wrapper output remains safe metadata only and
 does not treat runtime smoke success as generator quality or performance
 evidence.
+For Step273, review the
+[frozen policy generation scaffold runtime release-quality remote run record workflow](frozen_policy_generation_scaffold_runtime_release_quality_remote_run_record_workflow.md)
+and confirm it is docs-only: no remote run status marker, GitHub Actions
+workflow change, release-quality wrapper change, Makefile change, Python code
+change, Python test change, fixture change, generator code, artifact-body
+generation, artifact file writing, calibration/selective prediction logic,
+estimator work, metric computation, real-data use, or real-data readiness
+claim is introduced. Confirm the design defines the future status marker path,
+safe metadata fields, forbidden content, pass-only runtime smoke summary,
+count-only scaffold fixture validation summary, failure handling, and
+recording workflow without raw logs, request/pointer bodies, artifact bodies,
+raw rows, logits, private paths, or performance claims.
 
 ## 7. Checks To Run
 
