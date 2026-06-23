@@ -391,6 +391,15 @@ defines the next docs-only boundary for terminal execution. The CLI design
 keeps compatibility matching in these tests and proposes the runtime command as
 a safe metadata-only result reporter, not a fixture validator.
 
+Step268 follow-up:
+
+The runtime CLI has been implemented in
+`python/learner_state/frozen_policy_generation.py`, with focused tests in
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_cli.py`.
+The compatibility tests remain separate from the CLI tests: they continue to
+check runtime-vs-fixture expected-result compatibility, while the CLI tests
+check safe terminal behavior and output.
+
 ## 19. Update History
 
 - Step265: initial docs-only scaffold runtime fixture compatibility test
@@ -398,6 +407,7 @@ a safe metadata-only result reporter, not a fixture validator.
 - Step266: recorded the minimal runtime fixture compatibility tests
   implementation status.
 - Step267: linked the runtime CLI design as the next docs-only stage.
+- Step268: linked the runtime CLI implementation status.
 
 ## Related Documents
 
@@ -411,5 +421,6 @@ a safe metadata-only result reporter, not a fixture validator.
 - `python/learner_state/frozen_policy_generation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime.py`
 - `python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_fixture_compatibility.py`
+- `python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_cli.py`
 - `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
 - [Public release checklist](public_release_checklist.md)
