@@ -608,7 +608,6 @@ is stored or reported.
 
 Recommended next steps:
 
-- generator scaffold fixture validator implementation
 - generator scaffold fixture validator CLI design and implementation
 - generator scaffold validator Makefile target design and implementation
 - release-quality integration design after standalone safety evidence
@@ -622,6 +621,15 @@ This Step280 document links the Step279 fixture root to a future validator
 boundary. It does not add code, tests, fixtures, Makefile targets, wrapper
 changes, workflow changes, artifact bodies, or generated policy bodies.
 
+Step281 implements the metadata-only fixture validator at
+`python/learner_state/frozen_policy_generation_generator_scaffold_fixture_validation.py`
+and focused tests at
+`python/learner_state/tests/test_frozen_policy_generation_generator_scaffold_fixture_validation.py`.
+The implementation validates the fixture contract only. It does not add a CLI,
+Makefile target, release-quality integration, workflow change, generator,
+artifact body generation, artifact file writing, metrics, or real-data
+readiness.
+
 Related docs:
 
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
@@ -634,3 +642,6 @@ Related docs:
 
 - Step280: initial docs-only validator design for metadata-only generator
   scaffold fixtures.
+- Step281: recorded implementation status for the metadata-only fixture
+  validator and focused tests; CLI, Makefile target, release-quality
+  integration, generator code, and artifact writing remain out of scope.

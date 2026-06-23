@@ -456,6 +456,11 @@ It keeps validator implementation, generator implementation, artifact body
 generation, artifact writing, Makefile targets, release-quality integration,
 metrics, and real-data readiness out of scope.
 
+Step281 implements that metadata-only fixture validator and focused tests. It
+still does not add a CLI, Makefile target, release-quality integration,
+generator implementation, artifact body generation, artifact writing, metrics,
+or real-data readiness.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
