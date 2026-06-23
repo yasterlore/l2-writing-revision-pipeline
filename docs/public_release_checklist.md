@@ -1399,6 +1399,22 @@ pass-only/count-only metadata with no raw logs, request/pointer bodies,
 expected result bodies, artifact bodies, generated policy bodies, raw rows,
 logits, private paths, raw learner text, or performance claims.
 
+For Step287, review `scripts/check_release_quality.sh` and the
+[frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md).
+Confirm the wrapper change is limited to adding the metadata-only generator
+scaffold fixture validator target after scaffold runtime smoke and before
+config/scoring smoke checks. Confirm there is no GitHub Actions workflow
+change, Makefile change, Python code change, Python test change, fixture
+change, generator code, artifact-body generation, artifact file writing,
+calibration/selective prediction logic, estimator work, metric computation,
+real-data use, or real-data readiness claim. Confirm the added release-quality
+section reports 18 matched metadata-only cases, keeps `content_suppressed`,
+`no_raw_rows`, `no_logits_dump`, `no_private_paths`,
+`artifact_policy_checked`, `body_suppression_checked`, and
+`file_writing_checked` true, and avoids raw logs, request/pointer bodies,
+expected result bodies, artifact bodies, generated policy bodies, raw rows,
+logits, private paths, raw learner text, and performance claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
