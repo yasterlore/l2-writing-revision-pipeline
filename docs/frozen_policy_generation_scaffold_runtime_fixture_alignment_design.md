@@ -319,10 +319,21 @@ runtime implementation. The skeleton should load safe metadata, return safe
 results, and align with the existing fixture contract before any generator or
 artifact behavior exists.
 
+Step264 follow-up:
+
+The minimal scaffold runtime API skeleton has been added in
+`python/learner_state/frozen_policy_generation.py`. It follows this alignment
+design by returning safe metadata-only result fields, deterministic reason-code
+ordering, explicit safety booleans, and suppressed artifact-body flags. Focused
+runtime tests cover the current synthetic valid and invalid scaffold fixture
+cases without changing fixture files or adding generator behavior.
+
 ## 15. Update History
 
 - Step263: initial docs-only runtime API and scaffold fixture validator
   alignment design.
+- Step264: linked the minimal scaffold runtime API skeleton implementation
+  status.
 
 ## Related Documents
 

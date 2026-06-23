@@ -1066,6 +1066,21 @@ logs, full job output, generation request bodies, input pointer bodies,
 expected scaffold result bodies, generated or frozen policy artifact bodies,
 JSON bodies, raw rows, logits/probability dumps, private paths, raw learner
 text, or performance claims.
+For Step264, review `python/learner_state/frozen_policy_generation.py`,
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime.py`,
+and the linked runtime API/alignment docs. Confirm the change is limited to a
+minimal metadata-only scaffold runtime API skeleton plus focused tests and
+docs updates: no GitHub Actions workflow change, release-quality wrapper
+change, Makefile target, fixture change, runtime CLI, generator code,
+artifact-body generation, artifact file writing, calibration/selective
+prediction logic, estimator work, metric computation, real-data use, or
+real-data readiness claim is introduced. Confirm the runtime summary contains
+safe metadata only, deterministic reason codes, explicit safety booleans,
+`generated_artifact_written=false`, `generated_artifact_body_available=false`,
+and `artifact_body_suppressed=true`, without copying request bodies, pointer
+bodies, expected scaffold result bodies, generated or frozen policy artifact
+bodies, JSON bodies, raw rows, logits/probability dumps, private paths, raw
+learner text, or performance claims.
 
 ## 7. Checks To Run
 

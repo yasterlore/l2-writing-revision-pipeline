@@ -305,6 +305,13 @@ That document checks the field, reason-code, status, and safety-flag alignment
 between the future runtime result and the existing scaffold fixture validator
 contract before implementation.
 
+Step264 adds the minimal metadata-only scaffold runtime API skeleton at
+`python/learner_state/frozen_policy_generation.py`, with focused unit tests in
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime.py`.
+This is still not a generator: it does not create artifact bodies, write
+artifact files, add a runtime CLI, add a runtime Makefile target, or change
+release-quality integration.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, commands, and
@@ -336,6 +343,8 @@ checks matched expected metadata.
   before runtime implementation.
 - Step263: linked the runtime API / scaffold fixture validator alignment design
   as the final docs-only contract check before runtime implementation.
+- Step264: linked the minimal scaffold runtime API skeleton implementation
+  while keeping generator and artifact behavior out of scope.
 
 ## Related Documents
 

@@ -584,11 +584,28 @@ checks how the future `FrozenPolicyGenerationScaffoldResult` contract should
 align with the existing `expected_scaffold_result.json` fields and scaffold
 fixture validator comparison rules before runtime code is implemented.
 
+Step264 implementation status:
+
+The minimal scaffold runtime API skeleton now exists at
+`python/learner_state/frozen_policy_generation.py`, with focused tests in
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime.py`.
+It loads only safe request and pointer metadata, builds a metadata-only plan,
+returns a metadata-only scaffold result, keeps artifact body output suppressed,
+and maps the current synthetic valid and invalid scaffold fixtures to
+deterministic pass/fail reason-code outcomes.
+
+This implementation still does not include generator code, artifact file
+writing, runtime CLI behavior, runtime Makefile targets, release-quality
+runtime integration, metric computation, real-data handling, or production
+readiness claims.
+
 ## 22. Update History
 
 - Step262: initial docs-only scaffold runtime API design.
 - Step263: linked the runtime API / scaffold fixture validator alignment
   design.
+- Step264: recorded the minimal scaffold runtime API skeleton implementation
+  status.
 
 ## Related Documents
 
