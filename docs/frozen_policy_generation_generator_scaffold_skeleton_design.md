@@ -685,10 +685,9 @@ count-only, and safe marker labels.
 
 This design does not:
 
-- implement generator scaffold code
-- add Python tests
-- change fixtures
+- implement a generator beyond the metadata-only skeleton boundary
 - add a CLI
+- change fixtures
 - change the Makefile
 - change the release-quality wrapper
 - change GitHub Actions workflows
@@ -725,10 +724,9 @@ for real data.
 
 ## 22. Next Recommended Steps
 
-Recommended sequence:
+Recommended sequence after Step291:
 
-- Step291: generator scaffold skeleton implementation
-- Step292: skeleton compatibility tests if needed
+- Step292: skeleton compatibility test expansion if needed
 - Step293: skeleton CLI design
 - Step294: skeleton CLI implementation
 - Step295: Makefile target design
@@ -738,6 +736,36 @@ Recommended sequence:
 
 Each step should remain synthetic-only and metadata-only until a future
 artifact-body or artifact-writing design explicitly changes that boundary.
+
+## 23. Step291 Implementation Status
+
+Step291 implements the metadata-only skeleton at
+`python/learner_state/frozen_policy_generation_generator_scaffold.py` and adds
+focused tests at
+`python/learner_state/tests/test_frozen_policy_generation_generator_scaffold.py`.
+
+The implementation:
+
+- loads safe request metadata
+- loads safe input pointer metadata
+- builds a metadata-only plan
+- returns a safe result compatible with
+  `expected_generator_scaffold_result.json`
+- passes the three valid fixture cases
+- returns fail-closed results for the fifteen invalid fixture cases
+- returns safe input errors for malformed or missing input files
+- keeps artifact writing disabled
+- keeps artifact body generation disabled
+- keeps generated policy body generation disabled
+- does not add a CLI
+- does not add a Makefile target
+- does not change release-quality
+- does not change workflows
+- does not change fixtures
+
+The implementation remains synthetic-only and metadata-only. It still does not
+prove generator quality, policy quality, model performance, calibration
+quality, real-data readiness, or production readiness.
 
 ## Related Documents
 

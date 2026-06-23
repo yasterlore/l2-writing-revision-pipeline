@@ -470,6 +470,8 @@ written, no artifact body is produced, and no performance metric is computed.
   run status marker.
 - Step290: linked the generator scaffold skeleton design as the next
   metadata-only boundary before implementation.
+- Step291: linked the metadata-only generator scaffold skeleton implementation
+  status; CLI, artifact writing, and artifact body generation remain separate.
 
 ## Related Documents
 

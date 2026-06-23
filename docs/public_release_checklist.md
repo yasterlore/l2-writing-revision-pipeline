@@ -1461,6 +1461,19 @@ generator scaffold result bodies, artifact bodies, generated policy bodies,
 raw rows, logits, private paths, raw learner text, or performance metric
 bodies.
 
+For Step291, review the metadata-only generator scaffold skeleton
+implementation in `python/learner_state/frozen_policy_generation_generator_scaffold.py`
+and focused tests in
+`python/learner_state/tests/test_frozen_policy_generation_generator_scaffold.py`.
+Confirm the implementation reads only safe request/pointer metadata, returns
+safe expected-result-compatible summaries, passes valid fixture cases, returns
+fail-closed invalid fixture cases, returns safe input errors for malformed or
+missing input, does not implement a CLI, does not add a Makefile target, does
+not change release-quality or workflows, does not change fixtures, does not
+write artifacts, does not generate artifact bodies or generated policy bodies,
+does not compute metrics, and does not claim performance or real-data
+readiness. Confirm tests do not print fixture bodies or write artifacts.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

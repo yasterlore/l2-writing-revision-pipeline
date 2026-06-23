@@ -500,6 +500,10 @@ The skeleton should consume this fixture root only as metadata-only
 request/pointer input and compare future safe results with expected metadata,
 without producing artifact bodies or writing files.
 
+Step291 implements that metadata-only skeleton and focused tests. The fixture
+root remains unchanged, and expected-result compatibility is checked without
+printing fixture bodies in docs.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)

@@ -443,6 +443,10 @@ Step290 designs the future generator scaffold skeleton:
 The artifact policy remains unchanged: the skeleton boundary is metadata-only,
 does not generate artifact bodies or policy bodies, and does not write files.
 
+Step291 implements that metadata-only skeleton. The artifact policy remains
+unchanged: no artifact body, generated policy body, artifact manifest writer,
+or artifact file writing is introduced.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)

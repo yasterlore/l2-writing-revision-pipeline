@@ -779,6 +779,9 @@ metric computation, or real-data readiness claim is added.
   metadata-only boundary before implementation; generator code, artifact body
   generation, artifact writing, metrics, and real-data readiness remain out of
   scope.
+- Step291: recorded the metadata-only generator scaffold skeleton
+  implementation status; CLI, Makefile target, artifact body generation,
+  artifact writing, metrics, and real-data readiness remain out of scope.
 
 ## Related Documents
 
