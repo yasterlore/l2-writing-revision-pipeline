@@ -283,6 +283,10 @@ The new fixture files are metadata-only and do not add scaffold code,
 generator code, CLI, Makefile targets, release-quality changes, workflow
 changes, Python tests, or existing fixture changes.
 
+Step251 adds the docs-only scaffold fixture validator design. It describes how
+a future validator should check the scaffold fixture root before scaffold
+runtime code is added.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, CLI commands,
@@ -316,6 +320,7 @@ calibration method works well.
 - Step249: linked the frozen policy generation scaffold fixture design as the
   next docs-only fixture contract.
 - Step250: linked the initial scaffold fixture root implementation.
+- Step251: linked the scaffold fixture validator design.
 
 ## Related Documents
 
@@ -323,6 +328,7 @@ calibration method works well.
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
+- [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

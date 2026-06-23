@@ -880,6 +880,21 @@ body dumps, input pointer body dumps, generated artifact bodies, frozen policy
 artifact bodies, raw rows, logits/probability dumps, label bodies, split
 bodies, calibration policy bodies, private paths, raw learner text, real
 participant data, or performance evidence.
+For Step251, review the
+[frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
+and confirm it is docs-only: no validator code, scaffold code, generator code,
+CLI, Makefile change, wrapper change, workflow change, Python code change,
+Python test change, fixture change, existing fixture change,
+calibration/selective prediction logic, estimator work, metric computation,
+real-data use, or real-data readiness claim is introduced. The design must
+cover root-level checks, case-level checks, forbidden field/value scans,
+expected reason-code mapping, expected pass/fail behavior, safe human/JSON
+summary policy, relation to scaffold implementation, relation to the existing
+generation validator, CLI future, Makefile/release-quality future, and testing
+plan without copying raw logs, request bodies, input pointer bodies, generated
+artifact bodies, frozen policy artifact bodies, JSON bodies, raw rows,
+logits/probability dumps, private paths, raw learner text, or performance
+claims.
 
 ## 7. Checks To Run
 

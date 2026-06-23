@@ -556,15 +556,22 @@ invalid metadata-only cases. Scaffold code, scaffold fixture validation code,
 generator code, CLI, Makefile targets, release-quality wrapper changes,
 workflow changes, Python tests, and existing fixtures remain unchanged.
 
+Step251 designs a future scaffold fixture validator for this root. The design
+keeps validator implementation out of scope while defining root-level checks,
+case-level checks, forbidden field/value scans, expected reason-code matching,
+and safe summary behavior.
+
 ## 20. Update History
 
 - Step249: initial frozen policy generation scaffold fixture design.
 - Step250: initial scaffold fixture files created under
   `tests/fixtures/learner_state_frozen_policy_generation_scaffold/`.
+- Step251: linked the scaffold fixture validator design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
+- [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
