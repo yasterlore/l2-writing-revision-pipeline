@@ -372,6 +372,12 @@ scaffold runtime smoke`. This still does not add workflow changes, generator
 behavior, artifact writing, metric computation, real-data use, or performance
 claims.
 
+Step275 adds the next-stage recap at
+[Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md).
+That document summarizes runtime API/CLI, compatibility tests, Makefile and
+release-quality integration, remote/manual status, and the remaining
+generator/artifact-writing non-goals.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, commands, and
@@ -428,10 +434,13 @@ is computed.
 - Step272: linked the runtime release-quality wrapper integration while keeping
   workflow changes, generator behavior, artifact writing, metrics, and
   real-data behavior out of scope.
+- Step275: linked the scaffold runtime infrastructure recap as the next
+  milestone summary before generator scaffold or artifact policy work.
 
 ## Related Documents
 
 - [Milestone 11 frozen policy generation validation infrastructure recap](milestone_11_frozen_policy_generation_validation_infrastructure_recap.md)
+- [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)

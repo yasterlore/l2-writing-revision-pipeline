@@ -1216,6 +1216,19 @@ metric bodies. Confirm it does not treat runtime smoke success as generator
 quality, artifact generation quality, model performance, production
 readiness, or real-data readiness.
 
+For Step275, review the
+[milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
+and confirm it is docs-only: no GitHub Actions workflow change,
+release-quality wrapper change, Makefile change, Python code change, Python
+test change, fixture change, generator code, artifact-body generation,
+artifact file writing, calibration/selective prediction logic, estimator work,
+metric computation, real-data use, or real-data readiness claim is introduced.
+Confirm the recap summarizes runtime API/CLI, compatibility tests, Makefile
+and release-quality integration, remote/manual status, no-oracle and
+synthetic-only boundaries, remaining risks, and next-step guidance without raw
+logs, request/pointer bodies, artifact bodies, JSON bodies, raw rows, logits,
+private paths, raw learner text, or performance claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
