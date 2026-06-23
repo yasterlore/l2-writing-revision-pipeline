@@ -572,6 +572,10 @@ surface for fixture-root and single-case validation.
 Step254 implements the minimal scaffold fixture validator CLI and tests
 without changing the scaffold fixture root.
 
+Step255 designs the future standalone Makefile target for that CLI. It remains
+docs-only and does not change the Makefile, release-quality wrapper, workflow,
+Python code, tests, fixtures, scaffold runtime, or generator.
+
 ## 20. Update History
 
 - Step249: initial frozen policy generation scaffold fixture design.
@@ -581,12 +585,14 @@ without changing the scaffold fixture root.
 - Step252: linked the minimal scaffold fixture validator implementation.
 - Step253: linked the scaffold fixture validator CLI design.
 - Step254: linked the scaffold fixture validator CLI implementation.
+- Step255: linked the scaffold fixture validator Makefile target design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
+- [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)

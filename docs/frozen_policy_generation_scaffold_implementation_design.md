@@ -558,6 +558,11 @@ still fixture-only and does not add scaffold runtime or generator behavior.
 Step254 implements the minimal scaffold fixture validator CLI. The CLI remains
 fixture-only and does not introduce scaffold runtime or generator behavior.
 
+Step255 designs the future Makefile target for running the scaffold fixture
+validator CLI. It keeps Makefile implementation and release-quality integration
+out of scope while defining the proposed target name, command, help text, safe
+logging policy, and staging plan.
+
 ## 21. Update History
 
 - Step248: initial frozen policy generation scaffold implementation design.
@@ -570,6 +575,7 @@ fixture-only and does not introduce scaffold runtime or generator behavior.
 - Step252: linked the minimal scaffold fixture validator implementation.
 - Step253: linked the scaffold fixture validator CLI design.
 - Step254: linked the scaffold fixture validator CLI implementation.
+- Step255: linked the scaffold fixture validator Makefile target design.
 
 ## Related Documents
 
@@ -578,6 +584,7 @@ fixture-only and does not introduce scaffold runtime or generator behavior.
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
+- [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
