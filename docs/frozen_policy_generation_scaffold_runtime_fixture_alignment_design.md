@@ -335,6 +335,14 @@ turns this field/reason-code alignment into a future test plan. The planned
 tests should use the scaffold fixture validator contract as the runtime test
 oracle while keeping output body-free and synthetic-only.
 
+Step266 follow-up:
+
+The runtime fixture compatibility tests have been implemented in
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_fixture_compatibility.py`.
+They use the existing scaffold fixture validator comparison helper as the test
+oracle for the runtime summary, while keeping assertions limited to safe case
+labels, reason codes, statuses, deterministic summaries, and safety flags.
+
 ## 15. Update History
 
 - Step263: initial docs-only runtime API and scaffold fixture validator
@@ -342,6 +350,7 @@ oracle while keeping output body-free and synthetic-only.
 - Step264: linked the minimal scaffold runtime API skeleton implementation
   status.
 - Step265: linked the docs-only runtime fixture compatibility test design.
+- Step266: linked the runtime fixture compatibility tests implementation.
 
 ## Related Documents
 

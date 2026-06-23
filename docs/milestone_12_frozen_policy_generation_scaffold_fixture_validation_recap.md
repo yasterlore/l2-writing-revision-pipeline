@@ -318,6 +318,14 @@ That document describes how future tests should compare runtime skeleton
 results with existing scaffold fixture expected results through the scaffold
 fixture validator contract, without implementing tests yet.
 
+Step266 adds the minimal runtime fixture compatibility tests at
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_fixture_compatibility.py`.
+The tests use the scaffold fixture validator comparison helper as the oracle
+for runtime safe summaries across the current valid 3 and invalid 8 synthetic
+scaffold cases. This still does not add runtime CLI behavior, runtime Makefile
+targets, runtime release-quality integration, generator code, artifact writing,
+metric computation, real-data use, or performance claims.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, commands, and
@@ -353,6 +361,9 @@ checks matched expected metadata.
   while keeping generator and artifact behavior out of scope.
 - Step265: linked the runtime fixture compatibility test design as the next
   contract-check step before runtime CLI or Makefile work.
+- Step266: linked the runtime fixture compatibility tests implementation while
+  keeping runtime CLI, Makefile, release-quality, generator, and artifact
+  behavior out of scope.
 
 ## Related Documents
 

@@ -1097,6 +1097,22 @@ flags, and release-quality staging. Confirm it does not copy request bodies,
 pointer bodies, expected scaffold result bodies, generated or frozen policy
 artifact bodies, JSON bodies, raw rows, logits/probability dumps, private
 paths, raw learner text, or performance claims.
+For Step266, review
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_fixture_compatibility.py`
+and the linked compatibility-test design doc. Confirm the change is limited to
+minimal runtime fixture compatibility tests plus docs updates: no GitHub
+Actions workflow change, release-quality wrapper change, Makefile change,
+fixture change, runtime CLI, generator code, artifact-body generation,
+artifact file writing, calibration/selective prediction logic, estimator work,
+metric computation, real-data use, or real-data readiness claim is introduced.
+Confirm the tests compare runtime safe summaries with the existing scaffold
+fixture expected-result contract through the scaffold fixture validator helper,
+cover valid 3 and invalid 8 cases, malformed/missing input boundaries,
+no-body-leakage checks, deterministic behavior, and explicit safety booleans.
+Confirm test assertions use safe case labels and do not print request bodies,
+pointer bodies, expected scaffold result bodies, generated or frozen policy
+artifact bodies, JSON bodies, raw rows, logits/probability dumps, private paths,
+raw learner text, or performance claims.
 
 ## 7. Checks To Run
 
