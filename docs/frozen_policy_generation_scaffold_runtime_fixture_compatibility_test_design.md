@@ -400,6 +400,14 @@ The compatibility tests remain separate from the CLI tests: they continue to
 check runtime-vs-fixture expected-result compatibility, while the CLI tests
 check safe terminal behavior and output.
 
+Step269 follow-up:
+
+[Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
+defines a future standalone `make` smoke target for the runtime CLI. The
+target design does not replace compatibility tests; compatibility tests remain
+the fixture-contract check, while the future Makefile target is only a CLI
+smoke check over a synthetic valid fixture pair.
+
 ## 19. Update History
 
 - Step265: initial docs-only scaffold runtime fixture compatibility test
@@ -408,12 +416,14 @@ check safe terminal behavior and output.
   implementation status.
 - Step267: linked the runtime CLI design as the next docs-only stage.
 - Step268: linked the runtime CLI implementation status.
+- Step269: linked the runtime CLI Makefile target design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
 - [Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
+- [Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)

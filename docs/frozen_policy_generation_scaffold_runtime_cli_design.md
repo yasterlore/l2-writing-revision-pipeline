@@ -329,6 +329,14 @@ release-quality runtime integration, GitHub Actions workflow changes, fixture
 changes, generator code, artifact file writing, artifact body generation,
 metric computation, real-data use, or performance claims.
 
+Step269 follow-up:
+
+[Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
+defines the future standalone Makefile smoke target around this CLI. It keeps
+the target docs-only, recommends a single synthetic valid fixture pair for the
+initial smoke command, and keeps release-quality runtime integration as a later
+step.
+
 ## 16. Beginner-Friendly Explanation
 
 A CLI is the command a developer can run in a terminal. For this runtime, the
@@ -354,14 +362,13 @@ tests and logging behavior need to settle first.
 
 Recommended next step:
 
-- runtime CLI implementation
+- runtime CLI Makefile target implementation
 
 Then proceed with:
 
-- runtime CLI tests
-- runtime Makefile target design
-- runtime Makefile target implementation
 - runtime release-quality integration design
+- runtime release-quality wrapper integration
+- remote/manual status marker design if needed
 
 Generator implementation should remain a separate later stage.
 
@@ -370,12 +377,14 @@ Generator implementation should remain a separate later stage.
 - Step267: initial docs-only frozen policy generation scaffold runtime CLI
   design.
 - Step268: recorded the minimal runtime CLI implementation status.
+- Step269: linked the docs-only runtime CLI Makefile target design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
+- [Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
