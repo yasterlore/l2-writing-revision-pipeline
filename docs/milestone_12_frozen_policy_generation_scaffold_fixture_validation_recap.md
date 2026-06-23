@@ -349,6 +349,13 @@ runtime CLI. It remains docs-only and does not add a Makefile target,
 release-quality runtime integration, workflow changes, generator code,
 artifact writing, metric computation, real-data use, or performance claims.
 
+Step270 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-scaffold-runtime`. The target
+runs the runtime CLI over one synthetic valid scaffold fixture pair and emits
+safe metadata-only output. It still does not add release-quality runtime
+integration, workflow changes, generator code, artifact writing, metric
+computation, real-data use, or performance claims.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, commands, and
@@ -394,6 +401,9 @@ checks matched expected metadata.
   out of scope.
 - Step269: linked the runtime CLI Makefile target design while keeping
   Makefile changes, release-quality runtime integration, generator behavior,
+  artifact writing, metrics, and real-data behavior out of scope.
+- Step270: linked the runtime CLI Makefile target implementation while keeping
+  release-quality runtime integration, workflow changes, generator behavior,
   artifact writing, metrics, and real-data behavior out of scope.
 
 ## Related Documents

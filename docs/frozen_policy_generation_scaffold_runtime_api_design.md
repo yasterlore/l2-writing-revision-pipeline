@@ -647,6 +647,14 @@ design is docs-only and does not add a Makefile target, release-quality
 runtime integration, generator code, artifact writing, metric computation,
 real-data use, or performance claims.
 
+Step270 implementation status:
+
+The standalone Makefile target
+`check-learner-state-frozen-policy-generation-scaffold-runtime` now runs the
+runtime CLI over one synthetic valid scaffold fixture pair. It does not add
+release-quality runtime integration, workflow changes, generator code,
+artifact writing, metric computation, real-data use, or performance claims.
+
 ## 22. Update History
 
 - Step262: initial docs-only scaffold runtime API design.
@@ -660,6 +668,8 @@ real-data use, or performance claims.
 - Step267: linked the docs-only runtime CLI design.
 - Step268: recorded the minimal runtime CLI implementation status.
 - Step269: linked the docs-only runtime CLI Makefile target design.
+- Step270: recorded the standalone runtime CLI Makefile target implementation
+  status.
 
 ## Related Documents
 

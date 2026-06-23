@@ -1157,6 +1157,18 @@ target, keeps fixture-root expected matching in the scaffold fixture validator
 and runtime compatibility tests, requires safe metadata-only output, creates no
 tmp/manual output, and does not treat target success as generator quality or
 performance evidence.
+For Step270, review `Makefile` and the linked runtime Makefile target design.
+Confirm the change is limited to the standalone
+`check-learner-state-frozen-policy-generation-scaffold-runtime` target,
+Makefile help text, and docs updates: no release-quality wrapper change,
+GitHub Actions workflow change, Python code change, Python test change,
+fixture change, generator code, artifact-body generation, artifact file
+writing, calibration/selective prediction logic, estimator work, metric
+computation, real-data use, or real-data readiness claim is introduced.
+Confirm the target runs the runtime CLI over the synthetic
+`valid/minimal_fixed_threshold_dry_run` request and pointer pair, emits safe
+metadata-only output, creates no tmp/manual output, and does not treat target
+success as generator quality or performance evidence.
 
 ## 7. Checks To Run
 

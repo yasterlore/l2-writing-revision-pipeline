@@ -408,6 +408,13 @@ target design does not replace compatibility tests; compatibility tests remain
 the fixture-contract check, while the future Makefile target is only a CLI
 smoke check over a synthetic valid fixture pair.
 
+Step270 implementation status:
+
+The standalone runtime CLI Makefile target now exists as
+`check-learner-state-frozen-policy-generation-scaffold-runtime`. It remains a
+single-fixture CLI smoke check and does not replace the runtime fixture
+compatibility tests.
+
 ## 19. Update History
 
 - Step265: initial docs-only scaffold runtime fixture compatibility test
@@ -417,6 +424,7 @@ smoke check over a synthetic valid fixture pair.
 - Step267: linked the runtime CLI design as the next docs-only stage.
 - Step268: linked the runtime CLI implementation status.
 - Step269: linked the runtime CLI Makefile target design.
+- Step270: linked the runtime CLI Makefile target implementation status.
 
 ## Related Documents
 
