@@ -315,6 +315,9 @@ Step258 implements the release-quality wrapper integration for the standalone
 scaffold fixture validator target. Workflow, scaffold runtime, generator, and
 fixture files remain unchanged.
 
+Step259 designs the future remote/manual Release Quality run record workflow
+for that wrapper integration. It does not create the actual status marker.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, CLI commands,
@@ -359,6 +362,8 @@ calibration method works well.
   design.
 - Step258: linked the scaffold fixture validator release-quality wrapper
   integration implementation status.
+- Step259: linked the scaffold fixture validator remote/manual Release Quality
+  run record workflow design.
 
 ## Related Documents
 
@@ -370,6 +375,7 @@ calibration method works well.
 - [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
+- [Frozen policy generation scaffold fixture validator release-quality remote run record workflow](frozen_policy_generation_scaffold_fixture_validator_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

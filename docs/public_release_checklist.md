@@ -985,6 +985,21 @@ computation, real-data use, or real-data readiness claim. The wrapper output
 must remain safe summary only and must not copy raw logs, request bodies, input
 pointer bodies, artifact bodies, JSON bodies, raw rows, logits/probability
 dumps, private paths, raw learner text, or performance claims.
+For Step259, review the
+[frozen policy generation scaffold fixture validator release-quality remote run record workflow](frozen_policy_generation_scaffold_fixture_validator_release_quality_remote_run_record_workflow.md)
+and confirm it is docs-only: no remote run status marker, GitHub Actions
+workflow change, release-quality wrapper change, Makefile change, Python code
+change, Python test change, fixture change, scaffold runtime code, generator
+code, calibration/selective prediction logic, estimator work, metric
+computation, real-data use, or real-data readiness claim is introduced. The
+design must define the future status marker path, public-safe metadata,
+forbidden metadata, marker structure, scaffold fixture validation summary,
+related checks summary, safety review, interpretation, failure handling,
+future recording workflow, public release checklist relation, and non-goals
+without copying raw logs, request bodies, input pointer bodies, expected
+scaffold result bodies, artifact bodies, JSON bodies, raw rows,
+logits/probability dumps, private paths, raw learner text, or performance
+claims.
 
 ## 7. Checks To Run
 

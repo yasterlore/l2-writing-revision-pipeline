@@ -34,6 +34,13 @@ Available markers:
   remote/manual release-quality wrapper status after learner-state frozen
   policy generation validation integration.
 
+Future marker path:
+
+- `docs/status/learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md`:
+  planned public-safe metadata-only marker for a future remote/manual Release
+  Quality run after scaffold fixture validator wrapper integration. The marker
+  is not created yet.
+
 Related recap:
 
 - [Milestone 06 learner-state audit infrastructure recap](../milestone_06_learner_state_audit_infrastructure_recap.md):
@@ -52,3 +59,6 @@ Related recap:
 - [Milestone 11 frozen policy generation validation infrastructure recap](../milestone_11_frozen_policy_generation_validation_infrastructure_recap.md):
   broader recap of the frozen policy generation validation infrastructure
   milestone.
+- [Frozen policy generation scaffold fixture validator release-quality remote run record workflow](../frozen_policy_generation_scaffold_fixture_validator_release_quality_remote_run_record_workflow.md):
+  future public-safe metadata-only recording workflow for the scaffold fixture
+  validator release-quality wrapper integration.

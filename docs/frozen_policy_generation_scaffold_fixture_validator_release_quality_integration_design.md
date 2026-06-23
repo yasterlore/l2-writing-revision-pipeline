@@ -307,6 +307,13 @@ It must not record raw logs, full job output, request bodies, pointer bodies,
 artifact bodies, JSON bodies, raw rows, logits dumps, private paths, raw
 learner text, or performance metric bodies.
 
+Step259 follow-up:
+
+The remote/manual run record workflow is defined in
+[Frozen policy generation scaffold fixture validator release-quality remote run record workflow](frozen_policy_generation_scaffold_fixture_validator_release_quality_remote_run_record_workflow.md).
+It designs a future count-only status marker path and does not create the
+actual status marker.
+
 ## 14. What This Does NOT Do
 
 This design and the Step258 integration do not:
@@ -370,6 +377,8 @@ Reason:
   integration design.
 - Step258: release-quality wrapper integration implemented with the standalone
   scaffold fixture validator Makefile target.
+- Step259: linked the docs-only remote/manual Release Quality run record
+  workflow design for a future count-only status marker.
 
 ## Related Documents
 
@@ -380,4 +389,5 @@ Reason:
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Milestone 11 frozen policy generation validation infrastructure recap](milestone_11_frozen_policy_generation_validation_infrastructure_recap.md)
 - [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
+- [Frozen policy generation scaffold fixture validator release-quality remote run record workflow](frozen_policy_generation_scaffold_fixture_validator_release_quality_remote_run_record_workflow.md)
 - [Public release checklist](public_release_checklist.md)
