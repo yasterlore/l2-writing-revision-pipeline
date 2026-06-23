@@ -667,6 +667,9 @@ Step290 adds the generator scaffold skeleton design:
 The validator remains separate; future compatibility tests may compare skeleton
 metadata-only results with expected fixture metadata without printing bodies.
 
+Step291 implements the skeleton and focused tests. The fixture validator
+remains separate and still validates fixture contract only.
+
 Related docs:
 
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
@@ -704,3 +707,5 @@ Related docs:
   public-safe status marker.
 - Step290: linked the generator scaffold skeleton design; validator and
   skeleton responsibilities remain separate and metadata-only.
+- Step291: recorded skeleton implementation status while keeping validator
+  responsibility unchanged.

@@ -237,7 +237,8 @@ This marker does not prove:
 
 - Step290 created the future generator scaffold skeleton design:
   [Frozen policy generation generator scaffold skeleton design](../frozen_policy_generation_generator_scaffold_skeleton_design.md).
-- Keep future generator scaffold skeleton implementation separate.
+- Step291 implemented the metadata-only generator scaffold skeleton locally;
+  future CLI design and release-quality runtime integration remain separate.
 - Keep future artifact writing design separate.
 - Keep future calibration scaffold work separate.
 - Treat real-data readiness as future private/institution-approved review only.
@@ -248,3 +249,6 @@ This marker does not prove:
   generator scaffold fixture validation integration.
 - Step290: linked the metadata-only generator scaffold skeleton design as the
   next action; implementation remains separate.
+- Step291: noted local metadata-only skeleton implementation; CLI,
+  release-quality runtime integration, artifact writing, and artifact bodies
+  remain separate.
