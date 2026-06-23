@@ -797,6 +797,19 @@ code, tests, and fixtures unchanged. The wrapper output must remain safe:
 request bodies, input pointer bodies, generated artifact bodies, raw rows,
 logits/probability dumps, private paths, raw learner text, raw GitHub logs,
 and performance claims must not be copied into docs or logs.
+For Step245, review the
+[frozen policy generation release-quality remote run record workflow](frozen_policy_generation_release_quality_remote_run_record_workflow.md)
+and confirm it remains docs-only: no remote status marker, workflow change,
+wrapper change, Makefile change, Python code change, test change, fixture
+change, generator code, calibration/selective prediction logic, metric
+computation, or real-data readiness claim is introduced. The design must
+specify the future status marker path, safe metadata fields, forbidden
+metadata, count-only frozen policy generation validation summary, related
+learner-state checks summary, safety review, failure handling, and future
+recording workflow without copying raw logs, full job output, generation
+request bodies, input pointer bodies, generated artifact bodies, frozen policy
+artifact bodies, JSON bodies, raw rows, logits/probability dumps, private
+paths, raw learner text, or performance claims.
 
 ## 7. Checks To Run
 
