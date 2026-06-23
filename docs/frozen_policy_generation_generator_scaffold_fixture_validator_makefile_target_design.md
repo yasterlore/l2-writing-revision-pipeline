@@ -377,6 +377,18 @@ not add the target, change release-quality, change workflows, change Python
 code, change tests, change fixtures, run a generator, write artifacts, expose
 artifact bodies, compute metrics, or claim real-data readiness.
 
+Step285 implements the standalone Makefile target:
+
+```text
+check-learner-state-frozen-policy-generation-generator-scaffold-fixtures
+```
+
+The target runs the safe CLI root mode over
+`tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/`.
+It is not added to release-quality, does not change workflows, does not change
+Python code or tests, does not change fixtures, does not run a generator, does
+not write artifacts, and does not expose artifact bodies.
+
 Related docs:
 
 - [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
@@ -391,3 +403,6 @@ Related docs:
 
 - Step284: initial docs-only Makefile target design for the metadata-only
   generator scaffold fixture validator CLI.
+- Step285: recorded standalone Makefile target implementation status; release
+  quality integration, workflow changes, generator code, artifact body
+  generation, and artifact writing remain out of scope.

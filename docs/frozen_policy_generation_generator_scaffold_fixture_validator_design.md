@@ -647,6 +647,11 @@ The design keeps Makefile implementation, release-quality integration,
 workflow changes, generator code, artifact body generation, and artifact
 writing out of scope.
 
+Step285 implements the standalone Makefile target for the CLI. The validator
+contract remains unchanged, and release-quality integration, workflows,
+generator code, artifact body generation, artifact writing, Python tests, and
+fixtures remain out of scope.
+
 Related docs:
 
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
@@ -672,3 +677,6 @@ Related docs:
 - Step284: linked the docs-only standalone Makefile target design for the
   validator CLI; implementation and release-quality integration remain future
   work.
+- Step285: recorded standalone Makefile target implementation status; wrapper,
+  workflow, generator, artifact body, artifact writing, test, and fixture
+  changes remain out of scope.

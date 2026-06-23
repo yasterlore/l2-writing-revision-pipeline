@@ -703,6 +703,11 @@ It remains docs-only and keeps Makefile implementation, release-quality
 integration, generator code, artifact body generation, artifact writing,
 metrics, fixtures, and workflow changes out of scope.
 
+Step285 implements that standalone Makefile target while keeping the generator
+scaffold itself unimplemented. Release-quality integration, workflow changes,
+artifact body generation, artifact writing, metrics, tests, and fixtures remain
+out of scope.
+
 ## 21. Update History
 
 - Step234: initial frozen policy generation scaffold design creation.
@@ -757,6 +762,10 @@ metrics, fixtures, and workflow changes out of scope.
   Makefile implementation, release-quality generator integration, generator
   code, artifact body generation, artifact writing, metrics, fixtures, and
   workflow changes remain out of scope.
+- Step285: linked the metadata-only fixture validator standalone Makefile
+  target implementation; release-quality generator integration, generator
+  code, artifact body generation, artifact writing, metrics, tests, fixtures,
+  and workflow changes remain out of scope.
 
 ## Related Documents
 

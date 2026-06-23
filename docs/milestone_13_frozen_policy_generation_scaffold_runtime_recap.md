@@ -393,6 +393,12 @@ release-quality generator integration, generator code, artifact body
 generation, artifact file writing, metrics, workflow changes, or real-data
 readiness.
 
+Step285 implements the standalone Makefile target for the metadata-only
+generator scaffold fixture validator CLI. It still does not introduce
+release-quality generator integration, generator code, artifact body
+generation, artifact file writing, metrics, workflow changes, or real-data
+readiness.
+
 ## 14. Beginner-Friendly Explanation
 
 Runtime infrastructure is the code, tests, CLI, Makefile target, release-quality
@@ -440,6 +446,9 @@ written, no artifact body is produced, and no performance metric is computed.
   implementation.
 - Step284: linked the generator scaffold fixture validator Makefile target
   design before target implementation or release-quality integration.
+- Step285: linked the generator scaffold fixture validator standalone Makefile
+  target implementation before release-quality integration or generator
+  implementation.
 
 ## Related Documents
 
