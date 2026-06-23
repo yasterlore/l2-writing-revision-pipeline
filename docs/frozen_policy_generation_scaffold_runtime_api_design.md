@@ -655,6 +655,14 @@ runtime CLI over one synthetic valid scaffold fixture pair. It does not add
 release-quality runtime integration, workflow changes, generator code,
 artifact writing, metric computation, real-data use, or performance claims.
 
+Step271 follow-up:
+
+[Frozen policy generation scaffold runtime release-quality integration design](frozen_policy_generation_scaffold_runtime_release_quality_integration_design.md)
+defines the future release-quality wrapper placement for the standalone
+runtime target. It keeps the runtime API, generator, artifact writer, fixtures,
+tests, Makefile, workflows, and wrapper implementation unchanged in the design
+step.
+
 ## 22. Update History
 
 - Step262: initial docs-only scaffold runtime API design.
@@ -670,6 +678,7 @@ artifact writing, metric computation, real-data use, or performance claims.
 - Step269: linked the docs-only runtime CLI Makefile target design.
 - Step270: recorded the standalone runtime CLI Makefile target implementation
   status.
+- Step271: linked the docs-only runtime release-quality integration design.
 
 ## Related Documents
 
@@ -678,6 +687,7 @@ artifact writing, metric computation, real-data use, or performance claims.
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
 - [Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
 - [Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
+- [Frozen policy generation scaffold runtime release-quality integration design](frozen_policy_generation_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
