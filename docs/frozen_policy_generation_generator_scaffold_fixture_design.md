@@ -461,10 +461,18 @@ still does not add a CLI, Makefile target, release-quality integration,
 generator implementation, artifact body generation, artifact writing, metrics,
 or real-data readiness.
 
+Step282 designs the future CLI for running that validator safely from a
+terminal:
+[Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md).
+The CLI design keeps output metadata-only and does not implement CLI code,
+Makefile targets, release-quality integration, generator code, artifact body
+generation, or artifact writing.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
+- [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)

@@ -374,6 +374,12 @@ Makefile target, release-quality generator integration, generator code,
 artifact body generation, artifact file writing, metrics, or real-data
 readiness.
 
+Step282 designs the future safe CLI for that validator at
+[Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md).
+It remains docs-only and does not introduce CLI code, Makefile target,
+release-quality generator integration, generator code, artifact body
+generation, artifact file writing, metrics, or real-data readiness.
+
 ## 14. Beginner-Friendly Explanation
 
 Runtime infrastructure is the code, tests, CLI, Makefile target, release-quality
@@ -414,12 +420,15 @@ written, no artifact body is produced, and no performance metric is computed.
   docs-only boundary before validator implementation.
 - Step281: linked the generator scaffold fixture validator implementation
   status before CLI, Makefile, release-quality, or generator implementation.
+- Step282: linked the generator scaffold fixture validator CLI design as the
+  next docs-only boundary before CLI implementation.
 
 ## Related Documents
 
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
+- [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)

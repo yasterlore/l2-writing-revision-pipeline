@@ -684,6 +684,13 @@ The fixture root is still not a generator implementation and does not add
 artifact body generation, artifact file writing, metrics, or real-data
 readiness.
 
+Step282 designs the future CLI boundary for running the implemented
+metadata-only fixture validator:
+[Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md).
+It keeps CLI implementation, Makefile targets, release-quality integration,
+generator code, artifact body generation, artifact writing, metrics, and
+real-data behavior out of scope.
+
 ## 21. Update History
 
 - Step234: initial frozen policy generation scaffold design creation.
@@ -726,11 +733,16 @@ readiness.
   implementation status; CLI, Makefile target, release-quality generator
   integration, generator code, artifact body generation, artifact writing,
   metrics, and real-data behavior remain out of scope.
+- Step282: linked the metadata-only fixture validator CLI design; CLI
+  implementation, Makefile target, release-quality generator integration,
+  generator code, artifact body generation, artifact writing, metrics, and
+  real-data behavior remain out of scope.
 
 ## Related Documents
 
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
+- [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
