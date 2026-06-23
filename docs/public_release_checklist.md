@@ -1033,6 +1033,22 @@ before scaffold runtime API design. Confirm it does not copy raw logs, full job
 output, generation request bodies, input pointer bodies, expected scaffold
 result bodies, artifact bodies, JSON bodies, raw rows, logits/probability
 dumps, private paths, raw learner text, or performance claims.
+For Step262, review the
+[frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
+and confirm it is docs-only: no GitHub Actions workflow change,
+release-quality wrapper change, Makefile change, Python code change, Python
+test change, fixture change, scaffold runtime code, generator code,
+calibration/selective prediction logic, estimator work, metric computation,
+real-data use, or real-data readiness claim is introduced. Confirm the design
+defines only the future runtime API boundary: proposed module, public APIs,
+dataclasses, request contract, input pointer contract, plan contract, scaffold
+result contract, error categories, validator relation, release-quality
+relation, path safety, no-oracle boundary, synthetic-only boundary,
+logging/output policy, future tests, and staged implementation plan. Confirm
+the design does not copy raw logs, full job output, generation request bodies,
+input pointer bodies, expected scaffold result bodies, generated or frozen
+policy artifact bodies, JSON bodies, raw rows, logits/probability dumps,
+private paths, raw learner text, or performance claims.
 
 ## 7. Checks To Run
 

@@ -392,10 +392,13 @@ contract validation passed inside the release-quality wrapper.
   design for scaffold fixture validator wrapper integration.
 - Step260: public-safe status marker created at
   `docs/status/learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md`.
+- Step262: linked the scaffold runtime API design as a future stage after
+  scaffold fixture validation infrastructure and remote status recording.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
+- [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Learner-state frozen policy generation scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)

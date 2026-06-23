@@ -575,6 +575,12 @@ Step258 implements the release-quality wrapper integration for the standalone
 scaffold fixture validator target. It remains fixture-only and does not add
 workflow changes, scaffold runtime code, or generator code.
 
+Step262 adds
+[Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md).
+It refines this implementation-boundary design into a proposed runtime module,
+public API, dataclass, request/pointer/plan/result contract, error category,
+and safety policy before any runtime or generator code is implemented.
+
 ## 21. Update History
 
 - Step248: initial frozen policy generation scaffold implementation design.
@@ -594,10 +600,13 @@ workflow changes, scaffold runtime code, or generator code.
   design.
 - Step258: linked the scaffold fixture validator release-quality wrapper
   integration implementation status.
+- Step262: linked the scaffold runtime API design as the next docs-only API
+  boundary before runtime implementation.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
+- [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)

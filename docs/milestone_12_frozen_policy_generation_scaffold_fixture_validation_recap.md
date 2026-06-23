@@ -293,6 +293,12 @@ The safest next step is scaffold runtime API design. That keeps the runtime
 boundary explicit before any code starts reading request/pointer metadata and
 before any generator or artifact-writing behavior exists.
 
+Step262 adds the next-stage docs-only design at
+[Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md).
+That document defines the proposed runtime module, public APIs, dataclasses,
+request/pointer/plan/result contracts, error categories, and safety policy
+before any runtime or generator code exists.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, commands, and
@@ -320,10 +326,13 @@ checks matched expected metadata.
 
 - Step261: initial recap creation for scaffold fixture validation
   infrastructure.
+- Step262: linked the scaffold runtime API design as the next docs-only stage
+  before runtime implementation.
 
 ## Related Documents
 
 - [Milestone 11 frozen policy generation validation infrastructure recap](milestone_11_frozen_policy_generation_validation_infrastructure_recap.md)
+- [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
