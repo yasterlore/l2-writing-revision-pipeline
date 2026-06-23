@@ -7,7 +7,9 @@ prediction, train an estimator, or compute metrics.
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -137,6 +139,14 @@ UNSAFE_PATH_MARKERS = (
     "participant_data/",
     "private_data/",
     "manual_outputs/",
+)
+UNSAFE_CLI_PATH_PARTS = frozenset(
+    {
+        "real_data",
+        "participant_data",
+        "private_data",
+        "manual_outputs",
+    }
 )
 RAW_ROW_PAYLOAD_KEYS = frozenset(
     {
@@ -838,3 +848,167 @@ def _is_marker_string(value: str, key_context: str | None) -> bool:
     if value.startswith("synthetic_") and value.endswith("_marker_only"):
         return True
     return False
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Validate synthetic frozen policy generation scaffold fixtures "
+            "with safe metadata-only output."
+        )
+    )
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument(
+        "--fixture-root",
+        type=Path,
+        help="Synthetic scaffold fixture root to validate.",
+    )
+    group.add_argument(
+        "--fixture-case",
+        type=Path,
+        help="Single synthetic scaffold fixture case to validate.",
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit safe machine-readable summary JSON.",
+    )
+    args = parser.parse_args(argv)
+
+    selected_path = args.fixture_root or args.fixture_case
+    if _is_unsafe_cli_path(selected_path):
+        payload = _input_error_payload("unsafe_path")
+        _emit_cli_payload(payload, args.json)
+        return 2
+
+    if args.fixture_root is not None:
+        return _run_fixture_root_cli(args.fixture_root, args.json)
+    return _run_fixture_case_cli(args.fixture_case, args.json)
+
+
+def _run_fixture_root_cli(fixture_root: Path, json_output: bool) -> int:
+    summary = validate_scaffold_fixture_root(fixture_root)
+    payload = summary.to_safe_dict()
+    _emit_cli_payload(payload, json_output)
+    if summary.input_error_cases:
+        return 2
+    if summary.mismatched_cases:
+        return 3
+    return 0
+
+
+def _run_fixture_case_cli(fixture_case: Path, json_output: bool) -> int:
+    result = validate_scaffold_fixture_case(fixture_case)
+    payload = result.to_safe_dict()
+    payload["mode"] = "fixture_case"
+    payload["fixture_case_label"] = _safe_case_label(fixture_case)
+
+    if result.scaffold_status == "input_error":
+        payload["expected_result_matched"] = False
+        payload["mismatch_count"] = 0
+        payload["mismatch_fields"] = []
+        _emit_cli_payload(payload, json_output)
+        return 2
+
+    try:
+        expected = load_expected_scaffold_result(fixture_case)
+        mismatches = compare_scaffold_result_to_expected(result, expected)
+    except (OSError, json.JSONDecodeError, ValueError):
+        payload["scaffold_status"] = "input_error"
+        payload["validation_status"] = "input_error"
+        payload["reason_codes"] = ["malformed_fixture_file"]
+        payload["failed_checks"] = ["expected_scaffold_result"]
+        payload["expected_result_matched"] = False
+        payload["mismatch_count"] = 0
+        payload["mismatch_fields"] = []
+        _emit_cli_payload(payload, json_output)
+        return 2
+
+    payload["expected_result_matched"] = not mismatches
+    payload["mismatch_count"] = len(mismatches)
+    payload["mismatch_fields"] = [mismatch.field_name for mismatch in mismatches]
+    payload["mismatches"] = [
+        _safe_mismatch_summary(mismatch) for mismatch in mismatches
+    ]
+    _emit_cli_payload(payload, json_output)
+    return 0 if not mismatches else 3
+
+
+def _safe_mismatch_summary(
+    mismatch: ScaffoldFixtureValidationMismatch,
+) -> dict[str, Any]:
+    return {
+        "field_name": mismatch.field_name,
+        "expected_value": _safe_scalar_or_list(mismatch.expected_value),
+        "actual_value": _safe_scalar_or_list(mismatch.actual_value),
+    }
+
+
+def _safe_scalar_or_list(value: Any) -> Any:
+    if isinstance(value, (str, int, float, bool)) or value is None:
+        return value
+    if isinstance(value, list):
+        return [
+            item
+            for item in value
+            if isinstance(item, (str, int, float, bool)) or item is None
+        ]
+    if isinstance(value, dict):
+        return "metadata_object_suppressed"
+    return str(type(value).__name__)
+
+
+def _input_error_payload(reason_code: str) -> dict[str, Any]:
+    return {
+        "validation_schema_version": VALIDATION_SCHEMA_VERSION,
+        "mode": "input_error",
+        "scaffold_status": "input_error",
+        "validation_status": "input_error",
+        "reason_codes": [reason_code],
+        "failed_checks": [reason_code],
+        "content_suppressed": True,
+        "no_raw_rows": True,
+        "synthetic_only_checked": True,
+        "no_oracle_checked": True,
+        "private_path_scan_checked": True,
+        "performance_claim_scan_checked": True,
+    }
+
+
+def _emit_cli_payload(payload: dict[str, Any], json_output: bool) -> None:
+    if json_output:
+        print(json.dumps(payload, sort_keys=True))
+        return
+    for key in sorted(payload):
+        value = payload[key]
+        if isinstance(value, bool):
+            value_text = "true" if value else "false"
+        elif isinstance(value, (list, tuple)):
+            value_text = ",".join(str(item) for item in value) if value else "none"
+        elif isinstance(value, dict):
+            value_text = json.dumps(value, sort_keys=True, separators=(",", ":"))
+        else:
+            value_text = str(value)
+        print(f"{key}={value_text}")
+
+
+def _is_unsafe_cli_path(path: Path) -> bool:
+    text = str(path)
+    parts = set(Path(path).parts)
+    if parts.intersection(UNSAFE_CLI_PATH_PARTS):
+        return True
+    return any(marker in text for marker in UNSAFE_CLI_PATH_PARTS)
+
+
+def _safe_case_label(path: Path) -> str:
+    path = Path(path)
+    parts = path.parts
+    for marker in ("valid", "invalid"):
+        if marker in parts:
+            index = parts.index(marker)
+            return "/".join(parts[index:])
+    return path.name
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

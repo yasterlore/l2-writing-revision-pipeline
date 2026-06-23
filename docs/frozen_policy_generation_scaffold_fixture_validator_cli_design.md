@@ -2,13 +2,17 @@
 
 ## 1. Purpose
 
-This document designs a future command-line interface for the frozen policy
-generation scaffold fixture validator.
+This document designs the command-line interface for the frozen policy
+generation scaffold fixture validator and records the Step254 minimal
+implementation status.
 
-It is a docs-only design. It does not implement CLI code, scaffold runtime
-code, generator code, Makefile targets, release-quality integration, GitHub
-Actions workflow changes, metric computation, performance evaluation, or
-real-data readiness.
+Step254 implements the minimal CLI entrypoint in
+`python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
+and adds CLI tests in
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation_cli.py`.
+It does not implement scaffold runtime code, generator code, Makefile targets,
+release-quality integration, GitHub Actions workflow changes, metric
+computation, performance evaluation, or real-data readiness.
 
 The CLI should provide a safe way to run the existing scaffold fixture
 validator against one synthetic fixture case or the full scaffold fixture
@@ -34,9 +38,8 @@ Current scaffold fixture validation assets:
 - public API for discovery, case loading, expected-result loading,
   case/root validation, comparison, and safe summary conversion
 
-The following do not exist yet:
+The CLI exists as of Step254. The following do not exist yet:
 
-- scaffold fixture validator CLI
 - scaffold fixture validator Makefile target
 - release-quality integration for this scaffold fixture validator
 - scaffold runtime
@@ -353,8 +356,9 @@ Rationale:
 - it distinguishes scaffold fixtures from generation validation fixtures
 - it is explicit enough for release-quality logs
 
-This step does not implement a Makefile target. The target should be added
-only after CLI behavior and log safety are verified.
+Step254 verifies the standalone CLI behavior and log safety through CLI tests.
+This step still does not implement a Makefile target. The target should be
+designed and added in a later step.
 
 ## 17. Release-Quality Future
 
@@ -373,9 +377,8 @@ CLI command.
 
 ## 18. What This Does NOT Do
 
-This document does not:
+This document and Step254 implementation do not:
 
-- implement CLI code
 - implement scaffold runtime
 - implement a generator
 - create or modify fixtures
@@ -411,15 +414,18 @@ counts, statuses, and reason codes, not fixture bodies or private data.
 
 ## 20. Next Recommended Steps
 
+Step254 implements the scaffold fixture validator CLI.
+
 Recommended next step:
 
-- implement the scaffold fixture validator CLI
+- design the standalone Makefile target for the scaffold fixture validator CLI
 
 Reason:
 
-- the validator API and fixture tests already exist
-- CLI implementation is a small wrapper around existing safe APIs
-- it enables a later Makefile target without touching release-quality yet
+- the CLI and CLI tests now exist
+- a Makefile target should be introduced only after standalone log safety is
+  confirmed
+- release-quality integration should still wait for the standalone target
 
 Other future steps:
 
@@ -430,6 +436,8 @@ Other future steps:
 ## 21. Update History
 
 - Step253: initial scaffold fixture validator CLI design.
+- Step254: minimal scaffold fixture validator CLI implementation and CLI tests
+  added.
 
 ## Related Documents
 
@@ -439,3 +447,4 @@ Other future steps:
 - [Milestone 11 frozen policy generation validation infrastructure recap](milestone_11_frozen_policy_generation_validation_infrastructure_recap.md)
 - `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation_cli.py`

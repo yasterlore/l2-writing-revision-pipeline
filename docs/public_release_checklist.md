@@ -923,6 +923,19 @@ Makefile/release-quality staging, and non-goals without copying raw logs,
 request bodies, input pointer bodies, generated artifact bodies, frozen policy
 artifact bodies, JSON bodies, raw rows, logits/probability dumps, private
 paths, raw learner text, or performance claims.
+For Step254, review
+`python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
+and
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation_cli.py`
+and confirm the change is limited to the minimal scaffold fixture validator
+CLI and CLI tests: no scaffold runtime code, generator code, Makefile target,
+wrapper change, workflow change, fixture change, existing fixture change,
+calibration/selective prediction logic, estimator work, metric computation,
+real-data use, or real-data readiness claim is introduced. The CLI output
+must remain safe metadata only and must not include raw logs, request bodies,
+input pointer bodies, generated artifact bodies, frozen policy artifact
+bodies, JSON bodies, raw rows, logits/probability dumps, private paths, raw
+learner text, or performance claims.
 
 ## 7. Checks To Run
 

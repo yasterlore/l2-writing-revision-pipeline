@@ -569,6 +569,9 @@ Step253 designs the future CLI for the scaffold fixture validator. It keeps
 the current fixture root unchanged and specifies only a future safe command
 surface for fixture-root and single-case validation.
 
+Step254 implements the minimal scaffold fixture validator CLI and tests
+without changing the scaffold fixture root.
+
 ## 20. Update History
 
 - Step249: initial frozen policy generation scaffold fixture design.
@@ -577,6 +580,7 @@ surface for fixture-root and single-case validation.
 - Step251: linked the scaffold fixture validator design.
 - Step252: linked the minimal scaffold fixture validator implementation.
 - Step253: linked the scaffold fixture validator CLI design.
+- Step254: linked the scaffold fixture validator CLI implementation.
 
 ## Related Documents
 

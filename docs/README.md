@@ -27,7 +27,7 @@ Recommended entry points:
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md): Step250 initial synthetic-only scaffold fixture root with three valid dry-run cases and eight representative invalid cases.
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md): Step251 docs-only validator plan for checking scaffold fixture safety, reason-code alignment, and metadata-only output.
 - `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`: Step252 minimal scaffold fixture validator for the synthetic scaffold fixture root; no scaffold runtime or generator is added.
-- [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md): Step253 docs-only CLI entrypoint, arguments, exit-code, and safe-output design for the scaffold fixture validator.
+- [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md): Step253 design and Step254 implementation status for the safe scaffold fixture validator CLI.
 - [Selective prediction and calibration design](selective_prediction_calibration_design.md): docs-only design for confidence, abstention, validation/test label use, ECE, AURCC, and no-oracle boundaries before any estimator prototype.
 - [Selective prediction and calibration fixture design](selective_prediction_calibration_fixture_design.md): docs-only fixture-root, file-set, expected-result, and reason-code design for future confidence/calibration validation.
 - [Selective prediction and calibration fixtures](../tests/fixtures/learner_state_selective_prediction/README.md): initial synthetic-only prediction/label/split/policy fixtures for future calibration validation.
@@ -64,7 +64,8 @@ Recommended entry points:
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md): Step250 initial scaffold fixture files for future scaffold API/CLI behavior; no scaffold code or validator is added.
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md): Step251 docs-only design for the future scaffold fixture root validator.
 - `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`: Step252 safe fixture-root validator for scaffold fixture metadata and expected reason-code alignment.
-- [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md): Step253 docs-only plan for a future safe `python -m learner_state.frozen_policy_generation_scaffold_fixture_validation` CLI.
+- [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md): Step253 plan and Step254 implementation status for the safe `python -m learner_state.frozen_policy_generation_scaffold_fixture_validation` CLI.
+- `python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation_cli.py`: Step254 CLI tests for scaffold fixture-root/case modes, JSON output, usage errors, mismatch handling, and safe stdout/stderr.
 - `python/learner_state/frozen_policy_generation_validation.py`: Step238 minimal safe loader/validator and Step240 safe CLI for frozen policy generation fixtures; no generator, calibration, or metrics are added.
 - `python/learner_state/tests/test_frozen_policy_generation_validation.py`: fixture-based tests for three valid generation cases and ten fail-closed invalid generation cases.
 - `python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`: CLI tests for frozen policy generation fixture-case/root modes, safe JSON, usage errors, and expected-result mismatch handling.
@@ -174,7 +175,8 @@ Recommended entry points:
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md): Step250 metadata-only fixture root for future scaffold tests.
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md): Step251 design for validating the scaffold fixture root before scaffold runtime code.
 - `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`: Step252 minimal validator implementation for scaffold fixture safety and expected-result matching.
-- [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md): Step253 design for fixture-root/case CLI modes, safe JSON/human output, and future Makefile staging.
+- [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md): Step253 design and Step254 implementation status for fixture-root/case CLI modes, safe JSON/human output, and future Makefile staging.
+- `python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation_cli.py`: Step254 CLI coverage for expected-result matching and safe output.
 - `make check-learner-state-frozen-policy`: Step228 standalone target for the synthetic frozen policy fixture root; Step230 adds it to release-quality.
 - `python/learner_state/frozen_policy_validation.py`: Step224 minimal validator/loader and Step226 safe CLI for synthetic frozen policy fixtures; Step228 adds the standalone Makefile target, while scaffold code is not added.
 - `python/learner_state/tests/test_frozen_policy_validation.py`: unit tests for expected-result matching and safe validation metadata.
