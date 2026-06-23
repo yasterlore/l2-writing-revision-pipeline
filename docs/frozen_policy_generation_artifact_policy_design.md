@@ -380,8 +380,15 @@ It keeps generator implementation, artifact body generation, artifact file
 writing, metrics, real-data use, and release-quality generator integration out
 of scope.
 
+Step278 adds the metadata-only fixture design at
+[Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md).
+It keeps fixture creation, generator implementation, artifact body generation,
+artifact file writing, metrics, real-data use, and release-quality generator
+integration out of scope.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)

@@ -347,6 +347,14 @@ It defines a future metadata-only generator planning layer while keeping
 generator code, artifact body generation, artifact file writing, metrics,
 real-data use, and release-quality generator integration out of scope.
 
+Step278 adds the generator scaffold fixture design at
+[Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md).
+It defines the future metadata-only fixture root, case layout, expected-result
+contract, safety flags, artifact flags, and validator implications while
+keeping fixture creation, generator code, artifact body generation, artifact
+file writing, metrics, real-data use, and release-quality generator
+integration out of scope.
+
 ## 14. Beginner-Friendly Explanation
 
 Runtime infrastructure is the code, tests, CLI, Makefile target, release-quality
@@ -378,10 +386,14 @@ written, no artifact body is produced, and no performance metric is computed.
   release-quality staging.
 - Step277: linked the generator scaffold design as the next metadata-only
   planning boundary before generator fixtures or implementation.
+- Step278: linked the generator scaffold fixture design as the metadata-only
+  fixture-contract boundary before fixture creation or validator
+  implementation.
 
 ## Related Documents
 
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
+- [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
