@@ -1444,6 +1444,23 @@ fixtures, generator, artifact writing, artifact body generation, calibration
 code, estimator code, metric computation, or real-data readiness claim is
 introduced.
 
+For Step290, review the
+[frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md).
+Confirm it is docs-only and defines the future metadata-only skeleton module,
+dataclasses, public APIs, input contract, output contract, artifact flags,
+safety flags, count summary, fail-closed behavior, relation to the existing
+fixture validator, future tests, future CLI, future Makefile target,
+release-quality staging, and status-marker staging. Confirm it does not add
+Python code, Python tests, fixtures, Makefile targets, release-quality wrapper
+changes, GitHub Actions workflow changes, generator implementation, artifact
+body generation, generated policy bodies, artifact file writing, calibration
+or selective prediction logic, estimator work, metric computation,
+performance evaluation, real-data use, or real-data readiness claims.
+Confirm it does not include raw logs, request/pointer bodies, expected
+generator scaffold result bodies, artifact bodies, generated policy bodies,
+raw rows, logits, private paths, raw learner text, or performance metric
+bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

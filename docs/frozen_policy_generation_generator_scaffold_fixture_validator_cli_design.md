@@ -416,8 +416,14 @@ Step288 adds the future remote/manual Release Quality run record workflow:
 [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md).
 CLI summaries remain safe inputs to future pass-only/count-only status markers.
 
+Step290 adds the generator scaffold skeleton design:
+[Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md).
+The fixture validator CLI remains separate from any future generator scaffold
+CLI.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
@@ -441,3 +447,5 @@ Related docs:
 - Step285: recorded standalone Makefile target implementation status;
   release-quality integration and workflow changes remain future work.
 - Step286: linked the docs-only release-quality integration design.
+- Step290: linked the generator scaffold skeleton design as a separate future
+  component from this fixture validator CLI.

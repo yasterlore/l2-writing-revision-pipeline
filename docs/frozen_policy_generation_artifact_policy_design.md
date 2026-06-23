@@ -438,8 +438,14 @@ Step288 designs the future remote/manual Release Quality run record workflow:
 The artifact policy remains unchanged: no artifact body, generated policy body,
 raw rows, logits, private paths, or raw logs should be recorded.
 
+Step290 designs the future generator scaffold skeleton:
+[Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md).
+The artifact policy remains unchanged: the skeleton boundary is metadata-only,
+does not generate artifact bodies or policy bodies, and does not write files.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)

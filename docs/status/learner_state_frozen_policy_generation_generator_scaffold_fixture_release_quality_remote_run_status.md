@@ -235,8 +235,9 @@ This marker does not prove:
 
 ## Next Actions
 
-- Commit this status marker after local checks.
-- Keep future generator scaffold skeleton design separate.
+- Step290 created the future generator scaffold skeleton design:
+  [Frozen policy generation generator scaffold skeleton design](../frozen_policy_generation_generator_scaffold_skeleton_design.md).
+- Keep future generator scaffold skeleton implementation separate.
 - Keep future artifact writing design separate.
 - Keep future calibration scaffold work separate.
 - Treat real-data readiness as future private/institution-approved review only.
@@ -245,3 +246,5 @@ This marker does not prove:
 
 - Step289: initial public-safe remote/manual Release Quality status marker for
   generator scaffold fixture validation integration.
+- Step290: linked the metadata-only generator scaffold skeleton design as the
+  next action; implementation remains separate.

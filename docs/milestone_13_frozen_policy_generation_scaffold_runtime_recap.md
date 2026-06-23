@@ -468,9 +468,12 @@ written, no artifact body is produced, and no performance metric is computed.
   run record workflow design for a future public-safe status marker.
 - Step289: linked the generator scaffold fixture release-quality remote/manual
   run status marker.
+- Step290: linked the generator scaffold skeleton design as the next
+  metadata-only boundary before implementation.
 
 ## Related Documents
 
+- [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Learner-state frozen policy generation generator scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)

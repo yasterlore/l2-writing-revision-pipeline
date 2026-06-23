@@ -464,8 +464,15 @@ workflow for generator scaffold fixture validation.
 Step289 records the corresponding public-safe remote/manual Release Quality
 status marker. The marker remains pass-only and count-only.
 
+Step290 adds the generator scaffold skeleton design:
+[Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md).
+The skeleton design is separate from this remote-run record workflow and keeps
+generator implementation, artifact bodies, artifact writing, metrics, and
+real-data readiness out of scope.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Learner-state frozen policy generation generator scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
@@ -487,3 +494,5 @@ Related docs:
   metric computation, or real-data readiness claim is introduced.
 - Step289: recorded the public-safe remote/manual Release Quality status marker
   for generator scaffold fixture validation integration.
+- Step290: linked the generator scaffold skeleton design as the next
+  metadata-only design step after the status marker.
