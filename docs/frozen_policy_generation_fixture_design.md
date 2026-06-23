@@ -472,9 +472,12 @@ followed the synthetic fixture contract and safety boundaries.
   design; fixture files remain unchanged.
 - Step242: linked the standalone generation validator Makefile target
   implementation status; fixture files remain unchanged.
+- Step243: linked the release-quality integration design; fixture files remain
+  unchanged.
 
 ## Related Documents
 
+- [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

@@ -300,9 +300,12 @@ contract and expected-result matching behaved as designed.
 - Step242: implemented `make check-learner-state-frozen-policy-generation`
   as a standalone smoke target. Release-quality wrapper and workflows remain
   unchanged.
+- Step243: linked the release-quality integration design as the next
+  docs-only wrapper planning step.
 
 ## Related Documents
 
+- [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)

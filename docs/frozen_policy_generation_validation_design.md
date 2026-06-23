@@ -414,9 +414,12 @@ is not evidence that a model is accurate, calibrated, or ready for real data.
   design.
 - Step242: linked the standalone Makefile target implementation status for
   `make check-learner-state-frozen-policy-generation`.
+- Step243: linked the release-quality integration design for the standalone
+  generation validator target.
 
 ## Related Documents
 
+- [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

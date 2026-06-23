@@ -437,9 +437,12 @@ real-data-ready.
   design.
 - Step242: linked the standalone generation validator Makefile target
   implementation status; generator scaffold remains unimplemented.
+- Step243: linked the release-quality integration design; generator scaffold
+  remains unimplemented.
 
 ## Related Documents
 
+- [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
 - [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)
 - [Selective prediction and calibration scaffold design](selective_prediction_calibration_scaffold_design.md)
