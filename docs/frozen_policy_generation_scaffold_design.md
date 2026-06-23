@@ -722,6 +722,10 @@ readiness.
   design; validator code, generator code, artifact body generation, artifact
   writing, metrics, release-quality generator integration, and real-data
   behavior remain out of scope.
+- Step281: linked the metadata-only generator scaffold fixture validator
+  implementation status; CLI, Makefile target, release-quality generator
+  integration, generator code, artifact body generation, artifact writing,
+  metrics, and real-data behavior remain out of scope.
 
 ## Related Documents
 

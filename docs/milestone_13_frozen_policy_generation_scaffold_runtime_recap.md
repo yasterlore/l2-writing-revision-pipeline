@@ -368,6 +368,12 @@ It does not implement validator code, generator code, artifact body generation,
 artifact file writing, metrics, release-quality generator integration, or
 real-data readiness.
 
+Step281 implements the metadata-only fixture validator and focused tests for
+the generator scaffold fixture root. It still does not introduce a CLI,
+Makefile target, release-quality generator integration, generator code,
+artifact body generation, artifact file writing, metrics, or real-data
+readiness.
+
 ## 14. Beginner-Friendly Explanation
 
 Runtime infrastructure is the code, tests, CLI, Makefile target, release-quality
@@ -406,6 +412,8 @@ written, no artifact body is produced, and no performance metric is computed.
   the next contract artifact before validator design or implementation.
 - Step280: linked the generator scaffold fixture validator design as the next
   docs-only boundary before validator implementation.
+- Step281: linked the generator scaffold fixture validator implementation
+  status before CLI, Makefile, release-quality, or generator implementation.
 
 ## Related Documents
 

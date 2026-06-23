@@ -398,6 +398,10 @@ It keeps validator implementation, generator implementation, artifact body
 generation, artifact file writing, metrics, real-data use, and release-quality
 integration out of scope.
 
+Step281 implements the metadata-only fixture validator and tests. The artifact
+policy remains unchanged: no artifact body generation, no artifact file
+writing, no generated policy body, no metrics, and no real-data readiness.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
