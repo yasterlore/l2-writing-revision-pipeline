@@ -377,8 +377,14 @@ Step288 adds the remote/manual run record workflow design:
 It keeps the actual status marker as future work and limits any future record
 to pass-only/count-only metadata.
 
+Step289 records the corresponding public-safe status marker:
+[Learner-state frozen policy generation generator scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md).
+It uses only pass-only/count-only metadata and does not copy raw logs or
+fixture bodies.
+
 Related docs:
 
+- [Learner-state frozen policy generation generator scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
@@ -397,3 +403,5 @@ Related docs:
   artifact-body changes are introduced.
 - Step288: linked the docs-only remote/manual Release Quality run record
   workflow design for a future public-safe status marker.
+- Step289: linked the public-safe remote/manual Release Quality status marker
+  for generator scaffold fixture validation integration.
