@@ -355,6 +355,13 @@ keeping fixture creation, generator code, artifact body generation, artifact
 file writing, metrics, real-data use, and release-quality generator
 integration out of scope.
 
+Step279 creates that metadata-only fixture root at
+`tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/`.
+It remains synthetic-only and no-oracle, and it still does not introduce
+generator code, fixture validator code, artifact body generation, artifact file
+writing, metrics, release-quality generator integration, or real-data
+readiness.
+
 ## 14. Beginner-Friendly Explanation
 
 Runtime infrastructure is the code, tests, CLI, Makefile target, release-quality
@@ -389,10 +396,13 @@ written, no artifact body is produced, and no performance metric is computed.
 - Step278: linked the generator scaffold fixture design as the metadata-only
   fixture-contract boundary before fixture creation or validator
   implementation.
+- Step279: linked the created metadata-only generator scaffold fixture root as
+  the next contract artifact before validator design or implementation.
 
 ## Related Documents
 
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
+- [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)

@@ -1,0 +1,26 @@
+{
+  "abstention_policy_label": "threshold_based_abstention_metadata_only",
+  "artifact_policy_label": "metadata_only_no_body_no_file_writing",
+  "calibration_policy_label": "identity_temperature_validation_only",
+  "expected_failure_marker": "generated_artifact_body_leakage",
+  "expected_generation_status": "fail",
+  "expected_reason_codes": [
+    "generated_artifact_body_leakage"
+  ],
+  "generator_mode": "metadata_only_scaffold",
+  "no_oracle_required": true,
+  "notes": "synthetic fail-closed marker case; no unsafe payload body is embedded",
+  "request_id": "synthetic_generator_scaffold_generated_artifact_body_leakage",
+  "requested_artifact_body": true,
+  "requested_file_writing": false,
+  "schema_version": "frozen_policy_generation_generator_scaffold_request_v0.1",
+  "split_policy_label": "validation_only_split_metadata",
+  "synthetic_only": true,
+  "threshold_policy_label": "fixed_threshold_metadata_only",
+  "unsafe_marker_label": "synthetic_generated_artifact_body_leakage_marker_only",
+  "validation_reference_ids": [
+    "learner_state_frozen_policy_generation/valid/identity_temperature_fixed_threshold",
+    "learner_state_frozen_selective_prediction_policy/valid/fixed_threshold_policy",
+    "learner_state_selective_prediction/valid/fixed_temperature_validation_only"
+  ]
+}
