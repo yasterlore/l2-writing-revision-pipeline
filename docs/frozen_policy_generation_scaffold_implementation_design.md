@@ -545,6 +545,10 @@ Step250 creates the initial synthetic-only scaffold fixture files under
 adding scaffold code, generator code, CLI, Makefile targets, release-quality
 integration, workflow changes, or Python tests.
 
+Step251 defines the future scaffold fixture validator design. It keeps
+validator implementation separate from scaffold runtime code and focuses on
+fixture safety, metadata-only contracts, and expected reason-code alignment.
+
 ## 21. Update History
 
 - Step248: initial frozen policy generation scaffold implementation design.
@@ -552,12 +556,15 @@ integration, workflow changes, or Python tests.
   next docs-only fixture contract before scaffold code.
 - Step250: linked the initial scaffold fixture root implementation; scaffold
   code remains unimplemented.
+- Step251: linked the scaffold fixture validator design as the next safety
+  layer before scaffold runtime code.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
+- [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
