@@ -386,6 +386,13 @@ Makefile target, release-quality generator integration, generator code,
 artifact body generation, artifact file writing, metrics, workflow changes, or
 real-data readiness.
 
+Step284 designs the future Makefile target for that CLI at
+[Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md).
+It remains docs-only and still does not introduce a Makefile target,
+release-quality generator integration, generator code, artifact body
+generation, artifact file writing, metrics, workflow changes, or real-data
+readiness.
+
 ## 14. Beginner-Friendly Explanation
 
 Runtime infrastructure is the code, tests, CLI, Makefile target, release-quality
@@ -431,6 +438,8 @@ written, no artifact body is produced, and no performance metric is computed.
 - Step283: linked the generator scaffold fixture validator CLI implementation
   status before Makefile, release-quality, workflow, or generator
   implementation.
+- Step284: linked the generator scaffold fixture validator Makefile target
+  design before target implementation or release-quality integration.
 
 ## Related Documents
 
@@ -446,6 +455,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
 - [Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
 - [Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
+- [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation scaffold runtime release-quality integration design](frozen_policy_generation_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation scaffold runtime release-quality remote run record workflow](frozen_policy_generation_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_runtime_release_quality_remote_run_status.md)

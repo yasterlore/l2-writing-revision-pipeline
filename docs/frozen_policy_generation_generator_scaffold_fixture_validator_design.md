@@ -641,8 +641,15 @@ CLI tests. The CLI remains metadata-only and does not execute a generator,
 write artifacts, expose request/pointer/expected-result bodies, add a Makefile
 target, change release-quality, or change workflows.
 
+Step284 designs the future standalone Makefile target for that CLI at
+[Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md).
+The design keeps Makefile implementation, release-quality integration,
+workflow changes, generator code, artifact body generation, and artifact
+writing out of scope.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
@@ -662,3 +669,6 @@ Related docs:
 - Step283: recorded CLI implementation status; Makefile target,
   release-quality integration, workflow changes, generator code, artifact body
   generation, and artifact writing remain future work.
+- Step284: linked the docs-only standalone Makefile target design for the
+  validator CLI; implementation and release-quality integration remain future
+  work.

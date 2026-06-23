@@ -696,6 +696,13 @@ the generator scaffold itself unimplemented and does not add Makefile targets,
 release-quality integration, artifact body generation, artifact writing,
 metrics, fixtures, or workflow changes.
 
+Step284 designs a future standalone Makefile target for the generator scaffold
+fixture validator CLI:
+[Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md).
+It remains docs-only and keeps Makefile implementation, release-quality
+integration, generator code, artifact body generation, artifact writing,
+metrics, fixtures, and workflow changes out of scope.
+
 ## 21. Update History
 
 - Step234: initial frozen policy generation scaffold design creation.
@@ -746,12 +753,17 @@ metrics, fixtures, or workflow changes.
   Makefile target, release-quality generator integration, generator code,
   artifact body generation, artifact writing, metrics, fixtures, and workflow
   changes remain out of scope.
+- Step284: linked the metadata-only fixture validator Makefile target design;
+  Makefile implementation, release-quality generator integration, generator
+  code, artifact body generation, artifact writing, metrics, fixtures, and
+  workflow changes remain out of scope.
 
 ## Related Documents
 
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
 - [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
+- [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)

@@ -1356,6 +1356,21 @@ request/pointer bodies, expected result bodies, artifact bodies, generated
 policy bodies, raw rows, logits, private paths, raw learner text, and
 performance claims.
 
+For Step284, review the
+[frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
+and confirm it is docs-only: no Makefile target, Makefile change,
+release-quality wrapper change, GitHub Actions workflow change, Python code
+change, Python test change, fixture change, generator code, artifact-body
+generation, artifact file writing, calibration/selective prediction logic,
+estimator work, metric computation, real-data use, or real-data readiness
+claim is introduced. Confirm the proposed target name, command, help text,
+expected output, exit-code interpretation, tmp/output policy, relation to
+existing targets, release-quality staging, future target tests, and
+no-oracle/synthetic-only boundary are documented without raw logs,
+request/pointer bodies, expected result bodies, artifact bodies, generated
+policy bodies, raw rows, logits, private paths, raw learner text, or
+performance claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
