@@ -52,6 +52,13 @@ Release-quality integration does not exist yet.
 
 Scaffold runtime code and generator code do not exist.
 
+As of Step256, the standalone Makefile target exists:
+
+- `make check-learner-state-frozen-policy-generation-scaffold-fixtures`
+
+The target calls the scaffold fixture validator CLI in fixture-root mode and
+keeps release-quality integration out of scope.
+
 ## 3. Proposed Target Name
 
 Candidate target names:
@@ -328,7 +335,7 @@ Candidate next steps:
 
 Recommended next step:
 
-- Makefile target implementation
+- release-quality integration design
 
 Reason:
 
@@ -336,12 +343,15 @@ Reason:
 - the validator API exists
 - the CLI exists
 - CLI tests exist
-- a standalone Makefile target is the smallest next integration layer before
-  release-quality staging
+- Step256 adds the standalone Makefile target
+- release-quality staging should still wait for a separate design and wrapper
+  integration step
 
 ## 17. Update History
 
 - Step255: initial docs-only scaffold fixture validator Makefile target design.
+- Step256: standalone Makefile target implemented as
+  `check-learner-state-frozen-policy-generation-scaffold-fixtures`.
 
 ## Related Documents
 

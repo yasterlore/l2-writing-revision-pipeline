@@ -576,6 +576,9 @@ Step255 designs the future standalone Makefile target for that CLI. It remains
 docs-only and does not change the Makefile, release-quality wrapper, workflow,
 Python code, tests, fixtures, scaffold runtime, or generator.
 
+Step256 implements that standalone Makefile target without changing this
+fixture root. Release-quality integration remains a future step.
+
 ## 20. Update History
 
 - Step249: initial frozen policy generation scaffold fixture design.
@@ -586,6 +589,8 @@ Python code, tests, fixtures, scaffold runtime, or generator.
 - Step253: linked the scaffold fixture validator CLI design.
 - Step254: linked the scaffold fixture validator CLI implementation.
 - Step255: linked the scaffold fixture validator Makefile target design.
+- Step256: linked the scaffold fixture validator Makefile target
+  implementation status.
 
 ## Related Documents
 

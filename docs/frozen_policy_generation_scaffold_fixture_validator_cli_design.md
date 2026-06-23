@@ -421,6 +421,10 @@ CLI. The target is not implemented in Step255; the design fixes the proposed
 target name, command, help text, exit-code behavior, safe logging policy, and
 release-quality staging boundary.
 
+Step256 implements that standalone Makefile target. The release-quality wrapper
+is still unchanged, and scaffold runtime and generator code remain out of
+scope.
+
 Recommended next step:
 
 - design the standalone Makefile target for the scaffold fixture validator CLI
@@ -445,6 +449,7 @@ Other future steps:
   added.
 - Step255: linked the docs-only scaffold fixture validator Makefile target
   design.
+- Step256: linked the standalone Makefile target implementation status.
 
 ## Related Documents
 

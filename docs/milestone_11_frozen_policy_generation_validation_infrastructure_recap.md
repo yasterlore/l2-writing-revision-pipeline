@@ -304,6 +304,9 @@ validator CLI. The design is docs-only and keeps Makefile implementation,
 release-quality wrapper integration, workflow changes, scaffold runtime code,
 and generator code out of scope.
 
+Step256 implements the standalone Makefile target for scaffold fixture
+contract validation. Release-quality wrapper integration remains future work.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, CLI commands,
@@ -342,6 +345,8 @@ calibration method works well.
 - Step253: linked the scaffold fixture validator CLI design.
 - Step254: linked the scaffold fixture validator CLI implementation.
 - Step255: linked the scaffold fixture validator Makefile target design.
+- Step256: linked the scaffold fixture validator Makefile target
+  implementation status.
 
 ## Related Documents
 

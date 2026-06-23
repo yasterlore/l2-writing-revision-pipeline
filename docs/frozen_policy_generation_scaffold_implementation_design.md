@@ -563,6 +563,10 @@ validator CLI. It keeps Makefile implementation and release-quality integration
 out of scope while defining the proposed target name, command, help text, safe
 logging policy, and staging plan.
 
+Step256 implements that standalone Makefile target. It remains fixture-only and
+does not add release-quality integration, workflow changes, scaffold runtime
+code, or generator code.
+
 ## 21. Update History
 
 - Step248: initial frozen policy generation scaffold implementation design.
@@ -576,6 +580,8 @@ logging policy, and staging plan.
 - Step253: linked the scaffold fixture validator CLI design.
 - Step254: linked the scaffold fixture validator CLI implementation.
 - Step255: linked the scaffold fixture validator Makefile target design.
+- Step256: linked the scaffold fixture validator Makefile target
+  implementation status.
 
 ## Related Documents
 

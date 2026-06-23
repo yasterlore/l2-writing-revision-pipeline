@@ -399,6 +399,10 @@ implementation, release-quality integration, workflow changes, scaffold runtime
 code, and generator code out of scope while documenting the proposed target
 name, command, help text, safe logging policy, and future staging order.
 
+Step256 implements the standalone Makefile target for the CLI. It does not add
+release-quality wrapper integration, workflow changes, Python changes, fixture
+changes, scaffold runtime code, or generator code.
+
 ## 18. Beginner-Friendly Explanation
 
 A fixture validator is a checker for test-case files. It asks whether the
@@ -444,6 +448,8 @@ Reason:
 - Step254: linked the minimal scaffold fixture validator CLI implementation.
 - Step255: linked the docs-only scaffold fixture validator Makefile target
   design.
+- Step256: linked the standalone scaffold fixture validator Makefile target
+  implementation status.
 
 ## Related Documents
 
