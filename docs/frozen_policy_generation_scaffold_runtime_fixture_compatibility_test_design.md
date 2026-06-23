@@ -423,6 +423,12 @@ release-quality after the scaffold fixture validator target. Compatibility
 tests remain the broader runtime-vs-fixture contract check and do not become
 performance evidence.
 
+Step272 implementation status:
+
+The release-quality wrapper now includes the standalone runtime smoke target.
+Compatibility tests remain separate and continue to provide the broader
+runtime-vs-fixture contract check for valid 3 and invalid 8 synthetic cases.
+
 ## 19. Update History
 
 - Step265: initial docs-only scaffold runtime fixture compatibility test
@@ -434,6 +440,8 @@ performance evidence.
 - Step269: linked the runtime CLI Makefile target design.
 - Step270: linked the runtime CLI Makefile target implementation status.
 - Step271: linked the runtime release-quality integration design.
+- Step272: recorded release-quality wrapper integration status for the runtime
+  smoke target.
 
 ## Related Documents
 

@@ -200,11 +200,10 @@ artifact quality, model performance, or production readiness evidence.
 ## 10. Makefile / Workflow Status
 
 - The Makefile target already exists.
-- The release-quality wrapper is not yet changed for runtime smoke.
+- Step272 updates the release-quality wrapper to include the runtime smoke.
 - GitHub Actions workflow changes should not be needed if the workflow already
   calls the release-quality wrapper.
-- Future implementation should modify only `scripts/check_release_quality.sh`
-  if possible.
+- The wrapper change is limited to `scripts/check_release_quality.sh`.
 - Workflow YAML diff should remain none unless a separate reason appears.
 
 ## 11. Testing Plan For Future Implementation
@@ -312,22 +311,63 @@ A status marker should be a separate later step because remote/manual
 Release Quality results need careful public-safe recording without raw logs or
 body content.
 
-## 16. Next Recommended Steps
+## 16. Step272 Implementation Status
+
+Step272 adds the standalone runtime target to `scripts/check_release_quality.sh`
+immediately after scaffold fixture validation and before config/scoring smoke
+checks.
+
+Implemented wrapper label:
+
+```text
+release_quality_check: learner-state frozen policy generation scaffold runtime smoke
+```
+
+Implemented wrapper command:
+
+```bash
+make check-learner-state-frozen-policy-generation-scaffold-runtime
+```
+
+The integration keeps the runtime target's safe metadata-only output:
+
+- `scaffold_status=pass`
+- `content_suppressed=true`
+- `no_raw_rows=true`
+- `artifact_body_suppressed=true`
+- `generated_artifact_written=false`
+- `generated_artifact_body_available=false`
+- no request body
+- no pointer body
+- no artifact body
+- no raw rows
+- no logits dump
+- no private paths
+- no tmp output from the runtime target
+- no generator invocation
+- no artifact writing
+
+The implementation does not change GitHub Actions workflows, Makefile targets,
+Python code, tests, fixtures, generator behavior, artifact writing, artifact
+body generation, metric computation, real-data use, or performance claims.
+
+## 17. Next Recommended Steps
 
 Recommended next step:
 
-- release-quality wrapper integration implementation
+- remote/manual run record workflow design if needed
 
 Then proceed with:
 
-- remote/manual run record workflow design if needed
 - remote/manual status marker after a safe successful run if needed
 
 Generator implementation should remain separate.
 
-## 17. Update History
+## 18. Update History
 
 - Step271: initial docs-only runtime release-quality integration design.
+- Step272: recorded the release-quality wrapper integration implementation
+  status.
 
 ## Related Documents
 

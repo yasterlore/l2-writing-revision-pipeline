@@ -663,6 +663,13 @@ runtime target. It keeps the runtime API, generator, artifact writer, fixtures,
 tests, Makefile, workflows, and wrapper implementation unchanged in the design
 step.
 
+Step272 implementation status:
+
+The release-quality wrapper now includes the runtime smoke target after
+scaffold fixture validation and before config/scoring smoke checks. The runtime
+API remains metadata-only; no generator behavior, artifact writing, metric
+computation, or real-data behavior is added.
+
 ## 22. Update History
 
 - Step262: initial docs-only scaffold runtime API design.
@@ -679,6 +686,8 @@ step.
 - Step270: recorded the standalone runtime CLI Makefile target implementation
   status.
 - Step271: linked the docs-only runtime release-quality integration design.
+- Step272: recorded release-quality wrapper integration status for the runtime
+  smoke target.
 
 ## Related Documents
 
