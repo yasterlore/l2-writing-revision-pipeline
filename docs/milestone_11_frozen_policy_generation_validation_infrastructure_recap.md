@@ -268,6 +268,11 @@ Possible next steps:
 Do not immediately implement real-data handling, production pipelines, metric
 computation, or performance claims from this recap.
 
+Step248 expands the first next step in the
+[frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md).
+It remains docs-only and recommends scaffold fixture design as the safer next
+step before scaffold code is added.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, CLI commands,
@@ -296,10 +301,13 @@ calibration method works well.
 ## 14. Update History
 
 - Step247: initial frozen policy generation validation infrastructure recap.
+- Step248: linked the frozen policy generation scaffold implementation design
+  as the next docs-only safety boundary before scaffold code.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
+- [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

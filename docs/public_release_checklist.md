@@ -837,6 +837,20 @@ copying raw logs, request bodies, input pointer bodies, generated artifact
 bodies, frozen policy artifact bodies, JSON bodies, raw rows,
 logits/probability dumps, private paths, raw learner text, or performance
 claims.
+For Step248, review the
+[frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
+and confirm it is docs-only: no scaffold code, generator code, CLI,
+Makefile change, wrapper change, workflow change, Python code change, test
+change, fixture change, calibration/selective prediction logic, estimator
+work, metric computation, real-data use, or real-data readiness claim is
+introduced. The design must describe the future scaffold role, proposed module
+and APIs, dataclasses, input/output contracts, failure categories,
+no-oracle/synthetic-only boundaries, relation to validators, CLI future,
+fixture future, testing plan, release-quality staging, and next steps without
+copying raw logs, request bodies, input pointer bodies, generated artifact
+bodies, frozen policy artifact bodies, JSON bodies, raw rows,
+logits/probability dumps, private paths, raw learner text, or performance
+claims.
 
 ## 7. Checks To Run
 
