@@ -1429,6 +1429,21 @@ request/pointer bodies, expected result bodies, artifact bodies, generated
 policy bodies, JSON bodies, raw rows, logits, private paths, raw learner text,
 or performance claims.
 
+For Step289, review the public-safe status marker
+[learner-state frozen policy generation generator scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md).
+Confirm it records only the supplied remote/manual Release Quality metadata,
+wrapper inclusion status, pass-only runtime smoke summary, count-only fixture
+validation summaries, related learner-state check counts, and safety review.
+Confirm it does not copy raw GitHub Actions logs, full job output, generation
+request bodies, input pointer bodies, expected generator scaffold result
+bodies, generated artifact bodies, frozen policy artifact bodies, JSON bodies,
+raw rows, logits/probability dumps, private paths, raw learner text, real
+participant data, or performance metric bodies. Confirm no GitHub Actions
+workflow, release-quality wrapper, Makefile, Python code, Python tests,
+fixtures, generator, artifact writing, artifact body generation, calibration
+code, estimator code, metric computation, or real-data readiness claim is
+introduced.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

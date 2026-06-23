@@ -102,6 +102,18 @@ This follows the existing learner-state status marker family and distinguishes
 the generator scaffold fixture validator record from scaffold fixture
 validation and scaffold runtime smoke records.
 
+Step289 follow-up:
+
+The public-safe status marker is available at
+[Learner-state frozen policy generation generator scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md).
+It records only metadata, pass-only runtime smoke fields, and count-only
+generator scaffold fixture validation fields for the successful remote/manual
+Release Quality run. It does not include raw GitHub Actions logs, full job
+output, copied log blocks, generation request bodies, input pointer bodies,
+expected generator scaffold result bodies, generated artifact bodies, frozen
+policy artifact bodies, JSON bodies, raw rows, logits/probability dumps,
+private paths, raw learner text, or performance metric bodies.
+
 ## 5. Metadata To Record
 
 A future public-safe status marker may record:
@@ -436,9 +448,9 @@ performance metric is computed.
 
 Recommended next steps:
 
-1. Run remote/manual Release Quality.
-2. Create the public-safe status marker after the remote run is observed.
-3. Continue with generator scaffold skeleton next design.
+1. Continue with generator scaffold skeleton next design.
+2. Keep future artifact writing design separate.
+3. Keep future calibration scaffold work separate.
 
 Generator implementation, artifact writing, artifact body generation,
 calibration work, estimator work, metric computation, and real-data readiness
@@ -449,8 +461,12 @@ should remain separate future milestones.
 This Step288 document defines the remote/manual Release Quality run recording
 workflow for generator scaffold fixture validation.
 
+Step289 records the corresponding public-safe remote/manual Release Quality
+status marker. The marker remains pass-only and count-only.
+
 Related docs:
 
+- [Learner-state frozen policy generation generator scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
@@ -469,3 +485,5 @@ Related docs:
   change, wrapper change, Makefile change, Python change, test change, fixture
   change, generator implementation, artifact writing, artifact body generation,
   metric computation, or real-data readiness claim is introduced.
+- Step289: recorded the public-safe remote/manual Release Quality status marker
+  for generator scaffold fixture validation integration.
