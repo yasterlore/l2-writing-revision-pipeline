@@ -225,6 +225,10 @@ The future record workflow is specified in
 [Frozen policy generation release-quality remote run record workflow](frozen_policy_generation_release_quality_remote_run_record_workflow.md).
 It should be used before creating any actual status marker.
 
+Step246 follow-up: the public-safe status marker is available at
+[Learner-state frozen policy generation release-quality remote run status](status/learner_state_frozen_policy_generation_release_quality_remote_run_status.md).
+It records only metadata and count-only summaries.
+
 ## 10. Relation To Existing Release-Quality Checks
 
 Related release-quality checks:
@@ -340,9 +344,12 @@ expected-result matching and bridge-contract validation passed.
   and fixtures remain unchanged.
 - Step245: added a docs-only remote/manual Release Quality run record workflow
   design for future count-only status marker creation.
+- Step246: created a public-safe remote/manual Release Quality status marker
+  for frozen policy generation validation.
 
 ## Related Documents
 
+- [Learner-state frozen policy generation release-quality remote run status](status/learner_state_frozen_policy_generation_release_quality_remote_run_status.md)
 - [Frozen policy generation release-quality remote run record workflow](frozen_policy_generation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation validator Makefile target design](frozen_policy_generation_validator_makefile_target_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

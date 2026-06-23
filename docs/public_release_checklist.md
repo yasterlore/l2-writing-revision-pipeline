@@ -810,6 +810,19 @@ recording workflow without copying raw logs, full job output, generation
 request bodies, input pointer bodies, generated artifact bodies, frozen policy
 artifact bodies, JSON bodies, raw rows, logits/probability dumps, private
 paths, raw learner text, or performance claims.
+For Step246, review the
+[learner-state frozen policy generation release-quality remote run status](status/learner_state_frozen_policy_generation_release_quality_remote_run_status.md)
+and confirm it is a public-safe metadata-only status marker: no raw GitHub
+Actions logs, full job output, copied log blocks, generation request bodies,
+input pointer bodies, generated artifact bodies, frozen policy artifact
+bodies, JSON bodies, raw rows, logits/probability dumps, private paths, raw
+learner text, real participant data, or performance claims are included. The
+marker should record only run identity, wrapper inclusion, count-only frozen
+policy generation validation summary, related learner-state check summaries,
+safety review, interpretation, non-proofs, and next actions. This step must
+not change workflow YAML, wrapper scripts, Makefile, Python code, tests,
+fixtures, generator code, calibration/selective prediction logic, metric
+computation, or real-data readiness claims.
 
 ## 7. Checks To Run
 
