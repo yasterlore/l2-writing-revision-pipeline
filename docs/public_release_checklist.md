@@ -1289,6 +1289,24 @@ required safety flags, body-free count summaries, and no raw logs, request
 bodies, pointer bodies, artifact bodies, generated policy bodies, raw rows,
 logits, private paths, raw learner text, or performance claims.
 
+For Step280, review the
+[frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
+and confirm it is docs-only: no GitHub Actions workflow change,
+release-quality wrapper change, Makefile change, Python code change, Python
+test change, fixture change, generator code, fixture validator code,
+artifact-body generation, artifact file writing, calibration/selective
+prediction logic, estimator work, metric computation, real-data use, or
+real-data readiness claim is introduced. Confirm the design defines the future
+validator module, public API candidates, dataclass candidates, discovery
+contract, required file contract, schema version checks, required fields,
+valid/invalid category checks, expected case lists, artifact flag validation,
+safety flag validation, count-summary validation, forbidden marker scan
+policy, no-oracle and synthetic-only checks, comparison strategy, summary
+output, CLI implications, test strategy, relation to existing validators, and
+release-quality staging without raw logs, request/pointer bodies, expected
+result bodies, artifact bodies, generated policy bodies, raw rows, logits,
+private paths, raw learner text, or performance claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
