@@ -549,6 +549,9 @@ Step251 defines the future scaffold fixture validator design. It keeps
 validator implementation separate from scaffold runtime code and focuses on
 fixture safety, metadata-only contracts, and expected reason-code alignment.
 
+Step252 implements the minimal scaffold fixture validator module and tests.
+The scaffold runtime and generator remain unimplemented.
+
 ## 21. Update History
 
 - Step248: initial frozen policy generation scaffold implementation design.
@@ -558,6 +561,7 @@ fixture safety, metadata-only contracts, and expected reason-code alignment.
   code remains unimplemented.
 - Step251: linked the scaffold fixture validator design as the next safety
   layer before scaffold runtime code.
+- Step252: linked the minimal scaffold fixture validator implementation.
 
 ## Related Documents
 

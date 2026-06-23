@@ -357,7 +357,6 @@ instead of changing the committed fixture root.
 
 This design does not:
 
-- implement the validator
 - implement scaffold runtime
 - implement a generator
 - create more fixtures
@@ -370,8 +369,19 @@ This design does not:
 - change Makefile
 - change release-quality wrapper
 - change GitHub Actions workflow
-- change Python code
-- change tests
+
+Step252 implements the minimal scaffold fixture validator module and
+fixture-based unit tests:
+
+- `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation.py`
+
+The implementation validates the initial 11 scaffold fixture cases and 33 JSON
+files as safe metadata-only fixtures. It does not add scaffold runtime code,
+generator code, CLI behavior, Makefile targets, release-quality wrapper
+integration, workflow changes, metric computation, calibration, selective
+prediction logic, estimator training, real-data handling, or performance
+claims.
 
 ## 18. Beginner-Friendly Explanation
 
@@ -412,12 +422,16 @@ Reason:
 ## 20. Update History
 
 - Step251: initial frozen policy generation scaffold fixture validator design.
+- Step252: minimal scaffold fixture validator implementation and fixture-based
+  tests added.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
+- `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation.py`
 - [Milestone 11 frozen policy generation validation infrastructure recap](milestone_11_frozen_policy_generation_validation_infrastructure_recap.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

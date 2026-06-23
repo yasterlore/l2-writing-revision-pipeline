@@ -895,6 +895,19 @@ plan without copying raw logs, request bodies, input pointer bodies, generated
 artifact bodies, frozen policy artifact bodies, JSON bodies, raw rows,
 logits/probability dumps, private paths, raw learner text, or performance
 claims.
+For Step252, review
+`python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
+and
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation.py`
+and confirm the change is limited to the minimal scaffold fixture validator and
+unit tests: no scaffold runtime code, generator code, scaffold CLI, Makefile
+target, wrapper change, workflow change, fixture change, existing fixture
+change, calibration/selective prediction logic, estimator work, metric
+computation, real-data use, or real-data readiness claim is introduced. The
+validator output must remain safe metadata only and must not include raw logs,
+request bodies, input pointer bodies, generated artifact bodies, frozen policy
+artifact bodies, JSON bodies, raw rows, logits/probability dumps, private
+paths, raw learner text, or performance claims.
 
 ## 7. Checks To Run
 
