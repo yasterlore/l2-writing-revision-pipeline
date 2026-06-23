@@ -441,9 +441,12 @@ real-data-ready.
   remains unimplemented.
 - Step244: linked the release-quality wrapper integration status; generator
   scaffold remains unimplemented.
+- Step248: linked the frozen policy generation scaffold implementation design;
+  scaffold code and generator code remain unimplemented.
 
 ## Related Documents
 
+- [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
 - [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)
 - [Milestone 10 frozen policy validation infrastructure recap](milestone_10_frozen_policy_validation_infrastructure_recap.md)

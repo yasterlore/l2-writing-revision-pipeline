@@ -476,9 +476,12 @@ followed the synthetic fixture contract and safety boundaries.
   unchanged.
 - Step244: linked the release-quality wrapper integration status; fixture
   files remain unchanged.
+- Step248: linked the frozen policy generation scaffold implementation design;
+  fixture files remain unchanged.
 
 ## Related Documents
 
+- [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
