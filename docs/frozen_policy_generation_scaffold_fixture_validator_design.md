@@ -388,6 +388,12 @@ CLI implementation out of scope while specifying fixture-root and single-case
 modes, exit codes, safe human output, safe JSON output, path safety, mismatch
 reporting, and later Makefile/release-quality staging.
 
+Step254 implements that minimal CLI in the existing validator module and adds
+fixture-based CLI tests. The implementation remains fixture-only and does not
+add scaffold runtime code, generator code, Makefile targets, release-quality
+wrapper changes, workflow changes, fixture changes, metric computation, or
+real-data readiness claims.
+
 ## 18. Beginner-Friendly Explanation
 
 A fixture validator is a checker for test-case files. It asks whether the
@@ -430,6 +436,7 @@ Reason:
 - Step252: minimal scaffold fixture validator implementation and fixture-based
   tests added.
 - Step253: linked the docs-only scaffold fixture validator CLI design.
+- Step254: linked the minimal scaffold fixture validator CLI implementation.
 
 ## Related Documents
 
@@ -439,6 +446,7 @@ Reason:
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation_cli.py`
 - [Milestone 11 frozen policy generation validation infrastructure recap](milestone_11_frozen_policy_generation_validation_infrastructure_recap.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

@@ -555,6 +555,9 @@ The scaffold runtime and generator remain unimplemented.
 Step253 designs the future CLI for running that validator. The CLI design is
 still fixture-only and does not add scaffold runtime or generator behavior.
 
+Step254 implements the minimal scaffold fixture validator CLI. The CLI remains
+fixture-only and does not introduce scaffold runtime or generator behavior.
+
 ## 21. Update History
 
 - Step248: initial frozen policy generation scaffold implementation design.
@@ -566,6 +569,7 @@ still fixture-only and does not add scaffold runtime or generator behavior.
   layer before scaffold runtime code.
 - Step252: linked the minimal scaffold fixture validator implementation.
 - Step253: linked the scaffold fixture validator CLI design.
+- Step254: linked the scaffold fixture validator CLI implementation.
 
 ## Related Documents
 

@@ -295,6 +295,10 @@ Step253 designs the future scaffold fixture validator CLI. It keeps the work
 docs-only and describes how the existing safe validator API should later be
 run from fixture-root and single-case command modes.
 
+Step254 implements that minimal CLI and CLI tests. The CLI validates the
+scaffold fixture root and individual scaffold fixture cases through the
+existing safe validator API.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, CLI commands,
@@ -331,6 +335,7 @@ calibration method works well.
 - Step251: linked the scaffold fixture validator design.
 - Step252: linked the minimal scaffold fixture validator implementation.
 - Step253: linked the scaffold fixture validator CLI design.
+- Step254: linked the scaffold fixture validator CLI implementation.
 
 ## Related Documents
 
