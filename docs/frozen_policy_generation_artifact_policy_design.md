@@ -374,8 +374,15 @@ sets the initial no-body and no-file-writing boundary. Artifact fixture design
 should follow before any generator implementation that changes observable
 results.
 
+Step277 adds that next design at
+[Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md).
+It keeps generator implementation, artifact body generation, artifact file
+writing, metrics, real-data use, and release-quality generator integration out
+of scope.
+
 ## Related Documents
 
+- [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)

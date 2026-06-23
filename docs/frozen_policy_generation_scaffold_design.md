@@ -421,7 +421,258 @@ Success would mean that the scaffold followed the artifact contract. It would
 not mean the model is accurate, calibrated, useful, production-ready, or
 real-data-ready.
 
-## 20. Update History
+## 20. Step277 Metadata-Only Generator Scaffold Boundary
+
+Step277 updates this scaffold design after the runtime infrastructure and
+artifact policy work. The initial generator scaffold should now be understood
+as a metadata-only generation planning layer, not as a body-producing generator
+and not as an artifact writer.
+
+Current state:
+
+- runtime skeleton exists
+- artifact policy design exists
+- scaffold fixture validator exists
+- release-quality runtime smoke exists
+- generator is not implemented
+- artifact body generation is not allowed yet
+- artifact file writing is not allowed yet
+- `generated_artifact_written=false`
+- `generated_artifact_body_available=false`
+- `artifact_body_suppressed=true`
+
+The generator scaffold is distinct from:
+
+- runtime scaffold: the outer safety shell that loads request/pointer metadata
+- generator scaffold: the future metadata-only generation planning layer
+- artifact writer: a future file-writing component, not part of this stage
+- artifact validator: a future metadata/body safety checker
+- frozen policy validator: the existing frozen policy fixture validator
+- frozen policy generation validator: the existing generation contract checker
+- selective prediction validator: the existing calibration safety validator
+- learner-state estimator: separate estimator work, not part of this scaffold
+
+Initial generator scaffold responsibilities:
+
+- read generation request metadata
+- read input pointer metadata
+- reference validated metadata only
+- verify safety, no-oracle, and synthetic-only flags
+- verify validation references
+- build an artifact metadata plan
+- return a safe metadata-only generation result
+- return fail-closed results for invalid input
+- return deterministic reason codes and failed checks
+- return JSON serializable safe summaries
+
+Initial generator scaffold non-goals:
+
+- artifact body generation
+- policy JSON body generation
+- artifact file writing
+- output directory creation
+- real data loading
+- raw row loading
+- logits dump loading
+- learner text loading
+- calibration fitting
+- threshold tuning from test data
+- model training
+- metric computation
+- performance reporting
+- estimator training
+- release-quality generator integration
+
+Allowed input metadata:
+
+- generation request metadata
+- input pointer metadata
+- validation reference IDs
+- frozen policy validation status
+- selective prediction validation status
+- split policy label
+- calibration policy label
+- threshold policy label
+- abstention policy label
+- synthetic fixture labels
+- schema version
+- safe IDs
+- count-only summaries
+
+Forbidden input and output content:
+
+- request or pointer body payloads
+- raw rows
+- logits/probability dumps
+- generated policy bodies
+- artifact bodies
+- full policy JSON bodies
+- calibration bodies
+- label bodies
+- split bodies
+- raw learner text
+- `final_text`
+- `observed_after_text`
+- `gold_label`
+- expected action used as scoring feedback
+- private paths
+- real participant data
+- performance metric bodies
+
+Allowed output metadata:
+
+- generation status
+- request ID
+- pointer ID
+- policy ID
+- artifact ID
+- generator version
+- validation reference IDs
+- reason codes
+- failed checks
+- safety flags
+- artifact flags
+- count-only summary
+- safe summary label
+- schema version
+
+Docs-only data model candidates:
+
+- `FrozenPolicyGeneratorScaffoldRequest`
+- `FrozenPolicyGeneratorInputPointer`
+- `FrozenPolicyGeneratorMetadataPlan`
+- `FrozenPolicyGeneratorArtifactMetadata`
+- `FrozenPolicyGeneratorScaffoldResult`
+- `FrozenPolicyGeneratorSafetySummary`
+- `FrozenPolicyGeneratorScaffoldError`
+
+Docs-only API candidates:
+
+- `build_frozen_policy_generation_metadata_plan(request, pointer)`
+- `validate_frozen_policy_generation_metadata_plan(plan)`
+- `run_frozen_policy_generation_metadata_scaffold(request_path, pointer_path)`
+- `summarize_frozen_policy_generation_metadata_result(result)`
+- `audit_frozen_policy_generation_artifact_metadata(result)`
+
+Initial artifact flags:
+
+- `generated_artifact_written=false`
+- `generated_artifact_body_available=false`
+- `artifact_body_suppressed=true`
+- `artifact_file_path_available=false`
+- `artifact_manifest_available=false`
+- `artifact_validation_summary_available=true` only for safe metadata-only
+  validation summaries
+
+Candidate fail-closed reason codes:
+
+- `missing_validation_reference`
+- `unvalidated_input`
+- `unsafe_path`
+- `raw_rows_carryover`
+- `logits_dump_carryover`
+- `generated_artifact_body_leakage`
+- `artifact_file_writing_not_allowed`
+- `private_path_output`
+- `test_temperature_tuning`
+- `test_threshold_tuning`
+- `scoring_feedback_violation`
+- `performance_claim_in_generated_policy`
+- `request_body_leakage`
+- `pointer_body_leakage`
+- `unknown_schema_version`
+- `missing_required_field`
+
+No-oracle policy:
+
+- no `observed_after_text`
+- no `final_text`
+- no `gold_label`
+- no expected action as scoring feedback
+- no test-derived tuning
+- no validation/test leakage into generation
+- no scoring feedback loop
+- no oracle labels in metadata plans
+- fail closed if any forbidden field appears
+
+Synthetic-only policy:
+
+- initial generator scaffold uses synthetic fixtures only
+- no real data
+- no participant data
+- no private data
+- no `manual_outputs`
+- no real output directory
+- all public generator outputs are metadata-only
+
+Artifact body suppression policy:
+
+- generator scaffold does not create bodies
+- CLI must not print bodies
+- docs must not show bodies
+- release-quality must not log bodies
+- status markers must not store bodies
+- tests must scan for absence of body-like fields
+- body generation requires a separate milestone
+
+Future validation strategy:
+
+- valid metadata plan passes
+- invalid raw rows fail
+- invalid logits fail
+- invalid private path fails
+- invalid body leakage fails
+- invalid test tuning fails
+- invalid scoring feedback fails
+- missing validation reference fails
+- output is deterministic
+- summary is JSON serializable
+- stdout/stderr have no body leakage
+- no file writing occurs
+- no tmp output is created by the generator scaffold path
+
+Future fixture root candidate:
+
+- `tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/`
+
+Candidate valid fixture cases:
+
+- `valid/minimal_metadata_only_generation_plan`
+- `valid/validated_fixed_threshold_metadata_plan`
+- `valid/validated_fixed_abstention_rate_metadata_plan`
+
+Candidate invalid fixture cases:
+
+- `invalid/missing_validation_reference`
+- `invalid/raw_rows_carryover`
+- `invalid/logits_dump_carryover`
+- `invalid/generated_artifact_body_leakage`
+- `invalid/artifact_file_writing_attempt`
+- `invalid/private_path_output`
+- `invalid/test_temperature_tuning`
+- `invalid/test_threshold_tuning`
+- `invalid/scoring_feedback_violation`
+- `invalid/performance_claim_in_generated_policy`
+
+The generator scaffold should build on the runtime scaffold and artifact
+policy. It should not weaken runtime suppression, should keep release-quality
+runtime smoke separate from future generator checks, and should not enter
+release-quality until no-body-leakage tests exist.
+
+This design does not prove that a generator works, that artifact bodies exist,
+that policy quality is good, that model performance is acceptable, that
+calibration or selective prediction is correct, that the learner-state
+estimator is correct, or that the system is real-data-ready or
+production-ready.
+
+Next recommended steps:
+
+- generator scaffold fixture design
+- generator scaffold validator design
+- generator scaffold skeleton implementation
+- generator scaffold CLI design
+
+## 21. Update History
 
 - Step234: initial frozen policy generation scaffold design creation.
 - Step235: linked the frozen policy generation fixture design as the next
@@ -443,9 +694,15 @@ real-data-ready.
   scaffold remains unimplemented.
 - Step248: linked the frozen policy generation scaffold implementation design;
   scaffold code and generator code remain unimplemented.
+- Step277: added the metadata-only generator scaffold boundary after artifact
+  policy design; generator code, artifact body generation, artifact writing,
+  metrics, release-quality generator integration, and real-data behavior remain
+  out of scope.
 
 ## Related Documents
 
+- [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
+- [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
 - [Milestone 09 selective prediction validation infrastructure recap](milestone_09_selective_prediction_validation_infrastructure_recap.md)

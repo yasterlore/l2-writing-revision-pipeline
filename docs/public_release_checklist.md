@@ -1245,6 +1245,21 @@ and does not include raw logs, request/pointer bodies, artifact bodies, JSON
 bodies, raw rows, logits, private paths, raw learner text, or performance
 claims.
 
+For Step277, review the
+[frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
+and confirm it is docs-only: no GitHub Actions workflow change,
+release-quality wrapper change, Makefile change, Python code change, Python
+test change, fixture change, generator code, artifact-body generation,
+artifact file writing, calibration/selective prediction logic, estimator work,
+metric computation, real-data use, or real-data readiness claim is introduced.
+Confirm the design defines a metadata-only generator scaffold boundary,
+proposed input/output contracts, data model candidates, API surface
+candidates, artifact flags, fail-closed reason codes, no-oracle and
+synthetic-only policies, fixture strategy, validation strategy, and
+release-quality staging without raw logs, request/pointer bodies, artifact
+bodies, JSON bodies, raw rows, logits, private paths, raw learner text, or
+performance claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
