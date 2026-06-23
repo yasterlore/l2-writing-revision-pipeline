@@ -345,6 +345,15 @@ CLI over the synthetic `valid/minimal_fixed_threshold_dry_run` request and
 pointer pair and emits the safe human summary. Release-quality runtime
 integration remains a later step.
 
+Step271 follow-up:
+
+[Frozen policy generation scaffold runtime release-quality integration design](frozen_policy_generation_scaffold_runtime_release_quality_integration_design.md)
+defines the future wrapper placement for this CLI smoke target after scaffold
+fixture validation and before config/scoring smoke checks. It remains
+docs-only and does not change the wrapper, workflows, Makefile, Python code,
+tests, fixtures, generator behavior, artifact writing, metrics, real-data use,
+or performance claims.
+
 ## 16. Beginner-Friendly Explanation
 
 A CLI is the command a developer can run in a terminal. For this runtime, the
@@ -370,12 +379,10 @@ tests and logging behavior need to settle first.
 
 Recommended next step:
 
-- runtime CLI Makefile target implementation
+- runtime release-quality wrapper integration implementation
 
 Then proceed with:
 
-- runtime release-quality integration design
-- runtime release-quality wrapper integration
 - remote/manual status marker design if needed
 
 Generator implementation should remain a separate later stage.
@@ -388,6 +395,7 @@ Generator implementation should remain a separate later stage.
 - Step269: linked the docs-only runtime CLI Makefile target design.
 - Step270: recorded the standalone runtime CLI Makefile target implementation
   status.
+- Step271: linked the docs-only runtime release-quality integration design.
 
 ## Related Documents
 
@@ -395,6 +403,7 @@ Generator implementation should remain a separate later stage.
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
 - [Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
+- [Frozen policy generation scaffold runtime release-quality integration design](frozen_policy_generation_scaffold_runtime_release_quality_integration_design.md)
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)

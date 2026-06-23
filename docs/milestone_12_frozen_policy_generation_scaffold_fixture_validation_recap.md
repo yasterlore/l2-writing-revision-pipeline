@@ -356,6 +356,15 @@ safe metadata-only output. It still does not add release-quality runtime
 integration, workflow changes, generator code, artifact writing, metric
 computation, real-data use, or performance claims.
 
+Step271 adds
+[Frozen policy generation scaffold runtime release-quality integration design](frozen_policy_generation_scaffold_runtime_release_quality_integration_design.md).
+That document defines the future wrapper placement, command, label, expected
+behavior, failure interpretation, log-safety review, and testing plan for the
+standalone runtime smoke target. It remains docs-only and does not change the
+release-quality wrapper, workflows, Makefile, Python code, tests, fixtures,
+generator behavior, artifact writing, metric computation, real-data use, or
+performance claims.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, commands, and
@@ -375,9 +384,10 @@ wrapper makes sure the same check is part of the normal release-quality path.
 The remote status marker records that the check also passed in a remote/manual
 Release Quality run without storing raw logs.
 
-Success does not mean scaffold or generator quality because no scaffold runtime
-or generator exists yet. It only means the synthetic fixture contract and safety
-checks matched expected metadata.
+Success does not mean generator quality or full production scaffold quality.
+The current runtime path is a metadata-only scaffold smoke path over synthetic
+fixtures; no generator runs, no artifact is written, and no performance metric
+is computed.
 
 ## 14. Update History
 
@@ -405,6 +415,9 @@ checks matched expected metadata.
 - Step270: linked the runtime CLI Makefile target implementation while keeping
   release-quality runtime integration, workflow changes, generator behavior,
   artifact writing, metrics, and real-data behavior out of scope.
+- Step271: linked the docs-only runtime release-quality integration design
+  while keeping wrapper implementation, workflow changes, generator behavior,
+  artifact writing, metrics, and real-data behavior out of scope.
 
 ## Related Documents
 
@@ -414,6 +427,7 @@ checks matched expected metadata.
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
 - [Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
 - [Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
+- [Frozen policy generation scaffold runtime release-quality integration design](frozen_policy_generation_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)

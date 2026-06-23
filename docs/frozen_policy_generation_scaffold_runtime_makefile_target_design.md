@@ -315,11 +315,10 @@ policy artifact is written, and no performance metric is computed.
 
 Recommended next step:
 
-- release-quality integration design
+- release-quality wrapper integration implementation
 
 Then proceed with:
 
-- release-quality wrapper integration
 - remote/manual status marker design if needed
 - remote/manual status marker after a safe run if needed
 
@@ -348,14 +347,26 @@ Actions workflow changes, Python code changes, Python test changes, fixture
 changes, generator behavior, artifact writing, artifact body generation,
 metric computation, real-data use, or performance claims.
 
-## 18. Update History
+## 18. Step271 Follow-Up
+
+[Frozen policy generation scaffold runtime release-quality integration design](frozen_policy_generation_scaffold_runtime_release_quality_integration_design.md)
+defines the future wrapper placement, command, label, expected behavior,
+failure interpretation, log-safety review, and testing plan for adding the
+standalone runtime target to release-quality. It remains docs-only and does
+not change the wrapper, workflows, Makefile, Python code, tests, fixtures,
+generator behavior, artifact writing, metrics, real-data use, or performance
+claims.
+
+## 19. Update History
 
 - Step269: initial docs-only runtime CLI Makefile target design.
 - Step270: recorded the standalone runtime CLI Makefile target implementation
   status.
+- Step271: linked the docs-only runtime release-quality integration design.
 
 ## Related Documents
 
+- [Frozen policy generation scaffold runtime release-quality integration design](frozen_policy_generation_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)

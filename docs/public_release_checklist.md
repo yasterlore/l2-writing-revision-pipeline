@@ -1169,6 +1169,18 @@ Confirm the target runs the runtime CLI over the synthetic
 `valid/minimal_fixed_threshold_dry_run` request and pointer pair, emits safe
 metadata-only output, creates no tmp/manual output, and does not treat target
 success as generator quality or performance evidence.
+For Step271, review the
+[frozen policy generation scaffold runtime release-quality integration design](frozen_policy_generation_scaffold_runtime_release_quality_integration_design.md)
+and confirm it is docs-only: no release-quality wrapper change, GitHub Actions
+workflow change, Makefile change, Python code change, Python test change,
+fixture change, generator code, artifact-body generation, artifact file
+writing, calibration/selective prediction logic, estimator work, metric
+computation, real-data use, or real-data readiness claim is introduced.
+Confirm the design places the runtime smoke target after scaffold fixture
+validation and before config/scoring smoke checks, recommends calling the
+standalone Makefile target, defines the wrapper label, requires safe
+metadata-only output, creates no tmp/manual output, and does not treat runtime
+smoke success as generator quality or performance evidence.
 
 ## 7. Checks To Run
 
