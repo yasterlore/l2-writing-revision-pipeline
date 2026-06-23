@@ -672,6 +672,12 @@ Next recommended steps:
 - generator scaffold skeleton implementation
 - generator scaffold CLI design
 
+Step278 adds the fixture design for that next step at
+[Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md).
+It keeps fixture creation, generator code, artifact body generation, artifact
+file writing, metrics, real-data use, and release-quality generator integration
+out of scope.
+
 ## 21. Update History
 
 - Step234: initial frozen policy generation scaffold design creation.
@@ -698,9 +704,14 @@ Next recommended steps:
   policy design; generator code, artifact body generation, artifact writing,
   metrics, release-quality generator integration, and real-data behavior remain
   out of scope.
+- Step278: linked the metadata-only generator scaffold fixture design;
+  fixture files, generator code, artifact body generation, artifact writing,
+  metrics, release-quality generator integration, and real-data behavior remain
+  out of scope.
 
 ## Related Documents
 
+- [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)

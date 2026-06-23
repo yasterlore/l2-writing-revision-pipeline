@@ -1260,6 +1260,21 @@ release-quality staging without raw logs, request/pointer bodies, artifact
 bodies, JSON bodies, raw rows, logits, private paths, raw learner text, or
 performance claims.
 
+For Step278, review the
+[frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
+and confirm it is docs-only: no GitHub Actions workflow change,
+release-quality wrapper change, Makefile change, Python code change, Python
+test change, fixture creation, generator code, artifact-body generation,
+artifact file writing, calibration/selective prediction logic, estimator work,
+metric computation, real-data use, or real-data readiness claim is introduced.
+Confirm the design defines the future fixture root, case layout, required
+common fields, valid and invalid case candidates, malformed/missing input
+handling, expected-result contract, artifact flags, safety flags, forbidden
+field scan policy, no-oracle and synthetic-only fixture rules, validator
+implications, release-quality staging, and non-proofs without raw logs,
+request/pointer bodies, artifact bodies, JSON bodies, raw rows, logits,
+private paths, raw learner text, or performance claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
