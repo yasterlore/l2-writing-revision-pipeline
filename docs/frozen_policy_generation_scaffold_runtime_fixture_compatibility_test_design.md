@@ -368,10 +368,28 @@ Then proceed in this order:
 Generator design and implementation should remain separate and later than the
 runtime compatibility boundary.
 
+Step266 implementation status:
+
+The runtime fixture compatibility tests now exist at
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_fixture_compatibility.py`.
+They run the minimal runtime scaffold over the current synthetic scaffold
+fixture root, summarize the runtime result, and compare it with
+`expected_scaffold_result.json` through the existing scaffold fixture validator
+comparison helper. The tests cover the current valid 3 and invalid 8 cases,
+malformed and missing input boundaries, body-leakage scanning, deterministic
+summary behavior, and explicit safety booleans.
+
+The implementation does not add runtime CLI behavior, Makefile targets,
+release-quality wrapper changes, workflow changes, fixture changes, generator
+code, artifact file writing, artifact body generation, metric computation,
+real-data use, or performance claims.
+
 ## 19. Update History
 
 - Step265: initial docs-only scaffold runtime fixture compatibility test
   design.
+- Step266: recorded the minimal runtime fixture compatibility tests
+  implementation status.
 
 ## Related Documents
 
@@ -383,5 +401,6 @@ runtime compatibility boundary.
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
 - `python/learner_state/frozen_policy_generation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime.py`
+- `python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_fixture_compatibility.py`
 - `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
 - [Public release checklist](public_release_checklist.md)

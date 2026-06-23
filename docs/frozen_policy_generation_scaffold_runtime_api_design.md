@@ -608,6 +608,16 @@ docs-only and does not add runtime compatibility tests, CLI behavior, Makefile
 targets, generator code, artifact writing, or release-quality runtime
 integration.
 
+Step266 implementation status:
+
+The runtime fixture compatibility tests now exist at
+`python/learner_state/tests/test_frozen_policy_generation_scaffold_runtime_fixture_compatibility.py`.
+They verify that the runtime skeleton's safe summary remains compatible with
+the current scaffold fixture expected-result contract for valid 3 and invalid
+8 synthetic cases. They do not add runtime CLI behavior, runtime Makefile
+targets, generator behavior, artifact writing, release-quality runtime
+integration, metric computation, real-data use, or performance claims.
+
 ## 22. Update History
 
 - Step262: initial docs-only scaffold runtime API design.
@@ -616,6 +626,8 @@ integration.
 - Step264: recorded the minimal scaffold runtime API skeleton implementation
   status.
 - Step265: linked the docs-only runtime fixture compatibility test design.
+- Step266: recorded the runtime fixture compatibility tests implementation
+  status.
 
 ## Related Documents
 
