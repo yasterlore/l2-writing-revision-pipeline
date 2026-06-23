@@ -37,6 +37,12 @@ Available markers:
   remote/manual release-quality wrapper status after scaffold fixture validator
   integration.
 
+Planned marker paths:
+
+- `docs/status/learner_state_frozen_policy_generation_scaffold_runtime_release_quality_remote_run_status.md`:
+  future public-safe remote/manual release-quality wrapper status after
+  scaffold runtime smoke integration. This marker has not been created yet.
+
 Related recap:
 
 - [Milestone 06 learner-state audit infrastructure recap](../milestone_06_learner_state_audit_infrastructure_recap.md):
@@ -60,3 +66,6 @@ Related recap:
 - [Frozen policy generation scaffold fixture validator release-quality remote run record workflow](../frozen_policy_generation_scaffold_fixture_validator_release_quality_remote_run_record_workflow.md):
   future public-safe metadata-only recording workflow for the scaffold fixture
   validator release-quality wrapper integration.
+- [Frozen policy generation scaffold runtime release-quality remote run record workflow](../frozen_policy_generation_scaffold_runtime_release_quality_remote_run_record_workflow.md):
+  future public-safe pass-only recording workflow for the scaffold runtime
+  smoke release-quality wrapper integration.
