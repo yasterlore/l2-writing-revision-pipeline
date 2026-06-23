@@ -618,6 +618,16 @@ the current scaffold fixture expected-result contract for valid 3 and invalid
 targets, generator behavior, artifact writing, release-quality runtime
 integration, metric computation, real-data use, or performance claims.
 
+Step267 follow-up:
+
+[Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
+defines the future terminal boundary for running the runtime scaffold over one
+request/pointer pair. It recommends `python -m
+learner_state.frozen_policy_generation` as a thin wrapper around the runtime
+API, with safe metadata-only human and JSON summaries. It remains docs-only and
+does not implement CLI behavior, artifact writing, generator code, Makefile
+targets, or release-quality runtime integration.
+
 ## 22. Update History
 
 - Step262: initial docs-only scaffold runtime API design.
@@ -628,12 +638,14 @@ integration, metric computation, real-data use, or performance claims.
 - Step265: linked the docs-only runtime fixture compatibility test design.
 - Step266: recorded the runtime fixture compatibility tests implementation
   status.
+- Step267: linked the docs-only runtime CLI design.
 
 ## Related Documents
 
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
+- [Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
