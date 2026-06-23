@@ -30,14 +30,9 @@ Available markers:
 - [Learner-state frozen policy release-quality remote run status](learner_state_frozen_policy_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after learner-state frozen
   policy validation integration.
-
-Planned marker paths:
-
-- `learner_state_frozen_policy_generation_release_quality_remote_run_status.md`:
-  future metadata-only status marker path for a remote/manual Release Quality
-  run after learner-state frozen policy generation validation wrapper
-  integration. See
-  [frozen policy generation release-quality remote run record workflow](../frozen_policy_generation_release_quality_remote_run_record_workflow.md).
+- [Learner-state frozen policy generation release-quality remote run status](learner_state_frozen_policy_generation_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after learner-state frozen
+  policy generation validation integration.
 
 Related recap:
 

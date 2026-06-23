@@ -91,7 +91,16 @@ This follows the existing learner-state status marker family and keeps the
 generation bridge-contract record near the other learner-state release-quality
 records.
 
-This Step245 document does not create the status marker.
+Step246 follow-up:
+
+The public-safe status marker is available at
+[Learner-state frozen policy generation release-quality remote run status](status/learner_state_frozen_policy_generation_release_quality_remote_run_status.md).
+It records only metadata and count-only summaries for the successful remote
+Release Quality run. It does not include raw GitHub Actions logs, full job
+output, copied log blocks, generation request bodies, input pointer bodies,
+generated artifact bodies, frozen policy artifact bodies, JSON bodies, raw
+rows, logits/probability dumps, private paths, raw learner text, or
+performance metric bodies.
 
 ## 5. Metadata To Record
 
@@ -382,9 +391,12 @@ grade a generator.
 
 - Step245: initial frozen policy generation Release Quality remote/manual run
   record workflow design.
+- Step246: created the public-safe remote/manual Release Quality status marker
+  for frozen policy generation validation.
 
 ## Related Documents
 
+- [Learner-state frozen policy generation release-quality remote run status](status/learner_state_frozen_policy_generation_release_quality_remote_run_status.md)
 - [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md)
 - [Frozen policy generation validator Makefile target design](frozen_policy_generation_validator_makefile_target_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
