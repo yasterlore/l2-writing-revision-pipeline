@@ -46,9 +46,9 @@ The current CLI root mode reports safe count-only matching:
 - `mismatched_cases=0`
 - `input_error_cases=0`
 
-The Makefile target does not exist yet.
+At Step255 design time, the Makefile target did not exist yet.
 
-Release-quality integration does not exist yet.
+As of Step258, release-quality wrapper integration exists.
 
 Scaffold runtime code and generator code do not exist.
 
@@ -57,12 +57,17 @@ As of Step256, the standalone Makefile target exists:
 - `make check-learner-state-frozen-policy-generation-scaffold-fixtures`
 
 The target calls the scaffold fixture validator CLI in fixture-root mode and
-keeps release-quality integration out of scope.
+Step258 adds release-quality wrapper integration through this standalone
+target.
 
 Step257 designs the future release-quality wrapper integration for this
 standalone target. The design keeps wrapper implementation and workflow changes
 out of scope while defining the proposed insertion point, command, label, log
 safety review, failure interpretation, and status-marker staging.
+
+Step258 implements that wrapper integration without changing GitHub Actions
+workflows, Python code, tests, fixtures, scaffold runtime code, or generator
+code.
 
 ## 3. Proposed Target Name
 
@@ -359,6 +364,8 @@ Reason:
   `check-learner-state-frozen-policy-generation-scaffold-fixtures`.
 - Step257: linked the docs-only release-quality integration design for this
   target.
+- Step258: release-quality wrapper now calls the standalone target after frozen
+  policy generation validation and before config/scoring smoke checks.
 
 ## Related Documents
 

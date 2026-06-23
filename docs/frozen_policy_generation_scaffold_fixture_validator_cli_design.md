@@ -430,9 +430,12 @@ standalone target. It remains docs-only and does not change the wrapper,
 workflow, Makefile, Python code, tests, fixtures, scaffold runtime, or
 generator.
 
+Step258 implements that wrapper integration by calling the standalone Makefile
+target from `scripts/check_release_quality.sh`.
+
 Recommended next step:
 
-- design the standalone Makefile target for the scaffold fixture validator CLI
+- remote/manual run record workflow design or scaffold runtime API design
 
 Reason:
 
@@ -456,6 +459,8 @@ Other future steps:
   design.
 - Step256: linked the standalone Makefile target implementation status.
 - Step257: linked the docs-only release-quality integration design.
+- Step258: linked the release-quality wrapper integration implementation
+  status.
 
 ## Related Documents
 

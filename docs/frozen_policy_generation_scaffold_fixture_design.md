@@ -582,6 +582,9 @@ fixture root. Release-quality integration remains a future step.
 Step257 designs that future release-quality integration. The fixture root
 remains unchanged, and wrapper implementation is still out of scope.
 
+Step258 implements the release-quality wrapper integration for the standalone
+scaffold fixture validator target. The fixture root remains unchanged.
+
 ## 20. Update History
 
 - Step249: initial frozen policy generation scaffold fixture design.
@@ -596,6 +599,8 @@ remains unchanged, and wrapper implementation is still out of scope.
   implementation status.
 - Step257: linked the scaffold fixture validator release-quality integration
   design.
+- Step258: linked the scaffold fixture validator release-quality wrapper
+  integration implementation status.
 
 ## Related Documents
 

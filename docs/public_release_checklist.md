@@ -973,6 +973,18 @@ future status-marker policy, and non-goals without copying raw logs, request
 bodies, input pointer bodies, artifact bodies, JSON bodies, raw rows,
 logits/probability dumps, private paths, raw learner text, or performance
 claims.
+For Step258, review `scripts/check_release_quality.sh` and the
+[frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
+and confirm the wrapper change is limited to adding the scaffold fixture
+validator label and `make check-learner-state-frozen-policy-generation-scaffold-fixtures`
+after frozen policy generation validation and before config/scoring smoke
+checks. Confirm there is no GitHub Actions workflow change, Makefile change,
+Python code change, Python test change, fixture change, scaffold runtime code,
+generator code, calibration/selective prediction logic, estimator work, metric
+computation, real-data use, or real-data readiness claim. The wrapper output
+must remain safe summary only and must not copy raw logs, request bodies, input
+pointer bodies, artifact bodies, JSON bodies, raw rows, logits/probability
+dumps, private paths, raw learner text, or performance claims.
 
 ## 7. Checks To Run
 
