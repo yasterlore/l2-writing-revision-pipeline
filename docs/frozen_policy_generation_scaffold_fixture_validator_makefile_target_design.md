@@ -59,6 +59,11 @@ As of Step256, the standalone Makefile target exists:
 The target calls the scaffold fixture validator CLI in fixture-root mode and
 keeps release-quality integration out of scope.
 
+Step257 designs the future release-quality wrapper integration for this
+standalone target. The design keeps wrapper implementation and workflow changes
+out of scope while defining the proposed insertion point, command, label, log
+safety review, failure interpretation, and status-marker staging.
+
 ## 3. Proposed Target Name
 
 Candidate target names:
@@ -352,10 +357,13 @@ Reason:
 - Step255: initial docs-only scaffold fixture validator Makefile target design.
 - Step256: standalone Makefile target implemented as
   `check-learner-state-frozen-policy-generation-scaffold-fixtures`.
+- Step257: linked the docs-only release-quality integration design for this
+  target.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
+- [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)

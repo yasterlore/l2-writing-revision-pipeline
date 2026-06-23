@@ -579,6 +579,9 @@ Python code, tests, fixtures, scaffold runtime, or generator.
 Step256 implements that standalone Makefile target without changing this
 fixture root. Release-quality integration remains a future step.
 
+Step257 designs that future release-quality integration. The fixture root
+remains unchanged, and wrapper implementation is still out of scope.
+
 ## 20. Update History
 
 - Step249: initial frozen policy generation scaffold fixture design.
@@ -591,6 +594,8 @@ fixture root. Release-quality integration remains a future step.
 - Step255: linked the scaffold fixture validator Makefile target design.
 - Step256: linked the scaffold fixture validator Makefile target
   implementation status.
+- Step257: linked the scaffold fixture validator release-quality integration
+  design.
 
 ## Related Documents
 
@@ -598,6 +603,7 @@ fixture root. Release-quality integration remains a future step.
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)

@@ -567,6 +567,10 @@ Step256 implements that standalone Makefile target. It remains fixture-only and
 does not add release-quality integration, workflow changes, scaffold runtime
 code, or generator code.
 
+Step257 designs the future release-quality wrapper integration for that target.
+It remains fixture-only and does not implement wrapper changes, workflow
+changes, scaffold runtime code, or generator code.
+
 ## 21. Update History
 
 - Step248: initial frozen policy generation scaffold implementation design.
@@ -582,6 +586,8 @@ code, or generator code.
 - Step255: linked the scaffold fixture validator Makefile target design.
 - Step256: linked the scaffold fixture validator Makefile target
   implementation status.
+- Step257: linked the scaffold fixture validator release-quality integration
+  design.
 
 ## Related Documents
 
@@ -591,6 +597,7 @@ code, or generator code.
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

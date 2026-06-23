@@ -425,6 +425,11 @@ Step256 implements that standalone Makefile target. The release-quality wrapper
 is still unchanged, and scaffold runtime and generator code remain out of
 scope.
 
+Step257 designs the future release-quality wrapper integration for the
+standalone target. It remains docs-only and does not change the wrapper,
+workflow, Makefile, Python code, tests, fixtures, scaffold runtime, or
+generator.
+
 Recommended next step:
 
 - design the standalone Makefile target for the scaffold fixture validator CLI
@@ -450,11 +455,13 @@ Other future steps:
 - Step255: linked the docs-only scaffold fixture validator Makefile target
   design.
 - Step256: linked the standalone Makefile target implementation status.
+- Step257: linked the docs-only release-quality integration design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Milestone 11 frozen policy generation validation infrastructure recap](milestone_11_frozen_policy_generation_validation_infrastructure_recap.md)
