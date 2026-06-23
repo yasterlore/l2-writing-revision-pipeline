@@ -49,3 +49,6 @@ Related recap:
   milestone.
 - [Milestone 10 frozen policy validation infrastructure recap](../milestone_10_frozen_policy_validation_infrastructure_recap.md):
   broader recap of the frozen policy validation infrastructure milestone.
+- [Milestone 11 frozen policy generation validation infrastructure recap](../milestone_11_frozen_policy_generation_validation_infrastructure_recap.md):
+  broader recap of the frozen policy generation validation infrastructure
+  milestone.
