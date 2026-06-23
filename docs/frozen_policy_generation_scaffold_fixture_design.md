@@ -561,12 +561,17 @@ keeps validator implementation out of scope while defining root-level checks,
 case-level checks, forbidden field/value scans, expected reason-code matching,
 and safe summary behavior.
 
+Step252 implements that minimal fixture validator and unit tests without
+changing scaffold fixtures, scaffold runtime code, generator code, CLI,
+Makefile targets, release-quality wrapper, or workflow files.
+
 ## 20. Update History
 
 - Step249: initial frozen policy generation scaffold fixture design.
 - Step250: initial scaffold fixture files created under
   `tests/fixtures/learner_state_frozen_policy_generation_scaffold/`.
 - Step251: linked the scaffold fixture validator design.
+- Step252: linked the minimal scaffold fixture validator implementation.
 
 ## Related Documents
 

@@ -287,6 +287,10 @@ Step251 adds the docs-only scaffold fixture validator design. It describes how
 a future validator should check the scaffold fixture root before scaffold
 runtime code is added.
 
+Step252 implements the minimal scaffold fixture validator and tests. It checks
+the initial scaffold fixture root as metadata-only synthetic fixtures while
+leaving scaffold runtime and generator work for later.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, CLI commands,
@@ -321,6 +325,7 @@ calibration method works well.
   next docs-only fixture contract.
 - Step250: linked the initial scaffold fixture root implementation.
 - Step251: linked the scaffold fixture validator design.
+- Step252: linked the minimal scaffold fixture validator implementation.
 
 ## Related Documents
 
