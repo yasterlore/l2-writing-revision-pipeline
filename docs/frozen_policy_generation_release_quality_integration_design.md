@@ -184,7 +184,7 @@ or production-ready.
 
 ## 9. Remote / Manual Run Record Future
 
-After future wrapper integration, a remote/manual run status marker may record
+After wrapper integration, a future remote/manual run status marker may record
 only public-safe metadata:
 
 - workflow name
@@ -220,6 +220,10 @@ Do not record:
 - logits/probability dumps
 - raw learner text
 - performance metric body
+
+The future record workflow is specified in
+[Frozen policy generation release-quality remote run record workflow](frozen_policy_generation_release_quality_remote_run_record_workflow.md).
+It should be used before creating any actual status marker.
 
 ## 10. Relation To Existing Release-Quality Checks
 
@@ -334,9 +338,12 @@ expected-result matching and bridge-contract validation passed.
   into `scripts/check_release_quality.sh` after frozen policy validation and
   before config/scoring smoke checks. Workflow, Makefile, Python code, tests,
   and fixtures remain unchanged.
+- Step245: added a docs-only remote/manual Release Quality run record workflow
+  design for future count-only status marker creation.
 
 ## Related Documents
 
+- [Frozen policy generation release-quality remote run record workflow](frozen_policy_generation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation validator Makefile target design](frozen_policy_generation_validator_makefile_target_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)

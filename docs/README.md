@@ -49,6 +49,7 @@ Recommended entry points:
 - [Frozen policy generation validator Makefile target design](frozen_policy_generation_validator_makefile_target_design.md): Step241 design and Step242 standalone Makefile target status for `check-learner-state-frozen-policy-generation`; Step244 adds release-quality wrapper integration.
 - `make check-learner-state-frozen-policy-generation`: Step242 standalone smoke target for synthetic frozen policy generation fixture validation; release-quality now calls it through the wrapper.
 - [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md): Step243 design and Step244 wrapper integration status for placing the standalone generation validator target after frozen policy validation and before config/scoring smoke checks.
+- [Frozen policy generation release-quality remote run record workflow](frozen_policy_generation_release_quality_remote_run_record_workflow.md): Step245 docs-only plan for future public-safe metadata-only remote/manual Release Quality run records after generation validator wrapper integration.
 - `python/learner_state/frozen_policy_generation_validation.py`: Step238 minimal safe loader/validator and Step240 safe CLI for frozen policy generation fixtures; no generator, calibration, or metrics are added.
 - `python/learner_state/tests/test_frozen_policy_generation_validation.py`: fixture-based tests for three valid generation cases and ten fail-closed invalid generation cases.
 - `python/learner_state/tests/test_frozen_policy_generation_validation_cli.py`: CLI tests for frozen policy generation fixture-case/root modes, safe JSON, usage errors, and expected-result mismatch handling.
@@ -150,6 +151,7 @@ Recommended entry points:
 - [Frozen policy generation validator Makefile target design](frozen_policy_generation_validator_makefile_target_design.md): Step241 target design and Step242 standalone target implementation status for `make check-learner-state-frozen-policy-generation`.
 - `make check-learner-state-frozen-policy-generation`: Step242 standalone smoke target over the synthetic frozen policy generation fixture root; Step244 adds it to release-quality.
 - [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md): Step243 release-quality placement design and Step244 wrapper integration status.
+- [Frozen policy generation release-quality remote run record workflow](frozen_policy_generation_release_quality_remote_run_record_workflow.md): Step245 design for future count-only status marker creation after a remote/manual Release Quality run.
 - `make check-learner-state-frozen-policy`: Step228 standalone target for the synthetic frozen policy fixture root; Step230 adds it to release-quality.
 - `python/learner_state/frozen_policy_validation.py`: Step224 minimal validator/loader and Step226 safe CLI for synthetic frozen policy fixtures; Step228 adds the standalone Makefile target, while scaffold code is not added.
 - `python/learner_state/tests/test_frozen_policy_validation.py`: unit tests for expected-result matching and safe validation metadata.
@@ -280,6 +282,7 @@ Recommended entry points:
 - [Frozen policy generation validator Makefile target design](frozen_policy_generation_validator_makefile_target_design.md): Makefile smoke target design and Step242 implementation status for running the generation validator CLI safely.
 - `make check-learner-state-frozen-policy-generation`: standalone generation fixture validation smoke target now included in release-quality.
 - [Frozen policy generation release-quality integration design](frozen_policy_generation_release_quality_integration_design.md): wrapper integration design and Step244 status for the standalone generation validator target.
+- [Frozen policy generation release-quality remote run record workflow](frozen_policy_generation_release_quality_remote_run_record_workflow.md): future remote/manual Release Quality recording workflow for the generation validator check, using public-safe metadata only.
 - `make check-learner-state-frozen-policy`: frozen policy validator smoke target now included in release-quality.
 - `python/learner_state/frozen_policy_validation.py`: minimal safe frozen policy validator and CLI for the synthetic fixture root.
 - `python/learner_state/estimator_input.py`: minimal synthetic-only estimator input validator/loader; no learner-state estimator, training loop, calibration, or metrics are added.
