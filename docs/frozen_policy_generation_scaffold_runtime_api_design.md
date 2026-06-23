@@ -599,6 +599,15 @@ writing, runtime CLI behavior, runtime Makefile targets, release-quality
 runtime integration, metric computation, real-data handling, or production
 readiness claims.
 
+Step265 follow-up:
+
+[Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
+defines how future tests should compare runtime skeleton results against the
+existing scaffold fixture validator expected-result contract. It remains
+docs-only and does not add runtime compatibility tests, CLI behavior, Makefile
+targets, generator code, artifact writing, or release-quality runtime
+integration.
+
 ## 22. Update History
 
 - Step262: initial docs-only scaffold runtime API design.
@@ -606,11 +615,13 @@ readiness claims.
   design.
 - Step264: recorded the minimal scaffold runtime API skeleton implementation
   status.
+- Step265: linked the docs-only runtime fixture compatibility test design.
 
 ## Related Documents
 
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
+- [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)

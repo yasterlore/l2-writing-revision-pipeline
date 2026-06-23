@@ -1081,6 +1081,22 @@ and `artifact_body_suppressed=true`, without copying request bodies, pointer
 bodies, expected scaffold result bodies, generated or frozen policy artifact
 bodies, JSON bodies, raw rows, logits/probability dumps, private paths, raw
 learner text, or performance claims.
+For Step265, review the
+[frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
+and confirm it is docs-only: no GitHub Actions workflow change,
+release-quality wrapper change, Makefile change, Python code change, Python
+test change, fixture change, runtime CLI, generator code, artifact-body
+generation, artifact file writing, calibration/selective prediction logic,
+estimator work, metric computation, real-data use, or real-data readiness
+claim is introduced. Confirm the design explains how future tests should
+compare runtime skeleton summaries with existing
+`expected_scaffold_result.json` metadata through the scaffold fixture validator
+contract, covers valid 3 and invalid 8 cases, malformed/missing input
+boundaries, no-body-leakage scans, deterministic behavior, explicit safety
+flags, and release-quality staging. Confirm it does not copy request bodies,
+pointer bodies, expected scaffold result bodies, generated or frozen policy
+artifact bodies, JSON bodies, raw rows, logits/probability dumps, private
+paths, raw learner text, or performance claims.
 
 ## 7. Checks To Run
 

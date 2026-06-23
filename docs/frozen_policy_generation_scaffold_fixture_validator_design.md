@@ -464,6 +464,8 @@ Reason:
   status.
 - Step263: linked the runtime API / scaffold fixture validator alignment
   design before future runtime implementation.
+- Step265: linked the runtime fixture compatibility test design that will use
+  the fixture validator contract as the future runtime test oracle.
 
 ## Related Documents
 
@@ -473,6 +475,7 @@ Reason:
 - [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
+- [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation.py`
