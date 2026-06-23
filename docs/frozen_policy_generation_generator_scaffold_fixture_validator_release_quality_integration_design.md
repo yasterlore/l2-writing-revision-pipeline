@@ -387,8 +387,14 @@ Step290 designs the future generator scaffold skeleton:
 Release-quality currently includes only fixture validation for the generator
 scaffold; any future skeleton runtime integration should be staged separately.
 
+Step292 designs the future generator scaffold CLI:
+[Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md).
+Release-quality integration for that skeleton CLI remains future work and
+should not be confused with the existing fixture validator target.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Learner-state frozen policy generation generator scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
@@ -413,3 +419,5 @@ Related docs:
   for generator scaffold fixture validation integration.
 - Step290: linked the generator scaffold skeleton design as future staged work
   separate from release-quality fixture validation.
+- Step292: linked the generator scaffold CLI design while keeping
+  release-quality integration limited to fixture validation.

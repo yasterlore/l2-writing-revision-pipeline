@@ -472,9 +472,13 @@ written, no artifact body is produced, and no performance metric is computed.
   metadata-only boundary before implementation.
 - Step291: linked the metadata-only generator scaffold skeleton implementation
   status; CLI, artifact writing, and artifact body generation remain separate.
+- Step292: linked the generator scaffold CLI design as the next docs-only
+  boundary before CLI implementation or release-quality skeleton runtime
+  integration.
 
 ## Related Documents
 
+- [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Learner-state frozen policy generation generator scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md)

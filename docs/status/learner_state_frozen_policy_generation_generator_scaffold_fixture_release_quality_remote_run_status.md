@@ -239,6 +239,8 @@ This marker does not prove:
   [Frozen policy generation generator scaffold skeleton design](../frozen_policy_generation_generator_scaffold_skeleton_design.md).
 - Step291 implemented the metadata-only generator scaffold skeleton locally;
   future CLI design and release-quality runtime integration remain separate.
+- Step292 created the future generator scaffold CLI design:
+  [Frozen policy generation generator scaffold CLI design](../frozen_policy_generation_generator_scaffold_cli_design.md).
 - Keep future artifact writing design separate.
 - Keep future calibration scaffold work separate.
 - Treat real-data readiness as future private/institution-approved review only.
@@ -252,3 +254,6 @@ This marker does not prove:
 - Step291: noted local metadata-only skeleton implementation; CLI,
   release-quality runtime integration, artifact writing, and artifact bodies
   remain separate.
+- Step292: linked the generator scaffold CLI design as the next staged
+  boundary; CLI implementation and release-quality skeleton runtime
+  integration remain separate.

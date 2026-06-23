@@ -470,8 +470,15 @@ The skeleton design is separate from this remote-run record workflow and keeps
 generator implementation, artifact bodies, artifact writing, metrics, and
 real-data readiness out of scope.
 
+Step292 adds the future generator scaffold CLI design:
+[Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md).
+This workflow remains scoped to fixture validation records. Any future skeleton
+CLI remote status marker should be designed and recorded separately after
+future integration.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Learner-state frozen policy generation generator scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
@@ -496,3 +503,5 @@ Related docs:
   for generator scaffold fixture validation integration.
 - Step290: linked the generator scaffold skeleton design as the next
   metadata-only design step after the status marker.
+- Step292: linked the generator scaffold CLI design while keeping this remote
+  record workflow scoped to fixture validation.

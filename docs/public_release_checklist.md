@@ -1474,6 +1474,22 @@ write artifacts, does not generate artifact bodies or generated policy bodies,
 does not compute metrics, and does not claim performance or real-data
 readiness. Confirm tests do not print fixture bodies or write artifacts.
 
+For Step292, review the
+[frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md).
+Confirm it is docs-only and defines the future safe CLI entrypoint,
+arguments, example commands, expected behavior, exit codes, safe human output,
+safe JSON output, no-body-leakage policy, relation to skeleton APIs, relation
+to the fixture validator CLI, future CLI tests, Makefile staging,
+release-quality staging, and status-marker staging. Confirm it does not add
+Python code, Python tests, fixtures, Makefile targets, release-quality wrapper
+changes, GitHub Actions workflow changes, artifact file writing, artifact body
+generation, generated policy body generation, artifact manifest writing,
+calibration/selective prediction logic, estimator work, metric computation,
+performance evaluation, real-data use, or real-data readiness claims. Confirm
+it does not include raw logs, request/pointer bodies, expected generator
+scaffold result bodies, artifact bodies, generated policy bodies, raw rows,
+logits, private paths, raw learner text, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -504,8 +504,15 @@ Step291 implements that metadata-only skeleton and focused tests. The fixture
 root remains unchanged, and expected-result compatibility is checked without
 printing fixture bodies in docs.
 
+Step292 designs the future CLI for running the implemented skeleton:
+[Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md).
+The fixture root remains unchanged. The future CLI should consume one
+request/pointer pair as metadata-only input and should not expose fixture
+bodies, artifact bodies, generated policy bodies, or write files.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
