@@ -571,6 +571,10 @@ Step257 designs the future release-quality wrapper integration for that target.
 It remains fixture-only and does not implement wrapper changes, workflow
 changes, scaffold runtime code, or generator code.
 
+Step258 implements the release-quality wrapper integration for the standalone
+scaffold fixture validator target. It remains fixture-only and does not add
+workflow changes, scaffold runtime code, or generator code.
+
 ## 21. Update History
 
 - Step248: initial frozen policy generation scaffold implementation design.
@@ -588,6 +592,8 @@ changes, scaffold runtime code, or generator code.
   implementation status.
 - Step257: linked the scaffold fixture validator release-quality integration
   design.
+- Step258: linked the scaffold fixture validator release-quality wrapper
+  integration implementation status.
 
 ## Related Documents
 

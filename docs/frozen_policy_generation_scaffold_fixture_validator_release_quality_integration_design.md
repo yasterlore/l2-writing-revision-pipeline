@@ -40,11 +40,43 @@ The standalone target passes with safe metadata-only output:
 - `mismatched_cases=0`
 - `input_error_cases=0`
 
-Release-quality integration does not exist yet.
+Step258 implements the release-quality wrapper integration.
 
 No GitHub Actions workflow change exists for this target.
 
 Scaffold runtime code and generator code do not exist.
+
+## Step258 Implementation Status
+
+Step258 adds the standalone target to `scripts/check_release_quality.sh` after
+learner-state frozen policy generation validation and before config/scoring
+smoke checks.
+
+Implemented wrapper label:
+
+```text
+release_quality_check: learner-state frozen policy generation scaffold fixture validation
+```
+
+Implemented wrapper command:
+
+```bash
+make check-learner-state-frozen-policy-generation-scaffold-fixtures
+```
+
+The integration keeps the standalone target's safe human summary behavior:
+
+- `total_cases=11`
+- `matched_cases=11`
+- `mismatched_cases=0`
+- `input_error_cases=0`
+- no request body
+- no pointer body
+- no artifact body
+- no raw rows
+- no logits dump
+- no private paths
+- no tmp output
 
 ## 3. Proposed Wrapper Insertion Point
 
@@ -206,7 +238,7 @@ safe, synthetic-only, metadata-only, and expected-result aligned.
 Current status:
 
 - Makefile target already exists
-- release-quality wrapper is not yet changed
+- release-quality wrapper now includes the scaffold fixture validator target
 - GitHub Actions workflow is not changed
 - scaffold runtime is not implemented
 - generator is not implemented
@@ -277,9 +309,8 @@ learner text, or performance metric bodies.
 
 ## 14. What This Does NOT Do
 
-This document does not:
+This design and the Step258 integration do not:
 
-- integrate the release-quality wrapper
 - change GitHub Actions workflows
 - change the Makefile
 - change Python code
@@ -337,6 +368,8 @@ Reason:
 
 - Step257: initial docs-only scaffold fixture validator release-quality
   integration design.
+- Step258: release-quality wrapper integration implemented with the standalone
+  scaffold fixture validator Makefile target.
 
 ## Related Documents
 

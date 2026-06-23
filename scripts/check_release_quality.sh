@@ -115,6 +115,9 @@ run make check-learner-state-frozen-policy
 section "learner-state frozen policy generation validation"
 run make check-learner-state-frozen-policy-generation
 
+section "learner-state frozen policy generation scaffold fixture validation"
+run make check-learner-state-frozen-policy-generation-scaffold-fixtures
+
 section "config and scoring smoke checks"
 run scripts/check_config_enabled_summary_smoke.sh
 run scripts/check_config_enabled_e2e_smoke.sh

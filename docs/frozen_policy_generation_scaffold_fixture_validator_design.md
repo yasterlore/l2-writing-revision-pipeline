@@ -408,6 +408,10 @@ It keeps wrapper implementation, workflow changes, Makefile changes, Python
 changes, fixture changes, scaffold runtime code, and generator code out of
 scope.
 
+Step258 implements that wrapper integration through the standalone Makefile
+target. Workflow, Makefile, Python, test, fixture, scaffold runtime, and
+generator code remain unchanged.
+
 ## 18. Beginner-Friendly Explanation
 
 A fixture validator is a checker for test-case files. It asks whether the
@@ -456,6 +460,8 @@ Reason:
 - Step256: linked the standalone scaffold fixture validator Makefile target
   implementation status.
 - Step257: linked the docs-only release-quality integration design.
+- Step258: linked the release-quality wrapper integration implementation
+  status.
 
 ## Related Documents
 

@@ -311,6 +311,10 @@ Step257 designs that future release-quality wrapper integration. It specifies
 the proposed wrapper placement and log-safety boundary while leaving wrapper
 implementation and workflow changes for later.
 
+Step258 implements the release-quality wrapper integration for the standalone
+scaffold fixture validator target. Workflow, scaffold runtime, generator, and
+fixture files remain unchanged.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, CLI commands,
@@ -353,6 +357,8 @@ calibration method works well.
   implementation status.
 - Step257: linked the scaffold fixture validator release-quality integration
   design.
+- Step258: linked the scaffold fixture validator release-quality wrapper
+  integration implementation status.
 
 ## Related Documents
 
