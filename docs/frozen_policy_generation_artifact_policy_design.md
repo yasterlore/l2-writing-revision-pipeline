@@ -447,8 +447,15 @@ Step291 implements that metadata-only skeleton. The artifact policy remains
 unchanged: no artifact body, generated policy body, artifact manifest writer,
 or artifact file writing is introduced.
 
+Step292 designs the future CLI for running that skeleton:
+[Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md).
+The artifact policy remains unchanged: the future CLI should print safe
+metadata only, provide no output-file option, and still not generate artifact
+bodies, generated policy bodies, manifests, or written files.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)

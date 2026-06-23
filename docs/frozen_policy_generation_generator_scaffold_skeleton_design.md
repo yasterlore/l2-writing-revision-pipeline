@@ -726,9 +726,9 @@ for real data.
 
 Recommended sequence after Step291:
 
-- Step292: skeleton compatibility test expansion if needed
-- Step293: skeleton CLI design
-- Step294: skeleton CLI implementation
+- Step292: skeleton CLI design
+- Step293: skeleton CLI implementation
+- Step294: CLI test expansion if needed
 - Step295: Makefile target design
 - later: Makefile target implementation
 - later: release-quality integration design
@@ -767,8 +767,20 @@ The implementation remains synthetic-only and metadata-only. It still does not
 prove generator quality, policy quality, model performance, calibration
 quality, real-data readiness, or production readiness.
 
+## 24. Step292 CLI Design Status
+
+Step292 designs the future safe CLI boundary for running the implemented
+metadata-only skeleton:
+[Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md).
+
+The design keeps CLI implementation, Makefile target changes, release-quality
+integration, workflow changes, fixture changes, artifact body generation,
+generated policy body generation, artifact writing, metric computation, and
+real-data readiness out of scope.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)

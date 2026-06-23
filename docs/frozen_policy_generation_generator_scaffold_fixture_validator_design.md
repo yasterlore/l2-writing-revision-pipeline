@@ -670,8 +670,15 @@ metadata-only results with expected fixture metadata without printing bodies.
 Step291 implements the skeleton and focused tests. The fixture validator
 remains separate and still validates fixture contract only.
 
+Step292 designs the future CLI for running the skeleton:
+[Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md).
+The fixture validator remains separate. It continues to validate fixture
+contracts, while the future skeleton CLI should run one request/pointer pair
+and print only safe metadata.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
