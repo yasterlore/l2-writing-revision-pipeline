@@ -402,10 +402,17 @@ Step281 implements the metadata-only fixture validator and tests. The artifact
 policy remains unchanged: no artifact body generation, no artifact file
 writing, no generated policy body, no metrics, and no real-data readiness.
 
+Step282 designs the future CLI for that validator at
+[Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md).
+The artifact policy remains unchanged: CLI output must stay metadata-only,
+must not expose request/pointer/expected-result bodies, must not expose
+artifact bodies or generated policy bodies, and must not write files.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
+- [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
