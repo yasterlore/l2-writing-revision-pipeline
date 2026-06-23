@@ -652,8 +652,14 @@ contract remains unchanged, and release-quality integration, workflows,
 generator code, artifact body generation, artifact writing, Python tests, and
 fixtures remain out of scope.
 
+Step286 designs future release-quality wrapper integration for that target:
+[Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md).
+The design does not change the wrapper, workflows, validator, fixtures,
+generator, or artifact policy.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
@@ -680,3 +686,5 @@ Related docs:
 - Step285: recorded standalone Makefile target implementation status; wrapper,
   workflow, generator, artifact body, artifact writing, test, and fixture
   changes remain out of scope.
+- Step286: linked the release-quality integration design for the standalone
+  target.

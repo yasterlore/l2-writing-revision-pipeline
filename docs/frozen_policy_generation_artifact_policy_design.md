@@ -428,12 +428,18 @@ Step285 implements the standalone Makefile target while preserving the same
 artifact policy: no generator execution, no artifact body, no generated policy
 body, no file writing, and no release-quality integration.
 
+Step286 designs future release-quality integration for that target:
+[Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md).
+The artifact policy remains unchanged: wrapper logs and future status markers
+must stay metadata-only and body-free.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
 - [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)

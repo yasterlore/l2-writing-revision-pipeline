@@ -389,8 +389,16 @@ It is not added to release-quality, does not change workflows, does not change
 Python code or tests, does not change fixtures, does not run a generator, does
 not write artifacts, and does not expose artifact bodies.
 
+Step286 designs the future release-quality integration for this standalone
+target:
+[Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md).
+The design keeps wrapper implementation, workflow changes, generator execution,
+artifact writing, artifact body generation, and performance evaluation out of
+scope.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
@@ -406,3 +414,4 @@ Related docs:
 - Step285: recorded standalone Makefile target implementation status; release
   quality integration, workflow changes, generator code, artifact body
   generation, and artifact writing remain out of scope.
+- Step286: added docs-only release-quality integration design handoff.

@@ -407,8 +407,14 @@ Step285 implements that standalone Makefile target without adding it to
 release-quality and without changing workflows, Python code, tests, fixtures,
 generator code, artifact writing, or artifact body generation.
 
+Step286 designs the future release-quality integration for that target:
+[Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md).
+The design keeps wrapper implementation out of scope and preserves the
+metadata-only CLI boundary.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
@@ -429,3 +435,4 @@ Related docs:
   code, artifact body generation, and artifact writing remain future work.
 - Step285: recorded standalone Makefile target implementation status;
   release-quality integration and workflow changes remain future work.
+- Step286: linked the docs-only release-quality integration design.
