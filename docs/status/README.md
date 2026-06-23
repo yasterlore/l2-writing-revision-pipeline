@@ -60,6 +60,9 @@ Related recap:
   milestone.
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](../milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md):
   broader recap of the scaffold fixture validation infrastructure milestone.
+- [Milestone 13 frozen policy generation scaffold runtime recap](../milestone_13_frozen_policy_generation_scaffold_runtime_recap.md):
+  broader recap of the scaffold runtime infrastructure milestone and its
+  relation to the runtime remote/manual status marker.
 - [Frozen policy generation scaffold fixture validator release-quality remote run record workflow](../frozen_policy_generation_scaffold_fixture_validator_release_quality_remote_run_record_workflow.md):
   future public-safe metadata-only recording workflow for the scaffold fixture
   validator release-quality wrapper integration.
