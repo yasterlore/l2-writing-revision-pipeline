@@ -300,7 +300,7 @@ behavior without including unsafe payload bodies.
 
 ## 14. What This Does NOT Do
 
-This design does not:
+This design did not initially:
 
 - integrate the release-quality wrapper
 - change GitHub Actions workflows
@@ -315,6 +315,19 @@ This design does not:
 - evaluate performance
 - use real data
 - prove production readiness
+
+Step287 implements the planned wrapper integration with the standalone target
+only. The wrapper now runs:
+
+```text
+release_quality_check: learner-state frozen policy generation generator scaffold fixture validation
+command: make check-learner-state-frozen-policy-generation-generator-scaffold-fixtures
+```
+
+The integration is placed after scaffold runtime smoke and before
+config/scoring smoke checks. It does not change GitHub Actions workflows, the
+Makefile, Python code, Python tests, fixtures, generator code, artifact
+writing, or artifact body generation.
 
 ## 15. Beginner-Friendly Explanation
 
@@ -340,12 +353,10 @@ without copied logs or fixture bodies.
 
 ## 16. Next Recommended Steps
 
-Recommended next steps:
+Recommended next steps after Step287:
 
-1. Implement release-quality wrapper integration.
-2. Run standalone target and full release-quality locally.
-3. Confirm wrapper diff is limited and workflow diff is none.
-4. After remote/manual success, design or add a public-safe status marker if
+1. Confirm remote/manual Release Quality success.
+2. Design or add a public-safe status marker if
    needed.
 
 Generator implementation, artifact writing, artifact body generation,
@@ -356,6 +367,10 @@ separate future milestones.
 
 This Step286 document records the release-quality integration design for the
 metadata-only generator scaffold fixture validator target.
+
+Step287 records the corresponding minimal wrapper integration. The added
+wrapper section calls the standalone Makefile target and keeps output
+metadata-only.
 
 Related docs:
 
@@ -371,3 +386,6 @@ Related docs:
 
 - Step286: initial docs-only release-quality integration design for the
   generator scaffold fixture validator target.
+- Step287: recorded minimal release-quality wrapper integration status; no
+  workflow, Makefile, Python, test, fixture, generator, artifact-writing, or
+  artifact-body changes are introduced.

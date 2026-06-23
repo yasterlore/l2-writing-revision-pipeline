@@ -404,6 +404,12 @@ Step286 designs future release-quality integration for that target:
 The runtime recap boundary remains unchanged: no generator, artifact writer,
 artifact body generation, or performance evaluation is introduced.
 
+Step287 implements that release-quality wrapper integration. The wrapper now
+calls the standalone metadata-only generator scaffold fixture validator target
+after scaffold runtime smoke and before config/scoring smoke checks. Workflow,
+Makefile, Python, test, fixture, generator, artifact-writing, and artifact-body
+changes remain out of scope.
+
 ## 14. Beginner-Friendly Explanation
 
 Runtime infrastructure is the code, tests, CLI, Makefile target, release-quality
@@ -456,6 +462,8 @@ written, no artifact body is produced, and no performance metric is computed.
   implementation.
 - Step286: linked the release-quality integration design for the standalone
   target.
+- Step287: recorded minimal release-quality wrapper integration status for the
+  standalone target.
 
 ## Related Documents
 
