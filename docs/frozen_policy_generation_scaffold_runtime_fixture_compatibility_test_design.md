@@ -384,17 +384,26 @@ release-quality wrapper changes, workflow changes, fixture changes, generator
 code, artifact file writing, artifact body generation, metric computation,
 real-data use, or performance claims.
 
+Step267 follow-up:
+
+[Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
+defines the next docs-only boundary for terminal execution. The CLI design
+keeps compatibility matching in these tests and proposes the runtime command as
+a safe metadata-only result reporter, not a fixture validator.
+
 ## 19. Update History
 
 - Step265: initial docs-only scaffold runtime fixture compatibility test
   design.
 - Step266: recorded the minimal runtime fixture compatibility tests
   implementation status.
+- Step267: linked the runtime CLI design as the next docs-only stage.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
+- [Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)

@@ -343,6 +343,14 @@ They use the existing scaffold fixture validator comparison helper as the test
 oracle for the runtime summary, while keeping assertions limited to safe case
 labels, reason codes, statuses, deterministic summaries, and safety flags.
 
+Step267 follow-up:
+
+[Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
+keeps this alignment boundary intact by designing the future CLI as a thin
+runtime API wrapper. The CLI design does not add expected-result comparison to
+the initial runtime command; compatibility tests remain responsible for
+fixture/expected matching.
+
 ## 15. Update History
 
 - Step263: initial docs-only runtime API and scaffold fixture validator
@@ -351,11 +359,13 @@ labels, reason codes, statuses, deterministic summaries, and safety flags.
   status.
 - Step265: linked the docs-only runtime fixture compatibility test design.
 - Step266: linked the runtime fixture compatibility tests implementation.
+- Step267: linked the runtime CLI design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
+- [Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)

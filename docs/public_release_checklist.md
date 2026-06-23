@@ -1113,6 +1113,21 @@ Confirm test assertions use safe case labels and do not print request bodies,
 pointer bodies, expected scaffold result bodies, generated or frozen policy
 artifact bodies, JSON bodies, raw rows, logits/probability dumps, private paths,
 raw learner text, or performance claims.
+For Step267, review the
+[frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
+and confirm it is docs-only: no GitHub Actions workflow change,
+release-quality wrapper change, Makefile change, Python code change, Python
+test change, fixture change, runtime CLI implementation, generator code,
+artifact-body generation, artifact file writing, calibration/selective
+prediction logic, estimator work, metric computation, real-data use, or
+real-data readiness claim is introduced. Confirm the design recommends a thin
+`python -m learner_state.frozen_policy_generation` wrapper over the runtime
+API, defines `--request`, `--pointer`, `--json`, and `--help`, separates safe
+runtime fail results from usage/input errors, and requires safe metadata-only
+human/JSON output. Confirm it does not copy request bodies, pointer bodies,
+expected scaffold result bodies, generated or frozen policy artifact bodies,
+JSON bodies, raw rows, logits/probability dumps, private paths, raw learner
+text, or performance claims.
 
 ## 7. Checks To Run
 
