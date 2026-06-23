@@ -416,6 +416,8 @@ accidentally expose raw rows, labels, logits, paths, or misleading metrics.
   wrapper and workflows remain unchanged.
 - Step243: linked the frozen policy generation release-quality integration
   design; CLI behavior remains unchanged.
+- Step244: linked the release-quality wrapper integration status; CLI
+  behavior remains unchanged.
 
 ## Related Documents
 

@@ -474,6 +474,8 @@ followed the synthetic fixture contract and safety boundaries.
   implementation status; fixture files remain unchanged.
 - Step243: linked the release-quality integration design; fixture files remain
   unchanged.
+- Step244: linked the release-quality wrapper integration status; fixture
+  files remain unchanged.
 
 ## Related Documents
 

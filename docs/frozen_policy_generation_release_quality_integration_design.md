@@ -1,14 +1,16 @@
 # Frozen Policy Generation Release-Quality Integration Design
 
-This document designs a future release-quality wrapper integration for the
-frozen policy generation validator target.
+This document designs and records the Step244 implementation status for the
+release-quality wrapper integration of the frozen policy generation validator
+target.
 
-It is documentation only. It does not change the release-quality wrapper,
-GitHub Actions workflows, Makefile, Python code, tests, fixtures, scripts, or
-generated artifacts. It does not implement a generator, frozen policy
-generation scaffold, calibration, selective prediction, learner-state
-estimator, new model, or metric computation. It is not a performance
-evaluation and is not a real-data readiness claim.
+It is primarily a design record. Step244 changes only the release-quality
+wrapper by adding the standalone Makefile target. It does not change GitHub
+Actions workflows, Makefile, Python code, tests, fixtures, generated
+artifacts, generator code, frozen policy generation scaffold, calibration,
+selective prediction, learner-state estimator, new model, or metric
+computation. It is not a performance evaluation and is not a real-data
+readiness claim.
 
 Public docs must not include raw GitHub Actions logs, full job output, copied
 log blocks, screenshots containing raw logs, frozen policy artifact bodies,
@@ -19,9 +21,9 @@ private paths, raw learner text, or real participant data.
 
 ## 1. Purpose
 
-The purpose of this document is to design how
-`make check-learner-state-frozen-policy-generation` should be integrated into
-the release-quality wrapper in a future implementation step.
+The purpose of this document is to design and record how
+`make check-learner-state-frozen-policy-generation` is integrated into the
+release-quality wrapper.
 
 The integration should make release-quality cover the frozen policy generation
 bridge contract after the standalone target has already demonstrated safe
@@ -45,12 +47,12 @@ Current state:
 - standalone output is safe human summary only
 - no request body, input pointer body, generated artifact body, raw rows,
   logits dump, private path, or performance metric body is printed
-- release-quality integration does not exist yet
+- release-quality wrapper integration exists
 - workflow YAML change does not exist yet
 
 ## 3. Proposed Wrapper Insertion Point
 
-Recommended future wrapper order:
+Implemented wrapper order:
 
 1. learner-state audit fixtures
 2. learner-state exporter CLI smoke
@@ -60,7 +62,7 @@ Recommended future wrapper order:
 6. learner-state frozen policy generation validation
 7. config and scoring smoke checks
 
-Recommended insertion point:
+Implemented insertion point:
 
 - immediately after `release_quality_check: learner-state frozen policy validation`
 - immediately before `release_quality_check: config and scoring smoke checks`
@@ -76,7 +78,7 @@ Rationale:
 
 ## 4. Proposed Wrapper Command
 
-Recommended wrapper command:
+Implemented wrapper command:
 
 ```bash
 make check-learner-state-frozen-policy-generation
@@ -94,7 +96,7 @@ Reasons:
 
 ## 5. Proposed Wrapper Label
 
-Recommended section label:
+Implemented section label:
 
 ```text
 release_quality_check: learner-state frozen policy generation validation
@@ -246,16 +248,15 @@ the expected bridge contract.
 Status:
 
 - Makefile target already exists
-- release-quality wrapper is not changed yet
+- release-quality wrapper now calls the Makefile target
 - GitHub Actions workflows are not changed
-- future implementation should modify only `scripts/check_release_quality.sh`
-  if possible
-- workflow YAML may not need changes because the workflow already calls the
+- only `scripts/check_release_quality.sh` changed for wrapper integration
+- workflow YAML did not need changes because the workflow already calls the
   release-quality wrapper
 
-## 12. Testing Plan For Future Implementation
+## 12. Testing Plan For Implementation
 
-Future integration checks:
+Implementation checks:
 
 - `make check-learner-state-frozen-policy-generation` passes
 - `make check-release-quality` includes the generation validation label
@@ -289,9 +290,8 @@ Boundary:
 
 ## 14. What This Does NOT Do
 
-This document does not:
+This step does not:
 
-- integrate the release-quality wrapper
 - change GitHub Actions workflows
 - modify the Makefile
 - modify Python code
@@ -330,6 +330,10 @@ expected-result matching and bridge-contract validation passed.
 
 - Step243: initial frozen policy generation validator release-quality
   integration design creation.
+- Step244: integrated `make check-learner-state-frozen-policy-generation`
+  into `scripts/check_release_quality.sh` after frozen policy validation and
+  before config/scoring smoke checks. Workflow, Makefile, Python code, tests,
+  and fixtures remain unchanged.
 
 ## Related Documents
 
