@@ -17,6 +17,7 @@
 .PHONY: check-learner-state-frozen-policy
 .PHONY: check-learner-state-frozen-policy-generation
 .PHONY: check-learner-state-frozen-policy-generation-scaffold-fixtures
+.PHONY: check-learner-state-frozen-policy-generation-scaffold-runtime
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -43,6 +44,7 @@ help:
 	@echo "  check-learner-state-frozen-policy  Smoke-test frozen selective prediction policy validation"
 	@echo "  check-learner-state-frozen-policy-generation  Smoke-test frozen policy generation fixture validation"
 	@echo "  check-learner-state-frozen-policy-generation-scaffold-fixtures  Smoke-test frozen policy generation scaffold fixture validation"
+	@echo "  check-learner-state-frozen-policy-generation-scaffold-runtime  Smoke-test frozen policy generation scaffold runtime CLI"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -110,6 +112,9 @@ check-learner-state-frozen-policy-generation:
 
 check-learner-state-frozen-policy-generation-scaffold-fixtures:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_scaffold_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_scaffold
+
+check-learner-state-frozen-policy-generation-scaffold-runtime:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation --request tests/fixtures/learner_state_frozen_policy_generation_scaffold/valid/minimal_fixed_threshold_dry_run/generation_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_scaffold/valid/minimal_fixed_threshold_dry_run/input_fixture_pointer.json
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality

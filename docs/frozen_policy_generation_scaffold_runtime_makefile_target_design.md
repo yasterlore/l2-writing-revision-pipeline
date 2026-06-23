@@ -315,20 +315,44 @@ policy artifact is written, and no performance metric is computed.
 
 Recommended next step:
 
-- runtime CLI Makefile target implementation
+- release-quality integration design
 
 Then proceed with:
 
-- release-quality integration design
 - release-quality wrapper integration
 - remote/manual status marker design if needed
 - remote/manual status marker after a safe run if needed
 
 Generator implementation should remain separate.
 
-## 17. Update History
+## 17. Step270 Implementation Status
+
+The standalone Makefile target now exists:
+
+```bash
+make check-learner-state-frozen-policy-generation-scaffold-runtime
+```
+
+It runs the runtime CLI over the synthetic
+`valid/minimal_fixed_threshold_dry_run` request and pointer pair and emits the
+runtime CLI's safe human summary.
+
+The implemented command is:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.frozen_policy_generation --request tests/fixtures/learner_state_frozen_policy_generation_scaffold/valid/minimal_fixed_threshold_dry_run/generation_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_scaffold/valid/minimal_fixed_threshold_dry_run/input_fixture_pointer.json
+```
+
+The implementation does not add release-quality runtime integration, GitHub
+Actions workflow changes, Python code changes, Python test changes, fixture
+changes, generator behavior, artifact writing, artifact body generation,
+metric computation, real-data use, or performance claims.
+
+## 18. Update History
 
 - Step269: initial docs-only runtime CLI Makefile target design.
+- Step270: recorded the standalone runtime CLI Makefile target implementation
+  status.
 
 ## Related Documents
 

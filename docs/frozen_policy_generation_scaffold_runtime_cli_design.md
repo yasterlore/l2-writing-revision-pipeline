@@ -337,6 +337,14 @@ the target docs-only, recommends a single synthetic valid fixture pair for the
 initial smoke command, and keeps release-quality runtime integration as a later
 step.
 
+Step270 implementation status:
+
+The standalone runtime CLI Makefile target now exists as
+`check-learner-state-frozen-policy-generation-scaffold-runtime`. It runs this
+CLI over the synthetic `valid/minimal_fixed_threshold_dry_run` request and
+pointer pair and emits the safe human summary. Release-quality runtime
+integration remains a later step.
+
 ## 16. Beginner-Friendly Explanation
 
 A CLI is the command a developer can run in a terminal. For this runtime, the
@@ -378,6 +386,8 @@ Generator implementation should remain a separate later stage.
   design.
 - Step268: recorded the minimal runtime CLI implementation status.
 - Step269: linked the docs-only runtime CLI Makefile target design.
+- Step270: recorded the standalone runtime CLI Makefile target implementation
+  status.
 
 ## Related Documents
 
