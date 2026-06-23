@@ -657,8 +657,14 @@ Step286 designs future release-quality wrapper integration for that target:
 The design does not change the wrapper, workflows, validator, fixtures,
 generator, or artifact policy.
 
+Step288 adds the future remote/manual Release Quality run record workflow:
+[Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md).
+The validator remains a metadata-only fixture contract checker; the future
+status marker should record only pass-only/count-only results.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
@@ -688,3 +694,5 @@ Related docs:
   changes remain out of scope.
 - Step286: linked the release-quality integration design for the standalone
   target.
+- Step288: linked the remote/manual run record workflow design for a future
+  public-safe status marker.

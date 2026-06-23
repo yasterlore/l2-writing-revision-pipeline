@@ -1415,6 +1415,20 @@ section reports 18 matched metadata-only cases, keeps `content_suppressed`,
 expected result bodies, artifact bodies, generated policy bodies, raw rows,
 logits, private paths, raw learner text, and performance claims.
 
+For Step288, review the
+[frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
+and confirm it is docs-only: no remote run status marker, GitHub Actions
+workflow change, release-quality wrapper change, Makefile change, Python code
+change, Python test change, fixture change, generator code, artifact-body
+generation, artifact file writing, calibration/selective prediction logic,
+estimator work, metric computation, real-data use, or real-data readiness
+claim is introduced. Confirm the design defines the future status marker path,
+safe metadata fields, forbidden metadata, pass-only/count-only marker
+structure, failure handling, and actual recording workflow without raw logs,
+request/pointer bodies, expected result bodies, artifact bodies, generated
+policy bodies, JSON bodies, raw rows, logits, private paths, raw learner text,
+or performance claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

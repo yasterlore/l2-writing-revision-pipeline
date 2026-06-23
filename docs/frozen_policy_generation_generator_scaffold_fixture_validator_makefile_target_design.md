@@ -396,8 +396,14 @@ The design keeps wrapper implementation, workflow changes, generator execution,
 artifact writing, artifact body generation, and performance evaluation out of
 scope.
 
+Step288 designs the future remote/manual Release Quality run record workflow:
+[Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md).
+It keeps the actual status marker as future work and records only
+pass-only/count-only metadata.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
@@ -415,3 +421,4 @@ Related docs:
   quality integration, workflow changes, generator code, artifact body
   generation, and artifact writing remain out of scope.
 - Step286: added docs-only release-quality integration design handoff.
+- Step288: added docs-only remote/manual run record workflow handoff.

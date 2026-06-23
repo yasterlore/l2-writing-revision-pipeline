@@ -372,8 +372,14 @@ Step287 records the corresponding minimal wrapper integration. The added
 wrapper section calls the standalone Makefile target and keeps output
 metadata-only.
 
+Step288 adds the remote/manual run record workflow design:
+[Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md).
+It keeps the actual status marker as future work and limits any future record
+to pass-only/count-only metadata.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
@@ -389,3 +395,5 @@ Related docs:
 - Step287: recorded minimal release-quality wrapper integration status; no
   workflow, Makefile, Python, test, fixture, generator, artifact-writing, or
   artifact-body changes are introduced.
+- Step288: linked the docs-only remote/manual Release Quality run record
+  workflow design for a future public-safe status marker.
