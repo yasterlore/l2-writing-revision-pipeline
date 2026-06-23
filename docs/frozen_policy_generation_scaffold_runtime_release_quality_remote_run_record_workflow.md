@@ -98,6 +98,18 @@ for the future status marker if the remote run log review is safe.
 This follows the existing learner-state status marker family and distinguishes
 the runtime smoke record from the scaffold fixture validator record.
 
+Step274 follow-up:
+
+The public-safe status marker is available at
+[Learner-state frozen policy generation scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_runtime_release_quality_remote_run_status.md).
+It records only metadata, pass-only runtime smoke fields, and count-only
+scaffold fixture validation fields for the successful remote/manual Release
+Quality run. It does not include raw GitHub Actions logs, full job output,
+copied log blocks, generation request bodies, input pointer bodies, expected
+scaffold result bodies, generated artifact bodies, frozen policy artifact
+bodies, JSON bodies, raw rows, logits/probability dumps, private paths, raw
+learner text, or performance metric bodies.
+
 ## 5. Metadata To Record
 
 A future public-safe status marker may record:
@@ -434,6 +446,8 @@ work.
 
 - Step273: initial docs-only runtime Release Quality remote/manual run record
   workflow design.
+- Step274: linked the public-safe remote/manual Release Quality status marker
+  for scaffold runtime smoke integration.
 
 ## Related Documents
 
@@ -444,5 +458,6 @@ work.
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
 - [Frozen policy generation scaffold fixture validator release-quality remote run record workflow](frozen_policy_generation_scaffold_fixture_validator_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md)
+- [Learner-state frozen policy generation scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_runtime_release_quality_remote_run_status.md)
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Public release checklist](public_release_checklist.md)

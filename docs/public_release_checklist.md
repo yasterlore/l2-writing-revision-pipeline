@@ -1204,6 +1204,17 @@ safe metadata fields, forbidden content, pass-only runtime smoke summary,
 count-only scaffold fixture validation summary, failure handling, and
 recording workflow without raw logs, request/pointer bodies, artifact bodies,
 raw rows, logits, private paths, or performance claims.
+For Step274, confirm the public-safe status marker
+[learner-state frozen policy generation scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_runtime_release_quality_remote_run_status.md)
+records only safe metadata, pass-only runtime smoke summary, and count-only
+scaffold fixture validation summary for the successful remote/manual Release
+Quality run. Confirm it does not include raw GitHub Actions logs, full job
+output, copied log blocks, request/pointer/expected result bodies, generated
+or frozen policy artifact bodies, JSON bodies, raw rows, logits/probability
+dumps, private paths, raw learner text, real participant data, or performance
+metric bodies. Confirm it does not treat runtime smoke success as generator
+quality, artifact generation quality, model performance, production
+readiness, or real-data readiness.
 
 ## 7. Checks To Run
 

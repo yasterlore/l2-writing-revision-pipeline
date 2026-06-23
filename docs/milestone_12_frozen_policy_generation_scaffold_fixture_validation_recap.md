@@ -439,6 +439,7 @@ is computed.
 - [Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
 - [Frozen policy generation scaffold runtime release-quality integration design](frozen_policy_generation_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation scaffold runtime release-quality remote run record workflow](frozen_policy_generation_scaffold_runtime_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
