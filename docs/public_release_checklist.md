@@ -1181,6 +1181,17 @@ validation and before config/scoring smoke checks, recommends calling the
 standalone Makefile target, defines the wrapper label, requires safe
 metadata-only output, creates no tmp/manual output, and does not treat runtime
 smoke success as generator quality or performance evidence.
+For Step272, review `scripts/check_release_quality.sh` and the linked runtime
+release-quality integration design. Confirm the change is limited to adding
+`make check-learner-state-frozen-policy-generation-scaffold-runtime` after the
+scaffold fixture validator target and before config/scoring smoke checks, plus
+docs updates: no GitHub Actions workflow change, Makefile change, Python code
+change, Python test change, fixture change, generator code, artifact-body
+generation, artifact file writing, calibration/selective prediction logic,
+estimator work, metric computation, real-data use, or real-data readiness
+claim is introduced. Confirm the wrapper output remains safe metadata only and
+does not treat runtime smoke success as generator quality or performance
+evidence.
 
 ## 7. Checks To Run
 

@@ -315,11 +315,10 @@ policy artifact is written, and no performance metric is computed.
 
 Recommended next step:
 
-- release-quality wrapper integration implementation
+- remote/manual status marker design if needed
 
 Then proceed with:
 
-- remote/manual status marker design if needed
 - remote/manual status marker after a safe run if needed
 
 Generator implementation should remain separate.
@@ -357,12 +356,29 @@ not change the wrapper, workflows, Makefile, Python code, tests, fixtures,
 generator behavior, artifact writing, metrics, real-data use, or performance
 claims.
 
-## 19. Update History
+## 19. Step272 Implementation Status
+
+The release-quality wrapper now calls
+`make check-learner-state-frozen-policy-generation-scaffold-runtime` after
+scaffold fixture validation and before config/scoring smoke checks. The wrapper
+label is:
+
+```text
+release_quality_check: learner-state frozen policy generation scaffold runtime smoke
+```
+
+The integration does not change GitHub Actions workflows, the Makefile, Python
+code, tests, fixtures, generator behavior, artifact writing, metric
+computation, real-data use, or performance claims.
+
+## 20. Update History
 
 - Step269: initial docs-only runtime CLI Makefile target design.
 - Step270: recorded the standalone runtime CLI Makefile target implementation
   status.
 - Step271: linked the docs-only runtime release-quality integration design.
+- Step272: recorded release-quality wrapper integration status for the runtime
+  smoke target.
 
 ## Related Documents
 

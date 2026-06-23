@@ -354,6 +354,14 @@ docs-only and does not change the wrapper, workflows, Makefile, Python code,
 tests, fixtures, generator behavior, artifact writing, metrics, real-data use,
 or performance claims.
 
+Step272 implementation status:
+
+The release-quality wrapper now calls
+`make check-learner-state-frozen-policy-generation-scaffold-runtime` through
+the wrapper label `release_quality_check: learner-state frozen policy
+generation scaffold runtime smoke`. The CLI remains a safe metadata-only
+runtime smoke path and still does not invoke a generator or write artifacts.
+
 ## 16. Beginner-Friendly Explanation
 
 A CLI is the command a developer can run in a terminal. For this runtime, the
@@ -396,6 +404,8 @@ Generator implementation should remain a separate later stage.
 - Step270: recorded the standalone runtime CLI Makefile target implementation
   status.
 - Step271: linked the docs-only runtime release-quality integration design.
+- Step272: recorded release-quality wrapper integration status for the runtime
+  smoke target.
 
 ## Related Documents
 

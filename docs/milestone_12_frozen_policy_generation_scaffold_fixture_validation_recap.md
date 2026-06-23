@@ -365,6 +365,13 @@ release-quality wrapper, workflows, Makefile, Python code, tests, fixtures,
 generator behavior, artifact writing, metric computation, real-data use, or
 performance claims.
 
+Step272 adds the runtime smoke target to the release-quality wrapper after
+scaffold fixture validation and before config/scoring smoke checks. The wrapper
+label is `release_quality_check: learner-state frozen policy generation
+scaffold runtime smoke`. This still does not add workflow changes, generator
+behavior, artifact writing, metric computation, real-data use, or performance
+claims.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, commands, and
@@ -418,6 +425,9 @@ is computed.
 - Step271: linked the docs-only runtime release-quality integration design
   while keeping wrapper implementation, workflow changes, generator behavior,
   artifact writing, metrics, and real-data behavior out of scope.
+- Step272: linked the runtime release-quality wrapper integration while keeping
+  workflow changes, generator behavior, artifact writing, metrics, and
+  real-data behavior out of scope.
 
 ## Related Documents
 
