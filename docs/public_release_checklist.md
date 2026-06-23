@@ -1229,6 +1229,22 @@ synthetic-only boundaries, remaining risks, and next-step guidance without raw
 logs, request/pointer bodies, artifact bodies, JSON bodies, raw rows, logits,
 private paths, raw learner text, or performance claims.
 
+For Step276, review the
+[frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
+and confirm it is docs-only: no GitHub Actions workflow change,
+release-quality wrapper change, Makefile change, Python code change, Python
+test change, fixture change, generator code, artifact-body generation,
+artifact file writing, calibration/selective prediction logic, estimator work,
+metric computation, real-data use, or real-data readiness claim is introduced.
+Confirm the policy defines artifact metadata, artifact body, artifact file,
+manifest, pointer, validation summary, generated frozen policy, generation
+result, and runtime scaffold result boundaries. Confirm it keeps initial
+generator scaffold behavior metadata-only with `generated_artifact_written=false`,
+`generated_artifact_body_available=false`, and `artifact_body_suppressed=true`,
+and does not include raw logs, request/pointer bodies, artifact bodies, JSON
+bodies, raw rows, logits, private paths, raw learner text, or performance
+claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

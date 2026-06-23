@@ -391,4 +391,5 @@ Generator implementation should remain separate.
 - [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
+- [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Public release checklist](public_release_checklist.md)

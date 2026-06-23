@@ -335,6 +335,12 @@ write files, expose policy bodies, or produce artifacts, artifact policy design
 should come first so the generator scaffold has a clear fail-closed output
 contract.
 
+Step276 adds that next-stage artifact policy at
+[Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md).
+It keeps generator implementation, artifact body generation, artifact file
+writing, metrics, real-data use, and release-quality body-producing generator
+integration out of scope.
+
 ## 14. Beginner-Friendly Explanation
 
 Runtime infrastructure is the code, tests, CLI, Makefile target, release-quality
@@ -361,10 +367,14 @@ written, no artifact body is produced, and no performance metric is computed.
 ## 15. Update History
 
 - Step275: initial recap creation for scaffold runtime infrastructure.
+- Step276: linked the artifact policy design as the pre-generator scaffold
+  boundary for artifact metadata, body suppression, file-writing policy, and
+  release-quality staging.
 
 ## Related Documents
 
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
+- [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
