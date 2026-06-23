@@ -416,6 +416,11 @@ counts, statuses, and reason codes, not fixture bodies or private data.
 
 Step254 implements the scaffold fixture validator CLI.
 
+Step255 designs the future standalone Makefile target that should call this
+CLI. The target is not implemented in Step255; the design fixes the proposed
+target name, command, help text, exit-code behavior, safe logging policy, and
+release-quality staging boundary.
+
 Recommended next step:
 
 - design the standalone Makefile target for the scaffold fixture validator CLI
@@ -438,10 +443,13 @@ Other future steps:
 - Step253: initial scaffold fixture validator CLI design.
 - Step254: minimal scaffold fixture validator CLI implementation and CLI tests
   added.
+- Step255: linked the docs-only scaffold fixture validator Makefile target
+  design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
+- [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Milestone 11 frozen policy generation validation infrastructure recap](milestone_11_frozen_policy_generation_validation_infrastructure_recap.md)

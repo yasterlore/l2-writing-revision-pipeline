@@ -394,6 +394,11 @@ add scaffold runtime code, generator code, Makefile targets, release-quality
 wrapper changes, workflow changes, fixture changes, metric computation, or
 real-data readiness claims.
 
+Step255 designs the future Makefile target for this CLI. It keeps Makefile
+implementation, release-quality integration, workflow changes, scaffold runtime
+code, and generator code out of scope while documenting the proposed target
+name, command, help text, safe logging policy, and future staging order.
+
 ## 18. Beginner-Friendly Explanation
 
 A fixture validator is a checker for test-case files. It asks whether the
@@ -437,12 +442,15 @@ Reason:
   tests added.
 - Step253: linked the docs-only scaffold fixture validator CLI design.
 - Step254: linked the minimal scaffold fixture validator CLI implementation.
+- Step255: linked the docs-only scaffold fixture validator Makefile target
+  design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
+- [Frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation.py`

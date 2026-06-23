@@ -936,6 +936,20 @@ must remain safe metadata only and must not include raw logs, request bodies,
 input pointer bodies, generated artifact bodies, frozen policy artifact
 bodies, JSON bodies, raw rows, logits/probability dumps, private paths, raw
 learner text, or performance claims.
+For Step255, review the
+[frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
+and confirm it is docs-only: no Makefile target, Makefile change,
+release-quality wrapper change, GitHub Actions workflow change, Python code
+change, Python test change, fixture change, scaffold runtime code, generator
+code, calibration/selective prediction logic, estimator work, metric
+computation, real-data use, or real-data readiness claim is introduced. The
+design must cover target name, command, help text, expected behavior, exit
+codes, logging safety, tmp/output policy, relation to existing targets,
+release-quality staging, future tests, no-oracle boundaries, and non-goals
+without copying raw logs, request bodies, input pointer bodies, generated
+artifact bodies, frozen policy artifact bodies, JSON bodies, raw rows,
+logits/probability dumps, private paths, raw learner text, or performance
+claims.
 
 ## 7. Checks To Run
 
