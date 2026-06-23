@@ -708,6 +708,11 @@ scaffold itself unimplemented. Release-quality integration, workflow changes,
 artifact body generation, artifact writing, metrics, tests, and fixtures remain
 out of scope.
 
+Step286 designs future release-quality integration for that target:
+[Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md).
+This remains a wrapper-placement design only; no generator, artifact writer,
+metric computation, or real-data readiness claim is added.
+
 ## 21. Update History
 
 - Step234: initial frozen policy generation scaffold design creation.
@@ -766,6 +771,8 @@ out of scope.
   target implementation; release-quality generator integration, generator
   code, artifact body generation, artifact writing, metrics, tests, fixtures,
   and workflow changes remain out of scope.
+- Step286: linked the release-quality integration design for the standalone
+  target.
 
 ## Related Documents
 
@@ -773,6 +780,7 @@ out of scope.
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
 - [Frozen policy generation generator scaffold fixture validator CLI design](frozen_policy_generation_generator_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
