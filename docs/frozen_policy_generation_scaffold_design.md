@@ -718,10 +718,15 @@ readiness.
   generator code, fixture validator code, artifact body generation, artifact
   writing, metrics, release-quality generator integration, and real-data
   behavior remain out of scope.
+- Step280: linked the metadata-only generator scaffold fixture validator
+  design; validator code, generator code, artifact body generation, artifact
+  writing, metrics, release-quality generator integration, and real-data
+  behavior remain out of scope.
 
 ## Related Documents
 
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
+- [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)

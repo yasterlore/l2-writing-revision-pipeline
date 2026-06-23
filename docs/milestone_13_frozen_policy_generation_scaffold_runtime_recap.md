@@ -362,6 +362,12 @@ generator code, fixture validator code, artifact body generation, artifact file
 writing, metrics, release-quality generator integration, or real-data
 readiness.
 
+Step280 adds the docs-only validator design for that fixture root at
+[Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md).
+It does not implement validator code, generator code, artifact body generation,
+artifact file writing, metrics, release-quality generator integration, or
+real-data readiness.
+
 ## 14. Beginner-Friendly Explanation
 
 Runtime infrastructure is the code, tests, CLI, Makefile target, release-quality
@@ -398,11 +404,14 @@ written, no artifact body is produced, and no performance metric is computed.
   implementation.
 - Step279: linked the created metadata-only generator scaffold fixture root as
   the next contract artifact before validator design or implementation.
+- Step280: linked the generator scaffold fixture validator design as the next
+  docs-only boundary before validator implementation.
 
 ## Related Documents
 
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
+- [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
 - [Frozen policy generation generator scaffold fixture design](frozen_policy_generation_generator_scaffold_fixture_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
