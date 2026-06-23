@@ -299,6 +299,12 @@ That document defines the proposed runtime module, public APIs, dataclasses,
 request/pointer/plan/result contracts, error categories, and safety policy
 before any runtime or generator code exists.
 
+Step263 adds
+[Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md).
+That document checks the field, reason-code, status, and safety-flag alignment
+between the future runtime result and the existing scaffold fixture validator
+contract before implementation.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, commands, and
@@ -328,11 +334,14 @@ checks matched expected metadata.
   infrastructure.
 - Step262: linked the scaffold runtime API design as the next docs-only stage
   before runtime implementation.
+- Step263: linked the runtime API / scaffold fixture validator alignment design
+  as the final docs-only contract check before runtime implementation.
 
 ## Related Documents
 
 - [Milestone 11 frozen policy generation validation infrastructure recap](milestone_11_frozen_policy_generation_validation_infrastructure_recap.md)
 - [Frozen policy generation scaffold runtime API design](frozen_policy_generation_scaffold_runtime_api_design.md)
+- [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
