@@ -552,6 +552,9 @@ fixture safety, metadata-only contracts, and expected reason-code alignment.
 Step252 implements the minimal scaffold fixture validator module and tests.
 The scaffold runtime and generator remain unimplemented.
 
+Step253 designs the future CLI for running that validator. The CLI design is
+still fixture-only and does not add scaffold runtime or generator behavior.
+
 ## 21. Update History
 
 - Step248: initial frozen policy generation scaffold implementation design.
@@ -562,6 +565,7 @@ The scaffold runtime and generator remain unimplemented.
 - Step251: linked the scaffold fixture validator design as the next safety
   layer before scaffold runtime code.
 - Step252: linked the minimal scaffold fixture validator implementation.
+- Step253: linked the scaffold fixture validator CLI design.
 
 ## Related Documents
 
@@ -569,6 +573,7 @@ The scaffold runtime and generator remain unimplemented.
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
+- [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)

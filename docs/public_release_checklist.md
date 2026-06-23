@@ -908,6 +908,21 @@ validator output must remain safe metadata only and must not include raw logs,
 request bodies, input pointer bodies, generated artifact bodies, frozen policy
 artifact bodies, JSON bodies, raw rows, logits/probability dumps, private
 paths, raw learner text, or performance claims.
+For Step253, review the
+[frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
+and confirm it is docs-only: no CLI code, scaffold runtime code, generator
+code, Makefile target, wrapper change, workflow change, Python code change,
+Python test change, fixture change, existing fixture change,
+calibration/selective prediction logic, estimator work, metric computation,
+real-data use, or real-data readiness claim is introduced. The design must
+cover entrypoint choice, fixture-root and single-case modes, argument rules,
+exit codes, safe human output, safe JSON output, path safety, mismatch
+reporting, relation to the existing Python API, relation to scaffold runtime,
+relation to the existing generation validator CLI, future tests,
+Makefile/release-quality staging, and non-goals without copying raw logs,
+request bodies, input pointer bodies, generated artifact bodies, frozen policy
+artifact bodies, JSON bodies, raw rows, logits/probability dumps, private
+paths, raw learner text, or performance claims.
 
 ## 7. Checks To Run
 

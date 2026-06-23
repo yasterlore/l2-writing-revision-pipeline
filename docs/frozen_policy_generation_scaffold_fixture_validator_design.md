@@ -383,6 +383,11 @@ integration, workflow changes, metric computation, calibration, selective
 prediction logic, estimator training, real-data handling, or performance
 claims.
 
+Step253 designs the future CLI wrapper for this validator. The design keeps
+CLI implementation out of scope while specifying fixture-root and single-case
+modes, exit codes, safe human output, safe JSON output, path safety, mismatch
+reporting, and later Makefile/release-quality staging.
+
 ## 18. Beginner-Friendly Explanation
 
 A fixture validator is a checker for test-case files. It asks whether the
@@ -424,11 +429,13 @@ Reason:
 - Step251: initial frozen policy generation scaffold fixture validator design.
 - Step252: minimal scaffold fixture validator implementation and fixture-based
   tests added.
+- Step253: linked the docs-only scaffold fixture validator CLI design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
+- [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py`
 - `python/learner_state/tests/test_frozen_policy_generation_scaffold_fixture_validation.py`

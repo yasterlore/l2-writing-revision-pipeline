@@ -565,6 +565,10 @@ Step252 implements that minimal fixture validator and unit tests without
 changing scaffold fixtures, scaffold runtime code, generator code, CLI,
 Makefile targets, release-quality wrapper, or workflow files.
 
+Step253 designs the future CLI for the scaffold fixture validator. It keeps
+the current fixture root unchanged and specifies only a future safe command
+surface for fixture-root and single-case validation.
+
 ## 20. Update History
 
 - Step249: initial frozen policy generation scaffold fixture design.
@@ -572,11 +576,13 @@ Makefile targets, release-quality wrapper, or workflow files.
   `tests/fixtures/learner_state_frozen_policy_generation_scaffold/`.
 - Step251: linked the scaffold fixture validator design.
 - Step252: linked the minimal scaffold fixture validator implementation.
+- Step253: linked the scaffold fixture validator CLI design.
 
 ## Related Documents
 
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
+- [Frozen policy generation scaffold fixture validator CLI design](frozen_policy_generation_scaffold_fixture_validator_cli_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
