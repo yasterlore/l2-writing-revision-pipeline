@@ -342,6 +342,13 @@ metadata-only human or JSON summaries. It still does not add runtime Makefile
 targets, release-quality runtime integration, generator code, artifact writing,
 metric computation, real-data use, or performance claims.
 
+Step269 adds
+[Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md).
+That document designs a future standalone Makefile smoke target for the
+runtime CLI. It remains docs-only and does not add a Makefile target,
+release-quality runtime integration, workflow changes, generator code,
+artifact writing, metric computation, real-data use, or performance claims.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, commands, and
@@ -385,6 +392,9 @@ checks matched expected metadata.
 - Step268: linked the runtime CLI implementation while keeping Makefile,
   release-quality, generator, artifact writing, metrics, and real-data behavior
   out of scope.
+- Step269: linked the runtime CLI Makefile target design while keeping
+  Makefile changes, release-quality runtime integration, generator behavior,
+  artifact writing, metrics, and real-data behavior out of scope.
 
 ## Related Documents
 
@@ -393,6 +403,7 @@ checks matched expected metadata.
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
 - [Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
+- [Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_scaffold/README.md)

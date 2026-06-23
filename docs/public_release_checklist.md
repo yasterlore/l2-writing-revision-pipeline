@@ -1145,6 +1145,18 @@ emits safe metadata-only human/JSON summaries. Confirm it does not print
 request bodies, pointer bodies, expected scaffold result bodies, generated or
 frozen policy artifact bodies, JSON bodies, raw rows, logits/probability dumps,
 private paths, raw learner text, or performance claims.
+For Step269, review the
+[frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
+and confirm it is docs-only: no Makefile target, Makefile change,
+release-quality wrapper change, GitHub Actions workflow change, Python code
+change, Python test change, fixture change, generator code, artifact-body
+generation, artifact file writing, calibration/selective prediction logic,
+estimator work, metric computation, real-data use, or real-data readiness claim
+is introduced. Confirm the design recommends a standalone runtime CLI smoke
+target, keeps fixture-root expected matching in the scaffold fixture validator
+and runtime compatibility tests, requires safe metadata-only output, creates no
+tmp/manual output, and does not treat target success as generator quality or
+performance evidence.
 
 ## 7. Checks To Run
 

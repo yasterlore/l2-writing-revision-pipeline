@@ -524,14 +524,15 @@ results without printing fixture bodies.
 
 Suggested staged plan:
 
-- Step263: scaffold runtime API implementation
-- Step264: scaffold runtime API tests
-- Step265: scaffold runtime CLI design
-- Step266: scaffold runtime CLI implementation
-- Step267: scaffold runtime fixture compatibility tests
-- Step268: scaffold runtime Makefile target design
-- Step269: scaffold runtime Makefile target implementation
-- Step270: scaffold runtime release-quality integration design
+- Step263: scaffold runtime / fixture validator alignment design
+- Step264: scaffold runtime API skeleton implementation
+- Step265: scaffold runtime fixture compatibility test design
+- Step266: scaffold runtime fixture compatibility tests implementation
+- Step267: scaffold runtime CLI design
+- Step268: scaffold runtime CLI implementation
+- Step269: scaffold runtime Makefile target design
+- Step270: scaffold runtime Makefile target implementation
+- Step271: scaffold runtime release-quality integration design
 
 The exact numbering can change, but the order should keep standalone runtime
 safety ahead of CLI, Makefile, and release-quality integration.
@@ -638,6 +639,14 @@ human or JSON summaries, and does not add generator behavior, artifact writing,
 runtime Makefile targets, release-quality runtime integration, metric
 computation, real-data use, or performance claims.
 
+Step269 follow-up:
+
+[Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
+defines a future standalone Makefile smoke target for the runtime CLI. The
+design is docs-only and does not add a Makefile target, release-quality
+runtime integration, generator code, artifact writing, metric computation,
+real-data use, or performance claims.
+
 ## 22. Update History
 
 - Step262: initial docs-only scaffold runtime API design.
@@ -650,6 +659,7 @@ computation, real-data use, or performance claims.
   status.
 - Step267: linked the docs-only runtime CLI design.
 - Step268: recorded the minimal runtime CLI implementation status.
+- Step269: linked the docs-only runtime CLI Makefile target design.
 
 ## Related Documents
 
@@ -657,6 +667,7 @@ computation, real-data use, or performance claims.
 - [Frozen policy generation scaffold runtime fixture alignment design](frozen_policy_generation_scaffold_runtime_fixture_alignment_design.md)
 - [Frozen policy generation scaffold runtime fixture compatibility test design](frozen_policy_generation_scaffold_runtime_fixture_compatibility_test_design.md)
 - [Frozen policy generation scaffold runtime CLI design](frozen_policy_generation_scaffold_runtime_cli_design.md)
+- [Frozen policy generation scaffold runtime Makefile target design](frozen_policy_generation_scaffold_runtime_makefile_target_design.md)
 - [Frozen policy generation scaffold implementation design](frozen_policy_generation_scaffold_implementation_design.md)
 - [Frozen policy generation scaffold fixture design](frozen_policy_generation_scaffold_fixture_design.md)
 - [Frozen policy generation scaffold fixture validator design](frozen_policy_generation_scaffold_fixture_validator_design.md)
