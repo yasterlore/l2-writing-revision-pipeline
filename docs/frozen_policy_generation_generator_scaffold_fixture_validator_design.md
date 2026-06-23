@@ -662,8 +662,14 @@ Step288 adds the future remote/manual Release Quality run record workflow:
 The validator remains a metadata-only fixture contract checker; the future
 status marker should record only pass-only/count-only results.
 
+Step290 adds the generator scaffold skeleton design:
+[Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md).
+The validator remains separate; future compatibility tests may compare skeleton
+metadata-only results with expected fixture metadata without printing bodies.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
@@ -696,3 +702,5 @@ Related docs:
   target.
 - Step288: linked the remote/manual run record workflow design for a future
   public-safe status marker.
+- Step290: linked the generator scaffold skeleton design; validator and
+  skeleton responsibilities remain separate and metadata-only.

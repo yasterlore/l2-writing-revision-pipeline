@@ -382,8 +382,14 @@ Step289 records the corresponding public-safe status marker:
 It uses only pass-only/count-only metadata and does not copy raw logs or
 fixture bodies.
 
+Step290 designs the future generator scaffold skeleton:
+[Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md).
+Release-quality currently includes only fixture validation for the generator
+scaffold; any future skeleton runtime integration should be staged separately.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Learner-state frozen policy generation generator scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
@@ -405,3 +411,5 @@ Related docs:
   workflow design for a future public-safe status marker.
 - Step289: linked the public-safe remote/manual Release Quality status marker
   for generator scaffold fixture validation integration.
+- Step290: linked the generator scaffold skeleton design as future staged work
+  separate from release-quality fixture validation.

@@ -775,9 +775,14 @@ metric computation, or real-data readiness claim is added.
   target.
 - Step288: linked the remote/manual Release Quality run record workflow design
   for the generator scaffold fixture validator target.
+- Step290: linked the generator scaffold skeleton design as the next
+  metadata-only boundary before implementation; generator code, artifact body
+  generation, artifact writing, metrics, and real-data readiness remain out of
+  scope.
 
 ## Related Documents
 
+- [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold fixtures](../tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/README.md)
 - [Frozen policy generation generator scaffold fixture validator design](frozen_policy_generation_generator_scaffold_fixture_validator_design.md)
