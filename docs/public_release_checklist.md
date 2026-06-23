@@ -823,6 +823,20 @@ safety review, interpretation, non-proofs, and next actions. This step must
 not change workflow YAML, wrapper scripts, Makefile, Python code, tests,
 fixtures, generator code, calibration/selective prediction logic, metric
 computation, or real-data readiness claims.
+For Step247, review the
+[Milestone 11 frozen policy generation validation infrastructure recap](milestone_11_frozen_policy_generation_validation_infrastructure_recap.md)
+and confirm it is recap-only: no workflow change, wrapper change, Makefile
+change, Python code change, test change, fixture change, generator code,
+frozen policy generation scaffold implementation, calibration/selective
+prediction logic, estimator work, metric computation, real-data use, or
+real-data readiness claim is introduced. The recap must summarize scope,
+implemented artifacts, current validation surface, commands, release-quality
+status, no-oracle/synthetic-only guarantees, validated and non-validated
+areas, prior milestone relation, remaining risks, and next steps without
+copying raw logs, request bodies, input pointer bodies, generated artifact
+bodies, frozen policy artifact bodies, JSON bodies, raw rows,
+logits/probability dumps, private paths, raw learner text, or performance
+claims.
 
 ## 7. Checks To Run
 
