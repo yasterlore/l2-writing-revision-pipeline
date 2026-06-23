@@ -950,6 +950,16 @@ without copying raw logs, request bodies, input pointer bodies, generated
 artifact bodies, frozen policy artifact bodies, JSON bodies, raw rows,
 logits/probability dumps, private paths, raw learner text, or performance
 claims.
+For Step256, review `Makefile` and the
+[frozen policy generation scaffold fixture validator Makefile target design](frozen_policy_generation_scaffold_fixture_validator_makefile_target_design.md)
+and confirm the change is limited to the standalone Makefile target and docs:
+no release-quality wrapper change, GitHub Actions workflow change, Python code
+change, Python test change, fixture change, scaffold runtime code, generator
+code, calibration/selective prediction logic, estimator work, metric
+computation, real-data use, or real-data readiness claim is introduced. The
+target must call the scaffold fixture validator CLI in fixture-root mode, print
+safe human summary only, avoid tmp/manual output creation, and remain outside
+release-quality until a later integration step.
 
 ## 7. Checks To Run
 
