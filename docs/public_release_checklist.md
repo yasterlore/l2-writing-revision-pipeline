@@ -1016,6 +1016,23 @@ readiness claim. Confirm the marker does not copy raw logs, full job output,
 request bodies, input pointer bodies, expected scaffold result bodies,
 artifact bodies, JSON bodies, raw rows, logits/probability dumps, private
 paths, raw learner text, or performance claims.
+For Step261, review the
+[Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
+and confirm it is docs-only: no GitHub Actions workflow change,
+release-quality wrapper change, Makefile change, Python code change, Python
+test change, fixture change, scaffold runtime code, generator code,
+calibration/selective prediction logic, estimator work, metric computation,
+real-data use, or real-data readiness claim is introduced. Confirm the recap
+summarizes scaffold fixture validation infrastructure only: fixture root
+`tests/fixtures/learner_state_frozen_policy_generation_scaffold`, valid 3,
+invalid 8, total 11, JSON files 33, expected outcome matching, reason-code
+matching, forbidden field/value scans, private path scans, performance claim
+scans, no raw rows, no logits dump, safe summaries, Makefile target,
+release-quality inclusion, remote status, remaining risks, and next steps
+before scaffold runtime API design. Confirm it does not copy raw logs, full job
+output, generation request bodies, input pointer bodies, expected scaffold
+result bodies, artifact bodies, JSON bodies, raw rows, logits/probability
+dumps, private paths, raw learner text, or performance claims.
 
 ## 7. Checks To Run
 

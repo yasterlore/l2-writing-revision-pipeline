@@ -322,6 +322,12 @@ Step260 creates the public-safe remote/manual Release Quality status marker
 for scaffold fixture validator integration. It records metadata and count-only
 summaries without raw logs or fixture bodies.
 
+Step261 creates the next recap at
+[Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md).
+That recap covers scaffold fixture design, fixture implementation, validator
+API/CLI, Makefile/release-quality integration, remote status, and the remaining
+boundary before scaffold runtime API design.
+
 ## 13. Beginner-Friendly Explanation
 
 Validation infrastructure is the set of fixtures, validators, CLI commands,
@@ -370,6 +376,8 @@ calibration method works well.
   run record workflow design.
 - Step260: linked the scaffold fixture validator remote/manual Release Quality
   status marker.
+- Step261: linked the Milestone 12 scaffold fixture validation infrastructure
+  recap as the next-stage recap after Milestone 11.
 
 ## Related Documents
 
@@ -383,6 +391,7 @@ calibration method works well.
 - [Frozen policy generation scaffold fixture validator release-quality integration design](frozen_policy_generation_scaffold_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation scaffold fixture validator release-quality remote run record workflow](frozen_policy_generation_scaffold_fixture_validator_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md)
+- [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)
 - [Frozen policy generation fixture design](frozen_policy_generation_fixture_design.md)
 - [Frozen policy generation validation design](frozen_policy_generation_validation_design.md)
 - [Frozen policy generation validator CLI design](frozen_policy_generation_validator_cli_design.md)
