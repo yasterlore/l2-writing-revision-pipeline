@@ -282,7 +282,8 @@ evidence, or production readiness evidence.
 ## Next Actions
 
 - Commit this status marker after local checks.
-- Keep future artifact body generation design separate.
+- Keep future artifact body generation design separate:
+  [Frozen policy generation artifact body generation design](../frozen_policy_generation_artifact_body_generation_design.md).
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -296,3 +297,7 @@ evidence, or production readiness evidence.
   policy bodies, artifact bodies, manifest bodies, raw rows,
   logits/probability dumps, private paths, raw learner text, real participant
   data, or performance metric bodies.
+- Step322: linked the future artifact body generation design as the next
+  docs-only boundary. The status marker remains pass-only/count-only and does
+  not add artifact bodies, manifest bodies, file writing, metrics, real-data
+  use, or production readiness claims.

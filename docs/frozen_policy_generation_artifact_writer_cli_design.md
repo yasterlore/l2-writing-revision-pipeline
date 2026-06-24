@@ -471,3 +471,16 @@ CLI implementation, change tests, change workflow YAML, change wrapper logic,
 change Makefile targets, change fixture JSON, generate artifact bodies,
 generate manifest bodies, write files, compute metrics, use real data, or
 claim real-data readiness.
+
+## 29. Step322 Artifact Body Generation Design Status
+
+Step322 designs the future artifact body generation boundary:
+
+[Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md).
+
+The CLI remains unchanged. The design keeps default CLI output body-free and
+requires a later explicit safe design before any body mode can be added. No
+artifact body generation, manifest body generation, file writing, Makefile
+target, release-quality wrapper change, workflow change, Python test change,
+fixture JSON change, metrics, real-data use, or production readiness claim is
+introduced in Step322.

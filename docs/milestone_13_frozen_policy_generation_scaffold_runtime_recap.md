@@ -577,9 +577,15 @@ written, no artifact body is produced, and no performance metric is computed.
   status marker. The marker records only public-safe run identity metadata,
   pass-only runtime smoke fields, count-only fixture validation fields,
   related learner-state check summaries, and safety review statements.
+- Step322: linked the artifact body generation design. The design is docs-only
+  and defines future allowed metadata content, forbidden content, body schema,
+  safety audits, fail-closed reason codes, fixtures, tests, and staging. It
+  does not implement artifact body generation, manifest body generation, file
+  writing, metrics, real-data use, or production readiness claims.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md)

@@ -991,8 +991,24 @@ JSON, generate artifact bodies, generate generated policy bodies, generate
 manifest bodies, write files, compute metrics, use real data, or claim
 real-data readiness.
 
+## 46. Step322 Artifact Body Generation Design Status
+
+Step322 designs the future safe metadata-only artifact body generation
+boundary:
+
+[Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md).
+
+The design defines allowed content, forbidden content, schema candidates,
+safety audits, fail-closed reason codes, future fixtures, future tests, and
+staging for artifact body work. It does not implement artifact body
+generation, generate artifact bodies, change the writer CLI, change Makefile
+targets, change release-quality, change workflow YAML, change Python code or
+tests, change fixture JSON, write files, compute metrics, use real data, or
+claim production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)

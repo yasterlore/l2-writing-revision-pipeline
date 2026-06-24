@@ -417,3 +417,17 @@ change workflow YAML, change the wrapper, change Makefile targets, change
 Python code or tests, change fixture JSON, generate artifact bodies, generate
 generated policy bodies, generate manifest bodies, write artifact or manifest
 files, compute metrics, use real data, or claim real-data readiness.
+
+## 20. Step322 Artifact Body Generation Design Status
+
+Step322 designs future artifact body generation as a separate docs-only
+boundary:
+
+[Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md).
+
+Release-quality remains unchanged in Step322. Artifact body generation should
+not be added to release-quality until separate body fixtures, validation, CLI
+behavior, Makefile target design, and log safety review exist. Step322 does
+not generate bodies, write files, change workflow YAML, change wrapper
+scripts, change Makefile targets, change Python code or tests, change fixture
+JSON, compute metrics, use real data, or claim production readiness.

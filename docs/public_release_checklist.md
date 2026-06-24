@@ -1921,6 +1921,21 @@ body generation, generated policy body generation, manifest body generation,
 artifact or manifest file writing, metrics, real-data use, and real-data
 readiness claims remain unchanged or out of scope.
 
+For Step322, review the docs-only
+[frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md).
+Confirm it defines the future artifact body boundary, allowed safe metadata
+content, forbidden content, schema candidates, safety audit requirements,
+fail-closed reason codes, future fixtures, future tests, and implementation
+staging. Confirm it does not include raw logs, full job output, request
+bodies, pointer bodies, expected result bodies, generated policy bodies,
+artifact bodies, manifest bodies, JSON bodies, raw rows, logits/probability
+dumps, private paths, raw learner text, real participant data, or performance
+metric bodies. Confirm workflow YAML, release-quality wrapper scripts,
+Makefile targets, Python code/tests, fixture JSON, artifact body generation,
+generated policy body generation, manifest body generation, artifact or
+manifest file writing, metrics, real-data use, and production readiness
+claims remain unchanged or out of scope.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
