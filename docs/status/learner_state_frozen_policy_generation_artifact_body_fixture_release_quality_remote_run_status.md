@@ -286,6 +286,11 @@ Body and file safety:
 - Step336 designs a future artifact body generation CLI separately from this
   remote status marker; the design keeps future CLI output summary-only and
   body-free.
+- Step337 implements the artifact body generation CLI separately from this
+  remote status marker; the CLI emits body-free safe summaries only and does
+  not make this marker evidence of artifact body payload generation,
+  file-writing, manifest generation, metrics, real-data readiness, or
+  production readiness.
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -307,6 +312,11 @@ Body and file safety:
   remains a record of the earlier remote release-quality fixture validation
   run and does not become CLI, body payload, file-writing, manifest, metric,
   real-data, or production readiness evidence.
+- Step337: artifact body generation CLI implementation added. This status
+  marker remains a record of the earlier remote release-quality fixture
+  validation run and does not become evidence of artifact body payload output,
+  artifact file writing, manifest generation, model performance, real-data
+  readiness, or production readiness.
 
 ## Related Documents
 

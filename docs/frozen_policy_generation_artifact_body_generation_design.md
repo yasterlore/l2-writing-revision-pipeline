@@ -555,6 +555,19 @@ without implementing the CLI, changing the artifact writer CLI, adding a
 Makefile target, changing release-quality, writing files, generating manifest
 bodies, computing metrics, using real data, or claiming production readiness.
 
+## 33. Step337 Artifact Body Generation CLI Implementation Status
+
+Step337 implements the thin safe CLI entrypoint for the artifact body
+generation API in `python/learner_state/frozen_policy_generation_artifact_body.py`.
+The CLI prints only body-free safe metadata summaries in human or JSON form.
+
+The implementation keeps `suppressed` as the default mode and keeps
+`safe-metadata` summary-only. It does not print artifact body payloads, does
+not write artifact files, does not generate manifest bodies, does not modify
+artifact writer CLI behavior, does not add Makefile targets, does not change
+release-quality, does not change workflow YAML, does not change fixture JSON,
+does not use real data, and does not compute metrics.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)

@@ -9,9 +9,12 @@ writing.
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
+import sys
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Mapping
 
 ARTIFACT_BODY_SCHEMA_VERSION = (
@@ -35,6 +38,9 @@ FAIL_CLOSED_SAFE_SUMMARY = "fail_closed_metadata_only_artifact_body_result"
 BODY_STATUS_SUPPRESSED = "suppressed_metadata_only"
 BODY_STATUS_GENERATED_SAFE = "generated_safe_metadata_body"
 BODY_STATUS_FAIL_CLOSED = "fail_closed"
+
+CLI_MODE_SUPPRESSED = "suppressed"
+CLI_MODE_SAFE_METADATA = "safe-metadata"
 
 ALLOWED_BODY_FIELDS = frozenset(
     {
@@ -104,6 +110,28 @@ ZERO_COUNT_FIELDS = (
     "pointer_body_count",
     "expected_body_count",
     "manifest_body_count",
+)
+
+CLI_SAFE_SUMMARY_FIELDS = (
+    "mode",
+    "result_schema_version",
+    "artifact_body_schema_version",
+    "artifact_body_id",
+    "artifact_id",
+    "manifest_id",
+    "writer_version",
+    "writer_result_pointer_id",
+    "body_status",
+    "generation_status",
+    "validation_status",
+    "reason_codes",
+    "failed_checks",
+    "safety_flags",
+    "count_summary",
+    "artifact_body_available",
+    "artifact_file_written",
+    "manifest_file_written",
+    "safe_summary",
 )
 
 FORBIDDEN_KEY_REASONS = {
@@ -491,6 +519,74 @@ def summarize_artifact_body_result(
     return result.to_safe_dict()
 
 
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Generate a safe metadata-only frozen policy generation artifact "
+            "body summary without printing artifact body payloads."
+        )
+    )
+    parser.add_argument("--request", type=Path, required=True)
+    parser.add_argument("--pointer", type=Path, required=True)
+    parser.add_argument(
+        "--mode",
+        choices=(CLI_MODE_SUPPRESSED, CLI_MODE_SAFE_METADATA),
+        default=CLI_MODE_SUPPRESSED,
+    )
+    parser.add_argument("--json", action="store_true", dest="as_json")
+    args = parser.parse_args(argv)
+
+    try:
+        request = _load_cli_json(args.request, "request")
+        pointer = _load_cli_json(args.pointer, "pointer")
+        input_error_reasons = _cli_input_error_reasons(request, pointer)
+        if input_error_reasons:
+            _print_cli_summary(
+                _cli_error_summary(
+                    reason_codes=input_error_reasons,
+                    failed_checks=input_error_reasons,
+                    generation_status="input_error",
+                ),
+                as_json=args.as_json,
+            )
+            return 2
+
+        request_for_generation = dict(request)
+        if args.mode == CLI_MODE_SAFE_METADATA:
+            request_for_generation["requested_body_mode"] = BODY_STATUS_GENERATED_SAFE
+            request_for_generation["requested_body_status"] = BODY_STATUS_GENERATED_SAFE
+        else:
+            request_for_generation["requested_body_mode"] = BODY_STATUS_SUPPRESSED
+            request_for_generation["requested_body_status"] = BODY_STATUS_SUPPRESSED
+
+        result = generate_artifact_body(request_for_generation, pointer)
+        summary = _cli_summary_from_result(result)
+        _print_cli_summary(summary, as_json=args.as_json)
+        if result.validation_status == "fail":
+            return 3
+        return 0
+    except _CliInputError as error:
+        _print_cli_summary(
+            _cli_error_summary(
+                reason_codes=[error.reason_code],
+                failed_checks=[error.failed_check],
+                generation_status="input_error",
+            ),
+            as_json=args.as_json,
+        )
+        return 2
+    except Exception:
+        _print_cli_summary(
+            _cli_error_summary(
+                reason_codes=["unexpected_internal_error"],
+                failed_checks=["unexpected_internal_error"],
+                generation_status="internal_error",
+            ),
+            as_json=args.as_json,
+        )
+        return 1
+
+
 def _base_body(
     *,
     request_model: ArtifactBodyGenerationRequest,
@@ -874,6 +970,131 @@ def _assert_json_serializable(value: Mapping[str, Any]) -> None:
     json.dumps(value, sort_keys=True)
 
 
+class _CliInputError(Exception):
+    def __init__(self, reason_code: str, failed_check: str) -> None:
+        super().__init__(reason_code)
+        self.reason_code = reason_code
+        self.failed_check = failed_check
+
+
+def _load_cli_json(path: Path, input_name: str) -> dict[str, Any]:
+    path = Path(path)
+    if not path.is_file():
+        raise _CliInputError(
+            f"missing_{input_name}_file",
+            f"{input_name}_file",
+        )
+    try:
+        with path.open(encoding="utf-8") as file:
+            payload = json.load(file)
+    except json.JSONDecodeError as exc:
+        raise _CliInputError(
+            f"malformed_{input_name}_json",
+            f"{input_name}_json_parse",
+        ) from exc
+    except OSError as exc:
+        raise _CliInputError(
+            f"missing_{input_name}_file",
+            f"{input_name}_file",
+        ) from exc
+    if not isinstance(payload, dict):
+        raise _CliInputError(
+            f"malformed_{input_name}_json",
+            f"{input_name}_json_object",
+        )
+    return payload
+
+
+def _cli_input_error_reasons(
+    request: Mapping[str, Any],
+    pointer: Mapping[str, Any],
+) -> list[str]:
+    reasons: list[str] = []
+    if request.get("schema_version") != ARTIFACT_BODY_REQUEST_SCHEMA_VERSION:
+        reasons.append("unknown_request_schema_version")
+    if pointer.get("schema_version") != ARTIFACT_WRITER_RESULT_POINTER_SCHEMA_VERSION:
+        reasons.append("unknown_pointer_schema_version")
+    return _dedupe(reasons)
+
+
+def _cli_summary_from_result(
+    result: ArtifactBodyGenerationResult,
+) -> dict[str, Any]:
+    summary = summarize_artifact_body_result(result)
+    summary.update(
+        {
+            "mode": "artifact_body_generation",
+            "generation_status": result.validation_status,
+        }
+    )
+    return {key: summary[key] for key in CLI_SAFE_SUMMARY_FIELDS if key in summary}
+
+
+def _cli_error_summary(
+    *,
+    reason_codes: list[str],
+    failed_checks: list[str],
+    generation_status: str,
+) -> dict[str, Any]:
+    count_summary = ArtifactBodyCountSummary().to_safe_dict()
+    return {
+        "mode": "artifact_body_generation",
+        "result_schema_version": ARTIFACT_BODY_GENERATION_RESULT_SCHEMA_VERSION,
+        "artifact_body_schema_version": ARTIFACT_BODY_SCHEMA_VERSION,
+        "artifact_body_id": None,
+        "artifact_id": None,
+        "manifest_id": None,
+        "writer_version": DEFAULT_WRITER_VERSION,
+        "writer_result_pointer_id": None,
+        "body_status": "input_error"
+        if generation_status == "input_error"
+        else BODY_STATUS_FAIL_CLOSED,
+        "generation_status": generation_status,
+        "validation_status": generation_status,
+        "reason_codes": _dedupe(reason_codes),
+        "failed_checks": _dedupe(failed_checks),
+        "safety_flags": {
+            field_name: True for field_name in SAFETY_FLAG_FIELDS
+        },
+        "count_summary": count_summary,
+        "artifact_body_available": False,
+        "artifact_file_written": False,
+        "manifest_file_written": False,
+        "safe_summary": FAIL_CLOSED_SAFE_SUMMARY,
+    }
+
+
+def _print_cli_summary(summary: Mapping[str, Any], *, as_json: bool) -> None:
+    safe_summary = {
+        key: summary[key] for key in CLI_SAFE_SUMMARY_FIELDS if key in summary
+    }
+    if as_json:
+        print(json.dumps(safe_summary, sort_keys=True, separators=(",", ":")))
+    else:
+        print(_format_cli_human_summary(safe_summary))
+
+
+def _format_cli_human_summary(summary: Mapping[str, Any]) -> str:
+    lines: list[str] = []
+    for key in sorted(summary):
+        lines.append(f"{key}={_format_cli_value(summary[key])}")
+    return "\n".join(lines)
+
+
+def _format_cli_value(value: Any) -> str:
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if value is None:
+        return "none"
+    if isinstance(value, list):
+        if not value:
+            return "none"
+        return ",".join(str(item) for item in value)
+    if isinstance(value, dict):
+        return json.dumps(value, sort_keys=True, separators=(",", ":"))
+    return str(value)
+
+
 __all__ = [
     "ARTIFACT_BODY_GENERATION_RESULT_SCHEMA_VERSION",
     "ARTIFACT_BODY_SCHEMA_VERSION",
@@ -886,5 +1107,10 @@ __all__ = [
     "build_safe_metadata_body",
     "build_suppressed_metadata_only_body",
     "generate_artifact_body",
+    "main",
     "summarize_artifact_body_result",
 ]
+
+
+if __name__ == "__main__":
+    sys.exit(main())

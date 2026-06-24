@@ -379,3 +379,18 @@ This document does not:
 - use real data
 - compute metrics
 - claim production readiness
+
+## 20. Step337 Implementation Status
+
+Step337 implements the thin artifact body generation CLI entrypoint in
+`python/learner_state/frozen_policy_generation_artifact_body.py`:
+
+`PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body`
+
+The implemented CLI follows this design: `--mode suppressed` remains the
+default, `--mode safe-metadata` is summary-only, `--json` emits deterministic
+body-free safe metadata, and request/pointer bodies are never printed. The
+CLI does not add output-file options, does not write artifact files, does not
+generate manifest bodies, does not change the artifact writer CLI, does not
+change Makefile or release-quality, does not change workflow YAML, does not
+modify fixture JSON, does not use real data, and does not compute metrics.

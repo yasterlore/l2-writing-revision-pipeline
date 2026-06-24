@@ -508,6 +508,14 @@ The validator CLI remains unchanged and remains the fixture-validation
 interface. The generation CLI design does not implement CLI code, add Makefile
 targets, change release-quality, or print artifact body payloads.
 
+## 30. Step337 Artifact Body Generation CLI Implementation Status
+
+Step337 implements the separate artifact body generation CLI. The validator
+CLI remains unchanged and remains the fixture-validation interface. The new
+generation CLI emits only body-free safe summaries, does not print artifact
+body payloads, does not add Makefile targets, does not change release-quality,
+does not write files, does not use real data, and does not compute metrics.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)

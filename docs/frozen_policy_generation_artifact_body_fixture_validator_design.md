@@ -559,6 +559,15 @@ remains separate: it continues to validate fixture contracts and does not
 generate bodies. The generation CLI design does not change this validator,
 does not change fixture JSON, and does not add release-quality behavior.
 
+## 37. Step337 Artifact Body Generation CLI Implementation Status
+
+Step337 implements the separate artifact body generation CLI. The fixture
+validator remains unchanged and continues to validate fixture contracts only.
+The generation CLI calls the generation API and emits body-free safe summaries;
+it does not replace this validator, does not modify fixture JSON, does not add
+release-quality behavior, does not write files, does not use real data, and
+does not compute metrics.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)

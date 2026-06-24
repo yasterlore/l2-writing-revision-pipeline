@@ -657,6 +657,12 @@ written, no artifact body is produced, and no performance metric is computed.
   keeps future CLI output summary-only and body-free, and does not implement a
   CLI, change Makefile or release-quality, write files, generate manifests,
   compute metrics, use real data, or claim production readiness.
+- Step337: implemented the artifact body generation CLI as a thin wrapper
+  around the existing generation API. The CLI emits human or JSON
+  metadata-only summaries, keeps artifact body payloads out of stdout/stderr,
+  and does not change Makefile, release-quality, workflow YAML, fixture JSON,
+  artifact writer CLI behavior, file writing, manifest generation, metrics,
+  real-data use, or production readiness claims.
 
 ## Related Documents
 
