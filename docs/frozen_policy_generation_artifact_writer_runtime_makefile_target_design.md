@@ -419,3 +419,17 @@ runtime smoke and count-only metadata for related fixture validators. It must
 not copy raw logs, request bodies, pointer bodies, expected result bodies,
 artifact bodies, manifest bodies, raw rows, logits, private paths, raw learner
 text, or performance metric bodies.
+
+## 22. Step321 Runtime Status Marker Creation Status
+
+Step321 creates the public-safe remote/manual Release Quality status marker
+for this runtime target:
+
+[Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md).
+
+The marker records pass-only runtime smoke metadata and count-only related
+fixture validation metadata. It does not change the Makefile target, change
+workflow YAML, change the release-quality wrapper, change Python code or
+tests, change fixture JSON, generate artifact bodies, generate generated
+policy bodies, generate manifest bodies, write files, compute metrics, use
+real data, or claim real-data readiness.

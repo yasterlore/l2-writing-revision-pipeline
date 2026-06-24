@@ -573,11 +573,16 @@ written, no artifact body is produced, and no performance metric is computed.
   must record only pass-only/count-only metadata without raw logs, request or
   pointer bodies, artifact bodies, manifest bodies, raw rows, logits, private
   paths, raw learner text, metrics, or real-data readiness claims.
+- Step321: linked the artifact writer runtime remote/manual Release Quality
+  status marker. The marker records only public-safe run identity metadata,
+  pass-only runtime smoke fields, count-only fixture validation fields,
+  related learner-state check summaries, and safety review statements.
 
 ## Related Documents
 
 - [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)

@@ -403,3 +403,17 @@ real-data readiness.
 The future marker path is:
 
 `docs/status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md`
+
+## 19. Step321 Runtime Status Marker Creation Status
+
+Step321 creates that public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md).
+
+The marker records only safe run identity metadata, pass-only artifact writer
+runtime smoke fields, count-only fixture validation fields, related
+learner-state check summaries, and safety review statements. It does not
+change workflow YAML, change the wrapper, change Makefile targets, change
+Python code or tests, change fixture JSON, generate artifact bodies, generate
+generated policy bodies, generate manifest bodies, write artifact or manifest
+files, compute metrics, use real data, or claim real-data readiness.

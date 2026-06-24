@@ -976,8 +976,24 @@ future pass-only/count-only metadata policy and keeps artifact body
 generation, manifest body generation, file writing, metrics, real-data use,
 and production readiness out of scope.
 
+## 45. Step321 Artifact Writer Runtime Status Marker Creation Status
+
+Step321 creates the public-safe remote/manual Release Quality status marker
+for artifact writer runtime smoke:
+
+[Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md).
+
+The marker records safe run identity metadata, pass-only runtime smoke fields,
+count-only fixture validation fields, related learner-state summaries, and
+safety review statements. It does not change workflow YAML, change wrapper
+scripts, change Makefile targets, change Python code or tests, change fixture
+JSON, generate artifact bodies, generate generated policy bodies, generate
+manifest bodies, write files, compute metrics, use real data, or claim
+real-data readiness.
+
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)

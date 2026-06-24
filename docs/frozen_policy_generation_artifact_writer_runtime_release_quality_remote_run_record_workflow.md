@@ -491,3 +491,18 @@ synthetic fixture.
 - Status marker creation.
 - Keep artifact body generation design separate.
 - Keep manifest writer design separate.
+
+## 23. Step321 Runtime Status Marker Creation Status
+
+Step321 creates the public-safe remote/manual Release Quality status marker
+for artifact writer runtime smoke:
+
+[Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md).
+
+The marker records only run identity metadata, pass-only runtime smoke fields,
+count-only fixture validation fields, related learner-state check summaries,
+and safety review statements. It does not include raw logs, full job output,
+request bodies, pointer bodies, expected result bodies, policy bodies,
+generated policy bodies, artifact bodies, manifest bodies, JSON bodies, raw
+rows, logits/probability dumps, private paths, raw learner text, real
+participant data, or performance metric bodies.

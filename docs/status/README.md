@@ -48,10 +48,9 @@ Available markers:
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after artifact writer fixture
   validator integration.
-- Future marker path:
-  `docs/status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md`
-  for the artifact writer runtime smoke remote/manual Release Quality status.
-  The marker is not created yet.
+- [Learner-state frozen policy generation artifact writer runtime release-quality remote run status](learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after artifact writer runtime
+  smoke integration.
 
 Related recap:
 
