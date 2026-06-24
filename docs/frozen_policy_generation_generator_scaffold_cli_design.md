@@ -536,8 +536,19 @@ added to release-quality in Step295, and it does not change workflows, Python
 code, tests, fixtures, artifact writing, artifact bodies, generated policy
 bodies, manifest writing, metrics, or real-data readiness status.
 
+## 24. Step296 Release-Quality Integration Design Status
+
+Step296 designs future release-quality integration for that standalone runtime
+smoke target:
+[Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md).
+
+The design keeps wrapper implementation, workflow changes, Python changes,
+test changes, fixture changes, artifact writing, generated policy bodies,
+artifact bodies, metrics, and real-data readiness out of scope.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)

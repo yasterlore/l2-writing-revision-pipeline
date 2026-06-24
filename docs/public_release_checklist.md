@@ -1535,6 +1535,22 @@ Python tests, fixtures, calibration/selective prediction logic, estimator
 work, metric computation, performance evaluation, real-data use, or
 real-data readiness claims.
 
+For Step296, review the
+[frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md).
+Confirm it is docs-only and defines the future wrapper insertion point,
+Makefile command, release-quality label, expected wrapper behavior, failure
+interpretation, log safety, relationship to existing release-quality checks,
+future implementation tests, status-marker staging, and synthetic-only/no-oracle
+boundary. Confirm it does not change the release-quality wrapper, GitHub
+Actions workflow, Makefile, Python code, Python tests, fixtures, artifact file
+writing, artifact body generation, generated policy body generation, artifact
+manifest writing, calibration/selective prediction logic, estimator work,
+metric computation, performance evaluation, real-data use, or real-data
+readiness claims. Confirm it does not include raw logs, request/pointer bodies,
+expected generator scaffold result bodies, policy bodies, generated policy
+bodies, artifact bodies, raw rows, logits, private paths, raw learner text, or
+performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
