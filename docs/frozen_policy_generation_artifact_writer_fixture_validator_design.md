@@ -866,8 +866,20 @@ generate artifact bodies, generate generated policy bodies, generate manifest
 bodies, write files, compute metrics, evaluate performance, use real data, or
 claim production readiness.
 
+## 32. Step312 Remote Run Status Marker
+
+Step312 creates the public-safe remote/manual Release Quality status marker:
+[Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md).
+
+The marker records that the artifact writer fixture validator target matched
+17 metadata-only cases in the remote/manual Release Quality run. It does not
+record fixture JSON bodies, request/pointer/expected bodies, artifact bodies,
+manifest bodies, raw rows, logits, private paths, raw learner text, or
+performance metric bodies.
+
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)

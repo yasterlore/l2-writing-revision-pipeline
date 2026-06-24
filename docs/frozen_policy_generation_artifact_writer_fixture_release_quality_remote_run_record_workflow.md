@@ -19,8 +19,9 @@ metrics, evaluate performance, use real data, or claim real-data readiness.
 - The artifact writer fixture validator target is now included in the
   release-quality wrapper.
 - The workflow calls the release-quality wrapper.
-- A remote/manual status marker for artifact writer fixture validation does
-  not exist yet.
+- A remote/manual status marker for artifact writer fixture validation now
+  exists:
+  [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md).
 - The artifact writer implementation does not exist.
 - The artifact writer runtime target does not exist.
 
@@ -34,7 +35,7 @@ The record should contain public-safe metadata only. It is not performance
 evidence, artifact writer quality evidence, artifact generation evidence,
 manifest generation evidence, or production readiness evidence.
 
-## 4. Future Status Marker Path
+## 4. Status Marker Path
 
 Candidate paths:
 
@@ -46,11 +47,9 @@ use the `learner_state_..._release_quality_remote_run_status.md` naming
 pattern. It also keeps artifact writer fixture validation grouped with the
 learner-state frozen policy generation pipeline.
 
-Recommended future marker path:
+Selected marker path:
 
-```text
-docs/status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md
-```
+[docs/status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 
 The second candidate is shorter, but it is less consistent with the existing
 status marker names and could look separate from the learner-state release
@@ -361,7 +360,11 @@ If the remote run fails:
 
 ## 17. Workflow For Actually Recording Later
 
-Future steps:
+Step312 follows this workflow. The safe status marker is now recorded in:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md`
+
+General future steps for similar markers:
 
 1. Merge wrapper integration to `main`.
 2. Trigger Release Quality manually or through the existing workflow.
@@ -418,9 +421,21 @@ It does not mean the artifact writer exists or that artifact output is good.
 
 Recommended next steps:
 
-1. Run remote/manual Release Quality.
-2. Create the future artifact writer fixture status marker.
-3. Keep artifact writer skeleton design or implementation planning separate.
+1. Commit the Step312 artifact writer fixture remote status marker after local
+   checks.
+2. Keep artifact writer skeleton design separate.
+3. Keep artifact writer implementation planning separate.
+
+## 22. Step312 Status Marker
+
+Step312 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md).
+
+The marker records only pass-only and count-only metadata. It does not copy raw
+logs, request/pointer/expected bodies, policy bodies, generated policy bodies,
+artifact bodies, manifest bodies, raw rows, logits, private paths, raw learner
+text, or performance metric bodies.
 
 ## Related Documents
 
@@ -432,6 +447,7 @@ Recommended next steps:
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md)
+- [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)

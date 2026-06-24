@@ -1804,6 +1804,23 @@ bodies, expected result bodies, policy bodies, artifact bodies, manifest
 bodies, raw rows, logits, private paths, raw learner text, real participant
 data, or performance metric bodies.
 
+For Step312, review the
+[learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md).
+Confirm it records only public-safe metadata and pass-only/count-only summary
+for the successful remote/manual Release Quality run that included artifact
+writer fixture validation. Confirm the marker records the run identity,
+wrapper inclusion, 17 artifact writer fixture cases, 17 matched cases, zero
+mismatches, zero input errors, safety flags, and related learner-state checks
+without raw logs, full job output, artifact writer request bodies, generator
+result pointer bodies, expected artifact writer result bodies, generation
+request bodies, input pointer bodies, expected generator scaffold result
+bodies, policy bodies, generated policy bodies, artifact bodies, manifest
+bodies, JSON bodies, raw rows, logits, private paths, raw learner text, real
+participant data, or performance metric bodies. Confirm it does not implement
+an artifact writer, generate artifacts, generate manifests, write files,
+compute metrics, evaluate performance, use real data, or claim real-data
+readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
