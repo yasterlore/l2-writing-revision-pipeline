@@ -243,6 +243,8 @@ copied into docs or printed as raw body content.
   future fixture JSON or validator code.
 - Use the Step352 file writing fixture root as the future validator input
   contract.
+- Use the Step353 validator design before implementing the future static
+  fixture validator.
 - Keep future manifest writer design separate.
 - Keep future artifact writer CLI integration separate.
 - Treat real-data readiness as future private/institution-approved review.
@@ -269,9 +271,14 @@ copied into docs or printed as raw body content.
   fixture root. The fixture root does not implement a validator, add a CLI
   option, write artifact files or manifests, use real data, or compute
   metrics.
+- Step353: added a link to the docs-only artifact body file writing fixture
+  validator design. The design does not implement a validator, change fixture
+  JSON, add a CLI option, write artifact files or manifests, use real data,
+  or compute metrics.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body file writing fixture validator design](../frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](../frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](../frozen_policy_generation_artifact_body_file_writing_design.md)

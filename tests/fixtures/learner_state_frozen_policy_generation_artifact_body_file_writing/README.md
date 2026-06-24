@@ -98,6 +98,15 @@ path-policy decisions, body content policy decisions, and summary-only output.
 The validator should avoid writing files by default or should write only in an
 isolated temporary directory.
 
+Step353 designs that future validator:
+
+`docs/frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md`
+
+The design keeps this fixture root unchanged. It does not implement the
+validator, does not add a CLI option, does not write artifact body files,
+does not write manifest files, does not connect artifact writer CLI, does not
+use real data, and does not compute metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

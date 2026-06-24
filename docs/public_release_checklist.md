@@ -2377,6 +2377,20 @@ examples, generated policy bodies, manifest bodies, JSON body examples, raw
 rows, logits, private paths, raw learner text, real participant data, or
 performance metric bodies.
 
+For Step353, review the docs-only
+[frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md).
+Confirm it designs only a future validator for the file writing fixture root.
+Confirm it does not implement a validator, implement file writing, add a CLI
+output option, write artifact body files, write manifest files, change
+artifact writer CLI, change release-quality, change workflow YAML, change
+Makefile, change Python code/tests, change fixture JSON, use real data,
+compute metrics, or claim production readiness. Confirm docs do not include
+raw logs, full job output, copied log blocks, screenshots containing raw logs,
+request bodies, pointer bodies, expected bodies, artifact body payload
+examples, generated policy bodies, manifest bodies, JSON body examples, raw
+rows, logits, private paths, raw learner text, real participant data, or
+performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

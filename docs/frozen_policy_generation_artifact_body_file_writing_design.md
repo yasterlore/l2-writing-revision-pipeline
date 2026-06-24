@@ -346,8 +346,21 @@ root only; it does not implement writing, does not add `--artifact-body-out`,
 does not write manifests, does not connect artifact writer CLI, does not
 change release-quality, does not use real data, and does not compute metrics.
 
-## 21. Related Documents
+## 21. Step353 Fixture Validator Design Status
 
+Step353 designs a future validator for the file writing fixture root:
+
+[Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md).
+
+The design starts with static fixture contract validation and path-policy
+no-write validation before any CLI file-writing implementation exists. It
+does not implement a validator, add a CLI option, write artifacts or
+manifests, connect artifact writer CLI, change release-quality, use real
+data, or compute metrics.
+
+## 22. Related Documents
+
+- [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)

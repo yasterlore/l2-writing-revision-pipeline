@@ -767,9 +767,18 @@ written, no artifact body is produced, and no performance metric is computed.
   validator, add a CLI option, write artifact files or manifests, connect
   artifact writer CLI, compute metrics, use real data, or claim production
   readiness.
+- Step353: added the docs-only artifact body file writing fixture validator
+  design. The design defines static fixture contract validation,
+  path-policy no-write validation, later isolated temp write validation,
+  content-policy validation, stdout/stderr safety validation, reason-code
+  taxonomy, and validator safety constraints. It does not implement a
+  validator, add a CLI option, write artifact files or manifests, connect
+  artifact writer CLI, compute metrics, use real data, or claim production
+  readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
