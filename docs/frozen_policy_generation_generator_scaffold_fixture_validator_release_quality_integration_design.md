@@ -398,8 +398,15 @@ scaffold CLI:
 That future target is not part of this fixture-validator release-quality
 integration and should be staged separately.
 
+Step296 designs that separate future release-quality integration for the
+generator scaffold runtime smoke:
+[Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md).
+This fixture-validator integration remains focused on fixture contract
+validation only.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
@@ -430,3 +437,5 @@ Related docs:
   release-quality integration limited to fixture validation.
 - Step294: linked the generator scaffold CLI Makefile target design while
   keeping this release-quality integration scoped to fixture validation only.
+- Step296: linked the separate generator scaffold runtime release-quality
+  integration design while keeping this document scoped to fixture validation.

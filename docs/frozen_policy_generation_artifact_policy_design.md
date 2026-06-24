@@ -468,8 +468,15 @@ unchanged: the target runs a valid synthetic request/pointer smoke only, writes
 no artifacts, emits no artifact body, emits no generated policy body, and adds
 no manifest writer.
 
+Step296 designs future release-quality integration for that runtime smoke:
+[Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md).
+The artifact policy remains unchanged: future wrapper logs should stay
+metadata-only and should not include artifact bodies, generated policy bodies,
+manifest bodies, raw rows, logits, private paths, or performance evidence.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)

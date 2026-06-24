@@ -251,6 +251,10 @@ This marker does not prove:
 - Step295 implemented the standalone generator scaffold CLI runtime smoke
   target locally; release-quality skeleton runtime integration remains
   separate.
+- Step296 created the generator scaffold runtime release-quality integration
+  design:
+  [Frozen policy generation generator scaffold runtime release-quality integration design](../frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md).
+  Wrapper implementation and runtime remote status recording remain separate.
 - Keep future artifact writing design separate.
 - Keep future calibration scaffold work separate.
 - Treat real-data readiness as future private/institution-approved review only.
@@ -275,4 +279,7 @@ This marker does not prove:
   writing, and artifact bodies remain separate.
 - Step295: noted local standalone generator scaffold CLI runtime smoke target
   implementation; release-quality skeleton runtime integration, artifact
+  writing, and artifact bodies remain separate.
+- Step296: linked the generator scaffold runtime release-quality integration
+  design; wrapper implementation, runtime remote status recording, artifact
   writing, and artifact bodies remain separate.

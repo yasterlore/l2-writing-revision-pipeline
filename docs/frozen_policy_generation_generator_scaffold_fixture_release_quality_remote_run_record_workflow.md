@@ -482,8 +482,15 @@ This workflow remains scoped to fixture validation records; a future runtime
 smoke marker should be designed separately after that target is implemented
 and integrated.
 
+Step296 designs future release-quality integration for the generator scaffold
+runtime smoke:
+[Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md).
+This workflow remains scoped to fixture validation records; a runtime smoke
+remote/manual record should remain a separate future step.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
@@ -514,3 +521,6 @@ Related docs:
   record workflow scoped to fixture validation.
 - Step294: linked the generator scaffold CLI Makefile target design while
   keeping this remote record workflow scoped to fixture validation.
+- Step296: linked the generator scaffold runtime release-quality integration
+  design while keeping this remote record workflow scoped to fixture
+  validation.

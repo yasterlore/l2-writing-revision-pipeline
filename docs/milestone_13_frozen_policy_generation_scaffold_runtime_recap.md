@@ -484,9 +484,13 @@ written, no artifact body is produced, and no performance metric is computed.
 - Step295: recorded standalone generator scaffold CLI Makefile target
   implementation status; release-quality skeleton runtime integration,
   artifact writing, and artifact body generation remain separate.
+- Step296: linked the generator scaffold runtime release-quality integration
+  design; wrapper implementation, remote status recording, artifact writing,
+  and artifact body generation remain separate.
 
 ## Related Documents
 
+- [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)

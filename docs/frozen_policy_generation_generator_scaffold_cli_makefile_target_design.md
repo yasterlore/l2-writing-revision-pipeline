@@ -409,8 +409,21 @@ The implementation:
 Release-quality integration for this runtime smoke remains a future staged
 step.
 
+## 19. Step296 Release-Quality Integration Design Status
+
+Step296 designs future release-quality integration for the standalone runtime
+smoke target:
+[Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md).
+
+The design recommends placing the runtime smoke immediately after generator
+scaffold fixture validation and before config/scoring smoke checks. Step296 is
+docs-only: it does not change the wrapper, workflows, Makefile, Python code,
+tests, fixtures, artifact writing, artifact bodies, generated policy bodies,
+metrics, or real-data readiness status.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
