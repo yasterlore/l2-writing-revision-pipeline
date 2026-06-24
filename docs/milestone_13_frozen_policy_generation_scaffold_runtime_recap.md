@@ -529,6 +529,12 @@ written, no artifact body is produced, and no performance metric is computed.
   release-quality integration, workflow change, artifact writer implementation,
   artifact bodies, generated policy bodies, manifest bodies, file writing,
   metrics, or real-data readiness.
+- Step308: recorded the standalone artifact writer fixture validator Makefile
+  target. It runs the metadata-only fixture validator CLI over the Step302
+  fixture root and does not integrate release-quality, change workflow YAML,
+  implement an artifact writer, generate artifact bodies, generate generated
+  policy bodies, generate manifest bodies, write files, compute metrics, or
+  claim real-data readiness.
 
 ## Related Documents
 

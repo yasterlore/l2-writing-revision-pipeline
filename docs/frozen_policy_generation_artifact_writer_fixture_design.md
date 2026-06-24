@@ -749,6 +749,18 @@ target, integrate release-quality, change workflow YAML, implement an artifact
 writer, generate artifact bodies, generate generated policy bodies, generate
 manifest bodies, or write artifact/manifest files.
 
+## 27. Step308 Makefile Target Implementation Status
+
+Step308 implements that standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-fixtures`
+
+The fixture JSON files remain unchanged. The target runs the metadata-only
+validator CLI over this fixture root and does not integrate release-quality,
+change workflow YAML, implement an artifact writer, generate artifact bodies,
+generate generated policy bodies, generate manifest bodies, or write
+artifact/manifest files.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)

@@ -431,6 +431,19 @@ artifact body generation, generated policy body generation, manifest body
 generation, artifact file writing, manifest file writing, metric computation,
 performance evaluation, real-data use, or production readiness.
 
+## 23. Step308 Makefile Target Implementation Status
+
+Step308 implements the standalone Makefile target designed in Step307:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-fixtures`
+
+The target calls this CLI in fixture-root mode and keeps the output
+metadata-only. Step308 does not change the CLI implementation, release-quality
+wrapper, workflow YAML, fixture JSON, artifact writer implementation, artifact
+body generation, generated policy body generation, manifest body generation,
+file writing, metric computation, performance evaluation, real-data use, or
+production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)

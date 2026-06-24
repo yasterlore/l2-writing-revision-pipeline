@@ -545,6 +545,13 @@ Makefile target, does not integrate release-quality, does not execute an
 artifact writer, emits no artifact body, emits no generated policy body, emits
 no manifest body, and writes no files.
 
+Step308 implements the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-writer-fixtures`.
+The artifact policy remains unchanged: the target runs fixture validation only,
+does not integrate release-quality, does not execute an artifact writer, emits
+no artifact body, emits no generated policy body, emits no manifest body, and
+writes no files.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)

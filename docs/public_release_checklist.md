@@ -1739,6 +1739,22 @@ result bodies, generator scaffold bodies, policy bodies, artifact bodies,
 manifest bodies, raw rows, logits, private paths, raw learner text, real
 participant data, or performance metric bodies.
 
+For Step308, review `Makefile` and the
+[frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md).
+Confirm the new target is
+`check-learner-state-frozen-policy-generation-artifact-writer-fixtures`, that
+`make help` lists the target with the expected help text, and that the target
+calls the artifact writer fixture validator CLI in fixture-root mode over
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_writer`.
+Confirm the target emits only metadata-only summaries and does not output
+request, pointer, expected result, policy, artifact, manifest, raw row, logit,
+private path, raw learner text, or performance metric bodies. Confirm
+release-quality wrapper and workflow YAML are unchanged, Python code/tests are
+unchanged, fixture JSON is unchanged, artifact writer implementation is not
+added, artifact bodies, generated policy bodies, and manifest bodies are not
+generated, files are not written, metrics are not computed, performance is not
+evaluated, real data is not used, and real-data readiness is not claimed.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
