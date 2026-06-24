@@ -349,7 +349,8 @@ Recommended next steps:
 
 1. Step308: artifact writer fixture validator Makefile target implementation.
    Complete.
-2. Step309: release-quality integration design.
+2. Step309: release-quality integration design. Complete:
+   [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md).
 3. Step310: wrapper integration.
 4. Step311: remote status marker workflow design.
 
@@ -381,8 +382,23 @@ performance, use real data, or claim production readiness.
 Release-quality integration is still intentionally separate. Step308 does not
 change `scripts/check_release_quality.sh` or GitHub Actions workflow YAML.
 
+## 19. Step309 Release-Quality Integration Design Status
+
+Step309 designs future release-quality wrapper integration for the standalone
+artifact writer fixture validator target:
+[Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md).
+
+The recommended wrapper placement is after the generator scaffold runtime smoke
+target and before config and scoring smoke checks. Step309 is docs-only and
+does not change `scripts/check_release_quality.sh`, GitHub Actions workflow
+YAML, Makefile target behavior, Python code, Python tests, fixture JSON,
+artifact writer implementation, artifact body generation, generated policy
+body generation, manifest body generation, file writing, metric computation,
+performance evaluation, real-data use, or production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)

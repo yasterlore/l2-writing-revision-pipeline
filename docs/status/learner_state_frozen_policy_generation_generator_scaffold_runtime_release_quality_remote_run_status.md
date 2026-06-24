@@ -302,6 +302,13 @@ This marker does not prove:
 - Step308 artifact writer fixture validator Makefile target implementation is
   now tracked separately as a standalone local target. Release-quality
   integration remains future work.
+- Step309 artifact writer fixture validator release-quality integration design
+  is now tracked separately:
+  [Frozen policy generation artifact writer fixture release-quality integration design](../frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md).
+  This marker remains unchanged as generator scaffold runtime remote run
+  evidence and does not integrate release-quality, change workflow YAML,
+  execute an artifact writer, generate artifact bodies, generate manifest
+  bodies, write files, compute metrics, or claim real-data readiness.
 - Keep future artifact writer implementation separate.
 - Keep future generator scaffold expansion separate.
 - Keep future calibration scaffold work separate.
@@ -358,3 +365,9 @@ This marker does not prove:
   release-quality, change workflow YAML, execute an artifact writer, generate
   artifact bodies, generate manifest bodies, write files, compute metrics, or
   claim real-data readiness.
+- Step309: linked the artifact writer fixture validator release-quality
+  integration design. This status marker remains unchanged as generator
+  scaffold runtime remote run evidence and does not change wrapper scripts,
+  workflow YAML, Makefile behavior, Python code, tests, fixture JSON, artifact
+  writer implementation, artifact body generation, manifest body generation,
+  file writing, metrics, or real-data readiness claims.

@@ -444,8 +444,22 @@ body generation, generated policy body generation, manifest body generation,
 file writing, metric computation, performance evaluation, real-data use, or
 production readiness.
 
+## 24. Step309 Release-Quality Integration Design Status
+
+Step309 designs future release-quality wrapper integration for the standalone
+Makefile target:
+[Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md).
+
+The CLI remains unchanged. Step309 does not modify release-quality wrapper
+scripts, workflow YAML, Makefile target behavior, Python code, Python tests,
+fixture JSON, artifact writer implementation, artifact body generation,
+generated policy body generation, manifest body generation, file writing,
+metric computation, performance evaluation, real-data use, or production
+readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
