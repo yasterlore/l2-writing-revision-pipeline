@@ -488,8 +488,14 @@ runtime smoke:
 This workflow remains scoped to fixture validation records; a runtime smoke
 remote/manual record should remain a separate future step.
 
+Step298 creates that separate runtime smoke remote/manual record workflow
+design:
+[Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md).
+This fixture workflow remains scoped to fixture validation records.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
@@ -523,4 +529,7 @@ Related docs:
   keeping this remote record workflow scoped to fixture validation.
 - Step296: linked the generator scaffold runtime release-quality integration
   design while keeping this remote record workflow scoped to fixture
+  validation.
+- Step298: linked the separate generator scaffold runtime smoke remote/manual
+  record workflow design while keeping this document scoped to fixture
   validation.

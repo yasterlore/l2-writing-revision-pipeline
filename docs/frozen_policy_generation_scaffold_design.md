@@ -803,9 +803,14 @@ metric computation, or real-data readiness claim is added.
   integration; workflows, Makefile, Python code, tests, fixtures, artifact body
   generation, artifact writing, metrics, and real-data readiness remain out of
   scope.
+- Step298: linked the generator scaffold runtime remote/manual run record
+  workflow design; actual status marker creation, workflow changes, artifact
+  body generation, artifact writing, metrics, and real-data readiness remain
+  out of scope.
 
 ## Related Documents
 
+- [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)

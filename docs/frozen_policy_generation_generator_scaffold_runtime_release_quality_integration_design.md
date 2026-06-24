@@ -431,15 +431,29 @@ needs its own public-safe review and must avoid copying raw logs.
 
 Recommended next steps:
 
-- Step297: generator scaffold runtime release-quality wrapper integration
 - Step298: generator scaffold runtime remote/manual run record workflow design
 - Step299: generator scaffold runtime remote/manual run status marker
 
 Keep artifact writing, generated policy bodies, calibration work, performance
 evaluation, and real-data readiness separate.
 
+## 17. Step298 Remote Run Record Workflow Design Status
+
+Step298 designs the future public-safe remote/manual Release Quality run
+record workflow for generator scaffold runtime smoke:
+[Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md).
+
+The design stages a future status marker at
+`docs/status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md`.
+It does not create that status marker, run a remote workflow, change workflows,
+change the release-quality wrapper, change the Makefile, change Python code,
+change tests, change fixtures, write artifacts, emit artifact bodies, emit
+generated policy bodies, compute metrics, evaluate performance, or claim
+real-data readiness.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)

@@ -1568,6 +1568,22 @@ generator scaffold result bodies, policy bodies, generated policy bodies,
 artifact bodies, raw rows, logits, private paths, raw learner text, or
 performance metric bodies.
 
+For Step298, review the
+[frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md).
+Confirm it is docs-only and defines the future remote/manual run record
+workflow, recommended status marker path, pass-only runtime smoke summary,
+count-only fixture validation summaries, related learner-state summary policy,
+failure handling, and public-safe metadata boundary. Confirm it does not
+create the status marker, run a remote workflow, change GitHub Actions
+workflows, change the release-quality wrapper, change the Makefile, change
+Python code, change tests, change fixtures, write artifacts, emit artifact
+bodies or generated policy bodies, add an artifact manifest writer, compute
+metrics, evaluate performance, use real data, or claim real-data readiness.
+Confirm it does not include raw logs, full job output, request/pointer bodies,
+expected generator scaffold result bodies, policy bodies, generated policy
+bodies, artifact bodies, manifest bodies, JSON bodies, raw rows, logits,
+private paths, raw learner text, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
