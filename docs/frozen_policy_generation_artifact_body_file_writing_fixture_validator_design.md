@@ -305,8 +305,9 @@ and makes fail-closed behavior explicit.
 - Step354: static validator implementation.
 - Step355: CLI design.
 - Step356: CLI implementation.
-- Step357: Makefile target design or implementation.
-- Step358: release-quality integration design.
+- Step357: Makefile target design.
+- Step358: Makefile target implementation.
+- Step359: release-quality integration design.
 - Later: isolated temp write validation after CLI file writing exists.
 - Later: wrapper integration and remote/manual status marker.
 
@@ -363,9 +364,24 @@ Step356 also adds CLI tests:
 
 `python/learner_state/tests/test_frozen_policy_generation_artifact_body_file_writing_fixture_validation_cli.py`
 
-## 21. Related Documents
+## 21. Step357 Makefile Target Design Status
+
+Step357 designs a future standalone Makefile target for running the safe
+no-write CLI:
+
+[Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md).
+
+The design proposes target naming, command shape, help text, expected
+behavior, output safety, Makefile implementation notes, relation to existing
+targets, release-quality staging, and future tests. It does not implement a
+Makefile target, does not change release-quality, does not change workflow
+YAML, does not write files, does not implement `--artifact-body-out`, does
+not use real data, and does not compute metrics.
+
+## 22. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
+- [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
