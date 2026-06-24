@@ -559,6 +559,13 @@ change wrapper scripts, workflow YAML, Makefile behavior, Python code, tests,
 or fixture JSON, does not execute an artifact writer, emits no artifact body,
 emits no generated policy body, emits no manifest body, and writes no files.
 
+Step310 implements the release-quality wrapper integration for that standalone
+target. The artifact policy remains unchanged: the wrapper runs fixture
+validation only, does not change workflow YAML, Makefile behavior, Python code,
+tests, or fixture JSON, does not execute an artifact writer, emits no artifact
+body, emits no generated policy body, emits no manifest body, and writes no
+files.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)

@@ -773,6 +773,18 @@ fixture JSON, implement an artifact writer, generate artifact bodies, generate
 generated policy bodies, generate manifest bodies, or write artifact/manifest
 files.
 
+## 29. Step310 Wrapper Integration Status
+
+Step310 adds the artifact writer fixture validator Makefile target to the
+release-quality wrapper. The fixture JSON files remain unchanged. The wrapper
+now validates this fixture contract after generator scaffold runtime smoke and
+before config and scoring smoke checks.
+
+Step310 does not change workflow YAML, Makefile target behavior, Python code,
+Python tests, fixture JSON, implement an artifact writer, generate artifact
+bodies, generate generated policy bodies, generate manifest bodies, or write
+artifact/manifest files.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)

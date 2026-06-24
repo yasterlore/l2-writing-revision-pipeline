@@ -457,6 +457,19 @@ generated policy body generation, manifest body generation, file writing,
 metric computation, performance evaluation, real-data use, or production
 readiness.
 
+## 25. Step310 Wrapper Integration Status
+
+Step310 adds the standalone Makefile target to the release-quality wrapper.
+The CLI remains unchanged and is still invoked through the Makefile target.
+The wrapper section runs after generator scaffold runtime smoke and before
+config and scoring smoke checks.
+
+Step310 does not change workflow YAML, Makefile target behavior, Python code,
+Python tests, fixture JSON, artifact writer implementation, artifact body
+generation, generated policy body generation, manifest body generation, file
+writing, metric computation, performance evaluation, real-data use, or
+production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)

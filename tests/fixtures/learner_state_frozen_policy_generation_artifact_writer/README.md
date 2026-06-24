@@ -145,6 +145,12 @@ wrapper scripts, workflow YAML, Makefile behavior, Python code, Python tests,
 execute an artifact writer, generate artifact bodies, generate generated
 policy bodies, generate manifest bodies, or write artifact/manifest files.
 
+Step310 adds the standalone Makefile target to the release-quality wrapper.
+The fixture JSON files remain unchanged, and the wrapper still runs only
+metadata-only fixture contract validation. It does not execute an artifact
+writer, generate artifact bodies, generate generated policy bodies, generate
+manifest bodies, or write artifact/manifest files.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

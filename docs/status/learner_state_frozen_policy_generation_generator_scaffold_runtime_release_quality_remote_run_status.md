@@ -309,6 +309,10 @@ This marker does not prove:
   evidence and does not integrate release-quality, change workflow YAML,
   execute an artifact writer, generate artifact bodies, generate manifest
   bodies, write files, compute metrics, or claim real-data readiness.
+- Step310 artifact writer fixture validator release-quality wrapper
+  integration is now tracked separately. This marker remains unchanged as
+  generator scaffold runtime remote run evidence and does not record a new
+  remote/manual Release Quality run for the artifact writer fixture target.
 - Keep future artifact writer implementation separate.
 - Keep future generator scaffold expansion separate.
 - Keep future calibration scaffold work separate.
@@ -371,3 +375,9 @@ This marker does not prove:
   workflow YAML, Makefile behavior, Python code, tests, fixture JSON, artifact
   writer implementation, artifact body generation, manifest body generation,
   file writing, metrics, or real-data readiness claims.
+- Step310: recorded that release-quality wrapper integration for the artifact
+  writer fixture validator target now exists separately. This status marker
+  remains unchanged as generator scaffold runtime remote run evidence and does
+  not record raw logs, full job output, request/pointer/expected bodies,
+  artifact bodies, manifest bodies, metrics, real-data use, or production
+  readiness claims.

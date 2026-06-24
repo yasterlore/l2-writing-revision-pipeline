@@ -1772,6 +1772,21 @@ copied log blocks, request bodies, pointer bodies, expected result bodies,
 policy bodies, artifact bodies, manifest bodies, raw rows, logits, private
 paths, raw learner text, real participant data, or performance metric bodies.
 
+For Step310, review `scripts/check_release_quality.sh` and the
+[frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md).
+Confirm the wrapper includes
+`release_quality_check: learner-state frozen policy generation artifact writer fixture validation`
+immediately after generator scaffold runtime smoke and before config/scoring
+smoke checks, and calls
+`make check-learner-state-frozen-policy-generation-artifact-writer-fixtures`.
+Confirm `make check-release-quality` passes and emits only metadata-only
+fixture counts and safety flags for the artifact writer fixture target. Confirm
+workflow YAML, Makefile target behavior, Python code/tests, and fixture JSON
+are unchanged. Confirm artifact writer implementation is not added, artifact
+bodies, generated policy bodies, and manifest bodies are not generated, files
+are not written, metrics are not computed, performance is not evaluated, real
+data is not used, and real-data readiness is not claimed.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
