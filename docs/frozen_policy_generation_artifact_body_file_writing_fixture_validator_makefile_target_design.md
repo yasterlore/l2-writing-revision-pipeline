@@ -241,7 +241,7 @@ writer CLI, does not use real data, and does not compute metrics.
 
 ## 15. Next Recommended Steps
 
-- Step360: wrapper integration.
+- Step361: remote/manual Release Quality run record workflow design.
 - Later: remote/manual Release Quality status marker.
 - Later: isolated temp write validation after artifact body file writing
   exists.
@@ -270,3 +270,24 @@ the wrapper, workflow YAML, Makefile, Python code/tests, fixture JSON, file
 writing implementation, `--artifact-body-out`, isolated temp write
 validation, manifest writer, artifact writer CLI, real-data use, metrics, or
 production readiness claims.
+
+## 18. Step360 Release-Quality Wrapper Integration Status
+
+Step360 adds this standalone target to `scripts/check_release_quality.sh`
+after the safe-metadata artifact body generation CLI smoke and before
+config/scoring smoke checks.
+
+The wrapper label is:
+
+`release_quality_check: learner-state frozen policy generation artifact body file writing fixture validation`
+
+The wrapper command is:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures`
+
+The integration does not change workflow YAML, does not change Makefile,
+does not change Python code/tests, does not change fixture JSON, does not
+implement artifact body file writing, does not implement
+`--artifact-body-out`, does not run isolated temp write validation, does not
+write manifests, does not connect artifact writer CLI, does not use real
+data, and does not compute metrics.

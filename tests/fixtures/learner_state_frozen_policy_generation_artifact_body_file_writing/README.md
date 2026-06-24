@@ -171,6 +171,15 @@ implement `--artifact-body-out`, does not run isolated temp write validation,
 does not write manifests, does not use real data, and does not compute
 metrics.
 
+Step360 integrates the standalone target into the release-quality wrapper.
+The wrapper now runs this fixture root through the no-write validator target
+after safe-metadata artifact body generation smoke and before config/scoring
+smoke checks. This integration does not change this fixture root, does not
+write artifact body files, does not create temp output directories, does not
+implement `--artifact-body-out`, does not run isolated temp write validation,
+does not write manifests, does not use real data, and does not compute
+metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

@@ -396,7 +396,17 @@ It keeps file writing implementation, output file options, isolated temp
 write validation, manifest writing, artifact writer CLI integration, real
 data, metrics, and production readiness outside the scope.
 
-## 25. Related Documents
+## 25. Step360 Release-Quality Wrapper Integration Status
+
+Step360 integrates the no-write file writing fixture validator target into
+the release-quality wrapper. This integration validates future file-output
+and path-policy fixture contracts in the regular release-quality bundle, but
+it still does not implement artifact body file writing, output file options,
+`--artifact-body-out`, isolated temp write validation, manifest writing,
+artifact writer CLI integration, real-data use, metrics, or production
+readiness.
+
+## 26. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)

@@ -293,6 +293,32 @@ The marker can record:
 - Does not use real data.
 - Does not prove production readiness.
 
+## 14a. Step360 Wrapper Integration Status
+
+Step360 implements the release-quality wrapper integration in
+`scripts/check_release_quality.sh`.
+
+The wrapper now runs:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures`
+
+under the label:
+
+`release_quality_check: learner-state frozen policy generation artifact body file writing fixture validation`
+
+The integration is placed after the safe-metadata artifact body generation
+CLI smoke and before config/scoring smoke checks. It keeps the target
+static/no-write and expects metadata-only summary output with 29 total
+cases, 5 valid cases, 24 invalid cases, 29 matched cases, zero mismatches,
+zero input errors, safety flags, and `file_writing_isolated=false`.
+
+Step360 does not change workflow YAML, does not change Makefile, does not
+change Python code/tests, does not change fixture JSON, does not implement
+artifact body file writing, does not implement `--artifact-body-out`, does
+not run isolated temp write validation, does not write manifests, does not
+connect artifact writer CLI, does not use real data, and does not compute
+metrics.
+
 ## 15. Beginner-Friendly Explanation
 
 `release-quality` is the repository's bundle of local checks that should pass
@@ -315,7 +341,6 @@ the release-quality wrapper.
 
 ## 16. Next Recommended Steps
 
-- Step360: release-quality wrapper integration.
 - Step361: remote/manual run record workflow design.
 - Step362: remote/manual run status marker.
 - Later: isolated temp write validation after artifact body file writing
