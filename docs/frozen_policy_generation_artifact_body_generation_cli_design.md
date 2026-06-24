@@ -430,3 +430,13 @@ The design keeps this CLI summary-only and body-free. It does not change the
 wrapper, workflow YAML, Makefile, Python code or tests, fixture JSON,
 safe-metadata target coverage, artifact writer CLI behavior, file writing,
 manifest generation, real-data use, or metrics.
+
+## 24. Step341 Release-Quality Wrapper Integration Status
+
+Step341 adds the standalone artifact body generation target to the
+release-quality wrapper. The CLI remains default suppressed-mode in the
+wrapper, summary-only, and body-free.
+
+Step341 does not change workflow YAML, Makefile, Python code or tests, fixture
+JSON, safe-metadata target coverage, artifact writer CLI behavior, file
+writing, manifest generation, real-data use, or metrics.

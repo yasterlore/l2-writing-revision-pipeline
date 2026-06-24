@@ -607,6 +607,17 @@ workflow YAML, Makefile, Python code or tests, fixture JSON, safe-metadata
 target coverage, artifact writer CLI behavior, file writing, manifest
 generation, real-data use, or metrics.
 
+## 37. Step341 Artifact Body Generation Release-Quality Wrapper Integration Status
+
+Step341 integrates the standalone default suppressed-mode artifact body
+generation target into the release-quality wrapper after artifact body fixture
+validation and before config/scoring smoke checks.
+
+The wrapper now checks the safe CLI smoke path without printing artifact body
+payloads or writing files. Step341 does not change workflow YAML, Makefile,
+Python code or tests, fixture JSON, safe-metadata target coverage, artifact
+writer CLI behavior, manifest generation, real-data use, or metrics.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)

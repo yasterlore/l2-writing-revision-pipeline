@@ -354,3 +354,22 @@ real-data readiness, or production readiness.
 
 Artifact writer CLI integration, safe-metadata target design, manifest writer,
 artifact file writing, and real-data readiness remain separate future work.
+
+## 18. Step341 Wrapper Integration Status
+
+Step341 implements the release-quality wrapper integration described here.
+The wrapper now runs:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-generation`
+
+with the label:
+
+`release_quality_check: learner-state frozen policy generation artifact body generation CLI smoke`
+
+The command is placed after artifact body fixture validation and before
+config/scoring smoke checks. It remains default suppressed-mode only. Step341
+does not change workflow YAML, does not change Makefile, does not change
+Python code or tests, does not change fixture JSON, does not add a
+safe-metadata target, does not connect artifact writer CLI, does not write
+artifact files, does not generate manifest bodies, does not use real data, and
+does not compute metrics.

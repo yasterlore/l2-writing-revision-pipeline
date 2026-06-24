@@ -443,6 +443,16 @@ work, does not add a safe-metadata target, does not write artifact files, does
 not generate manifest bodies, does not use real data, and does not compute
 metrics.
 
+## 29. Step341 Artifact Body Generation Release-Quality Wrapper Integration Status
+
+Step341 adds the separate artifact body generation target to release-quality
+after this fixture validator target. The fixture validator target remains
+unchanged and continues to run before the generation smoke.
+
+Step341 does not add a safe-metadata target, does not write artifact files,
+does not generate manifest bodies, does not use real data, and does not
+compute metrics.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)

@@ -303,3 +303,14 @@ validation first and then the default suppressed-mode generation CLI smoke in
 a later wrapper step. It does not change fixture JSON, does not add a
 safe-metadata target, does not write artifact files, does not generate
 manifest bodies, does not use real data, and does not compute metrics.
+
+## Artifact Body Generation Release-Quality Wrapper Integration
+
+Step341 adds the standalone artifact body generation CLI smoke to the
+release-quality wrapper after artifact body fixture validation. The wrapper
+uses the existing default suppressed-mode target and this fixture root remains
+unchanged.
+
+The integration does not add a safe-metadata target, does not modify fixture
+JSON, does not write artifact files, does not generate manifest bodies, does
+not use real data, and does not compute metrics.
