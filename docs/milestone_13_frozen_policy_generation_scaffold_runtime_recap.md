@@ -535,9 +535,15 @@ written, no artifact body is produced, and no performance metric is computed.
   implement an artifact writer, generate artifact bodies, generate generated
   policy bodies, generate manifest bodies, write files, compute metrics, or
   claim real-data readiness.
+- Step312: linked the artifact writer fixture release-quality remote/manual
+  status marker. The marker records only pass-only/count-only metadata for the
+  successful remote/manual Release Quality run and does not copy raw logs,
+  request/pointer/expected bodies, artifact bodies, manifest bodies, raw rows,
+  logits, private paths, raw learner text, or performance metric bodies.
 
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)

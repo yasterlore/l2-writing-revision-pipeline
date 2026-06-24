@@ -798,8 +798,19 @@ change Python code or tests, implement an artifact writer, generate artifact
 bodies, generate generated policy bodies, generate manifest bodies, or write
 artifact/manifest files.
 
+## 31. Step312 Remote Run Status Marker
+
+Step312 creates the public-safe remote/manual Release Quality status marker for
+artifact writer fixture validation:
+[Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md).
+
+The marker records only fixture-root case counts, wrapper inclusion metadata,
+safety flags, and pass-only related smoke summaries. The fixture JSON files
+remain unchanged.
+
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)

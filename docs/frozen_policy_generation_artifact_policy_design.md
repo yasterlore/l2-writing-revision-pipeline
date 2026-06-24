@@ -418,7 +418,7 @@ same artifact policy:
 [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md).
 
 Step285 implements that standalone Makefile target without changing the
-artifact policy: release-quality integration remains future work, and the
+artifact policy: Step287 later integrates it into release-quality, and the
 target still runs only metadata-only fixture validation with no artifact body,
 no generated policy body, no file writing, and no generator execution.
 The design does not add the target, release-quality integration, generator
@@ -426,7 +426,7 @@ execution, artifact body generation, generated policy bodies, or file writing.
 
 Step285 implements the standalone Makefile target while preserving the same
 artifact policy: no generator execution, no artifact body, no generated policy
-body, no file writing, and no release-quality integration.
+body, no file writing, and no artifact writing.
 
 Step286 designs future release-quality integration for that target:
 [Frozen policy generation generator scaffold fixture validator release-quality integration design](frozen_policy_generation_generator_scaffold_fixture_validator_release_quality_integration_design.md).
@@ -574,8 +574,15 @@ pass-only/count-only metadata and does not create a status marker, change
 workflow YAML, change wrapper scripts, execute an artifact writer, emit body
 payloads, write files, or claim performance or real-data readiness.
 
+Step312 creates that public-safe remote/manual status marker:
+[Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md).
+The marker remains metadata-only and does not relax the artifact policy:
+artifact bodies, manifest bodies, generated policy bodies, and file writing
+remain out of scope.
+
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)

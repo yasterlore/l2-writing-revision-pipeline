@@ -300,15 +300,16 @@ This marker does not prove:
   tracked separately:
   [Frozen policy generation artifact writer fixture validator Makefile target design](../frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md).
 - Step308 artifact writer fixture validator Makefile target implementation is
-  now tracked separately as a standalone local target. Release-quality
-  integration remains future work.
+  now tracked separately as a standalone local target. Step310 later
+  integrates that target into release-quality.
 - Step309 artifact writer fixture validator release-quality integration design
   is now tracked separately:
   [Frozen policy generation artifact writer fixture release-quality integration design](../frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md).
   This marker remains unchanged as generator scaffold runtime remote run
-  evidence and does not integrate release-quality, change workflow YAML,
-  execute an artifact writer, generate artifact bodies, generate manifest
-  bodies, write files, compute metrics, or claim real-data readiness.
+  evidence. The later Step310 wrapper integration is tracked separately and
+  does not change workflow YAML, execute an artifact writer, generate artifact
+  bodies, generate manifest bodies, write files, compute metrics, or claim
+  real-data readiness.
 - Step310 artifact writer fixture validator release-quality wrapper
   integration is now tracked separately. This marker remains unchanged as
   generator scaffold runtime remote run evidence and does not record a new
@@ -316,8 +317,9 @@ This marker does not prove:
 - Step311 artifact writer fixture release-quality remote run record workflow
   design is now tracked separately:
   [Frozen policy generation artifact writer fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md).
-  The future marker path is
-  `docs/status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md`.
+- Step312 artifact writer fixture release-quality remote run status marker is
+  now tracked separately:
+  [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md).
 - Keep future artifact writer implementation separate.
 - Keep future generator scaffold expansion separate.
 - Keep future calibration scaffold work separate.
@@ -391,3 +393,8 @@ This marker does not prove:
   does not create the artifact writer fixture status marker, copy raw logs,
   copy body payloads, record performance evidence, use real data, or claim
   production readiness.
+- Step312: the artifact writer fixture Release Quality remote/manual status
+  marker is now tracked separately:
+  [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md).
+  This generator scaffold runtime marker remains unchanged and continues to
+  record only its original pass-only/count-only remote run metadata.

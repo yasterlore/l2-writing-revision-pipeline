@@ -161,6 +161,15 @@ record only pass-only/count-only metadata and must not copy fixture bodies, raw
 logs, artifact bodies, manifest bodies, raw rows, logits, private paths, raw
 learner text, or performance metric bodies.
 
+Step312 creates the public-safe remote/manual Release Quality status marker:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md`
+
+The fixture JSON files remain unchanged. The marker records only fixture-root
+case counts, wrapper inclusion metadata, and safety flags. It does not copy
+fixture bodies, raw logs, artifact bodies, manifest bodies, raw rows, logits,
+private paths, raw learner text, or performance metric bodies.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy
