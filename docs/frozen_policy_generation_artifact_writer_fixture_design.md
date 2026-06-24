@@ -625,7 +625,7 @@ Recommended next steps:
 
 1. Step302: artifact writer fixture creation.
 2. Step303: artifact writer fixture validator design.
-3. Step304: artifact writer fixture validator implementation.
+3. Step305: artifact writer fixture validator CLI design.
 4. Step305: artifact writer skeleton design.
 
 ## 19. Beginner-Friendly Explanation
@@ -700,6 +700,22 @@ staging. It does not implement validator code, execute an artifact writer,
 generate artifact bodies, generate generated policy bodies, generate manifest
 bodies, write artifact or manifest files, compute metrics, or claim real-data
 readiness.
+
+## 23. Step304 Fixture Validator Implementation Status
+
+Step304 implements the metadata-only validator for this fixture root:
+
+`python/learner_state/frozen_policy_generation_artifact_writer_fixture_validation.py`
+
+The implementation validates the fixture contract without running an artifact
+writer. It checks 17 synthetic cases, preserves the 3 valid / 14 invalid case
+split, permits only safe marker booleans for invalid triggers, and keeps the
+root summary body-free and count-only.
+
+The fixture JSON files remain unchanged. Step304 does not add an artifact
+writer, CLI, Makefile target, release-quality wrapper integration, workflow
+change, artifact body generation, generated policy body generation, manifest
+body generation, artifact file writing, or manifest file writing.
 
 ## Related Documents
 

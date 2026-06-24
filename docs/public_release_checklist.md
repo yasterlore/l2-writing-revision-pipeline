@@ -1668,6 +1668,26 @@ bodies, generator scaffold bodies, policy bodies, artifact bodies, manifest
 bodies, raw rows, logits, private paths, raw learner text, real participant
 data, or performance metric bodies.
 
+For Step304, review the metadata-only artifact writer fixture validator
+implementation:
+`python/learner_state/frozen_policy_generation_artifact_writer_fixture_validation.py`
+and
+`python/learner_state/tests/test_frozen_policy_generation_artifact_writer_fixture_validation.py`.
+Confirm it validates only the Step302 synthetic fixture contract, discovers
+17 cases, preserves 3 valid and 14 invalid cases, matches all expected
+metadata results, allows only safe marker booleans for invalid triggers,
+detects forbidden body/payload keys, returns body-free summaries, and handles
+missing files or malformed JSON without panic. Confirm it does not implement
+artifact writer code, artifact writer CLI, Makefile target, release-quality
+integration, workflow changes, artifact body generation, generated policy body
+generation, manifest body generation, artifact file writing, manifest file
+writing, metric computation, performance evaluation, real-data use, or
+real-data readiness. Confirm docs and tests do not include raw logs, full job
+output, copied log blocks, fixture JSON bodies, artifact writer request
+bodies, artifact writer expected result bodies, generator scaffold bodies,
+policy bodies, artifact bodies, manifest bodies, raw rows, logits, private
+paths, raw learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

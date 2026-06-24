@@ -720,10 +720,9 @@ Documentation must not include:
 
 Recommended next steps:
 
-1. Step304: artifact writer fixture validator implementation.
-2. Step305: artifact writer fixture validator CLI design.
-3. Step306: artifact writer fixture validator CLI implementation.
-4. Step307: Makefile target design.
+1. Step305: artifact writer fixture validator CLI design.
+2. Step306: artifact writer fixture validator CLI implementation.
+3. Step307: Makefile target design.
 5. Later: Makefile target implementation, release-quality integration design,
    wrapper integration, and public-safe remote status marker.
 
@@ -765,6 +764,28 @@ This document does not:
 - evaluate performance
 - use real data
 - claim production readiness
+
+## 24. Step304 Validator Implementation Status
+
+Step304 implements the metadata-only artifact writer fixture validator module:
+
+`python/learner_state/frozen_policy_generation_artifact_writer_fixture_validation.py`
+
+It also adds focused validator tests:
+
+`python/learner_state/tests/test_frozen_policy_generation_artifact_writer_fixture_validation.py`
+
+The implementation validates the Step302 fixture contract only. It discovers
+the 17 synthetic fixture cases, checks required files and schema metadata,
+allows safe marker booleans for expected invalid cases, scans for forbidden
+body/payload keys, compares expected metadata summaries, and returns a
+body-free root summary.
+
+Step304 does not implement an artifact writer, artifact writer CLI, Makefile
+target, release-quality wrapper integration, workflow change, artifact body
+generation, generated policy body generation, manifest body generation,
+artifact file writing, manifest file writing, metric computation, performance
+evaluation, real-data use, or production readiness.
 
 ## Related Documents
 

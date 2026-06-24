@@ -90,6 +90,15 @@ safe marker policy, flags, count-only summaries, and expected result metadata
 without generating artifact bodies, generated policy bodies, manifest bodies,
 or writing artifact or manifest files.
 
+Step304 implements the metadata-only fixture validator in:
+
+`python/learner_state/frozen_policy_generation_artifact_writer_fixture_validation.py`
+
+The validator checks this fixture contract only. It does not execute an
+artifact writer, expose a CLI, add a Makefile target, integrate release-quality,
+generate artifact bodies, generate generated policy bodies, generate manifest
+bodies, or write artifact/manifest files.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

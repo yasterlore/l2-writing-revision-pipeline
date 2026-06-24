@@ -511,6 +511,11 @@ written, no artifact body is produced, and no performance metric is computed.
   implementation, writer implementation, artifact bodies, generated policy
   bodies, manifest bodies, file writing, metrics, and real-data readiness
   remain separate.
+- Step304: linked the metadata-only artifact writer fixture validator
+  implementation. It validates the Step302 fixture contract only and does not
+  implement an artifact writer, CLI, Makefile target, release-quality
+  integration, artifact body generation, generated policy body generation,
+  manifest body generation, or file writing.
 
 ## Related Documents
 
