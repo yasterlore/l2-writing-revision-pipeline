@@ -290,7 +290,9 @@ evidence, and not production readiness evidence.
   separately:
   [Frozen policy generation artifact body safe-metadata release-quality integration design](../frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md).
 - Keep any safe-metadata release-quality integration as a future separate
-  design and wrapper step.
+  remote/manual run record workflow and status marker step.
+- Design a future safe-metadata remote/manual run record workflow after the
+  Step347 wrapper integration.
 - Keep future artifact body file writing separate.
 - Keep future manifest writer design separate.
 - Keep future artifact writer CLI integration separate.
@@ -318,6 +320,10 @@ evidence, and not production readiness evidence.
   integration design. This marker remains scoped to the default
   suppressed-mode remote Release Quality smoke and does not claim
   safe-metadata release-quality coverage.
+- Step347: noted that the safe-metadata target is now included in the
+  release-quality wrapper. This marker still records the earlier default
+  suppressed-mode remote Release Quality run only and does not claim a
+  safe-metadata remote run.
 
 ## Related Documents
 

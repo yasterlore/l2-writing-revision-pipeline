@@ -683,6 +683,17 @@ workflow YAML, Makefile, Python code or tests, fixture JSON, artifact writer
 CLI behavior, artifact file writing, manifest generation, real-data use, or
 metrics.
 
+## 43. Step347 Safe-Metadata Wrapper Integration Status
+
+Step347 integrates the standalone safe-metadata artifact body generation
+target into the release-quality wrapper after the default suppressed
+generation smoke and before config/scoring smoke checks.
+
+The wrapper now checks both default suppressed and safe-metadata summary-only
+generation paths. Step347 does not change workflow YAML, Makefile, Python code
+or tests, fixture JSON, artifact writer CLI behavior, artifact file writing,
+manifest generation, real-data use, or metrics.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body safe-metadata release-quality integration design](frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md)

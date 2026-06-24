@@ -294,3 +294,16 @@ suppressed generation smoke and before config/scoring smoke checks. It does
 not change the wrapper, workflow YAML, Makefile, Python code or tests,
 fixture JSON, artifact writer CLI behavior, artifact file writing, manifest
 generation, real-data use, performance evaluation, or metrics.
+
+## 17. Step347 Release-Quality Wrapper Integration Status
+
+Step347 adds this standalone safe-metadata target to the release-quality
+wrapper after the default suppressed artifact body generation CLI smoke and
+before config/scoring smoke checks. The target remains summary-only and
+body-free.
+
+Step347 does not change workflow YAML, does not change Makefile, does not
+change Python code or tests, does not change fixture JSON, does not connect
+artifact writer CLI, does not write artifact files, does not generate
+manifest bodies, does not use real data, does not evaluate performance, and
+does not compute metrics.
