@@ -346,3 +346,17 @@ release-quality and passed remotely. It does not modify these fixture JSON
 files, does not add a safe-metadata target, does not write artifact files,
 does not generate manifest bodies, does not use real data, and does not
 compute metrics.
+
+## Future Safe-Metadata Makefile Target Design
+
+Step344 designs a future standalone Makefile target for running the artifact
+body generation CLI with this fixture root's safe-metadata synthetic
+request/pointer case:
+
+`docs/frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md`
+
+The design keeps fixture JSON unchanged and requires summary-only,
+body-free output. It does not implement the target, does not add
+release-quality integration, does not write artifact files, does not generate
+manifest bodies, does not connect artifact writer CLI, does not use real
+data, and does not compute metrics.

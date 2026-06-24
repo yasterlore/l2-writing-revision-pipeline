@@ -403,3 +403,18 @@ for the generation CLI smoke target:
 The Makefile target remains unchanged. The marker records only safe run
 identity, pass-only smoke status, count-only related summaries, and safety
 review metadata.
+
+## 24. Step344 Safe-Metadata Makefile Target Design Status
+
+Step344 designs a future standalone Makefile target for the artifact body
+generation CLI's safe-metadata mode:
+
+[Frozen policy generation artifact body safe-metadata Makefile target design](frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md).
+
+The existing default suppressed-mode target remains unchanged and remains the
+only artifact body generation target in release-quality. Step344 does not
+implement the safe-metadata target, does not change the wrapper, does not
+change workflow YAML, does not change Makefile, does not change Python code
+or tests, does not change fixture JSON, does not write artifact files, does
+not generate manifest bodies, does not use real data, and does not compute
+metrics.

@@ -2245,6 +2245,21 @@ bodies, JSON bodies, raw rows, logits, private paths, raw learner text, real
 participant data, performance metric bodies, real-data readiness, production
 readiness, or F1 / accuracy / ECE / AURCC evidence.
 
+For Step344, review the docs-only
+[frozen policy generation artifact body safe-metadata Makefile target design](frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md).
+Confirm it designs only a future standalone safe-metadata Makefile target for
+the artifact body generation CLI. Confirm it does not implement the target,
+does not add release-quality integration, does not change workflow YAML, does
+not change Makefile, does not change Python code/tests, does not change
+fixture JSON, does not connect artifact writer CLI, does not write artifact
+files, does not generate manifest bodies, does not compute metrics, does not
+use real data, and does not claim production readiness. Confirm docs do not
+include raw logs, full job output, copied log blocks, screenshots containing
+raw logs, request bodies, pointer bodies, expected bodies, artifact body
+payloads, generated policy bodies, manifest bodies, JSON body examples, raw
+rows, logits, private paths, raw learner text, real participant data, or
+performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

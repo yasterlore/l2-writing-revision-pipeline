@@ -464,3 +464,17 @@ for the artifact body generation CLI smoke:
 The CLI remains unchanged. The marker records only body-free safe metadata for
 the default suppressed-mode smoke and does not make safe-metadata mode part of
 release-quality.
+
+## 27. Step344 Safe-Metadata Makefile Target Design Status
+
+Step344 designs a future standalone Makefile target for this CLI's
+safe-metadata mode:
+
+[Frozen policy generation artifact body safe-metadata Makefile target design](frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md).
+
+The design keeps the CLI summary-only and body-free. It does not implement a
+target, does not add release-quality coverage for safe-metadata mode, does
+not change workflow YAML, does not change Makefile, does not change Python
+code or tests, does not change fixture JSON, does not print artifact body
+payloads, does not write artifact files, does not generate manifest bodies,
+does not use real data, and does not compute metrics.

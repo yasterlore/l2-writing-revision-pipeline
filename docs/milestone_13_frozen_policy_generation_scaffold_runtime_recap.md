@@ -705,9 +705,17 @@ written, no artifact body is produced, and no performance metric is computed.
   statements. It does not include raw logs, body payloads, safe-metadata
   target coverage, file writing, manifest generation, metrics, real-data
   readiness, or production readiness evidence.
+- Step344: added the docs-only safe-metadata Makefile target design for the
+  artifact body generation CLI. The design proposes a future standalone
+  target for `--mode safe-metadata` while keeping output summary-only and
+  body-free. It does not implement the target, change release-quality, change
+  workflow YAML, change Makefile, change Python code/tests, change fixture
+  JSON, connect artifact writer CLI, write artifact files, generate manifest
+  bodies, compute metrics, use real data, or claim production readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body safe-metadata Makefile target design](frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md)
 - [Learner-state frozen policy generation artifact body generation release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body generation release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)

@@ -399,3 +399,16 @@ body-free, pass-only metadata. It does not copy raw logs, request/pointer
 bodies, artifact body payloads, generated policy bodies, manifest bodies, raw
 rows, logits, private paths, raw learner text, real participant data, or
 performance metric bodies.
+
+## 21. Step344 Safe-Metadata Makefile Target Design Status
+
+Step344 designs a future standalone safe-metadata Makefile target:
+
+[Frozen policy generation artifact body safe-metadata Makefile target design](frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md).
+
+This release-quality integration remains scoped to the default
+suppressed-mode target. The safe-metadata target is not implemented here and
+is not added to release-quality. Step344 does not change the wrapper,
+workflow YAML, Makefile, Python code or tests, fixture JSON, artifact writer
+CLI behavior, artifact file writing, manifest generation, real-data use, or
+metrics.
