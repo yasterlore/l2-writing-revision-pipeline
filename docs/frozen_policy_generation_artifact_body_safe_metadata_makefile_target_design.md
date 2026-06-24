@@ -281,3 +281,16 @@ Python code or tests, does not change fixture JSON, does not connect artifact
 writer CLI, does not implement artifact file writing, does not generate
 manifest bodies, does not use real data, does not evaluate performance, and
 does not compute metrics.
+
+## 16. Step346 Release-Quality Integration Design Status
+
+Step346 designs a future release-quality wrapper integration for the
+standalone safe-metadata target:
+
+[Frozen policy generation artifact body safe-metadata release-quality integration design](frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md).
+
+The design recommends placing the safe-metadata smoke after the default
+suppressed generation smoke and before config/scoring smoke checks. It does
+not change the wrapper, workflow YAML, Makefile, Python code or tests,
+fixture JSON, artifact writer CLI behavior, artifact file writing, manifest
+generation, real-data use, performance evaluation, or metrics.

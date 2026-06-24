@@ -431,3 +431,15 @@ only artifact body generation target in release-quality. The safe-metadata
 target is standalone only. Step345 does not change the release-quality
 wrapper, workflow YAML, Python code or tests, fixture JSON, artifact writer
 CLI behavior, file writing, manifest generation, real-data use, or metrics.
+
+## 26. Step346 Safe-Metadata Release-Quality Integration Design Status
+
+Step346 designs future release-quality wrapper integration for the standalone
+safe-metadata target:
+
+[Frozen policy generation artifact body safe-metadata release-quality integration design](frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md).
+
+The design keeps the target summary-only and body-free. It does not change
+the wrapper, workflow YAML, Makefile, Python code or tests, fixture JSON,
+artifact writer CLI behavior, file writing, manifest generation, real-data
+use, or metrics.
