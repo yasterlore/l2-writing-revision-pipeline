@@ -2085,6 +2085,22 @@ bodies, artifact body payloads, artifact body JSON examples, generated policy
 bodies, manifest bodies, raw rows, logits/probability dumps, private paths,
 raw learner text, real participant data, or performance metric bodies.
 
+For Step333, review the docs-only
+[frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md).
+Confirm it defines the future status marker path, safe metadata to record,
+metadata not to record, status marker structure, artifact body fixture
+validation summary, related release-quality summaries, safety review,
+interpretation, failure handling, and later recording workflow. Confirm it
+does not create the actual status marker, run GitHub Actions, change workflow
+YAML, change the release-quality wrapper, change Makefile, change Python code
+or tests, change fixture JSON, implement artifact body generation, generated
+policy body generation, manifest body generation, file writing, metrics,
+real-data use, or production readiness claims. Confirm docs do not include
+raw logs, full job output, request bodies, pointer bodies, expected result
+bodies, artifact body payloads, artifact body JSON examples, generated policy
+bodies, manifest bodies, raw rows, logits/probability dumps, private paths,
+raw learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

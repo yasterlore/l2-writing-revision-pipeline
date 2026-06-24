@@ -216,3 +216,19 @@ boundary after artifact writer runtime smoke and before config/scoring smoke
 checks. This does not change fixture JSON, generate artifact bodies, generate
 policy bodies, generate manifest bodies, write files, compute metrics, use
 real data, or claim production readiness.
+
+## Future Remote Status Marker Workflow
+
+Step333 designs the future public-safe remote/manual Release Quality run
+record workflow for this fixture validation:
+
+`docs/frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md`
+
+The future marker path is expected to be:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md`
+
+The status marker is not created yet. Future records should use pass-only and
+count-only metadata and must not copy fixture bodies, artifact body payloads,
+raw logs, raw rows, logits, private paths, raw learner text, real participant
+data, or performance metric bodies.

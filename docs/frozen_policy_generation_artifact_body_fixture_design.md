@@ -568,8 +568,20 @@ metadata-only fixture boundary through:
 This does not change fixture JSON, generate artifact bodies, write files,
 compute metrics, use real data, or claim production readiness.
 
+## 31. Step333 Remote Run Record Workflow Design Status
+
+Step333 designs the future remote/manual Release Quality run record workflow
+for the artifact body fixture validation wrapper integration:
+
+[Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md).
+
+The workflow design does not create the actual status marker, change fixture
+JSON, generate artifact bodies, write files, compute metrics, use real data,
+or claim production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
