@@ -611,6 +611,11 @@ written, no artifact body is produced, and no performance metric is computed.
   implement CLI code, Makefile targets, release-quality integration, body
   generation, file writing, metrics, real-data use, or production readiness
   claims.
+- Step328: linked the artifact body fixture validator CLI implementation.
+  The CLI calls the existing validator APIs and emits safe metadata-only
+  summaries for root and single-case validation. It does not add Makefile
+  targets, release-quality integration, artifact body generation, file
+  writing, metrics, real-data use, or production readiness claims.
 
 ## Related Documents
 

@@ -156,3 +156,15 @@ That design does not implement CLI code, Makefile targets, release-quality
 integration, artifact body generation, file writing, metrics, real-data use,
 or production readiness claims. Future CLI output must remain metadata-only
 and must not print fixture bodies or artifact body payloads.
+
+## Validator CLI Implementation
+
+Step328 implements the validator CLI in:
+
+`python/learner_state/frozen_policy_generation_artifact_body_fixture_validation.py`
+
+The CLI validates this fixture root through the existing validator API and
+prints safe metadata-only summaries. It does not add Makefile targets,
+release-quality integration, workflow changes, fixture JSON changes, artifact
+body generation, file writing, metrics, real-data use, or production
+readiness claims.
