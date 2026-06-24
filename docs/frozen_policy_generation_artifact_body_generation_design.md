@@ -461,6 +461,19 @@ Python code or tests, change fixture JSON, generate artifact bodies, generate
 policy bodies, generate manifest bodies, write files, compute metrics, use
 real data, or claim production readiness.
 
+## 26. Step330 Artifact Body Fixture Validator Makefile Target Implementation Status
+
+Step330 implements the standalone Makefile target for artifact body fixture
+validation:
+
+`check-learner-state-frozen-policy-generation-artifact-body-fixtures`
+
+This remains separate from artifact body generation. The target validates the
+fixture contract only and does not generate artifact bodies, generated policy
+bodies, manifest bodies, write files, integrate release-quality, change
+workflow YAML, change fixture JSON, compute metrics, use real data, or claim
+production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)

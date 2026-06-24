@@ -180,3 +180,15 @@ does not implement the Makefile target, integrate release-quality, change
 workflow YAML, change Python code or tests, change fixture JSON, implement
 artifact body generation, write files, compute metrics, use real data, or
 claim production readiness.
+
+## Validator Makefile Target Implementation
+
+Step330 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-fixtures`
+
+The target runs the existing validator CLI against this fixture root and
+prints safe metadata-only output. It does not integrate release-quality,
+change workflow YAML, change Python code or tests, change fixture JSON,
+implement artifact body generation, write files, compute metrics, use real
+data, or claim production readiness.
