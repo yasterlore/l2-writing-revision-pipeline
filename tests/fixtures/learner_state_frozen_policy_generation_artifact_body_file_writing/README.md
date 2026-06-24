@@ -128,6 +128,13 @@ not implement a CLI, does not add a Makefile target, does not implement
 temp output directories, does not change release-quality, does not use real
 data, and does not compute metrics.
 
+Step356 implements that safe no-write CLI in the validator module. The CLI
+can validate the default root or one safe relative case selector and can emit
+human or JSON summaries. It does not print fixture bodies, does not print
+artifact body payloads, does not write files, does not create temp output
+directories, does not add a Makefile target, does not change release-quality,
+does not use real data, and does not compute metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

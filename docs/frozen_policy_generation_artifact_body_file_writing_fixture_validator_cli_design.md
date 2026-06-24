@@ -314,3 +314,28 @@ It should carry only safe metadata, counts, flags, and reason-code names.
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 20. Step356 CLI Implementation Status
+
+Step356 implements the safe no-write CLI entrypoint:
+
+`PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_file_writing_fixture_validation`
+
+The CLI supports `--fixture-root`, `--fixture-case`, `--json`, and `--help`.
+With no arguments, it validates the default file writing fixture root and
+emits a body-free human summary. Single-case mode accepts safe relative case
+selectors only. JSON output is summary-only and does not include fixture
+bodies, request bodies, pointer bodies, file write request bodies, expected
+result bodies, artifact body payloads, raw rows, logits, private paths, raw
+learner text, generated policy bodies, manifest bodies, or absolute local
+paths.
+
+Step356 also adds focused CLI tests for help, default root, JSON output,
+single valid case, single expected invalid case, unsafe selectors, missing
+cases, malformed temp roots, and no-write behavior.
+
+This implementation does not add a Makefile target, does not add
+release-quality integration, does not implement file writing, does not add
+`--artifact-body-out`, does not run isolated temp write validation, does not
+write manifests, does not connect artifact writer CLI, does not use real
+data, and does not compute metrics.
