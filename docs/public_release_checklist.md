@@ -2137,6 +2137,20 @@ pointer bodies, expected bodies, artifact body payloads, raw logs, raw rows,
 logits, private paths, raw learner text, real participant data, or performance
 metric bodies.
 
+For Step337, review the artifact body generation CLI implementation in
+`python/learner_state/frozen_policy_generation_artifact_body.py` and
+`python/learner_state/tests/test_frozen_policy_generation_artifact_body_cli.py`.
+Confirm the CLI is a thin wrapper around the generation API, requires
+synthetic request and pointer paths, defaults to suppressed mode, supports
+safe-metadata mode, emits only body-free safe summaries in human or JSON form,
+uses documented exit codes, and never prints request bodies, pointer bodies,
+artifact body payloads, manifest bodies, generated policy bodies, raw rows,
+logits, private paths, raw learner text, real participant data, raw logs, or
+performance metric bodies. Confirm it does not add Makefile targets, change
+release-quality, change workflow YAML, modify fixture JSON, change artifact
+writer CLI behavior, write artifact files, generate manifest bodies, compute
+metrics, use real data, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

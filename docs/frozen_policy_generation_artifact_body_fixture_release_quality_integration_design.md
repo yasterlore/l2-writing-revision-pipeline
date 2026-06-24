@@ -437,6 +437,15 @@ only and does not run artifact body generation CLI, print body payloads, write
 files, generate manifests, compute metrics, use real data, or claim production
 readiness.
 
+## 23. Step337 Artifact Body Generation CLI Implementation Status
+
+Step337 implements the artifact body generation CLI, but this release-quality
+integration remains unchanged. Release-quality still validates artifact body
+fixture contracts only and does not run the generation CLI in this step. The
+CLI emits body-free summaries and does not print artifact body payloads, write
+files, generate manifests, compute metrics, use real data, or claim production
+readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)

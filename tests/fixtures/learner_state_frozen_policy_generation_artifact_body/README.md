@@ -256,3 +256,12 @@ The CLI design keeps stdout and stderr body-free and summary-only. It does not
 implement the CLI, modify fixture JSON, write artifact files, generate
 manifest bodies, change release-quality, compute metrics, use real data, or
 claim production readiness.
+
+## Artifact Body Generation CLI Implementation
+
+Step337 implements the separate artifact body generation CLI. These fixture
+JSON files remain unchanged. The CLI can consume synthetic request/pointer
+metadata and emit only body-free safe summaries in human or JSON form. It does
+not print artifact body payloads, write artifact files, generate manifest
+bodies, change release-quality, compute metrics, use real data, or claim
+production readiness.

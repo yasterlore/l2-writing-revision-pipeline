@@ -400,6 +400,14 @@ remains unchanged and continues to validate fixtures only. No new Makefile
 target, release-quality integration, file writing, manifest generation,
 metrics, real-data use, or production readiness claim is added.
 
+## 25. Step337 Artifact Body Generation CLI Implementation Status
+
+Step337 implements the separate artifact body generation CLI. This Makefile
+target remains unchanged and continues to validate fixtures only. No new
+Makefile target is added in Step337, and release-quality remains unchanged.
+The CLI implementation does not write artifact files, generate manifest
+bodies, compute metrics, use real data, or claim production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
