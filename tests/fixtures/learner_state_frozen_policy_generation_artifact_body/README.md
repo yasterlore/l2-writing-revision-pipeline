@@ -203,3 +203,16 @@ That design does not change the release-quality wrapper, workflow YAML,
 Makefile, Python code or tests, fixture JSON, implement artifact body
 generation, write files, compute metrics, use real data, or claim production
 readiness.
+
+## Release-Quality Wrapper Integration
+
+Step332 integrates the standalone artifact body fixture validator target into
+the release-quality wrapper:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-fixtures`
+
+The wrapper now checks this synthetic-only, metadata-only, no-oracle fixture
+boundary after artifact writer runtime smoke and before config/scoring smoke
+checks. This does not change fixture JSON, generate artifact bodies, generate
+policy bodies, generate manifest bodies, write files, compute metrics, use
+real data, or claim production readiness.

@@ -509,6 +509,16 @@ not change the release-quality wrapper, workflow YAML, Makefile, Python code
 or tests, fixture JSON, artifact body generation, file writing, metrics,
 real-data use, or production readiness claims.
 
+## 32. Step332 Release-Quality Wrapper Integration Status
+
+Step332 integrates the artifact body fixture validator target into the
+release-quality wrapper after artifact writer runtime smoke and before
+config/scoring smoke checks.
+
+The validator remains a fixture-boundary checker only. It does not generate
+artifact bodies, generated policy bodies, manifest bodies, write files,
+compute metrics, use real data, or claim production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)

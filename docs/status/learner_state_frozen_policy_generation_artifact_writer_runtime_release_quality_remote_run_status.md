@@ -300,6 +300,8 @@ evidence, or production readiness evidence.
 - Keep artifact body fixture validator release-quality integration separate
   from the Step330 standalone Makefile target implementation:
   [Frozen policy generation artifact body fixture release-quality integration design](../frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md).
+- Keep future artifact body fixture release-quality remote/manual run status
+  marker work separate from the Step332 wrapper integration.
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -354,3 +356,7 @@ evidence, or production readiness evidence.
   design. The status marker remains pass-only/count-only and does not change
   the release-quality wrapper, workflow YAML, Makefile, body generation, file
   writing, metrics, real-data use, or production readiness claims.
+- Step332: linked the artifact body fixture release-quality wrapper
+  integration status. The status marker remains pass-only/count-only and does
+  not record a new remote run, change workflow YAML, generate bodies, write
+  files, compute metrics, use real data, or claim production readiness.

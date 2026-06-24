@@ -633,6 +633,11 @@ written, no artifact body is produced, and no performance metric is computed.
   wrapper step. It does not change the wrapper, workflow YAML, Makefile,
   generate bodies, write files, compute metrics, use real data, or claim
   production readiness.
+- Step332: integrated the artifact body fixture validator target into the
+  release-quality wrapper after artifact writer runtime smoke and before
+  config/scoring smoke checks. It does not change workflow YAML, Makefile,
+  Python code or tests, fixture JSON, generate bodies, write files, compute
+  metrics, use real data, or claim production readiness.
 
 ## Related Documents
 

@@ -357,7 +357,6 @@ copying logs.
 
 ## 16. Next Recommended Steps
 
-- Step332 artifact body fixture validator wrapper integration
 - Step333 artifact body fixture validator remote/manual run record workflow
   design
 - Step334 artifact body fixture validator remote/manual run status marker
@@ -372,6 +371,30 @@ workflow YAML, change the Makefile, change Python code or tests, change
 fixture JSON, implement artifact body generation, generate policy bodies,
 generate manifest bodies, write files, compute metrics, use real data, or
 claim production readiness.
+
+## 18. Step332 Implementation Status
+
+Step332 integrates the standalone artifact body fixture validator target into
+the release-quality wrapper immediately after artifact writer runtime smoke
+and before config/scoring smoke checks.
+
+The wrapper label is:
+
+`release_quality_check: learner-state frozen policy generation artifact body fixture validation`
+
+The wrapper command is:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-fixtures`
+
+This integration makes `make check-release-quality` validate the artifact
+body fixture boundary contract as part of the normal release-quality command
+bundle. It remains synthetic-only, metadata-only, and no-oracle.
+
+Step332 does not change workflow YAML, change the Makefile, change Python code
+or tests, change fixture JSON, implement artifact body generation, generate
+policy bodies, generate manifest bodies, write artifact or manifest files,
+add output-file options, compute metrics, use real data, or claim production
+readiness.
 
 ## Related Documents
 

@@ -2071,6 +2071,20 @@ body payloads, artifact body JSON examples, generated policy bodies,
 manifest bodies, raw rows, logits/probability dumps, private paths, raw
 learner text, real participant data, or performance metric bodies.
 
+For Step332, confirm the release-quality wrapper includes
+`make check-learner-state-frozen-policy-generation-artifact-body-fixtures`
+after artifact writer runtime smoke and before config/scoring smoke checks.
+Confirm `make check-release-quality` emits the artifact body fixture
+validation label and passes with safe metadata-only output. Confirm this
+does not change workflow YAML, Makefile, Python code or tests, fixture JSON,
+implement artifact body generation, generated policy body generation,
+manifest body generation, file writing, metrics, real-data use, or
+production readiness claims. Confirm docs and target output do not include
+raw logs, full job output, request bodies, pointer bodies, expected result
+bodies, artifact body payloads, artifact body JSON examples, generated policy
+bodies, manifest bodies, raw rows, logits/probability dumps, private paths,
+raw learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
