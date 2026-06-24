@@ -902,8 +902,18 @@ validator remains unchanged and still validates fixture contracts only. The new
 writer CLI does not replace fixture-root validation or expected-result
 matching.
 
+## 36. Step316 Runtime Makefile Target Design Status
+
+Step316 designs a future writer runtime Makefile target separately:
+[Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md).
+
+The fixture validator remains unchanged. The future runtime target should
+smoke-test one valid synthetic writer CLI request/pointer pair and should not
+perform fixture-root expected-result matching.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)

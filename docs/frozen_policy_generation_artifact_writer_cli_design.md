@@ -335,9 +335,10 @@ rows, logits, private paths, or raw learner text.
 
 ## 19. Proposed Next Steps
 
-- Step316 artifact writer runtime Makefile target design
 - Step317 artifact writer runtime Makefile target implementation
 - Step318 artifact writer runtime release-quality integration design
+- Step319 artifact writer runtime release-quality wrapper integration
+- Step320 remote/manual status marker workflow design
 
 ## 20. Beginner-Friendly Explanation
 
@@ -391,3 +392,19 @@ The CLI implementation does not add a Makefile target, change release-quality,
 change workflow YAML, change fixture JSON, generate artifact bodies, generate
 generated policy bodies, generate manifest bodies, write files, compute
 metrics, use real data, or claim real-data readiness.
+
+## 23. Step316 Runtime Makefile Target Design Status
+
+Step316 designs the future standalone runtime smoke target for the artifact
+writer CLI:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-runtime`
+
+The design is documented in:
+
+[Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md).
+
+The target is not implemented in Step316. The design keeps the future target
+limited to one valid synthetic request/pointer pair, safe human metadata
+output, no artifact body generation, no manifest body generation, no artifact
+or manifest file writing, no metrics, and no real-data readiness claim.

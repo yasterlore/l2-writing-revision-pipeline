@@ -1851,6 +1851,16 @@ YAML, change fixture JSON, generate artifact bodies, generate generated policy
 bodies, generate manifest bodies, write artifact or manifest files, compute
 metrics, evaluate performance, use real data, or claim real-data readiness.
 
+For Step316, review the
+[frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md).
+Confirm it is docs-only and designs a future standalone runtime smoke target
+for the artifact writer CLI. Confirm it does not implement a Makefile target,
+change release-quality wrapper scripts, change workflow YAML, change Python
+code/tests, change fixture JSON, generate artifact bodies, generate generated
+policy bodies, generate manifest bodies, write artifact or manifest files,
+compute metrics, evaluate performance, use real data, or claim real-data
+readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

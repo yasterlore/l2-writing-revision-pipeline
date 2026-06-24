@@ -197,6 +197,14 @@ pair, emits safe human or JSON metadata, and still avoids artifact bodies,
 generated policy bodies, manifest bodies, artifact file writing, and manifest
 file writing.
 
+Step316 designs the future writer runtime Makefile target in:
+
+`docs/frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md`
+
+The fixture JSON files remain unchanged. The future target should use one
+valid synthetic request/pointer pair as a runtime smoke and should not replace
+the 17-case fixture validator.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

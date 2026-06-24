@@ -457,8 +457,18 @@ Step315 implements the writer CLI, but this Makefile target remains unchanged.
 It still validates artifact writer fixtures only and does not run the writer
 CLI. A future runtime smoke target remains separate work.
 
+## 26. Step316 Runtime Makefile Target Design Status
+
+Step316 designs that separate future runtime smoke target:
+[Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md).
+
+The fixture validator Makefile target remains unchanged. The future runtime
+target should run the writer CLI on one valid synthetic fixture and should not
+replace the 17-case fixture validator target.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)

@@ -293,7 +293,11 @@ This marker does not prove:
   [Frozen policy generation artifact writer CLI design](../frozen_policy_generation_artifact_writer_cli_design.md).
 - Step315 artifact writer CLI implementation is now tracked separately in
   `python/learner_state/frozen_policy_generation_artifact_writer.py`.
-- Keep future artifact writer runtime smoke separate.
+- Step316 artifact writer runtime Makefile target design is now tracked
+  separately:
+  [Frozen policy generation artifact writer runtime Makefile target design](../frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md).
+- Keep future artifact writer runtime smoke implementation and
+  release-quality integration separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
 ## Update History
@@ -317,3 +321,7 @@ This marker does not prove:
   fixture release-quality remote run evidence only; it does not record writer
   runtime smoke, artifact body generation, manifest body generation, file
   writing, metrics, real-data use, or production readiness.
+- Step316: linked the writer runtime Makefile target design. This status
+  marker remains fixture release-quality remote run evidence only; it does not
+  record a writer runtime target run, artifact body generation, manifest body
+  generation, file writing, metrics, real-data use, or production readiness.
