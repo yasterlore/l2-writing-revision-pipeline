@@ -512,3 +512,16 @@ wrapper. The CLI remains summary-only and body-free in the wrapper.
 Step347 does not change workflow YAML, Makefile, Python code or tests,
 fixture JSON, artifact writer CLI behavior, artifact file writing, manifest
 generation, real-data use, or metrics.
+
+## 31. Step348 Safe-Metadata Remote Run Record Workflow Design Status
+
+Step348 designs the future remote/manual Release Quality run record workflow
+for this CLI's safe-metadata smoke:
+
+[Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md).
+
+The CLI remains summary-only and body-free. The workflow design does not
+create a status marker, run a remote workflow, change workflow YAML, change
+the wrapper, change Makefile, change Python code or tests, change fixture
+JSON, print artifact body payloads, write artifact files, generate manifest
+bodies, use real data, evaluate performance, or compute metrics.

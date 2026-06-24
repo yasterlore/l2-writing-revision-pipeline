@@ -453,3 +453,16 @@ config/scoring smoke checks.
 The Makefile target remains unchanged. Step347 does not change workflow YAML,
 Makefile, Python code or tests, fixture JSON, artifact writer CLI behavior,
 file writing, manifest generation, real-data use, or metrics.
+
+## 28. Step348 Safe-Metadata Remote Run Record Workflow Design Status
+
+Step348 designs the future remote/manual Release Quality run record workflow
+for the safe-metadata target:
+
+[Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md).
+
+This Makefile target design remains unchanged. The Step348 workflow design
+keeps the future marker public-safe, pass-only, and count-only, and does not
+copy raw logs, request bodies, pointer bodies, artifact body payloads,
+generated policy bodies, manifest bodies, raw rows, logits, private paths,
+raw learner text, real participant data, or performance metric bodies.

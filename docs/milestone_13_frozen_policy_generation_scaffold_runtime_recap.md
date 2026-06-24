@@ -733,9 +733,18 @@ written, no artifact body is produced, and no performance metric is computed.
   Makefile, Python code/tests, fixture JSON, artifact writer CLI behavior,
   artifact file writing, manifest generation, metrics, real-data use, or
   production readiness claims.
+- Step348: added the docs-only safe-metadata remote/manual Release Quality
+  run record workflow design. The design defines a future public-safe status
+  marker path and pass-only/count-only recording policy for the safe-metadata
+  smoke now included in the wrapper. It does not create the status marker,
+  run a remote workflow, change workflow YAML, change the wrapper, change
+  Makefile, change Python code/tests, change fixture JSON, write artifact
+  files, generate manifest bodies, compute metrics, use real data, or claim
+  production readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body safe-metadata release-quality integration design](frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md)
 - [Frozen policy generation artifact body safe-metadata Makefile target design](frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md)
 - [Learner-state frozen policy generation artifact body generation release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md)

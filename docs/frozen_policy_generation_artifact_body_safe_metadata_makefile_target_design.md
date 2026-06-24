@@ -307,3 +307,17 @@ change Python code or tests, does not change fixture JSON, does not connect
 artifact writer CLI, does not write artifact files, does not generate
 manifest bodies, does not use real data, does not evaluate performance, and
 does not compute metrics.
+
+## 18. Step348 Remote Run Record Workflow Design Status
+
+Step348 designs the future remote/manual Release Quality run record workflow
+for the safe-metadata target now included in the wrapper:
+
+[Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md).
+
+The design keeps this Makefile target unchanged and specifies that a future
+status marker should record only public-safe pass-only/count-only metadata.
+It must not copy raw logs, full job output, request bodies, pointer bodies,
+artifact body payloads, generated policy bodies, manifest bodies, raw rows,
+logits, private paths, raw learner text, real participant data, or
+performance metric bodies.
