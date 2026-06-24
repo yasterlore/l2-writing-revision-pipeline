@@ -408,3 +408,15 @@ The target is not implemented in Step316. The design keeps the future target
 limited to one valid synthetic request/pointer pair, safe human metadata
 output, no artifact body generation, no manifest body generation, no artifact
 or manifest file writing, no metrics, and no real-data readiness claim.
+
+## 24. Step317 Runtime Makefile Target Implementation Status
+
+Step317 implements the standalone runtime smoke target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-runtime`
+
+The target calls this writer CLI on one valid synthetic request/pointer pair
+and emits the same safe human metadata summary. It is not added to
+release-quality in Step317. It does not generate artifact bodies, generated
+policy bodies, manifest bodies, write files, compute metrics, use real data,
+or claim real-data readiness.

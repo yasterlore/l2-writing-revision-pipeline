@@ -349,7 +349,35 @@ would require a separate design, implementation, and safety review.
 
 ## 17. Next Recommended Steps
 
-- Step317 artifact writer runtime Makefile target implementation
+- Step318 artifact writer runtime release-quality integration design
+- Step319 artifact writer runtime release-quality wrapper integration
+- Step320 remote/manual status marker workflow design
+
+## 18. Step317 Runtime Makefile Target Implementation Status
+
+Step317 implements the standalone target designed here:
+
+```text
+check-learner-state-frozen-policy-generation-artifact-writer-runtime
+```
+
+Implemented command:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_writer --request tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/valid/minimal_metadata_only_artifact_plan/artifact_writer_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/valid/minimal_metadata_only_artifact_plan/generator_result_pointer.json
+```
+
+The target is added to `Makefile` and `make help`. It runs one valid synthetic
+request/pointer pair and emits the existing safe artifact writer CLI human
+summary.
+
+Step317 does not add the target to release-quality, change workflow YAML,
+change Python code or tests, change fixture JSON, generate artifact bodies,
+generate generated policy bodies, generate manifest bodies, write artifact or
+manifest files, compute metrics, use real data, or claim real-data readiness.
+
+Next recommended steps:
+
 - Step318 artifact writer runtime release-quality integration design
 - Step319 artifact writer runtime release-quality wrapper integration
 - Step320 remote/manual status marker workflow design

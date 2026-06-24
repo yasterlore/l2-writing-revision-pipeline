@@ -205,6 +205,14 @@ The fixture JSON files remain unchanged. The future target should use one
 valid synthetic request/pointer pair as a runtime smoke and should not replace
 the 17-case fixture validator.
 
+Step317 implements that standalone runtime Makefile target:
+
+`make check-learner-state-frozen-policy-generation-artifact-writer-runtime`
+
+The fixture JSON files remain unchanged. The target uses one valid synthetic
+request/pointer pair and still does not generate artifact bodies, generated
+policy bodies, manifest bodies, artifact files, or manifest files.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

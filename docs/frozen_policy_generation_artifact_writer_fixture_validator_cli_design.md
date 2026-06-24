@@ -524,6 +524,12 @@ This fixture validator CLI remains unchanged. The future runtime target should
 call the writer CLI on one valid synthetic fixture and should keep body and
 file-writing behavior suppressed.
 
+## 32. Step317 Runtime Makefile Target Implementation Status
+
+Step317 implements the standalone writer runtime target. This fixture
+validator CLI remains unchanged and still validates fixture contracts only.
+The runtime target calls the writer CLI on one valid synthetic fixture.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)

@@ -606,6 +606,12 @@ target limited to one valid synthetic request/pointer pair, no artifact body,
 no manifest body, no artifact or manifest writing, no metrics, and no
 real-data readiness claim.
 
+Step317 implements that standalone runtime Makefile target. The policy remains
+unchanged: the target runs one valid synthetic request/pointer pair and emits
+only the safe metadata CLI summary. It is not integrated into release-quality
+yet and still does not generate artifact bodies, generated policy bodies,
+manifest bodies, write files, compute metrics, or claim real-data readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)

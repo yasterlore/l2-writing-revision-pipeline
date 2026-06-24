@@ -921,6 +921,19 @@ workflow YAML, change Python code or tests, change fixture JSON, generate
 artifact bodies, generate generated policy bodies, generate manifest bodies,
 write files, compute metrics, use real data, or claim real-data readiness.
 
+## 41. Step317 Artifact Writer Runtime Makefile Target Implementation Status
+
+Step317 implements the standalone Makefile runtime smoke target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-runtime`
+
+The target runs the artifact writer CLI on one valid synthetic request/pointer
+pair and emits only the safe metadata-only human summary. It is not integrated
+into release-quality in Step317. It does not change workflow YAML, change
+Python code or tests, change fixture JSON, generate artifact bodies, generate
+generated policy bodies, generate manifest bodies, write files, compute
+metrics, use real data, or claim real-data readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)

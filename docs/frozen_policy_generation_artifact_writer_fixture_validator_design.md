@@ -911,6 +911,12 @@ The fixture validator remains unchanged. The future runtime target should
 smoke-test one valid synthetic writer CLI request/pointer pair and should not
 perform fixture-root expected-result matching.
 
+## 37. Step317 Runtime Makefile Target Implementation Status
+
+Step317 implements the standalone writer runtime Makefile target. The fixture
+validator remains unchanged and still performs fixture-root expected-result
+matching only. The runtime target runs one valid synthetic writer CLI case.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
