@@ -593,9 +593,16 @@ written, no artifact body is produced, and no performance metric is computed.
   does not implement body generation, validators, CLI changes, Makefile
   targets, release-quality integration, workflow changes, file writing,
   metrics, real-data use, or production readiness claims.
+- Step325: linked the artifact body fixture validator design. The design is
+  docs-only and defines future validator responsibility, safe marker scan,
+  forbidden payload scan, comparison rules, aggregate summary, error handling,
+  output safety, and staging. It does not implement validator code, CLI,
+  Makefile targets, release-quality integration, body generation, file
+  writing, metrics, real-data use, or production readiness claims.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
 - [Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)

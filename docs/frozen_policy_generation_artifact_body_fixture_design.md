@@ -472,8 +472,22 @@ workflow YAML, change Python code or tests, change existing fixture JSON,
 generate policy bodies, generate manifest bodies, write files, compute
 metrics, use real data, or claim production readiness.
 
+## 23. Step325 Validator Design Status
+
+Step325 designs the future validator for this fixture root:
+
+[Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md).
+
+The design defines validator responsibilities, discovery behavior, safe marker
+scan, forbidden payload scan, comparison rules, aggregate summary, error
+handling, output safety, and future CLI/Makefile/release-quality staging. It
+does not implement validator code, CLI code, Makefile targets, release-quality
+integration, artifact body generation, file writing, Python tests, or fixture
+JSON changes.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)

@@ -124,3 +124,11 @@ body leakage, and emit a deterministic metadata-only aggregate summary.
 The validator should not output request bodies, pointer bodies, expected
 result bodies, artifact bodies, manifest bodies, raw rows, logits, private
 paths, raw learner text, or performance metric bodies.
+
+The future validator design is documented in:
+
+`docs/frozen_policy_generation_artifact_body_fixture_validator_design.md`
+
+That design is docs-only. It does not implement validator code, validator
+CLI, Makefile targets, release-quality integration, artifact body generation,
+file writing, metrics, real-data use, or production readiness claims.
