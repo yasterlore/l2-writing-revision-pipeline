@@ -118,6 +118,16 @@ not write files, does not create temp output directories, does not add a CLI
 option, does not generate manifest bodies, does not connect artifact writer
 CLI, does not use real data, and does not compute metrics.
 
+Step355 designs a future safe CLI for the static no-write validator:
+
+`docs/frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md`
+
+The CLI design keeps default validation summary-only and no-write. It does
+not implement a CLI, does not add a Makefile target, does not implement
+`--artifact-body-out`, does not write artifact body files, does not create
+temp output directories, does not change release-quality, does not use real
+data, and does not compute metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are
