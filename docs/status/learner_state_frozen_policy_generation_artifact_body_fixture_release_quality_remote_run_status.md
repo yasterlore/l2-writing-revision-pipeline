@@ -300,6 +300,11 @@ Body and file safety:
   evidence that the generation target ran remotely, is included in
   release-quality, writes artifact files, generates manifest bodies, evaluates
   performance, or supports real-data readiness.
+- Step340 designs future release-quality integration for the standalone
+  artifact body generation target separately from this remote status marker;
+  this marker does not become evidence that the generation target is included
+  in release-quality, ran remotely, writes artifact files, generates manifest
+  bodies, evaluates performance, or supports real-data readiness.
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -338,9 +343,16 @@ Body and file safety:
   release-quality, ran remotely, writes artifact files, generates manifest
   bodies, evaluates performance, supports real-data readiness, or proves
   production readiness.
+- Step340: artifact body generation release-quality integration design added.
+  This status marker remains a record of the earlier remote release-quality
+  fixture validation run and does not become evidence that the generation
+  target is included in release-quality, ran remotely, writes artifact files,
+  generates manifest bodies, evaluates performance, supports real-data
+  readiness, or proves production readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body generation release-quality integration design](../frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation Makefile target design](../frozen_policy_generation_artifact_body_generation_makefile_target_design.md)
 - [Frozen policy generation artifact body generation CLI design](../frozen_policy_generation_artifact_body_generation_cli_design.md)

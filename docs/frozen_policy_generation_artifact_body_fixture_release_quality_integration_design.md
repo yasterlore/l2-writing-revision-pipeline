@@ -471,8 +471,22 @@ does not change workflow YAML, does not write artifact files, does not
 generate manifest bodies, does not use real data, and does not compute
 metrics.
 
+## 26. Step340 Artifact Body Generation Release-Quality Integration Design Status
+
+Step340 designs a separate future release-quality integration for the artifact
+body generation target:
+
+[Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md).
+
+This artifact body fixture release-quality integration remains unchanged. The
+future generation smoke is designed to run after fixture validation and before
+config/scoring checks, but the wrapper is not changed in this step. No
+safe-metadata target, workflow change, file writing, manifest generation,
+real-data use, or metrics are added.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)
 - [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)

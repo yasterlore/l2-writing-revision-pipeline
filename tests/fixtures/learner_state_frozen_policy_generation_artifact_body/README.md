@@ -290,3 +290,16 @@ files remain unchanged. The target is not added to release-quality in this
 step, does not add a safe-metadata target, does not write artifact files, does
 not generate manifest bodies, does not use real data, and does not compute
 metrics.
+
+## Future Artifact Body Generation Release-Quality Integration
+
+Step340 designs future release-quality integration for the standalone artifact
+body generation target:
+
+`docs/frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md`
+
+The design keeps this fixture root unchanged. It proposes running fixture
+validation first and then the default suppressed-mode generation CLI smoke in
+a later wrapper step. It does not change fixture JSON, does not add a
+safe-metadata target, does not write artifact files, does not generate
+manifest bodies, does not use real data, and does not compute metrics.
