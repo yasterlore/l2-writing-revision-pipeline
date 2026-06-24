@@ -145,6 +145,18 @@ not write artifact body files, does not create temp output directories, does
 not implement `--artifact-body-out`, does not use real data, and does not
 compute metrics.
 
+Step358 implements that standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures`
+
+The target runs the safe no-write validator CLI against this fixture root and
+emits summary-only metadata. It does not add release-quality integration,
+does not write artifact body files, does not create temp output directories,
+does not implement `--artifact-body-out`, does not run isolated temp write
+validation, does not write manifests, does not connect artifact writer CLI,
+does not change fixture JSON, does not use real data, and does not compute
+metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

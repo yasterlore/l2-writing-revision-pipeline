@@ -371,7 +371,21 @@ create isolated temp outputs, does not add a CLI option, does not write
 manifests, does not connect artifact writer CLI, does not change
 release-quality, does not use real data, and does not compute metrics.
 
-## 23. Related Documents
+## 23. Step358 Makefile Target Implementation Status
+
+Step358 implements a standalone Makefile target for validating the file
+writing fixture contracts:
+
+`check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures`
+
+This target runs the static/no-write fixture validator CLI. It does not add
+release-quality integration, does not implement artifact body file writing,
+does not add an output file option, does not implement `--artifact-body-out`,
+does not run isolated temp write validation, does not write manifests, does
+not connect artifact writer CLI, does not use real data, and does not
+compute metrics.
+
+## 24. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
