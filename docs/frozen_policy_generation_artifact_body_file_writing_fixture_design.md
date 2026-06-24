@@ -410,3 +410,15 @@ through Release Quality. It records only metadata and counts; it does not
 copy fixture bodies, implement file writing, write artifact files, write
 manifest files, use real data, compute metrics, or claim production
 readiness.
+
+## 29. Step363 Final Implementation Design Status
+
+Step363 adds the docs-only final implementation design:
+
+[Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md).
+
+The final design uses this fixture root as the policy background for a
+future safe-metadata-only `--artifact-body-out` implementation. It does not
+change fixture JSON, implement file writing, run isolated temp write
+validation, write manifests, use real data, compute metrics, or claim
+production readiness.

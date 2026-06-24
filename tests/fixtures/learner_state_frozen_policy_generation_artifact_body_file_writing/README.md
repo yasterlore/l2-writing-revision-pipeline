@@ -201,6 +201,16 @@ create temp output directories, implement `--artifact-body-out`, run
 isolated temp write validation, write manifests, use real data, or compute
 metrics.
 
+Step363 creates the docs-only final implementation design:
+
+`docs/frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md`
+
+The final design explains how a future implementation should add
+`--artifact-body-out` for safe-metadata artifact body file writing while
+leaving this fixture root and no-write validator unchanged. It does not
+modify fixture JSON, implement file writing, run isolated temp write
+validation, write manifests, use real data, or compute metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

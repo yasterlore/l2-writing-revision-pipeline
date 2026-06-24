@@ -412,6 +412,16 @@ count-only summaries, and does not include raw logs, fixture bodies, artifact
 body payloads, manifest bodies, raw rows, logits, private paths, raw learner
 text, real participant data, or performance metric bodies.
 
+## 27. Step363 Final Implementation Design Status
+
+Step363 adds the docs-only final implementation design:
+
+[Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md).
+
+The final design does not change this no-write fixture validator CLI. It
+defines the separate future artifact body generation CLI option boundary for
+safe-metadata file writing and keeps this validator summary-only.
+
 The workflow design keeps future status markers pass-only/count-only and
 forbids raw logs, fixture bodies, artifact body payloads, manifest bodies,
 raw rows, logits, private paths, raw learner text, real data, and
