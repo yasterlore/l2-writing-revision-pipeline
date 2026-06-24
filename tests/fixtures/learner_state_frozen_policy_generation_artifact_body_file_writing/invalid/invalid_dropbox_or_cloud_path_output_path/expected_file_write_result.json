@@ -1,0 +1,25 @@
+{
+  "case_id": "invalid/invalid_dropbox_or_cloud_path_output_path",
+  "expected_allowed_key_check": true,
+  "expected_artifact_body_audit_checked": true,
+  "expected_body_payload_not_printed": true,
+  "expected_failed_checks": [
+    "output_path_no_private_cloud_marker"
+  ],
+  "expected_file_exists": false,
+  "expected_file_written": false,
+  "expected_forbidden_key_check": true,
+  "expected_logits_absent": true,
+  "expected_manifest_file_written": false,
+  "expected_output_path_safety_checked": true,
+  "expected_performance_metric_body_absent": true,
+  "expected_private_path_absent": true,
+  "expected_raw_text_absent": true,
+  "expected_reason_codes": [
+    "dropbox_or_cloud_path_output_path"
+  ],
+  "expected_status": "fail_closed",
+  "expected_summary_only_stdout": true,
+  "expected_zero_forbidden_counts": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_file_write_expected_result_v0.1"
+}

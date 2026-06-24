@@ -2362,6 +2362,21 @@ bodies, artifact body payload examples, generated policy bodies, manifest
 bodies, JSON body examples, raw rows, logits, private paths, raw learner
 text, real participant data, or performance metric bodies.
 
+For Step352, review the synthetic-only
+[frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md).
+Confirm every case has the expected four JSON files and all JSON parses.
+Confirm the fixtures are metadata-only contracts for future file writing and
+path-policy validation. Confirm they do not implement a validator, implement
+file writing, add a CLI output option, write artifact body files, write
+manifest files, change artifact writer CLI, change release-quality, change
+workflow YAML, change Makefile, change Python code/tests, use real data,
+compute metrics, or claim production readiness. Confirm docs do not include
+raw logs, full job output, copied log blocks, screenshots containing raw logs,
+request bodies, pointer bodies, expected bodies, artifact body payload
+examples, generated policy bodies, manifest bodies, JSON body examples, raw
+rows, logits, private paths, raw learner text, real participant data, or
+performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

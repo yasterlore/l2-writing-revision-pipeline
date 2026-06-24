@@ -452,3 +452,16 @@ root. This fixture root remains unchanged. Step351 does not create fixture
 JSON, does not implement a validator, does not write artifact files, does not
 generate manifest bodies, does not connect artifact writer CLI, does not use
 real data, and does not compute metrics.
+
+## Artifact Body File Writing Fixture Root
+
+Step352 creates the separate artifact body file writing fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/`
+
+This existing artifact body fixture root remains unchanged. The new file
+writing fixture root contains synthetic-only metadata contracts for future
+path-policy and file-output validation. It does not implement a validator,
+does not add a CLI option, does not write artifact files, does not generate
+manifest bodies, does not connect artifact writer CLI, does not use real
+data, and does not compute metrics.

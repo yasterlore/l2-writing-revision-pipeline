@@ -1,0 +1,25 @@
+{
+  "artifact_body_suppressed": true,
+  "artifact_id": "synthetic_artifact_metadata_only_v0_1",
+  "case_id": "valid/valid_safe_metadata_no_output_path",
+  "category": "valid",
+  "content_suppressed": true,
+  "generated_artifact_written": false,
+  "manifest_body_suppressed": true,
+  "manifest_id": "synthetic_manifest_metadata_only_v0_1",
+  "no_logits_dump": true,
+  "no_performance_claims": true,
+  "no_private_paths": true,
+  "no_raw_rows": true,
+  "safe_marker_flags": {},
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_writer_result_pointer_v0.1",
+  "validation_reference_ids": [
+    "learner_state_frozen_policy_generation_artifact_writer/valid/minimal_metadata_only_artifact_plan",
+    "learner_state_frozen_policy_generation_generator_scaffold/valid/minimal_metadata_only_generation_plan",
+    "learner_state_frozen_policy_generation/valid/identity_temperature_fixed_threshold"
+  ],
+  "writer_result_pointer_id": "valid/valid_safe_metadata_no_output_path/writer_result_pointer",
+  "writer_result_safe_summary": "metadata_only_artifact_writer_result",
+  "writer_result_schema_version": "learner_state_frozen_policy_generation_artifact_writer_result_v0.1",
+  "writer_status": "pass"
+}

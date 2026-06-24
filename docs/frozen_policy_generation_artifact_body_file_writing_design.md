@@ -334,8 +334,21 @@ does not add a CLI option, does not write artifacts or manifests, does not
 connect artifact writer CLI, does not change release-quality, does not use
 real data, and does not compute metrics.
 
-## 20. Related Documents
+## 20. Step352 Fixture Creation Status
 
+Step352 creates the synthetic-only metadata fixture root for future artifact
+body file writing validation:
+
+[Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md).
+
+The fixture root has 29 cases and 116 JSON files. It is a contract fixture
+root only; it does not implement writing, does not add `--artifact-body-out`,
+does not write manifests, does not connect artifact writer CLI, does not
+change release-quality, does not use real data, and does not compute metrics.
+
+## 21. Related Documents
+
+- [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
