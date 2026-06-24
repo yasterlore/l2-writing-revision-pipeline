@@ -302,8 +302,8 @@ It should carry only safe metadata, counts, flags, and reason-code names.
 
 - Step356: CLI implementation.
 - Step357: Makefile target design.
-- Step359: release-quality integration design.
-- Later: wrapper integration and remote/manual status marker.
+- Step360: release-quality wrapper integration.
+- Later: remote/manual status marker.
 - Later: isolated temp write validation after artifact body file writing
   exists.
 
@@ -311,6 +311,7 @@ It should carry only safe metadata, counts, flags, and reason-code names.
 
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
@@ -369,3 +370,15 @@ does not add release-quality integration, does not change workflow YAML,
 does not change Python code/tests, does not change fixture JSON, does not
 connect artifact writer CLI, does not use real data, and does not compute
 metrics.
+
+## 23. Step359 Release-Quality Integration Design Status
+
+Step359 designs future release-quality wrapper integration for the
+standalone no-write fixture validator target:
+
+[Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md).
+
+The design does not change the wrapper, workflow YAML, Makefile, Python
+code/tests, fixture JSON, file writing implementation, `--artifact-body-out`,
+isolated temp write validation, manifest writer, artifact writer CLI, real
+data, metrics, or production readiness claims.

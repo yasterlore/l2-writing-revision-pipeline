@@ -306,9 +306,9 @@ and makes fail-closed behavior explicit.
 - Step355: CLI design.
 - Step356: CLI implementation.
 - Step357: Makefile target design.
-- Step359: release-quality integration design.
+- Step360: release-quality wrapper integration.
 - Later: isolated temp write validation after CLI file writing exists.
-- Later: wrapper integration and remote/manual status marker.
+- Later: remote/manual status marker.
 
 ## 18. Step354 Static Validator Implementation Status
 
@@ -391,10 +391,23 @@ writing, does not implement `--artifact-body-out`, does not run isolated temp
 write validation, does not write manifests, does not connect artifact writer
 CLI, does not use real data, and does not compute metrics.
 
-## 23. Related Documents
+## 23. Step359 Release-Quality Integration Design Status
+
+Step359 adds a docs-only release-quality integration design for the
+standalone no-write Makefile target:
+
+[Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md).
+
+The design covers wrapper insertion point, command, label, expected
+behavior, failure interpretation, log safety, relation to existing
+release-quality checks, testing plan, and future status marker policy. It
+does not implement wrapper integration or file writing.
+
+## 24. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

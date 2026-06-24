@@ -315,7 +315,7 @@ surface needs local tests, fixture coverage, and path-policy validation first.
 - Step353: file writing fixture validator design or implementation.
 - Step354: CLI file writing implementation.
 - Later: standalone Makefile target design.
-- Later: release-quality integration design.
+- Later: release-quality wrapper integration.
 - Later: remote/manual run record workflow and status marker.
 
 Manifest writer design and artifact writer CLI integration should remain
@@ -385,10 +385,22 @@ does not run isolated temp write validation, does not write manifests, does
 not connect artifact writer CLI, does not use real data, and does not
 compute metrics.
 
-## 24. Related Documents
+## 24. Step359 Release-Quality Integration Design Status
+
+Step359 designs future release-quality wrapper integration for the
+standalone no-write file writing fixture validator target:
+
+[Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md).
+
+It keeps file writing implementation, output file options, isolated temp
+write validation, manifest writing, artifact writer CLI integration, real
+data, metrics, and production readiness outside the scope.
+
+## 25. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
