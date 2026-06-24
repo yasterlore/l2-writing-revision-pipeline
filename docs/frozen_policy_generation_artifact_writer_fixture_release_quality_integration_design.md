@@ -448,8 +448,23 @@ context. It must not copy raw logs, request bodies, pointer bodies, expected
 result bodies, artifact bodies, manifest bodies, raw rows, logits, private
 paths, raw learner text, or performance metric bodies.
 
+## 28. Step321 Runtime Status Marker Creation Status
+
+Step321 creates the runtime smoke status marker separately from the fixture
+validation status marker:
+
+[Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md).
+
+The fixture validation marker remains the record for the 17-case fixture
+contract. The runtime marker records one valid synthetic request/pointer smoke
+run through the artifact writer CLI. Neither marker records raw logs, request
+bodies, pointer bodies, expected result bodies, artifact bodies, manifest
+bodies, raw rows, logits, private paths, raw learner text, or performance
+metric bodies.
+
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)

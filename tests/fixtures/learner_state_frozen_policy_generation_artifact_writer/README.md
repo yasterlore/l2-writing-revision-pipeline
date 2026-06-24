@@ -243,6 +243,14 @@ pass-only/count-only metadata and must not copy fixture bodies, request bodies,
 pointer bodies, expected result bodies, artifact bodies, manifest bodies, raw
 rows, logits, private paths, raw learner text, or performance metric bodies.
 
+Step321 creates that public-safe runtime status marker:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md`
+
+The fixture JSON files remain unchanged. The marker records only safe
+metadata, pass-only runtime smoke fields, count-only fixture validation
+fields, related learner-state check summaries, and safety review statements.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

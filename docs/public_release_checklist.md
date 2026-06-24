@@ -1906,6 +1906,21 @@ generated policy bodies, generate manifest bodies, write artifact or manifest
 files, compute metrics, evaluate performance, use real data, or claim
 real-data readiness.
 
+For Step321, review the public-safe status marker
+[learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md).
+Confirm it records only public-safe run identity metadata, pass-only artifact
+writer runtime smoke fields, count-only fixture validation fields, related
+learner-state check summaries, and safety review statements. Confirm it does
+not copy raw GitHub Actions logs, full job output, copied log blocks, request
+bodies, pointer bodies, expected result bodies, policy bodies, generated
+policy bodies, artifact bodies, manifest bodies, JSON bodies, raw rows,
+logits/probability dumps, private paths, raw learner text, real participant
+data, or performance metric bodies. Confirm workflow YAML, release-quality
+wrapper scripts, Makefile targets, Python code/tests, fixture JSON, artifact
+body generation, generated policy body generation, manifest body generation,
+artifact or manifest file writing, metrics, real-data use, and real-data
+readiness claims remain unchanged or out of scope.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

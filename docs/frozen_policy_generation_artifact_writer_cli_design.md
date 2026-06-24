@@ -458,3 +458,16 @@ not create the marker, change the CLI, change workflow YAML, change wrapper
 logic, change Makefile targets, change tests, change fixture JSON, generate
 artifact bodies, generate manifest bodies, write files, compute metrics, use
 real data, or claim real-data readiness.
+
+## 28. Step321 Runtime Status Marker Creation Status
+
+Step321 creates the public-safe remote/manual Release Quality status marker
+for the artifact writer runtime smoke:
+
+[Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md).
+
+The marker records safe pass-only CLI runtime metadata. It does not change the
+CLI implementation, change tests, change workflow YAML, change wrapper logic,
+change Makefile targets, change fixture JSON, generate artifact bodies,
+generate manifest bodies, write files, compute metrics, use real data, or
+claim real-data readiness.
