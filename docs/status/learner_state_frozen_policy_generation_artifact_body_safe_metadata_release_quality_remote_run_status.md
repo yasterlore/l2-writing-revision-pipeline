@@ -237,7 +237,8 @@ copied into docs or printed as raw body content.
 ## Next Actions
 
 - Commit this status marker after local checks.
-- Keep future artifact body file writing separate.
+- Use the Step350 file writing design as the starting point for future
+  artifact body file writing work.
 - Keep future manifest writer design separate.
 - Keep future artifact writer CLI integration separate.
 - Treat real-data readiness as future private/institution-approved review.
@@ -252,9 +253,14 @@ copied into docs or printed as raw body content.
   bodies, artifact body payloads, generated policy bodies, manifest bodies,
   raw rows, logits/probability dumps, private paths, raw learner text, real
   participant data, or performance metric bodies.
+- Step350: added a link to the docs-only artifact body file writing design.
+  The design remains separate from this status marker and does not add file
+  writing, manifest writing, artifact writer CLI integration, real-data use,
+  metrics, or production readiness claims.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body file writing design](../frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](../frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body safe-metadata release-quality integration design](../frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md)
 - [Frozen policy generation artifact body safe-metadata Makefile target design](../frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md)

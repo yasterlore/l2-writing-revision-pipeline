@@ -537,3 +537,17 @@ The CLI remains summary-only and body-free. The marker does not copy raw
 logs, request bodies, pointer bodies, artifact body payloads, generated
 policy bodies, manifest bodies, raw rows, logits, private paths, raw learner
 text, real participant data, or performance metric bodies.
+
+## 33. Step350 Artifact Body File Writing Design Status
+
+Step350 designs a future file-writing option for the artifact body generation
+CLI:
+
+[Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md).
+
+The design recommends a future explicit `--artifact-body-out` option for
+safe-metadata mode only. It keeps default behavior no-file and keeps stdout
+summary-only. Step350 does not implement the option, does not write artifact
+body files, does not write manifest files, does not connect artifact writer
+CLI, does not change release-quality, does not use real data, and does not
+compute metrics.

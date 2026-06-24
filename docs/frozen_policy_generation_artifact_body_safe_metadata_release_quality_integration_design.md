@@ -389,3 +389,15 @@ only. It does not copy raw logs, full job output, request bodies, pointer
 bodies, expected result bodies, artifact body payloads, generated policy
 bodies, manifest bodies, raw rows, logits, private paths, raw learner text,
 real participant data, or performance metric bodies.
+
+## 20. Step350 Artifact Body File Writing Design Status
+
+Step350 designs future safe metadata artifact body file writing:
+
+[Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md).
+
+The design keeps release-quality unchanged. Future file writing should start
+with local tests and separate target/integration design before any wrapper
+coverage. Step350 does not change the wrapper, workflow YAML, Makefile,
+Python code or tests, fixture JSON, artifact writer CLI behavior, manifest
+generation, real-data use, or metrics.

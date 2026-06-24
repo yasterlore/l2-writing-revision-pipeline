@@ -749,9 +749,15 @@ written, no artifact body is produced, and no performance metric is computed.
   artifact body payloads, generated policy bodies, manifest bodies, raw rows,
   logits, private paths, raw learner text, real participant data, performance
   metric bodies, or production readiness claims.
+- Step350: added the docs-only artifact body file writing design. The design
+  limits future writing to safe metadata bodies, requires explicit safe
+  relative output paths, keeps stdout summary-only, and leaves manifest
+  writer, artifact writer CLI integration, release-quality integration,
+  metrics, real-data use, and production readiness as non-goals.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body safe-metadata release-quality integration design](frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md)

@@ -333,3 +333,16 @@ The marker records that the target was included in release-quality and passed
 remotely. It does not change this Makefile target, does not write artifact
 files, does not generate manifest bodies, does not connect artifact writer
 CLI, does not use real data, and does not compute metrics.
+
+## 20. Step350 Artifact Body File Writing Design Status
+
+Step350 designs future safe metadata artifact body file writing:
+
+[Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md).
+
+The design keeps this safe-metadata Makefile target unchanged and does not
+add file writing to it. Future file writing should be a separate explicit
+CLI option and later staging path. Step350 does not change Makefile, does
+not change release-quality, does not write artifact files, does not generate
+manifest bodies, does not connect artifact writer CLI, does not use real
+data, and does not compute metrics.
