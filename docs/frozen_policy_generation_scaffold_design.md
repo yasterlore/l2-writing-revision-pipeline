@@ -799,6 +799,10 @@ metric computation, or real-data readiness claim is added.
 - Step296: linked the generator scaffold runtime release-quality integration
   design; wrapper implementation, workflow changes, artifact body generation,
   artifact writing, metrics, and real-data readiness remain out of scope.
+- Step297: recorded generator scaffold runtime release-quality wrapper
+  integration; workflows, Makefile, Python code, tests, fixtures, artifact body
+  generation, artifact writing, metrics, and real-data readiness remain out of
+  scope.
 
 ## Related Documents
 

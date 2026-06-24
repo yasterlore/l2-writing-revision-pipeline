@@ -1551,6 +1551,23 @@ expected generator scaffold result bodies, policy bodies, generated policy
 bodies, artifact bodies, raw rows, logits, private paths, raw learner text, or
 performance metric bodies.
 
+For Step297, review `scripts/check_release_quality.sh` and
+[frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md).
+Confirm the change is limited to adding the
+`learner-state frozen policy generation generator scaffold runtime smoke`
+section after generator scaffold fixture validation and before config/scoring
+smoke checks, plus docs. Confirm the wrapper calls
+`make check-learner-state-frozen-policy-generation-generator-scaffold-runtime`,
+emits only metadata-only output, writes no artifacts, emits no artifact body or
+generated policy body, creates no target-specific tmp output, and does not
+change GitHub Actions workflows, the Makefile, Python code, Python tests,
+fixtures, calibration/selective prediction logic, estimator work, metric
+computation, performance evaluation, real-data use, or real-data readiness
+claims. Confirm it does not include raw logs, request/pointer bodies, expected
+generator scaffold result bodies, policy bodies, generated policy bodies,
+artifact bodies, raw rows, logits, private paths, raw learner text, or
+performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

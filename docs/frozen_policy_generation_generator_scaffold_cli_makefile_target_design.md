@@ -421,6 +421,18 @@ docs-only: it does not change the wrapper, workflows, Makefile, Python code,
 tests, fixtures, artifact writing, artifact bodies, generated policy bodies,
 metrics, or real-data readiness status.
 
+## 20. Step297 Release-Quality Wrapper Integration Status
+
+Step297 implements that wrapper integration by adding
+`make check-learner-state-frozen-policy-generation-generator-scaffold-runtime`
+to `scripts/check_release_quality.sh` immediately after generator scaffold
+fixture validation and before config/scoring smoke checks.
+
+The Makefile target itself remains unchanged. The integration does not change
+GitHub Actions workflows, Python code, tests, fixtures, artifact writing,
+artifact bodies, generated policy bodies, metrics, or real-data readiness
+status.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
