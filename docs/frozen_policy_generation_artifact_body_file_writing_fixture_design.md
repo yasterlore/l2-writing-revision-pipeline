@@ -312,8 +312,23 @@ does not add a CLI option, does not write artifact bodies or manifests, does
 not connect artifact writer CLI, does not change release-quality, does not
 use real data, and does not compute metrics.
 
-## 21. Related Documents
+## 21. Step353 Validator Design Status
 
+Step353 designs a future validator for this fixture root:
+
+[Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md).
+
+The validator design defines static fixture validation, path-policy no-write
+validation, later isolated temp write validation, content-policy validation,
+stdout/stderr safety validation, reason-code taxonomy, and fail-closed safety
+constraints. It does not implement the validator, does not change fixture
+JSON, does not add a CLI option, does not write artifacts or manifests, does
+not change release-quality, does not use real data, and does not compute
+metrics.
+
+## 22. Related Documents
+
+- [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
