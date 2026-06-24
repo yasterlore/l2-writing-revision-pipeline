@@ -690,9 +690,18 @@ written, no artifact body is produced, and no performance metric is computed.
   fixture JSON, safe-metadata target coverage, artifact writer CLI behavior,
   file writing, manifest generation, metrics, real-data use, or production
   readiness claims.
+- Step342: added the docs-only artifact body generation remote/manual Release
+  Quality run record workflow design. The design prepares a future
+  public-safe status marker for the generation CLI smoke using pass-only and
+  count-only metadata. It does not create the status marker, run GitHub
+  Actions, change workflow YAML, change the wrapper, change Makefile, change
+  Python code/tests, change fixture JSON, add a safe-metadata target, write
+  artifact files, generate manifest bodies, compute metrics, use real data,
+  or claim production readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body generation release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)
 - [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
