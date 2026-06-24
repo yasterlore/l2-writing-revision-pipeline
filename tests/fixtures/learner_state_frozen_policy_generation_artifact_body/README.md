@@ -396,3 +396,20 @@ fixture root remains unchanged.
 The integration does not modify fixture JSON, does not write artifact files,
 does not generate manifest bodies, does not connect artifact writer CLI, does
 not use real data, and does not compute metrics.
+
+## Future Safe-Metadata Remote Status Marker
+
+Step348 designs a future remote/manual Release Quality run record workflow
+for the safe-metadata CLI smoke now included in the wrapper:
+
+`docs/frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md`
+
+The future marker path is expected to be:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md`
+
+This fixture root remains unchanged. The future marker should record only
+public-safe pass-only and count-only metadata. It must not copy fixture JSON
+bodies, request bodies, pointer bodies, artifact body payloads, generated
+policy bodies, manifest bodies, raw logs, raw rows, logits, private paths,
+raw learner text, real participant data, or performance metric bodies.

@@ -358,3 +358,21 @@ does not change Python code or tests, does not change fixture JSON, does not
 connect artifact writer CLI, does not write artifact files, does not generate
 manifest bodies, does not use real data, does not evaluate performance, and
 does not compute metrics.
+
+## 18. Step348 Remote Run Record Workflow Design Status
+
+Step348 designs the future remote/manual Release Quality run record workflow
+for the safe-metadata wrapper integration:
+
+[Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md).
+
+The workflow design defines a future public-safe status marker path:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md`
+
+Step348 does not create the status marker, does not run a remote workflow,
+does not change workflow YAML, does not change the wrapper, does not change
+Makefile, does not change Python code or tests, does not change fixture JSON,
+does not connect artifact writer CLI, does not write artifact files, does not
+generate manifest bodies, does not use real data, does not evaluate
+performance, and does not compute metrics.

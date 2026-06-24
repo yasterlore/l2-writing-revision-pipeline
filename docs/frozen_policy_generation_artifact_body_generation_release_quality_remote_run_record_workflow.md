@@ -608,3 +608,19 @@ separately before adding a safe-metadata status marker. Step347 does not
 change workflow YAML, Makefile, Python code or tests, fixture JSON, artifact
 writer CLI behavior, artifact file writing, manifest generation, real-data
 use, or metrics.
+
+## 30. Step348 Safe-Metadata Remote Run Record Workflow Design Status
+
+Step348 designs the separate future remote/manual Release Quality run record
+workflow for the safe-metadata artifact body generation CLI smoke:
+
+[Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md).
+
+This document remains the record workflow for the earlier default
+suppressed-mode generation CLI smoke. The Step348 workflow defines a future
+safe-metadata status marker path and requires public-safe pass-only/count-only
+metadata only. It does not create the status marker, does not run a remote
+workflow, does not change workflow YAML, does not change the wrapper, does
+not change Makefile, does not change Python code or tests, does not change
+fixture JSON, does not write artifact files, does not generate manifest
+bodies, does not use real data, and does not compute metrics.

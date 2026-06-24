@@ -694,8 +694,23 @@ generation paths. Step347 does not change workflow YAML, Makefile, Python code
 or tests, fixture JSON, artifact writer CLI behavior, artifact file writing,
 manifest generation, real-data use, or metrics.
 
+## 44. Step348 Safe-Metadata Remote Run Record Workflow Design Status
+
+Step348 designs the future remote/manual Release Quality run record workflow
+for the safe-metadata artifact body generation CLI smoke:
+
+[Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md).
+
+The workflow design keeps the future status marker public-safe, pass-only,
+and count-only. It does not create the status marker, does not run a remote
+workflow, does not change workflow YAML, does not change the wrapper, does
+not change Makefile, does not change Python code or tests, does not change
+fixture JSON, does not write artifact files, does not generate manifest
+bodies, does not use real data, and does not compute metrics.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body safe-metadata release-quality integration design](frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md)
 - [Frozen policy generation artifact body safe-metadata Makefile target design](frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md)
 - [Learner-state frozen policy generation artifact body generation release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md)

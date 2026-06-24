@@ -58,6 +58,13 @@ Available markers:
   remote/manual release-quality wrapper status after artifact body generation
   CLI smoke integration.
 
+Future marker path:
+
+- `docs/status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md`:
+  future public-safe pass-only/count-only status marker for a remote/manual
+  Release Quality run after safe-metadata artifact body generation CLI smoke
+  wrapper integration.
+
 Related recap:
 
 - [Milestone 06 learner-state audit infrastructure recap](../milestone_06_learner_state_audit_infrastructure_recap.md):
@@ -105,3 +112,7 @@ Related recap:
 - [Frozen policy generation artifact body generation release-quality remote run record workflow](../frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   generation CLI smoke release-quality wrapper integration.
+- [Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](../frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md):
+  future public-safe pass-only/count-only recording workflow for
+  safe-metadata artifact body generation CLI smoke release-quality wrapper
+  integration.
