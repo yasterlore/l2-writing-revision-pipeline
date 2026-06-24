@@ -604,9 +604,17 @@ written, no artifact body is produced, and no performance metric is computed.
   results and focused unit tests. It does not implement a validator CLI,
   Makefile target, release-quality integration, artifact body generation, file
   writing, metrics, real-data use, or production readiness claims.
+- Step327: linked the artifact body fixture validator CLI design. The design
+  defines the future entrypoint, arguments, default fixture root, safe
+  human/JSON output, exit codes, single-case behavior, error handling, future
+  tests, Makefile target candidate, and release-quality staging. It does not
+  implement CLI code, Makefile targets, release-quality integration, body
+  generation, file writing, metrics, real-data use, or production readiness
+  claims.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
 - [Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md)

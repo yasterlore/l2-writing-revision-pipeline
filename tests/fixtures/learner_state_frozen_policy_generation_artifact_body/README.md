@@ -144,3 +144,15 @@ writing artifact files, writing manifest files, changing fixture JSON,
 computing metrics, using real data, or claiming production readiness.
 It emits safe metadata, counts, reason code names, schema names, and flags
 only.
+
+## Future Validator CLI Design
+
+Step327 designs the future CLI for safely running the validator from a
+terminal:
+
+`docs/frozen_policy_generation_artifact_body_fixture_validator_cli_design.md`
+
+That design does not implement CLI code, Makefile targets, release-quality
+integration, artifact body generation, file writing, metrics, real-data use,
+or production readiness claims. Future CLI output must remain metadata-only
+and must not print fixture bodies or artifact body payloads.

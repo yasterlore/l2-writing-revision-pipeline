@@ -419,8 +419,22 @@ implement a CLI, add Makefile targets, change release-quality, change
 workflow YAML, change fixture JSON, compute metrics, use real data, or claim
 production readiness.
 
+## 23. Step327 Artifact Body Fixture Validator CLI Design Status
+
+Step327 designs the future CLI for running artifact body fixture validation
+from a terminal:
+
+[Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md).
+
+This remains separate from artifact body generation. It does not implement
+CLI code, Makefile targets, release-quality integration, artifact body
+generation, generated policy body generation, manifest body generation, file
+writing, fixture JSON changes, metrics, real-data use, or production
+readiness claims.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
 - [Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md)
