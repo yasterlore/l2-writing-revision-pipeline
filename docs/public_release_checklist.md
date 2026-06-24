@@ -1635,6 +1635,23 @@ bodies, generator scaffold request/pointer/expected result bodies, policy
 bodies, artifact bodies, manifest bodies, raw rows, logits, private paths,
 raw learner text, real participant data, or performance metric bodies.
 
+For Step302, review the
+[frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
+and the
+[frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md).
+Confirm the fixture root contains 17 synthetic-only metadata-only cases: 3
+valid cases and 14 fail-closed invalid cases, with three safe metadata files
+per case. Confirm the fixtures are intended as a future artifact writer
+contract only and do not implement an artifact writer, validator, CLI,
+Makefile target, release-quality integration, artifact body generation,
+generated policy body generation, manifest body generation, artifact file
+writing, manifest file writing, metric computation, performance evaluation,
+real-data use, or real-data readiness. Confirm docs do not include raw logs,
+full job output, copied log blocks, artifact writer request bodies, artifact
+writer expected result bodies, generator scaffold bodies, policy bodies,
+artifact bodies, manifest bodies, raw rows, logits, private paths, raw learner
+text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

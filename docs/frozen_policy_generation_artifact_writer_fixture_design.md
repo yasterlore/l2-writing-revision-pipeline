@@ -48,7 +48,9 @@ Currently:
 
 - artifact writer design exists:
   [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
-- artifact writer fixtures do not exist
+- artifact writer fixture design exists in this document
+- artifact writer fixture files now exist as the Step302 synthetic-only
+  metadata-only fixture root
 - artifact writer validator does not exist
 - artifact writer implementation does not exist
 - artifact body generation does not exist
@@ -660,8 +662,35 @@ This document does not:
 - evaluate performance
 - use real data
 
+## 21. Step302 Fixture Creation Status
+
+Step302 creates the fixture root described by this design:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/`
+
+The created root contains:
+
+- 17 total cases
+- 3 valid cases
+- 14 invalid fail-closed cases
+- 51 JSON files
+- one root README
+
+The fixture files remain synthetic-only and metadata-only. They do not include
+artifact writer request bodies, artifact writer expected result bodies,
+generator scaffold request bodies, pointer bodies, expected result bodies,
+generated policy bodies, artifact bodies, manifest bodies, raw rows, logits,
+private paths, raw learner text, real participant data, or performance metric
+bodies.
+
+Step302 does not implement an artifact writer, validator, CLI, Makefile
+target, release-quality integration, artifact body generation, generated
+policy body generation, manifest body generation, artifact file writing, or
+manifest file writing.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
