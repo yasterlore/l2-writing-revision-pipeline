@@ -355,7 +355,8 @@ Documentation must not include:
 
 Recommended next steps:
 
-1. Step307: Makefile target design.
+1. Step307: Makefile target design. Complete:
+   [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md).
 2. Step308: Makefile target implementation.
 3. Step309: release-quality integration design.
 
@@ -418,8 +419,21 @@ generation, generated policy body generation, manifest body generation,
 artifact file writing, manifest file writing, metric computation, performance
 evaluation, real-data use, or production readiness.
 
+## 22. Step307 Makefile Target Design Status
+
+Step307 designs a future standalone Makefile target for this CLI:
+[Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md).
+
+The CLI implementation remains unchanged. Step307 is docs-only and does not
+add a Makefile target, release-quality wrapper integration, workflow change,
+Python code, Python tests, fixture JSON, artifact writer implementation,
+artifact body generation, generated policy body generation, manifest body
+generation, artifact file writing, manifest file writing, metric computation,
+performance evaluation, real-data use, or production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
 - [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)

@@ -524,9 +524,15 @@ written, no artifact body is produced, and no performance metric is computed.
   Makefile target, release-quality integration, artifact writer implementation,
   artifact bodies, generated policy bodies, manifest bodies, file writing,
   metrics, and real-data readiness remain separate.
+- Step307: linked the artifact writer fixture validator Makefile target
+  design. It remains docs-only and does not add a Makefile target,
+  release-quality integration, workflow change, artifact writer implementation,
+  artifact bodies, generated policy bodies, manifest bodies, file writing,
+  metrics, or real-data readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)

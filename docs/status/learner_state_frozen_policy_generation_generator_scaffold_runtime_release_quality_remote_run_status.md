@@ -296,8 +296,11 @@ This marker does not prove:
   [Frozen policy generation artifact writer fixture validator CLI design](../frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md).
 - Step306 artifact writer fixture validator CLI implementation is now tracked
   separately as metadata-only fixture contract CLI validation.
-- Keep future artifact writer fixture validator Makefile target design and
-  implementation separate.
+- Step307 artifact writer fixture validator Makefile target design is now
+  tracked separately:
+  [Frozen policy generation artifact writer fixture validator Makefile target design](../frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md).
+- Keep future artifact writer fixture validator Makefile target implementation
+  separate.
 - Keep future artifact writer implementation separate.
 - Keep future generator scaffold expansion separate.
 - Keep future calibration scaffold work separate.
@@ -342,3 +345,9 @@ This marker does not prove:
   implementation is now separate from this status marker. The marker still
   records only generator scaffold runtime pass-only/count-only remote run
   metadata.
+- Step307: linked the artifact writer fixture validator Makefile target
+  design. This status marker remains unchanged as generator scaffold runtime
+  remote run evidence and does not add a Makefile target, release-quality
+  integration, workflow change, artifact writer implementation, artifact body
+  generation, manifest body generation, file writing, metrics, or real-data
+  readiness claims.

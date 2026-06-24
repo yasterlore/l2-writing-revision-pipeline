@@ -116,6 +116,16 @@ writer, add a Makefile target, integrate release-quality, generate artifact
 bodies, generate generated policy bodies, generate manifest bodies, or write
 artifact/manifest files.
 
+Step307 designs a future standalone Makefile target for running that CLI over
+this fixture root:
+
+`docs/frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md`
+
+That design remains docs-only. It does not add a Makefile target, integrate
+release-quality, execute an artifact writer, generate artifact bodies,
+generate generated policy bodies, generate manifest bodies, or write
+artifact/manifest files.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy
