@@ -1020,8 +1020,22 @@ generate artifact bodies, change the writer CLI, change Makefile targets,
 change release-quality, change workflow YAML, change Python code or tests,
 write files, compute metrics, use real data, or claim production readiness.
 
+## 48. Step324 Artifact Body Fixture Creation Status
+
+Step324 creates the artifact body fixture root:
+
+[Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md).
+
+The fixture root is separate from artifact writer fixtures. It contains
+synthetic metadata-only request, pointer, and expected-result files for 18
+future artifact body validation cases. It does not implement a validator,
+generate artifact bodies, change writer code, change CLI behavior, change
+Makefile targets, change release-quality, change workflow YAML, write files,
+compute metrics, use real data, or claim production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
 - [Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md)

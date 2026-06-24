@@ -459,3 +459,13 @@ create fixture JSON, implement a validator, change the Makefile target, change
 the release-quality wrapper, change workflow YAML, change Python code or
 tests, change existing fixtures, generate artifact bodies, write files,
 compute metrics, use real data, or claim production readiness.
+
+## 25. Step324 Artifact Body Fixture Creation Status
+
+Step324 creates the artifact body fixture root:
+
+[Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md).
+
+The runtime target remains unchanged, body-free, and file-writing-free. The
+new fixtures are for future artifact body validation only and are not added to
+Makefile targets in Step324.

@@ -269,6 +269,14 @@ The fixture JSON files in this directory remain unchanged. Future artifact
 body fixtures should live in a separate root and should use safe marker
 booleans instead of unsafe payload bodies.
 
+Step324 creates that separate fixture root in:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body/`
+
+The fixture JSON files in this artifact writer root remain unchanged. The new
+artifact body fixture root is for future body-boundary validation and is not a
+replacement for these artifact writer fixtures.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy
