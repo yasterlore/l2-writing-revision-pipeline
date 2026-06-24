@@ -321,3 +321,15 @@ It must not copy raw logs, full job output, request bodies, pointer bodies,
 artifact body payloads, generated policy bodies, manifest bodies, raw rows,
 logits, private paths, raw learner text, real participant data, or
 performance metric bodies.
+
+## 19. Step349 Remote Run Status Marker Status
+
+Step349 creates the public-safe remote/manual Release Quality status marker
+for this safe-metadata target:
+
+[Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md).
+
+The marker records that the target was included in release-quality and passed
+remotely. It does not change this Makefile target, does not write artifact
+files, does not generate manifest bodies, does not connect artifact writer
+CLI, does not use real data, and does not compute metrics.

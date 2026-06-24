@@ -376,3 +376,16 @@ Makefile, does not change Python code or tests, does not change fixture JSON,
 does not connect artifact writer CLI, does not write artifact files, does not
 generate manifest bodies, does not use real data, does not evaluate
 performance, and does not compute metrics.
+
+## 19. Step349 Remote Run Status Marker Status
+
+Step349 creates the public-safe remote/manual Release Quality status marker
+for the safe-metadata wrapper integration:
+
+[Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md).
+
+The marker records pass-only/count-only metadata and safety review statements
+only. It does not copy raw logs, full job output, request bodies, pointer
+bodies, expected result bodies, artifact body payloads, generated policy
+bodies, manifest bodies, raw rows, logits, private paths, raw learner text,
+real participant data, or performance metric bodies.

@@ -466,3 +466,15 @@ keeps the future marker public-safe, pass-only, and count-only, and does not
 copy raw logs, request bodies, pointer bodies, artifact body payloads,
 generated policy bodies, manifest bodies, raw rows, logits, private paths,
 raw learner text, real participant data, or performance metric bodies.
+
+## 29. Step349 Safe-Metadata Remote Run Status Marker Status
+
+Step349 creates the public-safe remote/manual Release Quality status marker
+for the safe-metadata target:
+
+[Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md).
+
+The marker records pass-only/count-only metadata only. It does not change
+Makefile, workflow YAML, wrapper scripts, Python code or tests, fixture JSON,
+artifact writer CLI behavior, file writing, manifest generation, real-data
+use, or metrics.

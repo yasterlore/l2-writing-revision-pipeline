@@ -2321,6 +2321,20 @@ bodies, artifact body payloads, generated policy bodies, manifest bodies,
 JSON body examples, raw rows, logits, private paths, raw learner text, real
 participant data, or performance metric bodies.
 
+For Step349, review the public-safe
+[learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md).
+Confirm it records only safe metadata for the successful remote/manual
+Release Quality run that includes the safe-metadata artifact body generation
+CLI smoke. Confirm it does not change workflow YAML, change the wrapper,
+change Makefile, change Python code/tests, change fixture JSON, write
+artifact files, generate manifest bodies, connect artifact writer CLI,
+compute metrics, use real data, or claim production readiness. Confirm it
+does not include raw logs, full job output, copied log blocks, screenshots
+containing raw logs, request bodies, pointer bodies, expected bodies,
+artifact body payloads, generated policy bodies, manifest bodies, JSON body
+examples, raw rows, logits, private paths, raw learner text, real participant
+data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
