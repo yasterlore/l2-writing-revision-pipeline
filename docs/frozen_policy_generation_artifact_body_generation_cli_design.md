@@ -406,3 +406,15 @@ does not implement the Makefile target, does not add release-quality
 integration, does not change workflow YAML, does not change Python code or
 tests, does not change fixture JSON, does not write files, does not generate
 manifest bodies, does not use real data, and does not compute metrics.
+
+## 22. Step339 Makefile Target Implementation Status
+
+Step339 implements the standalone default suppressed-mode Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation`
+
+The target is a thin wrapper around this CLI. It does not add a safe-metadata
+target, does not add release-quality integration, does not change workflow
+YAML, does not change Python code or tests, does not change fixture JSON, does
+not write artifact files, does not generate manifest bodies, does not connect
+artifact writer CLI, does not use real data, and does not compute metrics.

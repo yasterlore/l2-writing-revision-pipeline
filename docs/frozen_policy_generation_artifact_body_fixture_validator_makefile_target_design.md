@@ -418,6 +418,18 @@ This fixture validator target remains unchanged. The Step338 design does not
 implement the generation target, does not change release-quality, does not
 write files, does not use real data, and does not compute metrics.
 
+## 27. Step339 Artifact Body Generation Makefile Target Implementation Status
+
+Step339 implements the separate standalone default suppressed-mode generation
+target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation`
+
+The artifact body fixture validator Makefile target remains unchanged. The
+generation target is not added to release-quality in this step, does not add
+a safe-metadata target, does not write artifact files, does not generate
+manifest bodies, does not use real data, and does not compute metrics.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)

@@ -668,6 +668,14 @@ written, no artifact body is produced, and no performance metric is computed.
   smoke target for the generation CLI. It does not implement the Makefile
   target, change release-quality, change workflow YAML, write files, generate
   manifests, compute metrics, use real data, or claim production readiness.
+- Step339: implemented the standalone artifact body generation Makefile
+  target `check-learner-state-frozen-policy-generation-artifact-body-generation`.
+  The target runs the generation CLI in default suppressed mode on one
+  synthetic request/pointer pair and emits only a body-free safe summary. It
+  is not added to release-quality in this step and does not change workflow
+  YAML, Python code/tests, fixture JSON, artifact writer CLI behavior,
+  safe-metadata target coverage, file writing, manifest generation, metrics,
+  real-data use, or production readiness claims.
 
 ## Related Documents
 

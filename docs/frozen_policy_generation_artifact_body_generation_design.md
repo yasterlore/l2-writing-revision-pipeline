@@ -581,6 +581,19 @@ the Makefile target, change release-quality, change workflow YAML, change
 Python code or tests, change fixture JSON, write files, generate manifest
 bodies, use real data, or compute metrics.
 
+## 35. Step339 Artifact Body Generation Makefile Target Implementation Status
+
+Step339 implements the standalone Makefile target for the default
+suppressed-mode artifact body generation CLI smoke:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation`
+
+The target remains outside release-quality for this step. It does not add a
+safe-metadata target, does not change workflow YAML, does not change Python
+code or tests, does not change fixture JSON, does not connect artifact writer
+CLI, does not write artifact files, does not generate manifest bodies, does
+not use real data, and does not compute metrics.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)

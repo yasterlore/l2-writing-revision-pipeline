@@ -2166,6 +2166,21 @@ bodies, expected bodies, artifact body payloads, raw logs, raw rows, logits,
 private paths, raw learner text, real participant data, or performance metric
 bodies.
 
+For Step339, review the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation`.
+Confirm it is added to `.PHONY`, appears in `make help`, runs the artifact
+body generation CLI in default suppressed mode on one synthetic request/pointer
+pair, emits only a body-free safe summary, and exits 0. Confirm it does not
+add a safe-metadata target, does not change release-quality, does not change
+workflow YAML, does not change Python code or tests, does not modify fixture
+JSON, does not connect artifact writer CLI, does not write artifact files,
+does not generate manifest bodies, does not compute metrics, does not use
+real data, and does not claim production readiness. Confirm target output
+does not include command body examples, JSON body examples, request bodies,
+pointer bodies, expected bodies, artifact body payloads, generated policy
+bodies, manifest bodies, raw logs, raw rows, logits, private paths, raw
+learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
