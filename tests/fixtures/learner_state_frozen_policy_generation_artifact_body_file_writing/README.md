@@ -189,6 +189,18 @@ metadata for this fixture root. It should not copy raw logs, fixture bodies,
 artifact body payloads, manifest bodies, raw rows, logits, private paths,
 raw learner text, real data, or performance metric bodies.
 
+Step362 creates that public-safe remote/manual Release Quality status marker:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md`
+
+The marker records that this fixture root's no-write validator target passed
+through Release Quality. It records only run identity metadata, wrapper
+inclusion metadata, pass-only/count-only summaries, and safety review
+statements. It does not change fixture JSON, write artifact body files,
+create temp output directories, implement `--artifact-body-out`, run
+isolated temp write validation, write manifests, use real data, or compute
+metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

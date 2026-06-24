@@ -373,3 +373,17 @@ change the release-quality wrapper, change Makefile, change Python
 code/tests, change fixture JSON, implement file writing, implement
 `--artifact-body-out`, run isolated temp write validation, write manifests,
 use real data, or compute metrics.
+
+## 19. Step362 Remote Run Status Marker Status
+
+Step362 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md).
+
+The marker records that the no-write file writing fixture validation target
+was included in Release Quality and passed in a remote/manual run. It records
+only run identity metadata, wrapper inclusion metadata, pass-only/count-only
+summaries, and safety review statements. It does not copy raw logs, full job
+output, fixture bodies, artifact body payloads, manifest bodies, raw rows,
+logits, private paths, raw learner text, real participant data, or
+performance metric bodies.

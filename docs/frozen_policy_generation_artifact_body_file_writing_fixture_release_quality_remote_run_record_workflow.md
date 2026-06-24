@@ -412,14 +412,15 @@ implementation exists and no artifact files are written by this target.
 
 ## 19. Next Recommended Steps
 
-- Run a remote/manual Release Quality workflow.
-- Create the future status marker after a successful run.
+- Use the Step362 status marker as the public-safe run record for the
+  successful remote/manual Release Quality workflow.
 - Keep artifact body file writing implementation separate.
 - Keep manifest writer work separate.
 - Keep artifact writer CLI integration separate.
 
 ## 20. Related Documents
 
+- [Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
@@ -432,3 +433,15 @@ implementation exists and no artifact files are written by this target.
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Status marker README](status/README.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 21. Step362 Remote Run Status Marker Status
+
+Step362 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md).
+
+The marker records only run identity metadata, wrapper inclusion metadata,
+pass-only/count-only summaries, safety review statements, interpretation,
+and non-goals. It does not copy raw logs, full job output, fixture bodies,
+artifact body payloads, manifest bodies, raw rows, logits, private paths,
+raw learner text, real participant data, or performance metric bodies.

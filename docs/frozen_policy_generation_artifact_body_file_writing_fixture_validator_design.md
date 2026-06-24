@@ -435,3 +435,15 @@ or run the remote workflow.
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 27. Step362 Remote Run Status Marker Status
+
+Step362 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md).
+
+The marker records pass-only/count-only evidence that the no-write fixture
+validator target was included in Release Quality and passed remotely. It does
+not implement file writing, run isolated temp write validation, add
+`--artifact-body-out`, generate manifests, use real data, compute metrics,
+or claim production readiness.

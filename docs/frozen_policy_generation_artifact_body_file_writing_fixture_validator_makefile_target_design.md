@@ -281,6 +281,18 @@ The wrapper label is:
 
 `release_quality_check: learner-state frozen policy generation artifact body file writing fixture validation`
 
+## 19. Step362 Remote Run Status Marker Status
+
+Step362 creates the public-safe remote/manual Release Quality status marker
+for this target after wrapper integration:
+
+[Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md).
+
+The marker records only pass-only/count-only metadata for the no-write
+fixture validator target. It does not prove file writing correctness, does
+not write artifact files, does not create manifest files, and does not copy
+fixture bodies or artifact body payloads into docs.
+
 The wrapper command is:
 
 `make check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures`

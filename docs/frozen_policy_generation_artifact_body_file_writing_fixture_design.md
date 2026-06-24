@@ -398,3 +398,15 @@ the status marker and does not change this fixture root.
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
 - [Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 28. Step362 Remote Run Status Marker Status
+
+Step362 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md).
+
+The marker records that the fixture root's no-write validator target passed
+through Release Quality. It records only metadata and counts; it does not
+copy fixture bodies, implement file writing, write artifact files, write
+manifest files, use real data, compute metrics, or claim production
+readiness.
