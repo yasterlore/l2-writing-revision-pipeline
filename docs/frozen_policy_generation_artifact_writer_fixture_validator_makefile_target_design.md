@@ -351,7 +351,7 @@ Recommended next steps:
    Complete.
 2. Step309: release-quality integration design. Complete:
    [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md).
-3. Step310: wrapper integration.
+3. Step310: wrapper integration. Complete.
 4. Step311: remote status marker workflow design.
 
 ## 18. Step308 Makefile Target Implementation Status
@@ -395,6 +395,19 @@ YAML, Makefile target behavior, Python code, Python tests, fixture JSON,
 artifact writer implementation, artifact body generation, generated policy
 body generation, manifest body generation, file writing, metric computation,
 performance evaluation, real-data use, or production readiness.
+
+## 20. Step310 Wrapper Integration Status
+
+Step310 adds the standalone artifact writer fixture validator target to
+`scripts/check_release_quality.sh` with the release-quality label designed in
+Step309. The section runs after generator scaffold runtime smoke and before
+config and scoring smoke checks.
+
+Step310 does not change GitHub Actions workflow YAML, Makefile target behavior,
+Python code, Python tests, fixture JSON, artifact writer implementation,
+artifact body generation, generated policy body generation, manifest body
+generation, file writing, metric computation, performance evaluation,
+real-data use, or production readiness.
 
 ## Related Documents
 

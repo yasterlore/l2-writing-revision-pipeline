@@ -198,7 +198,7 @@ performance evidence.
 ## 10. Makefile / Workflow Status
 
 - The Makefile target already exists.
-- The release-quality wrapper is not changed by this document.
+- The release-quality wrapper now includes this target as of Step310.
 - GitHub Actions workflow YAML is not changed by this document.
 - If the workflow already calls the release-quality wrapper, future integration
   should only need the wrapper change when possible.
@@ -270,7 +270,6 @@ It must not use:
 
 This document does not:
 
-- integrate the release-quality wrapper
 - change workflow YAML
 - change the Makefile
 - change Python code or tests
@@ -312,9 +311,36 @@ pass-only and count-only metadata.
 
 Recommended next steps:
 
-1. Step310: release-quality wrapper integration.
-2. Step311: remote/manual run record workflow design.
-3. Step312: remote/manual run status marker.
+1. Step311: remote/manual run record workflow design.
+2. Step312: remote/manual run status marker.
+3. Keep artifact writer implementation separate.
+
+## 17. Step310 Wrapper Integration Status
+
+Step310 implements the minimal release-quality wrapper integration in:
+
+`scripts/check_release_quality.sh`
+
+The wrapper now runs:
+
+```bash
+make check-learner-state-frozen-policy-generation-artifact-writer-fixtures
+```
+
+with the label:
+
+```text
+release_quality_check: learner-state frozen policy generation artifact writer fixture validation
+```
+
+The section is placed immediately after learner-state frozen policy generation
+generator scaffold runtime smoke and before config and scoring smoke checks.
+
+Step310 does not change GitHub Actions workflow YAML, Makefile target behavior,
+Python code, Python tests, fixture JSON, artifact writer implementation,
+artifact body generation, generated policy body generation, manifest body
+generation, artifact file writing, manifest file writing, metric computation,
+performance evaluation, real-data use, or production readiness.
 
 ## Related Documents
 
