@@ -711,10 +711,9 @@ works, that does not prove policy quality or model performance.
 
 Recommended next steps:
 
-1. Step304: artifact writer fixture validator implementation.
-2. Step305: artifact writer fixture validator CLI design.
-3. Step306: artifact writer fixture validator CLI implementation.
-4. Step307: artifact writer fixture validator Makefile target design.
+1. Step305: artifact writer fixture validator CLI design.
+2. Step306: artifact writer fixture validator CLI implementation.
+3. Step307: artifact writer fixture validator Makefile target design.
 5. Later: artifact writer skeleton design, writer CLI design, Makefile target
    design, release-quality integration design, and remote status marker
    workflow.
@@ -749,6 +748,22 @@ Step303 designs the future validator for the artifact writer fixtures:
 The writer remains unimplemented. No validator code is added, no artifact body
 or generated policy body is generated, no manifest body is generated, and no
 artifact or manifest file is written.
+
+## 28. Step304 Artifact Writer Fixture Validator Implementation Status
+
+Step304 implements the metadata-only artifact writer fixture validator:
+
+`python/learner_state/frozen_policy_generation_artifact_writer_fixture_validation.py`
+
+It also adds focused tests:
+
+`python/learner_state/tests/test_frozen_policy_generation_artifact_writer_fixture_validation.py`
+
+The validator checks the fixture contract only. It does not run an artifact
+writer, expose a CLI, add a Makefile target, integrate release-quality, change
+workflow YAML, generate artifact bodies, generate generated policy bodies,
+generate manifest bodies, write artifact files, write manifest files, compute
+metrics, evaluate performance, use real data, or claim production readiness.
 
 ## Related Documents
 
