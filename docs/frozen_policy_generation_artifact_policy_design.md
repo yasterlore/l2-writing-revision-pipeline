@@ -474,6 +474,12 @@ The artifact policy remains unchanged: future wrapper logs should stay
 metadata-only and should not include artifact bodies, generated policy bodies,
 manifest bodies, raw rows, logits, private paths, or performance evidence.
 
+Step297 implements that wrapper integration for the generator scaffold runtime
+smoke. The artifact policy remains unchanged: the release-quality wrapper now
+runs the valid synthetic metadata-only smoke, but it still writes no artifacts,
+emits no artifact body, emits no generated policy body, adds no manifest
+writer, and provides no performance evidence.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)

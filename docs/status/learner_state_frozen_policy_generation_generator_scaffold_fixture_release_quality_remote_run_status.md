@@ -255,6 +255,10 @@ This marker does not prove:
   design:
   [Frozen policy generation generator scaffold runtime release-quality integration design](../frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md).
   Wrapper implementation and runtime remote status recording remain separate.
+- Step297 implemented the generator scaffold runtime release-quality wrapper
+  integration locally. Runtime remote status recording remains separate, and
+  artifact writing, artifact bodies, generated policy bodies, metrics, and
+  real-data readiness remain out of scope.
 - Keep future artifact writing design separate.
 - Keep future calibration scaffold work separate.
 - Treat real-data readiness as future private/institution-approved review only.
@@ -283,3 +287,6 @@ This marker does not prove:
 - Step296: linked the generator scaffold runtime release-quality integration
   design; wrapper implementation, runtime remote status recording, artifact
   writing, and artifact bodies remain separate.
+- Step297: noted local generator scaffold runtime wrapper integration;
+  runtime remote status recording, artifact writing, generated policy bodies,
+  and artifact bodies remain separate.

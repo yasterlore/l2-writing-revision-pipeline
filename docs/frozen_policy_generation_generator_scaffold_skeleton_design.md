@@ -818,6 +818,14 @@ The skeleton remains unchanged. The design does not add wrapper integration,
 workflow changes, artifact writing, artifact bodies, generated policy bodies,
 metrics, or real-data readiness claims.
 
+## 29. Step297 Release-Quality Wrapper Integration Status
+
+Step297 adds the standalone generator scaffold runtime smoke target to the
+release-quality wrapper. The skeleton implementation remains unchanged: it
+still returns metadata-only results, writes no files, emits no artifact bodies,
+emits no generated policy bodies, and makes no performance or real-data
+readiness claim.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)

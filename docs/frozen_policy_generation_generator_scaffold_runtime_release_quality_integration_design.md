@@ -31,7 +31,10 @@ PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_generator_sc
 - The generator scaffold fixture validator target is already in
   release-quality:
   `make check-learner-state-frozen-policy-generation-generator-scaffold-fixtures`.
-- The generator scaffold runtime target is not in release-quality yet.
+- At Step296 design time, the generator scaffold runtime target was not in
+  release-quality yet.
+- Step297 adds the generator scaffold runtime smoke target to the
+  release-quality wrapper.
 - Artifact writer implementation does not exist.
 - Artifact body generation and generated policy body generation do not exist.
 
@@ -63,6 +66,39 @@ Current standalone runtime target behavior is metadata-only:
 - no target-specific tmp output
 - no artifact writing
 - no performance evidence
+
+## 2.1 Step297 Wrapper Integration Status
+
+Step297 implements this design by adding the standalone runtime smoke target
+to `scripts/check_release_quality.sh` immediately after generator scaffold
+fixture validation and before config/scoring smoke checks.
+
+The added wrapper section is:
+
+```text
+release_quality_check: learner-state frozen policy generation generator scaffold runtime smoke
+```
+
+It calls:
+
+```bash
+make check-learner-state-frozen-policy-generation-generator-scaffold-runtime
+```
+
+The implementation is intentionally minimal. It does not change GitHub Actions
+workflows, the Makefile, Python code, Python tests, fixtures, artifact file
+writing, artifact bodies, generated policy bodies, artifact manifest writing,
+metrics, performance evaluation, or real-data readiness status.
+
+The wrapper now checks both generator scaffold layers:
+
+- generator scaffold fixture validation checks the 18-case fixture contract
+- generator scaffold runtime smoke runs one valid synthetic request/pointer
+  pair through the metadata-only CLI
+
+This remains a safety and contract check. It is not generator quality evidence,
+artifact generation evidence, performance evidence, or production readiness
+evidence.
 
 ## 3. Proposed Wrapper Insertion Point
 

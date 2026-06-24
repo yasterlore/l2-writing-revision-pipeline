@@ -546,6 +546,17 @@ The design keeps wrapper implementation, workflow changes, Python changes,
 test changes, fixture changes, artifact writing, generated policy bodies,
 artifact bodies, metrics, and real-data readiness out of scope.
 
+## 25. Step297 Release-Quality Wrapper Integration Status
+
+Step297 adds the generator scaffold runtime smoke target to the
+release-quality wrapper:
+`make check-learner-state-frozen-policy-generation-generator-scaffold-runtime`.
+
+The CLI remains a thin metadata-only wrapper over the skeleton APIs. The
+release-quality integration does not add output-file options, artifact writing,
+artifact bodies, generated policy bodies, manifest writing, metrics, or
+real-data readiness claims.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)

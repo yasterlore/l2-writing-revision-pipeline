@@ -487,6 +487,9 @@ written, no artifact body is produced, and no performance metric is computed.
 - Step296: linked the generator scaffold runtime release-quality integration
   design; wrapper implementation, remote status recording, artifact writing,
   and artifact body generation remain separate.
+- Step297: recorded generator scaffold runtime release-quality wrapper
+  integration; remote status recording, artifact writing, generated policy
+  bodies, and artifact body generation remain separate.
 
 ## Related Documents
 
