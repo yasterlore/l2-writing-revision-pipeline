@@ -365,7 +365,7 @@ Recommended next steps:
 - Step295: generator scaffold CLI Makefile target implementation
 - Step296: generator scaffold runtime release-quality integration design
 - Step297: generator scaffold runtime wrapper integration
-- Step298: generator scaffold runtime remote status marker design or creation
+- Step298: generator scaffold runtime remote run record workflow design
 
 Keep artifact writing, generated policy bodies, calibration work, performance
 evaluation, and real-data readiness separate.
@@ -433,8 +433,17 @@ GitHub Actions workflows, Python code, tests, fixtures, artifact writing,
 artifact bodies, generated policy bodies, metrics, or real-data readiness
 status.
 
+## 21. Step298 Remote Run Record Workflow Design Status
+
+Step298 designs the future public-safe remote/manual Release Quality run record
+workflow for this runtime smoke:
+[Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md).
+
+The workflow design is docs-only and does not create the future status marker.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)

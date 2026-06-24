@@ -259,6 +259,12 @@ This marker does not prove:
   integration locally. Runtime remote status recording remains separate, and
   artifact writing, artifact bodies, generated policy bodies, metrics, and
   real-data readiness remain out of scope.
+- Step298 created the generator scaffold runtime remote/manual run record
+  workflow design:
+  [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](../frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md).
+  The planned runtime status marker path is
+  `docs/status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md`;
+  the marker is not created yet.
 - Keep future artifact writing design separate.
 - Keep future calibration scaffold work separate.
 - Treat real-data readiness as future private/institution-approved review only.
@@ -290,3 +296,6 @@ This marker does not prove:
 - Step297: noted local generator scaffold runtime wrapper integration;
   runtime remote status recording, artifact writing, generated policy bodies,
   and artifact bodies remain separate.
+- Step298: linked the generator scaffold runtime remote/manual run record
+  workflow design and future status marker path; marker creation, artifact
+  writing, generated policy bodies, and artifact bodies remain separate.

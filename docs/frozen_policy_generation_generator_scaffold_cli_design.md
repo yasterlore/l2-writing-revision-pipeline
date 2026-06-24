@@ -557,8 +557,17 @@ release-quality integration does not add output-file options, artifact writing,
 artifact bodies, generated policy bodies, manifest writing, metrics, or
 real-data readiness claims.
 
+## 26. Step298 Remote Run Record Workflow Design Status
+
+Step298 designs the future public-safe remote/manual Release Quality run record
+workflow for the generator scaffold runtime smoke:
+[Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md).
+
+The CLI remains unchanged and still emits only safe metadata summaries.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
