@@ -567,3 +567,18 @@ not change workflow YAML, does not change the wrapper, does not change
 Makefile, does not change Python code or tests, does not change fixture JSON,
 does not write artifact files, does not generate manifest bodies, does not
 use real data, and does not compute metrics.
+
+## 27. Step345 Safe-Metadata Makefile Target Implementation Status
+
+Step345 implements the standalone safe-metadata Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata`
+
+This remote-run record workflow remains scoped to the default suppressed-mode
+generation CLI smoke in release-quality. The safe-metadata target is not
+included in release-quality and is not covered by the existing remote status
+marker. Step345 does not run a remote workflow, does not create a status
+marker, does not change workflow YAML, does not change the wrapper, does not
+change Python code or tests, does not change fixture JSON, does not write
+artifact files, does not generate manifest bodies, does not use real data,
+and does not compute metrics.

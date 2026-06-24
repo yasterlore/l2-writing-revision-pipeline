@@ -712,6 +712,13 @@ written, no artifact body is produced, and no performance metric is computed.
   workflow YAML, change Makefile, change Python code/tests, change fixture
   JSON, connect artifact writer CLI, write artifact files, generate manifest
   bodies, compute metrics, use real data, or claim production readiness.
+- Step345: implemented the standalone safe-metadata Makefile target for the
+  artifact body generation CLI. The target runs one synthetic metadata-only
+  safe-metadata request/pointer smoke and emits only a body-free safe summary.
+  It is not added to release-quality and does not change workflow YAML,
+  Python code/tests, fixture JSON, artifact writer CLI behavior, artifact
+  file writing, manifest generation, metrics, real-data use, or production
+  readiness claims.
 
 ## Related Documents
 

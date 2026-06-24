@@ -284,8 +284,10 @@ evidence, and not production readiness evidence.
 ## Next Actions
 
 - Commit this status marker after local checks.
-- Review the future safe-metadata target design separately:
+- Review the standalone safe-metadata target implementation separately:
   [Frozen policy generation artifact body safe-metadata Makefile target design](../frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md).
+- Keep any safe-metadata release-quality integration as a future separate
+  design and wrapper step.
 - Keep future artifact body file writing separate.
 - Keep future manifest writer design separate.
 - Keep future artifact writer CLI integration separate.
@@ -304,6 +306,10 @@ evidence, and not production readiness evidence.
 - Step344: added a link to the docs-only safe-metadata Makefile target design.
   The status marker remains scoped to the default suppressed-mode remote
   Release Quality smoke and does not claim safe-metadata release-quality
+  coverage.
+- Step345: noted the standalone safe-metadata Makefile target implementation.
+  The status marker remains scoped to the default suppressed-mode remote
+  Release Quality smoke and still does not claim safe-metadata release-quality
   coverage.
 
 ## Related Documents

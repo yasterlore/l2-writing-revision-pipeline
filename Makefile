@@ -24,6 +24,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-artifact-writer-runtime
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation
+.PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -57,6 +58,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-artifact-writer-runtime  Run frozen policy generation artifact writer runtime smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-fixtures  Validate frozen policy generation artifact body fixtures"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation  Run artifact body generation CLI smoke"
+	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata  Run artifact body generation safe-metadata CLI smoke"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -145,6 +147,9 @@ check-learner-state-frozen-policy-generation-artifact-body-fixtures:
 
 check-learner-state-frozen-policy-generation-artifact-body-generation:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body --request tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/minimal_suppressed_metadata_only_body/artifact_body_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/minimal_suppressed_metadata_only_body/artifact_writer_result_pointer.json
+
+check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body --request tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/safe_metadata_body_summary/artifact_body_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/safe_metadata_body_summary/artifact_writer_result_pointer.json --mode safe-metadata
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality

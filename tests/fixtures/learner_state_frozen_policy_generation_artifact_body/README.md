@@ -360,3 +360,16 @@ body-free output. It does not implement the target, does not add
 release-quality integration, does not write artifact files, does not generate
 manifest bodies, does not connect artifact writer CLI, does not use real
 data, and does not compute metrics.
+
+## Safe-Metadata Makefile Target Implementation
+
+Step345 implements the standalone safe-metadata Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata`
+
+The target consumes this fixture root's existing synthetic safe-metadata
+request/pointer metadata and emits only a body-free safe summary. Fixture JSON
+files remain unchanged. The target is not added to release-quality in this
+step, does not write artifact files, does not generate manifest bodies, does
+not connect artifact writer CLI, does not use real data, and does not compute
+metrics.

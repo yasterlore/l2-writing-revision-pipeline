@@ -412,3 +412,15 @@ is not added to release-quality. Step344 does not change the wrapper,
 workflow YAML, Makefile, Python code or tests, fixture JSON, artifact writer
 CLI behavior, artifact file writing, manifest generation, real-data use, or
 metrics.
+
+## 22. Step345 Safe-Metadata Makefile Target Implementation Status
+
+Step345 implements the standalone safe-metadata Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata`
+
+This release-quality integration remains scoped to the default
+suppressed-mode target. The new safe-metadata target is not added to
+release-quality in Step345. Step345 does not change the wrapper, workflow
+YAML, Python code or tests, fixture JSON, artifact writer CLI behavior,
+artifact file writing, manifest generation, real-data use, or metrics.
