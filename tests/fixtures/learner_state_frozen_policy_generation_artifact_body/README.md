@@ -132,3 +132,15 @@ The future validator design is documented in:
 That design is docs-only. It does not implement validator code, validator
 CLI, Makefile targets, release-quality integration, artifact body generation,
 file writing, metrics, real-data use, or production readiness claims.
+
+## Validator Implementation
+
+Step326 implements the metadata-only fixture validator in:
+
+`python/learner_state/frozen_policy_generation_artifact_body_fixture_validation.py`
+
+The validator checks this fixture root without generating artifact bodies,
+writing artifact files, writing manifest files, changing fixture JSON,
+computing metrics, using real data, or claiming production readiness.
+It emits safe metadata, counts, reason code names, schema names, and flags
+only.

@@ -1982,6 +1982,20 @@ artifact body payloads, artifact body JSON examples, generated policy bodies,
 manifest bodies, raw rows, logits/probability dumps, private paths, raw
 learner text, real participant data, or performance metric bodies.
 
+For Step326, review the artifact body fixture validator implementation in
+`python/learner_state/frozen_policy_generation_artifact_body_fixture_validation.py`
+and its focused unit tests. Confirm it validates the 18-case synthetic fixture
+root with safe metadata-only results, reason code names, schema names, flags,
+and count summaries only. Confirm it does not implement validator CLI,
+Makefile targets, release-quality integration, artifact body generation,
+generated policy body generation, manifest body generation, file writing,
+fixture JSON changes, metrics, real-data use, or production readiness claims.
+Confirm docs and output summaries do not include raw logs, full job output,
+request bodies, pointer bodies, expected result bodies, artifact body
+payloads, artifact body JSON examples, generated policy bodies, manifest
+bodies, raw rows, logits/probability dumps, private paths, raw learner text,
+real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
