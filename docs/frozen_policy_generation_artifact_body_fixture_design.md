@@ -601,8 +601,21 @@ This does not write artifact files, generate manifest bodies, write manifests,
 change Makefile targets, change release-quality, change workflow YAML, compute
 metrics, use real data, or claim production readiness.
 
+## 34. Step336 Artifact Body Generation CLI Design Status
+
+Step336 designs a future CLI for calling the artifact body generation API with
+safe body-free summaries:
+
+[Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md).
+
+The fixture root remains unchanged. The design does not implement a CLI,
+modify fixture JSON, write artifact files, generate manifest bodies, change
+release-quality, compute metrics, use real data, or claim production
+readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)

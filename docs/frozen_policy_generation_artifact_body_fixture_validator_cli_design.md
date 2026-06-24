@@ -498,8 +498,19 @@ validator CLI remains unchanged and continues to emit body-free summaries for
 fixture validation. No CLI option is added for artifact body generation in this
 step, and no artifact body payload is printed by the validator CLI.
 
+## 29. Step336 Artifact Body Generation CLI Design Status
+
+Step336 designs a separate future CLI for artifact body generation:
+
+[Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md).
+
+The validator CLI remains unchanged and remains the fixture-validation
+interface. The generation CLI design does not implement CLI code, add Makefile
+targets, change release-quality, or print artifact body payloads.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)

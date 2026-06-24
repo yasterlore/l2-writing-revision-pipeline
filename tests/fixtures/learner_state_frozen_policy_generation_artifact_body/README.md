@@ -245,3 +245,14 @@ remain unchanged and continue to define the validation boundary for generated
 body safety. The implementation does not write artifact files, generate
 manifest bodies, write manifests, change release-quality, use real data,
 compute metrics, or claim production readiness.
+
+## Future Artifact Body Generation CLI Design
+
+Step336 designs a future CLI for calling the artifact body generation API:
+
+`docs/frozen_policy_generation_artifact_body_generation_cli_design.md`
+
+The CLI design keeps stdout and stderr body-free and summary-only. It does not
+implement the CLI, modify fixture JSON, write artifact files, generate
+manifest bodies, change release-quality, compute metrics, use real data, or
+claim production readiness.

@@ -552,8 +552,16 @@ fixture contract. The generator implementation is separate from the validator:
 it does not modify fixture JSON, does not write artifact files, does not
 generate manifest bodies, and does not add release-quality behavior.
 
+## 36. Step336 Artifact Body Generation CLI Design Status
+
+Step336 designs a future artifact body generation CLI. The fixture validator
+remains separate: it continues to validate fixture contracts and does not
+generate bodies. The generation CLI design does not change this validator,
+does not change fixture JSON, and does not add release-quality behavior.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)

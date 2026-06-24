@@ -2123,6 +2123,20 @@ artifact files, generate manifest bodies, write manifests, change workflows,
 change release-quality, change Makefile targets, modify fixture JSON, compute
 metrics, use real data, or claim production readiness.
 
+For Step336, review the docs-only
+[frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md).
+Confirm it defines the future entrypoint, arguments, default suppressed mode,
+safe metadata mode, human and JSON summary-only output, exit codes, input
+validation, no-body-leakage tests, and future Makefile/release-quality
+staging. Confirm it does not implement a CLI, connect artifact writer CLI,
+add Makefile targets, change release-quality, change workflow YAML, modify
+fixture JSON, write artifact files, generate manifest bodies, write manifests,
+compute metrics, use real data, or claim production readiness. Confirm docs
+do not include command output examples, JSON output examples, request bodies,
+pointer bodies, expected bodies, artifact body payloads, raw logs, raw rows,
+logits, private paths, raw learner text, real participant data, or performance
+metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -393,8 +393,16 @@ validates fixtures only; it does not generate artifact bodies, write files,
 change release-quality, compute metrics, use real data, or claim production
 readiness.
 
+## 24. Step336 Artifact Body Generation CLI Design Status
+
+Step336 designs a future generation CLI. The existing fixture Makefile target
+remains unchanged and continues to validate fixtures only. No new Makefile
+target, release-quality integration, file writing, manifest generation,
+metrics, real-data use, or production readiness claim is added.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
