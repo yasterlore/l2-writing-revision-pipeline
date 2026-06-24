@@ -168,3 +168,15 @@ prints safe metadata-only summaries. It does not add Makefile targets,
 release-quality integration, workflow changes, fixture JSON changes, artifact
 body generation, file writing, metrics, real-data use, or production
 readiness claims.
+
+## Future Validator Makefile Target Design
+
+Step329 designs the future standalone Makefile target for this validator CLI:
+
+`docs/frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md`
+
+That design keeps the target synthetic-only, metadata-only, and no-oracle. It
+does not implement the Makefile target, integrate release-quality, change
+workflow YAML, change Python code or tests, change fixture JSON, implement
+artifact body generation, write files, compute metrics, use real data, or
+claim production readiness.

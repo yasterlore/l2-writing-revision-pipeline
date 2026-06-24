@@ -2025,6 +2025,21 @@ pointer bodies, expected result bodies, artifact body payloads, generated
 policy bodies, manifest bodies, raw rows, logits/probability dumps, private
 paths, raw learner text, real participant data, or performance metric bodies.
 
+For Step329, review the docs-only
+[frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md).
+Confirm it defines the future target name, command, help text, expected safe
+behavior, exit-code interpretation, output/logging safety, relation to
+existing targets, future implementation notes, target tests, and
+release-quality staging. Confirm it does not implement the Makefile target,
+change release-quality, change workflow YAML, change Python code or tests,
+change fixture JSON, implement artifact body generation, generated policy
+body generation, manifest body generation, file writing, metrics, real-data
+use, or production readiness claims. Confirm docs do not include raw logs,
+full job output, request bodies, pointer bodies, expected result bodies,
+artifact body payloads, artifact body JSON examples, generated policy bodies,
+manifest bodies, raw rows, logits/probability dumps, private paths, raw
+learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

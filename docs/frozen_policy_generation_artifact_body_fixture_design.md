@@ -519,8 +519,22 @@ It does not add a Makefile target, integrate release-quality, implement
 artifact body generation, generate bodies, write files, change fixture JSON,
 compute metrics, use real data, or claim production readiness.
 
+## 27. Step329 Validator Makefile Target Design Status
+
+Step329 designs the future Makefile target for the artifact body fixture
+validator CLI:
+
+[Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md).
+
+The target design keeps this fixture root synthetic-only, metadata-only, and
+no-oracle. It does not implement the Makefile target, integrate
+release-quality, change workflow YAML, change Python code or tests, change
+fixture JSON, implement artifact body generation, write files, compute
+metrics, use real data, or claim production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)

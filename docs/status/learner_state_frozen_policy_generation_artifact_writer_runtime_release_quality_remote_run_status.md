@@ -295,7 +295,8 @@ evidence, or production readiness evidence.
 - Keep future artifact body fixture validator CLI design separate:
   [Frozen policy generation artifact body fixture validator CLI design](../frozen_policy_generation_artifact_body_fixture_validator_cli_design.md).
 - Keep future artifact body fixture validator Makefile target design separate
-  from the Step328 CLI implementation.
+  from the Step328 CLI implementation:
+  [Frozen policy generation artifact body fixture validator Makefile target design](../frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md).
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -337,3 +338,7 @@ evidence, or production readiness evidence.
   status. The status marker remains pass-only/count-only and does not add
   Makefile targets, release-quality integration, body generation, file
   writing, metrics, real-data use, or production readiness claims.
+- Step329: linked the artifact body fixture validator Makefile target design.
+  The status marker remains pass-only/count-only and does not add Makefile
+  targets, release-quality integration, workflow changes, body generation,
+  file writing, metrics, real-data use, or production readiness claims.

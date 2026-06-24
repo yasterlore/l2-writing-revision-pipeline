@@ -292,10 +292,15 @@ Recommended future staging:
 - Step324 artifact body fixture creation
 - Step325 artifact body validator design
 - Step326 artifact body validator implementation
-- Step327 artifact body generation implementation
-- Step328 artifact body CLI design
-- Step329 artifact body CLI implementation
-- Step330 artifact body Makefile target design
+- Step327 artifact body fixture validator CLI design
+- Step328 artifact body fixture validator CLI implementation
+- Step329 artifact body fixture validator Makefile target design
+- Step330 artifact body fixture validator Makefile target implementation
+- Step331 artifact body fixture validator release-quality integration design
+- Step332 artifact body fixture validator wrapper integration
+- Step333 artifact body fixture validator remote/manual run record workflow
+- Step334 artifact body fixture validator status marker
+- Later artifact body generation implementation steps
 
 Each step should keep workflow changes, release-quality integration, file
 writing, manifest body generation, metrics, and real-data readiness separate
@@ -443,8 +448,22 @@ bodies, write files, add Makefile targets, change release-quality, change
 workflow YAML, change fixture JSON, compute metrics, use real data, or claim
 production readiness.
 
+## 25. Step329 Artifact Body Fixture Validator Makefile Target Design Status
+
+Step329 designs a future standalone Makefile target for the artifact body
+fixture validator CLI:
+
+[Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md).
+
+This remains separate from artifact body generation. It does not implement a
+Makefile target, integrate release-quality, change workflow YAML, change
+Python code or tests, change fixture JSON, generate artifact bodies, generate
+policy bodies, generate manifest bodies, write files, compute metrics, use
+real data, or claim production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)

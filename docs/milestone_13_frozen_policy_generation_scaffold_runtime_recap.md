@@ -616,9 +616,16 @@ written, no artifact body is produced, and no performance metric is computed.
   summaries for root and single-case validation. It does not add Makefile
   targets, release-quality integration, artifact body generation, file
   writing, metrics, real-data use, or production readiness claims.
+- Step329: linked the artifact body fixture validator Makefile target design.
+  The design names the future standalone target, command, help text, expected
+  safe output, exit-code behavior, output safety, future tests, and
+  release-quality staging. It does not implement the Makefile target, change
+  release-quality, change workflow YAML, generate bodies, write files,
+  compute metrics, use real data, or claim production readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
