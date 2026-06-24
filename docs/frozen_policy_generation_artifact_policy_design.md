@@ -552,8 +552,16 @@ does not integrate release-quality, does not execute an artifact writer, emits
 no artifact body, emits no generated policy body, emits no manifest body, and
 writes no files.
 
+Step309 designs future release-quality integration for that standalone target:
+[Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md).
+The artifact policy remains unchanged: the design is docs-only, does not
+change wrapper scripts, workflow YAML, Makefile behavior, Python code, tests,
+or fixture JSON, does not execute an artifact writer, emits no artifact body,
+emits no generated policy body, emits no manifest body, and writes no files.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)

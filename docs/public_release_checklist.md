@@ -1755,6 +1755,23 @@ added, artifact bodies, generated policy bodies, and manifest bodies are not
 generated, files are not written, metrics are not computed, performance is not
 evaluated, real data is not used, and real-data readiness is not claimed.
 
+For Step309, review the
+[frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md).
+Confirm it is docs-only, recommends placing
+`make check-learner-state-frozen-policy-generation-artifact-writer-fixtures`
+after generator scaffold runtime smoke and before config/scoring smoke checks,
+and records the proposed release-quality label, expected metadata-only output,
+failure interpretation, log safety policy, future testing plan, and future
+status-marker staging. Confirm it does not change the release-quality wrapper,
+workflow YAML, Makefile, Python code, Python tests, fixture JSON, artifact
+writer implementation, artifact body generation, generated policy body
+generation, manifest body generation, artifact writing, manifest writing,
+metric computation, performance evaluation, real-data use, or real-data
+readiness claims. Confirm docs do not include raw logs, full job output,
+copied log blocks, request bodies, pointer bodies, expected result bodies,
+policy bodies, artifact bodies, manifest bodies, raw rows, logits, private
+paths, raw learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

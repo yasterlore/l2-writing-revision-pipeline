@@ -829,8 +829,21 @@ release-quality, change workflow YAML, change Python code, change tests, change
 fixture JSON, execute an artifact writer, generate artifact bodies, generate
 generated policy bodies, generate manifest bodies, or write files.
 
+## 29. Step309 Release-Quality Integration Design Status
+
+Step309 designs future release-quality wrapper integration for the standalone
+artifact writer fixture validator target:
+[Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md).
+
+The validator remains unchanged and still validates fixture contracts only.
+Step309 does not modify wrapper scripts, workflow YAML, Makefile target
+behavior, Python code, tests, fixture JSON, artifact writer implementation,
+artifact body generation, generated policy body generation, manifest body
+generation, file writing, metrics, real-data use, or production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)

@@ -135,6 +135,16 @@ not execute an artifact writer, integrate release-quality, generate artifact
 bodies, generate generated policy bodies, generate manifest bodies, or write
 artifact/manifest files.
 
+Step309 designs future release-quality wrapper placement for this standalone
+target in:
+
+`docs/frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md`
+
+That design remains docs-only. It does not change fixture JSON, release-quality
+wrapper scripts, workflow YAML, Makefile behavior, Python code, Python tests,
+execute an artifact writer, generate artifact bodies, generate generated
+policy bodies, generate manifest bodies, or write artifact/manifest files.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy
