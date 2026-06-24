@@ -301,8 +301,9 @@ It should carry only safe metadata, counts, flags, and reason-code names.
 ## 18. Next Recommended Steps
 
 - Step356: CLI implementation.
-- Step357: Makefile target design or implementation.
-- Step358: release-quality integration design.
+- Step357: Makefile target design.
+- Step358: Makefile target implementation.
+- Step359: release-quality integration design.
 - Later: wrapper integration and remote/manual status marker.
 - Later: isolated temp write validation after artifact body file writing
   exists.
@@ -310,6 +311,7 @@ It should carry only safe metadata, counts, flags, and reason-code names.
 ## 19. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
+- [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
@@ -339,3 +341,17 @@ release-quality integration, does not implement file writing, does not add
 `--artifact-body-out`, does not run isolated temp write validation, does not
 write manifests, does not connect artifact writer CLI, does not use real
 data, and does not compute metrics.
+
+## 21. Step357 Makefile Target Design Status
+
+Step357 designs a future standalone Makefile target for this CLI:
+
+[Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md).
+
+The target design proposes a long explicit learner-state/frozen-policy
+generation target name, a default-root CLI command, safe help text, expected
+counts, output safety, Makefile placement notes, relation to existing
+targets, release-quality staging, and future tests. It does not implement a
+Makefile target, does not add release-quality integration, does not write
+files, does not create temp output directories, does not implement
+`--artifact-body-out`, does not use real data, and does not compute metrics.

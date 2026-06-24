@@ -135,6 +135,16 @@ artifact body payloads, does not write files, does not create temp output
 directories, does not add a Makefile target, does not change release-quality,
 does not use real data, and does not compute metrics.
 
+Step357 designs a future standalone Makefile target for that CLI:
+
+`docs/frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md`
+
+The design keeps the future target no-write and standalone. It does not
+implement the Makefile target, does not add release-quality integration, does
+not write artifact body files, does not create temp output directories, does
+not implement `--artifact-body-out`, does not use real data, and does not
+compute metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are
