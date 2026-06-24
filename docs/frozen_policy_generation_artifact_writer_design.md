@@ -905,8 +905,25 @@ release-quality, change workflow YAML, change fixture JSON, generate artifact
 bodies, generate generated policy bodies, generate manifest bodies, write
 files, compute metrics, use real data, or claim real-data readiness.
 
+## 40. Step316 Artifact Writer Runtime Makefile Target Design Status
+
+Step316 designs the future standalone Makefile runtime smoke target for the
+artifact writer CLI:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-runtime`
+
+The design is documented in:
+
+[Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md).
+
+Step316 does not implement the Makefile target, change release-quality, change
+workflow YAML, change Python code or tests, change fixture JSON, generate
+artifact bodies, generate generated policy bodies, generate manifest bodies,
+write files, compute metrics, use real data, or claim real-data readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)

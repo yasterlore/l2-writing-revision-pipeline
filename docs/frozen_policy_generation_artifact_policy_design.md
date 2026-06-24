@@ -593,8 +593,22 @@ The artifact policy remains unchanged: the design is docs-only, exposes no
 body output option, exposes no output file option, does not write artifact or
 manifest files, and does not claim performance or real-data readiness.
 
+Step315 implements that artifact writer CLI in
+`python/learner_state/frozen_policy_generation_artifact_writer.py`. The policy
+remains unchanged: the CLI emits safe metadata only and still does not expose
+artifact body output, manifest body output, output file writing, metrics, or
+real-data readiness claims.
+
+Step316 designs the future writer runtime Makefile target:
+[Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md).
+The policy remains unchanged: the design is docs-only and keeps the future
+target limited to one valid synthetic request/pointer pair, no artifact body,
+no manifest body, no artifact or manifest writing, no metrics, and no
+real-data readiness claim.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)

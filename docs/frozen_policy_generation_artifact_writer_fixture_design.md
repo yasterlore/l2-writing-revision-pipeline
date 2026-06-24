@@ -836,8 +836,18 @@ remain unchanged. The CLI runs one request/pointer pair and emits safe
 metadata-only output; it does not generate artifact bodies, generated policy
 bodies, manifest bodies, or write files.
 
+## 35. Step316 Runtime Makefile Target Design Status
+
+Step316 designs the future writer runtime Makefile target separately:
+[Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md).
+
+The fixture JSON files remain unchanged. The future runtime target should run
+one valid synthetic request/pointer pair and should not replace this 17-case
+fixture contract.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
