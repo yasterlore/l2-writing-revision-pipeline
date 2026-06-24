@@ -384,6 +384,12 @@ The release-quality wrapper remains unchanged. Runtime smoke integration
 should wait for CLI implementation, standalone Makefile target design, and
 no-body-leakage review.
 
+## 22. Step315 Writer CLI Implementation Status
+
+Step315 implements the writer CLI. The release-quality wrapper remains
+unchanged and still runs artifact writer fixture validation only. Writer
+runtime smoke integration remains future work.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)

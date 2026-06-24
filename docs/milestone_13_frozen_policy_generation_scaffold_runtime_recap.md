@@ -547,6 +547,9 @@ written, no artifact body is produced, and no performance metric is computed.
 - Step314: linked the artifact writer CLI design. The CLI is not implemented
   yet; body generation, manifest generation, file writing, metrics, and
   real-data readiness remain out of scope.
+- Step315: linked the artifact writer CLI implementation. The CLI remains
+  metadata-only and body-free; Makefile runtime smoke and release-quality
+  runtime integration remain future work.
 
 ## Related Documents
 

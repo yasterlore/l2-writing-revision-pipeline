@@ -829,6 +829,13 @@ The fixture JSON files remain unchanged. The design keeps the future writer
 CLI limited to one request/pointer pair, safe human or JSON metadata output,
 no artifact body output, no manifest body output, and no file writing.
 
+## 34. Step315 Writer CLI Implementation Status
+
+Step315 implements the writer CLI described in Step314. The fixture JSON files
+remain unchanged. The CLI runs one request/pointer pair and emits safe
+metadata-only output; it does not generate artifact bodies, generated policy
+bodies, manifest bodies, or write files.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)

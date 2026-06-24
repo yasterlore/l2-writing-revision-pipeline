@@ -1841,6 +1841,16 @@ bodies, generate generated policy bodies, generate manifest bodies, write
 artifact or manifest files, compute metrics, evaluate performance, use real
 data, or claim real-data readiness.
 
+For Step315, review `python/learner_state/frozen_policy_generation_artifact_writer.py`
+and `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli.py`.
+Confirm the CLI runs one request/pointer pair, emits safe human or JSON
+metadata, returns exit code 0 for safe pass and expected fail-closed results,
+and returns exit code 2 for usage or input loading errors. Confirm it does not
+add a Makefile target, change release-quality wrapper scripts, change workflow
+YAML, change fixture JSON, generate artifact bodies, generate generated policy
+bodies, generate manifest bodies, write artifact or manifest files, compute
+metrics, evaluate performance, use real data, or claim real-data readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

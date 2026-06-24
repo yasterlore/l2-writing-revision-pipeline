@@ -893,6 +893,18 @@ generate artifact bodies, generate generated policy bodies, generate manifest
 bodies, write files, compute metrics, use real data, or claim real-data
 readiness.
 
+## 39. Step315 Artifact Writer CLI Implementation Status
+
+Step315 implements the CLI entrypoint designed in Step314:
+
+`PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_writer`
+
+The CLI runs one synthetic request/pointer pair and emits only safe
+metadata-only human or JSON output. It does not add a Makefile target, change
+release-quality, change workflow YAML, change fixture JSON, generate artifact
+bodies, generate generated policy bodies, generate manifest bodies, write
+files, compute metrics, use real data, or claim real-data readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
