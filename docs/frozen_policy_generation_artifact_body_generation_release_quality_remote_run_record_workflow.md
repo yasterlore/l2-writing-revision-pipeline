@@ -596,3 +596,15 @@ run recording remains future work until wrapper integration and a successful
 remote/manual run exist. Step346 does not change workflow YAML, the wrapper,
 Makefile, Python code or tests, fixture JSON, artifact writer CLI behavior,
 artifact file writing, manifest generation, real-data use, or metrics.
+
+## 29. Step347 Safe-Metadata Wrapper Integration Status
+
+Step347 adds the safe-metadata target to the release-quality wrapper. This
+remote-run record workflow still records the earlier default suppressed-mode
+generation CLI smoke only.
+
+A future safe-metadata remote/manual run record workflow should be designed
+separately before adding a safe-metadata status marker. Step347 does not
+change workflow YAML, Makefile, Python code or tests, fixture JSON, artifact
+writer CLI behavior, artifact file writing, manifest generation, real-data
+use, or metrics.

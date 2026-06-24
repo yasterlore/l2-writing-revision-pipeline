@@ -339,3 +339,22 @@ model performance, real-data readiness, or production readiness.
 
 Artifact file writing, manifest writer, output file options, artifact writer
 CLI integration, and real-data readiness remain separate future work.
+
+## 17. Step347 Wrapper Integration Status
+
+Step347 implements the release-quality wrapper integration described here.
+The wrapper now runs:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata`
+
+with the label:
+
+`release_quality_check: learner-state frozen policy generation artifact body generation safe-metadata CLI smoke`
+
+The command is placed after the default suppressed artifact body generation
+CLI smoke and before config/scoring smoke checks. It remains summary-only and
+body-free. Step347 does not change workflow YAML, does not change Makefile,
+does not change Python code or tests, does not change fixture JSON, does not
+connect artifact writer CLI, does not write artifact files, does not generate
+manifest bodies, does not use real data, does not evaluate performance, and
+does not compute metrics.

@@ -443,3 +443,13 @@ The design keeps the target summary-only and body-free. It does not change
 the wrapper, workflow YAML, Makefile, Python code or tests, fixture JSON,
 artifact writer CLI behavior, file writing, manifest generation, real-data
 use, or metrics.
+
+## 27. Step347 Safe-Metadata Wrapper Integration Status
+
+Step347 adds the standalone safe-metadata target to the release-quality
+wrapper after the default suppressed generation smoke and before
+config/scoring smoke checks.
+
+The Makefile target remains unchanged. Step347 does not change workflow YAML,
+Makefile, Python code or tests, fixture JSON, artifact writer CLI behavior,
+file writing, manifest generation, real-data use, or metrics.

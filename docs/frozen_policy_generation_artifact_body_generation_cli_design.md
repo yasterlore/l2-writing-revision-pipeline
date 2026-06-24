@@ -503,3 +503,12 @@ The CLI remains summary-only and body-free. The design does not change the
 wrapper, workflow YAML, Makefile, Python code or tests, fixture JSON, artifact
 writer CLI behavior, artifact file writing, manifest generation, real-data
 use, or metrics.
+
+## 30. Step347 Safe-Metadata Wrapper Integration Status
+
+Step347 adds the standalone safe-metadata target to the release-quality
+wrapper. The CLI remains summary-only and body-free in the wrapper.
+
+Step347 does not change workflow YAML, Makefile, Python code or tests,
+fixture JSON, artifact writer CLI behavior, artifact file writing, manifest
+generation, real-data use, or metrics.

@@ -726,6 +726,13 @@ written, no artifact body is produced, and no performance metric is computed.
   Makefile, Python code/tests, fixture JSON, artifact writer CLI behavior,
   artifact file writing, manifest generation, metrics, real-data use, or
   production readiness claims.
+- Step347: integrated the standalone safe-metadata artifact body generation
+  target into the release-quality wrapper after the default suppressed
+  generation smoke and before config/scoring smoke checks. The integration
+  remains summary-only and body-free. It does not change workflow YAML,
+  Makefile, Python code/tests, fixture JSON, artifact writer CLI behavior,
+  artifact file writing, manifest generation, metrics, real-data use, or
+  production readiness claims.
 
 ## Related Documents
 
