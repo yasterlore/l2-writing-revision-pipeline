@@ -711,11 +711,13 @@ works, that does not prove policy quality or model performance.
 
 Recommended next steps:
 
-1. Step303: artifact writer fixture validator design.
-2. Step304: artifact writer fixture validator implementation.
-3. Step305: artifact writer skeleton design.
-4. Later: artifact writer CLI design, Makefile target design, release-quality
-   integration design, and remote status marker workflow.
+1. Step304: artifact writer fixture validator implementation.
+2. Step305: artifact writer fixture validator CLI design.
+3. Step306: artifact writer fixture validator CLI implementation.
+4. Step307: artifact writer fixture validator Makefile target design.
+5. Later: artifact writer skeleton design, writer CLI design, Makefile target
+   design, release-quality integration design, and remote status marker
+   workflow.
 
 ## 25. Step301 Artifact Writer Fixture Design Status
 
@@ -739,8 +741,18 @@ The writer remains unimplemented. No validator is added, no artifact body or
 generated policy body is generated, no manifest body is generated, and no
 artifact or manifest file is written.
 
+## 27. Step303 Artifact Writer Fixture Validator Design Status
+
+Step303 designs the future validator for the artifact writer fixtures:
+[Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md).
+
+The writer remains unimplemented. No validator code is added, no artifact body
+or generated policy body is generated, no manifest body is generated, and no
+artifact or manifest file is written.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
 - [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
