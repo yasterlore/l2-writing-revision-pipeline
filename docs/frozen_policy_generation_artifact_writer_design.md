@@ -711,15 +711,25 @@ works, that does not prove policy quality or model performance.
 
 Recommended next steps:
 
-1. Step301: artifact writer fixture design.
-2. Step302: artifact writer fixtures.
-3. Step303: artifact writer validator design.
-4. Step304: artifact writer skeleton implementation.
+1. Step302: artifact writer fixture creation.
+2. Step303: artifact writer fixture validator design.
+3. Step304: artifact writer fixture validator implementation.
+4. Step305: artifact writer skeleton design.
 5. Later: artifact writer CLI design, Makefile target design, release-quality
    integration design, and remote status marker workflow.
 
+## 25. Step301 Artifact Writer Fixture Design Status
+
+Step301 designs future fixtures for the artifact writer:
+[Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md).
+
+The writer remains unimplemented. No fixture files are created, no validator
+is added, no artifact body or generated policy body is generated, no manifest
+body is generated, and no artifact or manifest file is written.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)

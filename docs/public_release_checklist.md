@@ -1618,6 +1618,23 @@ frozen policy artifact bodies, manifest bodies, JSON bodies, policy bodies,
 raw rows, logits, label/split/calibration policy bodies, private paths, raw
 learner text, real participant data, or performance metric bodies.
 
+For Step301, review the
+[frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md).
+Confirm it is docs-only and defines the future artifact writer fixture root,
+case file layout, valid cases, invalid fail-closed cases, allowed request
+metadata, forbidden request/pointer payloads, expected result contract,
+artifact flags, safety flags, count-only summary expectations, reason-code
+mapping, relation to generator scaffold fixtures, and future validator
+implications. Confirm it does not create fixture files, implement a validator,
+implement the writer, generate artifact bodies, generate generated policy
+bodies, generate manifest bodies, write artifact files, write manifest files,
+compute metrics, evaluate performance, use real data, or claim real-data
+readiness. Confirm it does not include raw logs, full job output, JSON fixture
+bodies, artifact writer request bodies, artifact writer expected result
+bodies, generator scaffold request/pointer/expected result bodies, policy
+bodies, artifact bodies, manifest bodies, raw rows, logits, private paths,
+raw learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
