@@ -2454,6 +2454,25 @@ examples, generated policy bodies, manifest bodies, JSON body examples, raw
 rows, logits, private paths, raw learner text, real participant data, or
 performance metric bodies.
 
+For Step358, review the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures`.
+Confirm `make help` lists the target and the target runs the safe no-write
+file writing fixture validator CLI against the default fixture root. Confirm
+the target emits summary-only metadata with 29 total cases, 5 valid cases,
+24 invalid cases, 29 matched cases, zero mismatches, zero input errors,
+body-suppression safety flags, and `file_writing_isolated=false`. Confirm it
+does not add release-quality integration, change workflow YAML, change
+Python code/tests, change fixture JSON, implement artifact body file
+writing, add `--artifact-body-out`, run isolated temp write validation,
+write manifest files, change artifact writer CLI, use real data, compute
+metrics, or claim production readiness. Confirm output does not include raw
+logs, full job output, copied log blocks, screenshots containing raw logs,
+request bodies, pointer bodies, file write request bodies, expected file
+write result bodies, artifact body payload examples, generated policy
+bodies, manifest bodies, JSON body examples, raw rows, logits, private
+paths, raw learner text, real participant data, or performance metric
+bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

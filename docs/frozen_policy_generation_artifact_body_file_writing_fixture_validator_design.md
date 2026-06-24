@@ -306,7 +306,6 @@ and makes fail-closed behavior explicit.
 - Step355: CLI design.
 - Step356: CLI implementation.
 - Step357: Makefile target design.
-- Step358: Makefile target implementation.
 - Step359: release-quality integration design.
 - Later: isolated temp write validation after CLI file writing exists.
 - Later: wrapper integration and remote/manual status marker.
@@ -378,7 +377,21 @@ Makefile target, does not change release-quality, does not change workflow
 YAML, does not write files, does not implement `--artifact-body-out`, does
 not use real data, and does not compute metrics.
 
-## 22. Related Documents
+## 22. Step358 Makefile Target Implementation Status
+
+Step358 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures`
+
+The target runs the static no-write validator CLI on the default file
+writing fixture root. It is not added to release-quality in this step. The
+implementation does not change workflow YAML, does not change Python code or
+tests, does not change fixture JSON, does not implement artifact body file
+writing, does not implement `--artifact-body-out`, does not run isolated temp
+write validation, does not write manifests, does not connect artifact writer
+CLI, does not use real data, and does not compute metrics.
+
+## 23. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)

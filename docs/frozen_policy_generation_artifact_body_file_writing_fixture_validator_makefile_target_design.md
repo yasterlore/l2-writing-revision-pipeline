@@ -219,9 +219,28 @@ no manifest writing, no raw rows, no logits, and no private paths.
 - Does not use real data.
 - Does not compute metrics.
 
+## 14a. Step358 Implementation Status
+
+Step358 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures`
+
+The target runs the safe no-write validator CLI against the default file
+writing fixture root. It uses the human summary by default and keeps the
+output limited to counts, reason-code names/counts, safety flags, schema
+names, and body-free summary fields.
+
+The Makefile implementation adds the target to `.PHONY`, adds the help text,
+and places the command near the existing artifact body fixture and generation
+targets. It does not add release-quality integration, does not change
+workflow YAML, does not change Python code or tests, does not change fixture
+JSON, does not write artifact body files, does not create temp output
+directories, does not implement `--artifact-body-out`, does not run isolated
+temp write validation, does not write manifests, does not connect artifact
+writer CLI, does not use real data, and does not compute metrics.
+
 ## 15. Next Recommended Steps
 
-- Step358: Makefile target implementation.
 - Step359: release-quality integration design.
 - Step360: wrapper integration.
 - Later: remote/manual Release Quality status marker.

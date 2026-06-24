@@ -25,6 +25,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata
+.PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -59,6 +60,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-fixtures  Validate frozen policy generation artifact body fixtures"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation  Run artifact body generation CLI smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata  Run artifact body generation safe-metadata CLI smoke"
+	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures  Validate artifact body file writing fixture contracts"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -150,6 +152,9 @@ check-learner-state-frozen-policy-generation-artifact-body-generation:
 
 check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body --request tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/safe_metadata_body_summary/artifact_body_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/safe_metadata_body_summary/artifact_writer_result_pointer.json --mode safe-metadata
+
+check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_file_writing_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality

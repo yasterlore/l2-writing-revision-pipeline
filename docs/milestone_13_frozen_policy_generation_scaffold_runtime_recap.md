@@ -805,6 +805,13 @@ written, no artifact body is produced, and no performance metric is computed.
   target, change release-quality, write artifact files, run isolated temp
   writes, generate manifests, connect artifact writer CLI, compute metrics,
   use real data, or claim production readiness.
+- Step358: implemented the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures`
+  for the safe no-write artifact body file writing fixture validator CLI. It
+  does not add release-quality integration, change workflow YAML, change
+  Python code/tests, change fixture JSON, write artifact files, run isolated
+  temp writes, generate manifests, connect artifact writer CLI, compute
+  metrics, use real data, or claim production readiness.
 
 ## Related Documents
 

@@ -302,7 +302,6 @@ It should carry only safe metadata, counts, flags, and reason-code names.
 
 - Step356: CLI implementation.
 - Step357: Makefile target design.
-- Step358: Makefile target implementation.
 - Step359: release-quality integration design.
 - Later: wrapper integration and remote/manual status marker.
 - Later: isolated temp write validation after artifact body file writing
@@ -355,3 +354,18 @@ targets, release-quality staging, and future tests. It does not implement a
 Makefile target, does not add release-quality integration, does not write
 files, does not create temp output directories, does not implement
 `--artifact-body-out`, does not use real data, and does not compute metrics.
+
+## 22. Step358 Makefile Target Implementation Status
+
+Step358 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures`
+
+The target calls this CLI against the default file writing fixture root and
+keeps the run static/no-write. The target does not use `--json` by default,
+does not write files, does not create temp output directories, does not run
+isolated temp write validation, does not implement `--artifact-body-out`,
+does not add release-quality integration, does not change workflow YAML,
+does not change Python code/tests, does not change fixture JSON, does not
+connect artifact writer CLI, does not use real data, and does not compute
+metrics.
