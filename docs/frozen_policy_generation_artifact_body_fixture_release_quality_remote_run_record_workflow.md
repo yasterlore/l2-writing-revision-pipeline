@@ -504,10 +504,8 @@ metadata-only expected outcomes for the artifact body safety boundary.
 
 ## 23. Next Recommended Steps
 
-- Run a remote/manual Release Quality workflow after the wrapper integration
-  is on the target branch.
-- Create the artifact body fixture remote/manual status marker after reviewing
-  only public-safe metadata.
+- Keep the artifact body fixture remote/manual status marker updated only with
+  public-safe metadata.
 - Keep artifact body generation implementation separate.
 
 ## 24. Step333 Status
@@ -519,8 +517,22 @@ code or tests, change fixture JSON, implement artifact body generation,
 generate policy bodies, generate manifest bodies, write files, compute
 metrics, use real data, or claim production readiness.
 
+## 25. Step334 Status Marker Creation Status
+
+Step334 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md).
+
+The status marker records only run identity metadata, pass-only summaries,
+count-only fixture validation metadata, and safety review statements. It does
+not copy raw logs, full job output, fixture bodies, request bodies, pointer
+bodies, expected result bodies, artifact body payloads, generated policy
+bodies, manifest bodies, raw rows, logits/probability dumps, private paths,
+raw learner text, real participant data, or performance metric bodies.
+
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)

@@ -51,10 +51,9 @@ Available markers:
 - [Learner-state frozen policy generation artifact writer runtime release-quality remote run status](learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after artifact writer runtime
   smoke integration.
-- Future marker path:
-  `learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md`
-  for artifact body fixture validation integration. The marker is not created
-  yet; see the remote run record workflow design.
+- [Learner-state frozen policy generation artifact body fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after artifact body fixture
+  validation integration.
 
 Related recap:
 
