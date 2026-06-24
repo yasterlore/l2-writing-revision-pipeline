@@ -22,6 +22,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-generator-scaffold-runtime
 .PHONY: check-learner-state-frozen-policy-generation-artifact-writer-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-artifact-writer-runtime
+.PHONY: check-learner-state-frozen-policy-generation-artifact-body-fixtures
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -53,6 +54,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-generator-scaffold-runtime  Run frozen policy generation generator scaffold runtime smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-writer-fixtures  Validate frozen policy generation artifact writer fixtures"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-writer-runtime  Run frozen policy generation artifact writer runtime smoke"
+	@echo "  check-learner-state-frozen-policy-generation-artifact-body-fixtures  Validate frozen policy generation artifact body fixtures"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -135,6 +137,9 @@ check-learner-state-frozen-policy-generation-artifact-writer-fixtures:
 
 check-learner-state-frozen-policy-generation-artifact-writer-runtime:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_writer --request tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/valid/minimal_metadata_only_artifact_plan/artifact_writer_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/valid/minimal_metadata_only_artifact_plan/generator_result_pointer.json
+
+check-learner-state-frozen-policy-generation-artifact-body-fixtures:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality

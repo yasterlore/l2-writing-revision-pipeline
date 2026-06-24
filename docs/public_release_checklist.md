@@ -2040,6 +2040,22 @@ artifact body payloads, artifact body JSON examples, generated policy bodies,
 manifest bodies, raw rows, logits/probability dumps, private paths, raw
 learner text, real participant data, or performance metric bodies.
 
+For Step330, review the standalone Makefile target implementation
+`check-learner-state-frozen-policy-generation-artifact-body-fixtures`. Confirm
+it is added to `.PHONY`, appears in `make help`, runs the existing artifact
+body fixture validator CLI on
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body`, and
+emits safe metadata-only output with 18 total cases, 4 valid cases, 14 invalid
+cases, 18 matched cases, 0 mismatched cases, and 0 input-error cases. Confirm
+it does not integrate release-quality, change workflow YAML, change Python
+code or tests, change fixture JSON, implement artifact body generation,
+generated policy body generation, manifest body generation, file writing,
+metrics, real-data use, or production readiness claims. Confirm docs and
+target output do not include raw logs, full job output, request bodies,
+pointer bodies, expected result bodies, artifact body payloads, generated
+policy bodies, manifest bodies, raw rows, logits/probability dumps, private
+paths, raw learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

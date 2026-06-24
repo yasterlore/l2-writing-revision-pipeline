@@ -622,6 +622,11 @@ written, no artifact body is produced, and no performance metric is computed.
   release-quality staging. It does not implement the Makefile target, change
   release-quality, change workflow YAML, generate bodies, write files,
   compute metrics, use real data, or claim production readiness.
+- Step330: linked the artifact body fixture validator Makefile target
+  implementation. The target runs the existing CLI against the synthetic
+  fixture root and emits safe metadata-only output. It does not integrate
+  release-quality, change workflow YAML, generate bodies, write files,
+  compute metrics, use real data, or claim production readiness.
 
 ## Related Documents
 
