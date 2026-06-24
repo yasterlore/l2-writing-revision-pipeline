@@ -474,8 +474,22 @@ bodies, manifest bodies, write files, integrate release-quality, change
 workflow YAML, change fixture JSON, compute metrics, use real data, or claim
 production readiness.
 
+## 27. Step331 Artifact Body Fixture Release-Quality Integration Design Status
+
+Step331 designs future release-quality integration for the artifact body
+fixture validator target:
+
+[Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md).
+
+This remains separate from artifact body generation. It does not change the
+release-quality wrapper, workflow YAML, Makefile, Python code or tests,
+fixture JSON, generate artifact bodies, generate policy bodies, generate
+manifest bodies, write files, compute metrics, use real data, or claim
+production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)

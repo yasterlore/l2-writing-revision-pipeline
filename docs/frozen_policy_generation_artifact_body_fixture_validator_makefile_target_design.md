@@ -338,8 +338,21 @@ generate policy bodies, generate manifest bodies, write artifact or manifest
 files, add output-file options, compute metrics, use real data, or claim
 production readiness.
 
+## 19. Step331 Release-Quality Integration Design Status
+
+Step331 designs future release-quality integration for this standalone target:
+
+[Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md).
+
+The integration design recommends placing the target after artifact writer
+runtime smoke and before config/scoring smoke checks. It does not change the
+release-quality wrapper, workflow YAML, Makefile, Python code or tests,
+fixture JSON, artifact body generation, file writing, metrics, real-data use,
+or production readiness claims.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)

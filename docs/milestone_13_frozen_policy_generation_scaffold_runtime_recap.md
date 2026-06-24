@@ -627,9 +627,16 @@ written, no artifact body is produced, and no performance metric is computed.
   fixture root and emits safe metadata-only output. It does not integrate
   release-quality, change workflow YAML, generate bodies, write files,
   compute metrics, use real data, or claim production readiness.
+- Step331: linked the artifact body fixture release-quality integration
+  design. The design proposes adding the standalone target after artifact
+  writer runtime smoke and before config/scoring smoke checks in a future
+  wrapper step. It does not change the wrapper, workflow YAML, Makefile,
+  generate bodies, write files, compute metrics, use real data, or claim
+  production readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)

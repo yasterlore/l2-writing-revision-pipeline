@@ -192,3 +192,14 @@ prints safe metadata-only output. It does not integrate release-quality,
 change workflow YAML, change Python code or tests, change fixture JSON,
 implement artifact body generation, write files, compute metrics, use real
 data, or claim production readiness.
+
+## Future Release-Quality Integration Design
+
+Step331 designs future release-quality integration for the standalone target:
+
+`docs/frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md`
+
+That design does not change the release-quality wrapper, workflow YAML,
+Makefile, Python code or tests, fixture JSON, implement artifact body
+generation, write files, compute metrics, use real data, or claim production
+readiness.

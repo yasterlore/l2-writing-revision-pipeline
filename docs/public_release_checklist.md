@@ -2056,6 +2056,21 @@ pointer bodies, expected result bodies, artifact body payloads, generated
 policy bodies, manifest bodies, raw rows, logits/probability dumps, private
 paths, raw learner text, real participant data, or performance metric bodies.
 
+For Step331, review the docs-only
+[frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md).
+Confirm it defines the future wrapper insertion point, command, label,
+expected wrapper behavior, failure interpretation, log safety review,
+relation to existing release-quality checks, testing plan, status marker
+policy, and no-oracle boundary. Confirm it does not change the
+release-quality wrapper, workflow YAML, Makefile, Python code or tests,
+fixture JSON, implement artifact body generation, generated policy body
+generation, manifest body generation, file writing, metrics, real-data use,
+or production readiness claims. Confirm docs do not include raw logs, full
+job output, request bodies, pointer bodies, expected result bodies, artifact
+body payloads, artifact body JSON examples, generated policy bodies,
+manifest bodies, raw rows, logits/probability dumps, private paths, raw
+learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
