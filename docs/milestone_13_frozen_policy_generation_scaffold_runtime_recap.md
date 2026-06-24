@@ -754,9 +754,17 @@ written, no artifact body is produced, and no performance metric is computed.
   relative output paths, keeps stdout summary-only, and leaves manifest
   writer, artifact writer CLI integration, release-quality integration,
   metrics, real-data use, and production readiness as non-goals.
+- Step351: added the docs-only artifact body file writing fixture and
+  path-policy design. The design proposes a separate future fixture root,
+  valid and invalid case names, path-policy checks, content-policy checks,
+  expected result fields, and validator staging. It does not create fixture
+  JSON, implement file writing, add a CLI option, write manifests, connect
+  artifact writer CLI, compute metrics, use real data, or claim production
+  readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md)

@@ -733,8 +733,23 @@ does not write manifest files, does not connect artifact writer CLI, does
 not change release-quality, does not use real data, and does not compute
 metrics.
 
+## 47. Step351 File Writing Fixture And Path-Policy Design Status
+
+Step351 designs future fixture and path-policy coverage for artifact body file
+writing:
+
+[Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md).
+
+The design proposes a separate future fixture root, valid and invalid case
+names, path-policy dimensions, content-policy dimensions, expected result
+fields, and validator staging. It does not create fixture JSON, implement
+file writing, add a CLI option, write artifacts or manifests, connect
+artifact writer CLI, change release-quality, use real data, or compute
+metrics.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md)
