@@ -478,9 +478,13 @@ written, no artifact body is produced, and no performance metric is computed.
 - Step293: linked the generator scaffold CLI implementation status; Makefile
   target, release-quality skeleton runtime integration, artifact writing, and
   artifact body generation remain separate.
+- Step294: linked the generator scaffold CLI Makefile target design as the
+  next docs-only boundary before target implementation or release-quality
+  skeleton runtime integration.
 
 ## Related Documents
 
+- [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Milestone 12 frozen policy generation scaffold fixture validation recap](milestone_12_frozen_policy_generation_scaffold_fixture_validation_recap.md)

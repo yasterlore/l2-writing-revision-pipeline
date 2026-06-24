@@ -476,8 +476,15 @@ This workflow remains scoped to fixture validation records. Any future skeleton
 CLI remote status marker should be designed and recorded separately after
 future integration.
 
+Step294 adds the future generator scaffold CLI Makefile target design:
+[Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md).
+This workflow remains scoped to fixture validation records; a future runtime
+smoke marker should be designed separately after that target is implemented
+and integrated.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Learner-state frozen policy generation generator scaffold fixture release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md)
@@ -505,3 +512,5 @@ Related docs:
   metadata-only design step after the status marker.
 - Step292: linked the generator scaffold CLI design while keeping this remote
   record workflow scoped to fixture validation.
+- Step294: linked the generator scaffold CLI Makefile target design while
+  keeping this remote record workflow scoped to fixture validation.

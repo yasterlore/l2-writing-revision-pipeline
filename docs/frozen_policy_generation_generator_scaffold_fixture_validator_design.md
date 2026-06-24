@@ -679,8 +679,14 @@ and print only safe metadata.
 Step293 implements that skeleton CLI. The fixture validator remains separate
 and continues to validate fixture contracts only.
 
+Step294 designs a future Makefile runtime smoke target for the skeleton CLI:
+[Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md).
+That future target is separate from this fixture validator and should not
+replace fixture-root contract validation.
+
 Related docs:
 
+- [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)
@@ -719,3 +725,5 @@ Related docs:
   skeleton responsibilities remain separate and metadata-only.
 - Step291: recorded skeleton implementation status while keeping validator
   responsibility unchanged.
+- Step294: linked the generator scaffold CLI Makefile target design while
+  keeping fixture validator responsibility unchanged.
