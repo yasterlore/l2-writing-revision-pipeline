@@ -446,8 +446,22 @@ integration, artifact body generation, generated policy body generation,
 manifest body generation, artifact or manifest file writing, fixture JSON
 changes, metrics, real-data use, or production readiness claims.
 
+## 27. Step327 CLI Design Status
+
+Step327 designs the future CLI for this implemented validator:
+
+[Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md).
+
+The CLI design defines the future entrypoint, arguments, default fixture root,
+human output, JSON output, exit codes, single-case behavior, error handling,
+output safety, future tests, Makefile target candidate, and release-quality
+staging. It does not implement CLI code, Makefile targets, release-quality
+integration, artifact body generation, file writing, Python code or tests,
+fixture JSON changes, metrics, real-data use, or production readiness claims.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
 - [Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
