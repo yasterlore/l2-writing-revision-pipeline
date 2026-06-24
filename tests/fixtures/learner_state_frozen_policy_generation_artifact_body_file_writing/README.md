@@ -157,6 +157,20 @@ validation, does not write manifests, does not connect artifact writer CLI,
 does not change fixture JSON, does not use real data, and does not compute
 metrics.
 
+Step359 designs future release-quality wrapper integration for that
+standalone target:
+
+`docs/frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md`
+
+The design keeps this fixture root unchanged and records wrapper placement,
+label, command, expected counts, failure interpretation, log safety, and
+future status marker policy. It does not add the target to release-quality,
+does not change workflow YAML, does not change fixture JSON, does not write
+artifact body files, does not create temp output directories, does not
+implement `--artifact-body-out`, does not run isolated temp write validation,
+does not write manifests, does not use real data, and does not compute
+metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

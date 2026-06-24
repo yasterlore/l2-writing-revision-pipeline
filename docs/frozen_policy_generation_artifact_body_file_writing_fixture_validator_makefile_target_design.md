@@ -241,7 +241,6 @@ writer CLI, does not use real data, and does not compute metrics.
 
 ## 15. Next Recommended Steps
 
-- Step359: release-quality integration design.
 - Step360: wrapper integration.
 - Later: remote/manual Release Quality status marker.
 - Later: isolated temp write validation after artifact body file writing
@@ -249,9 +248,25 @@ writer CLI, does not use real data, and does not compute metrics.
 
 ## 16. Related Documents
 
+- [Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 17. Step359 Release-Quality Integration Design Status
+
+Step359 adds a docs-only release-quality integration design:
+
+[Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md).
+
+The design proposes wrapper placement after safe-metadata artifact body
+generation smoke and before config/scoring smoke checks. It defines the
+future wrapper command, label, expected counts, failure interpretation, log
+safety, testing plan, and future status marker policy. It does not change
+the wrapper, workflow YAML, Makefile, Python code/tests, fixture JSON, file
+writing implementation, `--artifact-body-out`, isolated temp write
+validation, manifest writer, artifact writer CLI, real-data use, metrics, or
+production readiness claims.
