@@ -827,6 +827,16 @@ written, no artifact body is produced, and no performance metric is computed.
   code/tests, fixture JSON, write artifact files, run isolated temp writes,
   generate manifests, connect artifact writer CLI, compute metrics, use real
   data, or claim production readiness.
+- Step361: added the docs-only remote/manual Release Quality run record
+  workflow design for the artifact body file writing fixture validation
+  wrapper integration. The design defines a future status marker path,
+  public-safe metadata, pass-only/count-only summaries, safety review,
+  interpretation, failure handling, and recording workflow. It does not
+  create a status marker, run a remote workflow, change workflow YAML,
+  change the wrapper, change Makefile, change Python code/tests, change
+  fixture JSON, write artifact files, run isolated temp writes, generate
+  manifests, connect artifact writer CLI, compute metrics, use real data, or
+  claim production readiness.
 
 ## Related Documents
 
@@ -834,6 +844,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md)
+- [Frozen policy generation artifact body file writing fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

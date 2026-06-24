@@ -374,11 +374,22 @@ change fixture JSON, does not implement file writing, does not implement
 `--artifact-body-out`, does not run isolated temp write validation, does not
 write manifests, does not use real data, and does not compute metrics.
 
-## 26. Related Documents
+## 26. Step361 Remote Run Record Workflow Design Status
+
+Step361 adds a docs-only remote/manual Release Quality run record workflow:
+
+[Frozen policy generation artifact body file writing fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md).
+
+It defines a future status marker path and a pass-only/count-only recording
+policy for the file writing fixture validation target. It does not create
+the status marker and does not change this fixture root.
+
+## 27. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md)
+- [Frozen policy generation artifact body file writing fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
