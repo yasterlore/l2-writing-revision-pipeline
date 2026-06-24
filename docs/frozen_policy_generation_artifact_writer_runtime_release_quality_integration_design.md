@@ -5,15 +5,16 @@
 This document designs future release-quality wrapper integration for the
 standalone frozen policy generation artifact writer runtime Makefile target.
 
-This is a docs-only design. It does not implement wrapper integration, change
-GitHub Actions workflows, change the Makefile, change Python code, change
-tests, change fixture JSON, generate artifact bodies, generate generated
-policy bodies, generate manifest bodies, write files, compute metrics,
-evaluate performance, or claim real-data readiness.
+Step318 created this as a docs-only design. Step319 implements the wrapper
+integration described here. The implementation does not change GitHub Actions
+workflows, change the Makefile, change Python code, change tests, change
+fixture JSON, generate artifact bodies, generate generated policy bodies,
+generate manifest bodies, write files, compute metrics, evaluate performance,
+or claim real-data readiness.
 
 The goal is to define where and how
-`check-learner-state-frozen-policy-generation-artifact-writer-runtime` should
-later enter `make check-release-quality` safely.
+`check-learner-state-frozen-policy-generation-artifact-writer-runtime` enters
+`make check-release-quality` safely.
 
 ## 2. Current State
 
@@ -22,7 +23,8 @@ later enter `make check-release-quality` safely.
 - The artifact writer runtime Makefile target exists.
 - The artifact writer fixture validator target is already included in
   release-quality.
-- The artifact writer runtime target is not included in release-quality yet.
+- The artifact writer runtime target is included in release-quality as of
+  Step319.
 - Artifact body generation does not exist.
 - Manifest generation does not exist.
 - Artifact file writing and manifest file writing do not exist.
@@ -317,7 +319,6 @@ It must not use:
 
 This design does not:
 
-- integrate the release-quality wrapper
 - change workflow YAML
 - generate artifact bodies
 - write artifacts
@@ -356,6 +357,32 @@ should be recorded only after wrapper integration actually lands and passes.
 
 ## 16. Next Recommended Steps
 
-- Step319 artifact writer runtime release-quality wrapper integration
 - Step320 remote/manual run record workflow design
 - Step321 remote/manual run status marker
+
+## 17. Step319 Runtime Release-Quality Wrapper Integration Status
+
+Step319 implements the wrapper integration designed here. The
+release-quality wrapper now runs:
+
+```bash
+make check-learner-state-frozen-policy-generation-artifact-writer-runtime
+```
+
+The section is placed immediately after artifact writer fixture validation and
+before config and scoring smoke checks. Its label is:
+
+```text
+release_quality_check: learner-state frozen policy generation artifact writer runtime smoke
+```
+
+This integration keeps the runtime smoke metadata-only. It does not change
+workflow YAML, change the Makefile, change Python code or tests, change
+fixture JSON, generate artifact bodies, generate generated policy bodies,
+generate manifest bodies, write artifact or manifest files, compute metrics,
+use real data, or claim real-data readiness.
+
+The runtime smoke success is interpreted only as a safe terminal-path pass for
+one valid synthetic request/pointer pair. It is not artifact writer quality,
+artifact generation quality, manifest generation quality, performance
+evidence, real-data readiness, or production readiness.

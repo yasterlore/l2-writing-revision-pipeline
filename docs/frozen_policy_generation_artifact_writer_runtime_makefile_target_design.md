@@ -390,6 +390,21 @@ metrics, real-data use, or real-data readiness status.
 
 Next recommended steps:
 
-- Step319 artifact writer runtime release-quality wrapper integration
 - Step320 remote/manual run record workflow design
 - Step321 remote/manual run status marker
+
+## 20. Step319 Runtime Release-Quality Wrapper Integration Status
+
+Step319 integrates this standalone runtime target into the release-quality
+wrapper. The wrapper now runs:
+
+```text
+check-learner-state-frozen-policy-generation-artifact-writer-runtime
+```
+
+The section is placed after artifact writer fixture validation and before
+config/scoring smoke checks. Step319 does not change workflow YAML, change the
+Makefile target, change Python code or tests, change fixture JSON, generate
+artifact bodies, generate generated policy bodies, generate manifest bodies,
+write artifact or manifest files, compute metrics, use real data, or claim
+real-data readiness.

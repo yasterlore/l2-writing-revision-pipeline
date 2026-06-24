@@ -301,8 +301,11 @@ This marker does not prove:
 - Step318 artifact writer runtime release-quality integration design is now
   tracked separately:
   [Frozen policy generation artifact writer runtime release-quality integration design](../frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md).
-- Keep future artifact writer runtime release-quality wrapper implementation
-  separate.
+- Step319 artifact writer runtime release-quality wrapper integration is now
+  tracked separately in `scripts/check_release_quality.sh`. This marker
+  remains fixture release-quality remote run evidence only.
+- Keep future artifact writer runtime remote/manual run record workflow and
+  status marker separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
 ## Update History
@@ -338,5 +341,10 @@ This marker does not prove:
 - Step318: linked the writer runtime release-quality integration design. This
   status marker remains fixture release-quality remote run evidence only; it
   does not record runtime target release-quality inclusion, artifact body
+  generation, manifest body generation, file writing, metrics, real-data use,
+  or production readiness.
+- Step319: linked the writer runtime release-quality wrapper integration.
+  This status marker remains fixture release-quality remote run evidence only;
+  it does not record a remote/manual runtime smoke run, artifact body
   generation, manifest body generation, file writing, metrics, real-data use,
   or production readiness.

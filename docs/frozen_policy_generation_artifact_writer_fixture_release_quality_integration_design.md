@@ -418,6 +418,22 @@ The fixture validation wrapper integration remains unchanged. The future
 runtime target should be placed after this fixture validation and before
 config/scoring smoke checks.
 
+## 26. Step319 Runtime Release-Quality Wrapper Integration Status
+
+Step319 implements that runtime wrapper integration. The release-quality
+wrapper now runs:
+
+`make check-learner-state-frozen-policy-generation-artifact-writer-runtime`
+
+The runtime smoke is placed immediately after the artifact writer fixture
+validation target and before config/scoring smoke checks. The fixture
+validation target remains the 17-case contract check; the runtime smoke is a
+separate one-valid-synthetic-fixture terminal-path check. Step319 does not
+change workflow YAML, Makefile targets, Python code or tests, fixture JSON,
+artifact body generation, generated policy body generation, manifest body
+generation, artifact or manifest file writing, metrics, real-data use, or
+real-data readiness status.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)
