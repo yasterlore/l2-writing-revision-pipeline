@@ -1705,6 +1705,22 @@ result bodies, generator scaffold bodies, policy bodies, artifact bodies,
 manifest bodies, raw rows, logits, private paths, raw learner text, real
 participant data, or performance metric bodies.
 
+For Step306, review the artifact writer fixture validator CLI implementation:
+`python/learner_state/frozen_policy_generation_artifact_writer_fixture_validation.py`
+and
+`python/learner_state/tests/test_frozen_policy_generation_artifact_writer_fixture_validation_cli.py`.
+Confirm the CLI supports `--fixture-root`, `--fixture-case`, `--json`, and
+`--help`; enforces mutually exclusive root/case arguments; returns exit `0`
+for matched root/case validations, exit `2` for usage/input errors, exit `3`
+for mismatches, and exit `1` for unexpected internal errors; emits safe
+human/JSON metadata summaries; and does not echo request, pointer, expected
+result, policy, artifact, manifest, raw row, logit, private path, raw learner
+text, or performance metric bodies. Confirm it does not execute an artifact
+writer, add a Makefile target, integrate release-quality, change workflow
+YAML, generate artifact bodies, generate generated policy bodies, generate
+manifest bodies, write artifact files, write manifest files, compute metrics,
+evaluate performance, use real data, or claim real-data readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -8,7 +8,9 @@ compute metrics.
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -718,6 +720,53 @@ def scan_artifact_writer_fixture_for_forbidden_markers(
     )
 
 
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Validate frozen policy generation artifact writer fixtures with "
+            "metadata-only output."
+        )
+    )
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--fixture-root", type=Path)
+    group.add_argument("--fixture-case", type=Path)
+    parser.add_argument("--json", action="store_true", dest="as_json")
+    args = parser.parse_args(argv)
+
+    try:
+        if args.fixture_root is not None:
+            result = validate_artifact_writer_fixture_root(args.fixture_root)
+            summary = summarize_artifact_writer_fixture_validation_result(result)
+            exit_code = _cli_exit_code_for_root(result)
+        else:
+            result, mismatches = _validate_cli_case(args.fixture_case)
+            summary = _summarize_cli_case_result(result, mismatches)
+            exit_code = _cli_exit_code_for_case(result, mismatches)
+
+        if args.as_json:
+            print(json.dumps(summary, sort_keys=True, separators=(",", ":")))
+        else:
+            print(_format_cli_human_summary(summary))
+        return exit_code
+    except Exception:
+        error_summary = {
+            "mode": "artifact_writer_fixture_validator",
+            "writer_status": "input_error",
+            "reason_codes": ["unexpected_internal_error"],
+            "failed_checks": ["unexpected_internal_error"],
+            "content_suppressed": True,
+            "no_raw_rows": True,
+            "no_logits_dump": True,
+            "no_private_paths": True,
+            "validation_schema_version": VALIDATION_SCHEMA_VERSION,
+        }
+        if args.as_json:
+            print(json.dumps(error_summary, sort_keys=True, separators=(",", ":")))
+        else:
+            print(_format_cli_human_summary(error_summary))
+        return 1
+
+
 def _coerce_fixture_case(
     case: ArtifactWriterFixtureCase | ArtifactWriterFixtureValidationResult | Path,
 ) -> ArtifactWriterFixtureCase:
@@ -728,6 +777,99 @@ def _coerce_fixture_case(
             raise ValueError("cannot_load_case_from_result_without_label")
         raise ValueError("case_result_requires_explicit_expected_fixture_case")
     return load_artifact_writer_fixture_case(Path(case))
+
+
+def _validate_cli_case(
+    case_dir: Path,
+) -> tuple[ArtifactWriterFixtureValidationResult, list[ArtifactWriterFixtureComparisonResult]]:
+    result = validate_artifact_writer_fixture_case(case_dir)
+    if result.writer_status == "input_error":
+        return result, []
+    try:
+        fixture = load_artifact_writer_fixture_case(case_dir)
+        scan = scan_artifact_writer_fixture_for_forbidden_markers(fixture)
+        mismatches = compare_artifact_writer_fixture_to_expected(fixture)
+        for reason_code in scan.reason_codes:
+            mismatches.append(
+                ArtifactWriterFixtureComparisonResult(
+                    field_name=f"forbidden_marker_scan:{reason_code}",
+                    expected_value="scan_clear",
+                    actual_value="scan_failed",
+                )
+            )
+        return result, mismatches
+    except (OSError, json.JSONDecodeError, ValueError):
+        return (
+            ArtifactWriterFixtureValidationResult(
+                writer_status="input_error",
+                reason_codes=["malformed_fixture_file"],
+                failed_checks=["json_parse_or_fixture_shape"],
+                failure_categories=["input_error"],
+                checked_files_count=_count_existing_required_files(Path(case_dir)),
+                case_category=Path(case_dir).parent.name,
+                case_name=Path(case_dir).name,
+                case_label=f"{Path(case_dir).parent.name}/{Path(case_dir).name}",
+            ),
+            [],
+        )
+
+
+def _summarize_cli_case_result(
+    result: ArtifactWriterFixtureValidationResult,
+    mismatches: list[ArtifactWriterFixtureComparisonResult],
+) -> dict[str, Any]:
+    payload = result.to_safe_dict()
+    payload.update(
+        {
+            "mode": "fixture_case",
+            "case_id": result.case_label,
+            "category": result.case_category,
+            "matched": result.writer_status != "input_error" and not mismatches,
+            "mismatch_count": len(mismatches),
+            "mismatch_fields": [mismatch.field_name for mismatch in mismatches],
+        }
+    )
+    return payload
+
+
+def _cli_exit_code_for_root(result: ArtifactWriterFixtureRootValidationResult) -> int:
+    if result.input_error_cases:
+        return 2
+    if result.mismatched_cases:
+        return 3
+    return 0
+
+
+def _cli_exit_code_for_case(
+    result: ArtifactWriterFixtureValidationResult,
+    mismatches: list[ArtifactWriterFixtureComparisonResult],
+) -> int:
+    if result.writer_status == "input_error":
+        return 2
+    if mismatches:
+        return 3
+    return 0
+
+
+def _format_cli_human_summary(summary: dict[str, Any]) -> str:
+    lines: list[str] = []
+    for key in sorted(summary):
+        lines.append(f"{key}={_format_cli_value(summary[key])}")
+    return "\n".join(lines)
+
+
+def _format_cli_value(value: Any) -> str:
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if value is None:
+        return "none"
+    if isinstance(value, list):
+        if not value:
+            return "none"
+        return ",".join(str(item) for item in value)
+    if isinstance(value, dict):
+        return json.dumps(value, sort_keys=True, separators=(",", ":"))
+    return str(value)
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -1147,3 +1289,7 @@ def _safe_scalar_or_collection(value: Any) -> Any:
             if isinstance(item, (str, int, float, bool)) or item is None
         }
     return type(value).__name__
+
+
+if __name__ == "__main__":
+    sys.exit(main())

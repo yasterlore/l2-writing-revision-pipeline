@@ -711,10 +711,9 @@ works, that does not prove policy quality or model performance.
 
 Recommended next steps:
 
-1. Step306: artifact writer fixture validator CLI implementation.
-2. Step307: artifact writer fixture validator Makefile target design.
-3. Step308: artifact writer fixture validator Makefile target implementation.
-4. Later: artifact writer skeleton design, writer CLI design, Makefile target
+1. Step307: artifact writer fixture validator Makefile target design.
+2. Step308: artifact writer fixture validator Makefile target implementation.
+3. Later: artifact writer skeleton design, writer CLI design, Makefile target
    design, release-quality integration design, and remote status marker
    workflow.
 
@@ -776,6 +775,18 @@ add a Makefile target, integrate release-quality, generate artifact bodies,
 generate generated policy bodies, generate manifest bodies, write files,
 compute metrics, evaluate performance, use real data, or claim production
 readiness.
+
+## 30. Step306 Artifact Writer Fixture Validator CLI Implementation Status
+
+Step306 implements the safe validator CLI and focused CLI tests. The CLI runs
+the fixture validator in root or case mode and prints body-free metadata-only
+human or JSON summaries.
+
+The artifact writer remains unimplemented. Step306 does not add a Makefile
+target, integrate release-quality, change workflow YAML, generate artifact
+bodies, generate generated policy bodies, generate manifest bodies, write
+files, compute metrics, evaluate performance, use real data, or claim
+production readiness.
 
 ## Related Documents
 
