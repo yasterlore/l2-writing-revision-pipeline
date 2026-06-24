@@ -497,8 +497,21 @@ YAML, change Python code or tests, change fixture JSON, implement artifact
 body generation, write files, compute metrics, use real data, or claim
 production readiness.
 
+## 31. Step331 Release-Quality Integration Design Status
+
+Step331 designs future release-quality integration for the standalone target:
+
+[Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md).
+
+The design is docs-only and recommends a wrapper insertion point after
+artifact writer runtime smoke and before config/scoring smoke checks. It does
+not change the release-quality wrapper, workflow YAML, Makefile, Python code
+or tests, fixture JSON, artifact body generation, file writing, metrics,
+real-data use, or production readiness claims.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
