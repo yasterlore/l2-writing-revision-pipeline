@@ -453,3 +453,14 @@ marker, run GitHub Actions, change workflow YAML, change the release-quality
 wrapper, change Makefile, change Python code or tests, change fixture JSON,
 add a safe-metadata target, write artifact files, generate manifest bodies,
 use real data, or compute metrics.
+
+## 26. Step343 Remote Run Status Marker Status
+
+Step343 creates the public-safe remote/manual Release Quality status marker
+for the artifact body generation CLI smoke:
+
+[Learner-state frozen policy generation artifact body generation release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md).
+
+The CLI remains unchanged. The marker records only body-free safe metadata for
+the default suppressed-mode smoke and does not make safe-metadata mode part of
+release-quality.

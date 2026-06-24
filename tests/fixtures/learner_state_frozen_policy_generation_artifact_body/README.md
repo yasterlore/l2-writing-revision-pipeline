@@ -333,3 +333,16 @@ default suppressed-mode generation smoke. It must not copy fixture bodies,
 request bodies, pointer bodies, artifact body payloads, manifest bodies, raw
 logs, raw rows, logits, private paths, raw learner text, real participant
 data, or performance metric bodies.
+
+## Artifact Body Generation Remote Status Marker
+
+Step343 creates the public-safe remote/manual Release Quality status marker
+for the default suppressed-mode artifact body generation CLI smoke:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md`
+
+This marker records that the generation CLI smoke was included in
+release-quality and passed remotely. It does not modify these fixture JSON
+files, does not add a safe-metadata target, does not write artifact files,
+does not generate manifest bodies, does not use real data, and does not
+compute metrics.

@@ -2231,6 +2231,20 @@ bodies, artifact body payloads, generated policy bodies, manifest bodies, JSON
 body examples, raw rows, logits, private paths, raw learner text, real
 participant data, or performance metric bodies.
 
+For Step343, review the public-safe
+[learner-state frozen policy generation artifact body generation release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md).
+Confirm it records only safe run identity metadata, wrapper inclusion
+metadata, pass-only artifact body generation CLI smoke status, count-only
+related summaries, safety review statements, interpretation, non-proofs, and
+next actions. Confirm it records the generation smoke as default
+suppressed-mode only and does not claim safe-metadata mode release-quality
+coverage. Confirm it does not include raw logs, full job output, copied log
+blocks, screenshots containing raw logs, request bodies, pointer bodies,
+expected bodies, artifact body payloads, generated policy bodies, manifest
+bodies, JSON bodies, raw rows, logits, private paths, raw learner text, real
+participant data, performance metric bodies, real-data readiness, production
+readiness, or F1 / accuracy / ECE / AURCC evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

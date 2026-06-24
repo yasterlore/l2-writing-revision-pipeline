@@ -315,6 +315,9 @@ Body and file safety:
   `docs/status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md`.
   This existing fixture marker remains unchanged and does not become that
   generation smoke status marker.
+- Step343 creates that separate artifact body generation CLI smoke status
+  marker. This existing fixture marker remains a record of the earlier
+  artifact body fixture validation remote run.
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -369,9 +372,13 @@ Body and file safety:
   added. This status marker remains a record of the earlier artifact body
   fixture validation remote run and does not become the future artifact body
   generation CLI smoke status marker.
+- Step343: separate artifact body generation CLI smoke remote/manual status
+  marker added. This fixture marker remains unchanged as a fixture validation
+  remote run record.
 
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact body generation release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body generation release-quality remote run record workflow](../frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation release-quality integration design](../frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
