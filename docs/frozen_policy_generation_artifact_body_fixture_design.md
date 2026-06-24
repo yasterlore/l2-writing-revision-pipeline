@@ -658,6 +658,17 @@ JSON, does not change the wrapper, does not add a safe-metadata target, does
 not write artifact files, does not generate manifest bodies, does not use real
 data, and does not compute metrics.
 
+## 39. Step341 Artifact Body Generation Release-Quality Wrapper Integration Status
+
+Step341 adds the standalone artifact body generation CLI smoke to the
+release-quality wrapper after artifact body fixture validation. The fixture
+root remains unchanged and continues to validate body-boundary contracts
+separately from the generation smoke.
+
+Step341 does not modify fixture JSON, does not add a safe-metadata target,
+does not write artifact files, does not generate manifest bodies, does not use
+real data, and does not compute metrics.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)

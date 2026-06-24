@@ -365,3 +365,16 @@ and before config/scoring smoke checks in a later wrapper step. It does not
 change the wrapper, workflow YAML, Makefile, Python code or tests, fixture
 JSON, safe-metadata target coverage, artifact writer CLI behavior, file
 writing, manifest generation, real-data use, or metrics.
+
+## 21. Step341 Release-Quality Wrapper Integration Status
+
+Step341 adds this standalone target to the release-quality wrapper after
+artifact body fixture validation and before config/scoring smoke checks. The
+target remains default suppressed-mode only and continues to emit a body-free
+safe summary.
+
+Step341 does not change workflow YAML, does not change Makefile, does not
+change Python code or tests, does not change fixture JSON, does not add a
+safe-metadata target, does not connect artifact writer CLI, does not write
+artifact files, does not generate manifest bodies, does not use real data, and
+does not compute metrics.

@@ -484,6 +484,17 @@ config/scoring checks, but the wrapper is not changed in this step. No
 safe-metadata target, workflow change, file writing, manifest generation,
 real-data use, or metrics are added.
 
+## 27. Step341 Artifact Body Generation Release-Quality Wrapper Integration Status
+
+Step341 adds the artifact body generation CLI smoke to the release-quality
+wrapper immediately after artifact body fixture validation. This fixture
+validation integration remains in place and now precedes the generation smoke.
+
+Step341 does not change workflow YAML, does not change Makefile, does not
+change Python code or tests, does not change fixture JSON, does not add a
+safe-metadata target, does not write artifact files, does not generate
+manifest bodies, does not use real data, and does not compute metrics.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)

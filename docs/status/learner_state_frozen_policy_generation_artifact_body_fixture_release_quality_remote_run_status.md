@@ -305,6 +305,11 @@ Body and file safety:
   this marker does not become evidence that the generation target is included
   in release-quality, ran remotely, writes artifact files, generates manifest
   bodies, evaluates performance, or supports real-data readiness.
+- Step341 integrates the standalone artifact body generation target into the
+  local release-quality wrapper separately from this remote status marker;
+  this marker does not become evidence that the generation target ran
+  remotely, writes artifact files, generates manifest bodies, evaluates
+  performance, or supports real-data readiness.
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -347,6 +352,12 @@ Body and file safety:
   This status marker remains a record of the earlier remote release-quality
   fixture validation run and does not become evidence that the generation
   target is included in release-quality, ran remotely, writes artifact files,
+  generates manifest bodies, evaluates performance, supports real-data
+  readiness, or proves production readiness.
+- Step341: artifact body generation release-quality wrapper integration added
+  locally. This status marker remains a record of the earlier remote
+  release-quality fixture validation run and does not become evidence that the
+  generation target ran in a remote/manual workflow, writes artifact files,
   generates manifest bodies, evaluates performance, supports real-data
   readiness, or proves production readiness.
 

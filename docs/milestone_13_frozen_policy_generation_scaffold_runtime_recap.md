@@ -683,6 +683,13 @@ written, no artifact body is produced, and no performance metric is computed.
   workflow YAML, Makefile, Python code/tests, fixture JSON, safe-metadata
   target coverage, file writing, manifest generation, metrics, real-data use,
   or production readiness claims.
+- Step341: integrated the standalone artifact body generation CLI smoke into
+  the release-quality wrapper after artifact body fixture validation and
+  before config/scoring smoke checks. The integration uses default suppressed
+  mode only and does not change workflow YAML, Makefile, Python code/tests,
+  fixture JSON, safe-metadata target coverage, artifact writer CLI behavior,
+  file writing, manifest generation, metrics, real-data use, or production
+  readiness claims.
 
 ## Related Documents
 
