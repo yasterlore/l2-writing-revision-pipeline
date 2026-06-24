@@ -491,6 +491,13 @@ The marker records safe metadata only and does not copy raw logs, fixture
 bodies, artifact body payloads, raw rows, logits, private paths, raw learner
 text, real participant data, or performance metric bodies.
 
+## 28. Step335 Artifact Body Generation Implementation Status
+
+Step335 implements a safe metadata-only artifact body generation API. The
+validator CLI remains unchanged and continues to emit body-free summaries for
+fixture validation. No CLI option is added for artifact body generation in this
+step, and no artifact body payload is printed by the validator CLI.
+
 ## Related Documents
 
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)

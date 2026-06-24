@@ -2112,6 +2112,17 @@ rows, logits/probability dumps, private paths, raw learner text, real
 participant data, performance metric bodies, artifact body generation claims,
 real-data readiness claims, or production readiness claims.
 
+For Step335, review the safe metadata-only artifact body generation
+implementation in `python/learner_state/frozen_policy_generation_artifact_body.py`
+and its unit tests. Confirm the default remains suppressed metadata-only,
+explicit safe metadata body generation is limited to safe IDs, notices,
+validation reference IDs, allowed section names, safety flags, count summaries,
+reason code names, failed check names, and non-proof notices. Confirm result
+summaries are body-free by default and the implementation does not write
+artifact files, generate manifest bodies, write manifests, change workflows,
+change release-quality, change Makefile targets, modify fixture JSON, compute
+metrics, use real data, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

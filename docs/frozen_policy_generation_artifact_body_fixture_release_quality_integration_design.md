@@ -421,6 +421,14 @@ not copy raw logs, fixture bodies, artifact body payloads, raw rows, logits,
 private paths, raw learner text, real participant data, or performance metric
 bodies.
 
+## 21. Step335 Artifact Body Generation Implementation Status
+
+Step335 implements safe metadata-only artifact body generation APIs. The
+release-quality integration remains unchanged in this step: release-quality
+continues to validate artifact body fixtures, and does not run artifact body
+generation, write files, generate manifests, compute metrics, use real data,
+or claim production readiness.
+
 ## Related Documents
 
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)

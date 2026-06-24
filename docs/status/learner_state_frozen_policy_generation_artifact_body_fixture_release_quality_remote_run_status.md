@@ -281,7 +281,8 @@ Body and file safety:
 ## Next Actions
 
 - Commit this status marker after local checks.
-- Keep future artifact body generation implementation separate.
+- Step335 implements the first safe metadata-only artifact body generation API
+  separately from this remote status marker.
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -295,6 +296,10 @@ Body and file safety:
   body payloads, generated policy bodies, manifest bodies, raw rows,
   logits/probability dumps, private paths, raw learner text, real participant
   data, or performance metric bodies.
+- Step335: safe metadata-only artifact body generation implementation added in
+  Python. This status marker remains a record of the earlier remote
+  release-quality fixture validation run and does not become artifact body
+  generation evidence.
 
 ## Related Documents
 
