@@ -286,6 +286,9 @@ evidence, and not production readiness evidence.
 - Commit this status marker after local checks.
 - Review the standalone safe-metadata target implementation separately:
   [Frozen policy generation artifact body safe-metadata Makefile target design](../frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md).
+- Review the future safe-metadata release-quality integration design
+  separately:
+  [Frozen policy generation artifact body safe-metadata release-quality integration design](../frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md).
 - Keep any safe-metadata release-quality integration as a future separate
   design and wrapper step.
 - Keep future artifact body file writing separate.
@@ -311,9 +314,14 @@ evidence, and not production readiness evidence.
   The status marker remains scoped to the default suppressed-mode remote
   Release Quality smoke and still does not claim safe-metadata release-quality
   coverage.
+- Step346: added a link to the docs-only safe-metadata release-quality
+  integration design. This marker remains scoped to the default
+  suppressed-mode remote Release Quality smoke and does not claim
+  safe-metadata release-quality coverage.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body safe-metadata release-quality integration design](../frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md)
 - [Frozen policy generation artifact body safe-metadata Makefile target design](../frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md)
 - [Frozen policy generation artifact body generation release-quality remote run record workflow](../frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation release-quality integration design](../frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)

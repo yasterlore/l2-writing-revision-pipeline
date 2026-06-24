@@ -582,3 +582,17 @@ marker, does not change workflow YAML, does not change the wrapper, does not
 change Python code or tests, does not change fixture JSON, does not write
 artifact files, does not generate manifest bodies, does not use real data,
 and does not compute metrics.
+
+## 28. Step346 Safe-Metadata Release-Quality Integration Design Status
+
+Step346 designs future release-quality wrapper integration for the
+standalone safe-metadata target:
+
+[Frozen policy generation artifact body safe-metadata release-quality integration design](frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md).
+
+This remote-run record workflow remains scoped to the default suppressed-mode
+generation CLI smoke that is already in release-quality. Safe-metadata remote
+run recording remains future work until wrapper integration and a successful
+remote/manual run exist. Step346 does not change workflow YAML, the wrapper,
+Makefile, Python code or tests, fixture JSON, artifact writer CLI behavior,
+artifact file writing, manifest generation, real-data use, or metrics.

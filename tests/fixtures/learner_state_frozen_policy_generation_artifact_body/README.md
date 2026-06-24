@@ -373,3 +373,16 @@ files remain unchanged. The target is not added to release-quality in this
 step, does not write artifact files, does not generate manifest bodies, does
 not connect artifact writer CLI, does not use real data, and does not compute
 metrics.
+
+## Future Safe-Metadata Release-Quality Integration
+
+Step346 designs future release-quality integration for the standalone
+safe-metadata target:
+
+`docs/frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md`
+
+The design keeps this fixture root unchanged. It proposes running the
+safe-metadata smoke after the default suppressed artifact body generation
+smoke in a later wrapper step. It does not modify fixture JSON, does not
+write artifact files, does not generate manifest bodies, does not connect
+artifact writer CLI, does not use real data, and does not compute metrics.

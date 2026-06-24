@@ -491,3 +491,15 @@ summary. It is not added to release-quality in this step. Step345 does not
 change workflow YAML, Python code or tests, fixture JSON, artifact writer CLI
 behavior, artifact file writing, manifest generation, real-data use, or
 metrics.
+
+## 29. Step346 Safe-Metadata Release-Quality Integration Design Status
+
+Step346 designs a future release-quality wrapper integration for the
+standalone safe-metadata target:
+
+[Frozen policy generation artifact body safe-metadata release-quality integration design](frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md).
+
+The CLI remains summary-only and body-free. The design does not change the
+wrapper, workflow YAML, Makefile, Python code or tests, fixture JSON, artifact
+writer CLI behavior, artifact file writing, manifest generation, real-data
+use, or metrics.

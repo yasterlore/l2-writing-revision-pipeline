@@ -2277,6 +2277,20 @@ bodies, expected bodies, artifact body payloads, generated policy bodies,
 manifest bodies, JSON body examples, raw rows, logits, private paths, raw
 learner text, real participant data, or performance metric bodies.
 
+For Step346, review the docs-only
+[frozen policy generation artifact body safe-metadata release-quality integration design](frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md).
+Confirm it designs only a future wrapper integration for the standalone
+safe-metadata target. Confirm it does not change the wrapper, workflow YAML,
+Makefile, Python code/tests, fixture JSON, artifact writer CLI behavior,
+artifact file writing, manifest generation, metric computation, real-data
+use, or production readiness claims. Confirm it recommends the safe-metadata
+smoke after the default suppressed generation smoke and before config/scoring
+smoke checks. Confirm docs do not include raw logs, full job output, copied
+log blocks, screenshots containing raw logs, request bodies, pointer bodies,
+expected bodies, artifact body payloads, generated policy bodies, manifest
+bodies, JSON body examples, raw rows, logits, private paths, raw learner text,
+real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

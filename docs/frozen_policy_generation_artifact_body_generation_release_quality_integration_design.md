@@ -424,3 +424,16 @@ suppressed-mode target. The new safe-metadata target is not added to
 release-quality in Step345. Step345 does not change the wrapper, workflow
 YAML, Python code or tests, fixture JSON, artifact writer CLI behavior,
 artifact file writing, manifest generation, real-data use, or metrics.
+
+## 23. Step346 Safe-Metadata Release-Quality Integration Design Status
+
+Step346 designs future release-quality wrapper integration for the
+standalone safe-metadata target:
+
+[Frozen policy generation artifact body safe-metadata release-quality integration design](frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md).
+
+This document remains the default suppressed-mode integration record.
+Step346's design keeps safe-metadata integration separate and future. It does
+not change the wrapper, workflow YAML, Makefile, Python code or tests,
+fixture JSON, artifact writer CLI behavior, artifact file writing, manifest
+generation, real-data use, or metrics.
