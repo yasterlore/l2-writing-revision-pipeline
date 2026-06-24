@@ -533,6 +533,11 @@ The artifact policy remains unchanged: the CLI design keeps output
 metadata-only, does not execute an artifact writer, does not expose artifact or
 manifest body output options, and does not add file-writing options.
 
+Step306 implements that CLI. The artifact policy remains unchanged: the CLI is
+still metadata-only, does not execute an artifact writer, emits no artifact
+body, emits no generated policy body, emits no manifest body, and writes no
+files.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)

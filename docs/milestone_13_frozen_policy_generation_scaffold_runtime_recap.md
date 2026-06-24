@@ -520,6 +520,10 @@ written, no artifact body is produced, and no performance metric is computed.
   implementation, Makefile target, release-quality integration, artifact
   writer implementation, artifact bodies, generated policy bodies, manifest
   bodies, file writing, metrics, and real-data readiness remain separate.
+- Step306: linked the artifact writer fixture validator CLI implementation.
+  Makefile target, release-quality integration, artifact writer implementation,
+  artifact bodies, generated policy bodies, manifest bodies, file writing,
+  metrics, and real-data readiness remain separate.
 
 ## Related Documents
 

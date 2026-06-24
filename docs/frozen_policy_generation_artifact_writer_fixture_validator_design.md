@@ -720,9 +720,8 @@ Documentation must not include:
 
 Recommended next steps:
 
-1. Step306: artifact writer fixture validator CLI implementation.
-2. Step307: Makefile target design.
-3. Later: Makefile target implementation, release-quality integration design,
+1. Step307: Makefile target design.
+2. Later: Makefile target implementation, release-quality integration design,
    wrapper integration, and public-safe remote status marker.
 
 ## 22. Beginner-Friendly Explanation
@@ -795,6 +794,18 @@ The validator implementation remains unchanged. Step305 does not implement CLI
 code, execute an artifact writer, add a Makefile target, integrate
 release-quality, change workflow YAML, generate artifact bodies, generate
 generated policy bodies, generate manifest bodies, or write files.
+
+## 26. Step306 Fixture Validator CLI Implementation Status
+
+Step306 implements the CLI described by the Step305 design in the validator
+module itself. It provides root and case modes, safe human/JSON summaries, and
+exit codes for matched, usage/input-error, mismatch, and unexpected internal
+error outcomes.
+
+The validator remains metadata-only. Step306 does not execute an artifact
+writer, add a Makefile target, integrate release-quality, change workflow
+YAML, generate artifact bodies, generate generated policy bodies, generate
+manifest bodies, or write files.
 
 ## Related Documents
 

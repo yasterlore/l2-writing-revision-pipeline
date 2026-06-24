@@ -355,10 +355,9 @@ Documentation must not include:
 
 Recommended next steps:
 
-1. Step306: artifact writer fixture validator CLI implementation.
-2. Step307: Makefile target design.
-3. Step308: Makefile target implementation.
-4. Step309: release-quality integration design.
+1. Step307: Makefile target design.
+2. Step308: Makefile target implementation.
+3. Step309: release-quality integration design.
 
 ## 19. Beginner-Friendly Explanation
 
@@ -388,7 +387,6 @@ path-safety and cleanup concerns. That should be designed separately.
 
 This document does not:
 
-- implement the CLI
 - execute an artifact writer
 - generate artifact bodies
 - generate generated policy bodies
@@ -399,6 +397,26 @@ This document does not:
 - evaluate performance
 - use real data
 - claim production readiness
+
+## 21. Step306 CLI Implementation Status
+
+Step306 implements the minimal safe CLI in:
+
+`python/learner_state/frozen_policy_generation_artifact_writer_fixture_validation.py`
+
+It also adds focused CLI tests:
+
+`python/learner_state/tests/test_frozen_policy_generation_artifact_writer_fixture_validation_cli.py`
+
+The CLI supports root mode, case mode, safe human output, safe JSON output,
+usage/input-error/mismatch exit codes, deterministic summaries, and
+no-body-leakage checks. It remains a thin wrapper over the validator APIs.
+
+Step306 does not implement an artifact writer, Makefile target,
+release-quality wrapper integration, workflow change, artifact body
+generation, generated policy body generation, manifest body generation,
+artifact file writing, manifest file writing, metric computation, performance
+evaluation, real-data use, or production readiness.
 
 ## Related Documents
 

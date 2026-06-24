@@ -107,6 +107,15 @@ That design keeps the CLI metadata-only. It covers root mode, case mode, safe
 human output, safe JSON output, exit codes, and future Makefile staging without
 executing an artifact writer or writing artifact/manifest files.
 
+Step306 implements that safe validator CLI in:
+
+`python/learner_state/frozen_policy_generation_artifact_writer_fixture_validation.py`
+
+The CLI still checks fixture contracts only. It does not execute an artifact
+writer, add a Makefile target, integrate release-quality, generate artifact
+bodies, generate generated policy bodies, generate manifest bodies, or write
+artifact/manifest files.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

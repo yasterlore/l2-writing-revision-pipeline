@@ -623,10 +623,9 @@ Documentation must not include:
 
 Recommended next steps:
 
-1. Step306: artifact writer fixture validator CLI implementation.
-2. Step307: artifact writer fixture validator Makefile target design.
-3. Step308: artifact writer fixture validator Makefile target implementation.
-4. Step309: artifact writer fixture validator release-quality integration
+1. Step307: artifact writer fixture validator Makefile target design.
+2. Step308: artifact writer fixture validator Makefile target implementation.
+3. Step309: artifact writer fixture validator release-quality integration
    design.
 
 ## 19. Beginner-Friendly Explanation
@@ -726,6 +725,17 @@ Step305 designs the future terminal entrypoint for the fixture validator:
 The fixture JSON files remain unchanged. Step305 does not implement CLI code,
 artifact writer code, Makefile targets, release-quality integration, workflow
 changes, artifact body generation, generated policy body generation, manifest
+body generation, artifact file writing, or manifest file writing.
+
+## 25. Step306 Fixture Validator CLI Implementation Status
+
+Step306 implements the metadata-only validator CLI. It can validate this root
+or one case directory from the terminal and prints only safe metadata
+summaries.
+
+The fixture JSON files remain unchanged. Step306 does not implement an
+artifact writer, Makefile target, release-quality integration, workflow
+change, artifact body generation, generated policy body generation, manifest
 body generation, artifact file writing, or manifest file writing.
 
 ## Related Documents
