@@ -676,6 +676,9 @@ The fixture validator remains separate. It continues to validate fixture
 contracts, while the future skeleton CLI should run one request/pointer pair
 and print only safe metadata.
 
+Step293 implements that skeleton CLI. The fixture validator remains separate
+and continues to validate fixture contracts only.
+
 Related docs:
 
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)

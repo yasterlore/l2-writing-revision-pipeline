@@ -785,6 +785,10 @@ metric computation, or real-data readiness claim is added.
 - Step292: linked the generator scaffold CLI design as the next docs-only
   boundary before CLI implementation, Makefile target design, or
   release-quality skeleton runtime integration.
+- Step293: recorded the generator scaffold CLI implementation status; Makefile
+  target, release-quality skeleton runtime integration, artifact body
+  generation, artifact writing, metrics, and real-data readiness remain out of
+  scope.
 
 ## Related Documents
 

@@ -1490,6 +1490,22 @@ it does not include raw logs, request/pointer bodies, expected generator
 scaffold result bodies, artifact bodies, generated policy bodies, raw rows,
 logits, private paths, raw learner text, or performance metric bodies.
 
+For Step293, review the generator scaffold CLI implementation in
+`python/learner_state/frozen_policy_generation_generator_scaffold.py` and
+focused CLI tests in
+`python/learner_state/tests/test_frozen_policy_generation_generator_scaffold_cli.py`.
+Confirm the CLI is a thin wrapper over the skeleton APIs, supports
+`--request`, `--pointer`, `--json`, and `--help`, returns safe human/JSON
+metadata, exits `0` for valid pass and expected fail-closed invalid cases,
+exits `2` for usage/input errors, and does not write artifacts or generate
+artifact/policy bodies. Confirm stdout/stderr do not include request bodies,
+pointer bodies, expected result bodies, artifact bodies, generated policy
+bodies, raw rows, logits, private paths, raw learner text, or performance
+metric bodies. Confirm no Makefile target, release-quality wrapper change,
+GitHub Actions workflow change, fixture change, calibration/selective
+prediction logic, estimator work, metric computation, performance evaluation,
+real-data use, or real-data readiness claim is introduced.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

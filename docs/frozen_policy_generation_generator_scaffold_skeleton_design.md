@@ -757,7 +757,7 @@ The implementation:
 - keeps artifact writing disabled
 - keeps artifact body generation disabled
 - keeps generated policy body generation disabled
-- does not add a CLI
+- does not add a CLI in Step291
 - does not add a Makefile target
 - does not change release-quality
 - does not change workflows
@@ -777,6 +777,18 @@ The design keeps CLI implementation, Makefile target changes, release-quality
 integration, workflow changes, fixture changes, artifact body generation,
 generated policy body generation, artifact writing, metric computation, and
 real-data readiness out of scope.
+
+## 25. Step293 CLI Implementation Status
+
+Step293 implements the safe CLI entrypoint in
+`python/learner_state/frozen_policy_generation_generator_scaffold.py` and adds
+focused CLI tests at
+`python/learner_state/tests/test_frozen_policy_generation_generator_scaffold_cli.py`.
+
+The CLI remains a thin wrapper over the skeleton APIs. It emits safe
+metadata-only human or JSON summaries, does not write files, does not generate
+artifact bodies, does not generate policy bodies, and does not add Makefile,
+release-quality, workflow, or fixture changes.
 
 ## Related Documents
 

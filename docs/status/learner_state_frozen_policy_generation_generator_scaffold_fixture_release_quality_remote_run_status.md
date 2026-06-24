@@ -241,6 +241,9 @@ This marker does not prove:
   future CLI design and release-quality runtime integration remain separate.
 - Step292 created the future generator scaffold CLI design:
   [Frozen policy generation generator scaffold CLI design](../frozen_policy_generation_generator_scaffold_cli_design.md).
+- Step293 implemented the local safe generator scaffold CLI and focused CLI
+  tests; future Makefile target and release-quality skeleton runtime
+  integration remain separate.
 - Keep future artifact writing design separate.
 - Keep future calibration scaffold work separate.
 - Treat real-data readiness as future private/institution-approved review only.
@@ -257,3 +260,6 @@ This marker does not prove:
 - Step292: linked the generator scaffold CLI design as the next staged
   boundary; CLI implementation and release-quality skeleton runtime
   integration remain separate.
+- Step293: noted local generator scaffold CLI implementation; Makefile target,
+  release-quality skeleton runtime integration, artifact writing, and artifact
+  bodies remain separate.

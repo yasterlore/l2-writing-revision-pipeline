@@ -510,6 +510,10 @@ The fixture root remains unchanged. The future CLI should consume one
 request/pointer pair as metadata-only input and should not expose fixture
 bodies, artifact bodies, generated policy bodies, or write files.
 
+Step293 implements that safe CLI and focused CLI tests. The fixture root
+remains unchanged, and the CLI continues to consume request/pointer metadata
+without exposing fixture bodies or writing artifacts.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
