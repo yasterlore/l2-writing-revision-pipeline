@@ -376,8 +376,20 @@ change Python code or tests, change fixture JSON, generate artifact bodies,
 generate generated policy bodies, generate manifest bodies, write artifact or
 manifest files, compute metrics, use real data, or claim real-data readiness.
 
+## 19. Step318 Runtime Release-Quality Integration Design Status
+
+Step318 designs future release-quality wrapper integration for this standalone
+runtime target:
+
+[Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md).
+
+Step318 does not change the release-quality wrapper, workflow YAML, Makefile,
+Python code or tests, fixture JSON, artifact body generation, generated policy
+body generation, manifest body generation, artifact or manifest file writing,
+metrics, real-data use, or real-data readiness status.
+
 Next recommended steps:
 
-- Step318 artifact writer runtime release-quality integration design
 - Step319 artifact writer runtime release-quality wrapper integration
-- Step320 remote/manual status marker workflow design
+- Step320 remote/manual run record workflow design
+- Step321 remote/manual run status marker

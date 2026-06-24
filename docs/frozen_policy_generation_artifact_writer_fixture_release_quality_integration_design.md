@@ -409,8 +409,18 @@ The release-quality wrapper remains unchanged in Step317. Runtime
 release-quality integration remains future work and should be designed
 separately.
 
+## 25. Step318 Runtime Release-Quality Integration Design Status
+
+Step318 designs that future runtime release-quality integration separately:
+[Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md).
+
+The fixture validation wrapper integration remains unchanged. The future
+runtime target should be placed after this fixture validation and before
+config/scoring smoke checks.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)

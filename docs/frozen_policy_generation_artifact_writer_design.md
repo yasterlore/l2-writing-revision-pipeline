@@ -934,8 +934,20 @@ Python code or tests, change fixture JSON, generate artifact bodies, generate
 generated policy bodies, generate manifest bodies, write files, compute
 metrics, use real data, or claim real-data readiness.
 
+## 42. Step318 Artifact Writer Runtime Release-Quality Integration Design Status
+
+Step318 designs future release-quality wrapper integration for the standalone
+runtime target:
+
+[Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md).
+
+The wrapper is not changed in Step318. The design keeps the future target
+metadata-only, places it after artifact writer fixture validation, and treats
+success as runtime smoke evidence only.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
