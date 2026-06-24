@@ -1936,6 +1936,23 @@ generated policy body generation, manifest body generation, artifact or
 manifest file writing, metrics, real-data use, and production readiness
 claims remain unchanged or out of scope.
 
+For Step323, review the docs-only
+[frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md).
+Confirm it defines the future fixture root, case file layout, schema version
+candidates, valid cases, invalid cases, expected valid and invalid behavior,
+safe marker policy, forbidden marker scan, aggregate counts, future validator
+outline, and CLI/Makefile/release-quality staging. Confirm it does not create
+fixture JSON, implement a validator, implement artifact body generation,
+generate artifact bodies, generate generated policy bodies, generate manifest
+bodies, write artifact or manifest files, change writer CLI, change Makefile
+targets, change release-quality wrapper scripts, change workflow YAML, change
+Python code/tests, change existing fixture JSON, compute metrics, use real
+data, or claim production readiness. Confirm docs do not include raw logs,
+full job output, request bodies, pointer bodies, expected result bodies,
+artifact body JSON examples, generated policy bodies, artifact bodies,
+manifest bodies, raw rows, logits/probability dumps, private paths, raw
+learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

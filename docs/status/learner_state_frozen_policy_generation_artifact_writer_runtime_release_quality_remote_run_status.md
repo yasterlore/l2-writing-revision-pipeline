@@ -284,6 +284,8 @@ evidence, or production readiness evidence.
 - Commit this status marker after local checks.
 - Keep future artifact body generation design separate:
   [Frozen policy generation artifact body generation design](../frozen_policy_generation_artifact_body_generation_design.md).
+- Keep future artifact body fixture design separate:
+  [Frozen policy generation artifact body fixture design](../frozen_policy_generation_artifact_body_fixture_design.md).
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -301,3 +303,7 @@ evidence, or production readiness evidence.
   docs-only boundary. The status marker remains pass-only/count-only and does
   not add artifact bodies, manifest bodies, file writing, metrics, real-data
   use, or production readiness claims.
+- Step323: linked the future artifact body fixture design. The status marker
+  remains pass-only/count-only and does not create fixture JSON, generate
+  artifact bodies, implement validators, write files, compute metrics, use
+  real data, or claim production readiness.

@@ -484,3 +484,15 @@ artifact body generation, manifest body generation, file writing, Makefile
 target, release-quality wrapper change, workflow change, Python test change,
 fixture JSON change, metrics, real-data use, or production readiness claim is
 introduced in Step322.
+
+## 30. Step323 Artifact Body Fixture Design Status
+
+Step323 designs future artifact body fixtures:
+
+[Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md).
+
+The CLI remains unchanged and body-free by default. The future fixture design
+does not create fixture JSON, implement a validator, implement body
+generation, add CLI options, change Makefile targets, change release-quality,
+change workflow YAML, change Python code or tests, write files, compute
+metrics, use real data, or claim production readiness.

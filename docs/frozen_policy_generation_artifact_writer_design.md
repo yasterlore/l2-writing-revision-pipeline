@@ -1006,8 +1006,23 @@ targets, change release-quality, change workflow YAML, change Python code or
 tests, change fixture JSON, write files, compute metrics, use real data, or
 claim production readiness.
 
+## 47. Step323 Artifact Body Fixture Design Status
+
+Step323 designs future artifact body fixtures:
+
+[Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md).
+
+The design keeps artifact body fixtures separate from the current artifact
+writer fixture root. It defines future valid and invalid fixture cases,
+safe-marker booleans, forbidden marker scans, aggregate counts, and validator
+staging. Step323 does not create fixture JSON, implement a validator,
+generate artifact bodies, change the writer CLI, change Makefile targets,
+change release-quality, change workflow YAML, change Python code or tests,
+write files, compute metrics, use real data, or claim production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md)

@@ -582,9 +582,16 @@ written, no artifact body is produced, and no performance metric is computed.
   safety audits, fail-closed reason codes, fixtures, tests, and staging. It
   does not implement artifact body generation, manifest body generation, file
   writing, metrics, real-data use, or production readiness claims.
+- Step323: linked the artifact body fixture design. The design is docs-only
+  and defines the future fixture root, case layout, valid and invalid cases,
+  safe marker policy, forbidden marker scan, aggregate counts, validator
+  outline, and staging. It does not create fixture JSON, implement a
+  validator, generate artifact bodies, write files, compute metrics, use real
+  data, or claim production readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md)

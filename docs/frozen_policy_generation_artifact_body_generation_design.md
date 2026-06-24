@@ -369,8 +369,23 @@ body generation, artifact or manifest file writing, CLI options, Makefile
 targets, release-quality wrapper changes, workflow changes, Python code,
 tests, fixture JSON, metrics, real-data use, or production readiness claims.
 
+## 19. Step323 Artifact Body Fixture Design Status
+
+Step323 designs future artifact body fixtures:
+
+[Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md).
+
+The fixture design defines the future fixture root, case file layout, valid
+cases, invalid cases, safe marker policy, expected aggregate counts, validator
+outline, and staging. It does not create fixture JSON, implement artifact body
+generation, implement a validator, change the CLI, change Makefile targets,
+change release-quality, change workflow YAML, change Python code or tests,
+change existing fixture JSON, write files, compute metrics, use real data, or
+claim production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
