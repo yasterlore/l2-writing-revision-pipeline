@@ -308,7 +308,26 @@ and makes fail-closed behavior explicit.
 - Later: release-quality integration design.
 - Later: wrapper integration and remote/manual status marker.
 
-## 18. Related Documents
+## 18. Step354 Static Validator Implementation Status
+
+Step354 implements the static no-write validator module:
+
+`python/learner_state/frozen_policy_generation_artifact_body_file_writing_fixture_validation.py`
+
+It also adds unit tests:
+
+`python/learner_state/tests/test_frozen_policy_generation_artifact_body_file_writing_fixture_validation.py`
+
+The implementation validates fixture shape, JSON parsing, schema versions,
+case ID consistency, expected result fields, expected valid/invalid status,
+path-policy metadata, content-policy metadata, expected reason codes, and
+safe summary output. It does not write files, does not create temp output
+directories, does not implement `--artifact-body-out`, does not generate or
+write manifest bodies, does not connect artifact writer CLI, does not change
+Makefile, does not change release-quality, does not change workflow YAML,
+does not use real data, and does not compute metrics.
+
+## 19. Related Documents
 
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)

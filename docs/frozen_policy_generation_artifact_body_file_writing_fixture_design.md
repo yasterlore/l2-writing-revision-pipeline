@@ -326,7 +326,21 @@ JSON, does not add a CLI option, does not write artifacts or manifests, does
 not change release-quality, does not use real data, and does not compute
 metrics.
 
-## 22. Related Documents
+## 22. Step354 Static Validator Implementation Status
+
+Step354 implements the static no-write validator module:
+
+`python/learner_state/frozen_policy_generation_artifact_body_file_writing_fixture_validation.py`
+
+The validator reads this fixture root, validates required files, JSON parse,
+schema versions, case IDs, expected result fields, valid/invalid expected
+status, path-policy metadata, content-policy metadata, expected reason codes,
+and safe summaries. It does not implement file writing, does not add a CLI
+option, does not write artifacts or manifests, does not change Makefile,
+does not change release-quality, does not use real data, and does not
+compute metrics.
+
+## 23. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)

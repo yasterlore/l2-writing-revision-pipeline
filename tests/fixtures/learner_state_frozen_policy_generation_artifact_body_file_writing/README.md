@@ -107,6 +107,17 @@ validator, does not add a CLI option, does not write artifact body files,
 does not write manifest files, does not connect artifact writer CLI, does not
 use real data, and does not compute metrics.
 
+Step354 implements the static no-write validator:
+
+`python/learner_state/frozen_policy_generation_artifact_body_file_writing_fixture_validation.py`
+
+The validator reads this fixture root and checks fixture shape, schema
+versions, case IDs, expected result fields, path-policy metadata,
+content-policy metadata, expected reason codes, and safe summaries. It does
+not write files, does not create temp output directories, does not add a CLI
+option, does not generate manifest bodies, does not connect artifact writer
+CLI, does not use real data, and does not compute metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

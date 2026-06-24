@@ -245,6 +245,8 @@ copied into docs or printed as raw body content.
   contract.
 - Use the Step353 validator design before implementing the future static
   fixture validator.
+- Use the Step354 static validator as the local no-write fixture validation
+  baseline before any future file-writing implementation.
 - Keep future manifest writer design separate.
 - Keep future artifact writer CLI integration separate.
 - Treat real-data readiness as future private/institution-approved review.
@@ -275,6 +277,9 @@ copied into docs or printed as raw body content.
   validator design. The design does not implement a validator, change fixture
   JSON, add a CLI option, write artifact files or manifests, use real data,
   or compute metrics.
+- Step354: added the static no-write fixture validator implementation as the
+  future local validation baseline. It does not write files, add a CLI
+  option, generate manifest bodies, use real data, or compute metrics.
 
 ## Related Documents
 
