@@ -2151,6 +2151,21 @@ release-quality, change workflow YAML, modify fixture JSON, change artifact
 writer CLI behavior, write artifact files, generate manifest bodies, compute
 metrics, use real data, or claim production readiness.
 
+For Step338, review the docs-only
+[frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md).
+Confirm it proposes a future standalone default suppressed-mode smoke target
+for the artifact body generation CLI, documents target naming, command choice,
+help text, expected safe output, exit-code behavior, output/logging safety,
+future tests, and release-quality staging. Confirm it does not implement a
+Makefile target, change release-quality, change workflow YAML, change Python
+code or tests, modify fixture JSON, connect artifact writer CLI, write
+artifact files, generate manifest bodies, write manifests, compute metrics,
+use real data, or claim production readiness. Confirm docs do not include
+command output examples, JSON output examples, request bodies, pointer
+bodies, expected bodies, artifact body payloads, raw logs, raw rows, logits,
+private paths, raw learner text, real participant data, or performance metric
+bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

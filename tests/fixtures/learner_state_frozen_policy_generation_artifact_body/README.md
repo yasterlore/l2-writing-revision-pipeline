@@ -265,3 +265,14 @@ metadata and emit only body-free safe summaries in human or JSON form. It does
 not print artifact body payloads, write artifact files, generate manifest
 bodies, change release-quality, compute metrics, use real data, or claim
 production readiness.
+
+## Future Artifact Body Generation Makefile Target Design
+
+Step338 designs a future standalone Makefile target for the generation CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_makefile_target_design.md`
+
+The design keeps the fixture JSON files unchanged and recommends an initial
+default suppressed-mode smoke. It does not implement the Makefile target,
+change release-quality, write artifact files, generate manifest bodies,
+compute metrics, use real data, or claim production readiness.

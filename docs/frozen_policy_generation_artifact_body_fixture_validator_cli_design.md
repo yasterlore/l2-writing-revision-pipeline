@@ -516,8 +516,20 @@ generation CLI emits only body-free safe summaries, does not print artifact
 body payloads, does not add Makefile targets, does not change release-quality,
 does not write files, does not use real data, and does not compute metrics.
 
+## 31. Step338 Artifact Body Generation Makefile Target Design Status
+
+Step338 designs a future standalone Makefile target for the generation CLI:
+
+[Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md).
+
+The validator CLI remains unchanged. The generation Makefile target design
+does not implement a target, does not change release-quality, does not write
+files, does not print artifact body payloads, does not use real data, and
+does not compute metrics.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)

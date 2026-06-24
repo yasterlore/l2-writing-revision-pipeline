@@ -291,6 +291,10 @@ Body and file safety:
   not make this marker evidence of artifact body payload generation,
   file-writing, manifest generation, metrics, real-data readiness, or
   production readiness.
+- Step338 designs a future standalone Makefile target for the artifact body
+  generation CLI separately from this remote status marker; this marker does
+  not become evidence that the future generation target exists or is included
+  in release-quality.
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -317,10 +321,16 @@ Body and file safety:
   validation run and does not become evidence of artifact body payload output,
   artifact file writing, manifest generation, model performance, real-data
   readiness, or production readiness.
+- Step338: artifact body generation Makefile target design added. This status
+  marker remains a record of the earlier remote release-quality fixture
+  validation run and does not become evidence of a generation Makefile target,
+  release-quality generation integration, artifact file writing, manifest
+  generation, model performance, real-data readiness, or production readiness.
 
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
+- [Frozen policy generation artifact body generation Makefile target design](../frozen_policy_generation_artifact_body_generation_makefile_target_design.md)
 - [Frozen policy generation artifact body generation CLI design](../frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](../frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](../frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
