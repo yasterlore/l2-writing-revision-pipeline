@@ -126,6 +126,15 @@ release-quality, execute an artifact writer, generate artifact bodies,
 generate generated policy bodies, generate manifest bodies, or write
 artifact/manifest files.
 
+Step308 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-fixtures`
+
+The target runs the metadata-only validator CLI over this fixture root. It does
+not execute an artifact writer, integrate release-quality, generate artifact
+bodies, generate generated policy bodies, generate manifest bodies, or write
+artifact/manifest files.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

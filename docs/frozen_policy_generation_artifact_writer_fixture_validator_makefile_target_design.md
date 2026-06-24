@@ -348,9 +348,38 @@ easy to understand and keeps the wrapper change small later.
 Recommended next steps:
 
 1. Step308: artifact writer fixture validator Makefile target implementation.
+   Complete.
 2. Step309: release-quality integration design.
 3. Step310: wrapper integration.
 4. Step311: remote status marker workflow design.
+
+## 18. Step308 Makefile Target Implementation Status
+
+Step308 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-fixtures`
+
+The target command is:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_writer_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_writer
+```
+
+The help text is:
+
+```text
+check-learner-state-frozen-policy-generation-artifact-writer-fixtures  Validate frozen policy generation artifact writer fixtures
+```
+
+The target validates the 17 synthetic metadata-only artifact writer fixture
+cases in root mode and prints only a body-free metadata summary. It does not
+create tmp output, write validation result files, write artifact files, write
+manifest files, execute an artifact writer, generate artifact bodies, generate
+generated policy bodies, generate manifest bodies, compute metrics, evaluate
+performance, use real data, or claim production readiness.
+
+Release-quality integration is still intentionally separate. Step308 does not
+change `scripts/check_release_quality.sh` or GitHub Actions workflow YAML.
 
 ## Related Documents
 

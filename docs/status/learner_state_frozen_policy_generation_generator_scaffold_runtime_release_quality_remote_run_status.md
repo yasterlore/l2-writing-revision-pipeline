@@ -299,8 +299,9 @@ This marker does not prove:
 - Step307 artifact writer fixture validator Makefile target design is now
   tracked separately:
   [Frozen policy generation artifact writer fixture validator Makefile target design](../frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md).
-- Keep future artifact writer fixture validator Makefile target implementation
-  separate.
+- Step308 artifact writer fixture validator Makefile target implementation is
+  now tracked separately as a standalone local target. Release-quality
+  integration remains future work.
 - Keep future artifact writer implementation separate.
 - Keep future generator scaffold expansion separate.
 - Keep future calibration scaffold work separate.
@@ -351,3 +352,9 @@ This marker does not prove:
   integration, workflow change, artifact writer implementation, artifact body
   generation, manifest body generation, file writing, metrics, or real-data
   readiness claims.
+- Step308: recorded that the standalone artifact writer fixture validator
+  Makefile target now exists separately. This status marker remains unchanged
+  as generator scaffold runtime remote run evidence and does not integrate
+  release-quality, change workflow YAML, execute an artifact writer, generate
+  artifact bodies, generate manifest bodies, write files, compute metrics, or
+  claim real-data readiness.

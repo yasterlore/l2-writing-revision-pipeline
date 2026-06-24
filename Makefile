@@ -20,6 +20,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-scaffold-runtime
 .PHONY: check-learner-state-frozen-policy-generation-generator-scaffold-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-generator-scaffold-runtime
+.PHONY: check-learner-state-frozen-policy-generation-artifact-writer-fixtures
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -49,6 +50,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-scaffold-runtime  Smoke-test frozen policy generation scaffold runtime CLI"
 	@echo "  check-learner-state-frozen-policy-generation-generator-scaffold-fixtures  Validate frozen policy generation generator scaffold fixtures"
 	@echo "  check-learner-state-frozen-policy-generation-generator-scaffold-runtime  Run frozen policy generation generator scaffold runtime smoke"
+	@echo "  check-learner-state-frozen-policy-generation-artifact-writer-fixtures  Validate frozen policy generation artifact writer fixtures"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -125,6 +127,9 @@ check-learner-state-frozen-policy-generation-generator-scaffold-fixtures:
 
 check-learner-state-frozen-policy-generation-generator-scaffold-runtime:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_generator_scaffold --request tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/valid/minimal_metadata_only_generation_plan/generation_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/valid/minimal_metadata_only_generation_plan/input_fixture_pointer.json
+
+check-learner-state-frozen-policy-generation-artifact-writer-fixtures:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_writer_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_writer
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality
