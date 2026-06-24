@@ -807,8 +807,19 @@ writer, add a Makefile target, integrate release-quality, change workflow
 YAML, generate artifact bodies, generate generated policy bodies, generate
 manifest bodies, or write files.
 
+## 27. Step307 Makefile Target Design Status
+
+Step307 designs the future standalone Makefile target for the implemented CLI:
+[Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md).
+
+This keeps the validator and CLI unchanged. It does not implement a Makefile
+target, integrate release-quality, change workflow YAML, change fixture JSON,
+execute an artifact writer, generate artifact bodies, generate generated policy
+bodies, generate manifest bodies, or write files.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
 - [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)

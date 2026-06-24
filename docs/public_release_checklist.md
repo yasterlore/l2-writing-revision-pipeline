@@ -1721,6 +1721,24 @@ YAML, generate artifact bodies, generate generated policy bodies, generate
 manifest bodies, write artifact files, write manifest files, compute metrics,
 evaluate performance, use real data, or claim real-data readiness.
 
+For Step307, review the
+[frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md).
+Confirm it is docs-only and defines the future target name, target command,
+help text, expected fixture-root behavior, exit-code interpretation,
+output/logging safety, tmp/output policy, relation to existing targets, future
+target tests, release-quality staging, status-marker staging, no-oracle /
+synthetic-only boundary, and beginner-friendly explanation. Confirm it does
+not add a Makefile target, change the release-quality wrapper, change workflow
+YAML, change Python code, change Python tests, change fixture JSON, execute an
+artifact writer, generate artifact bodies, generate generated policy bodies,
+generate manifest bodies, write artifact files, write manifest files, compute
+metrics, evaluate performance, use real data, or claim real-data readiness.
+Confirm docs do not include raw logs, full job output, copied log blocks,
+fixture JSON bodies, artifact writer request bodies, artifact writer expected
+result bodies, generator scaffold bodies, policy bodies, artifact bodies,
+manifest bodies, raw rows, logits, private paths, raw learner text, real
+participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

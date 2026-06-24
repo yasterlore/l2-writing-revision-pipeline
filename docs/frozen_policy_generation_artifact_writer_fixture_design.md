@@ -738,8 +738,20 @@ artifact writer, Makefile target, release-quality integration, workflow
 change, artifact body generation, generated policy body generation, manifest
 body generation, artifact file writing, or manifest file writing.
 
+## 26. Step307 Makefile Target Design Status
+
+Step307 designs a future standalone Makefile target for running the
+metadata-only validator CLI over this fixture root:
+[Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md).
+
+The fixture JSON files remain unchanged. Step307 does not add a Makefile
+target, integrate release-quality, change workflow YAML, implement an artifact
+writer, generate artifact bodies, generate generated policy bodies, generate
+manifest bodies, or write artifact/manifest files.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
