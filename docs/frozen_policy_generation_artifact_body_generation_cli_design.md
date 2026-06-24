@@ -525,3 +525,15 @@ create a status marker, run a remote workflow, change workflow YAML, change
 the wrapper, change Makefile, change Python code or tests, change fixture
 JSON, print artifact body payloads, write artifact files, generate manifest
 bodies, use real data, evaluate performance, or compute metrics.
+
+## 32. Step349 Safe-Metadata Remote Run Status Marker Status
+
+Step349 creates the public-safe remote/manual Release Quality status marker
+for this CLI's safe-metadata smoke:
+
+[Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md).
+
+The CLI remains summary-only and body-free. The marker does not copy raw
+logs, request bodies, pointer bodies, artifact body payloads, generated
+policy bodies, manifest bodies, raw rows, logits, private paths, raw learner
+text, real participant data, or performance metric bodies.

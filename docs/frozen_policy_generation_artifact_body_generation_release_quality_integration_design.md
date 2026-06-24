@@ -466,3 +466,16 @@ not run a remote workflow, does not change workflow YAML, does not change the
 wrapper, does not change Makefile, does not change Python code or tests, does
 not change fixture JSON, does not write artifact files, does not generate
 manifest bodies, does not use real data, and does not compute metrics.
+
+## 26. Step349 Safe-Metadata Remote Run Status Marker Status
+
+Step349 creates the separate public-safe remote/manual Release Quality status
+marker for the safe-metadata artifact body generation CLI smoke:
+
+[Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md).
+
+This document remains the release-quality integration design for the default
+suppressed generation smoke. The Step349 marker records only public-safe
+metadata and does not copy raw logs, body payloads, generated bodies, raw
+rows, logits, private paths, raw learner text, real participant data, or
+performance metric bodies.

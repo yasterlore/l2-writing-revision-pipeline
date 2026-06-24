@@ -413,3 +413,17 @@ public-safe pass-only and count-only metadata. It must not copy fixture JSON
 bodies, request bodies, pointer bodies, artifact body payloads, generated
 policy bodies, manifest bodies, raw logs, raw rows, logits, private paths,
 raw learner text, real participant data, or performance metric bodies.
+
+## Safe-Metadata Remote Status Marker
+
+Step349 creates the public-safe remote/manual Release Quality status marker
+for the safe-metadata CLI smoke:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md`
+
+This fixture root remains unchanged. The marker records only public-safe
+run identity, pass-only smoke status, count-only related summaries, and
+safety review statements. It does not copy fixture JSON bodies, request
+bodies, pointer bodies, artifact body payloads, generated policy bodies,
+manifest bodies, raw logs, raw rows, logits, private paths, raw learner text,
+real participant data, or performance metric bodies.

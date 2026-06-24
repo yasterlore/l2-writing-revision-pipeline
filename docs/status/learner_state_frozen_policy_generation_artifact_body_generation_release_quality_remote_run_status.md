@@ -292,8 +292,8 @@ evidence, and not production readiness evidence.
 - Review the safe-metadata remote/manual run record workflow design
   separately:
   [Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](../frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md).
-- Create a future safe-metadata remote/manual run status marker only after a
-  public-safe successful remote/manual Release Quality run.
+- Review the safe-metadata remote/manual run status marker separately:
+  [Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md).
 - Keep future artifact body file writing separate.
 - Keep future manifest writer design separate.
 - Keep future artifact writer CLI integration separate.
@@ -329,9 +329,13 @@ evidence, and not production readiness evidence.
   record workflow design. This marker still records only the earlier default
   suppressed-mode remote Release Quality run and does not create or claim the
   future safe-metadata status marker.
+- Step349: added a link to the separate public-safe safe-metadata
+  remote/manual Release Quality status marker. This marker still records only
+  the earlier default suppressed-mode remote Release Quality run.
 
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](../frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body safe-metadata release-quality integration design](../frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md)
 - [Frozen policy generation artifact body safe-metadata Makefile target design](../frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md)
