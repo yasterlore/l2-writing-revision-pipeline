@@ -2214,6 +2214,23 @@ payloads, generated policy bodies, manifest bodies, raw logs, raw rows,
 logits, private paths, raw learner text, real participant data, or performance
 metric bodies.
 
+For Step342, review the docs-only
+[frozen policy generation artifact body generation release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md).
+Confirm it defines the future status marker path
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md`,
+metadata to record, metadata not to record, status marker structure,
+artifact body generation CLI smoke summary, related release-quality summaries,
+safety review, interpretation, failure handling, and next steps. Confirm it
+does not create a status marker, run GitHub Actions, change workflow YAML,
+change the wrapper, change Makefile, change Python code/tests, change fixture
+JSON, add a safe-metadata target, write artifact files, generate manifest
+bodies, compute metrics, use real data, or claim production readiness.
+Confirm docs do not include raw logs, full job output, copied log blocks,
+screenshots containing raw logs, request bodies, pointer bodies, expected
+bodies, artifact body payloads, generated policy bodies, manifest bodies, JSON
+body examples, raw rows, logits, private paths, raw learner text, real
+participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

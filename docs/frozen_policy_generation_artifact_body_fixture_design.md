@@ -669,8 +669,22 @@ Step341 does not modify fixture JSON, does not add a safe-metadata target,
 does not write artifact files, does not generate manifest bodies, does not use
 real data, and does not compute metrics.
 
+## 40. Step342 Artifact Body Generation Remote Run Record Workflow Design Status
+
+Step342 designs a future public-safe remote/manual Release Quality record for
+the generation CLI smoke that now runs after this fixture validation boundary:
+
+[Frozen policy generation artifact body generation release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md).
+
+The fixture root remains unchanged. The workflow design does not create a
+status marker, run GitHub Actions, change workflow YAML, change the wrapper,
+change Makefile, change Python code or tests, change fixture JSON, add a
+safe-metadata target, write artifact files, generate manifest bodies, use real
+data, or compute metrics.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)
 - [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)

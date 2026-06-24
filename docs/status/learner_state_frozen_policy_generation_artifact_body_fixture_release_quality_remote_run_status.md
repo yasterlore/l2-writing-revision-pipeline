@@ -310,6 +310,11 @@ Body and file safety:
   this marker does not become evidence that the generation target ran
   remotely, writes artifact files, generates manifest bodies, evaluates
   performance, or supports real-data readiness.
+- Step342 designs a future remote/manual Release Quality run record workflow
+  for the artifact body generation CLI smoke. The future marker path is
+  `docs/status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md`.
+  This existing fixture marker remains unchanged and does not become that
+  generation smoke status marker.
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -360,9 +365,14 @@ Body and file safety:
   generation target ran in a remote/manual workflow, writes artifact files,
   generates manifest bodies, evaluates performance, supports real-data
   readiness, or proves production readiness.
+- Step342: artifact body generation remote/manual run record workflow design
+  added. This status marker remains a record of the earlier artifact body
+  fixture validation remote run and does not become the future artifact body
+  generation CLI smoke status marker.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body generation release-quality remote run record workflow](../frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation release-quality integration design](../frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation Makefile target design](../frozen_policy_generation_artifact_body_generation_makefile_target_design.md)

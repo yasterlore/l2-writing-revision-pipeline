@@ -314,3 +314,22 @@ unchanged.
 The integration does not add a safe-metadata target, does not modify fixture
 JSON, does not write artifact files, does not generate manifest bodies, does
 not use real data, and does not compute metrics.
+
+## Future Artifact Body Generation Remote Status Marker Workflow
+
+Step342 designs how a future remote/manual Release Quality run should be
+recorded after the artifact body generation CLI smoke is included in the
+wrapper:
+
+`docs/frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md`
+
+The future marker path is expected to be:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md`
+
+This is separate from the artifact body fixture validation status marker. It
+should record only public-safe pass-only and count-only metadata for the
+default suppressed-mode generation smoke. It must not copy fixture bodies,
+request bodies, pointer bodies, artifact body payloads, manifest bodies, raw
+logs, raw rows, logits, private paths, raw learner text, real participant
+data, or performance metric bodies.

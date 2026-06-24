@@ -378,3 +378,17 @@ change Python code or tests, does not change fixture JSON, does not add a
 safe-metadata target, does not connect artifact writer CLI, does not write
 artifact files, does not generate manifest bodies, does not use real data, and
 does not compute metrics.
+
+## 22. Step342 Remote Run Record Workflow Design Status
+
+Step342 adds a docs-only workflow design for a future public-safe
+remote/manual Release Quality status marker after the generation CLI smoke is
+included in the wrapper:
+
+[Frozen policy generation artifact body generation release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md).
+
+The standalone Makefile target remains unchanged. The workflow design does
+not create a status marker, run GitHub Actions, change workflow YAML, change
+the wrapper, change Python code or tests, change fixture JSON, add a
+safe-metadata target, write artifact files, generate manifest bodies, use real
+data, or compute metrics.
