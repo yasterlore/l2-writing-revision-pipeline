@@ -232,6 +232,17 @@ synthetic request/pointer pair and remains separate from the 17-case fixture
 validator. It still does not generate artifact bodies, generated policy
 bodies, manifest bodies, artifact files, or manifest files.
 
+Step320 designs the future remote/manual Release Quality recording workflow
+for artifact writer runtime smoke:
+
+`docs/frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md`
+
+The future runtime status marker should remain separate from this fixture
+README and from the fixture validation status marker. It should record only
+pass-only/count-only metadata and must not copy fixture bodies, request bodies,
+pointer bodies, expected result bodies, artifact bodies, manifest bodies, raw
+rows, logits, private paths, raw learner text, or performance metric bodies.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

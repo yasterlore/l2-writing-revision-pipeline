@@ -357,7 +357,6 @@ should be recorded only after wrapper integration actually lands and passes.
 
 ## 16. Next Recommended Steps
 
-- Step320 remote/manual run record workflow design
 - Step321 remote/manual run status marker
 
 ## 17. Step319 Runtime Release-Quality Wrapper Integration Status
@@ -386,3 +385,21 @@ The runtime smoke success is interpreted only as a safe terminal-path pass for
 one valid synthetic request/pointer pair. It is not artifact writer quality,
 artifact generation quality, manifest generation quality, performance
 evidence, real-data readiness, or production readiness.
+
+## 18. Step320 Remote Run Record Workflow Design Status
+
+Step320 designs the future remote/manual Release Quality run recording
+workflow for this runtime smoke:
+
+[Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md).
+
+The Step320 workflow design does not create the status marker, run a remote
+workflow, change workflow YAML, change this wrapper integration, change the
+Makefile, change Python code or tests, change fixture JSON, generate artifact
+bodies, generate generated policy bodies, generate manifest bodies, write
+artifact or manifest files, compute metrics, use real data, or claim
+real-data readiness.
+
+The future marker path is:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md`

@@ -434,8 +434,23 @@ artifact body generation, generated policy body generation, manifest body
 generation, artifact or manifest file writing, metrics, real-data use, or
 real-data readiness status.
 
+## 27. Step320 Runtime Remote Run Record Workflow Design Status
+
+Step320 designs the future remote/manual Release Quality recording workflow
+for the artifact writer runtime smoke:
+
+[Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md).
+
+The artifact writer fixture validation marker remains separate from the future
+runtime smoke marker. The future runtime marker should record pass-only
+runtime metadata and may include count-only fixture validation metadata for
+context. It must not copy raw logs, request bodies, pointer bodies, expected
+result bodies, artifact bodies, manifest bodies, raw rows, logits, private
+paths, raw learner text, or performance metric bodies.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
