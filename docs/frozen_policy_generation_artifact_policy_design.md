@@ -463,6 +463,11 @@ The artifact policy remains unchanged: the target is valid-only, metadata-only,
 read-only, and should not add artifact body output, generated policy body
 output, artifact writing, manifest writing, or performance evidence.
 
+Step295 implements that standalone Makefile target. The artifact policy remains
+unchanged: the target runs a valid synthetic request/pointer smoke only, writes
+no artifacts, emits no artifact body, emits no generated policy body, and adds
+no manifest writer.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)

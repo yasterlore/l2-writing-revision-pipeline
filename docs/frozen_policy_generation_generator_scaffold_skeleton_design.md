@@ -800,6 +800,14 @@ The skeleton remains unchanged by that design. It still produces metadata-only
 results, writes no files, emits no artifact bodies, emits no generated policy
 bodies, and makes no performance or real-data readiness claim.
 
+## 27. Step295 CLI Makefile Target Implementation Status
+
+Step295 implements the standalone valid-only Makefile runtime smoke target for
+the safe generator scaffold CLI. The skeleton remains unchanged: it still
+returns metadata-only results, writes no files, emits no artifact bodies, emits
+no generated policy bodies, and makes no performance or real-data readiness
+claim.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)

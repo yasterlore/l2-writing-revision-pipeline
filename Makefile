@@ -19,6 +19,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-scaffold-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-scaffold-runtime
 .PHONY: check-learner-state-frozen-policy-generation-generator-scaffold-fixtures
+.PHONY: check-learner-state-frozen-policy-generation-generator-scaffold-runtime
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -47,6 +48,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-scaffold-fixtures  Smoke-test frozen policy generation scaffold fixture validation"
 	@echo "  check-learner-state-frozen-policy-generation-scaffold-runtime  Smoke-test frozen policy generation scaffold runtime CLI"
 	@echo "  check-learner-state-frozen-policy-generation-generator-scaffold-fixtures  Validate frozen policy generation generator scaffold fixtures"
+	@echo "  check-learner-state-frozen-policy-generation-generator-scaffold-runtime  Run frozen policy generation generator scaffold runtime smoke"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -120,6 +122,9 @@ check-learner-state-frozen-policy-generation-scaffold-runtime:
 
 check-learner-state-frozen-policy-generation-generator-scaffold-fixtures:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_generator_scaffold_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold
+
+check-learner-state-frozen-policy-generation-generator-scaffold-runtime:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_generator_scaffold --request tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/valid/minimal_metadata_only_generation_plan/generation_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/valid/minimal_metadata_only_generation_plan/input_fixture_pointer.json
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality

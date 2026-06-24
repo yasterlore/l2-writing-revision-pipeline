@@ -525,6 +525,17 @@ It remains docs-only: no Makefile target, release-quality wrapper change,
 workflow change, Python change, test change, fixture change, artifact body,
 generated policy body, or file-writing behavior is added.
 
+## 23. Step295 Makefile Target Implementation Status
+
+Step295 implements the standalone Makefile runtime smoke target:
+`check-learner-state-frozen-policy-generation-generator-scaffold-runtime`.
+
+The target runs the safe generator scaffold CLI on one valid synthetic
+request/pointer pair and prints only the body-free metadata summary. It is not
+added to release-quality in Step295, and it does not change workflows, Python
+code, tests, fixtures, artifact writing, artifact bodies, generated policy
+bodies, manifest writing, metrics, or real-data readiness status.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
