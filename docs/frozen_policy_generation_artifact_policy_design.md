@@ -501,8 +501,16 @@ metadata-only, keeps artifact body and generated policy body generation out of
 scope, keeps file writing disabled initially, and allows only manifest
 metadata summaries rather than manifest bodies.
 
+Step301 designs future artifact writer fixtures:
+[Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md).
+The artifact policy remains unchanged: fixture bodies are not created yet, the
+future fixture contract stays synthetic-only and metadata-only, and expected
+results must not include artifact bodies, generated policy bodies, manifest
+bodies, raw rows, logits, private paths, or raw learner text.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md)

@@ -584,8 +584,19 @@ The generator scaffold CLI remains unchanged. It still does not invoke an
 artifact writer, does not output artifact bodies or generated policy bodies,
 does not write files, and does not emit manifest bodies.
 
+## 29. Step301 Artifact Writer Fixture Design Status
+
+Step301 designs future artifact writer fixtures:
+[Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md).
+
+The generator scaffold CLI remains unchanged. Future artifact writer fixtures
+should reference safe CLI result metadata only and should not copy request,
+pointer, expected result, policy, generated policy, artifact, or manifest
+bodies.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md)
