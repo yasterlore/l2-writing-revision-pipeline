@@ -407,6 +407,18 @@ manifest body generation, file writing, Makefile targets, release-quality
 integration, workflow changes, Python tests, fixture JSON changes, metrics,
 real-data use, or production readiness claims.
 
+## 22. Step326 Artifact Body Fixture Validator Implementation Status
+
+Step326 implements the metadata-only validator for the artifact body fixture
+root. The validator checks the existing 18 synthetic cases and returns only
+safe metadata, counts, reason code names, schema names, and flags.
+
+This remains separate from artifact body generation. It does not generate
+artifact bodies, generated policy bodies, manifest bodies, write files,
+implement a CLI, add Makefile targets, change release-quality, change
+workflow YAML, change fixture JSON, compute metrics, use real data, or claim
+production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)

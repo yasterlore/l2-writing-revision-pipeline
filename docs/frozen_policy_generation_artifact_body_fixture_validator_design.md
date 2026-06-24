@@ -428,6 +428,24 @@ integration, artifact body generation, generated policy body generation,
 manifest body generation, file writing, Python tests, fixture JSON changes,
 metrics, real-data use, or production readiness claims.
 
+## 26. Step326 Implementation Status
+
+Step326 implements the metadata-only artifact body fixture validator module:
+
+`python/learner_state/frozen_policy_generation_artifact_body_fixture_validation.py`
+
+It also adds focused unit tests under `python/learner_state/tests/`. The
+validator discovers the 18 synthetic fixture cases, validates required files
+and schema versions, checks valid and invalid case expectations, scans safe
+marker booleans, scans for forbidden payload keys and path/log markers,
+compares safe metadata fields, and returns aggregate counts and reason-code
+summaries only.
+
+Step326 does not implement a validator CLI, Makefile target, release-quality
+integration, artifact body generation, generated policy body generation,
+manifest body generation, artifact or manifest file writing, fixture JSON
+changes, metrics, real-data use, or production readiness claims.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)

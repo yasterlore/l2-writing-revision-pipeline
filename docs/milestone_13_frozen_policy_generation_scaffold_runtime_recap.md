@@ -599,6 +599,11 @@ written, no artifact body is produced, and no performance metric is computed.
   output safety, and staging. It does not implement validator code, CLI,
   Makefile targets, release-quality integration, body generation, file
   writing, metrics, real-data use, or production readiness claims.
+- Step326: linked the artifact body fixture validator implementation. The
+  validator checks the 18-case synthetic fixture root with safe metadata-only
+  results and focused unit tests. It does not implement a validator CLI,
+  Makefile target, release-quality integration, artifact body generation, file
+  writing, metrics, real-data use, or production readiness claims.
 
 ## Related Documents
 

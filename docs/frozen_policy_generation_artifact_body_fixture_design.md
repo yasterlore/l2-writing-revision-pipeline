@@ -485,6 +485,18 @@ does not implement validator code, CLI code, Makefile targets, release-quality
 integration, artifact body generation, file writing, Python tests, or fixture
 JSON changes.
 
+## 24. Step326 Validator Implementation Status
+
+Step326 implements the artifact body fixture validator module and focused unit
+tests. The implementation validates the existing 18-case fixture root with
+metadata-only results, safe marker scans, forbidden payload scans, exact safe
+metadata comparison, and aggregate count summaries.
+
+It does not implement a validator CLI, add a Makefile target, integrate
+release-quality, implement artifact body generation, generate bodies, write
+files, change fixture JSON, compute metrics, use real data, or claim
+production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
