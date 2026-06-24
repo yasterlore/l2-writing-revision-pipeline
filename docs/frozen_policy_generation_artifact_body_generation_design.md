@@ -395,8 +395,21 @@ Makefile targets, release-quality integration, workflow changes, Python code
 or tests, generated policy body generation, manifest body generation, file
 writing, metrics, real-data use, or production readiness claims.
 
+## 21. Step325 Artifact Body Fixture Validator Design Status
+
+Step325 designs the future artifact body fixture validator:
+
+[Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md).
+
+The validator design remains docs-only. It does not implement validator code,
+validator CLI, artifact body generation, generated policy body generation,
+manifest body generation, file writing, Makefile targets, release-quality
+integration, workflow changes, Python tests, fixture JSON changes, metrics,
+real-data use, or production readiness claims.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
 - [Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)

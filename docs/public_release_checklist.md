@@ -1966,6 +1966,22 @@ generation, file writing, CLI changes, Makefile targets, release-quality
 wrapper changes, workflow changes, Python code/tests, existing fixture JSON
 changes, metrics, real-data use, or production readiness claims.
 
+For Step325, review the docs-only
+[frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md).
+Confirm it defines future validator responsibilities, input files, schema
+versions, dataclass/API candidates, case discovery, valid/invalid behavior,
+safe marker scan, forbidden payload scan, comparison rules, aggregate summary,
+error handling, output safety, CLI notes, and Makefile/release-quality
+staging. Confirm it does not implement validator code, validator CLI,
+artifact body generation, generated policy body generation, manifest body
+generation, file writing, Makefile targets, release-quality wrapper changes,
+workflow changes, Python code/tests, fixture JSON changes, metrics, real-data
+use, or production readiness claims. Confirm docs do not include raw logs,
+full job output, request bodies, pointer bodies, expected result bodies,
+artifact body payloads, artifact body JSON examples, generated policy bodies,
+manifest bodies, raw rows, logits/probability dumps, private paths, raw
+learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
