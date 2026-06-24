@@ -437,6 +437,15 @@ logs, request/pointer/expected bodies, policy bodies, generated policy bodies,
 artifact bodies, manifest bodies, raw rows, logits, private paths, raw learner
 text, or performance metric bodies.
 
+## 23. Step313 Metadata-Only Writer Skeleton Status
+
+Step313 implements the metadata-only artifact writer skeleton in
+`python/learner_state/frozen_policy_generation_artifact_writer.py`.
+This workflow document remains about remote/manual run recording. The writer
+skeleton does not change workflow YAML, release-quality wrapper scripts,
+Makefile targets, fixture JSON, artifact body generation, manifest body
+generation, file writing, metrics, or real-data readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)

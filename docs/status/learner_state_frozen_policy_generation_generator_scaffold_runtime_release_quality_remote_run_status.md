@@ -398,3 +398,8 @@ This marker does not prove:
   [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md).
   This generator scaffold runtime marker remains unchanged and continues to
   record only its original pass-only/count-only remote run metadata.
+- Step313: the metadata-only artifact writer skeleton is now implemented
+  separately in `python/learner_state/frozen_policy_generation_artifact_writer.py`.
+  This generator scaffold runtime marker remains unchanged and does not record
+  artifact writer runtime evidence, artifact bodies, manifest bodies, generated
+  policy bodies, file writing, metrics, real-data use, or production readiness.

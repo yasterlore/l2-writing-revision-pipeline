@@ -540,6 +540,10 @@ written, no artifact body is produced, and no performance metric is computed.
   successful remote/manual Release Quality run and does not copy raw logs,
   request/pointer/expected bodies, artifact bodies, manifest bodies, raw rows,
   logits, private paths, raw learner text, or performance metric bodies.
+- Step313: linked the metadata-only artifact writer skeleton implementation.
+  It matches the artifact writer fixture expected metadata without generating
+  artifact bodies, generated policy bodies, manifest bodies, writing files,
+  computing metrics, or claiming real-data readiness.
 
 ## Related Documents
 

@@ -861,6 +861,26 @@ The marker confirms release-quality inclusion of artifact writer fixture
 validation only. It does not indicate that an artifact writer implementation,
 artifact generation, manifest generation, or generated policy quality exists.
 
+## 37. Step313 Metadata-Only Skeleton Implementation Status
+
+Step313 implements the metadata-only artifact writer skeleton in:
+
+`python/learner_state/frozen_policy_generation_artifact_writer.py`
+
+The skeleton loads synthetic artifact-writer request metadata and generator
+result pointer metadata, builds metadata-only artifact and manifest summaries,
+and returns safe writer results matching the Step302 fixture expected
+metadata. It does not generate artifact bodies, generated policy bodies, or
+manifest bodies. It does not write artifact files or manifest files.
+
+The implementation adds unit tests in:
+
+`python/learner_state/tests/test_frozen_policy_generation_artifact_writer.py`
+
+CLI, Makefile target integration, release-quality integration, runtime smoke,
+artifact body generation, manifest writing, metrics, and real-data readiness
+remain separate future work.
+
 ## Related Documents
 
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)

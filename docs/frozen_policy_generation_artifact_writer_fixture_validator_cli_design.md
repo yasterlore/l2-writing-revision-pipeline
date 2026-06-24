@@ -492,6 +492,13 @@ The marker confirms that the CLI-backed Makefile target was included in
 release-quality and matched 17 metadata-only fixture cases without body,
 manifest, raw row, logits, private path, or performance metric output.
 
+## 28. Step313 Metadata-Only Writer Skeleton Status
+
+Step313 implements the metadata-only artifact writer skeleton in
+`python/learner_state/frozen_policy_generation_artifact_writer.py`.
+The fixture validator CLI remains unchanged. It still validates fixture
+contracts only and does not execute the writer, emit bodies, or write files.
+
 ## Related Documents
 
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
