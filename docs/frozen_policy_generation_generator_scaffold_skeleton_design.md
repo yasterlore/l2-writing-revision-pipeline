@@ -836,9 +836,20 @@ The skeleton remains unchanged. The workflow design does not create a status
 marker, run a remote workflow, write artifacts, emit artifact bodies, emit
 generated policy bodies, compute metrics, or claim real-data readiness.
 
+## 31. Step299 Remote Run Status Marker
+
+Step299 creates the public-safe remote/manual Release Quality status marker for
+generator scaffold runtime smoke:
+[Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md).
+
+The skeleton remains unchanged: it still returns metadata-only results, writes
+no files, emits no artifact bodies, emits no generated policy bodies, and
+makes no performance or real-data readiness claim.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)

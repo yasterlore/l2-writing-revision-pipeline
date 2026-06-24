@@ -1584,6 +1584,24 @@ expected generator scaffold result bodies, policy bodies, generated policy
 bodies, artifact bodies, manifest bodies, JSON bodies, raw rows, logits,
 private paths, raw learner text, or performance metric bodies.
 
+For Step299, review the
+[learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md).
+Confirm the marker records only public-safe run identity, wrapper inclusion,
+pass-only generator scaffold runtime smoke metadata, count-only fixture
+validation summaries, related learner-state summaries, safety review,
+interpretation, non-goals, and next actions. Confirm it does not include raw
+GitHub Actions logs, full job output, copied log blocks, screenshots
+containing raw logs, request/pointer bodies, expected generator scaffold result
+bodies, policy bodies, generated policy bodies, generated artifact bodies,
+frozen policy artifact bodies, manifest bodies, JSON bodies, raw rows, logits,
+label/split/calibration policy bodies, private paths, raw learner text, real
+participant data, or performance metric bodies. Confirm it does not change
+GitHub Actions workflows, the release-quality wrapper, the Makefile, Python
+code, Python tests, fixtures, artifact writing, artifact body generation,
+generated policy body generation, manifest writing, calibration/selective
+prediction logic, estimator work, metric computation, performance evaluation,
+real-data use, or real-data readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

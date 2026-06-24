@@ -431,8 +431,9 @@ needs its own public-safe review and must avoid copying raw logs.
 
 Recommended next steps:
 
-- Step298: generator scaffold runtime remote/manual run record workflow design
-- Step299: generator scaffold runtime remote/manual run status marker
+- future artifact writer design
+- future generator scaffold expansion design
+- future calibration scaffold work
 
 Keep artifact writing, generated policy bodies, calibration work, performance
 evaluation, and real-data readiness separate.
@@ -451,9 +452,22 @@ change tests, change fixtures, write artifacts, emit artifact bodies, emit
 generated policy bodies, compute metrics, evaluate performance, or claim
 real-data readiness.
 
+## 18. Step299 Remote Run Status Marker
+
+Step299 creates the public-safe runtime smoke status marker:
+[Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md).
+
+The marker records only run identity metadata, wrapper inclusion metadata,
+pass-only runtime smoke fields, count-only fixture validation summaries, and a
+public-safe safety review. It does not copy raw logs, request bodies, pointer
+bodies, expected result bodies, policy bodies, generated policy bodies,
+artifact bodies, raw rows, logits, private paths, raw learner text, or
+performance metric bodies.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
