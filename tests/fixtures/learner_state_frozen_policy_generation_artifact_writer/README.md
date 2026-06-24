@@ -222,6 +222,16 @@ The release-quality wrapper is not changed in Step318. The future integration
 should run the standalone runtime target after artifact writer fixture
 validation and before config/scoring smoke checks.
 
+Step319 integrates that standalone runtime target into the release-quality
+wrapper:
+
+`make check-learner-state-frozen-policy-generation-artifact-writer-runtime`
+
+The fixture JSON files remain unchanged. The runtime smoke uses one valid
+synthetic request/pointer pair and remains separate from the 17-case fixture
+validator. It still does not generate artifact bodies, generated policy
+bodies, manifest bodies, artifact files, or manifest files.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

@@ -430,3 +430,17 @@ runtime target:
 The wrapper is not changed in Step318. The design places the future runtime
 smoke after artifact writer fixture validation and before config/scoring
 smoke checks.
+
+## 26. Step319 Runtime Release-Quality Wrapper Integration Status
+
+Step319 integrates the standalone artifact writer runtime smoke target into
+the release-quality wrapper:
+
+`make check-learner-state-frozen-policy-generation-artifact-writer-runtime`
+
+The wrapper section is placed after artifact writer fixture validation and
+before config/scoring smoke checks. The CLI behavior remains metadata-only and
+body-free. Step319 does not change the CLI implementation, Python tests,
+workflow YAML, Makefile target, fixture JSON, artifact body generation,
+generated policy body generation, manifest body generation, artifact or
+manifest file writing, metrics, real-data use, or real-data readiness status.

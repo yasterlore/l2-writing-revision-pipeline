@@ -945,6 +945,21 @@ The wrapper is not changed in Step318. The design keeps the future target
 metadata-only, places it after artifact writer fixture validation, and treats
 success as runtime smoke evidence only.
 
+## 43. Step319 Artifact Writer Runtime Release-Quality Wrapper Integration Status
+
+Step319 integrates the standalone artifact writer runtime smoke target into
+the release-quality wrapper:
+
+`make check-learner-state-frozen-policy-generation-artifact-writer-runtime`
+
+The wrapper now runs this target after artifact writer fixture validation and
+before config/scoring smoke checks. The runtime smoke remains metadata-only
+and uses one valid synthetic request/pointer pair. Step319 does not change
+workflow YAML, change the Makefile, change Python code or tests, change
+fixture JSON, generate artifact bodies, generate generated policy bodies,
+generate manifest bodies, write artifact or manifest files, compute metrics,
+use real data, or claim real-data readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)

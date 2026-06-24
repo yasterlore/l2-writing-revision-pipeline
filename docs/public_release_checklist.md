@@ -1882,6 +1882,16 @@ fixture JSON, artifact body generation, generated policy body generation,
 manifest body generation, artifact or manifest file writing, metrics,
 real-data use, or real-data readiness claims.
 
+For Step319, review `scripts/check_release_quality.sh` and the linked
+[frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md).
+Confirm the wrapper now runs
+`make check-learner-state-frozen-policy-generation-artifact-writer-runtime`
+after artifact writer fixture validation and before config/scoring smoke
+checks. Confirm workflow YAML, Makefile targets, Python code/tests, fixture
+JSON, artifact body generation, generated policy body generation, manifest
+body generation, artifact or manifest file writing, metrics, real-data use,
+and real-data readiness claims remain unchanged or out of scope.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

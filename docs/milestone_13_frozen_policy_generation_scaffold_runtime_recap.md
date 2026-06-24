@@ -562,6 +562,12 @@ written, no artifact body is produced, and no performance metric is computed.
   design. The wrapper is not changed yet; artifact body generation, manifest
   generation, file writing, metrics, and real-data readiness remain out of
   scope.
+- Step319: linked the artifact writer runtime release-quality wrapper
+  integration. The wrapper now runs the standalone runtime smoke after
+  artifact writer fixture validation and before config/scoring smoke checks;
+  workflow YAML, Makefile targets, Python code/tests, fixture JSON, artifact
+  body generation, manifest generation, file writing, metrics, and real-data
+  readiness remain out of scope.
 
 ## Related Documents
 
