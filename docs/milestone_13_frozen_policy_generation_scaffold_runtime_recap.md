@@ -638,9 +638,15 @@ written, no artifact body is produced, and no performance metric is computed.
   config/scoring smoke checks. It does not change workflow YAML, Makefile,
   Python code or tests, fixture JSON, generate bodies, write files, compute
   metrics, use real data, or claim production readiness.
+- Step333: linked the artifact body fixture remote/manual Release Quality run
+  record workflow design. The design prepares a future public-safe status
+  marker path and does not run GitHub Actions, create the marker, generate
+  bodies, write files, compute metrics, use real data, or claim production
+  readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)

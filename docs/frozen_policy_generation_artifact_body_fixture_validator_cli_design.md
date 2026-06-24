@@ -468,8 +468,21 @@ The CLI remains metadata-only and does not print fixture bodies, artifact body
 payloads, raw rows, logits, private paths, raw learner text, or performance
 metric bodies.
 
+## 26. Step333 Remote Run Record Workflow Design Status
+
+Step333 designs the future remote/manual Release Quality run record workflow
+for the wrapper path that exercises this CLI:
+
+[Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md).
+
+The workflow design keeps future records pass-only and count-only. It does
+not create the actual status marker, change code, change fixtures, generate
+artifact bodies, write files, compute metrics, use real data, or claim
+production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)

@@ -302,6 +302,9 @@ evidence, or production readiness evidence.
   [Frozen policy generation artifact body fixture release-quality integration design](../frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md).
 - Keep future artifact body fixture release-quality remote/manual run status
   marker work separate from the Step332 wrapper integration.
+- Use the Step333 workflow design for the future artifact body fixture status
+  marker:
+  [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md).
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -359,4 +362,8 @@ evidence, or production readiness evidence.
 - Step332: linked the artifact body fixture release-quality wrapper
   integration status. The status marker remains pass-only/count-only and does
   not record a new remote run, change workflow YAML, generate bodies, write
+  files, compute metrics, use real data, or claim production readiness.
+- Step333: linked the future artifact body fixture remote/manual run record
+  workflow design. This marker remains unchanged and does not create the new
+  artifact body fixture status marker, copy raw logs, generate bodies, write
   files, compute metrics, use real data, or claim production readiness.

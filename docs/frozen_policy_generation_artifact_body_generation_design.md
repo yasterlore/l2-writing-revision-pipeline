@@ -498,8 +498,20 @@ This does not implement artifact body generation, generated policy body
 generation, manifest body generation, artifact file writing, manifest file
 writing, metrics, real-data use, or production readiness claims.
 
+## 29. Step333 Artifact Body Fixture Remote Run Record Workflow Design Status
+
+Step333 designs the future remote/manual Release Quality run record workflow
+for artifact body fixture validation:
+
+[Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md).
+
+This remains separate from artifact body generation. It does not create the
+actual status marker, run GitHub Actions, generate artifact bodies, write
+files, compute metrics, use real data, or claim production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)

@@ -357,8 +357,6 @@ copying logs.
 
 ## 16. Next Recommended Steps
 
-- Step333 artifact body fixture validator remote/manual run record workflow
-  design
 - Step334 artifact body fixture validator remote/manual run status marker
 
 Artifact body generation remains separate.
@@ -396,8 +394,24 @@ policy bodies, generate manifest bodies, write artifact or manifest files,
 add output-file options, compute metrics, use real data, or claim production
 readiness.
 
+## 19. Step333 Remote Run Record Workflow Design Status
+
+Step333 designs the future remote/manual Release Quality run record workflow
+for artifact body fixture validation:
+
+[Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md).
+
+The workflow design defines the future status marker path, safe metadata to
+record, metadata not to record, status marker structure, interpretation,
+failure handling, and next actions. It does not create the status marker, run
+GitHub Actions, change workflow YAML, change the release-quality wrapper,
+change the Makefile, change Python code or tests, change fixture JSON,
+implement artifact body generation, write files, compute metrics, use real
+data, or claim production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
