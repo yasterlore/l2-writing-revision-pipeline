@@ -263,3 +263,21 @@ This document does not:
 - evaluate performance
 - compute metrics
 - claim production readiness
+
+## 15. Step345 Implementation Status
+
+Step345 implements the standalone safe-metadata Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata`
+
+The target runs the artifact body generation CLI with the existing synthetic
+safe-metadata request/pointer pair and `--mode safe-metadata`. It uses human
+safe summary output by default, creates no output files, writes no artifact
+files, writes no manifest files, and does not print artifact body payloads.
+
+Step345 adds the target to `.PHONY` and `make help`. It does not add the
+target to release-quality, does not change workflow YAML, does not change
+Python code or tests, does not change fixture JSON, does not connect artifact
+writer CLI, does not implement artifact file writing, does not generate
+manifest bodies, does not use real data, does not evaluate performance, and
+does not compute metrics.

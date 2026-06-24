@@ -657,6 +657,19 @@ or tests, does not change fixture JSON, does not connect artifact writer CLI,
 does not write artifact files, does not generate manifest bodies, does not
 use real data, and does not compute metrics.
 
+## 41. Step345 Safe-Metadata Makefile Target Implementation Status
+
+Step345 implements the standalone safe-metadata Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata`
+
+The target runs the artifact body generation CLI with `--mode safe-metadata`
+on one synthetic metadata-only request/pointer pair. It emits only the CLI's
+body-free safe summary and does not write artifact files or manifest files.
+The target remains outside release-quality. Step345 does not change workflow
+YAML, the release-quality wrapper, Python code or tests, fixture JSON,
+artifact writer CLI behavior, manifest generation, real-data use, or metrics.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body safe-metadata Makefile target design](frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md)
