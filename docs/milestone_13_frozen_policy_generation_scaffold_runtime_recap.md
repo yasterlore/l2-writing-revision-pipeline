@@ -649,6 +649,10 @@ written, no artifact body is produced, and no performance metric is computed.
   statements. It does not copy raw logs, fixture bodies, artifact body
   payloads, generate bodies, write files, compute metrics, use real data, or
   claim production readiness.
+- Step335: added the first safe metadata-only artifact body generation API.
+  The default remains suppressed metadata-only, summaries remain body-free,
+  and the implementation does not write artifact files, generate manifest
+  bodies, compute metrics, use real data, or claim production readiness.
 
 ## Related Documents
 

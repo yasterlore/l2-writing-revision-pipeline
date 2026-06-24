@@ -237,3 +237,11 @@ Step334 creates the public-safe remote/manual Release Quality status marker:
 The marker uses pass-only and count-only metadata and does not copy fixture
 bodies, artifact body payloads, raw logs, raw rows, logits, private paths, raw
 learner text, real participant data, or performance metric bodies.
+
+## Artifact Body Generation Implementation
+
+Step335 adds a safe metadata-only artifact body generation API. These fixtures
+remain unchanged and continue to define the validation boundary for generated
+body safety. The implementation does not write artifact files, generate
+manifest bodies, write manifests, change release-quality, use real data,
+compute metrics, or claim production readiness.

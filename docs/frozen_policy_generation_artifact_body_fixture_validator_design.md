@@ -544,6 +544,14 @@ statements. It does not copy raw logs, fixture bodies, artifact body payloads,
 raw rows, logits, private paths, raw learner text, real participant data, or
 performance metric bodies.
 
+## 35. Step335 Artifact Body Generation Implementation Status
+
+Step335 adds the first safe metadata-only artifact body generation API. The
+fixture validator remains unchanged and continues to validate the 18-case
+fixture contract. The generator implementation is separate from the validator:
+it does not modify fixture JSON, does not write artifact files, does not
+generate manifest bodies, and does not add release-quality behavior.
+
 ## Related Documents
 
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)

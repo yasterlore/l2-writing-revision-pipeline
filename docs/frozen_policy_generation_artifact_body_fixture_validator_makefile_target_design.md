@@ -385,6 +385,14 @@ The marker records pass-only and count-only metadata only. It does not copy
 raw logs, fixture bodies, artifact body payloads, raw rows, logits, private
 paths, raw learner text, real participant data, or performance metric bodies.
 
+## 23. Step335 Artifact Body Generation Implementation Status
+
+Step335 implements the safe metadata-only artifact body generation API, but the
+standalone fixture Makefile target remains unchanged. The target still
+validates fixtures only; it does not generate artifact bodies, write files,
+change release-quality, compute metrics, use real data, or claim production
+readiness.
+
 ## Related Documents
 
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)

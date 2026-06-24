@@ -521,6 +521,28 @@ prove that artifact body generation exists, does not copy raw logs or body
 payloads, and does not claim performance, real-data readiness, or production
 readiness.
 
+## 31. Step335 Artifact Body Generation Implementation Status
+
+Step335 implements the first artifact body generation API in
+`python/learner_state/frozen_policy_generation_artifact_body.py`.
+
+The implementation is limited to synthetic-only, metadata-only,
+no-oracle-safe bodies. The default generation behavior remains
+`suppressed_metadata_only`; explicit safe metadata mode can produce a
+`generated_safe_metadata_body` containing only schema/version fields, safe
+IDs, notices, validation reference IDs, allowed section names, safety flags,
+count summaries, reason code names, failed check names, and non-proof notices.
+
+The implementation audits generated metadata bodies and fails closed for
+forbidden body fields, forbidden marker fragments, missing synthetic notice,
+missing no-oracle notice, or unknown artifact body schema version. Result
+summaries remain body-free by default.
+
+This does not implement artifact file writing, manifest body generation,
+manifest file writing, manifest writer behavior, output file options,
+release-quality changes, workflow changes, metric computation, real-data use,
+or production readiness claims.
+
 ## Related Documents
 
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
