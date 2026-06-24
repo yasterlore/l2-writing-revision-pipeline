@@ -2,13 +2,14 @@
 
 ## 1. Purpose
 
-This document designs a future Makefile runtime smoke target for the frozen
-policy generation artifact writer CLI.
+This document originally designed the Makefile runtime smoke target for the
+frozen policy generation artifact writer CLI.
 
-This is a docs-only design. It does not implement a Makefile target, integrate
-release-quality, generate artifact bodies, generate generated policy bodies,
-generate manifest bodies, write files, compute metrics, evaluate performance,
-or claim real-data readiness.
+Step316 was docs-only design. Later steps implemented the standalone target
+and release-quality wrapper integration. This document still does not define
+artifact body generation, generated policy body generation, manifest body
+generation, file writing, metric computation, performance evaluation, or
+real-data readiness.
 
 The goal is to make the Step315 artifact writer CLI easy to run with a short
 `make` command while preserving the current synthetic-only, metadata-only,
@@ -22,8 +23,8 @@ body-suppressed, file-writing-free boundary.
 - The artifact writer fixture validator target exists.
 - The artifact writer fixture validator target is included in
   release-quality.
-- The artifact writer runtime Makefile target does not exist.
-- Artifact writer runtime release-quality integration does not exist.
+- The artifact writer runtime Makefile target exists.
+- Artifact writer runtime release-quality integration exists.
 - Artifact body generation does not exist.
 - Manifest generation does not exist.
 - Artifact file writing and manifest file writing do not exist.
@@ -340,8 +341,8 @@ and invalid coverage is already handled by tests and the fixture validator.
 Using only one valid fixture keeps the make target fast, readable, and easy to
 interpret.
 
-Release-quality should not include the target immediately because standalone
-target output and no-body-leakage behavior should be reviewed first.
+Release-quality integration was added later after standalone target output and
+no-body-leakage behavior were reviewed.
 
 Artifact body and file-writing behavior remain out of scope because the current
 artifact policy is metadata-only and file-writing-free. Adding those behaviors
@@ -349,9 +350,7 @@ would require a separate design, implementation, and safety review.
 
 ## 17. Next Recommended Steps
 
-- Step318 artifact writer runtime release-quality integration design
-- Step319 artifact writer runtime release-quality wrapper integration
-- Step320 remote/manual status marker workflow design
+- Step321 remote/manual run status marker
 
 ## 18. Step317 Runtime Makefile Target Implementation Status
 
@@ -390,7 +389,6 @@ metrics, real-data use, or real-data readiness status.
 
 Next recommended steps:
 
-- Step320 remote/manual run record workflow design
 - Step321 remote/manual run status marker
 
 ## 20. Step319 Runtime Release-Quality Wrapper Integration Status
@@ -408,3 +406,16 @@ Makefile target, change Python code or tests, change fixture JSON, generate
 artifact bodies, generate generated policy bodies, generate manifest bodies,
 write artifact or manifest files, compute metrics, use real data, or claim
 real-data readiness.
+
+## 21. Step320 Remote Run Record Workflow Design Status
+
+Step320 designs the future public-safe remote/manual Release Quality run
+recording workflow for this runtime target:
+
+[Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md).
+
+The future status marker should record only pass-only metadata for this
+runtime smoke and count-only metadata for related fixture validators. It must
+not copy raw logs, request bodies, pointer bodies, expected result bodies,
+artifact bodies, manifest bodies, raw rows, logits, private paths, raw learner
+text, or performance metric bodies.

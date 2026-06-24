@@ -1892,6 +1892,20 @@ JSON, artifact body generation, generated policy body generation, manifest
 body generation, artifact or manifest file writing, metrics, real-data use,
 and real-data readiness claims remain unchanged or out of scope.
 
+For Step320, review the
+[frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md).
+Confirm it is docs-only and designs the future public-safe remote/manual
+Release Quality status marker workflow for artifact writer runtime smoke.
+Confirm it compares the future status marker path candidates, recommends
+`docs/status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md`,
+and limits future records to pass-only/count-only metadata. Confirm it does
+not create the status marker, run a remote workflow, change workflow YAML,
+change release-quality wrapper scripts, change Makefile targets, change
+Python code/tests, change fixture JSON, generate artifact bodies, generate
+generated policy bodies, generate manifest bodies, write artifact or manifest
+files, compute metrics, evaluate performance, use real data, or claim
+real-data readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

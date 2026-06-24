@@ -338,7 +338,8 @@ rows, logits, private paths, or raw learner text.
 - Step317 artifact writer runtime Makefile target implementation
 - Step318 artifact writer runtime release-quality integration design
 - Step319 artifact writer runtime release-quality wrapper integration
-- Step320 remote/manual status marker workflow design
+- Step320 remote/manual run record workflow design
+- Step321 remote/manual run status marker
 
 ## 20. Beginner-Friendly Explanation
 
@@ -444,3 +445,16 @@ body-free. Step319 does not change the CLI implementation, Python tests,
 workflow YAML, Makefile target, fixture JSON, artifact body generation,
 generated policy body generation, manifest body generation, artifact or
 manifest file writing, metrics, real-data use, or real-data readiness status.
+
+## 27. Step320 Runtime Remote Run Record Workflow Design Status
+
+Step320 designs the future public-safe remote/manual Release Quality run
+recording workflow for the artifact writer runtime smoke:
+
+[Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md).
+
+The workflow design keeps the future marker pass-only and count-only. It does
+not create the marker, change the CLI, change workflow YAML, change wrapper
+logic, change Makefile targets, change tests, change fixture JSON, generate
+artifact bodies, generate manifest bodies, write files, compute metrics, use
+real data, or claim real-data readiness.

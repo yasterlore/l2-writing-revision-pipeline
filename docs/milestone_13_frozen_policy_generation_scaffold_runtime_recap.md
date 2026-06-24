@@ -568,10 +568,16 @@ written, no artifact body is produced, and no performance metric is computed.
   workflow YAML, Makefile targets, Python code/tests, fixture JSON, artifact
   body generation, manifest generation, file writing, metrics, and real-data
   readiness remain out of scope.
+- Step320: linked the artifact writer runtime remote/manual Release Quality
+  run record workflow design. The future status marker remains separate and
+  must record only pass-only/count-only metadata without raw logs, request or
+  pointer bodies, artifact bodies, manifest bodies, raw rows, logits, private
+  paths, raw learner text, metrics, or real-data readiness claims.
 
 ## Related Documents
 
 - [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)
+- [Frozen policy generation artifact writer runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
