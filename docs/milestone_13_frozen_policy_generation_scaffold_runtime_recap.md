@@ -554,6 +554,10 @@ written, no artifact body is produced, and no performance metric is computed.
   target is not implemented yet; artifact body generation, manifest
   generation, file writing, metrics, and real-data readiness remain out of
   scope.
+- Step317: linked the artifact writer runtime Makefile target implementation.
+  The target is standalone and not yet in release-quality; artifact body
+  generation, manifest generation, file writing, metrics, and real-data
+  readiness remain out of scope.
 
 ## Related Documents
 

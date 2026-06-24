@@ -845,6 +845,12 @@ The fixture JSON files remain unchanged. The future runtime target should run
 one valid synthetic request/pointer pair and should not replace this 17-case
 fixture contract.
 
+## 36. Step317 Runtime Makefile Target Implementation Status
+
+Step317 implements that standalone runtime target. The fixture JSON files
+remain unchanged. The new target runs one valid synthetic request/pointer pair
+and does not replace the 17-case fixture validator contract.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)

@@ -296,8 +296,9 @@ This marker does not prove:
 - Step316 artifact writer runtime Makefile target design is now tracked
   separately:
   [Frozen policy generation artifact writer runtime Makefile target design](../frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md).
-- Keep future artifact writer runtime smoke implementation and
-  release-quality integration separate.
+- Step317 artifact writer runtime Makefile target implementation is now
+  tracked separately in `Makefile`.
+- Keep future artifact writer runtime release-quality integration separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
 ## Update History
@@ -325,3 +326,8 @@ This marker does not prove:
   marker remains fixture release-quality remote run evidence only; it does not
   record a writer runtime target run, artifact body generation, manifest body
   generation, file writing, metrics, real-data use, or production readiness.
+- Step317: linked the writer runtime Makefile target implementation. This
+  status marker remains fixture release-quality remote run evidence only; it
+  does not record runtime target release-quality inclusion, artifact body
+  generation, manifest body generation, file writing, metrics, real-data use,
+  or production readiness.

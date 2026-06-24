@@ -1861,6 +1861,17 @@ policy bodies, generate manifest bodies, write artifact or manifest files,
 compute metrics, evaluate performance, use real data, or claim real-data
 readiness.
 
+For Step317, review `Makefile` and the linked
+[frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md).
+Confirm the standalone target
+`check-learner-state-frozen-policy-generation-artifact-writer-runtime` runs one
+valid synthetic request/pointer pair through the artifact writer CLI and emits
+safe metadata only. Confirm release-quality wrapper scripts, workflow YAML,
+Python code/tests, fixture JSON, artifact body generation, generated policy
+body generation, manifest body generation, artifact or manifest file writing,
+metrics, real-data use, and real-data readiness claims remain unchanged or out
+of scope.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

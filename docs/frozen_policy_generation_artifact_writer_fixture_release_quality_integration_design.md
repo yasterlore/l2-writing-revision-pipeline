@@ -399,6 +399,16 @@ The release-quality wrapper remains unchanged in Step316. Runtime integration
 should wait until after standalone target implementation and no-body-leakage
 review.
 
+## 24. Step317 Runtime Makefile Target Implementation Status
+
+Step317 implements the standalone writer runtime Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-runtime`
+
+The release-quality wrapper remains unchanged in Step317. Runtime
+release-quality integration remains future work and should be designed
+separately.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
