@@ -335,3 +335,20 @@ This document does not:
 - use real data
 - compute metrics
 - claim production readiness
+
+## 19. Step339 Implementation Status
+
+Step339 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation`
+
+The target calls the artifact body generation CLI with the default
+suppressed-mode synthetic request/pointer pair described above. It emits only
+the CLI's body-free safe summary, creates no output files, writes no artifact
+files, writes no manifest files, and does not add a safe-metadata target.
+
+Step339 adds the target to `.PHONY` and `make help`. It does not add the
+target to release-quality, does not change workflow YAML, does not change
+Python code or tests, does not change fixture JSON, does not connect artifact
+writer CLI, does not generate manifest bodies, does not use real data, and
+does not compute metrics.

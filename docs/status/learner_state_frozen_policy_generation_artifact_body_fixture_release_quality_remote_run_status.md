@@ -295,6 +295,11 @@ Body and file safety:
   generation CLI separately from this remote status marker; this marker does
   not become evidence that the future generation target exists or is included
   in release-quality.
+- Step339 implements the standalone artifact body generation Makefile target
+  separately from this remote status marker; this marker does not become
+  evidence that the generation target ran remotely, is included in
+  release-quality, writes artifact files, generates manifest bodies, evaluates
+  performance, or supports real-data readiness.
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -326,6 +331,13 @@ Body and file safety:
   validation run and does not become evidence of a generation Makefile target,
   release-quality generation integration, artifact file writing, manifest
   generation, model performance, real-data readiness, or production readiness.
+- Step339: artifact body generation Makefile target implemented as a
+  standalone default suppressed-mode smoke target. This status marker remains
+  a record of the earlier remote release-quality fixture validation run and
+  does not become evidence that the generation target is included in
+  release-quality, ran remotely, writes artifact files, generates manifest
+  bodies, evaluates performance, supports real-data readiness, or proves
+  production readiness.
 
 ## Related Documents
 

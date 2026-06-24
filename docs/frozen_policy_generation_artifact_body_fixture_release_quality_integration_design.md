@@ -458,6 +458,19 @@ does not change workflow YAML, does not write files, does not generate
 manifests, does not compute metrics, does not use real data, and does not
 claim production readiness.
 
+## 25. Step339 Artifact Body Generation Makefile Target Implementation Status
+
+Step339 implements the standalone default suppressed-mode artifact body
+generation target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation`
+
+This release-quality integration remains unchanged. The new generation target
+is not added to the wrapper in this step, does not add a safe-metadata target,
+does not change workflow YAML, does not write artifact files, does not
+generate manifest bodies, does not use real data, and does not compute
+metrics.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)

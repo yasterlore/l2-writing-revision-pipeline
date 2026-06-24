@@ -276,3 +276,17 @@ The design keeps the fixture JSON files unchanged and recommends an initial
 default suppressed-mode smoke. It does not implement the Makefile target,
 change release-quality, write artifact files, generate manifest bodies,
 compute metrics, use real data, or claim production readiness.
+
+## Artifact Body Generation Makefile Target Implementation
+
+Step339 implements the standalone default suppressed-mode Makefile target for
+the generation CLI:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation`
+
+The target consumes the existing valid synthetic request/pointer metadata
+from this fixture root and emits only a body-free safe summary. Fixture JSON
+files remain unchanged. The target is not added to release-quality in this
+step, does not add a safe-metadata target, does not write artifact files, does
+not generate manifest bodies, does not use real data, and does not compute
+metrics.
