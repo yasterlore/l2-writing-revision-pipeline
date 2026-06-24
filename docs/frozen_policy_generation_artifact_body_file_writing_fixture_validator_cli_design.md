@@ -400,6 +400,18 @@ Step361 adds a docs-only remote/manual Release Quality run record workflow:
 
 [Frozen policy generation artifact body file writing fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md).
 
+## 26. Step362 Remote Run Status Marker Status
+
+Step362 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md).
+
+The marker records that the no-write fixture validator CLI path was exercised
+through the release-quality wrapper target. It records only safe metadata and
+count-only summaries, and does not include raw logs, fixture bodies, artifact
+body payloads, manifest bodies, raw rows, logits, private paths, raw learner
+text, real participant data, or performance metric bodies.
+
 The workflow design keeps future status markers pass-only/count-only and
 forbids raw logs, fixture bodies, artifact body payloads, manifest bodies,
 raw rows, logits, private paths, raw learner text, real data, and
