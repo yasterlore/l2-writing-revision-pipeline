@@ -81,6 +81,15 @@ required files, JSON parseability, schema versions, expected reason-code
 alignment, forbidden marker handling, and safe summary metadata. It should not
 execute an artifact writer unless a later design explicitly adds that behavior.
 
+The validator design is tracked in:
+
+- `docs/frozen_policy_generation_artifact_writer_fixture_validator_design.md`
+
+That design keeps validation metadata-only. It checks the fixture contract,
+safe marker policy, flags, count-only summaries, and expected result metadata
+without generating artifact bodies, generated policy bodies, manifest bodies,
+or writing artifact or manifest files.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

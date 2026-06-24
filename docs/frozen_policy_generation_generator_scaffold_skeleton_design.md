@@ -865,8 +865,20 @@ scaffold outputs only by safe metadata IDs and does not copy generator scaffold
 request bodies, pointer bodies, expected result bodies, generated policy
 bodies, artifact bodies, raw rows, logits, or private paths.
 
+## 34. Step303 Artifact Writer Fixture Validator Design Status
+
+Step303 designs the future validator for artifact writer fixtures:
+[Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md).
+
+The generator scaffold skeleton remains unchanged. The future artifact writer
+fixture validator should reference generator scaffold outputs only through safe
+metadata IDs and pointer labels; it should not read or copy generator scaffold
+request bodies, pointer bodies, expected result bodies, generated policy
+bodies, artifact bodies, raw rows, logits, or private paths.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)

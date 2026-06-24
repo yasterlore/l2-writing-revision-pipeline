@@ -515,8 +515,16 @@ metadata-only, the expected results remain body-free, and no artifact writer,
 validator, artifact body, generated policy body, manifest body, or file writing
 is added.
 
+Step303 designs the future artifact writer fixture validator:
+[Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md).
+The artifact policy remains unchanged: the validator design checks fixture
+metadata contracts only, does not execute an artifact writer, does not generate
+artifact bodies, generated policy bodies, or manifest bodies, and does not
+write files.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
 - [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)

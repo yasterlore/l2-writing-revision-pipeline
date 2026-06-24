@@ -688,8 +688,22 @@ target, release-quality integration, artifact body generation, generated
 policy body generation, manifest body generation, artifact file writing, or
 manifest file writing.
 
+## 22. Step303 Fixture Validator Design Status
+
+Step303 designs the future validator for this fixture root:
+[Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md).
+
+The fixture files remain unchanged. The validator design covers discovery,
+required-file checks, schema checks, safe marker scans, expected result
+metadata matching, root summaries, and future CLI/Makefile/release-quality
+staging. It does not implement validator code, execute an artifact writer,
+generate artifact bodies, generate generated policy bodies, generate manifest
+bodies, write artifact or manifest files, compute metrics, or claim real-data
+readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
