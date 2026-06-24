@@ -341,13 +341,13 @@ the release-quality wrapper.
 
 ## 16. Next Recommended Steps
 
-- Step361: remote/manual run record workflow design.
 - Step362: remote/manual run status marker.
 - Later: isolated temp write validation after artifact body file writing
   exists.
 
 ## 17. Related Documents
 
+- [Frozen policy generation artifact body file writing fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
@@ -358,3 +358,18 @@ the release-quality wrapper.
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 18. Step361 Remote Run Record Workflow Design Status
+
+Step361 adds a docs-only remote/manual Release Quality run record workflow:
+
+[Frozen policy generation artifact body file writing fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md).
+
+The workflow design defines the future status marker path, allowed metadata,
+forbidden metadata, pass-only/count-only marker structure, safety review,
+interpretation, failure handling, and future recording workflow. It does not
+create the status marker, run the remote workflow, change workflow YAML,
+change the release-quality wrapper, change Makefile, change Python
+code/tests, change fixture JSON, implement file writing, implement
+`--artifact-body-out`, run isolated temp write validation, write manifests,
+use real data, or compute metrics.

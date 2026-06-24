@@ -60,6 +60,10 @@ Available markers:
 - [Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after safe-metadata artifact
   body generation CLI smoke integration.
+- Future: `docs/status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md`
+  should record public-safe pass-only/count-only metadata after artifact body
+  file writing fixture validation release-quality wrapper integration passes
+  in a remote/manual Release Quality run.
 
 Related recap:
 
@@ -112,3 +116,6 @@ Related recap:
   future public-safe pass-only/count-only recording workflow for
   safe-metadata artifact body generation CLI smoke release-quality wrapper
   integration.
+- [Frozen policy generation artifact body file writing fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md):
+  future public-safe pass-only/count-only recording workflow for artifact body
+  file writing fixture validation release-quality wrapper integration.

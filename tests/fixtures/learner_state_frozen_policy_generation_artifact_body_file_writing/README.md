@@ -180,6 +180,15 @@ implement `--artifact-body-out`, does not run isolated temp write validation,
 does not write manifests, does not use real data, and does not compute
 metrics.
 
+Step361 designs the future remote/manual Release Quality run record workflow:
+
+`docs/frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md`
+
+The future status marker should record only public-safe pass-only/count-only
+metadata for this fixture root. It should not copy raw logs, fixture bodies,
+artifact body payloads, manifest bodies, raw rows, logits, private paths,
+raw learner text, real data, or performance metric bodies.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

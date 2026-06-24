@@ -393,3 +393,14 @@ CLI, does not change Python tests, does not change fixture JSON, does not
 implement file writing, does not implement `--artifact-body-out`, does not
 run isolated temp write validation, does not write manifests, does not use
 real data, and does not compute metrics.
+
+## 25. Step361 Remote Run Record Workflow Design Status
+
+Step361 adds a docs-only remote/manual Release Quality run record workflow:
+
+[Frozen policy generation artifact body file writing fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md).
+
+The workflow design keeps future status markers pass-only/count-only and
+forbids raw logs, fixture bodies, artifact body payloads, manifest bodies,
+raw rows, logits, private paths, raw learner text, real data, and
+performance metric bodies.

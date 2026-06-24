@@ -241,14 +241,14 @@ writer CLI, does not use real data, and does not compute metrics.
 
 ## 15. Next Recommended Steps
 
-- Step361: remote/manual Release Quality run record workflow design.
-- Later: remote/manual Release Quality status marker.
+- Step362: remote/manual Release Quality status marker.
 - Later: isolated temp write validation after artifact body file writing
   exists.
 
 ## 16. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md)
+- [Frozen policy generation artifact body file writing fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
