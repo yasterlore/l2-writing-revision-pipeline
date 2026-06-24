@@ -558,9 +558,14 @@ written, no artifact body is produced, and no performance metric is computed.
   The target is standalone and not yet in release-quality; artifact body
   generation, manifest generation, file writing, metrics, and real-data
   readiness remain out of scope.
+- Step318: linked the artifact writer runtime release-quality integration
+  design. The wrapper is not changed yet; artifact body generation, manifest
+  generation, file writing, metrics, and real-data readiness remain out of
+  scope.
 
 ## Related Documents
 
+- [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)

@@ -420,3 +420,13 @@ and emits the same safe human metadata summary. It is not added to
 release-quality in Step317. It does not generate artifact bodies, generated
 policy bodies, manifest bodies, write files, compute metrics, use real data,
 or claim real-data readiness.
+
+## 25. Step318 Runtime Release-Quality Integration Design Status
+
+Step318 designs future release-quality wrapper integration for the standalone
+runtime target:
+[Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md).
+
+The wrapper is not changed in Step318. The design places the future runtime
+smoke after artifact writer fixture validation and before config/scoring
+smoke checks.

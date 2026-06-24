@@ -1872,6 +1872,16 @@ body generation, manifest body generation, artifact or manifest file writing,
 metrics, real-data use, and real-data readiness claims remain unchanged or out
 of scope.
 
+For Step318, review the
+[frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md).
+Confirm it is docs-only and designs a future wrapper insertion point, command,
+label, failure interpretation, log safety policy, and status marker plan for
+the standalone artifact writer runtime target. Confirm it does not change
+release-quality wrapper scripts, workflow YAML, Makefile, Python code/tests,
+fixture JSON, artifact body generation, generated policy body generation,
+manifest body generation, artifact or manifest file writing, metrics,
+real-data use, or real-data readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

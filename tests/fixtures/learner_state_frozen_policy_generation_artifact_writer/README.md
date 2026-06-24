@@ -213,6 +213,15 @@ The fixture JSON files remain unchanged. The target uses one valid synthetic
 request/pointer pair and still does not generate artifact bodies, generated
 policy bodies, manifest bodies, artifact files, or manifest files.
 
+Step318 designs future release-quality wrapper integration for that runtime
+target in:
+
+`docs/frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md`
+
+The release-quality wrapper is not changed in Step318. The future integration
+should run the standalone runtime target after artifact writer fixture
+validation and before config/scoring smoke checks.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy
