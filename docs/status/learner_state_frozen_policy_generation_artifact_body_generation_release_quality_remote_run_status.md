@@ -284,7 +284,8 @@ evidence, and not production readiness evidence.
 ## Next Actions
 
 - Commit this status marker after local checks.
-- Keep future safe-metadata target design separate.
+- Review the future safe-metadata target design separately:
+  [Frozen policy generation artifact body safe-metadata Makefile target design](../frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md).
 - Keep future artifact body file writing separate.
 - Keep future manifest writer design separate.
 - Keep future artifact writer CLI integration separate.
@@ -300,9 +301,14 @@ evidence, and not production readiness evidence.
   body payloads, generated policy bodies, manifest bodies, raw rows,
   logits/probability dumps, private paths, raw learner text, real participant
   data, or performance metric bodies.
+- Step344: added a link to the docs-only safe-metadata Makefile target design.
+  The status marker remains scoped to the default suppressed-mode remote
+  Release Quality smoke and does not claim safe-metadata release-quality
+  coverage.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body safe-metadata Makefile target design](../frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md)
 - [Frozen policy generation artifact body generation release-quality remote run record workflow](../frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation release-quality integration design](../frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)
 - [Frozen policy generation artifact body generation Makefile target design](../frozen_policy_generation_artifact_body_generation_makefile_target_design.md)

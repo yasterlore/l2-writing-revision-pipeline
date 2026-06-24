@@ -643,8 +643,23 @@ body-free safe metadata. It does not include raw logs, body payloads,
 safe-metadata target coverage, artifact file writing, manifest generation,
 metrics, real-data readiness, or production readiness evidence.
 
+## 40. Step344 Safe-Metadata Makefile Target Design Status
+
+Step344 designs a future standalone Makefile target for running the artifact
+body generation CLI in safe-metadata mode:
+
+[Frozen policy generation artifact body safe-metadata Makefile target design](frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md).
+
+The design keeps safe-metadata output summary-only and body-free. It does not
+implement the target, does not add release-quality integration, does not
+change workflow YAML, does not change Makefile, does not change Python code
+or tests, does not change fixture JSON, does not connect artifact writer CLI,
+does not write artifact files, does not generate manifest bodies, does not
+use real data, and does not compute metrics.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body safe-metadata Makefile target design](frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md)
 - [Learner-state frozen policy generation artifact body generation release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body generation release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)

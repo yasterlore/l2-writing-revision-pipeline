@@ -551,3 +551,19 @@ bodies, pointer bodies, expected result bodies, artifact body payloads,
 generated policy bodies, manifest bodies, raw rows, logits, private paths,
 raw learner text, real participant data, performance metric bodies, or
 production readiness claims.
+
+## 26. Step344 Safe-Metadata Makefile Target Design Status
+
+Step344 designs a future standalone Makefile target for safe-metadata mode:
+
+[Frozen policy generation artifact body safe-metadata Makefile target design](frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md).
+
+This remote-run record workflow remains about the default suppressed-mode
+generation CLI smoke already included in release-quality. Safe-metadata mode
+remains outside the status marker until a future standalone target, optional
+wrapper integration, and remote/manual run record are designed and completed.
+Step344 does not run a remote workflow, does not create a status marker, does
+not change workflow YAML, does not change the wrapper, does not change
+Makefile, does not change Python code or tests, does not change fixture JSON,
+does not write artifact files, does not generate manifest bodies, does not
+use real data, and does not compute metrics.
