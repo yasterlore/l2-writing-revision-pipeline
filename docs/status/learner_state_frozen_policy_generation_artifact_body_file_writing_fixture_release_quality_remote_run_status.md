@@ -202,9 +202,11 @@ and not production readiness evidence.
 
 ## Next Actions
 
-- Commit this status marker after local checks.
-- Keep future artifact body file writing implementation separate.
-- Keep future `--artifact-body-out` work separate.
+- Use the Step363 final implementation design before adding artifact body
+  file writing.
+- Keep future artifact body file writing implementation separate from this
+  marker.
+- Keep future `--artifact-body-out` implementation separate from this marker.
 - Keep future isolated temp write validation separate.
 - Keep future manifest writer work separate.
 - Keep future artifact writer CLI integration separate.
@@ -219,3 +221,8 @@ and not production readiness evidence.
   include raw logs, full job output, fixture bodies, artifact body payloads,
   manifest bodies, raw rows, logits, private paths, raw learner text, real
   participant data, or performance metric bodies.
+- Step363: linked the docs-only final implementation design for future
+  safe-metadata artifact body file writing:
+  [Frozen policy generation artifact body file writing implementation final design](../frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md).
+  The marker remains a public-safe run record and does not become file
+  writing evidence.

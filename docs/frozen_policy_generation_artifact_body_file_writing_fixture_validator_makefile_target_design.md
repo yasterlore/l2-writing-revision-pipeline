@@ -293,6 +293,16 @@ fixture validator target. It does not prove file writing correctness, does
 not write artifact files, does not create manifest files, and does not copy
 fixture bodies or artifact body payloads into docs.
 
+## 20. Step363 Final Implementation Design Status
+
+Step363 adds the docs-only final implementation design:
+
+[Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md).
+
+The final design keeps this Makefile target no-write. Future file writing
+should first be implemented and tested through the artifact body generation
+CLI, then staged through a separate standalone smoke target design.
+
 The wrapper command is:
 
 `make check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures`

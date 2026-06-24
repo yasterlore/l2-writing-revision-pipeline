@@ -2547,6 +2547,26 @@ artifact body payload examples, generated policy bodies, manifest bodies,
 JSON body examples, raw rows, logits, private paths, absolute local paths,
 raw learner text, real participant data, or performance metric bodies.
 
+For Step363, review the docs-only
+[frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md).
+Confirm it fixes only the final design for a future minimal
+`--artifact-body-out` implementation and safe-metadata artifact body file
+writing. Confirm it recommends a fixed safe root under
+`tmp/artifact_body_generation/`, keeps stdout/stderr body-free, forbids
+suppressed/default mode file output, forbids manifest writing, and keeps
+artifact writer CLI integration separate. Confirm it does not change
+workflow YAML, change the release-quality wrapper, change Makefile, change
+Python code/tests, change fixture JSON, implement artifact body file writing,
+add `--artifact-body-out`, run isolated temp write validation, write
+manifest files, change artifact writer CLI, use real data, compute metrics,
+or claim production readiness. Confirm docs do not include raw logs, full
+job output, copied log blocks, screenshots containing raw logs, request
+bodies, pointer bodies, file write request bodies, expected file write
+result bodies, artifact body payload examples, generated policy bodies,
+manifest bodies, JSON body examples, raw rows, logits, private paths,
+absolute local paths, raw learner text, real participant data, or
+performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

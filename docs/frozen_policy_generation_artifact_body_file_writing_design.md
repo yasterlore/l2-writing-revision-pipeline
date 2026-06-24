@@ -423,6 +423,7 @@ production readiness.
 - [Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body file writing fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md)
+- [Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
@@ -446,3 +447,18 @@ boundary. It does not mean artifact body file writing exists, does not mean
 `--artifact-body-out` exists, does not write artifact files, does not write
 manifest files, does not use real data, and does not provide performance or
 production-readiness evidence.
+
+## 29. Step363 Final Implementation Design Status
+
+Step363 adds the docs-only final implementation design for the future
+minimal artifact body file writing path:
+
+[Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md).
+
+The final design fixes the future `--artifact-body-out` contract,
+safe-metadata-only writing boundary, safe root policy, file content contract,
+summary fields, fail-closed / usage-error matrix, test plan, and staging
+rules. It does not implement file writing, add a CLI option, write artifact
+files, write manifests, change Makefile, change release-quality, change
+workflow YAML, change Python code/tests, change fixture JSON, use real data,
+or compute metrics.

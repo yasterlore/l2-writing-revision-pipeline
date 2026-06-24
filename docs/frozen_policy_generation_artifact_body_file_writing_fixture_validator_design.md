@@ -447,3 +447,15 @@ validator target was included in Release Quality and passed remotely. It does
 not implement file writing, run isolated temp write validation, add
 `--artifact-body-out`, generate manifests, use real data, compute metrics,
 or claim production readiness.
+
+## 28. Step363 Final Implementation Design Status
+
+Step363 adds the docs-only final implementation design:
+
+[Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md).
+
+The final design keeps this validator no-write and release-quality-safe
+while the future artifact body generation CLI file writing path is
+implemented separately. It does not change the validator, Makefile,
+release-quality wrapper, workflow YAML, Python tests, fixture JSON, or
+manifest/artifact writer boundaries.
