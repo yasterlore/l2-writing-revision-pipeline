@@ -457,8 +457,15 @@ Step293 implements that safe CLI. The artifact policy remains unchanged: the
 CLI has no output-file option, writes no artifacts, emits no artifact body,
 emits no generated policy body, and introduces no manifest writer.
 
+Step294 designs a future Makefile target for that CLI:
+[Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md).
+The artifact policy remains unchanged: the target is valid-only, metadata-only,
+read-only, and should not add artifact body output, generated policy body
+output, artifact writing, manifest writing, or performance evidence.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)

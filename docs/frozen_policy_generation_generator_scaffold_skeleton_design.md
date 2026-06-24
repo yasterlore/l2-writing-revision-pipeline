@@ -790,8 +790,19 @@ metadata-only human or JSON summaries, does not write files, does not generate
 artifact bodies, does not generate policy bodies, and does not add Makefile,
 release-quality, workflow, or fixture changes.
 
+## 26. Step294 CLI Makefile Target Design Status
+
+Step294 designs a future valid-only Makefile runtime smoke target for the safe
+generator scaffold CLI:
+[Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md).
+
+The skeleton remains unchanged by that design. It still produces metadata-only
+results, writes no files, emits no artifact bodies, emits no generated policy
+bodies, and makes no performance or real-data readiness claim.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation scaffold design](frozen_policy_generation_scaffold_design.md)
 - [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)

@@ -1506,6 +1506,22 @@ GitHub Actions workflow change, fixture change, calibration/selective
 prediction logic, estimator work, metric computation, performance evaluation,
 real-data use, or real-data readiness claim is introduced.
 
+For Step294, review the
+[frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md).
+Confirm it is docs-only and defines the future target name, valid-only command,
+help text, expected behavior, exit-code interpretation, output/logging safety,
+tmp/output policy, relation to existing targets, future implementation tests,
+release-quality staging, status-marker staging, and synthetic-only/no-oracle
+boundary. Confirm it does not add a Makefile target, release-quality wrapper
+change, GitHub Actions workflow change, Python code, Python tests, fixtures,
+artifact file writing, artifact body generation, generated policy body
+generation, artifact manifest writing, calibration/selective prediction logic,
+estimator work, metric computation, performance evaluation, real-data use, or
+real-data readiness claim. Confirm it does not include raw logs,
+request/pointer bodies, expected generator scaffold result bodies, artifact
+bodies, generated policy bodies, raw rows, logits, private paths, raw learner
+text, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

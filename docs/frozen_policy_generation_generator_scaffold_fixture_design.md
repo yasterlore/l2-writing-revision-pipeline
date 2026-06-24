@@ -514,8 +514,15 @@ Step293 implements that safe CLI and focused CLI tests. The fixture root
 remains unchanged, and the CLI continues to consume request/pointer metadata
 without exposing fixture bodies or writing artifacts.
 
+Step294 designs a future Makefile runtime smoke target for that CLI:
+[Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md).
+The fixture root remains unchanged. The proposed target should use one valid
+synthetic request/pointer pair and should not expose fixture bodies or write
+artifacts.
+
 ## Related Documents
 
+- [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
 - [Frozen policy generation generator scaffold fixture release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_record_workflow.md)

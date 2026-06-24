@@ -512,3 +512,22 @@ The implementation:
 - does not change release-quality
 - does not change workflows
 - does not change fixtures
+
+## 22. Step294 Makefile Target Design Status
+
+Step294 designs a future standalone Makefile target for the implemented safe
+generator scaffold CLI:
+[Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md).
+
+The design recommends a valid-only runtime smoke target named
+`check-learner-state-frozen-policy-generation-generator-scaffold-runtime`.
+It remains docs-only: no Makefile target, release-quality wrapper change,
+workflow change, Python change, test change, fixture change, artifact body,
+generated policy body, or file-writing behavior is added.
+
+## Related Documents
+
+- [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
+- [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)
+- [Frozen policy generation generator scaffold fixture validator Makefile target design](frozen_policy_generation_generator_scaffold_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation artifact policy design](frozen_policy_generation_artifact_policy_design.md)
