@@ -2,13 +2,15 @@
 
 This module reads synthetic request/pointer metadata and returns a safe
 metadata-only generator scaffold result. It does not generate policy bodies,
-write artifacts, write manifests, read raw rows, read logits, compute metrics,
-or provide a CLI entrypoint.
+write artifacts, write manifests, read raw rows, read logits, or compute
+metrics. Its CLI emits only safe metadata summaries.
 """
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -194,6 +196,24 @@ SAFE_MARKER_KEYS = frozenset(
         "frozen_policy_validation_label",
         "selective_prediction_validation_label",
     }
+)
+
+CLI_SAFE_SUMMARY_FIELDS = (
+    "mode",
+    "schema_version",
+    "generation_status",
+    "reason_codes",
+    "failed_checks",
+    "request_id",
+    "pointer_id",
+    "policy_id",
+    "artifact_id",
+    "generator_version",
+    "validation_reference_ids",
+    "artifact_flags",
+    "safety_flags",
+    "count_summary",
+    "safe_summary",
 )
 
 
@@ -876,3 +896,107 @@ def _dedupe(values: Any) -> list[str]:
 
 def _safe_optional_string(value: Any) -> str | None:
     return value if isinstance(value, str) else None
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Run the synthetic frozen policy generation generator scaffold "
+            "with safe metadata-only output."
+        )
+    )
+    parser.add_argument(
+        "--request",
+        type=Path,
+        help="Synthetic generation_request.json path.",
+    )
+    parser.add_argument(
+        "--pointer",
+        type=Path,
+        help="Synthetic input_fixture_pointer.json path.",
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit a safe JSON summary instead of a human summary.",
+    )
+    args = parser.parse_args(argv)
+
+    if (args.request is None) != (args.pointer is None):
+        parser.error("--request and --pointer must be provided together")
+    if args.request is None or args.pointer is None:
+        parser.error("--request and --pointer are required")
+
+    try:
+        result = run_frozen_policy_generation_generator_scaffold(
+            args.request,
+            args.pointer,
+        )
+        payload = _generator_result_to_cli_payload(result)
+        _emit_cli_payload(payload, args.json)
+        if result.generation_status == "input_error":
+            return 2
+        safety = audit_frozen_policy_generation_generator_safety(result)
+        if safety.reason_codes or safety.failed_checks:
+            return 3
+        return 0
+    except Exception:
+        payload = _generator_result_to_cli_payload(
+            _cli_input_error_result("generator_scaffold_internal_error")
+        )
+        _emit_cli_payload(payload, args.json)
+        return 1
+
+
+def _generator_result_to_cli_payload(
+    result: FrozenPolicyGenerationGeneratorResult,
+) -> dict[str, Any]:
+    summary = summarize_frozen_policy_generation_generator_result(result)
+    summary["mode"] = "generator_scaffold"
+    return {key: summary.get(key) for key in CLI_SAFE_SUMMARY_FIELDS}
+
+
+def _cli_input_error_result(reason_code: str) -> FrozenPolicyGenerationGeneratorResult:
+    return FrozenPolicyGenerationGeneratorResult(
+        schema_version=RESULT_SCHEMA_VERSION,
+        generation_status="input_error",
+        reason_codes=[reason_code],
+        failed_checks=[reason_code],
+        policy_id=None,
+        artifact_id=None,
+        artifact_flags=dict(ARTIFACT_FLAGS),
+        safety_flags=dict(SAFETY_FLAGS),
+        count_summary=_count_summary(
+            validation_reference_count=0,
+            artifact_metadata_field_count=0,
+        ),
+        safe_summary=INPUT_ERROR_SAFE_SUMMARY,
+        metadata_plan_summary={
+            "planned_check_count": 0,
+            "body_field_count": 0,
+            "written_file_count": 0,
+        },
+    )
+
+
+def _emit_cli_payload(payload: dict[str, Any], json_output: bool) -> None:
+    if json_output:
+        print(json.dumps(payload, sort_keys=True))
+        return
+    for key in CLI_SAFE_SUMMARY_FIELDS:
+        value = payload.get(key)
+        if isinstance(value, bool):
+            value_text = "true" if value else "false"
+        elif isinstance(value, (list, tuple)):
+            value_text = ",".join(str(item) for item in value) if value else "none"
+        elif isinstance(value, dict):
+            value_text = json.dumps(value, sort_keys=True, separators=(",", ":"))
+        elif value is None:
+            value_text = "none"
+        else:
+            value_text = str(value)
+        print(f"{key}={value_text}")
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

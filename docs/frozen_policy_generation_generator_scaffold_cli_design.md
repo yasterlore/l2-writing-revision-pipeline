@@ -440,10 +440,8 @@ labels, or safe notes when they do not carry payload content.
 
 ## 18. What This Does NOT Do
 
-This design does not:
+This document does not:
 
-- implement the CLI
-- add CLI tests
 - add a Makefile target
 - integrate release-quality
 - change workflows
@@ -481,10 +479,36 @@ safety contract easier to review.
 Recommended next steps:
 
 - Step293: generator scaffold CLI implementation
-- Step294: CLI test expansion if needed
-- Step295: generator scaffold Makefile target design
-- Step296: generator scaffold Makefile target implementation
-- Step297: generator scaffold release-quality integration design
+- Step294: generator scaffold Makefile target design
+- Step295: generator scaffold Makefile target implementation
+- Step296: generator scaffold release-quality integration design
+- Step297: generator scaffold release-quality integration implementation
 
 Keep artifact writing, generated policy bodies, calibration work, performance
 evaluation, and real-data readiness separate.
+
+## 21. Step293 Implementation Status
+
+Step293 implements the safe CLI entrypoint in
+`python/learner_state/frozen_policy_generation_generator_scaffold.py` and adds
+focused CLI tests in
+`python/learner_state/tests/test_frozen_policy_generation_generator_scaffold_cli.py`.
+
+The implementation:
+
+- accepts `--request`, `--pointer`, `--json`, and `--help`
+- requires `--request` and `--pointer` together
+- returns safe human output by default
+- returns parseable safe JSON with `--json`
+- exits `0` for valid pass metadata and expected fail-closed invalid metadata
+- exits `2` for usage or input errors
+- reserves `3` for safety-audit mismatch
+- exits `1` for unexpected internal errors
+- calls the existing skeleton APIs instead of duplicating core logic
+- does not write artifacts
+- does not generate artifact bodies
+- does not generate policy bodies
+- does not add a Makefile target
+- does not change release-quality
+- does not change workflows
+- does not change fixtures

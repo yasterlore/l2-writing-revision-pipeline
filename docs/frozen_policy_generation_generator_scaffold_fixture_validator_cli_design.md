@@ -426,6 +426,9 @@ Step292 designs that future generator scaffold CLI:
 This fixture validator CLI remains a fixture-contract checker, not a skeleton
 runtime command.
 
+Step293 implements the skeleton CLI. This fixture validator CLI remains
+unchanged and scoped to fixture-contract validation.
+
 Related docs:
 
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)

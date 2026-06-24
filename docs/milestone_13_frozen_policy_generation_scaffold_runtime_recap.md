@@ -475,6 +475,9 @@ written, no artifact body is produced, and no performance metric is computed.
 - Step292: linked the generator scaffold CLI design as the next docs-only
   boundary before CLI implementation or release-quality skeleton runtime
   integration.
+- Step293: linked the generator scaffold CLI implementation status; Makefile
+  target, release-quality skeleton runtime integration, artifact writing, and
+  artifact body generation remain separate.
 
 ## Related Documents
 

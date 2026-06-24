@@ -453,6 +453,10 @@ The artifact policy remains unchanged: the future CLI should print safe
 metadata only, provide no output-file option, and still not generate artifact
 bodies, generated policy bodies, manifests, or written files.
 
+Step293 implements that safe CLI. The artifact policy remains unchanged: the
+CLI has no output-file option, writes no artifacts, emits no artifact body,
+emits no generated policy body, and introduces no manifest writer.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
