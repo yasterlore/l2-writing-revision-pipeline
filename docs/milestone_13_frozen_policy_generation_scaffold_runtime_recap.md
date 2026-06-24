@@ -782,10 +782,19 @@ written, no artifact body is produced, and no performance metric is computed.
   not implement file writing, add `--artifact-body-out`, run isolated temp
   writes, generate manifests, connect artifact writer CLI, compute metrics,
   use real data, or claim production readiness.
+- Step355: added the docs-only CLI design for the static no-write artifact
+  body file writing fixture validator. The design covers entrypoint,
+  `--fixture-root`, `--fixture-case`, `--json`, safe summaries, exit codes,
+  future tests, Makefile staging, release-quality staging, and no-write
+  separation. It does not implement a CLI, add a Makefile target, write
+  artifact files, run isolated temp writes, generate manifests, connect
+  artifact writer CLI, compute metrics, use real data, or claim production
+  readiness.
 
 ## Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
+- [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
