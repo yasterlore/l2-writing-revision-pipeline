@@ -151,6 +151,16 @@ metadata-only fixture contract validation. It does not execute an artifact
 writer, generate artifact bodies, generate generated policy bodies, generate
 manifest bodies, or write artifact/manifest files.
 
+Step311 designs the future remote/manual Release Quality status-marker
+workflow in:
+
+`docs/frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md`
+
+That design does not create the status marker yet. Any future marker should
+record only pass-only/count-only metadata and must not copy fixture bodies, raw
+logs, artifact bodies, manifest bodies, raw rows, logits, private paths, raw
+learner text, or performance metric bodies.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

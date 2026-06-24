@@ -352,7 +352,8 @@ Recommended next steps:
 2. Step309: release-quality integration design. Complete:
    [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md).
 3. Step310: wrapper integration. Complete.
-4. Step311: remote status marker workflow design.
+4. Step311: remote status marker workflow design. Complete:
+   [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md).
 
 ## 18. Step308 Makefile Target Implementation Status
 
@@ -409,8 +410,22 @@ artifact body generation, generated policy body generation, manifest body
 generation, file writing, metric computation, performance evaluation,
 real-data use, or production readiness.
 
+## 21. Step311 Remote Run Record Workflow Design Status
+
+Step311 designs the future public-safe status-marker workflow for a
+remote/manual Release Quality run that includes this target:
+[Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md).
+
+The Makefile target remains unchanged. Step311 does not create a status marker,
+change workflow YAML, change wrapper scripts, change Python code or tests,
+change fixture JSON, execute an artifact writer, generate artifact bodies,
+generate generated policy bodies, generate manifest bodies, write files,
+compute metrics, evaluate performance, use real data, or claim production
+readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)

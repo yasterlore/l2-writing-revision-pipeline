@@ -470,8 +470,21 @@ generation, generated policy body generation, manifest body generation, file
 writing, metric computation, performance evaluation, real-data use, or
 production readiness.
 
+## 26. Step311 Remote Run Record Workflow Design Status
+
+Step311 designs the future remote/manual Release Quality recording workflow:
+[Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md).
+
+The CLI remains unchanged. Step311 does not create a status marker, change
+workflow YAML, change wrapper scripts, change Makefile target behavior, change
+Python code or tests, change fixture JSON, execute an artifact writer,
+generate artifact bodies, generate generated policy bodies, generate manifest
+bodies, write files, compute metrics, evaluate performance, use real data, or
+claim production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)

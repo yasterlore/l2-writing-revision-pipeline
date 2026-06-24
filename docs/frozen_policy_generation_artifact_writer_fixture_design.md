@@ -785,8 +785,22 @@ Python tests, fixture JSON, implement an artifact writer, generate artifact
 bodies, generate generated policy bodies, generate manifest bodies, or write
 artifact/manifest files.
 
+## 30. Step311 Remote Run Record Workflow Design Status
+
+Step311 designs the future status-marker recording workflow for a
+remote/manual Release Quality run that includes artifact writer fixture
+validation:
+[Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md).
+
+The fixture JSON files remain unchanged. Step311 does not create a status
+marker, change workflow YAML, change wrapper scripts, change Makefile behavior,
+change Python code or tests, implement an artifact writer, generate artifact
+bodies, generate generated policy bodies, generate manifest bodies, or write
+artifact/manifest files.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
