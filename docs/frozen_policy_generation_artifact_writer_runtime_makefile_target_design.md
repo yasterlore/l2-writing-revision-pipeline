@@ -433,3 +433,16 @@ workflow YAML, change the release-quality wrapper, change Python code or
 tests, change fixture JSON, generate artifact bodies, generate generated
 policy bodies, generate manifest bodies, write files, compute metrics, use
 real data, or claim real-data readiness.
+
+## 23. Step322 Artifact Body Generation Design Status
+
+Step322 designs future artifact body generation separately from this runtime
+target:
+
+[Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md).
+
+The runtime target remains body-free and file-writing-free. Step322 does not
+change the Makefile target, release-quality wrapper, workflow YAML, Python
+code or tests, fixture JSON, CLI behavior, artifact body generation, manifest
+body generation, file writing, metrics, real-data use, or production
+readiness status.

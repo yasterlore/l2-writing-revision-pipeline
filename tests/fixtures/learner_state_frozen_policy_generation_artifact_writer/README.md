@@ -251,6 +251,16 @@ The fixture JSON files remain unchanged. The marker records only safe
 metadata, pass-only runtime smoke fields, count-only fixture validation
 fields, related learner-state check summaries, and safety review statements.
 
+Step322 designs future artifact body generation in:
+
+`docs/frozen_policy_generation_artifact_body_generation_design.md`
+
+The fixture JSON files remain unchanged. The design is docs-only and defines
+allowed metadata fields, forbidden content, body schema candidates,
+fail-closed reason codes, and future fixture/test staging. It does not
+generate artifact bodies, generated policy bodies, manifest bodies, artifact
+files, or manifest files.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy
