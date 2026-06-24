@@ -296,8 +296,25 @@ That contract needs its own fixture root and audit rules.
 Manifest writer and artifact writer CLI integration should remain separate
 tracks.
 
-## 20. Related Documents
+## 20. Step352 Fixture Creation Status
 
+Step352 creates the future artifact body file writing fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/`
+
+The root contains 29 synthetic-only metadata cases: 5 valid cases and 24
+invalid cases. Each case has `artifact_body_request.json`,
+`artifact_writer_result_pointer.json`, `file_write_request.json`, and
+`expected_file_write_result.json`.
+
+Step352 does not implement a validator, does not implement file writing,
+does not add a CLI option, does not write artifact bodies or manifests, does
+not connect artifact writer CLI, does not change release-quality, does not
+use real data, and does not compute metrics.
+
+## 21. Related Documents
+
+- [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)

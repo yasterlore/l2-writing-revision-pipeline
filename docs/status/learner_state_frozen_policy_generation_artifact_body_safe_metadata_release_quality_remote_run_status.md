@@ -241,6 +241,8 @@ copied into docs or printed as raw body content.
   artifact body file writing work.
 - Use the Step351 file writing fixture and path-policy design before creating
   future fixture JSON or validator code.
+- Use the Step352 file writing fixture root as the future validator input
+  contract.
 - Keep future manifest writer design separate.
 - Keep future artifact writer CLI integration separate.
 - Treat real-data readiness as future private/institution-approved review.
@@ -263,9 +265,14 @@ copied into docs or printed as raw body content.
   and path-policy design. The design does not create fixture JSON, implement
   a validator, add a CLI option, write artifacts or manifests, use real data,
   or compute metrics.
+- Step352: added a link to the synthetic-only artifact body file writing
+  fixture root. The fixture root does not implement a validator, add a CLI
+  option, write artifact files or manifests, use real data, or compute
+  metrics.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body file writing fixtures](../../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](../frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](../frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](../frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md)

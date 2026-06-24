@@ -1,0 +1,85 @@
+{
+  "artifact_body_status": "generated_safe_metadata_body",
+  "case_id": "invalid/invalid_pointer_body_leakage_in_file",
+  "content_policy": {
+    "allowed_top_level_keys": [
+      "artifact_body_schema_version",
+      "artifact_body_id",
+      "artifact_id",
+      "manifest_id",
+      "writer_version",
+      "body_status",
+      "body_type",
+      "synthetic_only_notice",
+      "no_oracle_notice",
+      "non_proof_notice",
+      "allowed_sections",
+      "validation_reference_ids",
+      "safety_flags",
+      "count_summary",
+      "safe_metadata_field_names",
+      "file_writing_policy_summary"
+    ],
+    "forbid_expected_body": true,
+    "forbid_generated_policy_body": true,
+    "forbid_logits": true,
+    "forbid_manifest_body": true,
+    "forbid_performance_metric_body": true,
+    "forbid_pointer_body": true,
+    "forbid_private_paths": true,
+    "forbid_raw_learner_text": true,
+    "forbid_raw_rows": true,
+    "forbid_request_body": true,
+    "require_no_oracle_notice": true,
+    "require_non_proof_notice": true,
+    "require_synthetic_notice": true,
+    "require_zero_forbidden_counts": true,
+    "required_body_status": "generated_safe_metadata_body",
+    "required_notices": [
+      "synthetic_only_notice",
+      "no_oracle_notice",
+      "non_proof_notice"
+    ],
+    "required_schema_version": "learner_state_frozen_policy_generation_artifact_body_v0.1"
+  },
+  "create_parent_dirs": false,
+  "expected_body_payload_not_printed": true,
+  "expected_summary_only_stdout": true,
+  "mode": "safe-metadata",
+  "no_oracle_notice": "no learner outcome oracle, gold label, or performance evidence is present",
+  "non_proof_notice": "fixture validates a future file-writing boundary only; it does not prove production readiness",
+  "output_path": "tmp/artifact_body_file_writes/safe_metadata_artifact_body.json",
+  "output_root_policy": {
+    "allowed_root": "tmp/artifact_body_file_writes",
+    "public_summary_path": "tmp/artifact_body_file_writes/safe_metadata_artifact_body.json",
+    "tmp_only_initial_policy": true
+  },
+  "overwrite": false,
+  "path_policy": {
+    "allowed_root_required": true,
+    "disallow_absolute_path": true,
+    "disallow_drive_root": true,
+    "disallow_hidden_private_dirs": true,
+    "disallow_home_path": true,
+    "disallow_parent_traversal": true,
+    "disallow_private_cloud_marker": true,
+    "disallow_symlink_escape": true,
+    "filename_safe_charset": "lowercase_ascii_digits_dash_underscore_dot_slash",
+    "overwrite_policy": "explicit_no_overwrite_by_default",
+    "parent_creation_policy": "explicit_case_policy",
+    "path_length_limit": 160,
+    "relative_path_required": true,
+    "require_json_extension": true
+  },
+  "requested_outputs": {
+    "artifact_body_file": true,
+    "generated_policy_body_file": false,
+    "manifest_file": false,
+    "stdout_body_payload": false
+  },
+  "safe_marker_flags": {
+    "synthetic_pointer_body_leakage_marker": true
+  },
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_file_write_request_v0.1",
+  "synthetic_only_notice": "synthetic-only metadata fixture for future artifact body file writing path-policy validation"
+}

@@ -1,0 +1,27 @@
+{
+  "artifact_body_id": "synthetic_artifact_body_file_writing_invalid_manifest_file_output_attempt_v0_1",
+  "artifact_id": "synthetic_artifact_metadata_only_v0_1",
+  "case_id": "invalid/invalid_manifest_file_output_attempt",
+  "category": "invalid",
+  "manifest_id": "synthetic_manifest_metadata_only_v0_1",
+  "no_oracle_notice_present": true,
+  "non_proof_notice_present": true,
+  "requested_body_mode": "generated_safe_metadata_body",
+  "requested_body_status": "generated_safe_metadata_body",
+  "safe_marker_flags": {},
+  "safe_section_keys": [
+    "schema_version",
+    "safe_ids",
+    "artifact_flags",
+    "safety_flags",
+    "count_summary"
+  ],
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_request_v0.1",
+  "synthetic_only_notice_present": true,
+  "validation_reference_ids": [
+    "learner_state_frozen_policy_generation_artifact_writer/valid/minimal_metadata_only_artifact_plan",
+    "learner_state_frozen_policy_generation_generator_scaffold/valid/minimal_metadata_only_generation_plan",
+    "learner_state_frozen_policy_generation/valid/identity_temperature_fixed_threshold"
+  ],
+  "writer_version": "frozen_policy_generation_artifact_body_fixture_contract_v0_1"
+}

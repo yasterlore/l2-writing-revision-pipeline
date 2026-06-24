@@ -761,9 +761,16 @@ written, no artifact body is produced, and no performance metric is computed.
   JSON, implement file writing, add a CLI option, write manifests, connect
   artifact writer CLI, compute metrics, use real data, or claim production
   readiness.
+- Step352: created the synthetic-only metadata artifact body file writing
+  fixture root for future path-policy and file-output validation. The root
+  contains valid and invalid contract cases only. It does not implement a
+  validator, add a CLI option, write artifact files or manifests, connect
+  artifact writer CLI, compute metrics, use real data, or claim production
+  readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md)
