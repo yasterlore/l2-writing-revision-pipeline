@@ -440,3 +440,15 @@ policy, and keeps stdout summary-only. It does not add output files here,
 does not change fixture JSON, does not generate manifest bodies, does not
 connect artifact writer CLI, does not use real data, and does not compute
 metrics.
+
+## Future Artifact Body File Writing Fixtures
+
+Step351 designs a future separate fixture root for artifact body file writing:
+
+`docs/frozen_policy_generation_artifact_body_file_writing_fixture_design.md`
+
+The proposed future fixture root is separate from this artifact body fixture
+root. This fixture root remains unchanged. Step351 does not create fixture
+JSON, does not implement a validator, does not write artifact files, does not
+generate manifest bodies, does not connect artifact writer CLI, does not use
+real data, and does not compute metrics.

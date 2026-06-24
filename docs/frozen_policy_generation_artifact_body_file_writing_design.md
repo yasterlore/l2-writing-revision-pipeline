@@ -310,9 +310,10 @@ surface needs local tests, fixture coverage, and path-policy validation first.
 
 ## 18. Next Recommended Steps
 
-- Step351: file writing implementation design review or fixture design.
-- Step352: file writing fixture design.
-- Step353: file writing implementation.
+- Step351: file writing fixture and path-policy design.
+- Step352: file writing fixture JSON creation.
+- Step353: file writing fixture validator design or implementation.
+- Step354: CLI file writing implementation.
 - Later: standalone Makefile target design.
 - Later: release-quality integration design.
 - Later: remote/manual run record workflow and status marker.
@@ -320,8 +321,22 @@ surface needs local tests, fixture coverage, and path-policy validation first.
 Manifest writer design and artifact writer CLI integration should remain
 separate tracks.
 
-## 19. Related Documents
+## 19. Step351 Fixture And Path-Policy Design Status
 
+Step351 designs the future fixture root, case names, path-policy checks,
+content-policy checks, expected result schema, and validator staging for
+artifact body file writing:
+
+[Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md).
+
+The design does not create fixture JSON, does not implement file writing,
+does not add a CLI option, does not write artifacts or manifests, does not
+connect artifact writer CLI, does not change release-quality, does not use
+real data, and does not compute metrics.
+
+## 20. Related Documents
+
+- [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Frozen policy generation artifact body safe-metadata Makefile target design](frozen_policy_generation_artifact_body_safe_metadata_makefile_target_design.md)

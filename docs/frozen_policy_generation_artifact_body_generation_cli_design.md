@@ -551,3 +551,16 @@ summary-only. Step350 does not implement the option, does not write artifact
 body files, does not write manifest files, does not connect artifact writer
 CLI, does not change release-quality, does not use real data, and does not
 compute metrics.
+
+## 34. Step351 File Writing Fixture And Path-Policy Design Status
+
+Step351 designs fixture and path-policy coverage for the future CLI file
+writing option:
+
+[Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md).
+
+The design keeps the current CLI unchanged. It defines future fixture case
+names, expected result fields, safe path checks, and body content checks. It
+does not create fixture JSON, implement `--artifact-body-out`, write
+artifacts or manifests, connect artifact writer CLI, change release-quality,
+use real data, or compute metrics.

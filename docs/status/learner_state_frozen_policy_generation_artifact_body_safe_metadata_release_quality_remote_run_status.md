@@ -239,6 +239,8 @@ copied into docs or printed as raw body content.
 - Commit this status marker after local checks.
 - Use the Step350 file writing design as the starting point for future
   artifact body file writing work.
+- Use the Step351 file writing fixture and path-policy design before creating
+  future fixture JSON or validator code.
 - Keep future manifest writer design separate.
 - Keep future artifact writer CLI integration separate.
 - Treat real-data readiness as future private/institution-approved review.
@@ -257,9 +259,14 @@ copied into docs or printed as raw body content.
   The design remains separate from this status marker and does not add file
   writing, manifest writing, artifact writer CLI integration, real-data use,
   metrics, or production readiness claims.
+- Step351: added a link to the docs-only artifact body file writing fixture
+  and path-policy design. The design does not create fixture JSON, implement
+  a validator, add a CLI option, write artifacts or manifests, use real data,
+  or compute metrics.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body file writing fixture design](../frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](../frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](../frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body safe-metadata release-quality integration design](../frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md)
