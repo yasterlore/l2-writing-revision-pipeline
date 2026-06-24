@@ -446,3 +446,16 @@ change the Makefile target, release-quality wrapper, workflow YAML, Python
 code or tests, fixture JSON, CLI behavior, artifact body generation, manifest
 body generation, file writing, metrics, real-data use, or production
 readiness status.
+
+## 24. Step323 Artifact Body Fixture Design Status
+
+Step323 designs future artifact body fixtures separately from this runtime
+target:
+
+[Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md).
+
+The runtime target remains body-free and file-writing-free. Step323 does not
+create fixture JSON, implement a validator, change the Makefile target, change
+the release-quality wrapper, change workflow YAML, change Python code or
+tests, change existing fixtures, generate artifact bodies, write files,
+compute metrics, use real data, or claim production readiness.

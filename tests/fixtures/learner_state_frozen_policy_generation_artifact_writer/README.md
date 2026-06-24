@@ -261,6 +261,14 @@ fail-closed reason codes, and future fixture/test staging. It does not
 generate artifact bodies, generated policy bodies, manifest bodies, artifact
 files, or manifest files.
 
+Step323 designs a separate future artifact body fixture root in:
+
+`docs/frozen_policy_generation_artifact_body_fixture_design.md`
+
+The fixture JSON files in this directory remain unchanged. Future artifact
+body fixtures should live in a separate root and should use safe marker
+booleans instead of unsafe payload bodies.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

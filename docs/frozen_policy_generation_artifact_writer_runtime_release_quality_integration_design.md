@@ -431,3 +431,17 @@ behavior, Makefile target design, and log safety review exist. Step322 does
 not generate bodies, write files, change workflow YAML, change wrapper
 scripts, change Makefile targets, change Python code or tests, change fixture
 JSON, compute metrics, use real data, or claim production readiness.
+
+## 21. Step323 Artifact Body Fixture Design Status
+
+Step323 designs future artifact body fixtures:
+
+[Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md).
+
+Release-quality remains unchanged in Step323. Artifact body fixture validation
+should be designed, implemented, exposed through CLI, and given a standalone
+Makefile target before any future wrapper integration. Step323 does not
+create fixture JSON, implement a validator, generate artifact bodies, change
+workflow YAML, change wrapper scripts, change Makefile targets, change Python
+code or tests, write files, compute metrics, use real data, or claim
+production readiness.
