@@ -285,7 +285,9 @@ This marker does not prove:
   [Frozen policy generation artifact writer design](../frozen_policy_generation_artifact_writer_design.md).
 - Step301 artifact writer fixture design is now tracked separately:
   [Frozen policy generation artifact writer fixture design](../frozen_policy_generation_artifact_writer_fixture_design.md).
-- Keep future artifact writer fixture creation separate.
+- Step302 artifact writer fixtures are now tracked separately:
+  [Frozen policy generation artifact writer fixtures](../../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md).
+- Keep future artifact writer fixture validator design separate.
 - Keep future artifact writer implementation separate.
 - Keep future generator scaffold expansion separate.
 - Keep future calibration scaffold work separate.
@@ -308,3 +310,8 @@ This marker does not prove:
   artifact writer fixtures, artifact writer validators, artifact writer code,
   artifact bodies, generated policy bodies, manifest bodies, file writing,
   metrics, or real-data readiness claims.
+- Step302: linked the future artifact writer fixture root. The marker still
+  records only the generator scaffold runtime remote run and does not implement
+  artifact writer validators, artifact writer code, artifact bodies, generated
+  policy bodies, manifest bodies, file writing, metrics, or real-data readiness
+  claims.

@@ -508,8 +508,16 @@ future fixture contract stays synthetic-only and metadata-only, and expected
 results must not include artifact bodies, generated policy bodies, manifest
 bodies, raw rows, logits, private paths, or raw learner text.
 
+Step302 creates the future artifact writer fixture contract files:
+[Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md).
+The artifact policy remains unchanged: the fixtures are synthetic-only and
+metadata-only, the expected results remain body-free, and no artifact writer,
+validator, artifact body, generated policy body, manifest body, or file writing
+is added.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
 - [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
