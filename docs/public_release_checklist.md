@@ -2421,6 +2421,23 @@ artifact body payload examples, generated policy bodies, manifest bodies,
 JSON body examples, raw rows, logits, private paths, raw learner text, real
 participant data, or performance metric bodies.
 
+For Step356, review the safe no-write CLI implementation in
+`python/learner_state/frozen_policy_generation_artifact_body_file_writing_fixture_validation.py`
+and the focused CLI tests. Confirm it supports `--fixture-root`,
+`--fixture-case`, `--json`, and `--help` with body-free summaries only.
+Confirm unsafe fixture-case selectors are rejected and single invalid cases
+that match expected fail-closed or usage-error outcomes can exit 0. Confirm
+it does not add a Makefile target, change release-quality, change workflow
+YAML, change fixture JSON, implement artifact body file writing, add
+`--artifact-body-out`, run isolated temp write validation, write manifest
+files, change artifact writer CLI, use real data, compute metrics, or claim
+production readiness. Confirm CLI output does not include raw logs, full job
+output, copied log blocks, screenshots containing raw logs, request bodies,
+pointer bodies, file write request bodies, expected file write result bodies,
+artifact body payload examples, generated policy bodies, manifest bodies,
+JSON body examples, raw rows, logits, private paths, raw learner text, real
+participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

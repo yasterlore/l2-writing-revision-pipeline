@@ -790,6 +790,13 @@ written, no artifact body is produced, and no performance metric is computed.
   artifact files, run isolated temp writes, generate manifests, connect
   artifact writer CLI, compute metrics, use real data, or claim production
   readiness.
+- Step356: implemented the safe no-write CLI for the artifact body file
+  writing fixture validator and added focused CLI tests. The CLI validates
+  the default fixture root, a custom root, or one safe relative case selector
+  and emits body-free human/JSON summaries. It does not add a Makefile
+  target, write artifact files, run isolated temp writes, generate manifests,
+  connect artifact writer CLI, compute metrics, use real data, or claim
+  production readiness.
 
 ## Related Documents
 

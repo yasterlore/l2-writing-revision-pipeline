@@ -343,7 +343,27 @@ implement a CLI, does not add a Makefile target, does not write files, does
 not create temp outputs, does not implement `--artifact-body-out`, does not
 change release-quality, does not use real data, and does not compute metrics.
 
-## 20. Related Documents
+## 20. Step356 Fixture Validator CLI Implementation Status
+
+Step356 implements the safe no-write CLI entrypoint in the existing validator
+module:
+
+`python/learner_state/frozen_policy_generation_artifact_body_file_writing_fixture_validation.py`
+
+The CLI validates the default fixture root, a custom fixture root, or one
+safe relative fixture case selector. It emits body-free human or JSON
+summaries only. It rejects unsafe `--fixture-case` selectors, does not print
+fixture bodies, does not print artifact body payloads, does not write files,
+does not create temp output directories, does not implement
+`--artifact-body-out`, does not change Makefile, does not change
+release-quality, does not change workflow YAML, does not use real data, and
+does not compute metrics.
+
+Step356 also adds CLI tests:
+
+`python/learner_state/tests/test_frozen_policy_generation_artifact_body_file_writing_fixture_validation_cli.py`
+
+## 21. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)

@@ -8,8 +8,10 @@ connect artifact writer CLI, train models, or compute metrics.
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
+import sys
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path, PurePosixPath
@@ -322,6 +324,7 @@ LOCAL_ABSOLUTE_PATH_PATTERN = re.compile(
     r"(^/Users/|^/home/|^/private/|^/var/folders/|^[A-Za-z]:\\)"
 )
 SAFE_PATH_PATTERN = re.compile(r"^[a-z0-9_./-]*$")
+SAFE_CASE_SELECTOR_PATTERN = re.compile(r"^[a-z0-9_/-]+$")
 
 
 @dataclass(frozen=True)
@@ -568,6 +571,209 @@ def summarize_file_writing_fixture_validation(
     lines = []
     for key in sorted(safe_dict):
         value = safe_dict[key]
+        if isinstance(value, bool):
+            rendered = "true" if value else "false"
+        elif isinstance(value, list):
+            rendered = "none" if not value else ",".join(str(item) for item in value)
+        elif isinstance(value, dict):
+            rendered = json.dumps(value, sort_keys=True, separators=(",", ":"))
+        elif value is None:
+            rendered = "none"
+        else:
+            rendered = str(value)
+        lines.append(f"{key}={rendered}")
+    return "\n".join(lines)
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        prog=(
+            "python3 -m "
+            "learner_state.frozen_policy_generation_artifact_body_file_writing_fixture_validation"
+        ),
+        description=(
+            "Validate artifact body file writing fixtures with metadata-only "
+            "no-write output."
+        ),
+    )
+    parser.add_argument(
+        "--fixture-root",
+        default=str(DEFAULT_FIXTURE_ROOT),
+        help="Fixture root to validate.",
+    )
+    parser.add_argument(
+        "--fixture-case",
+        help="Safe relative case selector, such as valid/case_name.",
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit a safe JSON summary instead of a human summary.",
+    )
+    args = parser.parse_args(argv)
+
+    try:
+        fixture_root = Path(args.fixture_root)
+        if args.fixture_case is not None:
+            return _run_case_cli(
+                fixture_root=fixture_root,
+                case_selector=args.fixture_case,
+                emit_json=args.json,
+            )
+        return _run_root_cli(fixture_root=fixture_root, emit_json=args.json)
+    except Exception:
+        safe_payload = {
+            "mode": "fixture_root",
+            "validation_schema_version": VALIDATION_SCHEMA_VERSION,
+            "validation_status": "internal_error",
+            "content_suppressed": True,
+            "no_raw_rows": True,
+            "no_logits_dump": True,
+            "no_private_paths": True,
+            "synthetic_only_checked": True,
+            "no_oracle_checked": True,
+            "file_writing_isolated": False,
+        }
+        print(_render_safe_dict(safe_payload, emit_json=bool(getattr(args, "json", False))))
+        return 1
+
+
+def _run_root_cli(*, fixture_root: Path, emit_json: bool) -> int:
+    summary = validate_fixture_root(fixture_root)
+    print(_render_safe_dict(summary.to_safe_dict(), emit_json=emit_json))
+    if summary.input_error_cases:
+        return 4
+    if summary.mismatched_cases:
+        return 3
+    return 0
+
+
+def _run_case_cli(*, fixture_root: Path, case_selector: str, emit_json: bool) -> int:
+    selector_error = _validate_case_selector(case_selector)
+    if selector_error is not None:
+        payload = _safe_case_error_payload(
+            case_selector="unsafe_fixture_case_selector",
+            reason_code=selector_error,
+        )
+        print(_render_safe_dict(payload, emit_json=emit_json))
+        return 2
+
+    case_path = fixture_root / PurePosixPath(case_selector)
+    if not case_path.is_dir():
+        payload = _safe_case_error_payload(
+            case_selector=case_selector,
+            reason_code="missing_fixture_case",
+        )
+        print(_render_safe_dict(payload, emit_json=emit_json))
+        return 4
+
+    expected_kind = PurePosixPath(case_selector).parts[0]
+    result = validate_fixture_case(case_path, expected_kind=expected_kind)
+    matched = _case_result_matches_expected(case_path, result)
+    payload = _case_result_cli_payload(result, matched=matched)
+    print(_render_safe_dict(payload, emit_json=emit_json))
+    if result.validation_status == "input_error":
+        return 4
+    if not matched:
+        return 3
+    return 0
+
+
+def _validate_case_selector(case_selector: str) -> str | None:
+    if not case_selector:
+        return "empty_fixture_case_selector"
+    if case_selector.startswith(("/", "~")):
+        return "unsafe_absolute_fixture_case_selector"
+    if "\\" in case_selector or re.match(r"^[A-Za-z]:", case_selector):
+        return "unsafe_absolute_fixture_case_selector"
+    path = PurePosixPath(case_selector)
+    parts = path.parts
+    if ".." in parts or "." in parts:
+        return "unsafe_parent_traversal_fixture_case_selector"
+    if len(parts) != 2 or parts[0] not in {"valid", "invalid"}:
+        return "unsafe_fixture_case_selector"
+    if not SAFE_CASE_SELECTOR_PATTERN.fullmatch(case_selector):
+        return "unsafe_fixture_case_selector"
+    return None
+
+
+def _case_result_matches_expected(
+    case_path: Path,
+    result: FileWritingFixtureCaseResult,
+) -> bool:
+    try:
+        expected = _read_json(case_path / EXPECTED_FILE_WRITE_RESULT_FILE)
+    except (OSError, json.JSONDecodeError, ValueError):
+        return False
+    return _case_matches_expected(result, expected)
+
+
+def _case_result_cli_payload(
+    result: FileWritingFixtureCaseResult,
+    *,
+    matched: bool,
+) -> dict[str, Any]:
+    return {
+        "mode": "fixture_case",
+        "validation_schema_version": result.validation_schema_version,
+        "case_id": result.case_id,
+        "expected_kind": result.expected_kind,
+        "expected_status": result.expected_status,
+        "actual_status": result.validation_status,
+        "validation_status": result.validation_status,
+        "matched": matched,
+        "reason_codes": list(result.reason_codes),
+        "failed_checks": list(result.failed_checks),
+        "content_suppressed": result.content_suppressed,
+        "no_raw_rows": result.no_raw_rows,
+        "no_logits_dump": result.no_logits_dump,
+        "no_private_paths": result.no_private_paths,
+        "synthetic_only_checked": result.synthetic_only_checked,
+        "no_oracle_checked": result.no_oracle_checked,
+        "path_policy_checked": result.path_policy_checked,
+        "body_content_policy_checked": result.body_content_policy_checked,
+        "stdout_body_suppression_checked": result.stdout_body_suppression_checked,
+        "manifest_absence_checked": result.manifest_absence_checked,
+        "file_writing_isolated": result.file_writing_isolated,
+    }
+
+
+def _safe_case_error_payload(*, case_selector: str, reason_code: str) -> dict[str, Any]:
+    return {
+        "mode": "fixture_case",
+        "validation_schema_version": VALIDATION_SCHEMA_VERSION,
+        "case_id": case_selector,
+        "expected_kind": "none",
+        "expected_status": "input_error",
+        "actual_status": "input_error",
+        "validation_status": "input_error",
+        "matched": False,
+        "reason_codes": [reason_code],
+        "failed_checks": [reason_code],
+        "content_suppressed": True,
+        "no_raw_rows": True,
+        "no_logits_dump": True,
+        "no_private_paths": True,
+        "synthetic_only_checked": True,
+        "no_oracle_checked": True,
+        "path_policy_checked": True,
+        "body_content_policy_checked": True,
+        "stdout_body_suppression_checked": True,
+        "manifest_absence_checked": True,
+        "file_writing_isolated": False,
+    }
+
+
+def _render_safe_dict(payload: Mapping[str, Any], *, emit_json: bool) -> str:
+    if emit_json:
+        return json.dumps(payload, sort_keys=True, separators=(",", ":"))
+    return _format_safe_fields(payload)
+
+
+def _format_safe_fields(payload: Mapping[str, Any]) -> str:
+    lines: list[str] = []
+    for key in sorted(payload):
+        value = payload[key]
         if isinstance(value, bool):
             rendered = "true" if value else "false"
         elif isinstance(value, list):
@@ -974,3 +1180,7 @@ def _walk_mapping(value: Any) -> list[tuple[str, Any]]:
         for child in value:
             items.extend(_walk_mapping(child))
     return items
+
+
+if __name__ == "__main__":
+    sys.exit(main())
