@@ -188,6 +188,15 @@ request/pointer pair, emit safe human or JSON metadata, and still avoid
 artifact bodies, generated policy bodies, manifest bodies, artifact file
 writing, and manifest file writing.
 
+Step315 implements that writer CLI in:
+
+`python/learner_state/frozen_policy_generation_artifact_writer.py`
+
+The fixture JSON files remain unchanged. The CLI reads one request/pointer
+pair, emits safe human or JSON metadata, and still avoids artifact bodies,
+generated policy bodies, manifest bodies, artifact file writing, and manifest
+file writing.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

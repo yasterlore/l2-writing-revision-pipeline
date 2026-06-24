@@ -451,6 +451,12 @@ This target remains unchanged. A future writer runtime smoke target should be
 designed separately after the CLI is implemented and reviewed for no-body
 leakage.
 
+## 25. Step315 Writer CLI Implementation Status
+
+Step315 implements the writer CLI, but this Makefile target remains unchanged.
+It still validates artifact writer fixtures only and does not run the writer
+CLI. A future runtime smoke target remains separate work.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)

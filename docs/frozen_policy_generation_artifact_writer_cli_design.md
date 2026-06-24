@@ -335,7 +335,6 @@ rows, logits, private paths, or raw learner text.
 
 ## 19. Proposed Next Steps
 
-- Step315 artifact writer CLI implementation
 - Step316 artifact writer runtime Makefile target design
 - Step317 artifact writer runtime Makefile target implementation
 - Step318 artifact writer runtime release-quality integration design
@@ -371,3 +370,24 @@ This design does not:
 - use real data
 - prove production readiness
 
+## 22. Step315 CLI Implementation Status
+
+Step315 implements the metadata-only artifact writer CLI entrypoint:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_writer
+```
+
+The implemented CLI accepts `--request`, `--pointer`, optional `--json`, and
+`--help`. It emits safe human or JSON metadata only. It does not add an output
+file option, artifact body output option, manifest body output option,
+artifact file-writing option, or manifest file-writing option.
+
+Step315 also adds focused CLI tests in:
+
+`python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli.py`
+
+The CLI implementation does not add a Makefile target, change release-quality,
+change workflow YAML, change fixture JSON, generate artifact bodies, generate
+generated policy bodies, generate manifest bodies, write files, compute
+metrics, use real data, or claim real-data readiness.

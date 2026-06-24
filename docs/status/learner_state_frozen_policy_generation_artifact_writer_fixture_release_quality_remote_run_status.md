@@ -291,6 +291,8 @@ This marker does not prove:
   `python/learner_state/frozen_policy_generation_artifact_writer.py`.
 - Step314 artifact writer CLI design is now tracked separately:
   [Frozen policy generation artifact writer CLI design](../frozen_policy_generation_artifact_writer_cli_design.md).
+- Step315 artifact writer CLI implementation is now tracked separately in
+  `python/learner_state/frozen_policy_generation_artifact_writer.py`.
 - Keep future artifact writer runtime smoke separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -311,3 +313,7 @@ This marker does not prove:
   remains fixture release-quality remote run evidence only; it does not record
   writer CLI execution, runtime smoke, artifact body generation, manifest body
   generation, file writing, metrics, real-data use, or production readiness.
+- Step315: linked the writer CLI implementation. This status marker remains
+  fixture release-quality remote run evidence only; it does not record writer
+  runtime smoke, artifact body generation, manifest body generation, file
+  writing, metrics, real-data use, or production readiness.

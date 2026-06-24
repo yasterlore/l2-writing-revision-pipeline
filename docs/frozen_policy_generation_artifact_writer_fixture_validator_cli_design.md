@@ -508,6 +508,13 @@ That future CLI is distinct from this fixture validator CLI. The validator CLI
 checks fixture contracts; the writer CLI will run one request/pointer pair and
 return a safe metadata-only writer result.
 
+## 30. Step315 Writer CLI Implementation Status
+
+Step315 implements the writer CLI. This fixture validator CLI remains
+unchanged and still checks fixture contracts only. The writer CLI runs a single
+request/pointer pair and does not perform fixture-root expected-result
+comparison.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)

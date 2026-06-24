@@ -895,6 +895,13 @@ The validator remains unchanged. The writer CLI design runs one request/pointer
 pair and does not replace fixture-root validation, expected-result matching, or
 the validator CLI.
 
+## 35. Step315 Writer CLI Implementation Status
+
+Step315 implements the writer CLI separately from this fixture validator. The
+validator remains unchanged and still validates fixture contracts only. The new
+writer CLI does not replace fixture-root validation or expected-result
+matching.
+
 ## Related Documents
 
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)

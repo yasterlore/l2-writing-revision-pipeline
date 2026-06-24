@@ -8,7 +8,9 @@ calibration, or compute metrics.
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -184,6 +186,23 @@ UNSAFE_PATH_MARKERS = (
     "participant_data/",
     "private_data/",
     "manual_outputs/",
+)
+
+CLI_SAFE_SUMMARY_FIELDS = (
+    "mode",
+    "validation_schema_version",
+    "writer_status",
+    "reason_codes",
+    "failed_checks",
+    "request_id",
+    "pointer_id",
+    "artifact_id",
+    "manifest_id",
+    "validation_reference_count",
+    "artifact_flags",
+    "safety_flags",
+    "count_summary",
+    "safe_summary",
 )
 
 
@@ -651,6 +670,149 @@ def to_expected_result_dict(
     return result.to_expected_result_dict()
 
 
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Run the synthetic frozen policy generation artifact writer "
+            "with safe metadata-only output."
+        )
+    )
+    parser.add_argument(
+        "--request",
+        type=Path,
+        help="Synthetic artifact_writer_request.json path.",
+    )
+    parser.add_argument(
+        "--pointer",
+        type=Path,
+        help="Synthetic generator_result_pointer.json path.",
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit a safe JSON summary instead of a human summary.",
+    )
+    args = parser.parse_args(argv)
+
+    if (args.request is None) != (args.pointer is None):
+        parser.error("--request and --pointer must be provided together")
+    if args.request is None or args.pointer is None:
+        parser.error("--request and --pointer are required")
+
+    try:
+        request = load_artifact_writer_request(args.request)
+        pointer = load_generator_result_pointer(args.pointer)
+        result = run_artifact_writer(request, pointer)
+        payload = _artifact_writer_result_to_cli_payload(
+            result,
+            request=request,
+            pointer=pointer,
+        )
+        _emit_cli_payload(payload, args.json)
+        if result.writer_status == "input_error":
+            return 2
+        safety = audit_artifact_writer_safety(result)
+        if safety.reason_codes or safety.failed_checks:
+            return 1
+        return 0
+    except Exception:
+        payload = _artifact_writer_result_to_cli_payload(
+            _cli_input_error_result("artifact_writer_internal_error")
+        )
+        _emit_cli_payload(payload, args.json)
+        return 1
+
+
+def _artifact_writer_result_to_cli_payload(
+    result: FrozenPolicyGenerationArtifactWriteResult,
+    *,
+    request: FrozenPolicyGenerationArtifactWriterRequest
+    | FrozenPolicyGenerationArtifactWriterError
+    | None = None,
+    pointer: FrozenPolicyGenerationArtifactPointer
+    | FrozenPolicyGenerationArtifactWriterError
+    | None = None,
+) -> dict[str, Any]:
+    summary = summarize_artifact_writer_result(result)
+    pointer_id = _pointer_id_for_cli(request=request, pointer=pointer)
+    return {
+        "mode": "artifact_writer",
+        "validation_schema_version": summary.get("result_schema_version"),
+        "writer_status": summary.get("writer_status"),
+        "reason_codes": summary.get("reason_codes"),
+        "failed_checks": summary.get("failed_checks"),
+        "request_id": summary.get("request_id"),
+        "pointer_id": pointer_id,
+        "artifact_id": summary.get("artifact_id"),
+        "manifest_id": summary.get("manifest_id"),
+        "validation_reference_count": summary.get("count_summary", {}).get(
+            "validation_reference_count",
+            0,
+        ),
+        "artifact_flags": summary.get("artifact_flags"),
+        "safety_flags": summary.get("safety_flags"),
+        "count_summary": summary.get("count_summary"),
+        "safe_summary": summary.get("safe_summary"),
+    }
+
+
+def _pointer_id_for_cli(
+    *,
+    request: FrozenPolicyGenerationArtifactWriterRequest
+    | FrozenPolicyGenerationArtifactWriterError
+    | None = None,
+    pointer: FrozenPolicyGenerationArtifactPointer
+    | FrozenPolicyGenerationArtifactWriterError
+    | None = None,
+) -> str | None:
+    if isinstance(pointer, FrozenPolicyGenerationArtifactPointer):
+        return pointer.generator_result_pointer_id
+    if isinstance(request, FrozenPolicyGenerationArtifactWriterRequest):
+        return request.generator_result_pointer_id
+    if isinstance(pointer, FrozenPolicyGenerationArtifactWriterError):
+        return pointer.generator_result_pointer_id
+    return None
+
+
+def _cli_input_error_result(reason_code: str) -> FrozenPolicyGenerationArtifactWriteResult:
+    return FrozenPolicyGenerationArtifactWriteResult(
+        result_schema_version=RESULT_SCHEMA_VERSION,
+        writer_status="input_error",
+        reason_codes=[reason_code],
+        failed_checks=[reason_code],
+        request_id=None,
+        generator_result_id=None,
+        policy_id=None,
+        artifact_id=None,
+        manifest_id=None,
+        artifact_writer_version=ARTIFACT_WRITER_VERSION,
+        artifact_policy_label=None,
+        artifact_flags=dict(ARTIFACT_FLAGS),
+        safety_flags=dict(SAFETY_FLAGS),
+        count_summary=_error_count_summary(None),
+        safe_summary=INPUT_ERROR_SAFE_SUMMARY,
+    )
+
+
+def _emit_cli_payload(payload: dict[str, Any], json_output: bool) -> None:
+    if json_output:
+        print(json.dumps(payload, sort_keys=True))
+        return
+    for key in CLI_SAFE_SUMMARY_FIELDS:
+        value = payload.get(key)
+        if isinstance(value, bool):
+            value_text = "true" if value else "false"
+        elif isinstance(value, (list, tuple)):
+            value_text = ",".join(str(item) for item in value) if value else "none"
+        elif isinstance(value, dict):
+            value_text = json.dumps(value, sort_keys=True, separators=(",", ":"))
+        elif value is None:
+            value_text = "none"
+        else:
+            value_text = str(value)
+        print(f"{key}={value_text}")
+
+
 def _read_json_object(
     path: Path,
     *,
@@ -909,3 +1071,7 @@ def _dedupe(values: Any) -> list[str]:
             seen.add(text)
             result.append(text)
     return result
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))
