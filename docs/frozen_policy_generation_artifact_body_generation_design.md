@@ -568,8 +568,22 @@ artifact writer CLI behavior, does not add Makefile targets, does not change
 release-quality, does not change workflow YAML, does not change fixture JSON,
 does not use real data, and does not compute metrics.
 
+## 34. Step338 Artifact Body Generation Makefile Target Design Status
+
+Step338 designs a future standalone Makefile target for running the artifact
+body generation CLI smoke:
+
+[Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md).
+
+The design recommends a default suppressed-mode smoke first and keeps
+safe-metadata smoke as a separate future consideration. It does not implement
+the Makefile target, change release-quality, change workflow YAML, change
+Python code or tests, change fixture JSON, write files, generate manifest
+bodies, use real data, or compute metrics.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)

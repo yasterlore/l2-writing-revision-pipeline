@@ -394,3 +394,15 @@ CLI does not add output-file options, does not write artifact files, does not
 generate manifest bodies, does not change the artifact writer CLI, does not
 change Makefile or release-quality, does not change workflow YAML, does not
 modify fixture JSON, does not use real data, and does not compute metrics.
+
+## 21. Step338 Makefile Target Design Status
+
+Step338 designs a future standalone Makefile target for the implemented CLI:
+
+[Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md).
+
+The design recommends starting with a default suppressed-mode smoke only. It
+does not implement the Makefile target, does not add release-quality
+integration, does not change workflow YAML, does not change Python code or
+tests, does not change fixture JSON, does not write files, does not generate
+manifest bodies, does not use real data, and does not compute metrics.

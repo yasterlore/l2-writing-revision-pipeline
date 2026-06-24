@@ -663,9 +663,15 @@ written, no artifact body is produced, and no performance metric is computed.
   and does not change Makefile, release-quality, workflow YAML, fixture JSON,
   artifact writer CLI behavior, file writing, manifest generation, metrics,
   real-data use, or production readiness claims.
+- Step338: added the docs-only artifact body generation Makefile target
+  design. The design proposes a future standalone default suppressed-mode
+  smoke target for the generation CLI. It does not implement the Makefile
+  target, change release-quality, change workflow YAML, write files, generate
+  manifests, compute metrics, use real data, or claim production readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)

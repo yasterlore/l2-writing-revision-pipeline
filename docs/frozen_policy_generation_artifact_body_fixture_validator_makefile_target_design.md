@@ -408,8 +408,19 @@ Makefile target is added in Step337, and release-quality remains unchanged.
 The CLI implementation does not write artifact files, generate manifest
 bodies, compute metrics, use real data, or claim production readiness.
 
+## 26. Step338 Artifact Body Generation Makefile Target Design Status
+
+Step338 designs a separate future Makefile target for the generation CLI:
+
+[Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md).
+
+This fixture validator target remains unchanged. The Step338 design does not
+implement the generation target, does not change release-quality, does not
+write files, does not use real data, and does not compute metrics.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
