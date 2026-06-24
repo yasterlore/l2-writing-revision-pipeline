@@ -375,8 +375,18 @@ The release-quality wrapper remains unchanged. The wrapper still runs fixture
 validation only; it does not run the writer skeleton, generate artifact bodies,
 generate manifest bodies, or write files.
 
+## 21. Step314 Writer CLI Design Status
+
+Step314 designs the future writer CLI:
+[Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md).
+
+The release-quality wrapper remains unchanged. Runtime smoke integration
+should wait for CLI implementation, standalone Makefile target design, and
+no-body-leakage review.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)

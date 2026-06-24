@@ -1831,6 +1831,16 @@ generate generated policy bodies, generate manifest bodies, write artifact or
 manifest files, compute metrics, evaluate performance, use real data, or claim
 real-data readiness.
 
+For Step314, review the
+[frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md).
+Confirm it is docs-only and designs a safe terminal entrypoint for the
+metadata-only artifact writer skeleton. Confirm it does not implement the CLI,
+change Python code/tests, add a Makefile target, change release-quality
+wrapper scripts, change workflow YAML, change fixture JSON, generate artifact
+bodies, generate generated policy bodies, generate manifest bodies, write
+artifact or manifest files, compute metrics, evaluate performance, use real
+data, or claim real-data readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

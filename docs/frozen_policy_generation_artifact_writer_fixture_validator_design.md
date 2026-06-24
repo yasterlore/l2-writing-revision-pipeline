@@ -886,8 +886,18 @@ without running the writer. The new writer skeleton is covered by separate unit
 tests and does not generate artifact bodies, generated policy bodies, manifest
 bodies, or write files.
 
+## 34. Step314 Writer CLI Design Status
+
+Step314 designs the future writer CLI separately from this fixture validator:
+[Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md).
+
+The validator remains unchanged. The writer CLI design runs one request/pointer
+pair and does not replace fixture-root validation, expected-result matching, or
+the validator CLI.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)

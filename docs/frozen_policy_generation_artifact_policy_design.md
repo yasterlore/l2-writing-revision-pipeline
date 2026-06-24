@@ -587,8 +587,15 @@ metadata only, does not expose a CLI, does not add Makefile or release-quality
 runtime integration, does not emit artifact bodies, generated policy bodies,
 or manifest bodies, and does not write files.
 
+Step314 designs the future artifact writer CLI:
+[Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md).
+The artifact policy remains unchanged: the design is docs-only, exposes no
+body output option, exposes no output file option, does not write artifact or
+manifest files, and does not claim performance or real-data readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)

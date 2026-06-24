@@ -179,6 +179,15 @@ returns expected metadata-only results for all 17 cases. It does not change
 fixture JSON, generate artifact bodies, generate generated policy bodies,
 generate manifest bodies, write artifact files, or write manifest files.
 
+Step314 designs a future writer CLI in:
+
+`docs/frozen_policy_generation_artifact_writer_cli_design.md`
+
+The fixture JSON files remain unchanged. The future CLI should run one
+request/pointer pair, emit safe human or JSON metadata, and still avoid
+artifact bodies, generated policy bodies, manifest bodies, artifact file
+writing, and manifest file writing.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

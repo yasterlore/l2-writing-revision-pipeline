@@ -446,8 +446,19 @@ skeleton does not change workflow YAML, release-quality wrapper scripts,
 Makefile targets, fixture JSON, artifact body generation, manifest body
 generation, file writing, metrics, or real-data readiness.
 
+## 24. Step314 Writer CLI Design Status
+
+Step314 designs the future writer CLI:
+[Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md).
+
+This record workflow remains focused on artifact writer fixture validation.
+Future writer runtime status markers should be separate and should record only
+pass-only/count-only metadata without request, pointer, artifact, policy, or
+manifest bodies.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
