@@ -2391,6 +2391,21 @@ examples, generated policy bodies, manifest bodies, JSON body examples, raw
 rows, logits, private paths, raw learner text, real participant data, or
 performance metric bodies.
 
+For Step354, review the static no-write validator implementation in
+`python/learner_state/frozen_policy_generation_artifact_body_file_writing_fixture_validation.py`
+and its unit tests. Confirm it validates only fixture shape, schema versions,
+case ID consistency, expected result fields, path-policy metadata,
+content-policy metadata, expected reason codes, and safe summaries. Confirm
+it does not implement artifact body file writing, add a CLI output option,
+run isolated temp write validation, write manifest files, change artifact
+writer CLI, change release-quality, change workflow YAML, change Makefile,
+change fixture JSON, use real data, compute metrics, or claim production
+readiness. Confirm docs do not include raw logs, full job output, copied log
+blocks, screenshots containing raw logs, request bodies, pointer bodies,
+expected bodies, artifact body payload examples, generated policy bodies,
+manifest bodies, JSON body examples, raw rows, logits, private paths, raw
+learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

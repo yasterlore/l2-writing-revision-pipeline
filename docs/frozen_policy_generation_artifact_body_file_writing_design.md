@@ -358,7 +358,20 @@ does not implement a validator, add a CLI option, write artifacts or
 manifests, connect artifact writer CLI, change release-quality, use real
 data, or compute metrics.
 
-## 22. Related Documents
+## 22. Step354 Static Validator Implementation Status
+
+Step354 implements the static no-write validator for the file writing fixture
+root:
+
+`python/learner_state/frozen_policy_generation_artifact_body_file_writing_fixture_validation.py`
+
+The implementation covers static fixture contract validation and path-policy
+metadata validation only. It does not write artifact body files, does not
+create isolated temp outputs, does not add a CLI option, does not write
+manifests, does not connect artifact writer CLI, does not change
+release-quality, does not use real data, and does not compute metrics.
+
+## 23. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)

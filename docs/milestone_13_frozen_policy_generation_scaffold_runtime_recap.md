@@ -775,6 +775,13 @@ written, no artifact body is produced, and no performance metric is computed.
   validator, add a CLI option, write artifact files or manifests, connect
   artifact writer CLI, compute metrics, use real data, or claim production
   readiness.
+- Step354: implemented the static no-write artifact body file writing fixture
+  validator and unit tests. The implementation validates fixture shape,
+  schema versions, case IDs, expected result fields, path-policy metadata,
+  content-policy metadata, expected reason codes, and safe summaries. It does
+  not implement file writing, add `--artifact-body-out`, run isolated temp
+  writes, generate manifests, connect artifact writer CLI, compute metrics,
+  use real data, or claim production readiness.
 
 ## Related Documents
 
