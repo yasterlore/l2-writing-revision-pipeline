@@ -365,7 +365,16 @@ release-quality, does not write files, does not create temp outputs, does
 not implement `--artifact-body-out`, does not write manifests, does not use
 real data, and does not compute metrics.
 
-## 25. Related Documents
+## 25. Step360 Release-Quality Wrapper Integration Status
+
+Step360 adds the no-write fixture validator target to the release-quality
+wrapper. The fixture root remains unchanged and the target still validates
+metadata-only fixture contracts without writing files. Step360 does not
+change fixture JSON, does not implement file writing, does not implement
+`--artifact-body-out`, does not run isolated temp write validation, does not
+write manifests, does not use real data, and does not compute metrics.
+
+## 26. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)

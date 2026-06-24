@@ -142,6 +142,9 @@ run make check-learner-state-frozen-policy-generation-artifact-body-generation
 section "learner-state frozen policy generation artifact body generation safe-metadata CLI smoke"
 run make check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata
 
+section "learner-state frozen policy generation artifact body file writing fixture validation"
+run make check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
+
 section "config and scoring smoke checks"
 run scripts/check_config_enabled_summary_smoke.sh
 run scripts/check_config_enabled_e2e_smoke.sh

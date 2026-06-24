@@ -820,6 +820,13 @@ written, no artifact body is produced, and no performance metric is computed.
   Makefile, Python code/tests, fixture JSON, write artifact files, run
   isolated temp writes, generate manifests, connect artifact writer CLI,
   compute metrics, use real data, or claim production readiness.
+- Step360: integrated the standalone no-write artifact body file writing
+  fixture validator target into `scripts/check_release_quality.sh` after
+  safe-metadata artifact body generation smoke and before config/scoring
+  smoke checks. It does not change workflow YAML, Makefile, Python
+  code/tests, fixture JSON, write artifact files, run isolated temp writes,
+  generate manifests, connect artifact writer CLI, compute metrics, use real
+  data, or claim production readiness.
 
 ## Related Documents
 

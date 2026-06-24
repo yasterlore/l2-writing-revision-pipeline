@@ -382,3 +382,14 @@ The design does not change the wrapper, workflow YAML, Makefile, Python
 code/tests, fixture JSON, file writing implementation, `--artifact-body-out`,
 isolated temp write validation, manifest writer, artifact writer CLI, real
 data, metrics, or production readiness claims.
+
+## 24. Step360 Release-Quality Wrapper Integration Status
+
+Step360 integrates the standalone no-write target into
+`scripts/check_release_quality.sh` after safe-metadata artifact body
+generation smoke and before config/scoring smoke checks. The CLI remains
+static/no-write, body-free, and summary-only. Step360 does not change this
+CLI, does not change Python tests, does not change fixture JSON, does not
+implement file writing, does not implement `--artifact-body-out`, does not
+run isolated temp write validation, does not write manifests, does not use
+real data, and does not compute metrics.

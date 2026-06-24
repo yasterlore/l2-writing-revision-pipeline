@@ -403,7 +403,17 @@ behavior, failure interpretation, log safety, relation to existing
 release-quality checks, testing plan, and future status marker policy. It
 does not implement wrapper integration or file writing.
 
-## 24. Related Documents
+## 24. Step360 Release-Quality Wrapper Integration Status
+
+Step360 integrates the standalone no-write target into the release-quality
+wrapper after safe-metadata artifact body generation smoke and before
+config/scoring smoke checks. The validator remains unchanged and no-write.
+Step360 does not change Python code/tests, fixture JSON, workflow YAML, or
+Makefile, and does not implement file writing, `--artifact-body-out`,
+isolated temp write validation, manifest writing, artifact writer CLI
+integration, real-data use, metrics, or production readiness claims.
+
+## 25. Related Documents
 
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
