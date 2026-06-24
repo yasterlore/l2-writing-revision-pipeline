@@ -107,6 +107,18 @@ This follows the existing learner-state status marker family and distinguishes
 the generator scaffold runtime smoke record from generator scaffold fixture
 validation, scaffold fixture validation, and scaffold runtime smoke records.
 
+Step299 follow-up:
+
+The public-safe status marker is available at
+[Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md).
+It records only metadata, pass-only runtime smoke fields, and count-only
+fixture validation fields for the successful remote/manual Release Quality run.
+It does not include raw GitHub Actions logs, full job output, copied log
+blocks, generation request bodies, input pointer bodies, expected generator
+scaffold result bodies, policy bodies, generated policy bodies, artifact
+bodies, manifest bodies, JSON bodies, raw rows, logits/probability dumps,
+private paths, raw learner text, or performance metric bodies.
+
 ## 5. Metadata To Record
 
 A future public-safe status marker may record:
@@ -507,10 +519,7 @@ real-data readiness.
 
 Recommended next steps:
 
-- run the remote/manual Release Quality workflow
-- create the generator scaffold runtime status marker with public-safe
-  metadata only
-- then continue with artifact writer design or the next generator scaffold
+- continue with artifact writer design or the next generator scaffold
   design step separately
 
 Keep artifact writing, generated policy bodies, calibration work, performance
@@ -519,6 +528,7 @@ evaluation, and real-data readiness separate.
 ## Related Documents
 
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
+- [Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
 - [Frozen policy generation generator scaffold skeleton design](frozen_policy_generation_generator_scaffold_skeleton_design.md)

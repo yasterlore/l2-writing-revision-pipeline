@@ -488,9 +488,16 @@ pass-only metadata, should copy no raw logs, should include no request/pointer
 body, and should include no artifact body, generated policy body, manifest
 body, raw rows, logits, private paths, or performance evidence.
 
+Step299 creates that public-safe runtime smoke status marker:
+[Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md).
+The artifact policy remains unchanged: the marker records pass-only metadata,
+writes no artifacts, emits no artifact body, emits no generated policy body,
+adds no manifest writer, and provides no performance evidence.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
