@@ -350,6 +350,18 @@ release-quality wrapper, workflow YAML, Makefile, Python code or tests,
 fixture JSON, artifact body generation, file writing, metrics, real-data use,
 or production readiness claims.
 
+## 20. Step332 Release-Quality Wrapper Integration Status
+
+Step332 integrates this standalone target into the release-quality wrapper
+after artifact writer runtime smoke and before config/scoring smoke checks.
+The wrapper command is:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-fixtures`
+
+This does not change workflow YAML, change the Makefile target itself, change
+Python code or tests, change fixture JSON, implement artifact body generation,
+write files, compute metrics, use real data, or claim production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)

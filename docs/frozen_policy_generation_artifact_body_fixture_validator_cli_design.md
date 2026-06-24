@@ -456,6 +456,18 @@ wrapper, workflow YAML, Makefile, Python code or tests, fixture JSON,
 artifact body generation, file writing, metrics, real-data use, or production
 readiness claims.
 
+## 25. Step332 Release-Quality Wrapper Integration Status
+
+Step332 integrates the standalone artifact body fixture validator target into
+the release-quality wrapper. The CLI is now exercised by
+`make check-release-quality` through:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-fixtures`
+
+The CLI remains metadata-only and does not print fixture bodies, artifact body
+payloads, raw rows, logits, private paths, raw learner text, or performance
+metric bodies.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)

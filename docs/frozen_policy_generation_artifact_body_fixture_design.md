@@ -557,6 +557,17 @@ Makefile, Python code or tests, fixture JSON, implement artifact body
 generation, write files, compute metrics, use real data, or claim production
 readiness.
 
+## 30. Step332 Release-Quality Wrapper Integration Status
+
+Step332 adds the artifact body fixture validator target to the release-quality
+wrapper. The release-quality bundle now checks this 18-case synthetic
+metadata-only fixture boundary through:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-fixtures`
+
+This does not change fixture JSON, generate artifact bodies, write files,
+compute metrics, use real data, or claim production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)

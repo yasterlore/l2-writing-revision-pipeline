@@ -487,6 +487,17 @@ fixture JSON, generate artifact bodies, generate policy bodies, generate
 manifest bodies, write files, compute metrics, use real data, or claim
 production readiness.
 
+## 28. Step332 Artifact Body Fixture Release-Quality Wrapper Integration Status
+
+Step332 integrates the artifact body fixture validator target into
+release-quality. This checks the fixture boundary contract in the normal
+release-quality bundle, but it remains separate from artifact body
+generation.
+
+This does not implement artifact body generation, generated policy body
+generation, manifest body generation, artifact file writing, manifest file
+writing, metrics, real-data use, or production readiness claims.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
