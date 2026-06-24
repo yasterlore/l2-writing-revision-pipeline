@@ -1821,6 +1821,16 @@ an artifact writer, generate artifacts, generate manifests, write files,
 compute metrics, evaluate performance, use real data, or claim real-data
 readiness.
 
+For Step313, review `python/learner_state/frozen_policy_generation_artifact_writer.py`
+and `python/learner_state/tests/test_frozen_policy_generation_artifact_writer.py`.
+Confirm the implementation is a metadata-only skeleton that matches the 17
+artifact writer fixtures at expected-result metadata level. Confirm it does
+not implement a CLI, add a Makefile target, change release-quality wrapper
+scripts, change workflow YAML, change fixture JSON, generate artifact bodies,
+generate generated policy bodies, generate manifest bodies, write artifact or
+manifest files, compute metrics, evaluate performance, use real data, or claim
+real-data readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -580,6 +580,13 @@ The marker remains metadata-only and does not relax the artifact policy:
 artifact bodies, manifest bodies, generated policy bodies, and file writing
 remain out of scope.
 
+Step313 implements the metadata-only artifact writer skeleton in
+`python/learner_state/frozen_policy_generation_artifact_writer.py`. The
+artifact policy remains unchanged: the skeleton returns safe fixture-aligned
+metadata only, does not expose a CLI, does not add Makefile or release-quality
+runtime integration, does not emit artifact bodies, generated policy bodies,
+or manifest bodies, and does not write files.
+
 ## Related Documents
 
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)

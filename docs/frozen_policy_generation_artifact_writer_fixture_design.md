@@ -808,6 +808,18 @@ The marker records only fixture-root case counts, wrapper inclusion metadata,
 safety flags, and pass-only related smoke summaries. The fixture JSON files
 remain unchanged.
 
+## 32. Step313 Metadata-Only Writer Skeleton Status
+
+Step313 implements a metadata-only artifact writer skeleton:
+
+`python/learner_state/frozen_policy_generation_artifact_writer.py`
+
+The skeleton consumes the Step302 fixture request and pointer metadata and
+returns results that match `expected_artifact_writer_result.json` at metadata
+level for all 17 cases. The fixture JSON files remain unchanged, and the
+implementation does not generate artifact bodies, generated policy bodies,
+manifest bodies, or write files.
+
 ## Related Documents
 
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)

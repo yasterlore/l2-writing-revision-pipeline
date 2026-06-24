@@ -434,6 +434,14 @@ copying request bodies, pointer bodies, expected result bodies, artifact
 bodies, manifest bodies, raw rows, logits, private paths, raw learner text, or
 performance metric bodies.
 
+## 23. Step313 Metadata-Only Writer Skeleton Status
+
+Step313 implements the metadata-only artifact writer skeleton in
+`python/learner_state/frozen_policy_generation_artifact_writer.py`.
+The standalone fixture validator Makefile target remains unchanged and does
+not run the writer. No Makefile target for the writer skeleton is added in
+Step313.
+
 ## Related Documents
 
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)

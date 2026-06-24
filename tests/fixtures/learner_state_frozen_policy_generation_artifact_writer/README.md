@@ -170,6 +170,15 @@ case counts, wrapper inclusion metadata, and safety flags. It does not copy
 fixture bodies, raw logs, artifact bodies, manifest bodies, raw rows, logits,
 private paths, raw learner text, or performance metric bodies.
 
+Step313 implements the metadata-only artifact writer skeleton in:
+
+`python/learner_state/frozen_policy_generation_artifact_writer.py`
+
+The skeleton consumes these fixture request and pointer metadata files and
+returns expected metadata-only results for all 17 cases. It does not change
+fixture JSON, generate artifact bodies, generate generated policy bodies,
+generate manifest bodies, write artifact files, or write manifest files.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

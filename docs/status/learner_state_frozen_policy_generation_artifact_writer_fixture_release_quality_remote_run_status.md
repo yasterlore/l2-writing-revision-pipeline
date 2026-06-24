@@ -287,8 +287,9 @@ This marker does not prove:
 ## Next Actions
 
 - Commit this status marker after local checks.
-- Keep future artifact writer skeleton design separate.
-- Keep future artifact writer implementation separate.
+- Step313 metadata-only artifact writer skeleton is now tracked separately in
+  `python/learner_state/frozen_policy_generation_artifact_writer.py`.
+- Keep future artifact writer CLI and runtime smoke separate.
 - Keep future artifact writer runtime smoke separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -301,3 +302,7 @@ This marker does not prove:
   bodies, policy bodies, generated policy bodies, artifact bodies, manifest
   bodies, raw rows, logits, private paths, raw learner text, or performance
   metric bodies.
+- Step313: linked the metadata-only artifact writer skeleton implementation.
+  This status marker remains remote run evidence only; it does not record an
+  artifact writer runtime smoke, artifact body generation, manifest body
+  generation, file writing, metrics, real-data use, or production readiness.
