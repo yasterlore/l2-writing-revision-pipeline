@@ -432,6 +432,17 @@ generation, generated policy body generation, manifest body generation, file
 writing, fixture JSON changes, metrics, real-data use, or production
 readiness claims.
 
+## 24. Step328 Artifact Body Fixture Validator CLI Implementation Status
+
+Step328 implements the CLI for running artifact body fixture validation from a
+terminal. This remains fixture-contract validation only and stays separate
+from artifact body generation.
+
+The CLI does not generate artifact bodies, generated policy bodies, manifest
+bodies, write files, add Makefile targets, change release-quality, change
+workflow YAML, change fixture JSON, compute metrics, use real data, or claim
+production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)

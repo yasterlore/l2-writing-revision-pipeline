@@ -8,8 +8,10 @@ metrics.
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
+import sys
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -39,6 +41,9 @@ EXPECTED_VALID_CASES = 4
 EXPECTED_INVALID_CASES = 14
 EXPECTED_TOTAL_CASES = 18
 EXPECTED_JSON_FILE_COUNT = EXPECTED_TOTAL_CASES * 3
+DEFAULT_FIXTURE_ROOT = Path(
+    "tests/fixtures/learner_state_frozen_policy_generation_artifact_body"
+)
 
 VALID_CASE_LABELS = frozenset(
     {
@@ -770,6 +775,175 @@ def summarize_fixture_root(
     return result.to_safe_dict()
 
 
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Validate frozen policy generation artifact body fixtures with "
+            "metadata-only output."
+        )
+    )
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("--fixture-root", type=Path)
+    group.add_argument("--fixture-case")
+    parser.add_argument("--json", action="store_true", dest="as_json")
+    args = parser.parse_args(argv)
+
+    try:
+        if args.fixture_case is not None:
+            summary, exit_code = _validate_cli_case(
+                args.fixture_case,
+                fixture_root=args.fixture_root or DEFAULT_FIXTURE_ROOT,
+            )
+        else:
+            root = args.fixture_root or DEFAULT_FIXTURE_ROOT
+            result = validate_artifact_body_fixture_root(root)
+            summary = summarize_fixture_root(result)
+            exit_code = _cli_exit_code_for_root(result)
+
+        if args.as_json:
+            print(json.dumps(summary, sort_keys=True, separators=(",", ":")))
+        else:
+            print(_format_cli_human_summary(summary))
+        return exit_code
+    except Exception:
+        error_summary = {
+            "mode": "artifact_body_fixture_validator",
+            "validation_status": "input_error",
+            "body_status": "input_error",
+            "reason_codes": ["unexpected_internal_error"],
+            "failed_checks": ["unexpected_internal_error"],
+            "content_suppressed": True,
+            "no_raw_rows": True,
+            "no_logits_dump": True,
+            "no_private_paths": True,
+            "validation_schema_version": VALIDATION_SCHEMA_VERSION,
+        }
+        if args.as_json:
+            print(json.dumps(error_summary, sort_keys=True, separators=(",", ":")))
+        else:
+            print(_format_cli_human_summary(error_summary))
+        return 1
+
+
+def _validate_cli_case(
+    case_arg: str,
+    *,
+    fixture_root: Path,
+) -> tuple[dict[str, Any], int]:
+    case_dir = _resolve_fixture_case(case_arg, fixture_root=fixture_root)
+    if case_dir is None:
+        result = ArtifactBodyFixtureValidationResult(
+            validation_status="input_error",
+            body_status="input_error",
+            reason_codes=["missing_fixture_case"],
+            failed_checks=["fixture_case_lookup"],
+            failure_categories=["input_error"],
+            case_label=_safe_case_label(case_arg),
+            case_id=_safe_case_label(case_arg),
+        )
+        return _summarize_cli_case_result(result, ["missing_fixture_case"]), 2
+
+    result = validate_artifact_body_fixture_case(case_dir)
+    if result.validation_status == "input_error":
+        return _summarize_cli_case_result(result, []), 2
+
+    try:
+        expected = load_expected_artifact_body_result(
+            case_dir / EXPECTED_ARTIFACT_BODY_RESULT_FILE
+        )
+        comparison = compare_expected_result(result.to_safe_dict(), expected)
+        mismatch_fields = comparison.mismatches
+        forbidden_scan = scan_forbidden_payload(expected)
+        safe_marker_scan = scan_safe_markers(expected)
+        mismatch_fields.extend(
+            f"forbidden_payload_scan:{reason}"
+            for reason in forbidden_scan.reason_codes
+        )
+        mismatch_fields.extend(
+            f"safe_marker_scan:{reason}"
+            for reason in safe_marker_scan.reason_codes
+        )
+        summary = _summarize_cli_case_result(result, sorted(set(mismatch_fields)))
+        return summary, 3 if mismatch_fields else 0
+    except (OSError, json.JSONDecodeError, ValueError):
+        return _summarize_cli_case_result(result, ["malformed_fixture_file"]), 2
+
+
+def _resolve_fixture_case(case_arg: str, *, fixture_root: Path) -> Path | None:
+    candidate = Path(case_arg)
+    if candidate.is_dir():
+        return candidate
+    if candidate.is_absolute() or candidate.parts[:1] == (".",):
+        return None
+    rooted_candidate = Path(fixture_root) / candidate
+    return rooted_candidate if rooted_candidate.is_dir() else None
+
+
+def _safe_case_label(case_arg: str) -> str:
+    candidate = Path(case_arg)
+    if len(candidate.parts) >= 2 and candidate.parts[-2] in {"valid", "invalid"}:
+        return f"{candidate.parts[-2]}/{candidate.parts[-1]}"
+    if "/" in case_arg and not case_arg.startswith("/"):
+        return case_arg
+    return "missing_fixture_case"
+
+
+def _summarize_cli_case_result(
+    result: ArtifactBodyFixtureValidationResult,
+    mismatch_fields: list[str],
+) -> dict[str, Any]:
+    payload = result.to_safe_dict()
+    safe_marker_flags = payload.pop("safe_marker_flags", {})
+    case_id = result.case_label or result.case_id or "unknown_case"
+    payload.update(
+        {
+            "mode": "fixture_case",
+            "case_id": case_id,
+            "category": result.case_category,
+            "matched": result.validation_status != "input_error"
+            and not mismatch_fields,
+            "mismatch_count": len(mismatch_fields),
+            "mismatch_fields": sorted(mismatch_fields),
+            "safe_marker_true_count": sum(
+                1 for value in safe_marker_flags.values() if value is True
+            ),
+            "safe_marker_false_count": sum(
+                1 for value in safe_marker_flags.values() if value is False
+            ),
+        }
+    )
+    return payload
+
+
+def _cli_exit_code_for_root(result: ArtifactBodyFixtureRootValidationResult) -> int:
+    if result.input_error_cases:
+        return 2
+    if result.mismatched_cases:
+        return 3
+    return 0
+
+
+def _format_cli_human_summary(summary: dict[str, Any]) -> str:
+    lines: list[str] = []
+    for key in sorted(summary):
+        lines.append(f"{key}={_format_cli_value(summary[key])}")
+    return "\n".join(lines)
+
+
+def _format_cli_value(value: Any) -> str:
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if value is None:
+        return "none"
+    if isinstance(value, list):
+        if not value:
+            return "none"
+        return ",".join(str(item) for item in value)
+    if isinstance(value, dict):
+        return json.dumps(value, sort_keys=True, separators=(",", ":"))
+    return str(value)
+
+
 def _case_dirs(root: Path) -> list[Path]:
     root = Path(root)
     cases: list[Path] = []
@@ -1178,3 +1352,7 @@ def _safe_scalar_or_collection(value: Any) -> Any:
             for key, item in sorted(value.items())
         }
     return str(type(value).__name__)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

@@ -509,6 +509,16 @@ implement CLI code, add a Makefile target, integrate release-quality,
 implement artifact body generation, generate bodies, write files, change
 fixture JSON, compute metrics, use real data, or claim production readiness.
 
+## 26. Step328 Validator CLI Implementation Status
+
+Step328 implements the artifact body fixture validator CLI and focused CLI
+tests. The CLI validates this 18-case synthetic fixture root through the
+existing validator API and outputs only safe metadata summaries.
+
+It does not add a Makefile target, integrate release-quality, implement
+artifact body generation, generate bodies, write files, change fixture JSON,
+compute metrics, use real data, or claim production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)

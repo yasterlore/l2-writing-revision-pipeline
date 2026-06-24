@@ -401,6 +401,23 @@ artifact body generation, generated policy body generation, manifest body
 generation, file writing, Python code or tests, fixture JSON changes,
 metrics, real-data use, or production readiness claims.
 
+## 21. Step328 Implementation Status
+
+Step328 implements the thin CLI entrypoint in:
+
+`python/learner_state/frozen_policy_generation_artifact_body_fixture_validation.py`
+
+It also adds focused CLI tests under `python/learner_state/tests/`. The CLI
+supports default root validation, explicit `--fixture-root`, `--fixture-case`,
+`--json`, and `--help`. It calls the existing validator APIs and emits safe
+metadata-only summaries in human or JSON form.
+
+Step328 does not add a Makefile target, integrate release-quality, change
+workflow YAML, change fixture JSON, implement artifact body generation,
+generate policy bodies, generate manifest bodies, write artifact or manifest
+files, add output-file options, compute metrics, use real data, or claim
+production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
