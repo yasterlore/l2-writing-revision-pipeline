@@ -543,8 +543,21 @@ manifest file writing, manifest writer behavior, output file options,
 release-quality changes, workflow changes, metric computation, real-data use,
 or production readiness claims.
 
+## 32. Step336 Artifact Body Generation CLI Design Status
+
+Step336 designs a future safe CLI for the artifact body generation API:
+
+[Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md).
+
+The CLI design keeps default output `suppressed`, summary-only, and body-free.
+It defines future arguments, exit codes, no-body-leakage checks, and staging
+without implementing the CLI, changing the artifact writer CLI, adding a
+Makefile target, changing release-quality, writing files, generating manifest
+bodies, computing metrics, using real data, or claiming production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)

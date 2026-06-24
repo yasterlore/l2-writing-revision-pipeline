@@ -653,10 +653,15 @@ written, no artifact body is produced, and no performance metric is computed.
   The default remains suppressed metadata-only, summaries remain body-free,
   and the implementation does not write artifact files, generate manifest
   bodies, compute metrics, use real data, or claim production readiness.
+- Step336: added the docs-only artifact body generation CLI design. The design
+  keeps future CLI output summary-only and body-free, and does not implement a
+  CLI, change Makefile or release-quality, write files, generate manifests,
+  compute metrics, use real data, or claim production readiness.
 
 ## Related Documents
 
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
+- [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)

@@ -429,8 +429,17 @@ continues to validate artifact body fixtures, and does not run artifact body
 generation, write files, generate manifests, compute metrics, use real data,
 or claim production readiness.
 
+## 22. Step336 Artifact Body Generation CLI Design Status
+
+Step336 designs a future generation CLI. This release-quality integration
+design remains unchanged: release-quality still validates fixture contracts
+only and does not run artifact body generation CLI, print body payloads, write
+files, generate manifests, compute metrics, use real data, or claim production
+readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)

@@ -283,6 +283,9 @@ Body and file safety:
 - Commit this status marker after local checks.
 - Step335 implements the first safe metadata-only artifact body generation API
   separately from this remote status marker.
+- Step336 designs a future artifact body generation CLI separately from this
+  remote status marker; the design keeps future CLI output summary-only and
+  body-free.
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -300,10 +303,15 @@ Body and file safety:
   Python. This status marker remains a record of the earlier remote
   release-quality fixture validation run and does not become artifact body
   generation evidence.
+- Step336: artifact body generation CLI design added. This status marker
+  remains a record of the earlier remote release-quality fixture validation
+  run and does not become CLI, body payload, file-writing, manifest, metric,
+  real-data, or production readiness evidence.
 
 ## Related Documents
 
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
+- [Frozen policy generation artifact body generation CLI design](../frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](../frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator Makefile target design](../frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](../frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
