@@ -720,8 +720,22 @@ count-only related summaries, and safety review statements. It does not copy
 raw logs, body payloads, generated bodies, raw rows, logits, private paths,
 raw learner text, real participant data, or performance metric bodies.
 
+## 46. Step350 Artifact Body File Writing Design Status
+
+Step350 designs a future artifact body file writing boundary:
+
+[Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md).
+
+The design limits future writing to safe metadata bodies, keeps suppressed
+mode no-file, requires explicit safe relative output paths, and keeps stdout
+summary-only. It does not implement file writing, does not add a CLI option,
+does not write manifest files, does not connect artifact writer CLI, does
+not change release-quality, does not use real data, and does not compute
+metrics.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Learner-state frozen policy generation artifact body safe-metadata release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body safe-metadata release-quality remote run record workflow](frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body safe-metadata release-quality integration design](frozen_policy_generation_artifact_body_safe_metadata_release_quality_integration_design.md)

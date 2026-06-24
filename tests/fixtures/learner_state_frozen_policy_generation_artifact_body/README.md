@@ -427,3 +427,16 @@ safety review statements. It does not copy fixture JSON bodies, request
 bodies, pointer bodies, artifact body payloads, generated policy bodies,
 manifest bodies, raw logs, raw rows, logits, private paths, raw learner text,
 real participant data, or performance metric bodies.
+
+## Future Artifact Body File Writing Design
+
+Step350 designs future safe metadata artifact body file writing:
+
+`docs/frozen_policy_generation_artifact_body_file_writing_design.md`
+
+This fixture root remains unchanged. The design keeps future file writing
+limited to safe metadata bodies, requires explicit safe relative output path
+policy, and keeps stdout summary-only. It does not add output files here,
+does not change fixture JSON, does not generate manifest bodies, does not
+connect artifact writer CLI, does not use real data, and does not compute
+metrics.
