@@ -566,8 +566,17 @@ tests, or fixture JSON, does not execute an artifact writer, emits no artifact
 body, emits no generated policy body, emits no manifest body, and writes no
 files.
 
+Step311 designs the future remote/manual Release Quality run recording
+workflow for artifact writer fixture validation:
+[Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md).
+The artifact policy remains unchanged: the design records only public-safe
+pass-only/count-only metadata and does not create a status marker, change
+workflow YAML, change wrapper scripts, execute an artifact writer, emit body
+payloads, write files, or claim performance or real-data readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)

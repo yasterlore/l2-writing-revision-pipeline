@@ -1787,6 +1787,23 @@ bodies, generated policy bodies, and manifest bodies are not generated, files
 are not written, metrics are not computed, performance is not evaluated, real
 data is not used, and real-data readiness is not claimed.
 
+For Step311, review the
+[frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md).
+Confirm it is docs-only, compares the future status marker path candidates,
+recommends
+`docs/status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md`,
+and records only public-safe pass-only/count-only metadata for a future
+remote/manual Release Quality run. Confirm it does not create the actual
+status marker, run a remote workflow, change workflow YAML, change wrapper
+scripts, change Makefile behavior, change Python code/tests, change fixture
+JSON, implement an artifact writer, generate artifact bodies, generated policy
+bodies, or manifest bodies, write files, compute metrics, evaluate
+performance, use real data, or claim real-data readiness. Confirm docs do not
+include raw logs, full job output, copied log blocks, request bodies, pointer
+bodies, expected result bodies, policy bodies, artifact bodies, manifest
+bodies, raw rows, logits, private paths, raw learner text, real participant
+data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

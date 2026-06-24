@@ -16,7 +16,8 @@ claim real-data readiness.
 - The artifact writer fixture validator module exists.
 - The artifact writer fixture validator CLI exists.
 - The artifact writer fixture validator Makefile target exists.
-- The artifact writer fixture validator target is not in release-quality yet.
+- The artifact writer fixture validator target is now included in the
+  release-quality wrapper.
 - The artifact writer implementation does not exist.
 - The artifact writer runtime target does not exist.
 
@@ -311,7 +312,8 @@ pass-only and count-only metadata.
 
 Recommended next steps:
 
-1. Step311: remote/manual run record workflow design.
+1. Step311: remote/manual run record workflow design. Complete:
+   [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md).
 2. Step312: remote/manual run status marker.
 3. Keep artifact writer implementation separate.
 
@@ -342,8 +344,21 @@ artifact body generation, generated policy body generation, manifest body
 generation, artifact file writing, manifest file writing, metric computation,
 performance evaluation, real-data use, or production readiness.
 
+## 18. Step311 Remote Run Record Workflow Design Status
+
+Step311 designs the future public-safe recording workflow for a remote/manual
+Release Quality run that includes artifact writer fixture validation:
+[Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md).
+
+The actual status marker is not created in Step311. The workflow design records
+only pass-only/count-only metadata and keeps raw logs, request/pointer/expected
+bodies, policy bodies, generated policy bodies, artifact bodies, manifest
+bodies, raw rows, logits, private paths, raw learner text, and performance
+metric bodies out of docs.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture validator Makefile target design](frozen_policy_generation_artifact_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
