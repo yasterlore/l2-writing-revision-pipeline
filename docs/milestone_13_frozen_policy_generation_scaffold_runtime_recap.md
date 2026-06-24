@@ -481,6 +481,9 @@ written, no artifact body is produced, and no performance metric is computed.
 - Step294: linked the generator scaffold CLI Makefile target design as the
   next docs-only boundary before target implementation or release-quality
   skeleton runtime integration.
+- Step295: recorded standalone generator scaffold CLI Makefile target
+  implementation status; release-quality skeleton runtime integration,
+  artifact writing, and artifact body generation remain separate.
 
 ## Related Documents
 

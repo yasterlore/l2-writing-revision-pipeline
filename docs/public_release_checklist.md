@@ -1522,6 +1522,19 @@ request/pointer bodies, expected generator scaffold result bodies, artifact
 bodies, generated policy bodies, raw rows, logits, private paths, raw learner
 text, or performance metric bodies.
 
+For Step295, review `Makefile` and
+[frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md).
+Confirm the change is limited to `.PHONY`, `make help`, the standalone
+`check-learner-state-frozen-policy-generation-generator-scaffold-runtime`
+target, and docs. Confirm the target runs one valid synthetic request/pointer
+pair through the safe generator scaffold CLI, exits `0`, emits only
+metadata-only output, creates no target-specific tmp output, writes no
+artifacts, emits no artifact body or generated policy body, and does not add
+release-quality wrapper changes, GitHub Actions workflow changes, Python code,
+Python tests, fixtures, calibration/selective prediction logic, estimator
+work, metric computation, performance evaluation, real-data use, or
+real-data readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

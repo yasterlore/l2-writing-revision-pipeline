@@ -370,6 +370,45 @@ Recommended next steps:
 Keep artifact writing, generated policy bodies, calibration work, performance
 evaluation, and real-data readiness separate.
 
+## 18. Step295 Implementation Status
+
+Step295 implements the standalone Makefile target:
+
+```text
+check-learner-state-frozen-policy-generation-generator-scaffold-runtime
+```
+
+The target command is:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_generator_scaffold --request tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/valid/minimal_metadata_only_generation_plan/generation_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/valid/minimal_metadata_only_generation_plan/input_fixture_pointer.json
+```
+
+The Makefile help text is:
+
+```text
+check-learner-state-frozen-policy-generation-generator-scaffold-runtime  Run frozen policy generation generator scaffold runtime smoke
+```
+
+The implementation:
+
+- runs one valid synthetic request/pointer pair
+- returns `mode=generator_scaffold`
+- returns `generation_status=pass`
+- returns `reason_codes=none`
+- returns `failed_checks=none`
+- keeps content suppressed
+- keeps raw rows, logits, and private paths out of output
+- keeps artifact body and generated policy body unavailable
+- keeps artifact file writing disabled
+- creates no target-specific tmp output
+- does not add release-quality integration
+- does not change workflows
+- does not change Python code, tests, or fixtures
+
+Release-quality integration for this runtime smoke remains a future staged
+step.
+
 ## Related Documents
 
 - [Frozen policy generation generator scaffold CLI design](frozen_policy_generation_generator_scaffold_cli_design.md)
