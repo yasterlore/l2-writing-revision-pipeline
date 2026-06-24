@@ -1602,6 +1602,22 @@ generated policy body generation, manifest writing, calibration/selective
 prediction logic, estimator work, metric computation, performance evaluation,
 real-data use, or real-data readiness claims.
 
+For Step300, review the
+[frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md).
+Confirm it is docs-only and defines the future artifact writer responsibility,
+metadata-only request/result contracts, manifest summary policy, file-writing
+boundary, body-suppression rules, fail-closed reason codes, future fixture
+root, tests, CLI, Makefile, release-quality, and status-marker staging.
+Confirm it does not implement artifact writer code, generate policy bodies,
+generate artifact bodies, write artifacts, write manifests, compute metrics,
+evaluate performance, use real data, or claim production readiness. Confirm it
+does not include raw GitHub Actions logs, full job output, copied log blocks,
+screenshots containing raw logs, request/pointer bodies, expected generator
+scaffold result bodies, generated policy bodies, generated artifact bodies,
+frozen policy artifact bodies, manifest bodies, JSON bodies, policy bodies,
+raw rows, logits, label/split/calibration policy bodies, private paths, raw
+learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

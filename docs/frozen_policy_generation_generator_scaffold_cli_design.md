@@ -575,8 +575,18 @@ The CLI remains unchanged. The marker records only safe metadata and does not
 copy raw logs, request bodies, pointer bodies, generated policy bodies,
 artifact bodies, raw rows, logits, private paths, or raw learner text.
 
+## 28. Step300 Artifact Writer Design Status
+
+Step300 designs the future frozen policy generation artifact writer:
+[Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md).
+
+The generator scaffold CLI remains unchanged. It still does not invoke an
+artifact writer, does not output artifact bodies or generated policy bodies,
+does not write files, and does not emit manifest bodies.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)

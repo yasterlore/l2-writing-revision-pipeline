@@ -464,8 +464,19 @@ bodies, expected result bodies, policy bodies, generated policy bodies,
 artifact bodies, raw rows, logits, private paths, raw learner text, or
 performance metric bodies.
 
+## 19. Step300 Artifact Writer Design Status
+
+Step300 creates the future artifact writer design:
+[Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md).
+
+The release-quality wrapper remains unchanged by that design. Artifact writer
+integration remains future work and should wait for implementation, tests,
+CLI, a standalone Makefile target, no-body-leakage review, and no-file-writing
+review.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold CLI Makefile target design](frozen_policy_generation_generator_scaffold_cli_makefile_target_design.md)

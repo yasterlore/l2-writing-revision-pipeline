@@ -810,9 +810,14 @@ metric computation, or real-data readiness claim is added.
 - Step299: recorded the generator scaffold runtime remote/manual Release
   Quality status marker; artifact body generation, artifact writing, metrics,
   and real-data readiness remain out of scope.
+- Step300: linked the artifact writer design as the next docs-only boundary;
+  artifact writer implementation, artifact body generation, generated policy
+  body generation, manifest body output, file writing, metrics, and real-data
+  readiness remain out of scope.
 
 ## Related Documents
 
+- [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)

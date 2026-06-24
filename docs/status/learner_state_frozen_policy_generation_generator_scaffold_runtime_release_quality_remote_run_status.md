@@ -281,8 +281,9 @@ This marker does not prove:
 
 ## Next Actions
 
-- Commit this status marker after local checks.
-- Keep future artifact writer design separate.
+- Step300 artifact writer design is now tracked separately:
+  [Frozen policy generation artifact writer design](../frozen_policy_generation_artifact_writer_design.md).
+- Keep future artifact writer implementation separate.
 - Keep future generator scaffold expansion separate.
 - Keep future calibration scaffold work separate.
 - Treat real-data readiness as future private/institution-approved review only.
@@ -295,3 +296,7 @@ This marker does not prove:
   fields. It does not include raw logs, request/pointer bodies, expected result
   bodies, policy bodies, generated policy bodies, artifact bodies, raw rows,
   logits, private paths, raw learner text, or performance metric bodies.
+- Step300: linked the future artifact writer design. The marker remains
+  unchanged as pass-only/count-only remote run evidence; it still does not
+  include artifact bodies, generated policy bodies, manifest bodies, file
+  writing, metrics, or real-data readiness claims.
