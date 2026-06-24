@@ -711,10 +711,10 @@ works, that does not prove policy quality or model performance.
 
 Recommended next steps:
 
-1. Step305: artifact writer fixture validator CLI design.
-2. Step306: artifact writer fixture validator CLI implementation.
-3. Step307: artifact writer fixture validator Makefile target design.
-5. Later: artifact writer skeleton design, writer CLI design, Makefile target
+1. Step306: artifact writer fixture validator CLI implementation.
+2. Step307: artifact writer fixture validator Makefile target design.
+3. Step308: artifact writer fixture validator Makefile target implementation.
+4. Later: artifact writer skeleton design, writer CLI design, Makefile target
    design, release-quality integration design, and remote status marker
    workflow.
 
@@ -765,8 +765,21 @@ workflow YAML, generate artifact bodies, generate generated policy bodies,
 generate manifest bodies, write artifact files, write manifest files, compute
 metrics, evaluate performance, use real data, or claim production readiness.
 
+## 29. Step305 Artifact Writer Fixture Validator CLI Design Status
+
+Step305 designs the future CLI for safely running the metadata-only fixture
+validator:
+[Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md).
+
+The artifact writer remains unimplemented. Step305 does not implement CLI code,
+add a Makefile target, integrate release-quality, generate artifact bodies,
+generate generated policy bodies, generate manifest bodies, write files,
+compute metrics, evaluate performance, use real data, or claim production
+readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
 - [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)

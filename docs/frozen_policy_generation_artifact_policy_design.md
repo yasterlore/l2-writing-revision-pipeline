@@ -522,8 +522,20 @@ metadata contracts only, does not execute an artifact writer, does not generate
 artifact bodies, generated policy bodies, or manifest bodies, and does not
 write files.
 
+Step304 implements that metadata-only fixture validator. The artifact policy
+remains unchanged: validation checks fixture contracts only, emits no artifact
+body, emits no generated policy body, emits no manifest body, and writes no
+files.
+
+Step305 designs the future CLI for that validator:
+[Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md).
+The artifact policy remains unchanged: the CLI design keeps output
+metadata-only, does not execute an artifact writer, does not expose artifact or
+manifest body output options, and does not add file-writing options.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
 - [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)

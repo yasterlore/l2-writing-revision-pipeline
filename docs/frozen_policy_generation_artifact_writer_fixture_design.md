@@ -623,10 +623,11 @@ Documentation must not include:
 
 Recommended next steps:
 
-1. Step302: artifact writer fixture creation.
-2. Step303: artifact writer fixture validator design.
-3. Step305: artifact writer fixture validator CLI design.
-4. Step305: artifact writer skeleton design.
+1. Step306: artifact writer fixture validator CLI implementation.
+2. Step307: artifact writer fixture validator Makefile target design.
+3. Step308: artifact writer fixture validator Makefile target implementation.
+4. Step309: artifact writer fixture validator release-quality integration
+   design.
 
 ## 19. Beginner-Friendly Explanation
 
@@ -717,8 +718,19 @@ writer, CLI, Makefile target, release-quality wrapper integration, workflow
 change, artifact body generation, generated policy body generation, manifest
 body generation, artifact file writing, or manifest file writing.
 
+## 24. Step305 Fixture Validator CLI Design Status
+
+Step305 designs the future terminal entrypoint for the fixture validator:
+[Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md).
+
+The fixture JSON files remain unchanged. Step305 does not implement CLI code,
+artifact writer code, Makefile targets, release-quality integration, workflow
+changes, artifact body generation, generated policy body generation, manifest
+body generation, artifact file writing, or manifest file writing.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
