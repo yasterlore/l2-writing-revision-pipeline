@@ -516,9 +516,14 @@ written, no artifact body is produced, and no performance metric is computed.
   implement an artifact writer, CLI, Makefile target, release-quality
   integration, artifact body generation, generated policy body generation,
   manifest body generation, or file writing.
+- Step305: linked the artifact writer fixture validator CLI design. CLI
+  implementation, Makefile target, release-quality integration, artifact
+  writer implementation, artifact bodies, generated policy bodies, manifest
+  bodies, file writing, metrics, and real-data readiness remain separate.
 
 ## Related Documents
 
+- [Frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact writer fixture validator design](frozen_policy_generation_artifact_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/README.md)
 - [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)

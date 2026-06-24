@@ -99,6 +99,14 @@ artifact writer, expose a CLI, add a Makefile target, integrate release-quality,
 generate artifact bodies, generate generated policy bodies, generate manifest
 bodies, or write artifact/manifest files.
 
+Step305 designs the future validator CLI in:
+
+`docs/frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md`
+
+That design keeps the CLI metadata-only. It covers root mode, case mode, safe
+human output, safe JSON output, exit codes, and future Makefile staging without
+executing an artifact writer or writing artifact/manifest files.
+
 ## What This Does Not Prove
 
 These fixtures do not prove artifact writer correctness, generated policy

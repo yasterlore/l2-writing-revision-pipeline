@@ -1688,6 +1688,23 @@ bodies, artifact writer expected result bodies, generator scaffold bodies,
 policy bodies, artifact bodies, manifest bodies, raw rows, logits, private
 paths, raw learner text, real participant data, or performance metric bodies.
 
+For Step305, review the
+[frozen policy generation artifact writer fixture validator CLI design](frozen_policy_generation_artifact_writer_fixture_validator_cli_design.md).
+Confirm it is docs-only and defines the future CLI entrypoint, mutually
+exclusive root/case arguments, safe human output, safe JSON output, exit codes,
+no-body-leakage policy, relation to validator APIs, future CLI tests, future
+Makefile target staging, release-quality staging, and status-marker staging.
+Confirm it does not implement CLI code, change validator code, execute the
+artifact writer, add a Makefile target, integrate release-quality, change
+workflow YAML, generate artifact bodies, generate generated policy bodies,
+generate manifest bodies, write artifact files, write manifest files, compute
+metrics, evaluate performance, use real data, or claim real-data readiness.
+Confirm docs do not include raw logs, full job output, copied log blocks,
+fixture JSON bodies, artifact writer request bodies, artifact writer expected
+result bodies, generator scaffold bodies, policy bodies, artifact bodies,
+manifest bodies, raw rows, logits, private paths, raw learner text, real
+participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
