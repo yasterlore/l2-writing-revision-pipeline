@@ -228,7 +228,12 @@ The future marker path is expected to be:
 
 `docs/status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md`
 
-The status marker is not created yet. Future records should use pass-only and
-count-only metadata and must not copy fixture bodies, artifact body payloads,
-raw logs, raw rows, logits, private paths, raw learner text, real participant
-data, or performance metric bodies.
+## Remote Status Marker
+
+Step334 creates the public-safe remote/manual Release Quality status marker:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md`
+
+The marker uses pass-only and count-only metadata and does not copy fixture
+bodies, artifact body payloads, raw logs, raw rows, logits, private paths, raw
+learner text, real participant data, or performance metric bodies.

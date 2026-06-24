@@ -374,8 +374,20 @@ YAML, change the wrapper, change the Makefile, change Python code or tests,
 change fixture JSON, implement artifact body generation, write files, compute
 metrics, use real data, or claim production readiness.
 
+## 22. Step334 Remote Run Status Marker Status
+
+Step334 creates the public-safe remote/manual Release Quality status marker
+for this target:
+
+[Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md).
+
+The marker records pass-only and count-only metadata only. It does not copy
+raw logs, fixture bodies, artifact body payloads, raw rows, logits, private
+paths, raw learner text, real participant data, or performance metric bodies.
+
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body fixture release-quality integration design](frozen_policy_generation_artifact_body_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body fixture validator CLI design](frozen_policy_generation_artifact_body_fixture_validator_cli_design.md)
