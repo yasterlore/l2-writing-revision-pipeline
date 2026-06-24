@@ -544,9 +544,13 @@ written, no artifact body is produced, and no performance metric is computed.
   It matches the artifact writer fixture expected metadata without generating
   artifact bodies, generated policy bodies, manifest bodies, writing files,
   computing metrics, or claiming real-data readiness.
+- Step314: linked the artifact writer CLI design. The CLI is not implemented
+  yet; body generation, manifest generation, file writing, metrics, and
+  real-data readiness remain out of scope.
 
 ## Related Documents
 
+- [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)

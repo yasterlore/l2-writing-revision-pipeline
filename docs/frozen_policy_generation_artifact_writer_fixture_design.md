@@ -820,8 +820,18 @@ level for all 17 cases. The fixture JSON files remain unchanged, and the
 implementation does not generate artifact bodies, generated policy bodies,
 manifest bodies, or write files.
 
+## 33. Step314 Writer CLI Design Status
+
+Step314 designs the future artifact writer CLI:
+[Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md).
+
+The fixture JSON files remain unchanged. The design keeps the future writer
+CLI limited to one request/pointer pair, safe human or JSON metadata output,
+no artifact body output, no manifest body output, and no file writing.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)

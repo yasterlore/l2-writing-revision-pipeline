@@ -442,8 +442,18 @@ The standalone fixture validator Makefile target remains unchanged and does
 not run the writer. No Makefile target for the writer skeleton is added in
 Step313.
 
+## 24. Step314 Writer CLI Design Status
+
+Step314 designs the future writer CLI:
+[Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md).
+
+This target remains unchanged. A future writer runtime smoke target should be
+designed separately after the CLI is implemented and reviewed for no-body
+leakage.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)

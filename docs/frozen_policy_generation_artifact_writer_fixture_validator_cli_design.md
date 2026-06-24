@@ -499,8 +499,18 @@ Step313 implements the metadata-only artifact writer skeleton in
 The fixture validator CLI remains unchanged. It still validates fixture
 contracts only and does not execute the writer, emit bodies, or write files.
 
+## 29. Step314 Writer CLI Design Status
+
+Step314 designs the future writer CLI:
+[Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md).
+
+That future CLI is distinct from this fixture validator CLI. The validator CLI
+checks fixture contracts; the writer CLI will run one request/pointer pair and
+return a safe metadata-only writer result.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)

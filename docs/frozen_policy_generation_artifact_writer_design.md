@@ -881,8 +881,21 @@ CLI, Makefile target integration, release-quality integration, runtime smoke,
 artifact body generation, manifest writing, metrics, and real-data readiness
 remain separate future work.
 
+## 38. Step314 Artifact Writer CLI Design Status
+
+Step314 designs the future CLI for the metadata-only artifact writer skeleton:
+[Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md).
+
+The design proposes `python -m learner_state.frozen_policy_generation_artifact_writer`
+with `--request`, `--pointer`, and optional `--json`. It does not implement the
+CLI, add a Makefile target, change release-quality, change workflow YAML,
+generate artifact bodies, generate generated policy bodies, generate manifest
+bodies, write files, compute metrics, use real data, or claim real-data
+readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
