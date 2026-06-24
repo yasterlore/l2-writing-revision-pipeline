@@ -352,3 +352,16 @@ target to release-quality, does not change workflow YAML, does not change
 Python code or tests, does not change fixture JSON, does not connect artifact
 writer CLI, does not generate manifest bodies, does not use real data, and
 does not compute metrics.
+
+## 20. Step340 Release-Quality Integration Design Status
+
+Step340 designs the future release-quality wrapper integration for this
+standalone target:
+
+[Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md).
+
+The design recommends adding the target after artifact body fixture validation
+and before config/scoring smoke checks in a later wrapper step. It does not
+change the wrapper, workflow YAML, Makefile, Python code or tests, fixture
+JSON, safe-metadata target coverage, artifact writer CLI behavior, file
+writing, manifest generation, real-data use, or metrics.

@@ -591,8 +591,22 @@ to release-quality in this step, does not add a safe-metadata target, does
 not write artifact files, does not generate manifest bodies, does not use
 real data, and does not compute metrics.
 
+## 40. Step340 Artifact Body Generation Release-Quality Integration Design Status
+
+Step340 designs future release-quality integration for the standalone artifact
+body generation target:
+
+[Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md).
+
+The fixture validator remains unchanged and remains the 18-case boundary
+contract check. The future generation smoke remains a separate target, does
+not change fixture JSON, does not add a safe-metadata target, does not write
+artifact files, does not generate manifest bodies, does not use real data, and
+does not compute metrics.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)
 - [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)
 - [Frozen policy generation artifact body generation CLI design](frozen_policy_generation_artifact_body_generation_cli_design.md)
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md)

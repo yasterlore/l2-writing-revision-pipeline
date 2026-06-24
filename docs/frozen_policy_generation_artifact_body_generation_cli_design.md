@@ -418,3 +418,15 @@ target, does not add release-quality integration, does not change workflow
 YAML, does not change Python code or tests, does not change fixture JSON, does
 not write artifact files, does not generate manifest bodies, does not connect
 artifact writer CLI, does not use real data, and does not compute metrics.
+
+## 23. Step340 Release-Quality Integration Design Status
+
+Step340 designs a future release-quality integration for the standalone
+default suppressed-mode generation target:
+
+[Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md).
+
+The design keeps this CLI summary-only and body-free. It does not change the
+wrapper, workflow YAML, Makefile, Python code or tests, fixture JSON,
+safe-metadata target coverage, artifact writer CLI behavior, file writing,
+manifest generation, real-data use, or metrics.

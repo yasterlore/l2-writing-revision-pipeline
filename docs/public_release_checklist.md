@@ -2181,6 +2181,21 @@ pointer bodies, expected bodies, artifact body payloads, generated policy
 bodies, manifest bodies, raw logs, raw rows, logits, private paths, raw
 learner text, real participant data, or performance metric bodies.
 
+For Step340, review the docs-only
+[frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md).
+Confirm it proposes future wrapper insertion after artifact body fixture
+validation and before config/scoring smoke checks, defines the wrapper command
+and label, documents expected suppressed-mode metadata, failure
+interpretation, log safety, testing plan, status marker staging, and
+safe-metadata mode staging. Confirm it does not change the wrapper, workflow
+YAML, Makefile, Python code or tests, fixture JSON, safe-metadata target
+coverage, artifact writer CLI behavior, artifact file writing, manifest
+generation, metrics, real-data use, or production readiness claims. Confirm
+docs do not include command output examples, JSON body examples, request
+bodies, pointer bodies, expected bodies, artifact body payloads, generated
+policy bodies, manifest bodies, raw logs, raw rows, logits, private paths,
+raw learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
