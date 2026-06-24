@@ -682,8 +682,19 @@ change Makefile, change Python code or tests, change fixture JSON, add a
 safe-metadata target, write artifact files, generate manifest bodies, use real
 data, or compute metrics.
 
+## 41. Step343 Artifact Body Generation Remote Run Status Marker Status
+
+Step343 creates the public-safe remote/manual Release Quality status marker
+for the artifact body generation CLI smoke:
+
+[Learner-state frozen policy generation artifact body generation release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md).
+
+This marker is separate from the artifact body fixture validation marker. The
+fixture root remains unchanged and no fixture JSON is modified.
+
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact body generation release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body generation release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)
 - [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)

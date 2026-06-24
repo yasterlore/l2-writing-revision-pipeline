@@ -698,9 +698,17 @@ written, no artifact body is produced, and no performance metric is computed.
   Python code/tests, change fixture JSON, add a safe-metadata target, write
   artifact files, generate manifest bodies, compute metrics, use real data,
   or claim production readiness.
+- Step343: created the public-safe remote/manual Release Quality status
+  marker for artifact body generation CLI smoke integration. The marker
+  records only run identity metadata, wrapper inclusion metadata, pass-only
+  generation smoke status, count-only related summaries, and safety review
+  statements. It does not include raw logs, body payloads, safe-metadata
+  target coverage, file writing, manifest generation, metrics, real-data
+  readiness, or production readiness evidence.
 
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact body generation release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body generation release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation release-quality integration design](frozen_policy_generation_artifact_body_generation_release_quality_integration_design.md)
 - [Frozen policy generation artifact body generation Makefile target design](frozen_policy_generation_artifact_body_generation_makefile_target_design.md)

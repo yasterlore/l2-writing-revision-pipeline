@@ -536,3 +536,18 @@ receive its own design, wrapper integration, and status marker if needed.
   or manual run.
 - Keep artifact body file writing, manifest writer, output file options, and
   artifact writer CLI integration as separate future work.
+
+## 25. Step343 Remote Run Status Marker Status
+
+Step343 creates the public-safe remote/manual Release Quality status marker
+for the artifact body generation CLI smoke:
+
+[Learner-state frozen policy generation artifact body generation release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md).
+
+The marker records only run identity metadata, wrapper inclusion metadata,
+pass-only generation smoke status, count-only related summaries, and safety
+review statements. It does not include raw logs, full job output, request
+bodies, pointer bodies, expected result bodies, artifact body payloads,
+generated policy bodies, manifest bodies, raw rows, logits, private paths,
+raw learner text, real participant data, performance metric bodies, or
+production readiness claims.
