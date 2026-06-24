@@ -286,6 +286,8 @@ evidence, or production readiness evidence.
   [Frozen policy generation artifact body generation design](../frozen_policy_generation_artifact_body_generation_design.md).
 - Keep future artifact body fixture design separate:
   [Frozen policy generation artifact body fixture design](../frozen_policy_generation_artifact_body_fixture_design.md).
+- Keep future artifact body fixture validation separate:
+  [Frozen policy generation artifact body fixtures](../../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md).
 - Keep future manifest writer design separate.
 - Treat real-data readiness as future private/institution-approved review only.
 
@@ -307,3 +309,7 @@ evidence, or production readiness evidence.
   remains pass-only/count-only and does not create fixture JSON, generate
   artifact bodies, implement validators, write files, compute metrics, use
   real data, or claim production readiness.
+- Step324: linked the synthetic-only artifact body fixture root. The status
+  marker remains pass-only/count-only and does not validate the new fixtures,
+  implement body generation, write files, compute metrics, use real data, or
+  claim production readiness.

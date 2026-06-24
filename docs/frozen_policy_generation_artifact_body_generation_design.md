@@ -383,8 +383,21 @@ change release-quality, change workflow YAML, change Python code or tests,
 change existing fixture JSON, write files, compute metrics, use real data, or
 claim production readiness.
 
+## 20. Step324 Artifact Body Fixture Creation Status
+
+Step324 creates the future artifact body fixture root:
+
+[Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md).
+
+The fixtures implement the Step323 layout as synthetic-only metadata fixture
+contracts. They do not implement body generation, validators, CLI options,
+Makefile targets, release-quality integration, workflow changes, Python code
+or tests, generated policy body generation, manifest body generation, file
+writing, metrics, real-data use, or production readiness claims.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
 - [Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)

@@ -1953,6 +1953,19 @@ artifact body JSON examples, generated policy bodies, artifact bodies,
 manifest bodies, raw rows, logits/probability dumps, private paths, raw
 learner text, real participant data, or performance metric bodies.
 
+For Step324, review the new
+[frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md).
+Confirm the root contains 18 cases and 54 JSON files, with three files per
+case: `artifact_body_request.json`, `artifact_writer_result_pointer.json`,
+and `expected_artifact_body_result.json`. Confirm valid cases are
+synthetic-only metadata-only pass cases, invalid cases use safe marker
+booleans only, and expected results contain safe reason codes, flags, and
+counts without raw payloads. Confirm the step does not implement a validator,
+artifact body generation, generated policy body generation, manifest body
+generation, file writing, CLI changes, Makefile targets, release-quality
+wrapper changes, workflow changes, Python code/tests, existing fixture JSON
+changes, metrics, real-data use, or production readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

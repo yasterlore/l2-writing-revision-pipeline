@@ -455,8 +455,26 @@ targets, change release-quality, change workflow YAML, change Python code or
 tests, change existing fixture JSON, compute metrics, use real data, or
 claim production readiness.
 
+## 22. Step324 Fixture Creation Status
+
+Step324 creates the synthetic-only artifact body fixture root:
+
+[Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md).
+
+The root contains 18 cases, 54 JSON files, and one README. The case layout is
+`artifact_body_request.json`, `artifact_writer_result_pointer.json`, and
+`expected_artifact_body_result.json` per case. The fixtures remain
+metadata-only and no-oracle. Invalid cases use safe marker booleans only.
+
+Step324 does not implement artifact body generation, implement a validator,
+change the CLI, change Makefile targets, change release-quality, change
+workflow YAML, change Python code or tests, change existing fixture JSON,
+generate policy bodies, generate manifest bodies, write files, compute
+metrics, use real data, or claim production readiness.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)

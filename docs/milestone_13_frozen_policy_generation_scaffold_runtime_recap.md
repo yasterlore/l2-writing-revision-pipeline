@@ -588,9 +588,15 @@ written, no artifact body is produced, and no performance metric is computed.
   outline, and staging. It does not create fixture JSON, implement a
   validator, generate artifact bodies, write files, compute metrics, use real
   data, or claim production readiness.
+- Step324: linked the artifact body fixture root. The root contains
+  synthetic-only metadata fixture JSON for future artifact body validation and
+  does not implement body generation, validators, CLI changes, Makefile
+  targets, release-quality integration, workflow changes, file writing,
+  metrics, real-data use, or production readiness claims.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
 - [Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact writer runtime release-quality integration design](frozen_policy_generation_artifact_writer_runtime_release_quality_integration_design.md)

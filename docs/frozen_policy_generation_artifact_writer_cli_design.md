@@ -496,3 +496,15 @@ does not create fixture JSON, implement a validator, implement body
 generation, add CLI options, change Makefile targets, change release-quality,
 change workflow YAML, change Python code or tests, write files, compute
 metrics, use real data, or claim production readiness.
+
+## 31. Step324 Artifact Body Fixture Creation Status
+
+Step324 creates the artifact body fixture root:
+
+[Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md).
+
+The CLI remains unchanged and body-free by default. Step324 does not add
+artifact body CLI options, implement validators, implement body generation,
+change Makefile targets, change release-quality, change workflow YAML, change
+Python code or tests, change existing fixture JSON, write files, compute
+metrics, use real data, or claim production readiness.

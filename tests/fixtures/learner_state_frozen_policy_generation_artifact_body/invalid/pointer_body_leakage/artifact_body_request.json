@@ -1,0 +1,41 @@
+{
+  "artifact_body_id": "synthetic_artifact_body_pointer_body_leakage_v0_1",
+  "artifact_id": "synthetic_artifact_metadata_only_v0_1",
+  "case_id": "invalid/pointer_body_leakage",
+  "category": "invalid",
+  "manifest_id": "synthetic_manifest_metadata_only_v0_1",
+  "no_oracle_notice_present": true,
+  "requested_body_mode": "safe_marker_validation_only",
+  "requested_body_status": "fail_closed",
+  "safe_marker_flags": {
+    "expected_result_body_marker_present": false,
+    "generated_policy_body_marker_present": false,
+    "logits_dump_marker_present": false,
+    "manifest_body_marker_present": false,
+    "missing_no_oracle_notice_marker_present": false,
+    "missing_synthetic_notice_marker_present": false,
+    "performance_claim_marker_present": false,
+    "pointer_body_marker_present": true,
+    "private_path_marker_present": false,
+    "raw_learner_text_marker_present": false,
+    "raw_rows_marker_present": false,
+    "request_body_marker_present": false,
+    "unknown_schema_version_marker_present": false,
+    "unsafe_schema_marker_present": false
+  },
+  "safe_section_keys": [
+    "schema_version",
+    "safe_ids",
+    "artifact_flags",
+    "safety_flags",
+    "count_summary"
+  ],
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_request_v0.1",
+  "synthetic_only_notice_present": true,
+  "validation_reference_ids": [
+    "learner_state_frozen_policy_generation_artifact_writer/valid/minimal_metadata_only_artifact_plan",
+    "learner_state_frozen_policy_generation_generator_scaffold/valid/minimal_metadata_only_generation_plan",
+    "learner_state_frozen_policy_generation/valid/identity_temperature_fixed_threshold"
+  ],
+  "writer_version": "frozen_policy_generation_artifact_body_fixture_contract_v0_1"
+}
