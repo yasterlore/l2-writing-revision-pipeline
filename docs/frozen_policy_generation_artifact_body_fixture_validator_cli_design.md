@@ -418,8 +418,22 @@ generate policy bodies, generate manifest bodies, write artifact or manifest
 files, add output-file options, compute metrics, use real data, or claim
 production readiness.
 
+## 22. Step329 Makefile Target Design Status
+
+Step329 designs the future standalone Makefile target for this CLI:
+
+[Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md).
+
+The design recommends
+`check-learner-state-frozen-policy-generation-artifact-body-fixtures` as a
+future target around the existing CLI. Step329 does not change the Makefile,
+release-quality wrapper, workflow YAML, Python code or tests, fixture JSON,
+artifact body generation, file writing, metrics, real-data use, or production
+readiness claims.
+
 ## Related Documents
 
+- [Frozen policy generation artifact body fixture validator Makefile target design](frozen_policy_generation_artifact_body_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body fixture validator design](frozen_policy_generation_artifact_body_fixture_validator_design.md)
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
 - [Frozen policy generation artifact body fixture design](frozen_policy_generation_artifact_body_fixture_design.md)
