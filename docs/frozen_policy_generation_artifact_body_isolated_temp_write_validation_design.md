@@ -411,3 +411,17 @@ release-quality integration, does not change workflow YAML, does not change
 Python code/tests, does not change fixture JSON, does not write manifests,
 does not connect artifact writer CLI, does not use real data, and does not
 compute metrics.
+
+## 25. Step372 Availability Reconciliation Status
+
+Step372 restores and confirms the isolated write validator module, CLI, and
+tests:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+The validator executes fixture cases in isolated temp roots and returns
+summary-only metadata. The root validation now reports 22 total cases, 22
+matched cases, 0 mismatches, 0 input errors, and 0 residue files. Step372
+does not add a Makefile target, does not add release-quality integration,
+does not change workflow YAML, does not change fixture JSON, does not write
+manifests, and does not connect artifact writer CLI.

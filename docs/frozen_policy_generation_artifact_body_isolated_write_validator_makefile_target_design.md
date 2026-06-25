@@ -188,7 +188,22 @@ the target would fail before validating fixture behavior.
 The implementation step should first run the CLI help and root validation
 commands, then add the Makefile target only if those commands succeed.
 
-## 11. Exit Code Strictness Note
+## 11. Step372 Availability Reconciliation Status
+
+Step372 restores and confirms the isolated write validator module, CLI, and
+unit tests in the active worktree:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+The restored validator validates the 22-case / 110-JSON isolated write
+fixture root with `matched_cases=22`, `mismatched_cases=0`,
+`input_error_cases=0`, and `residue_file_count=0`. The CLI remains
+summary-only and body-free. Step372 does not implement the Makefile target,
+does not add release-quality integration, does not change workflow YAML, does
+not change fixture JSON, does not write manifests, and does not connect the
+artifact writer CLI.
+
+## 12. Exit Code Strictness Note
 
 The intended isolated write validator behavior is to match fail-closed cases
 by category, status, and no-write behavior. Some fail-closed cases may
@@ -200,7 +215,7 @@ the validator result rather than reinterpreting case-level exit codes. Strict
 exit-code normalization can be a separate future step if the contract is
 tightened. This design does not change fixture JSON.
 
-## 12. Future Tests And Checks For Implementation
+## 13. Future Tests And Checks For Implementation
 
 The implementation step should verify:
 
@@ -221,7 +236,7 @@ The implementation step should verify:
 - release-quality wrapper diff remains none
 - workflow diff remains none
 
-## 13. Docs Safety Policy
+## 14. Docs Safety Policy
 
 Documentation for this target must include only field names, target names,
 command shapes, case IDs, counts, and safety policy.
@@ -231,7 +246,7 @@ artifact body payload examples, private path examples, raw logs, raw rows,
 logits, raw learner text, real participant data, or performance metric
 bodies.
 
-## 14. Beginner-Friendly Explanation
+## 15. Beginner-Friendly Explanation
 
 A Makefile target is a short command name that runs a longer command in a
 repeatable way.
@@ -251,7 +266,7 @@ as a standalone command.
 `residue_file_count=0` matters because it shows the validator cleaned up its
 temporary outputs and did not leave generated artifact body files behind.
 
-## 15. What This Does Not Do
+## 16. What This Does Not Do
 
 - does not implement the Makefile target
 - does not add release-quality integration
@@ -264,17 +279,16 @@ temporary outputs and did not leave generated artifact body files behind.
 - does not compute metrics
 - does not prove production readiness
 
-## 16. Next Recommended Steps
+## 17. Next Recommended Steps
 
-- Step372: confirm the validator module is present, then implement the
-  standalone Makefile target.
-- Step373: design release-quality integration for the isolated write target.
-- Step374: integrate the release-quality wrapper if the standalone target
+- Step373: implement the standalone Makefile target.
+- Step374: design release-quality integration for the isolated write target.
+- Step375: integrate the release-quality wrapper if the standalone target
   remains stable.
 - Later: record a public-safe remote/manual status marker after release-quality
   succeeds.
 
-## 17. Related Documents
+## 18. Related Documents
 
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
