@@ -2713,6 +2713,22 @@ bodies, artifact body payload examples, generated policy bodies, manifest
 bodies, JSON body examples, raw rows, logits, private paths, absolute local
 paths, raw learner text, real participant data, or performance metric bodies.
 
+For Step374, review the docs-only
+[frozen policy generation artifact body isolated write release-quality integration design](frozen_policy_generation_artifact_body_isolated_write_release_quality_integration_design.md).
+Confirm it only designs future wrapper integration for the standalone isolated
+write validator target. Confirm the proposed placement is after the no-write
+file-writing fixture validation target and before config/scoring smoke checks.
+Confirm it does not change the release-quality wrapper, change workflow YAML,
+change Makefile, change Python code/tests, change fixture JSON, write
+manifests, connect artifact writer CLI, use real data, compute metrics, or
+claim production readiness. Confirm docs do not include raw logs, full job
+output, copied log blocks, screenshots containing raw logs, request bodies,
+pointer bodies, isolated write request bodies, expected isolated write result
+bodies, case metadata bodies, written file content, artifact body payload
+examples, generated policy bodies, manifest bodies, JSON body examples, raw
+rows, logits, private paths, absolute local paths, raw learner text, real
+participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

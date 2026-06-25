@@ -501,3 +501,16 @@ The target validates the 22 synthetic metadata-only cases and expects 22
 matched cases, 0 mismatches, 0 input errors, and 0 residue files. Step373
 does not change fixture JSON, does not add release-quality integration, does
 not write manifests, and does not connect artifact writer CLI.
+
+## 28. Step374 Release-Quality Integration Design Status
+
+Step374 adds a docs-only release-quality integration design for the standalone
+isolated write validator target:
+
+[Frozen policy generation artifact body isolated write release-quality integration design](frozen_policy_generation_artifact_body_isolated_write_release_quality_integration_design.md).
+
+The design keeps this fixture root synthetic-only and metadata-only, requires
+`residue_file_count=0`, and prohibits fixture JSON bodies, written file
+content, artifact body payloads, private paths, absolute temp paths, raw rows,
+logits, and raw learner text in release-quality logs or docs. Step374 does
+not change fixture JSON and does not implement wrapper integration.

@@ -295,6 +295,8 @@ temporary outputs and did not leave generated artifact body files behind.
 ## 18. Next Recommended Steps
 
 - Step374: design release-quality integration for the isolated write target.
+  Completed in
+  [Frozen policy generation artifact body isolated write release-quality integration design](frozen_policy_generation_artifact_body_isolated_write_release_quality_integration_design.md).
 - Step375: integrate the release-quality wrapper if the standalone target
   remains stable.
 - Step376: record a public-safe remote/manual status marker after
@@ -302,6 +304,7 @@ temporary outputs and did not leave generated artifact body files behind.
 
 ## 19. Related Documents
 
+- [Frozen policy generation artifact body isolated write release-quality integration design](frozen_policy_generation_artifact_body_isolated_write_release_quality_integration_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)

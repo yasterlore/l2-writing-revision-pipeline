@@ -270,3 +270,9 @@ and not production readiness evidence.
   [Frozen policy generation artifact body isolated write validator Makefile target design](../frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md).
   This marker remains evidence only for the remote no-write fixture validator
   target and does not become isolated write validator target evidence.
+- Step374: linked the docs-only isolated write validator release-quality
+  integration design:
+  [Frozen policy generation artifact body isolated write release-quality integration design](../frozen_policy_generation_artifact_body_isolated_write_release_quality_integration_design.md).
+  This marker remains evidence only for the remote no-write fixture validator
+  target and does not become isolated write validator release-quality
+  evidence.

@@ -566,3 +566,17 @@ CLI over 22 cases / 110 JSON and expects `matched_cases=22` and
 availability prerequisite. This does not implement a Makefile target, add
 release-quality integration, change workflow YAML, change fixture JSON, write
 manifests, connect artifact writer CLI, use real data, or compute metrics.
+
+## 37. Step374 Isolated Write Release-Quality Integration Design Status
+
+Step374 adds the docs-only release-quality integration design for the
+standalone isolated write validator target:
+
+[Frozen policy generation artifact body isolated write release-quality integration design](frozen_policy_generation_artifact_body_isolated_write_release_quality_integration_design.md).
+
+The design keeps artifact body file writing, isolated temp validation, manifest
+writer work, and artifact writer CLI integration as separate boundaries. It
+proposes adding the isolated write validator target after no-write file
+writing fixture validation and before config/scoring smoke checks in a future
+wrapper step. Step374 does not change the wrapper, workflow YAML, Makefile,
+Python code/tests, fixture JSON, manifests, or artifact writer CLI.
