@@ -451,7 +451,19 @@ Docs continue to avoid JSON body examples, artifact body payload examples,
 raw logs, raw rows, logits, private paths, absolute local paths, raw learner
 text, and real participant data.
 
-## 24. Related Documents
+## 24. Step370 Validator Implementation Status
+
+Step370 implements the validator for this contract:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+The validator executes fixture cases under isolated temp roots, validates
+expected categories, checks stdout/stderr and written-file safety, and cleans
+up generated files. It does not modify the fixture JSON contract, does not
+add a Makefile target, does not add release-quality integration, does not
+write manifests, and does not connect the artifact writer CLI.
+
+## 25. Related Documents
 
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
