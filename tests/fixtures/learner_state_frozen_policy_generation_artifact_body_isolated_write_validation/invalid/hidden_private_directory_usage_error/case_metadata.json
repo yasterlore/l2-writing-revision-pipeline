@@ -1,0 +1,60 @@
+{
+  "allowed_failure_reason_codes": [
+    "unsafe_hidden_private_directory"
+  ],
+  "case_id": "invalid/hidden_private_directory_usage_error",
+  "case_kind": "invalid",
+  "description": "Synthetic metadata-only isolated write validation case for hidden_private_directory_usage_error.",
+  "expected_category": "usage_error_no_write",
+  "expected_exit_code": 2,
+  "expected_status": "usage_error",
+  "forbidden_output_markers": [
+    "artifact_body_payload",
+    "artifact_body_request_body",
+    "artifact_writer_result_pointer_body",
+    "isolated_write_request_body",
+    "expected_isolated_write_result_body",
+    "generated_policy_body",
+    "manifest_body",
+    "raw_rows",
+    "logits_dump",
+    "probability_dump",
+    "raw_learner_text",
+    "absolute_local_path",
+    "real_participant_data"
+  ],
+  "forbidden_summary_fields": [
+    "artifact_body_payload",
+    "file_contents",
+    "manifest_body",
+    "absolute_output_path",
+    "private_output_path",
+    "raw_rows",
+    "logits",
+    "raw_learner_text"
+  ],
+  "notes": [
+    "This fixture contains synthetic metadata only and no artifact body payload.",
+    "The future validator should run this case inside an isolated temp root.",
+    "Safe refusal is the expected matched outcome."
+  ],
+  "required_summary_fields": [
+    "mode",
+    "body_status",
+    "generation_status",
+    "validation_status",
+    "artifact_file_written",
+    "artifact_body_output_path_available",
+    "manifest_file_written",
+    "manifest_body_generated",
+    "stdout_body_suppressed",
+    "reason_codes",
+    "failed_checks"
+  ],
+  "safety_expectation": "synthetic_only_metadata_only_no_oracle_body_free_summary",
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_isolated_write_case_metadata_v0.1",
+  "should_cleanup": true,
+  "should_leave_residue": false,
+  "should_write_file": false,
+  "source_fixture_case": "learner_state_frozen_policy_generation_artifact_body/valid/safe_metadata_body_summary"
+}

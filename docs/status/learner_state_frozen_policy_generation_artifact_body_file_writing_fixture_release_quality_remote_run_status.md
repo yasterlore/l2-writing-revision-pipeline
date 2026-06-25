@@ -212,6 +212,9 @@ and not production readiness evidence.
   validator planning, not as part of this remote no-write fixture marker.
 - Treat Step368 isolated temp write fixture contract design as future
   fixture planning, not as part of this remote no-write fixture marker.
+- Treat Step369 isolated temp write fixture JSON creation as future local
+  validator input only. It creates fixture JSON but does not add isolated temp
+  write validation to release-quality.
 - Keep future file-writing smoke release-quality integration separate from
   this no-write fixture-validation marker.
 - Keep future isolated temp write validation separate.
@@ -252,3 +255,7 @@ and not production readiness evidence.
   [Frozen policy generation artifact body isolated temp write fixture contract design](../frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md).
   The marker remains evidence only for the remote no-write fixture validator
   target and does not become isolated write fixture evidence.
+- Step369: noted the synthetic-only isolated write validation fixture root
+  creation. This marker remains evidence only for the remote no-write fixture
+  validator target and does not become isolated temp write validation
+  evidence.

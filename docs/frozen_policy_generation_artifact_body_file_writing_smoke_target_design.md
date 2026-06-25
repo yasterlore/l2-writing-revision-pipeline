@@ -309,10 +309,23 @@ multi-case isolated temp validation. It does not create fixture JSON, change
 this smoke target, add release-quality integration, write manifests, connect
 artifact writer CLI, use real data, or compute metrics.
 
-## 20. Related Documents
+## 20. Step369 Isolated Temp Write Fixture JSON Creation Status
+
+Step369 creates the isolated write validation fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/`
+
+The root contains 22 synthetic-only metadata fixture cases and 110 JSON files.
+It instantiates the Step368 fixture contract for future isolated temp write
+validation. It does not implement the validator, does not add a Makefile
+target, does not add release-quality integration, does not write manifests,
+and does not connect the artifact writer CLI.
+
+## 21. Related Documents
 
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
+- [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)

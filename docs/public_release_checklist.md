@@ -2651,6 +2651,25 @@ examples, generated policy bodies, manifest bodies, JSON body examples, raw
 rows, logits, private paths, absolute local paths, raw learner text, real
 participant data, or performance metric bodies.
 
+For Step369, review the synthetic-only isolated temp write validation fixture
+root:
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/`.
+Confirm it contains only fixture JSON for future isolated temp write
+validation: 5 valid cases, 17 invalid / expected-failure cases, 22 total
+cases, and 110 JSON files. Confirm every case has `case_metadata.json`,
+`artifact_body_request.json`, `artifact_writer_result_pointer.json`,
+`isolated_write_request.json`, and `expected_isolated_write_result.json`.
+Confirm it does not implement a validator, add a Makefile target, add
+release-quality integration, change workflow YAML, change Python code/tests,
+write manifests, connect artifact writer CLI, use real data, compute metrics,
+or claim production readiness. Confirm docs do not include raw logs, full job
+output, copied log blocks, screenshots containing raw logs, request bodies,
+pointer bodies, isolated write request bodies, expected isolated write result
+bodies, case metadata bodies, artifact body payload examples, generated policy
+bodies, manifest bodies, JSON body examples, raw rows, logits, private paths,
+absolute local paths, raw learner text, real participant data, or performance
+metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

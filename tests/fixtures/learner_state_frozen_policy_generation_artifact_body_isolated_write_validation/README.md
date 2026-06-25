@@ -1,0 +1,104 @@
+# Learner-State Frozen Policy Generation Artifact Body Isolated Write Validation Fixtures
+
+This fixture root contains synthetic-only, metadata-only, no-oracle fixtures for future isolated temp write validation of frozen policy generation artifact body file writing.
+
+## Fixture Root
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/`
+
+## Purpose
+
+These fixtures describe valid and expected-failure cases for a future validator that will run artifact body generation CLI file writing inside an isolated temp root. They are fixture contracts only. They do not implement the validator, do not add a Makefile target, do not add release-quality integration, do not write manifests, and do not connect the artifact writer CLI.
+
+## Case Counts
+
+- valid cases: 5
+- invalid / expected-failure cases: 17
+- total cases: 22
+- JSON files per case: 5
+- total JSON files: 110
+
+## Files Per Case
+
+Each case directory contains:
+
+- `case_metadata.json`
+- `artifact_body_request.json`
+- `artifact_writer_result_pointer.json`
+- `isolated_write_request.json`
+- `expected_isolated_write_result.json`
+
+## Schema Versions
+
+- `learner_state_frozen_policy_generation_artifact_body_isolated_write_case_metadata_v0.1`
+- `learner_state_frozen_policy_generation_artifact_body_isolated_write_request_v0.1`
+- `learner_state_frozen_policy_generation_artifact_body_isolated_write_expected_result_v0.1`
+
+The artifact body request and writer result pointer files use the existing artifact body generation fixture-compatible schema versions.
+
+## Valid Cases
+
+- `valid/safe_metadata_flat_relative_output`
+- `valid/safe_metadata_nested_relative_output`
+- `valid/safe_metadata_output_parent_created`
+- `valid/safe_metadata_no_output_no_file`
+- `valid/safe_metadata_existing_output_rejected_after_precreate`
+
+The existing-output case is a valid contract case because the expected behavior is safe refusal without overwrite.
+
+## Invalid / Expected-Failure Cases
+
+- `invalid/suppressed_default_with_output_usage_error`
+- `invalid/suppressed_explicit_with_output_usage_error`
+- `invalid/absolute_output_path_usage_error`
+- `invalid/home_output_path_usage_error`
+- `invalid/drive_root_output_path_usage_error`
+- `invalid/parent_traversal_output_path_usage_error`
+- `invalid/private_marker_output_path_usage_error`
+- `invalid/cloud_marker_output_path_usage_error`
+- `invalid/hidden_private_directory_usage_error`
+- `invalid/non_json_extension_usage_error`
+- `invalid/unsafe_filename_usage_error`
+- `invalid/too_long_path_usage_error`
+- `invalid/existing_output_without_overwrite_usage_error`
+- `invalid/generation_fail_closed_no_file`
+- `invalid/unsafe_body_audit_no_file`
+- `invalid/manifest_write_attempt_not_supported`
+- `invalid/generated_policy_body_write_attempt_not_supported`
+
+Expected failures should count as matched cases when the future validator observes the expected safe refusal category.
+
+## Safety Rules
+
+- No real participant data.
+- No raw learner text.
+- No raw rows.
+- No logits or probability dumps.
+- No artifact body payload examples.
+- No request, pointer, isolated write request, or expected result body examples in docs.
+- No generated policy body.
+- No manifest body.
+- No actual private paths or absolute local paths.
+- No performance metric body.
+
+Invalid cases use synthetic metadata, case IDs, and reason-code names rather than real unsafe content.
+
+## Relationship To Existing Fixtures
+
+This root is separate from the existing no-write file writing fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/`
+
+The no-write fixture root validates static file-writing/path-policy contracts. This isolated write fixture root is for a future validator that will execute write attempts inside a temporary isolated root.
+
+## Future Validator
+
+The proposed future validator module is:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+It should produce summary-only, count-only output and must not print fixture JSON bodies or written artifact body payloads.
+
+## Future CLI / Makefile / Release Quality
+
+No CLI, Makefile target, or release-quality integration is added by this fixture root. Those are future steps after the isolated validator exists and is stable.

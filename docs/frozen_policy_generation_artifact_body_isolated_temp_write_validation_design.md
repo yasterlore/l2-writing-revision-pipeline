@@ -349,8 +349,9 @@ implemented, run locally, and gain a standalone Makefile target.
 ## 20. Next Recommended Steps
 
 - Step368: isolated temp write validation fixture contract design.
-- Step369: isolated temp write validator implementation.
-- Step370: standalone Makefile target design for the isolated validator.
+- Step369: isolated temp write validation fixture JSON creation.
+- Step370: isolated temp write validator implementation.
+- Step371: standalone Makefile target design for the isolated validator.
 - Later: Makefile target implementation, release-quality integration design,
   wrapper integration, and remote/manual status marker.
 
@@ -368,9 +369,22 @@ summary contract. It does not create fixture JSON, implement a validator, add
 a Makefile target, add release-quality integration, write manifests, connect
 artifact writer CLI, use real data, or compute metrics.
 
-## 22. Related Documents
+## 22. Step369 Fixture JSON Creation Status
+
+Step369 creates the synthetic-only isolated write validation fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/`
+
+The root contains 5 valid cases, 17 invalid / expected-failure cases, and 110
+JSON files. These fixtures instantiate the Step368 contract only. Step369
+does not implement this validator, does not add a Makefile target, does not
+add release-quality integration, does not write manifests, and does not
+connect the artifact writer CLI.
+
+## 23. Related Documents
 
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
+- [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
 - [Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
