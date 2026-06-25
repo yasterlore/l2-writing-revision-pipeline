@@ -875,6 +875,15 @@ written, no artifact body is produced, and no performance metric is computed.
   fixture JSON, does not run isolated temp write validation, does not write
   manifests, does not connect artifact writer CLI, does not use real data,
   compute metrics, or claim production readiness.
+- Step366: implemented the standalone Makefile smoke target for artifact body
+  file writing. The target runs one safe-metadata write, parses the generated
+  file without printing content, scans for forbidden payload field names
+  without printing matches, and cleans up the generated smoke output. It does
+  not add release-quality integration, does not change workflow YAML, does
+  not change Python code/tests, does not change fixture JSON, does not run
+  isolated temp write validation, does not write manifests, does not connect
+  artifact writer CLI, does not use real data, compute metrics, or claim
+  production readiness.
 
 ## Related Documents
 

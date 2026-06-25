@@ -325,3 +325,14 @@ should exercise one safe-metadata write, parse the generated file, and clean
 up the output under `tmp/artifact_body_generation/`. It should remain
 separate from this no-write fixture contract validator and should not be
 added to release-quality in the same step.
+
+## 22. Step366 Smoke Target Implementation Status
+
+Step366 implements that separate standalone smoke target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke`
+
+This target is distinct from the no-write fixture validator target described
+here. The fixture validator target remains in release-quality and remains
+no-write. The smoke target performs one write/parse/cleanup path and is not
+added to release-quality in Step366.

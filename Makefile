@@ -26,6 +26,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
+.PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -61,6 +62,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation  Run artifact body generation CLI smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata  Run artifact body generation safe-metadata CLI smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures  Validate artifact body file writing fixture contracts"
+	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke  Run artifact body safe-metadata file writing smoke"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -155,6 +157,28 @@ check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metad
 
 check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_file_writing_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing
+
+check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke:
+	@set -e; \
+	output="tmp/artifact_body_generation/smoke/safe_metadata_artifact_body.json"; \
+	cleanup() { rm -f "$$output"; rmdir tmp/artifact_body_generation/smoke 2>/dev/null || true; rmdir tmp/artifact_body_generation 2>/dev/null || true; }; \
+	trap cleanup EXIT; \
+	rm -f "$$output"; \
+	mkdir -p tmp/artifact_body_generation/smoke; \
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body --request tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/safe_metadata_body_summary/artifact_body_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/safe_metadata_body_summary/artifact_writer_result_pointer.json --mode safe-metadata --artifact-body-out smoke/safe_metadata_artifact_body.json; \
+	python3 -m json.tool "$$output" >/dev/null; \
+	if grep -Eq '"raw_rows"|"raw_event_rows"|"logits"|"probabilities"|"private_path"|"manifest_body"|"generated_policy_body"|"request_body"|"pointer_body"|"artifact_body_request"|"artifact_writer_result_pointer"|"expected_file_write_result"' "$$output"; then \
+		echo "artifact_body_file_writing_smoke_safety_scan=fail"; \
+		exit 1; \
+	fi; \
+	echo "artifact_body_file_writing_smoke_json_parse=pass"; \
+	echo "artifact_body_file_writing_smoke_safety_scan=pass"; \
+	cleanup; \
+	if test -e "$$output"; then \
+		echo "artifact_body_file_writing_smoke_cleanup=fail"; \
+		exit 1; \
+	fi; \
+	echo "artifact_body_file_writing_smoke_cleanup=pass"
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality

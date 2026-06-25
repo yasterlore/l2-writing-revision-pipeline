@@ -206,6 +206,8 @@ and not production readiness evidence.
   implementation work from this remote fixture-validation marker.
 - Use the Step365 standalone smoke target design before adding a local
   file-writing smoke target.
+- Treat Step366 standalone smoke target implementation as separate local
+  smoke coverage, not as part of this remote no-write fixture marker.
 - Keep future file-writing smoke release-quality integration separate from
   this no-write fixture-validation marker.
 - Keep future isolated temp write validation separate.
@@ -235,3 +237,6 @@ and not production readiness evidence.
   [Frozen policy generation artifact body file writing smoke target design](../frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md).
   The marker remains evidence only for the remote no-write fixture validator
   target and does not become file-writing smoke evidence.
+- Step366: noted that the standalone file-writing smoke target is implemented
+  as local coverage only. This marker remains evidence only for the remote
+  no-write fixture validator target.
