@@ -425,3 +425,16 @@ matched cases, 0 mismatches, 0 input errors, and 0 residue files. Step372
 does not add a Makefile target, does not add release-quality integration,
 does not change workflow YAML, does not change fixture JSON, does not write
 manifests, and does not connect artifact writer CLI.
+
+## 26. Step373 Standalone Makefile Target Status
+
+Step373 adds the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation`
+
+The target runs the isolated write validator CLI against the 22-case fixture
+root and preserves summary-only output, isolated temp execution, cleanup
+checking, and `residue_file_count=0`. Step373 does not add release-quality
+integration, does not change workflow YAML, does not change Python code/tests,
+does not change fixture JSON, does not write manifests, and does not connect
+artifact writer CLI.

@@ -2698,6 +2698,21 @@ policy bodies, manifest bodies, JSON body examples, raw rows, logits, private
 paths, absolute local paths, raw learner text, real participant data, or
 performance metric bodies.
 
+For Step373, review the standalone Makefile target implementation for the
+isolated write validator. Confirm `make help` lists
+`check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation`
+and that the target validates the 22-case isolated write fixture root with 22
+matched cases, 0 mismatches, 0 input errors, and 0 residue files. Confirm it
+does not add release-quality integration, change workflow YAML, change Python
+code/tests, change fixture JSON, write manifests, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness. Confirm docs
+and target output do not include raw logs, full job output, copied log blocks,
+screenshots containing raw logs, request bodies, pointer bodies, isolated
+write request bodies, expected isolated write result bodies, case metadata
+bodies, artifact body payload examples, generated policy bodies, manifest
+bodies, JSON body examples, raw rows, logits, private paths, absolute local
+paths, raw learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

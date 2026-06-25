@@ -27,6 +27,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke
+.PHONY: check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -63,6 +64,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata  Run artifact body generation safe-metadata CLI smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures  Validate artifact body file writing fixture contracts"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke  Run artifact body safe-metadata file writing smoke"
+	@echo "  check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation  Validate isolated artifact body file writing cases"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -179,6 +181,9 @@ check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke:
 		exit 1; \
 	fi; \
 	echo "artifact_body_file_writing_smoke_cleanup=pass"
+
+check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_isolated_write_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality

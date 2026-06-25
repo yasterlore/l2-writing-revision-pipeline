@@ -489,3 +489,15 @@ cleanup, and residue count, and emits summary-only metadata. Step372 does
 not change fixture JSON, does not add a Makefile target, does not add
 release-quality integration, does not write manifests, and does not connect
 artifact writer CLI.
+
+## 27. Step373 Standalone Makefile Target Status
+
+Step373 adds the standalone Makefile target that runs the isolated write
+validator CLI against this fixture root:
+
+`check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation`
+
+The target validates the 22 synthetic metadata-only cases and expects 22
+matched cases, 0 mismatches, 0 input errors, and 0 residue files. Step373
+does not change fixture JSON, does not add release-quality integration, does
+not write manifests, and does not connect artifact writer CLI.

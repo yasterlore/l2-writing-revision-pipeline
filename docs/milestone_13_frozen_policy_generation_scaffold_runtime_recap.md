@@ -921,6 +921,13 @@ written, no artifact body is produced, and no performance metric is computed.
   release-quality integration, change workflow YAML, change fixture JSON,
   write manifests, connect artifact writer CLI, use real data, compute
   metrics, or claim production readiness.
+- Step373: added the standalone Makefile target for the isolated write
+  validator. The target runs the summary-only isolated write validator CLI
+  against the 22-case / 110-JSON fixture root and keeps release-quality
+  integration separate. It does not change workflow YAML, change
+  release-quality wrapper, change Python code/tests, change fixture JSON,
+  write manifests, connect artifact writer CLI, use real data, compute
+  metrics, or claim production readiness.
 
 ## Related Documents
 

@@ -124,3 +124,14 @@ The validator runs this fixture root in isolated temp roots and confirms the
 22 expected outcomes without printing fixture JSON bodies or written artifact
 body payloads. Step372 does not change the fixture JSON files and does not add
 a Makefile target or release-quality integration.
+
+## Standalone Makefile Target
+
+Step373 adds the standalone target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation`
+
+The target runs the isolated write validator CLI against this fixture root and
+expects 22 matched cases, 0 mismatches, 0 input errors, and 0 residue files.
+The target is not added to release-quality in Step373, and fixture JSON files
+remain unchanged.
