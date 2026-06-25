@@ -513,3 +513,16 @@ YAML, does not change Python code/tests, does not change fixture JSON, does
 not implement isolated temp write validation, does not write manifests, does
 not connect artifact writer CLI, does not use real data, and does not compute
 metrics.
+
+## 33. Step367 Isolated Temp Write Validation Design Status
+
+Step367 adds the docs-only design for future isolated temp write validation:
+
+[Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md).
+
+The design separates multi-case isolated temp-root write validation from the
+single-path smoke target and from the static no-write fixture validator. It
+does not implement a validator, create fixture JSON, add a Makefile target,
+change release-quality, change workflow YAML, change Python code/tests,
+change fixture JSON, write manifests, connect artifact writer CLI, use real
+data, or compute metrics.

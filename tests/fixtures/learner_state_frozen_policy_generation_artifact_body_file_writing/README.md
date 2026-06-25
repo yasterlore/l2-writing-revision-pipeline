@@ -241,6 +241,17 @@ content, and cleans up the generated output. This fixture root remains
 unchanged and remains the no-write contract validator root. The smoke target
 is not added to release-quality in Step366.
 
+Step367 designs future isolated temp write validation:
+
+`docs/frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md`
+
+That future validator should exercise multiple valid and invalid write cases
+inside an isolated temp root, while this fixture root remains unchanged. The
+design does not create fixture JSON, does not implement a validator, does not
+add a Makefile target, does not add release-quality integration, does not
+write manifests, does not connect artifact writer CLI, does not use real
+data, and does not compute metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are
