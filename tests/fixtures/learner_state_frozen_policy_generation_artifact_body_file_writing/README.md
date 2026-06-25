@@ -252,6 +252,17 @@ add a Makefile target, does not add release-quality integration, does not
 write manifests, does not connect artifact writer CLI, does not use real
 data, and does not compute metrics.
 
+Step368 designs the future isolated temp write fixture contract:
+
+`docs/frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md`
+
+That future fixture contract should live in a separate fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/`
+
+Step368 does not create that root, does not create fixture JSON, and does not
+modify this no-write fixture root.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

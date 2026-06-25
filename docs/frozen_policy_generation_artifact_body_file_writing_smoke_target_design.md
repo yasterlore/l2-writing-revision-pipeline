@@ -298,8 +298,20 @@ integration, does not change workflow YAML, does not change Python code/tests,
 does not change fixture JSON, does not write manifests, does not connect
 artifact writer CLI, does not use real data, and does not compute metrics.
 
-## 19. Related Documents
+## 19. Step368 Isolated Temp Write Fixture Contract Design Status
 
+Step368 adds the docs-only fixture contract design:
+
+[Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md).
+
+The contract design keeps the standalone smoke target separate from future
+multi-case isolated temp validation. It does not create fixture JSON, change
+this smoke target, add release-quality integration, write manifests, connect
+artifact writer CLI, use real data, or compute metrics.
+
+## 20. Related Documents
+
+- [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

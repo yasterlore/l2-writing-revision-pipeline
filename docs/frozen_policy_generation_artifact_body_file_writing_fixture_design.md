@@ -445,3 +445,13 @@ Step367 adds the docs-only isolated temp write validation design:
 The future isolated validator should exercise multiple valid and invalid
 write cases under a temp root. This fixture root remains unchanged and remains
 the static no-write contract fixture root.
+
+## 32. Step368 Isolated Temp Write Fixture Contract Design Status
+
+Step368 adds the docs-only fixture contract design:
+
+[Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md).
+
+That future fixture root should be separate from this no-write fixture root.
+This document's fixture root remains unchanged, and no fixture JSON is created
+or modified in Step368.
