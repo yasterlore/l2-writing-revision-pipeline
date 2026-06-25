@@ -884,6 +884,12 @@ written, no artifact body is produced, and no performance metric is computed.
   isolated temp write validation, does not write manifests, does not connect
   artifact writer CLI, does not use real data, compute metrics, or claim
   production readiness.
+- Step367: added the docs-only isolated temp write validation design for
+  future multi-case artifact body file-writing validation under an isolated
+  temp root. It does not implement a validator, add a Makefile target, add
+  release-quality integration, change workflow YAML, change Python code/tests,
+  change fixture JSON, write manifests, connect artifact writer CLI, use real
+  data, compute metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -895,6 +901,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
+- [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

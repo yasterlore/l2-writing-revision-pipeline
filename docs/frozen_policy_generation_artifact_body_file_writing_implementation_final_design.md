@@ -374,7 +374,8 @@ body file should not quietly imply manifest generation.
 
 - Step364: minimal CLI file writing implementation.
 - Step365: standalone file-writing smoke target design.
-- Step366: fixture/isolated temp write validation design.
+- Step366: standalone file-writing smoke target implementation.
+- Step367: isolated temp write validation design.
 - Later: release-quality integration design for a standalone file-writing
   smoke target after the implementation and isolated checks are stable.
 
@@ -421,10 +422,22 @@ implement isolated temp write validation, does not write manifests, does not
 connect artifact writer CLI, does not use real data, and does not compute
 metrics.
 
-## 22. Related Documents
+## 22. Step367 Isolated Temp Write Validation Design Status
+
+Step367 adds the docs-only isolated temp write validation design:
+
+[Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md).
+
+The design covers future multi-case validation under an isolated temp root.
+It remains separate from the single-path smoke target, the no-write fixture
+validator, release-quality, manifest writer work, and artifact writer CLI
+integration.
+
+## 23. Related Documents
 
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
+- [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)

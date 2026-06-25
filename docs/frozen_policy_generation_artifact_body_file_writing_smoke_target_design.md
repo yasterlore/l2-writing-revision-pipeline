@@ -180,6 +180,9 @@ Isolated temp write validation remains future work. A future isolated
 validator can exercise many valid and invalid write cases without writing into
 repository fixture directories.
 
+Step367 adds the docs-only design for that future validator:
+[Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md).
+
 ## 12. Future Tests And Checks For Implementation
 
 Future implementation should verify:
@@ -282,8 +285,22 @@ fixture JSON, does not implement isolated temp write validation, does not
 write manifests, does not connect artifact writer CLI, does not use real
 data, and does not compute metrics.
 
-## 18. Related Documents
+## 18. Step367 Isolated Temp Write Validation Design Status
 
+Step367 adds the docs-only isolated temp write validation design:
+
+[Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md).
+
+The design covers a future isolated temp-root validator for multiple valid
+and invalid artifact body file-writing cases. It does not implement the
+validator, does not add a Makefile target, does not add release-quality
+integration, does not change workflow YAML, does not change Python code/tests,
+does not change fixture JSON, does not write manifests, does not connect
+artifact writer CLI, does not use real data, and does not compute metrics.
+
+## 19. Related Documents
+
+- [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)

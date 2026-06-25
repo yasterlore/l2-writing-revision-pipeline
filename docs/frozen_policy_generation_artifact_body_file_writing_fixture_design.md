@@ -386,6 +386,7 @@ the status marker and does not change this fixture root.
 
 ## 27. Related Documents
 
+- [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md)
@@ -434,3 +435,13 @@ The design does not change this fixture root. It keeps fixture validation
 separate from the future write smoke: fixture validation remains no-write,
 while the future smoke target should write one safe-metadata file, parse it,
 and clean it up under the fixed safe root.
+
+## 31. Step367 Isolated Temp Write Validation Design Status
+
+Step367 adds the docs-only isolated temp write validation design:
+
+[Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md).
+
+The future isolated validator should exercise multiple valid and invalid
+write cases under a temp root. This fixture root remains unchanged and remains
+the static no-write contract fixture root.

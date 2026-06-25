@@ -426,3 +426,13 @@ The workflow design keeps future status markers pass-only/count-only and
 forbids raw logs, fixture bodies, artifact body payloads, manifest bodies,
 raw rows, logits, private paths, raw learner text, real data, and
 performance metric bodies.
+
+## 28. Step367 Isolated Temp Write Validation Design Status
+
+Step367 adds the docs-only isolated temp write validation design:
+
+[Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md).
+
+This CLI remains static/no-write. The future isolated validator should use a
+separate module/CLI so this fixture validator CLI remains body-free and
+release-quality-safe.

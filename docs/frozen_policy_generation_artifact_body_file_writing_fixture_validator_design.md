@@ -425,6 +425,7 @@ or run the remote workflow.
 
 ## 26. Related Documents
 
+- [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md)
@@ -459,3 +460,13 @@ while the future artifact body generation CLI file writing path is
 implemented separately. It does not change the validator, Makefile,
 release-quality wrapper, workflow YAML, Python tests, fixture JSON, or
 manifest/artifact writer boundaries.
+
+## 29. Step367 Isolated Temp Write Validation Design Status
+
+Step367 adds the docs-only isolated temp write validation design:
+
+[Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md).
+
+That future validator is separate from this no-write fixture validator. It
+should run CLI writes only under an isolated temp root and should not change
+this static validator or its release-quality target.

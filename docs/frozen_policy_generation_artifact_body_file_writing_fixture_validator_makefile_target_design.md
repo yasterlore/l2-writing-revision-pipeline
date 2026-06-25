@@ -336,3 +336,13 @@ This target is distinct from the no-write fixture validator target described
 here. The fixture validator target remains in release-quality and remains
 no-write. The smoke target performs one write/parse/cleanup path and is not
 added to release-quality in Step366.
+
+## 23. Step367 Isolated Temp Write Validation Design Status
+
+Step367 adds the docs-only isolated temp write validation design:
+
+[Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md).
+
+The future isolated validator should get its own module and later its own
+standalone Makefile target. This no-write fixture validator target remains
+unchanged and remains in release-quality.
