@@ -897,6 +897,12 @@ written, no artifact body is produced, and no performance metric is computed.
   add a Makefile target, add release-quality integration, change workflow
   YAML, change Python code/tests, write manifests, connect artifact writer
   CLI, use real data, compute metrics, or claim production readiness.
+- Step369: created the synthetic-only isolated write validation fixture root
+  with 5 valid cases, 17 invalid / expected-failure cases, and 110 JSON files.
+  The root instantiates the Step368 contract only; it does not implement the
+  isolated temp write validator, add a Makefile target, add release-quality
+  integration, write manifests, connect artifact writer CLI, use real data,
+  compute metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -910,6 +916,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
+- [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

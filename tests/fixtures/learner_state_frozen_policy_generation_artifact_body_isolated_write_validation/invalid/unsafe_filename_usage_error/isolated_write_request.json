@@ -1,0 +1,20 @@
+{
+  "allow_overwrite": false,
+  "allow_parent_creation": true,
+  "artifact_body_out": "invalid/artifact body.json",
+  "case_id": "invalid/unsafe_filename_usage_error",
+  "cleanup_policy": "cleanup_after_case_and_after_run",
+  "cli_mode": "safe-metadata",
+  "expect_artifact_file_written": false,
+  "expect_body_payload_printed": false,
+  "expect_manifest_body": false,
+  "expect_manifest_file": false,
+  "expected_safe_root": "tmp/artifact_body_generation",
+  "no_oracle_required": true,
+  "parse_written_file": false,
+  "precreate_output_file": false,
+  "scan_stdout_stderr": true,
+  "scan_written_file": false,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_isolated_write_request_v0.1",
+  "synthetic_only": true
+}

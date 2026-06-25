@@ -51,7 +51,8 @@ Reasons:
   validation.
 - It identifies the artifact body generation CLI file-writing boundary.
 
-This step does not create that root.
+Step368 did not create that root. Step369 creates it as a fixture JSON root,
+while still not implementing the validator.
 
 ## 4. Proposed Case Directory Structure
 
@@ -424,13 +425,33 @@ writing in a controlled temporary area and then clean it up.
 
 ## 22. Next Recommended Steps
 
-- Step369: fixture JSON creation or validator implementation.
+- Step369: fixture JSON creation. Completed as a synthetic-only,
+  metadata-only fixture root with 22 cases and 110 JSON files.
 - Step370: isolated temp write validator implementation.
 - Step371: Makefile target design for the isolated validator.
 - Later: Makefile target implementation, release-quality integration design,
   wrapper integration, and remote/manual status marker.
 
-## 23. Related Documents
+## 23. Step369 Fixture JSON Creation Status
+
+Step369 creates the fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/`
+
+The root contains 5 valid contract cases, 17 invalid / expected-failure
+cases, and 110 JSON files. Each case contains the five contract files defined
+by this document. The files are synthetic-only, metadata-only, and no-oracle.
+
+Step369 does not implement the validator, does not add a Makefile target,
+does not add release-quality integration, does not change workflow YAML, does
+not change Python code/tests, does not write manifests, and does not connect
+the artifact writer CLI.
+
+Docs continue to avoid JSON body examples, artifact body payload examples,
+raw logs, raw rows, logits, private paths, absolute local paths, raw learner
+text, and real participant data.
+
+## 24. Related Documents
 
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
@@ -438,5 +459,6 @@ writing in a controlled temporary area and then clean it up.
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
+- [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md)
 - [Public release checklist](public_release_checklist.md)

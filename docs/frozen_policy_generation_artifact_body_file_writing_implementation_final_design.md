@@ -444,12 +444,24 @@ isolated temp write validation. It does not create fixture JSON, implement a
 validator, change Makefile, change release-quality, write manifests, connect
 artifact writer CLI, use real data, or compute metrics.
 
-## 24. Related Documents
+## 24. Step369 Isolated Temp Write Fixture JSON Creation Status
+
+Step369 creates the fixture JSON root for future isolated temp write
+validation:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/`
+
+The root contains 5 valid cases, 17 invalid / expected-failure cases, and 110
+JSON files. It remains separate from the minimal CLI file writing
+implementation and does not implement the isolated validator.
+
+## 25. Related Documents
 
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
+- [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)

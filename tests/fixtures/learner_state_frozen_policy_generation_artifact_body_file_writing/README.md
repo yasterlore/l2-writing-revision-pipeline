@@ -263,6 +263,14 @@ That future fixture contract should live in a separate fixture root:
 Step368 does not create that root, does not create fixture JSON, and does not
 modify this no-write fixture root.
 
+Step369 creates that separate future isolated write validation fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/`
+
+That root contains 22 synthetic-only metadata cases and 110 JSON files. This
+no-write fixture root remains unchanged and continues to serve the static
+file-writing/path-policy validator.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

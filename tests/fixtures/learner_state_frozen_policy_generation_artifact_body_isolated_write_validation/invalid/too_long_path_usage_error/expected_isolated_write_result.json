@@ -1,0 +1,47 @@
+{
+  "case_id": "invalid/too_long_path_usage_error",
+  "expected_category": "usage_error_no_write",
+  "expected_exit_code": 2,
+  "expected_failed_checks": [
+    "unsafe_output_path_too_long"
+  ],
+  "expected_file_allowed_keys_only": false,
+  "expected_file_cleanup_ok": true,
+  "expected_file_parse_ok": false,
+  "expected_file_written": false,
+  "expected_forbidden_counts_zero": true,
+  "expected_manifest_body_generated": false,
+  "expected_manifest_file_written": false,
+  "expected_no_absolute_paths": true,
+  "expected_no_logits": true,
+  "expected_no_private_paths": true,
+  "expected_no_raw_learner_text": true,
+  "expected_no_raw_rows": true,
+  "expected_no_real_data": true,
+  "expected_reason_codes": [
+    "unsafe_output_path_too_long"
+  ],
+  "expected_residue_file_count": 0,
+  "expected_safe_relative_path_only": true,
+  "expected_status": "usage_error",
+  "expected_stderr_body_free": true,
+  "expected_stdout_body_free": true,
+  "expected_summary_flags": {
+    "body_payload_printed": false,
+    "cleanup_checked": true,
+    "file_content_policy_checked": true,
+    "no_absolute_paths": true,
+    "no_generated_policy_body": true,
+    "no_logits_dump": true,
+    "no_manifest_body": true,
+    "no_oracle_checked": true,
+    "no_private_paths": true,
+    "no_raw_rows": true,
+    "path_policy_checked": true,
+    "stderr_body_suppressed": true,
+    "stdout_body_suppressed": true,
+    "synthetic_only_checked": true,
+    "temp_root_isolated": true
+  },
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_isolated_write_expected_result_v0.1"
+}
