@@ -321,7 +321,17 @@ validation. It does not implement the validator, does not add a Makefile
 target, does not add release-quality integration, does not write manifests,
 and does not connect the artifact writer CLI.
 
-## 21. Related Documents
+## 21. Step370 Isolated Temp Write Validator Implementation Status
+
+Step370 implements the isolated temp write validator and CLI:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+The smoke target remains a single-path local write/parse/cleanup check. The
+Step370 validator is separate multi-case isolated temp-root validation and is
+not added to release-quality in this step.
+
+## 22. Related Documents
 
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)

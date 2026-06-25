@@ -215,6 +215,9 @@ and not production readiness evidence.
 - Treat Step369 isolated temp write fixture JSON creation as future local
   validator input only. It creates fixture JSON but does not add isolated temp
   write validation to release-quality.
+- Treat Step370 isolated temp write validator implementation as local
+  validation only. It is not part of this remote no-write fixture marker until
+  a separate release-quality integration step occurs.
 - Keep future file-writing smoke release-quality integration separate from
   this no-write fixture-validation marker.
 - Keep future isolated temp write validation separate.
@@ -259,3 +262,5 @@ and not production readiness evidence.
   creation. This marker remains evidence only for the remote no-write fixture
   validator target and does not become isolated temp write validation
   evidence.
+- Step370: noted the isolated temp write validator implementation. This marker
+  remains evidence only for the remote no-write fixture validator target.

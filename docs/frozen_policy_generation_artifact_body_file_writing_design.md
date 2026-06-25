@@ -552,3 +552,13 @@ The root contains 22 synthetic-only metadata cases and 110 JSON files. It
 does not implement isolated temp write validation, does not add a Makefile
 target, does not add release-quality integration, does not write manifests,
 and does not connect the artifact writer CLI.
+
+## 36. Step370 Isolated Temp Write Validator Implementation Status
+
+Step370 implements the isolated temp write validator module and CLI:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+It validates the Step369 fixture root under isolated temp roots and keeps the
+standalone smoke target, no-write fixture validator, Makefile, release-quality
+wrapper, manifest writer, and artifact writer CLI integration separate.

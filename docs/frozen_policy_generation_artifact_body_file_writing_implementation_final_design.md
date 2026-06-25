@@ -455,7 +455,14 @@ The root contains 5 valid cases, 17 invalid / expected-failure cases, and 110
 JSON files. It remains separate from the minimal CLI file writing
 implementation and does not implement the isolated validator.
 
-## 25. Related Documents
+## 25. Step370 Isolated Temp Write Validator Implementation Status
+
+Step370 implements the isolated temp write validator module and CLI for the
+Step369 fixture root. The validator runs cases under isolated temp roots and
+does not add a Makefile target, release-quality integration, manifest writer,
+or artifact writer CLI integration.
+
+## 26. Related Documents
 
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
