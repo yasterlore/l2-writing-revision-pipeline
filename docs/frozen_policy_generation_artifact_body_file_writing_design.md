@@ -556,14 +556,13 @@ and does not connect the artifact writer CLI.
 ## 36. Step371 Isolated Write Validator Makefile Target Design Status
 
 Step371 adds the docs-only standalone Makefile target design for the
-isolated write validator CLI, with module availability as an implementation
-precondition:
+isolated write validator CLI, and Step372 restores and confirms that CLI:
 
 [Frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md).
 
 The design proposes a future target that runs the isolated write validator
-CLI over 22 cases / 110 JSON after availability is confirmed and expects
-`matched_cases=22` and `residue_file_count=0`. It does not implement a
-Makefile target, add release-quality integration, change workflow YAML,
-change Python code/tests, change fixture JSON, write manifests, connect
-artifact writer CLI, use real data, or compute metrics.
+CLI over 22 cases / 110 JSON and expects `matched_cases=22` and
+`residue_file_count=0`. Step372 confirms that the CLI now meets that
+availability prerequisite. This does not implement a Makefile target, add
+release-quality integration, change workflow YAML, change fixture JSON, write
+manifests, connect artifact writer CLI, use real data, or compute metrics.

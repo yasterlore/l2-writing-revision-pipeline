@@ -907,13 +907,20 @@ written, no artifact body is produced, and no performance metric is computed.
   adding orchestration around it. The Step371 target design assumes a
   summary-only validator CLI for the 22-case fixture root, but target
   implementation should first verify that the module is present in the active
-  branch.
+  branch. Step372 performs that reconciliation.
 - Step371: added the docs-only standalone Makefile target design for the
   isolated write validator. The design proposes a future short make command
   for the validator CLI and keeps release-quality integration separate. It
   does not implement a Makefile target, change wrapper/workflow/Python/tests,
   change fixture JSON, write manifests, connect artifact writer CLI, use real
   data, compute metrics, or claim production readiness.
+- Step372: restored and confirmed the isolated write validator module, CLI,
+  and unit tests. The validator runs the 22-case isolated write fixture root
+  under temporary isolated roots and reports 22 matched cases, 0 mismatches,
+  0 input errors, and 0 residue files. It does not add a Makefile target, add
+  release-quality integration, change workflow YAML, change fixture JSON,
+  write manifests, connect artifact writer CLI, use real data, compute
+  metrics, or claim production readiness.
 
 ## Related Documents
 

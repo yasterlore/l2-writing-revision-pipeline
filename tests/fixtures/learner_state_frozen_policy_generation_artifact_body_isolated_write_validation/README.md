@@ -113,3 +113,14 @@ The proposed target would run the isolated write validator CLI against this
 fixture root and expect 22 matched cases with zero residue. The target is not
 implemented by Step371, and release-quality integration remains a later
 separate step.
+
+## Validator Availability
+
+Step372 restores and confirms the validator module and CLI:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+The validator runs this fixture root in isolated temp roots and confirms the
+22 expected outcomes without printing fixture JSON bodies or written artifact
+body payloads. Step372 does not change the fixture JSON files and does not add
+a Makefile target or release-quality integration.

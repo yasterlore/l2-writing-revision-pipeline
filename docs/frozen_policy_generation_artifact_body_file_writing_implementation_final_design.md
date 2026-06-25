@@ -455,15 +455,15 @@ The root contains 5 valid cases, 17 invalid / expected-failure cases, and 110
 JSON files. It remains separate from the minimal CLI file writing
 implementation and does not implement the isolated validator.
 
-## 25. Step370 Isolated Write Validator Availability Note
+## 25. Step372 Isolated Write Validator Availability Status
 
-The Step371 target design assumes the isolated write validator module and CLI:
+Step372 restores and confirms the isolated write validator module and CLI:
 
 `learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
 
-Before a Makefile target is implemented, the active branch should verify that
-this module is present and that the CLI can run the 22-case fixture root with
-summary-only output. The target should not be added if the module is absent.
+The CLI runs the 22-case fixture root with summary-only output and reports
+22 matched cases, 0 mismatches, 0 input errors, and 0 residue files. The
+future Makefile target can now be implemented as a separate step.
 
 ## 26. Step371 Isolated Write Validator Makefile Target Design Status
 

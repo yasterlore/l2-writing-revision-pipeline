@@ -2684,6 +2684,20 @@ body payload examples, generated policy bodies, manifest bodies, JSON body
 examples, raw rows, logits, private paths, absolute local paths, raw learner
 text, real participant data, or performance metric bodies.
 
+For Step372, review the isolated write validator availability reconciliation.
+Confirm the module and tests exist, the CLI validates the 22-case isolated
+write fixture root with 22 matched cases and 0 residue files, and output
+remains summary-only. Confirm it does not add a Makefile target, add
+release-quality integration, change workflow YAML, change fixture JSON, write
+manifests, connect artifact writer CLI, use real data, compute metrics, or
+claim production readiness. Confirm docs do not include raw logs, full job
+output, copied log blocks, screenshots containing raw logs, request bodies,
+pointer bodies, isolated write request bodies, expected isolated write result
+bodies, case metadata bodies, artifact body payload examples, generated
+policy bodies, manifest bodies, JSON body examples, raw rows, logits, private
+paths, absolute local paths, raw learner text, real participant data, or
+performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

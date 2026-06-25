@@ -475,3 +475,17 @@ and `residue_file_count=0`.
 This does not implement a Makefile target, add release-quality integration,
 change workflow YAML, change Python code/tests, change fixture JSON, write
 manifests, connect artifact writer CLI, use real data, or compute metrics.
+
+## 26. Step372 Validator Availability Reconciliation Status
+
+Step372 restores and confirms the validator module and tests for this fixture
+contract:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+The validator runs this 22-case fixture root inside isolated temp roots,
+checks write/no-write behavior, stdout/stderr safety, written-file safety,
+cleanup, and residue count, and emits summary-only metadata. Step372 does
+not change fixture JSON, does not add a Makefile target, does not add
+release-quality integration, does not write manifests, and does not connect
+artifact writer CLI.
