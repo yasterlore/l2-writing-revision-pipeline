@@ -102,3 +102,14 @@ It should produce summary-only, count-only output and must not print fixture JSO
 ## Future CLI / Makefile / Release Quality
 
 No CLI, Makefile target, or release-quality integration is added by this fixture root. Those are future steps after the isolated validator exists and is stable.
+
+## Future Standalone Makefile Target
+
+Step371 adds a docs-only design for a future standalone target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation`
+
+The proposed target would run the isolated write validator CLI against this
+fixture root and expect 22 matched cases with zero residue. The target is not
+implemented by Step371, and release-quality integration remains a later
+separate step.

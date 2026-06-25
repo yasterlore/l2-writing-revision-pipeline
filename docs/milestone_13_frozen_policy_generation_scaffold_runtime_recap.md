@@ -903,6 +903,17 @@ written, no artifact body is produced, and no performance metric is computed.
   isolated temp write validator, add a Makefile target, add release-quality
   integration, write manifests, connect artifact writer CLI, use real data,
   compute metrics, or claim production readiness.
+- Step370: isolated write validator availability should be confirmed before
+  adding orchestration around it. The Step371 target design assumes a
+  summary-only validator CLI for the 22-case fixture root, but target
+  implementation should first verify that the module is present in the active
+  branch.
+- Step371: added the docs-only standalone Makefile target design for the
+  isolated write validator. The design proposes a future short make command
+  for the validator CLI and keeps release-quality integration separate. It
+  does not implement a Makefile target, change wrapper/workflow/Python/tests,
+  change fixture JSON, write manifests, connect artifact writer CLI, use real
+  data, compute metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -916,6 +927,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
+- [Frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)

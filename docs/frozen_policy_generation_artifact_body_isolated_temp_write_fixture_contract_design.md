@@ -453,6 +453,7 @@ text, and real participant data.
 
 ## 24. Related Documents
 
+- [Frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
 - [Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md)
@@ -462,3 +463,15 @@ text, and real participant data.
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 25. Step371 Makefile Target Design Status
+
+Step371 adds a docs-only design for a future standalone Makefile target that
+runs the isolated write validator CLI. The proposed target validates the
+Step369 fixture root through the isolated write validator CLI after module
+availability is confirmed and expects `total_cases=22`, `matched_cases=22`,
+and `residue_file_count=0`.
+
+This does not implement a Makefile target, add release-quality integration,
+change workflow YAML, change Python code/tests, change fixture JSON, write
+manifests, connect artifact writer CLI, use real data, or compute metrics.
