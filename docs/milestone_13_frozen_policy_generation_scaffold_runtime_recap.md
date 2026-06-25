@@ -866,6 +866,15 @@ written, no artifact body is produced, and no performance metric is computed.
   change workflow YAML, does not change fixture JSON, does not run isolated
   temp write validation, does not connect artifact writer CLI, does not use
   real data, compute metrics, or claim production readiness.
+- Step365: added the docs-only standalone smoke target design for artifact
+  body file writing. The design proposes a future Makefile target that runs
+  one safe-metadata file-writing smoke, parses the generated file, and cleans
+  up the generated output under `tmp/artifact_body_generation/`. It does not
+  implement the target, does not add release-quality integration, does not
+  change workflow YAML, does not change Python code/tests, does not change
+  fixture JSON, does not run isolated temp write validation, does not write
+  manifests, does not connect artifact writer CLI, does not use real data,
+  compute metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -876,6 +885,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation artifact body file writing fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md)
+- [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

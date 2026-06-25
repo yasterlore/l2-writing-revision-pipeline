@@ -482,3 +482,19 @@ file-writing path to release-quality, does not change workflow YAML, does not
 change fixture JSON, does not implement isolated temp write validation, does
 not write manifests, does not connect artifact writer CLI, does not use real
 data, and does not compute metrics.
+
+## 31. Step365 Standalone Smoke Target Design Status
+
+Step365 adds a docs-only design for a future standalone Makefile smoke target:
+
+[Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md).
+
+The design keeps the smoke target separate from release-quality initially.
+It proposes one safe-metadata write under `tmp/artifact_body_generation/`,
+JSON parse verification, optional safety scans that do not print file
+content, and cleanup of the generated smoke output. It does not implement a
+Makefile target, does not add release-quality integration, does not change
+workflow YAML, does not change Python code/tests, does not change fixture
+JSON, does not implement isolated temp write validation, does not write
+manifests, does not connect artifact writer CLI, does not use real data, and
+does not compute metrics.

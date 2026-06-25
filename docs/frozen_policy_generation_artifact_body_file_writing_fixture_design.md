@@ -391,6 +391,7 @@ the status marker and does not change this fixture root.
 - [Frozen policy generation artifact body file writing fixture release-quality integration design](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body file writing fixture release-quality remote run record workflow](frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
+- [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
@@ -422,3 +423,14 @@ future safe-metadata-only `--artifact-body-out` implementation. It does not
 change fixture JSON, implement file writing, run isolated temp write
 validation, write manifests, use real data, compute metrics, or claim
 production readiness.
+
+## 30. Step365 Smoke Target Design Status
+
+Step365 adds a docs-only standalone smoke target design:
+
+[Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md).
+
+The design does not change this fixture root. It keeps fixture validation
+separate from the future write smoke: fixture validation remains no-write,
+while the future smoke target should write one safe-metadata file, parse it,
+and clean it up under the fixed safe root.
