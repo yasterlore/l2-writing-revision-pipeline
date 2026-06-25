@@ -2670,6 +2670,20 @@ bodies, manifest bodies, JSON body examples, raw rows, logits, private paths,
 absolute local paths, raw learner text, real participant data, or performance
 metric bodies.
 
+For Step371, review the docs-only
+[frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md).
+Confirm it only designs a future standalone Makefile target for the existing
+isolated write validator CLI. Confirm it does not implement a Makefile target,
+add release-quality integration, change workflow YAML, change Python
+code/tests, change fixture JSON, write manifests, connect artifact writer
+CLI, use real data, compute metrics, or claim production readiness. Confirm
+docs do not include raw logs, full job output, copied log blocks, screenshots
+containing raw logs, request bodies, pointer bodies, isolated write request
+bodies, expected isolated write result bodies, case metadata bodies, artifact
+body payload examples, generated policy bodies, manifest bodies, JSON body
+examples, raw rows, logits, private paths, absolute local paths, raw learner
+text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -455,9 +455,32 @@ The root contains 5 valid cases, 17 invalid / expected-failure cases, and 110
 JSON files. It remains separate from the minimal CLI file writing
 implementation and does not implement the isolated validator.
 
-## 25. Related Documents
+## 25. Step370 Isolated Write Validator Availability Note
+
+The Step371 target design assumes the isolated write validator module and CLI:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+Before a Makefile target is implemented, the active branch should verify that
+this module is present and that the CLI can run the 22-case fixture root with
+summary-only output. The target should not be added if the module is absent.
+
+## 26. Step371 Isolated Write Validator Makefile Target Design Status
+
+Step371 adds the docs-only standalone Makefile target design:
+
+[Frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md).
+
+The proposed target would run the isolated write validator CLI over the
+Step369 fixture root and expect 22 matched cases with zero residue. It is not
+implemented in this step, is not added to release-quality, and does not
+change workflow YAML, Python code/tests, fixture JSON, manifest writing, or
+artifact writer CLI integration.
+
+## 27. Related Documents
 
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
+- [Frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)

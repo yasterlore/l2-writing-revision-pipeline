@@ -383,6 +383,7 @@ connect the artifact writer CLI.
 
 ## 23. Related Documents
 
+- [Frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
@@ -395,3 +396,18 @@ connect the artifact writer CLI.
 - [Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 24. Step371 Makefile Target Design Status
+
+Step371 adds the docs-only standalone Makefile target design for the isolated
+write validator:
+
+[Frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md).
+
+The design proposes a future target for running the isolated write validator
+CLI against 22 cases and 110 JSON files after module availability is
+confirmed. It does not implement the Makefile target, does not add
+release-quality integration, does not change workflow YAML, does not change
+Python code/tests, does not change fixture JSON, does not write manifests,
+does not connect artifact writer CLI, does not use real data, and does not
+compute metrics.

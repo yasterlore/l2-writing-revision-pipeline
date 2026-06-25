@@ -323,6 +323,7 @@ and does not connect the artifact writer CLI.
 
 ## 21. Related Documents
 
+- [Frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
@@ -335,3 +336,16 @@ and does not connect the artifact writer CLI.
 - [Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 22. Step371 Isolated Write Validator Makefile Target Design Status
+
+Step371 adds the docs-only standalone Makefile target design for the isolated
+write validator. The proposed target is separate from this single-path smoke
+target: this smoke target checks one safe write path, while the isolated
+write validator target would run multi-case write/no-write validation under
+isolated temp roots.
+
+Step371 does not implement a Makefile target, add release-quality
+integration, change workflow YAML, change Python code/tests, change fixture
+JSON, write manifests, connect artifact writer CLI, use real data, or
+compute metrics.
