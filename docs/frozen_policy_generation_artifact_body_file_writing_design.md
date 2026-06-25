@@ -498,3 +498,18 @@ workflow YAML, does not change Python code/tests, does not change fixture
 JSON, does not implement isolated temp write validation, does not write
 manifests, does not connect artifact writer CLI, does not use real data, and
 does not compute metrics.
+
+## 32. Step366 Standalone Smoke Target Implementation Status
+
+Step366 implements the standalone Makefile smoke target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke`
+
+The target writes one safe-metadata artifact body under the fixed safe root,
+parses the generated file without printing its content, scans for forbidden
+payload field names without printing matches, and cleans up the generated
+smoke output. It remains outside release-quality. It does not change workflow
+YAML, does not change Python code/tests, does not change fixture JSON, does
+not implement isolated temp write validation, does not write manifests, does
+not connect artifact writer CLI, does not use real data, and does not compute
+metrics.

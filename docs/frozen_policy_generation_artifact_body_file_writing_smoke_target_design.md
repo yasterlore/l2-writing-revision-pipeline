@@ -245,7 +245,6 @@ implemented and proven stable as a standalone local check.
 
 ## 15. What This Does Not Do
 
-- does not implement a Makefile target
 - does not add release-quality integration
 - does not implement isolated temp write validation
 - does not write a manifest
@@ -259,13 +258,31 @@ implemented and proven stable as a standalone local check.
 
 ## 16. Next Recommended Steps
 
-- Step366: standalone smoke target implementation.
 - Step367: isolated temp write validation design.
 - Step368: release-quality integration design for the smoke target.
 - Later: wrapper integration and remote/manual status marker after the
   standalone smoke target is stable.
 
-## 17. Related Documents
+## 17. Step366 Implementation Status
+
+Step366 implements the standalone Makefile smoke target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke`
+
+The target runs one safe-metadata artifact body file-writing smoke under
+`tmp/artifact_body_generation/`, parses the generated file without printing
+its content, scans for forbidden payload field names without printing
+matches, and cleans up the generated smoke output. The target emits only the
+CLI body-free summary and pass/fail metadata for parse, safety scan, and
+cleanup.
+
+This implementation does not add the smoke target to release-quality, does
+not change workflow YAML, does not change Python code/tests, does not change
+fixture JSON, does not implement isolated temp write validation, does not
+write manifests, does not connect artifact writer CLI, does not use real
+data, and does not compute metrics.
+
+## 18. Related Documents
 
 - [Frozen policy generation artifact body file writing implementation final design](frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

@@ -231,6 +231,16 @@ does not change fixture JSON, does not add release-quality integration, does
 not run isolated temp write validation, does not write manifests, does not
 use real data, and does not compute metrics.
 
+Step366 implements that standalone smoke target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke`
+
+The target writes one safe-metadata artifact body under the fixed safe root,
+parses it, scans for forbidden payload field names without printing file
+content, and cleans up the generated output. This fixture root remains
+unchanged and remains the no-write contract validator root. The smoke target
+is not added to release-quality in Step366.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

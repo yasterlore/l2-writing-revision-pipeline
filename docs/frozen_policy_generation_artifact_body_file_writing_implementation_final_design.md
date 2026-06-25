@@ -406,7 +406,22 @@ integration, does not implement isolated temp write validation, does not
 write manifests, does not connect artifact writer CLI, does not use real
 data, and does not compute metrics.
 
-## 21. Related Documents
+## 21. Step366 Smoke Target Implementation Status
+
+Step366 implements the standalone Makefile smoke target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke`
+
+The target runs one safe-metadata file-writing smoke, validates that the
+generated output parses as JSON, scans for forbidden payload field names
+without printing file content, and cleans up the generated smoke output. It
+does not add release-quality integration, does not change workflow YAML, does
+not change Python code/tests, does not change fixture JSON, does not
+implement isolated temp write validation, does not write manifests, does not
+connect artifact writer CLI, does not use real data, and does not compute
+metrics.
+
+## 22. Related Documents
 
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
