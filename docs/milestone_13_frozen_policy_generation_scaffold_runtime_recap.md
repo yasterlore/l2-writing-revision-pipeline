@@ -857,6 +857,15 @@ written, no artifact body is produced, and no performance metric is computed.
   release-quality, change workflow YAML, change Python code/tests, change
   fixture JSON, use real data, compute metrics, or claim production
   readiness.
+- Step364: implemented the minimal artifact body generation CLI file-writing
+  path. The `--artifact-body-out` option is accepted only with
+  `--mode safe-metadata`, writes under `tmp/artifact_body_generation/`, keeps
+  stdout/stderr body-free, rejects suppressed/default output requests and
+  unsafe paths, and keeps manifest writing disabled. This step does not add a
+  Makefile smoke target, does not add release-quality integration, does not
+  change workflow YAML, does not change fixture JSON, does not run isolated
+  temp write validation, does not connect artifact writer CLI, does not use
+  real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 

@@ -29,6 +29,7 @@ class FrozenPolicyGenerationArtifactBodyCliTests(unittest.TestCase):
         self.assertIn("--request", completed.stdout)
         self.assertIn("--pointer", completed.stdout)
         self.assertIn("--mode", completed.stdout)
+        self.assertIn("--artifact-body-out", completed.stdout)
         assert_safe_cli_output(self, completed)
 
     def test_no_args_exits_two(self) -> None:
@@ -125,6 +126,162 @@ class FrozenPolicyGenerationArtifactBodyCliTests(unittest.TestCase):
         self.assertEqual(payload["count_summary"]["raw_row_count"], 0)
         self.assertEqual(payload["count_summary"]["logits_dump_count"], 0)
         self.assertNotIn("artifact_body", payload)
+        assert_safe_cli_output(self, completed)
+
+    def test_safe_metadata_artifact_body_out_writes_safe_json_file(self) -> None:
+        relative_output = f"cli_tests/{self._testMethodName}.json"
+        output_path = artifact_body_output_path(relative_output)
+        cleanup_artifact_body_output(relative_output)
+        self.addCleanup(cleanup_artifact_body_output, relative_output)
+
+        completed = run_case_cli(
+            SAFE_METADATA_CASE,
+            "--mode",
+            "safe-metadata",
+            "--artifact-body-out",
+            relative_output,
+            "--json",
+        )
+
+        self.assertEqual(completed.returncode, 0)
+        self.assertTrue(output_path.is_file())
+        payload = json.loads(completed.stdout)
+        body = json.loads(output_path.read_text(encoding="utf-8"))
+        self.assertEqual(payload["artifact_file_written"], True)
+        self.assertEqual(payload["artifact_body_output_path_available"], True)
+        self.assertEqual(
+            payload["artifact_body_output_path"],
+            f"tmp/artifact_body_generation/{relative_output}",
+        )
+        self.assertNotIn(str(Path.cwd()), completed.stdout)
+        self.assertTrue(payload["artifact_body_output_path_safety_checked"])
+        self.assertEqual(
+            payload["artifact_body_write_policy"],
+            "safe_metadata_only_relative_tmp",
+        )
+        self.assertFalse(payload["manifest_file_written"])
+        self.assertFalse(payload["manifest_body_generated"])
+        self.assertTrue(payload["stdout_body_suppressed"])
+        self.assertEqual(body["body_status"], "generated_safe_metadata_body")
+        self.assertLessEqual(set(body), artifact_body_module.ALLOWED_BODY_FIELDS)
+        rendered_body = json.dumps(body, sort_keys=True)
+        assert_no_forbidden_fragments(
+            self,
+            rendered_body,
+            [
+                '"raw_learner_text":',
+                '"raw_rows":',
+                '"logits":',
+                '"probabilities":',
+                '"private_path":',
+                '"request_body":',
+                '"pointer_body":',
+                '"expected_result_body":',
+                '"generated_policy_body":',
+                '"manifest_body":',
+                '"performance_metrics":',
+                "/Users/",
+                "/home/",
+                "/private/",
+                "/var/folders/",
+                "real_data/",
+                "participant_data/",
+            ],
+            normalize_paths=True,
+        )
+        assert_safe_cli_output(self, completed)
+
+    def test_suppressed_default_artifact_body_out_is_usage_error(self) -> None:
+        relative_output = f"cli_tests/{self._testMethodName}.json"
+        cleanup_artifact_body_output(relative_output)
+        self.addCleanup(cleanup_artifact_body_output, relative_output)
+
+        completed = run_case_cli(
+            SUPPRESSED_CASE,
+            "--artifact-body-out",
+            relative_output,
+            "--json",
+        )
+
+        self.assertEqual(completed.returncode, 2)
+        payload = json.loads(completed.stdout)
+        self.assertEqual(payload["generation_status"], "usage_error")
+        self.assertIn(
+            "artifact_body_output_requires_safe_metadata_mode",
+            payload["reason_codes"],
+        )
+        self.assertFalse(artifact_body_output_path(relative_output).exists())
+        assert_safe_cli_output(self, completed)
+
+    def test_explicit_suppressed_artifact_body_out_is_usage_error(self) -> None:
+        relative_output = f"cli_tests/{self._testMethodName}.json"
+        cleanup_artifact_body_output(relative_output)
+        self.addCleanup(cleanup_artifact_body_output, relative_output)
+
+        completed = run_case_cli(
+            SUPPRESSED_CASE,
+            "--mode",
+            "suppressed",
+            "--artifact-body-out",
+            relative_output,
+        )
+
+        self.assertEqual(completed.returncode, 2)
+        self.assertIn("generation_status=usage_error", completed.stdout)
+        self.assertFalse(artifact_body_output_path(relative_output).exists())
+        assert_safe_cli_output(self, completed)
+
+    def test_unsafe_artifact_body_out_paths_are_usage_errors(self) -> None:
+        unsafe_cases = (
+            ("/tmp/unsafe.json", "unsafe_absolute_output_path"),
+            ("../unsafe.json", "unsafe_parent_traversal_output_path"),
+            ("~/unsafe.json", "unsafe_home_output_path"),
+            ("SYNTHETIC_PRIVATE_PATH_MARKER/out.json", "unsafe_private_path_marker"),
+            ("Dropbox/out.json", "unsafe_private_cloud_marker"),
+            (".private/out.json", "unsafe_hidden_private_directory"),
+            ("unsafe.txt", "unsafe_output_path_extension"),
+            ("unsafe name.json", "unsafe_output_path_filename"),
+        )
+
+        for unsafe_path, reason_code in unsafe_cases:
+            with self.subTest(unsafe_path=unsafe_path):
+                completed = run_case_cli(
+                    SAFE_METADATA_CASE,
+                    "--mode",
+                    "safe-metadata",
+                    "--artifact-body-out",
+                    unsafe_path,
+                    "--json",
+                )
+
+                self.assertEqual(completed.returncode, 2)
+                payload = json.loads(completed.stdout)
+                self.assertEqual(payload["generation_status"], "usage_error")
+                self.assertIn(reason_code, payload["reason_codes"])
+                assert_safe_cli_output(self, completed)
+
+    def test_existing_artifact_body_out_path_is_not_overwritten(self) -> None:
+        relative_output = f"cli_tests/{self._testMethodName}.json"
+        output_path = artifact_body_output_path(relative_output)
+        cleanup_artifact_body_output(relative_output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text("existing synthetic marker", encoding="utf-8")
+        self.addCleanup(cleanup_artifact_body_output, relative_output)
+
+        completed = run_case_cli(
+            SAFE_METADATA_CASE,
+            "--mode",
+            "safe-metadata",
+            "--artifact-body-out",
+            relative_output,
+            "--json",
+        )
+
+        self.assertEqual(completed.returncode, 2)
+        payload = json.loads(completed.stdout)
+        self.assertEqual(payload["generation_status"], "usage_error")
+        self.assertIn("artifact_body_output_path_exists", payload["reason_codes"])
+        self.assertEqual(output_path.read_text(encoding="utf-8"), "existing synthetic marker")
         assert_safe_cli_output(self, completed)
 
     def test_json_output_is_deterministic(self) -> None:
@@ -277,6 +434,24 @@ def run_cli(*args: str) -> subprocess.CompletedProcess[str]:
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
+
+
+def artifact_body_output_path(relative_output: str) -> Path:
+    return artifact_body_module.ARTIFACT_BODY_FILE_WRITE_SAFE_ROOT / relative_output
+
+
+def cleanup_artifact_body_output(relative_output: str) -> None:
+    path = artifact_body_output_path(relative_output)
+    if path.exists():
+        path.unlink()
+    root = artifact_body_module.ARTIFACT_BODY_FILE_WRITE_SAFE_ROOT
+    parent = path.parent
+    while parent != root and root in parent.parents:
+        try:
+            parent.rmdir()
+        except OSError:
+            break
+        parent = parent.parent
 
 
 def assert_safe_cli_output(
