@@ -393,9 +393,23 @@ fixture JSON, does not implement isolated temp write validation, does not
 write manifest files, does not connect artifact writer CLI, does not use
 real data, and does not compute metrics.
 
-## 20. Related Documents
+## 20. Step365 Smoke Target Design Status
+
+Step365 adds a docs-only standalone smoke target design:
+
+[Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md).
+
+The design explains a future Makefile target that should run one safe
+safe-metadata file-writing smoke, parse the generated file, and clean it up.
+It does not implement a Makefile target, does not add release-quality
+integration, does not implement isolated temp write validation, does not
+write manifests, does not connect artifact writer CLI, does not use real
+data, and does not compute metrics.
+
+## 21. Related Documents
 
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
+- [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)

@@ -204,8 +204,10 @@ and not production readiness evidence.
 
 - Treat Step364 minimal artifact body generation CLI file writing as separate
   implementation work from this remote fixture-validation marker.
-- Design a future standalone file-writing smoke target before adding any
-  file-writing check to release-quality.
+- Use the Step365 standalone smoke target design before adding a local
+  file-writing smoke target.
+- Keep future file-writing smoke release-quality integration separate from
+  this no-write fixture-validation marker.
 - Keep future isolated temp write validation separate.
 - Keep future manifest writer work separate.
 - Keep future artifact writer CLI integration separate.
@@ -229,3 +231,7 @@ and not production readiness evidence.
   from this marker. This marker remains evidence only for the remote
   no-write fixture validator target and does not become artifact body file
   writing correctness evidence.
+- Step365: linked the docs-only standalone smoke target design:
+  [Frozen policy generation artifact body file writing smoke target design](../frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md).
+  The marker remains evidence only for the remote no-write fixture validator
+  target and does not become file-writing smoke evidence.

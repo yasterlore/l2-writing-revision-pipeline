@@ -2586,6 +2586,23 @@ generated policy bodies, manifest bodies, JSON body examples, raw rows,
 logits, private paths, absolute local paths, raw learner text, real
 participant data, or performance metric bodies.
 
+For Step365, review the docs-only
+[frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md).
+Confirm it proposes only a future standalone Makefile smoke target for one
+safe-metadata file-writing path, JSON parse verification, optional body-free
+safety scans, and cleanup under `tmp/artifact_body_generation/`. Confirm it
+does not implement a Makefile target, does not add release-quality
+integration, does not change workflow YAML, does not change Python code/tests,
+does not change fixture JSON, does not implement isolated temp write
+validation, does not write manifests, does not connect artifact writer CLI,
+does not use real data, compute metrics, or claim production readiness.
+Confirm docs do not include raw logs, full job output, copied log blocks,
+screenshots containing raw logs, request bodies, pointer bodies, file write
+request bodies, expected file write result bodies, artifact body payload
+examples, generated policy bodies, manifest bodies, JSON body examples, raw
+rows, logits, private paths, absolute local paths, raw learner text, real
+participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

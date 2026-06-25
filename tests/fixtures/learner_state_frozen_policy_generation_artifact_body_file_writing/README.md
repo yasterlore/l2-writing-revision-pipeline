@@ -220,6 +220,17 @@ suppressed/default output requests, does not write manifests, does not run
 isolated temp write validation, does not change fixture JSON, does not use
 real data, and does not compute metrics.
 
+Step365 designs a future standalone smoke target:
+
+`docs/frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md`
+
+The future smoke target should exercise one safe-metadata file-writing path,
+parse the generated file, and clean up the generated output. This fixture
+root remains the no-write contract validator root. The smoke target design
+does not change fixture JSON, does not add release-quality integration, does
+not run isolated temp write validation, does not write manifests, does not
+use real data, and does not compute metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

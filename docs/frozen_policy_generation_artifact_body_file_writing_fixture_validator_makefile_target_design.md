@@ -313,3 +313,15 @@ implement artifact body file writing, does not implement
 `--artifact-body-out`, does not run isolated temp write validation, does not
 write manifests, does not connect artifact writer CLI, does not use real
 data, and does not compute metrics.
+
+## 21. Step365 Smoke Target Design Status
+
+Step365 adds the docs-only design for a separate future write smoke target:
+
+[Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md).
+
+This fixture validator target remains no-write. The future smoke target
+should exercise one safe-metadata write, parse the generated file, and clean
+up the output under `tmp/artifact_body_generation/`. It should remain
+separate from this no-write fixture contract validator and should not be
+added to release-quality in the same step.
