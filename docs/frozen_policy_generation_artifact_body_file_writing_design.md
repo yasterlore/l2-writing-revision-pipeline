@@ -462,3 +462,23 @@ rules. It does not implement file writing, add a CLI option, write artifact
 files, write manifests, change Makefile, change release-quality, change
 workflow YAML, change Python code/tests, change fixture JSON, use real data,
 or compute metrics.
+
+## 30. Step364 Minimal CLI Implementation Status
+
+Step364 adds the first minimal file-writing implementation to the artifact
+body generation CLI. The new `--artifact-body-out` option is accepted only
+with `--mode safe-metadata`, writes only under `tmp/artifact_body_generation/`,
+keeps stdout/stderr body-free, records only safe relative output metadata in
+the summary, and leaves `manifest_file_written=false` and
+`manifest_body_generated=false`.
+
+Suppressed/default mode output requests are usage errors. Unsafe output
+paths, parent traversal, hidden private directories, private path markers,
+private cloud markers, non-JSON extensions, unsafe filenames, and existing
+output paths are rejected without overwriting files.
+
+This step does not add a standalone Makefile smoke target, does not add the
+file-writing path to release-quality, does not change workflow YAML, does not
+change fixture JSON, does not implement isolated temp write validation, does
+not write manifests, does not connect artifact writer CLI, does not use real
+data, and does not compute metrics.

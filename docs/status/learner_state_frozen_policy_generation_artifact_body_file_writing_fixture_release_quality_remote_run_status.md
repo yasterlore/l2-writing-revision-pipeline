@@ -202,11 +202,10 @@ and not production readiness evidence.
 
 ## Next Actions
 
-- Use the Step363 final implementation design before adding artifact body
-  file writing.
-- Keep future artifact body file writing implementation separate from this
-  marker.
-- Keep future `--artifact-body-out` implementation separate from this marker.
+- Treat Step364 minimal artifact body generation CLI file writing as separate
+  implementation work from this remote fixture-validation marker.
+- Design a future standalone file-writing smoke target before adding any
+  file-writing check to release-quality.
 - Keep future isolated temp write validation separate.
 - Keep future manifest writer work separate.
 - Keep future artifact writer CLI integration separate.
@@ -226,3 +225,7 @@ and not production readiness evidence.
   [Frozen policy generation artifact body file writing implementation final design](../frozen_policy_generation_artifact_body_file_writing_implementation_final_design.md).
   The marker remains a public-safe run record and does not become file
   writing evidence.
+- Step364: noted that minimal CLI file writing implementation is separate
+  from this marker. This marker remains evidence only for the remote
+  no-write fixture validator target and does not become artifact body file
+  writing correctness evidence.

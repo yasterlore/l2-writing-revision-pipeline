@@ -2567,6 +2567,25 @@ manifest bodies, JSON body examples, raw rows, logits, private paths,
 absolute local paths, raw learner text, real participant data, or
 performance metric bodies.
 
+For Step364, review the minimal artifact body generation CLI file-writing
+implementation. Confirm `--artifact-body-out` is accepted only with
+`--mode safe-metadata`, writes only under `tmp/artifact_body_generation/`,
+keeps stdout/stderr body-free, reports only safe relative output metadata,
+rejects suppressed/default mode output requests, rejects unsafe paths,
+rejects existing output paths without overwrite policy, leaves
+`manifest_file_written=false` and `manifest_body_generated=false`, and does
+not add a standalone file-writing smoke target or release-quality
+integration. Confirm it does not change workflow YAML, change the
+release-quality wrapper, change Makefile, change fixture JSON, run isolated
+temp write validation, write manifest files, change artifact writer CLI, use
+real data, compute metrics, or claim production readiness. Confirm docs do
+not include raw logs, full job output, copied log blocks, screenshots
+containing raw logs, request bodies, pointer bodies, file write request
+bodies, expected file write result bodies, artifact body payload examples,
+generated policy bodies, manifest bodies, JSON body examples, raw rows,
+logits, private paths, absolute local paths, raw learner text, real
+participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -4,7 +4,7 @@ This module implements the first artifact body generation boundary for frozen
 policy generation artifacts. It only builds synthetic metadata bodies. It does
 not include learner text, raw rows, logits, private paths, performance metrics,
 request or pointer bodies, generated policy bodies, manifest bodies, or file
-writing.
+writing except for the explicit safe-metadata CLI file output option.
 """
 
 from __future__ import annotations
@@ -34,6 +34,9 @@ DEFAULT_WRITER_VERSION = "frozen_policy_generation_artifact_body_v0_1"
 SUPPRESSED_SAFE_SUMMARY = "suppressed_metadata_only_artifact_body_result"
 GENERATED_SAFE_SUMMARY = "generated_safe_metadata_artifact_body_result"
 FAIL_CLOSED_SAFE_SUMMARY = "fail_closed_metadata_only_artifact_body_result"
+ARTIFACT_BODY_FILE_WRITE_SAFE_ROOT = Path("tmp/artifact_body_generation")
+ARTIFACT_BODY_WRITE_POLICY = "safe_metadata_only_relative_tmp"
+MAX_ARTIFACT_BODY_OUTPUT_PATH_LENGTH = 160
 
 BODY_STATUS_SUPPRESSED = "suppressed_metadata_only"
 BODY_STATUS_GENERATED_SAFE = "generated_safe_metadata_body"
@@ -45,6 +48,7 @@ CLI_MODE_SAFE_METADATA = "safe-metadata"
 ALLOWED_BODY_FIELDS = frozenset(
     {
         "artifact_body_schema_version",
+        "artifact_body_id",
         "artifact_id",
         "manifest_id",
         "writer_version",
@@ -130,7 +134,13 @@ CLI_SAFE_SUMMARY_FIELDS = (
     "count_summary",
     "artifact_body_available",
     "artifact_file_written",
+    "artifact_body_output_path_available",
+    "artifact_body_output_path",
+    "artifact_body_output_path_safety_checked",
+    "artifact_body_write_policy",
     "manifest_file_written",
+    "manifest_body_generated",
+    "stdout_body_suppressed",
     "safe_summary",
 )
 
@@ -208,6 +218,25 @@ RAW_LOG_MARKERS = (
 
 LOCAL_ABSOLUTE_PATH_PATTERN = re.compile(
     r"(^/Users/|^/home/|^/private/|^/var/folders/|^[A-Za-z]:\\)"
+)
+SAFE_OUTPUT_PATH_PART_PATTERN = re.compile(r"^[A-Za-z0-9._-]+$")
+WINDOWS_DRIVE_PATH_PATTERN = re.compile(r"^[A-Za-z]:[\\/]")
+
+PRIVATE_OUTPUT_PATH_MARKERS = (
+    "synthetic_private_path_marker",
+    "private_path_marker",
+    "participant_data",
+    "real_data",
+    "private_data",
+)
+
+PRIVATE_CLOUD_OUTPUT_PATH_MARKERS = (
+    "dropbox",
+    "icloud",
+    "one drive",
+    "onedrive",
+    "google drive",
+    "googledrive",
 )
 
 
@@ -369,6 +398,12 @@ class ArtifactBodyGenerationResult:
             "manifest_file_written": self.manifest_file_written,
             "safe_summary": self.safe_summary,
         }
+
+
+@dataclass(frozen=True)
+class ArtifactBodyOutputPathPlan:
+    output_path: Path
+    safe_relative_output_path: str
 
 
 def build_suppressed_metadata_only_body(
@@ -533,10 +568,35 @@ def main(argv: list[str] | None = None) -> int:
         choices=(CLI_MODE_SUPPRESSED, CLI_MODE_SAFE_METADATA),
         default=CLI_MODE_SUPPRESSED,
     )
+    parser.add_argument(
+        "--artifact-body-out",
+        dest="artifact_body_out",
+        help=(
+            "Write a safe-metadata artifact body under tmp/artifact_body_generation/ "
+            "when --mode safe-metadata is used."
+        ),
+    )
     parser.add_argument("--json", action="store_true", dest="as_json")
     args = parser.parse_args(argv)
 
     try:
+        output_path_plan: ArtifactBodyOutputPathPlan | None = None
+        if args.artifact_body_out:
+            if args.mode != CLI_MODE_SAFE_METADATA:
+                _print_cli_summary(
+                    _cli_error_summary(
+                        reason_codes=["artifact_body_output_requires_safe_metadata_mode"],
+                        failed_checks=["artifact_body_output_mode"],
+                        generation_status="usage_error",
+                        file_write_summary=_file_write_summary(None, written=False),
+                    ),
+                    as_json=args.as_json,
+                )
+                return 2
+            output_path_plan = _validate_artifact_body_output_path(
+                args.artifact_body_out
+            )
+
         request = _load_cli_json(args.request, "request")
         pointer = _load_cli_json(args.pointer, "pointer")
         input_error_reasons = _cli_input_error_reasons(request, pointer)
@@ -560,17 +620,59 @@ def main(argv: list[str] | None = None) -> int:
             request_for_generation["requested_body_status"] = BODY_STATUS_SUPPRESSED
 
         result = generate_artifact_body(request_for_generation, pointer)
-        summary = _cli_summary_from_result(result)
+        file_write_summary: dict[str, Any] | None = None
+        if output_path_plan is not None:
+            if result.validation_status == "fail" or result.artifact_body is None:
+                file_write_summary = _file_write_summary(
+                    output_path_plan.safe_relative_output_path,
+                    written=False,
+                )
+            else:
+                try:
+                    _write_artifact_body_file(result.artifact_body, output_path_plan)
+                except OSError:
+                    _print_cli_summary(
+                        _cli_error_summary(
+                            reason_codes=["artifact_body_file_write_failed"],
+                            failed_checks=["artifact_body_file_write"],
+                            generation_status="fail",
+                            file_write_summary=_file_write_summary(
+                                output_path_plan.safe_relative_output_path,
+                                written=False,
+                            ),
+                        ),
+                        as_json=args.as_json,
+                    )
+                    return 3
+                file_write_summary = _file_write_summary(
+                    output_path_plan.safe_relative_output_path,
+                    written=True,
+                )
+        summary = _cli_summary_from_result(result, file_write_summary=file_write_summary)
         _print_cli_summary(summary, as_json=args.as_json)
         if result.validation_status == "fail":
             return 3
         return 0
+    except _CliUsageError as error:
+        _print_cli_summary(
+            _cli_error_summary(
+                reason_codes=[error.reason_code],
+                failed_checks=[error.failed_check],
+                generation_status="usage_error",
+                file_write_summary=_file_write_summary(None, written=False),
+            ),
+            as_json=args.as_json,
+        )
+        return 2
     except _CliInputError as error:
         _print_cli_summary(
             _cli_error_summary(
                 reason_codes=[error.reason_code],
                 failed_checks=[error.failed_check],
                 generation_status="input_error",
+                file_write_summary=_file_write_summary(None, written=False)
+                if args.artifact_body_out
+                else None,
             ),
             as_json=args.as_json,
         )
@@ -581,6 +683,9 @@ def main(argv: list[str] | None = None) -> int:
                 reason_codes=["unexpected_internal_error"],
                 failed_checks=["unexpected_internal_error"],
                 generation_status="internal_error",
+                file_write_summary=_file_write_summary(None, written=False)
+                if args.artifact_body_out
+                else None,
             ),
             as_json=args.as_json,
         )
@@ -606,6 +711,7 @@ def _base_body(
     )
     safe_metadata_field_names = [
         "artifact_body_schema_version",
+        "artifact_body_id",
         "artifact_id",
         "manifest_id",
         "writer_version",
@@ -617,6 +723,7 @@ def _base_body(
     ]
     return {
         "artifact_body_schema_version": ARTIFACT_BODY_SCHEMA_VERSION,
+        "artifact_body_id": request_model.artifact_body_id,
         "artifact_id": request_model.artifact_id or pointer_model.artifact_id,
         "manifest_id": request_model.manifest_id or pointer_model.manifest_id,
         "writer_version": request_model.writer_version,
@@ -635,7 +742,7 @@ def _base_body(
         "safe_metadata_field_names": sorted(safe_metadata_field_names),
         "created_by_version": DEFAULT_WRITER_VERSION,
         "body_suppression_policy": "suppress payload bodies by default",
-        "file_writing_policy": "file writing disabled",
+        "file_writing_policy": ARTIFACT_BODY_WRITE_POLICY,
     }
 
 
@@ -977,6 +1084,13 @@ class _CliInputError(Exception):
         self.failed_check = failed_check
 
 
+class _CliUsageError(Exception):
+    def __init__(self, reason_code: str, failed_check: str) -> None:
+        super().__init__(reason_code)
+        self.reason_code = reason_code
+        self.failed_check = failed_check
+
+
 def _load_cli_json(path: Path, input_name: str) -> dict[str, Any]:
     path = Path(path)
     if not path.is_file():
@@ -1019,6 +1133,8 @@ def _cli_input_error_reasons(
 
 def _cli_summary_from_result(
     result: ArtifactBodyGenerationResult,
+    *,
+    file_write_summary: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
     summary = summarize_artifact_body_result(result)
     summary.update(
@@ -1027,6 +1143,8 @@ def _cli_summary_from_result(
             "generation_status": result.validation_status,
         }
     )
+    if file_write_summary is not None:
+        summary.update(file_write_summary)
     return {key: summary[key] for key in CLI_SAFE_SUMMARY_FIELDS if key in summary}
 
 
@@ -1035,9 +1153,10 @@ def _cli_error_summary(
     reason_codes: list[str],
     failed_checks: list[str],
     generation_status: str,
+    file_write_summary: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
     count_summary = ArtifactBodyCountSummary().to_safe_dict()
-    return {
+    summary = {
         "mode": "artifact_body_generation",
         "result_schema_version": ARTIFACT_BODY_GENERATION_RESULT_SCHEMA_VERSION,
         "artifact_body_schema_version": ARTIFACT_BODY_SCHEMA_VERSION,
@@ -1061,6 +1180,94 @@ def _cli_error_summary(
         "artifact_file_written": False,
         "manifest_file_written": False,
         "safe_summary": FAIL_CLOSED_SAFE_SUMMARY,
+    }
+    if file_write_summary is not None:
+        summary.update(file_write_summary)
+    return summary
+
+
+def _validate_artifact_body_output_path(raw_path: str) -> ArtifactBodyOutputPathPlan:
+    if not raw_path:
+        raise _CliUsageError("missing_artifact_body_output_path", "artifact_body_output_path")
+
+    if len(raw_path) > MAX_ARTIFACT_BODY_OUTPUT_PATH_LENGTH:
+        raise _CliUsageError("unsafe_output_path_too_long", "artifact_body_output_path")
+
+    raw_path_lower = raw_path.lower()
+    if WINDOWS_DRIVE_PATH_PATTERN.match(raw_path):
+        raise _CliUsageError("unsafe_absolute_output_path", "artifact_body_output_path")
+    if any(marker in raw_path_lower for marker in PRIVATE_OUTPUT_PATH_MARKERS):
+        raise _CliUsageError("unsafe_private_path_marker", "artifact_body_output_path")
+    if any(marker in raw_path_lower for marker in PRIVATE_CLOUD_OUTPUT_PATH_MARKERS):
+        raise _CliUsageError("unsafe_private_cloud_marker", "artifact_body_output_path")
+
+    candidate = Path(raw_path)
+    if candidate.is_absolute():
+        raise _CliUsageError("unsafe_absolute_output_path", "artifact_body_output_path")
+
+    parts = candidate.parts
+    if not parts:
+        raise _CliUsageError("missing_artifact_body_output_path", "artifact_body_output_path")
+    if any(part == ".." for part in parts):
+        raise _CliUsageError(
+            "unsafe_parent_traversal_output_path",
+            "artifact_body_output_path",
+        )
+    if any(part == "~" or part.startswith("~/") for part in parts):
+        raise _CliUsageError("unsafe_home_output_path", "artifact_body_output_path")
+    if raw_path.startswith("~"):
+        raise _CliUsageError("unsafe_home_output_path", "artifact_body_output_path")
+    if any(part.startswith(".") for part in parts):
+        raise _CliUsageError(
+            "unsafe_hidden_private_directory",
+            "artifact_body_output_path",
+        )
+    if candidate.suffix != ".json":
+        raise _CliUsageError("unsafe_output_path_extension", "artifact_body_output_path")
+    if any(not SAFE_OUTPUT_PATH_PART_PATTERN.fullmatch(part) for part in parts):
+        raise _CliUsageError("unsafe_output_path_filename", "artifact_body_output_path")
+
+    output_path = ARTIFACT_BODY_FILE_WRITE_SAFE_ROOT.joinpath(*parts)
+    if output_path.exists():
+        raise _CliUsageError(
+            "artifact_body_output_path_exists",
+            "artifact_body_output_path_overwrite_policy",
+        )
+
+    safe_relative_output_path = ARTIFACT_BODY_FILE_WRITE_SAFE_ROOT.joinpath(
+        *parts
+    ).as_posix()
+    return ArtifactBodyOutputPathPlan(
+        output_path=output_path,
+        safe_relative_output_path=safe_relative_output_path,
+    )
+
+
+def _write_artifact_body_file(
+    artifact_body: Mapping[str, Any],
+    output_path_plan: ArtifactBodyOutputPathPlan,
+) -> None:
+    output_path_plan.output_path.parent.mkdir(parents=True, exist_ok=True)
+    if output_path_plan.output_path.exists():
+        raise FileExistsError("artifact body output already exists")
+    rendered = json.dumps(artifact_body, sort_keys=True, indent=2) + "\n"
+    output_path_plan.output_path.write_text(rendered, encoding="utf-8")
+
+
+def _file_write_summary(
+    safe_relative_output_path: str | None,
+    *,
+    written: bool,
+) -> dict[str, Any]:
+    return {
+        "artifact_file_written": bool(written),
+        "artifact_body_output_path_available": safe_relative_output_path is not None,
+        "artifact_body_output_path": safe_relative_output_path,
+        "artifact_body_output_path_safety_checked": True,
+        "artifact_body_write_policy": ARTIFACT_BODY_WRITE_POLICY,
+        "manifest_file_written": False,
+        "manifest_body_generated": False,
+        "stdout_body_suppressed": True,
     }
 
 
@@ -1097,7 +1304,9 @@ def _format_cli_value(value: Any) -> str:
 
 __all__ = [
     "ARTIFACT_BODY_GENERATION_RESULT_SCHEMA_VERSION",
+    "ARTIFACT_BODY_FILE_WRITE_SAFE_ROOT",
     "ARTIFACT_BODY_SCHEMA_VERSION",
+    "ARTIFACT_BODY_WRITE_POLICY",
     "ArtifactBodyCountSummary",
     "ArtifactBodyGenerationError",
     "ArtifactBodyGenerationRequest",

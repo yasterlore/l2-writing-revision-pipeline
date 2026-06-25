@@ -211,6 +211,15 @@ leaving this fixture root and no-write validator unchanged. It does not
 modify fixture JSON, implement file writing, run isolated temp write
 validation, write manifests, use real data, or compute metrics.
 
+Step364 implements the minimal artifact body generation CLI file-writing
+option for safe-metadata mode. This fixture root remains unchanged and still
+validates fixture/path-policy contracts through the no-write validator. The
+new CLI implementation writes only under the fixed safe root
+`tmp/artifact_body_generation/`, keeps stdout/stderr body-free, rejects
+suppressed/default output requests, does not write manifests, does not run
+isolated temp write validation, does not change fixture JSON, does not use
+real data, and does not compute metrics.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

@@ -378,7 +378,22 @@ body file should not quietly imply manifest generation.
 - Later: release-quality integration design for a standalone file-writing
   smoke target after the implementation and isolated checks are stable.
 
-## 19. Related Documents
+## 19. Step364 Implementation Status
+
+Step364 implements the minimal artifact body generation CLI file-writing
+path described here. The implementation adds `--artifact-body-out` for
+`--mode safe-metadata` only, writes under the fixed safe root
+`tmp/artifact_body_generation/`, keeps stdout/stderr summary-only, rejects
+suppressed/default mode output requests as usage errors, rejects unsafe
+relative paths, and keeps manifest writing disabled.
+
+The implementation does not add a Makefile smoke target, does not add
+release-quality integration, does not change workflow YAML, does not change
+fixture JSON, does not implement isolated temp write validation, does not
+write manifest files, does not connect artifact writer CLI, does not use
+real data, and does not compute metrics.
+
+## 20. Related Documents
 
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
