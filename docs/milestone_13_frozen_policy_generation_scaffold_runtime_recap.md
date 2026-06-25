@@ -928,6 +928,13 @@ written, no artifact body is produced, and no performance metric is computed.
   release-quality wrapper, change Python code/tests, change fixture JSON,
   write manifests, connect artifact writer CLI, use real data, compute
   metrics, or claim production readiness.
+- Step374: added the docs-only release-quality integration design for the
+  isolated write validator target. The design places it after the no-write
+  file-writing fixture validation target and before config/scoring checks,
+  with cleanup/no-residue and body-free log requirements. It does not change
+  the wrapper, workflow YAML, Makefile, Python code/tests, fixture JSON,
+  manifest writer, artifact writer CLI integration, use real data, compute
+  metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -942,6 +949,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
 - [Frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md)
+- [Frozen policy generation artifact body isolated write release-quality integration design](frozen_policy_generation_artifact_body_isolated_write_release_quality_integration_design.md)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)

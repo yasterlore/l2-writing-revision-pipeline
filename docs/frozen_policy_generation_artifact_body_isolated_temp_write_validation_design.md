@@ -438,3 +438,17 @@ checking, and `residue_file_count=0`. Step373 does not add release-quality
 integration, does not change workflow YAML, does not change Python code/tests,
 does not change fixture JSON, does not write manifests, and does not connect
 artifact writer CLI.
+
+## 27. Step374 Release-Quality Integration Design Status
+
+Step374 adds the docs-only release-quality integration design:
+
+[Frozen policy generation artifact body isolated write release-quality integration design](frozen_policy_generation_artifact_body_isolated_write_release_quality_integration_design.md).
+
+The design places the standalone isolated write validator target after the
+no-write file writing fixture validation target and before config/scoring
+smoke checks. It fixes the wrapper label, command, expected summary fields,
+failure interpretation, cleanup/no-residue requirement, log safety, and future
+status-marker policy. Step374 does not change the wrapper, workflow YAML,
+Makefile, Python code/tests, fixture JSON, manifest writer, or artifact writer
+CLI integration.

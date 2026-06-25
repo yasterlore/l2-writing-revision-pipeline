@@ -135,3 +135,16 @@ The target runs the isolated write validator CLI against this fixture root and
 expects 22 matched cases, 0 mismatches, 0 input errors, and 0 residue files.
 The target is not added to release-quality in Step373, and fixture JSON files
 remain unchanged.
+
+## Future Release-Quality Integration
+
+Step374 adds a docs-only design for future release-quality integration of the
+standalone isolated write validator target. The proposed wrapper placement is
+after the no-write artifact body file-writing fixture validation target and
+before config/scoring smoke checks.
+
+Future release-quality integration should require `residue_file_count=0` and
+must not print fixture JSON bodies, written file content, artifact body
+payloads, private paths, absolute temp paths, raw rows, logits, or raw learner
+text. Step374 does not change this fixture root and does not modify the
+release-quality wrapper.

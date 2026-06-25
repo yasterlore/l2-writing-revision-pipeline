@@ -349,3 +349,16 @@ Step371 does not implement a Makefile target, add release-quality
 integration, change workflow YAML, change Python code/tests, change fixture
 JSON, write manifests, connect artifact writer CLI, use real data, or
 compute metrics.
+
+## 23. Step374 Isolated Write Release-Quality Integration Design Status
+
+Step374 adds the docs-only release-quality integration design for the
+standalone isolated write validator target:
+
+[Frozen policy generation artifact body isolated write release-quality integration design](frozen_policy_generation_artifact_body_isolated_write_release_quality_integration_design.md).
+
+The design keeps this one-path smoke target standalone initially and proposes
+release-quality integration for the multi-case isolated write validator
+target instead. It does not change this smoke target, the release-quality
+wrapper, workflow YAML, Python code/tests, fixture JSON, manifest writer, or
+artifact writer CLI integration.
