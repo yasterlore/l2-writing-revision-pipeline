@@ -526,3 +526,18 @@ does not implement a validator, create fixture JSON, add a Makefile target,
 change release-quality, change workflow YAML, change Python code/tests,
 change fixture JSON, write manifests, connect artifact writer CLI, use real
 data, or compute metrics.
+
+## 34. Step368 Isolated Temp Write Fixture Contract Design Status
+
+Step368 adds the docs-only fixture contract design for future isolated temp
+write validation:
+
+[Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md).
+
+The contract fixes the future fixture root, case directory shape, schema
+names, metadata fields, isolated write request fields, expected result
+fields, case taxonomy, validation phases, temp-root rules, stdout/stderr
+rules, written-file safety rules, and summary contract. It does not create
+fixture JSON, implement a validator, add a Makefile target, change
+release-quality, change workflow YAML, change Python code/tests, write
+manifests, connect artifact writer CLI, use real data, or compute metrics.

@@ -433,11 +433,23 @@ It remains separate from the single-path smoke target, the no-write fixture
 validator, release-quality, manifest writer work, and artifact writer CLI
 integration.
 
-## 23. Related Documents
+## 23. Step368 Isolated Temp Write Fixture Contract Design Status
+
+Step368 adds the docs-only fixture contract design:
+
+[Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md).
+
+The contract design fixes future case files and expected result fields for
+isolated temp write validation. It does not create fixture JSON, implement a
+validator, change Makefile, change release-quality, write manifests, connect
+artifact writer CLI, use real data, or compute metrics.
+
+## 24. Related Documents
 
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
+- [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
