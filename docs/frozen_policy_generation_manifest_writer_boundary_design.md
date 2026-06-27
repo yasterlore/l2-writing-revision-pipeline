@@ -433,7 +433,20 @@ Step388 creates the public-safe remote/manual Release Quality status marker:
 The marker records wrapper success for static fixture validation only. The
 manifest writer boundary remains metadata-only future design work.
 
-## 27. Related Documents
+## 27. Step389 Runtime API / CLI Boundary Design Status
+
+Step389 adds the docs-only runtime API / CLI boundary design:
+
+[Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md).
+
+The runtime design fixes future metadata-only input/output boundaries,
+default no-file mode, summary fields, safety flags, fail-closed behavior, and
+future staging. It does not implement the manifest writer, write manifest
+files, change workflow YAML, change the wrapper, change Makefile, change
+Python code/tests, change fixture JSON, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness.
+
+## 28. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
@@ -442,6 +455,7 @@ manifest writer boundary remains metadata-only future design work.
 - [Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
+- [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

@@ -2958,6 +2958,19 @@ not change workflow YAML, wrapper, Makefile, Python code/tests, fixture JSON,
 implement a manifest writer, write manifest files, connect artifact writer
 CLI, use real data, compute metrics, or claim production readiness.
 
+For Step389, review the docs-only
+[frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md).
+Confirm it fixes only the future manifest writer runtime API / CLI boundary:
+proposed module, command shape, arguments, APIs, dataclasses, metadata-only
+input/output boundaries, default no-file mode, future file-writing path
+policy, fail-closed behavior, summary fields, count summary fields, safety
+flags, relation to static fixture validation, relation to artifact writer and
+artifact body summaries, and future staging. Confirm it does not implement a
+manifest writer, write manifest files, create runtime fixtures, implement a
+runtime validator, change workflow YAML, change the wrapper, change Makefile,
+change Python code/tests, change fixture JSON, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

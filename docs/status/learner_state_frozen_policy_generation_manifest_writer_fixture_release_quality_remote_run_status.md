@@ -212,3 +212,9 @@ correctness, real-data readiness, or production readiness.
   run identity metadata, wrapper inclusion metadata, pass-only/count-only
   fixture validation summary fields, related check inclusion summaries, safety
   review, interpretation, and non-goals.
+- Step389: linked the separate docs-only manifest writer runtime API / CLI
+  boundary design:
+  [Frozen policy generation manifest writer runtime API design](../frozen_policy_generation_manifest_writer_runtime_api_design.md).
+  This marker remains static fixture validation remote evidence only and does
+  not become manifest writer runtime, manifest file writing, or artifact
+  writer CLI integration evidence.
