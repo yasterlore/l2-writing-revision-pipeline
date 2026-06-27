@@ -444,7 +444,27 @@ metadata-only no-file mode.
 - release-quality integration
 - later runtime writer design / implementation
 
-## 30. Related Documents
+## 30. Step393 Runtime Fixture Validator Implementation Status
+
+Step393 implements the static runtime fixture validator module and focused
+tests:
+
+- `python/learner_state/frozen_policy_generation_manifest_writer_runtime_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_manifest_writer_runtime_fixture_validation.py`
+
+The validator checks the 31-case / 155-JSON runtime fixture root with
+body-free summaries. It validates fixture structure, schema versions, case
+identity, expected categories, request policy, pointer policy, expected-result
+policy, path/content/no-oracle sentinels, reason-code contracts, and safe
+selectors.
+
+The validator does not execute a manifest writer runtime, implement a
+manifest writer CLI, generate manifest bodies, write manifest files, change
+Makefile, change the release-quality wrapper, change workflow YAML, change
+fixture JSON, connect artifact writer CLI, use real data, compute metrics, or
+claim production readiness.
+
+## 31. Related Documents
 
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md)

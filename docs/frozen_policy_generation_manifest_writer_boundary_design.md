@@ -467,7 +467,17 @@ Step392 adds the docs-only runtime fixture validator design:
 The design remains separate from runtime implementation and manifest file
 writing.
 
-## 30. Related Documents
+## 30. Step393 Runtime Fixture Validator Implementation Status
+
+Step393 implements the static runtime fixture validator and focused tests for
+the separate runtime fixture root. This validates fixture contracts only. It
+does not implement manifest writer runtime behavior, implement a manifest
+writer CLI, generate manifest bodies, write manifest files, change Makefile,
+change the release-quality wrapper, change workflow YAML, change fixture
+JSON, connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
+## 31. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)

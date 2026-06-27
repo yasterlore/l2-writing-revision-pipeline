@@ -3011,6 +3011,18 @@ manifest files, change workflow YAML, change the wrapper, change Makefile,
 change Python code/tests, change fixture JSON, connect artifact writer CLI,
 use real data, compute metrics, or claim production readiness.
 
+For Step393, review the static
+`learner_state.frozen_policy_generation_manifest_writer_runtime_fixture_validation`
+module and focused tests. Confirm the validator checks the 31-case / 155-JSON
+runtime fixture root with body-free summaries, safe selector handling,
+request/pointer/expected-result contract checks, no-oracle/synthetic-only
+policy checks, and no manifest output residue. Confirm it does not execute a
+manifest writer runtime, implement a manifest writer CLI, generate manifest
+bodies, write manifest files, change workflow YAML, change the wrapper,
+change Makefile, change fixture JSON, connect artifact writer CLI, use real
+data, compute metrics, add release-quality integration, or claim production
+readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

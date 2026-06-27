@@ -231,3 +231,9 @@ correctness, real-data readiness, or production readiness.
   This marker remains static fixture validation remote evidence only. Runtime
   fixture validator implementation, runtime writer execution, manifest file
   writing, and artifact writer CLI integration remain separate future work.
+- Step393: noted the separate static manifest writer runtime fixture
+  validator implementation. This marker remains evidence for the earlier
+  manifest writer fixture release-quality run only. The runtime fixture
+  validator is implemented locally but is not a manifest writer runtime, does
+  not write manifest files, and is not represented as new remote Release
+  Quality evidence by this marker.
