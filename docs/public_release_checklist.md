@@ -2729,6 +2729,23 @@ examples, generated policy bodies, manifest bodies, JSON body examples, raw
 rows, logits, private paths, absolute local paths, raw learner text, real
 participant data, or performance metric bodies.
 
+For Step375, review the release-quality wrapper integration in
+`scripts/check_release_quality.sh`. Confirm the wrapper includes
+`make check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation`
+after the no-write artifact body file-writing fixture validation target and
+before config/scoring smoke checks. Confirm `make check-release-quality`
+passes and the isolated write validator reports 22 total cases, 22 matched
+cases, 0 mismatches, 0 input errors, and 0 residue files. Confirm it does not
+change workflow YAML, change Makefile, change Python code/tests, change
+fixture JSON, write manifests, connect artifact writer CLI, use real data,
+compute metrics, or claim production readiness. Confirm logs and docs do not
+include raw logs, full job output, copied log blocks, screenshots containing
+raw logs, request bodies, pointer bodies, isolated write request bodies,
+expected isolated write result bodies, case metadata bodies, written file
+content, artifact body payload examples, generated policy bodies, manifest
+bodies, JSON body examples, raw rows, logits, private paths, absolute local
+paths, raw learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

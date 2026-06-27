@@ -514,3 +514,15 @@ The design keeps this fixture root synthetic-only and metadata-only, requires
 content, artifact body payloads, private paths, absolute temp paths, raw rows,
 logits, and raw learner text in release-quality logs or docs. Step374 does
 not change fixture JSON and does not implement wrapper integration.
+
+## 29. Step375 Release-Quality Wrapper Integration Status
+
+Step375 integrates the standalone isolated write validator target into the
+release-quality wrapper. The wrapper now runs the validator after the
+no-write file-writing fixture validation target and before config/scoring
+smoke checks.
+
+The fixture contract remains unchanged: 5 valid cases, 17 invalid /
+expected-failure cases, and 110 JSON files. Step375 does not change fixture
+JSON, does not write manifests, does not connect artifact writer CLI, and does
+not introduce real data or performance evaluation.

@@ -452,3 +452,18 @@ failure interpretation, cleanup/no-residue requirement, log safety, and future
 status-marker policy. Step374 does not change the wrapper, workflow YAML,
 Makefile, Python code/tests, fixture JSON, manifest writer, or artifact writer
 CLI integration.
+
+## 28. Step375 Release-Quality Wrapper Integration Status
+
+Step375 adds the isolated write validator standalone target to the
+release-quality wrapper after the no-write artifact body file writing fixture
+validation target and before config/scoring smoke checks.
+
+The wrapper command is:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation`
+
+The integration keeps this validator summary-only and requires zero mismatches,
+zero input errors, and `residue_file_count=0`. Step375 does not change workflow
+YAML, Makefile targets, Python code/tests, fixture JSON, manifest writer
+behavior, artifact writer CLI integration, or performance evaluation.
