@@ -3023,6 +3023,18 @@ change Makefile, change fixture JSON, connect artifact writer CLI, use real
 data, compute metrics, add release-quality integration, or claim production
 readiness.
 
+For Step394, review the docs-only
+[frozen policy generation manifest writer runtime fixture validator Makefile target design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_makefile_target_design.md).
+Confirm it proposes only the future standalone target
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures`,
+its command shape, help text, expected output, logging safety, relation to the
+existing static manifest writer fixture target, future implementation checks,
+and release-quality staging. Confirm it does not implement a Makefile target,
+add release-quality integration, change workflow YAML, change the wrapper,
+change Python code/tests, change fixture JSON, execute a runtime writer,
+write manifest files, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
