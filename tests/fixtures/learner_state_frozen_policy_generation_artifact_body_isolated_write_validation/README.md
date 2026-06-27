@@ -160,3 +160,15 @@ The wrapper placement is after the no-write artifact body file-writing fixture
 validation target and before config/scoring smoke checks. The fixture JSON
 files remain unchanged. The wrapper must keep output summary-only and require
 22 matched cases, 0 mismatches, 0 input errors, and 0 residue files.
+
+## Future Remote Status Marker
+
+Step376 adds a docs-only workflow design for a future public-safe remote/manual
+Release Quality status marker:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md`
+
+That future marker should record only pass-only/count-only metadata and safety
+flags for this 22-case fixture root. It must not copy fixture JSON bodies,
+written file content, artifact body payloads, private paths, absolute temp
+paths, raw rows, logits, raw learner text, raw logs, or real participant data.
