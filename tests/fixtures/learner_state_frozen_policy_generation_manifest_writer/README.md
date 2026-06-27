@@ -135,3 +135,14 @@ checks this fixture root only as synthetic metadata contract data. It does not
 implement a manifest writer, generate manifest bodies, write manifest files,
 add a Makefile target, integrate release-quality, connect artifact writer CLI,
 use real data, compute metrics, or claim production readiness.
+
+## Future Makefile Target
+
+Step383 adds a docs-only standalone Makefile target design for running the
+static validator through a short project command:
+
+[Frozen policy generation manifest writer fixture validator Makefile target design](../../../docs/frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md).
+
+The design does not implement the target, add release-quality integration,
+implement a manifest writer, write manifest files, connect artifact writer
+CLI, use real data, compute metrics, or claim production readiness.

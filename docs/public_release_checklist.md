@@ -2872,6 +2872,23 @@ pointer bodies, expected bodies, raw rows, logits, private paths, absolute
 local paths, absolute temp paths, raw learner text, real participant data, or
 performance metric bodies.
 
+For Step383, review the docs-only
+[frozen policy generation manifest writer fixture validator Makefile target design](frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md).
+Confirm it designs only the future standalone Makefile target for the static
+manifest writer fixture validator: target name, command shape, help text,
+expected summary counts, output/logging safety, relation to existing targets,
+release-quality staging, implementation checks, and non-goals. Confirm it
+does not implement a Makefile target, add release-quality integration, change
+workflow YAML, change the release-quality wrapper, change Python code/tests,
+change fixture JSON, implement a manifest writer, generate manifest bodies,
+write manifest files, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness. Confirm docs do not include raw logs,
+full job output, copied log blocks, screenshots containing raw logs, fixture
+JSON body examples, manifest body examples, artifact body payload examples,
+request bodies, pointer bodies, expected bodies, raw rows, logits, private
+paths, absolute local paths, absolute temp paths, raw learner text, real
+participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

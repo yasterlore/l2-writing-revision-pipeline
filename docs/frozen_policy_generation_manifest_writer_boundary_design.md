@@ -244,12 +244,16 @@ Recommended staging:
 
 - Step379: manifest writer fixture contract design
 - Step380: manifest writer fixture JSON creation
-- Step381: manifest writer validator design or implementation
-- Step382: manifest writer implementation
-- Step383: Makefile target design
-- Step384: Makefile target implementation
+- Step381: manifest writer fixture validator design
+- Step382: manifest writer fixture validator implementation
+- Step383: manifest writer fixture validator Makefile target design
+- Step384: manifest writer fixture validator Makefile target implementation
 - Step385: release-quality integration design
 - Step386: wrapper integration
+- Step387: remote/manual status marker workflow design
+- Step388: remote/manual status marker
+- later: metadata-only manifest writer API/CLI design
+- later: manifest writer implementation
 - Step387: remote/manual status marker design
 - Step388: remote/manual status marker
 
@@ -371,11 +375,24 @@ implement a manifest writer, generate manifest bodies, write manifest files,
 connect artifact writer CLI, change release-quality, use real data, compute
 metrics, or claim production readiness.
 
-## 21. Related Documents
+## 21. Step383 Makefile Target Design Status
+
+Step383 adds the docs-only standalone Makefile target design for running the
+static manifest writer fixture validator:
+
+[Frozen policy generation manifest writer fixture validator Makefile target design](frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md).
+
+This remains a target design only. It does not implement a Makefile target,
+add release-quality integration, implement a manifest writer, write manifest
+files, connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
+## 22. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
+- [Frozen policy generation manifest writer fixture validator Makefile target design](frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

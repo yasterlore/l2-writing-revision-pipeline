@@ -250,3 +250,11 @@ readiness.
   evidence and does not become manifest writer evidence, manifest file writing
   evidence, artifact writer CLI integration evidence, performance evidence,
   real-data readiness evidence, or production readiness evidence.
+- Step383: linked the separate docs-only manifest writer fixture validator
+  Makefile target design:
+  [Frozen policy generation manifest writer fixture validator Makefile target design](../frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md).
+  This marker remains isolated write validator remote evidence and does not
+  become manifest writer target implementation evidence, release-quality
+  integration evidence, manifest writer evidence, manifest file writing
+  evidence, artifact writer CLI integration evidence, performance evidence,
+  real-data readiness evidence, or production readiness evidence.
