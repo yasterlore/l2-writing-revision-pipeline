@@ -392,7 +392,20 @@ writer, write manifest files, change workflow YAML, change fixture JSON,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
-## 27. Related Documents
+## 27. Step384 Makefile Target Implementation Status
+
+Step384 implements the standalone Makefile target
+`check-learner-state-frozen-policy-generation-manifest-writer-fixtures`.
+The target runs the static manifest writer fixture validator CLI against the
+synthetic metadata-only fixture root and reports the same body-free summary
+counts as the CLI.
+
+This target is not in release-quality yet. It does not run a manifest writer,
+write manifest files, generate manifest bodies, change workflow YAML, change
+Python code/tests, change fixture JSON, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness.
+
+## 28. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

@@ -431,7 +431,18 @@ a Makefile target, add release-quality integration, implement a manifest
 writer, write manifest files, change fixture JSON, use real data, compute
 metrics, or claim production readiness.
 
-## 27. Related Documents
+## 27. Step384 Makefile Target Implementation Status
+
+Step384 implements the standalone target described by the Step383 design:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-fixtures`
+
+The target validates this fixture contract through the static fixture
+validator only. It does not add release-quality integration, run a manifest
+writer, write manifest files, change fixture JSON, use real data, compute
+metrics, or claim production readiness.
+
+## 28. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)

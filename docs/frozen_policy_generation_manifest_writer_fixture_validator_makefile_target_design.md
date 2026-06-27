@@ -212,7 +212,6 @@ manifest writer and manifest file writing still do not exist.
 
 ## 13. What This Does Not Do
 
-- does not implement a Makefile target
 - does not add release-quality integration
 - does not implement the manifest writer
 - does not write manifest files
@@ -223,14 +222,29 @@ manifest writer and manifest file writing still do not exist.
 
 ## 14. Next Recommended Steps
 
-- Step384: implement the standalone Makefile target
 - Step385: design release-quality integration
 - Step386: integrate the wrapper
 - Step387: design remote/manual run record workflow
 - Step388: create the remote/manual run status marker
 - later: design and implement runtime manifest writer behavior separately
 
-## 15. Related Documents
+## 15. Step384 Implementation Status
+
+Step384 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-fixtures`
+
+The target runs the static fixture validator over the 30-case / 150-JSON
+synthetic metadata-only manifest writer fixture root. It uses the human
+summary output, does not use `--json` by default, does not write manifest
+files, and remains outside release-quality.
+
+This implementation does not change the release-quality wrapper, workflow
+YAML, Python code/tests, fixture JSON, manifest writer behavior, manifest
+body generation, manifest file writing, artifact writer CLI integration,
+metrics, real-data use, or production readiness claims.
+
+## 16. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

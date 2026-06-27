@@ -2889,6 +2889,19 @@ request bodies, pointer bodies, expected bodies, raw rows, logits, private
 paths, absolute local paths, absolute temp paths, raw learner text, real
 participant data, or performance metric bodies.
 
+For Step384, review `Makefile` and the
+[frozen policy generation manifest writer fixture validator Makefile target design](frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md).
+Confirm the standalone target
+`check-learner-state-frozen-policy-generation-manifest-writer-fixtures`
+exists, appears in `make help`, and runs the static manifest writer fixture
+validator against the 30-case / 150-JSON synthetic metadata-only fixture root.
+Confirm the target reports body-free summary counts, does not write manifest
+files, does not add release-quality integration, does not change workflow
+YAML, does not change Python code/tests, does not change fixture JSON, does
+not implement a manifest writer, does not connect artifact writer CLI, does
+not use real data, does not compute metrics, and does not claim production
+readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

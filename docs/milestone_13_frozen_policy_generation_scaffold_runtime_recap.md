@@ -1009,6 +1009,15 @@ written, no artifact body is produced, and no performance metric is computed.
   add release-quality integration, implement a manifest writer, write manifest
   files, connect artifact writer CLI, use real data, compute metrics, or claim
   production readiness.
+- Step384: implemented the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-manifest-writer-fixtures`.
+  The target runs the static manifest writer fixture validator over the
+  30-case / 150-JSON synthetic metadata-only fixture root and reports
+  body-free summary counts. It does not add release-quality integration,
+  implement a manifest writer, generate manifest bodies, write manifest files,
+  change workflow YAML, change Python code/tests, change fixture JSON, connect
+  artifact writer CLI, use real data, compute metrics, or claim production
+  readiness.
 
 ## Related Documents
 

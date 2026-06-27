@@ -146,3 +146,12 @@ static validator through a short project command:
 The design does not implement the target, add release-quality integration,
 implement a manifest writer, write manifest files, connect artifact writer
 CLI, use real data, compute metrics, or claim production readiness.
+
+Step384 implements that standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-fixtures`
+
+The target validates this synthetic metadata-only fixture root through the
+static validator. It does not add release-quality integration, implement a
+manifest writer, write manifest files, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness.
