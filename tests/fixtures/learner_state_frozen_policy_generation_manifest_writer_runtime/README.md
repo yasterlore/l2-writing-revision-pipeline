@@ -176,6 +176,15 @@ integration, runtime writer execution, manifest file writing, artifact writer
 CLI integration, real-data use, metric computation, and production readiness
 claims remain separate future work.
 
+Step395 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures`
+
+The target runs the static runtime fixture validator over this root. It
+remains outside release-quality, does not execute a runtime writer, does not
+write manifest files, does not connect artifact writer CLI, and does not
+claim production readiness.
+
 ## Docs Safety
 
 This README contains no JSON body examples, manifest body examples,

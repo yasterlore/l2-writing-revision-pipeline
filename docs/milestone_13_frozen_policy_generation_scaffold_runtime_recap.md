@@ -1111,6 +1111,14 @@ written, no artifact body is produced, and no performance metric is computed.
   workflow YAML, change the wrapper, change Python code/tests, change fixture
   JSON, execute a runtime writer, write manifest files, connect artifact
   writer CLI, use real data, compute metrics, or claim production readiness.
+- Step395: implemented the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures`.
+  The target runs the static runtime fixture validator over the 31-case /
+  155-JSON runtime fixture root and remains outside release-quality. It does
+  not change workflow YAML, change the wrapper, change Python code/tests,
+  change fixture JSON, execute a runtime writer, write manifest files,
+  connect artifact writer CLI, use real data, compute metrics, or claim
+  production readiness.
 
 ## Related Documents
 
