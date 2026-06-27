@@ -1,0 +1,32 @@
+{
+  "allow_overwrite": false,
+  "artifact_body_generation_result_pointer_id": "artifact_body_generation_result_pointer_raw_rows_leakage",
+  "artifact_body_id": "artifact_body_raw_rows_leakage",
+  "artifact_id": "artifact_raw_rows_leakage",
+  "artifact_writer_result_pointer_id": "artifact_writer_result_pointer_raw_rows_leakage",
+  "cleanup_policy": "cleanup_after_validation_no_residue",
+  "include_artifact_body_payload": false,
+  "include_expected_body": false,
+  "include_generated_policy_body": false,
+  "include_logits": false,
+  "include_manifest_body": false,
+  "include_pointer_body": false,
+  "include_private_paths": false,
+  "include_raw_rows": true,
+  "include_request_body": false,
+  "manifest_id": "manifest_raw_rows_leakage",
+  "manifest_out": null,
+  "manifest_output_root": "tmp/frozen_policy_generation_manifest/",
+  "no_oracle_required": true,
+  "non_proof_notice_required": true,
+  "release_quality_reference_ids": [],
+  "request_id": "manifest_writer_request_raw_rows_leakage",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_request_v0.1",
+  "synthetic_only": true,
+  "validation_reference_ids": [
+    "artifact_writer_fixture_validation_metadata_only",
+    "artifact_body_generation_safe_metadata_summary",
+    "manifest_writer_boundary_design",
+    "manifest_writer_fixture_contract_design"
+  ]
+}

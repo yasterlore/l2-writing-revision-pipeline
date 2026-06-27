@@ -230,3 +230,10 @@ readiness.
   [Frozen policy generation manifest writer fixture contract design](../frozen_policy_generation_manifest_writer_fixture_contract_design.md).
   This marker remains isolated write validator remote evidence and does not
   become manifest writer fixture, validator, or writer evidence.
+- Step380: linked the separate synthetic-only manifest writer fixture root:
+  [Frozen policy generation manifest writer fixtures](../../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md).
+  The fixture root remains future manifest writer contract data only; this
+  marker remains isolated write validator remote evidence and does not become
+  manifest writer, manifest validator, manifest file writing, artifact writer
+  CLI integration, performance, real-data readiness, or production readiness
+  evidence.
