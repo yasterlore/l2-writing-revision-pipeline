@@ -283,3 +283,7 @@ readiness.
   [Frozen policy generation manifest writer fixture release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_record_workflow.md).
   The future manifest writer fixture status marker remains separate from this
   artifact body isolated write status marker.
+- Step388: linked the separate manifest writer fixture remote/manual Release
+  Quality status marker:
+  [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md).
+  This marker remains artifact body isolated write evidence only.
