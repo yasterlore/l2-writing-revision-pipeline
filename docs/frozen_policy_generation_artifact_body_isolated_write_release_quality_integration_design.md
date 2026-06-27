@@ -371,3 +371,18 @@ performance evaluation. It does not copy raw logs, fixture bodies, written
 file content, artifact body payloads, generated policy bodies, manifest
 bodies, raw rows, logits, private paths, absolute temp paths, or raw learner
 text into docs.
+
+## 20. Step376 Remote Run Record Workflow Design Status
+
+Step376 adds the docs-only remote/manual Release Quality run record workflow
+for this wrapper integration:
+
+[Frozen policy generation artifact body isolated write release-quality remote run record workflow](frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_record_workflow.md).
+
+The workflow design defines the future status marker path, pass-only /
+count-only metadata, cleanup/no-residue safety review, failure handling, and
+recording steps. Step376 does not create the actual status marker, run a
+remote workflow, change workflow YAML, change this wrapper integration, change
+Makefile, change Python code/tests, change fixture JSON, implement manifest
+writer, connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.

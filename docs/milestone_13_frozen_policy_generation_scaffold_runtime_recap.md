@@ -942,6 +942,14 @@ written, no artifact body is produced, and no performance metric is computed.
   errors, and zero residue files. It does not change workflow YAML, Makefile,
   Python code/tests, fixture JSON, manifest writer, artifact writer CLI
   integration, use real data, compute metrics, or claim production readiness.
+- Step376: added the docs-only remote/manual Release Quality run record
+  workflow design for the isolated write validator wrapper integration. The
+  design defines a future public-safe status marker path, pass-only/count-only
+  metadata, cleanup/no-residue safety review, failure handling, and recording
+  workflow. It does not create a status marker, run a remote workflow, change
+  workflow YAML, change the wrapper, change Makefile, change Python
+  code/tests, change fixture JSON, implement manifest writer, connect artifact
+  writer CLI, use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -957,6 +965,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
 - [Frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body isolated write release-quality integration design](frozen_policy_generation_artifact_body_isolated_write_release_quality_integration_design.md)
+- [Frozen policy generation artifact body isolated write release-quality remote run record workflow](frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)

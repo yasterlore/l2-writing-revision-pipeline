@@ -467,3 +467,17 @@ The integration keeps this validator summary-only and requires zero mismatches,
 zero input errors, and `residue_file_count=0`. Step375 does not change workflow
 YAML, Makefile targets, Python code/tests, fixture JSON, manifest writer
 behavior, artifact writer CLI integration, or performance evaluation.
+
+## 29. Step376 Remote Run Record Workflow Design Status
+
+Step376 adds a docs-only workflow design for recording a future remote/manual
+Release Quality run after the isolated write validator is included in the
+wrapper:
+
+[Frozen policy generation artifact body isolated write release-quality remote run record workflow](frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_record_workflow.md).
+
+The design keeps the future marker pass-only, count-only, metadata-only, and
+public-safe. Step376 does not create a status marker, run a remote workflow,
+change workflow YAML, change the release-quality wrapper, change Makefile,
+change Python code/tests, change fixture JSON, implement manifest writer, or
+connect artifact writer CLI.

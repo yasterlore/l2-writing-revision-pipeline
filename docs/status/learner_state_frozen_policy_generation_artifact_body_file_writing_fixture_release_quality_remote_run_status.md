@@ -280,3 +280,8 @@ and not production readiness evidence.
   integration is local wrapper coverage only for now. This marker remains
   evidence only for the earlier remote no-write fixture validator target and
   should not be reinterpreted as remote evidence for isolated write validation.
+- Step376: linked the docs-only remote/manual run record workflow design for
+  future isolated write validator status recording:
+  [Frozen policy generation artifact body isolated write release-quality remote run record workflow](../frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_record_workflow.md).
+  This marker remains evidence only for the earlier remote no-write fixture
+  validator target.

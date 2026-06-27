@@ -526,3 +526,15 @@ The fixture contract remains unchanged: 5 valid cases, 17 invalid /
 expected-failure cases, and 110 JSON files. Step375 does not change fixture
 JSON, does not write manifests, does not connect artifact writer CLI, and does
 not introduce real data or performance evaluation.
+
+## 30. Step376 Remote Run Record Workflow Design Status
+
+Step376 adds the docs-only remote/manual Release Quality run record workflow
+design for the isolated write validator wrapper integration:
+
+[Frozen policy generation artifact body isolated write release-quality remote run record workflow](frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_record_workflow.md).
+
+The future marker should record only safe run identity metadata, wrapper
+inclusion metadata, pass-only/count-only isolated write validation counts, and
+cleanup/no-residue safety flags. Step376 does not create the actual marker and
+does not change this fixture contract or fixture JSON.
