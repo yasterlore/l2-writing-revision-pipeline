@@ -404,7 +404,22 @@ change fixture JSON, add a Makefile target, integrate release-quality, connect
 artifact writer CLI, use real data, compute metrics, or claim production
 readiness.
 
-## 25. Related Documents
+## 25. Step382 Static Validator Implementation Status
+
+Step382 implements the static fixture validator described by the Step381
+design:
+
+- `python/learner_state/frozen_policy_generation_manifest_writer_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_manifest_writer_fixture_validation.py`
+
+The validator checks the existing synthetic metadata-only manifest writer
+fixture root and produces body-free summaries. It does not run a manifest
+writer, generate manifest bodies, write manifest files, add a Makefile target,
+integrate release-quality, change workflow YAML, change fixture JSON, connect
+artifact writer CLI, use real data, compute metrics, or claim production
+readiness.
+
+## 26. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)

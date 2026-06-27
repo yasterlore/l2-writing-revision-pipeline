@@ -992,6 +992,14 @@ written, no artifact body is produced, and no performance metric is computed.
   YAML, change the wrapper, change Makefile, change Python code/tests, change
   fixture JSON, connect artifact writer CLI, use real data, compute metrics,
   or claim production readiness.
+- Step382: implemented the static manifest writer fixture validator module,
+  CLI, and focused tests. The validator checks the 30-case / 150-JSON
+  synthetic metadata-only fixture root with body-free summaries and reports 30
+  matched cases, zero mismatches, and zero input errors. It does not implement
+  a manifest writer, generate manifest bodies, write manifest files, add a
+  Makefile target, integrate release-quality, change workflow YAML, change the
+  wrapper, change fixture JSON, connect artifact writer CLI, use real data,
+  compute metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -1013,6 +1021,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
+- [Frozen policy generation manifest writer fixture validator](../python/learner_state/frozen_policy_generation_manifest_writer_fixture_validation.py)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
