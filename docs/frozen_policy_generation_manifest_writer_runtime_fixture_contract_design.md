@@ -417,7 +417,20 @@ release-quality wrapper, change Makefile, change Python code/tests, change
 existing fixture JSON, connect artifact writer CLI, use real data, compute
 metrics, or claim production readiness.
 
-## 27. Related Documents
+## 27. Step392 Runtime Fixture Validator Design Status
+
+Step392 adds the docs-only runtime fixture validator design:
+
+[Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md).
+
+The design describes how a future static validator should check the 31-case /
+155-JSON runtime fixture root without executing a runtime writer or writing
+manifest files. It does not implement the validator, change Makefile, change
+the wrapper, change workflow YAML, change Python code/tests, change fixture
+JSON, connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
+## 28. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
@@ -425,6 +438,7 @@ metrics, or claim production readiness.
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md)
+- [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)

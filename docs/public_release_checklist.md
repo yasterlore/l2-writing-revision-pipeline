@@ -2999,6 +2999,18 @@ workflow YAML, change the wrapper, change Makefile, change Python code/tests,
 change existing fixture JSON, connect artifact writer CLI, use real data,
 compute metrics, or claim production readiness.
 
+For Step392, review the docs-only
+[frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md).
+Confirm it fixes only the future static validator design for the runtime
+fixture root: module and CLI shape, validation phases, required files, schema
+checks, expected root summary, request/pointer/expected-result policy checks,
+path/content/no-oracle checks, reason-code handling, safe selector rules,
+exit codes, implementation tests, and Makefile/release-quality staging.
+Confirm it does not implement a validator, execute a runtime writer, write
+manifest files, change workflow YAML, change the wrapper, change Makefile,
+change Python code/tests, change fixture JSON, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
