@@ -2780,6 +2780,24 @@ generated policy bodies, manifest bodies, JSON body examples, raw rows,
 logits, private paths, absolute local paths, absolute temp paths, raw learner
 text, real participant data, or performance metric bodies.
 
+For Step378, review the docs-only
+[frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md).
+Confirm it defines only the future manifest writer boundary: metadata-only
+role, allowed field names, forbidden bodies/payloads/raw data/private paths,
+safe relative output path policy, future CLI/API shape, future fixture
+strategy, future validator strategy, and release-quality staging. Confirm it
+does not implement a manifest writer, generate manifest bodies, write manifest
+files, create fixture JSON, implement a validator, change workflow YAML,
+change the release-quality wrapper, change Makefile, change Python code/tests,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness. Confirm docs do not include raw logs, full job output,
+copied log blocks, screenshots containing raw logs, request bodies, pointer
+bodies, isolated write request bodies, expected isolated write result bodies,
+case metadata bodies, written file content, artifact body payload examples,
+generated policy bodies, manifest body examples, JSON body examples, raw
+rows, logits, private paths, absolute local paths, absolute temp paths, raw
+learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

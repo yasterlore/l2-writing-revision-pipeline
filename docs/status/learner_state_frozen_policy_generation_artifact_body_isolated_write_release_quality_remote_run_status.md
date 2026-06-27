@@ -211,7 +211,9 @@ readiness.
 ## Next Actions
 
 - commit this status marker after local checks
-- keep manifest writer work separate
+- keep manifest writer work separate; Step378 defines the future
+  metadata-only boundary in
+  [Frozen policy generation manifest writer boundary design](../frozen_policy_generation_manifest_writer_boundary_design.md)
 - keep artifact writer CLI integration separate
 - keep strict exit code normalization separate
 - keep real-data readiness for future private/institution-approved review
@@ -220,3 +222,6 @@ readiness.
 
 - Step377: created this public-safe remote/manual Release Quality status
   marker for the artifact body isolated write validator wrapper integration.
+- Step378: linked the separate docs-only manifest writer boundary design. This
+  marker remains isolated write validator remote evidence and does not become
+  manifest writer evidence.
