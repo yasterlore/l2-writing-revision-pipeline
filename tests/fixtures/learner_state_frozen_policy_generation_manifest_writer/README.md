@@ -116,3 +116,16 @@ These fixtures do not prove manifest writer correctness, manifest file output,
 manifest validation, artifact writer CLI integration, model performance,
 calibration quality, learner-state estimator correctness, real-data readiness,
 or production readiness.
+
+## Future Validator
+
+Step381 adds a docs-only design for a future static fixture validator:
+
+[Frozen policy generation manifest writer fixture validator design](../../../docs/frozen_policy_generation_manifest_writer_fixture_validator_design.md).
+
+That future validator should check fixture structure, schema versions, case
+IDs, expected category counts, path-policy sentinels, content-policy
+sentinels, reason-code contracts, selector safety, and body-free summaries.
+It should not run a manifest writer, generate manifest bodies, write manifest
+files, connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.

@@ -353,10 +353,21 @@ generation, manifest file writing, a manifest validator, artifact writer CLI
 integration, Makefile target, wrapper integration, workflow changes, metrics,
 real-data readiness, or production readiness.
 
-## 19. Related Documents
+## 19. Step381 Fixture Validator Design Status
+
+Step381 adds the docs-only static fixture validator design:
+
+[Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md).
+
+The validator design remains separate from manifest writer implementation and
+manifest file writing. It fixes only how the existing synthetic metadata-only
+fixtures should be checked in a future validator.
+
+## 20. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
+- [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
