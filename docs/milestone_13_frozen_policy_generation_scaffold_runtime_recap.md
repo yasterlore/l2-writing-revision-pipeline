@@ -935,6 +935,13 @@ written, no artifact body is produced, and no performance metric is computed.
   the wrapper, workflow YAML, Makefile, Python code/tests, fixture JSON,
   manifest writer, artifact writer CLI integration, use real data, compute
   metrics, or claim production readiness.
+- Step375: integrated the isolated write validator target into the
+  release-quality wrapper after the no-write file-writing fixture validation
+  target and before config/scoring checks. The wrapper now checks the 22-case
+  isolated write validator summary, including zero mismatches, zero input
+  errors, and zero residue files. It does not change workflow YAML, Makefile,
+  Python code/tests, fixture JSON, manifest writer, artifact writer CLI
+  integration, use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 

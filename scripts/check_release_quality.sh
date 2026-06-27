@@ -145,6 +145,9 @@ run make check-learner-state-frozen-policy-generation-artifact-body-generation-s
 section "learner-state frozen policy generation artifact body file writing fixture validation"
 run make check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
 
+section "learner-state frozen policy generation artifact body isolated write validation"
+run make check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation
+
 section "config and scoring smoke checks"
 run scripts/check_config_enabled_summary_smoke.sh
 run scripts/check_config_enabled_e2e_smoke.sh

@@ -298,7 +298,9 @@ temporary outputs and did not leave generated artifact body files behind.
   Completed in
   [Frozen policy generation artifact body isolated write release-quality integration design](frozen_policy_generation_artifact_body_isolated_write_release_quality_integration_design.md).
 - Step375: integrate the release-quality wrapper if the standalone target
-  remains stable.
+  remains stable. Completed by adding the standalone isolated write validator
+  target to the wrapper after the no-write file-writing fixture validation
+  target and before config/scoring smoke checks.
 - Step376: record a public-safe remote/manual status marker after
   release-quality succeeds.
 

@@ -276,3 +276,7 @@ and not production readiness evidence.
   This marker remains evidence only for the remote no-write fixture validator
   target and does not become isolated write validator release-quality
   evidence.
+- Step375: noted that isolated write validator release-quality wrapper
+  integration is local wrapper coverage only for now. This marker remains
+  evidence only for the earlier remote no-write fixture validator target and
+  should not be reinterpreted as remote evidence for isolated write validation.

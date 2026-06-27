@@ -348,3 +348,26 @@ remain future work.
 - Step376: design the remote/manual run record workflow.
 - Step377: add a public-safe remote/manual status marker after a successful
   Release Quality run.
+
+## 19. Step375 Wrapper Integration Status
+
+Step375 implements the wrapper integration described here. The release-quality
+wrapper now runs:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation`
+
+The new wrapper section label is:
+
+`release_quality_check: learner-state frozen policy generation artifact body isolated write validation`
+
+The section is placed after the no-write artifact body file writing fixture
+validation target and before config/scoring smoke checks. The target remains
+summary-only and is expected to report 22 total cases, 22 matched cases,
+0 mismatches, 0 input errors, and `residue_file_count=0`.
+
+Step375 does not change workflow YAML, Makefile targets, Python code/tests,
+fixture JSON, manifest writer behavior, artifact writer CLI integration, or
+performance evaluation. It does not copy raw logs, fixture bodies, written
+file content, artifact body payloads, generated policy bodies, manifest
+bodies, raw rows, logits, private paths, absolute temp paths, or raw learner
+text into docs.

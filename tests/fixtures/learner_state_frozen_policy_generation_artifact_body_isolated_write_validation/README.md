@@ -148,3 +148,15 @@ must not print fixture JSON bodies, written file content, artifact body
 payloads, private paths, absolute temp paths, raw rows, logits, or raw learner
 text. Step374 does not change this fixture root and does not modify the
 release-quality wrapper.
+
+## Release-Quality Wrapper Integration
+
+Step375 integrates the standalone isolated write validator target into the
+release-quality wrapper:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation`
+
+The wrapper placement is after the no-write artifact body file-writing fixture
+validation target and before config/scoring smoke checks. The fixture JSON
+files remain unchanged. The wrapper must keep output summary-only and require
+22 matched cases, 0 mismatches, 0 input errors, and 0 residue files.
