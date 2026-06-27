@@ -2833,6 +2833,24 @@ pointer body examples, expected body examples, fixture JSON examples in docs,
 raw rows, logits, private paths, absolute local paths, absolute temp paths,
 raw learner text, real participant data, or performance metric bodies.
 
+For Step381, review the docs-only
+[frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md).
+Confirm it designs only the future static fixture validator for the manifest
+writer fixture root: proposed module, CLI, APIs, dataclasses, validation
+phases, required files, schema checks, expected counts, summary fields,
+path/content policy checks, reason-code handling, safe selector rules, exit
+codes, implementation tests, and staging. Confirm it does not implement a
+validator, implement a manifest writer, generate manifest bodies, write
+manifest files, add a Makefile target, integrate release-quality, change
+workflow YAML, change the release-quality wrapper, change Python code/tests,
+change fixture JSON, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness. Confirm docs do not include raw logs,
+full job output, copied log blocks, screenshots containing raw logs, fixture
+JSON body examples, manifest body examples, artifact body payload examples,
+request bodies, pointer bodies, expected bodies, raw rows, logits, private
+paths, absolute local paths, absolute temp paths, raw learner text, real
+participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

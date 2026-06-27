@@ -983,6 +983,15 @@ written, no artifact body is produced, and no performance metric is computed.
   change workflow YAML, change the wrapper, change Makefile, change Python
   code/tests, change existing fixture JSON, connect artifact writer CLI, use
   real data, compute metrics, or claim production readiness.
+- Step381: added a docs-only manifest writer fixture validator design. The
+  design fixes the future static validator module, CLI, APIs, validation
+  phases, required files, schema checks, expected counts, path/content policy
+  sentinel checks, reason-code handling, safe selector rules, exit codes,
+  tests, and staging. It does not implement a validator, implement a manifest
+  writer, generate manifest bodies, write manifest files, change workflow
+  YAML, change the wrapper, change Makefile, change Python code/tests, change
+  fixture JSON, connect artifact writer CLI, use real data, compute metrics,
+  or claim production readiness.
 
 ## Related Documents
 
@@ -1003,6 +1012,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
+- [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)

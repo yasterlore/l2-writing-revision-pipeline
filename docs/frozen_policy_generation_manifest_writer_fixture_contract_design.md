@@ -390,10 +390,25 @@ write manifest files, implement a validator, add a Makefile target, integrate
 release-quality, connect artifact writer CLI, use real data, compute metrics,
 or claim production readiness.
 
-## 24. Related Documents
+## 24. Step381 Fixture Validator Design Status
+
+Step381 adds the docs-only static fixture validator design:
+
+[Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md).
+
+The design defines the future validator module, CLI, APIs, validation phases,
+required files, schema checks, expected counts, path/content policy checks,
+reason-code handling, safe selector rules, exit codes, tests, and staging. It
+does not implement the validator, run a manifest writer, write manifest files,
+change fixture JSON, add a Makefile target, integrate release-quality, connect
+artifact writer CLI, use real data, compute metrics, or claim production
+readiness.
+
+## 25. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
+- [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
