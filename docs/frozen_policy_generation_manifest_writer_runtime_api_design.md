@@ -464,13 +464,26 @@ does not create a status marker, run a workflow, write manifest files, connect
 artifact writer CLI, use real data, compute metrics, or claim production
 readiness.
 
-## 32. Related Documents
+## 32. Step399 Runtime Fixture Remote Run Status Marker Status
+
+Step399 creates the public-safe remote/manual Release Quality status marker
+for runtime fixture validation:
+
+[Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md).
+
+The marker records safe pass-only/count-only wrapper evidence only. It does
+not implement or execute the manifest writer runtime, write manifest files,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
+## 33. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
 - [Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
+- [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md)
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)

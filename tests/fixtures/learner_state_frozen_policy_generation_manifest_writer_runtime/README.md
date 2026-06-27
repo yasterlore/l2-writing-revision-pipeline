@@ -211,6 +211,15 @@ runtime writer, manifest file writing, artifact writer CLI integration,
 real-data use, metric computation, and production readiness claims remain
 separate.
 
+Step399 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](../../../docs/status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md).
+
+The marker records only safe pass-only/count-only evidence that this fixture
+root was validated through the release-quality wrapper. It does not execute a
+runtime writer, write manifest files, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness.
+
 ## Docs Safety
 
 This README contains no JSON body examples, manifest body examples,

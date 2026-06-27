@@ -305,3 +305,14 @@ The future marker remains separate. This target still validates runtime
 fixture contracts only and does not execute a runtime writer, write manifest
 files, connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
+
+## 20. Step399 Remote Run Status Marker Status
+
+Step399 creates the public-safe remote/manual Release Quality status marker
+for this target:
+
+[Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md).
+
+The marker records safe pass-only/count-only remote wrapper evidence only.
+Runtime writer execution, manifest file writing, artifact writer CLI
+integration, real-data use, metrics, and production readiness remain separate.

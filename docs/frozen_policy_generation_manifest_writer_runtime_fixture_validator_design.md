@@ -497,6 +497,7 @@ step, does not execute a runtime writer, and does not write manifest files.
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
+- [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
 
@@ -524,3 +525,11 @@ fixture validator wrapper integration. It defines the future status marker
 path and safe pass-only/count-only metadata policy, while keeping the marker,
 workflow execution, manifest writer runtime, manifest file writing, and
 artifact writer CLI integration separate.
+
+## 37. Step399 Remote Run Status Marker Status
+
+Step399 creates the public-safe remote/manual Release Quality status marker
+for the runtime fixture validator wrapper integration. The marker records
+31-case / 155-JSON pass-only/count-only remote wrapper evidence and keeps
+runtime writer execution, manifest file writing, artifact writer CLI
+integration, real-data use, metrics, and production readiness separate.

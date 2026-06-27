@@ -3080,6 +3080,18 @@ change Makefile, change Python code/tests, change fixture JSON, execute a
 runtime writer, write manifest files, connect artifact writer CLI, use real
 data, compute metrics, or claim production readiness.
 
+For Step399, review the public-safe status marker
+[learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md).
+Confirm it records only safe run identity metadata, wrapper inclusion
+metadata, pass-only/count-only runtime fixture validation summary fields,
+related check inclusion summaries, safety review, interpretation, and
+non-goals. Confirm it does not include raw logs, full job output, copied log
+blocks, screenshots containing raw logs, runtime fixture JSON body examples,
+manifest bodies, request/pointer/expected bodies, artifact body payloads,
+generated policy bodies, private paths, raw learner text, real participant
+data, performance evidence, real-data readiness, or production readiness
+claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

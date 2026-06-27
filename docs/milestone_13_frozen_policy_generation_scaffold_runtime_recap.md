@@ -1170,6 +1170,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer runtime fixture validator Makefile target design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)

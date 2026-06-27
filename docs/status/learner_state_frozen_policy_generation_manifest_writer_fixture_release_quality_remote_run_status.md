@@ -271,3 +271,11 @@ correctness, real-data readiness, or production readiness.
   release-quality run only. Runtime fixture remote evidence, manifest writer
   runtime execution, manifest file writing, artifact writer CLI integration,
   and production readiness remain separate.
+- Step399: linked the separate runtime fixture remote/manual Release Quality
+  status marker:
+  [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md).
+  This marker remains evidence for the earlier manifest writer fixture
+  validation run only. The runtime fixture marker records separate
+  pass-only/count-only wrapper evidence and does not imply runtime writer,
+  manifest file writing, artifact writer CLI integration, or production
+  readiness.

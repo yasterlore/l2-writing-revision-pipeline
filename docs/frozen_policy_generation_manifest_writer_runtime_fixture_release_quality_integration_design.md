@@ -362,6 +362,7 @@ internally consistent.
 - [Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
+- [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
 
@@ -398,3 +399,15 @@ create the status marker, run GitHub Actions, change workflow YAML, change the
 wrapper, change Makefile, change Python code/tests, change fixture JSON,
 execute a manifest writer runtime, write manifest files, connect artifact
 writer CLI, use real data, compute metrics, or claim production readiness.
+
+## 22. Step399 Remote Run Status Marker Status
+
+Step399 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md).
+
+The marker records the runtime fixture validator wrapper evidence using
+pass-only/count-only metadata. It does not change workflow YAML, the wrapper,
+Makefile, Python code/tests, fixture JSON, execute a manifest writer runtime,
+write manifest files, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness.

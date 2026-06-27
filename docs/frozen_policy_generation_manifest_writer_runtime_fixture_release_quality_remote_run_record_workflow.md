@@ -372,8 +372,8 @@ because this target is static fixture validation only.
 
 ## 17. Next Recommended Steps
 
-- run remote/manual Release Quality after this design is accepted
-- create the future status marker from safe metadata only
+- use the Step399 status marker as the current public-safe remote/manual run
+  record
 - keep runtime manifest writer design separate
 - keep manifest file writing separate
 - keep artifact writer CLI integration separate
@@ -388,6 +388,21 @@ because this target is static fixture validation only.
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
+- [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md)
 - [Status markers README](status/README.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 19. Step399 Status Marker Creation Status
+
+Step399 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md).
+
+The marker records only safe run identity metadata, wrapper inclusion
+metadata, pass-only/count-only runtime fixture validation summary fields,
+related check inclusion summaries, safety review, interpretation, and
+non-goals. It does not copy raw logs, full job output, fixture JSON bodies,
+request/pointer/expected bodies, manifest bodies, artifact body payloads,
+generated policy bodies, private paths, raw learner text, real participant
+data, or performance evidence.
