@@ -1,0 +1,68 @@
+{
+  "allowed_failure_reason_codes": [
+    "overwrite_without_policy"
+  ],
+  "case_id": "overwrite_without_policy",
+  "case_kind": "invalid",
+  "description": "Expected usage-error no-write contract for overwrite_without_policy.",
+  "expected_category": "usage_error_no_write",
+  "expected_exit_code": 2,
+  "expected_status": "usage_error",
+  "forbidden_output_markers": [
+    "artifact_body_payload",
+    "generated_policy_body",
+    "manifest_body",
+    "request_body",
+    "pointer_body",
+    "expected_body",
+    "raw_rows",
+    "logits",
+    "probabilities",
+    "private_path",
+    "absolute_path",
+    "raw_learner_text"
+  ],
+  "forbidden_summary_fields": [
+    "artifact_body_payload",
+    "artifact_body_request_body",
+    "artifact_writer_result_pointer_body",
+    "case_metadata_body",
+    "expected_manifest_writer_result_body",
+    "generated_policy_body",
+    "manifest_body",
+    "manifest_writer_request_body",
+    "raw_learner_text",
+    "raw_rows",
+    "logits",
+    "probabilities",
+    "private_path",
+    "absolute_path"
+  ],
+  "notes": [
+    "Path-policy case uses a safe sentinel selector instead of any real private or absolute local path.",
+    "Fixture JSON is synthetic metadata only.",
+    "Manifest writer, validator, file writing, and artifact writer CLI integration are not implemented by this fixture."
+  ],
+  "required_summary_fields": [
+    "mode",
+    "manifest_writer_schema_version",
+    "manifest_file_written",
+    "manifest_body_available",
+    "manifest_path_available",
+    "manifest_path_safe_relative_only",
+    "stdout_body_suppressed",
+    "stderr_body_suppressed",
+    "synthetic_only_checked",
+    "no_oracle_checked",
+    "non_proof_notice_checked",
+    "reason_codes",
+    "failed_checks"
+  ],
+  "safety_expectation": "synthetic_only_metadata_only_no_oracle_no_body_payloads",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_case_metadata_v0.1",
+  "should_cleanup": true,
+  "should_leave_residue": false,
+  "should_write_manifest_file": false,
+  "source_artifact_body_case": "safe_metadata_body_summary",
+  "source_artifact_writer_case": "valid/minimal_metadata_only_artifact_plan"
+}

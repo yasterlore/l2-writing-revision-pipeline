@@ -1,0 +1,18 @@
+{
+  "artifact_body_file_written": false,
+  "artifact_body_id": "artifact_body_hidden_private_manifest_directory",
+  "artifact_body_payload_suppressed": true,
+  "artifact_body_status": "generated_safe_metadata_body",
+  "artifact_id": "artifact_hidden_private_manifest_directory",
+  "generation_status": "pass",
+  "manifest_body_generated": false,
+  "manifest_file_written": false,
+  "no_oracle_checked": true,
+  "pointer_id": "artifact_body_generation_result_pointer_hidden_private_manifest_directory",
+  "raw_data_suppressed": true,
+  "result_schema_version": "learner_state_frozen_policy_generation_artifact_body_result_v0.1",
+  "safe_reference_only": true,
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_artifact_body_generation_result_pointer_v0.1",
+  "source_case_id": "safe_metadata_body_summary",
+  "synthetic_only_checked": true
+}

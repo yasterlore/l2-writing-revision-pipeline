@@ -1,0 +1,17 @@
+{
+  "artifact_id": "artifact_unsafe_manifest_filename",
+  "body_payload_suppressed": true,
+  "generated_policy_body_suppressed": true,
+  "manifest_body_suppressed": true,
+  "manifest_id": "manifest_unsafe_manifest_filename",
+  "no_oracle_checked": true,
+  "pointer_id": "artifact_writer_result_pointer_unsafe_manifest_filename",
+  "raw_data_suppressed": true,
+  "result_schema_version": "learner_state_frozen_policy_generation_artifact_writer_result_v0.1",
+  "safe_reference_only": true,
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_artifact_writer_result_pointer_v0.1",
+  "source_case_id": "valid/minimal_metadata_only_artifact_plan",
+  "synthetic_only_checked": true,
+  "writer_mode": "metadata_only",
+  "writer_status": "pass"
+}

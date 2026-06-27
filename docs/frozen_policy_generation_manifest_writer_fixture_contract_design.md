@@ -373,9 +373,27 @@ logits, real participant data, or performance metric bodies.
 - implement the metadata-only manifest writer
 - stage Makefile, release-quality, and remote marker work separately
 
-## 23. Related Documents
+## 23. Step380 Fixture JSON Creation Status
+
+Step380 creates the synthetic-only, metadata-only manifest writer fixture
+root:
+
+[Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md).
+
+The fixture root contains 5 valid cases, 25 invalid / expected-failure cases,
+30 total case directories, and 150 JSON files. Each case has the five-file
+contract fixed by this document. The files use safe metadata, safe sentinel
+reason codes, and expected result flags only.
+
+This status does not implement a manifest writer, generate manifest bodies,
+write manifest files, implement a validator, add a Makefile target, integrate
+release-quality, connect artifact writer CLI, use real data, compute metrics,
+or claim production readiness.
+
+## 24. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
+- [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)

@@ -335,9 +335,28 @@ validator, write manifest files, change Makefile, change the wrapper, change
 workflow YAML, change Python code/tests, change fixture JSON, connect artifact
 writer CLI, use real data, compute metrics, or claim production readiness.
 
-## 18. Related Documents
+## 18. Step380 Fixture Root Status
+
+Step380 creates the manifest writer fixture root:
+
+[Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md).
+
+The root contains 30 synthetic-only, metadata-only, no-oracle contract cases
+and 150 JSON files. It represents future manifest writer path-policy and
+content-policy expectations without including manifest bodies, artifact body
+payloads, request bodies, pointer bodies, expected bodies, raw rows, logits,
+private paths, absolute local paths, raw learner text, real participant data,
+or performance evidence.
+
+This fixture root does not implement the manifest writer, manifest body
+generation, manifest file writing, a manifest validator, artifact writer CLI
+integration, Makefile target, wrapper integration, workflow changes, metrics,
+real-data readiness, or production readiness.
+
+## 19. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
+- [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
