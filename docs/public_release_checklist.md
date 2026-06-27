@@ -2926,6 +2926,22 @@ implement a manifest writer, generate manifest bodies, write manifest files,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
+For Step387, review the docs-only
+[frozen policy generation manifest writer fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_record_workflow.md).
+Confirm it designs only the future public-safe remote/manual Release Quality
+status marker workflow for manifest writer fixture validation. Confirm it
+recommends
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md`,
+records only pass-only/count-only metadata, forbids raw logs, full job output,
+manifest bodies, fixture JSON bodies, request/pointer/expected bodies,
+artifact body payloads, generated policy bodies, raw rows, logits, private
+paths, absolute paths, raw learner text, real participant data, and
+performance evidence. Confirm it does not create the actual status marker,
+run a remote workflow, change workflow YAML, change the wrapper, change
+Makefile, change Python code/tests, change fixture JSON, implement a manifest
+writer, write manifest files, connect artifact writer CLI, use real data,
+compute metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

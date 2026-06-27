@@ -171,3 +171,15 @@ Step386 adds that static fixture validator target to the release-quality
 wrapper. This does not implement a manifest writer, write manifest files,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
+
+## Future Remote Status Marker
+
+Step387 adds the docs-only remote/manual Release Quality run record workflow:
+
+[Frozen policy generation manifest writer fixture release-quality remote run record workflow](../../../docs/frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_record_workflow.md).
+
+A future status marker should record only public-safe pass-only/count-only
+metadata for this fixture validation target. It must not copy fixture JSON
+bodies, manifest bodies, request/pointer/expected bodies, artifact body
+payloads, generated policy bodies, raw rows, logits, private paths, absolute
+paths, raw learner text, or raw logs.

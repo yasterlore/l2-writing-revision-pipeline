@@ -278,3 +278,8 @@ readiness.
   manifest writer evidence, manifest file writing evidence, artifact writer
   CLI integration evidence, performance evidence, real-data readiness
   evidence, or production readiness evidence.
+- Step387: linked the separate docs-only manifest writer fixture
+  remote/manual run record workflow design:
+  [Frozen policy generation manifest writer fixture release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_record_workflow.md).
+  The future manifest writer fixture status marker remains separate from this
+  artifact body isolated write status marker.
