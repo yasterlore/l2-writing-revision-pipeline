@@ -378,11 +378,26 @@ bodies, write manifest files, add a Makefile target, integrate
 release-quality, change workflow YAML, change fixture JSON, connect artifact
 writer CLI, use real data, compute metrics, or claim production readiness.
 
-## 26. Related Documents
+## 26. Step383 Makefile Target Design Status
+
+Step383 adds the docs-only standalone Makefile target design:
+
+[Frozen policy generation manifest writer fixture validator Makefile target design](frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md).
+
+The design fixes the future target name, command shape, help text, expected
+summary fields, output/logging safety, relation to existing targets,
+release-quality staging, implementation checks, and non-goals. It does not
+implement the Makefile target, add release-quality integration, run a manifest
+writer, write manifest files, change workflow YAML, change fixture JSON,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
+## 27. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
+- [Frozen policy generation manifest writer fixture validator Makefile target design](frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
