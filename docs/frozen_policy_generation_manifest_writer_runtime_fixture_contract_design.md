@@ -467,7 +467,19 @@ The target validates this runtime fixture root through `make`, but remains
 outside release-quality and does not execute a runtime writer or write
 manifest files.
 
-## 31. Related Documents
+## 31. Step396 Release-Quality Integration Design Status
+
+Step396 adds the docs-only release-quality integration design:
+
+[Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md).
+
+The design proposes future wrapper placement for the standalone runtime
+fixture validator target. It does not change the wrapper, workflow YAML,
+Makefile, Python code/tests, fixture JSON, implement a runtime writer, write
+manifest files, connect artifact writer CLI, use real data, compute metrics,
+or claim production readiness.
+
+## 32. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
@@ -476,6 +488,7 @@ manifest files.
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md)
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
+- [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)

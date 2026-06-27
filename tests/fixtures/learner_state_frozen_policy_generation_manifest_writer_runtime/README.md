@@ -185,6 +185,16 @@ remains outside release-quality, does not execute a runtime writer, does not
 write manifest files, does not connect artifact writer CLI, and does not
 claim production readiness.
 
+Step396 adds the docs-only release-quality integration design:
+
+[Frozen policy generation manifest writer runtime fixture release-quality integration design](../../../docs/frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md).
+
+The design proposes future wrapper placement for this static runtime fixture
+validator target. It does not change the wrapper, workflow YAML, Makefile,
+Python code/tests, fixture JSON, execute a runtime writer, write manifest
+files, connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
 ## Docs Safety
 
 This README contains no JSON body examples, manifest body examples,
