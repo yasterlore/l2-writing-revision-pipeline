@@ -2851,6 +2851,27 @@ request bodies, pointer bodies, expected bodies, raw rows, logits, private
 paths, absolute local paths, absolute temp paths, raw learner text, real
 participant data, or performance metric bodies.
 
+For Step382, review the static manifest writer fixture validator
+implementation:
+`python/learner_state/frozen_policy_generation_manifest_writer_fixture_validation.py`
+and
+`python/learner_state/tests/test_frozen_policy_generation_manifest_writer_fixture_validation.py`.
+Confirm it validates only the synthetic metadata-only manifest writer fixture
+contract root with body-free summaries: 30 total cases, 5 valid cases, 25
+invalid / expected-failure cases, 3 metadata-only no-file cases, 1 manifest
+file-written contract case, 11 usage-error cases, 15 fail-closed cases, 30
+matched cases, zero mismatches, and zero input errors. Confirm it does not
+implement a manifest writer, generate manifest bodies, write manifest files,
+add a Makefile target, integrate release-quality, change workflow YAML,
+change the release-quality wrapper, change fixture JSON, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+Confirm CLI and docs do not print or include raw logs, full job output, copied
+log blocks, screenshots containing raw logs, fixture JSON body examples,
+manifest body examples, artifact body payload examples, request bodies,
+pointer bodies, expected bodies, raw rows, logits, private paths, absolute
+local paths, absolute temp paths, raw learner text, real participant data, or
+performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

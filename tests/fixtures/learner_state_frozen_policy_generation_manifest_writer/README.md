@@ -129,3 +129,9 @@ sentinels, reason-code contracts, selector safety, and body-free summaries.
 It should not run a manifest writer, generate manifest bodies, write manifest
 files, connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
+
+Step382 implements that static validator and focused tests. The implementation
+checks this fixture root only as synthetic metadata contract data. It does not
+implement a manifest writer, generate manifest bodies, write manifest files,
+add a Makefile target, integrate release-quality, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness.

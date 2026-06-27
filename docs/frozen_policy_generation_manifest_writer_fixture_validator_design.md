@@ -358,7 +358,27 @@ rows, logits, real participant data, or performance metric bodies.
 - design and integrate release-quality wrapper coverage
 - later design and implement runtime manifest writer validation separately
 
-## 25. Related Documents
+## 25. Step382 Implementation Status
+
+Step382 implements the static manifest writer fixture validator module and
+focused tests:
+
+- `python/learner_state/frozen_policy_generation_manifest_writer_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_manifest_writer_fixture_validation.py`
+
+The validator reads the 30-case / 150-JSON synthetic metadata-only fixture
+root, checks fixture structure, schema versions, case IDs, expected category
+counts, path-policy sentinels, content-policy sentinels, reason-code
+contracts, selector safety, and body-free summaries. The root summary reports
+30 matched cases, zero mismatches, zero input errors, and
+`release_quality_ready=false`.
+
+This implementation does not implement the manifest writer, generate manifest
+bodies, write manifest files, add a Makefile target, integrate
+release-quality, change workflow YAML, change fixture JSON, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+
+## 26. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

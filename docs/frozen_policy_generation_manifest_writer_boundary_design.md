@@ -363,7 +363,15 @@ The validator design remains separate from manifest writer implementation and
 manifest file writing. It fixes only how the existing synthetic metadata-only
 fixtures should be checked in a future validator.
 
-## 20. Related Documents
+## 20. Step382 Static Validator Implementation Status
+
+Step382 implements the static manifest writer fixture validator module and
+tests. The validator checks fixture contract integrity only. It does not
+implement a manifest writer, generate manifest bodies, write manifest files,
+connect artifact writer CLI, change release-quality, use real data, compute
+metrics, or claim production readiness.
+
+## 21. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)

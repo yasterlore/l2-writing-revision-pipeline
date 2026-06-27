@@ -245,3 +245,8 @@ readiness.
   writer evidence, manifest file writing evidence, artifact writer CLI
   integration evidence, performance evidence, real-data readiness evidence, or
   production readiness evidence.
+- Step382: noted the separate static manifest writer fixture validator
+  implementation. This marker remains isolated write validator remote
+  evidence and does not become manifest writer evidence, manifest file writing
+  evidence, artifact writer CLI integration evidence, performance evidence,
+  real-data readiness evidence, or production readiness evidence.
