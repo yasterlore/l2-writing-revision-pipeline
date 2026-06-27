@@ -166,3 +166,8 @@ fixture validator target:
 The design does not add the target to the wrapper, implement a manifest
 writer, write manifest files, connect artifact writer CLI, use real data,
 compute metrics, or claim production readiness.
+
+Step386 adds that static fixture validator target to the release-quality
+wrapper. This does not implement a manifest writer, write manifest files,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.

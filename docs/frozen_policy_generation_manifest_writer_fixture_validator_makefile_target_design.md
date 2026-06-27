@@ -256,7 +256,17 @@ wrapper, workflow YAML, Makefile, Python code/tests, fixture JSON, manifest
 writer behavior, manifest file writing, artifact writer CLI integration,
 metrics, real-data use, or production readiness claims.
 
-## 17. Related Documents
+## 17. Step386 Wrapper Integration Status
+
+Step386 adds the standalone target to the release-quality wrapper with the
+label `release_quality_check: learner-state frozen policy generation manifest writer fixture validation`.
+
+The wrapper integration remains static fixture validation only. It does not
+change workflow YAML, Makefile target behavior, Python code/tests, fixture
+JSON, manifest writer behavior, manifest file writing, artifact writer CLI
+integration, metrics, real-data use, or production readiness claims.
+
+## 18. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

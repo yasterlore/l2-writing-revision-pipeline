@@ -452,7 +452,14 @@ The design does not add the target to the wrapper, run a manifest writer,
 write manifest files, change fixture JSON, use real data, compute metrics, or
 claim production readiness.
 
-## 29. Related Documents
+## 29. Step386 Wrapper Integration Status
+
+Step386 adds the static manifest writer fixture validator target to the
+release-quality wrapper. This does not change this fixture contract, run a
+manifest writer, write manifest files, change fixture JSON, use real data,
+compute metrics, or claim production readiness.
+
+## 30. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)

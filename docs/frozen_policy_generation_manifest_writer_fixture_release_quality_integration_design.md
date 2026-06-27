@@ -309,7 +309,6 @@ check, not proof that manifest writing or production file management is ready.
 
 ## 17. What This Does Not Do
 
-- does not integrate the wrapper
 - does not change workflow YAML
 - does not implement manifest writer
 - does not write manifest files
@@ -320,13 +319,31 @@ check, not proof that manifest writing or production file management is ready.
 
 ## 18. Next Recommended Steps
 
-- Step386: wrapper integration
 - Step387: remote/manual run record workflow design
 - Step388: remote/manual run status marker
 - later: runtime manifest writer design and implementation
 - later: runtime manifest writer Makefile and release-quality integration
 
-## 19. Related Documents
+## 19. Step386 Wrapper Integration Status
+
+Step386 adds the manifest writer fixture validator target to the
+release-quality wrapper immediately after artifact body isolated write
+validation and before config/scoring smoke checks.
+
+Wrapper label:
+
+`release_quality_check: learner-state frozen policy generation manifest writer fixture validation`
+
+Wrapper command:
+
+`make check-learner-state-frozen-policy-generation-manifest-writer-fixtures`
+
+This integration runs static fixture validation only. It does not change
+workflow YAML, Makefile, Python code/tests, fixture JSON, implement a manifest
+writer, generate manifest bodies, write manifest files, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+
+## 20. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

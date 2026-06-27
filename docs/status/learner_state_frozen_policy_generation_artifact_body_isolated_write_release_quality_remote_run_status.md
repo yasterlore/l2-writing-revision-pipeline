@@ -272,3 +272,9 @@ readiness.
   evidence, manifest file writing evidence, artifact writer CLI integration
   evidence, performance evidence, real-data readiness evidence, or production
   readiness evidence.
+- Step386: noted that manifest writer fixture validation was added to the
+  release-quality wrapper. This marker remains isolated write validator remote
+  evidence and does not become manifest writer fixture remote evidence,
+  manifest writer evidence, manifest file writing evidence, artifact writer
+  CLI integration evidence, performance evidence, real-data readiness
+  evidence, or production readiness evidence.

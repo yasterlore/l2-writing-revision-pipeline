@@ -408,7 +408,15 @@ The design is not wrapper implementation and does not implement a manifest
 writer, generate manifest bodies, write manifest files, connect artifact
 writer CLI, use real data, compute metrics, or claim production readiness.
 
-## 24. Related Documents
+## 24. Step386 Wrapper Integration Status
+
+Step386 adds the manifest writer fixture validator target to the
+release-quality wrapper. This is static fixture validation only and does not
+implement a manifest writer, generate manifest bodies, write manifest files,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
+## 25. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
