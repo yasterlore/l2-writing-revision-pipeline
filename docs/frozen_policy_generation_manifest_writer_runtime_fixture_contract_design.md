@@ -456,7 +456,18 @@ change workflow YAML, change the wrapper, change Python code/tests, change
 fixture JSON, connect artifact writer CLI, use real data, compute metrics, or
 claim production readiness.
 
-## 30. Related Documents
+## 30. Step395 Makefile Target Implementation Status
+
+Step395 implements the standalone Makefile target for the static runtime
+fixture validator:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures`
+
+The target validates this runtime fixture root through `make`, but remains
+outside release-quality and does not execute a runtime writer or write
+manifest files.
+
+## 31. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)

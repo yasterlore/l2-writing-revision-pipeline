@@ -29,6 +29,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-fixtures
+.PHONY: check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -67,6 +68,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke  Run artifact body safe-metadata file writing smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation  Validate isolated artifact body file writing cases"
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-fixtures  Validate manifest writer fixture contracts"
+	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures  Validate manifest writer runtime fixture contracts"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -189,6 +191,9 @@ check-learner-state-frozen-policy-generation-artifact-body-isolated-write-valida
 
 check-learner-state-frozen-policy-generation-manifest-writer-fixtures:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_manifest_writer
+
+check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer_runtime_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality

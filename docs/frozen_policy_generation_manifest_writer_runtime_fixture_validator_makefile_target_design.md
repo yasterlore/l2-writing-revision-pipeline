@@ -239,7 +239,24 @@ do not exist.
 - Step399: remote/manual run status marker
 - later: runtime manifest writer design / implementation
 
-## 15. Related Documents
+## 15. Step395 Implementation Status
+
+Step395 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures`
+
+The target runs the static runtime fixture validator over the 31-case /
+155-JSON synthetic metadata-only runtime fixture root. It uses the human
+summary output, does not use `--json` by default, does not execute a runtime
+writer, does not write manifest files, and remains outside release-quality.
+
+This implementation does not change the release-quality wrapper, workflow
+YAML, Python code/tests, fixture JSON, manifest writer runtime behavior,
+manifest writer CLI behavior, manifest body generation, manifest file
+writing, artifact writer CLI integration, metrics, real-data use, or
+production readiness claims.
+
+## 16. Related Documents
 
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)

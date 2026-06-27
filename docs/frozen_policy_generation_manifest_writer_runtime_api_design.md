@@ -428,7 +428,15 @@ The target remains unimplemented in this step. Runtime writer implementation,
 manifest writer CLI implementation, manifest file writing, release-quality
 integration, and artifact writer CLI integration remain separate.
 
-## 28. Related Documents
+## 28. Step395 Makefile Target Implementation Status
+
+Step395 implements the standalone Makefile target for the static runtime
+fixture validator. The target remains separate from the runtime API and does
+not implement or execute manifest writer runtime behavior, manifest writer
+CLI behavior, manifest file writing, release-quality integration, or artifact
+writer CLI integration.
+
+## 29. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

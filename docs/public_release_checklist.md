@@ -3035,6 +3035,17 @@ change Python code/tests, change fixture JSON, execute a runtime writer,
 write manifest files, connect artifact writer CLI, use real data, compute
 metrics, or claim production readiness.
 
+For Step395, review the standalone Makefile target
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures`.
+Confirm `make help` lists it, the target exits 0, the target reports 31 total
+cases / 155 JSON files / 31 matched cases / 0 input errors, and the output
+keeps `runtime_writer_executed=false`, `manifest_file_written=false`, and
+`release_quality_ready=false`. Confirm this does not add release-quality
+integration, change workflow YAML, change the wrapper, change Python
+code/tests, change fixture JSON, execute a runtime writer, write manifest
+files, connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

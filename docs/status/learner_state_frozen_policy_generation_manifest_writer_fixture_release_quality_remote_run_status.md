@@ -244,3 +244,9 @@ correctness, real-data readiness, or production readiness.
   release-quality run only. The runtime fixture validator Makefile target is
   not implemented here, is not in release-quality here, and does not imply
   manifest writer runtime or manifest file writing readiness.
+- Step395: noted that the standalone runtime fixture validator Makefile
+  target is implemented locally. This marker remains evidence for the earlier
+  manifest writer fixture release-quality run only. The new runtime fixture
+  target is not represented as new remote Release Quality evidence by this
+  marker and remains separate from manifest writer runtime and manifest file
+  writing readiness.

@@ -489,7 +489,15 @@ target, release-quality integration, workflow change, manifest writer runtime,
 manifest writer CLI, manifest file writing, artifact writer CLI integration,
 real-data use, metric computation, or production readiness claim is added.
 
-## 32. Related Documents
+## 32. Step395 Makefile Target Implementation Status
+
+Step395 implements the standalone Makefile target for the static runtime
+fixture validator. It remains outside release-quality and does not implement
+manifest writer runtime behavior, manifest writer CLI behavior, manifest file
+writing, artifact writer CLI integration, real-data use, metric computation,
+or production readiness claims.
+
+## 33. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
