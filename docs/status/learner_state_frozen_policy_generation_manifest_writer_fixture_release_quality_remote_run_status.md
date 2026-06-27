@@ -264,3 +264,10 @@ correctness, real-data readiness, or production readiness.
   release-quality run only. A separate future runtime fixture remote/manual
   status marker is needed before claiming remote wrapper evidence for this
   new target.
+- Step398: linked the separate docs-only runtime fixture remote/manual run
+  record workflow design:
+  [Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md).
+  This marker still remains evidence for the earlier manifest writer fixture
+  release-quality run only. Runtime fixture remote evidence, manifest writer
+  runtime execution, manifest file writing, artifact writer CLI integration,
+  and production readiness remain separate.

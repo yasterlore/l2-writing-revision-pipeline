@@ -201,6 +201,16 @@ release-quality, but still does not execute a runtime writer, write manifest
 files, connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
+Step398 adds the docs-only remote/manual Release Quality run record workflow:
+
+[Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](../../../docs/frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md).
+
+A future status marker may record only public-safe pass-only/count-only
+metadata after a remote/manual run. The marker is not created here, and the
+runtime writer, manifest file writing, artifact writer CLI integration,
+real-data use, metric computation, and production readiness claims remain
+separate.
+
 ## Docs Safety
 
 This README contains no JSON body examples, manifest body examples,

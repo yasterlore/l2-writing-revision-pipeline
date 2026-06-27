@@ -346,7 +346,6 @@ internally consistent.
 
 ## 18. Next Recommended Steps
 
-- Step398: remote/manual run record workflow design
 - Step399: remote/manual run status marker
 - later: runtime manifest writer design / implementation
 - later: manifest file writing design / implementation
@@ -361,6 +360,7 @@ internally consistent.
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md)
+- [Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
@@ -384,3 +384,17 @@ change workflow YAML, Makefile, Python code/tests, fixture JSON, implement or
 execute a manifest writer runtime, implement a manifest writer CLI, generate
 manifest bodies, write manifest files, connect artifact writer CLI, use real
 data, compute metrics, or claim production readiness.
+
+## 21. Step398 Remote Run Record Workflow Design Status
+
+Step398 adds the docs-only remote/manual Release Quality run record workflow
+for this runtime fixture validator wrapper integration:
+
+[Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md).
+
+The workflow design defines the future status marker path and safe
+pass-only/count-only metadata to record after a remote/manual run. It does not
+create the status marker, run GitHub Actions, change workflow YAML, change the
+wrapper, change Makefile, change Python code/tests, change fixture JSON,
+execute a manifest writer runtime, write manifest files, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.

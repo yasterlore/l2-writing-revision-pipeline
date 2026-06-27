@@ -515,7 +515,19 @@ does not implement the manifest writer runtime, manifest writer CLI, manifest
 body generation, manifest file writing, artifact writer CLI integration,
 real-data use, metrics, or production readiness claims.
 
-## 35. Related Documents
+## 35. Step398 Runtime Fixture Remote Run Record Workflow Design Status
+
+Step398 adds the docs-only remote/manual Release Quality run record workflow
+for the runtime fixture validator wrapper integration:
+
+[Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md).
+
+The workflow design keeps the future status marker separate and records only
+safe pass-only/count-only metadata. It does not execute a runtime writer,
+write manifest files, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness.
+
+## 36. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
@@ -528,6 +540,7 @@ real-data use, metrics, or production readiness claims.
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
+- [Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

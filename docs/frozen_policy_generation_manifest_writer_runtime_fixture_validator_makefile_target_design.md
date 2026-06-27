@@ -293,3 +293,15 @@ The target remains static runtime fixture validation only. It does not execute
 a runtime writer, write manifest files, change workflow YAML, change Makefile,
 change Python code/tests, change fixture JSON, connect artifact writer CLI,
 use real data, compute metrics, or claim production readiness.
+
+## 19. Step398 Remote Run Record Workflow Design Status
+
+Step398 adds a docs-only remote/manual run record workflow for the
+release-quality wrapper integration:
+
+[Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md).
+
+The future marker remains separate. This target still validates runtime
+fixture contracts only and does not execute a runtime writer, write manifest
+files, connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.

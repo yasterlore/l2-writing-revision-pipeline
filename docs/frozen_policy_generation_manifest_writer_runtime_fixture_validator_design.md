@@ -495,6 +495,7 @@ step, does not execute a runtime writer, and does not write manifest files.
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture validator Makefile target design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
+- [Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
@@ -515,3 +516,11 @@ release-quality wrapper. The wrapper integration validates the 31-case /
 not execute a manifest writer runtime, implement a manifest writer CLI, write
 manifest files, connect artifact writer CLI, use real data, compute metrics,
 or claim production readiness.
+
+## 36. Step398 Remote Run Record Workflow Design Status
+
+Step398 adds the docs-only remote/manual run record workflow for the runtime
+fixture validator wrapper integration. It defines the future status marker
+path and safe pass-only/count-only metadata policy, while keeping the marker,
+workflow execution, manifest writer runtime, manifest file writing, and
+artifact writer CLI integration separate.

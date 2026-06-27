@@ -3068,6 +3068,18 @@ Makefile, Python code/tests, fixture JSON, execute a runtime writer, write
 manifest files, connect artifact writer CLI, use real data, compute metrics,
 or claim production readiness.
 
+For Step398, review the docs-only
+[frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md).
+Confirm it defines the future marker path
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md`,
+safe metadata to record, forbidden metadata, marker structure, failure
+handling, interpretation, and next actions for runtime fixture validator
+remote/manual Release Quality evidence. Confirm it does not create the actual
+status marker, run GitHub Actions, change workflow YAML, change the wrapper,
+change Makefile, change Python code/tests, change fixture JSON, execute a
+runtime writer, write manifest files, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
