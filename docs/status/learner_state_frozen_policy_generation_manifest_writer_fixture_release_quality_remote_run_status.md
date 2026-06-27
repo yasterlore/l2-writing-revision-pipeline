@@ -218,3 +218,10 @@ correctness, real-data readiness, or production readiness.
   This marker remains static fixture validation remote evidence only and does
   not become manifest writer runtime, manifest file writing, or artifact
   writer CLI integration evidence.
+- Step390: linked the separate docs-only manifest writer runtime fixture
+  contract design:
+  [Frozen policy generation manifest writer runtime fixture contract design](../frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md).
+  This marker remains static fixture validation remote evidence only. Runtime
+  fixture JSON creation, runtime writer implementation, manifest file writing,
+  runtime validator implementation, and artifact writer CLI integration remain
+  separate future work.

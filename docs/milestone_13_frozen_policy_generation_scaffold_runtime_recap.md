@@ -1061,6 +1061,18 @@ written, no artifact body is produced, and no performance metric is computed.
   runtime validator, change workflow YAML, change the wrapper, change
   Makefile, change Python code/tests, change fixture JSON, connect artifact
   writer CLI, use real data, compute metrics, or claim production readiness.
+- Step390: added the docs-only manifest writer runtime fixture contract
+  design. The design fixes the future runtime fixture root, five-file case
+  structure, runtime schema names, valid and invalid case taxonomy, expected
+  counts, expected category counts, body-free expected runtime result
+  contract, request policy, pointer policy, path/content policy,
+  no-oracle/synthetic-only policy, reason code taxonomy, relation to the
+  existing static manifest writer fixtures, and future validator staging. It
+  does not create runtime fixture JSON, implement a runtime writer, write
+  manifest files, implement a runtime validator, change workflow YAML, change
+  the wrapper, change Makefile, change Python code/tests, change fixture
+  JSON, connect artifact writer CLI, use real data, compute metrics, or claim
+  production readiness.
 
 ## Related Documents
 
@@ -1088,6 +1100,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
+- [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
