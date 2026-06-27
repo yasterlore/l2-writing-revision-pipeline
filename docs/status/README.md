@@ -63,12 +63,9 @@ Available markers:
 - [Learner-state frozen policy generation artifact body file writing fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after artifact body file
   writing fixture validation integration.
-
-Planned marker paths:
-
-- `docs/status/learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md`:
-  future public-safe remote/manual Release Quality status marker after artifact
-  body isolated write validator wrapper integration.
+- [Learner-state frozen policy generation artifact body isolated write release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after artifact body isolated
+  write validator integration.
 
 Related recap:
 

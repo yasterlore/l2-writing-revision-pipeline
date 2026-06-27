@@ -481,3 +481,17 @@ public-safe. Step376 does not create a status marker, run a remote workflow,
 change workflow YAML, change the release-quality wrapper, change Makefile,
 change Python code/tests, change fixture JSON, implement manifest writer, or
 connect artifact writer CLI.
+
+## 30. Step377 Remote Status Marker Status
+
+Step377 creates the public-safe remote/manual Release Quality status marker
+for the isolated write validator wrapper integration:
+
+[Learner-state frozen policy generation artifact body isolated write release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md).
+
+The marker records the 22-case isolated write validation result as
+pass-only/count-only metadata with `matched_cases=22`,
+`mismatched_cases=0`, `input_error_cases=0`, and `residue_file_count=0`.
+It does not copy raw logs, fixture bodies, written file content, artifact
+body payloads, generated policy bodies, manifest bodies, private paths,
+absolute temp paths, raw learner text, or real participant data.

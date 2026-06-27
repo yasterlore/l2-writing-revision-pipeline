@@ -538,3 +538,15 @@ The future marker should record only safe run identity metadata, wrapper
 inclusion metadata, pass-only/count-only isolated write validation counts, and
 cleanup/no-residue safety flags. Step376 does not create the actual marker and
 does not change this fixture contract or fixture JSON.
+
+## 31. Step377 Remote Status Marker Status
+
+Step377 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation artifact body isolated write release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md).
+
+The marker records that the 22-case synthetic isolated write fixture root was
+covered by the release-quality wrapper and matched expected outcomes with
+zero residue. It is metadata-only and does not copy fixture JSON bodies,
+written file content, artifact body payloads, private paths, absolute temp
+paths, raw rows, logits, raw learner text, raw logs, or real participant data.

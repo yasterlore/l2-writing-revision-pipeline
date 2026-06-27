@@ -303,11 +303,14 @@ temporary outputs and did not leave generated artifact body files behind.
   target and before config/scoring smoke checks.
 - Step376: record a public-safe remote/manual status marker after
   release-quality succeeds.
+  Completed in Step377 with
+  [Learner-state frozen policy generation artifact body isolated write release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md).
 
 ## 19. Related Documents
 
 - [Frozen policy generation artifact body isolated write release-quality integration design](frozen_policy_generation_artifact_body_isolated_write_release_quality_integration_design.md)
 - [Frozen policy generation artifact body isolated write release-quality remote run record workflow](frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation artifact body isolated write release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)
 - [Frozen policy generation artifact body file writing smoke target design](frozen_policy_generation_artifact_body_file_writing_smoke_target_design.md)
