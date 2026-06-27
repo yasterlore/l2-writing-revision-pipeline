@@ -507,7 +507,15 @@ The design keeps runtime fixture validation separate from runtime writer
 implementation, manifest file writing, artifact writer CLI integration,
 workflow changes, real-data use, metrics, and production readiness claims.
 
-## 34. Related Documents
+## 34. Step397 Runtime Fixture Wrapper Integration Status
+
+Step397 adds the runtime fixture validator target to the release-quality
+wrapper after static manifest writer fixture validation. This integration
+does not implement the manifest writer runtime, manifest writer CLI, manifest
+body generation, manifest file writing, artifact writer CLI integration,
+real-data use, metrics, or production readiness claims.
+
+## 35. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)

@@ -258,3 +258,9 @@ correctness, real-data readiness, or production readiness.
   represented as new remote evidence here and remains separate from manifest
   writer runtime, manifest file writing, artifact writer CLI integration, and
   production readiness.
+- Step397: noted that runtime fixture validation is added to the local
+  release-quality wrapper after static manifest writer fixture validation.
+  This marker still remains evidence for the earlier manifest writer fixture
+  release-quality run only. A separate future runtime fixture remote/manual
+  status marker is needed before claiming remote wrapper evidence for this
+  new target.

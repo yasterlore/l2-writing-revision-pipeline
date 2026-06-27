@@ -281,3 +281,15 @@ config/scoring smoke checks. It does not change the wrapper, workflow YAML,
 Makefile, Python code/tests, fixture JSON, execute a runtime writer, write
 manifest files, connect artifact writer CLI, use real data, compute metrics,
 or claim production readiness.
+
+## 18. Step397 Wrapper Integration Status
+
+Step397 adds this standalone target to the release-quality wrapper using the
+label:
+
+`release_quality_check: learner-state frozen policy generation manifest writer runtime fixture validation`
+
+The target remains static runtime fixture validation only. It does not execute
+a runtime writer, write manifest files, change workflow YAML, change Makefile,
+change Python code/tests, change fixture JSON, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness.

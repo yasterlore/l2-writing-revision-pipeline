@@ -336,7 +336,6 @@ internally consistent.
 
 ## 17. What This Does Not Do
 
-- does not integrate the wrapper
 - does not change workflow YAML
 - does not implement manifest writer runtime
 - does not write manifest files
@@ -347,7 +346,6 @@ internally consistent.
 
 ## 18. Next Recommended Steps
 
-- Step397: wrapper integration
 - Step398: remote/manual run record workflow design
 - Step399: remote/manual run status marker
 - later: runtime manifest writer design / implementation
@@ -366,3 +364,23 @@ internally consistent.
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 20. Step397 Wrapper Integration Status
+
+Step397 adds the runtime fixture validator target to the release-quality
+wrapper immediately after static manifest writer fixture validation and before
+config/scoring smoke checks.
+
+Wrapper label:
+
+`release_quality_check: learner-state frozen policy generation manifest writer runtime fixture validation`
+
+Wrapper command:
+
+`make check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures`
+
+This integration runs static runtime fixture validation only. It does not
+change workflow YAML, Makefile, Python code/tests, fixture JSON, implement or
+execute a manifest writer runtime, implement a manifest writer CLI, generate
+manifest bodies, write manifest files, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness.

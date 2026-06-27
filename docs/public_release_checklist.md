@@ -3057,6 +3057,17 @@ code/tests, fixture JSON, execute a runtime writer, write manifest files,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
+For Step397, review the release-quality wrapper integration in
+`scripts/check_release_quality.sh`. Confirm it adds the label
+`release_quality_check: learner-state frozen policy generation manifest writer runtime fixture validation`
+and command
+`make check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures`
+immediately after static manifest writer fixture validation and before
+config/scoring smoke checks. Confirm it does not change workflow YAML,
+Makefile, Python code/tests, fixture JSON, execute a runtime writer, write
+manifest files, connect artifact writer CLI, use real data, compute metrics,
+or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
