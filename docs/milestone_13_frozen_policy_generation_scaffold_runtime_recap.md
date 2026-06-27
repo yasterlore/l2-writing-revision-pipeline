@@ -967,6 +967,14 @@ written, no artifact body is produced, and no performance metric is computed.
   wrapper, change Makefile, change Python code/tests, change fixture JSON,
   connect artifact writer CLI, use real data, compute metrics, or claim
   production readiness.
+- Step379: added a docs-only manifest writer fixture contract design. The
+  design fixes the future fixture root, case directory structure, schema
+  names, field names, valid and invalid case taxonomy, expected counts, path
+  policy, content policy, validator phases, and staging. It does not create
+  fixture JSON, implement a manifest writer, implement a validator, write
+  manifest files, change workflow YAML, change the wrapper, change Makefile,
+  change Python code/tests, change fixture JSON, connect artifact writer CLI,
+  use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -985,6 +993,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation artifact body isolated write release-quality remote run record workflow](frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation artifact body isolated write release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
+- [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)

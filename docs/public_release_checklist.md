@@ -2798,6 +2798,24 @@ generated policy bodies, manifest body examples, JSON body examples, raw
 rows, logits, private paths, absolute local paths, absolute temp paths, raw
 learner text, real participant data, or performance metric bodies.
 
+For Step379, review the docs-only
+[frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md).
+Confirm it fixes only the future manifest writer fixture contract: fixture
+root, case directory structure, schema names, field names, valid/invalid case
+taxonomy, expected fixture counts, path policy, content policy, validator
+phases, and staging. Confirm it does not create fixture JSON, implement a
+manifest writer, generate manifest bodies, write manifest files, implement a
+validator, change workflow YAML, change the release-quality wrapper, change
+Makefile, change Python code/tests, change fixture JSON, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+Confirm docs do not include raw logs, full job output, copied log blocks,
+screenshots containing raw logs, request bodies, pointer bodies, isolated
+write request bodies, expected isolated write result bodies, case metadata
+bodies, written file content, artifact body payload examples, generated
+policy bodies, manifest body examples, fixture JSON body examples, JSON body
+examples, raw rows, logits, private paths, absolute local paths, absolute temp
+paths, raw learner text, real participant data, or performance metric bodies.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
