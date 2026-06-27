@@ -141,6 +141,16 @@ versions, case IDs, expected category counts, path-policy sentinels,
 content-policy sentinels, reason-code contracts, and body-free summaries. It
 should not execute a runtime writer or write manifest files.
 
+Step392 adds the docs-only validator design:
+
+[Frozen policy generation manifest writer runtime fixture validator design](../../../docs/frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md).
+
+The design covers future CLI/API shape, validation phases, summary fields,
+request/pointer/expected-result policy checks, selector safety, exit codes,
+tests, and Makefile/release-quality staging. It does not implement a
+validator, execute a runtime writer, write manifest files, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+
 Runtime writer implementation, Makefile targets, release-quality integration,
 and remote markers remain separate future steps.
 

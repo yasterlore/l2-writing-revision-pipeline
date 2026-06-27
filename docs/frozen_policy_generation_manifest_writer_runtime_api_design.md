@@ -398,7 +398,17 @@ writer runtime, implement a CLI, implement a runtime validator, generate
 manifest bodies, write manifest files, connect artifact writer CLI, use real
 data, compute metrics, or claim production readiness.
 
-## 25. Related Documents
+## 25. Step392 Runtime Fixture Validator Design Status
+
+Step392 adds the docs-only runtime fixture validator design:
+
+[Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md).
+
+The validator remains separate from the runtime API. It will validate fixture
+contracts only and will not execute the runtime writer, write manifest files,
+or connect artifact writer CLI.
+
+## 26. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
@@ -407,6 +417,7 @@ data, compute metrics, or claim production readiness.
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md)
+- [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)

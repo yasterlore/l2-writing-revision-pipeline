@@ -225,3 +225,9 @@ correctness, real-data readiness, or production readiness.
   fixture JSON creation, runtime writer implementation, manifest file writing,
   runtime validator implementation, and artifact writer CLI integration remain
   separate future work.
+- Step392: linked the separate docs-only manifest writer runtime fixture
+  validator design:
+  [Frozen policy generation manifest writer runtime fixture validator design](../frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md).
+  This marker remains static fixture validation remote evidence only. Runtime
+  fixture validator implementation, runtime writer execution, manifest file
+  writing, and artifact writer CLI integration remain separate future work.
