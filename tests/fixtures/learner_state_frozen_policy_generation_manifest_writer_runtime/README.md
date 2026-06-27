@@ -166,6 +166,16 @@ release-quality wrapper, change workflow YAML, change fixture JSON, connect
 artifact writer CLI, use real data, compute metrics, or claim production
 readiness.
 
+Step394 adds the docs-only standalone Makefile target design for this
+validator:
+
+[Frozen policy generation manifest writer runtime fixture validator Makefile target design](../../../docs/frozen_policy_generation_manifest_writer_runtime_fixture_validator_makefile_target_design.md).
+
+The Makefile target remains unimplemented in Step394. Release-quality
+integration, runtime writer execution, manifest file writing, artifact writer
+CLI integration, real-data use, metric computation, and production readiness
+claims remain separate future work.
+
 ## Docs Safety
 
 This README contains no JSON body examples, manifest body examples,

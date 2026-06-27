@@ -1103,6 +1103,14 @@ written, no artifact body is produced, and no performance metric is computed.
   release-quality wrapper, change workflow YAML, change fixture JSON, connect
   artifact writer CLI, use real data, compute metrics, or claim production
   readiness.
+- Step394: added the docs-only standalone Makefile target design for the
+  manifest writer runtime fixture validator. The design proposes
+  `check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures`
+  for running the 31-case / 155-JSON validator through `make`. It does not
+  implement a Makefile target, add release-quality integration, change
+  workflow YAML, change the wrapper, change Python code/tests, change fixture
+  JSON, execute a runtime writer, write manifest files, connect artifact
+  writer CLI, use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -1134,6 +1142,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md)
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture validator](../python/learner_state/frozen_policy_generation_manifest_writer_runtime_fixture_validation.py)
+- [Frozen policy generation manifest writer runtime fixture validator Makefile target design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)

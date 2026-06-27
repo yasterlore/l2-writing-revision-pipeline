@@ -417,7 +417,18 @@ manifest writer CLI, generate manifest bodies, write manifest files, connect
 artifact writer CLI, use real data, compute metrics, or claim production
 readiness.
 
-## 27. Related Documents
+## 27. Step394 Makefile Target Design Status
+
+Step394 adds the docs-only standalone Makefile target design for running the
+runtime fixture validator from `make`:
+
+[Frozen policy generation manifest writer runtime fixture validator Makefile target design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_makefile_target_design.md).
+
+The target remains unimplemented in this step. Runtime writer implementation,
+manifest writer CLI implementation, manifest file writing, release-quality
+integration, and artifact writer CLI integration remain separate.
+
+## 28. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

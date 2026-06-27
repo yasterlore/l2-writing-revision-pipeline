@@ -477,7 +477,19 @@ change the release-quality wrapper, change workflow YAML, change fixture
 JSON, connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
-## 31. Related Documents
+## 31. Step394 Makefile Target Design Status
+
+Step394 adds the docs-only standalone Makefile target design for the runtime
+fixture validator:
+
+[Frozen policy generation manifest writer runtime fixture validator Makefile target design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_makefile_target_design.md).
+
+This remains separate from the manifest writer runtime boundary. No Makefile
+target, release-quality integration, workflow change, manifest writer runtime,
+manifest writer CLI, manifest file writing, artifact writer CLI integration,
+real-data use, metric computation, or production readiness claim is added.
+
+## 32. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)

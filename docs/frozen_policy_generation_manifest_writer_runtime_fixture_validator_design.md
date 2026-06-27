@@ -464,13 +464,26 @@ Makefile, change the release-quality wrapper, change workflow YAML, change
 fixture JSON, connect artifact writer CLI, use real data, compute metrics, or
 claim production readiness.
 
-## 31. Related Documents
+## 31. Step394 Makefile Target Design Status
+
+Step394 adds the docs-only standalone Makefile target design:
+
+[Frozen policy generation manifest writer runtime fixture validator Makefile target design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_makefile_target_design.md).
+
+The design proposes a future target for running this validator through
+`make`, but it does not implement the Makefile target, add release-quality
+integration, change workflow YAML, change Python code/tests, change fixture
+JSON, execute a runtime writer, write manifest files, connect artifact writer
+CLI, use real data, compute metrics, or claim production readiness.
+
+## 32. Related Documents
 
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
+- [Frozen policy generation manifest writer runtime fixture validator Makefile target design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_makefile_target_design.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
