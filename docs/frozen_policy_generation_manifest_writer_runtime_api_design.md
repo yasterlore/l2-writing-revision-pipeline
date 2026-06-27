@@ -386,7 +386,19 @@ wrapper, change workflow YAML, change Python code/tests, change fixture JSON,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
-## 24. Related Documents
+## 24. Step391 Runtime Fixture Root Creation Status
+
+Step391 creates the runtime fixture root described by the Step390 contract:
+
+[Frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md).
+
+The fixture root is synthetic-only, metadata-only, and no-oracle. It contains
+31 case directories and 155 JSON files. It does not implement the manifest
+writer runtime, implement a CLI, implement a runtime validator, generate
+manifest bodies, write manifest files, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness.
+
+## 25. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
@@ -394,6 +406,7 @@ production readiness.
 - [Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
+- [Frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)

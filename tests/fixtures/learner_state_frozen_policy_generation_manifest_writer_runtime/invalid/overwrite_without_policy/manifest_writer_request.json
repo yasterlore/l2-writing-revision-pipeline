@@ -1,0 +1,18 @@
+{
+  "allow_manifest_file_writing": false,
+  "include_manifest_body": false,
+  "manifest_out": "preexisting_manifest_output_sentinel.json",
+  "manifest_writer_mode": "metadata_only_no_file",
+  "no_oracle_notice": true,
+  "non_proof_notice": true,
+  "overwrite_policy": "reject_existing",
+  "release_quality_reference_ids": [],
+  "request_id": "synthetic_manifest_writer_runtime_request_overwrite_without_policy",
+  "requested_artifact_writer_cli_integration": false,
+  "safe_violation_sentinel": null,
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_runtime_request_v0.1",
+  "synthetic_notice": true,
+  "validation_reference_ids": [
+    "learner_state_frozen_policy_generation_artifact_writer_runtime/valid/minimal_metadata_only_artifact_plan"
+  ]
+}

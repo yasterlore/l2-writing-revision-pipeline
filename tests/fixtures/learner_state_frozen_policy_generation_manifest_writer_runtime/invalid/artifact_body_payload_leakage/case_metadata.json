@@ -1,0 +1,59 @@
+{
+  "case_id": "artifact_body_payload_leakage",
+  "case_kind": "invalid",
+  "description": "synthetic expected-failure runtime fixture for artifact_body_payload_leakage",
+  "expected_category": "fail_closed_no_write",
+  "expected_exit_code": 3,
+  "expected_manifest_writer_mode": "metadata_only_no_file",
+  "expected_reason_codes": [
+    "artifact_body_payload_leakage"
+  ],
+  "expected_writer_status": "fail_closed",
+  "forbidden_output_markers": [
+    "forbidden_manifest_body_marker",
+    "forbidden_artifact_body_marker",
+    "forbidden_generated_policy_marker",
+    "forbidden_raw_rows_marker",
+    "forbidden_logits_marker",
+    "forbidden_private_path_marker",
+    "forbidden_absolute_path_marker",
+    "forbidden_raw_learner_text_marker",
+    "forbidden_real_participant_marker"
+  ],
+  "forbidden_summary_fields": [
+    "manifest_body",
+    "manifest_json_body",
+    "artifact_body_payload",
+    "generated_policy_body",
+    "request_body",
+    "pointer_body",
+    "expected_body",
+    "raw_rows",
+    "logits",
+    "probabilities",
+    "private_path_value",
+    "absolute_path_value",
+    "raw_learner_text",
+    "performance_metric_body"
+  ],
+  "notes": "Runtime fixture contract only; does not execute manifest writer or write manifest files.",
+  "required_summary_fields": [
+    "mode",
+    "result_schema_version",
+    "writer_status",
+    "manifest_writer_mode",
+    "manifest_body_available",
+    "manifest_file_written",
+    "manifest_output_path_available",
+    "release_quality_ready",
+    "safety_flags",
+    "count_summary",
+    "safe_summary"
+  ],
+  "safety_expectation": "synthetic_only_metadata_only_no_oracle_body_free",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_runtime_case_metadata_v0.1",
+  "should_leave_residue": false,
+  "should_write_manifest_file": false,
+  "source_artifact_body_case": "valid/minimal_suppressed_metadata_only_body",
+  "source_artifact_writer_case": "valid/minimal_metadata_only_artifact_plan"
+}
