@@ -3,8 +3,8 @@
 ## 1. Purpose
 
 This document fixes the docs-only design for adding the standalone manifest
-writer fixture validator target to the release-quality wrapper in a future
-step.
+writer fixture validator target to the release-quality wrapper, and records
+the later Step386 wrapper integration status.
 
 This is not wrapper implementation, not a workflow change, not manifest writer
 implementation, not manifest file writing, not artifact writer CLI
@@ -18,7 +18,7 @@ integration, and not a production readiness claim.
 - the target validates 30 cases and 150 JSON files
 - the target is static fixture validation only
 - the target does not write manifest files
-- the target is not in release-quality
+- the target is in the release-quality wrapper after Step386
 - the manifest writer does not exist
 - manifest file writing does not exist
 - artifact writer CLI integration does not exist
@@ -319,7 +319,6 @@ check, not proof that manifest writing or production file management is ready.
 
 ## 18. Next Recommended Steps
 
-- Step387: remote/manual run record workflow design
 - Step388: remote/manual run status marker
 - later: runtime manifest writer design and implementation
 - later: runtime manifest writer Makefile and release-quality integration
@@ -343,12 +342,27 @@ workflow YAML, Makefile, Python code/tests, fixture JSON, implement a manifest
 writer, generate manifest bodies, write manifest files, connect artifact
 writer CLI, use real data, compute metrics, or claim production readiness.
 
-## 20. Related Documents
+## 20. Step387 Remote Run Record Workflow Design Status
+
+Step387 adds the docs-only remote/manual run record workflow for a future
+public-safe status marker:
+
+[Frozen policy generation manifest writer fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_record_workflow.md).
+
+The workflow design records only pass-only/count-only metadata after a future
+remote/manual Release Quality run. It does not create the actual status
+marker, run a remote workflow, change workflow YAML, change the wrapper,
+change Makefile, change Python code/tests, change fixture JSON, implement a
+manifest writer, write manifest files, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness.
+
+## 21. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
 - [Frozen policy generation manifest writer fixture validator Makefile target design](frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation manifest writer fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)

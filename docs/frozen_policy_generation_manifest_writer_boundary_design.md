@@ -254,8 +254,6 @@ Recommended staging:
 - Step388: remote/manual status marker
 - later: metadata-only manifest writer API/CLI design
 - later: manifest writer implementation
-- Step387: remote/manual status marker design
-- Step388: remote/manual status marker
 
 Release-quality integration should wait until fixture validation and safe
 summary behavior are stable.
@@ -416,13 +414,24 @@ implement a manifest writer, generate manifest bodies, write manifest files,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
-## 25. Related Documents
+## 25. Step387 Remote Run Record Workflow Design Status
+
+Step387 adds the docs-only workflow for a future public-safe remote/manual
+Release Quality marker for manifest writer fixture validation:
+
+[Frozen policy generation manifest writer fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_record_workflow.md).
+
+The future marker is traceability for static fixture validation only. It is
+not manifest writer runtime evidence or production readiness evidence.
+
+## 26. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
 - [Frozen policy generation manifest writer fixture validator Makefile target design](frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md)
+- [Frozen policy generation manifest writer fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

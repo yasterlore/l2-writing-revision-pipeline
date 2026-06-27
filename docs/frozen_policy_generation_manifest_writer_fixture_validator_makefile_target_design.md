@@ -222,8 +222,6 @@ manifest writer and manifest file writing still do not exist.
 
 ## 14. Next Recommended Steps
 
-- Step386: integrate the wrapper
-- Step387: design remote/manual run record workflow
 - Step388: create the remote/manual run status marker
 - later: design and implement runtime manifest writer behavior separately
 
@@ -266,12 +264,23 @@ change workflow YAML, Makefile target behavior, Python code/tests, fixture
 JSON, manifest writer behavior, manifest file writing, artifact writer CLI
 integration, metrics, real-data use, or production readiness claims.
 
-## 18. Related Documents
+## 18. Step387 Remote Run Record Workflow Design Status
+
+Step387 adds the docs-only future remote/manual Release Quality run recording
+workflow for this target:
+
+[Frozen policy generation manifest writer fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_record_workflow.md).
+
+The workflow design records only public-safe pass-only/count-only metadata and
+does not create the status marker or imply manifest writer runtime readiness.
+
+## 19. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
 - [Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md)
+- [Frozen policy generation manifest writer fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
