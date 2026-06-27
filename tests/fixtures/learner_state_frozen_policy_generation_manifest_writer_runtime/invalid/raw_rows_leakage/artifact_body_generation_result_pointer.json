@@ -1,0 +1,20 @@
+{
+  "artifact_body_available": true,
+  "artifact_body_status": "suppressed_metadata_only",
+  "generation_status": "pass",
+  "include_body_payload": false,
+  "include_private_paths": false,
+  "include_raw_rows": true,
+  "manifest_body_generated": false,
+  "manifest_file_written": false,
+  "no_oracle_checked": true,
+  "pointer_id": "artifact_body_generation_result_pointer/raw_rows_leakage",
+  "result_schema_version": "learner_state_frozen_policy_generation_artifact_body_generation_result_v0.1",
+  "safe_metadata_reference_id": "synthetic_artifact_body_generation_result_metadata/raw_rows_leakage",
+  "safe_reference_only": true,
+  "safe_violation_sentinel": null,
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_runtime_artifact_body_generation_result_pointer_v0.1",
+  "source_fixture_id": "learner_state_frozen_policy_generation_artifact_body/valid/minimal_suppressed_metadata_only_body",
+  "source_kind": "artifact_body_generation_result_summary",
+  "synthetic_only_checked": true
+}

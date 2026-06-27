@@ -2985,6 +2985,20 @@ validator, change workflow YAML, change the wrapper, change Makefile, change
 Python code/tests, change fixture JSON, connect artifact writer CLI, use real
 data, compute metrics, or claim production readiness.
 
+For Step391, review the synthetic-only
+[frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md).
+Confirm the root contains 5 valid cases, 26 invalid / expected-failure cases,
+31 total case directories, 5 JSON files per case, and 155 JSON files total.
+Confirm the fixtures are metadata-only and no-oracle: no manifest bodies, no
+manifest JSON bodies, no artifact body payloads, no generated policy bodies,
+no request/pointer/expected body nesting, no raw rows, no logits, no private
+paths, no absolute paths, no raw learner text, no real participant data, and
+no performance evidence. Confirm this does not implement a manifest writer
+runtime or CLI, implement a runtime validator, write manifest files, change
+workflow YAML, change the wrapper, change Makefile, change Python code/tests,
+change existing fixture JSON, connect artifact writer CLI, use real data,
+compute metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

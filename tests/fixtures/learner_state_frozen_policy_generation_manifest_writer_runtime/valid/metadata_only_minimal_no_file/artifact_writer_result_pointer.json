@@ -1,0 +1,19 @@
+{
+  "artifact_body_available": true,
+  "artifact_id": "synthetic_artifact_metadata_only_v0_1",
+  "include_body_payload": false,
+  "include_private_paths": false,
+  "include_raw_rows": false,
+  "manifest_id": "synthetic_manifest_runtime_metadata_only_minimal_no_file_v0_1",
+  "no_oracle_checked": true,
+  "pointer_id": "artifact_writer_result_pointer/metadata_only_minimal_no_file",
+  "result_schema_version": "learner_state_frozen_policy_generation_artifact_writer_result_v0.1",
+  "safe_metadata_reference_id": "synthetic_artifact_writer_result_metadata/metadata_only_minimal_no_file",
+  "safe_reference_only": true,
+  "safe_violation_sentinel": null,
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_runtime_artifact_writer_result_pointer_v0.1",
+  "source_fixture_id": "learner_state_frozen_policy_generation_artifact_writer/valid/minimal_metadata_only_artifact_plan",
+  "source_kind": "artifact_writer_result_summary",
+  "synthetic_only_checked": true,
+  "writer_status": "pass"
+}

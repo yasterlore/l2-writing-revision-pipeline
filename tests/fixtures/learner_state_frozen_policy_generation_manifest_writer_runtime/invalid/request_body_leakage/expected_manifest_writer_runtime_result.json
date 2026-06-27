@@ -1,0 +1,58 @@
+{
+  "case_id": "request_body_leakage",
+  "expected_category": "fail_closed_no_write",
+  "expected_count_summary": {
+    "absolute_path_count": 0,
+    "artifact_body_payload_count": 0,
+    "expected_body_count": 0,
+    "generated_policy_body_count": 0,
+    "logits_dump_count": 0,
+    "manifest_body_count": 0,
+    "manifest_metadata_field_count": 13,
+    "performance_metric_count": 0,
+    "pointer_body_count": 0,
+    "private_path_count": 0,
+    "raw_row_count": 0,
+    "release_quality_reference_count": 0,
+    "request_body_count": 0,
+    "validation_reference_count": 1,
+    "written_file_count": 0
+  },
+  "expected_failed_checks": [
+    "request_body_leakage"
+  ],
+  "expected_manifest_body_available": false,
+  "expected_manifest_file_written": false,
+  "expected_manifest_output_path_available": false,
+  "expected_manifest_writer_mode": "metadata_only_no_file",
+  "expected_no_real_data": true,
+  "expected_reason_codes": [
+    "request_body_leakage"
+  ],
+  "expected_release_quality_ready": false,
+  "expected_safe_summary": "metadata_only_manifest_writer_result",
+  "expected_safety_flags": {
+    "content_policy_checked": true,
+    "content_suppressed": true,
+    "file_writing_checked": true,
+    "manifest_body_suppressed": true,
+    "no_absolute_paths": true,
+    "no_artifact_body_payload": true,
+    "no_expected_body": true,
+    "no_generated_policy_body": true,
+    "no_logits_dump": true,
+    "no_manifest_body_nesting": true,
+    "no_oracle_checked": true,
+    "no_performance_claims": true,
+    "no_pointer_body": true,
+    "no_private_paths": true,
+    "no_raw_rows": true,
+    "no_request_body": true,
+    "non_proof_notice_checked": true,
+    "path_policy_checked": true,
+    "synthetic_only_checked": true
+  },
+  "expected_writer_status": "fail_closed",
+  "future_result_schema_version": "learner_state_frozen_policy_generation_manifest_writer_result_v0.1",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_runtime_expected_result_v0.1"
+}

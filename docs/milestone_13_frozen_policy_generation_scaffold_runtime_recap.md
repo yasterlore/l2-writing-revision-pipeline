@@ -1073,6 +1073,17 @@ written, no artifact body is produced, and no performance metric is computed.
   the wrapper, change Makefile, change Python code/tests, change fixture
   JSON, connect artifact writer CLI, use real data, compute metrics, or claim
   production readiness.
+- Step391: created the synthetic-only, metadata-only manifest writer runtime
+  fixture root with 5 valid cases, 26 invalid / expected-failure cases, 31
+  total case directories, 5 JSON files per case, and 155 JSON files total.
+  The fixtures cover future runtime request, artifact writer result pointer,
+  artifact body generation result pointer, and expected runtime result
+  contracts for the initial `metadata_only_no_file` mode. This does not
+  implement a manifest writer runtime or CLI, implement a runtime validator,
+  generate manifest bodies, write manifest files, change workflow YAML, change
+  the wrapper, change Makefile, change Python code/tests, change existing
+  fixture JSON, connect artifact writer CLI, use real data, compute metrics,
+  or claim production readiness.
 
 ## Related Documents
 
@@ -1101,6 +1112,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
+- [Frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)

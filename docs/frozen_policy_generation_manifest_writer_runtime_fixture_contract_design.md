@@ -399,13 +399,32 @@ policy can be added only after summary safety is stable.
 - Step395: metadata-only runtime writer implementation
 - later Makefile / release-quality / remote marker steps
 
-## 26. Related Documents
+## 26. Step391 Runtime Fixture Root Creation Status
+
+Step391 creates the synthetic-only, metadata-only, no-oracle runtime fixture
+root described by this contract:
+
+- `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/`
+
+The root contains 5 valid runtime contract cases, 26 invalid /
+expected-failure runtime contract cases, 31 total case directories, 5 JSON
+files per case, and 155 JSON files total. It also includes a fixture README.
+
+This is fixture JSON creation only. It does not implement the manifest writer
+runtime, implement a manifest writer CLI, implement a runtime validator, write
+manifest files, generate manifest bodies, change workflow YAML, change the
+release-quality wrapper, change Makefile, change Python code/tests, change
+existing fixture JSON, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness.
+
+## 27. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
+- [Frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
