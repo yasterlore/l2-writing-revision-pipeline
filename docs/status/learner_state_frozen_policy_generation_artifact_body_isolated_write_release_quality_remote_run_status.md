@@ -264,3 +264,11 @@ readiness.
   manifest file writing evidence, artifact writer CLI integration evidence,
   performance evidence, real-data readiness evidence, or production readiness
   evidence.
+- Step385: linked the separate docs-only manifest writer fixture
+  release-quality integration design:
+  [Frozen policy generation manifest writer fixture release-quality integration design](../frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md).
+  This marker remains isolated write validator remote evidence and does not
+  become manifest writer fixture release-quality evidence, manifest writer
+  evidence, manifest file writing evidence, artifact writer CLI integration
+  evidence, performance evidence, real-data readiness evidence, or production
+  readiness evidence.

@@ -155,3 +155,14 @@ The target validates this synthetic metadata-only fixture root through the
 static validator. It does not add release-quality integration, implement a
 manifest writer, write manifest files, connect artifact writer CLI, use real
 data, compute metrics, or claim production readiness.
+
+## Future Release-Quality Integration
+
+Step385 adds a docs-only release-quality integration design for this static
+fixture validator target:
+
+[Frozen policy generation manifest writer fixture release-quality integration design](../../../docs/frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md).
+
+The design does not add the target to the wrapper, implement a manifest
+writer, write manifest files, connect artifact writer CLI, use real data,
+compute metrics, or claim production readiness.
