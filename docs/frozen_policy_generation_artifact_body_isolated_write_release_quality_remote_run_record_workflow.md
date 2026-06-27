@@ -429,3 +429,21 @@ artifact body generation CLI.
 - keep manifest writer work separate
 - keep artifact writer CLI integration separate
 - keep strict exit code normalization separate
+
+## 21. Step377 Status Marker Creation Status
+
+Step377 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation artifact body isolated write release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md).
+
+The marker records the successful remote/manual Release Quality run using
+only run identity metadata, wrapper inclusion metadata, pass-only/count-only
+isolated write validation counts, related check summaries, and
+cleanup/no-residue safety flags. It does not copy raw logs, full job output,
+fixture JSON bodies, written file content, artifact body payloads, generated
+policy bodies, manifest bodies, raw rows, logits, private paths, absolute
+local paths, absolute temp paths, raw learner text, or real participant data.
+
+Step377 does not change workflow YAML, the release-quality wrapper, Makefile,
+Python code/tests, fixture JSON, manifest writer behavior, artifact writer
+CLI integration, metrics, real-data readiness, or production readiness.

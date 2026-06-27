@@ -386,3 +386,16 @@ remote workflow, change workflow YAML, change this wrapper integration, change
 Makefile, change Python code/tests, change fixture JSON, implement manifest
 writer, connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
+
+## 21. Step377 Remote Status Marker Status
+
+Step377 creates the public-safe remote/manual Release Quality status marker
+for this wrapper integration:
+
+[Learner-state frozen policy generation artifact body isolated write release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md).
+
+The marker records only metadata and pass-only/count-only summaries for the
+successful remote run. It does not copy raw logs, full job output, fixture
+bodies, written file content, artifact body payloads, generated policy
+bodies, manifest bodies, private paths, absolute temp paths, raw learner
+text, real participant data, or performance metric bodies.

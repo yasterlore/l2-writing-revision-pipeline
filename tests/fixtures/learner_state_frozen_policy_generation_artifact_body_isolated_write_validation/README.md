@@ -172,3 +172,15 @@ That future marker should record only pass-only/count-only metadata and safety
 flags for this 22-case fixture root. It must not copy fixture JSON bodies,
 written file content, artifact body payloads, private paths, absolute temp
 paths, raw rows, logits, raw learner text, raw logs, or real participant data.
+
+## Remote Status Marker
+
+Step377 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation artifact body isolated write release-quality remote run status](../../../../docs/status/learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md).
+
+The marker records only safe run metadata and pass-only/count-only summaries
+for this 22-case fixture root. The fixture JSON files remain unchanged, and
+the marker does not copy fixture bodies, written file content, artifact body
+payloads, manifest bodies, private paths, absolute temp paths, raw rows,
+logits, raw learner text, raw logs, or real participant data.

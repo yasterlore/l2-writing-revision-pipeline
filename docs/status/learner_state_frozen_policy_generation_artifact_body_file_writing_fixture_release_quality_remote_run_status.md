@@ -285,3 +285,9 @@ and not production readiness evidence.
   [Frozen policy generation artifact body isolated write release-quality remote run record workflow](../frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_record_workflow.md).
   This marker remains evidence only for the earlier remote no-write fixture
   validator target.
+- Step377: linked the separate public-safe remote/manual status marker for
+  isolated write validator release-quality coverage:
+  [Learner-state frozen policy generation artifact body isolated write release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md).
+  This file-writing fixture marker remains evidence only for the earlier
+  no-write fixture validator remote run and should not be reinterpreted as the
+  isolated write validator marker.
