@@ -497,7 +497,17 @@ manifest writer runtime behavior, manifest writer CLI behavior, manifest file
 writing, artifact writer CLI integration, real-data use, metric computation,
 or production readiness claims.
 
-## 33. Related Documents
+## 33. Step396 Runtime Fixture Release-Quality Integration Design Status
+
+Step396 adds the docs-only release-quality integration design:
+
+[Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md).
+
+The design keeps runtime fixture validation separate from runtime writer
+implementation, manifest file writing, artifact writer CLI integration,
+workflow changes, real-data use, metrics, and production readiness claims.
+
+## 34. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
@@ -509,6 +519,7 @@ or production readiness claims.
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
+- [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

@@ -250,3 +250,11 @@ correctness, real-data readiness, or production readiness.
   target is not represented as new remote Release Quality evidence by this
   marker and remains separate from manifest writer runtime and manifest file
   writing readiness.
+- Step396: linked the separate docs-only runtime fixture release-quality
+  integration design:
+  [Frozen policy generation manifest writer runtime fixture release-quality integration design](../frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md).
+  This marker remains evidence for the earlier manifest writer fixture
+  release-quality run only. Runtime fixture release-quality integration is not
+  represented as new remote evidence here and remains separate from manifest
+  writer runtime, manifest file writing, artifact writer CLI integration, and
+  production readiness.

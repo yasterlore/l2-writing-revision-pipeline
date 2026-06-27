@@ -258,6 +258,7 @@ production readiness claims.
 
 ## 16. Related Documents
 
+- [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/README.md)
@@ -267,3 +268,16 @@ production readiness claims.
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 17. Step396 Release-Quality Integration Design Status
+
+Step396 adds the docs-only release-quality integration design:
+
+[Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md).
+
+The design proposes adding this standalone target to the release-quality
+wrapper immediately after static manifest writer fixture validation and before
+config/scoring smoke checks. It does not change the wrapper, workflow YAML,
+Makefile, Python code/tests, fixture JSON, execute a runtime writer, write
+manifest files, connect artifact writer CLI, use real data, compute metrics,
+or claim production readiness.

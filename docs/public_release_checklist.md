@@ -3046,6 +3046,17 @@ code/tests, change fixture JSON, execute a runtime writer, write manifest
 files, connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
+For Step396, review the docs-only
+[frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md).
+Confirm it proposes only future release-quality wrapper placement, label,
+command, expected behavior, failure interpretation, log safety, future marker
+policy, and staging for
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures`.
+Confirm it does not change the wrapper, workflow YAML, Makefile, Python
+code/tests, fixture JSON, execute a runtime writer, write manifest files,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

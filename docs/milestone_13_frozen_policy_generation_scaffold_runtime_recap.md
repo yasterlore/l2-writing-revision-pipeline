@@ -1119,6 +1119,15 @@ written, no artifact body is produced, and no performance metric is computed.
   change fixture JSON, execute a runtime writer, write manifest files,
   connect artifact writer CLI, use real data, compute metrics, or claim
   production readiness.
+- Step396: added the docs-only release-quality integration design for the
+  manifest writer runtime fixture validator target. The design proposes
+  placing
+  `check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures`
+  immediately after static manifest writer fixture validation and before
+  config/scoring smoke checks in a future wrapper step. It does not change the
+  wrapper, workflow YAML, Makefile, Python code/tests, fixture JSON, execute a
+  runtime writer, write manifest files, connect artifact writer CLI, use real
+  data, compute metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -1151,6 +1160,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture validator](../python/learner_state/frozen_policy_generation_manifest_writer_runtime_fixture_validation.py)
 - [Frozen policy generation manifest writer runtime fixture validator Makefile target design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)
