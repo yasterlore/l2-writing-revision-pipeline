@@ -154,6 +154,18 @@ writer CLI, use real data, compute metrics, or claim production readiness.
 Runtime writer implementation, Makefile targets, release-quality integration,
 and remote markers remain separate future steps.
 
+Step393 implements the static runtime fixture validator for this root:
+
+- `python/learner_state/frozen_policy_generation_manifest_writer_runtime_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_manifest_writer_runtime_fixture_validation.py`
+
+The validator checks this fixture root with body-free summaries. It does not
+execute a manifest writer runtime, implement a manifest writer CLI, generate
+manifest bodies, write manifest files, change Makefile, change the
+release-quality wrapper, change workflow YAML, change fixture JSON, connect
+artifact writer CLI, use real data, compute metrics, or claim production
+readiness.
+
 ## Docs Safety
 
 This README contains no JSON body examples, manifest body examples,

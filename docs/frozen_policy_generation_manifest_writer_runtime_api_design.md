@@ -408,7 +408,16 @@ The validator remains separate from the runtime API. It will validate fixture
 contracts only and will not execute the runtime writer, write manifest files,
 or connect artifact writer CLI.
 
-## 26. Related Documents
+## 26. Step393 Runtime Fixture Validator Implementation Status
+
+Step393 implements the static runtime fixture validator for the 31-case /
+155-JSON runtime fixture root. The validator is separate from the future
+runtime writer API and does not execute runtime writer logic, implement the
+manifest writer CLI, generate manifest bodies, write manifest files, connect
+artifact writer CLI, use real data, compute metrics, or claim production
+readiness.
+
+## 27. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

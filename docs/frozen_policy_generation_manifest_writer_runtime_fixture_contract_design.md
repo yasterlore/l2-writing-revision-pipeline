@@ -430,7 +430,20 @@ the wrapper, change workflow YAML, change Python code/tests, change fixture
 JSON, connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
-## 28. Related Documents
+## 28. Step393 Runtime Fixture Validator Implementation Status
+
+Step393 implements the static runtime fixture validator module and focused
+tests for this fixture contract. The validator checks the runtime fixture root
+with body-free summaries and confirms 31 cases / 155 JSON files match the
+expected metadata-only contracts.
+
+This remains fixture contract validation only. It does not implement a
+manifest writer runtime or CLI, generate manifest bodies, write manifest
+files, change Makefile, change the release-quality wrapper, change workflow
+YAML, change fixture JSON, connect artifact writer CLI, use real data,
+compute metrics, or claim production readiness.
+
+## 29. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
