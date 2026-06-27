@@ -2913,6 +2913,19 @@ Makefile, change Python code/tests, change fixture JSON, implement a manifest
 writer, generate manifest bodies, write manifest files, connect artifact
 writer CLI, use real data, compute metrics, or claim production readiness.
 
+For Step386, review `scripts/check_release_quality.sh` and the
+[frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md).
+Confirm the wrapper includes
+`release_quality_check: learner-state frozen policy generation manifest writer fixture validation`
+after artifact body isolated write validation and before config/scoring smoke
+checks. Confirm the command is
+`make check-learner-state-frozen-policy-generation-manifest-writer-fixtures`
+and that the integration remains static fixture validation only. Confirm it
+does not change workflow YAML, Makefile, Python code/tests, fixture JSON,
+implement a manifest writer, generate manifest bodies, write manifest files,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

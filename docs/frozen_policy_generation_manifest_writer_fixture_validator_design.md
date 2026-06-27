@@ -416,7 +416,16 @@ manifest writer, write manifest files, change workflow YAML, change Python
 code/tests, change fixture JSON, connect artifact writer CLI, use real data,
 compute metrics, or claim production readiness.
 
-## 29. Related Documents
+## 29. Step386 Wrapper Integration Status
+
+Step386 adds this static fixture validator target to the release-quality
+wrapper after artifact body isolated write validation. The target still checks
+fixture contracts only and does not run a manifest writer, write manifest
+files, change workflow YAML, change Python code/tests, change fixture JSON,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
+## 30. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

@@ -1027,6 +1027,13 @@ written, no artifact body is produced, and no performance metric is computed.
   code/tests, fixture JSON, implement a manifest writer, write manifest files,
   connect artifact writer CLI, use real data, compute metrics, or claim
   production readiness.
+- Step386: added the manifest writer fixture validator target to the
+  release-quality wrapper immediately after artifact body isolated write
+  validation and before config/scoring smoke checks. This runs static fixture
+  validation only: it does not change workflow YAML, Makefile, Python
+  code/tests, fixture JSON, implement a manifest writer, generate manifest
+  bodies, write manifest files, connect artifact writer CLI, use real data,
+  compute metrics, or claim production readiness.
 
 ## Related Documents
 
