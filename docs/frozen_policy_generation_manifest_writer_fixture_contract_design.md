@@ -301,7 +301,7 @@ Step377 isolated write release-quality marker.
 - Step382: manifest writer fixture validator implementation
 - Step383: manifest writer fixture validator Makefile target design
 - Step384: manifest writer fixture validator Makefile target implementation
-- Step385: release-quality integration design
+- Step385: manifest writer fixture release-quality integration design
 - Step386: wrapper integration
 - Step387: remote/manual status marker workflow design
 - Step388: remote/manual status marker
@@ -442,12 +442,23 @@ validator only. It does not add release-quality integration, run a manifest
 writer, write manifest files, change fixture JSON, use real data, compute
 metrics, or claim production readiness.
 
-## 28. Related Documents
+## 28. Step385 Release-Quality Integration Design Status
+
+Step385 adds the docs-only release-quality integration design:
+
+[Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md).
+
+The design does not add the target to the wrapper, run a manifest writer,
+write manifest files, change fixture JSON, use real data, compute metrics, or
+claim production readiness.
+
+## 29. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
 - [Frozen policy generation manifest writer fixture validator Makefile target design](frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)

@@ -2902,6 +2902,17 @@ not implement a manifest writer, does not connect artifact writer CLI, does
 not use real data, does not compute metrics, and does not claim production
 readiness.
 
+For Step385, review the docs-only
+[frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md).
+Confirm it designs only future wrapper integration for the static manifest
+writer fixture validator target: insertion point, label, command, expected
+summary fields, failure interpretation, log safety, relation to existing
+release-quality checks, staging, testing plan, and future status marker
+policy. Confirm it does not change the wrapper, change workflow YAML, change
+Makefile, change Python code/tests, change fixture JSON, implement a manifest
+writer, generate manifest bodies, write manifest files, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

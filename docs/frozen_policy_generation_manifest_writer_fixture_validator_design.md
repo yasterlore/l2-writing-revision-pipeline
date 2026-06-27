@@ -405,12 +405,24 @@ write manifest files, generate manifest bodies, change workflow YAML, change
 Python code/tests, change fixture JSON, connect artifact writer CLI, use real
 data, compute metrics, or claim production readiness.
 
-## 28. Related Documents
+## 28. Step385 Release-Quality Integration Design Status
+
+Step385 adds the docs-only release-quality integration design for this target:
+
+[Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md).
+
+The design keeps wrapper integration as a future step and does not run a
+manifest writer, write manifest files, change workflow YAML, change Python
+code/tests, change fixture JSON, connect artifact writer CLI, use real data,
+compute metrics, or claim production readiness.
+
+## 29. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
 - [Frozen policy generation manifest writer fixture validator Makefile target design](frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body isolated temp write validation design](frozen_policy_generation_artifact_body_isolated_temp_write_validation_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
