@@ -302,9 +302,9 @@ If the remote run fails:
 - fix in a separate branch
 - rerun and update the future status marker
 
-## 13. Workflow For Actually Recording Later
+## 13. Workflow For Recording Or Updating
 
-Future steps:
+Workflow used for Step388 and future reruns:
 
 - merge wrapper integration to main
 - trigger Release Quality manually or via the existing workflow
@@ -359,13 +359,25 @@ does not implement or execute manifest file writing.
 
 ## 17. Next Recommended Steps
 
-- run remote/manual Release Quality
-- create the status marker at the recommended path
 - keep runtime manifest writer design separate
 - keep manifest file writing separate
 - keep artifact writer CLI integration separate
 
-## 18. Related Documents
+## 18. Step388 Status Marker Creation
+
+Step388 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md).
+
+The marker records only safe run identity metadata, wrapper inclusion
+metadata, pass-only/count-only manifest writer fixture validation summary
+fields, related check inclusion summaries, safety review, interpretation, and
+non-goals. It does not copy raw logs, full job output, manifest bodies,
+fixture JSON bodies, request/pointer/expected bodies, artifact body payloads,
+generated policy bodies, raw rows, logits, private paths, absolute paths, raw
+learner text, or real participant data.
+
+## 19. Related Documents
 
 - [Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer fixture validator Makefile target design](frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md)
@@ -373,5 +385,6 @@ does not implement or execute manifest file writing.
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
+- [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Status markers README](status/README.md)
 - [Public release checklist](public_release_checklist.md)

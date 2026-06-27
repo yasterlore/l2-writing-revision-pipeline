@@ -183,3 +183,12 @@ metadata for this fixture validation target. It must not copy fixture JSON
 bodies, manifest bodies, request/pointer/expected bodies, artifact body
 payloads, generated policy bodies, raw rows, logits, private paths, absolute
 paths, raw learner text, or raw logs.
+
+Step388 creates that public-safe status marker:
+
+[Learner-state frozen policy generation manifest writer fixture release-quality remote run status](../../../docs/status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md).
+
+The marker records remote/manual Release Quality success for static fixture
+validation only. It does not implement a manifest writer, write manifest
+files, connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.

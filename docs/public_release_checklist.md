@@ -2942,6 +2942,22 @@ Makefile, change Python code/tests, change fixture JSON, implement a manifest
 writer, write manifest files, connect artifact writer CLI, use real data,
 compute metrics, or claim production readiness.
 
+For Step388, review the public-safe status marker
+[learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md).
+Confirm it records only safe run identity metadata, wrapper inclusion
+metadata, pass-only/count-only manifest writer fixture validation summary,
+related check inclusion summaries, safety review, interpretation, and
+non-goals. Confirm it records the successful remote/manual Release Quality
+run for commit `44bc29`, includes the manifest writer fixture validation
+target, reports 30 total cases, 30 matched cases, zero mismatches, and zero
+input errors, and does not copy raw logs, full job output, manifest bodies,
+fixture JSON bodies, request/pointer/expected bodies, artifact body payloads,
+generated policy bodies, raw rows, logits, private paths, absolute paths, raw
+learner text, real participant data, or performance evidence. Confirm it does
+not change workflow YAML, wrapper, Makefile, Python code/tests, fixture JSON,
+implement a manifest writer, write manifest files, connect artifact writer
+CLI, use real data, compute metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
