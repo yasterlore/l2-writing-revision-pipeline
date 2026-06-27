@@ -445,7 +445,14 @@ Step396 adds the docs-only release-quality integration design:
 The runtime writer remains unimplemented and separate. The design concerns
 only future wrapper placement for static runtime fixture validation.
 
-## 30. Related Documents
+## 30. Step397 Runtime Fixture Wrapper Integration Status
+
+Step397 adds the runtime fixture validator target to the release-quality
+wrapper. This does not implement or execute the manifest writer runtime,
+manifest writer CLI, manifest body generation, manifest file writing, or
+artifact writer CLI integration.
+
+## 31. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

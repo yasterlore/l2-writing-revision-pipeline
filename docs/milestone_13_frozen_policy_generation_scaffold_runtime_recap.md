@@ -1128,6 +1128,14 @@ written, no artifact body is produced, and no performance metric is computed.
   wrapper, workflow YAML, Makefile, Python code/tests, fixture JSON, execute a
   runtime writer, write manifest files, connect artifact writer CLI, use real
   data, compute metrics, or claim production readiness.
+- Step397: added the manifest writer runtime fixture validator target to the
+  release-quality wrapper immediately after static manifest writer fixture
+  validation and before config/scoring smoke checks. This validates the
+  31-case / 155-JSON synthetic metadata-only runtime fixture root during
+  release-quality, but does not change workflow YAML, Makefile, Python
+  code/tests, fixture JSON, execute a runtime writer, write manifest files,
+  connect artifact writer CLI, use real data, compute metrics, or claim
+  production readiness.
 
 ## Related Documents
 

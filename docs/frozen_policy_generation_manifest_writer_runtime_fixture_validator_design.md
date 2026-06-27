@@ -506,3 +506,12 @@ standalone runtime fixture validator target. The design keeps wrapper
 implementation separate, keeps workflow YAML unchanged, does not execute a
 runtime writer, does not write manifest files, and does not connect artifact
 writer CLI integration.
+
+## 35. Step397 Wrapper Integration Status
+
+Step397 adds the standalone runtime fixture validator target to the
+release-quality wrapper. The wrapper integration validates the 31-case /
+155-JSON runtime fixture root during release-quality checks, but still does
+not execute a manifest writer runtime, implement a manifest writer CLI, write
+manifest files, connect artifact writer CLI, use real data, compute metrics,
+or claim production readiness.

@@ -479,7 +479,15 @@ Makefile, Python code/tests, fixture JSON, implement a runtime writer, write
 manifest files, connect artifact writer CLI, use real data, compute metrics,
 or claim production readiness.
 
-## 32. Related Documents
+## 32. Step397 Wrapper Integration Status
+
+Step397 adds the runtime fixture validator target to the release-quality
+wrapper. This makes release-quality check the synthetic metadata-only runtime
+fixture contracts, but it does not execute a runtime writer, write manifest
+files, connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
+## 33. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)

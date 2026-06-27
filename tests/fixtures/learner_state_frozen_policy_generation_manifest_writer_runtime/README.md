@@ -195,6 +195,12 @@ Python code/tests, fixture JSON, execute a runtime writer, write manifest
 files, connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
+Step397 adds this static runtime fixture validator target to the
+release-quality wrapper. The target validates this fixture root during
+release-quality, but still does not execute a runtime writer, write manifest
+files, connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
 ## Docs Safety
 
 This README contains no JSON body examples, manifest body examples,
