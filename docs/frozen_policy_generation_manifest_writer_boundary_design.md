@@ -321,8 +321,23 @@ learner text, real participant data, or performance metric bodies.
 - create a public-safe remote/manual status marker after successful remote
   coverage
 
-## 17. Related Documents
+## 17. Step379 Fixture Contract Design Status
 
+Step379 adds the docs-only fixture contract design:
+
+[Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md).
+
+The fixture contract fixes the future fixture root, case directory structure,
+schema names, field names, valid/invalid case taxonomy, expected fixture
+counts, path policy, content policy, validator phases, and future staging.
+It does not create fixture JSON, implement a manifest writer, implement a
+validator, write manifest files, change Makefile, change the wrapper, change
+workflow YAML, change Python code/tests, change fixture JSON, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+
+## 18. Related Documents
+
+- [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)

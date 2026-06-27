@@ -225,3 +225,8 @@ readiness.
 - Step378: linked the separate docs-only manifest writer boundary design. This
   marker remains isolated write validator remote evidence and does not become
   manifest writer evidence.
+- Step379: linked the separate docs-only manifest writer fixture contract
+  design:
+  [Frozen policy generation manifest writer fixture contract design](../frozen_policy_generation_manifest_writer_fixture_contract_design.md).
+  This marker remains isolated write validator remote evidence and does not
+  become manifest writer fixture, validator, or writer evidence.
