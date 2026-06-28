@@ -567,9 +567,22 @@ root does not implement a validator, write manifest files, add
 release-quality wrapper, change workflow YAML, connect artifact writer CLI,
 use real data, compute metrics, or claim production readiness.
 
-## 34. Related Documents
+## 34. Step412 File Writing Fixture Validator Implementation Status
+
+Step412 implements a static validator for the file writing fixture root:
+
+`python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py`
+
+This does not change the runtime implementation. The runtime remains
+metadata-only no-file, `--manifest-out` remains unimplemented, and manifest
+file writing, isolated write validation, Makefile/release-quality integration
+for the validator, and artifact writer CLI integration remain separate.
+
+## 35. Related Documents
 
 - [Frozen policy generation manifest writer metadata-only file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing/README.md)
+- [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
+- [Frozen policy generation manifest writer metadata-only file writing fixture validator implementation](../python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)

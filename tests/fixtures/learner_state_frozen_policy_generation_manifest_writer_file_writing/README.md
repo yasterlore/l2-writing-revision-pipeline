@@ -74,9 +74,18 @@ case ID consistency, category counts, safe path policy, content policy,
 no-oracle notices, reason codes, summary counts, and body-free output.
 
 Step411 adds the docs-only validator design for that future static checker.
-The validator is not implemented in this fixture root, and this fixture root
-does not execute runtime file writing, isolated writes, `--manifest-out`, or
-artifact writer CLI integration.
+
+Step412 implements the static fixture validator at:
+
+`python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py`
+
+The validator checks this 39-case / 195-JSON fixture root without writing
+manifest files, running the runtime writer, running isolated write validation,
+changing fixture JSON, adding a Makefile target, or adding release-quality
+integration. Its summaries are body-free and count-only.
+
+This fixture root does not execute runtime file writing, isolated writes,
+`--manifest-out`, or artifact writer CLI integration.
 
 A later isolated write validation step should perform actual writes only in an
 isolated safe root, verify parseable JSON, verify forbidden field counts are

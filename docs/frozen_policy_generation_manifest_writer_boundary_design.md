@@ -663,9 +663,23 @@ JSON change, no runtime file writing, no `--manifest-out`, no isolated write
 validation, no Makefile/wrapper/workflow change, no artifact writer CLI
 integration, no real data, no metrics, and no production readiness claim.
 
-## 48. Related Documents
+## 48. Step412 File Writing Fixture Validator Implementation Status
+
+Step412 implements the static metadata-only file writing fixture validator:
+
+`python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py`
+
+This remains inside the same boundary: the validator does not write manifest
+files, run the manifest writer runtime, implement `--manifest-out`, run
+isolated writes, change fixture JSON, change Makefile, change the
+release-quality wrapper, change workflow YAML, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness.
+
+## 49. Related Documents
 
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
+- [Frozen policy generation manifest writer metadata-only file writing fixture validator implementation](../python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)
+- [Frozen policy generation manifest writer metadata-only file writing fixture validator tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

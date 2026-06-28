@@ -590,9 +590,25 @@ add isolated write validation, change Makefile, change the release-quality
 wrapper, change workflow YAML, connect artifact writer CLI, use real data,
 compute metrics, or claim production readiness.
 
-## 29. Related Documents
+## 29. Step412 Fixture Validator Implementation Status
+
+Step412 implements the static validator and focused tests for this fixture
+contract:
+
+- `python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py`
+
+The implemented validator checks the 39-case / 195-JSON fixture root without
+writing files, running the runtime writer, running isolated write validation,
+or changing fixture JSON. It reports body-free, count-only metadata and keeps
+`release_quality_ready=false` until a separate Makefile/release-quality
+staging step.
+
+## 30. Related Documents
 
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
+- [Frozen policy generation manifest writer metadata-only file writing fixture validator implementation](../python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)
+- [Frozen policy generation manifest writer metadata-only file writing fixture validator tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)

@@ -3258,6 +3258,27 @@ expected-result body examples, artifact body payload examples, manifest body
 examples, private path examples, raw learner text, real participant data, or
 performance evidence.
 
+For Step412, review the static validator implementation and focused tests:
+`python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py`
+and
+`python/learner_state/tests/test_frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py`.
+Confirm the validator checks the 39-case / 195-JSON fixture root, reports
+`matched_cases=39`, `mismatched_cases=0`, `input_error_cases=0`,
+`validator_wrote_files=false`, `runtime_writer_executed=false`,
+`isolated_write_executed=false`, and `release_quality_ready=false`. Confirm
+the CLI supports root/case validation, safe selectors, `--json`, and `--help`.
+Confirm focused tests cover root counts, single valid/invalid cases, reason
+code counts, temporary missing/malformed/mismatch fixtures, body-free human
+and JSON output, and residue count 0. Confirm this step does not change
+fixture JSON, write manifest files, add `--manifest-out`, add isolated write
+validation, change Makefile, change the wrapper, change workflow YAML,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness. Confirm it does not include raw logs, JSON body
+examples, file writing fixture JSON body examples, request/pointer/
+expected-result body examples, artifact body payload examples, manifest body
+examples, private path examples, raw learner text, real participant data, or
+performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
