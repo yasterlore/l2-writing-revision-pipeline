@@ -3667,6 +3667,25 @@ artifact body payloads, generated policy bodies, private paths, absolute
 local or temp paths, raw learner text, real participant data, or performance
 evidence.
 
+For Step435, review the standalone Makefile target
+`check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures`.
+Confirm it runs the static production file writing fixture validator CLI
+against the Step431 fixture root and emits the body-free/count-only summary
+with 32 cases, 160 JSON files, 7 pass-written cases, 1 pass-no-write case,
+12 usage-error cases, 12 fail-closed cases, 32 matched cases, 0 input-error
+cases, `public_absolute_path_suppressed=true`,
+`artifact_writer_cli_integration_checked=true`, and
+`release_quality_ready=false`. Confirm it does not add release-quality wrapper
+integration, modify workflow YAML, modify Python code/tests, modify fixture
+JSON, execute runtime file writing, write manifest files, expose public
+`--manifest-out`, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness. Confirm docs and output do not
+include raw logs, full job output, fixture JSON bodies,
+request/pointer/expected-result bodies, written file bodies, manifest bodies,
+artifact body payloads, generated policy bodies, private paths, absolute
+local or temp paths, raw learner text, real participant data, or performance
+evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -30,6 +30,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures
+.PHONY: check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-runtime
@@ -72,6 +73,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation  Validate isolated artifact body file writing cases"
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation  Validate manifest writer metadata-only isolated write behavior"
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures  Validate manifest writer metadata-only file writing fixture contracts"
+	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures  Validate manifest writer production metadata-only file writing fixture contracts"
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-fixtures  Validate manifest writer fixture contracts"
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures  Validate manifest writer runtime fixture contracts"
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-runtime  Smoke test manifest writer metadata-only runtime"
@@ -200,6 +202,9 @@ check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-vali
 
 check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer_file_writing_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing
+
+check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer_production_file_writing_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_production_file_writing
 
 check-learner-state-frozen-policy-generation-manifest-writer-fixtures:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_manifest_writer

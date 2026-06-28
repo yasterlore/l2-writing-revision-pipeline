@@ -305,3 +305,10 @@ production readiness.
   production-facing runtime file writing, public `--manifest-out`, artifact
   writer CLI integration, real-data readiness, metrics, or production
   readiness.
+- Step435: the production-facing metadata-only manifest file writing fixture
+  validator Makefile target is implemented separately as
+  `check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures`.
+  This status marker remains isolated-write evidence only. It does not imply
+  release-quality wrapper inclusion for that target, production-facing runtime
+  file writing, public `--manifest-out`, artifact writer CLI integration,
+  real-data readiness, metrics, or production readiness.
