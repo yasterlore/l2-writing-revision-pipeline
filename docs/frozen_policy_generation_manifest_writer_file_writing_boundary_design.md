@@ -649,3 +649,18 @@ integration separation. It does not implement production-facing runtime file
 writing, expose public `--manifest-out`, change Makefile/wrapper/workflow,
 change Python code/tests, change fixture JSON, use real data, compute metrics,
 or claim production readiness.
+
+## 42. Step430 Production File Writing Fixture Contract Design Status
+
+Step430 adds the docs-only production-facing metadata-only manifest file
+writing fixture contract design:
+
+[Frozen policy generation manifest writer production file writing fixture contract design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_contract_design.md).
+
+The file writing boundary remains a design boundary in this step. The
+contract separates future production-facing runtime behavior fixtures from
+existing static file writing fixtures and isolated temp-root validation. It
+does not create fixture JSON, implement production-facing runtime file
+writing, expose public `--manifest-out`, change Makefile/wrapper/workflow,
+change Python code/tests, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness.

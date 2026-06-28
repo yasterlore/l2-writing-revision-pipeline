@@ -236,6 +236,8 @@ production readiness.
 - keep production-facing runtime file writing separate
 - keep the Step429 production-facing file writing design separate from this
   isolated validation marker
+- keep the Step430 production file writing fixture contract separate from
+  this isolated validation marker
 - keep public `--manifest-out` separate
 - keep artifact writer CLI integration separate
 - keep strict exit code normalization separate
@@ -259,3 +261,10 @@ production readiness.
   production-facing runtime file writing, public `--manifest-out`, artifact
   writer CLI integration, real-data readiness, metrics, or production
   readiness.
+- Step430: the production-facing metadata-only manifest file writing fixture
+  contract design is added separately in
+  [Frozen policy generation manifest writer production file writing fixture contract design](../frozen_policy_generation_manifest_writer_production_file_writing_fixture_contract_design.md).
+  This status marker remains isolated-write evidence only. It does not imply
+  production file writing fixture creation, public `--manifest-out`, runtime
+  file writing, artifact writer CLI integration, real-data readiness, metrics,
+  or production readiness.

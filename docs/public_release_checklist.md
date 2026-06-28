@@ -3575,6 +3575,25 @@ request/pointer/expected-result bodies, manifest bodies, artifact body
 payloads, generated policy bodies, private paths, absolute temp paths, raw
 learner text, real participant data, or performance evidence.
 
+For Step430, review the docs-only
+[frozen policy generation manifest writer production file writing fixture contract design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_contract_design.md).
+Confirm it fixes the future production-facing metadata-only manifest file
+writing fixture root, directory layout, required files, schema versions,
+valid/invalid cases, count math, case metadata field names, manifest writer
+request field names, pointer field names, expected result field names, safe
+output root policy, overwrite policy, written file content policy,
+stdout/stderr safety policy, reason codes, future validator expectations,
+future runtime expectations, release-quality separation, artifact writer CLI
+integration separation, docs safety, and non-goals. Confirm it does not create
+fixture JSON, implement production-facing runtime file writing, expose public
+`--manifest-out`, change Makefile/wrapper/workflow, change Python code/tests,
+change fixture JSON, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness. Confirm it does not include raw logs,
+full job output, fixture JSON bodies, request/pointer/expected-result bodies,
+written file bodies, manifest bodies, artifact body payloads, generated
+policy bodies, private paths, absolute local or temp paths, raw learner text,
+real participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

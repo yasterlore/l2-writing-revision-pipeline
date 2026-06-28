@@ -385,3 +385,20 @@ Step429 creates this docs-only production-facing metadata-only manifest file
 writing design. It does not implement production-facing runtime file writing,
 public `--manifest-out`, manifest body generation, artifact writer CLI
 integration, real-data use, metrics, or production readiness.
+
+## 24. Step430 Fixture Contract Design Status
+
+Step430 adds the docs-only production-facing metadata-only manifest file
+writing fixture contract design:
+
+[Frozen policy generation manifest writer production file writing fixture contract design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_contract_design.md).
+
+The production file writing design remains unimplemented. Step430 fixes the
+future fixture root, required files, schema versions, case categories, counts,
+request/result field names, safe output root policy, overwrite policy,
+written file content policy, stdout/stderr safety policy, reason codes,
+validator expectations, and runtime expectations. It does not create fixture
+JSON, implement production-facing runtime file writing, expose public
+`--manifest-out`, change Makefile/wrapper/workflow, change Python code/tests,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.

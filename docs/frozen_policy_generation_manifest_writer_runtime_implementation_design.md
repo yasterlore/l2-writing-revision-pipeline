@@ -530,6 +530,19 @@ integration, manifest body generation, Makefile/wrapper/workflow changes,
 Python code/tests changes, fixture JSON changes, real-data use, metrics, and
 production-readiness claims remain separate.
 
+## 45. Step430 Production File Writing Fixture Contract Design Status
+
+Step430 adds the docs-only production-facing metadata-only manifest file
+writing fixture contract design:
+
+[Frozen policy generation manifest writer production file writing fixture contract design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_contract_design.md).
+
+This does not change the runtime implementation. The runtime remains no-file
+today, public `--manifest-out` remains unimplemented, and production file
+writing fixtures, runtime file writing implementation, artifact writer CLI
+integration, Makefile/wrapper/workflow changes, Python code/tests changes,
+real-data use, metrics, and production-readiness claims remain separate.
+
 ## 44. Step421 Isolated Write Fixture Root Status
 
 Step421 creates the separate synthetic-only, metadata-only isolated write
