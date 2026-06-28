@@ -601,3 +601,18 @@ JSON bodies, request/pointer/expected-result bodies, raw logs, private paths,
 raw learner text, real participant data, or performance evidence. It is not
 runtime file writing evidence, isolated write evidence, artifact writer CLI
 integration evidence, real-data readiness, or a production-readiness claim.
+
+## 35. Step419 Isolated Write Validation Design Status
+
+Step419 adds the docs-only isolated write validation design:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md).
+
+The static validator remains unchanged. Isolated write validation is future
+separate coverage that should actually write only in an isolated safe root,
+parse written metadata-only JSON, scan forbidden fields, and verify cleanup.
+It should not replace static fixture validation. Step419 does not implement
+the isolated validator, create fixtures, change Python code/tests, change
+Makefile/wrapper/workflow, write manifest files, add `--manifest-out`, connect
+artifact writer CLI, use real data, compute metrics, or claim production
+readiness.

@@ -398,8 +398,22 @@ contract evidence only; it is not runtime file writing evidence, isolated
 write validation evidence, artifact writer CLI integration evidence,
 real-data readiness, performance evidence, or a production-readiness claim.
 
-## 23. Related Documents
+## 23. Step419 Isolated Write Validation Design Status
 
+Step419 adds the docs-only isolated write validation design:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md).
+
+The release-quality integration documented here remains static fixture
+validation only. Future isolated write validation should receive its own
+fixture contract, implementation, Makefile target, release-quality integration
+design, wrapper integration, and remote marker. Step419 does not change the
+current wrapper, workflow YAML, Makefile, Python code/tests, fixture JSON, or
+release-quality status.
+
+## 24. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md)
 - [Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md)

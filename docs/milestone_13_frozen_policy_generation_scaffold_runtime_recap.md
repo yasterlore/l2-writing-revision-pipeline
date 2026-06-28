@@ -1306,6 +1306,17 @@ written, no artifact body is produced, and no performance metric is computed.
   participant data, or performance evidence. It does not prove runtime file
   writing, isolated write validation, artifact writer CLI integration,
   real-data readiness, or production readiness.
+- Step419: added the docs-only isolated write validation design for future
+  manifest writer metadata-only file writing. The design recommends a
+  separate isolated write fixture root, fixes adjusted case counts, required
+  file names, isolated request/result contract field names, safe temp-root
+  policy, output content checks, stdout/stderr safety checks, fail-closed
+  behavior, future module/CLI/API shape, reason codes, and staging. It does
+  not create isolated write fixtures, implement isolated write validation,
+  implement runtime file writing, add `--manifest-out`, change Makefile,
+  change wrapper, change workflow YAML, change Python code/tests, change
+  fixture JSON, connect artifact writer CLI, use real data, compute metrics,
+  or claim production readiness.
 
 ## Related Documents
 
@@ -1331,6 +1342,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md)
+- [Frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator implementation](../python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)

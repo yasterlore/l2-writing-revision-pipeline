@@ -131,5 +131,16 @@ A later isolated write validation step should perform actual writes only in an
 isolated safe root, verify parseable JSON, verify forbidden field counts are
 zero, and clean up residue.
 
+Step419 adds the docs-only isolated write validation design:
+
+`docs/frozen_policy_generation_manifest_writer_isolated_write_validation_design.md`
+
+The fixture root remains unchanged. Step419 recommends a separate future
+isolated write fixture root for actual isolated safe-root writes, parseable
+JSON checks, stdout/stderr body suppression checks, cleanup, and residue
+checks. It does not create isolated write fixtures, implement isolated write
+validation, run runtime file writing, add `--manifest-out`, or connect
+artifact writer CLI.
+
 The runtime currently remains metadata_only_no_file. This fixture root does
 not implement --manifest-out or manifest file writing.

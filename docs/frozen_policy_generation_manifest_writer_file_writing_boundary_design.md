@@ -487,3 +487,19 @@ and passed Release Quality. It is not manifest file writing evidence, not
 `--manifest-out` evidence, not isolated write validation evidence, not
 artifact writer CLI integration evidence, not real-data readiness, not
 performance evidence, and not a production-readiness claim.
+
+## 31. Step419 Isolated Write Validation Design Status
+
+Step419 adds the docs-only isolated write validation design:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md).
+
+The file writing boundary remains unchanged. The design fixes future
+isolated safe-root validation responsibilities, fixture-root separation,
+request/result contract field names, stdout/stderr safety, output content
+checks, cleanup/residue checks, reason codes, and staging. It does not create
+isolated write fixtures, implement isolated write validation, implement
+runtime file writing, add `--manifest-out`, change Makefile, change the
+wrapper, change workflow YAML, change Python code/tests, change fixture JSON,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.

@@ -649,3 +649,26 @@ writing fixture validator wrapper integration:
 The API boundary remains no-file today. Step417 does not create a status
 marker, run remote workflows, implement `--manifest-out`, write files, change
 runtime code, change fixture JSON, change Makefile, or change workflow YAML.
+
+## 47. Step418 File Writing Fixture Remote Status Marker Status
+
+Step418 creates the public-safe remote/manual Release Quality status marker
+for the file writing fixture validator target:
+
+[Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md).
+
+The API boundary remains no-file today. Step418 does not implement
+`--manifest-out`, write files, change runtime code, change fixture JSON,
+change Makefile, change wrapper, or change workflow YAML.
+
+## 48. Step419 Isolated Write Validation Design Status
+
+Step419 adds the docs-only isolated write validation design:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md).
+
+The API boundary remains no-file today. The design describes future isolated
+safe-root validation for metadata-only manifest file writing without
+implementing `--manifest-out`, writing files, changing runtime code, changing
+fixture JSON, changing Makefile/wrapper/workflow, connecting artifact writer
+CLI, using real data, computing metrics, or claiming production readiness.

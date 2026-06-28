@@ -244,3 +244,9 @@ readiness, or production readiness.
   request/pointer/expected-result bodies, artifact body payloads, generated
   policy bodies, manifest bodies, private paths, raw learner text, real
   participant data, or performance evidence.
+- Step419: linked the docs-only isolated write validation design:
+  [Frozen policy generation manifest writer metadata-only isolated write validation design](../frozen_policy_generation_manifest_writer_isolated_write_validation_design.md).
+  This marker remains remote evidence only for the static file writing
+  fixture validator target. Isolated write validation, runtime file writing,
+  `--manifest-out`, artifact writer CLI integration, real-data readiness,
+  performance evidence, and production readiness remain future separate work.

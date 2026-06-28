@@ -655,3 +655,29 @@ This does not change the runtime implementation. The runtime remains
 metadata-only no-file, `--manifest-out` remains unimplemented, and isolated
 write validation, runtime file writing, status marker creation, and artifact
 writer CLI integration remain separate.
+
+## 41. Step418 File Writing Fixture Remote Status Marker Status
+
+Step418 creates the public-safe remote/manual Release Quality status marker
+for the file writing fixture validator target:
+
+[Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md).
+
+This does not change the runtime implementation. The runtime remains
+metadata-only no-file, `--manifest-out` remains unimplemented, and isolated
+write validation, runtime file writing, and artifact writer CLI integration
+remain separate.
+
+## 42. Step419 Isolated Write Validation Design Status
+
+Step419 adds the docs-only isolated write validation design:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md).
+
+This does not change the runtime implementation. The design is future staging
+for isolated safe-root validation after, or together with, minimal
+metadata-only runtime file writing. The runtime remains no-file today,
+`--manifest-out` remains unimplemented, and no isolated write fixtures,
+runtime file writing, Makefile/wrapper/workflow changes, artifact writer CLI
+integration, real-data readiness, metrics, or production-readiness claim are
+added.

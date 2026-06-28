@@ -3398,6 +3398,31 @@ code/tests, or fixture JSON, and does not implement manifest file writing,
 `--manifest-out`, isolated write validation, artifact writer CLI integration,
 real-data readiness, metrics, or production readiness.
 
+For Step419, review the docs-only
+[frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md).
+Confirm it designs only future isolated safe-root validation for manifest
+writer metadata-only file writing. Confirm it compares reuse of the existing
+file writing fixture root with a dedicated isolated write validation root and
+recommends
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/`.
+Confirm the adjusted future count math is explicit:
+`total_cases=25`, `valid_cases=6`, `invalid_cases=19`,
+`pass_written_cases=5`, `pass_no_write_cases=1`,
+`usage_error_cases=14`, `fail_closed_cases=5`, and
+`residue_file_count=0`. Confirm it covers isolated request/result field names,
+safe isolated root policy, output file content checks, stdout/stderr safety,
+fail-closed behavior, future module/CLI/API shape, reason codes, beginner
+explanation, docs safety policy, and staging. Confirm it does not create
+fixtures, implement isolated write validation, implement runtime file
+writing, add `--manifest-out`, change Makefile, change wrapper, change
+workflow YAML, change Python code/tests, change fixture JSON, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+Confirm it does not include raw logs, full job output, JSON body examples,
+fixture JSON body examples, request/pointer/expected-result body examples,
+output file content examples, artifact body payload examples, manifest body
+examples, private path examples, absolute temp path examples, raw learner
+text, real participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
