@@ -597,3 +597,18 @@ the isolated validation harness only; it does not implement production-facing
 runtime file writing, expose public `--manifest-out`, connect artifact writer
 CLI, change workflow YAML, change Makefile, change Python code/tests, change
 fixture JSON, use real data, compute metrics, or claim production readiness.
+
+## 39. Step427 Isolated Write Validation Remote Run Record Workflow Design Status
+
+Step427 adds the docs-only remote/manual run record workflow design for the
+manifest writer isolated write validation release-quality wrapper check:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation release-quality remote run record workflow](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md).
+
+The file writing boundary remains unchanged. The workflow design covers only
+future public-safe status marker metadata after a GitHub Actions Release
+Quality run. It does not create a status marker, run a workflow, change
+workflow YAML, change the wrapper, change Makefile, change Python code/tests,
+change fixture JSON, implement production-facing runtime file writing,
+expose public `--manifest-out`, connect artifact writer CLI, use real data,
+compute metrics, or claim production readiness.

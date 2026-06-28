@@ -651,3 +651,21 @@ Step426 does not change workflow YAML, Makefile, Python code/tests, fixture
 JSON, production-facing runtime file writing, public `--manifest-out`,
 artifact writer CLI integration, metrics, real-data use, or production
 readiness.
+
+## 36. Step427 Remote Run Record Workflow Design Status
+
+Step427 adds the docs-only remote/manual run record workflow design:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation release-quality remote run record workflow](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md).
+
+The validation design remains unchanged. The remote run record workflow
+specifies how a future status marker should capture only public-safe
+metadata, pass-only/count-only isolated write validation counts, residue 0,
+stdout/stderr suppression, temp-root isolation, and non-goals after a
+GitHub Actions Release Quality run.
+
+Step427 does not create a status marker, run a workflow, change workflow
+YAML, change the wrapper, change Makefile, change Python code/tests, change
+fixture JSON, implement production-facing runtime file writing, expose public
+`--manifest-out`, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness.

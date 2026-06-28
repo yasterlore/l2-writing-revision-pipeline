@@ -3532,6 +3532,20 @@ Makefile, Python code/tests, fixture JSON, production-facing runtime file
 writing, public `--manifest-out`, artifact writer CLI integration, real-data
 use, metrics, and production readiness are unchanged.
 
+For Step427, review the docs-only
+[frozen policy generation manifest writer metadata-only isolated write validation release-quality remote run record workflow](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md).
+Confirm it designs only a future public-safe status marker workflow after a
+remote/manual Release Quality run that includes the isolated write validation
+target. Confirm it does not create the actual marker, run a workflow, modify
+workflow YAML, wrapper, Makefile, Python code/tests, fixture JSON, implement
+production-facing runtime file writing, expose public `--manifest-out`,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness. Confirm it prohibits raw logs, full job output, written
+file JSON bodies, fixture JSON bodies, request/pointer/expected-result
+bodies, manifest bodies, artifact body payloads, generated policy bodies,
+private paths, absolute temp paths, raw learner text, real participant data,
+and performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

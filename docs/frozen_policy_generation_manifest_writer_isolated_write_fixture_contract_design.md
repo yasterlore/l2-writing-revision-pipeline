@@ -611,3 +611,22 @@ This integration does not modify fixture JSON, workflow YAML, Makefile,
 Python code/tests, production-facing runtime file writing, public
 `--manifest-out`, artifact writer CLI integration, metrics, real-data use, or
 production readiness.
+
+## 35. Step427 Remote Run Record Workflow Design Status
+
+Step427 adds the docs-only remote/manual run record workflow design:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation release-quality remote run record workflow](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md).
+
+The fixture contract remains unchanged. The future status marker should
+record only public-safe metadata and pass-only/count-only summaries for the
+25-case / 150-JSON isolated write validation target. It must not copy fixture
+JSON bodies, isolated write request bodies, manifest writer request bodies,
+pointer bodies, expected result bodies, written file JSON bodies, private
+paths, absolute temp paths, raw learner text, raw logs, or full job output.
+
+Step427 does not create a status marker, run a workflow, change workflow
+YAML, change the wrapper, change Makefile, change Python code/tests, change
+fixture JSON, implement production-facing runtime file writing, expose public
+`--manifest-out`, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness.

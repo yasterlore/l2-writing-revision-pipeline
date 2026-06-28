@@ -307,7 +307,8 @@ writing bugs often leak content through output streams or leave files behind.
 ## 19. Next Recommended Steps
 
 - Step426: wrapper integration
-- Step427: remote/manual marker
+- Step427: remote/manual run record workflow design
+- later remote/manual status marker
 - later production-facing runtime file writing design / implementation
 - later artifact writer CLI integration
 
@@ -317,6 +318,7 @@ writing bugs often leak content through output streams or leave files behind.
 - [Frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md)
 - [Frozen policy generation manifest writer metadata-only isolated write fixture contract design](frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/README.md)
+- [Frozen policy generation manifest writer metadata-only isolated write validation release-quality remote run record workflow](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md)
@@ -346,3 +348,19 @@ must not copy written file bodies, fixture JSON bodies, request/pointer/result
 bodies, manifest bodies, artifact body payloads, generated policy bodies,
 raw rows, logits, private paths, absolute temp paths, raw learner text, real
 participant data, raw logs, or full job output into docs.
+
+## 22. Step427 Remote Run Record Workflow Design Status
+
+Step427 adds the docs-only remote/manual run record workflow design:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation release-quality remote run record workflow](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md).
+
+The workflow design specifies the future status marker path, allowed
+public-safe metadata, forbidden raw logs and body content, status marker
+sections, pass-only/count-only isolated write validation summary, related
+check summaries, safety review, failure handling, and next recording steps.
+It does not create the status marker, run a workflow, change workflow YAML,
+change the wrapper, change Makefile, change Python code/tests, change fixture
+JSON, implement production-facing runtime file writing, expose public
+`--manifest-out`, connect artifact writer CLI, compute metrics, use real
+data, or claim production readiness.

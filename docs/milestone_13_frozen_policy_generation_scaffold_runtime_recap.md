@@ -1378,6 +1378,16 @@ written, no artifact body is produced, and no performance metric is computed.
   does not modify workflow YAML, Makefile, Python code/tests, fixture JSON,
   production-facing runtime file writing, public `--manifest-out`, artifact
   writer CLI integration, metrics, real-data use, or production readiness.
+- Step427: added docs-only remote/manual run record workflow design for the
+  manifest writer isolated write validation release-quality wrapper target.
+  The design fixes the future marker path, public-safe metadata, prohibited
+  raw logs/body content, pass-only/count-only summaries, safety review,
+  interpretation, failure handling, and recording workflow. It does not
+  create a status marker, run a workflow, change workflow YAML, change the
+  wrapper, change Makefile, change Python code/tests, change fixture JSON,
+  implement production-facing runtime file writing, expose public
+  `--manifest-out`, connect artifact writer CLI, use real data, compute
+  metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -1409,6 +1419,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer isolated write validation module](../python/learner_state/frozen_policy_generation_manifest_writer_isolated_write_validation.py)
 - [Frozen policy generation manifest writer metadata-only isolated write validation Makefile target design](frozen_policy_generation_manifest_writer_isolated_write_validation_makefile_target_design.md)
 - [Frozen policy generation manifest writer metadata-only isolated write validation release-quality integration design](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_integration_design.md)
+- [Frozen policy generation manifest writer metadata-only isolated write validation release-quality remote run record workflow](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md)
 - [Makefile manifest writer isolated write validation target](../Makefile)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator implementation](../python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)

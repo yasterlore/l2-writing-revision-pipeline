@@ -79,6 +79,13 @@ Available markers:
   remote/manual release-quality wrapper status after manifest writer
   metadata-only file writing fixture validator integration. It remains
   pass-only/count-only and does not copy raw logs or fixture JSON bodies.
+- Future marker path:
+  `learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_status.md`
+  will record a future public-safe, pass-only/count-only remote/manual
+  Release Quality run after manifest writer isolated write validation wrapper
+  integration. It must not copy raw logs, full job output, written file JSON
+  bodies, fixture JSON bodies, private paths, absolute temp paths, raw learner
+  text, or performance evidence.
 
 Related recap:
 
@@ -150,3 +157,6 @@ Related recap:
 - [Frozen policy generation manifest writer file writing fixture release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for manifest
   writer file writing fixture validator release-quality wrapper integration.
+- [Frozen policy generation manifest writer isolated write validation release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md):
+  future public-safe pass-only/count-only recording workflow for manifest
+  writer isolated write validation release-quality wrapper integration.

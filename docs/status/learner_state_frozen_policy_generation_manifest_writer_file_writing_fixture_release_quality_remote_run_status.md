@@ -301,3 +301,12 @@ readiness, or production readiness.
   production-facing runtime file writing, not public `--manifest-out`, not
   artifact writer CLI integration, not real-data readiness, and not
   production readiness.
+- Step427: linked the docs-only isolated write validation remote/manual run
+  record workflow:
+  [Frozen policy generation manifest writer metadata-only isolated write validation release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md).
+  This marker remains remote evidence only for the earlier static file
+  writing fixture validator target. The isolated write validation remote
+  marker is still future separate work and must remain public-safe,
+  pass-only/count-only, with no raw logs, written file JSON bodies, fixture
+  bodies, private paths, absolute temp paths, raw learner text, performance
+  evidence, real-data readiness, or production readiness claim.

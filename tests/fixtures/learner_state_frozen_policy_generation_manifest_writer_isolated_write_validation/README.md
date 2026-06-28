@@ -160,3 +160,17 @@ This fixture root remains unchanged. The wrapper integration does not modify
 workflow YAML, Makefile, Python code/tests, fixture JSON, production-facing
 runtime file writing, public `--manifest-out`, artifact writer CLI
 integration, real-data use, metrics, or production readiness.
+
+## Step427 Remote Run Record Workflow Design
+
+Step427 adds a docs-only workflow design for recording a future remote/manual
+Release Quality run that includes this isolated write validation target:
+
+`docs/frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md`
+
+This fixture root remains unchanged. The future marker should record only
+public-safe metadata and pass-only/count-only summaries. It must not copy
+fixture JSON bodies, isolated write request bodies, manifest writer request
+bodies, pointer bodies, expected result bodies, written file JSON bodies,
+private paths, absolute temp paths, raw learner text, raw logs, or full job
+output.
