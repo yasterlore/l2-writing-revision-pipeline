@@ -517,6 +517,19 @@ status marker, write manifest files, add `--manifest-out`, generate manifest
 bodies, connect artifact writer CLI, use real data, compute metrics, or
 claim production readiness.
 
+## 44. Step429 Production File Writing Design Status
+
+Step429 adds the docs-only production-facing metadata-only manifest file
+writing design:
+
+[Frozen policy generation manifest writer production file writing design](frozen_policy_generation_manifest_writer_production_file_writing_design.md).
+
+This does not change the runtime implementation. The runtime remains no-file
+today, public `--manifest-out` remains unimplemented, and artifact writer CLI
+integration, manifest body generation, Makefile/wrapper/workflow changes,
+Python code/tests changes, fixture JSON changes, real-data use, metrics, and
+production-readiness claims remain separate.
+
 ## 44. Step421 Isolated Write Fixture Root Status
 
 Step421 creates the separate synthetic-only, metadata-only isolated write

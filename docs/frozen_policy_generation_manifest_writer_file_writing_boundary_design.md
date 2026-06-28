@@ -632,3 +632,20 @@ Step428 does not change workflow YAML, release-quality wrapper, Makefile,
 Python code/tests, fixture JSON, production-facing runtime file writing,
 public `--manifest-out`, artifact writer CLI integration, metrics,
 real-data use, or production readiness.
+
+## 41. Step429 Production File Writing Design Status
+
+Step429 adds the docs-only production-facing metadata-only manifest file
+writing design:
+
+[Frozen policy generation manifest writer production file writing design](frozen_policy_generation_manifest_writer_production_file_writing_design.md).
+
+The file writing boundary remains a design boundary in this step. The document
+defines future production-facing safe output root rules, public
+`--manifest-out` and overwrite option shape, written file content policy,
+stdout/stderr policy, output result summary fields, fail-closed behavior,
+reason codes, tests, release-quality staging, and artifact writer CLI
+integration separation. It does not implement production-facing runtime file
+writing, expose public `--manifest-out`, change Makefile/wrapper/workflow,
+change Python code/tests, change fixture JSON, use real data, compute metrics,
+or claim production readiness.

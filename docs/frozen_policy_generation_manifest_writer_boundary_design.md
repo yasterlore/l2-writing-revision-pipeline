@@ -848,3 +848,19 @@ synthetic metadata-only fixtures and isolated temp-root write behavior. They
 do not implement production-facing runtime file writing, public
 `--manifest-out`, manifest body generation, artifact writer CLI integration,
 real-data use, performance metrics, or production readiness.
+
+## 59. Step429 Production File Writing Design Status
+
+Step429 adds the docs-only production-facing metadata-only manifest file
+writing design:
+
+[Frozen policy generation manifest writer production file writing design](frozen_policy_generation_manifest_writer_production_file_writing_design.md).
+
+The manifest writer boundary remains unchanged in this step. The design fixes
+future public `--manifest-out` shape, safe project-controlled output root
+policy, overwrite policy, written file content policy, stdout/stderr safety,
+fail-closed reason codes, tests, release-quality staging, and artifact writer
+CLI integration separation. It does not implement production-facing runtime
+file writing, expose public `--manifest-out`, change Makefile/wrapper/workflow,
+change Python code/tests, change fixture JSON, use real data, compute metrics,
+or claim production readiness.

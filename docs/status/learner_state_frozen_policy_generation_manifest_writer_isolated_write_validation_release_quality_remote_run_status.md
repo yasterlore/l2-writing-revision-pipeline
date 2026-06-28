@@ -234,6 +234,8 @@ production readiness.
 
 - commit this status marker after local checks
 - keep production-facing runtime file writing separate
+- keep the Step429 production-facing file writing design separate from this
+  isolated validation marker
 - keep public `--manifest-out` separate
 - keep artifact writer CLI integration separate
 - keep strict exit code normalization separate
@@ -250,3 +252,10 @@ production readiness.
   JSON bodies, request/pointer/expected-result bodies, artifact body payloads,
   generated policy bodies, manifest bodies, private paths, absolute temp
   paths, raw learner text, real participant data, or performance evidence.
+- Step429: the production-facing metadata-only manifest file writing design is
+  added separately in
+  [Frozen policy generation manifest writer production file writing design](../frozen_policy_generation_manifest_writer_production_file_writing_design.md).
+  This status marker remains isolated-write evidence only. It does not imply
+  production-facing runtime file writing, public `--manifest-out`, artifact
+  writer CLI integration, real-data readiness, metrics, or production
+  readiness.

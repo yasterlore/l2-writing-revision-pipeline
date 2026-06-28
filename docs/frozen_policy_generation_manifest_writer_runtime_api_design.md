@@ -693,3 +693,18 @@ Step421 creates the separate isolated write validation fixture root:
 The runtime API remains unchanged. The fixture root does not add
 `--manifest-out`, runtime file writing, isolated write validation, artifact
 writer CLI integration, metrics, real-data use, or production readiness.
+
+## 51. Step429 Production File Writing Design Status
+
+Step429 adds the docs-only production-facing metadata-only manifest file
+writing design:
+
+[Frozen policy generation manifest writer production file writing design](frozen_policy_generation_manifest_writer_production_file_writing_design.md).
+
+The runtime API remains unchanged in this step. The design proposes future
+public `--manifest-out`, `--allow-overwrite`, safe output root validation,
+metadata-only written file policy, body-free stdout/stderr, fail-closed reason
+codes, and test staging. It does not implement runtime file writing, change
+Python code/tests, change Makefile/wrapper/workflow, change fixture JSON,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.

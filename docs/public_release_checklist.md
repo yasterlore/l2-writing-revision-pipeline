@@ -3558,6 +3558,23 @@ does not claim production-facing runtime file writing, public
 `--manifest-out`, artifact writer CLI integration, model performance,
 real-data readiness, or production readiness.
 
+For Step429, review the docs-only
+[frozen policy generation manifest writer production file writing design](frozen_policy_generation_manifest_writer_production_file_writing_design.md).
+Confirm it fixes future production-facing metadata-only manifest file writing
+responsibilities, proposed public `--manifest-out` and `--allow-overwrite`
+shape, safe project-controlled output root policy, overwrite policy, written
+file content policy, stdout/stderr safety, output summary fields,
+fail-closed behavior, reason codes, tests, release-quality staging, artifact
+writer CLI integration separation, docs safety, and non-goals. Confirm it
+does not implement production-facing runtime file writing, expose public
+`--manifest-out`, change Makefile/wrapper/workflow, change Python code/tests,
+change fixture JSON, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness. Confirm it does not include raw logs,
+full job output, written file JSON bodies, fixture JSON bodies,
+request/pointer/expected-result bodies, manifest bodies, artifact body
+payloads, generated policy bodies, private paths, absolute temp paths, raw
+learner text, real participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
