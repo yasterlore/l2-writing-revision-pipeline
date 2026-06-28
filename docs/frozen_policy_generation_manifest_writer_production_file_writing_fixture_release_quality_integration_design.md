@@ -322,3 +322,20 @@ readiness.
 Step437 does not modify workflow YAML, Makefile, Python code/tests, fixture
 JSON, runtime writer behavior, public `--manifest-out`, artifact writer CLI
 integration, real-data use, metrics, or production readiness.
+
+## 21. Step438 Remote Run Record Workflow Design
+
+Step438 adds the docs-only remote/manual Release Quality run record workflow
+for this wrapper integration:
+
+[Frozen policy generation manifest writer production file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_record_workflow.md).
+
+The workflow design fixes the future status marker path, public-safe metadata
+fields, metadata that must not be recorded, marker structure, pass-only /
+count-only summaries, safety review, interpretation, and failure handling.
+
+Step438 does not create a status marker, run GitHub Actions, modify workflow
+YAML, modify the wrapper, modify Makefile, modify Python code/tests, modify
+fixture JSON, implement runtime file writing, expose public `--manifest-out`,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.

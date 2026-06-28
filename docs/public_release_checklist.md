@@ -3723,6 +3723,24 @@ artifact body payloads, generated policy bodies, private paths, absolute local
 or temp paths, raw learner text, real participant data, or performance
 evidence.
 
+For Step438, review the docs-only
+[frozen policy generation manifest writer production file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_record_workflow.md).
+Confirm it fixes the future status marker path
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md`,
+public-safe metadata to record, metadata not to record, status marker
+structure, pass-only/count-only production fixture validation summary,
+related manifest writer chain checks, related artifact body/writer checks,
+related learner-state checks, safety review, interpretation, failure handling,
+and later recording workflow. Confirm it does not create a status marker, run
+GitHub Actions, modify workflow YAML, modify the release-quality wrapper,
+modify Makefile, modify Python code/tests, modify fixture JSON, implement
+runtime file writing, expose public `--manifest-out`, connect artifact writer
+CLI, use real data, compute metrics, or claim production readiness. Confirm
+docs do not include raw logs, full job output, fixture JSON bodies,
+request/pointer/expected-result bodies, written file bodies, manifest bodies,
+artifact body payloads, generated policy bodies, private paths, absolute
+paths, raw learner text, real participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

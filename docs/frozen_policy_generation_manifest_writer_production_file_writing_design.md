@@ -492,3 +492,16 @@ the release-quality wrapper. Production-facing runtime file writing and public
 The wrapper integration does not change workflow YAML, Makefile, Python
 code/tests, fixture JSON, runtime writer behavior, artifact writer CLI
 integration, real-data use, metrics, or production readiness.
+
+## 32. Step438 Remote Run Record Workflow Design Status
+
+Step438 adds the docs-only remote/manual Release Quality run record workflow
+for the production file writing fixture validator wrapper integration:
+
+[Frozen policy generation manifest writer production file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_record_workflow.md).
+
+Production-facing runtime file writing and public `--manifest-out` remain
+unimplemented. The workflow design does not create a status marker, run
+GitHub Actions, change workflow YAML, change the wrapper, change Makefile,
+change Python code/tests, change fixture JSON, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness.

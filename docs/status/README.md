@@ -86,6 +86,15 @@ Available markers:
   file JSON bodies, fixture JSON bodies, private paths, absolute temp paths,
   raw learner text, or performance evidence.
 
+Planned markers:
+
+- `learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md`:
+  future public-safe pass-only/count-only marker for a remote/manual Release
+  Quality run that includes manifest writer production file writing fixture
+  validation. The marker does not exist yet and should not copy raw logs,
+  fixture JSON bodies, written file bodies, private paths, absolute paths,
+  raw learner text, or performance evidence.
+
 Related recap:
 
 - [Milestone 06 learner-state audit infrastructure recap](../milestone_06_learner_state_audit_infrastructure_recap.md):
@@ -159,3 +168,7 @@ Related recap:
 - [Frozen policy generation manifest writer isolated write validation release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for manifest
   writer isolated write validation release-quality wrapper integration.
+- [Frozen policy generation manifest writer production file writing fixture release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_record_workflow.md):
+  future public-safe pass-only/count-only recording workflow for manifest
+  writer production file writing fixture validation release-quality wrapper
+  integration.
