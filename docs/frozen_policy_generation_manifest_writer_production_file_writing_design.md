@@ -372,6 +372,7 @@ private path examples, or absolute temp path examples.
 
 - production file writing fixture contract design
 - production file writing fixtures
+- production file writing fixture validator design
 - runtime implementation
 - focused tests
 - Makefile / Release Quality integration design
@@ -418,3 +419,16 @@ This does not implement production-facing runtime file writing, public
 `--manifest-out`, a validator, Makefile target, release-quality integration,
 artifact writer CLI integration, real-data use, metrics, or production
 readiness.
+
+## 26. Step432 Fixture Validator Design Status
+
+Step432 adds the docs-only production-facing metadata-only manifest file
+writing fixture validator design:
+
+[Frozen policy generation manifest writer production file writing fixture validator design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_design.md).
+
+The validator design is static fixture validation for the Step431 32-case /
+160-JSON root. It does not execute runtime file writing, expose public
+`--manifest-out`, change Makefile/wrapper/workflow, change Python code/tests,
+change fixture JSON, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness.

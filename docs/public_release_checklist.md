@@ -3613,6 +3613,24 @@ writing, public `--manifest-out`, Makefile target, release-quality
 integration, workflow changes, artifact writer CLI integration, real-data use,
 metrics, or production readiness.
 
+For Step432, review the docs-only
+[frozen policy generation manifest writer production file writing fixture validator design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_design.md).
+Confirm it fixes the future static validator module, CLI, APIs, dataclasses,
+required files, body-free/count-only summary fields, validation phases, case
+handling, safe output root checks, overwrite checks, pointer checks, content
+checks, reason-code taxonomy, safe selector rules, expected CLI behavior,
+exit codes, focused test plan, release-quality separation, artifact writer
+CLI integration separation, docs safety, and non-goals. Confirm it does not
+implement a validator, production-facing runtime file writing, public
+`--manifest-out`, Makefile target, release-quality integration, workflow
+changes, Python code/tests changes, fixture JSON changes, artifact writer CLI
+integration, real-data use, metrics, or production readiness. Confirm it does
+not include raw logs, full job output, fixture JSON bodies,
+request/pointer/expected-result bodies, written file bodies, manifest bodies,
+artifact body payloads, generated policy bodies, private paths, absolute
+local or temp paths, raw learner text, real participant data, or performance
+evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

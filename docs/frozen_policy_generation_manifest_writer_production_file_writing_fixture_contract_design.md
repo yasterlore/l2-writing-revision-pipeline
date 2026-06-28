@@ -540,8 +540,7 @@ private path examples, or absolute path examples.
 ## 32. Next Recommended Steps
 
 - Step431 production file writing fixtures
-- Step432 production file writing validator design or runtime fixture
-  validator design
+- Step432 production file writing fixture validator design
 - Step433 runtime implementation
 - Step434 focused tests
 - Step435 Makefile / Release Quality design
@@ -582,3 +581,21 @@ The fixture root is synthetic-only and metadata-only. Step431 does not
 implement a validator, production-facing runtime file writing, public
 `--manifest-out`, Makefile targets, release-quality integration, artifact
 writer CLI integration, real-data use, metrics, or production readiness.
+
+## 35. Step432 Fixture Validator Design Status
+
+Step432 adds the docs-only production-facing metadata-only manifest file
+writing fixture validator design:
+
+[Frozen policy generation manifest writer production file writing fixture validator design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_design.md).
+
+The design fixes the future static validator module, CLI, APIs, dataclasses,
+required files, summary fields, validation phases, safe output root checks,
+overwrite checks, pointer checks, content checks, reason-code matching, safe
+selector rules, exit codes, and focused test plan for the 32-case / 160-JSON
+fixture root.
+
+Step432 does not implement a validator, production-facing runtime file
+writing, public `--manifest-out`, Makefile targets, release-quality
+integration, artifact writer CLI integration, real-data use, metrics, or
+production readiness.

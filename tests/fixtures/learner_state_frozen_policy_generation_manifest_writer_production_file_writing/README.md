@@ -102,3 +102,20 @@ It does not implement production-facing runtime file writing, public
 `--manifest-out`, a validator, Makefile target, release-quality integration,
 artifact writer CLI integration, real-data use, metrics, or production
 readiness.
+
+## Step432 Future Validator Design
+
+Step432 adds the docs-only production file writing fixture validator design:
+
+[Frozen policy generation manifest writer production file writing fixture validator design](../../../docs/frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_design.md).
+
+The future validator should statically check this fixture root for required
+files, JSON parsing, schema versions, case ID consistency, category counts,
+safe output root policy, overwrite policy, pointer safety, reason-code
+matching, stdout/stderr body-free expectations, and public absolute path
+suppression.
+
+The design does not implement the validator, production-facing runtime file
+writing, public `--manifest-out`, Makefile target, release-quality
+integration, artifact writer CLI integration, real-data use, metrics, or
+production readiness.

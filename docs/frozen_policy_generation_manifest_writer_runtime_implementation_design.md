@@ -746,3 +746,17 @@ create fixtures, implement isolated write validation, implement runtime file
 writing, change Makefile/wrapper/workflow, change Python code/tests, change
 fixture JSON, connect artifact writer CLI, use real data, compute metrics, or
 claim production readiness.
+
+## 44. Step432 Production File Writing Fixture Validator Design Status
+
+Step432 adds the docs-only production-facing metadata-only manifest file
+writing fixture validator design:
+
+[Frozen policy generation manifest writer production file writing fixture validator design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_design.md).
+
+This does not change the runtime implementation. The runtime remains no-file
+today and `--manifest-out` remains unimplemented. The validator design is
+static fixture validation only and does not implement validator code, runtime
+file writing, Makefile/wrapper/workflow changes, Python code/tests changes,
+fixture JSON changes, artifact writer CLI integration, real-data use,
+metrics, or production readiness.
