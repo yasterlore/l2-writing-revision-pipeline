@@ -546,3 +546,20 @@ integration, metrics, real-data use, or production readiness.
 
 The fixture JSON bodies remain fixtures only and must not be copied into
 public docs.
+
+## 30. Step422 Validator Implementation Status
+
+Step422 implements the isolated write validation module and focused tests:
+
+- `python/learner_state/frozen_policy_generation_manifest_writer_isolated_write_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_manifest_writer_isolated_write_validation.py`
+
+The validator checks this fixture root, performs actual writes only inside
+validator-owned temporary isolated roots for `pass_written` cases, parses and
+scans the written metadata-only JSON, cleans up residue, and emits body-free
+count summaries.
+
+It does not change fixture JSON, implement production-facing runtime file
+writing, expose public `--manifest-out`, add Makefile targets, add
+release-quality integration, change workflow YAML, connect artifact writer
+CLI, use real data, compute metrics, or claim production readiness.

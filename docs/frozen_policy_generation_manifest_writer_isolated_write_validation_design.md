@@ -568,3 +568,19 @@ write validation, runtime file writing, `--manifest-out`, runtime writer
 changes, Makefile targets, release-quality integration, workflow changes,
 Python code/tests, artifact writer CLI integration, metrics, real-data use,
 or production readiness.
+
+## 31. Step422 Isolated Write Validation Implementation Status
+
+Step422 implements the isolated write validation harness:
+
+`python/learner_state/frozen_policy_generation_manifest_writer_isolated_write_validation.py`
+
+It validates the 25-case / 150-JSON fixture root and writes only minimal
+safe metadata JSON inside validator-owned temporary roots for `pass_written`
+cases. It parses the written JSON, scans forbidden fields, cleans up the
+temporary root, verifies residue count 0, and emits body-free summaries.
+
+Step422 does not implement production-facing runtime file writing, public
+`--manifest-out`, Makefile targets, release-quality integration, workflow
+changes, fixture JSON changes, artifact writer CLI integration, metrics,
+real-data use, or production readiness.

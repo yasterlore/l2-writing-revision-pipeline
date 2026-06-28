@@ -95,3 +95,20 @@ Later runtime file writing support should be exercised only inside an isolated
 safe root. Release-quality integration should remain separate. This fixture root
 does not implement isolated write validation, runtime file writing,
 `--manifest-out`, or artifact writer CLI integration.
+
+## Step422 Validator Implementation
+
+Step422 implements the isolated write validation module:
+
+`learner_state.frozen_policy_generation_manifest_writer_isolated_write_validation`
+
+The validator checks this 25-case / 150-JSON fixture root. For `pass_written`
+cases it writes only minimal metadata-only manifest JSON inside a
+validator-owned temporary isolated root, parses and scans that file, cleans up
+the root, and reports residue count 0. For no-write and expected-failure
+cases it does not write output files.
+
+The validator does not implement production-facing runtime file writing,
+public `--manifest-out`, Makefile targets, release-quality integration,
+workflow changes, artifact writer CLI integration, real-data use, metrics, or
+production readiness.

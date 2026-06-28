@@ -518,6 +518,16 @@ Makefile targets, release-quality integration, workflow changes, Python
 code/tests, artifact writer CLI integration, metrics, real-data use, or
 production readiness.
 
+## 34. Step422 Isolated Write Validation Implementation Status
+
+Step422 implements the manifest writer isolated write validation harness for
+the separate isolated write fixture root. The harness writes only minimal
+safe metadata JSON inside validator-owned temporary roots and cleans it up.
+It does not implement production-facing runtime file writing, public
+`--manifest-out`, Makefile targets, release-quality integration, workflow
+changes, fixture JSON changes, artifact writer CLI integration, metrics,
+real-data use, or production readiness.
+
 ## 32. Step420 Isolated Write Fixture Contract Design Status
 
 Step420 adds the docs-only isolated write fixture contract design:

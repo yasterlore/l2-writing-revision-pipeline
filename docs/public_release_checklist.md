@@ -3462,6 +3462,17 @@ bodies, pointer bodies, expected result bodies, manifest bodies, artifact
 body payloads, generated policy bodies, private paths, absolute temp paths,
 raw learner text, real participant data, raw logs, or performance evidence.
 
+For Step422, review the isolated write validation implementation:
+`python/learner_state/frozen_policy_generation_manifest_writer_isolated_write_validation.py`.
+Confirm it writes only minimal safe metadata JSON inside validator-owned
+temporary roots for `pass_written` cases, parses and scans the written file,
+cleans up residue, suppresses body output, and validates the 25-case /
+150-JSON fixture root. Confirm it does not modify fixture JSON, add Makefile
+targets, integrate release-quality, change workflow YAML, implement
+production-facing runtime file writing, expose public `--manifest-out`,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

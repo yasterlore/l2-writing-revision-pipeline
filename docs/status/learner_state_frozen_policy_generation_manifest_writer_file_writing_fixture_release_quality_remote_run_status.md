@@ -266,3 +266,9 @@ readiness, or production readiness.
   contract data and do not imply isolated write validation, runtime file
   writing, `--manifest-out`, artifact writer CLI integration, real-data
   readiness, performance evidence, or production readiness.
+- Step422: linked the isolated write validation implementation. This marker
+  remains remote evidence only for the static file writing fixture validator
+  target. The isolated write validator is local implementation work and is
+  not yet a Makefile target, not yet release-quality integrated, not remote
+  status evidence, not production-facing runtime file writing, not public
+  `--manifest-out`, and not production readiness.
