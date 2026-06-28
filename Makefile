@@ -28,6 +28,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation
+.PHONY: check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures
@@ -69,6 +70,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures  Validate artifact body file writing fixture contracts"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke  Run artifact body safe-metadata file writing smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation  Validate isolated artifact body file writing cases"
+	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation  Validate manifest writer metadata-only isolated write behavior"
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures  Validate manifest writer metadata-only file writing fixture contracts"
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-fixtures  Validate manifest writer fixture contracts"
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures  Validate manifest writer runtime fixture contracts"
@@ -192,6 +194,9 @@ check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke:
 
 check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_isolated_write_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation
+
+check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer_isolated_write_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation
 
 check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer_file_writing_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing

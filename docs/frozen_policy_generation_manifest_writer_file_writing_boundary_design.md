@@ -557,3 +557,17 @@ standalone target that would run the isolated write validation CLI against the
 workflow YAML, Python code/tests, fixture JSON, production-facing runtime file
 writing, public `--manifest-out`, artifact writer CLI integration, metrics,
 real-data use, or production readiness.
+
+## 36. Step424 Isolated Write Validation Makefile Target Implementation Status
+
+Step424 implements the standalone Makefile target for the manifest writer
+isolated write validation harness:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation`
+
+The file writing boundary remains unchanged. The target runs only the isolated
+write validation CLI against the 25-case / 150-JSON isolated fixture root. It
+does not add release-quality integration, change workflow YAML, change Python
+code/tests, change fixture JSON, implement production-facing runtime file
+writing, expose public `--manifest-out`, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness.

@@ -264,3 +264,20 @@ Future Step424 should verify:
 - [Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 18. Step424 Makefile Target Implementation Status
+
+Step424 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation`
+
+The target runs the isolated write validation CLI against:
+
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation`
+
+The implementation is intentionally limited to Makefile target/help text
+wiring. It does not add release-quality wrapper integration, change workflow
+YAML, change Python code/tests, change fixture JSON, implement
+production-facing runtime file writing, expose public `--manifest-out`,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.

@@ -126,3 +126,15 @@ YAML, change Python code/tests, change fixture JSON, implement
 production-facing runtime file writing, expose public `--manifest-out`,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
+
+## Step424 Makefile Target Implementation
+
+Step424 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation`
+
+The target runs the isolated write validation CLI against this fixture root.
+It is not release-quality integrated yet and does not change workflow YAML,
+Python code/tests, fixture JSON, production-facing runtime file writing,
+public `--manifest-out`, artifact writer CLI integration, real-data use,
+metrics, or production readiness.

@@ -602,3 +602,19 @@ does not modify Makefile, release-quality wrapper, workflow YAML, Python
 code/tests, fixture JSON, production-facing runtime file writing, public
 `--manifest-out`, artifact writer CLI integration, metrics, real-data use, or
 production readiness.
+
+## 33. Step424 Makefile Target Implementation Status
+
+Step424 implements the standalone target in `Makefile`:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation`
+
+The target is a thin wrapper around the isolated write validation CLI and runs
+the 25-case / 150-JSON fixture root with body-free, count-only output. It
+writes only inside validator-owned isolated temporary roots during
+`pass_written` cases and reports residue count 0.
+
+Step424 does not add release-quality integration, change workflow YAML, change
+Python code/tests, change fixture JSON, implement production-facing runtime
+file writing, expose public `--manifest-out`, connect artifact writer CLI, use
+real data, compute metrics, or claim production readiness.

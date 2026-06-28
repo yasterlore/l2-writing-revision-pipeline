@@ -3491,6 +3491,18 @@ written file bodies, manifest bodies, artifact body payloads, generated
 policy bodies, private paths, absolute temp paths, raw learner text, real
 participant data, or performance evidence.
 
+For Step424, review `Makefile`. Confirm it adds only the standalone target
+`check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation`
+and its help text. Confirm the target runs the isolated write validation CLI
+against
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation`
+without default `--json`. Confirm wrapper/workflow/Python code/tests/fixture
+JSON are unchanged, release-quality integration is not added,
+production-facing runtime file writing remains unimplemented, public
+`--manifest-out` remains unimplemented, artifact writer CLI integration is
+not connected, real data is not used, metrics are not computed, and no
+production readiness claim is made.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
