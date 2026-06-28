@@ -250,3 +250,11 @@ readiness, or production readiness.
   fixture validator target. Isolated write validation, runtime file writing,
   `--manifest-out`, artifact writer CLI integration, real-data readiness,
   performance evidence, and production readiness remain future separate work.
+- Step420: linked the docs-only isolated write fixture contract design:
+  [Frozen policy generation manifest writer metadata-only isolated write fixture contract design](../frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md).
+  This marker remains remote evidence only for the static file writing
+  fixture validator target. The isolated write fixture contract is future
+  separate work and does not create fixtures, implement isolated write
+  validation, implement runtime file writing, add `--manifest-out`, connect
+  artifact writer CLI, use real data, compute metrics, or claim production
+  readiness.

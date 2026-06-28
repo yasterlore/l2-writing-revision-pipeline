@@ -672,3 +672,14 @@ safe-root validation for metadata-only manifest file writing without
 implementing `--manifest-out`, writing files, changing runtime code, changing
 fixture JSON, changing Makefile/wrapper/workflow, connecting artifact writer
 CLI, using real data, computing metrics, or claiming production readiness.
+
+## 49. Step420 Isolated Write Fixture Contract Design Status
+
+Step420 adds the docs-only isolated write fixture contract design:
+
+[Frozen policy generation manifest writer metadata-only isolated write fixture contract design](frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md).
+
+The API boundary remains no-file today. The contract design does not implement
+`--manifest-out`, write files, change runtime code, create fixtures, change
+fixture JSON, change Makefile/wrapper/workflow, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness.

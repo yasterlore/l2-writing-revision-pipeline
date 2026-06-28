@@ -713,3 +713,16 @@ cleanup, and residue checks do not blur with static contract validation.
 Step419 does not create fixtures, write files, implement runtime file writing,
 add `--manifest-out`, change code/tests, change Makefile/wrapper/workflow, or
 claim production readiness.
+
+## 38. Step420 Isolated Write Fixture Contract Design Status
+
+Step420 adds the docs-only isolated write fixture contract design:
+
+[Frozen policy generation manifest writer metadata-only isolated write fixture contract design](frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md).
+
+The static file writing fixture contract remains unchanged. The new contract
+design is for a separate future isolated write validation root and does not
+create fixtures, modify existing fixture JSON, implement isolated writes,
+implement runtime file writing, add `--manifest-out`, change Makefile,
+wrapper, workflow, or Python code/tests, use real data, compute metrics, or
+claim production readiness.

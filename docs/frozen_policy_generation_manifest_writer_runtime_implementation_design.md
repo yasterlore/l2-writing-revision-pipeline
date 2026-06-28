@@ -681,3 +681,16 @@ metadata-only runtime file writing. The runtime remains no-file today,
 runtime file writing, Makefile/wrapper/workflow changes, artifact writer CLI
 integration, real-data readiness, metrics, or production-readiness claim are
 added.
+
+## 43. Step420 Isolated Write Fixture Contract Design Status
+
+Step420 adds the docs-only isolated write fixture contract design:
+
+[Frozen policy generation manifest writer metadata-only isolated write fixture contract design](frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md).
+
+This does not change the runtime implementation. The runtime remains no-file
+today and `--manifest-out` remains unimplemented. The contract design does not
+create fixtures, implement isolated write validation, implement runtime file
+writing, change Makefile/wrapper/workflow, change Python code/tests, change
+fixture JSON, connect artifact writer CLI, use real data, compute metrics, or
+claim production readiness.

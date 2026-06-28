@@ -512,7 +512,6 @@ Docs must not include:
 
 ## 27. Next Recommended Steps
 
-- Step420: isolated write fixture contract design
 - Step421: isolated write fixture JSON creation
 - Step422: isolated write validation implementation
 - Step423: Makefile target design
@@ -523,8 +522,26 @@ Docs must not include:
 - later runtime file writing implementation if not already included in
   isolated validation staging
 
-## 28. Related Documents
+## 28. Step420 Isolated Write Fixture Contract Design Status
 
+Step420 adds the docs-only isolated write fixture contract design:
+
+[Frozen policy generation manifest writer metadata-only isolated write fixture contract design](frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md).
+
+The isolated write validation design remains unimplemented. Step420 fixes the
+future fixture root layout, required file names, schema versions, case
+categories, adjusted count math, isolated write request/result field names,
+manifest writer request field names, pointer field names, safe isolated root
+policy, output file content policy, stdout/stderr safety policy, reason
+codes, and future validator expectations. It does not create fixtures,
+implement isolated write validation, implement runtime file writing, add
+`--manifest-out`, change Makefile, change wrapper, change workflow YAML,
+change Python code/tests, change fixture JSON, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness.
+
+## 29. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only isolated write fixture contract design](frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)

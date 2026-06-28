@@ -3423,6 +3423,29 @@ output file content examples, artifact body payload examples, manifest body
 examples, private path examples, absolute temp path examples, raw learner
 text, real participant data, or performance evidence.
 
+For Step420, review the docs-only
+[frozen policy generation manifest writer metadata-only isolated write fixture contract design](frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md).
+Confirm it defines only the future fixture contract for manifest writer
+isolated write validation. Confirm it uses the future root
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/`,
+top-level `valid/`, `invalid/`, and `README.md`, and six required file names
+per case. Confirm the schema names, case categories, six valid cases, 19
+invalid cases, total count math, usage-error/fail-closed mapping, request
+contract field names, manifest writer request field names, pointer field
+names, expected isolated write result field names, safe isolated root policy,
+output file content policy, stdout/stderr safety policy, reason code
+taxonomy, and future validator expectations are present. Confirm it does not
+create fixture JSON, implement isolated write validation, implement runtime
+file writing, add `--manifest-out`, change runtime code, change Makefile,
+change wrapper, change workflow YAML, change Python code/tests, change
+existing fixture JSON, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness. Confirm it does not include raw logs,
+full job output, JSON body examples, fixture JSON body examples,
+isolated_write_request body examples, request/pointer/expected-result body
+examples, output file content examples, artifact body payload examples,
+manifest body examples, private path examples, absolute temp path examples,
+raw learner text, real participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
