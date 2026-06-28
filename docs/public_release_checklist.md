@@ -3148,6 +3148,19 @@ code/tests, fixture JSON, write manifest files, add `--manifest-out`,
 generate manifest bodies, connect artifact writer CLI, use real data,
 compute metrics, or claim production readiness.
 
+For Step405, review `scripts/check_release_quality.sh` and the linked
+[frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md).
+Confirm the wrapper includes
+`release_quality_check: learner-state frozen policy generation manifest writer runtime smoke`
+immediately after runtime fixture validation and before config/scoring smoke
+checks. Confirm the wrapper command is
+`make check-learner-state-frozen-policy-generation-manifest-writer-runtime`,
+the target output remains body-free and no-file, workflow YAML is unchanged,
+Makefile is unchanged, Python code/tests are unchanged, fixture JSON is
+unchanged, `--manifest-out` is not added, manifest bodies are not generated,
+artifact writer CLI is not connected, no real data is used, no metrics are
+computed, and no production-readiness claim is made.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -594,7 +594,15 @@ no-file, no manifest body, no `--manifest-out`, no artifact writer CLI
 integration, no real data, no metrics, and no production readiness claim.
 Step404 does not change the wrapper or workflow YAML.
 
-## 42. Related Documents
+## 42. Step405 Runtime Wrapper Integration Status
+
+Step405 adds the runtime smoke target to the release-quality wrapper after
+runtime fixture validation and before config/scoring smoke checks. The wrapper
+entry stays within this boundary: metadata-only, no-file, no manifest body,
+no `--manifest-out`, no artifact writer CLI integration, no real data, no
+metrics, and no production readiness claim. Workflow YAML remains unchanged.
+
+## 43. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)

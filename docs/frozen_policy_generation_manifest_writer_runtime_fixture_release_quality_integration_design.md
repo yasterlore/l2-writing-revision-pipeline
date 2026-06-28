@@ -470,3 +470,17 @@ fixture validation. The runtime smoke integration design is separate and does
 not change this wrapper entry, workflow YAML, Makefile, Python code/tests,
 fixture JSON, manifest file writing, artifact writer CLI integration,
 real-data use, metrics, or production readiness.
+
+## 28. Step405 Runtime Smoke Wrapper Integration Status
+
+Step405 adds the runtime smoke target to the release-quality wrapper as a
+separate section after runtime fixture validation:
+
+`release_quality_check: learner-state frozen policy generation manifest writer runtime smoke`
+
+This document remains the integration record for the runtime fixture
+validator target. Runtime fixture validation and runtime smoke are both in the
+wrapper after Step405, but they remain separate checks with separate
+interpretations. The runtime smoke does not write manifest files, generate
+manifest bodies, connect artifact writer CLI, use real data, compute metrics,
+or claim production readiness.

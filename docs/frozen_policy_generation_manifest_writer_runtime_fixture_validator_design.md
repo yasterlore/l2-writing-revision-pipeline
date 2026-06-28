@@ -589,3 +589,12 @@ statically, while the runtime smoke executes one valid metadata-only no-file
 runtime case. Step404 does not change wrapper, workflow YAML, Makefile,
 Python code/tests, fixture JSON, manifest file writing, artifact writer CLI
 integration, real-data use, metrics, or production readiness.
+
+## 43. Step405 Runtime Smoke Wrapper Integration Status
+
+Step405 adds the separate runtime smoke target to the release-quality wrapper
+after this runtime fixture validation target. This validator remains
+unchanged and still checks the 31-case / 155-JSON runtime fixture root
+statically. Runtime smoke success does not replace fixture validation and
+does not prove manifest file writing, artifact writer CLI integration,
+real-data readiness, metrics, or production readiness.

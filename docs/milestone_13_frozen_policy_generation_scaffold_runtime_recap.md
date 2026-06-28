@@ -1181,6 +1181,14 @@ written, no artifact body is produced, and no performance metric is computed.
   Python code/tests, fixture JSON, manifest file writing, `--manifest-out`,
   artifact writer CLI integration, real-data use, metrics, or production
   readiness.
+- Step405: added the manifest writer runtime smoke target to the
+  release-quality wrapper after runtime fixture validation and before
+  config/scoring smoke checks. The wrapper now runs
+  `check-learner-state-frozen-policy-generation-manifest-writer-runtime` as a
+  metadata-only no-file runtime smoke. It does not change workflow YAML,
+  Makefile, Python code/tests, fixture JSON, manifest file writing,
+  `--manifest-out`, artifact writer CLI integration, real-data use, metrics,
+  or production readiness.
 
 ## Related Documents
 

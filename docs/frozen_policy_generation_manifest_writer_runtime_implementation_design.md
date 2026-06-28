@@ -495,7 +495,17 @@ change fixture JSON, write manifest files, add `--manifest-out`, generate
 manifest bodies, connect artifact writer CLI, use real data, compute metrics,
 or claim production readiness.
 
-## 28. Related Documents
+## 28. Step405 Wrapper Integration Status
+
+Step405 adds the runtime smoke target to the release-quality wrapper after
+runtime fixture validation and before config/scoring smoke checks.
+
+The runtime implementation remains unchanged. The wrapper uses the existing
+metadata-only no-file runtime target and does not write manifest files, add
+`--manifest-out`, generate manifest bodies, connect artifact writer CLI, use
+real data, compute metrics, or claim production readiness.
+
+## 29. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)

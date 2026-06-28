@@ -297,14 +297,26 @@ YAML, Makefile, Python code/tests, fixture JSON, manifest file writing,
 `--manifest-out`, manifest body generation, artifact writer CLI integration,
 real-data use, metrics, or production readiness.
 
-## 17. Next Recommended Steps
+## 17. Step405 Wrapper Integration Status
 
-- Step405: wrapper integration
+Step405 adds the standalone runtime smoke target to the release-quality
+wrapper. The target remains the same:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime`
+
+The wrapper entry runs after runtime fixture validation and before
+config/scoring smoke checks. It does not change the target command, does not
+change workflow YAML, does not write manifest files, does not add
+`--manifest-out`, does not generate manifest bodies, does not connect
+artifact writer CLI, and does not claim production readiness.
+
+## 18. Next Recommended Steps
+
 - Step406: remote/manual run record workflow design
 - Step407: remote/manual run status marker
 - later: manifest file writing design / implementation
 
-## 18. Related Documents
+## 19. Related Documents
 
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)

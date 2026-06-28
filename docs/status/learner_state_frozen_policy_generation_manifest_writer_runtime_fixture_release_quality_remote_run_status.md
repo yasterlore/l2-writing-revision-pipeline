@@ -259,3 +259,11 @@ correctness, real-data readiness, or production readiness.
   wrapper evidence yet, not remote-run evidence yet, not manifest file
   writing evidence, not artifact writer CLI integration evidence, and not a
   production-readiness claim.
+- Step405: noted that the runtime writer smoke target is added to the local
+  release-quality wrapper:
+  `release_quality_check: learner-state frozen policy generation manifest writer runtime smoke`.
+  This marker still remains remote evidence only for the earlier runtime
+  fixture validator Release Quality run. A separate runtime writer smoke
+  remote/manual run record and status marker remain future work. This is not
+  manifest file writing evidence, not artifact writer CLI integration
+  evidence, and not a production-readiness claim.

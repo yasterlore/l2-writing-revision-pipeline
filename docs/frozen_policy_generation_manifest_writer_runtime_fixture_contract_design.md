@@ -541,7 +541,16 @@ The design does not change wrapper, workflow YAML, Makefile, Python
 code/tests, fixture JSON, manifest file writing, artifact writer CLI
 integration, real-data use, metrics, or production readiness.
 
-## 38. Related Documents
+## 38. Step405 Runtime Smoke Wrapper Integration Status
+
+Step405 adds the runtime smoke target to the release-quality wrapper after
+runtime fixture validation. The fixture contract remains unchanged. Runtime
+fixture validation still checks 31 fixture contracts statically, while the
+runtime smoke executes one valid metadata-only no-file runtime case. This
+does not write manifest files, generate manifest bodies, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+
+## 39. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)

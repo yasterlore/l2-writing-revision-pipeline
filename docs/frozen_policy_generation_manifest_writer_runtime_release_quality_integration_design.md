@@ -330,7 +330,6 @@ metadata-only and no-file by design.
 
 ## 17. What This Does Not Do
 
-- does not integrate the wrapper
 - does not change workflow YAML
 - does not change Makefile
 - does not change Python code/tests
@@ -343,15 +342,36 @@ metadata-only and no-file by design.
 - does not use real data
 - does not prove production readiness
 
-## 18. Next Recommended Steps
+## 18. Step405 Wrapper Integration Status
 
-- Step405: wrapper integration
+Step405 adds the standalone runtime smoke target to the release-quality
+wrapper:
+
+`make check-learner-state-frozen-policy-generation-manifest-writer-runtime`
+
+Wrapper label:
+
+`release_quality_check: learner-state frozen policy generation manifest writer runtime smoke`
+
+The wrapper entry is placed after runtime manifest writer fixture validation
+and before config/scoring smoke checks. It runs the existing metadata-only
+no-file runtime smoke and keeps output body-free. It does not change workflow
+YAML, Makefile, Python code/tests, fixture JSON, manifest file writing,
+`--manifest-out`, manifest body generation, artifact writer CLI integration,
+real-data use, metrics, or production readiness.
+
+After Step405, this document is historical for the integration design and
+records that the wrapper integration has been implemented. Remote/manual run
+recording and a runtime smoke status marker remain later steps.
+
+## 19. Next Recommended Steps
+
 - Step406: remote/manual run record workflow design
 - Step407: remote/manual run status marker
 - later: manifest file writing design / implementation
 - later: artifact writer CLI integration design / implementation
 
-## 19. Related Documents
+## 20. Related Documents
 
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
