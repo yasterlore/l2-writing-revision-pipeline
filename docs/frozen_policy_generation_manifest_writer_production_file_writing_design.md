@@ -482,3 +482,13 @@ unimplemented. The design does not modify the release-quality wrapper,
 workflow YAML, Makefile, Python code/tests, fixture JSON, runtime writer
 behavior, artifact writer CLI integration, real-data use, metrics, or
 production readiness.
+
+## 31. Step437 Fixture Release-Quality Wrapper Integration Status
+
+Step437 adds the static production file writing fixture validator target to
+the release-quality wrapper. Production-facing runtime file writing and public
+`--manifest-out` remain unimplemented.
+
+The wrapper integration does not change workflow YAML, Makefile, Python
+code/tests, fixture JSON, runtime writer behavior, artifact writer CLI
+integration, real-data use, metrics, or production readiness.

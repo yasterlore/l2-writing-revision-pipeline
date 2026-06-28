@@ -179,3 +179,14 @@ future step. It does not change fixture JSON, modify the wrapper, modify
 workflow YAML, execute runtime file writing, write manifest files, expose
 public `--manifest-out`, connect artifact writer CLI, use real data, compute
 metrics, or prove production readiness.
+
+## Step437 Release-Quality Wrapper Integration
+
+Step437 adds the standalone target to the release-quality wrapper after
+manifest writer isolated write validation and before config/scoring smoke
+checks.
+
+This fixture root remains unchanged. The wrapper integration does not change
+fixture JSON, execute runtime file writing, write manifest files, expose public
+`--manifest-out`, connect artifact writer CLI, use real data, compute metrics,
+or prove production readiness.

@@ -3704,6 +3704,25 @@ artifact body payloads, generated policy bodies, private paths, absolute
 local or temp paths, raw learner text, real participant data, or performance
 evidence.
 
+For Step437, review the release-quality wrapper section
+`release_quality_check: learner-state frozen policy generation manifest writer production file writing fixture validation`.
+Confirm it invokes
+`make check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures`
+after manifest writer isolated write validation and before config/scoring
+smoke checks. Confirm the wrapper output remains body-free/count-only and
+includes 32 cases, 160 JSON files, 32 matched cases, 0 input-error cases,
+`public_absolute_path_suppressed=true`,
+`artifact_writer_cli_integration_checked=true`, and
+`release_quality_ready=false`. Confirm it does not modify workflow YAML,
+Makefile, Python code/tests, fixture JSON, execute runtime file writing, write
+manifest files, expose public `--manifest-out`, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness. Confirm docs
+and output do not include raw logs, full job output, fixture JSON bodies,
+request/pointer/expected-result bodies, written file bodies, manifest bodies,
+artifact body payloads, generated policy bodies, private paths, absolute local
+or temp paths, raw learner text, real participant data, or performance
+evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -300,3 +300,25 @@ Step436 does not modify the release-quality wrapper, workflow YAML, Makefile,
 Python code/tests, fixture JSON, runtime writer behavior, public
 `--manifest-out`, artifact writer CLI integration, real-data use, metrics, or
 production readiness.
+
+## 20. Step437 Wrapper Integration Status
+
+Step437 implements the release-quality wrapper integration designed here. The
+wrapper now runs:
+
+`make check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures`
+
+under the label:
+
+`release_quality_check: learner-state frozen policy generation manifest writer production file writing fixture validation`
+
+The section is placed after manifest writer isolated write validation and
+before config/scoring smoke checks. It remains static fixture validation only:
+it does not execute the runtime writer, write manifest files, expose public
+`--manifest-out`, execute artifact writer CLI, execute artifact body
+generation CLI, use real data, compute metrics, or claim production
+readiness.
+
+Step437 does not modify workflow YAML, Makefile, Python code/tests, fixture
+JSON, runtime writer behavior, public `--manifest-out`, artifact writer CLI
+integration, real-data use, metrics, or production readiness.

@@ -305,3 +305,14 @@ does not modify the release-quality wrapper, workflow YAML, Makefile, Python
 code/tests, fixture JSON, runtime writer behavior, public `--manifest-out`,
 artifact writer CLI integration, real-data use, metrics, or production
 readiness.
+
+## 21. Step437 Release-Quality Wrapper Integration Status
+
+Step437 adds the standalone target to the release-quality wrapper after
+manifest writer isolated write validation and before config/scoring smoke
+checks.
+
+The Makefile target itself remains unchanged. The wrapper integration does not
+change workflow YAML, Python code/tests, fixture JSON, runtime writer behavior,
+public `--manifest-out`, artifact writer CLI integration, real-data use,
+metrics, or production readiness.
