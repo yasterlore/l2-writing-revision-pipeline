@@ -88,8 +88,9 @@ Step413 adds the docs-only Makefile target design for a future short command:
 
 `check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`
 
-That target is not implemented in Step413. The fixture root remains unchanged
-and the future target should only wrap the static validator CLI.
+Step414 implements that standalone Makefile target. The fixture root remains
+unchanged and the target only wraps the static validator CLI root validation.
+It is not added to release-quality in Step414.
 
 This fixture root does not execute runtime file writing, isolated writes,
 `--manifest-out`, or artifact writer CLI integration.

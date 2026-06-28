@@ -3298,6 +3298,27 @@ expected-result body examples, artifact body payload examples, manifest body
 examples, private path examples, raw learner text, real participant data, or
 performance evidence.
 
+For Step414, review the standalone Makefile target implementation:
+`check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`.
+Confirm `make help` includes the target and that the target runs only the
+static validator CLI root validation for
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing`.
+Confirm target output includes `total_cases=39`, `total_json_files=195`,
+`pass_metadata_file_written_cases=5`, `pass_metadata_no_file_cases=1`,
+`usage_error_cases=15`, `fail_closed_cases=18`, `matched_cases=39`,
+`mismatched_cases=0`, `input_error_cases=0`,
+`validator_wrote_files=false`, `runtime_writer_executed=false`,
+`isolated_write_executed=false`, and `release_quality_ready=false`. Confirm
+`tmp/frozen_policy_generation_manifest` residue remains 0. Confirm this step
+does not add release-quality integration, change workflow YAML, change Python
+code/tests, change fixture JSON, write manifest files, implement
+`--manifest-out`, run isolated writes, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness. Confirm it does not
+include raw logs, JSON body examples, file writing fixture JSON body examples,
+request/pointer/expected-result body examples, artifact body payload examples,
+manifest body examples, private path examples, raw learner text, real
+participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

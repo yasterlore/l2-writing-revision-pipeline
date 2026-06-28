@@ -1261,6 +1261,14 @@ written, no artifact body is produced, and no performance metric is computed.
   fixture JSON, write manifest files, add `--manifest-out`, run isolated
   writes, connect artifact writer CLI, use real data, compute metrics, or
   claim production readiness.
+- Step414: implemented the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`
+  and registered it in `make help`. The target runs only the static validator
+  CLI root validation and emits body-free/count-only metadata. It is not added
+  to the release-quality wrapper in this step. It does not change workflow
+  YAML, change Python code/tests, change fixture JSON, write manifest files,
+  add `--manifest-out`, run isolated writes, connect artifact writer CLI, use
+  real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 

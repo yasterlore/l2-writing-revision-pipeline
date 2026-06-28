@@ -590,7 +590,18 @@ metadata-only no-file, `--manifest-out` remains unimplemented, and Makefile
 implementation, release-quality integration, isolated write validation,
 runtime file writing, and artifact writer CLI integration remain separate.
 
-## 36. Related Documents
+## 36. Step414 File Writing Fixture Validator Makefile Target Implementation Status
+
+Step414 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`
+
+This does not change the runtime implementation. The runtime remains
+metadata-only no-file, `--manifest-out` remains unimplemented, and
+release-quality integration, isolated write validation, runtime file writing,
+and artifact writer CLI integration remain separate.
+
+## 37. Related Documents
 
 - [Frozen policy generation manifest writer metadata-only file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing/README.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md)

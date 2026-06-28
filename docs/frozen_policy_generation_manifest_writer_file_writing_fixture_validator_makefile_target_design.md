@@ -258,16 +258,31 @@ Future Step414 should verify:
 - does not compute metrics
 - does not prove production readiness
 
-## 16. Next Recommended Steps
+## 16. Step414 Implementation Status
 
-- Step414: Makefile target implementation
+Step414 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`
+
+The target runs the static validator CLI root validation:
+
+`PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer_file_writing_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing`
+
+The target is registered in `make help` with the designed help text. It does
+not pass `--json` by default. It does not run the manifest writer runtime, run
+isolated write validation, write manifest files, implement `--manifest-out`,
+connect artifact writer CLI, change fixture JSON, change workflow YAML, or
+add release-quality integration.
+
+## 17. Next Recommended Steps
+
 - Step415: release-quality integration design
 - Step416: wrapper integration
 - Step417: remote marker
 - later: isolated write validation
 - later: runtime file writing implementation
 
-## 17. Related Documents
+## 18. Related Documents
 
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator implementation](../python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)

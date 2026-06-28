@@ -294,3 +294,11 @@ readiness.
   integration, write manifest files, implement `--manifest-out`, run isolated
   writes, connect artifact writer CLI, use real data, compute metrics, or
   claim production readiness.
+- Step414: recorded that the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`
+  is implemented locally for the static validator CLI. This marker remains
+  remote evidence only for the no-file runtime smoke. Step414 is not
+  release-quality wrapper evidence for the new target, not workflow evidence,
+  not runtime file writing evidence, not isolated write evidence, not artifact
+  writer CLI integration evidence, not real-data readiness, not performance
+  evidence, and not a production-readiness claim.
