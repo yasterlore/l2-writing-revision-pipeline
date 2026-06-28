@@ -627,8 +627,21 @@ workflow YAML change, no wrapper change, no Makefile change, no manifest file
 writing, no `--manifest-out`, no artifact writer CLI integration, no real
 data, no metrics, and no production readiness claim.
 
-## 45. Related Documents
+## 45. Step408 File Writing Boundary Design Status
 
+Step408 adds the docs-only boundary design for future metadata-only manifest
+file writing:
+
+[Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md).
+
+This keeps file writing outside the current runtime smoke boundary. Future
+file writing needs its own safe root, path policy, metadata-only content
+policy, fixtures, validator, isolated write validation, release-quality
+staging, and remote status marker.
+
+## 46. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)

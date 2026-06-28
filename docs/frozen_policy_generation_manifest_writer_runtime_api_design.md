@@ -570,8 +570,21 @@ metadata for the metadata-only no-file runtime smoke and does not add
 artifact writer CLI, use real data, compute metrics, or claim production
 readiness.
 
-## 41. Related Documents
+## 41. Step408 File Writing Boundary Design Status
 
+Step408 adds the docs-only boundary design for future metadata-only manifest
+file writing and future `--manifest-out` behavior:
+
+[Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md).
+
+The API boundary remains no-file today. The design defines the future safe
+root, path policy, metadata-only file content policy, fail-closed behavior,
+fixture staging, isolated write staging, and release-quality staging without
+implementing `--manifest-out` or writing files.
+
+## 42. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)

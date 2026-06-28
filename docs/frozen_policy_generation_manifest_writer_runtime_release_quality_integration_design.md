@@ -398,8 +398,21 @@ logs, full job output, request/pointer bodies, fixture JSON bodies, artifact
 body payloads, generated policy bodies, manifest bodies, private paths, raw
 learner text, real participant data, or performance evidence.
 
-## 22. Related Documents
+## 22. Step408 File Writing Boundary Design Status
 
+Step408 adds the docs-only boundary design for future metadata-only manifest
+file writing:
+
+[Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md).
+
+The release-quality runtime smoke remains no-file only. File writing remains
+a future separate track with separate fixtures, validators, isolated write
+validation, Makefile target, release-quality integration, and remote status
+marker.
+
+## 23. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)

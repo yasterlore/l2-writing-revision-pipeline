@@ -3193,6 +3193,23 @@ generated policy bodies, private paths, raw learner text, real participant
 data, performance evidence, real-data readiness, or production readiness
 claims.
 
+For Step408, review the docs-only
+[frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md).
+Confirm it defines only the future file-writing boundary: metadata-only
+manifest file mode, future `--manifest-out` / overwrite policy shape, safe
+root `tmp/frozen_policy_generation_manifest/`, relative path policy,
+allowed metadata fields, forbidden body/payload/raw/logit/private/absolute
+content, fail-closed behavior, fixture staging, validator staging, isolated
+write validation staging, Makefile/release-quality staging, relation to the
+existing no-file runtime smoke, and safety interpretation. Confirm it does
+not implement file writing, add `--manifest-out`, create fixtures, change
+Python code/tests, change Makefile, change the wrapper, change workflow YAML,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness. Confirm it does not include raw logs, JSON body
+examples, request/pointer body examples, artifact body payload examples,
+manifest body examples, private path examples, raw learner text, real
+participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -252,3 +252,10 @@ readiness.
   raw logs, full job output, request/pointer bodies, fixture JSON bodies,
   artifact body payloads, generated policy bodies, manifest bodies, private
   paths, raw learner text, real participant data, or performance evidence.
+- Step408: linked the docs-only metadata-only manifest file writing boundary
+  design:
+  [Frozen policy generation manifest writer metadata-only file writing boundary design](../frozen_policy_generation_manifest_writer_file_writing_boundary_design.md).
+  This marker remains remote evidence only for the no-file runtime smoke.
+  It is not manifest file writing evidence, not artifact writer CLI
+  integration evidence, not real-data readiness, not performance evidence,
+  and not a production-readiness claim.

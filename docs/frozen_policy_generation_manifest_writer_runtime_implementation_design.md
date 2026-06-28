@@ -529,8 +529,22 @@ metadata-only no-file runtime smoke passed remotely, but it does not prove
 manifest file writing, artifact writer CLI integration, generated policy
 quality, performance, real-data readiness, or production readiness.
 
-## 31. Related Documents
+## 31. Step408 File Writing Boundary Design Status
 
+Step408 adds the docs-only boundary design for future metadata-only manifest
+file writing:
+
+[Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md).
+
+The runtime implementation remains unchanged and no-file only. The file
+writing boundary design does not implement `--manifest-out`, write manifest
+files, create fixtures, change Makefile, change the release-quality wrapper,
+change workflow YAML, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness.
+
+## 32. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md)

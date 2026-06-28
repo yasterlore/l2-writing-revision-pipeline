@@ -340,8 +340,21 @@ not copy fixture JSON bodies, request/pointer bodies, artifact body payloads,
 generated policy bodies, manifest bodies, raw logs, private paths, raw
 learner text, or performance evidence.
 
-## 21. Related Documents
+## 21. Step408 File Writing Boundary Design Status
 
+Step408 adds the docs-only boundary design for future metadata-only manifest
+file writing:
+
+[Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md).
+
+The existing runtime Makefile target remains no-file only. A future
+file-writing target should be separate, should use a safe root, should have
+isolated write validation, and should not replace the current runtime smoke
+target.
+
+## 22. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)

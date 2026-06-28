@@ -1206,6 +1206,15 @@ written, no artifact body is produced, and no performance metric is computed.
   raw logs, full job output, request/pointer bodies, fixture JSON bodies,
   artifact body payloads, generated policy bodies, manifest bodies, private
   paths, raw learner text, real participant data, or performance evidence.
+- Step408: added the docs-only metadata-only manifest file writing boundary
+  design. The design defines the future safe output root, relative path
+  policy, metadata-only file content policy, forbidden content,
+  fail-closed behavior, fixture staging, validator staging, isolated write
+  staging, Makefile/release-quality staging, relation to no-file runtime
+  smoke, and non-goals. It does not implement file writing, add
+  `--manifest-out`, create fixtures, change Makefile, change the wrapper,
+  change workflow YAML, change Python code/tests, connect artifact writer
+  CLI, use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -1246,6 +1255,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md)
+- [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer runtime](../python/learner_state/frozen_policy_generation_manifest_writer.py)
 - [Frozen policy generation manifest writer runtime tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer.py)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
