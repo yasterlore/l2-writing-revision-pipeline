@@ -1,0 +1,12 @@
+{
+  "artifact_id": "synthetic_isolated_artifact_invalid_overwrite_without_policy",
+  "include_body_payload": false,
+  "include_private_paths": false,
+  "include_raw_rows": false,
+  "manifest_id": "synthetic_isolated_manifest_invalid_overwrite_without_policy",
+  "pointer_id": "invalid/overwrite_without_policy/artifact_writer_result_pointer",
+  "safe_metadata_reference_id": "synthetic_artifact_writer_metadata_ref_invalid_overwrite_without_policy",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_runtime_artifact_writer_result_pointer_v0.1",
+  "source_fixture_id": "invalid/overwrite_without_policy",
+  "source_kind": "synthetic_fixture_pointer"
+}

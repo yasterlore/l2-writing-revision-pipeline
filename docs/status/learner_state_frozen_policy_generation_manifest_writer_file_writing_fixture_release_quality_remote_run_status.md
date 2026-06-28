@@ -258,3 +258,11 @@ readiness, or production readiness.
   validation, implement runtime file writing, add `--manifest-out`, connect
   artifact writer CLI, use real data, compute metrics, or claim production
   readiness.
+- Step421: linked the synthetic-only, metadata-only isolated write validation
+  fixture root:
+  [Frozen policy generation manifest writer metadata-only isolated write validation fixtures](../../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/README.md).
+  This marker remains remote evidence only for the static file writing
+  fixture validator target. The isolated write fixtures are future separate
+  contract data and do not imply isolated write validation, runtime file
+  writing, `--manifest-out`, artifact writer CLI integration, real-data
+  readiness, performance evidence, or production readiness.

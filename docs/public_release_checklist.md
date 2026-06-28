@@ -3446,6 +3446,22 @@ examples, output file content examples, artifact body payload examples,
 manifest body examples, private path examples, absolute temp path examples,
 raw learner text, real participant data, or performance evidence.
 
+For Step421, review the synthetic-only, metadata-only
+[frozen policy generation manifest writer isolated write validation fixture root](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/README.md).
+Confirm it contains 6 valid cases, 19 invalid / expected-failure cases, 25
+total cases, 6 JSON files per case, and 150 JSON files. Confirm it follows
+the isolated write request/result field-name contract, safe isolated root
+sentinel policy, stdout/stderr body-free policy, cleanup/residue expectation,
+and reason-code grouping from the Step420 design. Confirm it does not
+implement isolated write validation, runtime file writing, `--manifest-out`,
+runtime writer changes, Makefile targets, release-quality integration,
+workflow changes, Python code/tests, artifact writer CLI integration,
+metrics, real-data use, or production readiness. Confirm docs do not include
+fixture JSON bodies, isolated_write_request bodies, manifest_writer_request
+bodies, pointer bodies, expected result bodies, manifest bodies, artifact
+body payloads, generated policy bodies, private paths, absolute temp paths,
+raw learner text, real participant data, raw logs, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

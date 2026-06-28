@@ -373,6 +373,17 @@ implement a manifest writer, generate manifest bodies, write manifest files,
 connect artifact writer CLI, change release-quality, use real data, compute
 metrics, or claim production readiness.
 
+## 58. Step421 Isolated Write Fixture Root Status
+
+Step421 creates the separate isolated write validation fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/`
+
+It contains 25 synthetic-only, metadata-only cases and 150 JSON files. The
+boundary remains unchanged: isolated write validation, runtime file writing,
+`--manifest-out`, artifact writer CLI integration, metrics, real-data use,
+and production readiness remain separate future work.
+
 ## 21. Step383 Makefile Target Design Status
 
 Step383 adds the docs-only standalone Makefile target design for running the

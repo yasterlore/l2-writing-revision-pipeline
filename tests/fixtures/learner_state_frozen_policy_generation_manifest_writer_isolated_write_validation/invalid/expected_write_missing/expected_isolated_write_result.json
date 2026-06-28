@@ -1,0 +1,44 @@
+{
+  "case_id": "invalid/expected_write_missing",
+  "expected_category": "usage_error",
+  "expected_cleanup_status": "pass",
+  "expected_failed_checks": [
+    "expected_write_missing"
+  ],
+  "expected_forbidden_field_count": 0,
+  "expected_manifest_file_written": false,
+  "expected_parseable_json_file_count": 0,
+  "expected_reason_codes": [
+    "expected_write_missing"
+  ],
+  "expected_residue_file_count": 0,
+  "expected_safe_summary": "metadata_only_isolated_write_validation_result",
+  "expected_safety_flags": {
+    "cleanup_checked": true,
+    "content_suppressed": true,
+    "file_content_policy_checked": true,
+    "manifest_body_suppressed": true,
+    "no_absolute_paths": true,
+    "no_artifact_body_payload": true,
+    "no_expected_body": true,
+    "no_generated_policy_body": true,
+    "no_logits_dump": true,
+    "no_manifest_body_nesting": true,
+    "no_oracle_checked": true,
+    "no_pointer_body": true,
+    "no_private_paths": true,
+    "no_raw_rows": true,
+    "no_request_body": true,
+    "non_proof_notice_checked": true,
+    "path_policy_checked": true,
+    "stderr_body_suppressed": true,
+    "stdout_body_suppressed": true,
+    "synthetic_only_checked": true,
+    "temp_root_isolated": true
+  },
+  "expected_stderr_body_printed": false,
+  "expected_stdout_body_printed": false,
+  "expected_writer_status": "usage_error",
+  "expected_written_file_count": 0,
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_isolated_write_expected_result_v0.1"
+}

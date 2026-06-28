@@ -542,6 +542,7 @@ use real data, compute metrics, or claim production readiness.
 ## 29. Related Documents
 
 - [Frozen policy generation manifest writer metadata-only isolated write fixture contract design](frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md)
+- [Frozen policy generation manifest writer metadata-only isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/README.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
@@ -551,3 +552,19 @@ use real data, compute metrics, or claim production readiness.
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 30. Step421 Isolated Write Fixture Root Status
+
+Step421 creates the future isolated write validation fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/`
+
+The root contains 25 synthetic-only, metadata-only cases and 150 JSON files:
+6 valid cases, 19 invalid / expected-failure cases, 5 `pass_written` cases,
+1 `pass_no_write` case, 14 `usage_error` cases, and 5 `fail_closed` cases.
+
+The fixture root is contract data only. Step421 does not implement isolated
+write validation, runtime file writing, `--manifest-out`, runtime writer
+changes, Makefile targets, release-quality integration, workflow changes,
+Python code/tests, artifact writer CLI integration, metrics, real-data use,
+or production readiness.

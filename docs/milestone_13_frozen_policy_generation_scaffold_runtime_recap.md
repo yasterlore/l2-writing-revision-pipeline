@@ -1328,6 +1328,14 @@ written, no artifact body is produced, and no performance metric is computed.
   Makefile, change wrapper, change workflow YAML, change Python code/tests,
   change existing fixture JSON, connect artifact writer CLI, use real data,
   compute metrics, or claim production readiness.
+- Step421: created the synthetic-only, metadata-only isolated write
+  validation fixture root for future manifest writer isolated write
+  validation. The root contains 6 valid cases, 19 invalid / expected-failure
+  cases, 25 total cases, and 150 JSON files. It does not implement isolated
+  write validation, runtime file writing, `--manifest-out`, runtime writer
+  changes, Makefile targets, release-quality integration, workflow changes,
+  Python code/tests, artifact writer CLI integration, metrics, real-data use,
+  or production readiness.
 
 ## Related Documents
 
@@ -1355,6 +1363,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md)
 - [Frozen policy generation manifest writer metadata-only isolated write fixture contract design](frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md)
+- [Frozen policy generation manifest writer metadata-only isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/README.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator implementation](../python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)

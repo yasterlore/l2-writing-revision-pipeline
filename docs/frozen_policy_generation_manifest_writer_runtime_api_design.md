@@ -683,3 +683,13 @@ The API boundary remains no-file today. The contract design does not implement
 `--manifest-out`, write files, change runtime code, create fixtures, change
 fixture JSON, change Makefile/wrapper/workflow, connect artifact writer CLI,
 use real data, compute metrics, or claim production readiness.
+
+## 50. Step421 Isolated Write Fixture Root Status
+
+Step421 creates the separate isolated write validation fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/`
+
+The runtime API remains unchanged. The fixture root does not add
+`--manifest-out`, runtime file writing, isolated write validation, artifact
+writer CLI integration, metrics, real-data use, or production readiness.

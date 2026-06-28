@@ -504,6 +504,20 @@ wrapper, change workflow YAML, change Python code/tests, change fixture JSON,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
+## 33. Step421 Isolated Write Fixture Root Status
+
+Step421 creates the synthetic-only, metadata-only isolated write validation
+fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/`
+
+It contains 25 cases and 150 JSON files for future isolated write validation.
+This is fixture creation only. It does not implement isolated write
+validation, runtime file writing, `--manifest-out`, runtime writer changes,
+Makefile targets, release-quality integration, workflow changes, Python
+code/tests, artifact writer CLI integration, metrics, real-data use, or
+production readiness.
+
 ## 32. Step420 Isolated Write Fixture Contract Design Status
 
 Step420 adds the docs-only isolated write fixture contract design:

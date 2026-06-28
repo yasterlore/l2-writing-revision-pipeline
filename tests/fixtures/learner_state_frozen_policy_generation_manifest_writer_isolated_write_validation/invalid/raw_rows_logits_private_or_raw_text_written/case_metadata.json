@@ -1,0 +1,57 @@
+{
+  "case_id": "invalid/raw_rows_logits_private_or_raw_text_written",
+  "case_kind": "invalid",
+  "description": "Synthetic fail_closed isolated write validation fixture.",
+  "expected_category": "fail_closed",
+  "expected_reason_codes": [
+    "raw_rows_written",
+    "logits_dump_written",
+    "private_path_written",
+    "absolute_path_written",
+    "raw_learner_text_written"
+  ],
+  "expected_writer_status": "fail_closed",
+  "forbidden_output_markers": [
+    "manifest_body",
+    "manifest_json_body",
+    "artifact_body_payload",
+    "generated_policy_body",
+    "request_body",
+    "pointer_body",
+    "expected_body",
+    "raw_rows",
+    "logits_dump",
+    "private_path",
+    "absolute_path",
+    "raw_learner_text",
+    "performance_metric_body"
+  ],
+  "json_files_per_case": 6,
+  "notes": [
+    "synthetic-only metadata fixture",
+    "isolated write validation fixture only; validator and runtime file writing are future work",
+    "fixture JSON bodies must not be copied into docs"
+  ],
+  "required_files": [
+    "case_metadata.json",
+    "isolated_write_request.json",
+    "manifest_writer_request.json",
+    "artifact_writer_result_pointer.json",
+    "artifact_body_generation_result_pointer.json",
+    "expected_isolated_write_result.json"
+  ],
+  "safety_expectation": {
+    "metadata_only": true,
+    "no_artifact_body_payload": true,
+    "no_manifest_body": true,
+    "no_oracle": true,
+    "no_raw_learner_text": true,
+    "no_real_data": true,
+    "stderr_body_free": true,
+    "stdout_body_free": true
+  },
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_isolated_write_case_metadata_v0.1",
+  "should_expect_write": false,
+  "should_leave_residue": false,
+  "should_write_manifest_file": false
+}

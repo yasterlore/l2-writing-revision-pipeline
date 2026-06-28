@@ -10,6 +10,16 @@ runtime file writing, implement `--manifest-out`, add isolated write
 validation, integrate release-quality, connect artifact writer CLI, or claim
 production readiness.
 
+## 37. Step421 Isolated Write Fixture Root Status
+
+Step421 creates the separate isolated write validation fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/`
+
+It contains 25 synthetic-only, metadata-only cases and 150 JSON files for a
+future isolated write validator. The existing static file writing fixture
+validator remains unchanged and does not validate this new root yet.
+
 The validator is intended to statically validate the existing synthetic-only,
 metadata-only, no-oracle fixture root with body-free, count-only output.
 

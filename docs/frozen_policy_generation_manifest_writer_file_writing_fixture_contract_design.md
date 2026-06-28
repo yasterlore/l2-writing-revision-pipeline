@@ -714,6 +714,20 @@ Step419 does not create fixtures, write files, implement runtime file writing,
 add `--manifest-out`, change code/tests, change Makefile/wrapper/workflow, or
 claim production readiness.
 
+## 39. Step421 Isolated Write Fixture Root Status
+
+Step421 creates the separate isolated write validation fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/`
+
+The root follows the Step420 contract with 6 valid cases, 19 invalid /
+expected-failure cases, 25 total cases, and 150 JSON files. It remains
+separate from the static file writing fixture root and does not implement
+isolated write validation, runtime file writing, `--manifest-out`, Makefile
+targets, release-quality integration, workflow changes, Python code/tests,
+artifact writer CLI integration, metrics, real-data use, or production
+readiness.
+
 ## 38. Step420 Isolated Write Fixture Contract Design Status
 
 Step420 adds the docs-only isolated write fixture contract design:
