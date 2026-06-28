@@ -598,3 +598,18 @@ unchanged and still checks the 31-case / 155-JSON runtime fixture root
 statically. Runtime smoke success does not replace fixture validation and
 does not prove manifest file writing, artifact writer CLI integration,
 real-data readiness, metrics, or production readiness.
+
+## 44. Step406 Runtime Smoke Remote Run Record Workflow Design Status
+
+Step406 adds the docs-only remote/manual Release Quality run record workflow
+for the runtime smoke target:
+
+[Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md).
+
+This validator remains unchanged. The runtime smoke marker workflow is
+separate from runtime fixture validation evidence: it should record one
+metadata-only no-file runtime smoke summary, while the validator marker
+continues to record static 31-case / 155-JSON fixture validation. It does not
+run workflow jobs, create a status marker, write manifest files, connect
+artifact writer CLI, use real data, compute metrics, or claim production
+readiness.

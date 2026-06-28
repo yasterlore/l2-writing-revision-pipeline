@@ -484,3 +484,19 @@ wrapper after Step405, but they remain separate checks with separate
 interpretations. The runtime smoke does not write manifest files, generate
 manifest bodies, connect artifact writer CLI, use real data, compute metrics,
 or claim production readiness.
+
+## 29. Step406 Runtime Smoke Remote Run Record Workflow Design Status
+
+Step406 adds the docs-only remote/manual Release Quality run record workflow
+for the runtime smoke target:
+
+[Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md).
+
+This runtime smoke record workflow remains separate from the runtime fixture
+validation remote marker. Runtime fixture validation is static contract
+validation; runtime smoke executes one valid metadata-only no-file fixture
+through the writer. Both remain body-free, no-file, synthetic-only, and
+metadata-only. Step406 does not create a status marker, run workflow jobs,
+change workflow YAML, change the wrapper, write manifest files, connect
+artifact writer CLI, use real data, compute metrics, or claim production
+readiness.

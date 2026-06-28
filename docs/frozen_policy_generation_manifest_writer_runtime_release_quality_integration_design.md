@@ -364,14 +364,28 @@ After Step405, this document is historical for the integration design and
 records that the wrapper integration has been implemented. Remote/manual run
 recording and a runtime smoke status marker remain later steps.
 
-## 19. Next Recommended Steps
+## 19. Step406 Remote Run Record Workflow Design Status
 
-- Step406: remote/manual run record workflow design
+Step406 adds the docs-only remote/manual Release Quality run record workflow
+for the runtime smoke target:
+
+[Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md).
+
+The workflow design defines the future public-safe status marker path,
+allowed metadata, forbidden metadata, marker structure, failure handling,
+interpretation, and next actions. It does not create the actual status
+marker, run GitHub Actions, change workflow YAML, change the wrapper, change
+Makefile, change Python code/tests, change fixture JSON, write manifest
+files, add `--manifest-out`, connect artifact writer CLI, use real data,
+compute metrics, or claim production readiness.
+
+## 20. Next Recommended Steps
+
 - Step407: remote/manual run status marker
 - later: manifest file writing design / implementation
 - later: artifact writer CLI integration design / implementation
 
-## 20. Related Documents
+## 21. Related Documents
 
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
@@ -379,6 +393,7 @@ recording and a runtime smoke status marker remain later steps.
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
+- [Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)

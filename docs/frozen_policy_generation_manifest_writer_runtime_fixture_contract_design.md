@@ -550,11 +550,27 @@ runtime smoke executes one valid metadata-only no-file runtime case. This
 does not write manifest files, generate manifest bodies, connect artifact
 writer CLI, use real data, compute metrics, or claim production readiness.
 
-## 39. Related Documents
+## 39. Step406 Runtime Smoke Remote Run Record Workflow Design Status
+
+Step406 adds the docs-only remote/manual Release Quality run record workflow
+for the runtime smoke target:
+
+[Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md).
+
+The fixture contract remains unchanged. The future runtime smoke marker is
+separate from the runtime fixture marker: the fixture marker records static
+31-case contract validation, while the runtime smoke marker should record one
+metadata-only no-file runtime execution summary. Neither marker should copy
+runtime fixture JSON bodies, request/pointer bodies, manifest bodies,
+artifact body payloads, generated policy bodies, raw logs, private paths, raw
+learner text, or performance evidence.
+
+## 40. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md)
+- [Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)

@@ -267,3 +267,13 @@ correctness, real-data readiness, or production readiness.
   remote/manual run record and status marker remain future work. This is not
   manifest file writing evidence, not artifact writer CLI integration
   evidence, and not a production-readiness claim.
+- Step406: linked the separate docs-only remote/manual Release Quality run
+  record workflow for the runtime writer smoke target:
+  [Frozen policy generation manifest writer runtime release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md).
+  This marker remains remote evidence only for the earlier runtime fixture
+  validator Release Quality run. The future runtime writer smoke marker path
+  remains separate:
+  `docs/status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md`.
+  No runtime smoke status marker is created here, and this remains not
+  manifest file writing evidence, not artifact writer CLI integration
+  evidence, not performance evidence, and not a production-readiness claim.

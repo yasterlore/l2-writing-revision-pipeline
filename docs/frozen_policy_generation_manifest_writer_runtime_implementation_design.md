@@ -505,11 +505,25 @@ metadata-only no-file runtime target and does not write manifest files, add
 `--manifest-out`, generate manifest bodies, connect artifact writer CLI, use
 real data, compute metrics, or claim production readiness.
 
-## 29. Related Documents
+## 29. Step406 Remote Run Record Workflow Design Status
+
+Step406 adds the docs-only remote/manual Release Quality run record workflow
+for recording future runtime smoke wrapper evidence:
+
+[Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md).
+
+The runtime implementation remains unchanged. The workflow design is about
+future public-safe recording only: it does not run GitHub Actions, create the
+status marker, write manifest files, add `--manifest-out`, generate manifest
+bodies, connect artifact writer CLI, use real data, compute metrics, or
+claim production readiness.
+
+## 30. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md)
+- [Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)

@@ -3161,6 +3161,22 @@ unchanged, `--manifest-out` is not added, manifest bodies are not generated,
 artifact writer CLI is not connected, no real data is used, no metrics are
 computed, and no production-readiness claim is made.
 
+For Step406, review the docs-only
+[frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md).
+Confirm it defines the future marker path
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md`,
+safe metadata to record, forbidden metadata, marker structure, runtime smoke
+summary fields, related checks, safety review, interpretation, failure
+handling, and next actions for runtime smoke remote/manual Release Quality
+evidence. Confirm it does not create the actual status marker, run GitHub
+Actions, change workflow YAML, change the wrapper, change Makefile, change
+Python code/tests, change fixture JSON, write manifest files, add
+`--manifest-out`, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness. Confirm it does not copy raw logs,
+full job output, manifest bodies, JSON body examples, request/pointer bodies,
+artifact body payloads, generated policy bodies, private paths, raw learner
+text, real participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -602,7 +602,20 @@ entry stays within this boundary: metadata-only, no-file, no manifest body,
 no `--manifest-out`, no artifact writer CLI integration, no real data, no
 metrics, and no production readiness claim. Workflow YAML remains unchanged.
 
-## 43. Related Documents
+## 43. Step406 Runtime Remote Run Record Workflow Design Status
+
+Step406 adds the docs-only remote/manual Release Quality run record workflow
+for the runtime smoke target:
+
+[Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md).
+
+This remains inside the same boundary: future public-safe metadata recording
+only, no status marker creation in this step, no workflow YAML change, no
+wrapper change, no Makefile change, no manifest file writing, no
+`--manifest-out`, no artifact writer CLI integration, no real data, no
+metrics, and no production readiness claim.
+
+## 44. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
@@ -616,6 +629,7 @@ metrics, and no production readiness claim. Workflow YAML remains unchanged.
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md)
+- [Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
