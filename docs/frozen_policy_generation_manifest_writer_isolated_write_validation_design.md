@@ -787,3 +787,17 @@ temporary roots. The Step435 target does not change isolated write validation,
 does not execute production-facing runtime file writing, does not expose public
 `--manifest-out`, does not integrate release-quality, and does not imply
 production readiness.
+
+## 45. Step436 Production File Writing Fixture Release-Quality Integration Design Status
+
+Step436 adds the docs-only release-quality integration design for the separate
+static production file writing fixture validator target:
+
+[Frozen policy generation manifest writer production file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_integration_design.md).
+
+This isolated write validation design remains scoped to validator-owned
+temporary roots. The design recommends placing production file writing fixture
+validation after isolated write validation in a future wrapper step, but it
+does not modify the wrapper, workflow YAML, Makefile, Python code/tests,
+fixture JSON, runtime file writing, public `--manifest-out`, artifact writer
+CLI integration, real-data use, metrics, or production readiness.

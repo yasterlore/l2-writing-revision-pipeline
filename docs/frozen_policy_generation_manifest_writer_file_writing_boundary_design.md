@@ -731,3 +731,15 @@ file writing, expose public `--manifest-out`, integrate release-quality,
 change workflow YAML, change Python code/tests, change fixture JSON, connect
 artifact writer CLI, use real data, compute metrics, or prove production
 readiness.
+
+## 48. Step436 Production File Writing Fixture Release-Quality Integration Design Status
+
+Step436 adds the docs-only release-quality integration design for the static
+production file writing fixture validator target:
+
+[Frozen policy generation manifest writer production file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_integration_design.md).
+
+The file writing boundary remains unchanged. The design does not modify the
+release-quality wrapper, workflow YAML, Makefile, Python code/tests, fixture
+JSON, runtime file writing, public `--manifest-out`, artifact writer CLI
+integration, real-data use, metrics, or production readiness.

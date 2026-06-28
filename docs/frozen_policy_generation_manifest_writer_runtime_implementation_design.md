@@ -800,3 +800,16 @@ today and `--manifest-out` remains unimplemented. Step435 does not change
 release-quality wrapper, workflow YAML, Python code/tests, fixture JSON,
 runtime writer behavior, artifact writer CLI integration, real-data use,
 metrics, or production readiness.
+
+## 48. Step436 Production File Writing Fixture Release-Quality Integration Design Status
+
+Step436 adds the docs-only release-quality integration design for the static
+production file writing fixture validator target:
+
+[Frozen policy generation manifest writer production file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_integration_design.md).
+
+This does not change the runtime implementation. The runtime remains no-file
+today and `--manifest-out` remains unimplemented. Step436 does not modify the
+release-quality wrapper, workflow YAML, Makefile, Python code/tests, fixture
+JSON, runtime writer behavior, artifact writer CLI integration, real-data use,
+metrics, or production readiness.

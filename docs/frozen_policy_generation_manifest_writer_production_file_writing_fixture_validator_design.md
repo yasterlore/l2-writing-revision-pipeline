@@ -539,3 +539,17 @@ public `--manifest-out`, or call artifact writer CLI.
 Release-quality wrapper integration remains a later step. Step435 does not
 change workflow YAML, Python code/tests, fixture JSON, runtime writer behavior,
 real-data use, metrics, or production readiness.
+
+## 32. Step436 Release-Quality Integration Design Status
+
+Step436 adds the docs-only release-quality integration design for the
+standalone production file writing fixture validator target:
+
+[Frozen policy generation manifest writer production file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_integration_design.md).
+
+The design fixes the future wrapper label, command, insertion point after
+manifest writer isolated write validation, expected body-free output, failure
+interpretation, log safety, staging, and non-goals. It does not modify the
+release-quality wrapper, workflow YAML, Makefile, Python code/tests, fixture
+JSON, runtime writer behavior, public `--manifest-out`, artifact writer CLI
+integration, real-data use, metrics, or production readiness.

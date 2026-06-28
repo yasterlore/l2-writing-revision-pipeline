@@ -1468,6 +1468,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Production file writing fixture validator module](../python/learner_state/frozen_policy_generation_manifest_writer_production_file_writing_fixture_validation.py)
 - [Production file writing fixture validator tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer_production_file_writing_fixture_validation.py)
 - [Frozen policy generation manifest writer production file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_makefile_target_design.md)
+- [Frozen policy generation manifest writer production file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_integration_design.md)
 - [Makefile manifest writer production file writing fixture validator target](../Makefile)
 - [Makefile manifest writer isolated write validation target](../Makefile)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)

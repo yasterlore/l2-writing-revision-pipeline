@@ -469,3 +469,16 @@ validates fixture contract metadata only and does not expose public
 `--manifest-out`, write manifest files, change release-quality wrapper or
 workflow YAML, change Python code/tests, change fixture JSON, connect artifact
 writer CLI, use real data, compute metrics, or claim production readiness.
+
+## 30. Step436 Fixture Release-Quality Integration Design Status
+
+Step436 adds the docs-only release-quality integration design for the
+production file writing fixture validator target:
+
+[Frozen policy generation manifest writer production file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_integration_design.md).
+
+Production-facing runtime file writing and public `--manifest-out` remain
+unimplemented. The design does not modify the release-quality wrapper,
+workflow YAML, Makefile, Python code/tests, fixture JSON, runtime writer
+behavior, artifact writer CLI integration, real-data use, metrics, or
+production readiness.

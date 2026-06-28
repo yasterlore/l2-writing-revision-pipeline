@@ -291,3 +291,17 @@ YAML, change Python code/tests, change fixture JSON, implement
 production-facing runtime file writing, expose public `--manifest-out`, change
 the runtime writer, connect artifact writer CLI, use real data, compute
 metrics, or claim production readiness.
+
+## 20. Step436 Release-Quality Integration Design Status
+
+Step436 adds the docs-only release-quality integration design for this
+standalone target:
+
+[Frozen policy generation manifest writer production file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_integration_design.md).
+
+The design recommends adding the target after manifest writer isolated write
+validation and before config/scoring smoke checks in a later wrapper step. It
+does not modify the release-quality wrapper, workflow YAML, Makefile, Python
+code/tests, fixture JSON, runtime writer behavior, public `--manifest-out`,
+artifact writer CLI integration, real-data use, metrics, or production
+readiness.

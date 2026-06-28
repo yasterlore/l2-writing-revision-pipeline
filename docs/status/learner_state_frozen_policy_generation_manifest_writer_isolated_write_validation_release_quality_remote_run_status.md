@@ -312,3 +312,10 @@ production readiness.
   release-quality wrapper inclusion for that target, production-facing runtime
   file writing, public `--manifest-out`, artifact writer CLI integration,
   real-data readiness, metrics, or production readiness.
+- Step436: the production-facing metadata-only manifest file writing fixture
+  validator release-quality integration design is added separately in
+  [Frozen policy generation manifest writer production file writing fixture release-quality integration design](../frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_integration_design.md).
+  This status marker remains isolated-write evidence only. It does not imply
+  release-quality wrapper inclusion for that target, production-facing runtime
+  file writing, public `--manifest-out`, artifact writer CLI integration,
+  real-data readiness, metrics, or production readiness.

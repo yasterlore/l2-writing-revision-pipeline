@@ -3686,6 +3686,24 @@ artifact body payloads, generated policy bodies, private paths, absolute
 local or temp paths, raw learner text, real participant data, or performance
 evidence.
 
+For Step436, review the docs-only
+[frozen policy generation manifest writer production file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_integration_design.md).
+Confirm it fixes the future wrapper label, command, recommended insertion
+point after manifest writer isolated write validation and before
+config/scoring smoke checks, expected body-free/count-only output, failure
+interpretation, log safety, relationship to the manifest writer
+release-quality chain, relationship to runtime file writing, isolated write,
+existing static file writing fixture validation, artifact writer CLI
+integration, staging, docs safety, and non-goals. Confirm it does not modify
+the release-quality wrapper, workflow YAML, Makefile, Python code/tests,
+fixture JSON, runtime file writing, public `--manifest-out`, artifact writer
+CLI integration, real-data use, metrics, or production readiness. Confirm
+docs do not include raw logs, full job output, fixture JSON bodies,
+request/pointer/expected-result bodies, written file bodies, manifest bodies,
+artifact body payloads, generated policy bodies, private paths, absolute
+local or temp paths, raw learner text, real participant data, or performance
+evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

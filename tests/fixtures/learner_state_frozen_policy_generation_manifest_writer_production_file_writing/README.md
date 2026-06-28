@@ -165,3 +165,17 @@ body-free, count-only human summary by default. It does not change fixture JSON,
 execute production-facing runtime file writing, write manifest files, expose
 public `--manifest-out`, integrate release-quality, connect artifact writer
 CLI, use real data, compute metrics, or prove production readiness.
+
+## Step436 Future Release-Quality Integration Design
+
+Step436 adds the docs-only release-quality integration design for the
+standalone target:
+
+[Frozen policy generation manifest writer production file writing fixture release-quality integration design](../../../docs/frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_integration_design.md).
+
+The design recommends adding the target to release-quality after manifest
+writer isolated write validation and before config/scoring smoke checks in a
+future step. It does not change fixture JSON, modify the wrapper, modify
+workflow YAML, execute runtime file writing, write manifest files, expose
+public `--manifest-out`, connect artifact writer CLI, use real data, compute
+metrics, or prove production readiness.
