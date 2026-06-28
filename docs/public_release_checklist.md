@@ -3319,6 +3319,25 @@ request/pointer/expected-result body examples, artifact body payload examples,
 manifest body examples, private path examples, raw learner text, real
 participant data, or performance evidence.
 
+For Step415, review the docs-only
+[frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md).
+Confirm it fixes only the future wrapper insertion point, command, label,
+expected body-free/count-only output, failure interpretation, log safety,
+relation to existing release-quality checks, isolated write separation,
+runtime file writing non-goals, Makefile/workflow status, and future wrapper
+testing plan. Confirm the proposed wrapper command is
+`make check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`
+and the proposed label is
+`release_quality_check: learner-state frozen policy generation manifest writer file writing fixture validation`.
+Confirm this step does not modify the release-quality wrapper, workflow YAML,
+Makefile, Python code/tests, fixture JSON, write manifest files, implement
+`--manifest-out`, run isolated writes, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness. Confirm it does not
+include raw logs, JSON body examples, file writing fixture JSON body examples,
+request/pointer/expected-result body examples, artifact body payload examples,
+manifest body examples, private path examples, raw learner text, real
+participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

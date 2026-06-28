@@ -92,6 +92,13 @@ Step414 implements that standalone Makefile target. The fixture root remains
 unchanged and the target only wraps the static validator CLI root validation.
 It is not added to release-quality in Step414.
 
+Step415 adds the docs-only release-quality integration design for that
+standalone target. It defines a future wrapper label, command, insertion
+point, expected body-free counts, failure interpretation, and log safety. It
+does not add the target to release-quality, change workflow YAML, change
+Makefile, change fixture JSON, write manifest files, run isolated writes, or
+implement runtime file writing.
+
 This fixture root does not execute runtime file writing, isolated writes,
 `--manifest-out`, or artifact writer CLI integration.
 

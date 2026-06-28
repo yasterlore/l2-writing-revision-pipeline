@@ -596,6 +596,7 @@ content policy, reason codes, and validator expectations without implementing
 
 ## 43. Related Documents
 
+- [Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
@@ -618,3 +619,14 @@ content policy, reason codes, and validator expectations without implementing
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 44. Step415 File Writing Fixture Release-Quality Design Status
+
+Step415 adds the docs-only release-quality integration design for the
+standalone file writing fixture validator target:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md).
+
+The API boundary remains no-file today. Step415 does not implement
+`--manifest-out`, write files, change runtime code, change fixture JSON,
+change workflow YAML, or add wrapper integration.

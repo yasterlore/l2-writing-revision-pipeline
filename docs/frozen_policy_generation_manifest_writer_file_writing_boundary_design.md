@@ -423,6 +423,7 @@ claim production readiness.
 
 ## 26. Related Documents
 
+- [Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator implementation](../python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)
@@ -436,3 +437,16 @@ claim production readiness.
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 27. Step415 Release-Quality Integration Design Status
+
+Step415 adds the docs-only release-quality integration design for the
+standalone file writing fixture validator target:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md).
+
+The file writing boundary remains unchanged. Step415 does not add wrapper
+integration, change workflow YAML, change Makefile, change Python code/tests,
+change fixture JSON, write manifest files, implement `--manifest-out`, run
+isolated writes, connect artifact writer CLI, use real data, compute metrics,
+or claim production readiness.

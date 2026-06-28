@@ -536,6 +536,7 @@ use real data, compute metrics, or claim production readiness.
 
 ## 30. Related Documents
 
+- [Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing/README.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
@@ -547,3 +548,16 @@ use real data, compute metrics, or claim production readiness.
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 31. Step415 Release-Quality Integration Design Status
+
+Step415 adds the docs-only release-quality integration design for the
+standalone file writing fixture validator target:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md).
+
+The validator implementation remains unchanged. Step415 does not modify the
+release-quality wrapper, change workflow YAML, change Makefile, change Python
+code/tests, change fixture JSON, write manifest files, implement
+`--manifest-out`, run isolated writes, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness.

@@ -424,6 +424,7 @@ production readiness.
 
 ## 24. Related Documents
 
+- [Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
@@ -438,3 +439,15 @@ production readiness.
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 25. Step415 File Writing Fixture Release-Quality Design Status
+
+Step415 adds a separate docs-only release-quality integration design for the
+manifest writer file writing fixture validator target:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md).
+
+This runtime smoke integration remains scoped to metadata-only no-file runtime
+execution. The file writing fixture target is a static contract validator and
+does not prove runtime file writing, isolated write validation, artifact
+writer CLI integration, real-data readiness, or production readiness.
