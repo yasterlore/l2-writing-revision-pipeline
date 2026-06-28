@@ -876,3 +876,16 @@ The runtime API itself is unchanged in this step. Step442 does not modify
 Makefile, release-quality wrapper, workflow YAML, runtime code, Python tests,
 fixtures JSON, artifact writer CLI integration, artifact body generation CLI
 integration, real-data use, metrics, or production readiness.
+
+## 65. Step443 Runtime File Writing Smoke Target Implementation Status
+
+Step443 adds a standalone Makefile target that invokes the existing runtime API
+with safe `--manifest-out smoke/manifest.json` and validates the written
+metadata-only file without printing its body:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing`
+
+The runtime API itself is unchanged in this step. Step443 does not add
+release-quality integration, modify workflow YAML, modify Python code/tests,
+modify fixtures JSON, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness.

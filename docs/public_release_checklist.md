@@ -3791,6 +3791,22 @@ request/pointer/expected bodies, written file bodies, manifest bodies,
 artifact body payloads, generated policy bodies, private or absolute path
 examples, raw learner text, real participant data, or performance evidence.
 
+For Step443, review the standalone Makefile target
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing`.
+Confirm `make help` lists it, the target exits 0, runtime output is body-free,
+`manifest_file_written=true`, `written_file_count=1`,
+`manifest_writer_runtime_file_writing_smoke=ok`, and
+`smoke_residue_file_count=0` are present, the written file is parsed and
+scanned before cleanup, and the smoke directory is removed afterward. Confirm
+the target does not add release-quality integration, modify workflow YAML,
+modify Python code/tests, modify fixtures JSON, change runtime code, invoke
+artifact writer CLI, invoke artifact body generation CLI, use real data,
+compute metrics, or claim production readiness. Confirm docs and target output
+do not include raw logs, fixture JSON bodies, request/pointer/expected bodies,
+written file bodies, manifest bodies, artifact body payloads, generated policy
+bodies, private or absolute path examples, raw learner text, real participant
+data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -1506,6 +1506,14 @@ written, no artifact body is produced, and no performance metric is computed.
   workflow YAML, runtime code, Python tests, fixtures JSON, artifact writer
   CLI integration, artifact body generation CLI integration, real-data use,
   metrics, or production readiness.
+- Step443: implemented the standalone Makefile target for manifest writer
+  runtime metadata-only file writing smoke. The target writes one
+  target-owned smoke file through safe `--manifest-out`, validates the
+  body-free runtime summary, parses and scans the written file, cleans up the
+  smoke path, and reports zero smoke residue. It does not add release-quality
+  integration, change workflow YAML, change Python code/tests, change fixtures
+  JSON, change runtime code, connect artifact writer CLI, use real data,
+  compute metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -1553,6 +1561,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer runtime file writing smoke Makefile target design](frozen_policy_generation_manifest_writer_runtime_file_writing_smoke_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime implementation](../python/learner_state/frozen_policy_generation_manifest_writer.py)
 - [Frozen policy generation manifest writer runtime tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer.py)
+- [Makefile manifest writer runtime file writing smoke target](../Makefile)
 - [Release-quality wrapper with manifest writer production file writing fixture validation](../scripts/check_release_quality.sh)
 - [Makefile manifest writer production file writing fixture validator target](../Makefile)
 - [Makefile manifest writer isolated write validation target](../Makefile)

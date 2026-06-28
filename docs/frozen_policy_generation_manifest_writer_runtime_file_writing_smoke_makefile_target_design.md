@@ -282,7 +282,6 @@ This Step442 design does not:
 
 ## 17. Next Recommended Steps
 
-- Step443 Makefile target implementation
 - Step444 release-quality runtime integration design
 - Step445 wrapper integration
 - Step446 remote/manual run record workflow design
@@ -298,3 +297,24 @@ This Step442 design does not:
 - [Frozen policy generation manifest writer file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer production file writing design](frozen_policy_generation_manifest_writer_production_file_writing_design.md)
 - [Frozen policy generation manifest writer production file writing fixture validator design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_design.md)
+
+## 19. Step443 Implementation Status
+
+Step443 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing`
+
+The target smoke-tests the Step441 runtime file writing path using the existing
+synthetic metadata-only runtime fixture inputs and safe
+`--manifest-out smoke/manifest.json`. It removes the target-owned smoke output
+before the run, captures runtime stdout/stderr for public-output safety scans,
+verifies `manifest_file_written=true` and `written_file_count=1`, verifies the
+written file exists during the smoke, parses the written JSON, scans it for
+forbidden body/payload/raw/logit/private/absolute-path/raw-learner-text and
+performance markers, prints only body-free summary lines, removes the smoke
+directory, and verifies `smoke_residue_file_count=0`.
+
+Step443 does not add release-quality integration, change workflow YAML, change
+Python code/tests, change fixtures JSON, change runtime code, connect artifact
+writer CLI, call artifact body generation CLI, generate manifest bodies, use
+real data, compute metrics, or claim production readiness.

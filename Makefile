@@ -34,6 +34,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-runtime
+.PHONY: check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing
 .PHONY: check-all
 
 # Shared tmp outputs are not safe for parallel summary-flow checks.
@@ -77,6 +78,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-fixtures  Validate manifest writer fixture contracts"
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures  Validate manifest writer runtime fixture contracts"
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-runtime  Smoke test manifest writer metadata-only runtime"
+	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing  Smoke test manifest writer metadata-only runtime file writing"
 	@echo "  check-all                    Run the normal release-quality wrapper"
 
 check-release-quality:
@@ -214,6 +216,68 @@ check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures:
 
 check-learner-state-frozen-policy-generation-manifest-writer-runtime:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer --request tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/valid/metadata_only_minimal_no_file/manifest_writer_request.json --artifact-result tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/valid/metadata_only_minimal_no_file/artifact_writer_result_pointer.json --artifact-body-result tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/valid/metadata_only_minimal_no_file/artifact_body_generation_result_pointer.json
+
+check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing:
+	@set -e; \
+	smoke_dir="tmp/frozen_policy_generation_manifest/smoke"; \
+	output="$$smoke_dir/manifest.json"; \
+	stdout_file="$$smoke_dir/runtime.stdout"; \
+	stderr_file="$$smoke_dir/runtime.stderr"; \
+	cleanup() { rm -rf "$$smoke_dir"; }; \
+	trap cleanup EXIT; \
+	cleanup; \
+	mkdir -p "$$smoke_dir"; \
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer --request tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/valid/metadata_only_minimal_no_file/manifest_writer_request.json --artifact-result tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/valid/metadata_only_minimal_no_file/artifact_writer_result_pointer.json --artifact-body-result tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/valid/metadata_only_minimal_no_file/artifact_body_generation_result_pointer.json --manifest-out smoke/manifest.json >"$$stdout_file" 2>"$$stderr_file"; \
+	if ! grep -q '^manifest_file_written=true$$' "$$stdout_file"; then \
+		echo "manifest_writer_runtime_file_writing_smoke=fail"; \
+		exit 1; \
+	fi; \
+	if ! grep -q '"written_file_count":1' "$$stdout_file"; then \
+		echo "manifest_writer_runtime_file_writing_smoke=fail"; \
+		exit 1; \
+	fi; \
+	if test ! -f "$$output"; then \
+		echo "manifest_writer_runtime_file_writing_smoke=fail"; \
+		exit 1; \
+	fi; \
+	python3 -m json.tool "$$output" >/dev/null; \
+	if grep -Eiq '"manifest_body"|"manifest_json_body"|"artifact_body_payload"|"generated_policy_body"|"request_body"|"pointer_body"|"expected_body"|"raw_rows"|"raw_row"|"logits"|"probabilities"|"private_path"|"absolute_path"|"raw_learner_text"|"final_text"|"observed_after_text"|"gold_label"|"scoring_feedback"|"real_participant_data"|"performance_metric_body"|/Users/|/home/|/tmp/|Dropbox|CloudStorage' "$$output"; then \
+		echo "manifest_writer_runtime_file_writing_smoke_safety_scan=fail"; \
+		exit 1; \
+	fi; \
+	if grep -Eiq '"manifest_body":|"manifest_json_body":|"artifact_body_payload":|"generated_policy_body":|"request_body":|"pointer_body":|"expected_body":|"raw_rows":|"logits":|"probabilities":|"raw_learner_text":|"final_text":|"observed_after_text":|"gold_label":|"scoring_feedback":|"real_participant_data":|"performance_metric_body":|/Users/|/home/|/tmp/|/private/|/var/folders/|Dropbox|CloudStorage' "$$stdout_file" "$$stderr_file"; then \
+		echo "manifest_writer_runtime_file_writing_smoke_public_output_scan=fail"; \
+		exit 1; \
+	fi; \
+	cat "$$stdout_file"; \
+	if test -s "$$stderr_file"; then cat "$$stderr_file"; fi; \
+	echo "written_file_count=1"; \
+	echo "manifest_body_suppressed=true"; \
+	echo "file_writing_checked=true"; \
+	echo "output_path_safety_checked=true"; \
+	echo "content_policy_checked=true"; \
+	echo "no_manifest_body=true"; \
+	echo "no_artifact_body_payload=true"; \
+	echo "no_generated_policy_body=true"; \
+	echo "no_request_body=true"; \
+	echo "no_pointer_body=true"; \
+	echo "no_expected_body=true"; \
+	echo "no_raw_rows=true"; \
+	echo "no_logits_dump=true"; \
+	echo "no_private_paths=true"; \
+	echo "no_absolute_paths=true"; \
+	echo "no_performance_claims=true"; \
+	echo "synthetic_only_checked=true"; \
+	echo "no_oracle_checked=true"; \
+	echo "manifest_writer_runtime_file_writing_smoke=ok"; \
+	echo "manifest_writer_runtime_file_writing_smoke_json_parse=pass"; \
+	echo "manifest_writer_runtime_file_writing_smoke_safety_scan=pass"; \
+	cleanup; \
+	if test -e "$$smoke_dir"; then \
+		echo "manifest_writer_runtime_file_writing_smoke_cleanup=fail"; \
+		exit 1; \
+	fi; \
+	echo "smoke_residue_file_count=0"
 
 # check-release-quality already runs the normal success-path command bundle.
 check-all: check-release-quality

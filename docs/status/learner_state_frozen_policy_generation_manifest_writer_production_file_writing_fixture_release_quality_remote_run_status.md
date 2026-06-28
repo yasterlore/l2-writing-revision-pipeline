@@ -295,6 +295,15 @@ does not become runtime smoke evidence, Makefile target evidence,
 release-quality runtime integration evidence, or production readiness
 evidence.
 
+## Step443 Separation Note
+
+Step443 implements the standalone runtime file writing smoke Makefile target
+after this remote-run marker was created. This marker still records only the
+earlier Release Quality run for static production file writing fixture
+validation. It is not evidence that the runtime file writing smoke target has
+run in GitHub Actions, not release-quality runtime integration evidence, and
+not production readiness evidence.
+
 ## Update History
 
 - 2026-06-28: Step439 status marker created from public-safe metadata for the
@@ -304,3 +313,5 @@ evidence.
   metrics, or production readiness claims.
 - 2026-06-29: Step442 separation note added for the docs-only runtime file
   writing smoke Makefile target design.
+- 2026-06-29: Step443 separation note added for the standalone runtime file
+  writing smoke Makefile target implementation.

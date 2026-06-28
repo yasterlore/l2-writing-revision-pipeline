@@ -363,7 +363,6 @@ This Step440 plan does not:
 
 ## 17. Next Recommended Steps
 
-- Step443 Makefile/runtime smoke target implementation
 - Step444 release-quality runtime integration design
 - Step445 wrapper integration
 - Step446 remote/manual run record workflow design
@@ -412,5 +411,20 @@ smoke output path, written-file parse/scan validation, cleanup policy,
 failure behavior, docs safety, release-quality staging, and future
 implementation tests. It does not modify Makefile, release-quality wrapper,
 workflow YAML, runtime code, Python tests, fixtures JSON, artifact writer CLI
+integration, artifact body generation CLI integration, real-data use, metrics,
+or production readiness.
+
+## 21. Step443 Smoke Makefile Target Implementation Status
+
+Step443 implements the standalone Makefile target for runtime metadata-only
+file writing smoke:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing`
+
+The target remains outside release-quality for this step. It writes one
+metadata-only smoke file under the target-owned safe smoke path, parses and
+scans it, emits only body-free summaries, cleans up the smoke path, and reports
+zero smoke residue. It does not change workflow YAML, release-quality wrapper,
+Python code/tests, fixtures JSON, runtime code, artifact writer CLI
 integration, artifact body generation CLI integration, real-data use, metrics,
 or production readiness.

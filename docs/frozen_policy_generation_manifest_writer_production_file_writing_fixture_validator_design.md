@@ -613,3 +613,13 @@ Makefile target:
 The future smoke target will execute the runtime and write one target-owned
 metadata-only smoke file. This validator remains static fixture validation and
 continues not to write files or execute runtime file writing.
+
+## 38. Step443 Runtime Smoke Target Implementation Separation Note
+
+Step443 implements the standalone runtime file writing smoke Makefile target.
+That target executes the runtime and writes one target-owned metadata-only
+smoke file, then cleans it up.
+
+This static validator remains unchanged and still does not execute runtime
+file writing. Static fixture validation evidence and runtime smoke evidence
+remain separate.
