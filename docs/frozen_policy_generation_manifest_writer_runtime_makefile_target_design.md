@@ -352,8 +352,21 @@ file-writing target should be separate, should use a safe root, should have
 isolated write validation, and should not replace the current runtime smoke
 target.
 
-## 22. Related Documents
+## 22. Step409 File Writing Fixture Contract Design Status
 
+Step409 adds the docs-only fixture contract design for future metadata-only
+manifest file writing fixtures:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md).
+
+The existing runtime Makefile target remains a no-file smoke target. The file
+writing fixture contract is a future fixture/validator track and does not add
+fixture JSON, change Makefile, add `--manifest-out`, write manifest files, or
+join release-quality here.
+
+## 23. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)

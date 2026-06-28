@@ -345,8 +345,22 @@ Docs must not include:
 - later: isolated write validation
 - later: runtime file-writing implementation
 
-## 20. Related Documents
+## 20. Step409 Fixture Contract Design Status
 
+Step409 adds the docs-only fixture contract design for future metadata-only
+manifest file writing fixtures:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md).
+
+The boundary remains design-only. Step409 does not create fixture JSON,
+implement `--manifest-out`, write manifest files, change runtime code, change
+Makefile, change the release-quality wrapper, change workflow YAML, connect
+artifact writer CLI, use real data, compute metrics, or claim production
+readiness.
+
+## 21. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)

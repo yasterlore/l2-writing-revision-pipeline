@@ -582,8 +582,21 @@ root, path policy, metadata-only file content policy, fail-closed behavior,
 fixture staging, isolated write staging, and release-quality staging without
 implementing `--manifest-out` or writing files.
 
-## 42. Related Documents
+## 42. Step409 File Writing Fixture Contract Design Status
 
+Step409 adds the docs-only fixture contract design for future metadata-only
+manifest file writing fixtures:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md).
+
+The API boundary remains no-file today. The contract design defines future
+fixture field names, schema versions, case categories, safe path policy,
+content policy, reason codes, and validator expectations without implementing
+`--manifest-out`, writing files, changing code/tests, or changing fixtures.
+
+## 43. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

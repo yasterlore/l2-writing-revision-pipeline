@@ -639,8 +639,21 @@ file writing needs its own safe root, path policy, metadata-only content
 policy, fixtures, validator, isolated write validation, release-quality
 staging, and remote status marker.
 
-## 46. Related Documents
+## 46. Step409 File Writing Fixture Contract Design Status
 
+Step409 adds the docs-only fixture contract design for future metadata-only
+manifest file writing fixtures:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md).
+
+This keeps the same boundary: no fixture JSON creation, no runtime file
+writing, no `--manifest-out`, no Makefile/wrapper/workflow change, no artifact
+writer CLI integration, no real data, no metrics, and no production readiness
+claim.
+
+## 47. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)

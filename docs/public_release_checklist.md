@@ -3210,6 +3210,23 @@ examples, request/pointer body examples, artifact body payload examples,
 manifest body examples, private path examples, raw learner text, real
 participant data, or performance evidence.
 
+For Step409, review the docs-only
+[frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md).
+Confirm it defines only the future fixture contract: fixture root, directory
+layout, required file names, schema versions, case categories, six proposed
+valid cases, 32 proposed invalid cases, 38 total cases, 190 total JSON files,
+request/pointer/expected-result field-name contracts, safe path policy, file
+content policy, reason code taxonomy, fixture README policy, validator
+expectations, relation to isolated write validation, and future staging.
+Confirm it does not create fixture JSON, implement a validator, write files,
+add `--manifest-out`, change runtime code, change Makefile, change the
+wrapper, change workflow YAML, connect artifact writer CLI, use real data,
+compute metrics, or claim production readiness. Confirm it does not include
+raw logs, JSON body examples, file writing fixture JSON body examples,
+request/pointer/expected-result body examples, artifact body payload examples,
+manifest body examples, private path examples, raw learner text, real
+participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

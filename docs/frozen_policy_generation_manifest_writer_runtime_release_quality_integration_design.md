@@ -410,8 +410,21 @@ a future separate track with separate fixtures, validators, isolated write
 validation, Makefile target, release-quality integration, and remote status
 marker.
 
-## 23. Related Documents
+## 23. Step409 File Writing Fixture Contract Design Status
 
+Step409 adds the docs-only fixture contract design for future metadata-only
+manifest file writing fixtures:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md).
+
+The current release-quality runtime smoke remains no-file only. Step409 does
+not create fixture JSON, add a fixture validator, change the wrapper, write
+manifest files, add `--manifest-out`, connect artifact writer CLI, or claim
+production readiness.
+
+## 24. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)

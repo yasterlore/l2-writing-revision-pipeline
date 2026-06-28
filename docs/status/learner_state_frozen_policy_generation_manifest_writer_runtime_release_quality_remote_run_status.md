@@ -259,3 +259,10 @@ readiness.
   It is not manifest file writing evidence, not artifact writer CLI
   integration evidence, not real-data readiness, not performance evidence,
   and not a production-readiness claim.
+- Step409: linked the docs-only metadata-only manifest file writing fixture
+  contract design:
+  [Frozen policy generation manifest writer metadata-only file writing fixture contract design](../frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md).
+  This marker remains remote evidence only for the no-file runtime smoke.
+  The fixture contract design does not create fixture JSON, implement
+  `--manifest-out`, write manifest files, connect artifact writer CLI, use
+  real data, compute metrics, or claim production readiness.

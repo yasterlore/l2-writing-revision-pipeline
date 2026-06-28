@@ -542,8 +542,22 @@ files, create fixtures, change Makefile, change the release-quality wrapper,
 change workflow YAML, connect artifact writer CLI, use real data, compute
 metrics, or claim production readiness.
 
-## 32. Related Documents
+## 32. Step409 File Writing Fixture Contract Design Status
 
+Step409 adds the docs-only fixture contract design for future metadata-only
+manifest file writing fixtures:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md).
+
+The runtime implementation remains unchanged and no-file only. The fixture
+contract design does not create fixture JSON, implement `--manifest-out`, write
+manifest files, change Makefile, change the release-quality wrapper, change
+workflow YAML, connect artifact writer CLI, use real data, compute metrics, or
+claim production readiness.
+
+## 33. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
