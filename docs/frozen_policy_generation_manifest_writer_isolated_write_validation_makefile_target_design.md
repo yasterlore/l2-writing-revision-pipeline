@@ -257,6 +257,7 @@ Future Step424 should verify:
 ## 17. Related Documents
 
 - [Frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md)
+- [Frozen policy generation manifest writer metadata-only isolated write validation release-quality integration design](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only isolated write fixture contract design](frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/README.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md)
@@ -281,3 +282,16 @@ YAML, change Python code/tests, change fixture JSON, implement
 production-facing runtime file writing, expose public `--manifest-out`,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
+
+## 19. Step425 Release-Quality Integration Design Status
+
+Step425 adds the docs-only release-quality integration design:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation release-quality integration design](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_integration_design.md).
+
+The design recommends adding the standalone target after manifest writer file
+writing fixture validation and before config/scoring smoke checks in a future
+wrapper step. It does not modify the release-quality wrapper, workflow YAML,
+Makefile, Python code/tests, fixture JSON, production-facing runtime file
+writing, public `--manifest-out`, artifact writer CLI integration, metrics,
+real-data use, or production readiness.

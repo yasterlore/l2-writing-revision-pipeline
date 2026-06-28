@@ -520,6 +520,7 @@ metadata-only and safe.
 - [Frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md)
 - [Frozen policy generation manifest writer metadata-only isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/README.md)
 - [Frozen policy generation manifest writer metadata-only isolated write validation Makefile target design](frozen_policy_generation_manifest_writer_isolated_write_validation_makefile_target_design.md)
+- [Frozen policy generation manifest writer metadata-only isolated write validation release-quality integration design](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
@@ -589,3 +590,12 @@ validation CLI. It remains separate from release-quality integration and does
 not change fixture JSON, Python code/tests, workflow YAML, production-facing
 runtime file writing, public `--manifest-out`, artifact writer CLI
 integration, metrics, real-data use, or production readiness.
+
+## 33. Step425 Release-Quality Integration Design Status
+
+Step425 adds docs-only release-quality integration design for the standalone
+isolated write validation target. The fixture contract remains unchanged. The
+design does not modify the wrapper, workflow YAML, Makefile, Python
+code/tests, fixture JSON, production-facing runtime file writing, public
+`--manifest-out`, artifact writer CLI integration, metrics, real-data use, or
+production readiness.

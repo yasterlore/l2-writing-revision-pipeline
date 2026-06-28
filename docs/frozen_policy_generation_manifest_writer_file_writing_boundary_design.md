@@ -571,3 +571,17 @@ does not add release-quality integration, change workflow YAML, change Python
 code/tests, change fixture JSON, implement production-facing runtime file
 writing, expose public `--manifest-out`, connect artifact writer CLI, use real
 data, compute metrics, or claim production readiness.
+
+## 37. Step425 Isolated Write Validation Release-Quality Integration Design Status
+
+Step425 adds docs-only release-quality integration design for the standalone
+manifest writer isolated write validation target:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation release-quality integration design](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_integration_design.md).
+
+The file writing boundary remains unchanged. The design recommends future
+wrapper placement after manifest writer file writing fixture validation and
+before config/scoring smoke checks. It does not modify the wrapper, workflow
+YAML, Makefile, Python code/tests, fixture JSON, production-facing runtime
+file writing, public `--manifest-out`, artifact writer CLI integration,
+metrics, real-data use, or production readiness.

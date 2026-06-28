@@ -138,3 +138,14 @@ It is not release-quality integrated yet and does not change workflow YAML,
 Python code/tests, fixture JSON, production-facing runtime file writing,
 public `--manifest-out`, artifact writer CLI integration, real-data use,
 metrics, or production readiness.
+
+## Step425 Release-Quality Integration Design
+
+Step425 designs future release-quality wrapper integration for the standalone
+target. The recommended future placement is after manifest writer file writing
+fixture validation and before config/scoring smoke checks.
+
+This fixture root remains unchanged. Step425 does not modify the wrapper,
+workflow YAML, Makefile, Python code/tests, fixture JSON, production-facing
+runtime file writing, public `--manifest-out`, artifact writer CLI
+integration, real-data use, metrics, or production readiness.
