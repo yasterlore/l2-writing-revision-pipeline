@@ -136,3 +136,20 @@ It does not execute production-facing runtime file writing, write manifest
 files, expose public `--manifest-out`, add a Makefile target, integrate
 release-quality, connect artifact writer CLI, use real data, compute metrics,
 or prove production readiness.
+
+## Step434 Future Makefile Target Design
+
+Step434 adds the docs-only Makefile target design for running the static
+validator:
+
+[Frozen policy generation manifest writer production file writing fixture validator Makefile target design](../../../docs/frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_makefile_target_design.md).
+
+The proposed future target is
+`check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures`.
+It should run the validator CLI against this fixture root and emit only
+body-free, count-only summaries.
+
+Step434 does not modify Makefile, add release-quality integration, execute
+runtime file writing, write manifest files, expose public `--manifest-out`,
+change fixture JSON, connect artifact writer CLI, use real data, compute
+metrics, or prove production readiness.

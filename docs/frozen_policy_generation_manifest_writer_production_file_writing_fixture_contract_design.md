@@ -617,3 +617,16 @@ Step433 does not implement production-facing runtime file writing, public
 `--manifest-out`, Makefile targets, release-quality integration, workflow
 changes, fixture JSON changes, artifact writer CLI integration, real-data use,
 metrics, or production readiness.
+
+## 37. Step434 Fixture Validator Makefile Target Design Status
+
+Step434 adds the docs-only Makefile target design for running the static
+production file writing fixture validator:
+
+[Frozen policy generation manifest writer production file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_makefile_target_design.md).
+
+The contract root remains unchanged. The design does not implement a Makefile
+target, release-quality integration, production-facing runtime file writing,
+public `--manifest-out`, workflow changes, Python code/tests changes, fixture
+JSON changes, artifact writer CLI integration, real-data use, metrics, or
+production readiness.

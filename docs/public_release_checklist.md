@@ -3650,6 +3650,23 @@ written file bodies, manifest bodies, artifact body payloads, generated
 policy bodies, private paths, absolute local or temp paths, raw learner text,
 real participant data, or performance evidence.
 
+For Step434, review the docs-only
+[frozen policy generation manifest writer production file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_makefile_target_design.md).
+Confirm it fixes the future standalone target name, command, help text,
+expected body-free/count-only output, failure behavior, relationship to the
+current validator CLI, relationship to existing static file writing,
+isolated write, and runtime targets, release-quality staging, docs safety,
+future implementation tests, and non-goals. Confirm it does not implement the
+Makefile target, add release-quality integration, modify workflow YAML,
+modify Python code/tests, modify fixture JSON, implement runtime file
+writing, expose public `--manifest-out`, connect artifact writer CLI, use
+real data, compute metrics, or claim production readiness. Confirm docs do
+not include raw logs, full job output, fixture JSON bodies,
+request/pointer/expected-result bodies, written file bodies, manifest bodies,
+artifact body payloads, generated policy bodies, private paths, absolute
+local or temp paths, raw learner text, real participant data, or performance
+evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -443,3 +443,16 @@ writing fixture validator:
 The validator checks the Step431 production file writing fixture root without
 writing files or executing the runtime writer. Production-facing runtime file
 writing and public `--manifest-out` remain unimplemented and separate.
+
+## 28. Step434 Fixture Validator Makefile Target Design Status
+
+Step434 adds the docs-only Makefile target design for running the production
+file writing fixture validator:
+
+[Frozen policy generation manifest writer production file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_makefile_target_design.md).
+
+The production file writing runtime remains unimplemented. Step434 does not
+modify Makefile, add release-quality integration, expose public
+`--manifest-out`, change workflow YAML, change Python code/tests, change
+fixture JSON, connect artifact writer CLI, use real data, compute metrics, or
+claim production readiness.

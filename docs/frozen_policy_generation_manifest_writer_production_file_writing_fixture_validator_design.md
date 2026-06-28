@@ -506,3 +506,21 @@ runtime writer, write manifest files, expose public `--manifest-out`, add a
 Makefile target, integrate release-quality, change workflow YAML, change
 fixture JSON, connect artifact writer CLI, use real data, compute metrics, or
 claim production readiness.
+
+## 30. Step434 Makefile Target Design Status
+
+Step434 adds the docs-only standalone Makefile target design for this
+validator:
+
+[Frozen policy generation manifest writer production file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_makefile_target_design.md).
+
+The design proposes
+`check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures`
+as a thin wrapper around the validator CLI root validation. It fixes target
+name, command, help text, expected body-free/count-only output, failure
+behavior, release-quality staging, and future implementation tests.
+
+Step434 does not modify Makefile, release-quality wrapper, workflow YAML,
+Python code/tests, fixture JSON, runtime writer behavior, public
+`--manifest-out`, artifact writer CLI integration, real-data use, metrics, or
+production readiness.

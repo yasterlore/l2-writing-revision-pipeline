@@ -244,6 +244,8 @@ production readiness.
   from this isolated validation marker
 - keep the Step433 production file writing fixture validator implementation
   separate from this isolated validation marker
+- keep the Step434 production file writing fixture validator Makefile target
+  design separate from this isolated validation marker
 - keep public `--manifest-out` separate
 - keep artifact writer CLI integration separate
 - keep strict exit code normalization separate
@@ -295,3 +297,11 @@ production readiness.
   production-facing runtime file writing, public `--manifest-out`, Makefile
   target inclusion, release-quality wrapper inclusion, artifact writer CLI
   integration, real-data readiness, metrics, or production readiness.
+- Step434: the production-facing metadata-only manifest file writing fixture
+  validator Makefile target design is added separately in
+  [Frozen policy generation manifest writer production file writing fixture validator Makefile target design](../frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_makefile_target_design.md).
+  This status marker remains isolated-write evidence only. It does not imply
+  Makefile target implementation, release-quality wrapper inclusion,
+  production-facing runtime file writing, public `--manifest-out`, artifact
+  writer CLI integration, real-data readiness, metrics, or production
+  readiness.
