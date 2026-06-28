@@ -149,3 +149,14 @@ This fixture root remains unchanged. Step425 does not modify the wrapper,
 workflow YAML, Makefile, Python code/tests, fixture JSON, production-facing
 runtime file writing, public `--manifest-out`, artifact writer CLI
 integration, real-data use, metrics, or production readiness.
+
+## Step426 Release-Quality Wrapper Integration
+
+Step426 adds the standalone isolated write validation target to the
+release-quality wrapper after manifest writer file writing fixture validation
+and before config/scoring smoke checks.
+
+This fixture root remains unchanged. The wrapper integration does not modify
+workflow YAML, Makefile, Python code/tests, fixture JSON, production-facing
+runtime file writing, public `--manifest-out`, artifact writer CLI
+integration, real-data use, metrics, or production readiness.

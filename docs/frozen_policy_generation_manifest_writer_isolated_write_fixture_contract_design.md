@@ -599,3 +599,15 @@ design does not modify the wrapper, workflow YAML, Makefile, Python
 code/tests, fixture JSON, production-facing runtime file writing, public
 `--manifest-out`, artifact writer CLI integration, metrics, real-data use, or
 production readiness.
+
+## 34. Step426 Release-Quality Wrapper Integration Status
+
+Step426 adds the isolated write validation target to the release-quality
+wrapper. The fixture contract remains unchanged: 25 cases, 150 JSON files,
+body-free/count-only validation output, validator-owned isolated temporary
+write roots, and expected residue count 0.
+
+This integration does not modify fixture JSON, workflow YAML, Makefile,
+Python code/tests, production-facing runtime file writing, public
+`--manifest-out`, artifact writer CLI integration, metrics, real-data use, or
+production readiness.

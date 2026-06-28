@@ -295,3 +295,16 @@ wrapper step. It does not modify the release-quality wrapper, workflow YAML,
 Makefile, Python code/tests, fixture JSON, production-facing runtime file
 writing, public `--manifest-out`, artifact writer CLI integration, metrics,
 real-data use, or production readiness.
+
+## 20. Step426 Wrapper Integration Status
+
+Step426 adds the standalone target to the release-quality wrapper with the
+label:
+
+`release_quality_check: learner-state frozen policy generation manifest writer isolated write validation`
+
+The wrapper placement follows the Step425 design: after manifest writer file
+writing fixture validation and before config/scoring smoke checks. This does
+not change Makefile, workflow YAML, Python code/tests, fixture JSON,
+production-facing runtime file writing, public `--manifest-out`, artifact
+writer CLI integration, metrics, real-data use, or production readiness.

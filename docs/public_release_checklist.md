@@ -3521,6 +3521,17 @@ bodies, artifact body payloads, generated policy bodies, private paths,
 absolute temp paths, raw learner text, real participant data, or performance
 evidence.
 
+For Step426, review `scripts/check_release_quality.sh`. Confirm it adds only
+the release-quality wrapper section for
+`check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation`
+with the label
+`release_quality_check: learner-state frozen policy generation manifest writer isolated write validation`.
+Confirm the section appears after manifest writer file writing fixture
+validation and before config/scoring smoke checks. Confirm workflow YAML,
+Makefile, Python code/tests, fixture JSON, production-facing runtime file
+writing, public `--manifest-out`, artifact writer CLI integration, real-data
+use, metrics, and production readiness are unchanged.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

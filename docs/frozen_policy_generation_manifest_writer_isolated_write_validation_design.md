@@ -634,3 +634,20 @@ does not modify the wrapper, workflow YAML, Makefile, Python code/tests,
 fixture JSON, production-facing runtime file writing, public
 `--manifest-out`, artifact writer CLI integration, metrics, real-data use, or
 production readiness.
+
+## 35. Step426 Release-Quality Wrapper Integration Status
+
+Step426 adds the isolated write validation target to the release-quality
+wrapper:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation`
+
+The wrapper now checks this isolated temp-root validation harness after
+manifest writer file writing fixture validation and before config/scoring
+smoke checks. The validation still writes only inside validator-owned
+temporary roots, cleans up residue, and emits body-free count summaries.
+
+Step426 does not change workflow YAML, Makefile, Python code/tests, fixture
+JSON, production-facing runtime file writing, public `--manifest-out`,
+artifact writer CLI integration, metrics, real-data use, or production
+readiness.

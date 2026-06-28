@@ -585,3 +585,15 @@ before config/scoring smoke checks. It does not modify the wrapper, workflow
 YAML, Makefile, Python code/tests, fixture JSON, production-facing runtime
 file writing, public `--manifest-out`, artifact writer CLI integration,
 metrics, real-data use, or production readiness.
+
+## 38. Step426 Isolated Write Validation Release-Quality Wrapper Integration Status
+
+Step426 adds the manifest writer isolated write validation target to the
+release-quality wrapper after manifest writer file writing fixture validation
+and before config/scoring smoke checks.
+
+The file writing boundary remains unchanged. The wrapper integration checks
+the isolated validation harness only; it does not implement production-facing
+runtime file writing, expose public `--manifest-out`, connect artifact writer
+CLI, change workflow YAML, change Makefile, change Python code/tests, change
+fixture JSON, use real data, compute metrics, or claim production readiness.

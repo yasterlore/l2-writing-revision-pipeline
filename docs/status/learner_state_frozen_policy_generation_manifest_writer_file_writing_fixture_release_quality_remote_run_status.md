@@ -293,3 +293,11 @@ readiness, or production readiness.
   validator target. Future isolated write release-quality integration remains
   separate and is not production-facing runtime file writing, not public
   `--manifest-out`, and not production readiness.
+- Step426: noted local release-quality wrapper integration for the isolated
+  write validation target. This marker remains remote evidence only for the
+  earlier static file writing fixture validator target. A separate remote
+  status marker is still needed before claiming GitHub Actions evidence for
+  the isolated write validation wrapper label. The integration is not
+  production-facing runtime file writing, not public `--manifest-out`, not
+  artifact writer CLI integration, not real-data readiness, and not
+  production readiness.

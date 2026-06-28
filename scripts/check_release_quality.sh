@@ -160,6 +160,9 @@ run make check-learner-state-frozen-policy-generation-manifest-writer-runtime
 section "learner-state frozen policy generation manifest writer file writing fixture validation"
 run make check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures
 
+section "learner-state frozen policy generation manifest writer isolated write validation"
+run make check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation
+
 section "config and scoring smoke checks"
 run scripts/check_config_enabled_summary_smoke.sh
 run scripts/check_config_enabled_e2e_smoke.sh

@@ -1371,6 +1371,13 @@ written, no artifact body is produced, and no performance metric is computed.
   Makefile, Python code/tests, fixture JSON, production-facing runtime file
   writing, public `--manifest-out`, artifact writer CLI integration, metrics,
   real-data use, or production readiness.
+- Step426: integrated the standalone manifest writer isolated write
+  validation target into the release-quality wrapper after manifest writer
+  file writing fixture validation and before config/scoring smoke checks. The
+  wrapper integration is limited to `scripts/check_release_quality.sh`; it
+  does not modify workflow YAML, Makefile, Python code/tests, fixture JSON,
+  production-facing runtime file writing, public `--manifest-out`, artifact
+  writer CLI integration, metrics, real-data use, or production readiness.
 
 ## Related Documents
 

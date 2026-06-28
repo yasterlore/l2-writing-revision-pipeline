@@ -322,3 +322,27 @@ writing bugs often leak content through output streams or leave files behind.
 - [Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 21. Step426 Wrapper Integration Status
+
+Step426 implements the release-quality wrapper integration for:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation`
+
+The wrapper now runs this target after manifest writer file writing fixture
+validation and before config/scoring smoke checks, using the label:
+
+`release_quality_check: learner-state frozen policy generation manifest writer isolated write validation`
+
+The integration is intentionally limited to wrapper wiring. It does not
+change workflow YAML, Makefile, Python code/tests, fixture JSON,
+production-facing runtime file writing, public `--manifest-out`, artifact
+writer CLI integration, metrics, real-data use, or production readiness.
+
+The target output remains body-free and count-only. It may report the
+25-case / 150-JSON isolated write validation summary, residue count 0,
+stdout/stderr body suppression, temp-root isolation, and safety flags, but it
+must not copy written file bodies, fixture JSON bodies, request/pointer/result
+bodies, manifest bodies, artifact body payloads, generated policy bodies,
+raw rows, logits, private paths, absolute temp paths, raw learner text, real
+participant data, raw logs, or full job output into docs.
