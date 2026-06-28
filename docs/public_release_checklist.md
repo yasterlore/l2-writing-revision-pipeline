@@ -3359,6 +3359,27 @@ request/pointer/expected-result body examples, artifact body payload examples,
 manifest body examples, private path examples, raw learner text, real
 participant data, or performance evidence.
 
+For Step417, review the docs-only
+[frozen policy generation manifest writer metadata-only file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_record_workflow.md).
+Confirm it defines only the future public-safe recording workflow for a
+remote/manual Release Quality run that includes the manifest writer file
+writing fixture validator target. Confirm the recommended future marker path
+is
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md`.
+Confirm the design records only public-safe run identity metadata, wrapper
+inclusion metadata, pass-only/count-only validator counts, related check
+inclusion summaries, safety review, interpretation, failure handling, and next
+actions. Confirm it does not create a status marker, run remote workflows,
+change workflow YAML, change the wrapper, change Makefile, change Python
+code/tests, change fixture JSON, write manifest files, implement
+`--manifest-out`, run isolated writes, execute runtime file writing, connect
+artifact writer CLI, use real data, compute metrics, or claim production
+readiness. Confirm it does not include raw logs, full job output, copied
+GitHub log blocks, JSON body examples, file writing fixture JSON body
+examples, request/pointer/expected-result body examples, artifact body payload
+examples, manifest body examples, private path examples, raw learner text,
+real participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -643,3 +643,15 @@ release-quality wrapper. This does not change the runtime implementation.
 The runtime remains metadata-only no-file, `--manifest-out` remains
 unimplemented, and isolated write validation, runtime file writing, and
 artifact writer CLI integration remain separate.
+
+## 40. Step417 File Writing Fixture Remote Record Workflow Design Status
+
+Step417 adds the docs-only remote/manual run record workflow for the file
+writing fixture validator wrapper integration:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_record_workflow.md).
+
+This does not change the runtime implementation. The runtime remains
+metadata-only no-file, `--manifest-out` remains unimplemented, and isolated
+write validation, runtime file writing, status marker creation, and artifact
+writer CLI integration remain separate.

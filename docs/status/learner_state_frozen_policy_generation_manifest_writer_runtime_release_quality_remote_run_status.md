@@ -318,3 +318,11 @@ readiness.
   runtime file writing evidence, isolated write evidence, artifact writer CLI
   integration evidence, real-data readiness, performance evidence, or a
   production-readiness claim.
+- Step417: linked the docs-only remote/manual run record workflow for a future
+  file writing fixture validator status marker:
+  [Frozen policy generation manifest writer metadata-only file writing fixture release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_record_workflow.md).
+  This marker remains remote evidence only for the no-file runtime smoke.
+  Step417 does not create the file writing fixture validator marker, run
+  remote workflows, write manifest files, run isolated writes, connect
+  artifact writer CLI, use real data, compute metrics, or claim production
+  readiness.

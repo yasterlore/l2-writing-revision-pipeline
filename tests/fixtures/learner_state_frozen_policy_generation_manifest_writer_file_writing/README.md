@@ -105,6 +105,12 @@ fixture files remain unchanged, and the wrapper integration does not write
 manifest files, run isolated writes, implement `--manifest-out`, or execute
 runtime file writing.
 
+Step417 adds the docs-only remote/manual run record workflow for a future
+public-safe status marker after Release Quality includes this target. It does
+not create the marker, run remote workflows, change fixture files, write
+manifest files, run isolated writes, implement `--manifest-out`, or execute
+runtime file writing.
+
 This fixture root does not execute runtime file writing, isolated writes,
 `--manifest-out`, or artifact writer CLI integration.
 

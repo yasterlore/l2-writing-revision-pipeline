@@ -461,3 +461,16 @@ Step416 does not change workflow YAML, Makefile, Python code/tests, fixture
 JSON, runtime implementation, `--manifest-out`, isolated write validation,
 artifact writer CLI integration, metrics, real data use, or production
 readiness claims.
+
+## 29. Step417 Remote Run Record Workflow Design Status
+
+Step417 adds the docs-only remote/manual run record workflow for a future
+public-safe status marker:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_record_workflow.md).
+
+The file writing boundary remains unchanged. Step417 does not create a status
+marker, run remote workflows, change workflow YAML, change the wrapper, change
+Makefile, change Python code/tests, change fixture JSON, write manifest files,
+implement `--manifest-out`, run isolated writes, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness.

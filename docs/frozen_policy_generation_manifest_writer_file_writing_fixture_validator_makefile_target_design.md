@@ -310,8 +310,22 @@ fixture JSON, write manifest files, implement `--manifest-out`, run isolated
 writes, connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
-## 20. Related Documents
+## 20. Step417 Remote Run Record Workflow Design Status
 
+Step417 adds the docs-only remote/manual run record workflow for the future
+status marker:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_record_workflow.md).
+
+The Makefile target remains unchanged. Step417 does not create a status
+marker, run remote workflows, change workflow YAML, change the wrapper, change
+Makefile, change Python code/tests, change fixture JSON, write manifest files,
+implement `--manifest-out`, run isolated writes, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness.
+
+## 21. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator implementation](../python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)
