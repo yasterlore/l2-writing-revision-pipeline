@@ -319,6 +319,7 @@ writing bugs often leak content through output streams or leave files behind.
 - [Frozen policy generation manifest writer metadata-only isolated write fixture contract design](frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/README.md)
 - [Frozen policy generation manifest writer metadata-only isolated write validation release-quality remote run record workflow](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation manifest writer isolated write validation release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md)
@@ -364,3 +365,23 @@ change the wrapper, change Makefile, change Python code/tests, change fixture
 JSON, implement production-facing runtime file writing, expose public
 `--manifest-out`, connect artifact writer CLI, compute metrics, use real
 data, or claim production readiness.
+
+## 23. Step428 Remote Run Status Marker Status
+
+Step428 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation manifest writer isolated write validation release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_status.md).
+
+The marker records only safe run identity metadata, wrapper inclusion
+metadata, pass-only/count-only isolated write validation summary fields,
+related check inclusion summaries, safety review, interpretation, and
+non-goals. It does not copy raw logs, full job output, written file JSON
+bodies, fixture JSON bodies, request/pointer/expected-result bodies, manifest
+bodies, artifact body payloads, generated policy bodies, private paths,
+absolute temp paths, raw learner text, real participant data, or performance
+evidence.
+
+Step428 does not change workflow YAML, release-quality wrapper, Makefile,
+Python code/tests, fixture JSON, production-facing runtime file writing,
+public `--manifest-out`, artifact writer CLI integration, metrics,
+real-data use, or production readiness.

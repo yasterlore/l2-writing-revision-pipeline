@@ -3546,6 +3546,18 @@ bodies, manifest bodies, artifact body payloads, generated policy bodies,
 private paths, absolute temp paths, raw learner text, real participant data,
 and performance evidence.
 
+For Step428, review
+[learner-state frozen policy generation manifest writer isolated write validation release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_status.md).
+Confirm it records only public-safe remote/manual Release Quality metadata and
+pass-only/count-only isolated write validation summaries. Confirm it does not
+copy raw logs, full job output, written file JSON bodies, fixture JSON
+bodies, request/pointer/expected-result bodies, manifest bodies, artifact
+body payloads, generated policy bodies, private paths, absolute temp paths,
+raw learner text, real participant data, or performance evidence. Confirm it
+does not claim production-facing runtime file writing, public
+`--manifest-out`, artifact writer CLI integration, model performance,
+real-data readiness, or production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

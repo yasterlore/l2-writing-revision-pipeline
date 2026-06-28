@@ -426,8 +426,7 @@ directories are ready for production writes.
 
 ## 18. Next Recommended Steps
 
-- remote/manual Release Quality run
-- status marker creation
+- commit the Step428 status marker after local checks
 - production-facing runtime file writing remains separate
 - public `--manifest-out` remains separate
 - artifact writer CLI integration remains separate
@@ -441,5 +440,26 @@ directories are ready for production writes.
 - [Frozen policy generation manifest writer metadata-only isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/README.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md)
+- [Learner-state frozen policy generation manifest writer isolated write validation release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_status.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
+
+## 20. Step428 Status Marker Creation Status
+
+Step428 creates the public-safe status marker:
+
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_status.md`
+
+The marker records only safe run identity metadata, wrapper inclusion
+metadata, pass-only/count-only isolated write validation summary fields,
+related check inclusion summaries, safety review, interpretation, and
+non-goals. It does not copy raw logs, full job output, written file JSON
+bodies, fixture JSON bodies, request/pointer/expected-result bodies, manifest
+bodies, artifact body payloads, generated policy bodies, raw rows, logits,
+private paths, absolute temp paths, raw learner text, real participant data,
+or performance evidence.
+
+Step428 does not change workflow YAML, release-quality wrapper, Makefile,
+Python code/tests, fixture JSON, production-facing runtime file writing,
+public `--manifest-out`, artifact writer CLI integration, metrics,
+real-data use, or production readiness.

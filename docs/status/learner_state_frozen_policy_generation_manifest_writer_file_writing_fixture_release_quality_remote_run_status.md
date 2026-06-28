@@ -310,3 +310,12 @@ readiness, or production readiness.
   pass-only/count-only, with no raw logs, written file JSON bodies, fixture
   bodies, private paths, absolute temp paths, raw learner text, performance
   evidence, real-data readiness, or production readiness claim.
+- Step428: linked the separate isolated write validation remote/manual status
+  marker:
+  [Learner-state frozen policy generation manifest writer isolated write validation release-quality remote run status](learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_status.md).
+  This marker remains remote evidence only for the earlier static file
+  writing fixture validator target. The isolated write validation status
+  marker is separate evidence for the isolated temp-root validation harness
+  and is not production-facing runtime file writing, not public
+  `--manifest-out`, not artifact writer CLI integration, not real-data
+  readiness, and not production readiness.

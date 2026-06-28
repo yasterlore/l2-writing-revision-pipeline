@@ -1388,6 +1388,19 @@ written, no artifact body is produced, and no performance metric is computed.
   implement production-facing runtime file writing, expose public
   `--manifest-out`, connect artifact writer CLI, use real data, compute
   metrics, or claim production readiness.
+- Step428: created the public-safe remote/manual Release Quality status
+  marker for manifest writer isolated write validation. The marker records
+  only safe run identity metadata, wrapper inclusion metadata,
+  pass-only/count-only isolated write validation summary fields, related
+  check summaries, safety review, interpretation, and non-goals. It does not
+  copy raw logs, full job output, written file JSON bodies, fixture JSON
+  bodies, request/pointer/expected-result bodies, manifest bodies, artifact
+  body payloads, generated policy bodies, private paths, absolute temp paths,
+  raw learner text, real participant data, or performance evidence. It does
+  not change workflow YAML, release-quality wrapper, Makefile, Python
+  code/tests, fixture JSON, production-facing runtime file writing, public
+  `--manifest-out`, artifact writer CLI integration, metrics, real-data use,
+  or production readiness.
 
 ## Related Documents
 
@@ -1420,6 +1433,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer metadata-only isolated write validation Makefile target design](frozen_policy_generation_manifest_writer_isolated_write_validation_makefile_target_design.md)
 - [Frozen policy generation manifest writer metadata-only isolated write validation release-quality integration design](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only isolated write validation release-quality remote run record workflow](frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation manifest writer isolated write validation release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_status.md)
 - [Makefile manifest writer isolated write validation target](../Makefile)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator implementation](../python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)

@@ -612,3 +612,23 @@ workflow YAML, change the wrapper, change Makefile, change Python code/tests,
 change fixture JSON, implement production-facing runtime file writing,
 expose public `--manifest-out`, connect artifact writer CLI, use real data,
 compute metrics, or claim production readiness.
+
+## 40. Step428 Isolated Write Validation Remote Run Status Marker Status
+
+Step428 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation manifest writer isolated write validation release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_status.md).
+
+The file writing boundary remains unchanged. The marker records only safe run
+identity metadata, wrapper inclusion metadata, pass-only/count-only isolated
+write validation summary fields, related check summaries, safety review,
+interpretation, and non-goals. It does not copy raw logs, full job output,
+written file JSON bodies, fixture JSON bodies, request/pointer/expected-result
+bodies, manifest bodies, artifact body payloads, generated policy bodies,
+private paths, absolute temp paths, raw learner text, real participant data,
+or performance evidence.
+
+Step428 does not change workflow YAML, release-quality wrapper, Makefile,
+Python code/tests, fixture JSON, production-facing runtime file writing,
+public `--manifest-out`, artifact writer CLI integration, metrics,
+real-data use, or production readiness.

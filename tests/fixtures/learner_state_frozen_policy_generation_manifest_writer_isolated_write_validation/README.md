@@ -174,3 +174,16 @@ fixture JSON bodies, isolated write request bodies, manifest writer request
 bodies, pointer bodies, expected result bodies, written file JSON bodies,
 private paths, absolute temp paths, raw learner text, raw logs, or full job
 output.
+
+## Step428 Remote Run Status Marker
+
+Step428 creates the public-safe remote/manual Release Quality status marker:
+
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_status.md`
+
+This fixture root remains unchanged. The marker records only safe run metadata
+and pass-only/count-only summaries. It does not copy fixture JSON bodies,
+isolated write request bodies, manifest writer request bodies, pointer
+bodies, expected result bodies, written file JSON bodies, private paths,
+absolute temp paths, raw learner text, raw logs, full job output, real
+participant data, metrics, or production readiness evidence.
