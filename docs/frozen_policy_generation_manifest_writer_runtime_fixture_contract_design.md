@@ -528,10 +528,24 @@ validation target, does not validate all 31 runtime fixture contracts, does
 not write manifest files, does not generate manifest bodies, does not connect
 artifact writer CLI, and is not added to release-quality in this step.
 
-## 37. Related Documents
+## 37. Step404 Runtime Smoke Release-Quality Integration Design Status
+
+Step404 adds the docs-only release-quality integration design for the runtime
+smoke target:
+
+[Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md).
+
+The fixture contract remains unchanged. Runtime fixture validation remains a
+separate release-quality check from the future runtime smoke wrapper entry.
+The design does not change wrapper, workflow YAML, Makefile, Python
+code/tests, fixture JSON, manifest file writing, artifact writer CLI
+integration, real-data use, metrics, or production readiness.
+
+## 38. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
+- [Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)

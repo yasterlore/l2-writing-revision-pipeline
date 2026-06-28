@@ -575,3 +575,17 @@ runtime fixture root statically. The new runtime smoke target executes one
 metadata-only no-file runtime pass against the valid minimal runtime fixture.
 It is not a replacement for fixture validation and is not added to
 release-quality in this step.
+
+## 42. Step404 Runtime Smoke Release-Quality Integration Design Status
+
+Step404 adds the docs-only release-quality integration design for the runtime
+smoke target:
+
+[Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md).
+
+The validator remains unchanged. The runtime smoke wrapper design is separate
+from runtime fixture validation: the validator checks 31 fixture contracts
+statically, while the runtime smoke executes one valid metadata-only no-file
+runtime case. Step404 does not change wrapper, workflow YAML, Makefile,
+Python code/tests, fixture JSON, manifest file writing, artifact writer CLI
+integration, real-data use, metrics, or production readiness.

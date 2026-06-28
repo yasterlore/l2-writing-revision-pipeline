@@ -482,10 +482,24 @@ files, does not add `--manifest-out`, does not generate manifest bodies, does
 not connect artifact writer CLI, does not use real data, does not compute
 metrics, and does not claim production readiness.
 
-## 27. Related Documents
+## 27. Step404 Release-Quality Integration Design Status
+
+Step404 adds the docs-only release-quality integration design for the runtime
+smoke target:
+
+[Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md).
+
+The runtime implementation remains unchanged. The design does not add wrapper
+integration, change workflow YAML, change Makefile, change Python code/tests,
+change fixture JSON, write manifest files, add `--manifest-out`, generate
+manifest bodies, connect artifact writer CLI, use real data, compute metrics,
+or claim production readiness.
+
+## 28. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
+- [Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)

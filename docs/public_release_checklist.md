@@ -3138,6 +3138,16 @@ Python code/tests, does not change fixture JSON, does not add
 artifact writer CLI, uses no real data, computes no metrics, and makes no
 production-readiness claim.
 
+For Step404, review the docs-only
+[frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md).
+Confirm it proposes only the future wrapper insertion point, wrapper command,
+label, expected body-free output, failure interpretation, log safety,
+relation to runtime fixture validation, testing plan, and future marker path.
+Confirm it does not change the wrapper, workflow YAML, Makefile, Python
+code/tests, fixture JSON, write manifest files, add `--manifest-out`,
+generate manifest bodies, connect artifact writer CLI, use real data,
+compute metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

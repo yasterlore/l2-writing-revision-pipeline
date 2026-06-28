@@ -1173,6 +1173,14 @@ written, no artifact body is produced, and no performance metric is computed.
   bodies, does not add `--manifest-out`, does not connect artifact writer
   CLI, does not change release-quality or workflow YAML, does not use real
   data, does not compute metrics, and does not claim production readiness.
+- Step404: added the docs-only release-quality integration design for the
+  standalone manifest writer runtime smoke target. The design proposes placing
+  the runtime smoke after runtime fixture validation and before config/scoring
+  smoke checks, with body-free logging and pass-only/count-only future remote
+  marker policy. It does not change the wrapper, workflow YAML, Makefile,
+  Python code/tests, fixture JSON, manifest file writing, `--manifest-out`,
+  artifact writer CLI integration, real-data use, metrics, or production
+  readiness.
 
 ## Related Documents
 
@@ -1210,6 +1218,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
+- [Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime](../python/learner_state/frozen_policy_generation_manifest_writer.py)
 - [Frozen policy generation manifest writer runtime tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer.py)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)

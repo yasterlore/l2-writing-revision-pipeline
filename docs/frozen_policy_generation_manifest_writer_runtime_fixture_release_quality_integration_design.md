@@ -457,3 +457,16 @@ is not added to the release-quality wrapper in Step403. Wrapper integration,
 workflow evidence, remote/manual run recording, manifest file writing,
 artifact writer CLI integration, real-data use, metrics, and production
 readiness remain separate.
+
+## 27. Step404 Runtime Smoke Release-Quality Integration Design Status
+
+Step404 adds a separate docs-only release-quality integration design for the
+runtime smoke target:
+
+[Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md).
+
+This document remains the release-quality integration design for runtime
+fixture validation. The runtime smoke integration design is separate and does
+not change this wrapper entry, workflow YAML, Makefile, Python code/tests,
+fixture JSON, manifest file writing, artifact writer CLI integration,
+real-data use, metrics, or production readiness.

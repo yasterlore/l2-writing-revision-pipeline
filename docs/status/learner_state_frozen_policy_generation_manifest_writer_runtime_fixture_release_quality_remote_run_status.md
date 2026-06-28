@@ -251,3 +251,11 @@ correctness, real-data readiness, or production readiness.
   release-quality, not remote-run evidence, not manifest file writing
   evidence, not artifact writer CLI integration evidence, and not a
   production-readiness claim.
+- Step404: linked the separate docs-only release-quality integration design
+  for the runtime writer smoke target:
+  [Frozen policy generation manifest writer runtime release-quality integration design](../frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md).
+  This marker remains remote evidence only for the runtime fixture validator
+  release-quality run. The runtime writer smoke release-quality design is not
+  wrapper evidence yet, not remote-run evidence yet, not manifest file
+  writing evidence, not artifact writer CLI integration evidence, and not a
+  production-readiness claim.
