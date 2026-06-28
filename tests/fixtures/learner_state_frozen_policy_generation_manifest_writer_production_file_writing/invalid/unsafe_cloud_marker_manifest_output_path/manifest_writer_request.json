@@ -1,0 +1,18 @@
+{
+  "allow_manifest_file_writing": true,
+  "allow_overwrite": false,
+  "include_manifest_body": false,
+  "manifest_out": "CLOUD_MARKER_MANIFEST_OUTPUT_PATH_SENTINEL",
+  "manifest_writer_mode": "metadata_only_file",
+  "no_oracle_notice": "no_oracle_metadata_only",
+  "non_proof_notice": "contract_fixture_not_proof",
+  "overwrite_policy": "fail_if_exists",
+  "release_quality_reference_ids": [],
+  "request_id": "synthetic_invalid_unsafe_cloud_marker_manifest_output_path",
+  "safe_output_root_policy": "tmp_frozen_policy_generation_manifest_safe_relative_only",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_runtime_request_v0.1",
+  "synthetic_notice": "synthetic_fixture_only",
+  "validation_reference_ids": [
+    "synthetic_validation_reference_metadata_only"
+  ]
+}

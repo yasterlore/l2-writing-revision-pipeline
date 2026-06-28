@@ -16,7 +16,7 @@ body generation, or a production readiness claim.
 - static file writing fixture validator exists
 - isolated write validation exists
 - release-quality remote markers exist for static and isolated validation
-- production file writing fixture root does not exist
+- production file writing fixture root is created in Step431
 - production file writing validator does not exist
 - runtime file writing does not exist
 - public `--manifest-out` is not implemented
@@ -555,3 +555,30 @@ writing fixture contract design. It does not create fixture JSON, implement
 production-facing runtime file writing, expose public `--manifest-out`, change
 Makefile/wrapper/workflow, change Python code/tests, connect artifact writer
 CLI, use real data, compute metrics, or claim production readiness.
+
+## 34. Step431 Fixture Creation Status
+
+Step431 creates the production-facing metadata-only manifest file writing
+fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_production_file_writing/`
+
+Final counts:
+
+- `total_cases=32`
+- `valid_cases=8`
+- `invalid_cases=24`
+- `json_files_per_case=5`
+- `total_json_files=160`
+- `pass_written_cases=7`
+- `pass_no_write_cases=1`
+- `usage_error_cases=12`
+- `fail_closed_cases=12`
+- `matched_cases=32`
+- `mismatched_cases=0`
+- `input_error_cases=0`
+
+The fixture root is synthetic-only and metadata-only. Step431 does not
+implement a validator, production-facing runtime file writing, public
+`--manifest-out`, Makefile targets, release-quality integration, artifact
+writer CLI integration, real-data use, metrics, or production readiness.

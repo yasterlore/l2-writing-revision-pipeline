@@ -1,0 +1,12 @@
+{
+  "artifact_body_available": true,
+  "artifact_body_id": "synthetic_artifact_body_metadata_only_v0_1",
+  "include_body_payload": false,
+  "include_private_paths": false,
+  "include_raw_rows": false,
+  "pointer_id": "artifact_body_pointer_invalid_unsupported_artifact_writer_cli_integration",
+  "safe_metadata_reference_id": "safe_artifact_body_metadata_reference_v0_1",
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_generation_result_pointer_v0.1",
+  "source_fixture_id": "invalid/unsupported_artifact_writer_cli_integration",
+  "source_kind": "synthetic_metadata_pointer"
+}

@@ -664,3 +664,17 @@ does not create fixture JSON, implement production-facing runtime file
 writing, expose public `--manifest-out`, change Makefile/wrapper/workflow,
 change Python code/tests, connect artifact writer CLI, use real data, compute
 metrics, or claim production readiness.
+
+## 43. Step431 Production File Writing Fixture Root Status
+
+Step431 creates the production-facing metadata-only manifest file writing
+fixture root:
+
+[Frozen policy generation manifest writer production file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_production_file_writing/README.md).
+
+The file writing boundary remains a design boundary in this step. The root is
+separate from existing static file writing fixtures and isolated temp-root
+validation fixtures. It does not implement a validator, production-facing
+runtime file writing, public `--manifest-out`, Makefile/wrapper/workflow
+changes, Python code/tests changes, artifact writer CLI integration,
+real-data use, metrics, or production readiness.

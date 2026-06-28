@@ -402,3 +402,19 @@ JSON, implement production-facing runtime file writing, expose public
 `--manifest-out`, change Makefile/wrapper/workflow, change Python code/tests,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
+
+## 25. Step431 Fixture Root Status
+
+Step431 creates the production-facing metadata-only manifest file writing
+fixture root:
+
+[Frozen policy generation manifest writer production file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_production_file_writing/README.md).
+
+The root contains 32 synthetic-only, metadata-only cases and 160 JSON files:
+8 valid cases, 24 invalid / expected-failure cases, 7 `pass_written` cases,
+1 `pass_no_write` case, 12 `usage_error` cases, and 12 `fail_closed` cases.
+
+This does not implement production-facing runtime file writing, public
+`--manifest-out`, a validator, Makefile target, release-quality integration,
+artifact writer CLI integration, real-data use, metrics, or production
+readiness.

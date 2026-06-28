@@ -1,0 +1,15 @@
+{
+  "case_category": "fail_closed",
+  "case_id": "invalid/request_pointer_expected_body_leakage",
+  "expected_reason_codes": [
+    "request_body_leakage",
+    "pointer_body_leakage",
+    "expected_body_leakage"
+  ],
+  "fixture_kind": "production_file_writing_contract",
+  "no_oracle_notice": "no_oracle_metadata_only",
+  "non_proof_notice": "contract_fixture_not_proof",
+  "production_readiness_notice": "not_production_readiness",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_production_file_writing_case_metadata_v0.1",
+  "synthetic_notice": "synthetic_fixture_only"
+}

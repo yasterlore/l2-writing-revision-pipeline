@@ -543,6 +543,19 @@ writing fixtures, runtime file writing implementation, artifact writer CLI
 integration, Makefile/wrapper/workflow changes, Python code/tests changes,
 real-data use, metrics, and production-readiness claims remain separate.
 
+## 46. Step431 Production File Writing Fixture Root Status
+
+Step431 creates the production-facing metadata-only manifest file writing
+fixture root:
+
+[Frozen policy generation manifest writer production file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_production_file_writing/README.md).
+
+This does not change the runtime implementation. The runtime remains no-file
+today, public `--manifest-out` remains unimplemented, and the production file
+writing validator, runtime file writing implementation, Makefile/wrapper/
+workflow changes, Python code/tests changes, artifact writer CLI integration,
+real-data use, metrics, and production-readiness claims remain separate.
+
 ## 44. Step421 Isolated Write Fixture Root Status
 
 Step421 creates the separate synthetic-only, metadata-only isolated write

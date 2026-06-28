@@ -3594,6 +3594,25 @@ written file bodies, manifest bodies, artifact body payloads, generated
 policy bodies, private paths, absolute local or temp paths, raw learner text,
 real participant data, or performance evidence.
 
+For Step431, review the production-facing metadata-only manifest file writing
+fixture root:
+[frozen policy generation manifest writer production file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_production_file_writing/README.md).
+Confirm it contains 32 synthetic-only cases and 160 metadata-only JSON files:
+8 valid cases, 24 invalid / expected-failure cases, 7 `pass_written` cases,
+1 `pass_no_write` case, 12 `usage_error` cases, and 12 `fail_closed` cases.
+Confirm each case has exactly `case_metadata.json`,
+`manifest_writer_request.json`, `artifact_writer_result_pointer.json`,
+`artifact_body_generation_result_pointer.json`, and
+`expected_production_file_writing_result.json`. Confirm the fixtures use only
+safe relative manifest output paths or sentinel identifiers, and do not
+include real absolute paths, private paths, raw learner text, manifest bodies,
+artifact body payloads, generated policy bodies, raw rows, logits, real
+participant data, performance evidence, or production-readiness claims.
+Confirm Step431 does not implement a validator, production-facing runtime file
+writing, public `--manifest-out`, Makefile target, release-quality
+integration, workflow changes, artifact writer CLI integration, real-data use,
+metrics, or production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
