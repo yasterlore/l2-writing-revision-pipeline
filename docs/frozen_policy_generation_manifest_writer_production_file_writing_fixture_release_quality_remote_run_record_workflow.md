@@ -451,7 +451,8 @@ paths, or raw learner text.
 
 ## 19. Next Recommended Steps
 
-- Step439 remote/manual Release Quality run status marker
+- commit the Step439 remote/manual Release Quality run status marker after
+  local checks
 - production-facing runtime file writing remains separate
 - public `--manifest-out` remains separate
 - artifact writer CLI integration remains separate
@@ -466,5 +467,24 @@ paths, or raw learner text.
 - [Frozen policy generation manifest writer production file writing fixture contract design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer production file writing design](frozen_policy_generation_manifest_writer_production_file_writing_design.md)
 - [Production file writing fixture README](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_production_file_writing/README.md)
-- Future status marker:
-  `docs/status/learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md`
+- [Learner-state frozen policy generation manifest writer production file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md)
+
+## 21. Step439 Status Marker Creation
+
+Step439 creates the public-safe pass-only/count-only status marker for the
+successful remote/manual Release Quality run that included manifest writer
+production file writing fixture validation:
+
+[Learner-state frozen policy generation manifest writer production file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md).
+
+The marker records only safe metadata such as workflow identity, wrapper
+inclusion, case counts, safety flags, and non-goal interpretation. It does not
+copy raw logs, full job output, fixture JSON bodies, request bodies, pointer
+bodies, expected-result bodies, written file bodies, manifest bodies, artifact
+payloads, generated policy bodies, raw rows, logits, private paths, absolute
+paths, raw learner text, real participant data, or performance evidence.
+
+Step439 does not modify workflow YAML, the release-quality wrapper, Makefile,
+Python code/tests, fixture JSON, runtime writer behavior, public
+`--manifest-out`, artifact writer CLI integration, real-data use, metrics, or
+production readiness.

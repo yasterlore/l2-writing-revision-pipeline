@@ -85,15 +85,12 @@ Available markers:
   pass-only/count-only and does not copy raw logs, full job output, written
   file JSON bodies, fixture JSON bodies, private paths, absolute temp paths,
   raw learner text, or performance evidence.
-
-Planned markers:
-
-- `learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md`:
-  future public-safe pass-only/count-only marker for a remote/manual Release
-  Quality run that includes manifest writer production file writing fixture
-  validation. The marker does not exist yet and should not copy raw logs,
-  fixture JSON bodies, written file bodies, private paths, absolute paths,
-  raw learner text, or performance evidence.
+- [Learner-state frozen policy generation manifest writer production file writing fixture release-quality remote run status](learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after manifest writer
+  production file writing fixture validation integration. It remains
+  pass-only/count-only and does not copy raw logs, full job output, fixture
+  JSON bodies, written file bodies, private paths, absolute paths, raw learner
+  text, or performance evidence.
 
 Related recap:
 
