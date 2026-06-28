@@ -651,8 +651,21 @@ writing, no `--manifest-out`, no Makefile/wrapper/workflow change, no artifact
 writer CLI integration, no real data, no metrics, and no production readiness
 claim.
 
-## 47. Related Documents
+## 47. Step411 File Writing Fixture Validator Design Status
 
+Step411 adds the docs-only static validator design for the metadata-only file
+writing fixture root:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md).
+
+This remains inside the same boundary: no validator implementation, no fixture
+JSON change, no runtime file writing, no `--manifest-out`, no isolated write
+validation, no Makefile/wrapper/workflow change, no artifact writer CLI
+integration, no real data, no metrics, and no production readiness claim.
+
+## 48. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

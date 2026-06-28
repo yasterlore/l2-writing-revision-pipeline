@@ -273,3 +273,9 @@ readiness.
   validator evidence, runtime file writing evidence, isolated write evidence,
   artifact writer CLI integration evidence, real-data readiness, performance
   evidence, or a production-readiness claim.
+- Step411: linked the docs-only file writing fixture validator design:
+  [Frozen policy generation manifest writer metadata-only file writing fixture validator design](../frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md).
+  This marker remains remote evidence only for the no-file runtime smoke. The
+  validator design is not implemented validator evidence, runtime file writing
+  evidence, isolated write evidence, artifact writer CLI integration evidence,
+  real-data readiness, performance evidence, or a production-readiness claim.

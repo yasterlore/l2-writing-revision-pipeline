@@ -73,6 +73,11 @@ The future validator should statically check required files, schema versions,
 case ID consistency, category counts, safe path policy, content policy,
 no-oracle notices, reason codes, summary counts, and body-free output.
 
+Step411 adds the docs-only validator design for that future static checker.
+The validator is not implemented in this fixture root, and this fixture root
+does not execute runtime file writing, isolated writes, `--manifest-out`, or
+artifact writer CLI integration.
+
 A later isolated write validation step should perform actual writes only in an
 isolated safe root, verify parseable JSON, verify forbidden field counts are
 zero, and clean up residue.

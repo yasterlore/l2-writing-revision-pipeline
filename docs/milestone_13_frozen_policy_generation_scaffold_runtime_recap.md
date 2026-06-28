@@ -1232,6 +1232,15 @@ written, no artifact body is produced, and no performance metric is computed.
   write validation, no Makefile/wrapper/workflow change, no artifact writer
   CLI integration, no real data, no metrics, and no production readiness
   claim.
+- Step411: added the docs-only static validator design for the metadata-only
+  manifest writer file writing fixture root. The design fixes the future
+  validator module, CLI/API shape, validation phases, expected root summary,
+  request/pointer/expected-result policy checks, safe path and content checks,
+  reason code taxonomy, selector safety, exit codes, future tests, and staging.
+  It does not implement the validator, change fixture JSON, write files, add
+  `--manifest-out`, run isolated writes, change Makefile, change the wrapper,
+  change workflow YAML, connect artifact writer CLI, use real data, compute
+  metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -1253,6 +1262,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)
+- [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer fixture validator](../python/learner_state/frozen_policy_generation_manifest_writer_fixture_validation.py)
 - [Frozen policy generation manifest writer fixture validator Makefile target design](frozen_policy_generation_manifest_writer_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation manifest writer fixture release-quality integration design](frozen_policy_generation_manifest_writer_fixture_release_quality_integration_design.md)

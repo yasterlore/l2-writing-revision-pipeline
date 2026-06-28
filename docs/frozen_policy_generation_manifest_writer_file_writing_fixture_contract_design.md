@@ -578,8 +578,21 @@ manifest files, add `--manifest-out`, change runtime code, change Makefile,
 change the release-quality wrapper, change workflow YAML, connect artifact
 writer CLI, use real data, compute metrics, or claim production readiness.
 
-## 28. Related Documents
+## 28. Step411 Fixture Validator Design Status
 
+Step411 adds the docs-only static validator design for this fixture root:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md).
+
+The fixture contract remains unchanged. Step411 does not implement the
+validator, change fixture JSON, write manifest files, add `--manifest-out`,
+add isolated write validation, change Makefile, change the release-quality
+wrapper, change workflow YAML, connect artifact writer CLI, use real data,
+compute metrics, or claim production readiness.
+
+## 29. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)

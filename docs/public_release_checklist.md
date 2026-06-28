@@ -3241,6 +3241,23 @@ this step does not implement a validator, write manifest files, add
 change Makefile, change the wrapper, change workflow YAML, connect artifact
 writer CLI, use real data, compute metrics, or claim production readiness.
 
+For Step411, review the docs-only
+[frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md).
+Confirm it defines only the future static validator design for the 39-case /
+195-JSON fixture root: module name, CLI arguments, default root, APIs,
+dataclasses, validation phases, expected summary fields, request/pointer/
+expected-result checks, safe path policy, file content policy, reason code
+taxonomy, selector safety, exit codes, future tests, and Makefile /
+release-quality staging. Confirm it does not implement a validator, change
+fixture JSON, write manifest files, add `--manifest-out`, add isolated write
+validation, change Python code/tests, change Makefile, change the wrapper,
+change workflow YAML, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness. Confirm it does not include raw logs,
+JSON body examples, file writing fixture JSON body examples, request/pointer/
+expected-result body examples, artifact body payload examples, manifest body
+examples, private path examples, raw learner text, real participant data, or
+performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
