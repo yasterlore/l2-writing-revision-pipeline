@@ -272,3 +272,11 @@ readiness, or production readiness.
   not yet a Makefile target, not yet release-quality integrated, not remote
   status evidence, not production-facing runtime file writing, not public
   `--manifest-out`, and not production readiness.
+- Step423: linked the docs-only isolated write validation Makefile target
+  design:
+  [Frozen policy generation manifest writer metadata-only isolated write validation Makefile target design](../frozen_policy_generation_manifest_writer_isolated_write_validation_makefile_target_design.md).
+  This marker remains remote evidence only for the static file writing
+  fixture validator target. The isolated write Makefile target is not yet
+  implemented, not yet release-quality integrated, not remote status
+  evidence, not production-facing runtime file writing, not public
+  `--manifest-out`, and not production readiness.

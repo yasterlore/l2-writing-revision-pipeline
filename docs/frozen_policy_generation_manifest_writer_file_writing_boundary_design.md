@@ -543,3 +543,17 @@ validation, implement runtime file writing, add `--manifest-out`, change
 Makefile/wrapper/workflow, change Python code/tests, change fixture JSON,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
+
+## 35. Step423 Isolated Write Validation Makefile Target Design Status
+
+Step423 adds the docs-only Makefile target design for the isolated write
+validation harness:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation Makefile target design](frozen_policy_generation_manifest_writer_isolated_write_validation_makefile_target_design.md).
+
+The file writing boundary remains unchanged. The design proposes a future
+standalone target that would run the isolated write validation CLI against the
+25-case / 150-JSON fixture root. It does not modify Makefile, wrapper,
+workflow YAML, Python code/tests, fixture JSON, production-facing runtime file
+writing, public `--manifest-out`, artifact writer CLI integration, metrics,
+real-data use, or production readiness.

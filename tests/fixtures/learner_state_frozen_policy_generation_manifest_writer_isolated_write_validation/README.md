@@ -112,3 +112,17 @@ The validator does not implement production-facing runtime file writing,
 public `--manifest-out`, Makefile targets, release-quality integration,
 workflow changes, artifact writer CLI integration, real-data use, metrics, or
 production readiness.
+
+## Step423 Makefile Target Design
+
+Step423 designs a future standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation`
+
+The target would run the isolated write validation CLI against this fixture
+root and preserve body-free, count-only output. Step423 does not implement the
+target, change Makefile, change the release-quality wrapper, change workflow
+YAML, change Python code/tests, change fixture JSON, implement
+production-facing runtime file writing, expose public `--manifest-out`,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.

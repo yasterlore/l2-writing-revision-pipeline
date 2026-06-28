@@ -543,6 +543,7 @@ use real data, compute metrics, or claim production readiness.
 
 - [Frozen policy generation manifest writer metadata-only isolated write fixture contract design](frozen_policy_generation_manifest_writer_isolated_write_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/README.md)
+- [Frozen policy generation manifest writer metadata-only isolated write validation Makefile target design](frozen_policy_generation_manifest_writer_isolated_write_validation_makefile_target_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
@@ -584,3 +585,20 @@ Step422 does not implement production-facing runtime file writing, public
 `--manifest-out`, Makefile targets, release-quality integration, workflow
 changes, fixture JSON changes, artifact writer CLI integration, metrics,
 real-data use, or production readiness.
+
+## 32. Step423 Makefile Target Design Status
+
+Step423 adds the docs-only standalone Makefile target design:
+
+[Frozen policy generation manifest writer metadata-only isolated write validation Makefile target design](frozen_policy_generation_manifest_writer_isolated_write_validation_makefile_target_design.md).
+
+The proposed target is:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation`
+
+It would run the isolated write validation CLI against the 25-case / 150-JSON
+fixture root and emit a body-free count summary with residue count 0. Step423
+does not modify Makefile, release-quality wrapper, workflow YAML, Python
+code/tests, fixture JSON, production-facing runtime file writing, public
+`--manifest-out`, artifact writer CLI integration, metrics, real-data use, or
+production readiness.

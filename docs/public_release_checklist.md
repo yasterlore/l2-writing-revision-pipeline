@@ -3473,6 +3473,24 @@ production-facing runtime file writing, expose public `--manifest-out`,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
+For Step423, review the docs-only
+[frozen policy generation manifest writer metadata-only isolated write validation Makefile target design](frozen_policy_generation_manifest_writer_isolated_write_validation_makefile_target_design.md).
+Confirm it proposes only the standalone target
+`check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation`,
+the CLI command, help text, body-free expected summary, failure behavior,
+relation to the current isolated write CLI, relation to static file writing
+fixture validation, runtime target separation, release-quality staging, docs
+safety, and future implementation tests. Confirm it does not implement the
+Makefile target, modify wrapper/workflow/Python code/tests/fixture JSON,
+implement production-facing runtime file writing, expose public
+`--manifest-out`, connect artifact writer CLI, use real data, compute
+metrics, or claim production readiness. Confirm it does not include raw logs,
+full job output, fixture JSON bodies, isolated_write_request bodies,
+manifest_writer_request bodies, pointer bodies, expected result bodies,
+written file bodies, manifest bodies, artifact body payloads, generated
+policy bodies, private paths, absolute temp paths, raw learner text, real
+participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

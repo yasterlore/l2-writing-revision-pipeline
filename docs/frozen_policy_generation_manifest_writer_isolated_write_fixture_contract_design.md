@@ -519,6 +519,7 @@ metadata-only and safe.
 
 - [Frozen policy generation manifest writer metadata-only isolated write validation design](frozen_policy_generation_manifest_writer_isolated_write_validation_design.md)
 - [Frozen policy generation manifest writer metadata-only isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/README.md)
+- [Frozen policy generation manifest writer metadata-only isolated write validation Makefile target design](frozen_policy_generation_manifest_writer_isolated_write_validation_makefile_target_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
@@ -563,3 +564,15 @@ It does not change fixture JSON, implement production-facing runtime file
 writing, expose public `--manifest-out`, add Makefile targets, add
 release-quality integration, change workflow YAML, connect artifact writer
 CLI, use real data, compute metrics, or claim production readiness.
+
+## 31. Step423 Makefile Target Design Status
+
+Step423 adds the docs-only design for a future standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation`
+
+The design keeps this fixture contract separate from Makefile implementation
+and release-quality integration. It does not modify Makefile, wrapper,
+workflow YAML, Python code/tests, fixture JSON, production-facing runtime file
+writing, public `--manifest-out`, artifact writer CLI integration, metrics,
+real-data use, or production readiness.
