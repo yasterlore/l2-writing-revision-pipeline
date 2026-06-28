@@ -279,7 +279,7 @@ Record these only as pass-only / count-only summaries when available:
 
 ## 10. Safety Review
 
-The future marker must state:
+The status marker should state:
 
 - raw logs not copied
 - full job output not copied
@@ -327,7 +327,7 @@ If the remote run fails:
 - summarize failure category only
 - do not include private paths or absolute temp paths
 - fix in a separate branch
-- rerun and update the future status marker
+- rerun and update the status marker
 
 ## 13. Workflow For Actually Recording Later
 
@@ -344,7 +344,7 @@ Future steps:
 
 ## 14. Relation To Public Release Checklist
 
-The future status marker improves traceability. It is not a formal public
+The status marker improves traceability. It is not a formal public
 release, not production file writing readiness, not artifact writer CLI
 readiness, not performance evidence, and not real-data readiness.
 
@@ -388,11 +388,24 @@ the metadata-only no-file command produced the expected safe summary.
 
 ## 17. Next Recommended Steps
 
-- Step407: remote/manual Release Quality run status marker creation
 - later: manifest file writing design / implementation
 - later: artifact writer CLI integration design / implementation
 
-## 18. Related Documents
+## 18. Step407 Status Marker Creation Status
+
+Step407 creates the public-safe remote/manual Release Quality status marker
+for the runtime smoke target:
+
+[Learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md).
+
+The marker records only safe run identity metadata, wrapper inclusion
+metadata, pass-only/count-only runtime smoke summary fields, related check
+summaries, safety review, interpretation, and non-goals. It does not copy raw
+logs, full job output, request/pointer bodies, fixture JSON bodies, artifact
+body payloads, generated policy bodies, manifest bodies, private paths, raw
+learner text, real participant data, or performance evidence.
+
+## 19. Related Documents
 
 - [Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
@@ -403,6 +416,7 @@ the metadata-only no-file command produced the expected safe summary.
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md)
+- [Learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)

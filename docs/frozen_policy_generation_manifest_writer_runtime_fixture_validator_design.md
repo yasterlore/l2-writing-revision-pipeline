@@ -613,3 +613,16 @@ continues to record static 31-case / 155-JSON fixture validation. It does not
 run workflow jobs, create a status marker, write manifest files, connect
 artifact writer CLI, use real data, compute metrics, or claim production
 readiness.
+
+## 45. Step407 Runtime Smoke Status Marker Status
+
+Step407 creates the public-safe remote/manual Release Quality status marker
+for the runtime smoke target:
+
+[Learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md).
+
+This validator remains unchanged. The new marker records runtime smoke
+evidence, while this validator and its earlier marker remain static fixture
+contract evidence. The marker does not replace 31-case / 155-JSON fixture
+validation and does not prove manifest file writing, artifact writer CLI
+integration, real-data readiness, metrics, or production readiness.

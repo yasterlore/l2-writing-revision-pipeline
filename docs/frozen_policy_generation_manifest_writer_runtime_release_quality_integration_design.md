@@ -381,11 +381,24 @@ compute metrics, or claim production readiness.
 
 ## 20. Next Recommended Steps
 
-- Step407: remote/manual run status marker
 - later: manifest file writing design / implementation
 - later: artifact writer CLI integration design / implementation
 
-## 21. Related Documents
+## 21. Step407 Remote Run Status Marker Status
+
+Step407 creates the public-safe remote/manual Release Quality status marker
+for the runtime smoke target:
+
+[Learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md).
+
+The marker is pass-only/count-only and records safe run identity metadata,
+wrapper inclusion metadata, runtime smoke summary fields, related check
+summaries, safety review, interpretation, and non-goals. It does not copy raw
+logs, full job output, request/pointer bodies, fixture JSON bodies, artifact
+body payloads, generated policy bodies, manifest bodies, private paths, raw
+learner text, real participant data, or performance evidence.
+
+## 22. Related Documents
 
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
@@ -395,6 +408,7 @@ compute metrics, or claim production readiness.
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md)
+- [Learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)

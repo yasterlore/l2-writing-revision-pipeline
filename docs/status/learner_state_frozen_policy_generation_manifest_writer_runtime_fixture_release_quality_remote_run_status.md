@@ -277,3 +277,9 @@ correctness, real-data readiness, or production readiness.
   No runtime smoke status marker is created here, and this remains not
   manifest file writing evidence, not artifact writer CLI integration
   evidence, not performance evidence, and not a production-readiness claim.
+- Step407: linked the separate public-safe remote/manual Release Quality
+  status marker for the runtime writer smoke target:
+  [Learner-state frozen policy generation manifest writer runtime release-quality remote run status](learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md).
+  This marker remains remote evidence only for the earlier runtime fixture
+  validator Release Quality run. Runtime fixture validation and runtime smoke
+  now have separate remote status markers with separate interpretations.

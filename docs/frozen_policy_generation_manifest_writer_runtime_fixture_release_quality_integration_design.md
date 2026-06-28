@@ -500,3 +500,17 @@ metadata-only. Step406 does not create a status marker, run workflow jobs,
 change workflow YAML, change the wrapper, write manifest files, connect
 artifact writer CLI, use real data, compute metrics, or claim production
 readiness.
+
+## 30. Step407 Runtime Smoke Status Marker Status
+
+Step407 creates the public-safe remote/manual Release Quality status marker
+for the runtime smoke target:
+
+[Learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md).
+
+This document remains the integration record for runtime fixture validation.
+Runtime fixture validation and runtime smoke now have separate remote status
+markers with separate interpretations. The runtime smoke marker does not
+change the fixture validator, does not write manifest files, does not connect
+artifact writer CLI, does not use real data, does not compute metrics, and
+does not claim production readiness.

@@ -340,16 +340,15 @@ Future tests should cover:
 
 ## 17. Future Implementation Staging
 
-Proposed staging:
+Actual staging through Step407:
 
 - Step401: runtime writer fixture-backed implementation
-- Step402: focused runtime writer tests
-- Step403: standalone Makefile target design
-- Step404: standalone Makefile target implementation
-- Step405: release-quality integration design
-- Step406: wrapper integration
-- Step407: remote/manual run record workflow design
-- Step408: remote/manual run status marker
+- Step402: standalone Makefile target design
+- Step403: standalone Makefile target implementation
+- Step404: release-quality integration design
+- Step405: wrapper integration
+- Step406: remote/manual run record workflow design
+- Step407: remote/manual run status marker
 - later: manifest file writing design and implementation
 
 ## 18. Path/File Writing Policy
@@ -518,12 +517,25 @@ status marker, write manifest files, add `--manifest-out`, generate manifest
 bodies, connect artifact writer CLI, use real data, compute metrics, or
 claim production readiness.
 
-## 30. Related Documents
+## 30. Step407 Remote Run Status Marker Status
+
+Step407 creates the public-safe remote/manual Release Quality status marker
+for the runtime smoke target:
+
+[Learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md).
+
+The runtime implementation remains unchanged. The marker records that the
+metadata-only no-file runtime smoke passed remotely, but it does not prove
+manifest file writing, artifact writer CLI integration, generated policy
+quality, performance, real-data readiness, or production readiness.
+
+## 31. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)

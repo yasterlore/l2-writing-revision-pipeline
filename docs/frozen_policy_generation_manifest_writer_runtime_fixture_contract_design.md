@@ -565,12 +565,27 @@ runtime fixture JSON bodies, request/pointer bodies, manifest bodies,
 artifact body payloads, generated policy bodies, raw logs, private paths, raw
 learner text, or performance evidence.
 
-## 40. Related Documents
+## 40. Step407 Runtime Smoke Status Marker Status
+
+Step407 creates the public-safe remote/manual Release Quality status marker
+for the runtime smoke target:
+
+[Learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md).
+
+The fixture contract remains unchanged. The runtime smoke marker is separate
+from this fixture contract and from the runtime fixture validation marker. It
+records one metadata-only no-file runtime smoke outcome and does not copy
+runtime fixture JSON bodies, request/pointer bodies, artifact body payloads,
+generated policy bodies, manifest bodies, raw logs, private paths, raw
+learner text, or performance evidence.
+
+## 41. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime release-quality integration design](frozen_policy_generation_manifest_writer_runtime_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_record_workflow.md)
+- [Learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)

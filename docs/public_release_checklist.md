@@ -3177,6 +3177,22 @@ full job output, manifest bodies, JSON body examples, request/pointer bodies,
 artifact body payloads, generated policy bodies, private paths, raw learner
 text, real participant data, or performance evidence.
 
+For Step407, review the public-safe status marker
+[learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md).
+Confirm it records only safe run identity metadata, wrapper inclusion
+metadata, pass-only/count-only runtime smoke summary fields, related check
+inclusion summaries, safety review, interpretation, and non-goals. Confirm it
+records the successful remote/manual Release Quality run for commit
+`ce75339`, includes the manifest writer runtime smoke target, reports
+`writer_status=pass`, `runtime_writer_executed=true`,
+`manifest_body_available=false`, `manifest_file_written=false`,
+`manifest_output_path_available=false`, `release_quality_ready=false`, and
+`written_file_count=0`, and does not copy raw logs, full job output, manifest
+bodies, JSON body examples, request/pointer bodies, artifact body payloads,
+generated policy bodies, private paths, raw learner text, real participant
+data, performance evidence, real-data readiness, or production readiness
+claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
