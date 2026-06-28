@@ -323,8 +323,21 @@ Makefile, change Python code/tests, change fixture JSON, write manifest files,
 implement `--manifest-out`, run isolated writes, connect artifact writer CLI,
 use real data, compute metrics, or claim production readiness.
 
-## 21. Related Documents
+## 21. Step418 Remote Status Marker Status
 
+Step418 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md).
+
+The Makefile target remains unchanged. The marker confirms wrapper inclusion
+and pass-only/count-only validator summary fields for the static fixture
+contract target. It is not runtime file writing evidence and does not imply
+isolated write validation, artifact writer CLI integration, real-data
+readiness, performance evidence, or production readiness.
+
+## 22. Related Documents
+
+- [Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)

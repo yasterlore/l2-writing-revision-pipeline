@@ -587,3 +587,17 @@ remote workflows, change workflow YAML, change the wrapper, change Makefile,
 change Python code/tests, change fixture JSON, write manifest files,
 implement `--manifest-out`, run isolated writes, connect artifact writer CLI,
 use real data, compute metrics, or claim production readiness.
+
+## 34. Step418 Remote Status Marker Status
+
+Step418 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md).
+
+The validator remains unchanged. The marker records only safe run metadata,
+wrapper inclusion metadata, and pass-only/count-only validator results for the
+39-case / 195-JSON static fixture contract target. It does not copy fixture
+JSON bodies, request/pointer/expected-result bodies, raw logs, private paths,
+raw learner text, real participant data, or performance evidence. It is not
+runtime file writing evidence, isolated write evidence, artifact writer CLI
+integration evidence, real-data readiness, or a production-readiness claim.

@@ -111,6 +111,19 @@ not create the marker, run remote workflows, change fixture files, write
 manifest files, run isolated writes, implement `--manifest-out`, or execute
 runtime file writing.
 
+Step418 creates the public-safe remote/manual Release Quality status marker:
+
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md`
+
+The fixture root remains unchanged. The marker records only run metadata,
+wrapper inclusion metadata, pass-only/count-only validator summary fields,
+safety review, interpretation, and non-goals. It does not copy fixture JSON
+bodies, request/pointer/expected-result bodies, raw logs, manifest bodies,
+artifact body payloads, private paths, raw learner text, real participant
+data, or performance evidence. It does not prove runtime file writing,
+isolated write validation, artifact writer CLI integration, real-data
+readiness, or production readiness.
+
 This fixture root does not execute runtime file writing, isolated writes,
 `--manifest-out`, or artifact writer CLI integration.
 

@@ -346,7 +346,6 @@ and residue checks.
 
 ## 19. Next Recommended Steps
 
-- future remote/manual status marker creation
 - later: isolated write validation design
 - later: isolated write validation implementation
 - later: runtime file writing design and implementation
@@ -387,8 +386,21 @@ Python code/tests, change fixture JSON, write manifest files, implement
 `--manifest-out`, run isolated writes, connect artifact writer CLI, use real
 data, compute metrics, or claim production readiness.
 
-## 22. Related Documents
+## 22. Step418 Remote Status Marker Status
 
+Step418 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md).
+
+The marker records pass-only/count-only evidence that the wrapper included and
+passed the file writing fixture validator target. It is static fixture
+contract evidence only; it is not runtime file writing evidence, isolated
+write validation evidence, artifact writer CLI integration evidence,
+real-data readiness, performance evidence, or a production-readiness claim.
+
+## 23. Related Documents
+
+- [Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)

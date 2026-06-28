@@ -432,14 +432,30 @@ mean runtime file writing or production readiness.
 
 ## 19. Next Recommended Steps
 
-- run remote/manual Release Quality
-- create the public-safe status marker
+- keep the Step418 public-safe status marker current after future wrapper
+  changes
 - keep isolated write validation separate
 - keep runtime file writing separate
 - keep artifact writer CLI integration separate
 
-## 20. Related Documents
+## 20. Step418 Status Marker Creation Status
 
+Step418 creates the public-safe remote/manual Release Quality status marker:
+
+[Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md).
+
+The marker records only run identity metadata, wrapper inclusion metadata,
+pass-only/count-only validator summary fields, related check summaries,
+safety review, interpretation, and non-goals. It does not copy raw logs, full
+job output, fixture JSON bodies, request/pointer/expected-result bodies,
+manifest bodies, artifact body payloads, generated policy bodies, private
+paths, raw learner text, real participant data, or performance evidence. It
+does not implement runtime file writing, `--manifest-out`, isolated write
+validation, artifact writer CLI integration, or production readiness.
+
+## 21. Related Documents
+
+- [Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)

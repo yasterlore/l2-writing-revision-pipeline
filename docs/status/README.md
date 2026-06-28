@@ -75,12 +75,10 @@ Available markers:
 - [Learner-state frozen policy generation manifest writer runtime release-quality remote run status](learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after manifest writer
   metadata-only no-file runtime smoke integration.
-- Future marker:
-  `learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md`
-  should record a public-safe remote/manual Release Quality run after
-  manifest writer file writing fixture validator wrapper integration. It
-  should remain pass-only/count-only and must not copy raw logs or fixture
-  JSON bodies.
+- [Learner-state frozen policy generation manifest writer file writing fixture release-quality remote run status](learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after manifest writer
+  metadata-only file writing fixture validator integration. It remains
+  pass-only/count-only and does not copy raw logs or fixture JSON bodies.
 
 Related recap:
 
