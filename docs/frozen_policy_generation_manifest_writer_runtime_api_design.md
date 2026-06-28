@@ -476,7 +476,19 @@ not implement or execute the manifest writer runtime, write manifest files,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
 
-## 33. Related Documents
+## 33. Step400 Runtime Implementation Design Status
+
+Step400 adds the docs-only runtime implementation design:
+
+[Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md).
+
+The design fixes the future metadata-only no-file runtime scope, proposed
+module/API/CLI, input parsing, safe pointer handling, result construction,
+safety audit, fail-closed behavior, tests, and staging. It does not implement
+the runtime writer, implement the CLI, write manifest files, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+
+## 34. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
@@ -489,6 +501,7 @@ production readiness.
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md)
+- [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact body generation design](frozen_policy_generation_artifact_body_generation_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)

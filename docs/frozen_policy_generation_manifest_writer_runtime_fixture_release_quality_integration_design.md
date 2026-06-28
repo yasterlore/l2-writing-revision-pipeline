@@ -363,6 +363,7 @@ internally consistent.
 - [Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md)
 - [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md)
+- [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Public release checklist](public_release_checklist.md)
 
@@ -411,3 +412,15 @@ pass-only/count-only metadata. It does not change workflow YAML, the wrapper,
 Makefile, Python code/tests, fixture JSON, execute a manifest writer runtime,
 write manifest files, connect artifact writer CLI, use real data, compute
 metrics, or claim production readiness.
+
+## 23. Step400 Runtime Implementation Design Status
+
+Step400 adds a docs-only runtime implementation design for a future
+metadata-only no-file manifest writer runtime:
+
+[Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md).
+
+The design remains outside release-quality integration. It does not change
+the wrapper, workflow YAML, Makefile, Python code/tests, fixture JSON,
+execute a runtime writer, write manifest files, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness.

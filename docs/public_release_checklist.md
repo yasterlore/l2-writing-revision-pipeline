@@ -3092,6 +3092,17 @@ generated policy bodies, private paths, raw learner text, real participant
 data, performance evidence, real-data readiness, or production readiness
 claims.
 
+For Step400, review the docs-only
+[frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md).
+Confirm it fixes only the future metadata-only no-file runtime implementation
+boundary: proposed module/API/CLI, safe input parsing, pointer handling,
+result construction, safety audit, fail-closed behavior, tests, staging,
+path/file-writing policy, and non-goals. Confirm it does not implement a
+runtime writer, implement a CLI, write manifest files, change Makefile,
+change the wrapper, change workflow YAML, change Python code/tests, change
+fixture JSON, connect artifact writer CLI, use real data, compute metrics, or
+claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

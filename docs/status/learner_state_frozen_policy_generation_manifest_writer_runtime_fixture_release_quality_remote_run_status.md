@@ -224,3 +224,9 @@ correctness, real-data readiness, or production readiness.
   only safe run identity metadata, wrapper inclusion metadata,
   pass-only/count-only runtime fixture validation summary fields, related
   check inclusion summaries, safety review, interpretation, and non-goals.
+- Step400: linked the separate docs-only runtime implementation design:
+  [Frozen policy generation manifest writer runtime implementation design](../frozen_policy_generation_manifest_writer_runtime_implementation_design.md).
+  This marker remains remote wrapper evidence for static runtime fixture
+  validation only. Runtime writer implementation, manifest writer CLI,
+  manifest file writing, artifact writer CLI integration, real-data use,
+  metric computation, and production readiness remain separate.
