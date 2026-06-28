@@ -433,3 +433,14 @@ static runtime fixture validation only. The runtime writer is not added to
 the wrapper here, no workflow YAML changes are made, no Makefile target is
 added, no manifest files are written, artifact writer CLI integration remains
 separate, and no real-data or production-readiness claim is made.
+
+## 25. Step402 Runtime Makefile Target Design Status
+
+Step402 adds the docs-only standalone Makefile target design for a future
+runtime smoke:
+
+[Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md).
+
+This release-quality integration document still concerns the runtime fixture
+validator target only. The runtime smoke target remains unimplemented and
+outside release-quality until later steps.

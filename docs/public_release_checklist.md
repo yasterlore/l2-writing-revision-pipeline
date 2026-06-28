@@ -3114,6 +3114,16 @@ generates no manifest body, connects no artifact writer CLI, changes no
 Makefile or workflow YAML, changes no fixture JSON, uses no real data,
 computes no metrics, and makes no production-readiness claim.
 
+For Step402, review the docs-only
+[frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md).
+Confirm it proposes only the future standalone runtime smoke target name,
+command shape, help text, expected safe output, relation to runtime fixture
+validation, release-quality staging, and implementation checks. Confirm it
+does not implement a Makefile target, add release-quality, change workflow
+YAML, change Python code/tests, change fixture JSON, write manifest files,
+add `--manifest-out`, create manifest bodies, connect artifact writer CLI,
+use real data, compute metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

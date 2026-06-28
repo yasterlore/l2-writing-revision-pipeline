@@ -507,9 +507,19 @@ runtime writer. This does not add manifest file writing, manifest body
 generation, artifact writer CLI integration, Makefile target wiring,
 release-quality integration, real-data use, metrics, or production readiness.
 
-## 35. Related Documents
+## 35. Step402 Makefile Target Design Status
+
+Step402 adds a docs-only design for a future standalone runtime smoke target
+that uses the valid minimal runtime fixture case. The fixture root remains
+unchanged. The design does not add a Makefile target, release-quality
+integration, manifest file writing, `--manifest-out`, manifest body
+generation, artifact writer CLI integration, real-data use, metrics, or
+production readiness.
+
+## 36. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
+- [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixture validator design](frozen_policy_generation_manifest_writer_fixture_validator_design.md)

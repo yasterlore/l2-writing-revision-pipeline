@@ -559,7 +559,18 @@ files, does not generate manifest bodies, does not connect artifact writer
 CLI, does not use real data, does not compute metrics, and does not claim
 production readiness.
 
-## 39. Related Documents
+## 39. Step402 Runtime Makefile Target Design Status
+
+Step402 adds a docs-only design for a future standalone Makefile target that
+will run the metadata-only no-file runtime smoke:
+
+[Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md).
+
+The target design stays within this boundary: no manifest body, no manifest
+file writing, no `--manifest-out` output feature, no artifact writer CLI
+integration, no real data, no metrics, and no production readiness claim.
+
+## 40. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)
@@ -571,6 +582,7 @@ production readiness.
 - [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
+- [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime fixture validator design](frozen_policy_generation_manifest_writer_runtime_fixture_validator_design.md)
 - [Frozen policy generation manifest writer runtime fixture release-quality integration design](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_integration_design.md)

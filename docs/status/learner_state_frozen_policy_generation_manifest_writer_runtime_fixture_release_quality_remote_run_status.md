@@ -237,3 +237,9 @@ correctness, real-data readiness, or production readiness.
   runtime status marker, manifest file writing, artifact writer CLI
   integration, real-data use, metric computation, or production-readiness
   claim.
+- Step402: linked the docs-only standalone Makefile target design for a
+  future runtime writer smoke:
+  [Frozen policy generation manifest writer runtime Makefile target design](../frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md).
+  The runtime writer Makefile target remains separate from this remote
+  runtime fixture validation status marker and is not yet implemented or
+  included in release-quality.

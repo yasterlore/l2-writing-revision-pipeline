@@ -550,3 +550,16 @@ and focused tests. This validator still remains a static fixture contract
 validator: it does not execute the runtime writer, does not write manifest
 files, does not connect artifact writer CLI, does not use real data, does not
 compute metrics, and does not claim production readiness.
+
+## 40. Step402 Runtime Makefile Target Design Status
+
+Step402 adds the docs-only design for a future standalone runtime smoke
+Makefile target:
+
+[Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md).
+
+The runtime fixture validation target and future runtime smoke target remain
+separate. The design does not change this validator, Makefile, release-quality
+wrapper, workflow YAML, Python code/tests, fixture JSON, manifest file
+writing, artifact writer CLI integration, real-data use, metrics, or
+production readiness.
