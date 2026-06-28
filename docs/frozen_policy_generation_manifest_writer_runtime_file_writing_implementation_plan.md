@@ -363,12 +363,10 @@ This Step440 plan does not:
 
 ## 17. Next Recommended Steps
 
-- Step441 runtime file writing implementation
-- Step442 focused runtime file writing tests if not included in Step441
-- Step443 Makefile/runtime smoke target design
-- Step444 Makefile/runtime smoke target implementation
-- Step445 release-quality runtime integration design
-- Step446 wrapper integration
+- Step443 Makefile/runtime smoke target implementation
+- Step444 release-quality runtime integration design
+- Step445 wrapper integration
+- Step446 remote/manual run record workflow design
 - Step447 remote marker
 - artifact writer CLI integration remains separate
 
@@ -378,6 +376,7 @@ This Step440 plan does not:
 - [Frozen policy generation manifest writer production file writing fixture contract design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer production file writing fixture validator design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer production file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md)
+- [Frozen policy generation manifest writer runtime file writing smoke Makefile target design](frozen_policy_generation_manifest_writer_runtime_file_writing_smoke_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
@@ -400,3 +399,18 @@ This implementation does not change Makefile, release-quality wrapper,
 workflow YAML, fixtures JSON, artifact writer CLI integration, artifact body
 generation CLI integration, manifest body generation, metric computation,
 real-data use, or production readiness.
+
+## 20. Step442 Smoke Makefile Target Design Status
+
+Step442 adds the docs-only design for a future standalone runtime file writing
+smoke Makefile target:
+
+[Frozen policy generation manifest writer runtime file writing smoke Makefile target design](frozen_policy_generation_manifest_writer_runtime_file_writing_smoke_makefile_target_design.md).
+
+The design fixes the target name, help text, command sequence, target-owned
+smoke output path, written-file parse/scan validation, cleanup policy,
+failure behavior, docs safety, release-quality staging, and future
+implementation tests. It does not modify Makefile, release-quality wrapper,
+workflow YAML, runtime code, Python tests, fixtures JSON, artifact writer CLI
+integration, artifact body generation CLI integration, real-data use, metrics,
+or production readiness.

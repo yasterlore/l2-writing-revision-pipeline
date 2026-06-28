@@ -3777,6 +3777,20 @@ fixtures JSON, artifact writer CLI integration, artifact body generation CLI
 integration, manifest body generation, real-data use, metrics, or production
 readiness.
 
+For Step442, review the docs-only
+[frozen policy generation manifest writer runtime file writing smoke Makefile target design](frozen_policy_generation_manifest_writer_runtime_file_writing_smoke_makefile_target_design.md).
+Confirm it fixes the future target name, help text, command sequence, cleanup
+policy, written-file existence/parse/forbidden-field checks, expected
+body-free output, failure behavior, docs safety, release-quality staging, and
+future implementation tests. Confirm it does not modify Makefile,
+release-quality wrapper, workflow YAML, runtime code, Python tests, fixtures
+JSON, artifact writer CLI integration, artifact body generation CLI
+integration, manifest body generation, real-data use, metrics, or production
+readiness. Confirm docs do not include raw logs, fixture JSON bodies,
+request/pointer/expected bodies, written file bodies, manifest bodies,
+artifact body payloads, generated policy bodies, private or absolute path
+examples, raw learner text, real participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

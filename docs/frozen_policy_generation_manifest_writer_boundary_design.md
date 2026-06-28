@@ -1019,3 +1019,17 @@ The boundary still excludes artifact writer CLI execution, artifact body
 generation CLI execution, manifest body generation, fixture JSON changes,
 Makefile changes, release-quality wrapper changes, workflow YAML changes,
 real-data use, metric computation, and production readiness claims.
+
+## 72. Step442 Runtime File Writing Smoke Target Design Status
+
+Step442 adds the docs-only design for a future standalone Makefile target that
+smoke-tests the Step441 opt-in metadata-only file-writing boundary:
+
+[Frozen policy generation manifest writer runtime file writing smoke Makefile target design](frozen_policy_generation_manifest_writer_runtime_file_writing_smoke_makefile_target_design.md).
+
+The future target is designed to write one metadata-only file inside a
+target-owned smoke subdirectory, parse and scan it, and clean it up. Step442
+does not modify Makefile, release-quality wrapper, workflow YAML, runtime
+code, Python tests, fixtures JSON, artifact writer CLI integration, artifact
+body generation CLI integration, real-data use, metrics, or production
+readiness.

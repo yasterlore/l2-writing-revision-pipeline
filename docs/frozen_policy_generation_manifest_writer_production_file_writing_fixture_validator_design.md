@@ -602,3 +602,14 @@ The validator still does not execute the runtime writer, write manifest files,
 invoke artifact writer CLI, invoke artifact body generation CLI, use real
 data, compute metrics, or prove production readiness. Runtime file writing
 evidence and static fixture validation evidence remain separate.
+
+## 37. Step442 Runtime Smoke Target Separation Note
+
+Step442 adds the docs-only design for a future runtime file writing smoke
+Makefile target:
+
+[Frozen policy generation manifest writer runtime file writing smoke Makefile target design](frozen_policy_generation_manifest_writer_runtime_file_writing_smoke_makefile_target_design.md).
+
+The future smoke target will execute the runtime and write one target-owned
+metadata-only smoke file. This validator remains static fixture validation and
+continues not to write files or execute runtime file writing.

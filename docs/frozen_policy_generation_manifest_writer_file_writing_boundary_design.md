@@ -805,3 +805,16 @@ private paths, absolute paths, raw learner text, or performance bodies. Step441
 does not change Makefile, release-quality wrapper, workflow YAML, fixtures
 JSON, artifact writer CLI integration, real-data use, metrics, or production
 readiness.
+
+## 54. Step442 Runtime File Writing Smoke Target Design Status
+
+Step442 adds the docs-only design for a future runtime file writing smoke
+Makefile target:
+
+[Frozen policy generation manifest writer runtime file writing smoke Makefile target design](frozen_policy_generation_manifest_writer_runtime_file_writing_smoke_makefile_target_design.md).
+
+The design fixes the target-owned smoke path, pre/post cleanup, written-file
+existence check, JSON parse check, forbidden field scan, stdout/stderr safety,
+and residue-zero expectation. It does not modify Makefile, release-quality
+wrapper, workflow YAML, runtime code, Python tests, fixtures JSON, artifact
+writer CLI integration, real-data use, metrics, or production readiness.

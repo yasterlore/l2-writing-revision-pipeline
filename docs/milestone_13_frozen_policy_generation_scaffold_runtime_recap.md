@@ -1498,6 +1498,14 @@ written, no artifact body is produced, and no performance metric is computed.
   not change Makefile, release-quality wrapper, workflow YAML, fixtures JSON,
   artifact writer CLI integration, artifact body generation CLI integration,
   manifest body generation, real-data use, metrics, or production readiness.
+- Step442: added the docs-only Makefile target design for a future runtime
+  file writing smoke. It fixes the target name, help text, command sequence,
+  target-owned smoke output path, written-file parse/scan validation, cleanup
+  policy, failure behavior, docs safety, release-quality staging, and future
+  implementation tests. It does not modify Makefile, release-quality wrapper,
+  workflow YAML, runtime code, Python tests, fixtures JSON, artifact writer
+  CLI integration, artifact body generation CLI integration, real-data use,
+  metrics, or production readiness.
 
 ## Related Documents
 
@@ -1542,6 +1550,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer production file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer production file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime file writing implementation plan](frozen_policy_generation_manifest_writer_runtime_file_writing_implementation_plan.md)
+- [Frozen policy generation manifest writer runtime file writing smoke Makefile target design](frozen_policy_generation_manifest_writer_runtime_file_writing_smoke_makefile_target_design.md)
 - [Frozen policy generation manifest writer runtime implementation](../python/learner_state/frozen_policy_generation_manifest_writer.py)
 - [Frozen policy generation manifest writer runtime tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer.py)
 - [Release-quality wrapper with manifest writer production file writing fixture validation](../scripts/check_release_quality.sh)

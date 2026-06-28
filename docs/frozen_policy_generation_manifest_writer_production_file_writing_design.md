@@ -545,3 +545,16 @@ workflow YAML, fixtures JSON, artifact writer CLI integration, artifact body
 generation CLI integration, manifest body generation, metric computation,
 real-data use, or production readiness. Runtime smoke target design and
 release-quality runtime integration remain future separate steps.
+
+## 36. Step442 Runtime File Writing Smoke Target Design Status
+
+Step442 adds the docs-only design for a future standalone Makefile target that
+will smoke-test the Step441 runtime file writing path:
+
+[Frozen policy generation manifest writer runtime file writing smoke Makefile target design](frozen_policy_generation_manifest_writer_runtime_file_writing_smoke_makefile_target_design.md).
+
+The design keeps runtime smoke evidence separate from static production
+fixture validation and from release-quality remote evidence. It does not
+modify Makefile, release-quality wrapper, workflow YAML, runtime code, Python
+tests, fixtures JSON, artifact writer CLI integration, real-data use, metrics,
+or production readiness.

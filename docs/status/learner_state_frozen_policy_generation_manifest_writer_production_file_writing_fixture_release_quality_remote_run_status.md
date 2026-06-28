@@ -286,6 +286,15 @@ validator only. It is not runtime file writing evidence, not public
 `--manifest-out` remote evidence, not artifact writer CLI integration evidence,
 and not production readiness evidence.
 
+## Step442 Separation Note
+
+Step442 adds a docs-only design for a future runtime file writing smoke
+Makefile target. This status marker still records only the earlier
+Release Quality run for static production file writing fixture validation. It
+does not become runtime smoke evidence, Makefile target evidence,
+release-quality runtime integration evidence, or production readiness
+evidence.
+
 ## Update History
 
 - 2026-06-28: Step439 status marker created from public-safe metadata for the
@@ -293,3 +302,5 @@ and not production readiness evidence.
 - 2026-06-29: Step441 separation note added without adding raw logs, fixture
   bodies, written file bodies, private paths, absolute paths, raw learner text,
   metrics, or production readiness claims.
+- 2026-06-29: Step442 separation note added for the docs-only runtime file
+  writing smoke Makefile target design.

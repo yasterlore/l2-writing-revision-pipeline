@@ -862,3 +862,17 @@ output paths. Step441 does not connect artifact writer CLI, call artifact body
 generation CLI, generate manifest bodies, change Makefile, change the
 release-quality wrapper, change workflow YAML, change fixtures JSON, use real
 data, compute metrics, or claim production readiness.
+
+## 64. Step442 Runtime File Writing Smoke Target Design Status
+
+Step442 adds the docs-only design for a future Makefile smoke target that
+invokes the existing runtime API with safe `--manifest-out smoke/manifest.json`
+and validates the written metadata-only JSON without printing or copying its
+body:
+
+[Frozen policy generation manifest writer runtime file writing smoke Makefile target design](frozen_policy_generation_manifest_writer_runtime_file_writing_smoke_makefile_target_design.md).
+
+The runtime API itself is unchanged in this step. Step442 does not modify
+Makefile, release-quality wrapper, workflow YAML, runtime code, Python tests,
+fixtures JSON, artifact writer CLI integration, artifact body generation CLI
+integration, real-data use, metrics, or production readiness.
