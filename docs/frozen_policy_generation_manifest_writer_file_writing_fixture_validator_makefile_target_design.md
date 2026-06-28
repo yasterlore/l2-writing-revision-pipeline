@@ -276,7 +276,6 @@ add release-quality integration.
 
 ## 17. Next Recommended Steps
 
-- Step416: wrapper integration
 - Step417: remote marker
 - later: isolated write validation
 - later: runtime file writing implementation
@@ -295,7 +294,23 @@ Makefile, change Python code/tests, change fixture JSON, write manifest
 files, implement `--manifest-out`, run isolated writes, connect artifact
 writer CLI, use real data, compute metrics, or claim production readiness.
 
-## 19. Related Documents
+## 19. Step416 Wrapper Integration Status
+
+Step416 adds the standalone target to the release-quality wrapper with label:
+
+`release_quality_check: learner-state frozen policy generation manifest writer file writing fixture validation`
+
+The wrapper calls:
+
+`make check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`
+
+The target remains a static fixture contract validator. Step416 does not
+change workflow YAML, change Makefile, change Python code/tests, change
+fixture JSON, write manifest files, implement `--manifest-out`, run isolated
+writes, connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness.
+
+## 20. Related Documents
 
 - [Frozen policy generation manifest writer metadata-only file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)

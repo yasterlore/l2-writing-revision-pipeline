@@ -331,7 +331,6 @@ and residue checks.
 
 ## 18. What This Does NOT Do
 
-- does not modify the wrapper
 - does not modify workflow YAML
 - does not modify Makefile
 - does not modify Python code or tests
@@ -347,13 +346,33 @@ and residue checks.
 
 ## 19. Next Recommended Steps
 
-- Step416: wrapper integration
 - Step417: remote/manual run record workflow design or status marker
 - later: isolated write validation design
 - later: isolated write validation implementation
 - later: runtime file writing design and implementation
 
-## 20. Related Documents
+## 20. Step416 Wrapper Integration Status
+
+Step416 adds the standalone target to the release-quality wrapper immediately
+after the manifest writer runtime smoke and before config/scoring smoke
+checks.
+
+Wrapper label:
+
+`release_quality_check: learner-state frozen policy generation manifest writer file writing fixture validation`
+
+Wrapper command:
+
+`make check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`
+
+This wrapper integration keeps the target scoped to static fixture contract
+validation. It does not change workflow YAML, change Makefile, change Python
+code/tests, change fixture JSON, write manifest files, implement
+`--manifest-out`, run isolated writes, run runtime file writing, connect
+artifact writer CLI, use real data, compute metrics, or claim production
+readiness.
+
+## 21. Related Documents
 
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)

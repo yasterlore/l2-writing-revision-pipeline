@@ -3338,6 +3338,27 @@ request/pointer/expected-result body examples, artifact body payload examples,
 manifest body examples, private path examples, raw learner text, real
 participant data, or performance evidence.
 
+For Step416, review the release-quality wrapper integration in
+`scripts/check_release_quality.sh`. Confirm the wrapper adds only the label
+`release_quality_check: learner-state frozen policy generation manifest writer file writing fixture validation`
+and the command
+`make check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`
+after manifest writer runtime smoke and before config/scoring smoke checks.
+Confirm `make check-release-quality` passes and includes the new section.
+Confirm the target output remains body-free/count-only with 39 cases, 195 JSON
+files, 5 file-written pass cases, 1 no-file pass case, 15 usage-error cases,
+18 fail-closed cases, `matched_cases=39`, `mismatched_cases=0`,
+`input_error_cases=0`, `validator_wrote_files=false`,
+`runtime_writer_executed=false`, and `isolated_write_executed=false`.
+Confirm this step does not change workflow YAML, Makefile, Python code/tests,
+fixture JSON, write manifest files, implement `--manifest-out`, run isolated
+writes, execute runtime file writing, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness. Confirm it does not
+include raw logs, JSON body examples, file writing fixture JSON body examples,
+request/pointer/expected-result body examples, artifact body payload examples,
+manifest body examples, private path examples, raw learner text, real
+participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

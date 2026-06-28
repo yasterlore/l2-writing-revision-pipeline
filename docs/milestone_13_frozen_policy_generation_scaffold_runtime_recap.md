@@ -1278,6 +1278,14 @@ written, no artifact body is produced, and no performance metric is computed.
   YAML, Makefile, Python code/tests, fixture JSON, write manifest files, add
   `--manifest-out`, run isolated writes, connect artifact writer CLI, use real
   data, compute metrics, or claim production readiness.
+- Step416: added the standalone manifest writer file writing fixture validator
+  target to the release-quality wrapper after the manifest writer runtime
+  smoke and before config/scoring smoke checks. The wrapper entry runs the
+  static fixture contract validator only. It does not change workflow YAML,
+  Makefile, Python code/tests, fixture JSON, write manifest files, add
+  `--manifest-out`, run isolated writes, execute runtime file writing, connect
+  artifact writer CLI, use real data, compute metrics, or claim production
+  readiness.
 
 ## Related Documents
 

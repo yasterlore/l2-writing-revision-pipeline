@@ -630,3 +630,11 @@ standalone file writing fixture validator target:
 The API boundary remains no-file today. Step415 does not implement
 `--manifest-out`, write files, change runtime code, change fixture JSON,
 change workflow YAML, or add wrapper integration.
+
+## 45. Step416 File Writing Fixture Wrapper Integration Status
+
+Step416 adds the standalone file writing fixture validator target to the
+release-quality wrapper. The API boundary remains no-file today.
+
+This does not implement `--manifest-out`, write files, change runtime code,
+change fixture JSON, change Makefile, or change workflow YAML.

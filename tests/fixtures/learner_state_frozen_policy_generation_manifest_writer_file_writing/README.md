@@ -99,6 +99,12 @@ does not add the target to release-quality, change workflow YAML, change
 Makefile, change fixture JSON, write manifest files, run isolated writes, or
 implement runtime file writing.
 
+Step416 adds the standalone target to the release-quality wrapper. Release
+Quality now checks this fixture root through the static validator target. The
+fixture files remain unchanged, and the wrapper integration does not write
+manifest files, run isolated writes, implement `--manifest-out`, or execute
+runtime file writing.
+
 This fixture root does not execute runtime file writing, isolated writes,
 `--manifest-out`, or artifact writer CLI integration.
 
