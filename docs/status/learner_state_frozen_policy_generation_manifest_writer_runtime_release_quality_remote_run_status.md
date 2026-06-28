@@ -286,3 +286,11 @@ readiness.
   file writing evidence, isolated write evidence, release-quality wrapper
   evidence for the validator, artifact writer CLI integration evidence,
   real-data readiness, performance evidence, or a production-readiness claim.
+- Step413: linked the docs-only Makefile target design for the static file
+  writing fixture validator:
+  [Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](../frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md).
+  This marker remains remote evidence only for the no-file runtime smoke.
+  Step413 does not implement the Makefile target, add release-quality
+  integration, write manifest files, implement `--manifest-out`, run isolated
+  writes, connect artifact writer CLI, use real data, compute metrics, or
+  claim production readiness.

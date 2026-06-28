@@ -578,9 +578,22 @@ metadata-only no-file, `--manifest-out` remains unimplemented, and manifest
 file writing, isolated write validation, Makefile/release-quality integration
 for the validator, and artifact writer CLI integration remain separate.
 
-## 35. Related Documents
+## 35. Step413 File Writing Fixture Validator Makefile Target Design Status
+
+Step413 adds the docs-only standalone Makefile target design for the static
+file writing fixture validator:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md).
+
+This does not change the runtime implementation. The runtime remains
+metadata-only no-file, `--manifest-out` remains unimplemented, and Makefile
+implementation, release-quality integration, isolated write validation,
+runtime file writing, and artifact writer CLI integration remain separate.
+
+## 36. Related Documents
 
 - [Frozen policy generation manifest writer metadata-only file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing/README.md)
+- [Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator implementation](../python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)

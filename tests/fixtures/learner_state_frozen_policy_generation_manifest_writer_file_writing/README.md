@@ -84,6 +84,13 @@ manifest files, running the runtime writer, running isolated write validation,
 changing fixture JSON, adding a Makefile target, or adding release-quality
 integration. Its summaries are body-free and count-only.
 
+Step413 adds the docs-only Makefile target design for a future short command:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`
+
+That target is not implemented in Step413. The fixture root remains unchanged
+and the future target should only wrap the static validator CLI.
+
 This fixture root does not execute runtime file writing, isolated writes,
 `--manifest-out`, or artifact writer CLI integration.
 

@@ -3279,6 +3279,25 @@ expected-result body examples, artifact body payload examples, manifest body
 examples, private path examples, raw learner text, real participant data, or
 performance evidence.
 
+For Step413, review the docs-only
+[frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md).
+Confirm it defines only the future standalone target name, command, help text,
+expected body-free/count-only output, failure behavior, relation to the
+current validator CLI, relation to runtime targets, release-quality staging,
+isolated write separation, runtime file writing non-goals, docs safety, and
+future implementation tests. Confirm the proposed target is
+`check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`
+and the proposed command wraps the existing static validator CLI root
+validation. Confirm this step does not modify Makefile, add release-quality
+integration, change workflow YAML, change Python code/tests, change fixture
+JSON, write manifest files, implement `--manifest-out`, run isolated writes,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness. Confirm it does not include raw logs, JSON body
+examples, file writing fixture JSON body examples, request/pointer/
+expected-result body examples, artifact body payload examples, manifest body
+examples, private path examples, raw learner text, real participant data, or
+performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

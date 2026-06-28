@@ -604,8 +604,22 @@ or changing fixture JSON. It reports body-free, count-only metadata and keeps
 `release_quality_ready=false` until a separate Makefile/release-quality
 staging step.
 
-## 30. Related Documents
+## 30. Step413 Makefile Target Design Status
 
+Step413 adds the docs-only standalone Makefile target design for running the
+static validator CLI:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md).
+
+The fixture contract remains unchanged. Step413 does not modify Makefile,
+add release-quality integration, change workflow YAML, change Python
+code/tests, change fixture JSON, write manifest files, implement
+`--manifest-out`, run isolated writes, connect artifact writer CLI, use real
+data, compute metrics, or claim production readiness.
+
+## 31. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator implementation](../python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)
 - [Frozen policy generation manifest writer metadata-only file writing fixture validator tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py)

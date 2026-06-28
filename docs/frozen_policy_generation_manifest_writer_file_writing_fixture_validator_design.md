@@ -501,7 +501,6 @@ compute metrics, or claim production readiness.
 
 ## 27. Next Recommended Steps
 
-- Step413: Makefile target design
 - Step414: Makefile target implementation
 - Step415: release-quality integration design
 - Step416: wrapper integration
@@ -509,8 +508,23 @@ compute metrics, or claim production readiness.
 - later: isolated write validation
 - later: runtime file writing implementation
 
-## 28. Related Documents
+## 28. Step413 Makefile Target Design Status
 
+Step413 adds the docs-only standalone Makefile target design for running this
+validator CLI:
+
+[Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md).
+
+The proposed future target is
+`check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures`.
+Step413 does not modify Makefile, add release-quality integration, change
+workflow YAML, change Python code/tests, change fixture JSON, write manifest
+files, implement `--manifest-out`, run isolated writes, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+
+## 29. Related Documents
+
+- [Frozen policy generation manifest writer metadata-only file writing fixture validator Makefile target design](frozen_policy_generation_manifest_writer_file_writing_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing/README.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
