@@ -498,7 +498,16 @@ The actual status marker remains uncreated. Runtime writer execution,
 manifest file writing, artifact writer CLI integration, real-data use,
 metrics, and production readiness remain separate.
 
-## 34. Related Documents
+## 34. Step401 Runtime Implementation Status
+
+Step401 implements the initial metadata-only no-file runtime writer using the
+valid runtime fixture request/pointer contracts. The fixture root remains
+unchanged, and the static runtime fixture validator remains separate from the
+runtime writer. This does not add manifest file writing, manifest body
+generation, artifact writer CLI integration, Makefile target wiring,
+release-quality integration, real-data use, metrics, or production readiness.
+
+## 35. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)

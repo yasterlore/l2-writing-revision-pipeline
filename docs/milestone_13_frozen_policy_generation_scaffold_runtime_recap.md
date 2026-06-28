@@ -1136,6 +1136,28 @@ written, no artifact body is produced, and no performance metric is computed.
   code/tests, fixture JSON, execute a runtime writer, write manifest files,
   connect artifact writer CLI, use real data, compute metrics, or claim
   production readiness.
+- Step398: added the docs-only remote/manual run record workflow for the
+  manifest writer runtime fixture validator wrapper integration. It defines
+  safe pass-only/count-only metadata for a future status marker and does not
+  run GitHub Actions, execute a runtime writer, write manifest files, connect
+  artifact writer CLI, use real data, compute metrics, or claim production
+  readiness.
+- Step399: created the public-safe remote/manual Release Quality status
+  marker for the runtime fixture validator wrapper integration. The marker is
+  remote wrapper evidence for static runtime fixture validation only and does
+  not prove runtime writer correctness, manifest file output, artifact writer
+  CLI integration, real-data readiness, metrics, or production readiness.
+- Step400: added the docs-only runtime implementation design for the future
+  metadata-only no-file manifest writer runtime. It fixes module/API/CLI,
+  input parsing, safe pointer handling, result construction, fail-closed
+  behavior, tests, and staging without implementing runtime code.
+- Step401: implemented the initial metadata-only no-file manifest writer
+  runtime module and focused tests. The runtime emits body-free safe summaries
+  from synthetic request/pointer metadata, does not accept `--manifest-out` as
+  a supported output feature, does not write manifest files, does not
+  generate manifest bodies, does not connect artifact writer CLI, does not
+  change Makefile or release-quality, does not use real data, does not
+  compute metrics, and does not claim production readiness.
 
 ## Related Documents
 
@@ -1172,6 +1194,8 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer runtime fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
+- [Frozen policy generation manifest writer runtime](../python/learner_state/frozen_policy_generation_manifest_writer.py)
+- [Frozen policy generation manifest writer runtime tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer.py)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)
 - [Frozen policy generation artifact body file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/README.md)
 - [Frozen policy generation artifact body file writing fixture design](frozen_policy_generation_artifact_body_file_writing_fixture_design.md)

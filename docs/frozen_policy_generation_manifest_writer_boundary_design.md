@@ -550,7 +550,16 @@ The design stays within the boundary defined here: no manifest body, no
 manifest file writing, no artifact writer CLI integration, no real data, no
 metrics, and no production readiness claim.
 
-## 38. Related Documents
+## 38. Step401 Runtime Implementation Status
+
+Step401 implements the initial metadata-only no-file runtime writer inside
+this boundary. The runtime emits body-free safe summaries, does not accept
+`--manifest-out` as a supported output feature, does not write manifest
+files, does not generate manifest bodies, does not connect artifact writer
+CLI, does not use real data, does not compute metrics, and does not claim
+production readiness.
+
+## 39. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)

@@ -542,3 +542,11 @@ metadata-only no-file manifest writer runtime. The runtime fixture validator
 remains separate: it validates static fixture contracts and does not execute
 the writer, write manifest files, connect artifact writer CLI, use real data,
 compute metrics, or claim production readiness.
+
+## 39. Step401 Runtime Implementation Status
+
+Step401 implements the initial metadata-only no-file manifest writer runtime
+and focused tests. This validator still remains a static fixture contract
+validator: it does not execute the runtime writer, does not write manifest
+files, does not connect artifact writer CLI, does not use real data, does not
+compute metrics, and does not claim production readiness.

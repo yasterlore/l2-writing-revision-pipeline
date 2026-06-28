@@ -230,3 +230,10 @@ correctness, real-data readiness, or production readiness.
   validation only. Runtime writer implementation, manifest writer CLI,
   manifest file writing, artifact writer CLI integration, real-data use,
   metric computation, and production readiness remain separate.
+- Step401: noted that the metadata-only no-file runtime writer is implemented
+  locally, but this status marker remains evidence only for remote
+  release-quality static runtime fixture validation. The runtime writer is not
+  yet represented by a Makefile target, release-quality wrapper entry, remote
+  runtime status marker, manifest file writing, artifact writer CLI
+  integration, real-data use, metric computation, or production-readiness
+  claim.

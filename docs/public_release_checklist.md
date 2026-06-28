@@ -3103,6 +3103,17 @@ change the wrapper, change workflow YAML, change Python code/tests, change
 fixture JSON, connect artifact writer CLI, use real data, compute metrics, or
 claim production readiness.
 
+For Step401, review the metadata-only no-file manifest writer runtime module
+`python/learner_state/frozen_policy_generation_manifest_writer.py` and tests
+`python/learner_state/tests/test_frozen_policy_generation_manifest_writer.py`.
+Confirm the runtime uses only synthetic request/pointer metadata, emits
+body-free safe summaries, supports only `metadata_only_no_file`, fails closed
+for body/file/payload/path/notice violations, does not implement
+`--manifest-out` as a supported output feature, writes no manifest files,
+generates no manifest body, connects no artifact writer CLI, changes no
+Makefile or workflow YAML, changes no fixture JSON, uses no real data,
+computes no metrics, and makes no production-readiness claim.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

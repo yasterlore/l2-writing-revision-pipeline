@@ -488,7 +488,20 @@ safety audit, fail-closed behavior, tests, and staging. It does not implement
 the runtime writer, implement the CLI, write manifest files, connect artifact
 writer CLI, use real data, compute metrics, or claim production readiness.
 
-## 34. Related Documents
+## 34. Step401 Runtime Implementation Status
+
+Step401 implements the initial metadata-only no-file runtime module and CLI:
+
+- `learner_state.frozen_policy_generation_manifest_writer`
+- `PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer`
+
+The implementation reads synthetic request/pointer metadata and emits a
+body-free manifest writer result summary. It keeps `--manifest-out`,
+manifest file writing, manifest body generation, artifact writer CLI
+integration, Makefile target wiring, release-quality integration, real-data
+use, metric computation, and production readiness out of scope.
+
+## 35. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

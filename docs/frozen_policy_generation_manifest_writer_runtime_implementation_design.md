@@ -431,7 +431,31 @@ Docs must not include:
 - remote marker
 - later manifest file writing design
 
-## 24. Related Documents
+## 24. Step401 Implementation Status
+
+Step401 implements the initial metadata-only no-file manifest writer runtime:
+
+- `python/learner_state/frozen_policy_generation_manifest_writer.py`
+- `python/learner_state/tests/test_frozen_policy_generation_manifest_writer.py`
+
+Implemented scope:
+
+- module `learner_state.frozen_policy_generation_manifest_writer`
+- CLI `PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer`
+- initial arguments `--request`, `--artifact-result`, `--artifact-body-result`,
+  `--json`, and `--help`
+- mode `metadata_only_no_file`
+- body-free result summary
+- fail-closed handling for unsupported body/file/payload/path inputs
+- focused tests over the five valid runtime fixture cases
+
+This implementation does not add a Makefile target, does not add
+release-quality integration, does not accept `--manifest-out`, does not write
+manifest files, does not generate manifest bodies, does not connect artifact
+writer CLI output, does not use real data, does not compute metrics, and does
+not claim production readiness.
+
+## 25. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime fixture contract design](frozen_policy_generation_manifest_writer_runtime_fixture_contract_design.md)

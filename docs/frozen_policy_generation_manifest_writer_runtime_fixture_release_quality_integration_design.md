@@ -424,3 +424,12 @@ The design remains outside release-quality integration. It does not change
 the wrapper, workflow YAML, Makefile, Python code/tests, fixture JSON,
 execute a runtime writer, write manifest files, connect artifact writer CLI,
 use real data, compute metrics, or claim production readiness.
+
+## 24. Step401 Runtime Implementation Status
+
+Step401 implements the local metadata-only no-file manifest writer runtime
+and focused tests. The release-quality entry in this document remains about
+static runtime fixture validation only. The runtime writer is not added to
+the wrapper here, no workflow YAML changes are made, no Makefile target is
+added, no manifest files are written, artifact writer CLI integration remains
+separate, and no real-data or production-readiness claim is made.
