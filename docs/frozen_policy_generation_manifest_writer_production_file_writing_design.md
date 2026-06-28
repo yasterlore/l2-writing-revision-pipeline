@@ -432,3 +432,14 @@ The validator design is static fixture validation for the Step431 32-case /
 `--manifest-out`, change Makefile/wrapper/workflow, change Python code/tests,
 change fixture JSON, connect artifact writer CLI, use real data, compute
 metrics, or claim production readiness.
+
+## 27. Step433 Fixture Validator Implementation Status
+
+Step433 implements the static production-facing metadata-only manifest file
+writing fixture validator:
+
+[Production file writing fixture validator module](../python/learner_state/frozen_policy_generation_manifest_writer_production_file_writing_fixture_validation.py).
+
+The validator checks the Step431 production file writing fixture root without
+writing files or executing the runtime writer. Production-facing runtime file
+writing and public `--manifest-out` remain unimplemented and separate.

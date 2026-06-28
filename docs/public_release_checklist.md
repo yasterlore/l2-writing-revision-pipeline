@@ -3631,6 +3631,25 @@ artifact body payloads, generated policy bodies, private paths, absolute
 local or temp paths, raw learner text, real participant data, or performance
 evidence.
 
+For Step433, review the static production-facing metadata-only manifest file
+writing fixture validator implementation:
+`python/learner_state/frozen_policy_generation_manifest_writer_production_file_writing_fixture_validation.py`
+and
+`python/learner_state/tests/test_frozen_policy_generation_manifest_writer_production_file_writing_fixture_validation.py`.
+Confirm it validates the 32-case / 160-JSON Step431 fixture root with
+body-free/count-only summaries, safe selector handling, safe output root
+metadata checks, overwrite metadata checks, pointer safe metadata checks,
+grouped reason-code matching, stdout/stderr body-free expectations, and
+public absolute path suppression. Confirm it does not execute runtime file
+writing, write manifest files, expose public `--manifest-out`, add a Makefile
+target, integrate release-quality, change workflow YAML, change fixture JSON,
+connect artifact writer CLI, use real data, compute metrics, or claim
+production readiness. Confirm docs and output do not include raw logs, full
+job output, fixture JSON bodies, request/pointer/expected-result bodies,
+written file bodies, manifest bodies, artifact body payloads, generated
+policy bodies, private paths, absolute local or temp paths, raw learner text,
+real participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
