@@ -591,3 +591,14 @@ The validator remains static fixture validation only. Step439 does not modify
 workflow YAML, the release-quality wrapper, Makefile, Python code/tests,
 fixture JSON, runtime writer behavior, public `--manifest-out`, artifact
 writer CLI integration, real-data use, metrics, or production readiness.
+
+## 36. Step441 Runtime File Writing Separation Note
+
+Step441 implements opt-in metadata-only runtime file writing in the manifest
+writer runtime. This validator remains static fixture-contract validation for
+the production file writing fixture root.
+
+The validator still does not execute the runtime writer, write manifest files,
+invoke artifact writer CLI, invoke artifact body generation CLI, use real
+data, compute metrics, or prove production readiness. Runtime file writing
+evidence and static fixture validation evidence remain separate.

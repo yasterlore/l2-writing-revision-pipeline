@@ -518,3 +518,30 @@ Production-facing runtime file writing and public `--manifest-out` remain
 unimplemented. The marker records static fixture validation remote-run
 evidence only. It does not claim runtime file writing, artifact writer CLI
 integration, real-data readiness, metrics, or production readiness.
+
+## 34. Step440 Runtime File Writing Implementation Plan Status
+
+Step440 adds the docs-only runtime file writing implementation plan:
+
+[Frozen policy generation manifest writer runtime file writing implementation plan](frozen_policy_generation_manifest_writer_runtime_file_writing_implementation_plan.md).
+
+The plan fixes the intended opt-in metadata-only `--manifest-out` behavior,
+safe output root policy, write/parse/scan flow, stdout/stderr policy, reason
+codes, and focused tests before implementation. It does not implement runtime
+file writing, change Makefile, change release-quality wrapper, change workflow
+YAML, change fixtures JSON, connect artifact writer CLI, use real data,
+compute metrics, or claim production readiness.
+
+## 35. Step441 Runtime File Writing Implementation Status
+
+Step441 implements opt-in metadata-only runtime file writing for the manifest
+writer. The default no-file runtime remains unchanged. A safe `--manifest-out`
+value writes one metadata-only JSON document under the controlled manifest
+output root, verifies it through parse and forbidden-field scans, and keeps
+stdout/stderr/result summaries body-free.
+
+This implementation does not change Makefile, release-quality wrapper,
+workflow YAML, fixtures JSON, artifact writer CLI integration, artifact body
+generation CLI integration, manifest body generation, metric computation,
+real-data use, or production readiness. Runtime smoke target design and
+release-quality runtime integration remain future separate steps.

@@ -837,3 +837,28 @@ The runtime API remains unchanged. Step439 does not modify workflow YAML, the
 release-quality wrapper, Makefile, Python code/tests, fixture JSON, implement
 runtime file writing, expose public `--manifest-out`, connect artifact writer
 CLI, use real data, compute metrics, or claim production readiness.
+
+## 62. Step440 Runtime File Writing Implementation Plan Status
+
+Step440 adds the docs-only runtime file writing implementation plan:
+
+[Frozen policy generation manifest writer runtime file writing implementation plan](frozen_policy_generation_manifest_writer_runtime_file_writing_implementation_plan.md).
+
+The plan prepares opt-in metadata-only `--manifest-out` and `--allow-overwrite`
+behavior without changing runtime code, Makefile, release-quality wrapper,
+workflow YAML, fixtures JSON, artifact writer CLI integration, real-data use,
+metrics, or production readiness.
+
+## 63. Step441 Runtime File Writing API Status
+
+Step441 adds opt-in runtime CLI arguments `--manifest-out` and
+`--allow-overwrite`. Without `--manifest-out`, the existing metadata-only
+no-file runtime behavior remains unchanged. With a safe `--manifest-out`, the
+runtime writes one metadata-only JSON document under the controlled manifest
+output root and reports only body-free metadata flags and counts.
+
+The public result does not include written file bodies or absolute resolved
+output paths. Step441 does not connect artifact writer CLI, call artifact body
+generation CLI, generate manifest bodies, change Makefile, change the
+release-quality wrapper, change workflow YAML, change fixtures JSON, use real
+data, compute metrics, or claim production readiness.

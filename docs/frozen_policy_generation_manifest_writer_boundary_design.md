@@ -996,3 +996,26 @@ workflow YAML, the release-quality wrapper, Makefile, Python code/tests,
 fixture JSON, implement runtime file writing, expose public `--manifest-out`,
 connect artifact writer CLI, use real data, compute metrics, or claim
 production readiness.
+
+## 70. Step440 Runtime File Writing Implementation Plan Status
+
+Step440 adds the docs-only runtime file writing implementation plan:
+
+[Frozen policy generation manifest writer runtime file writing implementation plan](frozen_policy_generation_manifest_writer_runtime_file_writing_implementation_plan.md).
+
+The plan keeps artifact writer CLI integration, artifact body generation CLI
+integration, manifest body generation, real-data use, metrics, and production
+readiness out of scope.
+
+## 71. Step441 Runtime File Writing Boundary Status
+
+Step441 updates the manifest writer boundary from no-file-only runtime to
+default no-file plus opt-in metadata-only file writing. File writing is allowed
+only through safe `--manifest-out` values under the controlled manifest output
+root, writes one metadata-only JSON document, and keeps public stdout/stderr
+and result summaries body-free.
+
+The boundary still excludes artifact writer CLI execution, artifact body
+generation CLI execution, manifest body generation, fixture JSON changes,
+Makefile changes, release-quality wrapper changes, workflow YAML changes,
+real-data use, metric computation, and production readiness claims.

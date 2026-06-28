@@ -382,3 +382,21 @@ This Step440 plan does not:
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
+
+## 19. Step441 Implementation Status
+
+Step441 implements opt-in metadata-only runtime file writing in the manifest
+writer runtime. The default no-file runtime remains unchanged. A safe
+`--manifest-out` value writes exactly one metadata-only JSON document under the
+controlled manifest output root, parses it back, scans it for forbidden body,
+payload, raw-row, logit, private-path, absolute-path, raw-learner-text, and
+performance fields, and emits only body-free stdout/stderr summaries.
+
+Step441 also adds focused runtime tests for safe writes, nested writes,
+overwrite denied/allowed behavior, unsafe path failures, public output safety,
+written-document forbidden-field scanning, and cleanup.
+
+This implementation does not change Makefile, release-quality wrapper,
+workflow YAML, fixtures JSON, artifact writer CLI integration, artifact body
+generation CLI integration, manifest body generation, metric computation,
+real-data use, or production readiness.

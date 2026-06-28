@@ -271,13 +271,25 @@ readiness.
 ## Next Actions
 
 - commit this status marker after local checks
-- runtime file writing remains separate
-- public `--manifest-out` remains separate
+- runtime file writing evidence remains separate from this marker
+- public `--manifest-out` runtime evidence remains separate from this marker
 - artifact writer CLI integration remains separate
 - strict exit code normalization remains separate
 - real-data readiness remains a future non-public institution-approved review
+
+## Step441 Separation Note
+
+Step441 implements opt-in metadata-only runtime file writing after this
+remote-run marker was created. This marker remains evidence for Release
+Quality wrapper inclusion of the static production file writing fixture
+validator only. It is not runtime file writing evidence, not public
+`--manifest-out` remote evidence, not artifact writer CLI integration evidence,
+and not production readiness evidence.
 
 ## Update History
 
 - 2026-06-28: Step439 status marker created from public-safe metadata for the
   successful Release Quality remote/manual run.
+- 2026-06-29: Step441 separation note added without adding raw logs, fixture
+  bodies, written file bodies, private paths, absolute paths, raw learner text,
+  metrics, or production readiness claims.

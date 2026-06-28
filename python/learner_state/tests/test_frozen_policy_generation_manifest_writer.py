@@ -27,6 +27,7 @@ from test_support.safe_output_scan import assert_no_forbidden_fragments
 FIXTURE_ROOT = Path(
     "tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime"
 )
+MANIFEST_OUTPUT_ROOT = Path("tmp/frozen_policy_generation_manifest")
 VALID_CASES = (
     "metadata_only_minimal_no_file",
     "metadata_only_with_artifact_body_reference",
@@ -69,6 +70,28 @@ FORBIDDEN_RESULT_KEYS = {
     "performance_metric_body",
     "performance_metrics",
 }
+FORBIDDEN_WRITTEN_MANIFEST_KEYS = {
+    "manifest_body",
+    "manifest_json_body",
+    "artifact_body_payload",
+    "generated_policy_body",
+    "request_body",
+    "pointer_body",
+    "expected_body",
+    "raw_rows",
+    "logits",
+    "probabilities",
+    "private_path",
+    "absolute_path",
+    "raw_learner_text",
+    "final_text",
+    "observed_after_text",
+    "gold_label",
+    "scoring_feedback",
+    "scoring_feedback_payload",
+    "real_participant_data",
+    "performance_metric_body",
+}
 UNSAFE_STRING_MARKERS = (
     "/Users/",
     "/home/",
@@ -83,6 +106,9 @@ UNSAFE_STRING_MARKERS = (
 
 
 class FrozenPolicyGenerationManifestWriterRuntimeTests(unittest.TestCase):
+    def tearDown(self) -> None:
+        cleanup_manifest_output_root()
+
     def test_help_exits_zero(self) -> None:
         completed = run_cli("--help")
 
@@ -229,16 +255,139 @@ class FrozenPolicyGenerationManifestWriterRuntimeTests(unittest.TestCase):
 
         self.assert_fail_closed(completed, "unsafe_manifest_output_path")
 
-    def test_manifest_out_cli_argument_is_usage_error(self) -> None:
+    def test_manifest_out_cli_argument_writes_metadata_only_file(self) -> None:
         completed = run_case_cli(
             valid_case("metadata_only_minimal_no_file"),
             "--manifest-out",
-            "safe_sentinel_manifest.json",
+            "manifest.json",
+        )
+
+        self.assertEqual(completed.returncode, 0)
+        self.assertIn("writer_status=pass", completed.stdout)
+        self.assertIn("manifest_writer_mode=metadata_only_file", completed.stdout)
+        self.assertIn("manifest_file_written=true", completed.stdout)
+        self.assertIn("manifest_output_path_available=true", completed.stdout)
+        self.assertIn('"written_file_count":1', completed.stdout)
+        payload = read_written_manifest("manifest.json")
+        assert_metadata_only_written_manifest(self, payload)
+        self.assertEqual(payload["manifest_writer_mode"], "metadata_only_file")
+        assert_safe_cli_output(self, completed)
+
+    def test_nested_manifest_out_writes_one_metadata_only_file(self) -> None:
+        completed = run_case_cli(
+            valid_case("metadata_only_minimal_no_file"),
+            "--manifest-out",
+            "nested/manifest.json",
+        )
+
+        self.assertEqual(completed.returncode, 0)
+        payload = read_written_manifest("nested/manifest.json")
+        assert_metadata_only_written_manifest(self, payload)
+        self.assertEqual(count_manifest_output_files(), 1)
+        assert_safe_cli_output(self, completed)
+
+    def test_manifest_out_existing_file_without_overwrite_fails(self) -> None:
+        write_existing_manifest("manifest.json")
+
+        completed = run_case_cli(
+            valid_case("metadata_only_minimal_no_file"),
+            "--manifest-out",
+            "manifest.json",
         )
 
         self.assertEqual(completed.returncode, 2)
         self.assertIn("writer_status=usage_error", completed.stdout)
-        self.assertIn("manifest_out_not_supported", completed.stdout)
+        self.assertIn("output_exists_without_overwrite", completed.stdout)
+        self.assertIn("manifest_file_written=false", completed.stdout)
+        self.assertEqual(read_written_manifest("manifest.json")["safe_summary"], "existing")
+        assert_safe_cli_output(self, completed)
+
+    def test_manifest_out_existing_file_with_overwrite_succeeds(self) -> None:
+        write_existing_manifest("manifest.json")
+
+        completed = run_case_cli(
+            valid_case("metadata_only_minimal_no_file"),
+            "--manifest-out",
+            "manifest.json",
+            "--allow-overwrite",
+        )
+
+        self.assertEqual(completed.returncode, 0)
+        payload = read_written_manifest("manifest.json")
+        assert_metadata_only_written_manifest(self, payload)
+        self.assertEqual(payload["safe_summary"], "metadata_only_manifest_writer_result")
+        assert_safe_cli_output(self, completed)
+
+    def test_unsafe_absolute_manifest_out_fails_body_free(self) -> None:
+        completed = run_case_cli(
+            valid_case("metadata_only_minimal_no_file"),
+            "--manifest-out",
+            "/ABSOLUTE_MANIFEST_OUTPUT_PATH_SENTINEL/manifest.json",
+        )
+
+        self.assert_usage_error(completed, "unsafe_absolute_manifest_output_path")
+        self.assertEqual(count_manifest_output_files(), 0)
+
+    def test_parent_traversal_manifest_out_fails_body_free(self) -> None:
+        completed = run_case_cli(
+            valid_case("metadata_only_minimal_no_file"),
+            "--manifest-out",
+            "../outside.json",
+        )
+
+        self.assert_usage_error(completed, "unsafe_parent_traversal_manifest_output_path")
+        self.assertEqual(count_manifest_output_files(), 0)
+
+    def test_outside_root_manifest_out_fails_body_free(self) -> None:
+        completed = run_case_cli(
+            valid_case("metadata_only_minimal_no_file"),
+            "--manifest-out",
+            "tmp/other/manifest.json",
+        )
+
+        self.assert_usage_error(
+            completed,
+            "unsafe_manifest_output_path_outside_allowed_root",
+        )
+        self.assertEqual(count_manifest_output_files(), 0)
+
+    def test_non_json_manifest_out_fails_body_free(self) -> None:
+        completed = run_case_cli(
+            valid_case("metadata_only_minimal_no_file"),
+            "--manifest-out",
+            "manifest.txt",
+        )
+
+        self.assert_usage_error(completed, "unsafe_manifest_output_path_extension")
+        self.assertEqual(count_manifest_output_files(), 0)
+
+    def test_unsafe_filename_manifest_out_fails_body_free(self) -> None:
+        completed = run_case_cli(
+            valid_case("metadata_only_minimal_no_file"),
+            "--manifest-out",
+            "unsafe name.json",
+        )
+
+        self.assert_usage_error(completed, "unsafe_manifest_output_filename")
+        self.assertEqual(count_manifest_output_files(), 0)
+
+    def test_manifest_out_json_summary_is_body_free_and_has_no_absolute_path(self) -> None:
+        completed = run_case_cli(
+            valid_case("metadata_only_minimal_no_file"),
+            "--manifest-out",
+            "manifest.json",
+            "--json",
+        )
+
+        self.assertEqual(completed.returncode, 0)
+        summary = json.loads(completed.stdout)
+        self.assertTrue(summary["manifest_file_written"])
+        self.assertTrue(summary["manifest_output_path_available"])
+        self.assertEqual(summary["count_summary"]["written_file_count"], 1)
+        self.assertFalse(contains_unsafe_string(summary))
+        self.assertNotIn('"writer_version"', completed.stdout)
+        payload = read_written_manifest("manifest.json")
+        assert_metadata_only_written_manifest(self, payload)
         assert_safe_cli_output(self, completed)
 
     def test_pointer_include_body_payload_true_fails_closed(self) -> None:
@@ -381,6 +530,14 @@ class FrozenPolicyGenerationManifestWriterRuntimeTests(unittest.TestCase):
         self.assertIn("manifest_file_written=false", completed.stdout)
         assert_safe_cli_output(self, completed)
 
+    def assert_usage_error(self, completed, reason_code: str) -> None:
+        self.assertEqual(completed.returncode, 2)
+        self.assertIn("writer_status=usage_error", completed.stdout)
+        self.assertIn(reason_code, completed.stdout)
+        self.assertIn("manifest_file_written=false", completed.stdout)
+        self.assertIn("manifest_output_path_available=false", completed.stdout)
+        assert_safe_cli_output(self, completed)
+
 
 def valid_case(case_name: str) -> Path:
     return FIXTURE_ROOT / "valid" / case_name
@@ -460,6 +617,54 @@ def copy_case_to_tmp(tmp_dir: str) -> Path:
     case_dir = Path(tmp_dir) / "case"
     shutil.copytree(valid_case("metadata_only_minimal_no_file"), case_dir)
     return case_dir
+
+
+def cleanup_manifest_output_root() -> None:
+    shutil.rmtree(MANIFEST_OUTPUT_ROOT, ignore_errors=True)
+
+
+def read_written_manifest(relative_path: str) -> dict[str, object]:
+    return json.loads((MANIFEST_OUTPUT_ROOT / relative_path).read_text(encoding="utf-8"))
+
+
+def write_existing_manifest(relative_path: str) -> None:
+    path = MANIFEST_OUTPUT_ROOT / relative_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(
+            {
+                "schema_version": "synthetic_existing_metadata_only_manifest_v0.1",
+                "safe_summary": "existing",
+            },
+            sort_keys=True,
+        ),
+        encoding="utf-8",
+    )
+
+
+def count_manifest_output_files() -> int:
+    if not MANIFEST_OUTPUT_ROOT.exists():
+        return 0
+    return sum(1 for path in MANIFEST_OUTPUT_ROOT.rglob("*") if path.is_file())
+
+
+def assert_metadata_only_written_manifest(
+    test_case: unittest.TestCase,
+    payload: dict[str, object],
+) -> None:
+    test_case.assertEqual(
+        payload["schema_version"],
+        "learner_state_frozen_policy_generation_manifest_writer_metadata_only_manifest_v0.1",
+    )
+    test_case.assertEqual(
+        payload["safe_summary"],
+        "metadata_only_manifest_writer_result",
+    )
+    test_case.assertEqual(payload["count_summary"]["written_file_count"], 1)
+    test_case.assertFalse(
+        FORBIDDEN_WRITTEN_MANIFEST_KEYS.intersection(collect_keys(payload))
+    )
+    test_case.assertFalse(contains_unsafe_string(payload))
 
 
 def collect_keys(value):

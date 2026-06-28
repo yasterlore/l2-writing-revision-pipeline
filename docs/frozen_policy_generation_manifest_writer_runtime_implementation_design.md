@@ -852,3 +852,31 @@ today and `--manifest-out` remains unimplemented. Step439 does not modify
 workflow YAML, the release-quality wrapper, Makefile, Python code/tests,
 fixture JSON, runtime writer behavior, artifact writer CLI integration,
 real-data use, metrics, or production readiness.
+
+## 52. Step440 Runtime File Writing Implementation Plan Status
+
+Step440 adds the docs-only implementation plan for opt-in metadata-only
+runtime file writing:
+
+[Frozen policy generation manifest writer runtime file writing implementation plan](frozen_policy_generation_manifest_writer_runtime_file_writing_implementation_plan.md).
+
+The plan does not modify runtime code, Makefile, release-quality wrapper,
+workflow YAML, fixtures JSON, artifact writer CLI integration, real-data use,
+metrics, or production readiness.
+
+## 53. Step441 Runtime File Writing Implementation Status
+
+Step441 implements opt-in metadata-only runtime file writing in
+`python/learner_state/frozen_policy_generation_manifest_writer.py` and focused
+runtime tests in
+`python/learner_state/tests/test_frozen_policy_generation_manifest_writer.py`.
+
+The no-file metadata-only runtime remains the default. File writing happens
+only when `--manifest-out` is supplied, remains constrained to the controlled
+manifest output root, writes one metadata-only JSON document, parses and scans
+the written document, and emits body-free stdout/stderr/result summaries.
+
+Step441 does not modify Makefile, release-quality wrapper, workflow YAML,
+fixtures JSON, artifact writer CLI integration, artifact body generation CLI
+integration, manifest body generation, real-data use, metrics, or production
+readiness.

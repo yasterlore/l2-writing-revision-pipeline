@@ -1486,6 +1486,18 @@ written, no artifact body is produced, and no performance metric is computed.
   absolute paths, raw learner text, real participant data, or performance
   evidence, and it does not implement runtime file writing, public
   `--manifest-out`, artifact writer CLI integration, or production readiness.
+- Step440: added the docs-only runtime file writing implementation plan for
+  opt-in metadata-only manifest writer output. It fixes the intended CLI
+  surface, safe output root policy, write/parse/scan flow, stdout/stderr
+  safety, reason codes, focused tests, and staging before implementation.
+- Step441: implemented opt-in metadata-only runtime file writing through
+  safe `--manifest-out` and `--allow-overwrite`. The default no-file runtime
+  remains unchanged. Safe writes produce one metadata-only JSON document under
+  the controlled manifest output root, parse and scan the document, keep
+  stdout/stderr/result summaries body-free, and add focused tests. It does
+  not change Makefile, release-quality wrapper, workflow YAML, fixtures JSON,
+  artifact writer CLI integration, artifact body generation CLI integration,
+  manifest body generation, real-data use, metrics, or production readiness.
 
 ## Related Documents
 
@@ -1529,6 +1541,9 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer production file writing fixture release-quality integration design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer production file writing fixture release-quality remote run record workflow](frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation manifest writer production file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md)
+- [Frozen policy generation manifest writer runtime file writing implementation plan](frozen_policy_generation_manifest_writer_runtime_file_writing_implementation_plan.md)
+- [Frozen policy generation manifest writer runtime implementation](../python/learner_state/frozen_policy_generation_manifest_writer.py)
+- [Frozen policy generation manifest writer runtime tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer.py)
 - [Release-quality wrapper with manifest writer production file writing fixture validation](../scripts/check_release_quality.sh)
 - [Makefile manifest writer production file writing fixture validator target](../Makefile)
 - [Makefile manifest writer isolated write validation target](../Makefile)

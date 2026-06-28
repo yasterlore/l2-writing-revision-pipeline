@@ -35,6 +35,9 @@ RESULT_SCHEMA_VERSION = (
 )
 
 SUPPORTED_MODE = "metadata_only_no_file"
+FILE_WRITING_MODE = "metadata_only_file"
+SAFE_MANIFEST_OUTPUT_ROOT = Path("tmp/frozen_policy_generation_manifest")
+MAX_MANIFEST_OUTPUT_PATH_LENGTH = 240
 PASS_SAFE_SUMMARY = "metadata_only_manifest_writer_result"
 FAIL_SAFE_SUMMARY = "fail_closed_metadata_only_manifest_writer_result"
 USAGE_ERROR_SAFE_SUMMARY = "usage_error_metadata_only_manifest_writer_result"
@@ -117,8 +120,52 @@ SAFETY_FLAGS = {
     "no_oracle_checked": True,
     "non_proof_notice_checked": True,
     "path_policy_checked": True,
+    "output_path_safety_checked": True,
     "content_policy_checked": True,
     "file_writing_checked": True,
+}
+
+WRITTEN_MANIFEST_SCHEMA_VERSION = (
+    "learner_state_frozen_policy_generation_manifest_writer_metadata_only_manifest_v0.1"
+)
+WRITER_VERSION = "learner_state_frozen_policy_generation_manifest_writer_runtime_v0.1"
+
+ALLOWED_WRITTEN_MANIFEST_FIELDS = {
+    "schema_version",
+    "result_schema_version",
+    "manifest_id",
+    "artifact_id",
+    "artifact_body_id",
+    "manifest_writer_mode",
+    "validation_reference_count",
+    "release_quality_reference_count",
+    "safety_flags",
+    "count_summary",
+    "safe_summary",
+    "writer_version",
+}
+
+FORBIDDEN_WRITTEN_MANIFEST_KEYS = {
+    "manifest_body",
+    "manifest_json_body",
+    "artifact_body_payload",
+    "generated_policy_body",
+    "request_body",
+    "pointer_body",
+    "expected_body",
+    "raw_rows",
+    "logits",
+    "probabilities",
+    "private_path",
+    "absolute_path",
+    "raw_learner_text",
+    "final_text",
+    "observed_after_text",
+    "gold_label",
+    "scoring_feedback",
+    "scoring_feedback_payload",
+    "real_participant_data",
+    "performance_metric_body",
 }
 
 FORBIDDEN_PAYLOAD_KEY_REASONS = {
@@ -288,6 +335,7 @@ class ManifestWriterSafetyFlags:
     no_oracle_checked: bool = True
     non_proof_notice_checked: bool = True
     path_policy_checked: bool = True
+    output_path_safety_checked: bool = True
     content_policy_checked: bool = True
     file_writing_checked: bool = True
 
@@ -310,6 +358,7 @@ class ManifestWriterSafetyFlags:
             "no_oracle_checked": self.no_oracle_checked,
             "non_proof_notice_checked": self.non_proof_notice_checked,
             "path_policy_checked": self.path_policy_checked,
+            "output_path_safety_checked": self.output_path_safety_checked,
             "content_policy_checked": self.content_policy_checked,
             "file_writing_checked": self.file_writing_checked,
         }
@@ -535,17 +584,30 @@ def audit_manifest_result_safety(result: ManifestWriterResult) -> ManifestWriter
     if result.manifest_body_available is not False:
         reason_codes.append("manifest_body_requested")
         failed_checks.append("manifest_body_available")
-    if result.manifest_file_written is not False:
+    written_file_count = result.count_summary.get("written_file_count")
+    if result.manifest_file_written is True:
+        if result.manifest_output_path_available is not True:
+            reason_codes.append("unsafe_manifest_output_path")
+            failed_checks.append("manifest_output_path_available")
+        if written_file_count != 1:
+            reason_codes.append("unsafe_manifest_output_path")
+            failed_checks.append("written_file_count")
+    elif result.manifest_file_written is not False:
         reason_codes.append("unsafe_manifest_output_path")
         failed_checks.append("manifest_file_written")
-    if result.manifest_output_path_available is not False:
+    elif result.manifest_output_path_available is not False:
         reason_codes.append("unsafe_manifest_output_path")
         failed_checks.append("manifest_output_path_available")
+    if result.manifest_file_written is False and written_file_count != 0:
+        reason_codes.append("unsafe_manifest_output_path")
+        failed_checks.append("written_file_count")
     for flag_name in SAFETY_FLAGS:
         if result.safety_flags.get(flag_name) is not True:
             reason_codes.append(_reason_for_safety_flag(flag_name))
             failed_checks.append(flag_name)
     for count_name in ZERO_COUNT_FIELDS:
+        if count_name == "written_file_count" and result.manifest_file_written is True:
+            continue
         if result.count_summary.get(count_name) != 0:
             reason_codes.append(_reason_for_count_field(count_name))
             failed_checks.append(count_name)
@@ -569,7 +631,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=(
             "Run the synthetic frozen policy generation manifest writer runtime "
-            "with metadata-only no-file output."
+            "with metadata-only output."
         )
     )
     parser.add_argument("--request", type=Path, help="manifest_writer_request path.")
@@ -588,24 +650,23 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Emit a safe JSON summary instead of a human summary.",
     )
+    parser.add_argument(
+        "--manifest-out",
+        help=(
+            "Optional safe relative metadata-only manifest output path under "
+            "the project-controlled manifest output root."
+        ),
+    )
+    parser.add_argument(
+        "--allow-overwrite",
+        action="store_true",
+        help="Allow overwriting an existing safe metadata-only manifest output.",
+    )
     try:
         args, unknown = parser.parse_known_args(argv)
     except SystemExit as exc:
         return int(exc.code) if isinstance(exc.code, int) else 1
 
-    if "--manifest-out" in unknown or any(
-        item.startswith("--manifest-out=") for item in unknown
-    ):
-        result = _error_to_result(
-            ManifestWriterError(
-                error_status="usage_error",
-                reason_codes=["manifest_out_not_supported"],
-                failed_checks=["manifest_out"],
-                safe_summary=USAGE_ERROR_SAFE_SUMMARY,
-            )
-        )
-        _emit_cli_payload(result.to_safe_dict(), args.json)
-        return 2
     if unknown:
         result = _error_to_result(
             ManifestWriterError(
@@ -637,7 +698,13 @@ def main(argv: list[str] | None = None) -> int:
         artifact_body_pointer = load_artifact_body_generation_result_pointer(
             args.artifact_body_result
         )
-        result = run_manifest_writer(request, artifact_pointer, artifact_body_pointer)
+        result = run_manifest_writer(
+            request,
+            artifact_pointer,
+            artifact_body_pointer,
+            manifest_out=args.manifest_out,
+            allow_overwrite=args.allow_overwrite,
+        )
         _emit_cli_payload(result.to_safe_dict(), args.json)
         if result.writer_status == "pass":
             return 0
@@ -663,6 +730,9 @@ def run_manifest_writer(
     request: ManifestWriterRequest | ManifestWriterError,
     artifact_pointer: ArtifactWriterResultPointer | ManifestWriterError,
     artifact_body_pointer: ArtifactBodyGenerationResultPointer | ManifestWriterError,
+    *,
+    manifest_out: str | None = None,
+    allow_overwrite: bool = False,
 ) -> ManifestWriterResult:
     if isinstance(request, ManifestWriterError):
         return _error_to_result(request)
@@ -692,7 +762,359 @@ def run_manifest_writer(
                 "safe_summary": FAIL_SAFE_SUMMARY,
             }
         )
+    if manifest_out is not None:
+        return _write_metadata_only_manifest_file(
+            result,
+            manifest_out=manifest_out,
+            allow_overwrite=allow_overwrite,
+        )
     return result
+
+
+def _write_metadata_only_manifest_file(
+    result: ManifestWriterResult,
+    *,
+    manifest_out: str,
+    allow_overwrite: bool,
+) -> ManifestWriterResult:
+    candidate, reason_codes, failed_checks = _validate_manifest_output_path(
+        manifest_out
+    )
+    if reason_codes:
+        return _result_with_status(
+            result,
+            writer_status="usage_error",
+            reason_codes=reason_codes,
+            failed_checks=failed_checks,
+            safe_summary=USAGE_ERROR_SAFE_SUMMARY,
+        )
+    if candidate is None:
+        return _result_with_status(
+            result,
+            writer_status="usage_error",
+            reason_codes=["unsafe_manifest_output_path"],
+            failed_checks=["manifest_out"],
+            safe_summary=USAGE_ERROR_SAFE_SUMMARY,
+        )
+
+    overwrite_reasons, overwrite_checks = _validate_manifest_overwrite_policy(
+        candidate,
+        allow_overwrite=allow_overwrite,
+    )
+    if overwrite_reasons:
+        return _result_with_status(
+            result,
+            writer_status="usage_error",
+            reason_codes=overwrite_reasons,
+            failed_checks=overwrite_checks,
+            safe_summary=USAGE_ERROR_SAFE_SUMMARY,
+        )
+
+    written_result = _result_with_file_written(result)
+    document = _build_metadata_only_manifest_document(written_result)
+    scan_reasons = _scan_written_manifest_document(document)
+    if scan_reasons:
+        return _result_with_status(
+            result,
+            writer_status="fail_closed",
+            reason_codes=scan_reasons,
+            failed_checks=["manifest_written_forbidden_content"],
+            safe_summary=FAIL_SAFE_SUMMARY,
+        )
+
+    temp_path = candidate.with_name(f".{candidate.name}.tmp")
+    try:
+        candidate.parent.mkdir(parents=True, exist_ok=True)
+        if temp_path.exists() or temp_path.is_symlink():
+            temp_path.unlink()
+        temp_path.write_text(
+            json.dumps(document, sort_keys=True, separators=(",", ":")) + "\n",
+            encoding="utf-8",
+        )
+        parsed = json.loads(temp_path.read_text(encoding="utf-8"))
+        post_scan_reasons = _scan_written_manifest_document(parsed)
+        if post_scan_reasons:
+            temp_path.unlink(missing_ok=True)
+            return _result_with_status(
+                result,
+                writer_status="fail_closed",
+                reason_codes=post_scan_reasons,
+                failed_checks=["manifest_written_forbidden_content"],
+                safe_summary=FAIL_SAFE_SUMMARY,
+            )
+        temp_path.replace(candidate)
+    except json.JSONDecodeError:
+        _cleanup_partial_manifest_write(temp_path)
+        return _result_with_status(
+            result,
+            writer_status="fail_closed",
+            reason_codes=["manifest_write_parse_failure"],
+            failed_checks=["manifest_write_parse_failure"],
+            safe_summary=FAIL_SAFE_SUMMARY,
+        )
+    except OSError:
+        cleanup_failed = not _cleanup_partial_manifest_write(temp_path)
+        return _result_with_status(
+            result,
+            writer_status="fail_closed",
+            reason_codes=[
+                "manifest_write_failure",
+                *(["partial_write_cleanup_failure"] if cleanup_failed else []),
+            ],
+            failed_checks=[
+                "manifest_write_failure",
+                *(["partial_write_cleanup_failure"] if cleanup_failed else []),
+            ],
+            safe_summary=FAIL_SAFE_SUMMARY,
+        )
+
+    audit = audit_manifest_result_safety(written_result)
+    if audit.reason_codes or audit.failed_checks:
+        return _result_with_status(
+            written_result,
+            writer_status="fail_closed",
+            reason_codes=audit.reason_codes,
+            failed_checks=audit.failed_checks,
+            safe_summary=FAIL_SAFE_SUMMARY,
+        )
+    return written_result
+
+
+def _validate_manifest_output_path(
+    manifest_out: str,
+) -> tuple[Path | None, list[str], list[str]]:
+    if not isinstance(manifest_out, str) or not manifest_out:
+        return None, ["unsafe_manifest_output_filename"], ["manifest_out"]
+    if len(manifest_out) > MAX_MANIFEST_OUTPUT_PATH_LENGTH:
+        return (
+            None,
+            ["unsafe_manifest_output_path_too_long"],
+            ["manifest_out_length"],
+        )
+    if "\\" in manifest_out or any(ord(char) < 32 for char in manifest_out):
+        return None, ["unsafe_manifest_output_filename"], ["manifest_out"]
+
+    path = Path(manifest_out)
+    if path.is_absolute():
+        return (
+            None,
+            ["unsafe_absolute_manifest_output_path"],
+            ["manifest_out_absolute"],
+        )
+
+    parts = path.parts
+    if not parts or path.name in {"", ".", ".."}:
+        return None, ["unsafe_manifest_output_filename"], ["manifest_out_filename"]
+    if any(part == ".." for part in parts):
+        return (
+            None,
+            ["unsafe_parent_traversal_manifest_output_path"],
+            ["manifest_out_parent_traversal"],
+        )
+    if any(part.startswith("~") for part in parts):
+        return None, ["unsafe_home_manifest_output_path"], ["manifest_out_home"]
+    lowered_parts = [part.lower() for part in parts]
+    if lowered_parts[0] == "tmp":
+        return (
+            None,
+            ["unsafe_manifest_output_path_outside_allowed_root"],
+            ["manifest_out_outside_allowed_root"],
+        )
+    if any(_has_private_or_cloud_marker(part) for part in lowered_parts):
+        reason = (
+            "unsafe_cloud_marker_manifest_output_path"
+            if any(_has_cloud_marker(part) for part in lowered_parts)
+            else "unsafe_private_path_marker_manifest_output_path"
+        )
+        return None, [reason], ["manifest_out_private_or_cloud_marker"]
+    if any(part.startswith(".") for part in parts):
+        return (
+            None,
+            ["unsafe_hidden_private_manifest_directory"],
+            ["manifest_out_hidden_directory"],
+        )
+    if path.suffix != ".json":
+        return (
+            None,
+            ["unsafe_manifest_output_path_extension"],
+            ["manifest_out_extension"],
+        )
+    if not all(_is_safe_manifest_output_part(part) for part in parts):
+        return None, ["unsafe_manifest_output_filename"], ["manifest_out_filename"]
+
+    candidate = SAFE_MANIFEST_OUTPUT_ROOT / path
+    try:
+        root_resolved = SAFE_MANIFEST_OUTPUT_ROOT.resolve(strict=False)
+        candidate_resolved = candidate.resolve(strict=False)
+        if not candidate_resolved.is_relative_to(root_resolved):
+            return (
+                None,
+                ["unsafe_manifest_output_path_outside_allowed_root"],
+                ["manifest_out_outside_allowed_root"],
+            )
+    except OSError:
+        return None, ["unsafe_manifest_output_path"], ["manifest_out"]
+    return candidate, [], []
+
+
+def _validate_manifest_overwrite_policy(
+    candidate: Path,
+    *,
+    allow_overwrite: bool,
+) -> tuple[list[str], list[str]]:
+    if _path_has_symlink_sensitive_segment(candidate):
+        return ["unsafe_symlink_manifest_output_path"], ["manifest_out_symlink"]
+    if candidate.exists() and not allow_overwrite:
+        return ["output_exists_without_overwrite"], ["manifest_out_exists"]
+    return [], []
+
+
+def _path_has_symlink_sensitive_segment(path: Path) -> bool:
+    probe = SAFE_MANIFEST_OUTPUT_ROOT
+    if probe.exists() and probe.is_symlink():
+        return True
+    try:
+        relative = path.relative_to(SAFE_MANIFEST_OUTPUT_ROOT)
+    except ValueError:
+        return True
+    for part in relative.parts:
+        probe = probe / part
+        if probe.exists() and probe.is_symlink():
+            return True
+    return False
+
+
+def _is_safe_manifest_output_part(part: str) -> bool:
+    return bool(part) and all(
+        char.isalnum() or char in {"_", "-", "."} for char in part
+    )
+
+
+def _has_private_or_cloud_marker(value: str) -> bool:
+    return (
+        "private" in value
+        or "manual_outputs" in value
+        or "participant" in value
+        or "real_data" in value
+        or _has_cloud_marker(value)
+    )
+
+
+def _has_cloud_marker(value: str) -> bool:
+    return (
+        "cloud" in value
+        or "icloud" in value
+        or "dropbox" in value
+        or "onedrive" in value
+        or "google_drive" in value
+    )
+
+
+def _result_with_file_written(result: ManifestWriterResult) -> ManifestWriterResult:
+    count_summary = dict(result.count_summary)
+    count_summary["written_file_count"] = 1
+    safety_flags = dict(result.safety_flags)
+    safety_flags["output_path_safety_checked"] = True
+    return ManifestWriterResult(
+        **{
+            **result.to_safe_dict(),
+            "writer_status": "pass",
+            "manifest_writer_mode": FILE_WRITING_MODE,
+            "manifest_file_written": True,
+            "manifest_output_path_available": True,
+            "reason_codes": [],
+            "failed_checks": [],
+            "safety_flags": safety_flags,
+            "count_summary": count_summary,
+            "safe_summary": PASS_SAFE_SUMMARY,
+        }
+    )
+
+
+def _result_with_status(
+    result: ManifestWriterResult,
+    *,
+    writer_status: str,
+    reason_codes: list[str],
+    failed_checks: list[str],
+    safe_summary: str,
+) -> ManifestWriterResult:
+    count_summary = dict(result.count_summary)
+    count_summary["written_file_count"] = 0
+    return ManifestWriterResult(
+        **{
+            **result.to_safe_dict(),
+            "writer_status": writer_status,
+            "manifest_file_written": False,
+            "manifest_output_path_available": False,
+            "reason_codes": _dedupe(reason_codes),
+            "failed_checks": _dedupe(failed_checks),
+            "count_summary": count_summary,
+            "safe_summary": safe_summary,
+        }
+    )
+
+
+def _build_metadata_only_manifest_document(
+    result: ManifestWriterResult,
+) -> dict[str, Any]:
+    return {
+        "schema_version": WRITTEN_MANIFEST_SCHEMA_VERSION,
+        "result_schema_version": result.result_schema_version,
+        "manifest_id": result.manifest_id,
+        "artifact_id": result.artifact_id,
+        "artifact_body_id": result.artifact_body_id,
+        "manifest_writer_mode": result.manifest_writer_mode,
+        "validation_reference_count": result.validation_reference_count,
+        "release_quality_reference_count": result.release_quality_reference_count,
+        "safety_flags": dict(result.safety_flags),
+        "count_summary": dict(result.count_summary),
+        "safe_summary": result.safe_summary,
+        "writer_version": WRITER_VERSION,
+    }
+
+
+def _scan_written_manifest_document(value: Any) -> list[str]:
+    reasons: list[str] = []
+    if not isinstance(value, dict):
+        return ["manifest_write_parse_failure"]
+    extra_fields = set(value) - ALLOWED_WRITTEN_MANIFEST_FIELDS
+    if extra_fields:
+        reasons.append("manifest_written_forbidden_content")
+
+    def visit(item: Any) -> None:
+        if isinstance(item, dict):
+            for key, nested in item.items():
+                key_lower = str(key).lower()
+                if key_lower in FORBIDDEN_WRITTEN_MANIFEST_KEYS:
+                    reasons.append(
+                        FORBIDDEN_PAYLOAD_KEY_REASONS.get(
+                            key_lower,
+                            "manifest_written_forbidden_content",
+                        )
+                    )
+                visit(nested)
+        elif isinstance(item, list):
+            for nested in item:
+                visit(nested)
+        elif isinstance(item, str):
+            lowered = item.lower()
+            if any(marker.lower() in lowered for marker in UNSAFE_PATH_MARKERS):
+                if item.startswith(("/", "C:\\")):
+                    reasons.append("absolute_path_leakage")
+                else:
+                    reasons.append("private_path_leakage")
+
+    visit(value)
+    return _dedupe(reasons)
+
+
+def _cleanup_partial_manifest_write(path: Path) -> bool:
+    try:
+        path.unlink(missing_ok=True)
+    except OSError:
+        return False
+    return True
 
 
 def _request_from_payload(payload: dict[str, Any]) -> ManifestWriterRequest:
@@ -985,7 +1407,11 @@ def _reason_for_safety_flag(flag_name: str) -> str:
         return "logits_dump_leakage"
     if flag_name in {"no_private_paths"}:
         return "private_path_leakage"
-    if flag_name in {"no_absolute_paths", "path_policy_checked"}:
+    if flag_name in {
+        "no_absolute_paths",
+        "path_policy_checked",
+        "output_path_safety_checked",
+    }:
         return "absolute_path_leakage"
     if flag_name in {"no_artifact_body_payload"}:
         return "artifact_body_payload_leakage"

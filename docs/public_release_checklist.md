@@ -3755,6 +3755,28 @@ release-quality wrapper, Makefile, Python code/tests, fixture JSON, implement
 runtime file writing, expose public `--manifest-out`, connect artifact writer
 CLI, use real data, compute metrics, or claim production readiness.
 
+For Step440, review the docs-only
+[frozen policy generation manifest writer runtime file writing implementation plan](frozen_policy_generation_manifest_writer_runtime_file_writing_implementation_plan.md).
+Confirm it fixes the implementation target, CLI surface, safe output root
+policy, write/parse/scan flow, stdout/stderr/result safety, failure reason
+codes, focused tests, release-quality staging, and non-goals without modifying
+runtime code, Makefile, release-quality wrapper, workflow YAML, fixtures JSON,
+artifact writer CLI integration, real-data use, metrics, or production
+readiness.
+
+For Step441, review the runtime implementation and focused tests. Confirm the
+default no-file runtime remains unchanged; safe `--manifest-out` writes one
+metadata-only JSON document under the controlled manifest output root;
+`--allow-overwrite` is required for existing outputs; unsafe paths fail
+closed or usage-error without printing bodies or absolute resolved paths; the
+written document parses and contains no manifest body, artifact body payload,
+generated policy body, request/pointer/expected body, raw rows, logits,
+private paths, absolute paths, raw learner text, or performance body. Confirm
+Step441 does not modify Makefile, release-quality wrapper, workflow YAML,
+fixtures JSON, artifact writer CLI integration, artifact body generation CLI
+integration, manifest body generation, real-data use, metrics, or production
+readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
