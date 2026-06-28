@@ -1165,6 +1165,14 @@ written, no artifact body is produced, and no performance metric is computed.
   does not change Makefile, release-quality, workflow YAML, Python code/tests,
   fixture JSON, manifest file writing, `--manifest-out`, artifact writer CLI
   integration, real-data use, metrics, or production readiness.
+- Step403: implemented the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-manifest-writer-runtime` for
+  the metadata-only no-file manifest writer runtime smoke. The target runs the
+  existing runtime CLI against the valid minimal runtime fixture, emits a
+  body-free summary, does not write manifest files, does not generate manifest
+  bodies, does not add `--manifest-out`, does not connect artifact writer
+  CLI, does not change release-quality or workflow YAML, does not use real
+  data, does not compute metrics, and does not claim production readiness.
 
 ## Related Documents
 

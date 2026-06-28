@@ -516,7 +516,19 @@ integration, manifest file writing, `--manifest-out`, manifest body
 generation, artifact writer CLI integration, real-data use, metrics, or
 production readiness.
 
-## 36. Related Documents
+## 36. Step403 Runtime Smoke Target Implementation Status
+
+Step403 implements the standalone runtime smoke target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime`
+
+This target executes one metadata-only no-file runtime smoke against the
+valid minimal runtime fixture. It does not replace the runtime fixture
+validation target, does not validate all 31 runtime fixture contracts, does
+not write manifest files, does not generate manifest bodies, does not connect
+artifact writer CLI, and is not added to release-quality in this step.
+
+## 37. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)

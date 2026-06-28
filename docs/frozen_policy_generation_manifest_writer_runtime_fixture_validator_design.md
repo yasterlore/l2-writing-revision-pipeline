@@ -563,3 +563,15 @@ separate. The design does not change this validator, Makefile, release-quality
 wrapper, workflow YAML, Python code/tests, fixture JSON, manifest file
 writing, artifact writer CLI integration, real-data use, metrics, or
 production readiness.
+
+## 41. Step403 Runtime Makefile Target Implementation Status
+
+Step403 implements the separate runtime smoke Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime`
+
+This validator remains unchanged and still validates the 31-case / 155-JSON
+runtime fixture root statically. The new runtime smoke target executes one
+metadata-only no-file runtime pass against the valid minimal runtime fixture.
+It is not a replacement for fixture validation and is not added to
+release-quality in this step.

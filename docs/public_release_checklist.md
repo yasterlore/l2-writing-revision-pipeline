@@ -3124,6 +3124,20 @@ YAML, change Python code/tests, change fixture JSON, write manifest files,
 add `--manifest-out`, create manifest bodies, connect artifact writer CLI,
 use real data, compute metrics, or claim production readiness.
 
+For Step403, review `Makefile` and the linked
+[frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md).
+Confirm the standalone target
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime` exists
+with help text, runs the existing metadata-only no-file runtime CLI against
+the valid minimal runtime fixture, exits 0 locally, emits only body-free safe
+summary fields, writes no manifest files, leaves
+`tmp/frozen_policy_generation_manifest` with residue 0, does not add
+release-quality integration, does not change workflow YAML, does not change
+Python code/tests, does not change fixture JSON, does not add
+`--manifest-out`, does not generate manifest bodies, does not connect
+artifact writer CLI, uses no real data, computes no metrics, and makes no
+production-readiness claim.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

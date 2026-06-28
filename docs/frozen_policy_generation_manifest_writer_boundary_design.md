@@ -570,7 +570,19 @@ The target design stays within this boundary: no manifest body, no manifest
 file writing, no `--manifest-out` output feature, no artifact writer CLI
 integration, no real data, no metrics, and no production readiness claim.
 
-## 40. Related Documents
+## 40. Step403 Runtime Makefile Target Implementation Status
+
+Step403 implements the standalone runtime smoke target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime`
+
+The target stays within this boundary. It runs the metadata-only no-file
+runtime against the valid minimal runtime fixture, emits a body-free summary,
+does not write manifest files, does not generate manifest bodies, does not
+connect artifact writer CLI, and is not added to release-quality in this
+step.
+
+## 41. Related Documents
 
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)
 - [Frozen policy generation manifest writer fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/README.md)

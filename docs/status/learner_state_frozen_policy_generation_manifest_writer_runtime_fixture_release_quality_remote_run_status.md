@@ -243,3 +243,11 @@ correctness, real-data readiness, or production readiness.
   The runtime writer Makefile target remains separate from this remote
   runtime fixture validation status marker and is not yet implemented or
   included in release-quality.
+- Step403: noted that the standalone runtime writer Makefile target is
+  implemented locally:
+  `check-learner-state-frozen-policy-generation-manifest-writer-runtime`.
+  This marker remains remote evidence only for the runtime fixture validator
+  release-quality run. The runtime writer smoke target is not yet included in
+  release-quality, not remote-run evidence, not manifest file writing
+  evidence, not artifact writer CLI integration evidence, and not a
+  production-readiness claim.

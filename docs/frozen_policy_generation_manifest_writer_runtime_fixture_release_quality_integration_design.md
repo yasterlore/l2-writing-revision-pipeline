@@ -444,3 +444,16 @@ runtime smoke:
 This release-quality integration document still concerns the runtime fixture
 validator target only. The runtime smoke target remains unimplemented and
 outside release-quality until later steps.
+
+## 26. Step403 Runtime Makefile Target Implementation Status
+
+Step403 implements the standalone runtime smoke target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime`
+
+This document still concerns release-quality integration for the runtime
+fixture validator target. The runtime smoke target is implemented locally but
+is not added to the release-quality wrapper in Step403. Wrapper integration,
+workflow evidence, remote/manual run recording, manifest file writing,
+artifact writer CLI integration, real-data use, metrics, and production
+readiness remain separate.

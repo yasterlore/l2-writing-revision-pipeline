@@ -468,7 +468,21 @@ manifest file writing, does not add `--manifest-out`, does not create
 manifest bodies, does not connect artifact writer CLI, does not use real
 data, does not compute metrics, and does not claim production readiness.
 
-## 26. Related Documents
+## 26. Step403 Makefile Target Implementation Status
+
+Step403 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime`
+
+The target runs the existing metadata-only no-file runtime CLI against the
+valid minimal runtime fixture. It is a local smoke target only. It is not
+added to release-quality here, does not change workflow YAML, does not change
+Python code/tests, does not change fixture JSON, does not write manifest
+files, does not add `--manifest-out`, does not generate manifest bodies, does
+not connect artifact writer CLI, does not use real data, does not compute
+metrics, and does not claim production readiness.
+
+## 27. Related Documents
 
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer runtime Makefile target design](frozen_policy_generation_manifest_writer_runtime_makefile_target_design.md)

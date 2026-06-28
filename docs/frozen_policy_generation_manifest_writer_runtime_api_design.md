@@ -512,7 +512,19 @@ target, release-quality integration, `--manifest-out`, manifest file writing,
 manifest body generation, artifact writer CLI integration, real-data use,
 metrics, or production readiness claims.
 
-## 36. Related Documents
+## 36. Step403 Makefile Target Implementation Status
+
+Step403 implements the standalone Makefile runtime smoke target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime`
+
+The target invokes the existing metadata-only no-file CLI with the valid
+minimal runtime fixture. The API boundary remains unchanged: no
+`--manifest-out`, no manifest file writing, no manifest body generation, no
+artifact writer CLI integration, no real data, no metrics, and no production
+readiness claim. The target is not added to release-quality in this step.
+
+## 37. Related Documents
 
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
 - [Frozen policy generation manifest writer fixture contract design](frozen_policy_generation_manifest_writer_fixture_contract_design.md)

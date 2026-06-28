@@ -253,9 +253,24 @@ Success does not mean manifest file writing is ready. The runtime still does
 not accept `--manifest-out` as an output feature, does not create manifest
 bodies, and does not write files.
 
-## 14. What This Does Not Do
+## 14. Step403 Implementation Status
 
-- does not implement a Makefile target
+Step403 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-runtime`
+
+The target runs the metadata-only no-file manifest writer runtime against the
+valid minimal runtime fixture. It does not use `--json` by default and it does
+not write manifest files.
+
+The implementation adds only the standalone Makefile entry and help text. It
+does not add the target to release-quality, change workflow YAML, change
+Python code/tests, change fixture JSON, add `--manifest-out`, generate
+manifest bodies, connect artifact writer CLI, use real data, compute metrics,
+or claim production readiness.
+
+## 15. What This Does Not Do
+
 - does not add release-quality
 - does not write manifest files
 - does not add `--manifest-out`
@@ -265,16 +280,19 @@ bodies, and does not write files.
 - does not compute metrics
 - does not prove production readiness
 
-## 15. Next Recommended Steps
+After Step403, this design record is historical for the target shape. The
+target is now implemented as a standalone local smoke target, but
+release-quality integration remains a later step.
 
-- Step403: Makefile target implementation
+## 16. Next Recommended Steps
+
 - Step404: release-quality integration design
 - Step405: wrapper integration
 - Step406: remote/manual run record workflow design
 - Step407: remote/manual run status marker
 - later: manifest file writing design / implementation
 
-## 16. Related Documents
+## 17. Related Documents
 
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
