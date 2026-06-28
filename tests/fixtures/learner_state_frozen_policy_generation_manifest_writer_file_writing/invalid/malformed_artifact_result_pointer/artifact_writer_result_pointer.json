@@ -1,0 +1,12 @@
+{
+  "artifact_id": "synthetic_artifact_file_writing_invalid_malformed_artifact_result_pointer",
+  "include_body_payload": false,
+  "include_private_paths": false,
+  "include_raw_rows": false,
+  "manifest_id": "synthetic_manifest_file_writing_invalid_malformed_artifact_result_pointer",
+  "pointer_id": "invalid/malformed_artifact_result_pointer/artifact_writer_result_pointer",
+  "safe_metadata_reference_id": "MALFORMED_ARTIFACT_RESULT_POINTER_SENTINEL",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_runtime_artifact_writer_result_pointer_v0.1",
+  "source_fixture_id": "invalid/malformed_artifact_result_pointer",
+  "source_kind": "malformed_pointer_sentinel"
+}

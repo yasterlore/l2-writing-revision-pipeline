@@ -551,7 +551,34 @@ Docs must not include:
 - does not compute metrics
 - does not prove production readiness
 
-## 27. Related Documents
+## 27. Step410 Fixture JSON Creation Status
+
+Step410 creates the synthetic metadata-only fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing/`
+
+Final fixture counts use the revised Option A split so that missing artifact
+writer result pointer and missing artifact body generation result pointer are
+separate cases:
+
+- `valid_cases=6`
+- `invalid_cases=33`
+- `total_cases=39`
+- `json_files_per_case=5`
+- `total_json_files=195`
+- `pass_metadata_file_written_cases=5`
+- `pass_metadata_no_file_cases=1`
+- `usage_error_cases=15`
+- `fail_closed_cases=18`
+- `input_error_cases=0`
+- `mismatched_cases=0`
+
+This creates fixture JSON only. It does not implement a validator, write
+manifest files, add `--manifest-out`, change runtime code, change Makefile,
+change the release-quality wrapper, change workflow YAML, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+
+## 28. Related Documents
 
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)

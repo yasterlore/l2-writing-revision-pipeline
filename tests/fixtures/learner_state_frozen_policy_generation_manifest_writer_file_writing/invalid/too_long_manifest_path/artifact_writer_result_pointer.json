@@ -1,0 +1,12 @@
+{
+  "artifact_id": "synthetic_artifact_file_writing_invalid_too_long_manifest_path",
+  "include_body_payload": false,
+  "include_private_paths": false,
+  "include_raw_rows": false,
+  "manifest_id": "synthetic_manifest_file_writing_invalid_too_long_manifest_path",
+  "pointer_id": "invalid/too_long_manifest_path/artifact_writer_result_pointer",
+  "safe_metadata_reference_id": "synthetic_artifact_writer_metadata_ref_invalid_too_long_manifest_path",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_runtime_artifact_writer_result_pointer_v0.1",
+  "source_fixture_id": "invalid/too_long_manifest_path",
+  "source_kind": "synthetic_fixture_pointer"
+}

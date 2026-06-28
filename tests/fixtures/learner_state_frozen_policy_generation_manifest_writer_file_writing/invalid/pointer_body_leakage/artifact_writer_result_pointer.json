@@ -1,0 +1,12 @@
+{
+  "artifact_id": "synthetic_artifact_file_writing_invalid_pointer_body_leakage",
+  "include_body_payload": false,
+  "include_private_paths": false,
+  "include_raw_rows": false,
+  "manifest_id": "synthetic_manifest_file_writing_invalid_pointer_body_leakage",
+  "pointer_id": "invalid/pointer_body_leakage/artifact_writer_result_pointer",
+  "safe_metadata_reference_id": "POINTER_BODY_LEAKAGE_SENTINEL",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_runtime_artifact_writer_result_pointer_v0.1",
+  "source_fixture_id": "invalid/pointer_body_leakage",
+  "source_kind": "synthetic_fixture_pointer"
+}

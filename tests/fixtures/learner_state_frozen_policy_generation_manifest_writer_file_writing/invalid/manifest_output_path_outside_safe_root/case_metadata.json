@@ -1,0 +1,45 @@
+{
+  "case_id": "invalid/manifest_output_path_outside_safe_root",
+  "case_kind": "invalid",
+  "description": "Synthetic usage_error_no_write contract case for manifest_output_path_outside_safe_root.",
+  "expected_category": "usage_error_no_write",
+  "expected_manifest_writer_mode": "metadata_only_file",
+  "expected_reason_codes": [
+    "manifest_output_path_outside_safe_root"
+  ],
+  "expected_writer_status": "usage_error",
+  "forbidden_output_markers": [
+    "manifest_body",
+    "artifact_body_payload",
+    "generated_policy_body",
+    "raw_rows",
+    "logits_dump",
+    "private_path",
+    "absolute_path",
+    "raw_learner_text"
+  ],
+  "json_files_per_case": 5,
+  "notes": [
+    "synthetic-only metadata fixture",
+    "contract fixture only; validator and runtime file writing are future work",
+    "fixture JSON bodies must not be copied into docs"
+  ],
+  "required_files": [
+    "case_metadata.json",
+    "manifest_writer_request.json",
+    "artifact_writer_result_pointer.json",
+    "artifact_body_generation_result_pointer.json",
+    "expected_manifest_writer_file_writing_result.json"
+  ],
+  "safety_expectation": {
+    "metadata_only": true,
+    "no_artifact_body_payload": true,
+    "no_manifest_body": true,
+    "no_oracle": true,
+    "no_raw_learner_text": true,
+    "no_real_data": true
+  },
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_file_writing_case_metadata_v0.1",
+  "should_leave_residue": false,
+  "should_write_manifest_file": false
+}

@@ -1225,6 +1225,13 @@ written, no artifact body is produced, and no performance metric is computed.
   change runtime code, change Makefile, change the wrapper, change workflow
   YAML, connect artifact writer CLI, use real data, compute metrics, or claim
   production readiness.
+- Step410: created the synthetic metadata-only manifest writer file writing
+  fixture root with 6 valid cases, 33 invalid / expected-failure cases, 39
+  total cases, and 195 JSON files. The fixtures remain contract fixtures only:
+  no validator, no runtime file writing, no `--manifest-out`, no isolated
+  write validation, no Makefile/wrapper/workflow change, no artifact writer
+  CLI integration, no real data, no metrics, and no production readiness
+  claim.
 
 ## Related Documents
 
@@ -1267,6 +1274,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Learner-state frozen policy generation manifest writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer metadata-only file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
+- [Frozen policy generation manifest writer metadata-only file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing/README.md)
 - [Frozen policy generation manifest writer runtime](../python/learner_state/frozen_policy_generation_manifest_writer.py)
 - [Frozen policy generation manifest writer runtime tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer.py)
 - [Frozen policy generation artifact body isolated write validation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/README.md)

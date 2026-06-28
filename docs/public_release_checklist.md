@@ -3227,6 +3227,20 @@ request/pointer/expected-result body examples, artifact body payload examples,
 manifest body examples, private path examples, raw learner text, real
 participant data, or performance evidence.
 
+For Step410, review the synthetic-only
+[frozen policy generation manifest writer metadata-only file writing fixtures](../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing/README.md).
+Confirm the root contains 6 valid cases, 33 invalid / expected-failure cases,
+39 total cases, 5 JSON files per case, and 195 JSON files total. Confirm each
+case has the required five files, all JSON files parse, schema versions are
+present, case IDs are consistent, category counts match, and no actual
+manifest body, artifact body payload, generated policy body, raw rows, logits,
+private paths, absolute local paths, absolute temp paths, raw learner text,
+real participant data, or performance metric bodies are introduced. Confirm
+this step does not implement a validator, write manifest files, add
+`--manifest-out`, add isolated write validation, change Python code/tests,
+change Makefile, change the wrapper, change workflow YAML, connect artifact
+writer CLI, use real data, compute metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

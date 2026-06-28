@@ -358,7 +358,19 @@ Makefile, change the release-quality wrapper, change workflow YAML, connect
 artifact writer CLI, use real data, compute metrics, or claim production
 readiness.
 
-## 21. Related Documents
+## 21. Step410 Fixture JSON Creation Status
+
+Step410 creates the synthetic metadata-only file writing fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing/`
+
+The root contains 39 cases and 195 JSON files. It remains contract fixture
+data only: no validator, no runtime file writing, no `--manifest-out`, no
+isolated write validation, no Makefile/wrapper/workflow change, no artifact
+writer CLI integration, no real data, no metrics, and no production readiness
+claim.
+
+## 22. Related Documents
 
 - [Frozen policy generation manifest writer metadata-only file writing fixture contract design](frozen_policy_generation_manifest_writer_file_writing_fixture_contract_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)

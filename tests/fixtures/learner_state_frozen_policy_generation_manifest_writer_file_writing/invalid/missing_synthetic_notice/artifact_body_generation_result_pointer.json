@@ -1,0 +1,12 @@
+{
+  "artifact_body_available": false,
+  "artifact_body_id": "synthetic_artifact_body_file_writing_invalid_missing_synthetic_notice",
+  "include_body_payload": false,
+  "include_private_paths": false,
+  "include_raw_rows": false,
+  "pointer_id": "invalid/missing_synthetic_notice/artifact_body_generation_result_pointer",
+  "safe_metadata_reference_id": "synthetic_artifact_body_generation_metadata_ref_invalid_missing_synthetic_notice",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_runtime_artifact_body_generation_result_pointer_v0.1",
+  "source_fixture_id": "invalid/missing_synthetic_notice",
+  "source_kind": "synthetic_fixture_pointer"
+}

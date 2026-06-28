@@ -266,3 +266,10 @@ readiness.
   The fixture contract design does not create fixture JSON, implement
   `--manifest-out`, write manifest files, connect artifact writer CLI, use
   real data, compute metrics, or claim production readiness.
+- Step410: linked the synthetic metadata-only file writing fixture root:
+  [Frozen policy generation manifest writer metadata-only file writing fixtures](../../tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing/README.md).
+  The root contains 39 contract cases and 195 JSON files. This marker remains
+  remote evidence only for the no-file runtime smoke; the fixture root is not
+  validator evidence, runtime file writing evidence, isolated write evidence,
+  artifact writer CLI integration evidence, real-data readiness, performance
+  evidence, or a production-readiness claim.

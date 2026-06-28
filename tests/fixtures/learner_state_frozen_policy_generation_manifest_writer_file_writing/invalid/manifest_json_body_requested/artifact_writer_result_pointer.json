@@ -1,0 +1,12 @@
+{
+  "artifact_id": "synthetic_artifact_file_writing_invalid_manifest_json_body_requested",
+  "include_body_payload": false,
+  "include_private_paths": false,
+  "include_raw_rows": false,
+  "manifest_id": "synthetic_manifest_file_writing_invalid_manifest_json_body_requested",
+  "pointer_id": "invalid/manifest_json_body_requested/artifact_writer_result_pointer",
+  "safe_metadata_reference_id": "synthetic_artifact_writer_metadata_ref_invalid_manifest_json_body_requested",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_runtime_artifact_writer_result_pointer_v0.1",
+  "source_fixture_id": "invalid/manifest_json_body_requested",
+  "source_kind": "synthetic_fixture_pointer"
+}

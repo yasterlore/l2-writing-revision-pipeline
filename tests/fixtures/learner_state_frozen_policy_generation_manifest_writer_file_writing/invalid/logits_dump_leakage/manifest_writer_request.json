@@ -1,0 +1,17 @@
+{
+  "allow_manifest_file_writing": true,
+  "include_manifest_body": false,
+  "manifest_out": "tmp/frozen_policy_generation_manifest/invalid_no_write_manifest.json",
+  "manifest_writer_mode": "metadata_only_file",
+  "no_oracle_notice": "synthetic metadata-only no-oracle fixture",
+  "non_proof_notice": "contract fixture only; not proof of runtime or production readiness",
+  "overwrite_policy": "fail_if_exists",
+  "release_quality_reference_ids": [],
+  "request_id": "synthetic_manifest_file_writing_request_invalid_logits_dump_leakage",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_file_writing_request_v0.1",
+  "synthetic_notice": "synthetic-only metadata fixture",
+  "validation_reference_ids": [
+    "synthetic_validation_reference_1",
+    "LOGITS_DUMP_LEAKAGE_SENTINEL"
+  ]
+}
