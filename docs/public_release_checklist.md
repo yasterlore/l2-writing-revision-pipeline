@@ -4,6 +4,22 @@ This checklist is for reviewing the repository as public GitHub research softwar
 
 It does not authorize real-data processing or public dataset release.
 
+Current public-facing implementation state:
+
+- synthetic-only learner-state and frozen policy generation validation is
+  implemented through fixtures, validators, CLIs, Makefile targets, and the
+  release-quality wrapper.
+- artifact writer and artifact body checks are metadata-only or
+  body-suppressed in public output.
+- manifest writer metadata-only runtime file writing is implemented as an
+  opt-in safe path and is covered by a release-quality smoke target.
+- remote/manual status markers are public-safe metadata summaries where they
+  exist; the manifest writer runtime file writing smoke remote marker is not
+  created yet.
+- artifact writer CLI integration, production deployment, real participant
+  collection, real-data readiness, and model-performance claims remain out of
+  scope.
+
 ## 1. Data Safety
 
 Confirm before public release:
@@ -3859,23 +3875,18 @@ The wrapper covers the normal success-path command bundle. The individual
 commands remain useful as a manual fallback or for targeted reruns.
 
 ```bash
-scripts/check_release_quality.sh
-cargo fmt --all -- --check
-cargo test --workspace
-cargo clippy --workspace -- -D warnings
-scripts/check_synthetic_policy.sh
-PYTHONPATH=python python3 -m unittest discover -s python
-PYTHONPATH=python python3 -m compileall python
-make check-learner-state-audit-fixtures
-cd apps/logger-web && npm run typecheck
-cd apps/logger-web && npm test
-cd apps/logger-web && npm run build
-scripts/check_no_config_scoring_fixture_lock.sh
-scripts/check_hand_weight_config_validation.sh
-scripts/check_explicit_config_ranking_diff.sh
-scripts/check_config_enabled_e2e_smoke.sh
-scripts/check_config_enabled_summary_smoke.sh
-scripts/check_synthetic_diagnostic_distribution.sh
+make check-release-quality
+make check-python
+make check-rust
+make check-logger
+make check-fixtures
+make check-policy
+make check-summary-flow
+make check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing
+make check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures
+make check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation
+make check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures
+make check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures
 ```
 
 ## 8. Current Non-Goals

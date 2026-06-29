@@ -2,6 +2,19 @@
 
 This directory contains architecture notes, policies, specs, and milestone recaps.
 
+Current public-facing posture:
+
+- development and validation are synthetic-only
+- artifact and manifest paths are metadata-only where applicable
+- public output should be body-suppressed and summary-only
+- remote status markers record public-safe metadata, not raw logs or job output
+- manifest writer runtime file writing smoke is now in the release-quality
+  chain
+- the remote status marker for manifest writer runtime file writing smoke is
+  planned but not yet created
+- artifact writer CLI integration, production deployment, real-data readiness,
+  and model-performance claims remain out of scope
+
 Recommended entry points:
 
 - [Milestone 01 pipeline recap](milestone_01_pipeline_recap.md): beginner-friendly recap of the current pipeline foundation.

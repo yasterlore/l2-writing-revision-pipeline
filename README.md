@@ -1,128 +1,163 @@
 # L2 Writing Revision Pipeline
 
-Research software for studying keystroke-level L2 English free-writing revision processes.
+Research software for studying keystroke-level L2 English free-writing
+revision processes.
 
-This repository builds a reproducible, synthetic-only pipeline from browser raw events to deterministic replay, revision events, micro-episodes, no-oracle candidate generation, OT-inspired scoring prototypes, synthetic evaluation wiring, and config-aware diagnostic infrastructure.
+The repository currently focuses on synthetic-only development and validation.
+It connects browser-side keystroke logging concepts to deterministic replay,
+revision-event extraction, micro-episode construction, no-oracle candidate
+selection, scoring experiments, learner-state validation scaffolds, and frozen
+policy generation artifact/manifest scaffolds.
 
-It is not:
+This repository is not a production data-processing system and is not a
+repository for real participant data.
 
-- an automatic essay scorer
-- a grammar-correction product
-- a learner-state estimator yet
-- a production data-processing system
-- a repository for real participant data
+## Current Purpose
 
-## Current Pipeline
+The current pipeline supports public-safe research-software development around:
 
-```text
-RawEvent JSONL
-  -> Rust validation
-  -> Rust replay
-  -> Rust revision_event extraction
-  -> Rust micro_episode construction
-  -> Rust no-oracle audit
-  -> Rust NoOracleSafeEpisodeView export
-  -> Python CandidateSet
-  -> Python CandidateFeatureSet
-  -> Python ConstraintViolationSet
-  -> Python CandidateScoreSet
-  -> optional synthetic expected-action evaluation
-  -> summary-only synthetic E2E collector
-```
+- RawEvent-style keystroke logging data shapes
+- deterministic validation and replay
+- `revision_event` extraction
+- `micro_episode` construction
+- no-oracle safe views for candidate generation and ranking experiments
+- synthetic candidate generation and OT-style scoring prototypes
+- learner-state estimator input validation scaffolds
+- frozen selective-prediction policy validation
+- frozen policy generation scaffold, generator scaffold, artifact writer,
+  artifact body, and manifest writer metadata-only checks
+- runtime metadata-only manifest file writing smoke checks under a controlled
+  output root
 
-The synthetic evaluation wiring is a connection check. It is not production evaluation and does not report F1, accuracy, calibration, or learner-state estimates.
-
-Config-aware scoring support is explicit-only. It is diagnostic infrastructure,
-not performance evaluation. The no-config default path remains the protected
-baseline.
+All public fixtures and checks are synthetic-only. The project is not at the
+stage of handling real participant data or raw learner text.
 
 ## Language Architecture
 
-TypeScript is for the browser logger only:
+TypeScript is used for the web logger:
 
-- collect browser-side raw events
-- download RawEvent-like JSONL for synthetic/manual testing
-- do not validate authoritatively
-- do not replay text
-- do not extract revision events
-- do not generate or rank candidates
+- browser-side event collection UI
+- local logger-web typecheck, test, and build checks
+- no authoritative replay, extraction, ranking, or learner-state estimation
 
-Rust is the authoritative deterministic layer:
+Rust is the deterministic keystroke-processing layer:
 
-- `kslog_schema`
-- `kslog_validate`
-- `kslog_replay`
-- `kslog_extract`
-- `kslog_micro_episode`
-- `kslog_no_oracle_audit`
-- `kslog_cli`
+- raw-event schema and validation
+- deterministic replay
+- revision-event extraction
+- micro-episode construction
+- no-oracle audit and safe-view export
+- CLI tools for validation and safe summaries
 
-Python is for exploratory modeling and analysis prototypes:
+Python is used for research scaffolds and validation prototypes:
 
-- candidate generation
+- candidate generation prototypes
 - candidate feature extraction
-- constraint violation records
-- weighted scoring prototype
-- synthetic evaluation schema
-- future visualization and learner-state experiments
+- constraint violation and OT-style scoring experiments
+- synthetic evaluation and diagnostic scaffolds
+- learner-state audit/exporter/estimator-input validation
+- selective prediction and frozen policy validation
+- frozen policy generation scaffold, generator scaffold, artifact writer,
+  artifact body, and manifest writer metadata-only validation
+- metadata-only runtime smoke checks, including opt-in manifest file writing
 
-## Safety Policy
+## Safety Posture
 
-This repository is synthetic-only.
+The public repository is intentionally constrained:
 
-- Do not commit real participant data.
-- Do not place real participant data in `examples/` or `tests/fixtures/`.
-- Do not paste JSONL rows or participant text into docs.
-- Do not commit outputs from `manual_outputs/` or `tmp/`.
-- Do not ask Codex to read, inspect, transform, summarize, or write real participant data.
-- Real-data trials, if they ever happen, must be private/local or institution-approved and must follow [the private real-data readiness checklist](docs/private_real_data_readiness_checklist.md).
+- synthetic-only development and tests
+- metadata-only outputs where applicable
+- body suppression for artifact, manifest, request, pointer, and expected
+  result content
+- public-safe summaries instead of raw data dumps
+- no raw rows, logits/probabilities, private paths, absolute local paths, raw
+  learner text, generated policy bodies, artifact body payloads, manifest
+  bodies, or written file JSON bodies in public output
+- no real participant data in fixtures, examples, docs, logs, or CI
 
-## No-Oracle Policy
+Real-data trials, if they ever happen, must be private/local or
+institution-approved and must follow the
+[private real-data readiness checklist](docs/private_real_data_readiness_checklist.md).
 
-Candidate generation, scoring, ranking, and learner-state work must not use:
+## No-Oracle Principle
 
-- `final_text`
+Candidate generation, scoring, ranking, runtime validation, and learner-state
+work must not use information that would only be available after the writing
+moment being modeled.
+
+Do not use these as generation, ranking, feature, validation-runtime, or
+scoring inputs:
+
 - `observed_after_text`
+- `final_text`
 - `gold_label`
-- teacher correction
-- human correction after writing
-- answer key
+- teacher corrections
+- human corrections after writing
 - future edits
 - post-hoc annotations
+- answer keys
 - `local_context_after_observed`
 
-Synthetic expected actions are used only after scoring for synthetic evaluation checks. They must not flow into candidate generation, feature extraction, constraints, scoring, or ranking.
+Synthetic expected actions are allowed only as downstream synthetic evaluation
+fixtures. They must not flow into candidate generation, feature extraction,
+constraints, scoring, ranking, or runtime validation.
 
-## Quick Start
+## Current Release-Quality Chain
 
-Run Rust checks:
+The normal local release-quality wrapper is:
 
 ```bash
-cargo fmt --all -- --check
-cargo test --workspace
-cargo clippy --workspace -- -D warnings
+make check-release-quality
 ```
 
-Run Python checks:
+At a high level, it runs:
+
+- whitespace and conflict-marker checks
+- shell syntax checks
+- synthetic no-config summary and diagnostic distribution checks
+- Python `unittest` discovery and `compileall`
+- learner-state audit, exporter, estimator-input, selective-prediction, frozen
+  policy, and frozen policy generation validation
+- frozen policy generation scaffold and generator scaffold fixture/runtime
+  checks
+- artifact writer fixture and runtime checks
+- artifact body fixture, generation, safe-metadata generation, file-writing
+  fixture, and isolated write checks
+- manifest writer fixture, runtime fixture, no-file runtime, file-writing
+  fixture, isolated write, production file-writing fixture, and runtime
+  file-writing smoke checks
+- config/scoring smoke checks
+- Rust fmt/test/clippy
+- synthetic policy checks
+- logger-web typecheck/test/build
+
+These checks are validation and safety gates. They are not model-performance
+claims, production-readiness evidence, or real-data-readiness evidence.
+
+## Common Commands
+
+Run the full release-quality wrapper:
 
 ```bash
-PYTHONPATH=python python3 -m unittest discover -s python
-PYTHONPATH=python python3 -m compileall python
+make check-release-quality
 ```
 
-Run logger-web checks:
+Run focused bundles:
 
 ```bash
-cd apps/logger-web
-npm run typecheck
-npm test
-npm run build
+make check-python
+make check-rust
+make check-logger
+make check-fixtures
+make check-policy
+make check-summary-flow
 ```
 
-Run synthetic policy checks:
+Run manifest writer file-writing checks:
 
 ```bash
-scripts/check_synthetic_policy.sh
+make check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures
+make check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing
 ```
 
 Run one synthetic E2E case:
@@ -131,98 +166,72 @@ Run one synthetic E2E case:
 scripts/run_synthetic_e2e_pipeline.sh tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl deletion_case
 ```
 
-Run all valid synthetic raw-event fixtures with summary-only output:
+Generated outputs go under `tmp/`, which is Git-ignored. Do not copy generated
+data bodies or raw logs into documentation.
 
-```bash
-scripts/run_synthetic_e2e_summary.sh
-```
+## Implemented Scope
 
-Outputs go under `tmp/`, which is Git-ignored.
-
-Run optional diagnostic/config smoke checks:
-
-```bash
-scripts/check_no_config_scoring_fixture_lock.sh
-scripts/check_hand_weight_config_validation.sh
-scripts/check_explicit_config_ranking_diff.sh
-scripts/check_config_enabled_e2e_smoke.sh
-scripts/check_config_enabled_summary_smoke.sh
-scripts/check_synthetic_diagnostic_distribution.sh
-```
-
-These checks are synthetic-only wiring and regression checks, not performance
-metrics.
-
-## What Is Implemented
+Currently implemented:
 
 - TypeScript logger-web foundation
-- Rust RawEvent schema
-- Rust JSONL validation
-- Rust text replay
-- Rust revision_event extraction
-- Rust micro_episode construction
-- Rust no-oracle audit
-- Rust NoOracleSafeEpisodeView export
-- Rust CLI tools
-- Python candidate generation prototype
-- Python CandidateFeatureSet extraction
-- Python ConstraintViolationSet generation
-- Python CandidateScoreSet weighted scoring prototype
-- Python synthetic evaluation schema
-- synthetic expected action registry
-- synthetic E2E pipeline and summary collector
-- diagnostic summary tooling
-- hand-weight config validation
-- explicit `score.py --weight-config` path
-- config-enabled E2E and separate config-enabled summary collector
-- observation note templates and storage/review workflow
-- GitHub Actions CI for Rust checks, policy checks, CLI smoke tests, and one synthetic E2E smoke test
+- Rust raw-event schema, validation, replay, extraction, micro-episode, and
+  no-oracle audit crates
+- Rust CLI validation and safe-view tooling
+- Python candidate generation, feature, constraint, scoring, and synthetic
+  evaluation scaffolds
+- learner-state audit/exporter/estimator-input/selective-prediction/frozen
+  policy validation scaffolds
+- frozen policy generation scaffold and generator scaffold metadata-only
+  runtimes
+- frozen policy generation artifact writer metadata-only fixture and runtime
+  checks
+- artifact body suppressed and safe-metadata generation CLI checks
+- artifact body safe-metadata file writing and isolated write validation
+- manifest writer metadata-only no-file runtime
+- manifest writer metadata-only runtime file writing through opt-in
+  `--manifest-out` under a controlled output root
+- manifest writer file-writing, isolated-write, production fixture, and runtime
+  file-writing smoke validation in the release-quality chain
+- public-safe status markers for completed remote/manual Release Quality runs
+  where markers exist
 
-## What Is Not Implemented
+## Not Implemented
 
-- production data processing
-- real participant data processing
-- real gold label workflow
+Not currently implemented or not claimed:
+
+- production deployment
 - public dataset release
-- F1, accuracy, calibration, or selective prediction
-- learner-state estimation
+- real participant data processing
+- raw learner text public handling
+- real gold-label workflow
+- final learner-state estimation model
 - automatic weight learning
-- private validation
-- backend ingestion
-- database storage
-- cloud deployment
-- real-data CI
+- model-performance evidence
+- F1, accuracy, ECE, AURCC, calibration, or risk-coverage results
+- artifact writer CLI integration
+- production artifact/manifest deployment workflow
+- public release readiness
+- production readiness
+- real-data readiness
 
 ## Documentation Map
 
 - [Documentation index](docs/README.md)
-- [Milestone 01 pipeline recap](docs/milestone_01_pipeline_recap.md)
-- [Milestone 02 synthetic evaluation recap](docs/milestone_02_synthetic_evaluation_recap.md)
-- [Milestone 03 config-aware diagnostic infrastructure recap](docs/milestone_03_config_aware_diagnostic_infrastructure_recap.md)
-- [Milestone 03 final docs-only release review](docs/milestone_03_final_docs_only_release_review.md)
-- [Private real-data readiness checklist](docs/private_real_data_readiness_checklist.md)
+- [Status markers](docs/status/README.md)
+- [Public release checklist](docs/public_release_checklist.md)
+- [Security policy](SECURITY.md)
 - [No-oracle policy](docs/03_no_oracle_policy.md)
 - [Synthetic data policy](docs/12_synthetic_data_policy.md)
 - [Synthetic E2E pipeline](docs/synthetic_e2e_pipeline.md)
-- [Evaluation spec](docs/evaluation_spec.md)
-- [Scoring policy refinement plan](docs/scoring_policy_refinement_plan.md)
-- [Public release checklist](docs/public_release_checklist.md)
-- [Security policy](SECURITY.md)
+- [Private real-data readiness checklist](docs/private_real_data_readiness_checklist.md)
+- [Milestone 13 frozen policy generation scaffold runtime recap](docs/milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 
 ## CI
 
-GitHub Actions runs:
-
-```bash
-cargo fmt --all -- --check
-cargo test --workspace
-cargo clippy --workspace -- -D warnings
-scripts/check_synthetic_policy.sh
-cargo run -p kslog_cli -- validate tests/fixtures/synthetic/raw_events/valid/simple_typing.jsonl
-scripts/run_synthetic_e2e_pipeline.sh tests/fixtures/synthetic/raw_events/valid/deletion_case.jsonl deletion_case_ci
-```
-
-CI uses synthetic fixtures only. It must not process real participant data.
+GitHub Actions and local release-quality checks use synthetic fixtures only.
+They must not process real participant data and must not publish raw logs,
+fixture bodies, raw learner text, private paths, absolute local paths, or
+performance evidence.
 
 ## License
 
@@ -232,9 +241,11 @@ This project is under active research-software development. `LICENSE` is a
 placeholder, not a final open-source license. Until a final license is selected
 and the placeholder is replaced, reuse terms are not finalized.
 
-A final license must be chosen before formal public release. See
-[the public release checklist](docs/public_release_checklist.md).
+A final license must be chosen before formal public release. See the
+[public release checklist](docs/public_release_checklist.md).
 
 ## Security and Privacy
 
-See [SECURITY.md](SECURITY.md). Treat all JSONL input as untrusted, keep real data out of this repository, and do not publish logs, screenshots, derived outputs, or reports that may contain participant text.
+See [SECURITY.md](SECURITY.md). Treat all input as untrusted, keep real data
+out of this repository, and do not publish logs, screenshots, generated
+outputs, or reports that may contain participant text or private paths.
