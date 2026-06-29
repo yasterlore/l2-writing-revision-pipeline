@@ -1602,6 +1602,14 @@ written, no artifact body is produced, and no performance metric is computed.
   manifest writer separation. It does not add a Makefile target,
   release-quality wrapper integration, workflow changes, fixture JSON changes,
   runtime integration, real-data use, metrics, or production readiness claims.
+- Step471: added the docs-only standalone Makefile target design for running
+  the artifact writer CLI integration fixture validator through `make`. The
+  design fixes the future target name, help text, command, expected body-free
+  count-only output, failure interpretation, relation to existing artifact
+  writer targets, release-quality staging, and future implementation tests. It
+  does not implement the Makefile target, change wrapper/workflow/Python/tests,
+  change fixture JSON, execute runtime integration, use real data, compute
+  metrics, or claim production readiness.
 
 ## Related Documents
 

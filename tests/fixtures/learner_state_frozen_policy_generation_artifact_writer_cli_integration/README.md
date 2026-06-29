@@ -171,6 +171,17 @@ body generation CLI, connect manifest writer runtime, write files, change
 fixture JSON, add a Makefile target, integrate release-quality, use real data,
 compute metrics, or claim production readiness.
 
+Step471 designs the future standalone Makefile target for running that
+validator CLI:
+
+`docs/frozen_policy_generation_artifact_writer_cli_integration_fixture_validator_makefile_target_design.md`
+
+The proposed target is
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`.
+Step471 does not implement the target, change this fixture root, integrate
+release-quality, execute runtime integration, use real data, compute metrics,
+or claim production readiness.
+
 ## What This Fixture Root Does Not Prove
 
 This fixture root does not prove artifact writer CLI integration correctness,

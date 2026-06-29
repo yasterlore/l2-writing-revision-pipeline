@@ -441,3 +441,18 @@ runtime, connect artifact body generation CLI, connect manifest writer
 runtime, change fixture JSON, add a Makefile target, integrate
 release-quality, change workflow YAML, use real data, compute metrics, or
 claim production readiness.
+
+## 24. Step471 Makefile Target Design Status
+
+Step471 adds the docs-only Makefile target design for running the Step470
+artifact writer CLI integration fixture validator from `make`:
+
+[Frozen policy generation artifact writer CLI integration fixture validator Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_fixture_validator_makefile_target_design.md)
+
+The proposed target is
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`.
+It remains a static fixture-contract validator target proposal. Step471 does
+not change the Makefile, integrate release-quality, change workflow YAML,
+change Python code or tests, change fixture JSON, implement runtime
+integration, connect artifact body generation CLI, connect manifest writer
+runtime, use real data, compute metrics, or claim production readiness.

@@ -3969,6 +3969,15 @@ not change fixture JSON, add Makefile/release-quality integration, change
 workflow YAML, implement runtime integration, use real data, compute metrics,
 or claim production readiness.
 
+For Step471, review the docs-only
+[frozen policy generation artifact writer CLI integration fixture validator Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_fixture_validator_makefile_target_design.md).
+Confirm it designs only the future standalone Makefile target for running the
+Step470 validator CLI over the 28-case / 168-JSON fixture root. Confirm it
+does not implement the target, change Makefile, change wrapper, change
+workflow YAML, change Python code/tests, change fixture JSON, implement
+runtime integration, connect artifact body generation CLI, connect manifest
+writer runtime, use real data, compute metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

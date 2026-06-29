@@ -459,3 +459,18 @@ workflow YAML, change fixture JSON, implement artifact writer CLI integration
 runtime, connect artifact body generation CLI, connect manifest writer
 runtime, generate manifest bodies, use real data, compute metrics, or claim
 production readiness.
+
+## 23. Step471 Makefile Target Design Status
+
+Step471 adds the docs-only standalone Makefile target design for running the
+Step470 validator CLI from `make`:
+
+[Frozen policy generation artifact writer CLI integration fixture validator Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_fixture_validator_makefile_target_design.md)
+
+The proposed target is
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`.
+It would validate the 28-case / 168-JSON fixture root through the existing
+body-free validator CLI. Step471 does not modify the Makefile, integrate
+release-quality, change workflow YAML, change Python code or tests, change
+fixture JSON, implement runtime integration, use real data, compute metrics, or
+claim production readiness.
