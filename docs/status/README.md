@@ -9,6 +9,16 @@ outputs.
 Status markers must not include raw workflow logs, raw CI logs, generated data
 bodies, private paths, participant data, or performance claims.
 
+Current status-marker posture:
+
+- Available markers below are public-safe metadata records only.
+- They are pass-only or count-only summaries, not raw logs or full job output.
+- They do not prove production readiness, real-data readiness, model
+  performance, artifact writer CLI integration, or production deployment.
+- The manifest writer runtime file writing smoke target is in the
+  release-quality wrapper, but its remote/manual status marker is not created
+  yet.
+
 Available markers:
 
 - [Milestone 04 status](milestone_04_status.md): workflow maintenance
@@ -92,6 +102,13 @@ Available markers:
   JSON bodies, written file bodies, private paths, absolute paths, raw learner
   text, or performance evidence.
 
+Planned markers:
+
+- `learner_state_frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_status.md`:
+  planned public-safe remote/manual status marker for the release-quality run
+  that includes manifest writer runtime metadata-only file writing smoke. This
+  marker has not been created yet.
+
 Related recap:
 
 - [Milestone 06 learner-state audit infrastructure recap](../milestone_06_learner_state_audit_infrastructure_recap.md):
@@ -169,3 +186,7 @@ Related recap:
   future public-safe pass-only/count-only recording workflow for manifest
   writer production file writing fixture validation release-quality wrapper
   integration.
+- `../frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_record_workflow.md`:
+  planned public-safe recording workflow for manifest writer runtime
+  metadata-only file writing smoke release-quality wrapper integration. This
+  workflow design has not been created yet.
