@@ -3886,6 +3886,21 @@ bodies, fixture JSON bodies, request/pointer/expected bodies, manifest bodies,
 artifact body payloads, generated policy bodies, private or absolute path
 examples, raw learner text, real participant data, or performance evidence.
 
+For Step447, review the public-safe
+[learner-state frozen policy generation manifest writer runtime file writing release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_status.md).
+Confirm it records only safe metadata and pass-only/count-only summaries for
+the successful remote/manual Release Quality run that included
+`make check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing`.
+Confirm it records writer status pass, manifest writer mode
+`metadata_only_file`, written file count 1, written-file parse pass,
+written-file safety scan pass, and smoke residue file count 0. Confirm it does
+not include raw logs, full job output, written file bodies, fixture JSON
+bodies, request/pointer/expected bodies, manifest bodies, artifact body
+payloads, generated policy bodies, private or absolute path examples, raw
+learner text, real participant data, performance evidence, artifact writer CLI
+integration evidence, manifest body generation evidence, real-data readiness,
+or production readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

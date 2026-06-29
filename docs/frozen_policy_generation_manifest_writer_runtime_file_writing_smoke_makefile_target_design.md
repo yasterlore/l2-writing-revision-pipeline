@@ -357,3 +357,17 @@ writing smoke target:
 The status marker remains uncreated in this step. The design records only
 metadata and pass-only/count-only summaries, never the written file body or raw
 logs.
+
+## 23. Step447 Remote Status Marker Status
+
+Step447 creates the public-safe remote/manual Release Quality status marker
+for this smoke target:
+
+[Learner-state frozen policy generation manifest writer runtime file writing release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_status.md).
+
+The marker records only safe metadata and pass-only/count-only results:
+target included yes, writer status pass, manifest writer mode
+`metadata_only_file`, written file count 1, written file parse pass, written
+file safety scan pass, and smoke residue file count 0. It does not copy the
+written file body or any fixture/request/pointer/expected/manifest/artifact
+body content.

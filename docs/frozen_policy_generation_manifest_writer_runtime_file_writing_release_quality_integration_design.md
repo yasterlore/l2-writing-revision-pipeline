@@ -258,7 +258,6 @@ This design does not:
 
 ## 18. Next Recommended Steps
 
-- Step447 remote status marker
 - artifact writer CLI integration remains separate
 
 ## 19. Step445 Wrapper Integration Status
@@ -299,3 +298,21 @@ YAML, change the release-quality wrapper, change Makefile, modify Python
 code/tests, modify fixtures JSON, connect artifact writer CLI, call artifact
 body generation CLI, generate manifest bodies, use real data, compute metrics,
 or prove production readiness.
+
+## 21. Step447 Remote Status Marker Status
+
+Step447 records the successful remote/manual Release Quality run that included
+the runtime metadata-only file writing smoke target:
+
+[Learner-state frozen policy generation manifest writer runtime file writing release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_status.md).
+
+The status marker is public-safe, pass-only/count-only, and body-free. It
+records that the wrapper included
+`release_quality_check: learner-state frozen policy generation manifest writer runtime file writing smoke`
+and that the smoke target wrote one metadata-only file during the run, parsed
+and scanned it, and cleaned the target-owned smoke path with residue count 0.
+
+Step447 does not change workflow YAML, release-quality wrapper, Makefile,
+Python code/tests, fixtures JSON, artifact writer CLI integration, artifact
+body generation CLI integration, manifest body generation, real-data use,
+metrics, or production readiness.

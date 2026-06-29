@@ -16,9 +16,8 @@ Current status-marker posture:
 - They do not prove production readiness, real-data readiness, model
   performance, artifact writer CLI integration, or production deployment.
 - The manifest writer runtime file writing smoke target is in the
-  release-quality wrapper, but its remote/manual status marker is not created
-  yet.
-- The public-safe recording workflow design for that future marker now exists.
+  release-quality wrapper, and its remote/manual status marker is now recorded
+  as public-safe pass-only/count-only metadata.
 
 Available markers:
 
@@ -102,13 +101,14 @@ Available markers:
   pass-only/count-only and does not copy raw logs, full job output, fixture
   JSON bodies, written file bodies, private paths, absolute paths, raw learner
   text, or performance evidence.
+- [Learner-state frozen policy generation manifest writer runtime file writing release-quality remote run status](learner_state_frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after manifest writer runtime
+  metadata-only file writing smoke integration. It remains
+  pass-only/count-only and does not copy raw logs, full job output, written
+  file JSON bodies, fixture JSON bodies, private paths, absolute paths, raw
+  learner text, or performance evidence.
 
-Planned markers:
-
-- `learner_state_frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_status.md`:
-  planned public-safe remote/manual status marker for the release-quality run
-  that includes manifest writer runtime metadata-only file writing smoke. This
-  marker has not been created yet.
+Planned markers: none for the manifest writer runtime file writing smoke.
 
 Related recap:
 
@@ -188,6 +188,6 @@ Related recap:
   writer production file writing fixture validation release-quality wrapper
   integration.
 - [Frozen policy generation manifest writer runtime file writing release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_record_workflow.md):
-  public-safe recording workflow design for a future remote/manual Release
-  Quality run that includes manifest writer runtime metadata-only file writing
+  public-safe recording workflow design used by the remote/manual Release
+  Quality status marker for manifest writer runtime metadata-only file writing
   smoke wrapper integration.

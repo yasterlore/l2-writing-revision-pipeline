@@ -331,6 +331,20 @@ does not record runtime file writing smoke remote evidence, written file body
 contents, raw logs, artifact writer CLI integration, performance evidence, or
 production readiness.
 
+## Step447 Separation Note
+
+Step447 creates a separate public-safe status marker for the successful
+remote/manual Release Quality run that included the runtime file writing smoke
+target:
+
+[Learner-state frozen policy generation manifest writer runtime file writing release-quality remote run status](learner_state_frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_status.md).
+
+This production fixture marker remains unchanged in scope: it records only the
+earlier static production file writing fixture validation run. It does not
+copy runtime written file bodies, raw logs, artifact body payloads, generated
+policy bodies, private or absolute paths, raw learner text, performance
+evidence, or production readiness claims.
+
 ## Update History
 
 - 2026-06-28: Step439 status marker created from public-safe metadata for the
@@ -348,3 +362,5 @@ production readiness.
   release-quality wrapper integration.
 - 2026-06-29: Step446 separation note added for the future runtime file
   writing smoke remote/manual status workflow design.
+- 2026-06-29: Step447 separation note added for the separate runtime file
+  writing smoke remote/manual status marker.

@@ -469,3 +469,18 @@ YAML, change the release-quality wrapper, change Makefile, modify Python
 code/tests, modify fixtures JSON, connect artifact writer CLI, call artifact
 body generation CLI, use real data, compute metrics, or prove production
 readiness.
+
+## 25. Step447 Remote Status Marker Status
+
+Step447 creates the public-safe pass-only/count-only status marker for the
+successful remote/manual Release Quality run that included runtime
+metadata-only file writing smoke:
+
+[Learner-state frozen policy generation manifest writer runtime file writing release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_status.md).
+
+The marker records that the runtime wrote one metadata-only file during smoke,
+parsed and scanned it, and removed the target-owned smoke path with residue 0.
+It does not copy the written file body, raw logs, fixture JSON bodies,
+request/pointer/expected bodies, manifest bodies, artifact body payloads,
+generated policy bodies, private or absolute paths, raw learner text, real
+participant data, or performance evidence.
