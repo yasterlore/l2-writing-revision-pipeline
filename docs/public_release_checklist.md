@@ -4017,6 +4017,17 @@ workflow YAML, Makefile, Python code/tests, fixture JSON, runtime integration,
 artifact body generation CLI integration, manifest writer integration,
 metrics, real-data use, or production readiness claims.
 
+For Step476, review the public-safe status marker
+[learner-state frozen policy generation artifact writer CLI integration fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_status.md).
+Confirm it records only safe remote/manual Release Quality metadata and
+pass-only / count-only fixture validation summary for the successful run that
+included the artifact writer CLI integration fixture validator wrapper check.
+Confirm it does not copy raw logs, full job output, fixture/request/pointer/
+expected bodies, artifact body payloads, manifest bodies, generated policy
+bodies, raw rows, logits, private paths, absolute paths, raw learner text,
+real participant data, performance evidence, runtime integration evidence, or
+production readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

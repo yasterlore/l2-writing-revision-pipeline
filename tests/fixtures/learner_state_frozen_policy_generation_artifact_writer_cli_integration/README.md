@@ -215,6 +215,12 @@ JSON bodies, request/pointer/expected bodies, artifact body payloads, manifest
 bodies, generated policy bodies, raw logs, private paths, absolute paths, raw
 learner text, real data, metrics, or production readiness claims.
 
+Step476 creates that public-safe status marker after a successful remote/manual
+Release Quality run. The marker records only wrapper inclusion and count-only
+static fixture validation success; it does not change fixture JSON, execute
+runtime integration, connect artifact body generation CLI, connect manifest
+writer runtime, use real data, compute metrics, or claim production readiness.
+
 ## What This Fixture Root Does Not Prove
 
 This fixture root does not prove artifact writer CLI integration correctness,

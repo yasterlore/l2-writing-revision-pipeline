@@ -19,8 +19,8 @@ Current status-marker posture:
   release-quality wrapper, and its remote/manual status marker is now recorded
   as public-safe pass-only/count-only metadata.
 - The artifact writer CLI integration fixture validator target is in the
-  release-quality wrapper, and its remote/manual status marker is planned but
-  not yet created.
+  release-quality wrapper, and its remote/manual status marker is now recorded
+  as public-safe pass-only/count-only metadata.
 
 Available markers:
 
@@ -64,6 +64,13 @@ Available markers:
 - [Learner-state frozen policy generation artifact writer runtime release-quality remote run status](learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after artifact writer runtime
   smoke integration.
+- [Learner-state frozen policy generation artifact writer CLI integration fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after artifact writer CLI
+  integration fixture validator integration. It remains pass-only/count-only
+  and does not copy raw logs, full job output, fixture JSON bodies,
+  request/pointer/expected bodies, private paths, absolute paths, raw learner
+  text, or performance evidence. It is not runtime integration or production
+  readiness evidence.
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after artifact body fixture
   validation integration.
@@ -111,12 +118,8 @@ Available markers:
   file JSON bodies, fixture JSON bodies, private paths, absolute paths, raw
   learner text, or performance evidence.
 
-Planned markers:
-
-- `learner_state_frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_status.md`:
-  planned future public-safe pass-only/count-only marker for the artifact
-  writer CLI integration fixture validator release-quality wrapper check. The
-  marker is not yet created and this planned entry is not a success claim.
+Planned markers: none for the artifact writer CLI integration fixture
+validator release-quality wrapper check.
 
 Related recap:
 
