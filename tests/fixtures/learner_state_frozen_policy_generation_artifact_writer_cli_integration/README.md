@@ -207,6 +207,14 @@ execute runtime integration, connect artifact body generation CLI, connect
 manifest writer runtime, use real data, compute metrics, or claim production
 readiness.
 
+Step475 designs the future public-safe remote/manual Release Quality recording
+workflow for that wrapper check. The future status marker path is planned as
+`docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_status.md`,
+but the marker is not yet created. The planned marker must not copy fixture
+JSON bodies, request/pointer/expected bodies, artifact body payloads, manifest
+bodies, generated policy bodies, raw logs, private paths, absolute paths, raw
+learner text, real data, metrics, or production readiness claims.
+
 ## What This Fixture Root Does Not Prove
 
 This fixture root does not prove artifact writer CLI integration correctness,

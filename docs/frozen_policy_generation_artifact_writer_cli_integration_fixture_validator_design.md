@@ -518,3 +518,15 @@ change workflow YAML, change the Makefile, change Python code or tests, change
 fixture JSON, implement runtime integration, connect artifact body generation
 CLI, connect manifest writer runtime, use real data, compute metrics, or claim
 production readiness.
+
+## 27. Step475 Remote/Manual Run Record Workflow Design Status
+
+Step475 adds the docs-only future remote/manual Release Quality recording
+workflow for this static validator check:
+
+[Frozen policy generation artifact writer CLI integration fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_record_workflow.md)
+
+The future status marker remains planned only. Step475 does not create the
+marker, run remote workflows, change wrapper/workflow/Makefile/Python/test
+code, change fixture JSON, implement runtime integration, use real data,
+compute metrics, or claim production readiness.

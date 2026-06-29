@@ -18,6 +18,9 @@ Current status-marker posture:
 - The manifest writer runtime file writing smoke target is in the
   release-quality wrapper, and its remote/manual status marker is now recorded
   as public-safe pass-only/count-only metadata.
+- The artifact writer CLI integration fixture validator target is in the
+  release-quality wrapper, and its remote/manual status marker is planned but
+  not yet created.
 
 Available markers:
 
@@ -108,7 +111,12 @@ Available markers:
   file JSON bodies, fixture JSON bodies, private paths, absolute paths, raw
   learner text, or performance evidence.
 
-Planned markers: none for the manifest writer runtime file writing smoke.
+Planned markers:
+
+- `learner_state_frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_status.md`:
+  planned future public-safe pass-only/count-only marker for the artifact
+  writer CLI integration fixture validator release-quality wrapper check. The
+  marker is not yet created and this planned entry is not a success claim.
 
 Related recap:
 
@@ -151,6 +159,10 @@ Related recap:
 - [Frozen policy generation artifact writer runtime release-quality remote run record workflow](../frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact
   writer runtime smoke release-quality wrapper integration.
+- [Frozen policy generation artifact writer CLI integration fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_record_workflow.md):
+  future public-safe pass-only/count-only recording workflow for artifact
+  writer CLI integration fixture validator release-quality wrapper
+  integration. The status marker is planned but not yet created.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

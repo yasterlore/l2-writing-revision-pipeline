@@ -325,3 +325,17 @@ runtime integration.
 Step474 does not change workflow YAML, change the Makefile, change Python code
 or tests, change fixture JSON, use real data, compute metrics, or claim
 production readiness.
+
+## 17. Step475 Remote/Manual Run Record Workflow Design Status
+
+Step475 adds the docs-only remote/manual run record workflow design for the
+artifact writer CLI integration fixture validator wrapper check:
+
+[Frozen policy generation artifact writer CLI integration fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_record_workflow.md)
+
+The future marker path is planned as
+`docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_status.md`.
+Step475 does not create the marker, run GitHub Actions, change the wrapper,
+change workflow YAML, change the Makefile, change Python code or tests, change
+fixture JSON, implement runtime integration, use real data, compute metrics, or
+claim production readiness.

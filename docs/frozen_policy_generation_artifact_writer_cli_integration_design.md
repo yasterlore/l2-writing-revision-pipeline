@@ -497,3 +497,16 @@ scaffold CLI -> artifact writer CLI boundary. It does not implement runtime
 integration, artifact body generation CLI integration, manifest writer
 integration, manifest body generation, metrics, real-data use, or production
 readiness.
+
+## 28. Step475 Remote/Manual Run Record Workflow Design Status
+
+Step475 adds the docs-only recording workflow for a future remote/manual
+Release Quality status marker covering the artifact writer CLI integration
+fixture validator wrapper check:
+
+[Frozen policy generation artifact writer CLI integration fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_record_workflow.md)
+
+The planned marker records only public-safe metadata and pass-only /
+count-only summaries. It must not imply runtime integration, artifact body
+generation integration, manifest writer integration, model performance,
+real-data readiness, or production readiness.

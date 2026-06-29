@@ -4007,6 +4007,16 @@ Python code/tests, fixture JSON, runtime integration, artifact body generation
 CLI integration, manifest writer integration, metrics, real-data use, and
 production readiness claims remain unchanged.
 
+For Step475, review the docs-only
+[frozen policy generation artifact writer CLI integration fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_record_workflow.md).
+Confirm it defines only the future public-safe remote/manual Release Quality
+recording process and planned marker path
+`docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_status.md`.
+Confirm it does not create the marker, run a remote workflow, change wrapper,
+workflow YAML, Makefile, Python code/tests, fixture JSON, runtime integration,
+artifact body generation CLI integration, manifest writer integration,
+metrics, real-data use, or production readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

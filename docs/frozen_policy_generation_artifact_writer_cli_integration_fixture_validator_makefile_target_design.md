@@ -321,3 +321,16 @@ Step474 wrapper integration does not change the Makefile, workflow YAML,
 Python code or tests, fixture JSON, runtime integration, artifact body
 generation CLI integration, manifest writer integration, real-data use,
 metrics, or production readiness status.
+
+## 18. Step475 Remote/Manual Run Record Workflow Design Status
+
+Step475 adds the docs-only future recording workflow for a remote/manual
+Release Quality run that includes this target:
+
+[Frozen policy generation artifact writer CLI integration fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_record_workflow.md)
+
+The design keeps the future marker public-safe, pass-only / count-only, and
+explicitly excludes raw logs, fixture bodies, request/pointer/expected bodies,
+artifact body payloads, manifest bodies, generated policy bodies, raw rows,
+logits, private paths, absolute paths, raw learner text, real data, metrics,
+and production readiness claims.

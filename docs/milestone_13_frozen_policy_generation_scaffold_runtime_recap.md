@@ -1631,6 +1631,14 @@ written, no artifact body is produced, and no performance metric is computed.
   the Makefile, Python code/tests, fixture JSON, runtime integration, artifact
   body generation CLI integration, manifest writer integration, metrics,
   real-data use, or production readiness status.
+- Step475: added the docs-only future remote/manual Release Quality run record
+  workflow design for the artifact writer CLI integration fixture validator
+  wrapper check. The planned status marker path is
+  `docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_status.md`,
+  but the marker is not created in this step. The design remains public-safe,
+  pass-only / count-only, and does not change wrapper/workflow/Makefile/Python
+  code/tests, change fixture JSON, run remote workflows, implement runtime
+  integration, use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 
