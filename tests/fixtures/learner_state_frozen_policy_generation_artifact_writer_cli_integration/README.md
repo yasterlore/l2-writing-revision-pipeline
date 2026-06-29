@@ -199,6 +199,14 @@ and manifest writer checks. Step473 does not change the wrapper, workflow,
 Makefile, Python code/tests, fixture JSON, runtime integration, real-data use,
 metrics, or production readiness claims.
 
+Step474 adds the standalone validator target to the release-quality wrapper
+after artifact writer fixture validation and artifact writer runtime smoke, and
+before artifact body fixture validation. The wrapper integration keeps this
+fixture root as metadata-only contract input and does not change fixture JSON,
+execute runtime integration, connect artifact body generation CLI, connect
+manifest writer runtime, use real data, compute metrics, or claim production
+readiness.
+
 ## What This Fixture Root Does Not Prove
 
 This fixture root does not prove artifact writer CLI integration correctness,
@@ -209,5 +217,6 @@ readiness, or production readiness.
 ## Release Quality Note
 
 `release_quality_ready=false` remains part of the fixture contract. Release
-quality integration should happen only after validator design, validator
-implementation, a standalone Makefile target, and wrapper design.
+quality integration is present as a wrapper check for the standalone static
+fixture validator, but this does not make the fixture root production-ready or
+real-data-ready.

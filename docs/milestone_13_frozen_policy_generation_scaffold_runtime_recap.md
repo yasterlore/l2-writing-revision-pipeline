@@ -1624,6 +1624,13 @@ written, no artifact body is produced, and no performance metric is computed.
   implementation plan, and remote marker staging. It does not change the
   wrapper, workflow YAML, Makefile, Python code/tests, fixture JSON, runtime
   integration, real-data use, metrics, or production readiness claims.
+- Step474: integrated the artifact writer CLI integration fixture validator
+  standalone target into `scripts/check_release_quality.sh` after artifact
+  writer fixture validation and artifact writer runtime smoke, and before
+  artifact body fixture validation. This step does not change workflow YAML,
+  the Makefile, Python code/tests, fixture JSON, runtime integration, artifact
+  body generation CLI integration, manifest writer integration, metrics,
+  real-data use, or production readiness status.
 
 ## Related Documents
 

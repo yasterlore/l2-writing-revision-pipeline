@@ -306,3 +306,22 @@ This design does not:
 - Step474 wrapper integration
 - Step475 remote/manual run record workflow design
 - Step476 remote status marker
+
+## 16. Step474 Wrapper Integration Status
+
+Step474 implements the release-quality wrapper integration described in this
+design. `scripts/check_release_quality.sh` now includes the standalone fixture
+validator target with this label and command:
+
+- `release_quality_check: learner-state frozen policy generation artifact writer CLI integration fixture validation`
+- `make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`
+
+The block is placed after artifact writer fixture validation and artifact
+writer runtime smoke, and before artifact body fixture validation. This keeps
+the check limited to static CLI integration fixture contract validation and
+does not connect artifact body generation CLI, manifest writer runtime, or
+runtime integration.
+
+Step474 does not change workflow YAML, change the Makefile, change Python code
+or tests, change fixture JSON, use real data, compute metrics, or claim
+production readiness.

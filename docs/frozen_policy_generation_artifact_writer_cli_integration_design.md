@@ -482,3 +482,18 @@ Step473 does not change the wrapper, change workflow YAML, change the Makefile,
 change Python code or tests, change fixture JSON, implement runtime
 integration, connect artifact body generation CLI, connect manifest writer
 runtime, use real data, compute metrics, or claim production readiness.
+
+## 27. Step474 Release-Quality Wrapper Integration Status
+
+Step474 adds the artifact writer CLI integration fixture validator target to
+the release-quality wrapper. The wrapper now runs the static fixture-contract
+validator through
+`make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`
+under the label
+`release_quality_check: learner-state frozen policy generation artifact writer CLI integration fixture validation`.
+
+The integration remains limited to fixture validation for the generator
+scaffold CLI -> artifact writer CLI boundary. It does not implement runtime
+integration, artifact body generation CLI integration, manifest writer
+integration, manifest body generation, metrics, real-data use, or production
+readiness.

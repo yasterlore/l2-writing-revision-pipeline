@@ -501,3 +501,20 @@ plan, and remote marker staging. Step473 does not change the wrapper, change
 workflow YAML, change the Makefile, change Python code or tests, change fixture
 JSON, implement runtime integration, use real data, compute metrics, or claim
 production readiness.
+
+## 26. Step474 Release-Quality Wrapper Integration Status
+
+Step474 integrates the standalone Makefile target into the release-quality
+wrapper after artifact writer fixture validation and artifact writer runtime
+smoke, and before artifact body fixture validation.
+
+The added wrapper label is
+`release_quality_check: learner-state frozen policy generation artifact writer CLI integration fixture validation`.
+The added command is
+`make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`.
+
+This keeps the validator as a static fixture-contract check. Step474 does not
+change workflow YAML, change the Makefile, change Python code or tests, change
+fixture JSON, implement runtime integration, connect artifact body generation
+CLI, connect manifest writer runtime, use real data, compute metrics, or claim
+production readiness.

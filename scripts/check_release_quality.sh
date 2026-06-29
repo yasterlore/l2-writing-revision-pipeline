@@ -133,6 +133,9 @@ run make check-learner-state-frozen-policy-generation-artifact-writer-fixtures
 section "learner-state frozen policy generation artifact writer runtime smoke"
 run make check-learner-state-frozen-policy-generation-artifact-writer-runtime
 
+section "learner-state frozen policy generation artifact writer CLI integration fixture validation"
+run make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures
+
 section "learner-state frozen policy generation artifact body fixture validation"
 run make check-learner-state-frozen-policy-generation-artifact-body-fixtures
 

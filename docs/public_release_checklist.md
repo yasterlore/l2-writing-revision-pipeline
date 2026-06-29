@@ -3996,6 +3996,17 @@ not change the wrapper, workflow YAML, Makefile, Python code/tests, fixture
 JSON, runtime integration, artifact body generation CLI integration, manifest
 writer integration, metrics, real-data use, or production readiness claims.
 
+For Step474, review the release-quality wrapper change in
+`scripts/check_release_quality.sh`. Confirm it adds only
+`release_quality_check: learner-state frozen policy generation artifact writer CLI integration fixture validation`
+and
+`make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`
+after artifact writer fixture validation and artifact writer runtime smoke, and
+before artifact body fixture validation. Confirm workflow YAML, Makefile,
+Python code/tests, fixture JSON, runtime integration, artifact body generation
+CLI integration, manifest writer integration, metrics, real-data use, and
+production readiness claims remain unchanged.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

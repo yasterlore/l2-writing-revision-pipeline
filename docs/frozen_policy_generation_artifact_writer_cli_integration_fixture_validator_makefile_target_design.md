@@ -304,3 +304,20 @@ validation. Step473 does not change the wrapper, change workflow YAML, change
 the Makefile, change Python code or tests, change fixture JSON, implement
 runtime integration, use real data, compute metrics, or claim production
 readiness.
+
+## 17. Step474 Release-Quality Wrapper Integration Status
+
+Step474 adds the standalone target to `scripts/check_release_quality.sh` using
+the Step473 label:
+
+`release_quality_check: learner-state frozen policy generation artifact writer CLI integration fixture validation`
+
+The wrapper invokes:
+
+`make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`
+
+The target remains the same body-free, count-only static fixture validator. The
+Step474 wrapper integration does not change the Makefile, workflow YAML,
+Python code or tests, fixture JSON, runtime integration, artifact body
+generation CLI integration, manifest writer integration, real-data use,
+metrics, or production readiness status.
