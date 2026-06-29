@@ -439,3 +439,23 @@ This design does not:
 - Step474 wrapper integration
 - Step475 remote workflow design
 - Step476 remote marker
+
+## 22. Step470 Fixture Validator Implementation Status
+
+Step470 implements the static validator module and focused tests:
+
+- `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_fixture_validation.py`
+
+The validator checks the Step468 fixture root only. It validates case
+discovery, 6 required files per case, JSON parsing, schema and identity
+alignment, expected status and reason-code alignment, valid and invalid case
+rules, forbidden-content scans, no-oracle metadata, file-writing suppression,
+and artifact body / manifest writer separation. It emits body-free summaries
+for human and JSON output.
+
+Step470 does not add a Makefile target, integrate release-quality, change
+workflow YAML, change fixture JSON, implement artifact writer CLI integration
+runtime, connect artifact body generation CLI, connect manifest writer
+runtime, generate manifest bodies, use real data, compute metrics, or claim
+production readiness.

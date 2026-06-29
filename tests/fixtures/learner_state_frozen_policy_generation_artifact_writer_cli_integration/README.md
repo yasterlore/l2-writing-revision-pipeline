@@ -161,6 +161,16 @@ change workflow YAML, implement artifact writer CLI integration runtime,
 connect artifact body generation CLI, connect manifest writer runtime, use
 real data, compute metrics, or claim production readiness.
 
+Step470 implements that static validator in:
+
+`python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_fixture_validation.py`
+
+The validator checks this fixture root only and emits body-free summaries. It
+does not execute artifact writer CLI integration runtime, connect artifact
+body generation CLI, connect manifest writer runtime, write files, change
+fixture JSON, add a Makefile target, integrate release-quality, use real data,
+compute metrics, or claim production readiness.
+
 ## What This Fixture Root Does Not Prove
 
 This fixture root does not prove artifact writer CLI integration correctness,

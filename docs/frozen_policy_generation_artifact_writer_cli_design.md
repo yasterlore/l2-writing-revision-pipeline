@@ -562,3 +562,16 @@ integration runtime, connect artifact body generation CLI, connect manifest
 writer runtime, change Python code/tests, change fixture JSON, add a Makefile
 target, integrate release-quality, use real data, compute metrics, or claim
 production readiness.
+
+## 36. Step470 CLI Integration Fixture Validator Implementation Status
+
+Step470 implements the static artifact writer CLI integration fixture
+validator:
+
+`python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_fixture_validation.py`
+
+The existing artifact writer CLI remains unchanged. The new validator checks
+the Step468 fixture root only; it does not execute artifact writer CLI
+integration runtime, connect artifact body generation CLI, connect manifest
+writer runtime, change fixture JSON, add Makefile or release-quality
+integration, use real data, compute metrics, or claim production readiness.

@@ -3958,6 +3958,17 @@ not implement a validator, add Python tests, change fixture JSON, add Makefile
 or wrapper integration, change workflow YAML, implement runtime integration,
 use real data, compute metrics, or claim production readiness.
 
+For Step470, review the static validator module
+`python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_fixture_validation.py`
+and focused tests
+`python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_fixture_validation.py`.
+Confirm the validator checks only the Step468 fixture root, emits body-free
+human/JSON summaries, validates 28 cases and 168 JSON files, keeps
+artifact body generation and manifest writer integration separated, and does
+not change fixture JSON, add Makefile/release-quality integration, change
+workflow YAML, implement runtime integration, use real data, compute metrics,
+or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

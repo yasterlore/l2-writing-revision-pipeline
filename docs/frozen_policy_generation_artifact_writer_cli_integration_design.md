@@ -426,3 +426,18 @@ manifest writer separation checks. It does not implement integration runtime,
 change fixture JSON, add Python tests, add a Makefile target, integrate
 release-quality, use real data, compute metrics, or claim production
 readiness.
+
+## 23. Step470 Fixture Validator Implementation Status
+
+Step470 implements the static validator module and focused tests for the
+Step468 fixture root:
+
+- `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_fixture_validation.py`
+
+The validator checks fixture contract metadata only and emits body-free human
+or JSON summaries. It does not implement artifact writer CLI integration
+runtime, connect artifact body generation CLI, connect manifest writer
+runtime, change fixture JSON, add a Makefile target, integrate
+release-quality, change workflow YAML, use real data, compute metrics, or
+claim production readiness.

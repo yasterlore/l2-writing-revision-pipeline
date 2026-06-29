@@ -619,3 +619,16 @@ and reject artifact body payload leakage, but it should not execute this CLI,
 connect artifact writer CLI to artifact body generation CLI, add Python tests,
 change fixture JSON, add a Makefile target, integrate release-quality, use
 real data, compute metrics, or claim production readiness.
+
+## 39. Step470 Artifact Writer CLI Integration Fixture Validator Implementation Status
+
+Step470 implements the static artifact writer CLI integration fixture
+validator:
+
+`python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_fixture_validation.py`
+
+Artifact body generation CLI integration remains separate and unimplemented.
+The validator enforces artifact body generation separation for the fixture
+contract and does not execute this CLI, connect artifact writer CLI to artifact
+body generation CLI, change fixture JSON, add Makefile/release-quality
+integration, use real data, compute metrics, or claim production readiness.

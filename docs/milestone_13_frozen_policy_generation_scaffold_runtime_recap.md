@@ -1594,6 +1594,14 @@ written, no artifact body is produced, and no performance metric is computed.
   change fixture JSON, add Makefile/wrapper/workflow changes, implement
   runtime integration, use real data, compute metrics, or claim production
   readiness.
+- Step470: implemented the static artifact writer CLI integration fixture
+  validator module, CLI, and focused tests. The validator checks the Step468
+  28-case / 168-JSON fixture root with body-free summaries and validates
+  required files, schema/case/status/reason alignment, forbidden-content
+  scans, no-oracle policy, file-writing suppression, and artifact body /
+  manifest writer separation. It does not add a Makefile target,
+  release-quality wrapper integration, workflow changes, fixture JSON changes,
+  runtime integration, real-data use, metrics, or production readiness claims.
 
 ## Related Documents
 

@@ -540,3 +540,16 @@ execute manifest writer runtime, change manifest writer file writing behavior,
 add Python tests, change fixture JSON, add a Makefile target, integrate
 release-quality, use real data, compute metrics, or claim production
 readiness.
+
+## 30. Step470 Artifact Writer CLI Integration Fixture Validator Implementation Status
+
+Step470 implements the static artifact writer CLI integration fixture
+validator:
+
+`python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_fixture_validation.py`
+
+Manifest writer integration remains out of scope. The validator enforces
+manifest writer separation for the fixture contract and does not execute
+manifest writer runtime, change manifest writer file writing behavior, change
+fixture JSON, add Makefile/release-quality integration, use real data, compute
+metrics, or claim production readiness.
