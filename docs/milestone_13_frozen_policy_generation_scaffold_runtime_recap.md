@@ -1610,6 +1610,12 @@ written, no artifact body is produced, and no performance metric is computed.
   does not implement the Makefile target, change wrapper/workflow/Python/tests,
   change fixture JSON, execute runtime integration, use real data, compute
   metrics, or claim production readiness.
+- Step472: implemented the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`
+  for running the Step470 validator CLI over the Step468 fixture root. It
+  keeps the target outside release-quality for now and does not change workflow
+  YAML, Python code/tests, fixture JSON, runtime integration, real-data use,
+  metrics, or production readiness claims.
 
 ## Related Documents
 

@@ -182,6 +182,13 @@ Step471 does not implement the target, change this fixture root, integrate
 release-quality, execute runtime integration, use real data, compute metrics,
 or claim production readiness.
 
+Step472 implements that standalone Makefile target. It runs the Step470
+validator CLI against this fixture root and emits a body-free count-only
+summary. Step472 does not change fixture JSON, add release-quality integration,
+execute runtime integration, connect artifact body generation CLI, connect
+manifest writer runtime, use real data, compute metrics, or claim production
+readiness.
+
 ## What This Fixture Root Does Not Prove
 
 This fixture root does not prove artifact writer CLI integration correctness,

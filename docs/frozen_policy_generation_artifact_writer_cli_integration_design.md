@@ -456,3 +456,15 @@ not change the Makefile, integrate release-quality, change workflow YAML,
 change Python code or tests, change fixture JSON, implement runtime
 integration, connect artifact body generation CLI, connect manifest writer
 runtime, use real data, compute metrics, or claim production readiness.
+
+## 25. Step472 Makefile Target Implementation Status
+
+Step472 implements the standalone Makefile target for the Step470 validator:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`
+
+The target validates only the Step468 fixture root and remains outside
+release-quality until a later wrapper integration step. Step472 does not change
+workflow YAML, change Python code or tests, change fixture JSON, implement
+runtime integration, connect artifact body generation CLI, connect manifest
+writer runtime, use real data, compute metrics, or claim production readiness.

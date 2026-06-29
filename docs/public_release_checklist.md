@@ -3978,6 +3978,15 @@ workflow YAML, change Python code/tests, change fixture JSON, implement
 runtime integration, connect artifact body generation CLI, connect manifest
 writer runtime, use real data, compute metrics, or claim production readiness.
 
+For Step472, run
+`make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`.
+Confirm it emits the Step470 validator's body-free count-only summary for the
+28-case / 168-JSON fixture root. Confirm Step472 does not add release-quality
+wrapper integration, change workflow YAML, change Python code/tests, change
+fixture JSON, implement runtime integration, connect artifact body generation
+CLI, connect manifest writer runtime, use real data, compute metrics, or claim
+production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

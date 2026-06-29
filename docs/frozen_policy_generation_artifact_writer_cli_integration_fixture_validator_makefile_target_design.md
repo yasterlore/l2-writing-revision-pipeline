@@ -271,3 +271,22 @@ This design does not:
 - Step474 wrapper integration
 - Step475 remote/manual run record workflow design
 - Step476 remote status marker
+
+## 15. Step472 Makefile Target Implementation Status
+
+Step472 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`
+
+The target runs the Step470 validator CLI against the Step468 fixture root:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration
+```
+
+The target emits the validator's body-free count-only summary and remains
+standalone. Step472 does not add the target to the release-quality wrapper,
+change workflow YAML, change Python code or tests, change fixture JSON,
+implement runtime integration, connect artifact body generation CLI, connect
+manifest writer runtime, use real data, compute metrics, or claim production
+readiness.

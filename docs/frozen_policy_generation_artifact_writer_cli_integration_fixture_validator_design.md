@@ -474,3 +474,15 @@ body-free validator CLI. Step471 does not modify the Makefile, integrate
 release-quality, change workflow YAML, change Python code or tests, change
 fixture JSON, implement runtime integration, use real data, compute metrics, or
 claim production readiness.
+
+## 24. Step472 Makefile Target Implementation Status
+
+Step472 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures`
+
+The target invokes the Step470 validator CLI over the Step468 fixture root and
+prints only the existing body-free validation summary. Step472 does not add the
+target to release-quality, change workflow YAML, change Python code or tests,
+change fixture JSON, implement runtime integration, use real data, compute
+metrics, or claim production readiness.
