@@ -377,3 +377,22 @@ This design does not:
 - artifact writer CLI integration release-quality integration
 - artifact writer CLI integration remote/manual run record workflow
 - artifact writer CLI integration remote status marker
+
+## 20. Step467 Fixture Contract Design Status
+
+Step467 adds the docs-only fixture contract design for the future artifact
+writer CLI integration fixture root:
+
+[Frozen policy generation artifact writer CLI integration fixture contract design](frozen_policy_generation_artifact_writer_cli_integration_fixture_contract_design.md).
+
+The contract fixes the proposed fixture root, valid/invalid case taxonomy,
+expected counts, 6-files-per-case layout, expected result schema, reason code
+taxonomy, no-oracle policy, body-free metadata policy, no-file-writing policy,
+and release-quality staging.
+
+Step467 does not create the fixture root, create fixture JSON, implement a
+validator, implement artifact writer CLI integration, connect artifact body
+generation CLI, connect manifest writer runtime, generate manifest bodies,
+change runtime code, change Makefile, change release-quality wrapper, change
+workflow YAML, modify Python tests, use real data, compute metrics, or claim
+production readiness.

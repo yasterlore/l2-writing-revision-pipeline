@@ -496,3 +496,18 @@ not connect artifact writer CLI to artifact body generation CLI or manifest
 writer runtime, does not generate manifest bodies, does not change runtime
 code, Makefile, release-quality wrapper, workflow YAML, Python tests, fixtures
 JSON, metrics, real-data use, or production readiness.
+
+## 27. Step467 Artifact Writer CLI Integration Fixture Contract Status
+
+Step467 adds a docs-only fixture contract design for future artifact writer
+CLI integration fixtures:
+
+[Frozen policy generation artifact writer CLI integration fixture contract design](frozen_policy_generation_artifact_writer_cli_integration_fixture_contract_design.md).
+
+Manifest writer integration remains out of scope. The fixture contract keeps
+`manifest_writer_executed=false`, `manifest_body_available=false`,
+`manifest_file_written=false`, and `written_file_count=0`. Step467 does not
+connect artifact writer CLI to manifest writer runtime, generate manifest
+bodies, change runtime file writing behavior, create fixture JSON, implement a
+validator, change Makefile, change release-quality, use real data, compute
+metrics, or claim production readiness.

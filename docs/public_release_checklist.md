@@ -3917,6 +3917,24 @@ artifact body payloads, generated policy bodies, raw rows, logits/private
 paths, absolute paths, raw learner text, real participant data, or performance
 evidence.
 
+For Step467, review the docs-only
+[frozen policy generation artifact writer CLI integration fixture contract design](frozen_policy_generation_artifact_writer_cli_integration_fixture_contract_design.md).
+Confirm it defines only the future fixture contract: proposed fixture root,
+valid/invalid directory layout, 28 total cases, 6 valid cases, 22 invalid
+cases, 6 JSON files per case, 168 total JSON files, per-file purpose,
+expected result schema, valid/invalid expectations, reason code taxonomy,
+forbidden content policy, no-oracle policy, no-file-writing policy, and
+release-quality staging. Confirm it does not create the fixture root, create
+or modify fixture JSON, implement a validator, implement artifact writer CLI
+integration, connect artifact body generation CLI, connect manifest writer,
+generate manifest bodies, change Makefile, change wrapper, change workflow
+YAML, change runtime code, change Python tests, use real data, compute
+metrics, or claim production readiness. Confirm docs do not include raw logs,
+full job output, fixture JSON bodies, request/pointer/expected bodies,
+written file JSON bodies, manifest bodies, artifact body payloads, generated
+policy bodies, raw rows, logits/probabilities, private paths, absolute paths,
+raw learner text, real participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

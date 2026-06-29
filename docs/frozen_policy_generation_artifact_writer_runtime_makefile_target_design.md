@@ -484,3 +484,15 @@ contract and validator work. Step466 does not change Makefile, release-quality
 wrapper, workflow YAML, Python code/tests, fixtures JSON, artifact body
 generation CLI integration, manifest body generation, metrics, real-data use,
 or production readiness.
+
+## 27. Step467 CLI Integration Fixture Contract Status
+
+Step467 adds the docs-only fixture contract design for the future integration
+target:
+
+[Frozen policy generation artifact writer CLI integration fixture contract design](frozen_policy_generation_artifact_writer_cli_integration_fixture_contract_design.md).
+
+The existing artifact writer runtime Makefile target remains unchanged. The
+future integration target should remain separate and should not be added until
+fixture root creation, validator design, validator implementation, and target
+design are complete.

@@ -521,3 +521,16 @@ Step466 does not implement integration, connect artifact body generation CLI,
 generate manifest bodies, change runtime code, change Python tests, change
 fixtures JSON, change Makefile, change release-quality, change workflow YAML,
 use real data, compute metrics, or claim production readiness.
+
+## 33. Step467 CLI Integration Fixture Contract Status
+
+Step467 adds the docs-only fixture contract design for future artifact writer
+CLI integration fixtures:
+
+[Frozen policy generation artifact writer CLI integration fixture contract design](frozen_policy_generation_artifact_writer_cli_integration_fixture_contract_design.md).
+
+The artifact writer CLI remains unchanged. Step467 does not create fixture
+JSON, implement an integration validator, implement CLI integration, add
+Makefile targets, connect artifact body generation CLI, connect manifest
+writer runtime, generate manifest bodies, use real data, compute metrics, or
+claim production readiness.

@@ -1566,6 +1566,15 @@ written, no artifact body is produced, and no performance metric is computed.
   manifest writer integration, manifest body generation, file writing,
   release-quality changes, code/tests, fixtures JSON, metrics, real-data use,
   and production readiness kept separate for later steps.
+- Step467: added the docs-only fixture contract design for future artifact
+  writer CLI integration fixtures. The contract proposes a synthetic
+  metadata-only fixture root with 28 cases, 6 valid cases, 22 invalid cases,
+  6 JSON files per case, 168 total JSON files, expected result schema, reason
+  codes, body-free/no-oracle policy, no-file-writing policy, and
+  release-quality staging. It does not create fixtures, implement a validator,
+  implement integration, change Makefile/wrapper/workflow/code/tests, connect
+  artifact body generation CLI or manifest writer, use real data, compute
+  metrics, or claim production readiness.
 
 ## Related Documents
 
@@ -1676,6 +1685,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Frozen policy generation artifact writer CLI integration design](frozen_policy_generation_artifact_writer_cli_integration_design.md)
+- [Frozen policy generation artifact writer CLI integration fixture contract design](frozen_policy_generation_artifact_writer_cli_integration_fixture_contract_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)

@@ -578,3 +578,17 @@ writer CLI to artifact body generation CLI, does not generate artifact body
 payloads, does not generate manifest bodies, does not change Makefile,
 release-quality, workflow YAML, Python code/tests, fixtures JSON, metrics,
 real-data use, or production readiness.
+
+## 36. Step467 Artifact Writer CLI Integration Fixture Contract Status
+
+Step467 adds a docs-only fixture contract design for the future artifact
+writer CLI integration boundary:
+
+[Frozen policy generation artifact writer CLI integration fixture contract design](frozen_policy_generation_artifact_writer_cli_integration_fixture_contract_design.md).
+
+Artifact body generation CLI integration remains out of scope. The contract
+includes only an unsupported artifact body generation integration invalid case
+to document the boundary. Step467 does not change this CLI, create fixtures,
+create fixture JSON, implement a validator, connect artifact writer CLI to
+artifact body generation CLI, generate payloads, use real data, compute
+metrics, or claim production readiness.
