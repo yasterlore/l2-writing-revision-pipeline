@@ -290,3 +290,17 @@ change workflow YAML, change Python code or tests, change fixture JSON,
 implement runtime integration, connect artifact body generation CLI, connect
 manifest writer runtime, use real data, compute metrics, or claim production
 readiness.
+
+## 16. Step473 Release-Quality Integration Design Status
+
+Step473 adds the docs-only release-quality wrapper integration design for this
+standalone target:
+
+[Frozen policy generation artifact writer CLI integration fixture release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_integration_design.md)
+
+The design recommends adding the target after artifact writer fixture
+validation and artifact writer runtime smoke, and before artifact body fixture
+validation. Step473 does not change the wrapper, change workflow YAML, change
+the Makefile, change Python code or tests, change fixture JSON, implement
+runtime integration, use real data, compute metrics, or claim production
+readiness.

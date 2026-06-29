@@ -1616,6 +1616,14 @@ written, no artifact body is produced, and no performance metric is computed.
   keeps the target outside release-quality for now and does not change workflow
   YAML, Python code/tests, fixture JSON, runtime integration, real-data use,
   metrics, or production readiness claims.
+- Step473: added the docs-only release-quality integration design for the
+  artifact writer CLI integration fixture validator target. The design fixes
+  the future wrapper label, command, insertion point after artifact writer
+  fixture/runtime checks and before artifact body fixture validation, expected
+  body-free output, failure interpretation, safety policy, wrapper
+  implementation plan, and remote marker staging. It does not change the
+  wrapper, workflow YAML, Makefile, Python code/tests, fixture JSON, runtime
+  integration, real-data use, metrics, or production readiness claims.
 
 ## Related Documents
 

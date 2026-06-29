@@ -486,3 +486,18 @@ prints only the existing body-free validation summary. Step472 does not add the
 target to release-quality, change workflow YAML, change Python code or tests,
 change fixture JSON, implement runtime integration, use real data, compute
 metrics, or claim production readiness.
+
+## 25. Step473 Release-Quality Integration Design Status
+
+Step473 adds the docs-only release-quality integration design for the
+standalone target:
+
+[Frozen policy generation artifact writer CLI integration fixture release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_integration_design.md)
+
+The design fixes the proposed label, command, insertion point, expected
+body-free output, failure interpretation, relation to existing artifact writer
+checks, artifact body / manifest writer separation, wrapper implementation
+plan, and remote marker staging. Step473 does not change the wrapper, change
+workflow YAML, change the Makefile, change Python code or tests, change fixture
+JSON, implement runtime integration, use real data, compute metrics, or claim
+production readiness.

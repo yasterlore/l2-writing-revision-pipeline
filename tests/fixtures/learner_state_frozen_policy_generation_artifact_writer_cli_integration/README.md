@@ -189,6 +189,16 @@ execute runtime integration, connect artifact body generation CLI, connect
 manifest writer runtime, use real data, compute metrics, or claim production
 readiness.
 
+Step473 designs future release-quality wrapper integration for that standalone
+target:
+
+`docs/frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_integration_design.md`
+
+The design keeps this fixture validator separate from artifact body generation
+and manifest writer checks. Step473 does not change the wrapper, workflow,
+Makefile, Python code/tests, fixture JSON, runtime integration, real-data use,
+metrics, or production readiness claims.
+
 ## What This Fixture Root Does Not Prove
 
 This fixture root does not prove artifact writer CLI integration correctness,

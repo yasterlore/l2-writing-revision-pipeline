@@ -3987,6 +3987,15 @@ fixture JSON, implement runtime integration, connect artifact body generation
 CLI, connect manifest writer runtime, use real data, compute metrics, or claim
 production readiness.
 
+For Step473, review the docs-only
+[frozen policy generation artifact writer CLI integration fixture release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_integration_design.md).
+Confirm it proposes only a future wrapper label, command, insertion point,
+expected body-free output, failure interpretation, release-quality safety
+policy, wrapper implementation plan, and remote marker staging. Confirm it does
+not change the wrapper, workflow YAML, Makefile, Python code/tests, fixture
+JSON, runtime integration, artifact body generation CLI integration, manifest
+writer integration, metrics, real-data use, or production readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
