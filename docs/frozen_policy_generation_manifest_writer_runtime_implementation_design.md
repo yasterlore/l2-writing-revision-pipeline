@@ -907,3 +907,17 @@ target-owned smoke path, and reports zero smoke residue. Step443 does not add
 release-quality integration, change workflow YAML, change Python code/tests,
 change fixtures JSON, change runtime code, connect artifact writer CLI, use
 real data, compute metrics, or claim production readiness.
+
+## 56. Step444 Runtime File Writing Release-Quality Integration Design Status
+
+Step444 adds the docs-only design for future release-quality wrapper
+integration of the runtime file writing smoke target:
+
+[Frozen policy generation manifest writer runtime file writing release-quality integration design](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_integration_design.md).
+
+The runtime implementation is unchanged in this step. The design fixes the
+future wrapper label, command, insertion point, body-free output expectations,
+failure interpretation, log safety, cleanup/residue policy, and staging. It
+does not modify the release-quality wrapper, workflow YAML, Makefile, Python
+code/tests, fixtures JSON, artifact writer CLI integration, artifact body
+generation CLI integration, real-data use, metrics, or production readiness.

@@ -282,7 +282,6 @@ This Step442 design does not:
 
 ## 17. Next Recommended Steps
 
-- Step444 release-quality runtime integration design
 - Step445 wrapper integration
 - Step446 remote/manual run record workflow design
 - Step447 remote status marker
@@ -297,6 +296,7 @@ This Step442 design does not:
 - [Frozen policy generation manifest writer file writing boundary design](frozen_policy_generation_manifest_writer_file_writing_boundary_design.md)
 - [Frozen policy generation manifest writer production file writing design](frozen_policy_generation_manifest_writer_production_file_writing_design.md)
 - [Frozen policy generation manifest writer production file writing fixture validator design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_design.md)
+- [Frozen policy generation manifest writer runtime file writing release-quality integration design](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_integration_design.md)
 
 ## 19. Step443 Implementation Status
 
@@ -318,3 +318,17 @@ Step443 does not add release-quality integration, change workflow YAML, change
 Python code/tests, change fixtures JSON, change runtime code, connect artifact
 writer CLI, call artifact body generation CLI, generate manifest bodies, use
 real data, compute metrics, or claim production readiness.
+
+## 20. Step444 Release-Quality Integration Design Status
+
+Step444 adds the docs-only release-quality integration design for the runtime
+file writing smoke target:
+
+[Frozen policy generation manifest writer runtime file writing release-quality integration design](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_integration_design.md).
+
+The design fixes the future wrapper label, command, insertion point, expected
+body-free output, failure interpretation, log safety, cleanup policy, residue
+policy, staging, and non-goals. It does not modify the release-quality
+wrapper, workflow YAML, Makefile, Python code/tests, fixtures JSON, artifact
+writer CLI integration, artifact body generation CLI integration, manifest
+body generation, real-data use, metrics, or production readiness.

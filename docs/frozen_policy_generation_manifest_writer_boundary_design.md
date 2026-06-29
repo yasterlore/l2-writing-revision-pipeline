@@ -1045,3 +1045,17 @@ This does not change workflow YAML, the release-quality wrapper, Python
 code/tests, fixtures JSON, runtime code, artifact writer CLI integration,
 artifact body generation CLI integration, real-data use, metrics, or
 production readiness.
+
+## 74. Step444 Runtime File Writing Release-Quality Boundary Status
+
+Step444 adds the docs-only release-quality integration design for the runtime
+file writing smoke boundary:
+
+[Frozen policy generation manifest writer runtime file writing release-quality integration design](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_integration_design.md).
+
+The design keeps the boundary explicit: release-quality may later run the
+standalone smoke target, but it must still emit only body-free summaries,
+remove the target-owned smoke path, report zero residue, and avoid artifact
+writer CLI execution. This step does not modify wrapper, workflow YAML,
+Makefile, Python code/tests, fixtures JSON, runtime code, real-data use,
+metrics, or production readiness.

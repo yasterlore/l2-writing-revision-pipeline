@@ -1514,6 +1514,14 @@ written, no artifact body is produced, and no performance metric is computed.
   integration, change workflow YAML, change Python code/tests, change fixtures
   JSON, change runtime code, connect artifact writer CLI, use real data,
   compute metrics, or claim production readiness.
+- Step444: added the docs-only release-quality integration design for the
+  manifest writer runtime metadata-only file writing smoke target. It fixes
+  the proposed wrapper label, command, insertion point after production file
+  writing fixture validation, body-free expected output, failure
+  interpretation, cleanup/residue policy, log safety, staging, and non-goals.
+  It does not change the release-quality wrapper, workflow YAML, Makefile,
+  Python code/tests, fixtures JSON, artifact writer CLI integration, real-data
+  use, metrics, or production readiness.
 
 ## Related Documents
 
@@ -1559,6 +1567,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Learner-state frozen policy generation manifest writer production file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime file writing implementation plan](frozen_policy_generation_manifest_writer_runtime_file_writing_implementation_plan.md)
 - [Frozen policy generation manifest writer runtime file writing smoke Makefile target design](frozen_policy_generation_manifest_writer_runtime_file_writing_smoke_makefile_target_design.md)
+- [Frozen policy generation manifest writer runtime file writing release-quality integration design](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime implementation](../python/learner_state/frozen_policy_generation_manifest_writer.py)
 - [Frozen policy generation manifest writer runtime tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer.py)
 - [Makefile manifest writer runtime file writing smoke target](../Makefile)

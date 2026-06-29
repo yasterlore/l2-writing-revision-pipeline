@@ -570,3 +570,16 @@ This is runtime smoke evidence only. It remains separate from static
 production fixture validation, release-quality wrapper integration, remote
 markers, artifact writer CLI integration, real-data readiness, and production
 readiness.
+
+## 38. Step444 Runtime File Writing Release-Quality Integration Design Status
+
+Step444 adds the docs-only design for future release-quality wrapper
+integration of the runtime file writing smoke target:
+
+[Frozen policy generation manifest writer runtime file writing release-quality integration design](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_integration_design.md).
+
+The design places the future runtime file writing smoke after the static
+production file writing fixture validation and before config/scoring smoke
+checks. It remains runtime smoke evidence only and does not modify wrapper,
+workflow YAML, Makefile, Python code/tests, fixtures JSON, artifact writer CLI
+integration, real-data use, metrics, or production readiness.

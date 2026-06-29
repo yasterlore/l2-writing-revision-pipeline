@@ -363,7 +363,6 @@ This Step440 plan does not:
 
 ## 17. Next Recommended Steps
 
-- Step444 release-quality runtime integration design
 - Step445 wrapper integration
 - Step446 remote/manual run record workflow design
 - Step447 remote marker
@@ -376,6 +375,7 @@ This Step440 plan does not:
 - [Frozen policy generation manifest writer production file writing fixture validator design](frozen_policy_generation_manifest_writer_production_file_writing_fixture_validator_design.md)
 - [Frozen policy generation manifest writer production file writing fixture release-quality remote run status](status/learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation manifest writer runtime file writing smoke Makefile target design](frozen_policy_generation_manifest_writer_runtime_file_writing_smoke_makefile_target_design.md)
+- [Frozen policy generation manifest writer runtime file writing release-quality integration design](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_integration_design.md)
 - [Frozen policy generation manifest writer runtime implementation design](frozen_policy_generation_manifest_writer_runtime_implementation_design.md)
 - [Frozen policy generation manifest writer runtime API design](frozen_policy_generation_manifest_writer_runtime_api_design.md)
 - [Frozen policy generation manifest writer boundary design](frozen_policy_generation_manifest_writer_boundary_design.md)
@@ -428,3 +428,18 @@ zero smoke residue. It does not change workflow YAML, release-quality wrapper,
 Python code/tests, fixtures JSON, runtime code, artifact writer CLI
 integration, artifact body generation CLI integration, real-data use, metrics,
 or production readiness.
+
+## 22. Step444 Release-Quality Integration Design Status
+
+Step444 adds the docs-only integration design for placing the runtime file
+writing smoke target in the release-quality wrapper:
+
+[Frozen policy generation manifest writer runtime file writing release-quality integration design](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_integration_design.md).
+
+The design keeps wrapper implementation separate. It fixes the proposed label,
+command, insertion point after production file writing fixture validation,
+expected body-free output, cleanup and residue policy, log safety, failure
+interpretation, and future staging. It does not modify Makefile,
+release-quality wrapper, workflow YAML, Python code/tests, fixtures JSON,
+artifact writer CLI integration, artifact body generation CLI integration,
+manifest body generation, real-data use, metrics, or production readiness.

@@ -623,3 +623,16 @@ smoke file, then cleans it up.
 This static validator remains unchanged and still does not execute runtime
 file writing. Static fixture validation evidence and runtime smoke evidence
 remain separate.
+
+## 39. Step444 Runtime Smoke Release-Quality Integration Separation Note
+
+Step444 adds the docs-only release-quality integration design for the runtime
+file writing smoke target:
+
+[Frozen policy generation manifest writer runtime file writing release-quality integration design](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_integration_design.md).
+
+The production fixture validator remains static and should stay before the
+runtime file writing smoke in the future wrapper order. This step does not
+change the validator, wrapper, workflow YAML, Makefile, Python code/tests,
+fixtures JSON, artifact writer CLI integration, real-data use, metrics, or
+production readiness.

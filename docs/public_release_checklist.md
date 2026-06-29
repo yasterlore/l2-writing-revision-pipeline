@@ -3807,6 +3807,24 @@ written file bodies, manifest bodies, artifact body payloads, generated policy
 bodies, private or absolute path examples, raw learner text, real participant
 data, or performance evidence.
 
+For Step444, review the docs-only
+[frozen policy generation manifest writer runtime file writing release-quality integration design](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_integration_design.md).
+Confirm it fixes the future wrapper label
+`release_quality_check: learner-state frozen policy generation manifest writer runtime file writing smoke`,
+the command
+`make check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing`,
+the insertion point after production file writing fixture validation and
+before config/scoring smoke checks, expected body-free output, failure
+interpretation, cleanup/residue policy, log safety, staging, and non-goals.
+Confirm it does not modify the release-quality wrapper, workflow YAML,
+Makefile, Python code/tests, fixtures JSON, artifact writer CLI integration,
+artifact body generation CLI integration, manifest body generation, real-data
+use, metrics, or production readiness. Confirm docs do not include raw logs,
+fixture JSON bodies, request/pointer/expected bodies, written file bodies,
+manifest bodies, artifact body payloads, generated policy bodies, private or
+absolute path examples, raw learner text, real participant data, or
+performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

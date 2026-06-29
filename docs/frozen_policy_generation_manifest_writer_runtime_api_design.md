@@ -889,3 +889,18 @@ The runtime API itself is unchanged in this step. Step443 does not add
 release-quality integration, modify workflow YAML, modify Python code/tests,
 modify fixtures JSON, connect artifact writer CLI, use real data, compute
 metrics, or claim production readiness.
+
+## 66. Step444 Runtime File Writing Release-Quality Integration Design Status
+
+Step444 adds the docs-only release-quality integration design for the existing
+runtime file writing smoke target:
+
+[Frozen policy generation manifest writer runtime file writing release-quality integration design](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_integration_design.md).
+
+The runtime API itself is unchanged in this step. The design keeps
+`--manifest-out` and `--allow-overwrite` behavior as implemented and only
+specifies future wrapper placement, label, command, expected body-free output,
+failure interpretation, cleanup/residue policy, and log safety. It does not
+modify wrapper, workflow YAML, Makefile, Python code/tests, fixtures JSON,
+artifact writer CLI integration, artifact body generation CLI integration,
+real-data use, metrics, or production readiness.

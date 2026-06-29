@@ -829,3 +829,16 @@ reports `smoke_residue_file_count=0`.
 The target does not delete unrelated output outside its smoke path and does
 not invoke artifact writer CLI or artifact body generation CLI. Release-quality
 integration remains a later step.
+
+## 56. Step444 Runtime File Writing Release-Quality Boundary Status
+
+Step444 adds the docs-only design for future release-quality integration of
+the runtime file writing smoke target:
+
+[Frozen policy generation manifest writer runtime file writing release-quality integration design](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_integration_design.md).
+
+The design requires the future wrapper section to keep the smoke target
+body-free, clean up only the target-owned smoke subdirectory, leave smoke
+residue 0, and avoid artifact writer CLI or artifact body generation CLI. It
+does not modify wrapper, workflow YAML, Makefile, Python code/tests, fixtures
+JSON, runtime code, real-data use, metrics, or production readiness.
