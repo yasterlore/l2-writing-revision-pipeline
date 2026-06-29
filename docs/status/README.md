@@ -165,7 +165,13 @@ Related recap:
 - [Frozen policy generation artifact writer CLI integration fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact
   writer CLI integration fixture validator release-quality wrapper
-  integration. The status marker is planned but not yet created.
+  integration. The status marker is now available as public-safe pass-only /
+  count-only metadata.
+- [Frozen policy generation artifact writer CLI integration runtime design](../frozen_policy_generation_artifact_writer_cli_integration_runtime_design.md):
+  docs-only future runtime integration boundary design following the public-safe
+  artifact writer CLI integration fixture validation status marker. It is not
+  runtime implementation, real-data readiness, or production readiness
+  evidence.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

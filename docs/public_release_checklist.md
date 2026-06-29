@@ -4028,6 +4028,16 @@ bodies, raw rows, logits, private paths, absolute paths, raw learner text,
 real participant data, performance evidence, runtime integration evidence, or
 production readiness claims.
 
+For Step477, review the docs-only
+[frozen policy generation artifact writer CLI integration runtime design](frozen_policy_generation_artifact_writer_cli_integration_runtime_design.md).
+Confirm it defines only a future metadata-only runtime integration boundary,
+input/output/error/suppression/file-writing/exit-code contracts, fail-closed
+failure modes, and follow-up staging. Confirm it does not implement runtime
+integration, artifact body generation integration, manifest writer
+integration, manifest body generation, generated policy body generation, use
+real data, compute metrics, or claim production readiness, real-data
+readiness, model performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

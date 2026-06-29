@@ -351,3 +351,15 @@ The marker confirms the label and command were included and that the 28-case /
 168-JSON fixture contract validation passed remotely. It does not claim runtime
 integration, artifact body generation integration, manifest writer integration,
 model performance, real-data readiness, or production readiness.
+
+## 19. Step477 Runtime Design Status
+
+Step477 adds the docs-only runtime integration design that will guide future
+implementation work after this fixture-validation chain:
+
+[Frozen policy generation artifact writer CLI integration runtime design](frozen_policy_generation_artifact_writer_cli_integration_runtime_design.md)
+
+The runtime design remains separate from this release-quality fixture
+validation chain and does not change the wrapper, workflow, Makefile, Python
+code/tests, fixture JSON, artifact body generation integration, manifest
+writer integration, metrics, real-data use, or production readiness status.

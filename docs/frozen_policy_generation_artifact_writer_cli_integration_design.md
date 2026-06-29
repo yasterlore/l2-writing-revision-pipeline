@@ -523,3 +523,15 @@ It does not implement or prove artifact writer CLI integration runtime,
 artifact body generation integration, manifest writer integration, manifest
 body generation, model performance, real-data readiness, or production
 readiness.
+
+## 30. Step477 Runtime Design Status
+
+Step477 adds the docs-only runtime integration design for the future artifact
+writer CLI integration boundary:
+
+[Frozen policy generation artifact writer CLI integration runtime design](frozen_policy_generation_artifact_writer_cli_integration_runtime_design.md)
+
+The design is metadata-only, synthetic-only, no-oracle, and fail-closed. It
+does not implement runtime integration, connect artifact body generation,
+connect manifest writer integration, generate manifest bodies, use real data,
+compute metrics, or claim production readiness.

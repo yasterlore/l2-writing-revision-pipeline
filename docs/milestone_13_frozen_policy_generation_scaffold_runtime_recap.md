@@ -1646,6 +1646,13 @@ written, no artifact body is produced, and no performance metric is computed.
   validation summary without raw logs, body payloads, private paths, absolute
   paths, raw learner text, performance evidence, runtime integration evidence,
   real-data readiness, or production readiness claims.
+- Step477: added the docs-only artifact writer CLI integration runtime design.
+  The design fixes the future metadata-only runtime boundary, proposed
+  contracts, CLI flow, fail-closed failure modes, and staged follow-up plan
+  without implementing runtime integration, changing Makefile/wrapper/workflow/
+  Python/tests/fixture JSON, connecting artifact body generation or manifest
+  writer integration, using real data, computing metrics, or claiming
+  production readiness.
 
 ## Related Documents
 

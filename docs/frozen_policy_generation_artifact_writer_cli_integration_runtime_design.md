@@ -1,0 +1,333 @@
+# Frozen Policy Generation Artifact Writer CLI Integration Runtime Design
+
+## 1. Scope
+
+This document is the design for a future frozen policy generation artifact
+writer CLI integration runtime.
+
+This is design-only. It is not:
+
+- runtime implementation
+- fixture validator implementation
+- artifact body generation integration implementation
+- manifest writer integration implementation
+- manifest body generation
+- production readiness evidence
+- real-data readiness evidence
+- model performance evidence
+
+The design keeps the repository's synthetic-only / metadata-only / no-oracle
+posture. Runtime integration must remain public-safe, body-suppressed,
+fail-closed, and count-only where possible.
+
+## 2. Prior Completed Chain
+
+- Step466 created the artifact writer CLI integration design and recommended a
+  narrow generator scaffold CLI -> artifact writer CLI scope.
+- Step467 created the fixture contract design for the integration boundary.
+- Step468 created the synthetic metadata-only fixture root.
+- Step469 created the fixture validator design.
+- Step470 implemented the static validator module, CLI, and focused tests.
+- Step471 created the standalone Makefile target design.
+- Step472 implemented the standalone Makefile target.
+- Step473 created the release-quality integration design.
+- Step474 integrated the standalone target into the release-quality wrapper.
+- Step475 created the remote/manual run record workflow design.
+- Step476 created the public-safe remote status marker for the successful
+  Release Quality run that included artifact writer CLI integration fixture
+  validation.
+
+The Step476 marker records that static fixture validation was included in
+Release Quality and passed with public-safe pass-only / count-only metadata. It
+does not prove artifact writer CLI integration runtime correctness, artifact
+body generation integration correctness, manifest writer integration
+correctness, generated policy quality, model performance, real-data readiness,
+or production readiness.
+
+## 3. Runtime Integration Goal
+
+A future artifact writer CLI integration runtime should safely connect the
+frozen policy generation CLI flow to the artifact writer while preserving the
+metadata-only boundary.
+
+The runtime should:
+
+- call the artifact writer from a controlled CLI integration flow
+- restrict artifact writer inputs to metadata-only synthetic records
+- reject prohibited fields before the artifact writer boundary
+- suppress body payloads from stdout, stderr, summaries, and files
+- preserve synthetic-only and no-oracle checks
+- keep artifact body generation and manifest writer integration as separate
+  boundaries
+- return a public-safe runtime status summary
+- fail closed on unsafe input, unsafe output, or ambiguous state
+- avoid residue on failure
+
+Step477 does not implement this runtime.
+
+## 4. Runtime Boundary
+
+The future runtime may handle:
+
+- synthetic fixture-derived metadata
+- public-safe counts
+- status strings
+- schema versions
+- validation mode names
+- safe relative repo paths
+- suppression flags
+- no-oracle flags
+- pass / fail / usage-error / fail-closed categories
+- boolean flags such as `content_suppressed` and `body_suppressed`
+
+The future runtime must not handle, print, store, or pass through:
+
+- raw learner text
+- raw rows
+- logits or probabilities
+- private paths
+- absolute paths
+- `final_text`
+- `observed_after_text`
+- gold labels
+- post-hoc annotation payloads
+- request bodies
+- pointer bodies
+- expected bodies
+- written file JSON bodies
+- manifest bodies
+- artifact body payloads
+- generated policy bodies
+- GitHub Actions raw logs
+- full job output
+- screenshots containing raw logs
+
+## 5. Proposed Runtime Contract
+
+### Input Contract
+
+Future input should be metadata-only and should contain only field names such
+as:
+
+- schema version
+- request id
+- integration mode
+- generator scaffold result pointer id
+- artifact writer request id
+- validation reference ids
+- release-quality reference ids
+- synthetic-only notice
+- no-oracle notice
+- suppression flags
+- file-writing mode flag
+
+Input must not contain body payloads, learner text, raw rows, logits,
+probabilities, private paths, absolute paths, future information, gold labels,
+or performance metric bodies.
+
+### Output Contract
+
+Future output should be body-free and public-safe. It may contain field names
+such as:
+
+- mode
+- result schema version
+- integration status
+- writer status
+- reason codes
+- failed checks
+- count summary
+- safety flags
+- `artifact_writer_cli_integration_checked`
+- `artifact_body_generation_executed=false`
+- `manifest_writer_executed=false`
+- `release_quality_ready=false`
+
+Output must not include request bodies, pointer bodies, expected bodies,
+artifact body payloads, manifest bodies, generated policy bodies, raw rows,
+logits, private paths, absolute paths, raw learner text, or performance
+evidence.
+
+### Error Contract
+
+Errors should be public-safe and body-free. The runtime should return reason
+codes and counts instead of raw payloads. Error output should not echo input
+bodies or path internals.
+
+### Suppression Contract
+
+The runtime should set and preserve suppression fields such as:
+
+- `content_suppressed=true`
+- `body_suppressed=true`
+- `artifact_body_suppressed=true`
+- `manifest_body_suppressed=true`
+- `no_request_body=true`
+- `no_pointer_body=true`
+- `no_expected_body=true`
+- `no_generated_policy_body=true`
+- `no_artifact_body_payload=true`
+- `no_manifest_body=true`
+
+### File-Writing Boundary
+
+Default runtime behavior should write no files. Any future file writing must
+be separately designed as opt-in, safe-root limited, parse/scan/finalize
+checked, and cleanup verified. This runtime design does not add file writing.
+
+### Exit-Code Behavior
+
+Future CLI behavior should use:
+
+- exit 0 when all expected metadata-only checks pass
+- nonzero exit for usage errors, fail-closed safety failures, malformed input,
+  unsupported schema, unsafe path exposure, prohibited content, or cleanup
+  failure
+
+### Public-Safe Summary Behavior
+
+stdout and stderr should remain body-free. Human and JSON summaries should
+include only public-safe flags, counts, statuses, and reason codes.
+
+### Fail-Closed Behavior
+
+The runtime should stop before calling the artifact writer when prohibited
+fields or unsupported modes are detected. If an unsafe condition is detected
+after the artifact writer boundary, the runtime should suppress output and
+return a fail-closed status.
+
+### Residue Prevention Behavior
+
+The runtime should leave no partial files, temp files, or target-owned smoke
+residue. Cleanup failures should be reported with a public-safe reason code.
+
+## 6. CLI Flow Design
+
+Future CLI flow:
+
+1. Load a metadata-only artifact writer CLI integration request.
+2. Validate root-level schema, integration mode, and safe field set.
+3. Reject prohibited fields fail-closed before runtime invocation.
+4. Validate synthetic-only and no-oracle notices.
+5. Validate that file writing is disabled unless a later opt-in design exists.
+6. Load only metadata pointer identifiers, not pointer bodies.
+7. Call artifact writer runtime with metadata-only payload.
+8. Confirm artifact body generation and manifest writer integration remain
+   disabled.
+9. Build a body-free public-safe status summary.
+10. Emit no raw rows / no logits / no private paths / no absolute paths flags.
+11. Prevent or clean target-owned residue on failure.
+12. Return exit status based on pass / usage-error / fail-closed category.
+
+## 7. Relationship To Existing Components
+
+- Artifact writer fixture validation checks the artifact writer's static
+  metadata-only fixture contract. The runtime design does not replace it.
+- Artifact writer runtime smoke checks the current metadata-only artifact
+  writer runtime path. The integration runtime should build on this boundary
+  without expanding body output.
+- Artifact writer CLI integration fixture validation checks the static
+  integration fixture contract. It is not runtime execution evidence.
+- Artifact body fixture validation remains a separate contract check.
+- Artifact body generation suppressed CLI smoke remains separate from this
+  integration runtime.
+- Artifact body generation safe-metadata CLI smoke remains separate from this
+  integration runtime.
+- Artifact body file writing fixture validation remains a separate file-writing
+  boundary.
+- Manifest writer fixture validation remains separate.
+- Manifest writer runtime fixture validation remains separate.
+- Manifest writer file writing fixture validation remains separate.
+- The Release Quality wrapper now includes static artifact writer CLI
+  integration fixture validation, but that inclusion is not runtime integration
+  evidence.
+- The Step476 remote status marker records remote wrapper success for static
+  fixture validation only.
+
+None of these components should be interpreted as production readiness,
+real-data readiness, or model performance evidence.
+
+## 8. Failure Modes
+
+The future runtime should fail closed for:
+
+- prohibited body field detected
+- raw learner text detected
+- raw rows detected
+- logits or probabilities detected
+- absolute path detected
+- private path pattern detected
+- `final_text` detected
+- `observed_after_text` detected
+- gold label detected
+- post-hoc annotation payload detected
+- scoring feedback payload detected
+- request body detected
+- pointer body detected
+- expected body detected
+- artifact body payload detected
+- manifest body detected
+- generated policy body detected
+- unsupported schema version
+- unsupported integration mode
+- artifact body generation requested unexpectedly
+- manifest writer integration requested unexpectedly
+- file writing requested without an explicit future design
+- output residue would remain after failure
+- ambiguous file-writing target
+- public output would contain private, absolute, or body content
+
+## 9. Planned Fixture / Validator Follow-Up
+
+Suggested future sequence:
+
+- Step478: artifact writer CLI integration runtime fixture contract design
+- Step479: runtime fixture root creation
+- Step480: runtime validator design
+- Step481: runtime validator module / CLI / focused tests
+- Step482: standalone Makefile target design
+- Step483: standalone Makefile target implementation
+- Step484: release-quality integration design
+- Step485: release-quality wrapper integration
+- Step486: remote/manual run record workflow design
+- Step487: remote status marker
+
+The numbering is a proposal. The design -> fixtures -> validator -> Makefile
+target -> wrapper -> remote marker order should be preserved.
+
+## 10. Non-Claims
+
+This design does not claim:
+
+- production readiness
+- real-data readiness
+- model performance
+- F1, accuracy, ECE, or AURCC achievement
+- artifact body generation integration correctness
+- manifest writer integration correctness
+- generated policy quality
+- learner-state estimator correctness
+- runtime implementation completion
+- deployment readiness
+
+## 11. Public-Safe Checklist
+
+- no raw logs
+- no full job output
+- no fixture JSON body
+- no request body
+- no pointer body
+- no expected body
+- no written file JSON body
+- no manifest body
+- no artifact body payload
+- no generated policy body
+- no raw rows
+- no logits or probabilities
+- no private paths
+- no absolute paths
+- no raw learner text
+- no real participant data
+- no performance claims
+- no production readiness claims
+- no real-data readiness claims
