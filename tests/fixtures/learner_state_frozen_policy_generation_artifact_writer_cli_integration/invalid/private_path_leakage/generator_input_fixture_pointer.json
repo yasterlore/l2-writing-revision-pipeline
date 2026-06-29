@@ -1,0 +1,11 @@
+{
+  "body_suppressed": true,
+  "content_suppressed": true,
+  "fixture_reference_id": "synthetic_generator_input_fixture_private_path_leakage",
+  "no_oracle": true,
+  "pointer_id": "synthetic_generator_input_pointer_private_path_leakage",
+  "private_path_leakage_marker": true,
+  "schema_version": "learner_state_frozen_policy_generation_generator_input_fixture_pointer_v0.1",
+  "synthetic_only": true,
+  "validation_status": "validated"
+}

@@ -1058,6 +1058,19 @@ future fixture shape only: 28 synthetic metadata-only cases, 6 JSON files per
 case, no artifact body generation CLI integration, no manifest writer
 integration, no file writing, no raw bodies, and no production readiness claim.
 
+## 51. Step468 CLI Integration Fixture Root Status
+
+Step468 creates the artifact writer CLI integration fixture root:
+
+[Frozen policy generation artifact writer CLI integration fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/README.md).
+
+The new root contains 28 synthetic metadata-only cases and 168 JSON case files
+for future generator scaffold CLI -> artifact writer CLI contract validation.
+It does not change the artifact writer implementation, add a validator, add a
+Makefile target, integrate release-quality, connect artifact body generation
+CLI, connect manifest writer runtime, write files, use real data, compute
+metrics, or claim production readiness.
+
 ## Related Documents
 
 - [Frozen policy generation artifact body fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body/README.md)
@@ -1070,6 +1083,7 @@ integration, no file writing, no raw bodies, and no production readiness claim.
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
 - [Frozen policy generation artifact writer CLI integration design](frozen_policy_generation_artifact_writer_cli_integration_design.md)
 - [Frozen policy generation artifact writer CLI integration fixture contract design](frozen_policy_generation_artifact_writer_cli_integration_fixture_contract_design.md)
+- [Frozen policy generation artifact writer CLI integration fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/README.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)

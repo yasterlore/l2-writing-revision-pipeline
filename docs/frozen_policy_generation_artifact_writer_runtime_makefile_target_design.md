@@ -496,3 +496,15 @@ The existing artifact writer runtime Makefile target remains unchanged. The
 future integration target should remain separate and should not be added until
 fixture root creation, validator design, validator implementation, and target
 design are complete.
+
+## 28. Step468 CLI Integration Fixture Root Status
+
+Step468 creates the future artifact writer CLI integration fixture root:
+
+[Frozen policy generation artifact writer CLI integration fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/README.md).
+
+The existing artifact writer runtime Makefile target remains unchanged. The
+new fixture root is contract data only and does not add a validator, Makefile
+target, release-quality wrapper entry, workflow change, runtime code change,
+artifact body generation CLI integration, manifest writer integration, metric
+computation, real-data use, or production readiness evidence.

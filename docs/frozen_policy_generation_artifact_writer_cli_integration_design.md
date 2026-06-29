@@ -396,3 +396,18 @@ generation CLI, connect manifest writer runtime, generate manifest bodies,
 change runtime code, change Makefile, change release-quality wrapper, change
 workflow YAML, modify Python tests, use real data, compute metrics, or claim
 production readiness.
+
+## 21. Step468 Fixture Root Creation Status
+
+Step468 creates the artifact writer CLI integration fixture root described by
+the Step467 contract:
+
+[Frozen policy generation artifact writer CLI integration fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/README.md).
+
+The root contains 28 synthetic metadata-only cases and 168 JSON case files for
+the generator scaffold CLI -> artifact writer CLI boundary. It remains fixture
+contract data only. Step468 does not implement artifact writer CLI integration,
+artifact body generation CLI integration, manifest writer integration, manifest
+body generation, a validator, a Makefile target, release-quality integration,
+workflow changes, Python runtime changes, Python test changes, metric
+computation, real-data use, or production readiness.

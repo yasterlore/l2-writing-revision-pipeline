@@ -1,0 +1,11 @@
+{
+  "body_suppressed": true,
+  "content_suppressed": true,
+  "fixture_reference_id": "synthetic_generator_input_fixture_missing_generator_input_pointer",
+  "generator_input_pointer_missing_marker": true,
+  "no_oracle": true,
+  "pointer_id": "synthetic_generator_input_pointer_missing_generator_input_pointer",
+  "schema_version": "learner_state_frozen_policy_generation_generator_input_fixture_pointer_v0.1",
+  "synthetic_only": true,
+  "validation_status": "missing"
+}

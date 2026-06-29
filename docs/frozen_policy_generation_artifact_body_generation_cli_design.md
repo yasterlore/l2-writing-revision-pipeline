@@ -592,3 +592,16 @@ to document the boundary. Step467 does not change this CLI, create fixtures,
 create fixture JSON, implement a validator, connect artifact writer CLI to
 artifact body generation CLI, generate payloads, use real data, compute
 metrics, or claim production readiness.
+
+## 37. Step468 Artifact Writer CLI Integration Fixture Root Status
+
+Step468 creates the artifact writer CLI integration fixture root:
+
+[Frozen policy generation artifact writer CLI integration fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/README.md).
+
+Artifact body generation CLI integration remains separate and unimplemented.
+The new root keeps `artifact_body_generation_executed=false` in expected
+results and contains no artifact body payloads. It does not change this CLI,
+add validator code, add a Makefile target, integrate release-quality, connect
+manifest writer runtime, use real data, compute metrics, or claim production
+readiness.

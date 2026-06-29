@@ -534,3 +534,17 @@ JSON, implement an integration validator, implement CLI integration, add
 Makefile targets, connect artifact body generation CLI, connect manifest
 writer runtime, generate manifest bodies, use real data, compute metrics, or
 claim production readiness.
+
+## 34. Step468 CLI Integration Fixture Root Status
+
+Step468 creates the fixture root for the future generator scaffold CLI ->
+artifact writer CLI integration boundary:
+
+[Frozen policy generation artifact writer CLI integration fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/README.md).
+
+This does not change the artifact writer CLI. The new fixture root is
+synthetic-only metadata contract data for future validation, with no artifact
+body generation CLI integration, manifest writer integration, manifest body
+generation, file writing, runtime code change, Makefile target, wrapper
+integration, workflow change, metric computation, real-data use, or production
+readiness claim.

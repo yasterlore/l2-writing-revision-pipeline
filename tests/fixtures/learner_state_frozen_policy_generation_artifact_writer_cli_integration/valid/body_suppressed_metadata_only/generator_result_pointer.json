@@ -1,0 +1,19 @@
+{
+  "artifact_file_path_available": false,
+  "body_suppressed": true,
+  "content_suppressed": true,
+  "generated_artifact_body_available": false,
+  "generated_artifact_written": false,
+  "generation_status": "pass",
+  "generator_result_schema_version": "learner_state_frozen_policy_generation_generator_scaffold_result_v0.1",
+  "generator_scaffold_executed": true,
+  "no_generated_policy_body": true,
+  "no_logits_dump": true,
+  "no_oracle_checked": true,
+  "no_private_paths": true,
+  "no_raw_rows": true,
+  "pointer_id": "synthetic_generator_result_pointer_body_suppressed_metadata_only",
+  "schema_version": "learner_state_frozen_policy_generation_generator_result_pointer_v0.1",
+  "synthetic_only_checked": true,
+  "validation_status": "validated"
+}

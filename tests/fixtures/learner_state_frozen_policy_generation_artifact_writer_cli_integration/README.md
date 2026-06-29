@@ -1,0 +1,165 @@
+# Frozen Policy Generation Artifact Writer CLI Integration Fixtures
+
+This fixture root contains synthetic-only, metadata-only, no-oracle fixture
+contracts for future artifact writer CLI integration.
+
+The fixtures cover only the first integration boundary:
+
+- generator scaffold CLI -> artifact writer CLI
+
+They do not implement the integration runtime, execute artifact body
+generation, execute the manifest writer, generate manifest bodies, write files,
+or claim production readiness.
+
+## Fixture Root
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/`
+
+## Scope
+
+- artifact writer CLI integration fixture contract only
+- generator scaffold to artifact writer boundary only
+- no artifact body generation CLI integration
+- no manifest writer integration
+- no manifest body generation
+- no file writing
+- body-free public summaries only
+- `release_quality_ready=false`
+
+## Case Counts
+
+- total cases: 28
+- valid cases: 6
+- invalid cases: 22
+- JSON files per case: 6
+- total JSON case files: 168
+
+## File Contract
+
+Each case directory contains exactly these files:
+
+- `case_metadata.json`
+- `generator_request.json`
+- `generator_input_fixture_pointer.json`
+- `artifact_writer_request.json`
+- `generator_result_pointer.json`
+- `expected_artifact_writer_cli_integration_result.json`
+
+All files are metadata-only. They may include safe ids, schema/version names,
+reason codes, counters, and boolean safety flags. They must not include raw
+body payloads, raw rows, logits/probabilities, private paths, absolute local or
+temporary paths, raw learner text, real participant data, or performance metric
+bodies.
+
+## Valid Cases
+
+- `valid/minimal_generator_to_artifact_writer_metadata_only`
+- `valid/generator_with_validation_references_metadata_only`
+- `valid/generator_with_release_quality_reference_metadata_only`
+- `valid/artifact_writer_preserves_safe_ids_metadata_only`
+- `valid/no_file_writing_default_metadata_only`
+- `valid/body_suppressed_metadata_only`
+
+Valid cases expect `integration_status=pass`, generator scaffold execution,
+artifact writer execution, no artifact body generation, no manifest writer
+execution, no file writing, and no body output.
+
+## Invalid Cases
+
+- `invalid/missing_generator_request`
+- `invalid/missing_generator_input_pointer`
+- `invalid/missing_artifact_writer_request`
+- `invalid/missing_generator_result_pointer`
+- `invalid/malformed_generator_result_pointer`
+- `invalid/unknown_generator_result_schema`
+- `invalid/unvalidated_generator_result`
+- `invalid/generated_policy_body_leakage`
+- `invalid/artifact_body_payload_leakage`
+- `invalid/manifest_body_leakage`
+- `invalid/request_body_leakage`
+- `invalid/pointer_body_leakage`
+- `invalid/raw_rows_leakage`
+- `invalid/logits_dump_leakage`
+- `invalid/private_path_leakage`
+- `invalid/absolute_path_leakage`
+- `invalid/raw_learner_text_leakage`
+- `invalid/performance_claim_in_artifact`
+- `invalid/non_synthetic_input`
+- `invalid/no_oracle_violation`
+- `invalid/unsupported_file_writing_mode`
+- `invalid/unsupported_artifact_body_generation_integration`
+
+Invalid cases use controlled safe marker fields and reason codes only. They do
+not include real body content, raw learner text, private paths, absolute paths,
+real participant data, or metric bodies.
+
+## Forbidden Content Policy
+
+These fixtures must not contain:
+
+- raw learner text
+- raw rows
+- logits or probability dumps
+- generated policy body payloads
+- artifact body payloads
+- manifest bodies or manifest JSON bodies
+- request, pointer, or expected-result body payloads
+- private paths
+- absolute local or temporary paths
+- performance metric bodies
+- real participant data
+- final corrected text, observed-after text, gold labels, or scoring feedback
+
+Controlled reason-code strings and safe boolean marker fields may appear in
+invalid cases so a future validator can detect boundary failures without
+copying unsafe content.
+
+## No-Oracle Policy
+
+The fixture root is no-oracle. It must not contain future information,
+observed-after text, final corrected text, gold labels, post-hoc annotations,
+test-set tuning payloads, generated body leakage, or scoring feedback payloads.
+
+## File-Writing Policy
+
+No case represents actual file writing. Expected results keep:
+
+- `generated_artifact_written=false`
+- `artifact_file_written=false`
+- `manifest_file_written=false`
+- `written_file_count=0`
+
+Any future file-writing integration must be a separate opt-in design.
+
+## Relation To Artifact Body Generation
+
+Artifact body generation is not part of this fixture root. The
+`unsupported_artifact_body_generation_integration` case documents that boundary
+without executing artifact body generation or including artifact body payloads.
+
+## Relation To Manifest Writer
+
+Manifest writer integration is not part of this fixture root. Expected results
+keep `manifest_writer_executed=false` and `manifest_file_written=false`.
+Manifest writer chaining remains separate future work.
+
+## Relation To Future Validator
+
+A future validator should check case discovery, required files, JSON parsing,
+schema versions, case ids, expected statuses, reason code alignment, safety
+flags, controlled invalid markers, file-writing suppression, body suppression,
+and no-oracle metadata. The validator should not implement the integration
+runtime.
+
+## What This Fixture Root Does Not Prove
+
+This fixture root does not prove artifact writer CLI integration correctness,
+artifact body generation integration, manifest writer integration, manifest
+body generation, runtime file output readiness, model performance, real-data
+readiness, or production readiness.
+
+## Release Quality Note
+
+`release_quality_ready=false` remains part of the fixture contract. Release
+quality integration should happen only after validator design, validator
+implementation, a standalone Makefile target, and wrapper design.

@@ -1,0 +1,20 @@
+{
+  "artifact_body_generation_expected": false,
+  "body_free": true,
+  "case_group": "invalid",
+  "case_id": "invalid/manifest_body_leakage",
+  "controlled_invalid_marker": "manifest_body_leakage",
+  "expected_reason_codes": [
+    "manifest_body_leakage"
+  ],
+  "expected_status": "fail_closed",
+  "file_writing_expected": false,
+  "integration_step": "generator_scaffold_to_artifact_writer",
+  "manifest_writer_expected": false,
+  "metadata_only": true,
+  "no_oracle": true,
+  "release_quality_ready": false,
+  "safe_marker_policy": "controlled_reason_marker_only",
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_integration_case_metadata_v0.1",
+  "synthetic_only": true
+}

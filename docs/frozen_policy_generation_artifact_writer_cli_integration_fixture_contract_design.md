@@ -523,3 +523,20 @@ This design does not:
 - Step474 wrapper integration
 - Step475 remote workflow design
 - Step476 remote marker
+
+## 21. Step468 Fixture Root Creation Status
+
+Step468 creates the synthetic metadata-only fixture root proposed by this
+contract:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/`
+
+The root contains 6 valid cases, 22 invalid cases, 6 JSON files per case, 168
+JSON case files total, and a root `README.md`.
+
+The fixture root remains contract data only. Step468 does not implement a
+validator, artifact writer CLI integration runtime, artifact body generation
+CLI integration, manifest writer integration, manifest body generation,
+Makefile target, release-quality wrapper integration, workflow change, Python
+runtime change, Python test change, metric computation, real-data use, or
+production readiness claim.

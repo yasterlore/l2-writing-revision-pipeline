@@ -1,0 +1,14 @@
+{
+  "artifact_body_generation_requested": false,
+  "artifact_body_suppressed": true,
+  "artifact_writer_version": "frozen_policy_generation_artifact_writer_metadata_only_v0.1",
+  "body_suppressed": true,
+  "file_writing_allowed": false,
+  "manifest_body_suppressed": true,
+  "manifest_writer_requested": false,
+  "no_oracle_notice": "no_future_or_gold_fields",
+  "release_quality_ready": false,
+  "request_id": "synthetic_artifact_writer_request_unknown_generator_result_schema",
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_integration_request_v0.1",
+  "synthetic_only_notice": "synthetic_fixture_metadata_only"
+}

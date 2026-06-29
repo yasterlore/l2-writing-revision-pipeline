@@ -3935,6 +3935,17 @@ written file JSON bodies, manifest bodies, artifact body payloads, generated
 policy bodies, raw rows, logits/probabilities, private paths, absolute paths,
 raw learner text, real participant data, or performance evidence.
 
+For Step468, review the
+[frozen policy generation artifact writer CLI integration fixture root](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/README.md).
+Confirm it contains exactly 6 valid cases, 22 invalid cases, 6 JSON files per
+case, and 168 JSON case files for the generator scaffold CLI -> artifact
+writer CLI boundary. Confirm the fixture files remain synthetic-only,
+metadata-only, no-oracle, body-free, no-file-writing, and
+`release_quality_ready=false`. Confirm Step468 does not implement a validator,
+Makefile target, release-quality wrapper integration, workflow change, Python
+runtime/test change, artifact body generation CLI integration, manifest writer
+integration, metric computation, real-data use, or production readiness claim.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

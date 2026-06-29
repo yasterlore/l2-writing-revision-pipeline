@@ -1,0 +1,14 @@
+{
+  "body_suppressed": true,
+  "content_suppressed": true,
+  "file_writing_allowed": false,
+  "generator_version": "frozen_policy_generation_generator_scaffold_metadata_only_v0.1",
+  "no_oracle_notice": "no_future_or_gold_fields",
+  "release_quality_reference_ids": [],
+  "request_id": "synthetic_generator_request_artifact_writer_preserves_safe_ids_metadata_only",
+  "schema_version": "learner_state_frozen_policy_generation_generator_cli_integration_request_v0.1",
+  "synthetic_only_notice": "synthetic_fixture_metadata_only",
+  "validation_reference_ids": [
+    "synthetic_validation_ref_artifact_writer_preserves_safe_ids_metadata_only_001"
+  ]
+}

@@ -511,3 +511,17 @@ connect artifact writer CLI to manifest writer runtime, generate manifest
 bodies, change runtime file writing behavior, create fixture JSON, implement a
 validator, change Makefile, change release-quality, use real data, compute
 metrics, or claim production readiness.
+
+## 28. Step468 Artifact Writer CLI Integration Fixture Root Status
+
+Step468 creates the artifact writer CLI integration fixture root:
+
+[Frozen policy generation artifact writer CLI integration fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/README.md).
+
+Manifest writer integration remains out of scope. The fixture expected results
+keep `manifest_writer_executed=false`, `manifest_body_available=false`,
+`manifest_file_written=false`, and `written_file_count=0`. This does not
+change manifest writer runtime file writing, Makefile targets, release-quality
+wrapper behavior, workflow YAML, Python runtime code, Python tests, artifact
+body generation CLI integration, metric use, real-data use, or production
+readiness.
