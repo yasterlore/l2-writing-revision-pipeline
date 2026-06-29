@@ -258,7 +258,27 @@ This design does not:
 
 ## 18. Next Recommended Steps
 
-- Step445 release-quality wrapper integration
 - Step446 remote/manual run record workflow design
 - Step447 remote status marker
 - artifact writer CLI integration remains separate
+
+## 19. Step445 Wrapper Integration Status
+
+Step445 adds the runtime metadata-only file writing smoke target to the
+release-quality wrapper with the label:
+
+`release_quality_check: learner-state frozen policy generation manifest writer runtime file writing smoke`
+
+The wrapper command is:
+
+`make check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing`
+
+The new wrapper section is placed after production file writing fixture
+validation and before config/scoring smoke checks. It keeps the wrapper output
+body-free and count-only, relies on the smoke target cleanup policy, and does
+not change workflow YAML, Makefile, Python code/tests, fixtures JSON, artifact
+writer CLI integration, artifact body generation CLI integration, manifest
+body generation, real-data use, metrics, or production readiness.
+
+Step445 does not create a remote/manual run record workflow or status marker.
+Those remain separate future steps.

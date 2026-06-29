@@ -1524,6 +1524,14 @@ written, no artifact body is produced, and no performance metric is computed.
   It does not change the release-quality wrapper, workflow YAML, Makefile,
   Python code/tests, fixtures JSON, artifact writer CLI integration, real-data
   use, metrics, or production readiness.
+- Step445: added the manifest writer runtime metadata-only file writing smoke
+  target to the release-quality wrapper after production file writing fixture
+  validation and before config/scoring smoke checks. The wrapper now covers
+  the actual `metadata_only_file` runtime smoke while keeping output
+  body-free, cleanup target-owned, and artifact writer CLI integration
+  separate. It does not change workflow YAML, Makefile, Python code/tests,
+  fixtures JSON, artifact writer CLI integration, real-data use, metrics, or
+  production readiness.
 
 ## Related Documents
 
@@ -1573,6 +1581,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation manifest writer runtime implementation](../python/learner_state/frozen_policy_generation_manifest_writer.py)
 - [Frozen policy generation manifest writer runtime tests](../python/learner_state/tests/test_frozen_policy_generation_manifest_writer.py)
 - [Makefile manifest writer runtime file writing smoke target](../Makefile)
+- [Release-quality wrapper with manifest writer runtime file writing smoke](../scripts/check_release_quality.sh)
 - [Release-quality wrapper with manifest writer production file writing fixture validation](../scripts/check_release_quality.sh)
 - [Makefile manifest writer production file writing fixture validator target](../Makefile)
 - [Makefile manifest writer isolated write validation target](../Makefile)

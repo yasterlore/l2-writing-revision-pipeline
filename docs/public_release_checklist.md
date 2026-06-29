@@ -3839,6 +3839,20 @@ fixture JSON bodies, request/pointer/expected bodies, written file bodies,
 manifest bodies, artifact body payloads, generated policy bodies, private or
 absolute path examples, raw learner text, real participant data, or
 performance evidence.
+
+For Step445, review the release-quality wrapper change in
+`scripts/check_release_quality.sh`. Confirm it adds only the wrapper label
+`release_quality_check: learner-state frozen policy generation manifest writer runtime file writing smoke`
+and the command
+`make check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing`,
+placed after production file writing fixture validation and before
+config/scoring smoke checks. Confirm `make check-release-quality` includes the
+runtime metadata-only file writing smoke, leaves smoke residue 0, emits only
+body-free/count-only output, and does not modify workflow YAML, Makefile,
+Python code/tests, fixtures JSON, artifact writer CLI integration, artifact
+body generation CLI integration, manifest body generation, real-data use,
+metrics, or production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

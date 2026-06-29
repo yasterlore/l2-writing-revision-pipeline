@@ -218,3 +218,11 @@ execute runtime file writing, write manifest files, expose public
 or prove production readiness. The marker does not copy fixture JSON bodies,
 written file bodies, request/pointer/expected-result bodies, private paths,
 absolute paths, raw learner text, raw logs, or performance evidence.
+
+## Step445 Runtime Smoke Wrapper Separation
+
+Step445 adds the separate runtime file writing smoke target to the
+release-quality wrapper. This fixture root remains static production
+file-writing contract data. Step445 does not change fixture JSON, execute this
+fixture root as runtime input, connect artifact writer CLI, use real data,
+compute metrics, or prove production readiness.

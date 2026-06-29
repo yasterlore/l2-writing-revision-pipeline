@@ -313,6 +313,15 @@ evidence that the runtime file writing smoke target is included in
 release-quality, not evidence that it has run in GitHub Actions, and not
 production readiness evidence.
 
+## Step445 Separation Note
+
+Step445 adds the runtime file writing smoke target to the release-quality
+wrapper after the static production file writing fixture validator. This
+marker still records only the earlier Release Quality run for production file
+writing fixture validation. It is not the remote status marker for the runtime
+file writing smoke target, not evidence of a later GitHub Actions run that
+includes that smoke target, and not production readiness evidence.
+
 ## Update History
 
 - 2026-06-28: Step439 status marker created from public-safe metadata for the
@@ -326,3 +335,5 @@ production readiness evidence.
   writing smoke Makefile target implementation.
 - 2026-06-29: Step444 separation note added for the docs-only runtime file
   writing smoke release-quality integration design.
+- 2026-06-29: Step445 separation note added for runtime file writing smoke
+  release-quality wrapper integration.
