@@ -322,6 +322,15 @@ writing fixture validation. It is not the remote status marker for the runtime
 file writing smoke target, not evidence of a later GitHub Actions run that
 includes that smoke target, and not production readiness evidence.
 
+## Step446 Separation Note
+
+Step446 adds the docs-only remote/manual run record workflow design for a
+future status marker covering the runtime file writing smoke target. This
+marker remains the production file writing fixture validation marker only. It
+does not record runtime file writing smoke remote evidence, written file body
+contents, raw logs, artifact writer CLI integration, performance evidence, or
+production readiness.
+
 ## Update History
 
 - 2026-06-28: Step439 status marker created from public-safe metadata for the
@@ -337,3 +346,5 @@ includes that smoke target, and not production readiness evidence.
   writing smoke release-quality integration design.
 - 2026-06-29: Step445 separation note added for runtime file writing smoke
   release-quality wrapper integration.
+- 2026-06-29: Step446 separation note added for the future runtime file
+  writing smoke remote/manual status workflow design.

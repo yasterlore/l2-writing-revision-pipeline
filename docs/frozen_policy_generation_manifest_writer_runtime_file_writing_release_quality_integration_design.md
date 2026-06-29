@@ -258,7 +258,6 @@ This design does not:
 
 ## 18. Next Recommended Steps
 
-- Step446 remote/manual run record workflow design
 - Step447 remote status marker
 - artifact writer CLI integration remains separate
 
@@ -282,3 +281,21 @@ body generation, real-data use, metrics, or production readiness.
 
 Step445 does not create a remote/manual run record workflow or status marker.
 Those remain separate future steps.
+
+## 20. Step446 Remote Run Record Workflow Design Status
+
+Step446 adds the docs-only workflow design for recording a future remote/manual
+Release Quality run that includes the runtime file writing smoke target:
+
+[Frozen policy generation manifest writer runtime file writing release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_record_workflow.md).
+
+The design fixes the future status marker path, public-safe metadata to record,
+metadata not to record, status marker structure, runtime file writing smoke
+summary, written file safety summary, cleanup/residue summary, related chain
+checks, safety review, interpretation, failure handling, and next actions.
+
+Step446 does not run GitHub Actions, create the status marker, change workflow
+YAML, change the release-quality wrapper, change Makefile, modify Python
+code/tests, modify fixtures JSON, connect artifact writer CLI, call artifact
+body generation CLI, generate manifest bodies, use real data, compute metrics,
+or prove production readiness.

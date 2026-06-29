@@ -594,3 +594,16 @@ wrapper section covers the actual metadata-only runtime smoke.
 This does not change production fixtures, workflow YAML, Makefile, Python
 code/tests, artifact writer CLI integration, real-data use, metrics, or
 production readiness.
+
+## 40. Step446 Runtime File Writing Remote Record Workflow Status
+
+Step446 adds a docs-only remote/manual run record workflow design for the
+runtime file writing smoke:
+
+[Frozen policy generation manifest writer runtime file writing release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_record_workflow.md).
+
+This workflow is separate from production file writing fixture validation. It
+does not create a status marker, change production fixtures, run GitHub
+Actions, change workflow YAML, change the wrapper, change Makefile, modify
+Python code/tests, connect artifact writer CLI, use real data, compute metrics,
+or prove production readiness.

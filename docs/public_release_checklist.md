@@ -3869,6 +3869,23 @@ Python code/tests, fixtures JSON, artifact writer CLI integration, artifact
 body generation CLI integration, manifest body generation, real-data use,
 metrics, or production readiness.
 
+For Step446, review the docs-only
+[frozen policy generation manifest writer runtime file writing release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_record_workflow.md).
+Confirm it defines the future marker path
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_status.md`,
+public-safe metadata to record, metadata not to record, status marker
+structure, runtime file writing smoke summary, written-file safety summary,
+cleanup/residue summary, related chain checks, safety review, interpretation,
+failure handling, and recording workflow. Confirm it does not create the
+status marker, run GitHub Actions, change workflow YAML, change the
+release-quality wrapper, change Makefile, modify Python code/tests, modify
+fixtures JSON, connect artifact writer CLI, call artifact body generation CLI,
+generate manifest bodies, use real data, compute metrics, or claim production
+readiness. Confirm docs do not include raw logs, full job output, written file
+bodies, fixture JSON bodies, request/pointer/expected bodies, manifest bodies,
+artifact body payloads, generated policy bodies, private or absolute path
+examples, raw learner text, real participant data, or performance evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

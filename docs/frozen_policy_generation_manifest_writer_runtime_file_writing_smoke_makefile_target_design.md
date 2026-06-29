@@ -345,3 +345,15 @@ target-owned smoke cleanup policy. It does not change workflow YAML, Makefile,
 Python code/tests, fixtures JSON, artifact writer CLI integration, artifact
 body generation CLI integration, manifest body generation, real-data use,
 metrics, or production readiness.
+
+## 22. Step446 Remote Run Record Workflow Design Status
+
+Step446 adds the docs-only workflow design for a future public-safe
+remote/manual Release Quality status record that includes this runtime file
+writing smoke target:
+
+[Frozen policy generation manifest writer runtime file writing release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_record_workflow.md).
+
+The status marker remains uncreated in this step. The design records only
+metadata and pass-only/count-only summaries, never the written file body or raw
+logs.

@@ -854,3 +854,15 @@ target-owned smoke file, body-free output, cleanup, and zero smoke residue. It
 does not change workflow YAML, Makefile, Python code/tests, fixtures JSON,
 runtime code, artifact writer CLI integration, artifact body generation CLI
 integration, real-data use, metrics, or production readiness.
+
+## 58. Step446 Runtime File Writing Remote Record Boundary Status
+
+Step446 adds the docs-only remote/manual run record workflow design for the
+runtime file writing smoke target:
+
+[Frozen policy generation manifest writer runtime file writing release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_record_workflow.md).
+
+The future marker should record that the target wrote one metadata-only smoke
+file, parsed/scanned it, and cleaned its target-owned path. It must not record
+the written file body, raw logs, private paths, absolute paths, raw learner
+text, performance evidence, or production readiness claims.

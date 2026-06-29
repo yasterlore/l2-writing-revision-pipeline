@@ -1070,3 +1070,16 @@ artifact body generation CLI.
 
 This does not modify workflow YAML, Makefile, Python code/tests, fixtures
 JSON, runtime code, real-data use, metrics, or production readiness.
+
+## 76. Step446 Runtime File Writing Remote Record Boundary Status
+
+Step446 adds the docs-only remote/manual run record workflow design for the
+runtime file writing smoke boundary:
+
+[Frozen policy generation manifest writer runtime file writing release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_record_workflow.md).
+
+The future status marker should preserve only public-safe metadata,
+pass-only/count-only summaries, cleanup/residue status, and safety flags. It
+must not preserve raw logs, written file bodies, manifest bodies, artifact
+payloads, private paths, absolute paths, raw learner text, real participant
+data, metrics, or production readiness claims.

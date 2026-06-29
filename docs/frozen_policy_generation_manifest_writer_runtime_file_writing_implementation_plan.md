@@ -455,3 +455,17 @@ This remains a wrapper integration only. It does not change workflow YAML,
 Makefile, Python code/tests, fixtures JSON, artifact writer CLI integration,
 artifact body generation CLI integration, manifest body generation, real-data
 use, metrics, or production readiness.
+
+## 24. Step446 Remote Run Record Workflow Design Status
+
+Step446 adds the docs-only workflow design for future public-safe recording of
+a remote/manual Release Quality run that includes the runtime file writing
+smoke:
+
+[Frozen policy generation manifest writer runtime file writing release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_record_workflow.md).
+
+This does not run a remote workflow, create a status marker, change workflow
+YAML, change the release-quality wrapper, change Makefile, modify Python
+code/tests, modify fixtures JSON, connect artifact writer CLI, call artifact
+body generation CLI, use real data, compute metrics, or prove production
+readiness.

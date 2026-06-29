@@ -914,3 +914,15 @@ release-quality wrapper. The API surface remains `--manifest-out` plus
 The integration does not modify workflow YAML, Makefile, Python code/tests,
 fixtures JSON, artifact writer CLI integration, artifact body generation CLI
 integration, real-data use, metrics, or production readiness.
+
+## 68. Step446 Runtime File Writing Remote Record Workflow Status
+
+Step446 adds the docs-only remote/manual run record workflow design for the
+runtime file writing smoke target:
+
+[Frozen policy generation manifest writer runtime file writing release-quality remote run record workflow](frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_record_workflow.md).
+
+The API remains unchanged. The future status marker should record only the
+safe runtime file writing smoke summary and must not include written file
+bodies, fixture/request/pointer/expected bodies, raw logs, private paths,
+absolute paths, raw learner text, metrics, or production readiness claims.

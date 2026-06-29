@@ -18,6 +18,7 @@ Current status-marker posture:
 - The manifest writer runtime file writing smoke target is in the
   release-quality wrapper, but its remote/manual status marker is not created
   yet.
+- The public-safe recording workflow design for that future marker now exists.
 
 Available markers:
 
@@ -186,7 +187,7 @@ Related recap:
   future public-safe pass-only/count-only recording workflow for manifest
   writer production file writing fixture validation release-quality wrapper
   integration.
-- `../frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_record_workflow.md`:
-  planned public-safe recording workflow for manifest writer runtime
-  metadata-only file writing smoke release-quality wrapper integration. This
-  workflow design has not been created yet.
+- [Frozen policy generation manifest writer runtime file writing release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_record_workflow.md):
+  public-safe recording workflow design for a future remote/manual Release
+  Quality run that includes manifest writer runtime metadata-only file writing
+  smoke wrapper integration.
