@@ -271,6 +271,13 @@ That root contains 22 synthetic-only metadata cases and 110 JSON files. This
 no-write fixture root remains unchanged and continues to serve the static
 file-writing/path-policy validator.
 
+Step370 implements the isolated temp write validator for that separate root:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+This no-write fixture root remains unchanged and remains separate from the
+isolated validator's runtime write checks.
+
 ## Relation To Future CLI Option
 
 The future CLI option candidate is `--artifact-body-out`. These fixtures are

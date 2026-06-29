@@ -97,11 +97,17 @@ The proposed future validator module is:
 
 `learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
 
-It should produce summary-only, count-only output and must not print fixture JSON bodies or written artifact body payloads.
+Step370 implements that validator module and CLI. It runs these fixture cases
+inside isolated temp roots, validates expected write/no-write/failure
+categories, scans stdout/stderr and written files, and cleans up generated
+outputs. It produces summary-only, count-only output and must not print
+fixture JSON bodies or written artifact body payloads.
 
 ## Future CLI / Makefile / Release Quality
 
-No CLI, Makefile target, or release-quality integration is added by this fixture root. Those are future steps after the isolated validator exists and is stable.
+At fixture-root creation time, no CLI, Makefile target, or release-quality
+integration was added by this fixture root. Later steps add those layers
+separately while leaving the fixture JSON files unchanged.
 
 ## Future Standalone Makefile Target
 

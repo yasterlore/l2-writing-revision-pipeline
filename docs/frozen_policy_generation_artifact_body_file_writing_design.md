@@ -553,7 +553,17 @@ does not implement isolated temp write validation, does not add a Makefile
 target, does not add release-quality integration, does not write manifests,
 and does not connect the artifact writer CLI.
 
-## 36. Step371 Isolated Write Validator Makefile Target Design Status
+## 36. Step370 Isolated Temp Write Validator Implementation Status
+
+Step370 implements the isolated temp write validator module and CLI:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+It validates the Step369 fixture root under isolated temp roots and keeps the
+standalone smoke target, no-write fixture validator, Makefile, release-quality
+wrapper, manifest writer, and artifact writer CLI integration separate.
+
+## 37. Step371 Isolated Write Validator Makefile Target Design Status
 
 Step371 adds the docs-only standalone Makefile target design for the
 isolated write validator CLI, and Step372 restores and confirms that CLI:
@@ -567,7 +577,7 @@ availability prerequisite. This does not implement a Makefile target, add
 release-quality integration, change workflow YAML, change fixture JSON, write
 manifests, connect artifact writer CLI, use real data, or compute metrics.
 
-## 37. Step374 Isolated Write Release-Quality Integration Design Status
+## 38. Step374 Isolated Write Release-Quality Integration Design Status
 
 Step374 adds the docs-only release-quality integration design for the
 standalone isolated write validator target:

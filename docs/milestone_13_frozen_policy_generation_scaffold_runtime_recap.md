@@ -903,11 +903,13 @@ written, no artifact body is produced, and no performance metric is computed.
   isolated temp write validator, add a Makefile target, add release-quality
   integration, write manifests, connect artifact writer CLI, use real data,
   compute metrics, or claim production readiness.
-- Step370: isolated write validator availability should be confirmed before
-  adding orchestration around it. The Step371 target design assumes a
-  summary-only validator CLI for the 22-case fixture root, but target
-  implementation should first verify that the module is present in the active
-  branch. Step372 performs that reconciliation.
+- Step370: implemented the isolated temp write validator module and CLI. It
+  executes the Step369 cases under isolated temp roots, validates write /
+  no-write / usage-error / fail-closed categories, scans stdout/stderr and
+  written files, checks cleanup and residue, and emits body-free summaries.
+  It does not add a Makefile target, add release-quality integration, write
+  manifests, connect artifact writer CLI, use real data, compute metrics, or
+  claim production readiness.
 - Step371: added the docs-only standalone Makefile target design for the
   isolated write validator. The design proposes a future short make command
   for the validator CLI and keeps release-quality integration separate. It

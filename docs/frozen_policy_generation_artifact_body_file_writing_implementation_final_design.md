@@ -455,15 +455,12 @@ The root contains 5 valid cases, 17 invalid / expected-failure cases, and 110
 JSON files. It remains separate from the minimal CLI file writing
 implementation and does not implement the isolated validator.
 
-## 25. Step372 Isolated Write Validator Availability Status
+## 25. Step370 Isolated Temp Write Validator Implementation Status
 
-Step372 restores and confirms the isolated write validator module and CLI:
-
-`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
-
-The CLI runs the 22-case fixture root with summary-only output and reports
-22 matched cases, 0 mismatches, 0 input errors, and 0 residue files. The
-future Makefile target can now be implemented as a separate step.
+Step370 implements the isolated temp write validator module and CLI for the
+Step369 fixture root. The validator runs cases under isolated temp roots and
+does not add a Makefile target, release-quality integration, manifest writer,
+or artifact writer CLI integration.
 
 ## 26. Step371 Isolated Write Validator Makefile Target Design Status
 
@@ -477,7 +474,17 @@ implemented in this step, is not added to release-quality, and does not
 change workflow YAML, Python code/tests, fixture JSON, manifest writing, or
 artifact writer CLI integration.
 
-## 27. Related Documents
+## 27. Step372 Isolated Write Validator Availability Status
+
+Step372 restores and confirms the isolated write validator module and CLI:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+The CLI runs the 22-case fixture root with summary-only output and reports
+22 matched cases, 0 mismatches, 0 input errors, and 0 residue files. The
+future Makefile target can now be implemented as a separate step.
+
+## 28. Related Documents
 
 - [Frozen policy generation artifact body file writing design](frozen_policy_generation_artifact_body_file_writing_design.md)
 - [Frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md)

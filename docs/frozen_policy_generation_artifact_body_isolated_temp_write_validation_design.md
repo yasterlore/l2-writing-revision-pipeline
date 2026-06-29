@@ -381,7 +381,23 @@ does not implement this validator, does not add a Makefile target, does not
 add release-quality integration, does not write manifests, and does not
 connect the artifact writer CLI.
 
-## 23. Related Documents
+## 23. Step370 Validator Implementation Status
+
+Step370 implements the isolated temp write validator module and CLI:
+
+`learner_state.frozen_policy_generation_artifact_body_isolated_write_validation`
+
+The validator runs the 22 Step369 fixture cases in isolated temp roots. It
+checks write / no-write / usage-error / fail-closed categories, stdout/stderr
+safety, written file parse and allowed-key policy, cleanup, and residue count.
+It emits body-free human or JSON summaries and keeps `release_quality_ready`
+false.
+
+Step370 does not add a Makefile target, does not add release-quality
+integration, does not change workflow YAML, does not change fixture JSON, does
+not write manifests, and does not connect the artifact writer CLI.
+
+## 24. Related Documents
 
 - [Frozen policy generation artifact body isolated write validator Makefile target design](frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body isolated temp write fixture contract design](frozen_policy_generation_artifact_body_isolated_temp_write_fixture_contract_design.md)

@@ -215,6 +215,9 @@ and not production readiness evidence.
 - Treat Step369 isolated temp write fixture JSON creation as future local
   validator input only. It creates fixture JSON but does not add isolated temp
   write validation to release-quality.
+- Treat Step370 isolated temp write validator implementation as local
+  validation only. It is not part of this remote no-write fixture marker until
+  a separate release-quality integration step occurs.
 - Treat Step370 isolated write validator availability as a local precondition
   for future target work. It is not part of this remote no-write fixture
   marker.
@@ -265,6 +268,8 @@ and not production readiness evidence.
   creation. This marker remains evidence only for the remote no-write fixture
   validator target and does not become isolated temp write validation
   evidence.
+- Step370: noted the isolated temp write validator implementation. This marker
+  remains evidence only for the remote no-write fixture validator target.
 - Step371: linked the docs-only isolated write validator Makefile target
   design:
   [Frozen policy generation artifact body isolated write validator Makefile target design](../frozen_policy_generation_artifact_body_isolated_write_validator_makefile_target_design.md).
