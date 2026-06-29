@@ -484,3 +484,15 @@ It does not copy the written file body, raw logs, fixture JSON bodies,
 request/pointer/expected bodies, manifest bodies, artifact body payloads,
 generated policy bodies, private or absolute paths, raw learner text, real
 participant data, or performance evidence.
+
+## 26. Step466 Artifact Writer CLI Integration Design Status
+
+Step466 adds a docs-only design for future artifact writer CLI integration:
+
+[Frozen policy generation artifact writer CLI integration design](frozen_policy_generation_artifact_writer_cli_integration_design.md).
+
+The manifest writer runtime file writing path remains separate. Step466 does
+not connect artifact writer CLI to artifact body generation CLI or manifest
+writer runtime, does not generate manifest bodies, does not change runtime
+code, Makefile, release-quality wrapper, workflow YAML, Python tests, fixtures
+JSON, metrics, real-data use, or production readiness.

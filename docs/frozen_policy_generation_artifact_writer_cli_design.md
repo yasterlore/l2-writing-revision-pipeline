@@ -508,3 +508,16 @@ artifact body CLI options, implement validators, implement body generation,
 change Makefile targets, change release-quality, change workflow YAML, change
 Python code or tests, change existing fixture JSON, write files, compute
 metrics, use real data, or claim production readiness.
+
+## 32. Step466 Artifact Writer CLI Integration Design Status
+
+Step466 adds a docs-only design for future artifact writer CLI integration:
+
+[Frozen policy generation artifact writer CLI integration design](frozen_policy_generation_artifact_writer_cli_integration_design.md).
+
+The design recommends a first integration scope limited to generator scaffold
+CLI -> artifact writer CLI. The existing CLI implementation remains unchanged.
+Step466 does not implement integration, connect artifact body generation CLI,
+generate manifest bodies, change runtime code, change Python tests, change
+fixtures JSON, change Makefile, change release-quality, change workflow YAML,
+use real data, compute metrics, or claim production readiness.

@@ -3901,6 +3901,22 @@ learner text, real participant data, performance evidence, artifact writer CLI
 integration evidence, manifest body generation evidence, real-data readiness,
 or production readiness claims.
 
+For Step466, review the docs-only
+[frozen policy generation artifact writer CLI integration design](frozen_policy_generation_artifact_writer_cli_integration_design.md).
+Confirm it limits the recommended first future integration scope to generator
+scaffold CLI -> artifact writer CLI, keeps artifact body generation CLI
+integration and manifest writer integration separate, and preserves
+synthetic-only, metadata-only, no-oracle, body-suppressed output. Confirm it
+does not implement integration, change runtime code, change Python tests,
+change fixtures JSON, change Makefile, change release-quality wrapper, change
+workflow YAML, connect artifact body generation CLI, generate manifest bodies,
+write files, use real data, compute metrics, or claim production readiness.
+Confirm docs do not include raw logs, full job output, fixture JSON bodies,
+request/pointer/expected bodies, written file JSON bodies, manifest bodies,
+artifact body payloads, generated policy bodies, raw rows, logits/private
+paths, absolute paths, raw learner text, real participant data, or performance
+evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

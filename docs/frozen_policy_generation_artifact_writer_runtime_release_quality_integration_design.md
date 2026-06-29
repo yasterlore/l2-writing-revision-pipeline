@@ -455,3 +455,17 @@ Step324 creates the artifact body fixture root:
 Release-quality remains unchanged. The new fixtures are not validated by the
 release-quality wrapper until a future validator, CLI, Makefile target, and
 wrapper integration are designed and implemented.
+
+## 23. Step466 Artifact Writer CLI Integration Design Status
+
+Step466 adds a docs-only design for a future artifact writer CLI integration
+path:
+
+[Frozen policy generation artifact writer CLI integration design](frozen_policy_generation_artifact_writer_cli_integration_design.md).
+
+This release-quality integration remains the existing artifact writer runtime
+smoke only. The future CLI integration should be added as a separate
+release-quality label after fixture contract, fixture validator, and Makefile
+target work. Step466 does not change wrapper scripts, Makefile, workflow YAML,
+Python code/tests, fixtures JSON, artifact body generation CLI integration,
+manifest body generation, real-data use, metrics, or production readiness.

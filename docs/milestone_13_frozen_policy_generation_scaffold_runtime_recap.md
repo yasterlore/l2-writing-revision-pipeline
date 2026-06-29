@@ -1560,6 +1560,12 @@ written, no artifact body is produced, and no performance metric is computed.
   manifest bodies, artifact body payloads, generated policy bodies, private or
   absolute paths, raw learner text, real participant data, metrics, artifact
   writer CLI integration evidence, or production readiness claims.
+- Step466: added a docs-only design for future artifact writer CLI
+  integration. The recommended first scope is generator scaffold CLI ->
+  artifact writer CLI only, with artifact body generation CLI integration,
+  manifest writer integration, manifest body generation, file writing,
+  release-quality changes, code/tests, fixtures JSON, metrics, real-data use,
+  and production readiness kept separate for later steps.
 
 ## Related Documents
 
@@ -1669,6 +1675,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Learner-state frozen policy generation artifact writer runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer runtime Makefile target design](frozen_policy_generation_artifact_writer_runtime_makefile_target_design.md)
 - [Frozen policy generation artifact writer CLI design](frozen_policy_generation_artifact_writer_cli_design.md)
+- [Frozen policy generation artifact writer CLI integration design](frozen_policy_generation_artifact_writer_cli_integration_design.md)
 - [Learner-state frozen policy generation artifact writer fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact writer fixture release-quality integration design](frozen_policy_generation_artifact_writer_fixture_release_quality_integration_design.md)
 - [Frozen policy generation artifact writer fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_record_workflow.md)

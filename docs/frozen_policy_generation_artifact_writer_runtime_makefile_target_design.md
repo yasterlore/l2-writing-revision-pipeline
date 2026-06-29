@@ -469,3 +469,18 @@ Step324 creates the artifact body fixture root:
 The runtime target remains unchanged, body-free, and file-writing-free. The
 new fixtures are for future artifact body validation only and are not added to
 Makefile targets in Step324.
+
+## 26. Step466 Artifact Writer CLI Integration Design Status
+
+Step466 adds the docs-only design for a future artifact writer CLI integration
+boundary:
+
+[Frozen policy generation artifact writer CLI integration design](frozen_policy_generation_artifact_writer_cli_integration_design.md).
+
+The standalone runtime target remains unchanged and should not be replaced by
+the future integration target. Any future artifact writer CLI integration
+target should use a separate label and should be staged only after fixture
+contract and validator work. Step466 does not change Makefile, release-quality
+wrapper, workflow YAML, Python code/tests, fixtures JSON, artifact body
+generation CLI integration, manifest body generation, metrics, real-data use,
+or production readiness.

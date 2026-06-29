@@ -225,6 +225,7 @@ Not currently implemented or not claimed:
 - [Synthetic E2E pipeline](docs/synthetic_e2e_pipeline.md)
 - [Private real-data readiness checklist](docs/private_real_data_readiness_checklist.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](docs/milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
+- [Artifact writer CLI integration design](docs/frozen_policy_generation_artifact_writer_cli_integration_design.md)
 
 ## CI
 

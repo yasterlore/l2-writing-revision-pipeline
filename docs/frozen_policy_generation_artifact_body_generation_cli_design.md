@@ -564,3 +564,17 @@ names, expected result fields, safe path checks, and body content checks. It
 does not create fixture JSON, implement `--artifact-body-out`, write
 artifacts or manifests, connect artifact writer CLI, change release-quality,
 use real data, or compute metrics.
+
+## 35. Step466 Artifact Writer CLI Integration Design Status
+
+Step466 adds a docs-only design for future artifact writer CLI integration:
+
+[Frozen policy generation artifact writer CLI integration design](frozen_policy_generation_artifact_writer_cli_integration_design.md).
+
+The recommended first scope stops at generator scaffold CLI -> artifact writer
+CLI. Artifact body generation CLI integration remains separate. This document
+therefore remains unchanged in behavior: Step466 does not connect artifact
+writer CLI to artifact body generation CLI, does not generate artifact body
+payloads, does not generate manifest bodies, does not change Makefile,
+release-quality, workflow YAML, Python code/tests, fixtures JSON, metrics,
+real-data use, or production readiness.

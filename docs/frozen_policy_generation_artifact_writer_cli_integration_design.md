@@ -1,0 +1,379 @@
+# Frozen Policy Generation Artifact Writer CLI Integration Design
+
+## 1. Purpose
+
+This document fixes the docs-only design for a future frozen policy generation
+artifact writer CLI integration path.
+
+It is not an implementation. It does not implement artifact writer CLI
+integration, artifact body generation CLI integration, manifest body
+generation, production readiness, real-data readiness, or performance
+evaluation.
+
+The design is synthetic-only, metadata-only, no-oracle, body-suppressed, and
+public-safe. It may name fields, targets, reason codes, and policy boundaries,
+but it must not include fixture JSON bodies, request bodies, pointer bodies,
+expected-result bodies, written file JSON bodies, manifest bodies, artifact
+body payloads, generated policy bodies, raw rows, logits/probabilities,
+private paths, absolute paths, raw learner text, raw logs, or full job output.
+
+## 2. Current State
+
+- frozen policy generation scaffold exists
+- generator scaffold exists
+- artifact writer fixture validation exists
+- artifact writer runtime smoke exists
+- artifact body fixture validation exists
+- artifact body generation suppressed CLI smoke exists
+- artifact body generation safe-metadata CLI smoke exists
+- artifact body file writing fixture validation exists
+- artifact body isolated write validation exists
+- manifest writer fixture validation exists
+- manifest writer runtime fixture validation exists
+- manifest writer metadata-only no-file runtime smoke exists
+- manifest writer static file-writing fixture validation exists
+- manifest writer isolated write validation exists
+- manifest writer production file writing fixture validation exists
+- manifest writer runtime metadata-only file writing smoke exists
+- release-quality wrapper includes the current artifact writer, artifact body,
+  manifest writer, and runtime file writing smoke checks
+- artifact writer CLI integration is not implemented
+- artifact body generation CLI integration is not implemented
+- manifest body generation is not implemented
+- production readiness is not claimed
+- real-data readiness is not claimed
+
+## 3. Integration Goal For Future Step
+
+The future integration goal is to connect the existing safe terminal surfaces
+in a narrow, metadata-only path before any broader pipeline integration.
+
+For the first implementation stage, "artifact writer CLI integration" should
+mean:
+
+- a synthetic generator scaffold result pointer is passed into the artifact
+  writer CLI integration boundary
+- the artifact writer returns a metadata-only artifact writer result
+- public output remains body-free and count-only
+- generated policy body is never emitted
+- artifact body payload is never emitted
+- manifest body is never emitted
+- request and pointer bodies are never copied into public output
+- raw rows, logits/probabilities, private paths, absolute paths, raw learner
+  text, and performance bodies are never emitted
+- file writing remains disabled unless a separate opt-in safe-root design is
+  created later
+
+Passing the artifact writer result pointer onward to artifact body generation
+or manifest writer should remain a separate later step.
+
+## 4. Proposed Future CLI Flow
+
+### Option A
+
+Generator scaffold CLI -> artifact writer CLI.
+
+This option treats the integration as a small handoff from generator scaffold
+metadata to artifact writer metadata. It keeps artifact body generation and
+manifest writer execution outside the first integration boundary.
+
+### Option B
+
+Generator scaffold CLI -> artifact writer CLI -> artifact body generation
+suppressed CLI.
+
+This option adds a second downstream CLI boundary. It checks a longer path but
+also increases failure modes and body/payload leakage risk.
+
+### Option C
+
+Generator scaffold CLI -> artifact writer CLI -> artifact body generation
+safe-metadata CLI -> manifest writer metadata-only runtime.
+
+This option approximates a larger end-to-end synthetic metadata chain. It is
+too broad for the first artifact writer CLI integration step because it
+combines artifact writer, artifact body, and manifest writer boundaries.
+
+## 5. Recommended Scope
+
+Use Option A for the first future implementation stage.
+
+Reasons:
+
+- scope is small
+- artifact body generation and manifest writer coupling remain separate
+- body/payload leakage risk is lower
+- failure boundaries are clearer
+- fixture validation can be designed before execution
+- release-quality can add the new integration check as a separate label
+- the existing artifact writer runtime smoke remains intact
+
+## 6. Future Implementation Target
+
+The next implementation sequence should be designed before writing code. Future
+steps may add:
+
+- artifact writer CLI integration fixture contract design
+- artifact writer CLI integration fixture root creation
+- artifact writer CLI integration validator design
+- artifact writer CLI integration validator implementation
+- artifact writer CLI integration Makefile target design
+- artifact writer CLI integration Makefile target implementation
+- artifact writer CLI integration release-quality design
+- artifact writer CLI integration wrapper integration
+- artifact writer CLI integration remote/manual run record workflow
+- artifact writer CLI integration remote status marker
+
+Step466 does not implement any of these.
+
+## 7. Proposed Inputs
+
+Future integration fixtures and runtime smoke should use only:
+
+- synthetic-only generator scaffold fixture references
+- safe pointer metadata
+- existing artifact writer request fixture references
+- existing generator result pointer fixture references
+- validation reference identifiers
+- release-quality reference identifiers
+- count-only metadata
+- safety flags
+
+Inputs must not include raw rows, logits/probabilities, generated policy body,
+artifact body payload, manifest body, request body copied into public output,
+pointer body copied into public output, raw learner text, private paths,
+absolute paths, real participant data, or performance metric bodies.
+
+## 8. Proposed Outputs
+
+Future integration output should be metadata-only and body-free. Allowed
+public fields may include:
+
+- `mode`
+- `result_schema_version`
+- `writer_status`
+- `artifact_id`
+- `manifest_id`
+- `validation_reference_count`
+- `release_quality_reference_count`
+- `artifact_body_suppressed`
+- `generated_artifact_body_available=false`
+- `manifest_body_suppressed=true`
+- `generated_artifact_written=false` unless separately designed
+- `safety_flags`
+- `count_summary`
+- `safe_summary`
+- `release_quality_ready=false`
+
+The output should include flags confirming no raw rows, no logits dump, no
+private paths, no absolute paths, no generated policy body, no artifact body
+payload, no manifest body, no request body, no pointer body, no real data, no
+performance claims, synthetic-only checked, and no-oracle checked.
+
+## 9. Forbidden Outputs / Forbidden Docs Content
+
+Future integration output, docs, logs, and status markers must not include:
+
+- artifact body payload
+- generated policy body
+- manifest body
+- manifest JSON body
+- request body
+- pointer body
+- expected body
+- raw rows
+- logits/probability dump
+- private paths
+- absolute local/temp paths
+- raw learner text
+- final text
+- observed-after text
+- gold labels
+- scoring feedback payload
+- real participant data
+- performance metric body
+- raw GitHub logs
+- full job output
+
+Invalid/leakage fixtures, when later created, should use sentinel booleans,
+labels, and reason codes only, never actual payloads.
+
+## 10. No-Oracle / Leakage Policy
+
+The integration must preserve the no-oracle boundary:
+
+- no observed-after text
+- no final corrected text
+- no gold labels
+- no post-hoc annotations
+- no test-set tuning
+- no future information
+- no raw learner text in public output
+- no generated body leakage
+- no scoring feedback payload leakage
+
+Any future validator should fail closed if no-oracle or body-suppression
+signals are missing or contradicted.
+
+## 11. Path And File-Writing Policy
+
+The default integration path should perform no file writing.
+
+Any future file writing must be separately designed and remain:
+
+- opt-in only
+- safe-root only
+- safe relative path only
+- no absolute paths in public output
+- no home/cloud/private marker paths
+- no parent traversal
+- no symlink-sensitive outputs
+- parse/scan/finalize/cleanup if writing is later added
+
+Step466 itself writes no runtime files and does not add any file-writing
+behavior.
+
+## 12. Failure / Reason Code Plan
+
+Future fixture contracts and validators should reserve reason codes including:
+
+- `missing_generator_result_pointer`
+- `malformed_generator_result_pointer`
+- `unvalidated_generator_result`
+- `generated_policy_body_leakage`
+- `artifact_body_payload_leakage`
+- `manifest_body_leakage`
+- `request_body_leakage`
+- `pointer_body_leakage`
+- `raw_rows_leakage`
+- `logits_dump_leakage`
+- `private_path_leakage`
+- `absolute_path_leakage`
+- `raw_learner_text_leakage`
+- `performance_claim_in_artifact`
+- `non_synthetic_input`
+- `no_oracle_violation`
+- `unsupported_file_writing_mode`
+- `unsupported_artifact_body_generation_integration`
+- `unsupported_manifest_writer_integration`
+
+The first implementation stage should treat artifact body generation and
+manifest writer integration requests as unsupported unless separately
+designed.
+
+## 13. Validation Strategy
+
+Recommended validation order:
+
+- fixture contract first
+- fixture root creation second
+- static fixture validator design third
+- static fixture validator implementation fourth
+- focused tests alongside implementation
+- standalone Makefile target design
+- standalone Makefile target implementation
+- release-quality integration design
+- wrapper integration
+- remote/manual run record workflow
+- remote status marker
+
+Validation must use no real data and no performance metrics.
+
+## 14. Release-Quality Staging
+
+Recommended future sequence:
+
+- Step466: this docs-only design
+- Step467: artifact writer CLI integration fixture contract design
+- Step468: fixture root creation
+- Step469: fixture validator design
+- Step470: fixture validator implementation
+- Step471: Makefile target design
+- Step472: Makefile target implementation
+- Step473: release-quality integration design
+- Step474: wrapper integration
+- Step475: remote/manual run record workflow design
+- Step476: remote status marker
+
+Numbering may be adjusted if the project needs an additional design split, but
+the order should remain design -> fixtures -> validator -> Makefile -> wrapper
+-> remote marker.
+
+## 15. Relation To Current Release-Quality Chain
+
+The current chain already validates:
+
+- artifact writer fixture contracts
+- artifact writer metadata-only runtime smoke
+- artifact body fixture contracts
+- artifact body generation suppressed and safe-metadata CLI smoke
+- artifact body file writing fixture contracts
+- artifact body isolated write validation
+- manifest writer fixture/runtime/file-writing/isolated/production contracts
+- manifest writer runtime metadata-only file writing smoke
+
+Artifact writer CLI integration should be added only after a static fixture
+validator exists for the integration contract. It should not replace the
+existing artifact writer runtime smoke. It should use a separate
+release-quality label so failures are attributable to the integration boundary,
+not the underlying writer runtime alone.
+
+## 16. Relation To README / SECURITY Refresh
+
+The public README and security policy already state that artifact writer CLI
+integration is not implemented and should not be treated as complete.
+
+Step466 preserves that status. This document is a planning boundary, not
+implementation evidence.
+
+## 17. Docs Safety Policy
+
+Docs may include:
+
+- field names
+- target names
+- reason code names
+- safe relative path policy names
+- count names
+- safety flags
+- non-goal statements
+
+Docs must not include:
+
+- JSON body examples
+- written output examples
+- raw log examples
+- private path examples
+- absolute path examples
+- raw learner text examples
+- written artifact body examples
+- generated policy body examples
+- manifest body examples
+
+## 18. What This Does Not Do
+
+This design does not:
+
+- implement artifact writer CLI integration
+- implement artifact body generation CLI integration
+- implement manifest body generation
+- change runtime code
+- change Python tests
+- change fixtures JSON
+- change Makefile
+- change the release-quality wrapper
+- change workflow YAML
+- use real data
+- compute metrics
+- prove production readiness
+- prove real-data readiness
+
+## 19. Next Recommended Steps
+
+- artifact writer CLI integration fixture contract design
+- artifact writer CLI integration fixture root
+- artifact writer CLI integration fixture validator
+- artifact writer CLI integration Makefile target
+- artifact writer CLI integration release-quality integration
+- artifact writer CLI integration remote/manual run record workflow
+- artifact writer CLI integration remote status marker
