@@ -411,3 +411,18 @@ artifact body generation CLI integration, manifest writer integration, manifest
 body generation, a validator, a Makefile target, release-quality integration,
 workflow changes, Python runtime changes, Python test changes, metric
 computation, real-data use, or production readiness.
+
+## 22. Step469 Fixture Validator Design Status
+
+Step469 adds the docs-only validator design for the Step468 fixture root:
+
+[Frozen policy generation artifact writer CLI integration fixture validator design](frozen_policy_generation_artifact_writer_cli_integration_fixture_validator_design.md).
+
+The design keeps the integration boundary static and metadata-only. It plans a
+future validator module and CLI for case discovery, required files, schema and
+identity alignment, reason-code validation, forbidden-content scanning,
+no-oracle checks, file-writing suppression checks, and artifact body /
+manifest writer separation checks. It does not implement integration runtime,
+change fixture JSON, add Python tests, add a Makefile target, integrate
+release-quality, use real data, compute metrics, or claim production
+readiness.

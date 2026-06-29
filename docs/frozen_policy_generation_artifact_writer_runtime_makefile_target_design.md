@@ -508,3 +508,15 @@ new fixture root is contract data only and does not add a validator, Makefile
 target, release-quality wrapper entry, workflow change, runtime code change,
 artifact body generation CLI integration, manifest writer integration, metric
 computation, real-data use, or production readiness evidence.
+
+## 29. Step469 CLI Integration Fixture Validator Design Status
+
+Step469 adds a docs-only validator design for the artifact writer CLI
+integration fixture root:
+
+[Frozen policy generation artifact writer CLI integration fixture validator design](frozen_policy_generation_artifact_writer_cli_integration_fixture_validator_design.md).
+
+The existing artifact writer runtime Makefile target remains unchanged. The
+future integration validator should be a separate static fixture validator and
+should not replace this runtime smoke target or add release-quality wrapper
+integration until a later step.

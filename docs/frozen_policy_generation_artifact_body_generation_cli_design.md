@@ -605,3 +605,17 @@ results and contains no artifact body payloads. It does not change this CLI,
 add validator code, add a Makefile target, integrate release-quality, connect
 manifest writer runtime, use real data, compute metrics, or claim production
 readiness.
+
+## 38. Step469 Artifact Writer CLI Integration Fixture Validator Design Status
+
+Step469 adds a docs-only validator design for the artifact writer CLI
+integration fixture root:
+
+[Frozen policy generation artifact writer CLI integration fixture validator design](frozen_policy_generation_artifact_writer_cli_integration_fixture_validator_design.md).
+
+Artifact body generation CLI integration remains separate and unimplemented.
+The future validator should enforce `artifact_body_generation_executed=false`
+and reject artifact body payload leakage, but it should not execute this CLI,
+connect artifact writer CLI to artifact body generation CLI, add Python tests,
+change fixture JSON, add a Makefile target, integrate release-quality, use
+real data, compute metrics, or claim production readiness.

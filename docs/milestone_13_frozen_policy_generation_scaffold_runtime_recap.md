@@ -1584,6 +1584,16 @@ written, no artifact body is produced, and no performance metric is computed.
   release-quality wrapper entry, workflow change, Python runtime/test change,
   artifact body generation CLI integration, manifest writer integration,
   metric computation, real-data use, or production readiness claim.
+- Step469: added the docs-only validator design for the artifact writer CLI
+  integration fixture root. The design fixes the future module and CLI names,
+  summary schema, case discovery, required-file validation, schema/case/status
+  alignment, valid/invalid rules, reason-code validation, forbidden-content
+  scan, safe marker policy, no-oracle checks, file-writing suppression checks,
+  artifact body / manifest writer separation checks, future tests, and
+  release-quality staging. It does not implement the validator, add tests,
+  change fixture JSON, add Makefile/wrapper/workflow changes, implement
+  runtime integration, use real data, compute metrics, or claim production
+  readiness.
 
 ## Related Documents
 
@@ -1705,6 +1715,7 @@ written, no artifact body is produced, and no performance metric is computed.
 - [Frozen policy generation artifact writer fixture design](frozen_policy_generation_artifact_writer_fixture_design.md)
 - [Frozen policy generation artifact writer design](frozen_policy_generation_artifact_writer_design.md)
 - [Frozen policy generation artifact writer CLI integration fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/README.md)
+- [Frozen policy generation artifact writer CLI integration fixture validator design](frozen_policy_generation_artifact_writer_cli_integration_fixture_validator_design.md)
 - [Frozen policy generation generator scaffold runtime release-quality remote run record workflow](frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_record_workflow.md)
 - [Learner-state frozen policy generation generator scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation generator scaffold runtime release-quality integration design](frozen_policy_generation_generator_scaffold_runtime_release_quality_integration_design.md)

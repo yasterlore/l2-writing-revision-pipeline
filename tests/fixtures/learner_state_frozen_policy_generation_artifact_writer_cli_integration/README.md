@@ -151,6 +151,16 @@ flags, controlled invalid markers, file-writing suppression, body suppression,
 and no-oracle metadata. The validator should not implement the integration
 runtime.
 
+Step469 designs that future validator in:
+
+`docs/frozen_policy_generation_artifact_writer_cli_integration_fixture_validator_design.md`
+
+The design remains docs-only. It does not implement a validator, add Python
+tests, change fixture JSON, add a Makefile target, integrate release-quality,
+change workflow YAML, implement artifact writer CLI integration runtime,
+connect artifact body generation CLI, connect manifest writer runtime, use
+real data, compute metrics, or claim production readiness.
+
 ## What This Fixture Root Does Not Prove
 
 This fixture root does not prove artifact writer CLI integration correctness,

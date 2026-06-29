@@ -3946,6 +3946,18 @@ Makefile target, release-quality wrapper integration, workflow change, Python
 runtime/test change, artifact body generation CLI integration, manifest writer
 integration, metric computation, real-data use, or production readiness claim.
 
+For Step469, review the docs-only
+[frozen policy generation artifact writer CLI integration fixture validator design](frozen_policy_generation_artifact_writer_cli_integration_fixture_validator_design.md).
+Confirm it designs only the future static validator for the Step468 fixture
+root: module and CLI names, args, summary schema, case discovery, 6 required
+files per case, schema/case/status/reason alignment, valid/invalid rules,
+reason-code validation, forbidden-content scan, safe marker policy, no-oracle
+checks, file-writing suppression checks, artifact body / manifest writer
+separation checks, future tests, and release-quality staging. Confirm it does
+not implement a validator, add Python tests, change fixture JSON, add Makefile
+or wrapper integration, change workflow YAML, implement runtime integration,
+use real data, compute metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
