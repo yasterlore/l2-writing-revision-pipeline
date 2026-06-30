@@ -372,6 +372,17 @@ It does not change the wrapper, workflow files, Makefile, Python code/tests,
 fixture JSON, runtime implementation, artifact body generation integration,
 manifest writer integration, real-data use, metrics, or production readiness.
 
+## 9.8 Step485 Runtime Fixture Release-Quality Wrapper Integration Status
+
+Step485 adds the Step483 runtime fixture validator target to
+`scripts/check_release_quality.sh` after artifact writer CLI integration
+fixture validation and before artifact body fixture validation. The wrapper
+check remains static fixture validation only. It does not execute runtime
+integration, change workflow files, change Makefile targets, change Python
+code/tests, change fixture JSON, connect artifact body generation integration,
+connect manifest writer integration, use real data, compute metrics, or claim
+production readiness.
+
 ## 10. Non-Claims
 
 This design does not claim:

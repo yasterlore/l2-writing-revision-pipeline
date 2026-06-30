@@ -32,7 +32,7 @@ correctness, generated policy quality, or learner-state estimator correctness.
 - Focused validator tests exist.
 - The standalone Makefile target exists.
 - The standalone target validates the fixture root statically only.
-- The standalone target is not yet in the release-quality wrapper.
+- Step485 adds the standalone target to the release-quality wrapper.
 - GitHub Actions workflow YAML is unchanged for this target.
 - Artifact writer CLI integration runtime is not implemented.
 - Artifact body generation CLI integration is not implemented.
@@ -351,11 +351,33 @@ Docs must not include:
 - real participant data
 - performance metric bodies
 
-## 15. What This Does Not Do
+## 15. Step485 Wrapper Integration Status
+
+Step485 implements the wrapper integration proposed by this design by adding
+the release-quality label and command block to `scripts/check_release_quality.sh`.
+
+Added label:
+
+```text
+release_quality_check: learner-state frozen policy generation artifact writer CLI integration runtime fixture validation
+```
+
+Added command:
+
+```bash
+make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures
+```
+
+The check is inserted after artifact writer CLI integration fixture validation
+and before artifact body fixture validation. Step485 does not change workflow
+YAML, Makefile targets, Python code/tests, fixture JSON, runtime
+implementation, artifact body generation integration, manifest writer
+integration, real-data use, metrics, or production readiness.
+
+## 16. What This Does Not Do
 
 This design does not:
 
-- change `scripts/check_release_quality.sh`
 - modify workflow YAML
 - modify the Makefile
 - modify Python code or tests
@@ -371,9 +393,8 @@ This design does not:
 - prove real-data readiness
 - prove model performance
 
-## 16. Next Recommended Steps
+## 17. Next Recommended Steps
 
-- Step485: release-quality wrapper integration.
 - Step486: remote/manual run record workflow design.
 - Step487: remote status marker.
 - Step488: artifact writer CLI integration runtime implementation design.

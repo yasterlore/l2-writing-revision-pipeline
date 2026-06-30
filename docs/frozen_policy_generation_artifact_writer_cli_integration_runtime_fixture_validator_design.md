@@ -335,10 +335,10 @@ Step483 implements the standalone Makefile target for this validator:
 
 `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures`
 
-The target remains standalone and is not added to release-quality in Step483.
-It does not change workflow files, Python code/tests, fixture JSON, execute
-runtime integration, use real data, compute metrics, or claim production
-readiness.
+The target remains standalone in Step483. Step485 adds it to the
+release-quality wrapper. The target does not change workflow files, Python
+code/tests, fixture JSON, execute runtime integration, use real data, compute
+metrics, or claim production readiness.
 
 ## 14.4 Step484 Release-Quality Integration Design Status
 
@@ -351,6 +351,16 @@ The design proposes future wrapper placement after the earlier artifact writer
 CLI integration fixture validation and before artifact body checks. It does
 not change the wrapper, workflow files, Makefile, Python code/tests, fixture
 JSON, execute runtime integration, use real data, compute metrics, or claim
+production readiness.
+
+## 14.5 Step485 Wrapper Integration Status
+
+Step485 adds the standalone runtime fixture validator target to
+`scripts/check_release_quality.sh` in the Step484 insertion point. The wrapper
+now runs the static fixture validator after artifact writer CLI integration
+fixture validation and before artifact body fixture validation. Step485 does
+not change workflow files, Makefile targets, Python code/tests, fixture JSON,
+execute runtime integration, use real data, compute metrics, or claim
 production readiness.
 
 ## 15. Non-Claims

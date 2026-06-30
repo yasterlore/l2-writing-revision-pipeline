@@ -1733,11 +1733,11 @@ written, no artifact body is produced, and no performance metric is computed.
 - Step483: added the standalone Makefile target
   `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures`
   for the Step481 runtime fixture validator CLI. The target validates the
-  Step479 30-case / 180-JSON synthetic metadata-only fixture root and remains
-  outside release-quality. It does not change workflow files, Python
-  code/tests, fixture JSON, runtime integration, artifact body generation
-  integration, manifest writer integration, metrics, real-data use, or
-  production readiness.
+  Step479 30-case / 180-JSON synthetic metadata-only fixture root. Step485
+  adds it to release-quality. The target does not change workflow files,
+  Python code/tests, fixture JSON, runtime integration, artifact body
+  generation integration, manifest writer integration, metrics, real-data use,
+  or production readiness.
 - Step484: added the docs-only release-quality integration design for future
   wrapper integration of the Step483 runtime fixture validator target:
   [Frozen policy generation artifact writer CLI integration runtime fixture release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_integration_design.md).
@@ -1746,6 +1746,14 @@ written, no artifact body is produced, and no performance metric is computed.
   not change the wrapper, workflow files, Makefile, Python code/tests, fixture
   JSON, runtime implementation, artifact body generation integration, manifest
   writer integration, metrics, real-data use, or production readiness.
+- Step485: added the runtime fixture validator release-quality label and
+  command block to `scripts/check_release_quality.sh` after artifact writer
+  CLI integration fixture validation and before artifact body fixture
+  validation. This wrapper integration runs the static fixture validator only;
+  it does not change workflow files, Makefile targets, Python code/tests,
+  fixture JSON, runtime implementation, artifact body generation integration,
+  manifest writer integration, metrics, real-data use, or production
+  readiness.
 
 ## Related Documents
 

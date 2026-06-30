@@ -430,8 +430,8 @@ metrics, or production readiness.
 ## 15.5 Step483 Standalone Makefile Target Status
 
 Step483 implements the standalone Makefile target for the runtime fixture
-validator CLI. The target validates the Step479 fixture root only and remains
-outside release-quality until a later wrapper step.
+validator CLI. The target validates the Step479 fixture root only. Step485
+adds this target to the release-quality wrapper.
 
 ## 15.6 Step484 Release-Quality Integration Design Status
 
@@ -444,6 +444,15 @@ The design does not change the wrapper, workflow files, Makefile, Python
 code/tests, fixture JSON, runtime implementation, artifact body generation
 integration, manifest writer integration, real-data use, metrics, or
 production readiness.
+
+## 15.7 Step485 Wrapper Integration Status
+
+Step485 adds the standalone runtime fixture validator target to
+`scripts/check_release_quality.sh` after artifact writer CLI integration
+fixture validation and before artifact body fixture validation. It does not
+change workflow files, Makefile targets, Python code/tests, fixture JSON,
+runtime implementation, artifact body generation integration, manifest writer
+integration, real-data use, metrics, or production readiness.
 
 ## 16. Non-Claims
 

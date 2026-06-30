@@ -620,3 +620,17 @@ validation and before artifact body checks. It does not change the wrapper,
 workflow files, Makefile, Python code/tests, fixture JSON, runtime
 implementation, artifact body generation integration, manifest writer
 integration, real-data use, metrics, or production readiness.
+
+## 38. Step485 Runtime Fixture Validator Wrapper Integration Status
+
+Step485 adds the Step483 runtime fixture validator target to the
+release-quality wrapper:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures`
+
+The wrapper runs this static fixture validator after artifact writer CLI
+integration fixture validation and before artifact body fixture validation. It
+does not execute artifact writer CLI integration runtime, change workflow
+files, change Makefile targets, change Python code/tests, change fixture JSON,
+connect artifact body generation integration, connect manifest writer
+integration, use real data, compute metrics, or claim production readiness.

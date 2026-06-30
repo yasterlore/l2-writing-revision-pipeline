@@ -4117,12 +4117,12 @@ model performance, F1, accuracy, ECE, or AURCC.
 For Step483, review the standalone Makefile target
 `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures`.
 Confirm it runs only the Step481 static validator CLI over the Step479
-synthetic metadata-only fixture root. Confirm it is not added to
-release-quality yet, does not change workflow YAML, does not change Python
-code/tests, does not change fixture JSON, does not execute runtime integration,
-does not connect artifact body generation or manifest writer integration, and
-does not claim production readiness, real-data readiness, model performance,
-F1, accuracy, ECE, or AURCC.
+synthetic metadata-only fixture root. Step485 adds it to release-quality.
+Confirm it does not change workflow YAML, does not change Python code/tests,
+does not change fixture JSON, does not execute runtime integration, does not
+connect artifact body generation or manifest writer integration, and does not
+claim production readiness, real-data readiness, model performance, F1,
+accuracy, ECE, or AURCC.
 
 For Step484, review the
 [frozen policy generation artifact writer CLI integration runtime fixture release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_integration_design.md).
@@ -4132,6 +4132,15 @@ workflow YAML, Makefile, Python code/tests, fixture JSON, runtime
 implementation, artifact body generation integration, manifest writer
 integration, use real data, compute metrics, or claim production readiness,
 real-data readiness, model performance, F1, accuracy, ECE, or AURCC.
+
+For Step485, review `scripts/check_release_quality.sh` and confirm the
+runtime fixture validator release-quality label and command are inserted after
+artifact writer CLI integration fixture validation and before artifact body
+fixture validation. Confirm Step485 does not change workflow YAML, Makefile
+targets, Python code/tests, fixture JSON, runtime implementation, artifact body
+generation integration, manifest writer integration, use real data, compute
+metrics, or claim production readiness, real-data readiness, model
+performance, F1, accuracy, ECE, or AURCC.
 
 ## 7. Checks To Run
 
