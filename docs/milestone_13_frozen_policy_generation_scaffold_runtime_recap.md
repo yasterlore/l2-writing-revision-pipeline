@@ -1835,6 +1835,15 @@ written, no artifact body is produced, and no performance metric is computed.
   change fixture JSON, perform artifact writer CLI actual invocation, connect
   artifact body generation integration, connect manifest writer integration,
   write files, use real data, compute metrics, or claim production readiness.
+- Step495: added the public-safe pass-only metadata-only body-free
+  remote/manual Release Quality status marker for the Step493 artifact writer
+  CLI integration runtime smoke:
+  [Learner-state frozen policy generation artifact writer CLI integration runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_status.md).
+  This does not change workflow files, change the release-quality wrapper,
+  change Makefile, change Python code/tests, change fixture JSON, perform
+  artifact writer CLI actual invocation, connect artifact body generation
+  integration, connect manifest writer integration, write files, use real
+  data, compute metrics, or claim production readiness.
 
 ## Related Documents
 

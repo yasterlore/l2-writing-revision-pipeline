@@ -281,6 +281,20 @@ perform artifact writer CLI actual invocation, connect artifact body
 generation integration, connect manifest writer integration, write files, or
 claim production readiness.
 
+## Runtime Smoke Remote Status Marker
+
+Step495 creates the public-safe pass-only metadata-only body-free remote/manual
+status marker for the Step493 runtime smoke wrapper check:
+
+[Learner-state frozen policy generation artifact writer CLI integration runtime release-quality remote run status](../../../docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_status.md)
+
+This is separate from the static fixture validator remote status marker. It
+does not store raw logs, full job output, fixture/request/pointer/expected
+bodies, artifact body payloads, manifest bodies, generated policy bodies, real
+participant data, or performance metric bodies. It is not artifact writer CLI
+actual invocation evidence, artifact body generation integration evidence,
+manifest writer integration evidence, or production readiness evidence.
+
 ## Implementation Status
 
 - fixture root created: yes
@@ -297,7 +311,7 @@ claim production readiness.
 - static fixture remote run record workflow design: yes
 - static fixture remote status marker created: yes, public-safe pass-only/count-only marker
 - runtime smoke remote run record workflow design: yes, Step494 docs-only
-- runtime smoke remote status marker created: no
+- runtime smoke remote status marker created: yes, Step495 public-safe pass-only metadata-only marker
 - workflow changed: no
 - artifact body generation integration implemented: no
 - manifest writer integration implemented: no

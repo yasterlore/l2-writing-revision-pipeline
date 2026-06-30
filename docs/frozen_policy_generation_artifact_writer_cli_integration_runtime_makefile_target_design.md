@@ -349,3 +349,16 @@ design, change Makefile, change workflow files, change Python code/tests,
 change fixture JSON, perform artifact writer CLI actual invocation, connect
 artifact body generation integration, connect manifest writer integration,
 write files, or claim production readiness.
+
+## 19. Step495 Remote Status Marker Status
+
+Step495 creates the public-safe pass-only metadata-only body-free remote/manual
+status marker for the Step493 runtime smoke wrapper check:
+
+[Learner-state frozen policy generation artifact writer CLI integration runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_status.md)
+
+This does not change this Makefile target design, change Makefile, change
+workflow files, change Python code/tests, change fixture JSON, perform
+artifact writer CLI actual invocation, connect artifact body generation
+integration, connect manifest writer integration, write files, or claim
+production readiness.

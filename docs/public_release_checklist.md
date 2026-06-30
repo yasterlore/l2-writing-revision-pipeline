@@ -4233,6 +4233,19 @@ integration, write files, use real data, compute metrics, or claim production
 readiness, real-data readiness, model performance, F1, accuracy, ECE, or
 AURCC.
 
+For Step495, review the public-safe
+[learner-state frozen policy generation artifact writer CLI integration runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_status.md).
+Confirm it records only pass-only metadata-only body-free remote/manual run
+status for the Step493 runtime smoke. Confirm raw logs, full job output,
+copied GitHub log blocks, screenshots containing raw logs, fixture/request/
+pointer/expected bodies, artifact body payloads, manifest bodies, generated
+policy bodies, raw rows, logits/probabilities, private paths, absolute paths,
+raw learner text, real participant data, and performance metric bodies are not
+stored. Confirm it does not claim artifact writer CLI actual invocation
+correctness, artifact body generation integration correctness, manifest writer
+integration correctness, production readiness, real-data readiness, model
+performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -24,6 +24,9 @@ Current status-marker posture:
 - The artifact writer CLI integration runtime fixture validator target is in
   the release-quality wrapper, and its remote/manual status marker is now
   recorded as public-safe pass-only/count-only metadata.
+- The artifact writer CLI integration runtime smoke target is in the
+  release-quality wrapper, and its remote/manual status marker is now recorded
+  as public-safe pass-only metadata.
 
 Available markers:
 
@@ -81,6 +84,13 @@ Available markers:
   GitHub log blocks, fixture JSON bodies, request/pointer/expected bodies,
   private paths, absolute paths, raw learner text, or performance evidence. It
   is not runtime integration or production readiness evidence.
+- [Learner-state frozen policy generation artifact writer CLI integration runtime release-quality remote run status](learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after artifact writer CLI
+  integration runtime smoke integration. It remains pass-only, metadata-only,
+  and body-free. Raw logs and full job output are not stored. It is not
+  artifact writer CLI actual invocation evidence, artifact body generation
+  integration evidence, manifest writer integration evidence, or production
+  readiness evidence.
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after artifact body fixture
   validation integration.
@@ -128,12 +138,8 @@ Available markers:
   file JSON bodies, fixture JSON bodies, private paths, absolute paths, raw
   learner text, or performance evidence.
 
-Planned markers:
-
-- `docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_status.md`
-  for the artifact writer CLI integration runtime smoke release-quality
-  wrapper check after a future actual remote/manual run. It should remain
-  public-safe, metadata-only, body-free, and raw-log-free.
+Planned markers: none for the artifact writer CLI integration runtime smoke
+release-quality wrapper check.
 
 Related recap:
 

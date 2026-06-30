@@ -212,8 +212,10 @@ Proposed future status marker path for Step495:
 
 `docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_status.md`
 
-Step494 does not create this marker. Step495 should create it only after an
-actual remote/manual Release Quality run and only with public-safe metadata.
+Step494 does not create this marker. Step495 creates it after an actual
+remote/manual Release Quality run and records only public-safe metadata:
+
+[Learner-state frozen policy generation artifact writer CLI integration runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_status.md)
 
 ## 10. Planned Step495 Input Fields
 
@@ -280,3 +282,18 @@ This workflow design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 13. Step495 Remote Status Marker Status
+
+Step495 creates the public-safe pass-only metadata-only body-free remote/manual
+status marker for the Step493 runtime smoke wrapper check:
+
+[Learner-state frozen policy generation artifact writer CLI integration runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_status.md)
+
+The marker does not store raw logs, full job output, copied GitHub log blocks,
+fixture/request/pointer/expected bodies, artifact body payloads, manifest
+bodies, generated policy bodies, private paths, absolute paths, raw learner
+text, real participant data, or performance metric bodies. It is not artifact
+writer CLI actual invocation evidence, artifact body generation integration
+evidence, manifest writer integration evidence, real-data readiness evidence,
+model-performance evidence, or production readiness evidence.
