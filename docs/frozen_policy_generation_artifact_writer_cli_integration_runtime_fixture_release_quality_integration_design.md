@@ -447,3 +447,17 @@ integration runtime module, CLI, and focused tests:
 This fixture validator release-quality integration remains unchanged. The
 Step489 runtime is not yet added to Makefile or release-quality as a runtime
 check.
+
+## 22. Step490 Runtime Makefile Target Design Status
+
+Step490 adds the docs-only standalone Makefile target design for the Step489
+runtime CLI:
+
+[Frozen policy generation artifact writer CLI integration runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_makefile_target_design.md)
+
+This release-quality integration remains limited to the static runtime fixture
+validator target. Step490 does not change the wrapper, change workflow files,
+modify Makefile, change Python code/tests, change fixture JSON, perform
+artifact writer CLI actual invocation, connect artifact body generation
+integration, connect manifest writer integration, write files, or claim
+production readiness.

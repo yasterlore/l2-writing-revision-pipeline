@@ -543,3 +543,16 @@ The fixture JSON is unchanged. The runtime does not write files, invoke
 artifact body generation, invoke manifest writer, generate manifest bodies,
 generate policy bodies, or connect to Makefile/release-quality runtime checks
 yet.
+
+## 22. Step490 Runtime Makefile Target Design Status
+
+Step490 adds the docs-only standalone Makefile target design for the Step489
+runtime CLI:
+
+[Frozen policy generation artifact writer CLI integration runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_makefile_target_design.md)
+
+The fixture JSON remains unchanged. The design does not implement the target,
+change the release-quality wrapper, change workflow files, change Python
+code/tests, perform artifact writer CLI actual invocation, connect artifact
+body generation integration, connect manifest writer integration, write files,
+or claim production readiness.

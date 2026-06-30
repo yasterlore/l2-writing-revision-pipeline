@@ -453,3 +453,16 @@ and is not replaced.
 The runtime does not write files, invoke artifact body generation, invoke
 manifest writer, generate manifest bodies, generate policy bodies, or claim
 production readiness.
+
+## 20. Step490 Runtime Makefile Target Design Status
+
+Step490 adds the docs-only standalone Makefile target design for the Step489
+runtime CLI:
+
+[Frozen policy generation artifact writer CLI integration runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_makefile_target_design.md)
+
+The Step481 fixture validator remains static and unchanged. Step490 does not
+modify Makefile, change the wrapper, change workflow files, change Python
+code/tests, change fixture JSON, perform artifact writer CLI actual
+invocation, connect artifact body generation integration, connect manifest
+writer integration, write files, or claim production readiness.

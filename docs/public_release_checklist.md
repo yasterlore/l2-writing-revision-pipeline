@@ -4181,6 +4181,18 @@ invoke manifest writer, generate manifest bodies, generate policy bodies, use
 real data, compute metrics, or claim production readiness, real-data
 readiness, model performance, F1, accuracy, ECE, or AURCC.
 
+For Step490, review the docs-only
+[frozen policy generation artifact writer CLI integration runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_makefile_target_design.md).
+Confirm it proposes only a future standalone target name, command, help text,
+safe output expectations, exit-code behavior, no-file-writing policy, and
+release-quality staging for the Step489 runtime CLI. Confirm it does not
+change Makefile, change the release-quality wrapper, change workflow YAML,
+change Python code/tests, change fixture JSON, invoke artifact writer CLI
+actual downstream behavior, connect artifact body generation integration,
+connect manifest writer integration, write files, use real data, compute
+metrics, or claim production readiness, real-data readiness, model
+performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

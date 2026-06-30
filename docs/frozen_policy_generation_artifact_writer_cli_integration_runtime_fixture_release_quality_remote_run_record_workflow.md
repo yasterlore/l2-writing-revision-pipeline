@@ -324,3 +324,16 @@ The Step489 runtime is not a remote status marker update, not a workflow
 change, and not a release-quality runtime wrapper integration. It writes no
 files, invokes no artifact body generation, invokes no manifest writer, and
 does not claim production readiness.
+
+## 17. Step490 Runtime Makefile Target Design Status
+
+Step490 adds the docs-only standalone Makefile target design for the Step489
+runtime CLI:
+
+[Frozen policy generation artifact writer CLI integration runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_makefile_target_design.md)
+
+Step490 is not a remote status marker update, not a workflow change, and not a
+release-quality wrapper integration. It does not modify Makefile, change
+Python code/tests, change fixture JSON, perform artifact writer CLI actual
+invocation, connect artifact body generation integration, connect manifest
+writer integration, write files, or claim production readiness.

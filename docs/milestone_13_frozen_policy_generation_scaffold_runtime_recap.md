@@ -1787,6 +1787,16 @@ written, no artifact body is produced, and no performance metric is computed.
   bodies, generate policy bodies, use real data, compute metrics, or claim
   production readiness. It is not yet connected to a Makefile runtime target
   or release-quality runtime wrapper check.
+- Step490: added the docs-only standalone Makefile target design for the
+  Step489 artifact writer CLI integration runtime:
+  [Frozen policy generation artifact writer CLI integration runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_makefile_target_design.md).
+  The design proposes only a future target name, command, help text, safe
+  output expectations, exit-code behavior, no-file-writing policy, and
+  release-quality staging. It does not change Makefile, change the
+  release-quality wrapper, change workflow files, change Python code/tests,
+  change fixture JSON, perform artifact writer CLI actual invocation, connect
+  artifact body generation integration, connect manifest writer integration,
+  write files, use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 

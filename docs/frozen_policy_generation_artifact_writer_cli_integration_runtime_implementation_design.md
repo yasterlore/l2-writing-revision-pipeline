@@ -279,9 +279,8 @@ These tests should remain synthetic-only and metadata-only.
 
 ## 13. Proposed Implementation Staging
 
-Suggested future staging after Step489:
+Suggested future staging after Step490:
 
-- Step490: runtime CLI Makefile target design
 - Step491: runtime CLI Makefile target implementation
 - Step492: runtime release-quality integration design
 - Step493: runtime release-quality wrapper integration
@@ -289,6 +288,7 @@ Suggested future staging after Step489:
 - Step495: remote status marker
 
 Step489 stops at the standalone runtime module, CLI, and focused tests.
+Step490 adds only the docs-only Makefile target design.
 
 ## 14. Non-Claims
 
@@ -323,6 +323,21 @@ runtime summaries, keeps file writing disabled, does not invoke artifact body
 generation, does not invoke manifest writer, does not generate manifest
 bodies, does not generate policy bodies, and does not connect to Makefile or
 release-quality runtime wrapper checks yet.
+
+## 16.1 Step490 Makefile Target Design Status
+
+Step490 adds the docs-only standalone Makefile target design for the Step489
+runtime CLI:
+
+[Frozen policy generation artifact writer CLI integration runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_makefile_target_design.md)
+
+The design proposes the target name, command, help text, safe output
+expectations, exit-code interpretation, no-file-writing policy, and
+release-quality staging. It does not modify Makefile, change the wrapper,
+change workflow YAML, change Python code/tests, change fixture JSON, invoke
+artifact writer CLI actual downstream behavior, connect artifact body
+generation integration, connect manifest writer integration, implement file
+writing, or claim production readiness.
 
 ## 17. Public-Safe Checklist
 

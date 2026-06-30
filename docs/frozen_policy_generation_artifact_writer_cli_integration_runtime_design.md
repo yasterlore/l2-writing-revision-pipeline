@@ -478,3 +478,18 @@ It returns body-free public-safe summaries, keeps file writing disabled, does
 not invoke artifact body generation, does not invoke manifest writer, does not
 generate manifest bodies, does not generate policy bodies, and is not yet
 connected to Makefile or release-quality runtime wrapper checks.
+
+## 16. Step490 Runtime Makefile Target Design Status
+
+Step490 adds the docs-only standalone Makefile target design for running the
+Step489 runtime CLI from a future Makefile target:
+
+[Frozen policy generation artifact writer CLI integration runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_makefile_target_design.md)
+
+The design is limited to target name, command, safe output, exit-code
+behavior, no-file-writing policy, and release-quality staging. It does not
+change Makefile, change the wrapper, change workflow files, change Python
+code/tests, change fixture JSON, invoke artifact writer CLI actual downstream
+behavior, connect artifact body generation integration, connect manifest
+writer integration, implement file writing, use real data, compute metrics, or
+claim production readiness.

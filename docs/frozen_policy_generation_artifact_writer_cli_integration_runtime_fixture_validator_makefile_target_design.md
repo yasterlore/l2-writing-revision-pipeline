@@ -377,7 +377,22 @@ This document's fixture validator Makefile target remains unchanged. The new
 runtime has no Makefile target yet and is not in release-quality as a runtime
 check.
 
-## 22. Public-Safe Checklist
+## 22. Step490 Runtime Makefile Target Design Status
+
+Step490 adds a separate docs-only Makefile target design for the Step489
+runtime CLI:
+
+[Frozen policy generation artifact writer CLI integration runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_makefile_target_design.md)
+
+That design is for a future runtime smoke target. It does not change this
+static fixture validator target, does not modify Makefile, does not change the
+release-quality wrapper, does not change workflow files, does not change
+Python code/tests, does not change fixture JSON, does not perform artifact
+writer CLI actual invocation, does not connect artifact body generation
+integration, does not connect manifest writer integration, and does not claim
+production readiness.
+
+## 23. Public-Safe Checklist
 
 - no raw logs
 - no full job output

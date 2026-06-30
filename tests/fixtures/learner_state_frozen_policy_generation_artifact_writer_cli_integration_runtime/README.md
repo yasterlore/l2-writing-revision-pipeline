@@ -212,6 +212,19 @@ body-free public-safe summaries. It does not write files, invoke artifact body
 generation, invoke manifest writer, generate manifest bodies, generate policy
 bodies, or connect to Makefile/release-quality runtime checks yet.
 
+## Runtime Makefile Target Design
+
+Step490 adds the docs-only standalone Makefile target design for running the
+Step489 runtime CLI over one valid synthetic metadata-only fixture case:
+
+[Frozen policy generation artifact writer CLI integration runtime Makefile target design](../../../docs/frozen_policy_generation_artifact_writer_cli_integration_runtime_makefile_target_design.md)
+
+The design does not implement the Makefile target, change the release-quality
+wrapper, change workflow files, change Python code/tests, change fixture JSON,
+perform artifact writer CLI actual invocation, connect artifact body
+generation integration, connect manifest writer integration, write files, or
+claim production readiness.
+
 ## Implementation Status
 
 - fixture root created: yes
@@ -219,7 +232,9 @@ bodies, or connect to Makefile/release-quality runtime checks yet.
 - validator implemented: yes
 - runtime implemented: yes, initial standalone metadata-only runtime boundary
 - runtime implementation design: yes, docs-only / planning-only
-- Makefile target added: yes
+- runtime Makefile target design: yes, docs-only
+- static validator Makefile target added: yes
+- runtime Makefile target added: no
 - release-quality wrapper changed: yes, static validator target only
 - remote run record workflow design: yes
 - remote status marker created: yes, public-safe pass-only/count-only marker
