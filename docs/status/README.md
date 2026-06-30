@@ -123,6 +123,10 @@ validator release-quality wrapper check.
 
 Related recap:
 
+- [Full technical specification source inventory](../full_technical_specification_source_inventory.md):
+  docs-only source inventory and coverage audit for a later full technical
+  specification. It does not copy raw logs or payload bodies, and it is not
+  production readiness, real-data readiness, or model-performance evidence.
 - [Milestone 06 learner-state audit infrastructure recap](../milestone_06_learner_state_audit_infrastructure_recap.md):
   broader recap of the learner-state audit infrastructure milestone.
 - [Milestone 07 learner-state sequence exporter infrastructure recap](../milestone_07_learner_state_sequence_exporter_infrastructure_recap.md):

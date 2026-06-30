@@ -12,6 +12,13 @@ body-suppressed, no-oracle, and public-safe summary only. This recap is still
 not production readiness, real-data readiness, artifact writer CLI integration,
 or model-performance evidence.
 
+Step-pretec-doc1 note: the
+[full technical specification source inventory](full_technical_specification_source_inventory.md)
+now records a docs-only repository source inventory and coverage audit for a
+later full technical specification. It is not the full technical specification
+and does not change implementation, fixtures, workflows, or release-quality
+behavior.
+
 It is a recap document. It is not generator implementation, not an artifact
 writer, not calibration implementation, not selective prediction
 implementation, not learner-state estimator implementation, not metric

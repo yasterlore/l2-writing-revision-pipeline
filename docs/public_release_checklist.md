@@ -19,6 +19,10 @@ Current public-facing implementation state:
 - artifact writer CLI integration, production deployment, real participant
   collection, real-data readiness, and model-performance claims remain out of
   scope.
+- [Full technical specification source inventory](full_technical_specification_source_inventory.md)
+  is available as a coverage audit for a later full technical specification.
+  It is docs-only inventory and is not production readiness, real-data
+  readiness, or model-performance evidence.
 
 ## 1. Data Safety
 
@@ -199,6 +203,7 @@ Confirm README explains:
 
 Confirm docs link to:
 
+- `docs/full_technical_specification_source_inventory.md`
 - `docs/milestone_01_pipeline_recap.md`
 - `docs/milestone_02_synthetic_evaluation_recap.md`
 - `docs/milestone_03_config_aware_diagnostic_infrastructure_recap.md`
