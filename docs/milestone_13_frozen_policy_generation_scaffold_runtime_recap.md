@@ -19,6 +19,13 @@ later full technical specification. It is not the full technical specification
 and does not change implementation, fixtures, workflows, or release-quality
 behavior.
 
+Step-pretec-doc2 note: the
+[full technical specification draft](full_technical_specification.md) now
+consolidates repository architecture, runtimes, fixtures, validators,
+release-quality, status markers, and safety boundaries based on the inventory.
+It is still docs-only and does not prove production readiness, real-data
+readiness, or model performance.
+
 It is a recap document. It is not generator implementation, not an artifact
 writer, not calibration implementation, not selective prediction
 implementation, not learner-state estimator implementation, not metric

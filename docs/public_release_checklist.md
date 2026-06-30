@@ -23,6 +23,10 @@ Current public-facing implementation state:
   is available as a coverage audit for a later full technical specification.
   It is docs-only inventory and is not production readiness, real-data
   readiness, or model-performance evidence.
+- [Full technical specification draft](full_technical_specification.md) is
+  available as a docs-only consolidated draft based on the inventory. It must
+  still be coverage-validated before being treated as a final public
+  specification.
 
 ## 1. Data Safety
 
@@ -203,6 +207,7 @@ Confirm README explains:
 
 Confirm docs link to:
 
+- `docs/full_technical_specification.md`
 - `docs/full_technical_specification_source_inventory.md`
 - `docs/milestone_01_pipeline_recap.md`
 - `docs/milestone_02_synthetic_evaluation_recap.md`
