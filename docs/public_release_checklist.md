@@ -4066,6 +4066,16 @@ YAML, change Python code/tests, change fixture JSON, use real data, compute
 metrics, or claim production readiness, real-data readiness, model
 performance, F1, accuracy, ECE, or AURCC.
 
+For Step481, review the artifact writer CLI integration runtime fixture
+validator module and focused tests. Confirm they statically validate the
+Step479 synthetic metadata-only fixture root and emit only body-free
+public-safe summaries. Confirm they do not execute runtime integration, call
+artifact writer CLI integration runtime, connect artifact body generation,
+connect manifest writer integration, add a Makefile target, change
+release-quality wrapper or workflow YAML, change fixture JSON, use real data,
+compute metrics, or claim production readiness, real-data readiness, model
+performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

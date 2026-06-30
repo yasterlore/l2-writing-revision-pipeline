@@ -185,6 +185,10 @@ Related recap:
   docs-only future validator design for the Step479 runtime fixture root. It
   does not implement a validator, execute runtime integration, or provide
   production readiness evidence.
+- `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation.py`:
+  Step481 static validator module and CLI for the Step479 runtime fixture root.
+  It is not runtime integration, real-data readiness, or production readiness
+  evidence.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

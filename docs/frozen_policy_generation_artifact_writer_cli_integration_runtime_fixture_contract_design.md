@@ -411,6 +411,15 @@ add a Makefile target, change wrapper/workflow files, change Python code/tests,
 change fixture JSON, use real data, compute metrics, or claim production
 readiness.
 
+## 15.3 Step481 Validator Implementation Status
+
+Step481 implements the static validator module, CLI, and focused tests for the
+Step479 fixture root. The validator checks 30 synthetic metadata-only cases and
+180 JSON files with body-free public-safe summaries. It does not execute
+runtime integration, connect artifact body generation, connect manifest writer
+integration, add a Makefile target, change wrapper/workflow files, change
+fixture JSON, use real data, compute metrics, or claim production readiness.
+
 ## 16. Non-Claims
 
 This design does not claim:

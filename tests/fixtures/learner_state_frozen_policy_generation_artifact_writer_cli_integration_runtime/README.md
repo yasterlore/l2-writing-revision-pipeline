@@ -108,11 +108,23 @@ validator, execute runtime integration, add a Makefile target, change
 release-quality wrapper or workflow files, change Python code/tests, or change
 fixture JSON.
 
+## Validator Implementation
+
+Step481 implements the static validator module, CLI, and focused tests for this
+fixture root:
+
+`python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation.py`
+
+The validator checks fixture contracts only. It does not execute runtime
+integration, call artifact writer CLI integration runtime, connect artifact
+body generation, connect manifest writer integration, write files, change
+fixture JSON, or prove production readiness.
+
 ## Implementation Status
 
 - fixture root created: yes
 - fixture JSON created: yes
-- validator implemented: no
+- validator implemented: yes
 - runtime implemented: no
 - Makefile target added: no
 - release-quality wrapper changed: no

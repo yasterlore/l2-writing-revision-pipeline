@@ -333,6 +333,14 @@ writer integration, add Makefile or wrapper changes, change workflow files,
 change Python code/tests, change fixture JSON, use real data, compute metrics,
 or claim production readiness.
 
+## 9.4 Step481 Runtime Fixture Validator Implementation Status
+
+Step481 implements the static validator module, CLI, and focused tests for the
+Step479 runtime fixture root. The validator does not execute or prove runtime
+integration, connect artifact body generation, connect manifest writer
+integration, add Makefile or wrapper changes, change workflow files, change
+fixture JSON, use real data, compute metrics, or claim production readiness.
+
 ## 10. Non-Claims
 
 This design does not claim:

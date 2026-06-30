@@ -302,6 +302,22 @@ Suggested future sequence:
 
 The numbering is a proposal. Step480 does not advance into these steps.
 
+## 14.1 Step481 Validator Implementation Status
+
+Step481 implements the static validator module, CLI, and focused tests proposed
+by this design:
+
+`python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation.py`
+
+`python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation.py`
+
+The implementation validates the Step479 synthetic metadata-only fixture root
+and emits body-free public-safe summaries. It does not execute runtime
+integration, call artifact writer CLI integration runtime, connect artifact
+body generation, connect manifest writer integration, add a Makefile target,
+change release-quality wrapper/workflow files, change fixture JSON, use real
+data, compute metrics, or claim production readiness.
+
 ## 15. Non-Claims
 
 This design does not claim:
