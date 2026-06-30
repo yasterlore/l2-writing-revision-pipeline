@@ -1,0 +1,15 @@
+{
+  "absolute_path_value_stored": false,
+  "absolute_paths_allowed": false,
+  "case_id": "invalid/invalid_private_path_present",
+  "forbidden_marker": "private_path_present",
+  "metadata_only": true,
+  "pointer_body_present": false,
+  "pointer_mode": "relative_metadata_pointers_only",
+  "private_path_value_stored": false,
+  "private_paths_allowed": false,
+  "relative_fixture_path": "invalid/invalid_private_path_present",
+  "relative_repo_path": "tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation/invalid/invalid_private_path_present",
+  "safe_path_policy": "relative_paths_only",
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_pointer_metadata_v0.1"
+}

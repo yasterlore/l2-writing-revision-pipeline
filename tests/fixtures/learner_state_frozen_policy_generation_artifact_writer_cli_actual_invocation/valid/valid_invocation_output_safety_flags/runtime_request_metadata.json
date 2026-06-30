@@ -1,0 +1,19 @@
+{
+  "artifact_writer_cli_actual_invocation_requested": true,
+  "artifact_writer_cli_module": "learner_state.frozen_policy_generation_artifact_writer",
+  "case_id": "valid/valid_invocation_output_safety_flags",
+  "file_writing_requested": false,
+  "fixture_source": "step498_synthetic_metadata_only_fixture_root",
+  "forbidden_marker": "none",
+  "invocation_mode": "metadata_only_actual_invocation_boundary",
+  "metadata_only": true,
+  "mode": "artifact_writer_cli_actual_invocation_fixture_contract",
+  "no_oracle_policy": "no_future_or_gold_fields",
+  "prohibited_body_value_stored": false,
+  "prohibited_field_present": false,
+  "relative_fixture_path": "tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation/valid/valid_invocation_output_safety_flags",
+  "runtime_schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_v0.1",
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_request_metadata_v0.1",
+  "suppression_policy": "body_free_summary_only",
+  "synthetic_only": true
+}

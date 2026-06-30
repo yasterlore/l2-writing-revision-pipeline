@@ -324,6 +324,7 @@ not include JSON body examples.
 | Generator scaffold | `frozen_policy_generation_generator_scaffold_result_v0.1`, fixture validation schema | generator scaffold module/docs | Metadata-only generator scaffold | No generated policy body payload. |
 | Artifact writer | artifact writer request/pointer/result/expected schema names | artifact writer module/docs/fixtures | Metadata-only artifact writer result | Body and manifest body suppressed. |
 | Artifact writer CLI integration fixture | `learner_state_frozen_policy_generation_artifact_writer_cli_integration_fixture_validation_v0.1`, `learner_state_frozen_policy_generation_artifact_writer_cli_integration_result_v0.1` | CLI integration validator/docs/fixtures | Static fixture validation | No artifact body or manifest integration execution. |
+| Artifact writer CLI actual invocation fixture | `learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_*_v0.1` metadata schema family | Step498 fixture root and README | Future actual invocation fixture contract | Metadata-only sentinels; no payload bodies or actual invocation correctness claim. |
 | Artifact writer CLI integration runtime fixture | `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation_v0.1`, runtime result/request/pointer/case metadata schema names | runtime fixture validator/docs/fixtures | Future runtime fixture validation | Static only; runtime integration not implemented. |
 | Artifact body | artifact body expected/result/generation schema names | artifact body modules/docs/fixtures | Suppressed and safe-metadata body generation | No body payload in public summaries. |
 | Manifest writer | manifest writer request/result/runtime/file-writing/isolated/production schema names | manifest writer modules/docs/fixtures | Metadata-only manifest writer and file-writing checks | No manifest body; safe-root file writing only. |
@@ -431,6 +432,7 @@ Fixture bodies are not reproduced in this document.
 | Artifact writer fixtures | artifact writer root | Metadata-only artifact writer contract | artifact writer fixture validator | 17 cases confirmed by release-quality status/check output |
 | Artifact writer CLI integration fixtures | CLI integration root | Static generator-to-artifact-writer fixture contract | CLI integration validator | 28 cases / 168 JSON files confirmed |
 | Artifact writer CLI integration runtime fixtures | runtime fixture root | Static future runtime fixture contract | runtime fixture validator | 30 cases / 180 JSON files confirmed by Step479/Step481 docs |
+| Artifact writer CLI actual invocation fixtures | actual invocation fixture root | Future metadata-only actual invocation fixture contract | validator not yet implemented | 32 cases / 192 JSON files confirmed by Step498 fixture root creation |
 | Artifact body fixtures | artifact body roots | Body-suppressed body generation and file-writing boundaries | artifact body validators | artifact body fixture count 18; file-writing 29; isolated-write 22 from release-quality status/check output |
 | Manifest writer fixtures | manifest writer roots | Manifest writer fixture/runtime/file-writing/isolated/production boundaries | manifest writer validators | counts include 30, 31, 39, 25, 32 from release-quality status/check output |
 
@@ -698,6 +700,7 @@ draft should be validated in Step-pretec-doc3 or later.
 | Artifact writer CLI integration fixture validation | validator implemented | yes | yes | yes | yes | yes | no | runtime correctness |
 | Artifact writer CLI integration runtime fixture validation | static validator implemented | yes | yes | yes | no observed | no | no | runtime implementation |
 | Artifact writer CLI integration runtime | no | supporting fixtures exist | supporting validator exists | supporting target exists | no | no | design docs exist | not implemented |
+| Artifact writer CLI actual invocation fixtures | no | yes, Step498 fixture root | no | no | no | no | contract docs exist | validator and actual invocation not implemented |
 | Artifact body generation | safe/suppressed smokes | yes | yes | yes | yes | yes | no | broader CLI integration |
 | Artifact body generation CLI integration | no | partial supporting fixtures | no full integration | no | no | no | design fragments | not implemented |
 | Manifest writer | yes metadata-only | yes | yes | yes | yes | yes | no | broader integration |
@@ -725,6 +728,7 @@ draft should be validated in Step-pretec-doc3 or later.
 | Artifact writer CLI integration fixture | CLI integration validator | CLI integration tests | CLI integration fixtures | CLI integration docs | CLI integration fixture target | CLI integration fixture validation | CLI integration marker | release-quality integrated static validation |
 | Artifact writer CLI integration runtime fixture | runtime fixture validator | runtime fixture tests | runtime fixture root | runtime fixture docs | runtime fixture target | runtime fixture validation | runtime fixture marker | release-quality integrated static validation |
 | Artifact writer CLI integration runtime | `frozen_policy_generation_artifact_writer_cli_integration_runtime.py` | runtime focused tests | supporting runtime fixtures | runtime design docs | none | none | none | metadata-only runtime boundary; standalone CLI |
+| Artifact writer CLI actual invocation fixture | none | none | actual invocation fixture root | actual invocation design and contract docs | none | none | none | fixture-only Step498; validator and actual invocation not implemented |
 | Artifact body | artifact body module/validators | body tests | body fixture roots | body docs | body targets | body labels | body markers | body-suppressed checks |
 | Manifest writer | manifest writer module/validators | manifest writer tests | manifest fixture roots | manifest docs | manifest targets | manifest labels | manifest markers | metadata-only writer/file-writing checks |
 | Release Quality | wrapper script/workflow | wrapper execution | not applicable | release-quality docs | `check-release-quality` | wrapper labels | status markers | implemented wrapper |
@@ -996,6 +1000,7 @@ and JSON files only. Fixture JSON bodies are not copied.
 | `tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/` | artifact writer fixtures | 17 | 3 / 14 | 51 | 3 | artifact writer fixture validator/target | included | artifact body suppressed |
 | `tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/` | artifact writer CLI integration fixtures | 28 | 6 / 22 | 168 | 6 | CLI integration fixture validator/target | included | static fixture contract only |
 | `tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime/` | future runtime fixture validation | 30 | 6 / 24 | 180 | 6 | runtime fixture validator/Makefile target | release-quality static validation | supports Step489 standalone runtime guardrails |
+| `tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation/` | future artifact writer CLI actual invocation fixture validation | 32 | 6 / 26 | 192 | 6 | validator not yet implemented; fixture root created in Step498 | not included | metadata-only/body-free sentinel fixtures; no actual invocation correctness claim |
 | `tests/fixtures/learner_state_frozen_policy_generation_artifact_body/` | artifact body fixtures | 18 | 4 / 14 | 54 | 3 | artifact body fixture validator/target | included | body payload suppressed |
 | `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/` | artifact body file-writing fixtures | 29 | 5 / 24 | 116 | 4 | file-writing fixture validator/target | included | safe-root policy |
 | `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/` | artifact body isolated write fixtures | 22 | 5 / 17 | 110 | 5 | isolated write validator/target | included | residue checks |

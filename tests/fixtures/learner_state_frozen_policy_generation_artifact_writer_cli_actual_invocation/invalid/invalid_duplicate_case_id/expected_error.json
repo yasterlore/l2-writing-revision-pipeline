@@ -1,0 +1,16 @@
+{
+  "case_id": "invalid/invalid_duplicate_case_id",
+  "error_body_suppressed": true,
+  "expected_error_category": "usage_error",
+  "expected_exit_code_category": "nonzero",
+  "expected_reason_code": "duplicate_case_id",
+  "fail_closed": false,
+  "forbidden_marker": "duplicate_case_id",
+  "input_error": false,
+  "mismatch": false,
+  "prohibited_body_value_stored": false,
+  "public_safe_error": true,
+  "raw_content_suppressed": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_expected_error_v0.1",
+  "usage_error": true
+}

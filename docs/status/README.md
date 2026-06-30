@@ -281,6 +281,11 @@ Related recap:
   not create a fixture root or fixture JSON, does not implement a validator or
   actual invocation, and does not claim artifact writer CLI actual invocation
   correctness or production readiness.
+- [Artifact writer CLI actual invocation fixtures](../../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation/README.md):
+  Step498 synthetic metadata-only fixture root for future artifact writer CLI
+  actual invocation validation. It is not a status marker, does not implement a
+  validator or actual invocation, and does not claim artifact writer CLI actual
+  invocation correctness or production readiness.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

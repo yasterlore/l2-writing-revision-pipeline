@@ -1861,6 +1861,15 @@ written, no artifact body is produced, and no performance metric is computed.
   workflow files, connect artifact body generation integration, connect
   manifest writer integration, write files, use real data, compute metrics, or
   claim production readiness.
+- Step498: created the synthetic metadata-only artifact writer CLI actual
+  invocation fixture root:
+  [Artifact writer CLI actual invocation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation/README.md).
+  The root contains 32 case directories and 192 JSON files. This does not
+  implement a validator, update runtime actual invocation, change Python
+  code/tests, change Makefile, change the release-quality wrapper, change
+  workflow files, connect artifact body generation integration, connect
+  manifest writer integration, write files, use real data, compute metrics, or
+  claim production readiness.
 
 ## Related Documents
 

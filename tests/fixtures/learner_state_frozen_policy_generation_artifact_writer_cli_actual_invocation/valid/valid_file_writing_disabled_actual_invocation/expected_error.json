@@ -1,0 +1,16 @@
+{
+  "case_id": "valid/valid_file_writing_disabled_actual_invocation",
+  "error_body_suppressed": true,
+  "expected_error_category": "none",
+  "expected_exit_code_category": "zero",
+  "expected_reason_code": "none",
+  "fail_closed": false,
+  "forbidden_marker": "none",
+  "input_error": false,
+  "mismatch": false,
+  "prohibited_body_value_stored": false,
+  "public_safe_error": false,
+  "raw_content_suppressed": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_expected_error_v0.1",
+  "usage_error": false
+}

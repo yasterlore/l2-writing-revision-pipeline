@@ -1,0 +1,37 @@
+{
+  "artifact_body_payload_stored": false,
+  "artifact_writer_schema": "supported_metadata_only_v0.1",
+  "case_id": "invalid/invalid_pointer_body_present",
+  "command_label": "artifact_writer_cli_actual_invocation_future_boundary",
+  "expected_exit_code_category": "nonzero",
+  "expected_invocation_flags": {
+    "artifact_body_generation_invoked": false,
+    "artifact_writer_cli_invocation_planned": true,
+    "artifact_writer_cli_invoked": false,
+    "file_writing_enabled": false,
+    "manifest_writer_invoked": false
+  },
+  "file_contents_stored": false,
+  "forbidden_marker": "pointer_body_present",
+  "generated_policy_body_stored": false,
+  "manifest_body_stored": false,
+  "module_name": "learner_state.frozen_policy_generation_artifact_writer",
+  "no_oracle_flags": {
+    "metadata_only": true,
+    "no_oracle": true,
+    "synthetic_only": true
+  },
+  "raw_stderr_stored": false,
+  "raw_stdout_stored": false,
+  "relative_artifact_writer_pointer": "invalid/invalid_pointer_body_present/artifact_writer_cli_invocation_metadata.json",
+  "relative_request_pointer": "invalid/invalid_pointer_body_present/runtime_request_metadata.json",
+  "safe_mode": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_metadata_v0.1",
+  "summary_mode": "public_safe_metadata_only",
+  "suppression_flags": {
+    "body_suppressed": true,
+    "content_suppressed": true,
+    "raw_output_suppressed": true
+  },
+  "unsafe_output_sentinel_present": false
+}

@@ -181,6 +181,24 @@ Confirm logger-web coverage against repository evidence:
 Do not treat logger-web checks as deployment readiness or real participant
 collection readiness.
 
+## 9.1 Step498 Fixture Root Review
+
+Confirm the Step498 artifact writer CLI actual invocation fixture root is
+covered as fixture-only evidence:
+
+- `tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation/`
+- 32 case directories
+- 192 metadata-only JSON files
+- 1 fixture README
+- validator not implemented
+- runtime actual invocation not implemented
+- Makefile target, release-quality wrapper, and workflow unchanged
+
+Do not treat this fixture root as artifact writer CLI actual invocation
+correctness, artifact body generation integration correctness, manifest writer
+integration correctness, production readiness, real-data readiness, or model
+performance evidence.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

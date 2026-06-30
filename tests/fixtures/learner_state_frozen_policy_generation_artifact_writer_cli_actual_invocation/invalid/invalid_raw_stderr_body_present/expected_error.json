@@ -1,0 +1,16 @@
+{
+  "case_id": "invalid/invalid_raw_stderr_body_present",
+  "error_body_suppressed": true,
+  "expected_error_category": "fail_closed",
+  "expected_exit_code_category": "nonzero",
+  "expected_reason_code": "raw_stderr_body_present",
+  "fail_closed": true,
+  "forbidden_marker": "raw_stderr_body_present",
+  "input_error": false,
+  "mismatch": false,
+  "prohibited_body_value_stored": false,
+  "public_safe_error": true,
+  "raw_content_suppressed": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_expected_error_v0.1",
+  "usage_error": false
+}

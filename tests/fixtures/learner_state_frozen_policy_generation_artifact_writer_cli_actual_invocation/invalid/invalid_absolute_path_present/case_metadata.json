@@ -1,0 +1,16 @@
+{
+  "body_suppressed": true,
+  "case_id": "invalid/invalid_absolute_path_present",
+  "case_intent": "metadata_only_actual_invocation_fixture_contract",
+  "case_kind": "invalid",
+  "case_title": "invalid absolute path present",
+  "content_suppressed": true,
+  "expected_exit_code_category": "nonzero",
+  "expected_reason_code": "absolute_path_present",
+  "expected_status": "fail_closed",
+  "forbidden_marker": "absolute_path_present",
+  "metadata_only": true,
+  "no_oracle": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_case_metadata_v0.1",
+  "synthetic_only": true
+}

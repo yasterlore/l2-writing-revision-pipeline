@@ -28,6 +28,8 @@ The current pipeline supports public-safe research-software development around:
   artifact body, and manifest writer metadata-only checks
 - runtime metadata-only manifest file writing smoke checks under a controlled
   output root
+- synthetic metadata-only fixture roots for future artifact writer CLI actual
+  invocation boundary validation
 
 All public fixtures and checks are synthetic-only. The project is not at the
 stage of handling real participant data or raw learner text.
@@ -233,6 +235,7 @@ Not currently implemented or not claimed:
 - [Private real-data readiness checklist](docs/private_real_data_readiness_checklist.md)
 - [Milestone 13 frozen policy generation scaffold runtime recap](docs/milestone_13_frozen_policy_generation_scaffold_runtime_recap.md)
 - [Artifact writer CLI integration design](docs/frozen_policy_generation_artifact_writer_cli_integration_design.md)
+- [Artifact writer CLI actual invocation fixture contract design](docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_contract_design.md)
 
 ## CI
 

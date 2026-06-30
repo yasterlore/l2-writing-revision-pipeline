@@ -431,3 +431,26 @@ This design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 20. Step498 Fixture Root Creation Status
+
+Step498 creates the synthetic metadata-only fixture root proposed by this
+contract:
+
+[Artifact writer CLI actual invocation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation/README.md)
+
+Confirmed Step498 counts:
+
+- `total_cases`: 32
+- `valid_cases`: 6
+- `invalid_cases`: 26
+- `json_files_per_case`: 6
+- `total_json_files`: 192
+- `root_readme`: 1
+
+The fixture root uses metadata-only sentinel flags. It does not implement a
+validator, update runtime actual invocation, implement artifact writer CLI
+actual invocation, change Python code/tests, change Makefile, change the
+release-quality wrapper, change workflow files, connect artifact body
+generation integration, connect manifest writer integration, enable file
+writing, use real data, compute metrics, or claim production readiness.

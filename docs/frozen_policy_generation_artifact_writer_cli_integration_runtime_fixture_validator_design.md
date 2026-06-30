@@ -521,3 +521,18 @@ code/tests, change Makefile, change the release-quality wrapper, change
 workflow files, connect artifact body generation integration, connect manifest
 writer integration, write files, use real data, compute metrics, or claim
 production readiness.
+
+## 25. Step498 Actual Invocation Fixture Root Creation Status
+
+Step498 creates the separate synthetic metadata-only fixture root for future
+artifact writer CLI actual invocation validation:
+
+[Artifact writer CLI actual invocation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation/README.md)
+
+The new root contains 32 case directories and 192 JSON files. This static
+runtime fixture validator design remains unchanged. Step498 does not implement
+an actual invocation validator, update runtime actual invocation, change Python
+code/tests, change Makefile, change the release-quality wrapper, change
+workflow files, connect artifact body generation integration, connect manifest
+writer integration, enable file writing, use real data, compute metrics, or
+claim production readiness.

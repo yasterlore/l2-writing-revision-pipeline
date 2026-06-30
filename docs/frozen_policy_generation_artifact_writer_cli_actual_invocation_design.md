@@ -346,3 +346,17 @@ change Python code/tests, change Makefile, change the release-quality wrapper,
 change workflow files, connect artifact body generation integration, connect
 manifest writer integration, write files, use real data, compute metrics, or
 claim production readiness.
+
+## 17. Step498 Fixture Root Creation Status
+
+Step498 creates the synthetic metadata-only fixture root for the future actual
+invocation fixture contract:
+
+[Artifact writer CLI actual invocation fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation/README.md)
+
+The root contains 32 case directories and 192 metadata-only JSON files. This
+does not implement actual invocation, update the runtime, implement a
+validator, change Python code/tests, change Makefile, change the
+release-quality wrapper, change workflow files, connect artifact body
+generation integration, connect manifest writer integration, enable file
+writing, use real data, compute metrics, or claim production readiness.

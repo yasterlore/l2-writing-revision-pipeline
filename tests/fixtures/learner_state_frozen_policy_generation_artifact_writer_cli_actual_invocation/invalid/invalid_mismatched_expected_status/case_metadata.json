@@ -1,0 +1,16 @@
+{
+  "body_suppressed": true,
+  "case_id": "invalid/invalid_mismatched_expected_status",
+  "case_intent": "metadata_only_actual_invocation_fixture_contract",
+  "case_kind": "invalid",
+  "case_title": "invalid mismatched expected status",
+  "content_suppressed": true,
+  "expected_exit_code_category": "nonzero",
+  "expected_reason_code": "mismatched_expected_status",
+  "expected_status": "pass_expected_by_fixture_sentinel",
+  "forbidden_marker": "mismatched_expected_status",
+  "metadata_only": true,
+  "no_oracle": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_case_metadata_v0.1",
+  "synthetic_only": true
+}

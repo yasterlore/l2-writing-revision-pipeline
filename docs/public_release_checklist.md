@@ -4271,6 +4271,19 @@ body generation integration correctness, manifest writer integration
 correctness, real-data readiness, model performance, F1, accuracy, ECE, or
 AURCC.
 
+For Step498, review the synthetic metadata-only
+[artifact writer CLI actual invocation fixture root](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation/README.md).
+Confirm it contains 32 case directories, 192 JSON files, and 1 README. Confirm
+the files are metadata-only sentinel fixtures and do not store prohibited
+payload bodies or raw logs. Confirm Step498 does not implement a validator,
+update runtime actual invocation, change Python code/tests, change Makefile,
+change the release-quality wrapper, change workflow files, connect artifact
+body generation integration, connect manifest writer integration, write files,
+use real data, use metrics, or claim production readiness. Confirm it does not
+claim artifact writer CLI actual invocation correctness, artifact body
+generation integration correctness, manifest writer integration correctness,
+real-data readiness, model performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
