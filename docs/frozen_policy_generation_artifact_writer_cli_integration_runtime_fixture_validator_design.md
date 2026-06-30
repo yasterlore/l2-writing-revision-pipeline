@@ -438,3 +438,18 @@ the Step481 validator, change fixture JSON, add runtime code, add a CLI, change
 Makefile, change the release-quality wrapper, execute artifact body generation
 integration, execute manifest writer integration, or claim production
 readiness.
+
+## 19. Step489 Runtime Implementation Status
+
+Step489 implements the initial standalone metadata-only runtime module, CLI,
+and focused tests. The Step481 fixture validator remains a static validator
+and is not replaced.
+
+- runtime module:
+  `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+- focused tests:
+  `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+
+The runtime does not write files, invoke artifact body generation, invoke
+manifest writer, generate manifest bodies, generate policy bodies, or claim
+production readiness.

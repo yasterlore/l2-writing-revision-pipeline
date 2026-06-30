@@ -365,7 +365,19 @@ Makefile target unchanged. It does not add runtime code, add a runtime CLI,
 change Makefile, change the release-quality wrapper, change workflow files,
 change fixture JSON, or claim production readiness.
 
-## 21. Public-Safe Checklist
+## 21. Step489 Runtime Implementation Status
+
+Step489 implements the initial standalone metadata-only runtime module, CLI,
+and focused tests:
+
+- `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+
+This document's fixture validator Makefile target remains unchanged. The new
+runtime has no Makefile target yet and is not in release-quality as a runtime
+check.
+
+## 22. Public-Safe Checklist
 
 - no raw logs
 - no full job output

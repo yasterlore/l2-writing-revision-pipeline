@@ -435,3 +435,15 @@ The design does not change the release-quality wrapper, workflow files,
 Makefile, Python code/tests, fixture JSON, artifact body generation
 integration, manifest writer integration, real-data use, metrics, or
 production readiness.
+
+## 21. Step489 Runtime Implementation Status
+
+Step489 implements the initial standalone metadata-only artifact writer CLI
+integration runtime module, CLI, and focused tests:
+
+- `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+
+This fixture validator release-quality integration remains unchanged. The
+Step489 runtime is not yet added to Makefile or release-quality as a runtime
+check.

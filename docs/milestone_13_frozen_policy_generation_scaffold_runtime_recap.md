@@ -1777,6 +1777,16 @@ written, no artifact body is produced, and no performance metric is computed.
   change the release-quality wrapper, change workflow files, change fixture
   JSON, connect artifact body generation integration, connect manifest writer
   integration, use real data, compute metrics, or claim production readiness.
+- Step489: implemented the initial metadata-only artifact writer CLI
+  integration runtime module, CLI, and focused tests:
+  `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+  and
+  `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`.
+  The runtime returns body-free public-safe summaries and does not write files,
+  invoke artifact body generation, invoke manifest writer, generate manifest
+  bodies, generate policy bodies, use real data, compute metrics, or claim
+  production readiness. It is not yet connected to a Makefile runtime target
+  or release-quality runtime wrapper check.
 
 ## Related Documents
 

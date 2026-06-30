@@ -205,7 +205,8 @@ specification content.
 | frozen policy validators | frozen policy/generation modules | 12, 19 | covered | Counts summarized by family. |
 | scaffold/generator scaffold validators | scaffold modules | 12, 19 | covered | Covered with runtime distinction. |
 | artifact writer validators | writer fixture and CLI integration validators | 12, 16, 19 | covered | Strong coverage. |
-| artifact writer CLI integration runtime fixture validator | runtime fixture validator | 12, 16, 19, 21 | covered | Standalone status correctly noted. |
+| artifact writer CLI integration runtime fixture validator | runtime fixture validator | 12, 16, 19, 21 | covered | Release-quality static validation status noted. |
+| artifact writer CLI integration runtime module | runtime module and focused tests | 12, 16, 19, 21 | covered | Step489 standalone metadata-only runtime boundary noted; no Makefile target yet. |
 | artifact body validators | fixture/file-writing/isolated modules | 12, 15, 19 | covered | Exact module-by-module counts can be expanded. |
 | manifest writer validators | fixture/runtime/file-writing/isolated/production modules | 12, 15, 19 | covered | Strong family coverage. |
 
@@ -264,8 +265,9 @@ should be added.
 | synthetic policy | wrapper script block | 13 | covered |
 | logger-web checks | wrapper script block | 13 | covered |
 
-The draft also correctly notes that artifact writer CLI integration runtime
-fixture validation is standalone and not observed in the current wrapper.
+The draft also notes that artifact writer CLI integration runtime fixture
+validation is in the wrapper, while the Step489 runtime module is currently a
+standalone metadata-only runtime boundary with no Makefile target yet.
 
 ## 15. Status Marker Coverage Validation
 
@@ -297,7 +299,9 @@ specification draft.
 
 Required non-implemented/non-proof statements are present:
 
-- artifact writer CLI integration runtime is not implemented
+- artifact writer CLI integration runtime has an initial metadata-only
+  standalone implementation but no Makefile target or release-quality runtime
+  wrapper integration yet
 - artifact body generation CLI integration is not implemented
 - manifest writer integration is not implemented
 - manifest body generation is not implemented
@@ -397,7 +401,7 @@ privacy/legal/IRB readiness.
   completed as docs-only appendices and checklist
 - Step-pretec-doc6: final safety/non-proof review, completed as a docs-only
   final review record before external reviewer pass
-- Later: artifact writer CLI integration runtime implementation design and
-  implementation, separate from this specification coverage work
+- Later: artifact writer CLI integration runtime Makefile target design and
+  integration staging, separate from this specification coverage work
 - Later: artifact body generation CLI integration design and implementation
 - Later: manifest writer integration design and implementation

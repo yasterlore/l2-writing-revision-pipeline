@@ -59,7 +59,8 @@ Python is used for research scaffolds and validation prototypes:
 - selective prediction and frozen policy validation
 - frozen policy generation scaffold, generator scaffold, artifact writer,
   artifact body, and manifest writer metadata-only validation
-- artifact writer CLI integration fixture and runtime-fixture static validators
+- artifact writer CLI integration fixture/runtime-fixture static validators and
+  an initial metadata-only artifact writer CLI integration runtime boundary
 - metadata-only runtime smoke checks, including opt-in manifest file writing
 
 ## Safety Posture
@@ -122,6 +123,9 @@ At a high level, it runs:
 - frozen policy generation scaffold and generator scaffold fixture/runtime
   checks
 - artifact writer fixture and runtime checks
+- artifact writer CLI integration fixture/runtime-fixture checks; the initial
+  artifact writer CLI integration runtime module remains standalone and
+  metadata-only until a later Makefile/release-quality step
 - artifact body fixture, generation, safe-metadata generation, file-writing
   fixture, and isolated write checks
 - manifest writer fixture, runtime fixture, no-file runtime, file-writing

@@ -676,3 +676,17 @@ It does not add Python runtime code, add a CLI, change Makefile, change the
 release-quality wrapper, change workflow files, change fixture JSON, connect
 artifact body generation integration, connect manifest writer integration, use
 real data, compute metrics, or claim production readiness.
+
+## 42. Step489 Runtime Implementation Status
+
+Step489 implements the initial standalone metadata-only artifact writer CLI
+integration runtime module, CLI, and focused tests:
+
+- `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+
+The runtime returns public-safe body-free summaries from fixture metadata or
+explicit metadata paths. It does not call artifact body generation, call
+manifest writer, generate manifest bodies, generate policy bodies, write
+files, use real data, compute metrics, or claim production readiness. It is
+not yet connected to Makefile or release-quality runtime wrapper checks.

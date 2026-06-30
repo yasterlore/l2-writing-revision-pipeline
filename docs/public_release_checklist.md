@@ -3258,7 +3258,7 @@ For Step408, review the docs-only
 Confirm it defines only the future file-writing boundary: metadata-only
 manifest file mode, future `--manifest-out` / overwrite policy shape, safe
 root `tmp/frozen_policy_generation_manifest/`, relative path policy,
-allowed metadata fields, forbidden body/payload/raw/logit/private/absolute
+allowed metadata fields, forbidden body/payload/raw/logit/private or absolute
 content, fail-closed behavior, fixture staging, validator staging, isolated
 write validation staging, Makefile/release-quality staging, relation to the
 existing no-file runtime smoke, and safety interpretation. Confirm it does
@@ -4169,6 +4169,17 @@ JSON, connect artifact body generation integration, connect manifest writer
 integration, use real data, compute metrics, or claim runtime correctness,
 production readiness, real-data readiness, model performance, F1, accuracy,
 ECE, or AURCC.
+
+For Step489, review
+`python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+and
+`python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`.
+Confirm the initial runtime is metadata-only, body-free, no-file-writing by
+default, standalone, and not yet connected to Makefile or the release-quality
+runtime wrapper chain. Confirm it does not invoke artifact body generation,
+invoke manifest writer, generate manifest bodies, generate policy bodies, use
+real data, compute metrics, or claim production readiness, real-data
+readiness, model performance, F1, accuracy, ECE, or AURCC.
 
 ## 7. Checks To Run
 

@@ -199,12 +199,25 @@ the release-quality wrapper, change workflow files, connect artifact body
 generation integration, connect manifest writer integration, or claim
 production readiness.
 
+## Runtime Module And CLI
+
+Step489 implements the initial standalone metadata-only runtime module and CLI:
+
+- `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+- `python -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+
+The runtime can consume this fixture root or explicit metadata paths and emits
+body-free public-safe summaries. It does not write files, invoke artifact body
+generation, invoke manifest writer, generate manifest bodies, generate policy
+bodies, or connect to Makefile/release-quality runtime checks yet.
+
 ## Implementation Status
 
 - fixture root created: yes
 - fixture JSON created: yes
 - validator implemented: yes
-- runtime implemented: no
+- runtime implemented: yes, initial standalone metadata-only runtime boundary
 - runtime implementation design: yes, docs-only / planning-only
 - Makefile target added: yes
 - release-quality wrapper changed: yes, static validator target only

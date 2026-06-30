@@ -5,10 +5,11 @@
 This document is the Step488 design-only / planning-only implementation design
 for a future artifact writer CLI integration runtime.
 
-This document does not implement Python runtime code, add a CLI, change the
-Makefile, change the release-quality wrapper, change workflow YAML, change
-fixture JSON, connect artifact body generation integration, connect manifest
-writer integration, or generate manifest bodies.
+Step489 implements the initial Python runtime module, CLI, and focused tests
+described by this design. The implementation does not change the Makefile,
+change the release-quality wrapper, change workflow YAML, change fixture JSON,
+connect artifact body generation integration, connect manifest writer
+integration, write files, or generate manifest bodies.
 
 This document is not production readiness evidence, real-data readiness
 evidence, model performance evidence, F1 evidence, accuracy evidence, ECE
@@ -69,7 +70,8 @@ Future CLI candidate:
 
 `python -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime`
 
-Step488 does not create this module or CLI.
+Step489 creates this module and CLI as an initial standalone metadata-only
+runtime boundary.
 
 ## 5. Proposed Runtime Inputs
 
@@ -168,8 +170,8 @@ The future implementation should follow this flow:
     command output.
 12. Ensure no output residue remains after failure.
 
-Step488 does not implement the call in step 8. It records the call as future
-approved behavior only.
+Step489 keeps the call in step 8 disabled and returns a metadata-only
+invocation plan summary instead.
 
 ## 8. Artifact Writer CLI Invocation Boundary
 
@@ -203,7 +205,7 @@ Initial future implementation should keep file writing disabled by default:
   validator, implementation, Makefile, release-quality, and remote status
   chain
 
-Step488 does not implement file writing.
+Step489 does not implement file writing.
 
 ## 10. Error and Fail-Closed Design
 
@@ -277,9 +279,8 @@ These tests should remain synthetic-only and metadata-only.
 
 ## 13. Proposed Implementation Staging
 
-Suggested future staging:
+Suggested future staging after Step489:
 
-- Step489: artifact writer CLI integration runtime implementation
 - Step490: runtime CLI Makefile target design
 - Step491: runtime CLI Makefile target implementation
 - Step492: runtime release-quality integration design
@@ -287,7 +288,7 @@ Suggested future staging:
 - Step494: remote/manual run record workflow design
 - Step495: remote status marker
 
-Step488 stops at implementation design.
+Step489 stops at the standalone runtime module, CLI, and focused tests.
 
 ## 14. Non-Claims
 
@@ -302,9 +303,28 @@ This document does not claim:
 - manifest writer integration correctness
 - generated policy quality
 - learner-state estimator correctness
-- completed runtime implementation
+- Makefile runtime target
+- release-quality runtime wrapper integration
 
-## 15. Public-Safe Checklist
+## 16. Step489 Implementation Status
+
+Step489 implements:
+
+- `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+- CLI entrypoint:
+  `python -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime`
+- runtime schema version:
+  `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_v0.1`
+- mode: `artifact_writer_cli_integration_runtime`
+
+The implementation is standalone and metadata-only. It returns public-safe
+runtime summaries, keeps file writing disabled, does not invoke artifact body
+generation, does not invoke manifest writer, does not generate manifest
+bodies, does not generate policy bodies, and does not connect to Makefile or
+release-quality runtime wrapper checks yet.
+
+## 17. Public-Safe Checklist
 
 - no raw logs
 - no full job output

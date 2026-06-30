@@ -66,10 +66,12 @@ Confirm that each major component is categorized correctly:
 - not implemented
 - future work
 
-Pay special attention that the following remain marked as not implemented or
-future work unless a later implementation step exists:
+Pay special attention that the following remain marked with their current
+implementation boundaries:
 
-- artifact writer CLI integration runtime
+- artifact writer CLI integration runtime: initial metadata-only standalone
+  runtime module exists after Step489, with no Makefile target or
+  release-quality runtime wrapper integration yet
 - artifact body generation CLI integration
 - manifest writer integration
 - manifest body generation

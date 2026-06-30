@@ -311,3 +311,16 @@ The design does not implement runtime code, add a CLI, change Makefile, change
 the release-quality wrapper, change workflow files, change fixture JSON, or
 claim runtime correctness, real-data readiness, model performance, or
 production readiness.
+
+## 16. Step489 Runtime Implementation Status
+
+Step489 implements the initial standalone metadata-only runtime module, CLI,
+and focused tests:
+
+- `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+
+The Step489 runtime is not a remote status marker update, not a workflow
+change, and not a release-quality runtime wrapper integration. It writes no
+files, invokes no artifact body generation, invokes no manifest writer, and
+does not claim production readiness.

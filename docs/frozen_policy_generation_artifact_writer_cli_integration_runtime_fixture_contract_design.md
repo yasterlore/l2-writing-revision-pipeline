@@ -530,3 +530,16 @@ The design does not change this fixture root or fixture JSON, implement a
 runtime, add a CLI, change Makefile, change the release-quality wrapper,
 connect artifact body generation integration, connect manifest writer
 integration, or claim production readiness.
+
+## 21. Step489 Runtime Implementation Status
+
+Step489 adds the initial standalone metadata-only runtime module and focused
+tests that use this fixture root as guardrails:
+
+- `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
+
+The fixture JSON is unchanged. The runtime does not write files, invoke
+artifact body generation, invoke manifest writer, generate manifest bodies,
+generate policy bodies, or connect to Makefile/release-quality runtime checks
+yet.
