@@ -373,9 +373,9 @@ and focused tests:
 - `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
 - `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
 
-This document's fixture validator Makefile target remains unchanged. The new
-runtime has no Makefile target yet and is not in release-quality as a runtime
-check.
+This document's fixture validator Makefile target remains unchanged. Step491
+adds a separate standalone runtime Makefile target, but that runtime target is
+not in release-quality as a runtime check yet.
 
 ## 22. Step490 Runtime Makefile Target Design Status
 

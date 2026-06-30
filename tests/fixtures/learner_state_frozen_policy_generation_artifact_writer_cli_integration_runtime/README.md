@@ -225,6 +225,19 @@ perform artifact writer CLI actual invocation, connect artifact body
 generation integration, connect manifest writer integration, write files, or
 claim production readiness.
 
+## Runtime Makefile Target
+
+Step491 implements the standalone Makefile target for the Step489 runtime CLI:
+
+- `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime`
+
+The target runs one valid synthetic metadata-only fixture case and emits a
+body-free public-safe runtime summary. It does not change the release-quality
+wrapper, change workflow files, change Python code/tests, change fixture JSON,
+perform artifact writer CLI actual invocation, connect artifact body
+generation integration, connect manifest writer integration, write files, or
+claim production readiness.
+
 ## Implementation Status
 
 - fixture root created: yes
@@ -234,7 +247,7 @@ claim production readiness.
 - runtime implementation design: yes, docs-only / planning-only
 - runtime Makefile target design: yes, docs-only
 - static validator Makefile target added: yes
-- runtime Makefile target added: no
+- runtime Makefile target added: yes, standalone only
 - release-quality wrapper changed: yes, static validator target only
 - remote run record workflow design: yes
 - remote status marker created: yes, public-safe pass-only/count-only marker

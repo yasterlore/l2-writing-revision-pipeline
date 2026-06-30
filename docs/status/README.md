@@ -242,6 +242,12 @@ Related recap:
   CLI. It is not a status marker, does not change Makefile, does not change
   the wrapper, does not change workflow YAML, and does not claim runtime
   release-quality evidence or production readiness.
+- `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime`:
+  Step491 standalone Makefile target for the Step489 runtime CLI. It is not a
+  status marker, not a workflow change, and not release-quality runtime
+  wrapper evidence. It writes no files and does not invoke artifact body
+  generation, manifest writer, or artifact writer CLI actual downstream
+  behavior.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

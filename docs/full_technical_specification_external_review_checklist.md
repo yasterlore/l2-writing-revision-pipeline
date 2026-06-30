@@ -69,9 +69,9 @@ Confirm that each major component is categorized correctly:
 Pay special attention that the following remain marked with their current
 implementation boundaries:
 
-- artifact writer CLI integration runtime: initial metadata-only standalone
-  runtime module exists after Step489, with no Makefile target or
-  release-quality runtime wrapper integration yet
+- artifact writer CLI integration runtime: initial metadata-only runtime
+  module exists after Step489, with a Step491 standalone Makefile smoke target
+  and no release-quality runtime wrapper integration yet
 - artifact body generation CLI integration
 - manifest writer integration
 - manifest body generation

@@ -124,8 +124,8 @@ At a high level, it runs:
   checks
 - artifact writer fixture and runtime checks
 - artifact writer CLI integration fixture/runtime-fixture checks; the initial
-  artifact writer CLI integration runtime module remains standalone and
-  metadata-only until a later Makefile/release-quality step
+  artifact writer CLI integration runtime smoke target remains standalone and
+  metadata-only until a later release-quality step
 - artifact body fixture, generation, safe-metadata generation, file-writing
   fixture, and isolated write checks
 - manifest writer fixture, runtime fixture, no-file runtime, file-writing

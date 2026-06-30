@@ -6,12 +6,12 @@ This document is the Step490 design-only Makefile target design for running
 the Step489 artifact writer CLI integration runtime module from a future
 standalone Makefile target.
 
-This document does not implement the Makefile target, change the
-release-quality wrapper, change workflow YAML, change Python code or tests,
-change fixture JSON, invoke the artifact writer CLI for actual downstream
-work, connect artifact body generation integration, connect manifest writer
-integration, generate manifest bodies, generate policy bodies, or implement
-file writing.
+Step491 implements the standalone Makefile target described here. This
+document still does not change the release-quality wrapper, change workflow
+YAML, change Python code or tests, change fixture JSON, invoke the artifact
+writer CLI for actual downstream work, connect artifact body generation
+integration, connect manifest writer integration, generate manifest bodies,
+generate policy bodies, or implement file writing.
 
 This document is not production readiness evidence, real-data readiness
 evidence, model performance evidence, F1 evidence, accuracy evidence, ECE
@@ -41,11 +41,13 @@ learner-state estimator correctness evidence.
 - Step488 created the runtime implementation design.
 - Step489 implemented the initial standalone metadata-only runtime module,
   CLI, and focused tests.
+- Step490 created this Makefile target design.
+- Step491 implemented the standalone Makefile target.
 
-Step489 does not add a Makefile target or release-quality runtime wrapper
-check. It also does not perform artifact writer CLI actual invocation,
-artifact body generation, manifest writer integration, generated policy body
-generation, or file writing.
+Step491 adds a standalone Makefile target only. It does not add
+release-quality runtime wrapper integration, workflow changes, artifact writer
+CLI actual invocation, artifact body generation, manifest writer integration,
+generated policy body generation, or file writing.
 
 ## 3. Current Runtime CLI
 
@@ -72,9 +74,9 @@ The runtime can consume the Step479 runtime fixture root or explicit metadata
 paths. It returns an invocation plan summary instead of invoking artifact body
 generation or manifest writer behavior.
 
-## 4. Proposed Target Name
+## 4. Target Name
 
-Recommended target name:
+Implemented target name:
 
 ```text
 check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime
@@ -90,9 +92,9 @@ Rationale:
   body generation, manifest writer integration, file writing, or production
   readiness.
 
-## 5. Proposed Command
+## 5. Target Command
 
-Recommended future Makefile command:
+Implemented Makefile command:
 
 ```bash
 PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime \
@@ -100,19 +102,19 @@ PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_wri
   --fixture-case valid/valid_minimal_metadata_runtime_pass
 ```
 
-The target should use one valid synthetic metadata-only fixture case as a
-runtime smoke. It should not read or print fixture JSON bodies. It should not
+The target uses one valid synthetic metadata-only fixture case as a runtime
+smoke. It should not read or print fixture JSON bodies. It should not
 use invalid fixture cases for the standalone smoke; invalid fail-closed
 coverage remains in focused tests and the Step481 static runtime fixture
 validator.
 
-The target should prefer the runtime's default human summary for the initial
-Makefile target. A later target may choose `--json` only if a separate design
+The target uses the runtime's default human summary for the initial Makefile
+target. A later target may choose `--json` only if a separate design
 requires machine-readable summary checks without copying payload bodies.
 
-## 6. Proposed Help Text
+## 6. Help Text
 
-Recommended help text:
+Implemented help text:
 
 ```text
 check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime  Run artifact writer CLI integration runtime smoke
@@ -120,7 +122,7 @@ check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-run
 
 ## 7. Expected Safe Output
 
-The future target should allow only body-free public-safe summary output.
+The target should allow only body-free public-safe summary output.
 
 Expected safe fields or lines include:
 
@@ -156,7 +158,7 @@ Expected success summary for the recommended valid fixture:
 
 ## 8. Exit-Code Behavior
 
-The future target should not transform the runtime CLI exit code.
+The target should not transform the runtime CLI exit code.
 
 Expected interpretation:
 
@@ -170,7 +172,7 @@ turn expected invalid cases into successful Makefile target runs.
 
 ## 9. File-Writing And Residue Policy
 
-The future Makefile target should:
+The Makefile target should:
 
 - write no files
 - create no artifact body output
@@ -219,14 +221,14 @@ Existing static runtime fixture validator target:
 That target validates the 30-case / 180-JSON synthetic metadata-only fixture
 root and is already in the release-quality wrapper.
 
-Proposed runtime smoke target:
+Implemented runtime smoke target:
 
 `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime`
 
-The proposed target should run the Step489 runtime CLI over one valid
-metadata-only fixture case. It should verify terminal invocation and safe
-runtime summary behavior, but it should not replace the static fixture
-validator, focused tests, or future release-quality integration.
+The target runs the Step489 runtime CLI over one valid metadata-only fixture
+case. It verifies terminal invocation and safe runtime summary behavior, but
+it does not replace the static fixture validator, focused tests, or future
+release-quality integration.
 
 ## 12. Future Release-Quality Staging
 
@@ -245,10 +247,12 @@ That future design should define:
 - remote status marker staging
 
 Step490 does not change the wrapper.
+Step491 also does not change the wrapper.
 
 ## 13. Verification Plan For Future Implementation
 
-When the Makefile target is implemented later, focused verification should run:
+For the Step491 implementation and future maintenance, focused verification
+should run:
 
 - `git status --short`
 - the new Makefile target
@@ -264,8 +268,8 @@ When the Makefile target is implemented later, focused verification should run:
 - docs/code safety scan
 - residue checks for artifact body and manifest tmp roots
 
-The implementation step should keep release-quality wrapper and workflow YAML
-unchanged unless that future step explicitly scopes those changes.
+The Step491 implementation keeps release-quality wrapper and workflow YAML
+unchanged. Future steps should do the same unless explicitly scoped.
 
 ## 14. Non-Claims
 
@@ -281,7 +285,6 @@ This design does not claim:
 - manifest body generation correctness
 - generated policy quality
 - learner-state estimator correctness
-- Makefile target implemented
 - release-quality runtime wrapper integration implemented
 
 ## 15. Public-Safe Checklist
@@ -312,14 +315,12 @@ This design does not claim:
 
 Suggested future staging:
 
-1. Step491: artifact writer CLI integration runtime standalone Makefile target
-   implementation.
-2. Step492: artifact writer CLI integration runtime release-quality
+1. Step492: artifact writer CLI integration runtime release-quality
    integration design.
-3. Step493: artifact writer CLI integration runtime release-quality wrapper
+2. Step493: artifact writer CLI integration runtime release-quality wrapper
    integration.
-4. Step494: remote/manual run record workflow design.
-5. Step495: remote/manual status marker.
+3. Step494: remote/manual run record workflow design.
+4. Step495: remote/manual status marker.
 
 Artifact writer CLI actual invocation, artifact body generation integration,
 manifest writer integration, manifest body generation, and file-writing

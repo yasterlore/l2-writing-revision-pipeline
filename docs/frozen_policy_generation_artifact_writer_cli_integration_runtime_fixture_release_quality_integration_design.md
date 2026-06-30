@@ -445,8 +445,8 @@ integration runtime module, CLI, and focused tests:
 - `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`
 
 This fixture validator release-quality integration remains unchanged. The
-Step489 runtime is not yet added to Makefile or release-quality as a runtime
-check.
+Step489 runtime is added to a standalone Makefile target in Step491, but is
+not yet added to release-quality as a runtime check.
 
 ## 22. Step490 Runtime Makefile Target Design Status
 

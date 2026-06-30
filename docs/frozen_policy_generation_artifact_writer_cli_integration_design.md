@@ -689,7 +689,8 @@ The runtime returns public-safe body-free summaries from fixture metadata or
 explicit metadata paths. It does not call artifact body generation, call
 manifest writer, generate manifest bodies, generate policy bodies, write
 files, use real data, compute metrics, or claim production readiness. It is
-not yet connected to Makefile or release-quality runtime wrapper checks.
+connected to a standalone Makefile target in Step491 while remaining outside
+release-quality runtime wrapper checks.
 
 ## 43. Step490 Runtime Makefile Target Design Status
 
@@ -704,3 +705,17 @@ release-quality wrapper, change workflow files, change Python code/tests,
 change fixture JSON, perform artifact writer CLI actual invocation, connect
 artifact body generation integration, connect manifest writer integration,
 write files, use real data, compute metrics, or claim production readiness.
+
+## 44. Step491 Runtime Makefile Target Implementation Status
+
+Step491 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime`
+
+The target runs the Step489 runtime CLI over one valid synthetic
+metadata-only fixture case and emits body-free public-safe output. It does not
+change the release-quality wrapper, change workflow files, change Python
+code/tests, change fixture JSON, perform artifact writer CLI actual
+invocation, connect artifact body generation integration, connect manifest
+writer integration, write files, use real data, compute metrics, or claim
+production readiness.

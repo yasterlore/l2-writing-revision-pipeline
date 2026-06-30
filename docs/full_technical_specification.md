@@ -759,8 +759,8 @@ Recommended next steps:
 - Step-pretec-doc4: medium-priority coverage gap appendices, completed with
   Python CLI, Makefile target, schema/version, fixture count, and external
   review checklist appendices
-- artifact writer CLI integration runtime Makefile target design and
-  integration staging after the Step489 standalone metadata-only runtime module
+- artifact writer CLI integration runtime release-quality integration staging
+  after the Step491 standalone Makefile target
 - artifact body generation CLI integration design and implementation
 - manifest writer integration design and implementation
 - manifest body generation design, if it remains in scope
@@ -857,8 +857,8 @@ generated policy/artifact/manifest bodies.
 | `python/learner_state/frozen_policy_generation_artifact_writer.py` | `python -m learner_state.frozen_policy_generation_artifact_writer` | `--request`, `--pointer`, `--json` | Artifact writer runtime smoke | metadata-only request/pointer to safe summary | no body writing | artifact writer runtime target; wrapper included | artifact/manifest bodies suppressed |
 | `python/learner_state/frozen_policy_generation_artifact_writer_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_artifact_writer_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Artifact writer fixture validation | fixture root/case to safe summary | no | artifact writer fixture target; wrapper included | metadata-only fixture validation |
 | `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Artifact writer CLI integration fixture validation | fixture root/case to count-only summary | no | CLI integration fixture target; wrapper included | static fixture contract only |
-| `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Future runtime fixture validation | fixture root/case to count-only summary | no | standalone Makefile target; not wrapper-integrated as of scan | does not execute runtime integration |
-| `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py` | `python -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime` | `--fixture-root`, `--fixture-case`, `--request-metadata`, `--pointer-metadata`, `--artifact-writer-cli-metadata`, `--json` | Metadata-only artifact writer CLI integration runtime boundary | fixture case or explicit metadata paths to public-safe runtime summary | no | no Makefile target yet | initial runtime boundary; does not invoke artifact body generation or manifest writer |
+| `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Future runtime fixture validation | fixture root/case to count-only summary | no | standalone Makefile target; wrapper included for static validation | does not execute runtime integration |
+| `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py` | `python -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime` | `--fixture-root`, `--fixture-case`, `--request-metadata`, `--pointer-metadata`, `--artifact-writer-cli-metadata`, `--json` | Metadata-only artifact writer CLI integration runtime boundary | fixture case or explicit metadata paths to public-safe runtime summary | no | standalone Makefile target after Step491; not release-quality runtime wrapper included | initial runtime boundary; does not invoke artifact body generation or manifest writer |
 | `python/learner_state/frozen_policy_generation_artifact_body.py` | `python -m learner_state.frozen_policy_generation_artifact_body` | `--request`, `--pointer`, `--mode`, `--artifact-body-out`, `--json` | Artifact body suppressed/safe-metadata smoke | metadata-only request/pointer to safe summary or opt-in safe output | optional safe output for file-writing smoke | body generation and safe-metadata targets; wrapper included | no artifact body payload in public output |
 | `python/learner_state/frozen_policy_generation_artifact_body_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_artifact_body_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Artifact body fixture validation | fixture root/case to safe summary | no | body fixture target; wrapper included | body suppressed |
 | `python/learner_state/frozen_policy_generation_artifact_body_file_writing_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_artifact_body_file_writing_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Artifact body file-writing fixture validation | fixture root/case to safe summary | no | body file-writing target; wrapper included | validates safe writing policy |
@@ -904,6 +904,7 @@ logs.
 | `check-learner-state-frozen-policy-generation-artifact-writer-fixtures` | artifact writer fixture validator root mode | Artifact writer fixture validation | safe summary | wrapper included | artifact writer | metadata-only |
 | `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures` | CLI integration fixture validator root mode | CLI integration fixture validation | count-only summary | wrapper included | artifact writer CLI integration | static contract only |
 | `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures` | runtime fixture validator root mode | Runtime fixture validation | count-only summary | release-quality included | artifact writer CLI integration runtime fixtures | no runtime execution |
+| `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime` | runtime CLI valid fixture smoke | Runtime smoke | body-free public-safe summary | standalone only after Step491 | artifact writer CLI integration runtime | no artifact writer CLI actual invocation, no file writing |
 | `check-learner-state-frozen-policy-generation-artifact-writer-runtime` | artifact writer runtime with request/pointer fixtures | Artifact writer runtime smoke | safe summary | wrapper included | artifact writer | no body writing |
 | `check-learner-state-frozen-policy-generation-artifact-body-fixtures` | artifact body fixture validator root mode | Artifact body fixture validation | safe summary | wrapper included | artifact body | body suppressed |
 | `check-learner-state-frozen-policy-generation-artifact-body-generation` | artifact body CLI suppressed mode | Artifact body smoke | safe summary | wrapper included | artifact body generation | payload suppressed |
@@ -1030,8 +1031,10 @@ absolute coverage or external-review completion.
   payloads, generated policy bodies, raw rows, logits/probabilities, private
   path values, absolute local path values, raw learner text, or raw logs are
   copied into public docs.
-- Confirm artifact writer CLI integration runtime remains marked not
-  implemented until a separate runtime implementation step exists.
+- Confirm artifact writer CLI integration runtime remains marked as an
+  initial metadata-only runtime with a standalone Makefile smoke target, not a
+  release-quality runtime wrapper check, artifact writer CLI actual invocation
+  proof, or production readiness proof.
 - Confirm artifact body generation CLI integration, manifest writer
   integration, and manifest body generation remain marked not implemented
   where appropriate.

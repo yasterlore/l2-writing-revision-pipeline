@@ -4175,11 +4175,12 @@ For Step489, review
 and
 `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_integration_runtime.py`.
 Confirm the initial runtime is metadata-only, body-free, no-file-writing by
-default, standalone, and not yet connected to Makefile or the release-quality
-runtime wrapper chain. Confirm it does not invoke artifact body generation,
-invoke manifest writer, generate manifest bodies, generate policy bodies, use
-real data, compute metrics, or claim production readiness, real-data
-readiness, model performance, F1, accuracy, ECE, or AURCC.
+default, and connected only to the standalone Step491 Makefile smoke target,
+not the release-quality runtime wrapper chain. Confirm it does not invoke
+artifact body generation, invoke manifest writer, generate manifest bodies,
+generate policy bodies, use real data, compute metrics, or claim production
+readiness, real-data readiness, model performance, F1, accuracy, ECE, or
+AURCC.
 
 For Step490, review the docs-only
 [frozen policy generation artifact writer CLI integration runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_makefile_target_design.md).
@@ -4191,6 +4192,17 @@ change Python code/tests, change fixture JSON, invoke artifact writer CLI
 actual downstream behavior, connect artifact body generation integration,
 connect manifest writer integration, write files, use real data, compute
 metrics, or claim production readiness, real-data readiness, model
+performance, F1, accuracy, ECE, or AURCC.
+
+For Step491, review the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime`.
+Confirm it runs the Step489 runtime CLI over one valid synthetic
+metadata-only fixture case, emits body-free public-safe output, and remains
+outside the release-quality runtime wrapper chain. Confirm it does not change
+workflow YAML, change Python code/tests, change fixture JSON, invoke artifact
+writer CLI actual downstream behavior, connect artifact body generation
+integration, connect manifest writer integration, write files, use real data,
+compute metrics, or claim production readiness, real-data readiness, model
 performance, F1, accuracy, ECE, or AURCC.
 
 ## 7. Checks To Run

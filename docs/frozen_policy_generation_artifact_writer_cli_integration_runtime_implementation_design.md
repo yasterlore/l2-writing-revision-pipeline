@@ -288,7 +288,9 @@ Suggested future staging after Step490:
 - Step495: remote status marker
 
 Step489 stops at the standalone runtime module, CLI, and focused tests.
-Step490 adds only the docs-only Makefile target design.
+Step490 adds only the docs-only Makefile target design. Step491 implements
+the standalone Makefile target without adding release-quality runtime wrapper
+integration.
 
 ## 14. Non-Claims
 
@@ -318,11 +320,11 @@ Step489 implements:
   `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_v0.1`
 - mode: `artifact_writer_cli_integration_runtime`
 
-The implementation is standalone and metadata-only. It returns public-safe
-runtime summaries, keeps file writing disabled, does not invoke artifact body
-generation, does not invoke manifest writer, does not generate manifest
-bodies, does not generate policy bodies, and does not connect to Makefile or
-release-quality runtime wrapper checks yet.
+The implementation is metadata-only. It returns public-safe runtime summaries,
+keeps file writing disabled, does not invoke artifact body generation, does
+not invoke manifest writer, does not generate manifest bodies, does not
+generate policy bodies, and is connected to a standalone Makefile target in
+Step491 while remaining outside release-quality runtime wrapper checks.
 
 ## 16.1 Step490 Makefile Target Design Status
 
@@ -338,6 +340,19 @@ change workflow YAML, change Python code/tests, change fixture JSON, invoke
 artifact writer CLI actual downstream behavior, connect artifact body
 generation integration, connect manifest writer integration, implement file
 writing, or claim production readiness.
+
+## 16.2 Step491 Makefile Target Implementation Status
+
+Step491 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime`
+
+The target runs the Step489 runtime CLI over one valid synthetic
+metadata-only fixture case and emits a body-free public-safe summary. It does
+not change the release-quality wrapper, change workflow YAML, change Python
+code/tests, change fixture JSON, perform artifact writer CLI actual
+invocation, connect artifact body generation integration, connect manifest
+writer integration, write files, or claim production readiness.
 
 ## 17. Public-Safe Checklist
 

@@ -111,8 +111,8 @@ The following items remain constrained by their current implementation
 boundaries:
 
 - artifact writer CLI integration runtime has an initial metadata-only
-  standalone implementation after Step489, but no Makefile target or
-  release-quality runtime wrapper integration yet
+  standalone implementation after Step489 and a Step491 standalone Makefile
+  smoke target, but no release-quality runtime wrapper integration yet
 - artifact body generation CLI integration
 - manifest writer integration
 - manifest body generation

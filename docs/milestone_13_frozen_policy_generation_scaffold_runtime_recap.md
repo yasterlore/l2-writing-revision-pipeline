@@ -1797,6 +1797,15 @@ written, no artifact body is produced, and no performance metric is computed.
   change fixture JSON, perform artifact writer CLI actual invocation, connect
   artifact body generation integration, connect manifest writer integration,
   write files, use real data, compute metrics, or claim production readiness.
+- Step491: implemented the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime`
+  for the Step489 artifact writer CLI integration runtime. The target runs one
+  valid synthetic metadata-only fixture case and emits body-free public-safe
+  output. It does not change the release-quality wrapper, change workflow
+  files, change Python code/tests, change fixture JSON, perform artifact
+  writer CLI actual invocation, connect artifact body generation integration,
+  connect manifest writer integration, write files, use real data, compute
+  metrics, or claim production readiness.
 
 ## Related Documents
 

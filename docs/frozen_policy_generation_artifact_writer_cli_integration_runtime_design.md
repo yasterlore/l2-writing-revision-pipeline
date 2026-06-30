@@ -476,8 +476,9 @@ schema version
 `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_v0.1`.
 It returns body-free public-safe summaries, keeps file writing disabled, does
 not invoke artifact body generation, does not invoke manifest writer, does not
-generate manifest bodies, does not generate policy bodies, and is not yet
-connected to Makefile or release-quality runtime wrapper checks.
+generate manifest bodies, does not generate policy bodies, and is connected
+to a standalone Makefile target in Step491 while remaining outside
+release-quality runtime wrapper checks.
 
 ## 16. Step490 Runtime Makefile Target Design Status
 
@@ -493,3 +494,16 @@ code/tests, change fixture JSON, invoke artifact writer CLI actual downstream
 behavior, connect artifact body generation integration, connect manifest
 writer integration, implement file writing, use real data, compute metrics, or
 claim production readiness.
+
+## 17. Step491 Runtime Makefile Target Implementation Status
+
+Step491 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime`
+
+The target runs the Step489 runtime CLI over one valid synthetic
+metadata-only fixture case. It remains outside the release-quality runtime
+wrapper chain and does not change workflow files, change Python code/tests,
+change fixture JSON, perform artifact writer CLI actual invocation, connect
+artifact body generation integration, connect manifest writer integration,
+write files, use real data, compute metrics, or claim production readiness.
