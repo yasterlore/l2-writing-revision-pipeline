@@ -387,6 +387,18 @@ Suggested future sequence:
 
 The numbering is a proposal. Step478 does not advance into these steps.
 
+## 15.1 Step479 Fixture Root Creation Status
+
+Step479 creates the fixture root proposed in this design:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime/`
+
+The root contains 30 case directories, 6 valid cases, 24 invalid cases, 6 JSON
+files per case, and 180 JSON case files. Step479 does not implement a
+validator, implement runtime integration, add a Makefile target, change the
+release-quality wrapper, change workflow YAML, change Python code/tests, use
+real data, compute metrics, or claim production readiness.
+
 ## 16. Non-Claims
 
 This design does not claim:

@@ -309,6 +309,18 @@ implement a validator, implement runtime integration, change Makefile/wrapper/
 workflow/Python/tests, use real data, compute metrics, or claim production
 readiness.
 
+## 9.2 Step479 Fixture Root Creation Status
+
+Step479 creates the synthetic metadata-only runtime fixture root for this
+future boundary:
+
+[Frozen policy generation artifact writer CLI integration runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime/README.md)
+
+The fixture root is a contract input for future validator work. It does not
+implement runtime integration, artifact body generation integration, manifest
+writer integration, Makefile targets, release-quality wrapper changes,
+workflow changes, metrics, real-data use, or production readiness.
+
 ## 10. Non-Claims
 
 This design does not claim:

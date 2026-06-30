@@ -1,0 +1,19 @@
+{
+  "body_suppressed": true,
+  "case_id": "invalid/invalid_duplicate_case_id",
+  "case_intent": "metadata_only_runtime_fixture_contract",
+  "case_kind": "invalid",
+  "case_title": "duplicate case id",
+  "content_suppressed": true,
+  "expected_exit_code_category": "nonzero",
+  "expected_reason_code": "duplicate_case_id",
+  "expected_status": "usage_error",
+  "forbidden_marker": "duplicate_case_id",
+  "metadata_only": true,
+  "no_oracle": true,
+  "release_quality_ready": false,
+  "runtime_implementation_present": false,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_case_metadata_v0.1",
+  "synthetic_only": true,
+  "validator_implemented": false
+}

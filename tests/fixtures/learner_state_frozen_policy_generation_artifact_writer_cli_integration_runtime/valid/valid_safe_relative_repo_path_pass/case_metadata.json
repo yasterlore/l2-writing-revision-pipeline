@@ -1,0 +1,19 @@
+{
+  "body_suppressed": true,
+  "case_id": "valid/valid_safe_relative_repo_path_pass",
+  "case_intent": "metadata_only_runtime_fixture_contract",
+  "case_kind": "valid",
+  "case_title": "safe relative repo path pass",
+  "content_suppressed": true,
+  "expected_exit_code_category": "zero",
+  "expected_reason_code": "none",
+  "expected_status": "pass",
+  "forbidden_marker": "none",
+  "metadata_only": true,
+  "no_oracle": true,
+  "release_quality_ready": false,
+  "runtime_implementation_present": false,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_case_metadata_v0.1",
+  "synthetic_only": true,
+  "validator_implemented": false
+}

@@ -1,0 +1,19 @@
+{
+  "body_suppressed": true,
+  "case_id": "invalid/invalid_final_text_present",
+  "case_intent": "metadata_only_runtime_fixture_contract",
+  "case_kind": "invalid",
+  "case_title": "final text present",
+  "content_suppressed": true,
+  "expected_exit_code_category": "nonzero",
+  "expected_reason_code": "final_text_present",
+  "expected_status": "fail_closed",
+  "forbidden_marker": "final_text_present",
+  "metadata_only": true,
+  "no_oracle": true,
+  "release_quality_ready": false,
+  "runtime_implementation_present": false,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_case_metadata_v0.1",
+  "synthetic_only": true,
+  "validator_implemented": false
+}

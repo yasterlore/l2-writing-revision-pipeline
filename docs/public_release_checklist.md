@@ -4048,6 +4048,15 @@ implement runtime integration, change Makefile/wrapper/workflow/Python/tests,
 use real data, compute metrics, or claim production readiness, real-data
 readiness, model performance, F1, accuracy, ECE, or AURCC.
 
+For Step479, review the
+[frozen policy generation artifact writer CLI integration runtime fixture root](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime/README.md).
+Confirm it creates only the synthetic metadata-only fixture root with 30 case
+directories and 180 JSON files. Confirm it does not implement a validator,
+implement runtime integration, add a Makefile target, change release-quality
+wrapper or workflow YAML, change Python code/tests, use real data, compute
+metrics, or claim production readiness, real-data readiness, model
+performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

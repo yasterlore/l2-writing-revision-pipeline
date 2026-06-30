@@ -177,6 +177,10 @@ Related recap:
   integration runtime boundary. It does not create fixtures, implement a
   validator, implement runtime integration, or provide production readiness
   evidence.
+- [Frozen policy generation artifact writer CLI integration runtime fixtures](../../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime/README.md):
+  synthetic metadata-only fixture root for the future artifact writer CLI
+  integration runtime boundary. It is not runtime implementation, validator
+  implementation, real-data readiness, or production readiness evidence.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

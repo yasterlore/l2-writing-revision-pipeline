@@ -1660,6 +1660,12 @@ written, no artifact body is produced, and no performance metric is computed.
   validator, implementing runtime integration, changing Makefile/wrapper/
   workflow/Python/tests/fixture JSON, using real data, computing metrics, or
   claiming production readiness.
+- Step479: created the synthetic metadata-only artifact writer CLI integration
+  runtime fixture root with 30 case directories and 180 JSON files. The step
+  adds fixture contracts only and does not implement a validator, runtime
+  integration, Makefile target, release-quality wrapper change, workflow
+  change, Python code/tests, artifact body generation integration, manifest
+  writer integration, metrics, real-data use, or production readiness.
 
 ## Related Documents
 

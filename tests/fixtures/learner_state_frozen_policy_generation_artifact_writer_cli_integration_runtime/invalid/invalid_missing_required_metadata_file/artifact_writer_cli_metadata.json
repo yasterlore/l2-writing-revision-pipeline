@@ -1,0 +1,33 @@
+{
+  "ambiguous_file_writing_target": false,
+  "artifact_body_generation_requested": false,
+  "artifact_body_payload_stored": false,
+  "case_id": "invalid/invalid_missing_required_metadata_file",
+  "command_label": "artifact_writer_cli_integration_runtime_future_boundary",
+  "expected_exit_code_category": "nonzero",
+  "file_contents_stored": false,
+  "full_stderr_stored": false,
+  "full_stdout_stored": false,
+  "generated_policy_body_stored": false,
+  "manifest_body_stored": false,
+  "manifest_writer_requested": false,
+  "no_oracle_flags": {
+    "metadata_only_checked": true,
+    "no_oracle_checked": true,
+    "synthetic_only_checked": true
+  },
+  "raw_output_stored": false,
+  "relative_fixture_pointers": [
+    "invalid/invalid_missing_required_metadata_file/request_metadata.json",
+    "invalid/invalid_missing_required_metadata_file/pointer_metadata.json"
+  ],
+  "safe_mode": "metadata_only",
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_artifact_writer_cli_metadata_v0.1",
+  "summary_mode": "public_safe_count_only",
+  "suppression_flags": {
+    "artifact_body_suppressed": true,
+    "body_suppressed": true,
+    "content_suppressed": true,
+    "manifest_body_suppressed": true
+  }
+}

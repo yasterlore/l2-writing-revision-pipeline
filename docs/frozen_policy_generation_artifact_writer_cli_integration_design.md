@@ -547,3 +547,15 @@ It remains design-only and does not create a fixture root, create fixture JSON,
 implement a validator, implement runtime integration, connect artifact body
 generation, connect manifest writer integration, use real data, compute
 metrics, or claim production readiness.
+
+## 32. Step479 Runtime Fixture Root Creation Status
+
+Step479 creates the runtime fixture root for the future artifact writer CLI
+integration runtime boundary:
+
+[Frozen policy generation artifact writer CLI integration runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime/README.md)
+
+The root contains synthetic metadata-only fixture contracts only. It does not
+implement runtime integration, artifact body generation integration, manifest
+writer integration, validator code, Makefile targets, release-quality wrapper
+changes, workflow changes, real-data use, metrics, or production readiness.

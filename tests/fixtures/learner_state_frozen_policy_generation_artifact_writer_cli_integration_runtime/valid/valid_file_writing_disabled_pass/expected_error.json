@@ -1,0 +1,15 @@
+{
+  "case_id": "valid/valid_file_writing_disabled_pass",
+  "error_body_suppressed": true,
+  "expected_error_category": "none",
+  "expected_exit_code_category": "zero",
+  "expected_reason_code": "none",
+  "fail_closed": false,
+  "input_error": false,
+  "mismatch": false,
+  "public_safe_error": true,
+  "raw_content_suppressed": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_expected_error_v0.1",
+  "unsafe_value_stored": false,
+  "usage_error": false
+}
