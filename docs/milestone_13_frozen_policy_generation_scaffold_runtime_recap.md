@@ -48,6 +48,13 @@ The separate
 is also available. This is documentation hardening only; it is not runtime
 implementation and does not claim production readiness.
 
+Step-pretec-doc6 note: the
+[full technical specification final safety and non-proof review](full_technical_specification_final_safety_review.md)
+records the final docs-only safety, non-proof, not-implemented, status wording,
+public release, status marker, and traceability review before an external
+reviewer pass. It is not runtime implementation, external approval, production
+readiness, real-data readiness, or model-performance evidence.
+
 It is a recap document. It is not generator implementation, not an artifact
 writer, not calibration implementation, not selective prediction
 implementation, not learner-state estimator implementation, not metric

@@ -5,6 +5,12 @@ draft against the source inventory and repository scan evidence. This document
 is a coverage validation report. It is not an absolute guarantee of complete
 coverage.
 
+Step-pretec-doc6 adds
+`docs/full_technical_specification_final_safety_review.md` as a final
+safety/non-proof review for the specification documentation set. That review
+does not change the coverage categories and does not convert this report into
+an absolute no-omission guarantee.
+
 This step is docs-only. It does not change implementation code, Makefile
 targets, release-quality wrapper behavior, workflows, Python/Rust/TypeScript
 code, package files, tests, or fixture JSON. It does not prove production
@@ -389,7 +395,8 @@ privacy/legal/IRB readiness.
 - Step-pretec-doc4: medium gap fixes, completed as docs-only appendices
 - Step-pretec-doc5: external-review-ready version and low-priority hardening,
   completed as docs-only appendices and checklist
-- Step-pretec-doc6: final safety/non-proof review
+- Step-pretec-doc6: final safety/non-proof review, completed as a docs-only
+  final review record before external reviewer pass
 - Later: artifact writer CLI integration runtime implementation design and
   implementation, separate from this specification coverage work
 - Later: artifact body generation CLI integration design and implementation

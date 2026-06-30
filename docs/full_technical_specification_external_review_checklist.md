@@ -11,6 +11,7 @@ The checklist should be used with:
 - `docs/full_technical_specification_source_inventory.md`
 - `docs/full_technical_specification.md`
 - `docs/full_technical_specification_coverage_validation.md`
+- `docs/full_technical_specification_final_safety_review.md`
 - repository evidence in `Makefile`, `.github/workflows/`, `scripts/`,
   `python/`, `crates/`, `apps/logger-web/`, `tests/fixtures/`, and
   `docs/status/`
@@ -200,6 +201,7 @@ Before treating the specification as external-review-ready, confirm:
 
 - high and medium coverage gaps remain closed or explicitly reopened
 - low-priority hardening is summarized at external-review level
+- the final safety and non-proof review has been read
 - no raw payloads or raw logs are introduced during review
 - unresolved items remain listed
 - future runtime integration work remains separate

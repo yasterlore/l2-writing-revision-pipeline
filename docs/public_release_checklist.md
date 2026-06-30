@@ -40,6 +40,11 @@ Current public-facing implementation state:
   [Full technical specification external review checklist](full_technical_specification_external_review_checklist.md)
   is available. This reduces low-priority documentation gaps but does not
   claim production readiness, real-data readiness, or model performance.
+- Step-pretec-doc6 final safety and non-proof review is available as
+  [Full technical specification final safety and non-proof review](full_technical_specification_final_safety_review.md).
+  Public release should still not proceed without external review, and this
+  review does not claim production readiness, real-data readiness, or model
+  performance.
 
 ## 1. Data Safety
 

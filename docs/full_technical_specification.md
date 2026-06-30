@@ -19,9 +19,16 @@ step`.
 
 Step-pretec-doc3 adds a separate
 [coverage validation report](full_technical_specification_coverage_validation.md)
-that compares this draft with the source inventory. The report found no
-high-severity gaps, but medium and low follow-up gaps remain; this draft should
-not be treated as an absolute guarantee of no omissions.
+that compares this draft with the source inventory. Step-pretec-doc4 fixed the
+recorded medium-priority gaps, and Step-pretec-doc5 reduced low-priority gaps
+at external-review summary level. This draft should still not be treated as an
+absolute guarantee of no omissions.
+
+Step-pretec-doc6 adds a
+[final safety and non-proof review](full_technical_specification_final_safety_review.md)
+for this documentation set. That review supports external review readiness with
+caveats; it is not external review completion, production readiness,
+real-data readiness, or model-performance evidence.
 
 ## 1. Document Position
 
@@ -764,6 +771,8 @@ Recommended next steps:
   index, Rust crate API detail, logger-web UI behavior, and workflow action
   version tables, completed at external-review summary level in
   Step-pretec-doc5
+- final safety and non-proof review, completed as Step-pretec-doc6 docs-only
+  review before external reviewer pass
 
 ## 25. Coverage And Evidence Appendix
 
@@ -1155,3 +1164,9 @@ The standalone external review checklist is
 should use it with this specification, the source inventory, and the coverage
 validation report. The checklist is a review aid, not a production readiness,
 real-data readiness, or model-performance certification.
+
+The final safety and non-proof review is
+`docs/full_technical_specification_final_safety_review.md`. It records that
+the documentation set is an external-review-ready draft with caveats, not a
+guarantee of no omissions and not a production, real-data, model-performance,
+or external-approval claim.
