@@ -161,6 +161,18 @@ only. It does not execute runtime integration, change workflow files, change
 Makefile targets, change Python code/tests, change fixture JSON, connect
 artifact body generation integration, or connect manifest writer integration.
 
+## Remote Run Record Workflow Design
+
+Step486 adds the docs-only public-safe remote/manual run record workflow design
+for the Step485 wrapper check:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture release-quality remote run record workflow](../../../docs/frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_record_workflow.md)
+
+The design proposes future remote status marker metadata and count-only summary
+fields. It does not create the marker, change workflow files, change the
+wrapper, change Makefile targets, change Python code/tests, change fixture
+JSON, or execute runtime integration.
+
 ## Implementation Status
 
 - fixture root created: yes
@@ -169,6 +181,8 @@ artifact body generation integration, or connect manifest writer integration.
 - runtime implemented: no
 - Makefile target added: yes
 - release-quality wrapper changed: yes, static validator target only
+- remote run record workflow design: yes
+- remote status marker created: no
 - workflow changed: no
 - artifact body generation integration implemented: no
 - manifest writer integration implemented: no

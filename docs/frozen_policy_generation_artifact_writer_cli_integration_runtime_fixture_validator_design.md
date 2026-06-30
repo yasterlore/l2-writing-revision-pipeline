@@ -363,6 +363,18 @@ not change workflow files, Makefile targets, Python code/tests, fixture JSON,
 execute runtime integration, use real data, compute metrics, or claim
 production readiness.
 
+## 14.6 Step486 Remote Run Record Workflow Design Status
+
+Step486 adds the docs-only public-safe remote/manual run record workflow design
+for the Step485 wrapper check:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_record_workflow.md)
+
+The design does not create a remote status marker, change workflow files,
+change the wrapper, change Makefile targets, change Python code/tests, change
+fixture JSON, execute runtime integration, use real data, compute metrics, or
+claim production readiness.
+
 ## 15. Non-Claims
 
 This design does not claim:

@@ -4142,6 +4142,15 @@ generation integration, manifest writer integration, use real data, compute
 metrics, or claim production readiness, real-data readiness, model
 performance, F1, accuracy, ECE, or AURCC.
 
+For Step486, review the
+[frozen policy generation artifact writer CLI integration runtime fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_record_workflow.md).
+Confirm it is design-only for a future public-safe remote/manual run record and
+does not create a status marker, change workflow YAML, change the
+release-quality wrapper, change Makefile targets, change Python code/tests,
+change fixture JSON, execute runtime integration, use real data, compute
+metrics, or claim production readiness, real-data readiness, model
+performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

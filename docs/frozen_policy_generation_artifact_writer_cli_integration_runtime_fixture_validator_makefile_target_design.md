@@ -316,14 +316,33 @@ Python code/tests, fixture JSON, execute runtime integration, connect artifact
 body generation, connect manifest writer integration, use real data, compute
 metrics, or claim production readiness.
 
-## 16. Next Recommended Steps
+## 16. Step485 Wrapper Integration Status
 
-- Step485: release-quality wrapper integration.
-- Step486: remote/manual run record workflow design.
+Step485 adds the standalone runtime fixture validator target to
+`scripts/check_release_quality.sh` after artifact writer CLI integration
+fixture validation and before artifact body fixture validation. It does not
+change workflow files, Makefile targets, Python code/tests, fixture JSON,
+execute runtime integration, use real data, compute metrics, or claim
+production readiness.
+
+## 17. Step486 Remote Run Record Workflow Design Status
+
+Step486 adds the docs-only public-safe remote/manual run record workflow design
+for the Step485 wrapper check:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_record_workflow.md)
+
+The design does not create a remote status marker, change workflow files,
+change the wrapper, change Makefile targets, change Python code/tests, change
+fixture JSON, execute runtime integration, use real data, compute metrics, or
+claim production readiness.
+
+## 18. Next Recommended Steps
+
 - Step487: remote status marker.
 - Step488: artifact writer CLI integration runtime implementation design.
 
-## 17. Public-Safe Checklist
+## 19. Public-Safe Checklist
 
 - no raw logs
 - no full job output

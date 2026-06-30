@@ -206,6 +206,14 @@ Related recap:
   Step483 standalone runtime fixture validator target. It is not workflow
   change, runtime integration, real-data readiness, or production readiness
   evidence.
+- [Frozen policy generation artifact writer CLI integration runtime fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_record_workflow.md):
+  Step486 docs-only public-safe remote/manual run record workflow design for
+  the Step485 wrapper check. It does not create a status marker, change
+  workflow files, change the wrapper, execute runtime integration, or provide
+  production readiness evidence.
+- Planned marker path:
+  `docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_status.md`.
+  This marker is not created in Step486.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

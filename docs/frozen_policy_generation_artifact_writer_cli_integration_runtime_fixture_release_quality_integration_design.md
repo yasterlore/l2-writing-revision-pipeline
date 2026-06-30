@@ -282,9 +282,9 @@ Forbidden in wrapper output and docs:
 - real participant data
 - performance metric bodies
 
-## 12. Wrapper Implementation Plan For Next Step
+## 12. Wrapper Implementation Plan
 
-Future Step485 should:
+Step485 follows this implementation plan:
 
 - update `scripts/check_release_quality.sh`
 - add the proposed label and command at the proposed insertion point
@@ -374,7 +374,21 @@ YAML, Makefile targets, Python code/tests, fixture JSON, runtime
 implementation, artifact body generation integration, manifest writer
 integration, real-data use, metrics, or production readiness.
 
-## 16. What This Does Not Do
+## 16. Step486 Remote Run Record Workflow Design Status
+
+Step486 adds the docs-only remote/manual run record workflow design for the
+Step485 wrapper check:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_record_workflow.md)
+
+The design defines public-safe remote run metadata, count-only target summary
+fields, related release-quality chain summary policy, safety review workflow,
+interpretation rules, and the proposed future status marker path. It does not
+create the marker, change workflow YAML, change the wrapper, change Makefile,
+change Python code/tests, change fixture JSON, execute runtime integration,
+use real data, compute metrics, or claim production readiness.
+
+## 17. What This Does Not Do
 
 This design does not:
 
@@ -393,8 +407,7 @@ This design does not:
 - prove real-data readiness
 - prove model performance
 
-## 17. Next Recommended Steps
+## 18. Next Recommended Steps
 
-- Step486: remote/manual run record workflow design.
 - Step487: remote status marker.
 - Step488: artifact writer CLI integration runtime implementation design.
