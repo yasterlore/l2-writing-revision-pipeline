@@ -535,3 +535,15 @@ The design is metadata-only, synthetic-only, no-oracle, and fail-closed. It
 does not implement runtime integration, connect artifact body generation,
 connect manifest writer integration, generate manifest bodies, use real data,
 compute metrics, or claim production readiness.
+
+## 31. Step478 Runtime Fixture Contract Design Status
+
+Step478 adds the docs-only future fixture contract design for the artifact
+writer CLI integration runtime boundary:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture contract design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_contract_design.md)
+
+It remains design-only and does not create a fixture root, create fixture JSON,
+implement a validator, implement runtime integration, connect artifact body
+generation, connect manifest writer integration, use real data, compute
+metrics, or claim production readiness.

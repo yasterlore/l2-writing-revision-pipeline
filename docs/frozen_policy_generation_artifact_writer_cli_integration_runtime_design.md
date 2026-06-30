@@ -295,6 +295,20 @@ Suggested future sequence:
 The numbering is a proposal. The design -> fixtures -> validator -> Makefile
 target -> wrapper -> remote marker order should be preserved.
 
+## 9.1 Step478 Runtime Fixture Contract Design Status
+
+Step478 adds the docs-only fixture contract design for future runtime
+validation of this boundary:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture contract design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_contract_design.md)
+
+The contract design proposes the future fixture root, case layout, case counts,
+valid/invalid taxonomy, expected summary field names, metadata contracts,
+validator implications, and status mapping. It does not create fixtures,
+implement a validator, implement runtime integration, change Makefile/wrapper/
+workflow/Python/tests, use real data, compute metrics, or claim production
+readiness.
+
 ## 10. Non-Claims
 
 This design does not claim:

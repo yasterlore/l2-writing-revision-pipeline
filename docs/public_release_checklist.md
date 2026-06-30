@@ -4038,6 +4038,16 @@ integration, manifest body generation, generated policy body generation, use
 real data, compute metrics, or claim production readiness, real-data
 readiness, model performance, F1, accuracy, ECE, or AURCC.
 
+For Step478, review the docs-only
+[frozen policy generation artifact writer CLI integration runtime fixture contract design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_contract_design.md).
+Confirm it defines only the future runtime fixture contract: proposed root,
+case layout, case counts, valid/invalid taxonomy, expected summary fields,
+metadata contracts, validator implications, and status mapping. Confirm it
+does not create a fixture root, create fixture JSON, implement a validator,
+implement runtime integration, change Makefile/wrapper/workflow/Python/tests,
+use real data, compute metrics, or claim production readiness, real-data
+readiness, model performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

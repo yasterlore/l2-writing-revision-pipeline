@@ -1653,6 +1653,13 @@ written, no artifact body is produced, and no performance metric is computed.
   Python/tests/fixture JSON, connecting artifact body generation or manifest
   writer integration, using real data, computing metrics, or claiming
   production readiness.
+- Step478: added the docs-only artifact writer CLI integration runtime fixture
+  contract design. The design fixes the proposed future fixture root, case
+  layout, case counts, valid/invalid taxonomy, metadata contracts, validator
+  implications, and status mapping without creating fixtures, implementing a
+  validator, implementing runtime integration, changing Makefile/wrapper/
+  workflow/Python/tests/fixture JSON, using real data, computing metrics, or
+  claiming production readiness.
 
 ## Related Documents
 
