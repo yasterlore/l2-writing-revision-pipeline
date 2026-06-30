@@ -39,6 +39,15 @@ version families, fixture root counts, and remaining external-review checks.
 This is docs-only medium-gap cleanup and is not runtime integration or
 implementation work.
 
+Step-pretec-doc5 note: the
+[full technical specification draft](full_technical_specification.md) now has
+external-review hardening for dependency/runtime/package/workflow versions,
+status marker indexing, Rust crate review notes, and logger-web behavior notes.
+The separate
+[full technical specification external review checklist](full_technical_specification_external_review_checklist.md)
+is also available. This is documentation hardening only; it is not runtime
+implementation and does not claim production readiness.
+
 It is a recap document. It is not generator implementation, not an artifact
 writer, not calibration implementation, not selective prediction
 implementation, not learner-state estimator implementation, not metric

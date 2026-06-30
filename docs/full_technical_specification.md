@@ -762,7 +762,8 @@ Recommended next steps:
 - external review checklist for public specification release
 - low-priority hardening for dependency/version tables, per-status-marker
   index, Rust crate API detail, logger-web UI behavior, and workflow action
-  version tables
+  version tables, completed at external-review summary level in
+  Step-pretec-doc5
 
 ## 25. Coverage And Evidence Appendix
 
@@ -791,9 +792,10 @@ Known uncertainty:
 - Python CLI arguments, Makefile command families, stable schema/result
   families, and fixture root counts are covered in Appendices A-D as of
   Step-pretec-doc4
-- dependency/version tables, exact per-status-marker indexing, Rust crate API
-  details, logger-web UI behavior, and workflow action version tables remain
-  low-priority follow-up items
+- dependency/version tables, per-status-marker indexing, Rust crate API
+  review notes, logger-web UI behavior notes, and workflow action version
+  tables are summarized at external-review level in Appendices F-I as of
+  Step-pretec-doc5
 - any component not represented in this draft should be treated as
   `not yet confirmed from repository scan` unless a later coverage validation
   or external review confirms it
@@ -994,18 +996,19 @@ and JSON files only. Fixture JSON bodies are not copied.
 ## Appendix E. Remaining Low-Priority Gaps And External Review Checklist
 
 The medium gaps from Step-pretec-doc3 are addressed by Appendices A-D. Low
-priority gaps remain as review hardening items. This appendix does not claim
+priority gaps are reduced at external-review summary level by Appendices F-I
+and the standalone external review checklist. This appendix does not claim
 absolute coverage or external-review completion.
 
 ### Remaining Low-Priority Gaps
 
-| Gap | Status after Step-pretec-doc4 | Suggested follow-up |
+| Gap | Status after Step-pretec-doc5 | Suggested follow-up |
 | --- | --- | --- |
-| Dependency/version tables | still open | Add summarized Cargo/npm dependency tables without lockfile body copying. |
-| Per-status-marker index | still open | Add a marker-family or per-marker appendix if external review requires it. |
-| Rust crate API details | still open | Add crate-level public API summaries from crate docs/source. |
-| Logger-web UI behavior | still open | Add UI interaction summary without raw event payload examples. |
-| Exact workflow action versions | still open | Add workflow setup/action version table from YAML. |
+| Dependency/version tables | reduced by Appendix F | External reviewer may request deeper dependency tables without lockfile body copying. |
+| Per-status-marker index | reduced by Appendix G | External reviewer may request more status-marker metadata, still without raw logs. |
+| Rust crate API details | reduced by Appendix H | External reviewer may request crate-level API detail from source/README evidence only. |
+| Logger-web UI behavior | reduced by Appendix I | External reviewer may request UI interaction details without raw event payload examples. |
+| Exact workflow action versions | reduced by Appendix F | External reviewer may request a more granular workflow action matrix from YAML. |
 
 ### External Review Checklist
 
@@ -1026,3 +1029,129 @@ absolute coverage or external-review completion.
 - Confirm future external-review-ready versions still cite evidence paths and
   mark unknowns as `not yet confirmed from repository scan` or
   `next step verification required`.
+
+## Appendix F. Dependency, Runtime, Package, And Workflow Version Catalogue
+
+Step-pretec-doc5 adds this appendix to reduce the dependency/version and
+workflow-action low-priority gaps from Step-pretec-doc3. It is based on
+repository files only: `.github/workflows/ci.yml`,
+`.github/workflows/release-quality.yml`, `Cargo.toml`,
+`crates/*/Cargo.toml`, and `apps/logger-web/package.json`. It does not copy
+lockfile bodies or raw workflow logs.
+
+### Runtime And Workflow Setup
+
+| Area | Repository evidence | Confirmed value or version | Use in repository | Review note |
+| --- | --- | --- | --- | --- |
+| CI workflow runner | `.github/workflows/ci.yml` | `ubuntu-latest` | Rust workspace checks, synthetic policy, Rust CLI smoke, synthetic E2E smoke | Runner image resolution is controlled by GitHub Actions and is not pinned in the workflow file. |
+| Release Quality runner | `.github/workflows/release-quality.yml` | `ubuntu-latest` | Release-quality wrapper | Runner image resolution is controlled by GitHub Actions and is not pinned in the workflow file. |
+| Python setup | `.github/workflows/release-quality.yml` | `actions/setup-python@v6`, `python-version: "3.11"` | Release-quality Python checks and validators | Exact patch version comes from the runner/tool cache and is not fixed in the workflow file. |
+| Rust toolchain | both workflow files | `dtolnay/rust-toolchain@stable`, components `rustfmt`, `clippy` | Cargo format, tests, clippy | Stable channel is used; exact compiler patch version is not fixed in workflow YAML. |
+| Node setup | `.github/workflows/release-quality.yml` | `actions/setup-node@v6`, `node-version: "22"` | logger-web npm checks | Exact patch version comes from setup-node resolution and is not fixed in workflow YAML. |
+| npm cache | `.github/workflows/release-quality.yml` | cache `npm`, cache dependency path `apps/logger-web/package-lock.json` | logger-web dependency install | Lockfile body is not reproduced in this specification. |
+| checkout action | both workflow files | `actions/checkout@v7` | source checkout | Version is confirmed from workflow YAML. |
+
+### Cargo Workspace And Rust Crate Dependencies
+
+| Package or workspace | Evidence path | Confirmed package metadata | Dependency summary | Review note |
+| --- | --- | --- | --- | --- |
+| Cargo workspace | `Cargo.toml` | resolver `2`, workspace edition `2021` | members are the seven `kslog_*` crates | Workspace package version policy beyond edition is not separately specified. |
+| `kslog_schema` | `crates/kslog_schema/Cargo.toml` | version `0.1.0` | `serde` with derive; dev `serde_json` | Shared schema types for synthetic logs. |
+| `kslog_validate` | `crates/kslog_validate/Cargo.toml` | version `0.1.0` | `kslog_schema`, `serde_json` | Deterministic JSONL validation. |
+| `kslog_replay` | `crates/kslog_replay/Cargo.toml` | version `0.1.0` | `kslog_schema`; dev `kslog_validate`, `serde_json` | Deterministic replay over validated synthetic events. |
+| `kslog_extract` | `crates/kslog_extract/Cargo.toml` | version `0.1.0` | `kslog_schema`, `kslog_replay`; dev `kslog_validate`, `serde_json` | Revision-event extraction. |
+| `kslog_micro_episode` | `crates/kslog_micro_episode/Cargo.toml` | version `0.1.0` | `kslog_extract`, `kslog_schema`, `serde`; dev `kslog_validate`, `serde_json` | Micro-episode construction. |
+| `kslog_no_oracle_audit` | `crates/kslog_no_oracle_audit/Cargo.toml` | version `0.1.0` | `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, `serde`; dev `kslog_validate`, `serde_json` | No-oracle checks and safe-view boundaries. |
+| `kslog_cli` | `crates/kslog_cli/Cargo.toml` | version `0.1.0`, binary `kslog` | all Rust pipeline crates plus `serde_json` | CLI wrapper for deterministic synthetic checks. |
+
+### Logger-Web Package Metadata
+
+| Area | Evidence path | Confirmed value | Purpose | Review note |
+| --- | --- | --- | --- | --- |
+| package name | `apps/logger-web/package.json` | `kslog-logger-web` | browser logger package | Package is private. |
+| package version | `apps/logger-web/package.json` | `0.1.0` | package metadata | Not a public release version claim. |
+| dev server script | `apps/logger-web/package.json` | `npm run dev` -> `vite --host 127.0.0.1` | local synthetic logger dev server | Local development only. |
+| build script | `apps/logger-web/package.json` | `npm run build` -> `vite build` | production-style bundle build check | Build success is not deployment readiness. |
+| typecheck script | `apps/logger-web/package.json` | `npm run typecheck` -> `tsc --noEmit` | TypeScript check | Included in `make check-logger`. |
+| test script | `apps/logger-web/package.json` | `npm test` -> TypeScript test compile and Node raw event test | raw event helper tests | Included in `make check-logger`. |
+| TypeScript dependency | `apps/logger-web/package.json` | `typescript` declared as `^5.6.3` | TypeScript compilation | Exact installed resolution is determined by lockfile, not copied here. |
+| Vite dependency | `apps/logger-web/package.json` | `vite` declared as `^8.0.16` | dev server and build | Exact installed resolution is determined by lockfile, not copied here. |
+
+## Appendix G. Status Marker Index
+
+Step-pretec-doc5 adds this index to reduce the per-status-marker low-priority
+gap. The index lists marker paths and public-safe interpretation only. It does
+not copy run logs, full job output, fixture JSON bodies, or raw workflow
+payloads.
+
+| Marker path | Related component | Status type | Raw logs stored | What it proves | What it does not prove |
+| --- | --- | --- | --- | --- | --- |
+| `docs/status/milestone_04_status.md` | Milestone 04 docs-only release review | milestone marker | no | Public-safe milestone status was recorded. | Does not prove production or real-data readiness. |
+| `docs/status/milestone_05_status.md` | Milestone 05 Makefile orchestration | milestone marker | no | Public-safe milestone status was recorded. | Does not prove production or real-data readiness. |
+| `docs/status/learner_state_audit_release_quality_remote_run_status.md` | learner-state audit | remote/manual run marker | no | Release-quality inclusion/status was recorded safely. | Does not prove learner-state estimator correctness. |
+| `docs/status/learner_state_exporter_release_quality_remote_run_status.md` | learner-state exporter | remote/manual run marker | no | Exporter check status was recorded safely. | Does not prove real-data export readiness. |
+| `docs/status/learner_state_estimator_input_release_quality_remote_run_status.md` | estimator input | remote/manual run marker | no | Estimator input validation status was recorded safely. | Does not prove estimator model correctness. |
+| `docs/status/learner_state_selective_prediction_release_quality_remote_run_status.md` | selective prediction | remote/manual run marker | no | Selective prediction validation status was recorded safely. | Does not prove model performance, ECE, or AURCC. |
+| `docs/status/learner_state_frozen_policy_release_quality_remote_run_status.md` | frozen policy validation | remote/manual run marker | no | Frozen policy validation status was recorded safely. | Does not prove policy quality. |
+| `docs/status/learner_state_frozen_policy_generation_release_quality_remote_run_status.md` | frozen policy generation validation | remote/manual run marker | no | Generation validation status was recorded safely. | Does not prove generated policy quality. |
+| `docs/status/learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md` | scaffold fixture validation | remote/manual run marker | no | Fixture validation inclusion/status was recorded safely. | Does not prove runtime generation correctness. |
+| `docs/status/learner_state_frozen_policy_generation_scaffold_runtime_release_quality_remote_run_status.md` | scaffold runtime smoke | remote/manual run marker | no | Metadata-only runtime smoke inclusion/status was recorded safely. | Does not prove production runtime readiness. |
+| `docs/status/learner_state_frozen_policy_generation_generator_scaffold_fixture_release_quality_remote_run_status.md` | generator scaffold fixture validation | remote/manual run marker | no | Fixture validation inclusion/status was recorded safely. | Does not prove generated policy body correctness. |
+| `docs/status/learner_state_frozen_policy_generation_generator_scaffold_runtime_release_quality_remote_run_status.md` | generator scaffold runtime smoke | remote/manual run marker | no | Metadata-only runtime smoke inclusion/status was recorded safely. | Does not prove artifact body or manifest integration. |
+| `docs/status/learner_state_frozen_policy_generation_artifact_writer_fixture_release_quality_remote_run_status.md` | artifact writer fixture validation | remote/manual run marker | no | Artifact writer fixture validation status was recorded safely. | Does not prove CLI integration runtime correctness. |
+| `docs/status/learner_state_frozen_policy_generation_artifact_writer_runtime_release_quality_remote_run_status.md` | artifact writer runtime smoke | remote/manual run marker | no | Metadata-only artifact writer smoke status was recorded safely. | Does not prove artifact body generation integration. |
+| `docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_fixture_release_quality_remote_run_status.md` | artifact writer CLI integration fixture validation | remote/manual run marker | no | CLI integration fixture validation status was recorded safely. | Does not prove artifact writer CLI integration runtime correctness. |
+| `docs/status/learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md` | artifact body fixture validation | remote/manual run marker | no | Artifact body fixture validation status was recorded safely. | Does not prove artifact body payload quality. |
+| `docs/status/learner_state_frozen_policy_generation_artifact_body_generation_release_quality_remote_run_status.md` | artifact body generation suppressed smoke | remote/manual run marker | no | Suppressed smoke status was recorded safely. | Does not prove artifact body generation integration correctness. |
+| `docs/status/learner_state_frozen_policy_generation_artifact_body_safe_metadata_release_quality_remote_run_status.md` | artifact body safe-metadata smoke | remote/manual run marker | no | Safe-metadata smoke status was recorded safely. | Does not prove production artifact body writing readiness. |
+| `docs/status/learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_release_quality_remote_run_status.md` | artifact body file-writing fixtures | remote/manual run marker | no | File-writing fixture validation status was recorded safely. | Does not prove production file-writing readiness. |
+| `docs/status/learner_state_frozen_policy_generation_artifact_body_isolated_write_release_quality_remote_run_status.md` | artifact body isolated write validation | remote/manual run marker | no | Isolated write validation status was recorded safely. | Does not prove production output readiness. |
+| `docs/status/learner_state_frozen_policy_generation_manifest_writer_fixture_release_quality_remote_run_status.md` | manifest writer fixture validation | remote/manual run marker | no | Manifest writer fixture validation status was recorded safely. | Does not prove manifest writer integration correctness. |
+| `docs/status/learner_state_frozen_policy_generation_manifest_writer_runtime_release_quality_remote_run_status.md` | manifest writer runtime smoke | remote/manual run marker | no | Runtime smoke status was recorded safely. | Does not prove production manifest readiness. |
+| `docs/status/learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_release_quality_remote_run_status.md` | manifest writer runtime fixture validation | remote/manual run marker | no | Runtime fixture validation status was recorded safely. | Does not prove manifest body generation. |
+| `docs/status/learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_release_quality_remote_run_status.md` | manifest writer file-writing fixtures | remote/manual run marker | no | File-writing fixture validation status was recorded safely. | Does not prove production readiness. |
+| `docs/status/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation_release_quality_remote_run_status.md` | manifest writer isolated write validation | remote/manual run marker | no | Isolated write validation status was recorded safely. | Does not prove production file-writing readiness. |
+| `docs/status/learner_state_frozen_policy_generation_manifest_writer_production_file_writing_fixture_release_quality_remote_run_status.md` | production-shaped manifest writer file-writing fixtures | remote/manual run marker | no | Production-shaped fixture validation status was recorded safely. | Does not prove production readiness. |
+| `docs/status/learner_state_frozen_policy_generation_manifest_writer_runtime_file_writing_release_quality_remote_run_status.md` | manifest writer runtime file-writing smoke | remote/manual run marker | no | Runtime file-writing smoke status was recorded safely. | Does not prove production data collection validity. |
+
+## Appendix H. Rust Crate API Review Notes
+
+Step-pretec-doc5 adds these review notes to reduce the Rust crate API
+low-priority gap. The table uses confirmed crate names, descriptions,
+dependencies, README scope, and test/build commands. It does not reproduce Rust
+source bodies or infer unconfirmed API signatures.
+
+| Crate | Role | Public-facing behavior confirmed from repository | Tests/check relation | No-oracle / safe-view relation | Non-claim |
+| --- | --- | --- | --- | --- | --- |
+| `kslog_schema` | shared synthetic raw event schema types | Deserializes and serializes synthetic raw event structures used by the Rust pipeline. | covered by `cargo test --workspace` and `check-rust` | rejects no-oracle forbidden unknown fields in tests | Not a real-data schema approval. |
+| `kslog_validate` | deterministic JSONL validation | Validates synthetic raw event JSONL and rejects malformed or unsafe sequences. | covered by Rust tests and CLI validation smoke | includes forbidden no-oracle field checks | Not legal/privacy readiness. |
+| `kslog_replay` | deterministic replay | Replays validated synthetic events and exposes safe diagnostics behavior. | covered by Rust tests and CLI replay/diagnose commands | diagnostics suppress content and emphasize counts/metadata | Not proof that replay handles all real-world inputs. |
+| `kslog_extract` | revision-event extraction | Extracts revision-event summaries from validated synthetic event sequences. | covered by Rust tests and CLI extract command | downstream input to no-oracle audited views | Not a complete linguistic revision model. |
+| `kslog_micro_episode` | micro-episode construction | Builds synthetic micro-episodes from revision events with deterministic IDs and local context policies. | covered by Rust tests and CLI build command | feeds no-oracle audit and safe-view creation | Not learner-state estimator correctness. |
+| `kslog_no_oracle_audit` | no-oracle audit and safe-view field boundaries | Defines forbidden field sets and safe-view field boundaries used for candidate-generation safety. | covered by Rust tests and CLI audit/make-safe-view/export-safe-view commands | central no-oracle / safe-view component | Not a guarantee that every future task is leakage-free. |
+| `kslog_cli` | Rust command-line wrapper | Provides `kslog` commands for validate, replay, diagnostics, extraction, micro-episode construction, no-oracle audit, safe view, and safe-view export. | covered by Rust tests, CI smoke, and `check-rust` | summaries suppress final text and unsafe context by default | Not production or real-data readiness. |
+
+## Appendix I. Logger-Web UI Behavior And External Review Notes
+
+Step-pretec-doc5 adds this summary to reduce the logger-web UI behavior
+low-priority gap. It is based on `apps/logger-web/README.md`,
+`apps/logger-web/package.json`, `apps/logger-web/src/`, and
+`apps/logger-web/tests/`. It does not copy raw event JSONL or user text.
+
+| Area | Confirmed behavior | Evidence path | Review note |
+| --- | --- | --- | --- |
+| Framework/runtime | Vite + TypeScript browser app with npm scripts for dev, build, typecheck, and tests | `apps/logger-web/package.json`, `apps/logger-web/vite.config.ts` | Local app checks do not prove deployment readiness. |
+| UI surface | Minimal page with one writing textarea, event summary elements, download button, and clear button | `apps/logger-web/src/main.ts`, `apps/logger-web/README.md` | UI behavior is summarized, not exhaustively specified. |
+| Event construction | Uses TypeScript raw event helpers to build synthetic raw event records and JSONL output | `apps/logger-web/src/rawEvent.ts`, `apps/logger-web/tests/rawEvent.test.ts` | Raw event bodies are not copied into docs. |
+| Browser event handling | Handles before/input/composition/selection/mouse/key-related snapshots for synthetic sessions | `apps/logger-web/src/main.ts` | This is not privacy or real participant readiness. |
+| Download behavior | In-memory synthetic events can be downloaded as JSONL | `apps/logger-web/README.md`, `apps/logger-web/src/main.ts` | Downloaded files must not be committed if they contain real or private data. |
+| Storage/network posture | README states no server send, no localStorage, and no console logging of text or JSONL | `apps/logger-web/README.md` | External review should confirm this remains true after future UI changes. |
+| Checks | `npm run typecheck`, `npm test`, and `npm run build` are wired through `make check-logger` | `apps/logger-web/package.json`, `Makefile` | Build/test success is not production deployment evidence. |
+
+## Appendix J. External Review Checklist Link
+
+The standalone external review checklist is
+`docs/full_technical_specification_external_review_checklist.md`. Reviewers
+should use it with this specification, the source inventory, and the coverage
+validation report. The checklist is a review aid, not a production readiness,
+real-data readiness, or model-performance certification.

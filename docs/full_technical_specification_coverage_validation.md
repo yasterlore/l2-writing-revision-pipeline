@@ -326,15 +326,16 @@ want an appendix with exact file lists.
 | G2 | Exact Makefile command mapping | `Makefile` targets | 9, Appendix B | partially covered | medium | Add a Makefile command appendix with exact command families, avoiding output logs. | yes, Step-pretec-doc4 |
 | G3 | Stable schema catalogue | schema/version scan found many names and markers | 7, Appendix C | weakly covered | medium | Split stable schema names from synthetic invalid-case markers and reason codes. | yes, Step-pretec-doc4 |
 | G4 | Fixture per-root counts | fixture README/validator outputs | 11, Appendix D | partially covered | medium | Recompute safe counts for every fixture root and add a count appendix. | yes, Step-pretec-doc4 |
-| G5 | Dependency version tables | package/Cargo metadata | 4, 17, 18 | weakly covered | low | Add summarized dependency/version evidence without lockfile body copying. | no |
-| G6 | Per-status-marker index | `docs/status/` | 20, 22 | partially covered | low | Add a marker-family appendix or per-marker table if required. | no |
-| G7 | Rust crate API details | crate READMEs/source | 18 | partially covered | low | Add crate-level API summary from README/source docs. | no |
-| G8 | Logger-web UI behavior | `apps/logger-web/src/` | 17 | partially covered | low | Add UI interaction summary without raw event payload examples. | no |
-| G9 | Exact workflow action versions | workflow YAML | 10 | weakly covered | low | Add workflow setup/action version table if needed. | no |
+| G5 | Dependency version tables | package/Cargo metadata | 4, 17, 18, Appendix F | weakly covered | low | Add summarized dependency/version evidence without lockfile body copying. | reduced, Step-pretec-doc5 |
+| G6 | Per-status-marker index | `docs/status/` | 20, 22, Appendix G, external review checklist | partially covered | low | Add a marker-family appendix or per-marker table if required. | reduced, Step-pretec-doc5 |
+| G7 | Rust crate API details | crate READMEs/source | 18, Appendix H | partially covered | low | Add crate-level API summary from README/source docs. | reduced, Step-pretec-doc5 |
+| G8 | Logger-web UI behavior | `apps/logger-web/src/` | 17, Appendix I | partially covered | low | Add UI interaction summary without raw event payload examples. | reduced, Step-pretec-doc5 |
+| G9 | Exact workflow action versions | workflow YAML | 10, Appendix F | weakly covered | low | Add workflow setup/action version table if needed. | reduced, Step-pretec-doc5 |
 
 No high-severity gaps were found in this coverage validation. The four
-medium-priority gaps are fixed in Step-pretec-doc4 appendices. The low-priority
-gaps remain as external-review hardening items.
+medium-priority gaps are fixed in Step-pretec-doc4 appendices. The
+low-priority gaps are reduced in Step-pretec-doc5 appendices and the
+external-review checklist. They are not an absolute guarantee of no omissions.
 
 ## 19. Fixes Applied In This Step
 
@@ -352,6 +353,10 @@ Minimal documentation links and coverage notes were applied:
   remaining low-priority external-review checks
 - Step-pretec-doc4 follow-up updated this gap table so medium-priority gaps
   G1-G4 are marked fixed
+- Step-pretec-doc5 follow-up added external-review-level hardening for
+  dependency/runtime/package/workflow versions, per-status-marker indexing,
+  Rust crate review notes, logger-web UI behavior notes, and a standalone
+  external review checklist
 
 No implementation, fixture JSON, Makefile, workflow, wrapper, Python, Rust, or
 TypeScript changes were made.
@@ -366,12 +371,12 @@ Coverage validation found:
 - high gaps: 0
 - medium gaps remaining after Step-pretec-doc4: 0
 - medium gaps fixed in Step-pretec-doc4: 4
-- low gaps remaining: 5
+- low gaps reduced in Step-pretec-doc5: 5
+- unresolved low-priority external review questions: still possible, to be
+  recorded by reviewer if found
 
-Unresolved low-priority gaps remain listed above for the next specification
-step. This is not an absolute guarantee of no omissions. Future external
-review is still recommended before treating the draft as an
-external-review-ready specification.
+This is not an absolute guarantee of no omissions. Future external review is
+still recommended before treating the draft as externally accepted.
 
 This validation does not prove production readiness, real-data readiness,
 model performance, F1, accuracy, ECE, AURCC, runtime integration correctness,
@@ -382,7 +387,8 @@ privacy/legal/IRB readiness.
 ## 21. Next Recommended Steps
 
 - Step-pretec-doc4: medium gap fixes, completed as docs-only appendices
-- Step-pretec-doc5: external-review-ready version and low-priority hardening
+- Step-pretec-doc5: external-review-ready version and low-priority hardening,
+  completed as docs-only appendices and checklist
 - Step-pretec-doc6: final safety/non-proof review
 - Later: artifact writer CLI integration runtime implementation design and
   implementation, separate from this specification coverage work

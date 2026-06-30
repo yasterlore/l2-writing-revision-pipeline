@@ -35,6 +35,11 @@ Current public-facing implementation state:
   [Full technical specification draft](full_technical_specification.md) for
   Python CLI args, Makefile target mapping, schema/result versions, fixture
   root counts, and remaining low-priority external-review checks.
+- Step-pretec-doc5 external-review hardening is now present in
+  [Full technical specification draft](full_technical_specification.md), and
+  [Full technical specification external review checklist](full_technical_specification_external_review_checklist.md)
+  is available. This reduces low-priority documentation gaps but does not
+  claim production readiness, real-data readiness, or model performance.
 
 ## 1. Data Safety
 
