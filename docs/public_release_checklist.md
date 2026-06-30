@@ -4076,6 +4076,15 @@ release-quality wrapper or workflow YAML, change fixture JSON, use real data,
 compute metrics, or claim production readiness, real-data readiness, model
 performance, F1, accuracy, ECE, or AURCC.
 
+For Step482, review the
+[frozen policy generation artifact writer CLI integration runtime fixture validator Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validator_makefile_target_design.md).
+Confirm it is design-only for a future standalone Makefile target that runs
+the Step481 validator CLI. Confirm it does not change Makefile, release-quality
+wrapper, workflow YAML, Python code/tests, fixture JSON, runtime integration,
+artifact body generation integration, manifest writer integration, use real
+data, compute metrics, or claim production readiness, real-data readiness,
+model performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

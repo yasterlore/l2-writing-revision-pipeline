@@ -120,6 +120,17 @@ integration, call artifact writer CLI integration runtime, connect artifact
 body generation, connect manifest writer integration, write files, change
 fixture JSON, or prove production readiness.
 
+## Future Makefile Target Design
+
+Step482 adds the docs-only standalone Makefile target design for running the
+Step481 validator CLI:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture validator Makefile target design](../../../docs/frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validator_makefile_target_design.md)
+
+The design does not implement a Makefile target, change release-quality
+wrapper or workflow files, change Python code/tests, change fixture JSON, or
+execute runtime integration.
+
 ## Implementation Status
 
 - fixture root created: yes

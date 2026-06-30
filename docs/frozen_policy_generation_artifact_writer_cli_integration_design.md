@@ -583,3 +583,15 @@ The validator checks synthetic metadata-only fixture contracts only. It does
 not execute runtime integration, connect artifact body generation, connect
 manifest writer integration, change Makefile/wrapper/workflow files, change
 fixture JSON, use real data, compute metrics, or claim production readiness.
+
+## 35. Step482 Runtime Fixture Validator Makefile Target Design Status
+
+Step482 adds the docs-only standalone Makefile target design for running the
+Step481 runtime fixture validator CLI:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture validator Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validator_makefile_target_design.md)
+
+The design does not change Makefile, release-quality wrapper, workflow files,
+Python code/tests, fixture JSON, runtime integration, artifact body generation
+integration, manifest writer integration, real-data use, metrics, or production
+readiness.

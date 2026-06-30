@@ -1680,6 +1680,13 @@ written, no artifact body is produced, and no performance metric is computed.
   artifact body generation, connect manifest writer integration, add a
   Makefile target, change release-quality wrapper/workflow files, change
   fixture JSON, use real data, compute metrics, or claim production readiness.
+- Step482: added the docs-only standalone Makefile target design for running
+  the Step481 artifact writer CLI integration runtime fixture validator CLI.
+  The design fixes the future target name, help text, command, expected
+  body-free output, failure interpretation, release-quality staging, and future
+  implementation checks without changing Makefile, wrapper, workflow files,
+  Python code/tests, fixture JSON, runtime integration, metrics, real-data use,
+  or production readiness.
 
 ## Related Documents
 

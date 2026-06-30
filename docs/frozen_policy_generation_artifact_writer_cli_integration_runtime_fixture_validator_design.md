@@ -318,6 +318,17 @@ body generation, connect manifest writer integration, add a Makefile target,
 change release-quality wrapper/workflow files, change fixture JSON, use real
 data, compute metrics, or claim production readiness.
 
+## 14.2 Step482 Makefile Target Design Status
+
+Step482 adds the docs-only standalone Makefile target design for running the
+Step481 validator CLI:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture validator Makefile target design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validator_makefile_target_design.md)
+
+The design does not implement the target, change release-quality wrapper or
+workflow files, change Python code/tests, change fixture JSON, execute runtime
+integration, use real data, compute metrics, or claim production readiness.
+
 ## 15. Non-Claims
 
 This design does not claim:

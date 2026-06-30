@@ -420,6 +420,13 @@ runtime integration, connect artifact body generation, connect manifest writer
 integration, add a Makefile target, change wrapper/workflow files, change
 fixture JSON, use real data, compute metrics, or claim production readiness.
 
+## 15.4 Step482 Makefile Target Design Status
+
+Step482 adds the docs-only standalone Makefile target design for the Step481
+runtime fixture validator CLI. It does not change Makefile, wrapper/workflow
+files, Python code/tests, fixture JSON, runtime integration, real-data use,
+metrics, or production readiness.
+
 ## 16. Non-Claims
 
 This design does not claim:
