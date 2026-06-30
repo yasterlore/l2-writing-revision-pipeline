@@ -315,13 +315,26 @@ This design does not claim:
 
 Suggested future staging:
 
-1. Step492: artifact writer CLI integration runtime release-quality
-   integration design.
-2. Step493: artifact writer CLI integration runtime release-quality wrapper
+1. Step493: artifact writer CLI integration runtime release-quality wrapper
    integration.
-3. Step494: remote/manual run record workflow design.
-4. Step495: remote/manual status marker.
+2. Step494: remote/manual run record workflow design.
+3. Step495: remote/manual status marker.
 
 Artifact writer CLI actual invocation, artifact body generation integration,
 manifest writer integration, manifest body generation, and file-writing
 behavior remain separate future work.
+
+## 17. Step492 Release-Quality Integration Design Status
+
+Step492 adds the docs-only release-quality integration design for the Step491
+runtime target:
+
+[Frozen policy generation artifact writer CLI integration runtime release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_integration_design.md)
+
+The design proposes the wrapper label, command, insertion point, expected
+safe output, failure interpretation, relation to the existing chain, and
+remote status staging. It does not change the release-quality wrapper, change
+workflow YAML, change Makefile, change Python code/tests, change fixture JSON,
+perform artifact writer CLI actual invocation, connect artifact body
+generation integration, connect manifest writer integration, write files, or
+claim production readiness.

@@ -4205,6 +4205,17 @@ integration, connect manifest writer integration, write files, use real data,
 compute metrics, or claim production readiness, real-data readiness, model
 performance, F1, accuracy, ECE, or AURCC.
 
+For Step492, review the docs-only
+[frozen policy generation artifact writer CLI integration runtime release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_integration_design.md).
+Confirm it proposes only a future wrapper label, command, insertion point,
+safe output expectations, failure interpretation, chain relation, and remote
+status staging. Confirm it does not change the release-quality wrapper,
+change workflow YAML, change Makefile, change Python code/tests, change
+fixture JSON, invoke artifact writer CLI actual downstream behavior, connect
+artifact body generation integration, connect manifest writer integration,
+write files, use real data, compute metrics, or claim production readiness,
+real-data readiness, model performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

@@ -354,6 +354,20 @@ code/tests, change fixture JSON, perform artifact writer CLI actual
 invocation, connect artifact body generation integration, connect manifest
 writer integration, write files, or claim production readiness.
 
+## 16.3 Step492 Release-Quality Integration Design Status
+
+Step492 adds the docs-only release-quality integration design for the Step491
+runtime target:
+
+[Frozen policy generation artifact writer CLI integration runtime release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_integration_design.md)
+
+The design proposes a future wrapper label and command for the standalone
+runtime smoke target. It does not change the wrapper, change workflow YAML,
+change Makefile, change Python code/tests, change fixture JSON, perform
+artifact writer CLI actual invocation, connect artifact body generation
+integration, connect manifest writer integration, write files, or claim
+production readiness.
+
 ## 17. Public-Safe Checklist
 
 - no raw logs

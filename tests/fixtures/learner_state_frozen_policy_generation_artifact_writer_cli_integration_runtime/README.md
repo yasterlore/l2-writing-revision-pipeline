@@ -238,6 +238,21 @@ perform artifact writer CLI actual invocation, connect artifact body
 generation integration, connect manifest writer integration, write files, or
 claim production readiness.
 
+## Runtime Release-Quality Integration Design
+
+Step492 adds the docs-only release-quality integration design for the Step491
+runtime target:
+
+[Frozen policy generation artifact writer CLI integration runtime release-quality integration design](../../../docs/frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_integration_design.md)
+
+The design proposes only a future wrapper label, command, insertion point,
+safe output expectations, failure interpretation, chain relation, and remote
+status staging. It does not change the release-quality wrapper, change
+workflow files, change Makefile, change Python code/tests, change fixture
+JSON, perform artifact writer CLI actual invocation, connect artifact body
+generation integration, connect manifest writer integration, write files, or
+claim production readiness.
+
 ## Implementation Status
 
 - fixture root created: yes
@@ -248,6 +263,7 @@ claim production readiness.
 - runtime Makefile target design: yes, docs-only
 - static validator Makefile target added: yes
 - runtime Makefile target added: yes, standalone only
+- runtime release-quality integration design: yes, docs-only
 - release-quality wrapper changed: yes, static validator target only
 - remote run record workflow design: yes
 - remote status marker created: yes, public-safe pass-only/count-only marker

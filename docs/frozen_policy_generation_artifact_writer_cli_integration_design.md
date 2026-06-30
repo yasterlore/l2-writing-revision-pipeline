@@ -719,3 +719,18 @@ code/tests, change fixture JSON, perform artifact writer CLI actual
 invocation, connect artifact body generation integration, connect manifest
 writer integration, write files, use real data, compute metrics, or claim
 production readiness.
+
+## 45. Step492 Runtime Release-Quality Integration Design Status
+
+Step492 adds the docs-only release-quality integration design for the Step491
+runtime target:
+
+[Frozen policy generation artifact writer CLI integration runtime release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_integration_design.md)
+
+The design proposes the future release-quality label, command, insertion
+point, safe output expectations, failure interpretation, and remote status
+staging. It does not change the wrapper, change workflow files, change
+Makefile, change Python code/tests, change fixture JSON, perform artifact
+writer CLI actual invocation, connect artifact body generation integration,
+connect manifest writer integration, write files, use real data, compute
+metrics, or claim production readiness.
