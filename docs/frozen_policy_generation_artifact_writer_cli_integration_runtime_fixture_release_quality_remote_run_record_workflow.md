@@ -337,3 +337,17 @@ release-quality wrapper integration. It does not modify Makefile, change
 Python code/tests, change fixture JSON, perform artifact writer CLI actual
 invocation, connect artifact body generation integration, connect manifest
 writer integration, write files, or claim production readiness.
+
+## 18. Step494 Runtime Smoke Remote Run Record Workflow Design Status
+
+Step494 adds a separate docs-only public-safe remote/manual run record
+workflow design for the Step493 runtime smoke wrapper check:
+
+[Frozen policy generation artifact writer CLI integration runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_record_workflow.md)
+
+This Step486 document remains scoped to the static runtime fixture validator
+check from Step485. Step494 does not create a runtime smoke status marker,
+change workflow files, change the wrapper, change Makefile, change Python
+code/tests, change fixture JSON, perform artifact writer CLI actual
+invocation, connect artifact body generation integration, connect manifest
+writer integration, write files, or claim production readiness.

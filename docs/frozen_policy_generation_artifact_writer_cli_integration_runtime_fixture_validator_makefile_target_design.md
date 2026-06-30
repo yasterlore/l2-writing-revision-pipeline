@@ -392,7 +392,21 @@ writer CLI actual invocation, does not connect artifact body generation
 integration, does not connect manifest writer integration, and does not claim
 production readiness.
 
-## 23. Public-Safe Checklist
+## 23. Step494 Runtime Smoke Remote Run Record Workflow Design Status
+
+Step494 adds the docs-only public-safe remote/manual run record workflow
+design for the separate Step493 runtime smoke wrapper check:
+
+[Frozen policy generation artifact writer CLI integration runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_record_workflow.md)
+
+This static fixture validator Makefile target design remains unchanged.
+Step494 does not create a remote status marker, change workflow files, change
+the wrapper, change Makefile, change Python code/tests, change fixture JSON,
+perform artifact writer CLI actual invocation, connect artifact body
+generation integration, connect manifest writer integration, write files, or
+claim production readiness.
+
+## 24. Public-Safe Checklist
 
 - no raw logs
 - no full job output

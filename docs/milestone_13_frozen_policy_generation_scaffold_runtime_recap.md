@@ -1827,6 +1827,14 @@ written, no artifact body is produced, and no performance metric is computed.
   perform artifact writer CLI actual invocation, connect artifact body
   generation integration, connect manifest writer integration, write files,
   use real data, compute metrics, or claim production readiness.
+- Step494: added the docs-only remote/manual run record workflow design for
+  the Step493 artifact writer CLI integration runtime smoke:
+  [Frozen policy generation artifact writer CLI integration runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_record_workflow.md).
+  This does not create a remote status marker, change workflow files, change
+  the release-quality wrapper, change Makefile, change Python code/tests,
+  change fixture JSON, perform artifact writer CLI actual invocation, connect
+  artifact body generation integration, connect manifest writer integration,
+  write files, use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 

@@ -267,6 +267,20 @@ fixture JSON, perform artifact writer CLI actual invocation, connect artifact
 body generation integration, connect manifest writer integration, write files,
 or claim production readiness.
 
+## Runtime Smoke Remote Run Record Workflow Design
+
+Step494 adds the docs-only public-safe remote/manual run record workflow
+design for the Step493 runtime smoke wrapper check:
+
+[Frozen policy generation artifact writer CLI integration runtime release-quality remote run record workflow](../../../docs/frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_record_workflow.md)
+
+This is separate from the static fixture validator remote status marker. It
+does not create the runtime smoke status marker, change workflow files, change
+the wrapper, change Makefile, change Python code/tests, change fixture JSON,
+perform artifact writer CLI actual invocation, connect artifact body
+generation integration, connect manifest writer integration, write files, or
+claim production readiness.
+
 ## Implementation Status
 
 - fixture root created: yes
@@ -280,8 +294,10 @@ or claim production readiness.
 - runtime release-quality integration design: yes, docs-only
 - release-quality wrapper changed: yes, static validator target and runtime
   smoke target
-- remote run record workflow design: yes
-- remote status marker created: yes, public-safe pass-only/count-only marker
+- static fixture remote run record workflow design: yes
+- static fixture remote status marker created: yes, public-safe pass-only/count-only marker
+- runtime smoke remote run record workflow design: yes, Step494 docs-only
+- runtime smoke remote status marker created: no
 - workflow changed: no
 - artifact body generation integration implemented: no
 - manifest writer integration implemented: no

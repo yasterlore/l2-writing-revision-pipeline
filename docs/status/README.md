@@ -128,8 +128,12 @@ Available markers:
   file JSON bodies, fixture JSON bodies, private paths, absolute paths, raw
   learner text, or performance evidence.
 
-Planned markers: none for the artifact writer CLI integration runtime fixture
-validator release-quality wrapper check.
+Planned markers:
+
+- `docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_status.md`
+  for the artifact writer CLI integration runtime smoke release-quality
+  wrapper check after a future actual remote/manual run. It should remain
+  public-safe, metadata-only, body-free, and raw-log-free.
 
 Related recap:
 
@@ -254,6 +258,12 @@ Related recap:
   target and Step493 wrapper integration status. It is not a status marker,
   does not change workflow YAML, and does not claim remote release-quality
   evidence or production readiness.
+- [Frozen policy generation artifact writer CLI integration runtime release-quality remote run record workflow](../frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_record_workflow.md):
+  Step494 docs-only public-safe remote/manual run record workflow design for
+  the Step493 runtime smoke wrapper check. It is not a status marker, does
+  not store raw logs or full job output, and does not claim artifact writer
+  CLI actual invocation correctness, production readiness, real-data
+  readiness, or model performance.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

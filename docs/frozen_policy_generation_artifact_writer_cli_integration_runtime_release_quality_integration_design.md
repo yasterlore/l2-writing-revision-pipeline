@@ -224,9 +224,13 @@ generation integration, manifest writer integration, or file-writing behavior.
 
 ## 12. Remote Status Marker Staging
 
-After a future wrapper integration and actual remote/manual Release Quality
-run, a separate remote/manual run record workflow design should define what
-metadata can be recorded publicly.
+Step494 creates the separate remote/manual run record workflow design for the
+Step493 runtime smoke check:
+
+[Frozen policy generation artifact writer CLI integration runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_record_workflow.md)
+
+After an actual remote/manual Release Quality run, that workflow design should
+guide what metadata can be recorded publicly.
 
 Future status marker records should be pass-only, count-only or summary-only,
 metadata-only, and raw-log-free. They must not copy full job output, GitHub log
@@ -301,3 +305,16 @@ workflow YAML, Makefile, Python code/tests, fixture JSON, artifact writer CLI
 actual invocation behavior, artifact body generation integration, manifest
 writer integration, file-writing behavior, real-data use, metric use, or
 production readiness.
+
+## 17. Step494 Remote Run Record Workflow Design Status
+
+Step494 adds the docs-only public-safe remote/manual run record workflow
+design for the Step493 runtime smoke wrapper check:
+
+[Frozen policy generation artifact writer CLI integration runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_record_workflow.md)
+
+It does not create the remote status marker, change workflow YAML, change the
+release-quality wrapper, change Makefile, change Python code/tests, change
+fixture JSON, perform artifact writer CLI actual invocation, connect artifact
+body generation integration, connect manifest writer integration, write files,
+use real data, compute metrics, or claim production readiness.

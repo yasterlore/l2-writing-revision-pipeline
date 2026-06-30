@@ -727,6 +727,11 @@ runtime target:
 
 [Frozen policy generation artifact writer CLI integration runtime release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_integration_design.md)
 
+Step494 adds the docs-only public-safe remote/manual run record workflow
+design for that Step493 runtime smoke wrapper check:
+
+[Frozen policy generation artifact writer CLI integration runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_record_workflow.md)
+
 The design proposes the future release-quality label, command, insertion
 point, safe output expectations, failure interpretation, and remote status
 staging. It does not change the wrapper, change workflow files, change

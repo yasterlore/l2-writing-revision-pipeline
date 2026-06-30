@@ -4222,6 +4222,17 @@ For Step493, confirm the release-quality wrapper includes:
 - insertion point: after artifact writer CLI integration runtime fixture
   validation and before artifact body fixture validation
 
+For Step494, review the docs-only
+[frozen policy generation artifact writer CLI integration runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_remote_run_record_workflow.md).
+Confirm it designs only future public-safe remote/manual status recording for
+the Step493 runtime smoke. Confirm it does not create a status marker, change
+workflow YAML, change the wrapper, change Makefile, change Python code/tests,
+change fixture JSON, invoke artifact writer CLI actual downstream behavior,
+connect artifact body generation integration, connect manifest writer
+integration, write files, use real data, compute metrics, or claim production
+readiness, real-data readiness, model performance, F1, accuracy, ECE, or
+AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
