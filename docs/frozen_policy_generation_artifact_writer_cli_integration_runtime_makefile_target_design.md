@@ -315,10 +315,8 @@ This design does not claim:
 
 Suggested future staging:
 
-1. Step493: artifact writer CLI integration runtime release-quality wrapper
-   integration.
-2. Step494: remote/manual run record workflow design.
-3. Step495: remote/manual status marker.
+1. Step494: remote/manual run record workflow design.
+2. Step495: remote/manual status marker.
 
 Artifact writer CLI actual invocation, artifact body generation integration,
 manifest writer integration, manifest body generation, and file-writing

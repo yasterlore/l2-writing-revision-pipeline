@@ -6,11 +6,12 @@ This document is the Step492 design-only release-quality integration design
 for the Step491 standalone artifact writer CLI integration runtime Makefile
 target.
 
-This document does not implement the release-quality wrapper change, change
-workflow YAML, change Makefile, change Python code or tests, change fixture
-JSON, perform artifact writer CLI actual invocation, connect artifact body
-generation integration, connect manifest writer integration, generate manifest
-bodies, generate policy bodies, or implement file writing.
+Step493 implements the release-quality wrapper change described here. This
+document still does not change workflow YAML, change Makefile, change Python
+code or tests, change fixture JSON, perform artifact writer CLI actual
+invocation, connect artifact body generation integration, connect manifest
+writer integration, generate manifest bodies, generate policy bodies, or
+implement file writing.
 
 This document is not production readiness evidence, real-data readiness
 evidence, model performance evidence, F1 evidence, accuracy evidence, ECE
@@ -27,11 +28,13 @@ learner-state estimator correctness evidence.
   runtime CLI.
 - Step491 implemented the standalone Makefile target:
   `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime`.
+- Step492 created this release-quality integration design.
+- Step493 added the standalone runtime target to the release-quality wrapper.
 
-Step491 adds a standalone target only. It does not add release-quality runtime
-wrapper integration, workflow changes, artifact writer CLI actual invocation,
-artifact body generation integration, manifest writer integration, generated
-policy body generation, or file writing.
+Step493 adds a release-quality wrapper label and command block only. It does
+not add workflow changes, artifact writer CLI actual invocation, artifact body
+generation integration, manifest writer integration, generated policy body
+generation, or file writing.
 
 ## 3. Target Makefile Target
 
@@ -55,9 +58,9 @@ artifact body generation, invoke manifest writer, generate manifest bodies,
 generate policy bodies, or perform artifact writer CLI actual downstream
 behavior.
 
-## 4. Proposed Release-Quality Label
+## 4. Release-Quality Label
 
-Recommended label:
+Implemented label:
 
 ```text
 release_quality_check: learner-state frozen policy generation artifact writer CLI integration runtime smoke
@@ -69,9 +72,9 @@ correctness, artifact body generation integration correctness, manifest writer
 integration correctness, generated policy quality, or learner-state estimator
 correctness.
 
-## 5. Proposed Release-Quality Command
+## 5. Release-Quality Command
 
-Recommended wrapper command:
+Implemented wrapper command:
 
 ```bash
 make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime
@@ -81,9 +84,9 @@ The wrapper should call the standalone Makefile target rather than duplicating
 the Python CLI command. This keeps the release-quality wrapper aligned with
 the local developer entrypoint.
 
-## 6. Proposed Insertion Point
+## 6. Insertion Point
 
-Recommended insertion point:
+Implemented insertion point:
 
 - after artifact writer fixture validation
 - after artifact writer runtime smoke
@@ -137,7 +140,7 @@ Expected body-free public-safe output includes:
 - `real_data_readiness_claimed=False`
 - `performance_claims_present=False`
 
-The output must remain metadata-only and body-free. It must not print fixture
+The output remains metadata-only and body-free. It must not print fixture
 JSON bodies, request bodies, pointer bodies, expected bodies, generated policy
 bodies, artifact body payloads, manifest bodies, raw rows, logits,
 probabilities, private paths, absolute paths, raw learner text, real
@@ -187,7 +190,7 @@ estimator correctness.
 
 ## 10. Relation To Existing Release-Quality Chain
 
-This proposed check:
+This check:
 
 - does not replace artifact writer fixture validation
 - does not replace artifact writer runtime smoke
@@ -201,24 +204,23 @@ This proposed check:
   metadata-only fixture case
 
 The static runtime fixture validator remains the count-oriented contract check.
-The proposed runtime smoke is a terminal invocation and safe-summary check.
+The runtime smoke is a terminal invocation and safe-summary check.
 
 ## 11. Wrapper Implementation Guidance
 
-A future Step493 wrapper implementation should add only a label and command
-block to `scripts/check_release_quality.sh`.
+Step493 adds only a label and command block to
+`scripts/check_release_quality.sh`.
 
-The future wrapper block should look conceptually like:
+The wrapper block is:
 
 ```text
 release_quality_check: learner-state frozen policy generation artifact writer CLI integration runtime smoke
 command: make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime
 ```
 
-The implementation step should not change workflow YAML, Makefile, Python
-code/tests, fixture JSON, artifact writer CLI actual invocation behavior,
-artifact body generation integration, manifest writer integration, or
-file-writing behavior.
+The implementation does not change workflow YAML, Makefile, Python code/tests,
+fixture JSON, artifact writer CLI actual invocation behavior, artifact body
+generation integration, manifest writer integration, or file-writing behavior.
 
 ## 12. Remote Status Marker Staging
 
@@ -247,7 +249,6 @@ This design does not claim:
 - manifest body generation correctness
 - generated policy quality
 - learner-state estimator correctness
-- release-quality wrapper implementation completed
 - remote status marker created
 
 ## 14. Public-Safe Checklist
@@ -278,11 +279,25 @@ This design does not claim:
 
 Suggested future staging:
 
-1. Step493: artifact writer CLI integration runtime release-quality wrapper
-   integration.
-2. Step494: remote/manual run record workflow design.
-3. Step495: remote/manual status marker.
+1. Step494: remote/manual run record workflow design.
+2. Step495: remote/manual status marker.
 
 Artifact writer CLI actual invocation, artifact body generation integration,
 manifest writer integration, manifest body generation, and file-writing
 behavior remain separate future work.
+
+## 16. Step493 Wrapper Integration Status
+
+Step493 adds the release-quality wrapper block:
+
+```text
+release_quality_check: learner-state frozen policy generation artifact writer CLI integration runtime smoke
+command: make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime
+```
+
+The block is inserted after artifact writer CLI integration runtime fixture
+validation and before artifact body fixture validation. It does not change
+workflow YAML, Makefile, Python code/tests, fixture JSON, artifact writer CLI
+actual invocation behavior, artifact body generation integration, manifest
+writer integration, file-writing behavior, real-data use, metric use, or
+production readiness.

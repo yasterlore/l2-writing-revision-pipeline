@@ -689,8 +689,8 @@ The runtime returns public-safe body-free summaries from fixture metadata or
 explicit metadata paths. It does not call artifact body generation, call
 manifest writer, generate manifest bodies, generate policy bodies, write
 files, use real data, compute metrics, or claim production readiness. It is
-connected to a standalone Makefile target in Step491 while remaining outside
-release-quality runtime wrapper checks.
+connected to a standalone Makefile target in Step491 and the release-quality
+wrapper in Step493.
 
 ## 43. Step490 Runtime Makefile Target Design Status
 

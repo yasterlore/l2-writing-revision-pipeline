@@ -446,7 +446,7 @@ integration runtime module, CLI, and focused tests:
 
 This fixture validator release-quality integration remains unchanged. The
 Step489 runtime is added to a standalone Makefile target in Step491, but is
-not yet added to release-quality as a runtime check.
+added to release-quality as a runtime smoke check in Step493.
 
 ## 22. Step490 Runtime Makefile Target Design Status
 

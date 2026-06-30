@@ -279,18 +279,15 @@ These tests should remain synthetic-only and metadata-only.
 
 ## 13. Proposed Implementation Staging
 
-Suggested future staging after Step490:
+Suggested future staging after Step493:
 
-- Step491: runtime CLI Makefile target implementation
-- Step492: runtime release-quality integration design
-- Step493: runtime release-quality wrapper integration
 - Step494: remote/manual run record workflow design
 - Step495: remote status marker
 
 Step489 stops at the standalone runtime module, CLI, and focused tests.
 Step490 adds only the docs-only Makefile target design. Step491 implements
-the standalone Makefile target without adding release-quality runtime wrapper
-integration.
+the standalone Makefile target. Step493 adds the target to the
+release-quality wrapper.
 
 ## 14. Non-Claims
 
@@ -324,7 +321,7 @@ The implementation is metadata-only. It returns public-safe runtime summaries,
 keeps file writing disabled, does not invoke artifact body generation, does
 not invoke manifest writer, does not generate manifest bodies, does not
 generate policy bodies, and is connected to a standalone Makefile target in
-Step491 while remaining outside release-quality runtime wrapper checks.
+Step491 and to the release-quality wrapper in Step493.
 
 ## 16.1 Step490 Makefile Target Design Status
 

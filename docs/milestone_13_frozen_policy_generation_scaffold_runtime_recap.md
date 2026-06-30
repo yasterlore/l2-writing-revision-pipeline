@@ -1816,6 +1816,17 @@ written, no artifact body is produced, and no performance metric is computed.
   JSON, perform artifact writer CLI actual invocation, connect artifact body
   generation integration, connect manifest writer integration, write files,
   use real data, compute metrics, or claim production readiness.
+- Step493: added the Step491 artifact writer CLI integration runtime smoke
+  target to the release-quality wrapper:
+  `release_quality_check: learner-state frozen policy generation artifact writer CLI integration runtime smoke`.
+  The wrapper command is
+  `make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime`,
+  inserted after artifact writer CLI integration runtime fixture validation
+  and before artifact body fixture validation. This does not change workflow
+  files, change Makefile, change Python code/tests, change fixture JSON,
+  perform artifact writer CLI actual invocation, connect artifact body
+  generation integration, connect manifest writer integration, write files,
+  use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 

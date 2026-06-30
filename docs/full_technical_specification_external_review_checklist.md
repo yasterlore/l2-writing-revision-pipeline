@@ -71,7 +71,7 @@ implementation boundaries:
 
 - artifact writer CLI integration runtime: initial metadata-only runtime
   module exists after Step489, with a Step491 standalone Makefile smoke target
-  and no release-quality runtime wrapper integration yet
+  and Step493 release-quality wrapper inclusion
 - artifact body generation CLI integration
 - manifest writer integration
 - manifest body generation

@@ -235,8 +235,9 @@ Related recap:
 - `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime.py`:
   Step489 initial standalone metadata-only artifact writer CLI integration
   runtime module and CLI. It is not a status marker, not a workflow change, and
-  not release-quality runtime wrapper evidence. It writes no files and does
-  not invoke artifact body generation or manifest writer.
+  not remote release-quality evidence. Step493 adds its smoke target to the
+  release-quality wrapper. It writes no files and does not invoke artifact
+  body generation or manifest writer.
 - [Frozen policy generation artifact writer CLI integration runtime Makefile target design](../frozen_policy_generation_artifact_writer_cli_integration_runtime_makefile_target_design.md):
   Step490 docs-only standalone Makefile target design for the Step489 runtime
   CLI. It is not a status marker, does not change Makefile, does not change
@@ -250,9 +251,9 @@ Related recap:
   behavior.
 - [Frozen policy generation artifact writer CLI integration runtime release-quality integration design](../frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_integration_design.md):
   Step492 docs-only release-quality integration design for the Step491 runtime
-  target. It is not a status marker, does not change the wrapper, does not
-  change workflow YAML, and does not claim release-quality runtime evidence or
-  production readiness.
+  target and Step493 wrapper integration status. It is not a status marker,
+  does not change workflow YAML, and does not claim remote release-quality
+  evidence or production readiness.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

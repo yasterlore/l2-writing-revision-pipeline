@@ -4207,14 +4207,20 @@ performance, F1, accuracy, ECE, or AURCC.
 
 For Step492, review the docs-only
 [frozen policy generation artifact writer CLI integration runtime release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_release_quality_integration_design.md).
-Confirm it proposes only a future wrapper label, command, insertion point,
-safe output expectations, failure interpretation, chain relation, and remote
-status staging. Confirm it does not change the release-quality wrapper,
-change workflow YAML, change Makefile, change Python code/tests, change
-fixture JSON, invoke artifact writer CLI actual downstream behavior, connect
-artifact body generation integration, connect manifest writer integration,
-write files, use real data, compute metrics, or claim production readiness,
-real-data readiness, model performance, F1, accuracy, ECE, or AURCC.
+Confirm Step493 implements only the wrapper label and command for the runtime
+smoke target. Confirm it does not change workflow YAML, change Makefile,
+change Python code/tests, change fixture JSON, invoke artifact writer CLI
+actual downstream behavior, connect artifact body generation integration,
+connect manifest writer integration, write files, use real data, compute
+metrics, or claim production readiness, real-data readiness, model
+performance, F1, accuracy, ECE, or AURCC.
+
+For Step493, confirm the release-quality wrapper includes:
+
+- label: `release_quality_check: learner-state frozen policy generation artifact writer CLI integration runtime smoke`
+- command: `make check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime`
+- insertion point: after artifact writer CLI integration runtime fixture
+  validation and before artifact body fixture validation
 
 ## 7. Checks To Run
 
