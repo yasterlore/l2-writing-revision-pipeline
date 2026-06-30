@@ -433,3 +433,16 @@ This design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 13. Step487 Remote Status Marker Status
+
+Step487 creates the public-safe pass-only/count-only remote/manual status
+marker for the Step485 release-quality wrapper check over the runtime fixture
+validator:
+
+[Learner-state frozen policy generation artifact writer CLI integration runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_status.md)
+
+The marker confirms wrapper inclusion and static fixture contract validation
+only. It does not execute artifact writer CLI integration runtime, store raw
+logs or full job output, prove runtime correctness, prove real-data readiness,
+prove model performance, or prove production readiness.

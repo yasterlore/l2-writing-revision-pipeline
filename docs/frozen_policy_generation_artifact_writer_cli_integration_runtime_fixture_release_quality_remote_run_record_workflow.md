@@ -206,7 +206,10 @@ Proposed future status marker path for Step487:
 
 `docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_status.md`
 
-Step486 does not create this marker.
+Step486 does not create this marker. Step487 creates it as a public-safe
+pass-only/count-only marker without raw logs, full job output, copied GitHub
+log blocks, runtime integration evidence, real-data readiness evidence,
+model-performance evidence, or production readiness evidence.
 
 ## 10. Planned Step487 Input Fields
 
@@ -275,8 +278,22 @@ This design does not claim:
 
 ## 13. Next Recommended Steps
 
-- Step487: create the public-safe remote status marker after an actual
-  remote/manual Release Quality run is reviewed.
+- Step487: completed by creating the public-safe remote status marker after an
+  actual remote/manual Release Quality run was reviewed.
 - Step488: artifact writer CLI integration runtime implementation design.
 - Later artifact body generation integration work remains separate.
 - Later manifest writer integration work remains separate.
+
+## 14. Step487 Remote Status Marker Status
+
+Step487 creates the remote/manual status marker:
+
+[Learner-state frozen policy generation artifact writer CLI integration runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_status.md)
+
+The marker records the Step485 wrapper check as public-safe, pass-only,
+count-only, and metadata-only. It does not copy raw logs, full job output,
+copied GitHub log blocks, fixture/request/pointer/expected bodies, artifact
+body payloads, manifest bodies, generated policy bodies, private paths,
+absolute paths, raw learner text, real participant data, or performance metric
+bodies. It is not runtime integration evidence, real-data readiness evidence,
+model-performance evidence, or production readiness evidence.

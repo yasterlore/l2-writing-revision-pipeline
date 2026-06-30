@@ -173,6 +173,19 @@ fields. It does not create the marker, change workflow files, change the
 wrapper, change Makefile targets, change Python code/tests, change fixture
 JSON, or execute runtime integration.
 
+## Remote Status Marker
+
+Step487 creates the public-safe pass-only/count-only remote/manual status
+marker for the Step485 wrapper check:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture release-quality remote run status](../../../docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_status.md)
+
+The marker records static fixture validation counts only. It does not store
+raw logs, full job output, copied GitHub log blocks, fixture JSON bodies,
+request/pointer/expected bodies, runtime integration evidence, real-data
+readiness evidence, model-performance evidence, or production readiness
+evidence.
+
 ## Implementation Status
 
 - fixture root created: yes
@@ -182,7 +195,7 @@ JSON, or execute runtime integration.
 - Makefile target added: yes
 - release-quality wrapper changed: yes, static validator target only
 - remote run record workflow design: yes
-- remote status marker created: no
+- remote status marker created: yes, public-safe pass-only/count-only marker
 - workflow changed: no
 - artifact body generation integration implemented: no
 - manifest writer integration implemented: no

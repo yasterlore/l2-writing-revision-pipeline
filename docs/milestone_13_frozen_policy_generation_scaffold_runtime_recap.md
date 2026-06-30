@@ -1763,6 +1763,13 @@ written, no artifact body is produced, and no performance metric is computed.
   change workflow files, change the wrapper, change Makefile targets, change
   Python code/tests, change fixture JSON, execute runtime integration, use real
   data, compute metrics, or claim production readiness.
+- Step487: created the public-safe pass-only/count-only remote/manual status
+  marker for the Step485 wrapper check:
+  [Learner-state frozen policy generation artifact writer CLI integration runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_status.md).
+  The marker stores no raw logs, full job output, copied GitHub log blocks,
+  fixture JSON bodies, request/pointer/expected bodies, runtime integration
+  evidence, real-data readiness evidence, model performance evidence, or
+  production readiness evidence.
 
 ## Related Documents
 

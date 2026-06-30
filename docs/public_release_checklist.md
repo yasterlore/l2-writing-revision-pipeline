@@ -4151,6 +4151,15 @@ change fixture JSON, execute runtime integration, use real data, compute
 metrics, or claim production readiness, real-data readiness, model
 performance, F1, accuracy, ECE, or AURCC.
 
+For Step487, review the
+[artifact writer CLI integration runtime fixture release-quality remote run status marker](status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_status.md).
+Confirm it is public-safe, pass-only, count-only, metadata-only, and does not
+store raw logs, full job output, copied GitHub log blocks, fixture JSON bodies,
+request/pointer/expected bodies, private paths, absolute paths, raw learner
+text, real participant data, runtime integration evidence, production
+readiness evidence, real-data readiness evidence, model performance evidence,
+F1, accuracy, ECE, or AURCC evidence.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

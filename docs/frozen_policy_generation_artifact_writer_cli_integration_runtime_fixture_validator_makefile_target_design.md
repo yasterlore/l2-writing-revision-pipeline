@@ -337,12 +337,24 @@ change the wrapper, change Makefile targets, change Python code/tests, change
 fixture JSON, execute runtime integration, use real data, compute metrics, or
 claim production readiness.
 
-## 18. Next Recommended Steps
+## 18. Step487 Remote Status Marker Status
 
-- Step487: remote status marker.
+Step487 creates the public-safe pass-only/count-only remote/manual status
+marker for the Step485 wrapper check:
+
+[Learner-state frozen policy generation artifact writer CLI integration runtime fixture release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_remote_run_status.md)
+
+The marker records wrapper inclusion and static fixture validation counts. It
+does not store raw logs, full job output, copied GitHub log blocks, fixture
+JSON bodies, request/pointer/expected bodies, runtime integration evidence,
+real-data readiness evidence, model-performance evidence, or production
+readiness evidence.
+
+## 19. Next Recommended Steps
+
 - Step488: artifact writer CLI integration runtime implementation design.
 
-## 19. Public-Safe Checklist
+## 20. Public-Safe Checklist
 
 - no raw logs
 - no full job output
