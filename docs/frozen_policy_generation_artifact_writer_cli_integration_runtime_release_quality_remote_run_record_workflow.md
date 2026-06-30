@@ -297,3 +297,16 @@ text, real participant data, or performance metric bodies. It is not artifact
 writer CLI actual invocation evidence, artifact body generation integration
 evidence, manifest writer integration evidence, real-data readiness evidence,
 model-performance evidence, or production readiness evidence.
+
+## 14. Step496 Actual Invocation Design Status
+
+Step496 adds the docs-only / planning-only design for a future metadata-only
+body-free artifact writer CLI actual invocation boundary:
+
+[Frozen policy generation artifact writer CLI actual invocation design](frozen_policy_generation_artifact_writer_cli_actual_invocation_design.md)
+
+The design does not implement actual invocation, change Python code/tests,
+change Makefile, change the release-quality wrapper, change workflow files,
+change fixture JSON, connect artifact body generation integration, connect
+manifest writer integration, write files, use real data, compute metrics, or
+claim production readiness.

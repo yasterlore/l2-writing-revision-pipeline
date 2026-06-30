@@ -295,6 +295,19 @@ participant data, or performance metric bodies. It is not artifact writer CLI
 actual invocation evidence, artifact body generation integration evidence,
 manifest writer integration evidence, or production readiness evidence.
 
+## Actual Invocation Design
+
+Step496 adds the docs-only / planning-only design for a future metadata-only
+body-free artifact writer CLI actual invocation boundary:
+
+[Frozen policy generation artifact writer CLI actual invocation design](../../../docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_design.md)
+
+The fixture root and fixture JSON remain unchanged. The design does not
+implement actual invocation, change Python code/tests, change Makefile, change
+the release-quality wrapper, change workflow files, connect artifact body
+generation integration, connect manifest writer integration, write files, use
+real data, compute metrics, or claim production readiness.
+
 ## Implementation Status
 
 - fixture root created: yes
@@ -312,6 +325,8 @@ manifest writer integration evidence, or production readiness evidence.
 - static fixture remote status marker created: yes, public-safe pass-only/count-only marker
 - runtime smoke remote run record workflow design: yes, Step494 docs-only
 - runtime smoke remote status marker created: yes, Step495 public-safe pass-only metadata-only marker
+- actual invocation design: yes, Step496 docs-only / planning-only
+- actual invocation implemented: no
 - workflow changed: no
 - artifact body generation integration implemented: no
 - manifest writer integration implemented: no

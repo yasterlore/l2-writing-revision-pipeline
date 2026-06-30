@@ -1844,6 +1844,14 @@ written, no artifact body is produced, and no performance metric is computed.
   artifact writer CLI actual invocation, connect artifact body generation
   integration, connect manifest writer integration, write files, use real
   data, compute metrics, or claim production readiness.
+- Step496: added the docs-only / planning-only artifact writer CLI actual
+  invocation design:
+  [Frozen policy generation artifact writer CLI actual invocation design](frozen_policy_generation_artifact_writer_cli_actual_invocation_design.md).
+  This does not implement actual invocation, change Python code/tests, change
+  Makefile, change the release-quality wrapper, change workflow files, change
+  fixture JSON, connect artifact body generation integration, connect
+  manifest writer integration, write files, use real data, compute metrics, or
+  claim production readiness.
 
 ## Related Documents
 

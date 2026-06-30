@@ -548,3 +548,16 @@ change Python code/tests, change fixture JSON, perform artifact writer CLI
 actual invocation, connect artifact body generation integration, connect
 manifest writer integration, write files, use real data, compute metrics, or
 claim production readiness.
+
+## 21. Step496 Actual Invocation Design Status
+
+Step496 adds the docs-only / planning-only design for a future metadata-only
+body-free artifact writer CLI actual invocation boundary:
+
+[Frozen policy generation artifact writer CLI actual invocation design](frozen_policy_generation_artifact_writer_cli_actual_invocation_design.md)
+
+The runtime remains a metadata-only smoke path with actual invocation disabled.
+The design does not change Python code/tests, Makefile, the release-quality
+wrapper, workflow files, fixture JSON, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claims.

@@ -4246,6 +4246,17 @@ correctness, artifact body generation integration correctness, manifest writer
 integration correctness, production readiness, real-data readiness, model
 performance, F1, accuracy, ECE, or AURCC.
 
+For Step496, review the docs-only
+[frozen policy generation artifact writer CLI actual invocation design](frozen_policy_generation_artifact_writer_cli_actual_invocation_design.md).
+Confirm it defines only a future metadata-only body-free actual invocation
+boundary. Confirm it does not change Python code/tests, Makefile, the
+release-quality wrapper, workflow YAML, fixture JSON, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness. Confirm it does not claim artifact writer CLI
+actual invocation correctness, artifact body generation integration
+correctness, manifest writer integration correctness, real-data readiness,
+model performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
