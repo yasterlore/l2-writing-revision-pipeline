@@ -352,9 +352,20 @@ readiness evidence.
 
 ## 19. Next Recommended Steps
 
-- Step488: artifact writer CLI integration runtime implementation design.
+- Step489: artifact writer CLI integration runtime implementation.
 
-## 20. Public-Safe Checklist
+## 20. Step488 Runtime Implementation Design Status
+
+Step488 adds the design-only / planning-only implementation design:
+
+[Frozen policy generation artifact writer CLI integration runtime implementation design](frozen_policy_generation_artifact_writer_cli_integration_runtime_implementation_design.md)
+
+It proposes a future metadata-only runtime boundary while leaving this
+Makefile target unchanged. It does not add runtime code, add a runtime CLI,
+change Makefile, change the release-quality wrapper, change workflow files,
+change fixture JSON, or claim production readiness.
+
+## 21. Public-Safe Checklist
 
 - no raw logs
 - no full job output

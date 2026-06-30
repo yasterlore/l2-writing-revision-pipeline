@@ -446,3 +446,18 @@ The marker confirms wrapper inclusion and static fixture contract validation
 only. It does not execute artifact writer CLI integration runtime, store raw
 logs or full job output, prove runtime correctness, prove real-data readiness,
 prove model performance, or prove production readiness.
+
+## 14. Step488 Runtime Implementation Design Status
+
+Step488 adds the design-only / planning-only implementation design for a
+future metadata-only artifact writer CLI integration runtime:
+
+[Frozen policy generation artifact writer CLI integration runtime implementation design](frozen_policy_generation_artifact_writer_cli_integration_runtime_implementation_design.md)
+
+The design proposes the future module/CLI boundary, metadata-only inputs,
+public-safe outputs, runtime flow, artifact writer CLI invocation boundary,
+file-writing boundary, fail-closed behavior, focused tests, and staging. It
+does not add Python runtime code, add a CLI, change Makefile, change the
+release-quality wrapper, change workflow files, change fixture JSON, execute
+runtime integration, use real data, compute metrics, or claim production
+readiness.

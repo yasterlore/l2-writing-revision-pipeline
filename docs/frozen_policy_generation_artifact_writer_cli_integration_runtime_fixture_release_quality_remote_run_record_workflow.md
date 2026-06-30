@@ -280,7 +280,9 @@ This design does not claim:
 
 - Step487: completed by creating the public-safe remote status marker after an
   actual remote/manual Release Quality run was reviewed.
-- Step488: artifact writer CLI integration runtime implementation design.
+- Step488: completed by creating the artifact writer CLI integration runtime
+  implementation design.
+- Step489: artifact writer CLI integration runtime implementation.
 - Later artifact body generation integration work remains separate.
 - Later manifest writer integration work remains separate.
 
@@ -297,3 +299,15 @@ body payloads, manifest bodies, generated policy bodies, private paths,
 absolute paths, raw learner text, real participant data, or performance metric
 bodies. It is not runtime integration evidence, real-data readiness evidence,
 model-performance evidence, or production readiness evidence.
+
+## 15. Step488 Runtime Implementation Design Status
+
+Step488 adds the design-only / planning-only implementation design for the
+future artifact writer CLI integration runtime:
+
+[Frozen policy generation artifact writer CLI integration runtime implementation design](frozen_policy_generation_artifact_writer_cli_integration_runtime_implementation_design.md)
+
+The design does not implement runtime code, add a CLI, change Makefile, change
+the release-quality wrapper, change workflow files, change fixture JSON, or
+claim runtime correctness, real-data readiness, model performance, or
+production readiness.

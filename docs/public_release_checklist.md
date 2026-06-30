@@ -4160,6 +4160,16 @@ text, real participant data, runtime integration evidence, production
 readiness evidence, real-data readiness evidence, model performance evidence,
 F1, accuracy, ECE, or AURCC evidence.
 
+For Step488, review the
+[frozen policy generation artifact writer CLI integration runtime implementation design](frozen_policy_generation_artifact_writer_cli_integration_runtime_implementation_design.md).
+Confirm it is design-only / planning-only for a future metadata-only runtime
+implementation. Confirm it does not add Python runtime code, add a CLI, change
+Makefile, change release-quality wrapper, change workflow YAML, change fixture
+JSON, connect artifact body generation integration, connect manifest writer
+integration, use real data, compute metrics, or claim runtime correctness,
+production readiness, real-data readiness, model performance, F1, accuracy,
+ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

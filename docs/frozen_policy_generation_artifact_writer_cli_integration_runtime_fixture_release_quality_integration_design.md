@@ -422,4 +422,16 @@ This design does not:
 
 ## 19. Next Recommended Steps
 
-- Step488: artifact writer CLI integration runtime implementation design.
+- Step489: artifact writer CLI integration runtime implementation.
+
+## 20. Step488 Runtime Implementation Design Status
+
+Step488 adds the design-only / planning-only implementation design for a
+future metadata-only artifact writer CLI integration runtime:
+
+[Frozen policy generation artifact writer CLI integration runtime implementation design](frozen_policy_generation_artifact_writer_cli_integration_runtime_implementation_design.md)
+
+The design does not change the release-quality wrapper, workflow files,
+Makefile, Python code/tests, fixture JSON, artifact body generation
+integration, manifest writer integration, real-data use, metrics, or
+production readiness.

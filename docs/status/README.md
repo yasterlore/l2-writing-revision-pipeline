@@ -225,6 +225,13 @@ Related recap:
   Step487 public-safe pass-only/count-only status marker for the Step485
   wrapper check. Raw logs and full job output are not stored, and the marker is
   not runtime integration evidence or production readiness evidence.
+- [Frozen policy generation artifact writer CLI integration runtime implementation design](../frozen_policy_generation_artifact_writer_cli_integration_runtime_implementation_design.md):
+  Step488 design-only / planning-only implementation design for a future
+  metadata-only artifact writer CLI integration runtime. It does not add
+  runtime code, a CLI, Makefile changes, wrapper changes, workflow changes,
+  fixture JSON changes, artifact body generation integration, manifest writer
+  integration, real-data use, metric evidence, or production readiness
+  evidence.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

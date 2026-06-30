@@ -1770,6 +1770,13 @@ written, no artifact body is produced, and no performance metric is computed.
   fixture JSON bodies, request/pointer/expected bodies, runtime integration
   evidence, real-data readiness evidence, model performance evidence, or
   production readiness evidence.
+- Step488: added the design-only / planning-only implementation design for a
+  future metadata-only artifact writer CLI integration runtime:
+  [Frozen policy generation artifact writer CLI integration runtime implementation design](frozen_policy_generation_artifact_writer_cli_integration_runtime_implementation_design.md).
+  This step does not add Python runtime code, add a CLI, change Makefile,
+  change the release-quality wrapper, change workflow files, change fixture
+  JSON, connect artifact body generation integration, connect manifest writer
+  integration, use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 

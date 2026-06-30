@@ -425,3 +425,16 @@ The marker records static fixture validator wrapper inclusion and the 30-case /
 JSON bodies, request/pointer/expected bodies, runtime integration evidence,
 real-data readiness evidence, model-performance evidence, or production
 readiness evidence.
+
+## 18. Step488 Runtime Implementation Design Status
+
+Step488 adds the design-only / planning-only implementation design for a
+future artifact writer CLI integration runtime:
+
+[Frozen policy generation artifact writer CLI integration runtime implementation design](frozen_policy_generation_artifact_writer_cli_integration_runtime_implementation_design.md)
+
+The design uses this validator chain as static guardrails. It does not replace
+the Step481 validator, change fixture JSON, add runtime code, add a CLI, change
+Makefile, change the release-quality wrapper, execute artifact body generation
+integration, execute manifest writer integration, or claim production
+readiness.

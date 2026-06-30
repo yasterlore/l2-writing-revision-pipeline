@@ -186,12 +186,26 @@ request/pointer/expected bodies, runtime integration evidence, real-data
 readiness evidence, model-performance evidence, or production readiness
 evidence.
 
+## Runtime Implementation Design
+
+Step488 adds the design-only / planning-only implementation design for a
+future metadata-only artifact writer CLI integration runtime:
+
+[Frozen policy generation artifact writer CLI integration runtime implementation design](../../../docs/frozen_policy_generation_artifact_writer_cli_integration_runtime_implementation_design.md)
+
+The design may use this fixture root as a guardrail, but it does not modify
+fixture JSON, implement runtime behavior, add a CLI, change Makefile, change
+the release-quality wrapper, change workflow files, connect artifact body
+generation integration, connect manifest writer integration, or claim
+production readiness.
+
 ## Implementation Status
 
 - fixture root created: yes
 - fixture JSON created: yes
 - validator implemented: yes
 - runtime implemented: no
+- runtime implementation design: yes, docs-only / planning-only
 - Makefile target added: yes
 - release-quality wrapper changed: yes, static validator target only
 - remote run record workflow design: yes

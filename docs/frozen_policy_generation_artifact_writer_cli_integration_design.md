@@ -662,3 +662,17 @@ job output, copied GitHub log blocks, fixture JSON bodies,
 request/pointer/expected bodies, runtime integration evidence, real-data
 readiness evidence, model-performance evidence, or production readiness
 evidence.
+
+## 41. Step488 Runtime Implementation Design Status
+
+Step488 adds the design-only / planning-only implementation design for a
+future artifact writer CLI integration runtime:
+
+[Frozen policy generation artifact writer CLI integration runtime implementation design](frozen_policy_generation_artifact_writer_cli_integration_runtime_implementation_design.md)
+
+The design proposes a metadata-only runtime boundary between generator
+scaffold CLI output or request metadata and the artifact writer CLI boundary.
+It does not add Python runtime code, add a CLI, change Makefile, change the
+release-quality wrapper, change workflow files, change fixture JSON, connect
+artifact body generation integration, connect manifest writer integration, use
+real data, compute metrics, or claim production readiness.
