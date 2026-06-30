@@ -559,3 +559,15 @@ The root contains synthetic metadata-only fixture contracts only. It does not
 implement runtime integration, artifact body generation integration, manifest
 writer integration, validator code, Makefile targets, release-quality wrapper
 changes, workflow changes, real-data use, metrics, or production readiness.
+
+## 33. Step480 Runtime Fixture Validator Design Status
+
+Step480 adds the docs-only validator design for the runtime fixture root:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture validator design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validator_design.md)
+
+The design covers future static fixture validation only. It does not implement
+the validator, implement runtime integration, connect artifact body generation,
+connect manifest writer integration, change Makefile/wrapper/workflow files,
+change Python code/tests, change fixture JSON, use real data, compute metrics,
+or claim production readiness.

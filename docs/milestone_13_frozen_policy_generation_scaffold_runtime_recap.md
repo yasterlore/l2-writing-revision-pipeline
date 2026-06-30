@@ -1666,6 +1666,13 @@ written, no artifact body is produced, and no performance metric is computed.
   integration, Makefile target, release-quality wrapper change, workflow
   change, Python code/tests, artifact body generation integration, manifest
   writer integration, metrics, real-data use, or production readiness.
+- Step480: added the docs-only artifact writer CLI integration runtime fixture
+  validator design for the Step479 fixture root. The design fixes the future
+  module/CLI shape, validation phases, forbidden-content and sentinel policies,
+  expected summary schema, expected counts, exit-code behavior, CLI modes, and
+  focused test plan without implementing a validator, runtime integration,
+  Makefile target, wrapper change, workflow change, Python code/tests, fixture
+  JSON changes, metrics, real-data use, or production readiness.
 
 ## Related Documents
 

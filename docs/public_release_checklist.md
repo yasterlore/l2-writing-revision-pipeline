@@ -4057,6 +4057,15 @@ wrapper or workflow YAML, change Python code/tests, use real data, compute
 metrics, or claim production readiness, real-data readiness, model
 performance, F1, accuracy, ECE, or AURCC.
 
+For Step480, review the
+[frozen policy generation artifact writer CLI integration runtime fixture validator design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validator_design.md).
+Confirm it is design-only for a future static validator over the Step479
+fixture root. Confirm it does not implement a validator, implement runtime
+integration, add a Makefile target, change release-quality wrapper or workflow
+YAML, change Python code/tests, change fixture JSON, use real data, compute
+metrics, or claim production readiness, real-data readiness, model
+performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

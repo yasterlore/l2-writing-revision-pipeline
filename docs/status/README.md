@@ -181,6 +181,10 @@ Related recap:
   synthetic metadata-only fixture root for the future artifact writer CLI
   integration runtime boundary. It is not runtime implementation, validator
   implementation, real-data readiness, or production readiness evidence.
+- [Frozen policy generation artifact writer CLI integration runtime fixture validator design](../frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validator_design.md):
+  docs-only future validator design for the Step479 runtime fixture root. It
+  does not implement a validator, execute runtime integration, or provide
+  production readiness evidence.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

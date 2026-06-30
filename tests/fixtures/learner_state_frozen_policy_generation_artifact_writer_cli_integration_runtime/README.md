@@ -97,6 +97,17 @@ integration correctness, manifest writer integration correctness, generated
 policy quality, model performance, learner-state estimator correctness,
 real-data readiness, or production readiness.
 
+## Future Validator Design
+
+Step480 adds the docs-only validator design for this fixture root:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture validator design](../../../docs/frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validator_design.md)
+
+The design describes future static validation only. It does not implement the
+validator, execute runtime integration, add a Makefile target, change
+release-quality wrapper or workflow files, change Python code/tests, or change
+fixture JSON.
+
 ## Implementation Status
 
 - fixture root created: yes

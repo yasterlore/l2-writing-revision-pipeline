@@ -399,6 +399,18 @@ validator, implement runtime integration, add a Makefile target, change the
 release-quality wrapper, change workflow YAML, change Python code/tests, use
 real data, compute metrics, or claim production readiness.
 
+## 15.2 Step480 Validator Design Status
+
+Step480 adds the docs-only validator design for the Step479 fixture root:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture validator design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validator_design.md)
+
+The design fixes the future static validator phases and public-safe summary
+contract. It does not implement the validator, implement runtime integration,
+add a Makefile target, change wrapper/workflow files, change Python code/tests,
+change fixture JSON, use real data, compute metrics, or claim production
+readiness.
+
 ## 16. Non-Claims
 
 This design does not claim:
