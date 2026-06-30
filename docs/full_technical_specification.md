@@ -748,7 +748,10 @@ real-data readiness or production evidence.
 Recommended next steps:
 
 - Step-pretec-doc3: coverage validation for this draft against the source
-  inventory and repository scan
+  inventory and repository scan, completed as a docs-only report
+- Step-pretec-doc4: medium-priority coverage gap appendices, completed with
+  Python CLI, Makefile target, schema/version, fixture count, and external
+  review checklist appendices
 - artifact writer CLI integration runtime implementation design and
   implementation
 - artifact body generation CLI integration design and implementation
@@ -757,9 +760,9 @@ Recommended next steps:
 - production readiness review, separate from this research software draft
 - real-data readiness review, separate and institution-approved
 - external review checklist for public specification release
-- exact CLI argument extraction for all Python modules
-- exact Makefile command mapping appendix
-- fixture count recomputation and schema catalogue validation
+- low-priority hardening for dependency/version tables, per-status-marker
+  index, Rust crate API detail, logger-web UI behavior, and workflow action
+  version tables
 
 ## 25. Coverage And Evidence Appendix
 
@@ -785,17 +788,18 @@ Scan scope from Step-pretec-doc1:
 
 Known uncertainty:
 
-- exact CLI argument tables for every Python module require parser/help
-  extraction in a later step
-- exact fixture counts should be recomputed from fixture roots or validator
-  summaries before treating this draft as final
-- exact schema catalogue should distinguish stable schema names from synthetic
-  invalid-case markers
+- Python CLI arguments, Makefile command families, stable schema/result
+  families, and fixture root counts are covered in Appendices A-D as of
+  Step-pretec-doc4
+- dependency/version tables, exact per-status-marker indexing, Rust crate API
+  details, logger-web UI behavior, and workflow action version tables remain
+  low-priority follow-up items
 - any component not represented in this draft should be treated as
-  `not yet confirmed from repository scan` until Step-pretec-doc3 validates
-  coverage
+  `not yet confirmed from repository scan` unless a later coverage validation
+  or external review confirms it
 
-Coverage validation in the next step should compare this draft against:
+Future coverage validation or external review should compare this draft
+against:
 
 - `docs/full_technical_specification_source_inventory.md`
 - `Makefile`
@@ -807,3 +811,218 @@ Coverage validation in the next step should compare this draft against:
 - `apps/logger-web/`
 - `tests/fixtures/`
 - `docs/status/`
+
+## Appendix A. Python CLI Argument Catalogue
+
+Step-pretec-doc4 adds this appendix to close the medium-priority CLI argument
+coverage gap found in Step-pretec-doc3. The catalogue is based on repository
+source scans of Python modules that define `argparse` parsers. It records
+argument names only; it does not copy fixture bodies, request bodies, pointer
+bodies, expected bodies, raw rows, raw learner text, logits, probabilities, or
+generated policy/artifact/manifest bodies.
+
+| Module path | Command | Args | Purpose | Input / output | File writing behavior | Makefile / release-quality relation | Safety note |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `python/candidate_generation/generate.py` | `python -m candidate_generation.generate` | `--input`, `--output` | Candidate generation CLI | synthetic input path to candidate output | writes caller-selected output | not directly in release-quality wrapper | synthetic-only; no performance claim |
+| `python/evaluation/evaluate.py` | `python -m evaluation.evaluate` | `--scores`, `--expected`, `--output` | Synthetic expected-action evaluation | candidate scores and expected-action metadata to report output | writes caller-selected output | not directly in wrapper | not model-performance evidence |
+| `python/evaluation/expected_action_registry.py` | `python -m evaluation.expected_action_registry` | `--registry`, `--case-name` | Expected-action registry inspection | registry metadata to safe status | no confirmed write behavior | not directly in wrapper | synthetic registry only |
+| `python/ot_scorer/features.py` | `python -m ot_scorer.features` | `--input`, `--output` | Feature generation | synthetic input to feature output | writes caller-selected output | used through scripts/tests | no raw learner text in public docs |
+| `python/ot_scorer/constraints.py` | `python -m ot_scorer.constraints` | `--input`, `--output` | Constraint generation | synthetic feature input to constraint output | writes caller-selected output | used through scripts/tests | no oracle fields in public output |
+| `python/ot_scorer/score.py` | `python -m ot_scorer.score` | `--input` / `--constraints`, `--output`, `--weight-config` | OT-inspired scoring | synthetic candidates/constraints/config to score output | writes caller-selected output | config/scoring smoke scripts | no metric achievement claim |
+| `python/ot_scorer/summarize_diagnostics.py` | `python -m ot_scorer.summarize_diagnostics` | `--constraints`, `--output` | Diagnostic summary generation | synthetic constraints to summary output | writes caller-selected output | summary/check scripts | count-only diagnostics |
+| `python/ot_scorer/validate_weight_config.py` | `python -m ot_scorer.validate_weight_config` | `--config` | Hand weight config validation | synthetic config to validation status | no | `check-fixtures` scripts | config validation only |
+| `python/ot_scorer/score_fixture_lock.py` | `python -m ot_scorer.score_fixture_lock` | `--expected`, `--generated`, `--case-name` | Fixture score lock comparison | expected/generated synthetic score paths to mismatch status | no | `check-fixtures` scripts | mismatch summaries only |
+| `python/ot_scorer/config_ranking_diff.py` | `python -m ot_scorer.config_ranking_diff` | `--no-config`, `--config`, `--case-name`, `--expect-zero-diff`, `--expect-weighted-score-diff` | Config ranking diff check | synthetic score outputs/config metadata to diff status | no direct writing; scripts may create controlled outputs | config/scoring smoke scripts | no model-performance claim |
+| `python/learner_state/sequence_audit.py` | `python -m learner_state.sequence_audit` | `--features`, `--labels`, `--manifest`, `--fixture-case`, `--fixture-root`, `--json` | Sequence audit validation | dataset metadata or fixture root/case to safe audit summary | no | `check-learner-state-audit-fixtures`; wrapper included | no-oracle audit; no raw rows |
+| `python/learner_state/sequence_exporter.py` | `python -m learner_state.sequence_exporter` | `--input-fixture`, `--output-dir`, `--json` | Sequence export smoke | synthetic fixture to separated output files and safe summary | writes caller output dir | `check-learner-state-exporter-cli`; wrapper included | synthetic-only export; path safety checked |
+| `python/learner_state/estimator_input.py` | `python -m learner_state.estimator_input` | `--fixture-case`, `--fixture-root`, `--json` | Estimator input fixture validation | fixture case/root to safe summary | no | `check-learner-state-estimator-input`; wrapper included | no estimator correctness claim |
+| `python/learner_state/selective_prediction_validation.py` | `python -m learner_state.selective_prediction_validation` | `--fixture-case`, `--fixture-root`, `--json` | Selective prediction fixture validation | fixture case/root to safe summary | no | `check-learner-state-selective-prediction`; wrapper included | no ECE/AURCC achievement |
+| `python/learner_state/frozen_policy_validation.py` | `python -m learner_state.frozen_policy_validation` | `--fixture-case`, `--fixture-root`, `--json` | Frozen policy fixture validation | fixture case/root to safe summary | no | `check-learner-state-frozen-policy`; wrapper included | no policy quality proof |
+| `python/learner_state/frozen_policy_generation_validation.py` | `python -m learner_state.frozen_policy_generation_validation` | `--fixture-case`, `--fixture-root`, `--json` | Frozen policy generation fixture validation | fixture case/root to safe summary | no | `check-learner-state-frozen-policy-generation`; wrapper included | no generated policy quality proof |
+| `python/learner_state/frozen_policy_generation.py` | `python -m learner_state.frozen_policy_generation` | `--request`, `--pointer`, `--json` | Scaffold runtime smoke | metadata-only request/pointer to safe summary | no artifact writing | scaffold runtime target; wrapper included | artifact body suppressed |
+| `python/learner_state/frozen_policy_generation_scaffold_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_scaffold_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Scaffold fixture validation | fixture root/case to safe summary | no | scaffold fixture target; wrapper included | metadata-only validation |
+| `python/learner_state/frozen_policy_generation_generator_scaffold.py` | `python -m learner_state.frozen_policy_generation_generator_scaffold` | `--request`, `--pointer`, `--json` | Generator scaffold smoke | metadata-only request/pointer to safe summary | no body/file writing | generator runtime target; wrapper included | no generated policy body |
+| `python/learner_state/frozen_policy_generation_generator_scaffold_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_generator_scaffold_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Generator scaffold fixture validation | fixture root/case to safe summary | no | generator fixture target; wrapper included | no body leakage |
+| `python/learner_state/frozen_policy_generation_artifact_writer.py` | `python -m learner_state.frozen_policy_generation_artifact_writer` | `--request`, `--pointer`, `--json` | Artifact writer runtime smoke | metadata-only request/pointer to safe summary | no body writing | artifact writer runtime target; wrapper included | artifact/manifest bodies suppressed |
+| `python/learner_state/frozen_policy_generation_artifact_writer_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_artifact_writer_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Artifact writer fixture validation | fixture root/case to safe summary | no | artifact writer fixture target; wrapper included | metadata-only fixture validation |
+| `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Artifact writer CLI integration fixture validation | fixture root/case to count-only summary | no | CLI integration fixture target; wrapper included | static fixture contract only |
+| `python/learner_state/frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Future runtime fixture validation | fixture root/case to count-only summary | no | standalone Makefile target; not wrapper-integrated as of scan | does not execute runtime integration |
+| `python/learner_state/frozen_policy_generation_artifact_body.py` | `python -m learner_state.frozen_policy_generation_artifact_body` | `--request`, `--pointer`, `--mode`, `--artifact-body-out`, `--json` | Artifact body suppressed/safe-metadata smoke | metadata-only request/pointer to safe summary or opt-in safe output | optional safe output for file-writing smoke | body generation and safe-metadata targets; wrapper included | no artifact body payload in public output |
+| `python/learner_state/frozen_policy_generation_artifact_body_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_artifact_body_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Artifact body fixture validation | fixture root/case to safe summary | no | body fixture target; wrapper included | body suppressed |
+| `python/learner_state/frozen_policy_generation_artifact_body_file_writing_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_artifact_body_file_writing_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Artifact body file-writing fixture validation | fixture root/case to safe summary | no | body file-writing target; wrapper included | validates safe writing policy |
+| `python/learner_state/frozen_policy_generation_artifact_body_isolated_write_validation.py` | `python -m learner_state.frozen_policy_generation_artifact_body_isolated_write_validation` | `--fixture-root`, `--fixture-case`, `--json` | Artifact body isolated write validation | fixture root/case to safe summary | controlled isolated validation only | isolated write target; wrapper included | residue checks; no body leakage |
+| `python/learner_state/frozen_policy_generation_manifest_writer.py` | `python -m learner_state.frozen_policy_generation_manifest_writer` | `--request`, `--artifact-result`, `--artifact-body-result`, `--json`, `--manifest-out`, `--allow-overwrite` | Manifest writer runtime and file-writing smoke | metadata-only inputs to safe summary or opt-in safe output | optional safe-root file writing | runtime and runtime-file-writing targets; wrapper included | no manifest body generation |
+| `python/learner_state/frozen_policy_generation_manifest_writer_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_manifest_writer_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Manifest writer fixture validation | fixture root/case to safe summary | no | manifest writer fixture target; wrapper included | metadata-only validation |
+| `python/learner_state/frozen_policy_generation_manifest_writer_runtime_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_manifest_writer_runtime_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Manifest writer runtime fixture validation | fixture root/case to safe summary | no | runtime fixture target; wrapper included | runtime fixture contract only |
+| `python/learner_state/frozen_policy_generation_manifest_writer_file_writing_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_manifest_writer_file_writing_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Manifest writer file-writing fixture validation | fixture root/case to safe summary | no | file-writing fixture target; wrapper included | safe-root policy validation |
+| `python/learner_state/frozen_policy_generation_manifest_writer_isolated_write_validation.py` | `python -m learner_state.frozen_policy_generation_manifest_writer_isolated_write_validation` | `--fixture-root`, `--fixture-case`, `--json` | Manifest writer isolated write validation | fixture root/case to safe summary | controlled isolated validation only | isolated write target; wrapper included | residue checks |
+| `python/learner_state/frozen_policy_generation_manifest_writer_production_file_writing_fixture_validation.py` | `python -m learner_state.frozen_policy_generation_manifest_writer_production_file_writing_fixture_validation` | `--fixture-root`, `--fixture-case`, `--json` | Production-shaped manifest writer file-writing fixture validation | fixture root/case to safe summary | no | production fixture target; wrapper included | not production readiness |
+
+## Appendix B. Makefile Target Command Mapping
+
+Step-pretec-doc4 adds this appendix to close the medium-priority Makefile
+command mapping gap. Commands are summarized from `Makefile`; long multi-line
+smoke bodies are represented as command families, not copied as raw output or
+logs.
+
+| Target | Command or command family | Purpose | Output type | Inclusion | Related component | Safety note |
+| --- | --- | --- | --- | --- | --- | --- |
+| `help` | `echo` help lines | List available targets | text help | standalone | Makefile | no runtime execution |
+| `check-release-quality` | `scripts/check_release_quality.sh` | Run wrapper | ordered status summaries | wrapper entrypoint | release-quality | content-suppressed checks |
+| `check-summary` | `scripts/run_synthetic_e2e_summary.sh` | Synthetic E2E summary | count/status summary | wrapper component | synthetic summary | writes controlled `tmp/` outputs |
+| `check-manifest-sync` | `scripts/check_summary_manifest_schema_sync.sh` | Manifest schema sync | schema/status summary | wrapper component | summary manifest | body-free output |
+| `check-diagnostic-distribution` | `scripts/check_synthetic_diagnostic_distribution.sh` | Diagnostic distribution check | count/status summary | wrapper component | diagnostics | no performance claim |
+| `check-summary-flow` | summary, manifest sync, diagnostic scripts | Run summary-flow bundle | safe summaries | standalone bundle | summary-flow | do not parallelize |
+| `check-config-smoke` | config-enabled summary and E2E scripts | Config smoke bundle | status/count summary | wrapper component | scoring/config | synthetic-only |
+| `check-python` | unittest discover and compileall | Python tests/compile | test status | wrapper equivalent | Python | no implementation change |
+| `check-rust` | cargo fmt/test/clippy | Rust format/test/lint | check status | wrapper included | Rust crates | synthetic tests only |
+| `check-logger` | npm typecheck/test/build in `apps/logger-web` | Logger web checks | build/test status | wrapper included | logger-web | not deployment proof |
+| `check-policy` | `scripts/check_synthetic_policy.sh` | Synthetic policy scan | policy status | wrapper included | safety policy | no legal/privacy approval |
+| `check-fixtures` | score lock, hand weight config, ranking diff scripts | Fixture/config checks | count/status summary | wrapper component | scoring fixtures | no metric achievement |
+| `check-learner-state-audit-fixtures` | `python -m learner_state.sequence_audit --fixture-root ...` | Audit fixture validation | safe summary | wrapper included | learner-state audit | no raw rows |
+| `check-learner-state-exporter-cli` | cleanup plus two `sequence_exporter` runs | Exporter smoke | safe summary and controlled outputs | wrapper included | sequence exporter | controlled tmp output |
+| `check-learner-state-estimator-input` | `python -m learner_state.estimator_input --fixture-root ...` | Estimator input validation | safe summary | wrapper included | estimator input | no estimator correctness proof |
+| `check-learner-state-selective-prediction` | selective prediction validator root mode | Selective prediction validation | safe summary | wrapper included | selective prediction | no ECE/AURCC claim |
+| `check-learner-state-frozen-policy` | frozen policy validator root mode | Frozen policy validation | safe summary | wrapper included | frozen policy | no policy quality proof |
+| `check-learner-state-frozen-policy-generation` | generation validator root mode | Generation fixture validation | safe summary | wrapper included | frozen policy generation | no generated quality proof |
+| `check-learner-state-frozen-policy-generation-scaffold-fixtures` | scaffold fixture validator root mode | Scaffold fixture validation | safe summary | wrapper included | scaffold | metadata-only |
+| `check-learner-state-frozen-policy-generation-scaffold-runtime` | scaffold runtime with request/pointer fixtures | Scaffold runtime smoke | safe summary | wrapper included | scaffold runtime | no artifact writing |
+| `check-learner-state-frozen-policy-generation-generator-scaffold-fixtures` | generator fixture validator root mode | Generator fixture validation | safe summary | wrapper included | generator scaffold | no body leakage |
+| `check-learner-state-frozen-policy-generation-generator-scaffold-runtime` | generator scaffold runtime with request/pointer fixtures | Generator runtime smoke | safe summary | wrapper included | generator scaffold | no generated policy body |
+| `check-learner-state-frozen-policy-generation-artifact-writer-fixtures` | artifact writer fixture validator root mode | Artifact writer fixture validation | safe summary | wrapper included | artifact writer | metadata-only |
+| `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures` | CLI integration fixture validator root mode | CLI integration fixture validation | count-only summary | wrapper included | artifact writer CLI integration | static contract only |
+| `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures` | runtime fixture validator root mode | Runtime fixture validation | count-only summary | standalone | artifact writer CLI integration runtime fixtures | no runtime execution |
+| `check-learner-state-frozen-policy-generation-artifact-writer-runtime` | artifact writer runtime with request/pointer fixtures | Artifact writer runtime smoke | safe summary | wrapper included | artifact writer | no body writing |
+| `check-learner-state-frozen-policy-generation-artifact-body-fixtures` | artifact body fixture validator root mode | Artifact body fixture validation | safe summary | wrapper included | artifact body | body suppressed |
+| `check-learner-state-frozen-policy-generation-artifact-body-generation` | artifact body CLI suppressed mode | Artifact body smoke | safe summary | wrapper included | artifact body generation | payload suppressed |
+| `check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata` | artifact body CLI safe-metadata mode | Safe-metadata body smoke | safe summary | wrapper included | artifact body generation | no payload public output |
+| `check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures` | artifact body file-writing fixture validator root mode | File-writing fixture validation | safe summary | wrapper included | artifact body file writing | validates safe write policy |
+| `check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke` | multi-step safe-metadata write smoke under controlled tmp | Artifact body write smoke | parse/safety/cleanup status | standalone as of wrapper scan | artifact body file writing | cleanup and safety scan |
+| `check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation` | artifact body isolated write validator root mode | Isolated write validation | residue/count summary | wrapper included | artifact body isolated writing | controlled residue checks |
+| `check-learner-state-frozen-policy-generation-manifest-writer-isolated-write-validation` | manifest writer isolated write validator root mode | Manifest isolated write validation | residue/count summary | wrapper included | manifest writer | safe-root policy |
+| `check-learner-state-frozen-policy-generation-manifest-writer-file-writing-fixtures` | manifest writer file-writing fixture validator root mode | File-writing fixture validation | safe summary | wrapper included | manifest writer | metadata-only |
+| `check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures` | production-shaped file-writing fixture validator root mode | Production-shaped fixture validation | safe summary | wrapper included | manifest writer | not production readiness |
+| `check-learner-state-frozen-policy-generation-manifest-writer-fixtures` | manifest writer fixture validator root mode | Manifest fixture validation | safe summary | wrapper included | manifest writer | no manifest body |
+| `check-learner-state-frozen-policy-generation-manifest-writer-runtime-fixtures` | runtime fixture validator root mode | Runtime fixture validation | safe summary | wrapper included | manifest writer runtime | static fixture validation |
+| `check-learner-state-frozen-policy-generation-manifest-writer-runtime` | manifest writer runtime no-file smoke | Runtime smoke | safe summary | wrapper included | manifest writer runtime | no file writing |
+| `check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing` | multi-step manifest writer safe file-writing smoke | Runtime file-writing smoke | safe summary and residue status | wrapper included | manifest writer runtime file writing | safe-root, parse, scan, cleanup |
+| `check-all` | depends on `check-release-quality` | Run wrapper | wrapper status | wrapper entrypoint | release-quality | same as wrapper |
+
+## Appendix C. Schema / Result Version Catalogue
+
+Step-pretec-doc4 adds this appendix to close the medium-priority schema
+catalogue gap. It separates stable schema/result/version names from synthetic
+invalid markers and reason-code markers. It lists names and families only; it
+does not include schema bodies or JSON payload examples.
+
+### Stable Schema And Result Version Names
+
+| Name | Family | Related component | Evidence | Safety relevance |
+| --- | --- | --- | --- | --- |
+| `kslog.raw_event.v1` | raw event schema | logger/Rust raw events | raw event docs and Rust schema crate | no-oracle forbidden fields rejected |
+| `summary_manifest_schema_v1` / manifest schema version `1.0` | summary manifest | synthetic E2E summary | `docs/schemas/summary_manifest_schema_v1.json`, scripts | allowed/forbidden key sync |
+| `candidate_feature_schema_v0_3` | candidate/scoring | OT scorer features | `python/ot_scorer/`, feature docs | feature-only; no raw text examples |
+| `evaluation_report_schema_v0_1` | evaluation | expected-action evaluation | evaluation modules/docs | not performance evidence |
+| `diagnostic_summary_schema_v0_1` | diagnostics | OT scorer diagnostics | diagnostic module/docs | count-only diagnostics |
+| `hand_weight_config_schema_v0_1` | scoring config | hand weight config | config validator/fixtures | synthetic config validation |
+| `ot_constraint_schema_v0_1`, `ot_constraint_schema_v0_2` | scoring constraints | OT scorer constraints | scorer modules/docs | no model metric claim |
+| `learner_state_sequence_audit_result_v0_1` | learner-state audit | sequence audit | audit module/fixtures | no-oracle audit summary |
+| `learner_state_sequence_manifest_v0.1`, `learner_state_sequence_manifest_v0_1` | sequence exporter | sequence exporter | exporter module/fixtures | separated outputs |
+| `learner_state_estimator_input_validation_v0.1`, `learner_state_estimator_input_validation_result_v0.1` | estimator input | estimator input validator | validator module/fixtures | no estimator correctness claim |
+| `learner_state_selective_prediction_validation_v0.1` | selective prediction | selective prediction validator | validator module/fixtures | no ECE/AURCC claim |
+| `frozen_selective_prediction_policy_schema_v0_1`, `learner_state_frozen_policy_validation_v0.1` | frozen policy | frozen policy validator | module/docs/fixtures | no test tuning |
+| `frozen_policy_generation_request_schema_v0_1`, `frozen_policy_generation_input_pointer_schema_v0_1`, `learner_state_frozen_policy_generation_validation_v0.1` | frozen policy generation | generation validator | generation modules/fixtures | no generated policy body |
+| `frozen_policy_generation_scaffold_request_schema_v0_1`, `frozen_policy_generation_scaffold_pointer_schema_v0_1`, `frozen_policy_generation_scaffold_result_schema_v0_1`, `frozen_policy_generation_scaffold_runtime_schema_v0_1` | scaffold | scaffold validator/runtime | scaffold modules/fixtures | metadata-only runtime |
+| `frozen_policy_generation_generator_scaffold_result_v0.1`, `learner_state_frozen_policy_generation_generator_scaffold_fixture_validation_v0.1`, `learner_state_frozen_policy_generation_generator_scaffold_result_v0.1` | generator scaffold | generator scaffold | generator modules/fixtures | generated body suppressed |
+| `learner_state_frozen_policy_generation_artifact_writer_fixture_validation_v0.1`, `learner_state_frozen_policy_generation_artifact_writer_result_v0.1`, `learner_state_frozen_policy_generation_artifact_writer_expected_result_v0.1`, `artifact_writer_result_pointer_v0.1` | artifact writer | artifact writer | writer modules/fixtures | metadata-only artifact result |
+| `learner_state_frozen_policy_generation_artifact_writer_cli_integration_fixture_validation_v0.1`, `learner_state_frozen_policy_generation_artifact_writer_cli_integration_result_v0.1` | artifact writer CLI integration fixture | CLI integration validator | validator/fixtures/docs | static fixture validation |
+| `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation_v0.1`, `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_result_v0.1` | artifact writer CLI integration runtime fixture | runtime fixture validator | validator/fixtures/docs | static fixture validation; no runtime execution |
+| `learner_state_frozen_policy_generation_artifact_body_fixture_validation_v0.1`, `learner_state_frozen_policy_generation_artifact_body_result_v0.1`, `learner_state_frozen_policy_generation_artifact_body_expected_result_v0.1`, `learner_state_frozen_policy_generation_artifact_body_generation_result_v0.1` | artifact body | artifact body module/fixtures | body modules/fixtures/docs | body payload suppressed |
+| `learner_state_frozen_policy_generation_artifact_body_file_writing_fixture_validation_v0.1`, `learner_state_frozen_policy_generation_artifact_body_file_write_expected_result_v0.1`, `file_writing_fixture_validation_v0.1`, `file_writing_expected_result_v0.1` | artifact body file writing | artifact body file-writing validator | validator/fixtures/docs | safe-root and no body payload |
+| `learner_state_frozen_policy_generation_artifact_body_isolated_write_validation_v0.1`, `learner_state_frozen_policy_generation_artifact_body_isolated_write_expected_result_v0.1`, `isolated_write_validation_v0.1`, `isolated_write_expected_result_v0.1` | artifact body isolated write | isolated write validator | validator/fixtures/docs | residue checks |
+| `learner_state_frozen_policy_generation_manifest_writer_fixture_validation_v0.1`, `learner_state_frozen_policy_generation_manifest_writer_result_v0.1`, `learner_state_frozen_policy_generation_manifest_writer_expected_result_v0.1`, `learner_state_frozen_policy_generation_manifest_writer_metadata_only_manifest_v0.1` | manifest writer | manifest writer | manifest modules/fixtures/docs | no manifest body |
+| `learner_state_frozen_policy_generation_manifest_writer_runtime_fixture_validation_v0.1`, `learner_state_frozen_policy_generation_manifest_writer_runtime_v0.1`, `learner_state_frozen_policy_generation_manifest_writer_runtime_expected_result_v0.1` | manifest writer runtime | runtime fixture/smoke | runtime modules/fixtures/docs | metadata-only runtime |
+| `learner_state_frozen_policy_generation_manifest_writer_file_writing_fixture_validation_v0.1`, `learner_state_frozen_policy_generation_manifest_writer_file_writing_expected_result_v0.1`, `learner_state_frozen_policy_generation_manifest_writer_file_writing_request_v0.1` | manifest writer file writing | file-writing validator | validator/fixtures/docs | safe-root file writing |
+| `learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation_v0.1`, `learner_state_frozen_policy_generation_manifest_writer_isolated_write_expected_result_v0.1`, `learner_state_frozen_policy_generation_manifest_writer_isolated_write_request_v0.1` | manifest writer isolated write | isolated validator | validator/fixtures/docs | residue checks |
+| `learner_state_frozen_policy_generation_manifest_writer_production_file_writing_validation_v0.1`, `learner_state_frozen_policy_generation_manifest_writer_production_file_writing_expected_result_v0.1`, `production_file_writing_validation_v0.1`, `production_file_writing_expected_result_v0.1` | manifest writer production file-writing fixtures | production-shaped validator | validator/fixtures/docs | not production readiness |
+
+### Synthetic Invalid Markers And Reason-Code Markers
+
+Repository scans also find synthetic invalid-case marker names, unknown-schema
+sentinels, and reason-code-like identifiers. Examples include unknown version
+sentinels, leakage markers, path-safety markers, and expected-failure marker
+names in fixture metadata. These are not stable public schema contracts. They
+exist to exercise validator fail-closed or usage-error behavior while keeping
+fixtures synthetic-only and body-free.
+
+The full specification should keep this separation:
+
+- stable schema/result/validation names describe component contracts
+- fixture schema names describe fixture metadata and expected summaries
+- synthetic invalid markers describe controlled negative cases
+- reason-code markers describe expected validation failures
+
+## Appendix D. Fixture Root Counts Catalogue
+
+Step-pretec-doc4 adds this appendix to close the medium-priority fixture count
+gap. Counts are derived from fixture root layout by counting case directories
+and JSON files only. Fixture JSON bodies are not copied.
+
+| Fixture root | Purpose | Cases | Valid / invalid | JSON files | JSON files per case | Validator / Makefile relation | Release-quality inclusion | Safety note |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `tests/fixtures/synthetic/` | synthetic raw/scoring/config/safe-view fixtures | not yet confirmed from repository scan | mixed subroots | 11 JSON, 32 JSONL observed | mixed | Rust/Python scripts and scoring checks | used by CI/wrapper scripts | synthetic-only; no body examples here |
+| `tests/fixtures/learner_state_sequence_audit/` | sequence audit fixtures | 9 | 1 / 8 | 2 | mixed | `sequence_audit`, audit target | included | no raw rows |
+| `tests/fixtures/learner_state_sequence_exporter/` | sequence exporter fixtures | 7 | 2 / 5 | 28 | 4 | `sequence_exporter`, exporter target | included | controlled export outputs |
+| `tests/fixtures/learner_state_estimator_input/` | estimator input validation fixtures | 9 | 1 / 8 | 18 | 2 | `estimator_input`, estimator target | included | no estimator correctness claim |
+| `tests/fixtures/learner_state_selective_prediction/` | selective prediction validation fixtures | 8 | 1 / 7 | 24 | 3 | `selective_prediction_validation`, selective target | included | no metric achievement |
+| `tests/fixtures/learner_state_frozen_selective_prediction_policy/` | frozen policy fixtures | 12 | 1 / 11 | 24 | 2 | `frozen_policy_validation`, frozen policy target | included | no test tuning |
+| `tests/fixtures/learner_state_frozen_policy_generation/` | frozen policy generation fixtures | 13 | 3 / 10 | 52 | 4 | `frozen_policy_generation_validation`, generation target | included | no generated policy body |
+| `tests/fixtures/learner_state_frozen_policy_generation_scaffold/` | scaffold fixture validation | 11 | 3 / 8 | 33 | 3 | scaffold fixture validator/target | included | metadata-only |
+| `tests/fixtures/learner_state_frozen_policy_generation_generator_scaffold/` | generator scaffold fixtures | 18 | 3 / 15 | 54 | 3 | generator fixture validator/target | included | body suppressed |
+| `tests/fixtures/learner_state_frozen_policy_generation_artifact_writer/` | artifact writer fixtures | 17 | 3 / 14 | 51 | 3 | artifact writer fixture validator/target | included | artifact body suppressed |
+| `tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration/` | artifact writer CLI integration fixtures | 28 | 6 / 22 | 168 | 6 | CLI integration fixture validator/target | included | static fixture contract only |
+| `tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime/` | future runtime fixture validation | 30 | 6 / 24 | 180 | 6 | runtime fixture validator/standalone target | standalone only | does not execute runtime integration |
+| `tests/fixtures/learner_state_frozen_policy_generation_artifact_body/` | artifact body fixtures | 18 | 4 / 14 | 54 | 3 | artifact body fixture validator/target | included | body payload suppressed |
+| `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing/` | artifact body file-writing fixtures | 29 | 5 / 24 | 116 | 4 | file-writing fixture validator/target | included | safe-root policy |
+| `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_isolated_write_validation/` | artifact body isolated write fixtures | 22 | 5 / 17 | 110 | 5 | isolated write validator/target | included | residue checks |
+| `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer/` | manifest writer fixtures | 30 | 5 / 25 | 150 | 5 | manifest writer fixture validator/target | included | no manifest body |
+| `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_runtime/` | manifest writer runtime fixtures | 31 | 5 / 26 | 155 | 5 | runtime fixture validator/target | included | metadata-only runtime |
+| `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_file_writing/` | manifest writer file-writing fixtures | 39 | 6 / 33 | 195 | 5 | file-writing fixture validator/target | included | safe-root output |
+| `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_isolated_write_validation/` | manifest writer isolated write fixtures | 25 | 6 / 19 | 150 | 6 | isolated write validator/target | included | residue checks |
+| `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_production_file_writing/` | production-shaped manifest writer file-writing fixtures | 32 | 8 / 24 | 160 | 5 | production file-writing validator/target | included | not production readiness |
+
+## Appendix E. Remaining Low-Priority Gaps And External Review Checklist
+
+The medium gaps from Step-pretec-doc3 are addressed by Appendices A-D. Low
+priority gaps remain as review hardening items. This appendix does not claim
+absolute coverage or external-review completion.
+
+### Remaining Low-Priority Gaps
+
+| Gap | Status after Step-pretec-doc4 | Suggested follow-up |
+| --- | --- | --- |
+| Dependency/version tables | still open | Add summarized Cargo/npm dependency tables without lockfile body copying. |
+| Per-status-marker index | still open | Add a marker-family or per-marker appendix if external review requires it. |
+| Rust crate API details | still open | Add crate-level public API summaries from crate docs/source. |
+| Logger-web UI behavior | still open | Add UI interaction summary without raw event payload examples. |
+| Exact workflow action versions | still open | Add workflow setup/action version table from YAML. |
+
+### External Review Checklist
+
+- Confirm the appendix data still matches `Makefile`, Python parser sources,
+  fixture root layout, and schema/version scans.
+- Confirm no JSON body examples, fixture bodies, request bodies, pointer
+  bodies, expected bodies, written file bodies, manifest bodies, artifact body
+  payloads, generated policy bodies, raw rows, logits/probabilities, private
+  path values, absolute local path values, raw learner text, or raw logs are
+  copied into public docs.
+- Confirm artifact writer CLI integration runtime remains marked not
+  implemented until a separate runtime implementation step exists.
+- Confirm artifact body generation CLI integration, manifest writer
+  integration, and manifest body generation remain marked not implemented
+  where appropriate.
+- Confirm production readiness, real-data readiness, model performance, F1,
+  accuracy, ECE, and AURCC are not claimed.
+- Confirm future external-review-ready versions still cite evidence paths and
+  mark unknowns as `not yet confirmed from repository scan` or
+  `next step verification required`.

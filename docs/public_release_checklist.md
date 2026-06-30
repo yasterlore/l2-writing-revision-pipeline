@@ -31,6 +31,10 @@ Current public-facing implementation state:
   is available as a docs-only Step-pretec-doc3 validation report. It does not
   guarantee no omissions and does not prove production readiness, real-data
   readiness, or model performance.
+- Step-pretec-doc4 appendices are now present in
+  [Full technical specification draft](full_technical_specification.md) for
+  Python CLI args, Makefile target mapping, schema/result versions, fixture
+  root counts, and remaining low-priority external-review checks.
 
 ## 1. Data Safety
 

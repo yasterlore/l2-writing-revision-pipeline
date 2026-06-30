@@ -322,17 +322,19 @@ want an appendix with exact file lists.
 
 | Gap id | Component | Inventory evidence | Current full spec section | Gap type | Severity | Recommended fix | Fix applied in this step |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| G1 | Exact Python CLI args | `argparse` scans in Python modules | 8, 19 | partially covered | medium | Add a CLI argument appendix generated from parser/help output. | no |
-| G2 | Exact Makefile command mapping | `Makefile` targets | 9 | partially covered | medium | Add a Makefile command appendix with exact command families, avoiding output logs. | no |
-| G3 | Stable schema catalogue | schema/version scan found many names and markers | 7 | weakly covered | medium | Split stable schema names from synthetic invalid-case markers and reason codes. | no |
-| G4 | Fixture per-root counts | fixture README/validator outputs | 11 | partially covered | medium | Recompute safe counts for every fixture root and add a count appendix. | no |
+| G1 | Exact Python CLI args | `argparse` scans in Python modules | 8, 19, Appendix A | partially covered | medium | Add a CLI argument appendix generated from parser/help output. | yes, Step-pretec-doc4 |
+| G2 | Exact Makefile command mapping | `Makefile` targets | 9, Appendix B | partially covered | medium | Add a Makefile command appendix with exact command families, avoiding output logs. | yes, Step-pretec-doc4 |
+| G3 | Stable schema catalogue | schema/version scan found many names and markers | 7, Appendix C | weakly covered | medium | Split stable schema names from synthetic invalid-case markers and reason codes. | yes, Step-pretec-doc4 |
+| G4 | Fixture per-root counts | fixture README/validator outputs | 11, Appendix D | partially covered | medium | Recompute safe counts for every fixture root and add a count appendix. | yes, Step-pretec-doc4 |
 | G5 | Dependency version tables | package/Cargo metadata | 4, 17, 18 | weakly covered | low | Add summarized dependency/version evidence without lockfile body copying. | no |
 | G6 | Per-status-marker index | `docs/status/` | 20, 22 | partially covered | low | Add a marker-family appendix or per-marker table if required. | no |
 | G7 | Rust crate API details | crate READMEs/source | 18 | partially covered | low | Add crate-level API summary from README/source docs. | no |
 | G8 | Logger-web UI behavior | `apps/logger-web/src/` | 17 | partially covered | low | Add UI interaction summary without raw event payload examples. | no |
 | G9 | Exact workflow action versions | workflow YAML | 10 | weakly covered | low | Add workflow setup/action version table if needed. | no |
 
-No high-severity gaps were found in this coverage validation.
+No high-severity gaps were found in this coverage validation. The four
+medium-priority gaps are fixed in Step-pretec-doc4 appendices. The low-priority
+gaps remain as external-review hardening items.
 
 ## 19. Fixes Applied In This Step
 
@@ -344,6 +346,12 @@ Minimal documentation links and coverage notes were applied:
   `docs/milestone_13_frozen_policy_generation_scaffold_runtime_recap.md`
 - added a short coverage validation note to
   `docs/full_technical_specification.md`
+- Step-pretec-doc4 follow-up added Appendix A-E to
+  `docs/full_technical_specification.md` for Python CLI args, Makefile target
+  command mapping, schema/result version families, fixture root counts, and
+  remaining low-priority external-review checks
+- Step-pretec-doc4 follow-up updated this gap table so medium-priority gaps
+  G1-G4 are marked fixed
 
 No implementation, fixture JSON, Makefile, workflow, wrapper, Python, Rust, or
 TypeScript changes were made.
@@ -356,13 +364,14 @@ specification draft based on the Step-pretec-doc1 inventory.
 Coverage validation found:
 
 - high gaps: 0
-- medium gaps: 4
-- low gaps: 5
+- medium gaps remaining after Step-pretec-doc4: 0
+- medium gaps fixed in Step-pretec-doc4: 4
+- low gaps remaining: 5
 
-Unresolved gaps remain listed above for the next specification step. This is
-not an absolute guarantee of no omissions. Future external review is still
-recommended before treating the draft as an external-review-ready
-specification.
+Unresolved low-priority gaps remain listed above for the next specification
+step. This is not an absolute guarantee of no omissions. Future external
+review is still recommended before treating the draft as an
+external-review-ready specification.
 
 This validation does not prove production readiness, real-data readiness,
 model performance, F1, accuracy, ECE, AURCC, runtime integration correctness,
@@ -372,8 +381,8 @@ privacy/legal/IRB readiness.
 
 ## 21. Next Recommended Steps
 
-- Step-pretec-doc4: fix high/medium coverage gaps
-- Step-pretec-doc5: external-review-ready version
+- Step-pretec-doc4: medium gap fixes, completed as docs-only appendices
+- Step-pretec-doc5: external-review-ready version and low-priority hardening
 - Step-pretec-doc6: final safety/non-proof review
 - Later: artifact writer CLI integration runtime implementation design and
   implementation, separate from this specification coverage work

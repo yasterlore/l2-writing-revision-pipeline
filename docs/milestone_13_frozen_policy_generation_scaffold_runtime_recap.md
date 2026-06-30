@@ -32,6 +32,13 @@ now compares the source inventory with the draft and records remaining
 medium/low follow-up gaps. It is a docs-only validation report, not an
 absolute guarantee of no omissions.
 
+Step-pretec-doc4 note: the
+[full technical specification draft](full_technical_specification.md) now has
+appendices for Python CLI args, Makefile target command mapping, schema/result
+version families, fixture root counts, and remaining external-review checks.
+This is docs-only medium-gap cleanup and is not runtime integration or
+implementation work.
+
 It is a recap document. It is not generator implementation, not an artifact
 writer, not calibration implementation, not selective prediction
 implementation, not learner-state estimator implementation, not metric
