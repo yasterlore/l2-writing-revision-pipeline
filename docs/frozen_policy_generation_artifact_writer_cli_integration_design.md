@@ -606,3 +606,17 @@ The target runs the Step481 static validator CLI only. It is not release-quality
 wrapper integration, runtime integration, artifact body generation integration,
 manifest writer integration, real-data readiness, or production readiness
 evidence.
+
+## 37. Step484 Runtime Fixture Release-Quality Integration Design Status
+
+Step484 adds the docs-only release-quality integration design for future
+wrapper integration of the Step483 runtime fixture validator target:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_integration_design.md)
+
+The design keeps the runtime fixture validator as a static contract check and
+proposes placing it after the earlier artifact writer CLI integration fixture
+validation and before artifact body checks. It does not change the wrapper,
+workflow files, Makefile, Python code/tests, fixture JSON, runtime
+implementation, artifact body generation integration, manifest writer
+integration, real-data use, metrics, or production readiness.

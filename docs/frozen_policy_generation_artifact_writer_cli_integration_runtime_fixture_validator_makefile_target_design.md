@@ -302,15 +302,28 @@ fixture JSON, execute runtime integration, connect artifact body generation,
 connect manifest writer integration, use real data, compute metrics, or claim
 production readiness.
 
-## 15. Next Recommended Steps
+## 15. Step484 Release-Quality Integration Design Status
 
-- Step484: release-quality integration design.
+Step484 adds the docs-only release-quality integration design for the
+standalone target:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_integration_design.md)
+
+The design proposes the future wrapper label, command, insertion point,
+expected body-free output, failure interpretation, and remote marker staging.
+It does not change the release-quality wrapper, workflow files, Makefile,
+Python code/tests, fixture JSON, execute runtime integration, connect artifact
+body generation, connect manifest writer integration, use real data, compute
+metrics, or claim production readiness.
+
+## 16. Next Recommended Steps
+
 - Step485: release-quality wrapper integration.
 - Step486: remote/manual run record workflow design.
 - Step487: remote status marker.
 - Step488: artifact writer CLI integration runtime implementation design.
 
-## 16. Public-Safe Checklist
+## 17. Public-Safe Checklist
 
 - no raw logs
 - no full job output

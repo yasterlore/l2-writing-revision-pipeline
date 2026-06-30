@@ -140,6 +140,18 @@ Step483 adds the standalone target:
 The target runs the Step481 validator CLI over this fixture root. It is not
 release-quality wrapper integration and does not execute runtime integration.
 
+## Release-Quality Integration Design
+
+Step484 adds the docs-only release-quality integration design for the
+standalone target:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture release-quality integration design](../../../docs/frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_integration_design.md)
+
+The design proposes future wrapper placement only. It does not change the
+release-quality wrapper, workflow files, Makefile, Python code/tests, fixture
+JSON, runtime implementation, artifact body generation integration, or manifest
+writer integration.
+
 ## Implementation Status
 
 - fixture root created: yes

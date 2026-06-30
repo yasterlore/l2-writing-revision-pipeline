@@ -340,6 +340,19 @@ It does not change workflow files, Python code/tests, fixture JSON, execute
 runtime integration, use real data, compute metrics, or claim production
 readiness.
 
+## 14.4 Step484 Release-Quality Integration Design Status
+
+Step484 adds the docs-only release-quality integration design for the
+standalone runtime fixture validator target:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_integration_design.md)
+
+The design proposes future wrapper placement after the earlier artifact writer
+CLI integration fixture validation and before artifact body checks. It does
+not change the wrapper, workflow files, Makefile, Python code/tests, fixture
+JSON, execute runtime integration, use real data, compute metrics, or claim
+production readiness.
+
 ## 15. Non-Claims
 
 This design does not claim:

@@ -4124,6 +4124,15 @@ does not connect artifact body generation or manifest writer integration, and
 does not claim production readiness, real-data readiness, model performance,
 F1, accuracy, ECE, or AURCC.
 
+For Step484, review the
+[frozen policy generation artifact writer CLI integration runtime fixture release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_integration_design.md).
+Confirm it is design-only for future wrapper integration of the Step483
+standalone target. Confirm it does not change the release-quality wrapper,
+workflow YAML, Makefile, Python code/tests, fixture JSON, runtime
+implementation, artifact body generation integration, manifest writer
+integration, use real data, compute metrics, or claim production readiness,
+real-data readiness, model performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

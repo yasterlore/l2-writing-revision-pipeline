@@ -433,6 +433,18 @@ Step483 implements the standalone Makefile target for the runtime fixture
 validator CLI. The target validates the Step479 fixture root only and remains
 outside release-quality until a later wrapper step.
 
+## 15.6 Step484 Release-Quality Integration Design Status
+
+Step484 adds the docs-only release-quality integration design for future
+wrapper integration of the Step483 standalone runtime fixture validator target:
+
+[Frozen policy generation artifact writer CLI integration runtime fixture release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_integration_design.md)
+
+The design does not change the wrapper, workflow files, Makefile, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, real-data use, metrics, or
+production readiness.
+
 ## 16. Non-Claims
 
 This design does not claim:

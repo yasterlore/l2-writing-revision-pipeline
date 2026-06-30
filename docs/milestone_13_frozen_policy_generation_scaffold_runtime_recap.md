@@ -1738,6 +1738,14 @@ written, no artifact body is produced, and no performance metric is computed.
   code/tests, fixture JSON, runtime integration, artifact body generation
   integration, manifest writer integration, metrics, real-data use, or
   production readiness.
+- Step484: added the docs-only release-quality integration design for future
+  wrapper integration of the Step483 runtime fixture validator target:
+  [Frozen policy generation artifact writer CLI integration runtime fixture release-quality integration design](frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_release_quality_integration_design.md).
+  The design proposes the future label, command, insertion point, expected
+  body-free output, failure interpretation, and remote marker staging. It does
+  not change the wrapper, workflow files, Makefile, Python code/tests, fixture
+  JSON, runtime implementation, artifact body generation integration, manifest
+  writer integration, metrics, real-data use, or production readiness.
 
 ## Related Documents
 
