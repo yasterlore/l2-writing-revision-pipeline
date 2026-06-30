@@ -289,16 +289,28 @@ This design does not:
 - prove real-data readiness
 - prove model performance
 
-## 14. Next Recommended Steps
+## 14. Step483 Standalone Target Implementation Status
 
-- Step483: standalone Makefile target implementation.
+Step483 implements the standalone Makefile target proposed by this design:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures`
+
+The target runs the Step481 validator CLI over the Step479 fixture root and
+emits body-free public-safe counts. Step483 does not add the target to
+release-quality, change workflow YAML, change Python code/tests, change
+fixture JSON, execute runtime integration, connect artifact body generation,
+connect manifest writer integration, use real data, compute metrics, or claim
+production readiness.
+
+## 15. Next Recommended Steps
+
 - Step484: release-quality integration design.
 - Step485: release-quality wrapper integration.
 - Step486: remote/manual run record workflow design.
 - Step487: remote status marker.
 - Step488: artifact writer CLI integration runtime implementation design.
 
-## 15. Public-Safe Checklist
+## 16. Public-Safe Checklist
 
 - no raw logs
 - no full job output

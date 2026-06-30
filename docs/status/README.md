@@ -193,6 +193,10 @@ Related recap:
   docs-only standalone Makefile target design for running the Step481 runtime
   fixture validator CLI. It does not implement the target or provide runtime
   integration, real-data readiness, or production readiness evidence.
+- `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures`:
+  Step483 standalone Makefile target for static validation of the Step479
+  runtime fixture root. It is not release-quality wrapper integration, runtime
+  integration, real-data readiness, or production readiness evidence.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

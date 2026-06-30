@@ -1687,6 +1687,14 @@ written, no artifact body is produced, and no performance metric is computed.
   implementation checks without changing Makefile, wrapper, workflow files,
   Python code/tests, fixture JSON, runtime integration, metrics, real-data use,
   or production readiness.
+- Step483: added the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures`
+  for the Step481 runtime fixture validator CLI. The target validates the
+  Step479 30-case / 180-JSON synthetic metadata-only fixture root and remains
+  outside release-quality. It does not change workflow files, Python
+  code/tests, fixture JSON, runtime integration, artifact body generation
+  integration, manifest writer integration, metrics, real-data use, or
+  production readiness.
 
 ## Related Documents
 

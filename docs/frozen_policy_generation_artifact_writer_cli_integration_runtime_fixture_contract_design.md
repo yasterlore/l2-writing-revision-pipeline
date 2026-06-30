@@ -427,6 +427,12 @@ runtime fixture validator CLI. It does not change Makefile, wrapper/workflow
 files, Python code/tests, fixture JSON, runtime integration, real-data use,
 metrics, or production readiness.
 
+## 15.5 Step483 Standalone Makefile Target Status
+
+Step483 implements the standalone Makefile target for the runtime fixture
+validator CLI. The target validates the Step479 fixture root only and remains
+outside release-quality until a later wrapper step.
+
 ## 16. Non-Claims
 
 This design does not claim:

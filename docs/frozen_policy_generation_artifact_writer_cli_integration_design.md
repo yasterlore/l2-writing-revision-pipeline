@@ -595,3 +595,14 @@ The design does not change Makefile, release-quality wrapper, workflow files,
 Python code/tests, fixture JSON, runtime integration, artifact body generation
 integration, manifest writer integration, real-data use, metrics, or production
 readiness.
+
+## 36. Step483 Runtime Fixture Validator Standalone Target Status
+
+Step483 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures`
+
+The target runs the Step481 static validator CLI only. It is not release-quality
+wrapper integration, runtime integration, artifact body generation integration,
+manifest writer integration, real-data readiness, or production readiness
+evidence.

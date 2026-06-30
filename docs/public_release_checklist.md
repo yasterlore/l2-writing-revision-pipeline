@@ -4085,6 +4085,16 @@ artifact body generation integration, manifest writer integration, use real
 data, compute metrics, or claim production readiness, real-data readiness,
 model performance, F1, accuracy, ECE, or AURCC.
 
+For Step483, review the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures`.
+Confirm it runs only the Step481 static validator CLI over the Step479
+synthetic metadata-only fixture root. Confirm it is not added to
+release-quality yet, does not change workflow YAML, does not change Python
+code/tests, does not change fixture JSON, does not execute runtime integration,
+does not connect artifact body generation or manifest writer integration, and
+does not claim production readiness, real-data readiness, model performance,
+F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

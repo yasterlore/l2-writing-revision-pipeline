@@ -131,13 +131,22 @@ The design does not implement a Makefile target, change release-quality
 wrapper or workflow files, change Python code/tests, change fixture JSON, or
 execute runtime integration.
 
+## Standalone Makefile Target
+
+Step483 adds the standalone target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures`
+
+The target runs the Step481 validator CLI over this fixture root. It is not
+release-quality wrapper integration and does not execute runtime integration.
+
 ## Implementation Status
 
 - fixture root created: yes
 - fixture JSON created: yes
 - validator implemented: yes
 - runtime implemented: no
-- Makefile target added: no
+- Makefile target added: yes
 - release-quality wrapper changed: no
 - workflow changed: no
 - artifact body generation integration implemented: no

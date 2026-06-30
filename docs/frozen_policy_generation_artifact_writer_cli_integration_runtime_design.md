@@ -350,6 +350,15 @@ integration, change Makefile/wrapper/workflow files, change Python code/tests,
 change fixture JSON, use real data, compute metrics, or claim production
 readiness.
 
+## 9.6 Step483 Standalone Makefile Target Status
+
+Step483 implements the standalone target for the Step481 runtime fixture
+validator CLI. The target is static fixture validation only; it does not
+execute or prove runtime integration, connect artifact body generation,
+connect manifest writer integration, change workflow files, change Python
+code/tests, change fixture JSON, use real data, compute metrics, or claim
+production readiness.
+
 ## 10. Non-Claims
 
 This design does not claim:
