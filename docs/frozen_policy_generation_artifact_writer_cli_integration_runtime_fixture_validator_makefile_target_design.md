@@ -453,3 +453,18 @@ production readiness.
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 27. Step497 Actual Invocation Fixture Contract Design Status
+
+Step497 adds the docs-only / planning-only fixture contract design for a future
+metadata-only body-free artifact writer CLI actual invocation fixture root:
+
+[Frozen policy generation artifact writer CLI actual invocation fixture contract design](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_contract_design.md)
+
+This static runtime fixture validator Makefile target design remains
+unchanged. The Step497 contract design does not create a fixture root, create
+fixture JSON, implement a validator, update the runtime, implement actual
+invocation, change Python code/tests, change Makefile, change the
+release-quality wrapper, change workflow files, connect artifact body
+generation integration, connect manifest writer integration, write files, use
+real data, compute metrics, or claim production readiness.

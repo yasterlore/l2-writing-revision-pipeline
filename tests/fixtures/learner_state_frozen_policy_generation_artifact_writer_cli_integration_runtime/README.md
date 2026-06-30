@@ -308,6 +308,21 @@ the release-quality wrapper, change workflow files, connect artifact body
 generation integration, connect manifest writer integration, write files, use
 real data, compute metrics, or claim production readiness.
 
+## Actual Invocation Fixture Contract Design
+
+Step497 adds the docs-only / planning-only fixture contract design for a future
+metadata-only body-free artifact writer CLI actual invocation fixture root:
+
+[Frozen policy generation artifact writer CLI actual invocation fixture contract design](../../../docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_contract_design.md)
+
+This runtime fixture root and fixture JSON remain unchanged. The contract
+design does not create a fixture root, create fixture JSON, implement a
+validator, update the runtime, implement actual invocation, change Python
+code/tests, change Makefile, change the release-quality wrapper, change
+workflow files, connect artifact body generation integration, connect manifest
+writer integration, write files, use real data, compute metrics, or claim
+production readiness.
+
 ## Implementation Status
 
 - fixture root created: yes
@@ -326,6 +341,7 @@ real data, compute metrics, or claim production readiness.
 - runtime smoke remote run record workflow design: yes, Step494 docs-only
 - runtime smoke remote status marker created: yes, Step495 public-safe pass-only metadata-only marker
 - actual invocation design: yes, Step496 docs-only / planning-only
+- actual invocation fixture contract design: yes, Step497 docs-only / planning-only
 - actual invocation implemented: no
 - workflow changed: no
 - artifact body generation integration implemented: no

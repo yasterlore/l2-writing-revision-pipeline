@@ -4257,6 +4257,20 @@ actual invocation correctness, artifact body generation integration
 correctness, manifest writer integration correctness, real-data readiness,
 model performance, F1, accuracy, ECE, or AURCC.
 
+For Step497, review the docs-only
+[frozen policy generation artifact writer CLI actual invocation fixture
+contract design](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_contract_design.md).
+Confirm it defines only a future metadata-only body-free fixture contract.
+Confirm it does not create a fixture root, create fixture JSON, implement a
+validator, update the runtime, implement actual invocation, change Python
+code/tests, Makefile, the release-quality wrapper, workflow YAML, connect
+artifact body generation integration, connect manifest writer integration,
+write files, use real data, use metrics, or claim production readiness. Confirm
+it does not claim artifact writer CLI actual invocation correctness, artifact
+body generation integration correctness, manifest writer integration
+correctness, real-data readiness, model performance, F1, accuracy, ECE, or
+AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
