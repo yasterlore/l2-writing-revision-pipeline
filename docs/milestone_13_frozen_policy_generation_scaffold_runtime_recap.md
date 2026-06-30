@@ -26,6 +26,12 @@ release-quality, status markers, and safety boundaries based on the inventory.
 It is still docs-only and does not prove production readiness, real-data
 readiness, or model performance.
 
+Step-pretec-doc3 note: the
+[full technical specification coverage validation](full_technical_specification_coverage_validation.md)
+now compares the source inventory with the draft and records remaining
+medium/low follow-up gaps. It is a docs-only validation report, not an
+absolute guarantee of no omissions.
+
 It is a recap document. It is not generator implementation, not an artifact
 writer, not calibration implementation, not selective prediction
 implementation, not learner-state estimator implementation, not metric

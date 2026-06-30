@@ -18,6 +18,7 @@ Current public-facing posture:
 Recommended entry points:
 
 - [Full technical specification draft](full_technical_specification.md): Step-pretec-doc2 consolidated technical specification draft based on the source inventory; it is docs-only and does not claim production readiness, real-data readiness, or model performance.
+- [Full technical specification coverage validation](full_technical_specification_coverage_validation.md): Step-pretec-doc3 coverage validation report comparing the source inventory with the draft; unresolved medium/low gaps remain for follow-up.
 - [Full technical specification source inventory](full_technical_specification_source_inventory.md): Step-pretec-doc1 source inventory and coverage audit for a later full technical specification; it is not the full technical specification and does not claim production readiness, real-data readiness, or model performance.
 - [Milestone 01 pipeline recap](milestone_01_pipeline_recap.md): beginner-friendly recap of the current pipeline foundation.
 - [Milestone 02 synthetic evaluation recap](milestone_02_synthetic_evaluation_recap.md): beginner-friendly recap of the synthetic evaluation wiring milestone.

@@ -25,8 +25,12 @@ Current public-facing implementation state:
   readiness, or model-performance evidence.
 - [Full technical specification draft](full_technical_specification.md) is
   available as a docs-only consolidated draft based on the inventory. It must
-  still be coverage-validated before being treated as a final public
-  specification.
+  still resolve coverage validation follow-ups before being treated as a final
+  public specification.
+- [Full technical specification coverage validation](full_technical_specification_coverage_validation.md)
+  is available as a docs-only Step-pretec-doc3 validation report. It does not
+  guarantee no omissions and does not prove production readiness, real-data
+  readiness, or model performance.
 
 ## 1. Data Safety
 
@@ -208,6 +212,7 @@ Confirm README explains:
 Confirm docs link to:
 
 - `docs/full_technical_specification.md`
+- `docs/full_technical_specification_coverage_validation.md`
 - `docs/full_technical_specification_source_inventory.md`
 - `docs/milestone_01_pipeline_recap.md`
 - `docs/milestone_02_synthetic_evaluation_recap.md`

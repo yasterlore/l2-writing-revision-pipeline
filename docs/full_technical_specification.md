@@ -17,6 +17,12 @@ correctness. Items not confirmed from the repository scan are explicitly
 marked `not yet confirmed from repository scan` or `to be verified in a later
 step`.
 
+Step-pretec-doc3 adds a separate
+[coverage validation report](full_technical_specification_coverage_validation.md)
+that compares this draft with the source inventory. The report found no
+high-severity gaps, but medium and low follow-up gaps remain; this draft should
+not be treated as an absolute guarantee of no omissions.
+
 ## 1. Document Position
 
 This document is the Step-pretec-doc2 full technical specification draft. It
