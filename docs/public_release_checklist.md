@@ -4608,3 +4608,14 @@ change workflow files, change the wrapper, change Makefile, change Python
 code/tests, change runtime implementation, implement artifact body generation
 integration, connect manifest writer integration, enable file writing, use
 real data, compute metrics, or claim production readiness.
+
+## 22. Step524 Artifact Body Generation Integration Fixture Validator Design
+
+For Step524, review the docs-only / planning-only
+[artifact body generation integration fixture validator design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_design.md).
+Confirm it only designs a future public-safe validator for the Step523
+fixture root. Confirm it does not implement a validator, change Python
+code/tests, change Makefile, change the wrapper, change workflow files, change
+fixture JSON, change runtime implementation, implement artifact body
+generation integration, connect manifest writer integration, enable file
+writing, use real data, compute metrics, or claim production readiness.

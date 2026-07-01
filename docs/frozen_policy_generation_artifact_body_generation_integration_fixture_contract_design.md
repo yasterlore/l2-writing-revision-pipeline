@@ -415,7 +415,24 @@ implementation, implement artifact body generation integration, connect
 manifest writer integration, enable file writing, use real data, compute
 metrics, or claim production readiness.
 
-## 19. Failure Interpretation
+## 19. Step524 Fixture Validator Design Status
+
+Step524 adds the docs-only / planning-only fixture validator design for the
+Step523 fixture root:
+
+[Frozen policy generation artifact body generation integration fixture validator design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_design.md)
+
+It proposes a future validator module/CLI, validation schema, aggregate
+output, reason-code mapping, required-file validation, schema validation,
+cross-file consistency checks, safety scan rules, CLI output policy, focused
+tests, and release-quality staging. It does not implement a validator, change
+Python code/tests, change Makefile, change the release-quality wrapper,
+change workflow files, change fixture JSON, change runtime implementation,
+implement artifact body generation integration, connect manifest writer
+integration, enable file writing, use real data, compute metrics, or claim
+production readiness.
+
+## 20. Failure Interpretation
 
 Future failure interpretation:
 
@@ -430,7 +447,7 @@ Future failure interpretation:
   file-writing is explicitly in scope
 - raw stdout/stderr and payloads must not be copied into docs or reports
 
-## 20. Non-Claims
+## 21. Non-Claims
 
 This fixture contract design does not claim:
 
@@ -446,7 +463,7 @@ This fixture contract design does not claim:
 - runtime actual invocation correctness generally
 - fixture validator implementation
 
-## 21. Public-Safe Checklist
+## 22. Public-Safe Checklist
 
 - no raw logs
 - no full job output

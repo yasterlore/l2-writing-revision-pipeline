@@ -2105,6 +2105,17 @@ written, no artifact body is produced, and no performance metric is computed.
   code/tests, change runtime implementation, implement artifact body
   generation integration, connect manifest writer integration, enable file
   writing, use real data, compute metrics, or claim production readiness.
+- Step524: added the docs-only / planning-only artifact body generation
+  integration fixture validator design:
+  [Frozen policy generation artifact body generation integration fixture validator design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_design.md).
+  This proposes a future validator module/CLI, schema, aggregate output,
+  reason-code plan, required-file checks, metadata consistency checks, safety
+  scan rules, CLI output policy, focused tests, and staging. It does not
+  implement a validator, change Python code/tests, change Makefile, change
+  the wrapper, change workflow files, change fixture JSON, change runtime
+  implementation, implement artifact body generation integration, connect
+  manifest writer integration, enable file writing, use real data, compute
+  metrics, or claim production readiness.
 
 ## Related Documents
 

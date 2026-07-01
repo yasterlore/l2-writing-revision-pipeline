@@ -543,3 +543,14 @@ Makefile, Python/test, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, model performance evidence, real-data readiness evidence, or production
 readiness evidence.
+
+## Step524 Artifact Body Generation Integration Fixture Validator Design
+
+Step524 adds the docs-only / planning-only
+[artifact body generation integration fixture validator design](../frozen_policy_generation_artifact_body_generation_integration_fixture_validator_design.md)
+for the Step523 fixture root. It creates no status marker and adds no
+validator implementation, Python/test changes, Makefile changes, wrapper
+changes, workflow changes, fixture JSON changes, runtime implementation,
+artifact body generation integration, manifest writer integration, file
+writing, real-data use, metric use, model performance evidence, real-data
+readiness evidence, or production readiness evidence.

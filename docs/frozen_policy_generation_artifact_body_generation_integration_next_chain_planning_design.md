@@ -349,7 +349,20 @@ implementation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
 
-## 18. Public-Safe Checklist
+## 18. Step524 Fixture Validator Design Status
+
+Step524 adds the docs-only / planning-only artifact body generation
+integration fixture validator design:
+
+[Frozen policy generation artifact body generation integration fixture validator design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_design.md)
+
+It does not implement a validator, change Python code/tests, change Makefile,
+change the wrapper, change workflow files, change fixture JSON, change runtime
+implementation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.
+
+## 19. Public-Safe Checklist
 
 - no raw logs
 - no full job output

@@ -155,6 +155,22 @@ artifact body generation integration, manifest writer integration, artifact
 file writing, manifest file writing, release-quality integration, workflow
 changes, or model evaluation.
 
+## Future Validator Design
+
+Step524 adds the future public-safe fixture validator design:
+
+`docs/frozen_policy_generation_artifact_body_generation_integration_fixture_validator_design.md`
+
+The design proposes a future validator module/CLI, validation schema,
+aggregate counts, reason-code mapping, required-file validation, schema
+validation, cross-file consistency checks, safety scan rules, CLI output
+policy, focused tests, and release-quality staging. It does not implement a
+validator, change Python code/tests, change Makefile, change the wrapper,
+change workflow files, change fixture JSON, change runtime implementation,
+implement artifact body generation integration, connect manifest writer
+integration, enable file writing, use real data, compute metrics, or claim
+production readiness.
+
 ## Non-Claims
 
 These fixtures do not claim:

@@ -253,7 +253,21 @@ code/tests, runtime implementation, artifact body generation integration,
 manifest writer integration, file writing, real-data use, metric use, or
 production readiness claims.
 
-## 15. Non-Claims
+## 15. Step524 Fixture Validator Design Status
+
+Step524 adds the docs-only / planning-only artifact body generation
+integration fixture validator design:
+
+[Frozen policy generation artifact body generation integration fixture validator design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_design.md)
+
+This continues the fixture-only handoff by designing a future public-safe
+static validator for the Step523 fixture root. It does not change
+implementation, Python code/tests, Makefile, the wrapper, workflow files,
+fixture JSON, runtime implementation, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claims.
+
+## 16. Non-Claims
 
 This final safety review design does not claim:
 
@@ -268,7 +282,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 16. Public-Safe Checklist
+## 17. Public-Safe Checklist
 
 - no raw logs
 - no full job output
