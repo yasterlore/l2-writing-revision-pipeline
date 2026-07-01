@@ -2005,6 +2005,15 @@ written, no artifact body is produced, and no performance metric is computed.
   connect artifact body generation integration, connect manifest writer
   integration, write files, use real data, compute metrics, or claim
   production readiness.
+- Step513: updated the artifact writer CLI integration runtime module and
+  focused tests so plan-only remains the default while explicit
+  `--actual-invocation` enables runtime schema v0.2
+  `actual_invocation_metadata_only` public-safe summaries. The update captures
+  and suppresses stdout/stderr, uses fail-closed sentinel handling, keeps file
+  writing disabled, and does not change workflow files, change the
+  release-quality wrapper, change Makefile, change fixture JSON, connect
+  artifact body generation integration, connect manifest writer integration,
+  use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 

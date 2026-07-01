@@ -439,3 +439,14 @@ runtime actual invocation, perform artifact writer CLI actual invocation,
 connect artifact body generation integration, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
+
+## 25. Step513 Runtime Actual Invocation Implementation Status
+
+Step513 implements the explicit `actual_invocation_metadata_only` runtime
+summary path in the Step489 runtime module. Plan-only remains the default.
+Runtime schema v0.2 summaries are emitted only when `--actual-invocation` is
+used, with stdout/stderr suppression, fail-closed sentinel handling, and
+file-writing disabled. This does not connect artifact body generation
+integration, connect manifest writer integration, change fixture JSON, change
+Makefile, change the release-quality wrapper, change workflows, use real
+data, compute metrics, or claim production readiness.

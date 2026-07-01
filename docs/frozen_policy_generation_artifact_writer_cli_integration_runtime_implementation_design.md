@@ -550,3 +550,13 @@ change Python code/tests, change fixture JSON, change Makefile, change the
 release-quality wrapper, change workflows, connect artifact body generation
 integration, connect manifest writer integration, enable file writing, use
 real data, compute metrics, or claim production readiness.
+
+## Step513 Runtime Actual Invocation Implementation Status
+
+Step513 updates this runtime module and focused tests. The default behavior
+remains plan-only / no-invocation with runtime schema v0.1. Explicit
+`--actual-invocation` enables runtime schema v0.2
+`actual_invocation_metadata_only` summaries, stdout/stderr capture and
+suppression, safe reason-code reporting, and fail-closed sentinel handling.
+File writing remains disabled, and artifact body generation integration and
+manifest writer integration remain out of scope.

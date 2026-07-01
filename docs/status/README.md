@@ -418,3 +418,12 @@ remote status marker is created here, and no runtime actual invocation,
 artifact writer CLI actual invocation, artifact body generation integration,
 manifest writer integration, file writing, model performance, real-data
 readiness, or production readiness evidence is added.
+
+## Step513 Runtime Actual Invocation Implementation Update
+
+Step513 updates the local runtime module and focused tests so explicit
+`--actual-invocation` returns runtime schema v0.2
+`actual_invocation_metadata_only` public-safe summaries. No remote status
+marker is created here. This is not production readiness, real-data
+readiness, model performance evidence, artifact body generation integration
+evidence, or manifest writer integration evidence.

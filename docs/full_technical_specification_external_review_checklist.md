@@ -261,6 +261,13 @@ accept both v0.1 plan-only and v0.2 actual-invocation metadata-only fixture
 schema families, and report only public-safe aggregate counts, reason codes,
 and safety flags.
 
+Confirm the Step513 runtime module update keeps plan-only behavior as the
+default and only enables `actual_invocation_metadata_only` with an explicit
+flag. Reviewers should check the new CLI flags, runtime schema v0.2 summary
+fields, stdout/stderr suppression, fail-closed sentinel handling,
+no-file-writing boundary, and absence of artifact body generation or manifest
+writer integration.
+
 Do not treat this fixture update as artifact writer CLI actual invocation
 correctness, runtime actual invocation correctness, artifact body generation
 integration correctness, manifest writer integration correctness, production

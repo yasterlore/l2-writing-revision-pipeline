@@ -451,7 +451,8 @@ production readiness.
 - actual invocation runtime fixture validator update design: yes, Step510 docs-only / planning-only
 - runtime fixture validator updated for v0.2 cases: yes, Step511 static validator v0.2 support
 - actual invocation runtime implementation refinement design: yes, Step512 docs-only / planning-only
-- actual invocation implemented: no
+- actual invocation runtime implementation support: yes, Step513 explicit metadata-only mode
+- artifact writer CLI actual invocation integration implemented: no
 - workflow changed: no
 - artifact body generation integration implemented: no
 - manifest writer integration implemented: no
@@ -556,3 +557,14 @@ Python code/tests, change Makefile, change the release-quality wrapper, change
 workflows, connect artifact body generation integration, connect manifest
 writer integration, enable file writing, use real data, compute metrics, or
 claim production readiness.
+
+## Actual Invocation Runtime Implementation Status
+
+Step513 updates the runtime module and focused tests to support this fixture
+root's v0.2 `actual_invocation_metadata_only` cases through an explicit
+`--actual-invocation` flag. The default runtime path remains v0.1 plan-only.
+
+This fixture root and fixture JSON are unchanged by Step513. The update does
+not change Makefile, release-quality wrapper, workflows, artifact body
+generation integration, manifest writer integration, file writing, real-data
+use, metric use, or production readiness claims.

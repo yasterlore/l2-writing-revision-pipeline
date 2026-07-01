@@ -432,3 +432,13 @@ JSON, implement runtime actual invocation, perform artifact writer CLI actual
 invocation, connect artifact body generation integration, connect manifest
 writer integration, enable file writing, use real data, compute metrics, or
 claim production readiness.
+
+## 23. Step513 Runtime Actual Invocation Implementation Status
+
+Step513 updates the runtime module and focused tests so the existing plan-only
+path remains the default while explicit `--actual-invocation` enables runtime
+schema v0.2 `actual_invocation_metadata_only` public-safe summaries. This
+does not change the fixture validator, fixture JSON, Makefile, release-quality
+wrapper, workflows, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.

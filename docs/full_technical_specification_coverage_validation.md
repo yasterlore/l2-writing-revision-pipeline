@@ -207,7 +207,7 @@ specification content.
 | scaffold/generator scaffold validators | scaffold modules | 12, 19 | covered | Covered with runtime distinction. |
 | artifact writer validators | writer fixture and CLI integration validators | 12, 16, 19 | covered | Strong coverage. |
 | artifact writer CLI integration runtime fixture validator | runtime fixture validator | 12, 16, 19, 21 | covered | Release-quality static validation status noted. |
-| artifact writer CLI integration runtime module | runtime module, focused tests, Step491 standalone Makefile target, and Step493 wrapper inclusion | 12, 16, 19, 21 | covered | Step489 metadata-only runtime boundary and Step493 release-quality runtime smoke inclusion noted. |
+| artifact writer CLI integration runtime module | runtime module, focused tests, Step491 standalone Makefile target, and Step493 wrapper inclusion | 12, 16, 19, 21 | covered | Step489 plan-only metadata boundary remains default; Step513 adds explicit `actual_invocation_metadata_only` v0.2 summary support with no file writing, no artifact body generation integration, and no manifest writer integration. |
 | artifact writer CLI actual invocation fixture validator | Step500 static validator, Step502 standalone target, and Step504 wrapper inclusion | 11, 21, Appendix D | covered after Step504 | Validator module / CLI / focused tests, standalone Makefile target, and release-quality wrapper check exist; actual invocation remains future work. |
 | artifact body validators | fixture/file-writing/isolated modules | 12, 15, 19 | covered | Exact module-by-module counts can be expanded. |
 | manifest writer validators | fixture/runtime/file-writing/isolated/production modules | 12, 15, 19 | covered | Strong family coverage. |

@@ -242,6 +242,14 @@ writer CLI actual invocation correctness, runtime actual invocation
 correctness, real-data readiness, model performance, F1, accuracy, ECE, or
 AURCC evidence.
 
+Step513 adds explicit `actual_invocation_metadata_only` support to the
+artifact writer CLI integration runtime module. The default path remains
+plan-only. The v0.2 path emits public-safe summaries, suppresses captured
+stdout/stderr, keeps file writing disabled, and does not connect artifact body
+generation or manifest writer integration. This is not production readiness,
+real-data readiness, model performance evidence, or a general runtime actual
+invocation correctness claim.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

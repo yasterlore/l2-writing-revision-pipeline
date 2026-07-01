@@ -406,3 +406,18 @@ This design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 20. Step513 Runtime Implementation Status
+
+Step513 implements the next-step runtime update described by this refinement
+design. The runtime module keeps plan-only as the default and adds explicit
+`--actual-invocation` / `actual_invocation_metadata_only` support with runtime
+schema `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_v0.2`.
+
+The implementation adds public-safe CLI flags, stdout/stderr capture and
+suppression, sentinel-driven fail-closed summaries, timeout/nonzero safe
+summary categories, and no-file-writing metadata checks. It does not change
+fixture JSON, Makefile targets, release-quality wrapper scripts, workflows,
+artifact body generation integration, manifest writer integration, generated
+policy body generation, artifact body file writing, manifest file writing,
+real-data use, metric use, or production readiness claims.

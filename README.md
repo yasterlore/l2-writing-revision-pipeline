@@ -243,6 +243,7 @@ Not currently implemented or not claimed:
 - [Artifact writer CLI actual invocation fixture validator design](docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_design.md)
 - [Artifact writer CLI actual invocation fixture validator Makefile target design](docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_makefile_target_design.md)
 - [Artifact writer CLI actual invocation fixture validator release-quality integration design](docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_integration_design.md)
+- [Artifact writer CLI actual invocation runtime implementation refinement design](docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_implementation_refinement_design.md)
 
 ## CI
 

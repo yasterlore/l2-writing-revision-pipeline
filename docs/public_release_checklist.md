@@ -4466,3 +4466,14 @@ Python code/tests, Makefile, the wrapper, workflow files, fixture JSON,
 runtime actual invocation implementation, artifact writer CLI actual
 invocation, artifact body generation integration, manifest writer integration,
 file writing, real-data use, metric use, or production readiness claims.
+
+## 11. Step513 Runtime Actual Invocation Implementation Update
+
+For Step513, review the artifact writer CLI integration runtime module and
+focused tests. Confirm plan-only remains the default, `--actual-invocation`
+is required for runtime schema v0.2 `actual_invocation_metadata_only`
+summaries, stdout/stderr bodies are captured and suppressed, unsafe sentinels
+fail closed, and file writing, artifact body generation integration, manifest
+writer integration, workflow changes, wrapper changes, fixture JSON changes,
+real-data use, metric use, and production readiness claims remain out of
+scope.
