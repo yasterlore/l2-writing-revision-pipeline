@@ -2172,9 +2172,18 @@ written, no artifact body is produced, and no performance metric is computed.
   fixture JSON, change runtime implementation, implement artifact body
   generation integration, connect manifest writer integration, enable file
   writing, use real data, compute metrics, or claim production readiness.
+- Step531: added the public-safe pass-only metadata-only body-free count-only
+  remote run status marker for the Step529 wrapper check:
+  [Learner-state frozen policy generation artifact body generation integration
+  fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_status.md).
+  It stores no raw logs, no full job output, no fixture/request/pointer/expected
+  bodies, no artifact body payload, no manifest body, no generated policy body,
+  no private/absolute paths, no raw learner text, no metric bodies, and no
+  production readiness, real-data readiness, or model performance evidence.
 
 ## Related Documents
 
+- [Learner-state frozen policy generation artifact body generation integration fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body generation integration fixture validator release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation integration fixture validator release-quality integration design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation artifact body generation integration fixture validator Makefile target design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md)

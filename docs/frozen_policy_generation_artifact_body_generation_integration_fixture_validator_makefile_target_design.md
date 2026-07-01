@@ -264,7 +264,15 @@ code/tests, fixture JSON, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claims.
 
-## 13. Failure Interpretation
+## 13. Step531 Remote Run Status Marker
+
+Step531 adds the public-safe status marker for the Step529 wrapper check. It
+stores no raw logs or full job output and does not provide artifact body
+generation integration correctness evidence generally, manifest writer
+integration evidence, production readiness evidence, real-data readiness
+evidence, or model performance evidence.
+
+## 14. Failure Interpretation
 
 Future target failure means the fixture validator failed or the CLI invocation
 failed. It may indicate a fixture metadata, sentinel policy, consistency, or
@@ -280,7 +288,7 @@ Future target failure does not prove:
 Raw stdout/stderr and payloads must not be copied into docs or reports.
 Interpret failures through public-safe reason codes only.
 
-## 14. Non-Claims
+## 15. Non-Claims
 
 This Makefile target design does not claim:
 
@@ -297,7 +305,7 @@ This Makefile target design does not claim:
 - a Makefile target has been added
 - release-quality wrapper inclusion
 
-## 15. Public-Safe Checklist
+## 16. Public-Safe Checklist
 
 - no raw logs
 - no full job output

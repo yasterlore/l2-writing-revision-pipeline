@@ -245,6 +245,18 @@ implementation, implement artifact body generation integration, connect
 manifest writer integration, enable file writing, use real data, compute
 metrics, or claim production readiness.
 
+## Validator Remote Run Status Marker
+
+Step531 adds the public-safe status marker:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_status.md`
+
+The marker stores no raw logs, no full job output, no fixture/request/pointer
+or expected bodies, no artifact body payload, no manifest body, no generated
+policy body, no private or absolute path values, no raw learner text, no
+metric bodies, and no production readiness, real-data readiness, or model
+performance evidence.
+
 ## Non-Claims
 
 These fixtures do not claim:

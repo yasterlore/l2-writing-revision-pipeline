@@ -335,7 +335,19 @@ This workflow design does not claim:
 - runtime actual invocation correctness generally
 - remote status marker creation
 
-## 15. Public-Safe Checklist
+## 15. Step531 Status Marker Availability
+
+Step531 adds the public-safe status marker for the Step529 wrapper check:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_status.md`
+
+The marker remains pass-only, metadata-only, body-free, and count-only where
+applicable. It stores no raw logs or full job output and does not provide
+artifact body generation integration correctness evidence generally, manifest
+writer integration evidence, production readiness evidence, real-data
+readiness evidence, or model performance evidence.
+
+## 16. Public-Safe Checklist
 
 - no raw logs
 - no full job output

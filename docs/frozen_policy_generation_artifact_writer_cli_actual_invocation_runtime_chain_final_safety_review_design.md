@@ -334,7 +334,15 @@ runtime implementation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
 
-## 22. Non-Claims
+## 22. Step531 Fixture Validator Remote Run Status Marker
+
+Step531 adds the public-safe status marker for the artifact body generation
+integration fixture validator wrapper check. It stores no raw logs or full job
+output and does not provide artifact body generation integration correctness
+evidence generally, manifest writer integration evidence, production readiness
+evidence, real-data readiness evidence, or model performance evidence.
+
+## 23. Non-Claims
 
 This final safety review design does not claim:
 
@@ -349,7 +357,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 23. Public-Safe Checklist
+## 24. Public-Safe Checklist
 
 - no raw logs
 - no full job output

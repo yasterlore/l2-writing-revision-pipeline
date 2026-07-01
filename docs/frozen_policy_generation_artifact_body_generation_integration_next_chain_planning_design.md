@@ -422,7 +422,15 @@ code/tests, fixture JSON, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claims.
 
-## 25. Public-Safe Checklist
+## 25. Step531 Remote Run Status Marker
+
+Step531 adds the public-safe status marker for the Step529 wrapper check. It
+stores no raw logs or full job output and does not provide artifact body
+generation integration correctness evidence generally, manifest writer
+integration evidence, production readiness evidence, real-data readiness
+evidence, or model performance evidence.
+
+## 26. Public-Safe Checklist
 
 - no raw logs
 - no full job output
