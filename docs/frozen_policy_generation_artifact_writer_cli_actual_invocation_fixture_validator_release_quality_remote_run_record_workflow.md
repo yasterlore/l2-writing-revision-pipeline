@@ -222,7 +222,9 @@ Future Step506 status marker target:
 
 `docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md`
 
-Step505 does not create this marker.
+Step505 does not create this marker. Step506 creates this public-safe
+pass-only / metadata-only / body-free status marker:
+[Learner-state frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md).
 
 ## 11. Planned Step506 Input Fields
 

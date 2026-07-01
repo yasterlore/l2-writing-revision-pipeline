@@ -91,6 +91,13 @@ Available markers:
   artifact writer CLI actual invocation evidence, artifact body generation
   integration evidence, manifest writer integration evidence, or production
   readiness evidence.
+- [Learner-state frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run status](learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after artifact writer CLI
+  actual invocation fixture validator integration. It remains pass-only,
+  metadata-only, and body-free. Raw logs and full job output are not stored.
+  It is not artifact writer CLI actual invocation evidence, runtime actual
+  invocation evidence, artifact body generation integration evidence, manifest
+  writer integration evidence, or production readiness evidence.
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after artifact body fixture
   validation integration.
@@ -314,6 +321,13 @@ Related recap:
   workflow design for the Step504 wrapper check. It is not a status marker,
   does not store raw logs or full job output, and does not claim artifact
   writer CLI actual invocation correctness or production readiness.
+- [Learner-state frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run status](learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md):
+  Step506 public-safe pass-only / metadata-only / body-free status marker for
+  the successful remote/manual Release Quality run including the Step504
+  wrapper check. Raw logs and full job output are not stored. It is not
+  artifact writer CLI actual invocation evidence, runtime actual invocation
+  evidence, artifact body generation integration evidence, manifest writer
+  integration evidence, or production readiness evidence.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

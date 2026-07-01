@@ -458,14 +458,19 @@ Step505 does not create a status marker or change workflow files, wrapper,
 Makefile, Python code/tests, fixture JSON, runtime actual invocation, artifact
 writer CLI actual invocation, or file writing.
 
+Step506 adds the public-safe remote status marker:
+[Learner-state frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md).
+Step506 does not change workflow files, wrapper, Makefile, Python code/tests,
+fixture JSON, runtime actual invocation, artifact writer CLI actual invocation,
+or file writing.
+
 ## 18. Planned Follow-Up Steps
 
 Possible follow-up steps:
 
-1. Step506: remote status marker
-2. Step507 or later: actual invocation runtime update design
+1. Step507 or later: actual invocation runtime update design
 
-Step505 does not start these follow-up steps.
+Step506 does not start these follow-up steps.
 
 ## 19. Non-Claims
 

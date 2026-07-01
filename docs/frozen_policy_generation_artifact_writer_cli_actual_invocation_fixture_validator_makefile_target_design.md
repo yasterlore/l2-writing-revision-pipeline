@@ -216,6 +216,9 @@ Step505 adds the docs-only remote/manual run record workflow design for the
 Step504 wrapper check:
 [Frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_record_workflow.md).
 
+Step506 adds the public-safe remote status marker:
+[Learner-state frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md).
+
 ## 10. Proposed Checks For Step502
 
 If Step502 implements the standalone Makefile target, it should run checks such

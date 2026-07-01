@@ -551,3 +551,17 @@ fixture JSON, update runtime actual invocation, perform artifact writer CLI
 actual invocation, connect artifact body generation integration, connect
 manifest writer integration, enable file writing, use real data, compute
 metrics, or claim production readiness.
+
+## 28. Step506 Remote Status Marker Status
+
+Step506 adds the public-safe pass-only / metadata-only / body-free remote
+status marker:
+
+[Learner-state frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md)
+
+This does not change workflow files, change the release-quality wrapper,
+change Makefile, change Python code/tests, change fixture JSON, update runtime
+actual invocation, perform artifact writer CLI actual invocation, connect
+artifact body generation integration, connect manifest writer integration,
+enable file writing, use real data, compute metrics, or claim production
+readiness.

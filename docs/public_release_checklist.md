@@ -4357,6 +4357,15 @@ invocation, perform artifact writer CLI actual invocation, connect artifact
 body generation integration, connect manifest writer integration, write files,
 use real data, use metrics, or claim production readiness.
 
+For Step506, review the public-safe status marker:
+[artifact writer CLI actual invocation fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md).
+Confirm it records only pass-only / metadata-only / body-free remote run
+metadata and target validator summary counts. Confirm it does not store raw
+logs, full job output, fixture JSON bodies, request/pointer/expected bodies,
+raw stdout/stderr bodies, artifact body payloads, manifest bodies, generated
+policy bodies, private or absolute path values, raw learner text, real data,
+metrics, or production readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

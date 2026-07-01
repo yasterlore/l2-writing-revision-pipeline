@@ -101,6 +101,7 @@ learner-state estimator correctness.
 - release-quality integration design: yes, Step503 docs-only design
 - release-quality wrapper changed: yes, Step504 static fixture validation check
 - remote/manual run record workflow design: yes, Step505 docs-only design
+- remote status marker: yes, Step506 public-safe marker
 - workflow changed: no
 - artifact body generation integration implemented: no
 - manifest writer integration implemented: no
@@ -141,4 +142,10 @@ Step505 remote/manual run record workflow design:
 
 - design doc: `docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_record_workflow.md`
 - proposed future status marker path: `docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md`
-- implementation status: design-only; status marker not created
+- implementation status: status marker created in Step506
+
+Step506 remote status marker:
+
+- status marker: `docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md`
+- summary: public-safe pass-only / metadata-only / body-free status for the Step504 wrapper check
+- safety boundary: no raw logs, no full job output, no fixture JSON bodies, no runtime actual invocation, no artifact writer CLI actual invocation, no artifact body generation integration, no manifest writer integration, and no file writing
