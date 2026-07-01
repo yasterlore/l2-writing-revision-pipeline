@@ -4375,6 +4375,16 @@ runtime actual invocation implementation, artifact writer CLI actual
 invocation, artifact body generation integration, manifest writer integration,
 file writing, real-data use, metric use, or production readiness claims.
 
+For Step508, review the docs-only
+[artifact writer CLI actual invocation runtime fixture update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_update_design.md).
+Confirm it designs only a future update to the existing runtime fixture root
+for `actual_invocation_metadata_only` mode. Confirm it does not change fixture
+JSON, fixture roots, validators, Python code/tests, Makefile, the wrapper,
+workflow files, runtime actual invocation implementation, artifact writer CLI
+actual invocation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

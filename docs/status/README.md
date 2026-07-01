@@ -334,6 +334,12 @@ Related recap:
   It is not a status marker and does not claim artifact writer CLI actual
   invocation correctness, runtime actual invocation correctness, or production
   readiness.
+- [Frozen policy generation artifact writer CLI actual invocation runtime fixture update design](../frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_update_design.md):
+  Step508 docs-only / planning-only fixture update design for adapting the
+  existing runtime fixture root to a future `actual_invocation_metadata_only`
+  mode. It is not a status marker, does not change fixture JSON, and does not
+  claim artifact writer CLI actual invocation correctness, runtime actual
+  invocation correctness, or production readiness.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

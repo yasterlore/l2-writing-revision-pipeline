@@ -156,3 +156,9 @@ Step507 runtime update design:
 - design doc: `docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_update_design.md`
 - scope: future metadata-only body-free actual invocation boundary for the Step489 runtime
 - implementation status: design-only; runtime actual invocation not implemented
+
+Step508 runtime fixture update design:
+
+- design doc: `docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_update_design.md`
+- scope: future fixture update design for adapting the existing runtime fixture root to `actual_invocation_metadata_only` mode
+- implementation status: design-only; fixture JSON and runtime actual invocation remain unchanged

@@ -373,7 +373,24 @@ production readiness.
 - actual invocation fixture contract design: yes, Step497 docs-only / planning-only
 - actual invocation fixture root created: yes, Step498 synthetic metadata-only root
 - actual invocation fixture validator design: yes, Step499 docs-only / planning-only
+- actual invocation runtime update design: yes, Step507 docs-only / planning-only
+- actual invocation runtime fixture update design: yes, Step508 docs-only / planning-only
 - actual invocation implemented: no
 - workflow changed: no
 - artifact body generation integration implemented: no
 - manifest writer integration implemented: no
+
+## Actual Invocation Runtime Fixture Update Design
+
+Step508 adds the docs-only / planning-only fixture update design for adapting
+this existing runtime fixture root to a future
+`actual_invocation_metadata_only` mode:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime fixture update design](../../../docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_update_design.md)
+
+The fixture root and fixture JSON remain unchanged. Step508 does not update
+validators, implement runtime actual invocation, perform artifact writer CLI
+actual invocation, change Python code/tests, change Makefile, change the
+release-quality wrapper, change workflow files, connect artifact body
+generation integration, connect manifest writer integration, enable file
+writing, use real data, compute metrics, or claim production readiness.

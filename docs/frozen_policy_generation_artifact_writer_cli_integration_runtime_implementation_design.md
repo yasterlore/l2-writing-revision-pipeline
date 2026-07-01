@@ -478,3 +478,19 @@ runtime actual invocation, implement artifact writer CLI actual invocation,
 connect artifact body generation integration, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
+
+## 16.10 Step508 Runtime Fixture Update Design Status
+
+Step508 adds the docs-only / planning-only runtime fixture update design for
+adapting the existing runtime fixture root to a future
+`actual_invocation_metadata_only` mode:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime fixture update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_update_design.md)
+
+This runtime implementation design remains unchanged. Step508 does not change
+fixture JSON, change fixture roots, update validators, change Python
+code/tests, change Makefile, change the release-quality wrapper, change
+workflow files, update runtime actual invocation, perform artifact writer CLI
+actual invocation, connect artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.

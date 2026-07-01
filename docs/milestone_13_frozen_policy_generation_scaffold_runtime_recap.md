@@ -1955,6 +1955,16 @@ written, no artifact body is produced, and no performance metric is computed.
   connect artifact body generation integration, connect manifest writer
   integration, write files, use real data, compute metrics, or claim production
   readiness.
+- Step508: added the docs-only / planning-only runtime fixture update design
+  for adapting the existing artifact writer CLI integration runtime fixture
+  root to a future `actual_invocation_metadata_only` mode:
+  [Frozen policy generation artifact writer CLI actual invocation runtime fixture update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_update_design.md).
+  This does not change workflow files, change the release-quality wrapper,
+  change Makefile, change Python code/tests, change fixture JSON, change
+  fixture roots, update validators, update runtime actual invocation, perform
+  artifact writer CLI actual invocation, connect artifact body generation
+  integration, connect manifest writer integration, write files, use real
+  data, compute metrics, or claim production readiness.
 
 ## Related Documents
 
