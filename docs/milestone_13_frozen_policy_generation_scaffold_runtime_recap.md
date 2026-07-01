@@ -2030,6 +2030,14 @@ written, no artifact body is produced, and no performance metric is computed.
   JSON, runtime implementation, artifact body generation integration,
   manifest writer integration, file writing, real-data use, metric use, or
   production readiness claims.
+- Step516: added the docs-only / planning-only release-quality integration
+  design for the Step515 standalone target:
+  [Frozen policy generation artifact writer CLI actual invocation runtime release-quality integration design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_integration_design.md).
+  This proposes a future wrapper label and command only. It does not change
+  the release-quality wrapper, workflow files, Makefile, Python code/tests,
+  fixture JSON, runtime implementation, artifact body generation integration,
+  manifest writer integration, file writing, real-data use, metric use, or
+  production readiness claims.
 
 ## Related Documents
 

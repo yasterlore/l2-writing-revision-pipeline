@@ -581,5 +581,18 @@ Step515 implements the standalone target
 for the Step513 explicit `actual_invocation_metadata_only` runtime smoke. The
 target uses the valid synthetic metadata-only v0.2 fixture case and keeps
 file writing, artifact body generation integration, and manifest writer
-integration out of scope. It is not release-quality wrapper integrated in
+integration out of scope. It is not added to the release-quality wrapper in
 Step515.
+
+## Step516 Runtime Actual Invocation Release-Quality Integration Design Status
+
+Step516 adds a design-only / planning-only release-quality integration design
+for adding the Step515 standalone target to a future release-quality wrapper:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime release-quality integration design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_integration_design.md)
+
+The design proposes a future wrapper label and command only. It does not
+change the release-quality wrapper, workflow files, Makefile, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.

@@ -257,7 +257,7 @@ The Step514 design-only portion does not claim:
 - learner-state estimator correctness
 - release-quality wrapper integration
 
-## 14. Step515 Implementation Status
+## 13. Step515 Implementation Status
 
 Step515 implements the standalone Makefile target:
 
@@ -288,6 +288,30 @@ JSON, runtime implementation, artifact body generation integration, manifest
 writer integration, generated policy body generation, artifact body file
 writing, manifest file writing, real-data use, metric use, or production
 readiness claims.
+
+## 14. Step516 Release-Quality Integration Design Status
+
+Step516 adds the docs-only / planning-only release-quality integration design
+for this standalone target:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime release-quality integration design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_integration_design.md)
+
+The proposed future wrapper label is:
+
+```text
+release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation runtime smoke
+```
+
+The proposed future wrapper command is:
+
+```bash
+make check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime
+```
+
+Step516 does not change the release-quality wrapper, workflow files, Makefile,
+Python code/tests, fixture JSON, runtime implementation, artifact body
+generation integration, manifest writer integration, file writing, real-data
+use, metric use, or production readiness claims.
 
 ## 15. Public-Safe Checklist
 

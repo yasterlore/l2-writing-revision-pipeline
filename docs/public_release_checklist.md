@@ -4500,3 +4500,17 @@ change the release-quality wrapper, workflow files, Python code/tests, fixture
 JSON, runtime implementation, artifact body generation integration, manifest
 writer integration, file writing, real-data use, metric use, or production
 readiness claims.
+
+## 14. Step516 Runtime Actual Invocation Release-Quality Integration Design
+
+For Step516, review the docs-only / planning-only
+[artifact writer CLI actual invocation runtime release-quality integration design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_integration_design.md).
+Confirm it only proposes adding the Step515 standalone target to a future
+release-quality wrapper with label
+`release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation runtime smoke`
+and command
+`make check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime`.
+Confirm it does not change the wrapper, workflow files, Makefile,
+Python code/tests, fixture JSON, runtime implementation, artifact body
+generation integration, manifest writer integration, file writing,
+real-data use, metric use, or production readiness claims.

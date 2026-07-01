@@ -597,3 +597,16 @@ The fixture root and fixture JSON are unchanged. Step515 does not change the
 release-quality wrapper, workflows, Python code/tests, runtime implementation,
 artifact body generation integration, manifest writer integration, file
 writing, real-data use, metric use, or production readiness claims.
+
+## Actual Invocation Runtime Release-Quality Integration Design Status
+
+Step516 adds the docs-only / planning-only release-quality integration design
+for the Step515 standalone target:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime release-quality integration design](../../../docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_integration_design.md)
+
+The fixture root and fixture JSON are unchanged. Step516 does not change the
+release-quality wrapper, workflows, Makefile, Python code/tests, runtime
+implementation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.

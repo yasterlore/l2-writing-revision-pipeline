@@ -721,3 +721,17 @@ the release-quality wrapper, workflows, Python code/tests, fixture JSON,
 runtime implementation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
+
+## Step516 Runtime Actual Invocation Release-Quality Integration Design Status
+
+Step516 adds the docs-only / planning-only release-quality integration design
+for the Step515 standalone target:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime release-quality integration design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_integration_design.md)
+
+The proposed future wrapper check remains a metadata-only runtime smoke before
+the artifact body chain. Step516 does not change the release-quality wrapper,
+workflow files, Makefile, Python code/tests, fixture JSON, runtime
+implementation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.

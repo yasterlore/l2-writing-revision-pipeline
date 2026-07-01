@@ -449,3 +449,14 @@ wrapper entry, workflow change, Python/test change, fixture JSON change,
 runtime implementation change, artifact body generation integration, manifest
 writer integration, file writing, remote status marker, real-data use, metric
 use, or production readiness claim is added.
+
+## Step516 Runtime Actual Invocation Release-Quality Integration Design
+
+Step516 adds the docs-only / planning-only
+[runtime actual invocation release-quality integration design](../frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_integration_design.md)
+for a future wrapper entry around the Step515 standalone target. No
+release-quality wrapper entry, workflow change, Makefile change, Python/test
+change, fixture JSON change, runtime implementation change, artifact body
+generation integration, manifest writer integration, file writing, remote
+status marker, real-data use, metric use, or production readiness claim is
+added.
