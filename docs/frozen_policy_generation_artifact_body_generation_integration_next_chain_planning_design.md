@@ -336,7 +336,20 @@ implementation, implement artifact body generation integration, connect
 manifest writer integration, enable file writing, use real data, compute
 metrics, or claim production readiness.
 
-## 17. Public-Safe Checklist
+## 17. Step523 Fixture Root Creation Status
+
+Step523 creates the synthetic metadata-only artifact body generation
+integration fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration/`
+
+The root contains 28 cases, 196 JSON files, and 7 files per case. It does not
+change workflow files, the wrapper, Makefile, Python code/tests, runtime
+implementation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.
+
+## 18. Public-Safe Checklist
 
 - no raw logs
 - no full job output

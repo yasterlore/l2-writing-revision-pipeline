@@ -532,3 +532,14 @@ root, fixture JSON, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, model performance evidence, real-data readiness evidence, or production
 readiness evidence.
+
+## Step523 Artifact Body Generation Integration Fixture Root
+
+Step523 adds the synthetic metadata-only
+[artifact body generation integration fixture root](../../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration/README.md)
+with 28 cases, 196 JSON files, 7 files per case, six valid cases, and 22
+invalid cases. It creates no status marker and adds no workflow, wrapper,
+Makefile, Python/test, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, model performance evidence, real-data readiness evidence, or production
+readiness evidence.

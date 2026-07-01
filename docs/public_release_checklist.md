@@ -4594,3 +4594,17 @@ change Makefile, change Python code/tests, change runtime implementation,
 implement artifact body generation integration, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
+
+## 21. Step523 Artifact Body Generation Integration Fixture Root
+
+For Step523, review the synthetic metadata-only fixture root:
+
+[artifact body generation integration fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration/README.md).
+
+Confirm it contains 28 cases, 196 JSON files, 7 files per case, six valid
+cases, and 22 invalid cases. Confirm it uses the v0.1 schema family and
+metadata-only sentinel policy. Confirm it does not implement a validator,
+change workflow files, change the wrapper, change Makefile, change Python
+code/tests, change runtime implementation, implement artifact body generation
+integration, connect manifest writer integration, enable file writing, use
+real data, compute metrics, or claim production readiness.

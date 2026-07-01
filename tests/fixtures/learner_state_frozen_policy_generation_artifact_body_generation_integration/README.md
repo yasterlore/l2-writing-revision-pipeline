@@ -1,0 +1,171 @@
+# Frozen Policy Generation Artifact Body Generation Integration Fixtures
+
+This fixture root contains synthetic-only, metadata-only, no-oracle fixtures
+for the future artifact body generation integration boundary.
+
+The fixtures connect public-safe actual invocation runtime summary metadata to
+artifact body generation boundary metadata. They do not implement artifact
+body generation integration, do not implement a validator, do not invoke a
+runtime, do not invoke a manifest writer, do not write artifact files, do not
+write manifest files, do not compute metrics, and do not prove production or
+real-data readiness.
+
+## Purpose
+
+The purpose is to define a future contract for static fixture validation of
+the bridge between:
+
+- actual invocation runtime summary metadata
+- artifact body request metadata
+- artifact body pointer metadata
+- artifact body generation metadata
+- expected public-safe integration summary metadata
+- expected public-safe error metadata
+
+All cases are body-free and use safe booleans, reason codes, count-like
+metadata, schema names, mode labels, and relative fixture identifiers only.
+
+## Synthetic-Only / Metadata-Only / No-Oracle Boundary
+
+These fixtures must not contain real participant data, raw learner text, raw
+rows, logits, probabilities, private path values, absolute path values,
+request bodies, pointer bodies, expected bodies, generated policy bodies,
+artifact body payloads, manifest bodies, raw stdout bodies, raw stderr
+bodies, copied GitHub log blocks, full job output, or performance metric
+bodies.
+
+## Counts
+
+- total_cases: 28
+- valid_cases: 6
+- invalid_cases: 22
+- json_files_per_case: 7
+- total_json_files: 196
+- README: 1
+
+## File Layout
+
+Each case directory contains:
+
+- `case_metadata.json`
+- `actual_invocation_runtime_summary_metadata.json`
+- `artifact_body_request_metadata.json`
+- `artifact_body_pointer_metadata.json`
+- `artifact_body_generation_metadata.json`
+- `expected_integration_summary.json`
+- `expected_error.json`
+
+This README intentionally does not include fixture JSON bodies.
+
+## Valid Taxonomy
+
+- `valid/valid_minimal_suppressed_metadata_only_bridge`
+- `valid/valid_safe_metadata_summary_bridge`
+- `valid/valid_runtime_summary_to_suppressed_body_generation`
+- `valid/valid_no_file_writing_bridge`
+- `valid/valid_no_manifest_writer_bridge`
+- `valid/valid_no_downstream_payload_bridge`
+
+Valid cases expect `status=pass`, `reason_code=none`,
+`exit_code_category=zero`, `invocation_mode=actual_invocation_metadata_only`,
+suppressed content/body flags, suppressed raw stdout/stderr body flags, no
+request / pointer / expected body detection, no artifact body payload
+detection, no manifest body detection, no generated policy body detection, no
+file writing detection, no manifest writer invocation, no production
+readiness claim, no real-data readiness claim, and no performance claim.
+
+## Invalid Taxonomy
+
+- `invalid/invalid_runtime_summary_schema`
+- `invalid/invalid_runtime_summary_status`
+- `invalid/invalid_runtime_summary_body_detected`
+- `invalid/invalid_runtime_summary_raw_stdout_body`
+- `invalid/invalid_runtime_summary_raw_stderr_body`
+- `invalid/invalid_artifact_body_payload_requested`
+- `invalid/invalid_manifest_body_requested`
+- `invalid/invalid_generated_policy_body_requested`
+- `invalid/invalid_request_body_present`
+- `invalid/invalid_pointer_body_present`
+- `invalid/invalid_expected_body_present`
+- `invalid/invalid_raw_rows_present`
+- `invalid/invalid_logits_present`
+- `invalid/invalid_private_path_present`
+- `invalid/invalid_absolute_path_present`
+- `invalid/invalid_raw_learner_text_present`
+- `invalid/invalid_file_writing_requested`
+- `invalid/invalid_manifest_writer_requested`
+- `invalid/invalid_artifact_body_generation_unsafe_mode`
+- `invalid/invalid_mismatched_expected_status`
+- `invalid/invalid_real_data_marker_present`
+- `invalid/invalid_performance_metric_body_present`
+
+Invalid cases use metadata-only sentinels. The expected status split is:
+
+- `invalid_runtime_summary_schema`: usage_error
+- `invalid_mismatched_expected_status`: mismatch
+- all other invalid cases: fail_closed
+
+Reason codes are public-safe labels only.
+
+## Schema Family
+
+- `learner_state_frozen_policy_generation_artifact_body_generation_integration_case_v0.1`
+- `learner_state_frozen_policy_generation_artifact_body_generation_integration_runtime_summary_metadata_v0.1`
+- `learner_state_frozen_policy_generation_artifact_body_generation_integration_request_metadata_v0.1`
+- `learner_state_frozen_policy_generation_artifact_body_generation_integration_pointer_metadata_v0.1`
+- `learner_state_frozen_policy_generation_artifact_body_generation_integration_generation_metadata_v0.1`
+- `learner_state_frozen_policy_generation_artifact_body_generation_integration_expected_summary_v0.1`
+- `learner_state_frozen_policy_generation_artifact_body_generation_integration_expected_error_v0.1`
+
+## Sentinel Policy
+
+Invalid fixtures use safe sentinel booleans, reason codes, schema names, mode
+labels, and count-like metadata. Actual unsafe payloads are never stored.
+
+Valid cases must not contain forbidden sentinels. Invalid cases may contain
+controlled metadata-only sentinel fields that indicate the simulated failure
+class.
+
+## Forbidden Payload Policy
+
+This fixture root must not store:
+
+- request bodies
+- pointer bodies
+- expected bodies
+- written file JSON bodies
+- manifest bodies
+- artifact body payloads
+- generated policy bodies
+- raw stdout bodies
+- raw stderr bodies
+- raw rows
+- logits or probabilities
+- private path values
+- absolute path values
+- raw learner text
+- real participant data
+- performance metric bodies
+- raw logs or full job output
+
+## What Is Not Implemented
+
+This fixture root does not implement fixture validation, runtime invocation,
+artifact body generation integration, manifest writer integration, artifact
+file writing, manifest file writing, release-quality integration, workflow
+changes, or model evaluation.
+
+## Non-Claims
+
+These fixtures do not claim:
+
+- production readiness
+- real-data readiness
+- model performance
+- F1 / accuracy / ECE / AURCC achievement
+- artifact body generation integration correctness
+- manifest writer integration correctness
+- artifact writer CLI actual invocation correctness generally
+- runtime actual invocation correctness generally
+- generated policy quality
+- learner-state estimator correctness

@@ -284,6 +284,20 @@ correctness, runtime actual invocation correctness, artifact body generation
 integration correctness, manifest writer integration correctness, production
 readiness, real-data readiness, or model performance evidence.
 
+Confirm the Step523 artifact body generation integration fixture root is
+covered as fixture-only evidence:
+
+- `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration/`
+- 28 case directories
+- 196 metadata-only JSON files
+- 7 JSON files per case
+- 1 fixture README
+- v0.1 integration metadata schema family
+
+Do not treat this fixture root as artifact body generation integration
+correctness, manifest writer integration correctness, production readiness,
+real-data readiness, or model performance evidence.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

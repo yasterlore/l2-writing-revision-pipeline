@@ -1,0 +1,16 @@
+{
+  "absolute_path_present": false,
+  "fixture_relative_path": "invalid/invalid_performance_metric_body_present",
+  "logits_present": false,
+  "metadata_only": true,
+  "no_oracle": true,
+  "pointer_body_present": false,
+  "pointer_id": "invalid/invalid_performance_metric_body_present::artifact_body_pointer_metadata",
+  "pointer_kind": "metadata_only_bridge_pointer",
+  "private_path_present": false,
+  "raw_learner_text_present": false,
+  "raw_rows_present": false,
+  "real_data_marker_present": false,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_generation_integration_pointer_metadata_v0.1",
+  "synthetic_only": true
+}

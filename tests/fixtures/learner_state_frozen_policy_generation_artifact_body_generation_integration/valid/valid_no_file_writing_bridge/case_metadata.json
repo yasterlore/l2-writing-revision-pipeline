@@ -1,0 +1,13 @@
+{
+  "body_free": true,
+  "case_id": "valid/valid_no_file_writing_bridge",
+  "case_kind": "valid",
+  "description": "bridge with file writing disabled",
+  "expected_reason_code": "none",
+  "expected_status": "pass",
+  "fixture_contract_version": "artifact_body_generation_integration_fixture_contract_v0.1",
+  "metadata_only": true,
+  "no_oracle": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_generation_integration_case_v0.1",
+  "synthetic_only": true
+}

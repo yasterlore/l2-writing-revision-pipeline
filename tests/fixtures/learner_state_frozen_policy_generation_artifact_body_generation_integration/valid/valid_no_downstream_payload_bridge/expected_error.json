@@ -1,0 +1,10 @@
+{
+  "body_suppressed": true,
+  "content_suppressed": true,
+  "expected_error_public_safe": false,
+  "expected_exit_code_category": "zero",
+  "expected_reason_code": "none",
+  "expected_status": "pass",
+  "no_payload_in_error": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_generation_integration_expected_error_v0.1"
+}

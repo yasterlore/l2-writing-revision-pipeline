@@ -1,0 +1,18 @@
+{
+  "artifact_body_payload_requested": false,
+  "generated_policy_body_requested": false,
+  "manifest_body_requested": false,
+  "metadata_only": true,
+  "mode": "suppressed",
+  "no_file_writing": true,
+  "no_manifest_writer": true,
+  "no_oracle": true,
+  "no_payload_output": true,
+  "performance_metric_body_present": false,
+  "real_data_marker_present": false,
+  "request_body_present": false,
+  "request_id": "invalid/invalid_absolute_path_present::artifact_body_request_metadata",
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_generation_integration_request_metadata_v0.1",
+  "summary_only": true,
+  "synthetic_only": true
+}

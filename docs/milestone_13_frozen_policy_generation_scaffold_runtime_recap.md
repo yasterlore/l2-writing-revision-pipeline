@@ -2096,6 +2096,15 @@ written, no artifact body is produced, and no performance metric is computed.
   Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
   body generation integration, manifest writer integration, file writing,
   real-data use, metric use, or production readiness claims.
+- Step523: added the synthetic metadata-only artifact body generation
+  integration fixture root:
+  [Frozen policy generation artifact body generation integration fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration/README.md).
+  The root contains 28 cases, 196 JSON files, 7 files per case, six valid
+  cases, and 22 invalid cases. It does not implement a validator, change
+  workflow files, change the wrapper, change Makefile, change Python
+  code/tests, change runtime implementation, implement artifact body
+  generation integration, connect manifest writer integration, enable file
+  writing, use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 

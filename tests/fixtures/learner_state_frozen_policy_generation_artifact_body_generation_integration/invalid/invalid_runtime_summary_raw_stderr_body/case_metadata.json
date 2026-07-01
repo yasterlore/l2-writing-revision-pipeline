@@ -1,0 +1,13 @@
+{
+  "body_free": true,
+  "case_id": "invalid/invalid_runtime_summary_raw_stderr_body",
+  "case_kind": "invalid",
+  "description": "metadata-only sentinel for runtime_summary_raw_stderr_body",
+  "expected_reason_code": "runtime_summary_raw_stderr_body",
+  "expected_status": "fail_closed",
+  "fixture_contract_version": "artifact_body_generation_integration_fixture_contract_v0.1",
+  "metadata_only": true,
+  "no_oracle": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_generation_integration_case_v0.1",
+  "synthetic_only": true
+}

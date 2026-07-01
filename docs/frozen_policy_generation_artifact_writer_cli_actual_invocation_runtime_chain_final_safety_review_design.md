@@ -240,7 +240,20 @@ fixture JSON, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
 
-## 14. Non-Claims
+## 14. Step523 Fixture Root Creation Status
+
+Step523 creates the synthetic metadata-only artifact body generation
+integration fixture root with 28 cases and 196 JSON files:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration/`
+
+This remains a fixture-only handoff into the artifact body chain. It does not
+change implementation, workflow files, the wrapper, Makefile, Python
+code/tests, runtime implementation, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claims.
+
+## 15. Non-Claims
 
 This final safety review design does not claim:
 
@@ -255,7 +268,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 15. Public-Safe Checklist
+## 16. Public-Safe Checklist
 
 - no raw logs
 - no full job output

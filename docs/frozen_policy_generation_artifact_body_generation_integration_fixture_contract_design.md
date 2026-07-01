@@ -400,7 +400,22 @@ Suggested future staging:
 
 Step522 does not proceed to those steps.
 
-## 18. Failure Interpretation
+## 18. Step523 Fixture Root Creation Status
+
+Step523 creates the synthetic metadata-only fixture root proposed by this
+contract:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration/`
+
+The root uses the 7-file layout with 28 cases, six valid cases, 22 invalid
+cases, and 196 JSON files. It preserves the metadata-only sentinel policy and
+does not implement a validator, change Python code/tests, change Makefile,
+change the release-quality wrapper, change workflow files, change runtime
+implementation, implement artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.
+
+## 19. Failure Interpretation
 
 Future failure interpretation:
 
@@ -415,7 +430,7 @@ Future failure interpretation:
   file-writing is explicitly in scope
 - raw stdout/stderr and payloads must not be copied into docs or reports
 
-## 19. Non-Claims
+## 20. Non-Claims
 
 This fixture contract design does not claim:
 
@@ -429,9 +444,9 @@ This fixture contract design does not claim:
 - learner-state estimator correctness
 - artifact writer CLI actual invocation correctness generally
 - runtime actual invocation correctness generally
-- available fixture root or fixture JSON
+- fixture validator implementation
 
-## 20. Public-Safe Checklist
+## 21. Public-Safe Checklist
 
 - no raw logs
 - no full job output
