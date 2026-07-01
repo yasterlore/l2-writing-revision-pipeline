@@ -250,6 +250,7 @@ Not currently implemented or not claimed:
 - [Artifact writer CLI actual invocation runtime Makefile target design](docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_makefile_target_design.md)
 - [Artifact writer CLI actual invocation runtime release-quality integration design](docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_integration_design.md)
 - [Artifact body generation integration fixtures](tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration/README.md)
+- [Artifact body generation integration fixture validator Makefile target design](docs/frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md)
 
 ## CI
 

@@ -191,7 +191,7 @@ specification content.
 | artifact writer CLI integration fixtures | CLI integration root | 11 | covered | 28 cases / 168 JSON noted. |
 | artifact writer CLI integration runtime fixtures | runtime root | 11 | covered | Step509 expands the root to 54 cases / 324 JSON files; Step511 updates the static validator to schema v0.2 for mixed v0.1/v0.2 fixture validation. |
 | artifact writer CLI actual invocation fixtures | actual invocation root | 11, Appendix D | covered after Step500 | 32 cases / 192 JSON validated by Step500 static validator; actual invocation remains not implemented. |
-| artifact body generation integration fixtures | integration root and validator | 11, 12 | covered after Step525 | 28 cases / 196 JSON files validated by Step525 static validator; Makefile/release-quality integration remains future work. |
+| artifact body generation integration fixtures | integration root and validator | 11, 12 | covered after Step527 | 28 cases / 196 JSON files validated by Step525 static validator; Step527 standalone Makefile target available; release-quality integration remains future work. |
 | artifact body fixtures | body roots | 11 | covered | Body fixture/file-writing/isolated counts included. |
 | artifact body file-writing fixtures | file-writing root | 11, 15 | covered | Safe writing policy included. |
 | artifact body isolated write validation fixtures | isolated root | 11, 15 | covered | Residue policy included. |
@@ -227,7 +227,7 @@ specification content.
 | artifact writer | Python/docs/fixtures | 7 | covered | Family covered. |
 | artifact writer CLI integration | Python/docs/fixtures | 7 | covered | Fixture and runtime fixture families included. |
 | artifact writer CLI actual invocation fixtures | Step498 fixture root/docs and Step500 validator | 7, 11, Appendix D | covered after Step500 | Metadata schema family and aggregate counts covered at validator level; actual invocation remains future work. |
-| artifact body generation integration fixtures | Step523 fixture root/docs and Step525 validator | 7, 11, 12 | covered after Step525 | v0.1 metadata-only schema family, validation schema, aggregate counts, and reason-code counts documented; runtime integration remains future work. |
+| artifact body generation integration fixtures | Step523 fixture root/docs, Step525 validator, and Step527 standalone target | 7, 11, 12 | covered after Step527 | v0.1 metadata-only schema family, validation schema, aggregate counts, reason-code counts, and Makefile target documented; runtime integration remains future work. |
 | artifact body | Python/docs/fixtures | 7 | covered | Family covered. |
 | manifest writer | Python/docs/fixtures | 7 | covered | Family covered. |
 | release-quality status markers | docs/status | 7, 20 | covered | Status marker schema concept covered. |

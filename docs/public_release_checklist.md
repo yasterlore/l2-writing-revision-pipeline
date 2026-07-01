@@ -4646,3 +4646,18 @@ code/tests, change fixture JSON, change runtime implementation, implement
 artifact body generation integration, connect manifest writer integration,
 enable file writing, use real data, compute metrics, or claim production
 readiness.
+
+## 25. Step527 Artifact Body Generation Integration Fixture Validator Makefile Target Implementation
+
+For Step527, review the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures`
+
+Confirm it runs the Step525 validator CLI against the Step523 fixture root and
+emits public-safe aggregate output with 28 cases, 196 JSON files, pass 6,
+usage_error 1, fail_closed 20, mismatch 1, and public-safe reason-code
+counts. Confirm it does not change the wrapper, change workflow files, change
+Python code/tests, change fixture JSON, change runtime implementation,
+implement artifact body generation integration, connect manifest writer
+integration, enable file writing, use real data, compute metrics, or claim
+production readiness.

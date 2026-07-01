@@ -454,7 +454,19 @@ files, Python code/tests, fixture JSON, runtime implementation, artifact body
 generation integration, manifest writer integration, file writing, real-data
 use, metric use, or production readiness claims.
 
-## 21. Failure Interpretation
+## 21. Step527 Makefile Target Implementation Status
+
+Step527 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures`
+for the Step525 validator CLI. The target emits public-safe aggregate output
+and reason-code counts for the Step523 fixture root. It does not add
+release-quality wrapper integration, change workflow files, change Python
+code/tests, change fixture JSON, change runtime implementation, implement
+artifact body generation integration, connect manifest writer integration,
+enable file writing, use real data, compute metrics, or claim production
+readiness.
+
+## 22. Failure Interpretation
 
 Future validator failure means a metadata fixture contract, sentinel policy,
 or consistency issue.
@@ -469,7 +481,7 @@ Future validator failure does not prove:
 Raw stdout/stderr and payloads must not be copied into docs or reports.
 Failure reports should use public-safe reason codes only.
 
-## 22. Non-Claims
+## 23. Non-Claims
 
 This fixture validator design does not claim:
 
@@ -485,7 +497,7 @@ This fixture validator design does not claim:
 - runtime actual invocation correctness generally
 - Makefile or release-quality integration
 
-## 23. Public-Safe Checklist
+## 24. Public-Safe Checklist
 
 - no raw logs
 - no full job output

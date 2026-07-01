@@ -195,6 +195,20 @@ files, Python code/tests, fixture JSON, runtime implementation, artifact body
 generation integration, manifest writer integration, file writing, real-data
 use, metric use, or production readiness claims.
 
+## Validator Makefile Target
+
+Step527 adds the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures`
+
+The target runs the Step525 validator CLI against this fixture root and emits
+public-safe aggregate counts and reason-code counts only. It does not add
+release-quality wrapper integration, change workflow files, change Python
+code/tests, change fixture JSON, change runtime implementation, implement
+artifact body generation integration, connect manifest writer integration,
+enable file writing, use real data, compute metrics, or claim production
+readiness.
+
 ## Non-Claims
 
 These fixtures do not claim:

@@ -270,6 +270,15 @@ integration, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
 
+Step527 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures`
+for the Step525 validator CLI. The target emits the same public-safe aggregate
+summary and reason-code counts. It is not yet release-quality wrapper
+included and does not change workflow files, Python code/tests, fixture
+JSON, runtime implementation, artifact body generation integration, manifest
+writer integration, file writing, real-data use, metric use, or production
+readiness claims.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

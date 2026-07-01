@@ -382,7 +382,17 @@ fixture JSON, runtime implementation, artifact body generation integration,
 manifest writer integration, file writing, real-data use, metric use, or
 production readiness claims.
 
-## 21. Public-Safe Checklist
+## 21. Step527 Makefile Target Implementation Status
+
+Step527 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures`
+for the Step525 validator CLI. It does not add wrapper integration, change
+workflow files, change Python code/tests, change fixture JSON, change runtime
+implementation, implement artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.
+
+## 22. Public-Safe Checklist
 
 - no raw logs
 - no full job output

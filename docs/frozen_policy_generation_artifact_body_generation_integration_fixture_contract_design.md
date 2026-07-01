@@ -457,7 +457,17 @@ Python code/tests, fixture JSON, runtime implementation, artifact body
 generation integration, manifest writer integration, file writing, real-data
 use, metric use, or production readiness claims.
 
-## 22. Failure Interpretation
+## 22. Step527 Makefile Target Implementation Status
+
+Step527 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures`
+for the Step525 validator CLI. It does not add release-quality wrapper
+integration, change workflow files, change Python code/tests, change fixture
+JSON, change runtime implementation, implement artifact body generation
+integration, connect manifest writer integration, enable file writing, use
+real data, compute metrics, or claim production readiness.
+
+## 23. Failure Interpretation
 
 Future failure interpretation:
 
@@ -472,7 +482,7 @@ Future failure interpretation:
   file-writing is explicitly in scope
 - raw stdout/stderr and payloads must not be copied into docs or reports
 
-## 23. Non-Claims
+## 24. Non-Claims
 
 This fixture contract design does not claim:
 
@@ -488,7 +498,7 @@ This fixture contract design does not claim:
 - runtime actual invocation correctness generally
 - Makefile or release-quality integration
 
-## 24. Public-Safe Checklist
+## 25. Public-Safe Checklist
 
 - no raw logs
 - no full job output

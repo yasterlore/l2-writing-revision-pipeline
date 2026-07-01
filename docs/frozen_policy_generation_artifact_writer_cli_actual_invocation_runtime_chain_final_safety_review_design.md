@@ -290,7 +290,18 @@ fixture JSON, runtime implementation, artifact body generation integration,
 manifest writer integration, file writing, real-data use, metric use, or
 production readiness claims.
 
-## 18. Non-Claims
+## 18. Step527 Fixture Validator Makefile Target Implementation Status
+
+Step527 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures`
+for the artifact body generation integration fixture validator. It remains a
+static fixture-validation target and does not add wrapper integration, change
+workflow files, change Python code/tests, change fixture JSON, change runtime
+implementation, implement artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.
+
+## 19. Non-Claims
 
 This final safety review design does not claim:
 
@@ -305,7 +316,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 19. Public-Safe Checklist
+## 20. Public-Safe Checklist
 
 - no raw logs
 - no full job output

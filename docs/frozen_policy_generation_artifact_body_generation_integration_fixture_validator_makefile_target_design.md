@@ -60,6 +60,13 @@ PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_bod
 
 Step526 does not add this target to the Makefile.
 
+Step527 adds this standalone target to the Makefile with the target name, help
+text, and command above. Step527 does not add release-quality wrapper
+integration, change workflow files, change Python code/tests, change fixture
+JSON, change runtime implementation, implement artifact body generation
+integration, connect manifest writer integration, enable file writing, use
+real data, compute metrics, or claim production readiness.
+
 ## 4. Expected Output
 
 The future standalone target should emit only public-safe aggregate output.
@@ -209,7 +216,8 @@ Suggested follow-up chain:
 4. Step530: remote/manual run record workflow design
 5. Step531: remote status marker
 
-Step526 does not perform those steps.
+Step527 completes the standalone Makefile target implementation. Step528 and
+later steps remain future work.
 
 ## 10. Failure Interpretation
 

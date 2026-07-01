@@ -2135,6 +2135,14 @@ written, no artifact body is produced, and no performance metric is computed.
   runtime implementation, artifact body generation integration, manifest
   writer integration, file writing, real-data use, metric use, or production
   readiness status.
+- Step527: added the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures`
+  for the Step525 validator CLI. The target runs over the Step523 fixture root
+  and emits the same public-safe aggregate counts and reason-code counts. It
+  does not change the wrapper, workflow files, Python code/tests, fixture JSON,
+  runtime implementation, artifact body generation integration, manifest writer
+  integration, file writing, real-data use, metric use, or production
+  readiness status.
 
 ## Related Documents
 
