@@ -4297,6 +4297,17 @@ invocation correctness, artifact body generation integration correctness,
 manifest writer integration correctness, real-data readiness, model
 performance, F1, accuracy, ECE, or AURCC.
 
+For Step500, review the static validator module and focused tests for the
+Step498 artifact writer CLI actual invocation fixture root:
+`python/learner_state/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation.py`
+and
+`python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation.py`.
+Confirm the CLI output remains public-safe summary-only, confirms 32 cases /
+192 JSON files, and does not change fixture JSON, Makefile, the release-quality
+wrapper, workflow files, runtime actual invocation, artifact writer CLI actual
+invocation, artifact body generation integration, manifest writer integration,
+file writing, real-data use, metric use, or production readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

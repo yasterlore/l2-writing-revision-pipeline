@@ -291,6 +291,11 @@ Related recap:
   root. It is not a status marker, does not implement a validator or actual
   invocation, and does not claim artifact writer CLI actual invocation
   correctness or production readiness.
+- `python/learner_state/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation.py`:
+  Step500 static validator module / CLI for the Step498 fixture root. It is
+  not a status marker, is not Makefile or release-quality integrated yet, does
+  not perform artifact writer CLI actual invocation, and does not claim
+  artifact writer CLI actual invocation correctness or production readiness.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

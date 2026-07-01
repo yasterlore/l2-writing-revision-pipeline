@@ -190,7 +190,7 @@ specification content.
 | artifact writer fixtures | writer root | 11 | covered | Confirmed 17-case note present. |
 | artifact writer CLI integration fixtures | CLI integration root | 11 | covered | 28 cases / 168 JSON noted. |
 | artifact writer CLI integration runtime fixtures | runtime root | 11 | covered | 30 cases / 180 JSON noted. |
-| artifact writer CLI actual invocation fixtures | actual invocation root | 11, Appendix D | covered after Step498 | 32 cases / 192 JSON noted; validator and actual invocation remain not implemented. |
+| artifact writer CLI actual invocation fixtures | actual invocation root | 11, Appendix D | covered after Step500 | 32 cases / 192 JSON validated by Step500 static validator; actual invocation remains not implemented. |
 | artifact body fixtures | body roots | 11 | covered | Body fixture/file-writing/isolated counts included. |
 | artifact body file-writing fixtures | file-writing root | 11, 15 | covered | Safe writing policy included. |
 | artifact body isolated write validation fixtures | isolated root | 11, 15 | covered | Residue policy included. |
@@ -208,7 +208,7 @@ specification content.
 | artifact writer validators | writer fixture and CLI integration validators | 12, 16, 19 | covered | Strong coverage. |
 | artifact writer CLI integration runtime fixture validator | runtime fixture validator | 12, 16, 19, 21 | covered | Release-quality static validation status noted. |
 | artifact writer CLI integration runtime module | runtime module, focused tests, Step491 standalone Makefile target, and Step493 wrapper inclusion | 12, 16, 19, 21 | covered | Step489 metadata-only runtime boundary and Step493 release-quality runtime smoke inclusion noted. |
-| artifact writer CLI actual invocation fixture validator | not implemented | 11, 21, Appendix D | intentionally out of scope | Step498 creates fixture root only; future validator remains a follow-up. |
+| artifact writer CLI actual invocation fixture validator | Step500 static validator | 11, 21, Appendix D | covered after Step500 | Validator module / CLI / focused tests exist; Makefile and release-quality integration remain future work. |
 | artifact body validators | fixture/file-writing/isolated modules | 12, 15, 19 | covered | Exact module-by-module counts can be expanded. |
 | manifest writer validators | fixture/runtime/file-writing/isolated/production modules | 12, 15, 19 | covered | Strong family coverage. |
 
@@ -225,7 +225,7 @@ specification content.
 | scaffold/generator scaffold | Python/docs/fixtures | 7 | covered | Representative versions included. |
 | artifact writer | Python/docs/fixtures | 7 | covered | Family covered. |
 | artifact writer CLI integration | Python/docs/fixtures | 7 | covered | Fixture and runtime fixture families included. |
-| artifact writer CLI actual invocation fixtures | Step498 fixture root/docs | 7, 11, Appendix D | covered after Step498 | Metadata schema family covered at field-family level; validator remains future work. |
+| artifact writer CLI actual invocation fixtures | Step498 fixture root/docs and Step500 validator | 7, 11, Appendix D | covered after Step500 | Metadata schema family and aggregate counts covered at validator level; actual invocation remains future work. |
 | artifact body | Python/docs/fixtures | 7 | covered | Family covered. |
 | manifest writer | Python/docs/fixtures | 7 | covered | Family covered. |
 | release-quality status markers | docs/status | 7, 20 | covered | Status marker schema concept covered. |

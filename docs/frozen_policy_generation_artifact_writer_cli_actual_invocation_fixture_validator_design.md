@@ -404,21 +404,35 @@ Future Step500 tests should cover:
 Step499 is not validator implementation. It is the design for a future
 validator that will check the Step498 fixture root.
 
+Step500 implements the static validator module / CLI / focused tests described
+by this design:
+
+- `python/learner_state/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation.py`
+
+The implementation validates the Step498 fixture root at summary level with
+the validation schema
+`learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation_v0.1`.
+It does not update runtime actual invocation, perform artifact writer CLI
+actual invocation, add a Makefile target, change the release-quality wrapper,
+change workflows, change fixture JSON, connect artifact body generation
+integration, connect manifest writer integration, enable file writing, use
+real data, compute metrics, or claim production readiness.
+
 ## 18. Planned Follow-Up Steps
 
 Possible follow-up steps:
 
-1. Step500: actual invocation fixture validator module / CLI / focused tests
-2. Step501: actual invocation fixture validator Makefile target design
-3. Step502: actual invocation fixture validator Makefile target implementation
-4. Step503: actual invocation runtime update design
-5. Step504: actual invocation runtime implementation update
-6. Step505: release-quality integration design
-7. Step506: release-quality wrapper integration
-8. Step507: remote/manual run record workflow design
-9. Step508: remote status marker
+1. Step501: actual invocation fixture validator Makefile target design
+2. Step502: actual invocation fixture validator Makefile target implementation
+3. Step503: actual invocation runtime update design
+4. Step504: actual invocation runtime implementation update
+5. Step505: release-quality integration design
+6. Step506: release-quality wrapper integration
+7. Step507: remote/manual run record workflow design
+8. Step508: remote status marker
 
-Step499 does not start these steps.
+Step500 does not start these follow-up steps.
 
 ## 19. Non-Claims
 

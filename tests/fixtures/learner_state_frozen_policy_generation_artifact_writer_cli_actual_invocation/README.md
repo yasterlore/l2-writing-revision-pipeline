@@ -94,7 +94,7 @@ learner-state estimator correctness.
 - fixture root created: yes, Step498
 - fixture JSON created: yes, 192 metadata-only JSON files
 - validator design: yes, Step499 docs-only / planning-only
-- validator implemented: no
+- validator implemented: yes, Step500 static module / CLI / focused tests
 - runtime actual invocation update implemented: no
 - artifact writer CLI actual invocation implemented: no
 - Makefile target added: no
@@ -103,3 +103,14 @@ learner-state estimator correctness.
 - artifact body generation integration implemented: no
 - manifest writer integration implemented: no
 - file writing implemented: no
+
+Step500 validator implementation:
+
+- module: `python/learner_state/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation.py`
+- focused tests: `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation.py`
+- validation schema: `learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation_v0.1`
+- expected aggregate: 32 cases / 192 JSON files / 6 valid / 26 invalid
+- output boundary: public-safe summary-only; no fixture body, request body,
+  pointer body, expected body, raw stdout/stderr body, artifact body payload,
+  manifest body, generated policy body, raw rows, logits/probabilities,
+  private paths, absolute paths, raw learner text, or real participant data

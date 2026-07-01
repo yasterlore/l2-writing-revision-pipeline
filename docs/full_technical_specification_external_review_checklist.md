@@ -190,11 +190,25 @@ covered as fixture-only evidence:
 - 32 case directories
 - 192 metadata-only JSON files
 - 1 fixture README
-- validator not implemented
+- Step500 static validator module / CLI / focused tests implemented
 - runtime actual invocation not implemented
 - Makefile target, release-quality wrapper, and workflow unchanged
 
 Do not treat this fixture root as artifact writer CLI actual invocation
+correctness, artifact body generation integration correctness, manifest writer
+integration correctness, production readiness, real-data readiness, or model
+performance evidence.
+
+## 9.2 Step500 Fixture Validator Review
+
+Confirm the Step500 artifact writer CLI actual invocation fixture validator
+checks only the Step498 synthetic metadata-only fixture root and emits
+public-safe summary-only output. Reviewers should check the 32 case / 192 JSON
+aggregate counts, expected status and reason-code mapping, sentinel policy,
+path-safety policy, downstream boundary checks, malformed JSON handling, and
+missing-root handling.
+
+Do not treat this validator as artifact writer CLI actual invocation
 correctness, artifact body generation integration correctness, manifest writer
 integration correctness, production readiness, real-data readiness, or model
 performance evidence.

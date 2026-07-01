@@ -1879,6 +1879,17 @@ written, no artifact body is produced, and no performance metric is computed.
   actual invocation, connect artifact body generation integration, connect
   manifest writer integration, write files, use real data, compute metrics, or
   claim production readiness.
+- Step500: implemented the static artifact writer CLI actual invocation
+  fixture validator module / CLI / focused tests for the Step498 fixture root:
+  `python/learner_state/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation.py`
+  and
+  `python/learner_state/tests/test_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation.py`.
+  The validator checks 32 cases / 192 JSON files and emits public-safe
+  summary-only output. This does not update runtime actual invocation, perform
+  artifact writer CLI actual invocation, add a Makefile target, change the
+  release-quality wrapper, change workflow files, change fixture JSON, connect
+  artifact body generation integration, connect manifest writer integration,
+  write files, use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 

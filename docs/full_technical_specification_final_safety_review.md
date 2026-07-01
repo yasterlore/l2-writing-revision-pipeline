@@ -217,11 +217,14 @@ TypeScript, fixture JSON, or runtime integration changes were made.
 Step498 later adds a fixture-only artifact writer CLI actual invocation fixture
 root with 32 case directories and 192 metadata-only JSON files. That fixture
 root should be reviewed as synthetic-only, metadata-only, body-free fixture
-evidence. It does not implement a validator, update runtime actual invocation,
-change Makefile targets, change the release-quality wrapper, change workflows,
-connect artifact body generation integration, connect manifest writer
-integration, enable file writing, or prove production readiness, real-data
-readiness, model performance, F1, accuracy, ECE, or AURCC.
+evidence. Step500 later adds a static validator module / CLI / focused tests
+for that fixture root. The validator checks fixture metadata and emits
+public-safe summary-only output. It does not update runtime actual invocation,
+perform artifact writer CLI actual invocation, change Makefile targets, change
+the release-quality wrapper, change workflows, connect artifact body
+generation integration, connect manifest writer integration, enable file
+writing, or prove production readiness, real-data readiness, model
+performance, F1, accuracy, ECE, or AURCC.
 
 ## 11. Final Safety Review Result
 
