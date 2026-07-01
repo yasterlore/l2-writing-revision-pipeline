@@ -480,7 +480,17 @@ code/tests, fixture JSON, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claims.
 
-## 23. Failure Interpretation
+## 23. Step529 Release-Quality Wrapper Integration Status
+
+Step529 adds the Step527 standalone target to the release-quality wrapper with
+the artifact body generation integration fixture validation label. The check
+is placed after actual invocation runtime smoke and before artifact body
+fixture validation. It does not change workflow files, Makefile, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.
+
+## 24. Failure Interpretation
 
 Future validator failure means a metadata fixture contract, sentinel policy,
 or consistency issue.
@@ -495,7 +505,7 @@ Future validator failure does not prove:
 Raw stdout/stderr and payloads must not be copied into docs or reports.
 Failure reports should use public-safe reason codes only.
 
-## 24. Non-Claims
+## 25. Non-Claims
 
 This fixture validator design does not claim:
 
@@ -511,7 +521,7 @@ This fixture validator design does not claim:
 - runtime actual invocation correctness generally
 - Makefile or release-quality integration
 
-## 25. Public-Safe Checklist
+## 26. Public-Safe Checklist
 
 - no raw logs
 - no full job output

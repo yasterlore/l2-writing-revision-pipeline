@@ -273,11 +273,20 @@ claims.
 Step527 adds the standalone Makefile target
 `check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures`
 for the Step525 validator CLI. The target emits the same public-safe aggregate
-summary and reason-code counts. It is not yet release-quality wrapper
-included and does not change workflow files, Python code/tests, fixture
-JSON, runtime implementation, artifact body generation integration, manifest
-writer integration, file writing, real-data use, metric use, or production
-readiness claims.
+summary and reason-code counts. Step529 adds it to the release-quality wrapper
+as a static fixture validation check. It does not change workflow files,
+Python code/tests, fixture JSON, runtime implementation, artifact body
+generation integration, manifest writer integration, file writing, real-data
+use, metric use, or production readiness claims.
+
+Step529 adds the wrapper check
+`release_quality_check: learner-state frozen policy generation artifact body generation integration fixture validation`
+using the Step527 target. The check is inserted after actual invocation
+runtime smoke and before artifact body fixture validation. It remains static
+fixture validation and does not change workflow files, Makefile, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.
 
 ## 11. Final Safety Review Result
 

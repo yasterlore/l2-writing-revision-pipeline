@@ -4674,3 +4674,21 @@ Makefile, change Python code/tests, change fixture JSON, change runtime
 implementation, implement artifact body generation integration, connect
 manifest writer integration, enable file writing, use real data, compute
 metrics, or claim production readiness.
+
+## 27. Step529 Artifact Body Generation Integration Fixture Validator Release-Quality Wrapper Integration
+
+For Step529, review `scripts/check_release_quality.sh` and the
+[artifact body generation integration fixture validator release-quality integration design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md).
+Confirm the wrapper adds:
+
+`release_quality_check: learner-state frozen policy generation artifact body generation integration fixture validation`
+
+and runs:
+
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures`
+
+Confirm the check appears after actual invocation runtime smoke and before
+artifact body fixture validation. Confirm it does not change workflow files,
+Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.

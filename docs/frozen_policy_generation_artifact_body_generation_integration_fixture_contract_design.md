@@ -479,7 +479,16 @@ fixture JSON, runtime implementation, artifact body generation integration,
 manifest writer integration, file writing, real-data use, metric use, or
 production readiness claims.
 
-## 24. Failure Interpretation
+## 24. Step529 Release-Quality Wrapper Integration Status
+
+Step529 adds the Step527 standalone target to the release-quality wrapper
+after actual invocation runtime smoke and before artifact body fixture
+validation. It does not change workflow files, Makefile, Python code/tests,
+fixture JSON, runtime implementation, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claims.
+
+## 25. Failure Interpretation
 
 Future failure interpretation:
 
@@ -494,7 +503,7 @@ Future failure interpretation:
   file-writing is explicitly in scope
 - raw stdout/stderr and payloads must not be copied into docs or reports
 
-## 25. Non-Claims
+## 26. Non-Claims
 
 This fixture contract design does not claim:
 
@@ -510,7 +519,7 @@ This fixture contract design does not claim:
 - runtime actual invocation correctness generally
 - Makefile or release-quality integration
 
-## 26. Public-Safe Checklist
+## 27. Public-Safe Checklist
 
 - no raw logs
 - no full job output

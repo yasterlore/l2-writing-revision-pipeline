@@ -404,7 +404,16 @@ fixture JSON, runtime implementation, artifact body generation integration,
 manifest writer integration, file writing, real-data use, metric use, or
 production readiness claims.
 
-## 23. Public-Safe Checklist
+## 23. Step529 Release-Quality Wrapper Integration Status
+
+Step529 adds the Step527 standalone target to the release-quality wrapper
+after actual invocation runtime smoke and before artifact body fixture
+validation. It does not change workflow files, Makefile, Python code/tests,
+fixture JSON, runtime implementation, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claims.
+
+## 24. Public-Safe Checklist
 
 - no raw logs
 - no full job output

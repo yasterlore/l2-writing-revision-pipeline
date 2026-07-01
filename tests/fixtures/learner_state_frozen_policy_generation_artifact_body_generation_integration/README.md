@@ -222,6 +222,16 @@ code/tests, fixture JSON, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claims.
 
+## Validator Release-Quality Wrapper Integration
+
+Step529 adds the Step527 standalone target to the release-quality wrapper with
+the artifact body generation integration fixture validation label. The check
+still validates this synthetic metadata-only fixture root only. It does not
+change workflow files, Makefile, Python code/tests, fixture JSON, runtime
+implementation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.
+
 ## Non-Claims
 
 These fixtures do not claim:

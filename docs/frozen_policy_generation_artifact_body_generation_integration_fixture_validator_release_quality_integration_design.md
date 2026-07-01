@@ -91,6 +91,12 @@ make check-learner-state-frozen-policy-generation-artifact-body-generation-integ
 
 Step528 does not implement the wrapper change.
 
+Step529 adds this label and command to the release-quality wrapper at the
+insertion point described below. Step529 does not change workflow files,
+Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, or production readiness claims.
+
 ## 5. Proposed Insertion Point
 
 Recommended insertion point:
@@ -259,9 +265,30 @@ Suggested follow-up chain:
 2. Step530: remote/manual run record workflow design
 3. Step531: remote status marker
 
-Step528 does not perform those steps.
+Step529 completes the wrapper integration. Step530 and later steps remain
+future work.
 
-## 12. Failure Interpretation
+## 12. Step529 Wrapper Integration Status
+
+Step529 adds the wrapper check:
+
+```text
+release_quality_check: learner-state frozen policy generation artifact body generation integration fixture validation
+```
+
+Command:
+
+```bash
+make check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures
+```
+
+The check is inserted after artifact writer CLI actual invocation runtime
+smoke and before artifact body fixture validation. It remains static fixture
+validation over synthetic metadata-only fixtures. It does not replace artifact
+body fixture validation, artifact body generation smoke targets, artifact body
+file-writing checks, or manifest writer checks.
+
+## 13. Failure Interpretation
 
 Future wrapper check failure means the artifact body generation integration
 fixture validator failed inside the release-quality wrapper.
@@ -280,7 +307,7 @@ or production readiness issue. Interpret failures through public-safe reason
 codes only. Raw stdout/stderr and payloads must not be copied into docs or
 reports.
 
-## 13. Non-Claims
+## 14. Non-Claims
 
 This release-quality integration design does not claim:
 
@@ -296,7 +323,7 @@ This release-quality integration design does not claim:
 - runtime actual invocation correctness generally
 - release-quality wrapper inclusion
 
-## 14. Public-Safe Checklist
+## 15. Public-Safe Checklist
 
 - no raw logs
 - no full job output

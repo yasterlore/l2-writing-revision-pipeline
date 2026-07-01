@@ -314,7 +314,17 @@ fixture JSON, runtime implementation, artifact body generation integration,
 manifest writer integration, file writing, real-data use, metric use, or
 production readiness claims.
 
-## 20. Non-Claims
+## 20. Step529 Fixture Validator Release-Quality Wrapper Integration Status
+
+Step529 adds the artifact body generation integration fixture validator check
+to the release-quality wrapper after actual invocation runtime smoke and
+before artifact body fixture validation. It remains static fixture validation
+and does not change workflow files, Makefile, Python code/tests, fixture JSON,
+runtime implementation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.
+
+## 21. Non-Claims
 
 This final safety review design does not claim:
 
@@ -329,7 +339,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 21. Public-Safe Checklist
+## 22. Public-Safe Checklist
 
 - no raw logs
 - no full job output

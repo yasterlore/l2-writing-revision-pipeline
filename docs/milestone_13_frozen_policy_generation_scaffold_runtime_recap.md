@@ -2153,6 +2153,16 @@ written, no artifact body is produced, and no performance metric is computed.
   fixture JSON, runtime implementation, artifact body generation integration,
   manifest writer integration, file writing, real-data use, metric use, or
   production readiness status.
+- Step529: added the Step527 standalone target to the release-quality wrapper
+  with label
+  `release_quality_check: learner-state frozen policy generation artifact body generation integration fixture validation`
+  and command
+  `make check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures`.
+  The check is inserted after actual invocation runtime smoke and before
+  artifact body fixture validation. It does not change workflow files,
+  Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
+  body generation integration, manifest writer integration, file writing,
+  real-data use, metric use, or production readiness status.
 
 ## Related Documents
 
