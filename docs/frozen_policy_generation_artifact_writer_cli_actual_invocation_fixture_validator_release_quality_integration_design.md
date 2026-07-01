@@ -63,6 +63,12 @@ Future release-quality wrapper command:
 
 Step503 does not add this command to `scripts/check_release_quality.sh`.
 
+Step504 adds this command to `scripts/check_release_quality.sh` as a
+release-quality wrapper check. Step504 does not change workflow files,
+Makefile, Python code/tests, fixture JSON, runtime actual invocation, artifact
+writer CLI actual invocation, artifact body generation integration, manifest
+writer integration, or file writing.
+
 ## 7. Proposed Insertion Point
 
 Recommended insertion point:
@@ -80,6 +86,8 @@ Rationale:
   artifact body chain keeps the future actual invocation boundary visible
 
 The wrapper change should remain a later step.
+
+Step504 implements this insertion point in the release-quality wrapper.
 
 ## 8. Expected Release-Quality Safe Output
 
@@ -203,16 +211,20 @@ checks include:
 
 Step503 does not run wrapper integration checks.
 
+Step504 is expected to run wrapper integration checks, including the standalone
+target, focused tests, CLI smoke, Python checks, compileall, and the
+release-quality wrapper.
+
 ## 13. Future Staging
 
 Possible future staging:
 
-1. Step504: release-quality wrapper integration
-2. Step505: remote/manual run record workflow design
-3. Step506: remote status marker
-4. Step507 or later: runtime actual invocation update design
+1. Step505: remote/manual run record workflow design
+2. Step506: remote status marker
+3. Step507 or later: runtime actual invocation update design
 
-Step503 does not start these follow-up steps.
+Step504 implements release-quality wrapper integration but does not start the
+remaining follow-up steps.
 
 ## 14. Non-Claims
 
@@ -227,7 +239,6 @@ This design does not claim:
 - manifest writer integration correctness
 - generated policy quality
 - learner-state estimator correctness
-- release-quality integration implemented
 - actual invocation implemented
 
 ## 15. Public-Safe Checklist

@@ -1916,6 +1916,15 @@ written, no artifact body is produced, and no performance metric is computed.
   connect artifact body generation integration, connect manifest writer
   integration, write files, use real data, compute metrics, or claim production
   readiness.
+- Step504: added the Step502 actual invocation fixture validator standalone
+  target to the release-quality wrapper after artifact writer CLI integration
+  runtime smoke and before artifact body fixture validation:
+  `release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation fixture validation`.
+  This does not change workflow files, Makefile, Python code/tests, fixture
+  JSON, update runtime actual invocation, perform artifact writer CLI actual
+  invocation, connect artifact body generation integration, connect manifest
+  writer integration, write files, use real data, compute metrics, or claim
+  production readiness.
 
 ## Related Documents
 

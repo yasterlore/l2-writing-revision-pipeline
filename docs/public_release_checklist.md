@@ -4337,6 +4337,17 @@ invocation, artifact writer CLI actual invocation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claims.
 
+For Step504, review the release-quality wrapper addition:
+`release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation fixture validation`.
+Confirm it invokes only
+`make check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures`
+after artifact writer CLI integration runtime smoke and before artifact body
+fixture validation. Confirm it does not change workflow files, Makefile,
+Python code/tests, fixture JSON, runtime actual invocation, artifact writer CLI
+actual invocation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

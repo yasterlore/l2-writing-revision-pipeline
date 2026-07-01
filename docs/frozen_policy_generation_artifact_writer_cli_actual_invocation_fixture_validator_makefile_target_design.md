@@ -207,6 +207,11 @@ Python code/tests, fixture JSON, runtime actual invocation, artifact writer CLI
 actual invocation, artifact body generation integration, manifest writer
 integration, or file writing.
 
+Step504 adds the standalone target to the release-quality wrapper. The wrapper
+check remains static fixture validation only and does not perform artifact
+writer CLI actual invocation, artifact body generation integration, manifest
+writer integration, or file writing.
+
 ## 10. Proposed Checks For Step502
 
 If Step502 implements the standalone Makefile target, it should run checks such

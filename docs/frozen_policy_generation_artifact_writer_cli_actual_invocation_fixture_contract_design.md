@@ -524,3 +524,17 @@ Makefile, change Python code/tests, change fixture JSON, update runtime actual
 invocation, perform artifact writer CLI actual invocation, connect artifact
 body generation integration, connect manifest writer integration, enable file
 writing, use real data, compute metrics, or claim production readiness.
+
+## 26. Step504 Release-Quality Wrapper Integration Status
+
+Step504 adds the standalone actual invocation fixture validator target to the
+release-quality wrapper:
+
+`release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation fixture validation`
+
+The check runs static fixture validation only. It does not change workflow
+files, change Makefile, change Python code/tests, change fixture JSON, update
+runtime actual invocation, perform artifact writer CLI actual invocation,
+connect artifact body generation integration, connect manifest writer
+integration, enable file writing, use real data, compute metrics, or claim
+production readiness.

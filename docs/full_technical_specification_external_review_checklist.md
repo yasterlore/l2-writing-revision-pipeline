@@ -192,8 +192,9 @@ covered as fixture-only evidence:
 - 1 fixture README
 - Step500 static validator module / CLI / focused tests implemented
 - Step502 standalone Makefile target implemented
+- Step504 release-quality wrapper check added
 - runtime actual invocation not implemented
-- release-quality wrapper and workflow unchanged
+- workflow unchanged
 
 Do not treat this fixture root as artifact writer CLI actual invocation
 correctness, artifact body generation integration correctness, manifest writer
@@ -228,6 +229,21 @@ artifact writer CLI actual invocation correctness evidence, artifact body
 generation integration evidence, manifest writer integration evidence,
 production readiness evidence, real-data readiness evidence, or model
 performance evidence.
+
+## 9.4 Step504 Release-Quality Wrapper Review
+
+Confirm the Step504 release-quality wrapper check invokes only the standalone
+static fixture validator target:
+
+- label: `release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation fixture validation`
+- command: `make check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures`
+- insertion point: after artifact writer CLI integration runtime smoke and
+  before artifact body fixture validation
+
+Do not treat this wrapper check as artifact writer CLI actual invocation
+correctness evidence, artifact body generation integration evidence, manifest
+writer integration evidence, production readiness evidence, real-data
+readiness evidence, or model performance evidence.
 
 ## 10. Rust Crate Review
 

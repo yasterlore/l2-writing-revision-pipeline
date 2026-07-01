@@ -444,16 +444,23 @@ Step503 does not change the release-quality wrapper, workflow files, Makefile,
 Python code/tests, fixture JSON, runtime actual invocation, artifact writer CLI
 actual invocation, or file writing.
 
+Step504 adds the standalone target to the release-quality wrapper as:
+
+`release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation fixture validation`
+
+Step504 does not change workflow files, Makefile, Python code/tests, fixture
+JSON, runtime actual invocation, artifact writer CLI actual invocation, or file
+writing.
+
 ## 18. Planned Follow-Up Steps
 
 Possible follow-up steps:
 
-1. Step504: release-quality wrapper integration
-2. Step505: remote/manual run record workflow design
-3. Step506: remote status marker
-4. Step507 or later: actual invocation runtime update design
+1. Step505: remote/manual run record workflow design
+2. Step506: remote status marker
+3. Step507 or later: actual invocation runtime update design
 
-Step503 does not start these follow-up steps.
+Step504 does not start these follow-up steps.
 
 ## 19. Non-Claims
 
