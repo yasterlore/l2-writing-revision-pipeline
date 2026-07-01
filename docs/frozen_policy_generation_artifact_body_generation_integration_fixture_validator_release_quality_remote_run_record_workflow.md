@@ -414,3 +414,16 @@ remote/manual run record workflow design: no new remote marker, workflow
 change, release-quality wrapper change, Makefile target, fixture JSON change,
 manifest writer integration, file writing, real-data use, metric use, or
 production readiness claim is added here.
+
+## 17. Step536 Makefile Target Design Note
+
+Step536 adds the docs-only / planning-only Makefile target design for the
+Step535 `plan-only-bridge` runtime CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md`
+
+This note does not change the remote/manual run record workflow design. It
+adds no remote marker, workflow change, release-quality wrapper change,
+Makefile change, Python code/test change, fixture JSON change, validator
+change, runtime implementation change, manifest writer integration, file
+writing, real-data use, metric use, or production readiness claim.

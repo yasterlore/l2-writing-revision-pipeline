@@ -301,3 +301,15 @@ public-safe usage errors. Step535 does not change fixture JSON, validators,
 Makefile, release-quality wrapper, workflow files, artifact body generation
 runtime invocation, manifest writer integration, file writing, real-data use,
 metric use, or production readiness status.
+
+## 17. Step536 Makefile Target Design Status
+
+Step536 adds the docs-only / planning-only Makefile target design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md`
+
+It proposes a future standalone target for the Step535 `plan-only-bridge`
+CLI. It does not change Makefile, release-quality wrapper, workflow files,
+Python code/tests, fixture JSON, validators, runtime implementation, artifact
+body generation runtime invocation, manifest writer integration, file
+writing, real-data use, metric use, or production readiness status.

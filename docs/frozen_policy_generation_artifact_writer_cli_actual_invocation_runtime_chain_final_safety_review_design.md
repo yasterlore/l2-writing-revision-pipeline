@@ -427,3 +427,17 @@ release-quality wrapper, change workflow files, use real data, compute
 metrics, or claim artifact body generation integration correctness generally,
 runtime actual invocation correctness generally, manifest writer integration
 correctness, production readiness, real-data readiness, or model performance.
+
+## 23. Step536 Runtime Makefile Target Design Note
+
+Step536 adds the docs-only / planning-only Makefile target design for the
+Step535 selected-case `plan-only-bridge` runtime CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md`
+
+It proposes a future standalone target and does not change Makefile,
+release-quality wrapper, workflow files, Python code/tests, fixture JSON,
+validators, runtime implementation, artifact body generation runtime
+invocation, manifest writer integration, file writing, real-data use, metric
+use, production readiness status, real-data readiness status, or model
+performance status.

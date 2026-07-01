@@ -601,3 +601,17 @@ This note does not add new fixture cases or schemas to the fixture root. The
 runtime CLI does not invoke artifact body generation runtime, call manifest
 writer code, write files, use real data, compute metrics, or claim production
 readiness.
+
+## 24. Step536 Runtime Makefile Target Design Note
+
+Step536 adds the docs-only / planning-only Makefile target design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md`
+
+It proposes a future standalone target for the Step535 `plan-only-bridge`
+runtime CLI over the existing selected case
+`valid/valid_minimal_suppressed_metadata_only_bridge`. It does not change this
+contract, add fixture cases, change fixture JSON, change validators, change
+runtime implementation, invoke artifact body generation runtime, call
+manifest writer code, write files, use real data, compute metrics, or claim
+production readiness.

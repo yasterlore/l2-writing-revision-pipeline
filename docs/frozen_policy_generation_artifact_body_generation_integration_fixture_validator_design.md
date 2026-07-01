@@ -605,3 +605,17 @@ The Step535 runtime uses
 and does not invoke artifact body generation runtime, call manifest writer
 code, write files, change fixture JSON, change this validator, use real data,
 compute metrics, or claim production readiness.
+
+## 23. Step536 Runtime Makefile Target Design Note
+
+Step536 adds the docs-only / planning-only Makefile target design for the
+Step535 `plan-only-bridge` runtime CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md`
+
+The static fixture validator remains the aggregate fixture-root validator.
+The Step536 target proposal is a selected-case runtime smoke target and does
+not replace this validator, change validator code, change fixture JSON, change
+Makefile, change release-quality wrapper, change workflow files, invoke
+artifact body generation runtime, call manifest writer code, write files, use
+real data, compute metrics, or claim production readiness.

@@ -412,3 +412,17 @@ target and is not release-quality integrated in this step; it does not invoke
 artifact body generation runtime, call manifest writer code, write files,
 change fixture JSON, use real data, compute metrics, or claim production
 readiness.
+
+## 17. Step536 Makefile Target Design Note
+
+Step536 adds the docs-only / planning-only design for a future standalone
+Makefile target around the Step535 runtime CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md`
+
+This document still covers the Step529 static fixture validator wrapper check.
+The Step536 design does not connect the runtime CLI to the release-quality
+wrapper, does not change Makefile, workflow files, Python code/tests, fixture
+JSON, validators, runtime implementation, artifact body generation runtime
+invocation, manifest writer integration, file writing, real-data use, metric
+use, or production readiness status.

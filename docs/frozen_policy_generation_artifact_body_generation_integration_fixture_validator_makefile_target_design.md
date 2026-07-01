@@ -370,3 +370,18 @@ validator. Step535 does not add a Makefile target for the runtime CLI, does
 not change this validator target, does not change release-quality wrapper or
 workflow files, does not change fixture JSON, and does not invoke artifact
 body generation runtime, manifest writer code, or file writing.
+
+## 15. Step536 Runtime Makefile Target Design Note
+
+Step536 adds a separate docs-only / planning-only Makefile target design for
+the Step535 selected-case runtime CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md`
+
+The Step536 target proposal is
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`.
+It does not replace the static fixture validator target described here. It
+does not change Makefile, release-quality wrapper, workflow files, Python
+code/tests, fixture JSON, validators, runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.

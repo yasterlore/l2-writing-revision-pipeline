@@ -677,3 +677,17 @@ target, release-quality wrapper change, fixture JSON change, validator
 change, artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, model performance
 evidence, real-data readiness evidence, or production readiness evidence.
+
+## Step536 Artifact Body Generation Runtime Integration Makefile Target Design
+
+Step536 adds the docs-only / planning-only
+[artifact body generation runtime integration plan-only bridge Makefile target design](../frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md).
+It proposes a future standalone target for the Step535 `plan-only-bridge`
+runtime CLI and creates no status marker.
+
+It adds no Makefile change, release-quality wrapper change, workflow change,
+Python code/test change, fixture JSON change, validator change, runtime
+implementation change, artifact body generation runtime invocation, manifest
+writer integration, file writing, real-data use, metric use, model
+performance evidence, real-data readiness evidence, or production readiness
+evidence.

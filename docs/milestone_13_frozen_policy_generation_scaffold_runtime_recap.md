@@ -2214,23 +2214,7 @@ written, no artifact body is produced, and no performance metric is computed.
 
 - [Frozen policy generation artifact body generation runtime integration fixture update design](frozen_policy_generation_artifact_body_generation_runtime_integration_fixture_update_design.md)
 - [Frozen policy generation artifact body generation runtime integration module](../python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py)
-
-## Step535 Artifact Body Generation Runtime Integration Plan-Only Bridge
-
-Step535 adds the initial selected-case runtime module and focused tests:
-
-- `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
-- `python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_integration.py`
-
-The supported mode is `plan-only-bridge` over
-`valid/valid_minimal_suppressed_metadata_only_bridge`, with runtime schema
-`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`.
-The reserved `suppressed-smoke` and `safe-metadata-smoke` modes return
-public-safe usage errors. The runtime emits a selected-case public-safe
-summary only, does not invoke artifact body generation runtime, does not call
-manifest writer code, does not write files, does not change fixture JSON or
-validators, and does not claim production readiness, real-data readiness, or
-model performance.
+- [Frozen policy generation artifact body generation runtime integration plan-only bridge Makefile target design](frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md)
 - [Frozen policy generation artifact body generation runtime integration refinement design](frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_design.md)
 - [Frozen policy generation artifact body generation runtime integration refinement planning design](frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_planning_design.md)
 - [Learner-state frozen policy generation artifact body generation integration fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_status.md)
@@ -2383,3 +2367,32 @@ model performance.
 - [Learner-state frozen policy generation scaffold runtime release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_runtime_release_quality_remote_run_status.md)
 - [Frozen policy generation scaffold fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_scaffold_fixture_release_quality_remote_run_status.md)
 - [Public release checklist](public_release_checklist.md)
+
+## Step535 Artifact Body Generation Runtime Integration Plan-Only Bridge
+
+Step535 adds the initial selected-case runtime module and focused tests:
+
+- `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+
+The supported mode is `plan-only-bridge` over
+`valid/valid_minimal_suppressed_metadata_only_bridge`, with runtime schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`.
+The reserved `suppressed-smoke` and `safe-metadata-smoke` modes return
+public-safe usage errors. The runtime emits a selected-case public-safe
+summary only, does not invoke artifact body generation runtime, does not call
+manifest writer code, does not write files, does not change fixture JSON or
+validators, and does not claim production readiness, real-data readiness, or
+model performance.
+
+## Step536 Artifact Body Generation Runtime Integration Makefile Target Design
+
+Step536 adds the docs-only / planning-only standalone Makefile target design
+for the Step535 `plan-only-bridge` runtime CLI. The proposed future target is
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+with help text `Run artifact body generation runtime integration plan-only
+bridge smoke`. Step536 does not change Makefile, release-quality wrapper,
+workflow files, Python code/tests, fixture JSON, validators, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+status.

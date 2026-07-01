@@ -319,6 +319,22 @@ artifact body generation integration correctness generally, manifest writer
 integration correctness, production readiness, real-data readiness, or model
 performance.
 
+## Runtime Integration Plan-Only Bridge Makefile Target Design
+
+Step536 adds the docs-only / planning-only Makefile target design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md`
+
+The design proposes a future standalone target for the Step535
+`plan-only-bridge` runtime CLI over
+`valid/valid_minimal_suppressed_metadata_only_bridge`. It does not change this
+fixture root or fixture JSON, does not change validators or runtime
+implementation, does not invoke artifact body generation runtime, does not
+call manifest writer code, does not write files, and does not claim artifact
+body generation integration correctness generally, manifest writer
+integration correctness, production readiness, real-data readiness, or model
+performance.
+
 ## Non-Claims
 
 These fixtures do not claim:

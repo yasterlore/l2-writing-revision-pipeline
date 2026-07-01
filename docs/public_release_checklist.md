@@ -4779,3 +4779,23 @@ invoke artifact body generation runtime, call manifest writer code, write
 files, change fixture JSON, change validators, change Makefile, change the
 release-quality wrapper, change workflow files, use real data, compute
 metrics, or claim production readiness.
+
+## 34. Step536 Artifact Body Generation Runtime Integration Makefile Target Design
+
+For Step536, review the
+[artifact body generation runtime integration plan-only bridge Makefile target design](frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md).
+Confirm it is design-only / planning-only and proposes only a future
+standalone Makefile target for the Step535 runtime CLI.
+
+Confirm the proposed target is
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`,
+the proposed help text is `Run artifact body generation runtime integration
+plan-only bridge smoke`, and the proposed command uses the existing Step535
+CLI over `valid/valid_minimal_suppressed_metadata_only_bridge` with
+`--mode plan-only-bridge`, `--summary-only`, `--no-file-writing`,
+`--no-manifest-writer`, and `--fail-closed-on-unsafe-output`.
+
+Confirm Step536 does not change Makefile, release-quality wrapper, workflow
+files, Python code/tests, fixture JSON, validators, runtime implementation,
+artifact body generation runtime invocation, manifest writer integration,
+file writing, real-data use, metric use, or production readiness status.

@@ -1,0 +1,234 @@
+# Frozen Policy Generation Artifact Body Generation Runtime Integration Plan-Only Bridge Makefile Target Design
+
+## 1. Scope
+
+This document is a Makefile target design for running the Step535 artifact
+body generation runtime integration `plan-only-bridge` CLI as a future
+standalone Makefile check.
+
+This is design-only / planning-only. It does not change Makefile,
+release-quality wrapper, workflow files, Python code/tests, fixture JSON,
+validators, or runtime implementation. It does not invoke artifact body
+generation runtime, does not connect manifest writer integration, and does
+not enable file writing.
+
+This design is not production readiness evidence, real-data readiness
+evidence, or model performance evidence.
+
+## 2. Prior Completed Chain Dependency
+
+The proposed target depends on the completed upstream chain:
+
+- Step523 fixture root is available:
+  `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration/`
+- Step525 static fixture validator module / CLI / focused tests are available.
+- Step527 static fixture validator standalone Makefile target is available.
+- Step529 static fixture validator is included in the release-quality wrapper.
+- Step535 runtime module / CLI / focused tests are available:
+  `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+  and
+  `python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_integration.py`.
+- Step535 runtime CLI is not connected to Makefile.
+- Step536 designs the standalone Makefile target only.
+
+## 3. Proposed Makefile Target
+
+Future target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+
+Future help text:
+
+`Run artifact body generation runtime integration plan-only bridge smoke`
+
+Future command:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_generation_runtime_integration \
+  --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration \
+  --fixture-case valid/valid_minimal_suppressed_metadata_only_bridge \
+  --mode plan-only-bridge \
+  --summary-only \
+  --no-file-writing \
+  --no-manifest-writer \
+  --fail-closed-on-unsafe-output
+```
+
+Do not add this target in Step536.
+
+## 4. Expected Public-Safe Output
+
+Standalone target execution should emit selected-case public-safe metadata
+only. Expected fields:
+
+- mode: `artifact_body_generation_runtime_integration`
+- runtime_schema_version:
+  `learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`
+- status: `pass`
+- reason_code: `none`
+- exit_code_category: `zero`
+- case_id: `valid/valid_minimal_suppressed_metadata_only_bridge`
+- integration_mode: `plan-only-bridge`
+- artifact_body_runtime_invoked: `false`
+- artifact_body_runtime_mode: `not_invoked`
+- content_suppressed: `true`
+- body_suppressed: `true`
+- summary_only: `true`
+- request_body_detected: `false`
+- pointer_body_detected: `false`
+- expected_body_detected: `false`
+- artifact_body_payload_detected: `false`
+- manifest_body_detected: `false`
+- generated_policy_body_detected: `false`
+- raw_stdout_body_suppressed: `true`
+- raw_stderr_body_suppressed: `true`
+- raw_rows_detected: `false`
+- logits_detected: `false`
+- private_path_detected: `false`
+- absolute_path_detected: `false`
+- raw_learner_text_detected: `false`
+- real_data_marker_detected: `false`
+- performance_metric_body_detected: `false`
+- file_writing_enabled: `false`
+- file_writing_detected: `false`
+- manifest_writer_invoked: `false`
+- artifact_file_written: `false`
+- manifest_file_written: `false`
+- runtime_safety_scan_passed: `true`
+- runtime_fail_closed: `false`
+- production_readiness_claimed: `false`
+- real_data_readiness_claimed: `false`
+- performance_claims_present: `false`
+- runtime_summary_checked: `true`
+- artifact_body_request_checked: `true`
+- artifact_body_pointer_checked: `true`
+- artifact_body_generation_metadata_checked: `true`
+- metadata_file_count: `7`
+- unsafe_signal_count: `0`
+
+## 5. Safety Boundary
+
+The proposed Makefile target must not:
+
+- print raw stdout/stderr body
+- print fixture JSON body
+- print request / pointer / expected body
+- print artifact body payload
+- print manifest body
+- print generated policy body
+- print raw rows
+- print logits / probabilities
+- print private / absolute path values
+- print raw learner text
+- use real participant data
+- write artifact files
+- write manifest files
+- invoke artifact body generation runtime
+- invoke manifest writer
+- claim production readiness
+- claim real-data readiness
+- claim model performance
+
+## 6. Relationship To Existing Targets
+
+This proposed target is a new standalone runtime smoke target. It does not
+replace:
+
+- static artifact body generation integration fixture validation target
+- existing artifact body fixture validation
+- artifact body generation smoke targets
+- artifact body file-writing validation targets
+- manifest writer targets
+
+It is not yet connected to the release-quality wrapper. Wrapper inclusion
+should be a later separate step.
+
+## 7. Proposed Implementation Checks For Next Step
+
+If Step537 adds the Makefile target, check:
+
+- `make help` shows the target and help text
+- new target passes
+- direct runtime CLI still passes
+- focused runtime tests still pass
+- static fixture validator still passes
+- full Python tests pass
+- compileall passes
+- fixture JSON diff remains none
+- Makefile diff is limited to target and help entry
+- wrapper/workflow diff remains none
+- code/docs/output safety scan passes
+- no artifact body generation runtime invocation
+- no manifest writer invocation
+- no file writing
+- no residue
+
+## 8. Future Staging
+
+Suggested next chain:
+
+- Step537: Makefile target implementation
+- Step538: release-quality integration design
+- Step539: release-quality wrapper integration
+- Step540: remote/manual run record workflow design
+- Step541: remote status marker
+
+Do not perform these in Step536.
+
+## 9. Failure Interpretation
+
+Future target failure means the runtime CLI failed or the selected-case
+metadata boundary failed. Possible reasons include:
+
+- missing selected case
+- missing metadata file
+- unsupported mode
+- unsafe metadata
+- CLI usage issue
+
+Failure does not prove artifact body generation integration correctness
+generally, manifest writer issue, model performance issue, or production
+readiness issue. Raw stdout/stderr and payloads must not be copied into docs
+or reports. Interpret failures through public-safe reason codes only.
+
+## 10. Non-Claims
+
+This Makefile target design does not claim:
+
+- production readiness
+- real-data readiness
+- model performance
+- F1 / accuracy / ECE / AURCC achievement
+- artifact body generation integration correctness
+- manifest writer integration correctness
+- generated policy quality
+- learner-state estimator correctness
+- artifact writer CLI actual invocation correctness generally
+- runtime actual invocation correctness generally
+- Makefile target availability
+- release-quality wrapper inclusion
+
+## 11. Public-Safe Checklist
+
+- no raw logs
+- no full job output
+- no copied GitHub log blocks
+- no screenshots containing raw logs
+- no fixture JSON body
+- no request body
+- no pointer body
+- no expected body
+- no written file JSON body
+- no manifest body
+- no artifact body payload
+- no generated policy body
+- no raw stdout/stderr body
+- no raw rows
+- no logits/probabilities
+- no private paths
+- no absolute paths
+- no raw learner text
+- no real participant data
+- no performance claims
+- no production readiness claims
+- no real-data readiness claims
