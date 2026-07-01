@@ -452,15 +452,20 @@ Step504 does not change workflow files, Makefile, Python code/tests, fixture
 JSON, runtime actual invocation, artifact writer CLI actual invocation, or file
 writing.
 
+Step505 adds the docs-only remote/manual run record workflow design:
+[Frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_record_workflow.md).
+Step505 does not create a status marker or change workflow files, wrapper,
+Makefile, Python code/tests, fixture JSON, runtime actual invocation, artifact
+writer CLI actual invocation, or file writing.
+
 ## 18. Planned Follow-Up Steps
 
 Possible follow-up steps:
 
-1. Step505: remote/manual run record workflow design
-2. Step506: remote status marker
-3. Step507 or later: actual invocation runtime update design
+1. Step506: remote status marker
+2. Step507 or later: actual invocation runtime update design
 
-Step504 does not start these follow-up steps.
+Step505 does not start these follow-up steps.
 
 ## 19. Non-Claims
 

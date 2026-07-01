@@ -215,15 +215,21 @@ Step504 is expected to run wrapper integration checks, including the standalone
 target, focused tests, CLI smoke, Python checks, compileall, and the
 release-quality wrapper.
 
+Step505 adds the docs-only remote/manual run record workflow design:
+[Frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_record_workflow.md).
+It does not create a status marker, change workflow files, change the wrapper,
+change Makefile, change Python code/tests, change fixture JSON, update runtime
+actual invocation, perform artifact writer CLI actual invocation, or enable
+file writing.
+
 ## 13. Future Staging
 
 Possible future staging:
 
-1. Step505: remote/manual run record workflow design
-2. Step506: remote status marker
-3. Step507 or later: runtime actual invocation update design
+1. Step506: remote status marker
+2. Step507 or later: runtime actual invocation update design
 
-Step504 implements release-quality wrapper integration but does not start the
+Step505 implements the run record workflow design but does not start the
 remaining follow-up steps.
 
 ## 14. Non-Claims

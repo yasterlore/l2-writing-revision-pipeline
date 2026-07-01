@@ -100,6 +100,7 @@ learner-state estimator correctness.
 - Makefile target added: yes, Step502 standalone validator target
 - release-quality integration design: yes, Step503 docs-only design
 - release-quality wrapper changed: yes, Step504 static fixture validation check
+- remote/manual run record workflow design: yes, Step505 docs-only design
 - workflow changed: no
 - artifact body generation integration implemented: no
 - manifest writer integration implemented: no
@@ -135,3 +136,9 @@ Step504 release-quality wrapper integration:
 - command: `make check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures`
 - insertion point: after artifact writer CLI integration runtime smoke and before artifact body fixture validation
 - safety boundary: static fixture validation only; no runtime actual invocation, artifact writer CLI actual invocation, artifact body generation integration, manifest writer integration, or file writing
+
+Step505 remote/manual run record workflow design:
+
+- design doc: `docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_record_workflow.md`
+- proposed future status marker path: `docs/status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md`
+- implementation status: design-only; status marker not created

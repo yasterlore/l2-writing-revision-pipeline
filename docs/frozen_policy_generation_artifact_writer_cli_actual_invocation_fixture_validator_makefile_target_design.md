@@ -212,6 +212,10 @@ check remains static fixture validation only and does not perform artifact
 writer CLI actual invocation, artifact body generation integration, manifest
 writer integration, or file writing.
 
+Step505 adds the docs-only remote/manual run record workflow design for the
+Step504 wrapper check:
+[Frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_record_workflow.md).
+
 ## 10. Proposed Checks For Step502
 
 If Step502 implements the standalone Makefile target, it should run checks such

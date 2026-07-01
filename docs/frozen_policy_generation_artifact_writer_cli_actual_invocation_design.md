@@ -442,3 +442,17 @@ update runtime actual invocation, perform artifact writer CLI actual
 invocation, connect artifact body generation integration, connect manifest
 writer integration, enable file writing, use real data, compute metrics, or
 claim production readiness.
+
+## 24. Step505 Remote Run Record Workflow Design Status
+
+Step505 adds the docs-only remote/manual run record workflow design for the
+Step504 actual invocation fixture validator wrapper check:
+
+[Frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_record_workflow.md)
+
+This does not create a status marker, change workflow files, change the
+release-quality wrapper, change Makefile, change Python code/tests, change
+fixture JSON, update runtime actual invocation, perform artifact writer CLI
+actual invocation, connect artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.

@@ -4348,6 +4348,15 @@ actual invocation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
 
+For Step505, review the docs-only
+[artifact writer CLI actual invocation fixture validator release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_record_workflow.md).
+Confirm it designs only a future public-safe remote/manual run record and does
+not create a status marker, change workflow files, change the wrapper, change
+Makefile, change Python code/tests, change fixture JSON, update runtime actual
+invocation, perform artifact writer CLI actual invocation, connect artifact
+body generation integration, connect manifest writer integration, write files,
+use real data, use metrics, or claim production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
