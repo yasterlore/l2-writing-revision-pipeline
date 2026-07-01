@@ -63,6 +63,8 @@ Python is used for research scaffolds and validation prototypes:
   artifact body, and manifest writer metadata-only validation
 - artifact writer CLI integration fixture/runtime-fixture static validators and
   an initial metadata-only artifact writer CLI integration runtime boundary
+- an expanded synthetic metadata-only runtime fixture root for future artifact
+  writer CLI actual invocation metadata-only mode cases
 - metadata-only runtime smoke checks, including opt-in manifest file writing
 
 ## Safety Posture

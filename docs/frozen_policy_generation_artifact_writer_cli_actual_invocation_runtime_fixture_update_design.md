@@ -425,3 +425,28 @@ This design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 20. Step509 Fixture Root Update Status
+
+Step509 applies the recommended Option A fixture-root update by adding 24 v0.2
+synthetic metadata-only `actual_invocation_metadata_only` cases to the existing
+runtime fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime/`
+
+Updated fixture counts:
+
+- total cases: 54
+- existing v0.1 plan-only cases: 30
+- additional v0.2 actual invocation metadata-only cases: 24
+- valid cases: 12
+- invalid cases: 42
+- JSON files per case: 6
+- total JSON files: 324
+
+Step509 does not update the fixture validator, implement runtime actual
+invocation, perform artifact writer CLI actual invocation, change Python
+code/tests, change Makefile, change the release-quality wrapper, change
+workflow files, connect artifact body generation integration, connect manifest
+writer integration, enable file writing, use real data, compute metrics, or
+claim production readiness.

@@ -1965,6 +1965,17 @@ written, no artifact body is produced, and no performance metric is computed.
   artifact writer CLI actual invocation, connect artifact body generation
   integration, connect manifest writer integration, write files, use real
   data, compute metrics, or claim production readiness.
+- Step509: expanded the existing artifact writer CLI integration runtime
+  fixture root with 24 v0.2 synthetic metadata-only
+  `actual_invocation_metadata_only` cases. The root now contains 54 cases and
+  324 JSON files while preserving the original 30 v0.1 plan-only cases:
+  [Frozen policy generation artifact writer CLI integration runtime fixtures](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime/README.md).
+  This does not change workflow files, change the release-quality wrapper,
+  change Makefile, change Python code/tests, update the fixture validator,
+  update runtime actual invocation, perform artifact writer CLI actual
+  invocation, connect artifact body generation integration, connect manifest
+  writer integration, write files, use real data, compute metrics, or claim
+  production readiness.
 
 ## Related Documents
 

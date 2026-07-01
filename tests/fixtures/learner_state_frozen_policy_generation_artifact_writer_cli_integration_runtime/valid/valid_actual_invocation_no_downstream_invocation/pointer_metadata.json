@@ -1,0 +1,22 @@
+{
+  "absolute_path_present": false,
+  "absolute_path_value_stored": false,
+  "absolute_paths_allowed": false,
+  "case_id": "valid/valid_actual_invocation_no_downstream_invocation",
+  "forbidden_marker": "none",
+  "logits_present": false,
+  "metadata_only": true,
+  "pointer_body_present": false,
+  "pointer_mode": "relative_metadata_pointer",
+  "private_path_present": false,
+  "private_path_value_stored": false,
+  "private_paths_allowed": false,
+  "probabilities_present": false,
+  "raw_learner_text_present": false,
+  "raw_rows_present": false,
+  "relative_fixture_path": "valid/valid_actual_invocation_no_downstream_invocation",
+  "relative_repo_path": "tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime/valid/valid_actual_invocation_no_downstream_invocation",
+  "safe_path_policy": "relative_repo_path_only",
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_pointer_v0.2",
+  "unsafe_value_stored": false
+}

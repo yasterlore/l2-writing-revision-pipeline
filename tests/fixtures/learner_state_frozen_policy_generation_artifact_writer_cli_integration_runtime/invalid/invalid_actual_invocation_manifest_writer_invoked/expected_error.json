@@ -1,0 +1,15 @@
+{
+  "case_id": "invalid/invalid_actual_invocation_manifest_writer_invoked",
+  "error_body_suppressed": true,
+  "expected_error_category": "fail_closed",
+  "expected_exit_code_category": "nonzero",
+  "expected_reason_code": "manifest_writer_invoked",
+  "fail_closed": true,
+  "input_error": false,
+  "mismatch": false,
+  "public_safe_error": true,
+  "raw_content_suppressed": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_expected_error_v0.2",
+  "unsafe_value_stored": false,
+  "usage_error": false
+}

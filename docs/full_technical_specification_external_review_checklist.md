@@ -245,6 +245,20 @@ correctness evidence, artifact body generation integration evidence, manifest
 writer integration evidence, production readiness evidence, real-data
 readiness evidence, or model performance evidence.
 
+## 9.5 Step509 Runtime Fixture Root Update Review
+
+Confirm the Step509 artifact writer CLI integration runtime fixture root update
+preserves the original 30 v0.1 plan-only cases and adds 24 v0.2 synthetic
+metadata-only `actual_invocation_metadata_only` cases. Reviewers should check
+the 54 case / 324 JSON aggregate counts, the six-file layout, the v0.2 schema
+family, sentinel-only invalid cases, and the explicit note that the fixture
+validator is not yet updated for v0.2 cases.
+
+Do not treat this fixture update as artifact writer CLI actual invocation
+correctness, runtime actual invocation correctness, artifact body generation
+integration correctness, manifest writer integration correctness, production
+readiness, real-data readiness, or model performance evidence.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

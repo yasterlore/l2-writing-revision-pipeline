@@ -340,6 +340,12 @@ Related recap:
   mode. It is not a status marker, does not change fixture JSON, and does not
   claim artifact writer CLI actual invocation correctness, runtime actual
   invocation correctness, or production readiness.
+- [Frozen policy generation artifact writer CLI integration runtime fixtures](../../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime/README.md):
+  Step509 expands the existing runtime fixture root to 54 cases and 324 JSON
+  files with v0.2 synthetic metadata-only `actual_invocation_metadata_only`
+  cases. It is not a status marker, does not update validators, and does not
+  claim artifact writer CLI actual invocation correctness, runtime actual
+  invocation correctness, or production readiness.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

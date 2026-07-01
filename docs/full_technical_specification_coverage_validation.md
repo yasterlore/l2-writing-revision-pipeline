@@ -189,7 +189,7 @@ specification content.
 | generator scaffold fixtures | generator root | 11 | covered | Family coverage present. |
 | artifact writer fixtures | writer root | 11 | covered | Confirmed 17-case note present. |
 | artifact writer CLI integration fixtures | CLI integration root | 11 | covered | 28 cases / 168 JSON noted. |
-| artifact writer CLI integration runtime fixtures | runtime root | 11 | covered | 30 cases / 180 JSON noted. |
+| artifact writer CLI integration runtime fixtures | runtime root | 11 | covered | Step509 expands the root to 54 cases / 324 JSON files; v0.2 validator update remains future work. |
 | artifact writer CLI actual invocation fixtures | actual invocation root | 11, Appendix D | covered after Step500 | 32 cases / 192 JSON validated by Step500 static validator; actual invocation remains not implemented. |
 | artifact body fixtures | body roots | 11 | covered | Body fixture/file-writing/isolated counts included. |
 | artifact body file-writing fixtures | file-writing root | 11, 15 | covered | Safe writing policy included. |
@@ -271,6 +271,9 @@ should be added.
 The draft also notes that artifact writer CLI integration runtime fixture
 validation is in the wrapper, and Step493 adds the Step489 runtime module's
 standalone Makefile smoke target to the wrapper after that static validation.
+Step509 expands the runtime fixture root with 24 v0.2 metadata-only actual
+invocation cases. This is fixture-root evidence only; it is not runtime actual
+invocation correctness evidence.
 
 ## 15. Status Marker Coverage Validation
 

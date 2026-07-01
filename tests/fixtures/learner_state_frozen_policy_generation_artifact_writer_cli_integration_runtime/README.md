@@ -13,11 +13,21 @@ The root was created in Step479 from the Step478 fixture contract design:
 
 ## Case Counts
 
-- total_cases: 30
-- valid_cases: 6
-- invalid_cases: 24
+- total_cases: 54
+- existing_plan_only_cases: 30
+- additional_actual_invocation_cases: 24
+- valid_cases: 12
+- existing_valid_plan_only_cases: 6
+- new_valid_actual_invocation_cases: 6
+- invalid_cases: 42
+- existing_invalid_plan_only_cases: 24
+- new_invalid_actual_invocation_cases: 18
 - json_files_per_case: 6
-- total_json_files: 180
+- total_json_files: 324
+
+The original 30 v0.1 plan-only / no-invocation cases remain in place. Step509
+adds 24 v0.2 synthetic metadata-only cases for a future
+`actual_invocation_metadata_only` mode.
 
 ## Case Files
 
@@ -32,6 +42,8 @@ Each case directory contains exactly these metadata-only files:
 
 ## Valid Case Taxonomy
 
+Original v0.1 plan-only valid cases:
+
 - `valid/valid_minimal_metadata_runtime_pass`
 - `valid/valid_suppressed_artifact_writer_summary_pass`
 - `valid/valid_safe_relative_repo_path_pass`
@@ -39,11 +51,24 @@ Each case directory contains exactly these metadata-only files:
 - `valid/valid_no_oracle_flags_pass`
 - `valid/valid_fail_safe_suppression_flags_pass`
 
-Valid cases model future metadata-only runtime summaries. They do not include
-artifact body payloads, manifest bodies, generated policy bodies, raw text, raw
-rows, logits, private paths, absolute paths, or performance evidence.
+Step509 v0.2 actual invocation metadata-only valid cases:
+
+- `valid/valid_actual_invocation_minimal_metadata_only`
+- `valid/valid_actual_invocation_body_free_output`
+- `valid/valid_actual_invocation_nonzero_exit_safe_summary`
+- `valid/valid_actual_invocation_timeout_safe_summary`
+- `valid/valid_actual_invocation_file_writing_disabled`
+- `valid/valid_actual_invocation_no_downstream_invocation`
+
+Valid cases model future metadata-only runtime summaries. The Step509 actual
+invocation cases are fixture-only metadata contracts and do not perform actual
+invocation. They do not include artifact body payloads, manifest bodies,
+generated policy bodies, raw stdout/stderr bodies, raw text, raw rows, logits,
+private paths, absolute paths, or performance evidence.
 
 ## Invalid / Expected-Failure Case Taxonomy
+
+Original v0.1 plan-only invalid cases:
 
 - `invalid/invalid_request_body_present`
 - `invalid/invalid_pointer_body_present`
@@ -70,8 +95,55 @@ rows, logits, private paths, absolute paths, or performance evidence.
 - `invalid/invalid_mismatched_expected_status`
 - `invalid/invalid_duplicate_case_id`
 
+Step509 v0.2 actual invocation metadata-only invalid cases:
+
+- `invalid/invalid_actual_invocation_raw_stdout_body`
+- `invalid/invalid_actual_invocation_raw_stderr_body`
+- `invalid/invalid_actual_invocation_artifact_body_payload`
+- `invalid/invalid_actual_invocation_manifest_body`
+- `invalid/invalid_actual_invocation_generated_policy_body`
+- `invalid/invalid_actual_invocation_request_body`
+- `invalid/invalid_actual_invocation_pointer_body`
+- `invalid/invalid_actual_invocation_expected_body`
+- `invalid/invalid_actual_invocation_private_path`
+- `invalid/invalid_actual_invocation_absolute_path`
+- `invalid/invalid_actual_invocation_raw_learner_text`
+- `invalid/invalid_actual_invocation_raw_rows`
+- `invalid/invalid_actual_invocation_logits`
+- `invalid/invalid_actual_invocation_file_writing_detected`
+- `invalid/invalid_actual_invocation_artifact_body_generation_invoked`
+- `invalid/invalid_actual_invocation_manifest_writer_invoked`
+- `invalid/invalid_actual_invocation_unsupported_schema`
+- `invalid/invalid_actual_invocation_mismatched_expected_status`
+
 Invalid cases use safe marker fields and boolean presence flags only. They do
 not include the prohibited content itself.
+
+## Step509 Schema Family
+
+Step509 actual invocation metadata-only cases use the proposed v0.2 schema
+family:
+
+- `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_case_v0.2`
+- `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_request_v0.2`
+- `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_pointer_v0.2`
+- `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_artifact_writer_cli_metadata_v0.2`
+- `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_expected_summary_v0.2`
+- `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_expected_error_v0.2`
+
+The original v0.1 plan-only cases keep their existing schema versions.
+
+## Sentinel Policy
+
+Step509 invalid actual invocation cases use metadata-only sentinels. Sentinel
+fields may record that a prohibited category was detected, while value-stored
+flags remain false.
+
+The fixtures do not store actual raw stdout/stderr bodies, request bodies,
+pointer bodies, expected bodies, artifact body payloads, manifest bodies,
+generated policy bodies, private path values, absolute path values, raw learner
+text, raw rows, logits/probabilities, real participant data, or performance
+metric bodies.
 
 ## Public-Safe Policy
 
@@ -375,6 +447,8 @@ production readiness.
 - actual invocation fixture validator design: yes, Step499 docs-only / planning-only
 - actual invocation runtime update design: yes, Step507 docs-only / planning-only
 - actual invocation runtime fixture update design: yes, Step508 docs-only / planning-only
+- actual invocation runtime fixture cases added: yes, Step509 v0.2 metadata-only cases
+- runtime fixture validator updated for v0.2 cases: no
 - actual invocation implemented: no
 - workflow changed: no
 - artifact body generation integration implemented: no
@@ -388,9 +462,22 @@ this existing runtime fixture root to a future
 
 [Frozen policy generation artifact writer CLI actual invocation runtime fixture update design](../../../docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_update_design.md)
 
-The fixture root and fixture JSON remain unchanged. Step508 does not update
-validators, implement runtime actual invocation, perform artifact writer CLI
-actual invocation, change Python code/tests, change Makefile, change the
-release-quality wrapper, change workflow files, connect artifact body
-generation integration, connect manifest writer integration, enable file
+At Step508, the fixture root and fixture JSON remained unchanged. Step508 did
+not update validators, implement runtime actual invocation, perform artifact
+writer CLI actual invocation, change Python code/tests, change Makefile,
+change the release-quality wrapper, change workflow files, connect artifact
+body generation integration, connect manifest writer integration, enable file
 writing, use real data, compute metrics, or claim production readiness.
+
+## Actual Invocation Runtime Fixture Cases
+
+Step509 adds 24 v0.2 synthetic metadata-only cases to this existing fixture
+root for a future `actual_invocation_metadata_only` mode. Existing v0.1
+plan-only cases are preserved.
+
+Step509 does not update the fixture validator, implement runtime actual
+invocation, perform artifact writer CLI actual invocation, change Python
+code/tests, change Makefile, change the release-quality wrapper, change
+workflow files, connect artifact body generation integration, connect manifest
+writer integration, enable file writing, use real data, compute metrics, or
+claim production readiness.

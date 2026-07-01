@@ -1,0 +1,21 @@
+{
+  "body_suppressed": true,
+  "case_id": "invalid/invalid_actual_invocation_file_writing_detected",
+  "case_intent": "actual_invocation_metadata_only_runtime_fixture_contract",
+  "case_kind": "invalid",
+  "case_title": "invalid actual invocation file writing detected",
+  "content_suppressed": true,
+  "expected_exit_code_category": "nonzero",
+  "expected_reason_code": "file_writing_detected",
+  "expected_status": "fail_closed",
+  "forbidden_marker": "file_writing",
+  "metadata_only": true,
+  "no_oracle": true,
+  "release_quality_ready": false,
+  "runtime_implementation_present": false,
+  "runtime_mode": "actual_invocation_metadata_only",
+  "schema_family": "v0.2_actual_invocation_metadata_only",
+  "schema_version": "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_case_v0.2",
+  "synthetic_only": true,
+  "validator_implemented": false
+}

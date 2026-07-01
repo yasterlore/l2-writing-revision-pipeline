@@ -382,3 +382,17 @@ change workflow files, implement runtime actual invocation, perform artifact
 writer CLI actual invocation, connect artifact body generation integration,
 connect manifest writer integration, enable file writing, use real data,
 compute metrics, or claim production readiness.
+
+## 21. Step509 Runtime Fixture Root Update Status
+
+Step509 expands the existing artifact writer CLI integration runtime fixture
+root with 24 v0.2 synthetic metadata-only `actual_invocation_metadata_only`
+cases. The root now contains 54 cases and 324 JSON files while preserving the
+original 30 v0.1 plan-only cases.
+
+Step509 does not update the fixture validator, implement runtime actual
+invocation, perform artifact writer CLI actual invocation, change Python
+code/tests, change Makefile, change the release-quality wrapper, change
+workflow files, connect artifact body generation integration, connect manifest
+writer integration, enable file writing, use real data, compute metrics, or
+claim production readiness.

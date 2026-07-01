@@ -4385,6 +4385,17 @@ actual invocation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
 
+For Step509, review the expanded
+[artifact writer CLI integration runtime fixture root](../tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime/README.md).
+Confirm it preserves the existing 30 v0.1 plan-only cases and adds 24 v0.2
+synthetic metadata-only `actual_invocation_metadata_only` cases for a total of
+54 cases and 324 JSON files. Confirm the new invalid cases use sentinels only,
+store no prohibited payloads or path values, and do not update validators,
+Python code/tests, Makefile, the wrapper, workflow files, runtime actual
+invocation implementation, artifact writer CLI actual invocation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, or production readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
