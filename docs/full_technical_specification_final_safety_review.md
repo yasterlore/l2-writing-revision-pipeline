@@ -230,12 +230,17 @@ F1, accuracy, ECE, or AURCC.
 Step509 later expands the existing artifact writer CLI integration runtime
 fixture root to 54 cases and 324 metadata-only JSON files by adding 24 v0.2
 `actual_invocation_metadata_only` cases. The original 30 v0.1 plan-only cases
-remain preserved. The fixture validator, runtime actual invocation,
-Makefile target, release-quality wrapper, workflow files, Python code/tests,
+remain preserved. Step511 later updates the static fixture validator module /
+CLI / focused tests to validator schema
+`learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation_v0.2`
+and validates the mixed v0.1/v0.2 root with public-safe aggregate output.
+Runtime actual invocation, artifact writer CLI actual invocation, Makefile
+target names, release-quality wrapper labels, workflow files, fixture JSON,
 artifact body generation integration, manifest writer integration, and file
-writing are not updated by Step509. This fixture update is not artifact writer
-CLI actual invocation correctness, runtime actual invocation correctness,
-real-data readiness, model performance, F1, accuracy, ECE, or AURCC evidence.
+writing are not updated by Step511. This static validation is not artifact
+writer CLI actual invocation correctness, runtime actual invocation
+correctness, real-data readiness, model performance, F1, accuracy, ECE, or
+AURCC evidence.
 
 ## 11. Final Safety Review Result
 

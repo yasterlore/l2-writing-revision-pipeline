@@ -522,3 +522,17 @@ runtime actual invocation, perform artifact writer CLI actual invocation,
 connect artifact body generation integration, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
+
+## Step511 Validator v0.2 Support Status
+
+Step511 updates the static runtime fixture validator module / CLI / focused
+tests to validate 54 synthetic metadata-only cases / 324 JSON files across the
+v0.1 plan-only and v0.2 actual-invocation metadata-only fixture schema
+families. This implementation design remains a planning document for runtime
+behavior; the runtime implementation is not changed by Step511.
+
+Step511 does not implement runtime actual invocation, perform artifact writer
+CLI actual invocation, change fixture JSON, change Makefile target names,
+change the release-quality wrapper, change workflows, connect artifact body
+generation integration, connect manifest writer integration, enable file
+writing, use real data, compute metrics, or claim production readiness.

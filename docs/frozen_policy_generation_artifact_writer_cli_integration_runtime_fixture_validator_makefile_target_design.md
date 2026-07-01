@@ -513,3 +513,15 @@ runtime actual invocation, perform artifact writer CLI actual invocation,
 connect artifact body generation integration, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
+
+## Step511 Validator v0.2 Support Status
+
+Step511 keeps the existing standalone Makefile target name unchanged while
+updating the underlying static validator module / CLI / focused tests to
+support the Step509-expanded 54-case / 324-JSON mixed v0.1/v0.2 runtime
+fixture root. The target remains static fixture validation only.
+
+Step511 does not change the Makefile, release-quality wrapper, workflows,
+fixture JSON, runtime actual invocation, artifact writer CLI actual
+invocation, artifact body generation integration, manifest writer integration,
+file writing, metric use, real-data use, or production readiness claims.

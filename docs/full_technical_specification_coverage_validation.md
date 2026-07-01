@@ -189,7 +189,7 @@ specification content.
 | generator scaffold fixtures | generator root | 11 | covered | Family coverage present. |
 | artifact writer fixtures | writer root | 11 | covered | Confirmed 17-case note present. |
 | artifact writer CLI integration fixtures | CLI integration root | 11 | covered | 28 cases / 168 JSON noted. |
-| artifact writer CLI integration runtime fixtures | runtime root | 11 | covered | Step509 expands the root to 54 cases / 324 JSON files; v0.2 validator update remains future work. |
+| artifact writer CLI integration runtime fixtures | runtime root | 11 | covered | Step509 expands the root to 54 cases / 324 JSON files; Step511 updates the static validator to schema v0.2 for mixed v0.1/v0.2 fixture validation. |
 | artifact writer CLI actual invocation fixtures | actual invocation root | 11, Appendix D | covered after Step500 | 32 cases / 192 JSON validated by Step500 static validator; actual invocation remains not implemented. |
 | artifact body fixtures | body roots | 11 | covered | Body fixture/file-writing/isolated counts included. |
 | artifact body file-writing fixtures | file-writing root | 11, 15 | covered | Safe writing policy included. |

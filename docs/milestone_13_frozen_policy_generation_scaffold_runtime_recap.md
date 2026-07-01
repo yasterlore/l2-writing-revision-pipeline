@@ -1985,6 +1985,16 @@ written, no artifact body is produced, and no performance metric is computed.
   CLI actual invocation, connect artifact body generation integration, connect
   manifest writer integration, write files, use real data, compute metrics, or
   claim production readiness.
+- Step511: updated the static artifact writer CLI integration runtime fixture
+  validator module / CLI / focused tests to support validator schema
+  `learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation_v0.2`
+  and validate the 54-case / 324-JSON mixed v0.1 plan-only and v0.2
+  actual-invocation metadata-only fixture root. This does not change workflow
+  files, change the release-quality wrapper, change Makefile target names,
+  change fixture JSON, update runtime actual invocation, perform artifact
+  writer CLI actual invocation, connect artifact body generation integration,
+  connect manifest writer integration, write files, use real data, compute
+  metrics, or claim production readiness.
 
 ## Related Documents
 

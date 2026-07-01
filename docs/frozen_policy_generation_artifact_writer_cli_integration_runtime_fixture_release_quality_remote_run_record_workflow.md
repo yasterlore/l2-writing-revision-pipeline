@@ -439,3 +439,19 @@ runtime actual invocation, perform artifact writer CLI actual invocation,
 connect artifact body generation integration, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
+
+## Step511 Validator v0.2 Support Status
+
+Step511 updates the local static runtime fixture validator module / CLI /
+focused tests to support the 54-case / 324-JSON mixed v0.1/v0.2 runtime
+fixture root. Future remote/manual run records for this check should record
+the validator schema
+`learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation_v0.2`
+and the updated aggregate counts only, without raw logs or payload bodies.
+
+Step511 does not create a new remote status marker, change workflows, change
+the release-quality wrapper, change Makefile target names, change fixture
+JSON, implement runtime actual invocation, perform artifact writer CLI actual
+invocation, connect artifact body generation integration, connect manifest
+writer integration, enable file writing, use real data, compute metrics, or
+claim production readiness.

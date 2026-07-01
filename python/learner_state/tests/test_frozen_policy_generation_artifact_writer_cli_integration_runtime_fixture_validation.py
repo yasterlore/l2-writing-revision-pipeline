@@ -10,6 +10,7 @@ from pathlib import Path
 
 from learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation import (
     EXPECTED_FAIL_CLOSED_CASES,
+    EXPECTED_MISMATCH_CASES,
     EXPECTED_PASS_CASES,
     EXPECTED_TOTAL_CASES,
     EXPECTED_TOTAL_JSON_FILES,
@@ -41,8 +42,8 @@ class ArtifactWriterCliIntegrationRuntimeFixtureValidationTests(unittest.TestCas
 
         self.assertTrue(summary.all_matched)
         self.assertEqual(payload["total_cases"], EXPECTED_TOTAL_CASES)
-        self.assertEqual(payload["valid_cases"], 6)
-        self.assertEqual(payload["invalid_cases"], 24)
+        self.assertEqual(payload["valid_cases"], 12)
+        self.assertEqual(payload["invalid_cases"], 42)
         self.assertEqual(payload["total_json_files"], EXPECTED_TOTAL_JSON_FILES)
         self.assertEqual(payload["matched_cases"], EXPECTED_TOTAL_CASES)
         self.assertEqual(payload["mismatched_cases"], 0)
@@ -50,6 +51,12 @@ class ArtifactWriterCliIntegrationRuntimeFixtureValidationTests(unittest.TestCas
         self.assertEqual(payload["pass_cases"], EXPECTED_PASS_CASES)
         self.assertEqual(payload["usage_error_cases"], EXPECTED_USAGE_ERROR_CASES)
         self.assertEqual(payload["fail_closed_cases"], EXPECTED_FAIL_CLOSED_CASES)
+        self.assertEqual(payload["mismatch_cases"], EXPECTED_MISMATCH_CASES)
+        self.assertEqual(payload["v0_1_case_count"], 30)
+        self.assertEqual(payload["v0_2_case_count"], 24)
+        self.assertEqual(payload["plan_only_case_count"], 30)
+        self.assertEqual(payload["actual_invocation_case_count"], 24)
+        self.assertEqual(payload["runtime_actual_invocation_enabled_cases"], 24)
         self.assertFalse(payload["production_readiness_claimed"])
         self.assertFalse(payload["real_data_readiness_claimed"])
         self.assertFalse(payload["performance_claims_present"])
@@ -86,6 +93,147 @@ class ArtifactWriterCliIntegrationRuntimeFixtureValidationTests(unittest.TestCas
         self.assertEqual(result.expected_status, "usage_error")
         self.assertEqual(result.expected_reason_code, "missing_required_metadata_file")
         assert_safe_output(self, json.dumps(result.to_safe_dict(), sort_keys=True))
+
+    def test_v0_1_plan_only_cases_remain_represented(self) -> None:
+        summary = validate_artifact_writer_cli_integration_runtime_fixture_root(
+            FIXTURE_ROOT
+        )
+        plan_only = [
+            result
+            for result in summary.case_results
+            if result.fixture_schema_family == "v0.1"
+        ]
+
+        self.assertEqual(len(plan_only), 30)
+        self.assertEqual(sum(result.expected_status == "pass" for result in plan_only), 6)
+        self.assertEqual(
+            sum(result.expected_status == "usage_error" for result in plan_only),
+            5,
+        )
+        self.assertEqual(
+            sum(result.expected_status == "fail_closed" for result in plan_only),
+            19,
+        )
+
+    def test_v0_2_actual_invocation_cases_are_accepted(self) -> None:
+        summary = validate_artifact_writer_cli_integration_runtime_fixture_root(
+            FIXTURE_ROOT
+        )
+        actual_invocation = [
+            result
+            for result in summary.case_results
+            if result.fixture_schema_family == "v0.2"
+        ]
+
+        self.assertEqual(len(actual_invocation), 24)
+        self.assertTrue(all(result.matched for result in actual_invocation))
+        self.assertTrue(
+            all(
+                result.runtime_mode == "actual_invocation_metadata_only"
+                for result in actual_invocation
+            )
+        )
+        self.assertEqual(
+            sum(result.expected_status == "pass" for result in actual_invocation),
+            6,
+        )
+        self.assertEqual(
+            sum(result.expected_status == "fail_closed" for result in actual_invocation),
+            16,
+        )
+        self.assertEqual(
+            sum(result.expected_status == "usage_error" for result in actual_invocation),
+            1,
+        )
+        self.assertEqual(
+            sum(result.expected_status == "mismatch" for result in actual_invocation),
+            1,
+        )
+
+    def test_valid_actual_invocation_cases_pass(self) -> None:
+        for case_name in (
+            "valid_actual_invocation_minimal_metadata_only",
+            "valid_actual_invocation_body_free_output",
+            "valid_actual_invocation_nonzero_exit_safe_summary",
+            "valid_actual_invocation_timeout_safe_summary",
+            "valid_actual_invocation_file_writing_disabled",
+            "valid_actual_invocation_no_downstream_invocation",
+        ):
+            with self.subTest(case_name=case_name):
+                result = validate_artifact_writer_cli_integration_runtime_fixture_case(
+                    FIXTURE_ROOT / "valid" / case_name
+                )
+
+                self.assertTrue(result.matched)
+                self.assertEqual(result.expected_status, "pass")
+                self.assertEqual(result.expected_reason_code, "none")
+                self.assertEqual(result.fixture_schema_family, "v0.2")
+
+    def test_invalid_actual_invocation_cases_match_expected_reason_codes(self) -> None:
+        expected = {
+            "invalid_actual_invocation_raw_stdout_body": "raw_stdout_body_present",
+            "invalid_actual_invocation_raw_stderr_body": "raw_stderr_body_present",
+            "invalid_actual_invocation_artifact_body_payload": (
+                "artifact_body_payload_present"
+            ),
+            "invalid_actual_invocation_manifest_body": "manifest_body_present",
+            "invalid_actual_invocation_generated_policy_body": (
+                "generated_policy_body_present"
+            ),
+            "invalid_actual_invocation_request_body": "request_body_present",
+            "invalid_actual_invocation_pointer_body": "pointer_body_present",
+            "invalid_actual_invocation_expected_body": "expected_body_present",
+            "invalid_actual_invocation_private_path": "private_path_present",
+            "invalid_actual_invocation_absolute_path": "absolute_path_present",
+            "invalid_actual_invocation_raw_learner_text": "raw_learner_text_present",
+            "invalid_actual_invocation_raw_rows": "raw_rows_present",
+            "invalid_actual_invocation_logits": "logits_present",
+            "invalid_actual_invocation_file_writing_detected": "file_writing_detected",
+            "invalid_actual_invocation_artifact_body_generation_invoked": (
+                "artifact_body_generation_invoked"
+            ),
+            "invalid_actual_invocation_manifest_writer_invoked": (
+                "manifest_writer_invoked"
+            ),
+            "invalid_actual_invocation_unsupported_schema": (
+                "unsupported_schema_version"
+            ),
+            "invalid_actual_invocation_mismatched_expected_status": (
+                "mismatched_expected_status"
+            ),
+        }
+
+        for case_name, reason_code in expected.items():
+            with self.subTest(case_name=case_name):
+                result = validate_artifact_writer_cli_integration_runtime_fixture_case(
+                    FIXTURE_ROOT / "invalid" / case_name
+                )
+
+                self.assertTrue(result.matched)
+                self.assertEqual(result.expected_reason_code, reason_code)
+                self.assertEqual(result.fixture_schema_family, "v0.2")
+
+    def test_nonzero_and_timeout_safe_summaries_are_handled(self) -> None:
+        nonzero = validate_artifact_writer_cli_integration_runtime_fixture_case(
+            FIXTURE_ROOT / "valid/valid_actual_invocation_nonzero_exit_safe_summary"
+        )
+        timeout = validate_artifact_writer_cli_integration_runtime_fixture_case(
+            FIXTURE_ROOT / "valid/valid_actual_invocation_timeout_safe_summary"
+        )
+
+        self.assertTrue(nonzero.matched)
+        self.assertEqual(nonzero.expected_status, "pass")
+        self.assertTrue(timeout.matched)
+        self.assertEqual(timeout.expected_status, "pass")
+
+    def test_mismatched_expected_status_reported_as_mismatch_case(self) -> None:
+        result = validate_artifact_writer_cli_integration_runtime_fixture_case(
+            FIXTURE_ROOT / "invalid/invalid_actual_invocation_mismatched_expected_status"
+        )
+
+        self.assertTrue(result.matched)
+        self.assertEqual(result.expected_status, "mismatch")
+        self.assertEqual(result.expected_reason_code, "mismatched_expected_status")
 
     def test_required_file_missing_in_temp_copy_fails(self) -> None:
         with temp_root_copy() as root:
@@ -181,6 +329,53 @@ class ArtifactWriterCliIntegrationRuntimeFixtureValidationTests(unittest.TestCas
             result.mismatch_reasons,
         )
 
+    def test_unknown_v0_2_schema_fails_safely_in_temp_copy(self) -> None:
+        with temp_root_copy() as root:
+            path = (
+                root
+                / "valid/valid_actual_invocation_minimal_metadata_only"
+                / "request_metadata.json"
+            )
+            data = load_json(path)
+            data["schema_version"] = "unsupported_v0_2_schema"
+            write_json(path, data)
+            result = validate_artifact_writer_cli_integration_runtime_fixture_case(
+                path.parent
+            )
+
+        self.assertFalse(result.matched)
+        self.assertIn("request_metadata_schema_version_mismatch", result.mismatch_reasons)
+
+    def test_malformed_json_returns_input_error_in_temp_fixture(self) -> None:
+        with temp_root_copy() as root:
+            path = (
+                root
+                / "valid/valid_actual_invocation_minimal_metadata_only"
+                / "request_metadata.json"
+            )
+            path.write_text("{", encoding="utf-8")
+            result = validate_artifact_writer_cli_integration_runtime_fixture_case(
+                path.parent
+            )
+
+        self.assertTrue(result.input_error)
+        self.assertEqual(result.expected_status, "input_error")
+        self.assertEqual(result.expected_reason_code, "malformed_json")
+
+    def test_root_not_found_returns_input_error_safely(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            summary = validate_artifact_writer_cli_integration_runtime_fixture_root(
+                Path(tmp) / "missing"
+            )
+
+        payload = summarize_artifact_writer_cli_integration_runtime_fixture_validation(
+            summary
+        )
+        self.assertFalse(summary.all_matched)
+        self.assertEqual(payload["input_error_cases"], 0)
+        self.assertIn("fixture_root_missing", payload["root_errors"])
+        assert_safe_output(self, json.dumps(payload, sort_keys=True))
+
     def test_expected_reason_code_mismatch_in_temp_copy_fails(self) -> None:
         with temp_root_copy() as root:
             path = (
@@ -247,6 +442,39 @@ class ArtifactWriterCliIntegrationRuntimeFixtureValidationTests(unittest.TestCas
         self.assertFalse(result.matched)
         self.assertIn("manifest_writer_requested_not_false", result.mismatch_reasons)
 
+    def test_actual_invocation_sentinels_are_fail_closed_or_usage_error(self) -> None:
+        fail_closed_cases = {
+            "invalid_actual_invocation_raw_stdout_body",
+            "invalid_actual_invocation_raw_stderr_body",
+            "invalid_actual_invocation_artifact_body_payload",
+            "invalid_actual_invocation_manifest_body",
+            "invalid_actual_invocation_generated_policy_body",
+            "invalid_actual_invocation_request_body",
+            "invalid_actual_invocation_pointer_body",
+            "invalid_actual_invocation_expected_body",
+            "invalid_actual_invocation_private_path",
+            "invalid_actual_invocation_absolute_path",
+            "invalid_actual_invocation_raw_learner_text",
+            "invalid_actual_invocation_raw_rows",
+            "invalid_actual_invocation_logits",
+            "invalid_actual_invocation_file_writing_detected",
+            "invalid_actual_invocation_artifact_body_generation_invoked",
+            "invalid_actual_invocation_manifest_writer_invoked",
+        }
+        for case_name in sorted(fail_closed_cases):
+            with self.subTest(case_name=case_name):
+                result = validate_artifact_writer_cli_integration_runtime_fixture_case(
+                    FIXTURE_ROOT / "invalid" / case_name
+                )
+                self.assertTrue(result.matched)
+                self.assertEqual(result.expected_status, "fail_closed")
+
+        unsupported = validate_artifact_writer_cli_integration_runtime_fixture_case(
+            FIXTURE_ROOT / "invalid/invalid_actual_invocation_unsupported_schema"
+        )
+        self.assertTrue(unsupported.matched)
+        self.assertEqual(unsupported.expected_status, "usage_error")
+
     def test_cli_json_output_parseable_and_body_free(self) -> None:
         completed = run_cli("--json")
 
@@ -254,6 +482,10 @@ class ArtifactWriterCliIntegrationRuntimeFixtureValidationTests(unittest.TestCas
         payload = json.loads(completed.stdout)
         self.assertEqual(payload["total_cases"], EXPECTED_TOTAL_CASES)
         self.assertEqual(payload["total_json_files"], EXPECTED_TOTAL_JSON_FILES)
+        self.assertEqual(payload["validation_schema_version"].split("_")[-1], "v0.2")
+        self.assertEqual(payload["v0_2_case_count"], 24)
+        self.assertTrue(payload["no_raw_stdout_body"])
+        self.assertTrue(payload["no_raw_stderr_body"])
         assert_safe_output(self, completed.stdout)
         assert_safe_output(self, completed.stderr)
 
@@ -261,8 +493,9 @@ class ArtifactWriterCliIntegrationRuntimeFixtureValidationTests(unittest.TestCas
         completed = run_cli()
 
         self.assertEqual(completed.returncode, 0, completed.stderr)
-        self.assertIn("total_cases=30", completed.stdout)
-        self.assertIn("matched_cases=30", completed.stdout)
+        self.assertIn("total_cases=54", completed.stdout)
+        self.assertIn("matched_cases=54", completed.stdout)
+        self.assertIn("v0_2_case_count=24", completed.stdout)
         assert_safe_output(self, completed.stdout)
         assert_safe_output(self, completed.stderr)
 

@@ -383,3 +383,37 @@ This design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 21. Step511 Validator v0.2 Support Implementation Status
+
+Step511 implements the static runtime fixture validator module / CLI / focused
+test update described by this design. The validator result schema is now:
+
+`learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation_v0.2`
+
+The updated validator accepts the original v0.1 plan-only fixture schema
+family and the Step509 v0.2 actual-invocation metadata-only fixture schema
+family. Expected public-safe aggregate counts are:
+
+- `total_cases=54`
+- `valid_cases=12`
+- `invalid_cases=42`
+- `total_json_files=324`
+- `matched_cases=54`
+- `mismatched_cases=0`
+- `input_error_cases=0`
+- `pass_cases=12`
+- `usage_error_cases=6`
+- `fail_closed_cases=35`
+- `mismatch_cases=1`
+- `v0_1_case_count=30`
+- `v0_2_case_count=24`
+- `plan_only_case_count=30`
+- `actual_invocation_case_count=24`
+- `runtime_actual_invocation_enabled_cases=24`
+
+Step511 does not change fixture JSON, rename the Makefile target, change the
+release-quality wrapper, change workflows, implement runtime actual
+invocation, perform artifact writer CLI actual invocation, connect artifact
+body generation integration, connect manifest writer integration, enable file
+writing, use real data, compute metrics, or claim production readiness.

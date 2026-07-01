@@ -392,3 +392,19 @@ Related recap:
   public-safe recording workflow design used by the remote/manual Release
   Quality status marker for manifest writer runtime metadata-only file writing
   smoke wrapper integration.
+
+## Step511 Static Runtime Fixture Validator v0.2 Support
+
+Step511 updates
+`learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation`
+to validator schema
+`learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation_v0.2`
+for the 54-case / 324-JSON synthetic metadata-only runtime fixture root. This
+is local static fixture validation status only; no new remote status marker is
+created here.
+
+The update does not store raw logs or full job output and is not evidence of
+runtime actual invocation correctness, artifact writer CLI actual invocation
+correctness, artifact body generation integration correctness, manifest writer
+integration correctness, model performance, real-data readiness, or production
+readiness.

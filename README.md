@@ -195,7 +195,9 @@ Currently implemented:
 - frozen policy generation artifact writer metadata-only fixture and runtime
   checks
 - artifact writer CLI integration static fixture validation, including the
-  runtime fixture validator for synthetic metadata-only contracts
+  runtime fixture validator for the 54-case / 324-JSON synthetic
+  metadata-only root with v0.1 plan-only and v0.2 actual-invocation fixture
+  schema support
 - artifact body suppressed and safe-metadata generation CLI checks
 - artifact body safe-metadata file writing and isolated write validation
 - manifest writer metadata-only no-file runtime

@@ -58,20 +58,55 @@ REQUEST_VALIDATION_SCHEMA_VERSION = (
     "fixture_contract_v0.1"
 )
 
+CASE_METADATA_SCHEMA_VERSION_V0_2 = (
+    "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_"
+    "fixture_case_v0.2"
+)
+REQUEST_METADATA_SCHEMA_VERSION_V0_2 = (
+    "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_"
+    "request_v0.2"
+)
+POINTER_METADATA_SCHEMA_VERSION_V0_2 = (
+    "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_"
+    "pointer_v0.2"
+)
+ARTIFACT_WRITER_CLI_METADATA_SCHEMA_VERSION_V0_2 = (
+    "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_"
+    "artifact_writer_cli_metadata_v0.2"
+)
+EXPECTED_RUNTIME_SUMMARY_SCHEMA_VERSION_V0_2 = (
+    "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_"
+    "expected_summary_v0.2"
+)
+EXPECTED_ERROR_SCHEMA_VERSION_V0_2 = (
+    "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_"
+    "expected_error_v0.2"
+)
+REQUEST_VALIDATION_SCHEMA_VERSION_V0_2 = (
+    "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_"
+    "fixture_contract_v0.2"
+)
+
 VALIDATION_SCHEMA_VERSION = (
     "learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime_"
-    "fixture_validation_v0.1"
+    "fixture_validation_v0.2"
 )
 MODE = "artifact_writer_cli_integration_runtime_fixture_validation"
 
-EXPECTED_TOTAL_CASES = 30
-EXPECTED_VALID_CASES = 6
-EXPECTED_INVALID_CASES = 24
+EXPECTED_TOTAL_CASES = 54
+EXPECTED_VALID_CASES = 12
+EXPECTED_INVALID_CASES = 42
 JSON_FILES_PER_CASE = 6
 EXPECTED_TOTAL_JSON_FILES = EXPECTED_TOTAL_CASES * JSON_FILES_PER_CASE
-EXPECTED_PASS_CASES = 6
-EXPECTED_USAGE_ERROR_CASES = 5
-EXPECTED_FAIL_CLOSED_CASES = 19
+EXPECTED_PASS_CASES = 12
+EXPECTED_USAGE_ERROR_CASES = 6
+EXPECTED_FAIL_CLOSED_CASES = 35
+EXPECTED_MISMATCH_CASES = 1
+EXPECTED_V0_1_CASES = 30
+EXPECTED_V0_2_CASES = 24
+EXPECTED_PLAN_ONLY_CASES = 30
+EXPECTED_ACTUAL_INVOCATION_CASES = 24
+EXPECTED_RUNTIME_ACTUAL_INVOCATION_ENABLED_CASES = 24
 
 REQUIRED_FILES = (
     CASE_METADATA_FILE,
@@ -90,6 +125,12 @@ VALID_CASE_LABELS = frozenset(
         "valid/valid_file_writing_disabled_pass",
         "valid/valid_no_oracle_flags_pass",
         "valid/valid_fail_safe_suppression_flags_pass",
+        "valid/valid_actual_invocation_minimal_metadata_only",
+        "valid/valid_actual_invocation_body_free_output",
+        "valid/valid_actual_invocation_nonzero_exit_safe_summary",
+        "valid/valid_actual_invocation_timeout_safe_summary",
+        "valid/valid_actual_invocation_file_writing_disabled",
+        "valid/valid_actual_invocation_no_downstream_invocation",
     }
 )
 
@@ -126,6 +167,38 @@ EXPECTED_INVALID_REASONS = {
     ),
     "invalid/invalid_mismatched_expected_status": "mismatched_expected_status",
     "invalid/invalid_duplicate_case_id": "duplicate_case_id",
+    "invalid/invalid_actual_invocation_raw_stdout_body": "raw_stdout_body_present",
+    "invalid/invalid_actual_invocation_raw_stderr_body": "raw_stderr_body_present",
+    "invalid/invalid_actual_invocation_artifact_body_payload": (
+        "artifact_body_payload_present"
+    ),
+    "invalid/invalid_actual_invocation_manifest_body": "manifest_body_present",
+    "invalid/invalid_actual_invocation_generated_policy_body": (
+        "generated_policy_body_present"
+    ),
+    "invalid/invalid_actual_invocation_request_body": "request_body_present",
+    "invalid/invalid_actual_invocation_pointer_body": "pointer_body_present",
+    "invalid/invalid_actual_invocation_expected_body": "expected_body_present",
+    "invalid/invalid_actual_invocation_private_path": "private_path_present",
+    "invalid/invalid_actual_invocation_absolute_path": "absolute_path_present",
+    "invalid/invalid_actual_invocation_raw_learner_text": "raw_learner_text_present",
+    "invalid/invalid_actual_invocation_raw_rows": "raw_rows_present",
+    "invalid/invalid_actual_invocation_logits": "logits_present",
+    "invalid/invalid_actual_invocation_file_writing_detected": (
+        "file_writing_detected"
+    ),
+    "invalid/invalid_actual_invocation_artifact_body_generation_invoked": (
+        "artifact_body_generation_invoked"
+    ),
+    "invalid/invalid_actual_invocation_manifest_writer_invoked": (
+        "manifest_writer_invoked"
+    ),
+    "invalid/invalid_actual_invocation_unsupported_schema": (
+        "unsupported_schema_version"
+    ),
+    "invalid/invalid_actual_invocation_mismatched_expected_status": (
+        "mismatched_expected_status"
+    ),
 }
 ALLOWED_REASON_CODES = frozenset(EXPECTED_INVALID_REASONS.values()) | {"none"}
 
@@ -133,6 +206,45 @@ EXPECTED_STATUS_COUNTS = {
     "pass": EXPECTED_PASS_CASES,
     "usage_error": EXPECTED_USAGE_ERROR_CASES,
     "fail_closed": EXPECTED_FAIL_CLOSED_CASES,
+    "mismatch": EXPECTED_MISMATCH_CASES,
+}
+
+REASON_FORBIDDEN_MARKERS = {
+    "request_body_present": "request_body",
+    "pointer_body_present": "pointer_body",
+    "expected_body_present": "expected_body",
+    "artifact_body_payload_present": "artifact_body_payload",
+    "manifest_body_present": "manifest_body",
+    "generated_policy_body_present": "generated_policy_body",
+    "raw_learner_text_present": "raw_learner_text",
+    "raw_rows_present": "raw_rows",
+    "logits_present": "logits",
+    "probabilities_present": "probabilities",
+    "private_path_present": "private_path",
+    "absolute_path_present": "absolute_path",
+    "final_text_present": "final_text",
+    "observed_after_text_present": "observed_after_text",
+    "gold_label_present": "gold_label",
+    "post_hoc_annotation_present": "post_hoc_annotation",
+    "raw_stdout_body_present": "raw_stdout_body",
+    "raw_stderr_body_present": "raw_stderr_body",
+    "file_writing_detected": "file_writing",
+    "artifact_body_generation_invoked": "artifact_body_generation",
+    "manifest_writer_invoked": "manifest_writer",
+    "unsupported_schema_version": "unsupported_schema",
+}
+
+REASON_ALLOWED_FALSE_SUMMARY_FLAGS = {
+    "raw_rows_present": "no_raw_rows",
+    "logits_present": "no_logits_dump",
+    "private_path_present": "no_private_paths",
+    "absolute_path_present": "no_absolute_paths",
+    "generated_policy_body_present": "no_generated_policy_body",
+    "artifact_body_payload_present": "no_artifact_body_payload",
+    "manifest_body_present": "no_manifest_body",
+    "request_body_present": "no_request_body",
+    "pointer_body_present": "no_pointer_body",
+    "expected_body_present": "no_expected_body",
 }
 
 CASE_METADATA_FIELDS = frozenset(
@@ -156,6 +268,11 @@ CASE_METADATA_FIELDS = frozenset(
         "validator_implemented",
     }
 )
+
+CASE_METADATA_FIELDS_V0_2 = CASE_METADATA_FIELDS | {
+    "runtime_mode",
+    "schema_family",
+}
 
 REQUEST_METADATA_FIELDS = frozenset(
     {
@@ -185,6 +302,24 @@ REQUEST_METADATA_FIELDS = frozenset(
         "unsafe_value_stored",
     }
 )
+
+REQUEST_METADATA_FIELDS_V0_2 = REQUEST_METADATA_FIELDS | {
+    "actual_invocation_requested",
+    "artifact_writer_cli_module",
+    "fail_closed_on_unsafe_output",
+    "invocation_mode",
+    "no_file_writing",
+    "plan_only",
+    "runtime_mode",
+    "stderr_body_printed",
+    "stderr_capture_enabled",
+    "stdout_body_printed",
+    "stdout_capture_enabled",
+    "subprocess_shell_enabled",
+    "summary_only",
+    "timeout_category",
+    "timeout_seconds",
+}
 
 POINTER_METADATA_FIELDS = frozenset(
     {
@@ -235,6 +370,16 @@ ARTIFACT_WRITER_CLI_METADATA_FIELDS = frozenset(
     }
 )
 
+ARTIFACT_WRITER_CLI_METADATA_FIELDS_V0_2 = ARTIFACT_WRITER_CLI_METADATA_FIELDS | {
+    "module_name",
+    "raw_stderr_body_detected",
+    "raw_stderr_body_value_stored",
+    "raw_stdout_body_detected",
+    "raw_stdout_body_value_stored",
+    "unsafe_value_stored",
+    "unsupported_schema_present",
+}
+
 EXPECTED_RUNTIME_SUMMARY_FIELDS = frozenset(
     {
         "schema_version",
@@ -266,6 +411,37 @@ EXPECTED_RUNTIME_SUMMARY_FIELDS = frozenset(
         "runtime_implemented",
     }
 )
+
+EXPECTED_RUNTIME_SUMMARY_FIELDS_V0_2 = EXPECTED_RUNTIME_SUMMARY_FIELDS | {
+    "actual_invocation_output_variant",
+    "artifact_body_generation_invoked",
+    "artifact_body_payload_detected",
+    "artifact_writer_cli_exit_code_category",
+    "artifact_writer_cli_invocation_planned",
+    "artifact_writer_cli_invoked",
+    "artifact_writer_cli_output_body_free",
+    "artifact_writer_cli_output_scanned",
+    "expected_body_detected",
+    "file_writing_detected",
+    "forbidden_marker",
+    "generated_policy_body_detected",
+    "invocation_mode",
+    "manifest_body_detected",
+    "manifest_writer_invoked",
+    "prohibited_body_value_stored",
+    "raw_stderr_body_detected",
+    "raw_stderr_body_suppressed",
+    "raw_stderr_body_value_stored",
+    "raw_stdout_body_detected",
+    "raw_stdout_body_suppressed",
+    "raw_stdout_body_value_stored",
+    "request_body_detected",
+    "runtime_actual_invocation_enabled",
+    "runtime_actual_invocation_fail_closed",
+    "runtime_actual_invocation_safety_scan_passed",
+    "summary_mode",
+    "unsupported_schema_present",
+}
 
 EXPECTED_ERROR_FIELDS = frozenset(
     {
@@ -329,11 +505,41 @@ POINTER_SENTINEL_FIELDS = frozenset(
     }
 )
 
-ALLOWED_SENTINEL_FIELDS = REQUEST_SENTINEL_FIELDS | POINTER_SENTINEL_FIELDS | {
-    "artifact_body_generation_requested",
-    "manifest_writer_requested",
-    "ambiguous_file_writing_target",
-}
+ACTUAL_INVOCATION_ARTIFACT_SENTINEL_FIELDS = frozenset(
+    {
+        "raw_stdout_body_detected",
+        "raw_stderr_body_detected",
+        "unsupported_schema_present",
+    }
+)
+
+ACTUAL_INVOCATION_SUMMARY_SENTINEL_FIELDS = frozenset(
+    {
+        "artifact_body_generation_invoked",
+        "artifact_body_payload_detected",
+        "expected_body_detected",
+        "file_writing_detected",
+        "generated_policy_body_detected",
+        "manifest_body_detected",
+        "manifest_writer_invoked",
+        "raw_stderr_body_detected",
+        "raw_stdout_body_detected",
+        "request_body_detected",
+        "unsupported_schema_present",
+    }
+)
+
+ALLOWED_SENTINEL_FIELDS = (
+    REQUEST_SENTINEL_FIELDS
+    | POINTER_SENTINEL_FIELDS
+    | ACTUAL_INVOCATION_ARTIFACT_SENTINEL_FIELDS
+    | ACTUAL_INVOCATION_SUMMARY_SENTINEL_FIELDS
+    | {
+        "artifact_body_generation_requested",
+        "manifest_writer_requested",
+        "ambiguous_file_writing_target",
+    }
+)
 
 FORBIDDEN_ACTUAL_KEYS = frozenset(
     {
@@ -383,6 +589,8 @@ class ArtifactWriterCliIntegrationRuntimeFixtureCaseResult:
     expected_status: str
     expected_reason_code: str
     expected_exit_code_category: str
+    fixture_schema_family: str
+    runtime_mode: str
     matched: bool
     input_error: bool
     mismatch_reasons: tuple[str, ...] = ()
@@ -398,6 +606,8 @@ class ArtifactWriterCliIntegrationRuntimeFixtureCaseResult:
             "expected_status": self.expected_status,
             "expected_reason_code": self.expected_reason_code,
             "expected_exit_code_category": self.expected_exit_code_category,
+            "fixture_schema_family": self.fixture_schema_family,
+            "runtime_mode": self.runtime_mode,
             "matched": self.matched,
             "input_error": self.input_error,
             "mismatch_reasons": list(self.mismatch_reasons),
@@ -458,6 +668,37 @@ class ArtifactWriterCliIntegrationRuntimeFixtureValidationSummary:
         return sum(
             result.expected_status == "fail_closed" for result in self.case_results
         )
+
+    @property
+    def mismatch_cases(self) -> int:
+        return sum(result.expected_status == "mismatch" for result in self.case_results)
+
+    @property
+    def v0_1_case_count(self) -> int:
+        return sum(
+            result.fixture_schema_family == "v0.1" for result in self.case_results
+        )
+
+    @property
+    def v0_2_case_count(self) -> int:
+        return sum(
+            result.fixture_schema_family == "v0.2" for result in self.case_results
+        )
+
+    @property
+    def plan_only_case_count(self) -> int:
+        return sum(result.runtime_mode == "plan_only" for result in self.case_results)
+
+    @property
+    def actual_invocation_case_count(self) -> int:
+        return sum(
+            result.runtime_mode == "actual_invocation_metadata_only"
+            for result in self.case_results
+        )
+
+    @property
+    def runtime_actual_invocation_enabled_cases(self) -> int:
+        return self.actual_invocation_case_count
 
     @property
     def all_matched(self) -> bool:
@@ -577,6 +818,8 @@ def validate_artifact_writer_cli_integration_runtime_fixture_case(
         expected_runtime_summary,
         expected_error,
     )
+    fixture_schema_family = _fixture_schema_family(case_metadata)
+    runtime_mode = _runtime_mode(case_metadata)
     mismatches: list[str] = []
     _validate_field_sets(
         case_metadata,
@@ -626,12 +869,22 @@ def validate_artifact_writer_cli_integration_runtime_fixture_case(
         expected_runtime_summary,
         mismatches,
     )
+    _validate_actual_invocation_metadata_only_policy(
+        case_kind,
+        case_metadata,
+        request_metadata,
+        pointer_metadata,
+        artifact_writer_cli_metadata,
+        expected_runtime_summary,
+        mismatches,
+    )
     _validate_sentinel_policy(
         case_kind,
         case_metadata,
         request_metadata,
         pointer_metadata,
         artifact_writer_cli_metadata,
+        expected_runtime_summary,
         expected_error,
         mismatches,
     )
@@ -654,6 +907,8 @@ def validate_artifact_writer_cli_integration_runtime_fixture_case(
         expected_status=expected_status,
         expected_reason_code=expected_reason,
         expected_exit_code_category=expected_exit_code,
+        fixture_schema_family=fixture_schema_family,
+        runtime_mode=runtime_mode,
         matched=not mismatches,
         input_error=False,
         mismatch_reasons=tuple(sorted(set(mismatches))),
@@ -678,6 +933,14 @@ def summarize_artifact_writer_cli_integration_runtime_fixture_validation(
         "pass_cases": summary.pass_cases,
         "usage_error_cases": summary.usage_error_cases,
         "fail_closed_cases": summary.fail_closed_cases,
+        "mismatch_cases": summary.mismatch_cases,
+        "v0_1_case_count": summary.v0_1_case_count,
+        "v0_2_case_count": summary.v0_2_case_count,
+        "plan_only_case_count": summary.plan_only_case_count,
+        "actual_invocation_case_count": summary.actual_invocation_case_count,
+        "runtime_actual_invocation_enabled_cases": (
+            summary.runtime_actual_invocation_enabled_cases
+        ),
         "duplicate_case_id_cases": summary.duplicate_case_id_cases,
         "missing_required_file_cases": summary.missing_required_file_cases,
         "content_suppressed": True,
@@ -692,6 +955,8 @@ def summarize_artifact_writer_cli_integration_runtime_fixture_validation(
         "no_request_body": True,
         "no_pointer_body": True,
         "no_expected_body": True,
+        "no_raw_stdout_body": True,
+        "no_raw_stderr_body": True,
         "no_oracle_checked": True,
         "synthetic_only_checked": True,
         "metadata_only_checked": True,
@@ -757,18 +1022,32 @@ def _validate_field_sets(
     expected_error: Mapping[str, Any],
     mismatches: list[str],
 ) -> None:
-    _field_set(case_metadata, CASE_METADATA_FIELDS, "case_metadata", mismatches)
-    _field_set(request_metadata, REQUEST_METADATA_FIELDS, "request_metadata", mismatches)
-    _field_set(pointer_metadata, POINTER_METADATA_FIELDS, "pointer_metadata", mismatches)
+    schema_family = _fixture_schema_family(case_metadata)
+    if schema_family == "v0.2":
+        case_fields = CASE_METADATA_FIELDS_V0_2
+        request_fields = REQUEST_METADATA_FIELDS_V0_2
+        pointer_fields = POINTER_METADATA_FIELDS
+        artifact_fields = ARTIFACT_WRITER_CLI_METADATA_FIELDS_V0_2
+        summary_fields = EXPECTED_RUNTIME_SUMMARY_FIELDS_V0_2
+    else:
+        case_fields = CASE_METADATA_FIELDS
+        request_fields = REQUEST_METADATA_FIELDS
+        pointer_fields = POINTER_METADATA_FIELDS
+        artifact_fields = ARTIFACT_WRITER_CLI_METADATA_FIELDS
+        summary_fields = EXPECTED_RUNTIME_SUMMARY_FIELDS
+
+    _field_set(case_metadata, case_fields, "case_metadata", mismatches)
+    _field_set(request_metadata, request_fields, "request_metadata", mismatches)
+    _field_set(pointer_metadata, pointer_fields, "pointer_metadata", mismatches)
     _field_set(
         artifact_writer_cli_metadata,
-        ARTIFACT_WRITER_CLI_METADATA_FIELDS,
+        artifact_fields,
         "artifact_writer_cli_metadata",
         mismatches,
     )
     _field_set(
         expected_runtime_summary,
-        EXPECTED_RUNTIME_SUMMARY_FIELDS,
+        summary_fields,
         "expected_runtime_summary",
         mismatches,
     )
@@ -786,22 +1065,40 @@ def _validate_schema_and_identity(
     expected_error: Mapping[str, Any],
     mismatches: list[str],
 ) -> None:
-    _schema(case_metadata, CASE_METADATA_SCHEMA_VERSION, "case_metadata", mismatches)
-    _schema(request_metadata, REQUEST_METADATA_SCHEMA_VERSION, "request_metadata", mismatches)
-    _schema(pointer_metadata, POINTER_METADATA_SCHEMA_VERSION, "pointer_metadata", mismatches)
+    schema_family = _fixture_schema_family(case_metadata)
+    if schema_family == "v0.2":
+        case_schema = CASE_METADATA_SCHEMA_VERSION_V0_2
+        request_schema = REQUEST_METADATA_SCHEMA_VERSION_V0_2
+        pointer_schema = POINTER_METADATA_SCHEMA_VERSION_V0_2
+        artifact_schema = ARTIFACT_WRITER_CLI_METADATA_SCHEMA_VERSION_V0_2
+        summary_schema = EXPECTED_RUNTIME_SUMMARY_SCHEMA_VERSION_V0_2
+        error_schema = EXPECTED_ERROR_SCHEMA_VERSION_V0_2
+        request_validation_schema = REQUEST_VALIDATION_SCHEMA_VERSION_V0_2
+    else:
+        case_schema = CASE_METADATA_SCHEMA_VERSION
+        request_schema = REQUEST_METADATA_SCHEMA_VERSION
+        pointer_schema = POINTER_METADATA_SCHEMA_VERSION
+        artifact_schema = ARTIFACT_WRITER_CLI_METADATA_SCHEMA_VERSION
+        summary_schema = EXPECTED_RUNTIME_SUMMARY_SCHEMA_VERSION
+        error_schema = EXPECTED_ERROR_SCHEMA_VERSION
+        request_validation_schema = REQUEST_VALIDATION_SCHEMA_VERSION
+
+    _schema(case_metadata, case_schema, "case_metadata", mismatches)
+    _schema(request_metadata, request_schema, "request_metadata", mismatches)
+    _schema(pointer_metadata, pointer_schema, "pointer_metadata", mismatches)
     _schema(
         artifact_writer_cli_metadata,
-        ARTIFACT_WRITER_CLI_METADATA_SCHEMA_VERSION,
+        artifact_schema,
         "artifact_writer_cli_metadata",
         mismatches,
     )
     _schema(
         expected_runtime_summary,
-        EXPECTED_RUNTIME_SUMMARY_SCHEMA_VERSION,
+        summary_schema,
         "expected_runtime_summary",
         mismatches,
     )
-    _schema(expected_error, EXPECTED_ERROR_SCHEMA_VERSION, "expected_error", mismatches)
+    _schema(expected_error, error_schema, "expected_error", mismatches)
 
     for label, payload in (
         ("case_metadata", case_metadata),
@@ -816,7 +1113,7 @@ def _validate_schema_and_identity(
 
     if case_metadata.get("case_kind") != case_kind:
         mismatches.append("case_kind_mismatch")
-    if request_metadata.get("validation_schema_version") != REQUEST_VALIDATION_SCHEMA_VERSION:
+    if request_metadata.get("validation_schema_version") != request_validation_schema:
         mismatches.append("request_validation_schema_version_mismatch")
     if request_metadata.get("mode") != "artifact_writer_cli_integration_runtime_fixture_contract":
         mismatches.append("request_mode_mismatch")
@@ -866,7 +1163,7 @@ def _validate_reason_and_status_policy(
         expected_reason_for_case = EXPECTED_INVALID_REASONS.get(case_id)
         if expected_reason_for_case is None:
             mismatches.append("unknown_invalid_case")
-        if expected_status not in {"usage_error", "fail_closed"}:
+        if expected_status not in {"usage_error", "fail_closed", "mismatch"}:
             mismatches.append("invalid_case_status_not_error")
         if expected_exit_code != "nonzero":
             mismatches.append("invalid_case_exit_code_not_nonzero")
@@ -892,6 +1189,13 @@ def _validate_reason_and_status_policy(
             mismatches.append("fail_closed_flag_not_true")
         if expected_error.get("usage_error") is not False:
             mismatches.append("fail_closed_usage_error_not_false")
+    elif expected_status == "mismatch":
+        if expected_error.get("mismatch") is not True:
+            mismatches.append("mismatch_flag_not_true")
+        if expected_error.get("fail_closed") is not False:
+            mismatches.append("mismatch_fail_closed_not_false")
+        if expected_error.get("usage_error") is not False:
+            mismatches.append("mismatch_usage_error_not_false")
     else:
         mismatches.append("unknown_expected_status")
 
@@ -918,8 +1222,15 @@ def _validate_no_oracle_and_suppression_policy(
         mismatches.append("case_metadata_content_suppressed_not_true")
     if case_metadata.get("body_suppressed") is not True:
         mismatches.append("case_metadata_body_suppressed_not_true")
+    allowed_false_summary_flag = None
+    if _fixture_schema_family(case_metadata) == "v0.2":
+        reason = _string_value(expected_runtime_summary, "expected_reason_code", "")
+        allowed_false_summary_flag = REASON_ALLOWED_FALSE_SUMMARY_FLAGS.get(reason)
     for field_name in TRUE_SUMMARY_FLAGS:
-        if expected_runtime_summary.get(field_name) is not True:
+        if (
+            expected_runtime_summary.get(field_name) is not True
+            and field_name != allowed_false_summary_flag
+        ):
             mismatches.append(f"expected_runtime_summary_{field_name}_not_true")
     if expected_runtime_summary.get("production_readiness_claimed") is not False:
         mismatches.append("production_readiness_claimed_not_false")
@@ -976,11 +1287,14 @@ def _validate_file_writing_policy(
     expected_runtime_summary: Mapping[str, Any],
     mismatches: list[str],
 ) -> None:
-    if request_metadata.get("file_writing_requested") is not False:
+    reason = _string_value(expected_runtime_summary, "expected_reason_code", "")
+    if (
+        request_metadata.get("file_writing_requested") is not False
+        and reason != "file_writing_detected"
+    ):
         mismatches.append("file_writing_requested_not_false")
     if expected_runtime_summary.get("file_writing_enabled") is not False:
         mismatches.append("file_writing_enabled_not_false")
-    reason = _string_value(expected_runtime_summary, "expected_reason_code", "")
     if (
         expected_runtime_summary.get("residue_expected") is not False
         and reason != "unsafe_output_residue_risk"
@@ -997,10 +1311,16 @@ def _validate_artifact_body_manifest_separation(
 ) -> None:
     reason = _string_value(expected_runtime_summary, "expected_reason_code", "")
     if artifact_writer_cli_metadata.get("artifact_body_generation_requested") is not False:
-        if reason != "unexpected_artifact_body_generation_request":
+        if reason not in {
+            "unexpected_artifact_body_generation_request",
+            "artifact_body_generation_invoked",
+        }:
             mismatches.append("artifact_body_generation_requested_not_false")
     if artifact_writer_cli_metadata.get("manifest_writer_requested") is not False:
-        if reason != "unexpected_manifest_writer_request":
+        if reason not in {
+            "unexpected_manifest_writer_request",
+            "manifest_writer_invoked",
+        }:
             mismatches.append("manifest_writer_requested_not_false")
     if artifact_writer_cli_metadata.get("artifact_body_payload_stored") is not False:
         mismatches.append("artifact_body_payload_stored_not_false")
@@ -1016,12 +1336,114 @@ def _validate_artifact_body_manifest_separation(
         mismatches.append("full_stderr_stored_not_false")
 
 
+def _validate_actual_invocation_metadata_only_policy(
+    case_kind: str,
+    case_metadata: Mapping[str, Any],
+    request_metadata: Mapping[str, Any],
+    pointer_metadata: Mapping[str, Any],
+    artifact_writer_cli_metadata: Mapping[str, Any],
+    expected_runtime_summary: Mapping[str, Any],
+    mismatches: list[str],
+) -> None:
+    if _fixture_schema_family(case_metadata) != "v0.2":
+        return
+
+    reason = _string_value(expected_runtime_summary, "expected_reason_code", "")
+    expected_status = _string_value(expected_runtime_summary, "expected_status", "")
+
+    if case_metadata.get("runtime_mode") != "actual_invocation_metadata_only":
+        mismatches.append("case_metadata_runtime_mode_mismatch")
+    if request_metadata.get("runtime_mode") != "actual_invocation_metadata_only":
+        mismatches.append("request_runtime_mode_mismatch")
+    if request_metadata.get("invocation_mode") != "actual_invocation_metadata_only":
+        mismatches.append("request_invocation_mode_mismatch")
+    if expected_runtime_summary.get("invocation_mode") != "actual_invocation_metadata_only":
+        mismatches.append("summary_invocation_mode_mismatch")
+    if request_metadata.get("actual_invocation_requested") is not True:
+        mismatches.append("actual_invocation_requested_not_true")
+    if request_metadata.get("plan_only") is not False:
+        mismatches.append("plan_only_not_false")
+    if request_metadata.get("summary_only") is not True:
+        mismatches.append("summary_only_not_true")
+    if request_metadata.get("no_file_writing") is not True:
+        if reason != "file_writing_detected":
+            mismatches.append("no_file_writing_not_true")
+    if request_metadata.get("fail_closed_on_unsafe_output") is not True:
+        mismatches.append("fail_closed_on_unsafe_output_not_true")
+    if request_metadata.get("subprocess_shell_enabled") is not False:
+        mismatches.append("subprocess_shell_enabled_not_false")
+    if request_metadata.get("stdout_capture_enabled") is not True:
+        mismatches.append("stdout_capture_enabled_not_true")
+    if request_metadata.get("stderr_capture_enabled") is not True:
+        mismatches.append("stderr_capture_enabled_not_true")
+    if request_metadata.get("stdout_body_printed") is not False:
+        mismatches.append("stdout_body_printed_not_false")
+    if request_metadata.get("stderr_body_printed") is not False:
+        mismatches.append("stderr_body_printed_not_false")
+
+    if expected_runtime_summary.get("runtime_actual_invocation_enabled") is not True:
+        mismatches.append("runtime_actual_invocation_enabled_not_true")
+    if expected_runtime_summary.get("artifact_writer_cli_invoked") is not True:
+        mismatches.append("artifact_writer_cli_invoked_not_true")
+    if expected_runtime_summary.get("artifact_writer_cli_invocation_planned") is not False:
+        mismatches.append("artifact_writer_cli_invocation_planned_not_false")
+    if expected_runtime_summary.get("artifact_writer_cli_output_scanned") is not True:
+        mismatches.append("artifact_writer_cli_output_scanned_not_true")
+    if expected_runtime_summary.get("raw_stdout_body_suppressed") is not True:
+        mismatches.append("raw_stdout_body_suppressed_not_true")
+    if expected_runtime_summary.get("raw_stderr_body_suppressed") is not True:
+        mismatches.append("raw_stderr_body_suppressed_not_true")
+    if expected_runtime_summary.get("raw_stdout_body_value_stored") is not False:
+        mismatches.append("raw_stdout_body_value_stored_not_false")
+    if expected_runtime_summary.get("raw_stderr_body_value_stored") is not False:
+        mismatches.append("raw_stderr_body_value_stored_not_false")
+    if expected_runtime_summary.get("prohibited_body_value_stored") is not False:
+        mismatches.append("prohibited_body_value_stored_not_false")
+    if artifact_writer_cli_metadata.get("unsafe_value_stored") is not False:
+        mismatches.append("artifact_writer_cli_unsafe_value_stored_not_false")
+    if artifact_writer_cli_metadata.get("raw_stdout_body_value_stored") is not False:
+        mismatches.append("artifact_raw_stdout_body_value_stored_not_false")
+    if artifact_writer_cli_metadata.get("raw_stderr_body_value_stored") is not False:
+        mismatches.append("artifact_raw_stderr_body_value_stored_not_false")
+
+    if case_kind == "valid":
+        if expected_runtime_summary.get("artifact_writer_cli_output_body_free") is not True:
+            mismatches.append("valid_actual_invocation_output_body_free_not_true")
+        if expected_runtime_summary.get("runtime_actual_invocation_safety_scan_passed") is not True:
+            mismatches.append("valid_actual_invocation_safety_scan_not_true")
+        if expected_runtime_summary.get("runtime_actual_invocation_fail_closed") is not False:
+            mismatches.append("valid_actual_invocation_fail_closed_not_false")
+        if expected_runtime_summary.get("file_writing_detected") is not False:
+            mismatches.append("valid_file_writing_detected_not_false")
+        if expected_runtime_summary.get("artifact_body_generation_invoked") is not False:
+            mismatches.append("valid_artifact_body_generation_invoked_not_false")
+        if expected_runtime_summary.get("manifest_writer_invoked") is not False:
+            mismatches.append("valid_manifest_writer_invoked_not_false")
+        if _summary_true_sentinels(expected_runtime_summary):
+            mismatches.append("valid_actual_invocation_summary_sentinel_present")
+    elif expected_status in {"fail_closed", "usage_error", "mismatch"}:
+        if expected_runtime_summary.get("runtime_actual_invocation_safety_scan_passed") is not False:
+            mismatches.append("invalid_actual_invocation_safety_scan_not_false")
+        if reason not in {"unsupported_schema_version", "mismatched_expected_status"}:
+            if expected_runtime_summary.get("runtime_actual_invocation_fail_closed") is not True:
+                mismatches.append("invalid_actual_invocation_fail_closed_not_true")
+
+    for label, value in (
+        ("request_relative_fixture_path", request_metadata.get("relative_fixture_path")),
+        ("pointer_relative_fixture_path", pointer_metadata.get("relative_fixture_path")),
+        ("pointer_relative_repo_path", pointer_metadata.get("relative_repo_path")),
+    ):
+        if not isinstance(value, str) or _unsafe_metadata_path(value):
+            mismatches.append(f"{label}_unsafe")
+
+
 def _validate_sentinel_policy(
     case_kind: str,
     case_metadata: Mapping[str, Any],
     request_metadata: Mapping[str, Any],
     pointer_metadata: Mapping[str, Any],
     artifact_writer_cli_metadata: Mapping[str, Any],
+    expected_runtime_summary: Mapping[str, Any],
     expected_error: Mapping[str, Any],
     mismatches: list[str],
 ) -> None:
@@ -1030,7 +1452,14 @@ def _validate_sentinel_policy(
     if case_kind == "valid":
         if marker != "none":
             mismatches.append("valid_case_forbidden_marker_not_none")
-    elif marker != reason:
+    elif (
+        marker
+        != (
+            REASON_FORBIDDEN_MARKERS.get(reason, reason)
+            if _fixture_schema_family(case_metadata) == "v0.2"
+            else reason
+        )
+    ):
         mismatches.append("forbidden_marker_reason_mismatch")
 
     if expected_error.get("unsafe_value_stored") is not False:
@@ -1060,16 +1489,34 @@ def _validate_sentinel_policy(
         "ambiguous_file_writing_target": artifact_writer_cli_metadata.get(
             "ambiguous_file_writing_target"
         ),
+        **{
+            field_name: artifact_writer_cli_metadata.get(field_name)
+            for field_name in ACTUAL_INVOCATION_ARTIFACT_SENTINEL_FIELDS
+        },
+        **{
+            field_name: expected_runtime_summary.get(field_name)
+            for field_name in ACTUAL_INVOCATION_SUMMARY_SENTINEL_FIELDS
+        },
     }
     true_sentinels = {key for key, value in sentinel_sources.items() if value is True}
     if case_kind == "valid" and true_sentinels:
         mismatches.append("valid_case_sentinel_present")
+    schema_family = _fixture_schema_family(case_metadata)
     expected_sentinel = {
         "unexpected_artifact_body_generation_request": (
             "artifact_body_generation_requested"
         ),
         "unexpected_manifest_writer_request": "manifest_writer_requested",
     }.get(reason, reason)
+    if schema_family == "v0.2":
+        expected_sentinel = {
+            "raw_stdout_body_present": "raw_stdout_body_detected",
+            "raw_stderr_body_present": "raw_stderr_body_detected",
+            "file_writing_detected": "file_writing_detected",
+            "artifact_body_generation_invoked": "artifact_body_generation_invoked",
+            "manifest_writer_invoked": "manifest_writer_invoked",
+            "unsupported_schema_version": "unsupported_schema_present",
+        }.get(reason, expected_sentinel)
     if case_kind == "invalid" and expected_sentinel in ALLOWED_SENTINEL_FIELDS:
         if expected_sentinel not in true_sentinels:
             mismatches.append("expected_sentinel_not_present")
@@ -1089,6 +1536,54 @@ def _scan_for_forbidden_content(
 ) -> None:
     for payload in payloads:
         _scan_value(payload, mismatches)
+
+
+def _fixture_schema_family(case_metadata: Mapping[str, Any]) -> str:
+    schema_version = case_metadata.get("schema_version")
+    if schema_version == CASE_METADATA_SCHEMA_VERSION:
+        return "v0.1"
+    if schema_version == CASE_METADATA_SCHEMA_VERSION_V0_2:
+        return "v0.2"
+    return "unknown"
+
+
+def _runtime_mode(case_metadata: Mapping[str, Any]) -> str:
+    if _fixture_schema_family(case_metadata) == "v0.2":
+        value = case_metadata.get("runtime_mode")
+        return value if isinstance(value, str) else "unknown"
+    return "plan_only"
+
+
+def _summary_true_sentinels(
+    expected_runtime_summary: Mapping[str, Any],
+) -> set[str]:
+    return {
+        field_name
+        for field_name in ACTUAL_INVOCATION_SUMMARY_SENTINEL_FIELDS
+        if expected_runtime_summary.get(field_name) is True
+    }
+
+
+def _unsafe_metadata_path(value: str) -> bool:
+    private_markers = (
+        "/",
+        "~",
+        "file://",
+        "\\",
+        "s3://",
+        "gs://",
+        "az://",
+        ".ssh",
+        ".aws",
+        ".config",
+    )
+    parts = value.split("/")
+    return (
+        not value
+        or value.startswith(private_markers)
+        or ".." in parts
+        or LOCAL_ABSOLUTE_PATH_PATTERN.search(value) is not None
+    )
 
 
 def _scan_value(value: Any, mismatches: list[str], key_path: tuple[str, ...] = ()) -> None:
@@ -1147,6 +1642,8 @@ def _case_input_error(
         expected_status="input_error",
         expected_reason_code=reason,
         expected_exit_code_category="nonzero",
+        fixture_schema_family="unknown",
+        runtime_mode="unknown",
         matched=False,
         input_error=True,
         mismatch_reasons=(reason,),
