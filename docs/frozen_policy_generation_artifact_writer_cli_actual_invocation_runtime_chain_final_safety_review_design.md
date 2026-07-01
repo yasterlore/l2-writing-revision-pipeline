@@ -362,7 +362,17 @@ the wrapper, change workflow files, connect manifest writer integration,
 enable file writing, use real data, compute metrics, or claim production
 readiness.
 
-## 25. Non-Claims
+## 25. Step534 Fixture Update Design Status
+
+Step534 adds the docs-only / planning-only fixture update design for the
+future `plan-only-bridge`. It recommends no fixture update and does not change
+fixture JSON, add fixture roots, change validators, change runtime
+implementation, change Python code/tests, change Makefile, change the wrapper,
+change workflow files, implement artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.
+
+## 26. Non-Claims
 
 This final safety review design does not claim:
 
@@ -377,7 +387,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 26. Public-Safe Checklist
+## 27. Public-Safe Checklist
 
 - no raw logs
 - no full job output

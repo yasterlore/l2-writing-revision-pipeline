@@ -290,7 +290,17 @@ code/tests, change Makefile, change the wrapper, change workflow files,
 connect manifest writer integration, enable file writing, use real data,
 compute metrics, or claim production readiness.
 
-## 16. Failure Interpretation
+## 16. Step534 Fixture Update Design Status
+
+Step534 adds the docs-only / planning-only fixture update design. It
+recommends no fixture update for the initial `plan-only-bridge` and does not
+change fixture JSON, add fixture roots, change validators, change runtime
+implementation, change Python code/tests, change Makefile, change the wrapper,
+change workflow files, implement artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.
+
+## 17. Failure Interpretation
 
 Future target failure means the fixture validator failed or the CLI invocation
 failed. It may indicate a fixture metadata, sentinel policy, consistency, or
@@ -306,7 +316,7 @@ Future target failure does not prove:
 Raw stdout/stderr and payloads must not be copied into docs or reports.
 Interpret failures through public-safe reason codes only.
 
-## 17. Non-Claims
+## 18. Non-Claims
 
 This Makefile target design does not claim:
 
@@ -323,7 +333,7 @@ This Makefile target design does not claim:
 - a Makefile target has been added
 - release-quality wrapper inclusion
 
-## 18. Public-Safe Checklist
+## 19. Public-Safe Checklist
 
 - no raw logs
 - no full job output

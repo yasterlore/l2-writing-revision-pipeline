@@ -525,7 +525,17 @@ code/tests, change Makefile, change the wrapper, change workflow files,
 connect manifest writer integration, enable file writing, use real data,
 compute metrics, or claim production readiness.
 
-## 28. Failure Interpretation
+## 28. Step534 Fixture Update Design Status
+
+Step534 adds the docs-only / planning-only fixture update design. It
+recommends no fixture update for the initial `plan-only-bridge` and does not
+change fixture JSON, add fixture roots, change validators, change runtime
+implementation, change Python code/tests, change Makefile, change the wrapper,
+change workflow files, implement artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.
+
+## 29. Failure Interpretation
 
 Future validator failure means a metadata fixture contract, sentinel policy,
 or consistency issue.
@@ -540,7 +550,7 @@ Future validator failure does not prove:
 Raw stdout/stderr and payloads must not be copied into docs or reports.
 Failure reports should use public-safe reason codes only.
 
-## 29. Non-Claims
+## 30. Non-Claims
 
 This fixture validator design does not claim:
 
@@ -556,7 +566,7 @@ This fixture validator design does not claim:
 - runtime actual invocation correctness generally
 - Makefile or release-quality integration
 
-## 30. Public-Safe Checklist
+## 31. Public-Safe Checklist
 
 - no raw logs
 - no full job output

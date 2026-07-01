@@ -369,7 +369,17 @@ code/tests, change Makefile, change the wrapper, change workflow files,
 connect manifest writer integration, enable file writing, use real data,
 compute metrics, or claim production readiness.
 
-## 18. Public-Safe Checklist
+## 18. Step534 Fixture Update Design Status
+
+Step534 adds the docs-only / planning-only fixture update design. It
+recommends no fixture update for the initial `plan-only-bridge` and does not
+change fixture JSON, add fixture roots, change validators, change runtime
+implementation, change Python code/tests, change Makefile, change the wrapper,
+change workflow files, implement artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.
+
+## 19. Public-Safe Checklist
 
 - no raw logs
 - no full job output

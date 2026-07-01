@@ -4746,3 +4746,17 @@ generation integration, change fixture JSON, change validators, change Python
 code/tests, change Makefile, change the release-quality wrapper, change
 workflow files, connect manifest writer integration, enable file writing, use
 real data, compute metrics, or claim production readiness.
+
+## 32. Step534 Artifact Body Generation Runtime Integration Fixture Update Design
+
+For Step534, review the
+[artifact body generation runtime integration fixture update design](frozen_policy_generation_artifact_body_generation_runtime_integration_fixture_update_design.md).
+Confirm it is design-only / planning-only and recommends no fixture update for
+the initial `plan-only-bridge`.
+
+Confirm it does not change fixture JSON, add a fixture root, change
+validators, change runtime implementation, change Python code/tests, change
+Makefile, change the release-quality wrapper, change workflow files, implement
+artifact body generation integration, connect manifest writer integration,
+enable file writing, use real data, compute metrics, or claim production
+readiness.

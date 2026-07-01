@@ -649,3 +649,15 @@ JSON change, validator change, Python/test change, Makefile change, wrapper
 change, workflow change, manifest writer integration, file writing, real-data
 use, metric use, model performance evidence, real-data readiness evidence, or
 production readiness evidence.
+
+## Step534 Artifact Body Generation Runtime Integration Fixture Update Design
+
+Step534 adds the docs-only / planning-only
+[artifact body generation runtime integration fixture update design](../frozen_policy_generation_artifact_body_generation_runtime_integration_fixture_update_design.md)
+for the future `plan-only-bridge`. It recommends no fixture update for the
+initial runtime mode and adds no fixture JSON change, fixture root, validator
+change, runtime implementation change, Python/test change, Makefile change,
+wrapper change, workflow change, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, model
+performance evidence, real-data readiness evidence, or production readiness
+evidence.

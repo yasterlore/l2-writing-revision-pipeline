@@ -528,7 +528,20 @@ This runtime integration refinement design does not claim:
 - runtime actual invocation correctness generally
 - runtime refinement implementation
 
-## 22. Public-Safe Checklist
+## 22. Step534 Fixture Update Design Status
+
+Step534 adds the docs-only / planning-only fixture update design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_fixture_update_design.md`
+
+It recommends no fixture update for the initial `plan-only-bridge`. It does
+not change fixture JSON, add fixture roots, change validators, change runtime
+implementation, change Python code/tests, change Makefile, change the wrapper,
+change workflow files, implement artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.
+
+## 23. Public-Safe Checklist
 
 - no raw logs
 - no full job output

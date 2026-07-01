@@ -523,7 +523,17 @@ code/tests, change Makefile, change the wrapper, change workflow files,
 connect manifest writer integration, enable file writing, use real data,
 compute metrics, or claim production readiness.
 
-## 29. Failure Interpretation
+## 29. Step534 Fixture Update Design Status
+
+Step534 adds the docs-only / planning-only fixture update design. It
+recommends no fixture update for the initial `plan-only-bridge` and does not
+change fixture JSON, add fixture roots, change validators, change runtime
+implementation, change Python code/tests, change Makefile, change the wrapper,
+change workflow files, implement artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.
+
+## 30. Failure Interpretation
 
 Future failure interpretation:
 
@@ -538,7 +548,7 @@ Future failure interpretation:
   file-writing is explicitly in scope
 - raw stdout/stderr and payloads must not be copied into docs or reports
 
-## 30. Non-Claims
+## 31. Non-Claims
 
 This fixture contract design does not claim:
 
@@ -554,7 +564,7 @@ This fixture contract design does not claim:
 - runtime actual invocation correctness generally
 - Makefile or release-quality integration
 
-## 31. Public-Safe Checklist
+## 32. Public-Safe Checklist
 
 - no raw logs
 - no full job output
