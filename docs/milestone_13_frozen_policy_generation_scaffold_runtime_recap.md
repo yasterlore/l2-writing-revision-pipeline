@@ -2046,6 +2046,17 @@ written, no artifact body is produced, and no performance metric is computed.
   Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
   body generation integration, manifest writer integration, file writing,
   real-data use, metric use, or production readiness claims.
+- Step518: added the docs-only public-safe remote/manual run record workflow
+  design for the Step517 wrapper check:
+  [Frozen policy generation artifact writer CLI actual invocation runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_remote_run_record_workflow.md).
+  This defines future status marker fields, target runtime summary fields,
+  safety review, interpretation rules, failure interpretation, and the
+  proposed future status marker path. It does not create a status marker,
+  change workflow files, change the wrapper, change Makefile, change
+  Python code/tests, change fixture JSON, change runtime implementation,
+  connect artifact body generation integration, connect manifest writer
+  integration, enable file writing, use real data, compute metrics, or claim
+  production readiness.
 
 ## Related Documents
 

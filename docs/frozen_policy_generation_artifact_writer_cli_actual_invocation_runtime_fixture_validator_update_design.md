@@ -490,3 +490,16 @@ Step517 does not change this validator, fixture JSON, Python code/tests,
 Makefile, workflow files, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claims.
+
+## 28. Step518 Remote Run Record Workflow Design Status
+
+Step518 adds the docs-only / public-safe remote/manual run record workflow
+design for the Step517 wrapper check:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_remote_run_record_workflow.md)
+
+It does not create a remote status marker, change workflow files, change the
+wrapper, change Makefile, change Python code/tests, change fixture JSON,
+change this validator, change runtime implementation, connect artifact body
+generation integration, connect manifest writer integration, enable file
+writing, use real data, compute metrics, or claim production readiness.

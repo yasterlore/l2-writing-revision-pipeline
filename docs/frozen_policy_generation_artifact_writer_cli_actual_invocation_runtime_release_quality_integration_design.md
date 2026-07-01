@@ -315,3 +315,19 @@ This design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 16. Step518 Remote Run Record Workflow Design Status
+
+Step518 adds the docs-only / public-safe remote/manual run record workflow
+design for the Step517 wrapper check:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime release-quality remote run record workflow](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_remote_run_record_workflow.md)
+
+It defines future status marker fields, target runtime summary fields,
+related release-quality chain summary policy, safety review, interpretation
+rules, failure interpretation, and the proposed future status marker path. It
+does not create a remote status marker, change workflow files, change the
+release-quality wrapper, change Makefile, change Python code/tests, change
+fixture JSON, change runtime implementation, connect artifact body generation
+integration, connect manifest writer integration, enable file writing, use
+real data, compute metrics, or claim production readiness.

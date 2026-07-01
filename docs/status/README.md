@@ -470,3 +470,14 @@ No remote status marker, workflow change, Makefile change, Python/test change,
 fixture JSON change, runtime implementation change, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claim is added.
+
+## Step518 Runtime Actual Invocation Remote Run Record Workflow Design
+
+Step518 adds the docs-only / public-safe
+[runtime actual invocation remote run record workflow design](../frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_remote_run_record_workflow.md)
+for a future remote/manual Release Quality status marker covering the Step517
+wrapper check. No remote status marker is created here, and no workflow,
+wrapper, Makefile, Python/test, fixture JSON, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, model performance evidence, real-data readiness
+evidence, or production readiness evidence is added.
