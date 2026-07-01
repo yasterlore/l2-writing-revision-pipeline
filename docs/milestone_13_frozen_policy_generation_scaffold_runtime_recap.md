@@ -2057,6 +2057,17 @@ written, no artifact body is produced, and no performance metric is computed.
   connect artifact body generation integration, connect manifest writer
   integration, enable file writing, use real data, compute metrics, or claim
   production readiness.
+- Step519: added the public-safe pass-only metadata-only body-free remote run
+  status marker for the Step517 wrapper check:
+  [Learner-state frozen policy generation artifact writer CLI actual invocation runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_remote_run_status.md).
+  The marker records the selected synthetic fixture case summary and
+  public-safe remote run metadata only. It stores no raw logs, no full job
+  output, no fixture/request/pointer/expected bodies, no raw stdout/stderr
+  bodies, no artifact body payload, no manifest body, no generated policy
+  body, no real data, and no performance metric bodies. It does not change
+  workflow files, the wrapper, Makefile, Python code/tests, fixture JSON,
+  runtime implementation, artifact body generation integration, manifest
+  writer integration, file writing, or production readiness claims.
 
 ## Related Documents
 

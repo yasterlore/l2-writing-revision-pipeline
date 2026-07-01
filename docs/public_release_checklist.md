@@ -4541,3 +4541,21 @@ Makefile, change Python code/tests, change fixture JSON, change runtime
 implementation, connect artifact body generation integration, connect
 manifest writer integration, enable file writing, use real data, compute
 metrics, or claim production readiness.
+
+## 17. Step519 Runtime Actual Invocation Remote Status Marker
+
+For Step519, review the public-safe status marker:
+
+[artifact writer CLI actual invocation runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_remote_run_status.md).
+
+Confirm it records only pass-only / metadata-only / body-free remote run
+metadata and target runtime summary fields for the Step517 wrapper check.
+Confirm raw logs, full job output, copied GitHub log blocks, fixture JSON
+body, request / pointer / expected body, raw stdout/stderr body, artifact
+body payload, manifest body, generated policy body, raw rows, logits,
+private paths, absolute paths, raw learner text, real participant data, and
+performance metric bodies are not stored. Confirm it does not claim artifact
+writer CLI actual invocation correctness generally, runtime actual invocation
+correctness generally, artifact body generation integration correctness,
+manifest writer integration correctness, real-data readiness, model
+performance, or production readiness.

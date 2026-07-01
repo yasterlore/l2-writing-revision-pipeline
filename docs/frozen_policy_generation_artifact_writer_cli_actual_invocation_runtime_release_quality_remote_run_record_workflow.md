@@ -321,3 +321,20 @@ This workflow design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 15. Step519 Remote Status Marker Status
+
+Step519 creates the public-safe pass-only metadata-only body-free status
+marker for the Step517 wrapper check:
+
+[Learner-state frozen policy generation artifact writer CLI actual invocation runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_remote_run_status.md)
+
+The marker records actual remote/manual Release Quality metadata and the
+target runtime summary without raw logs, full job output, fixture bodies,
+request / pointer / expected bodies, raw stdout/stderr bodies, artifact body
+payload, manifest body, generated policy body, real participant data, or
+performance metric bodies. It does not change workflow files, the wrapper,
+Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data readiness evidence, model performance evidence, or production
+readiness evidence.

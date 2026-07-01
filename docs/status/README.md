@@ -481,3 +481,20 @@ wrapper, Makefile, Python/test, fixture JSON, runtime implementation, artifact
 body generation integration, manifest writer integration, file writing,
 real-data use, metric use, model performance evidence, real-data readiness
 evidence, or production readiness evidence is added.
+
+## Step519 Runtime Actual Invocation Remote Run Status Marker
+
+Step519 adds the available public-safe status marker:
+
+[Learner-state frozen policy generation artifact writer CLI actual invocation runtime release-quality remote run status](learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_remote_run_status.md)
+
+The marker records that the Step517 actual invocation metadata-only runtime
+smoke was included in an actual remote/manual Release Quality run and produced
+a pass-only metadata-only body-free summary for
+`valid/valid_actual_invocation_minimal_metadata_only`.
+
+Raw logs are not stored. Full job output is not stored. This is not artifact
+writer CLI actual invocation correctness evidence generally, not runtime
+actual invocation correctness evidence generally, not artifact body generation
+integration evidence, not manifest writer integration evidence, and not
+production readiness evidence.

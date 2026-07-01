@@ -503,3 +503,15 @@ wrapper, change Makefile, change Python code/tests, change fixture JSON,
 change this validator, change runtime implementation, connect artifact body
 generation integration, connect manifest writer integration, enable file
 writing, use real data, compute metrics, or claim production readiness.
+
+## 29. Step519 Remote Status Marker Status
+
+Step519 creates the public-safe pass-only metadata-only body-free remote run
+status marker for the Step517 wrapper check:
+
+[Learner-state frozen policy generation artifact writer CLI actual invocation runtime release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_release_quality_remote_run_status.md)
+
+It does not change this validator, fixture JSON, Python code/tests, Makefile,
+workflow files, release-quality wrapper, runtime implementation, artifact body
+generation integration, manifest writer integration, file writing, real-data
+use, metric use, or production readiness claims.
