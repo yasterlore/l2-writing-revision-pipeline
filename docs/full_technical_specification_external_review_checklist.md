@@ -191,8 +191,9 @@ covered as fixture-only evidence:
 - 192 metadata-only JSON files
 - 1 fixture README
 - Step500 static validator module / CLI / focused tests implemented
+- Step502 standalone Makefile target implemented
 - runtime actual invocation not implemented
-- Makefile target, release-quality wrapper, and workflow unchanged
+- release-quality wrapper and workflow unchanged
 
 Do not treat this fixture root as artifact writer CLI actual invocation
 correctness, artifact body generation integration correctness, manifest writer
@@ -211,6 +212,21 @@ missing-root handling.
 Do not treat this validator as artifact writer CLI actual invocation
 correctness, artifact body generation integration correctness, manifest writer
 integration correctness, production readiness, real-data readiness, or model
+performance evidence.
+
+## 9.3 Step502 Makefile Target Review
+
+Confirm the Step502 standalone Makefile target runs only the Step500 static
+validator CLI:
+
+- `check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures`
+
+Reviewers should confirm the target output remains public-safe summary-only,
+matches the 32 case / 192 JSON aggregate counts, and does not change
+release-quality wrapper behavior or workflow files. Do not treat the target as
+artifact writer CLI actual invocation correctness evidence, artifact body
+generation integration evidence, manifest writer integration evidence,
+production readiness evidence, real-data readiness evidence, or model
 performance evidence.
 
 ## 10. Rust Crate Review

@@ -298,9 +298,11 @@ Related recap:
   artifact writer CLI actual invocation correctness or production readiness.
 - [Frozen policy generation artifact writer CLI actual invocation fixture validator Makefile target design](../frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_makefile_target_design.md):
   Step501 docs-only / planning-only standalone Makefile target design for the
-  Step500 validator CLI. It is not a status marker, does not implement a
-  Makefile target, is not release-quality integrated, and does not claim
-  artifact writer CLI actual invocation correctness or production readiness.
+  Step500 validator CLI. Step502 implements the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures`.
+  It is not a status marker, is not release-quality integrated, and does not
+  claim artifact writer CLI actual invocation correctness or production
+  readiness.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

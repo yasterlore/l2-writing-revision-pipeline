@@ -429,19 +429,26 @@ change workflow files, change Python code/tests, change fixture JSON, update
 runtime actual invocation, perform artifact writer CLI actual invocation, or
 enable file writing.
 
+Step502 implements the standalone Makefile target for this validator:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures`
+
+Step502 does not change release-quality, change workflow files, change Python
+code/tests, change fixture JSON, update runtime actual invocation, perform
+artifact writer CLI actual invocation, or enable file writing.
+
 ## 18. Planned Follow-Up Steps
 
 Possible follow-up steps:
 
-1. Step502: actual invocation fixture validator Makefile target implementation
-2. Step503: actual invocation runtime update design
-3. Step504: actual invocation runtime implementation update
-4. Step505: release-quality integration design
-5. Step506: release-quality wrapper integration
-6. Step507: remote/manual run record workflow design
-7. Step508: remote status marker
+1. Step503: actual invocation runtime update design
+2. Step504: actual invocation runtime implementation update
+3. Step505: release-quality integration design
+4. Step506: release-quality wrapper integration
+5. Step507: remote/manual run record workflow design
+6. Step508: remote status marker
 
-Step501 does not start these follow-up steps.
+Step502 does not start these follow-up steps.
 
 ## 19. Non-Claims
 

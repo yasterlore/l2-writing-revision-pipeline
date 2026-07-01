@@ -4318,6 +4318,16 @@ connect artifact body generation integration, connect manifest writer
 integration, write files, use real data, use metrics, or claim production
 readiness.
 
+For Step502, review the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures`.
+Confirm it calls only the Step500 static validator CLI for the Step498 fixture
+root and emits public-safe summary-only output. Confirm it does not change the
+release-quality wrapper, change workflow files, change Python code/tests,
+change fixture JSON, update runtime actual invocation, perform artifact writer
+CLI actual invocation, connect artifact body generation integration, connect
+manifest writer integration, write files, use real data, use metrics, or claim
+production readiness.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

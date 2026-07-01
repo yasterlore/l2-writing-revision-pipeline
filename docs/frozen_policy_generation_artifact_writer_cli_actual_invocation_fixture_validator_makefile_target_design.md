@@ -81,6 +81,16 @@ Recommended help text:
 
 Step501 does not add this target to the Makefile.
 
+Step502 implements this standalone Makefile target in the Makefile:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures`
+
+The implementation calls the Step500 validator CLI with the command above. It
+does not add release-quality wrapper integration, change workflow files, change
+Python code/tests, change fixture JSON, update runtime actual invocation,
+perform artifact writer CLI actual invocation, connect artifact body generation
+integration, connect manifest writer integration, or enable file writing.
+
 ## 6. Expected Safe Output
 
 The future Makefile target should preserve the Step500 validator's body-free
@@ -186,7 +196,7 @@ Recommended staging:
 - later separate step: remote/manual run record workflow design
 - later separate step: remote status marker
 
-Step501 does not add the proposed target to release-quality. Release-quality
+Step502 does not add the target to release-quality. Release-quality
 wrapper integration should remain separate from standalone target
 implementation.
 

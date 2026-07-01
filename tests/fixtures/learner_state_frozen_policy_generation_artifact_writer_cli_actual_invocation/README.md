@@ -97,7 +97,7 @@ learner-state estimator correctness.
 - validator implemented: yes, Step500 static module / CLI / focused tests
 - runtime actual invocation update implemented: no
 - artifact writer CLI actual invocation implemented: no
-- Makefile target added: no
+- Makefile target added: yes, Step502 standalone validator target
 - release-quality wrapper changed: no
 - workflow changed: no
 - artifact body generation integration implemented: no
@@ -119,5 +119,5 @@ Step501 Makefile target design:
 
 - design doc: `docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_makefile_target_design.md`
 - proposed target: `check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures`
-- implementation status: design-only; Makefile target not added
+- implementation status: implemented as standalone target in Step502
 - release-quality status: not integrated

@@ -208,7 +208,7 @@ specification content.
 | artifact writer validators | writer fixture and CLI integration validators | 12, 16, 19 | covered | Strong coverage. |
 | artifact writer CLI integration runtime fixture validator | runtime fixture validator | 12, 16, 19, 21 | covered | Release-quality static validation status noted. |
 | artifact writer CLI integration runtime module | runtime module, focused tests, Step491 standalone Makefile target, and Step493 wrapper inclusion | 12, 16, 19, 21 | covered | Step489 metadata-only runtime boundary and Step493 release-quality runtime smoke inclusion noted. |
-| artifact writer CLI actual invocation fixture validator | Step500 static validator | 11, 21, Appendix D | covered after Step500 | Validator module / CLI / focused tests exist; Makefile and release-quality integration remain future work. |
+| artifact writer CLI actual invocation fixture validator | Step500 static validator and Step502 standalone target | 11, 21, Appendix D | covered after Step502 | Validator module / CLI / focused tests and standalone Makefile target exist; release-quality integration remains future work. |
 | artifact body validators | fixture/file-writing/isolated modules | 12, 15, 19 | covered | Exact module-by-module counts can be expanded. |
 | manifest writer validators | fixture/runtime/file-writing/isolated/production modules | 12, 15, 19 | covered | Strong family coverage. |
 

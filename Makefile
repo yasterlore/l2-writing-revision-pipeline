@@ -23,6 +23,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-artifact-writer-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures
+.PHONY: check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime
 .PHONY: check-learner-state-frozen-policy-generation-artifact-writer-runtime
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-fixtures
@@ -70,6 +71,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-artifact-writer-fixtures  Validate frozen policy generation artifact writer fixtures"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fixtures  Validate artifact writer CLI integration fixture contracts"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures  Validate artifact writer CLI integration runtime fixture contracts"
+	@echo "  check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures  Run artifact writer CLI actual invocation fixture validation"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime  Run artifact writer CLI integration runtime smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-writer-runtime  Run frozen policy generation artifact writer runtime smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-fixtures  Validate frozen policy generation artifact body fixtures"
@@ -170,6 +172,9 @@ check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-fix
 
 check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime-fixtures:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime
+
+check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation
 
 check-learner-state-frozen-policy-generation-artifact-writer-cli-integration-runtime:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime --fixture-case valid/valid_minimal_metadata_runtime_pass

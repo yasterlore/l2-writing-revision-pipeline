@@ -499,3 +499,16 @@ change fixture JSON, update runtime actual invocation, perform artifact writer
 CLI actual invocation, connect artifact body generation integration, connect
 manifest writer integration, enable file writing, use real data, compute
 metrics, or claim production readiness.
+
+## 24. Step502 Makefile Target Implementation Status
+
+Step502 adds the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures`
+
+The target runs the Step500 validator CLI against the Step498 fixture root. It
+does not change the release-quality wrapper, change workflow files, change
+Python code/tests, change fixture JSON, update runtime actual invocation,
+perform artifact writer CLI actual invocation, connect artifact body
+generation integration, connect manifest writer integration, enable file
+writing, use real data, compute metrics, or claim production readiness.
