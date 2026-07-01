@@ -2116,6 +2116,15 @@ written, no artifact body is produced, and no performance metric is computed.
   implementation, implement artifact body generation integration, connect
   manifest writer integration, enable file writing, use real data, compute
   metrics, or claim production readiness.
+- Step525: implemented the static public-safe artifact body generation
+  integration fixture validator module / CLI / focused tests for the Step523
+  fixture root. The validator uses schema
+  `learner_state_frozen_policy_generation_artifact_body_generation_integration_fixture_validation_v0.1`,
+  validates 28 cases and 196 JSON files, and emits aggregate metadata-only
+  output. It does not change Makefile, the wrapper, workflow files, fixture
+  JSON, runtime implementation, artifact body generation integration, manifest
+  writer integration, file writing, real-data use, metric use, or production
+  readiness claims.
 
 ## Related Documents
 

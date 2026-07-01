@@ -4619,3 +4619,18 @@ code/tests, change Makefile, change the wrapper, change workflow files, change
 fixture JSON, change runtime implementation, implement artifact body
 generation integration, connect manifest writer integration, enable file
 writing, use real data, compute metrics, or claim production readiness.
+
+## 23. Step525 Artifact Body Generation Integration Fixture Validator Implementation
+
+For Step525, review the validator module, focused tests, and docs:
+
+- `python/learner_state/frozen_policy_generation_artifact_body_generation_integration_fixture_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_integration_fixture_validation.py`
+- [artifact body generation integration fixture validator design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_design.md)
+
+Confirm the validator is static, public-safe, metadata-only, and validates the
+Step523 fixture root with 28 cases and 196 JSON files. Confirm it does not
+change Makefile, change the wrapper, change workflow files, change fixture
+JSON, change runtime implementation, implement artifact body generation
+integration, connect manifest writer integration, enable file writing, use
+real data, compute metrics, or claim production readiness.

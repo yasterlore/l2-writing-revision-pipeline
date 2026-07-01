@@ -432,7 +432,20 @@ implement artifact body generation integration, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
 
-## 20. Failure Interpretation
+## 20. Step525 Fixture Validator Implementation Status
+
+Step525 implements the static public-safe fixture validator module / CLI /
+focused tests for the Step523 fixture root:
+
+`python/learner_state/frozen_policy_generation_artifact_body_generation_integration_fixture_validation.py`
+
+The implementation validates aggregate metadata and public-safe reason codes
+only. It does not change Makefile, the release-quality wrapper, workflow
+files, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.
+
+## 21. Failure Interpretation
 
 Future failure interpretation:
 
@@ -447,7 +460,7 @@ Future failure interpretation:
   file-writing is explicitly in scope
 - raw stdout/stderr and payloads must not be copied into docs or reports
 
-## 21. Non-Claims
+## 22. Non-Claims
 
 This fixture contract design does not claim:
 
@@ -461,9 +474,9 @@ This fixture contract design does not claim:
 - learner-state estimator correctness
 - artifact writer CLI actual invocation correctness generally
 - runtime actual invocation correctness generally
-- fixture validator implementation
+- Makefile or release-quality integration
 
-## 22. Public-Safe Checklist
+## 23. Public-Safe Checklist
 
 - no raw logs
 - no full job output

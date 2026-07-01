@@ -261,11 +261,14 @@ use, metric use, or production readiness claims.
 
 Step523 adds the synthetic metadata-only artifact body generation integration
 fixture root with 28 cases, 196 JSON files, and seven JSON files per case.
-The root records a fixture-only bridge from actual invocation runtime summary
-metadata to artifact body generation boundary metadata. It does not implement
-a validator, runtime integration, artifact body generation integration,
-manifest writer integration, file writing, real-data use, metric use, or
-production readiness claims.
+Step525 adds the static public-safe validator module / CLI / focused tests
+for that root, using validation schema
+`learner_state_frozen_policy_generation_artifact_body_generation_integration_fixture_validation_v0.1`
+and aggregate split pass 6 / usage_error 1 / fail_closed 20 / mismatch 1.
+This validates fixture metadata only. It does not implement runtime
+integration, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.
 
 ## 11. Final Safety Review Result
 

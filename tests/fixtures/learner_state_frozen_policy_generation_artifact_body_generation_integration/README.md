@@ -171,6 +171,18 @@ implement artifact body generation integration, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
 
+## Validator Implementation
+
+Step525 implements the static public-safe fixture validator module / CLI /
+focused tests:
+
+`python/learner_state/frozen_policy_generation_artifact_body_generation_integration_fixture_validation.py`
+
+The validator checks this fixture root without invoking runtime code,
+generating artifact bodies, invoking manifest writer code, writing files,
+computing metrics, using real data, or claiming production readiness. It emits
+aggregate metadata-only output and public-safe reason code counts only.
+
 ## Non-Claims
 
 These fixtures do not claim:

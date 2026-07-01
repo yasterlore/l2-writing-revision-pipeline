@@ -267,7 +267,16 @@ fixture JSON, runtime implementation, artifact body generation integration,
 manifest writer integration, file writing, real-data use, metric use, or
 production readiness claims.
 
-## 16. Non-Claims
+## 16. Step525 Fixture Validator Implementation Status
+
+Step525 implements the static public-safe artifact body generation integration
+fixture validator module / CLI / focused tests. This remains fixture-only
+validation for the artifact body chain. It does not change Makefile, the
+wrapper, workflow files, fixture JSON, runtime implementation, artifact body
+generation integration, manifest writer integration, file writing,
+real-data use, metric use, or production readiness claims.
+
+## 17. Non-Claims
 
 This final safety review design does not claim:
 
@@ -282,7 +291,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 17. Public-Safe Checklist
+## 18. Public-Safe Checklist
 
 - no raw logs
 - no full job output

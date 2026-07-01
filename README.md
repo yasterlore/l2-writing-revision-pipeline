@@ -131,7 +131,8 @@ At a high level, it runs:
   artifact writer CLI integration runtime smoke target remains standalone and
   metadata-only until a later release-quality step
 - artifact body generation integration fixture root metadata, added as
-  fixture-only contract evidence without validator/runtime integration
+  fixture-only contract evidence with a standalone validator module but without
+  Makefile or release-quality integration
 - artifact body fixture, generation, safe-metadata generation, file-writing
   fixture, and isolated write checks
 - manifest writer fixture, runtime fixture, no-file runtime, file-writing

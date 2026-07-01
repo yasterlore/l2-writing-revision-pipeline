@@ -285,7 +285,7 @@ integration correctness, manifest writer integration correctness, production
 readiness, real-data readiness, or model performance evidence.
 
 Confirm the Step523 artifact body generation integration fixture root is
-covered as fixture-only evidence:
+covered as fixture-only evidence and Step525 static validator evidence:
 
 - `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration/`
 - 28 case directories
@@ -293,6 +293,11 @@ covered as fixture-only evidence:
 - 7 JSON files per case
 - 1 fixture README
 - v0.1 integration metadata schema family
+- validator module:
+  `python/learner_state/frozen_policy_generation_artifact_body_generation_integration_fixture_validation.py`
+- validation schema:
+  `learner_state_frozen_policy_generation_artifact_body_generation_integration_fixture_validation_v0.1`
+- aggregate split: pass 6 / usage_error 1 / fail_closed 20 / mismatch 1
 
 Do not treat this fixture root as artifact body generation integration
 correctness, manifest writer integration correctness, production readiness,
