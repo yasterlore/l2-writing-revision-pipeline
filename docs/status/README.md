@@ -300,14 +300,14 @@ Related recap:
   correctness or production readiness.
 - `python/learner_state/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation.py`:
   Step500 static validator module / CLI for the Step498 fixture root. It is
-  not a status marker, is not Makefile or release-quality integrated yet, does
+  not a status marker, is not included in Makefile or the release-quality wrapper yet, does
   not perform artifact writer CLI actual invocation, and does not claim
   artifact writer CLI actual invocation correctness or production readiness.
 - [Frozen policy generation artifact writer CLI actual invocation fixture validator Makefile target design](../frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_makefile_target_design.md):
   Step501 docs-only / planning-only standalone Makefile target design for the
   Step500 validator CLI. Step502 implements the standalone Makefile target
   `check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures`.
-  It is not a status marker, is not release-quality integrated, and does not
+  It is not a status marker, is not included in the release-quality wrapper, and does not
   claim artifact writer CLI actual invocation correctness or production
   readiness.
 - [Frozen policy generation artifact writer CLI actual invocation fixture validator release-quality integration design](../frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_integration_design.md):
@@ -584,3 +584,14 @@ changes, workflow changes, Python/test changes, fixture JSON changes, runtime
 implementation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, model performance
 evidence, real-data readiness evidence, or production readiness evidence.
+
+## Step528 Artifact Body Generation Integration Fixture Validator Release-Quality Integration Design
+
+Step528 adds the docs-only / planning-only
+[artifact body generation integration fixture validator release-quality integration design](../frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md)
+for future wrapper inclusion of the Step527 standalone target. It creates no
+status marker and adds no wrapper changes, workflow changes, Makefile changes,
+Python/test changes, fixture JSON changes, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, model performance evidence, real-data readiness
+evidence, or production readiness evidence.

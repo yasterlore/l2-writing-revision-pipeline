@@ -301,7 +301,20 @@ implementation, implement artifact body generation integration, connect
 manifest writer integration, enable file writing, use real data, compute
 metrics, or claim production readiness.
 
-## 19. Non-Claims
+## 19. Step528 Fixture Validator Release-Quality Integration Design Status
+
+Step528 adds the docs-only / planning-only release-quality integration design
+for the artifact body generation integration fixture validator:
+
+[Frozen policy generation artifact body generation integration fixture validator release-quality integration design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md)
+
+It proposes future wrapper inclusion for the Step527 standalone target and
+does not change the wrapper, workflow files, Makefile, Python code/tests,
+fixture JSON, runtime implementation, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claims.
+
+## 20. Non-Claims
 
 This final safety review design does not claim:
 
@@ -316,7 +329,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 20. Public-Safe Checklist
+## 21. Public-Safe Checklist
 
 - no raw logs
 - no full job output

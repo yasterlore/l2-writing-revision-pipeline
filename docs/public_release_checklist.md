@@ -4661,3 +4661,16 @@ Python code/tests, change fixture JSON, change runtime implementation,
 implement artifact body generation integration, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
+
+## 26. Step528 Artifact Body Generation Integration Fixture Validator Release-Quality Integration Design
+
+For Step528, review the docs-only / planning-only
+[artifact body generation integration fixture validator release-quality integration design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md).
+Confirm it only designs future wrapper inclusion for the Step527 standalone
+target, including label, command, insertion point, expected aggregate output,
+reason-code counts, safety boundary, implementation checks, and staging.
+Confirm it does not change the wrapper, change workflow files, change
+Makefile, change Python code/tests, change fixture JSON, change runtime
+implementation, implement artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.

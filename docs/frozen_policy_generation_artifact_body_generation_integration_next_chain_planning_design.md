@@ -392,7 +392,19 @@ implementation, implement artifact body generation integration, connect
 manifest writer integration, enable file writing, use real data, compute
 metrics, or claim production readiness.
 
-## 22. Public-Safe Checklist
+## 22. Step528 Release-Quality Integration Design Status
+
+Step528 adds the docs-only / planning-only release-quality integration design
+for the Step527 standalone target:
+
+[Frozen policy generation artifact body generation integration fixture validator release-quality integration design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md)
+
+It does not change the wrapper, workflow files, Makefile, Python code/tests,
+fixture JSON, runtime implementation, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claims.
+
+## 23. Public-Safe Checklist
 
 - no raw logs
 - no full job output

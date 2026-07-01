@@ -2143,9 +2143,20 @@ written, no artifact body is produced, and no performance metric is computed.
   runtime implementation, artifact body generation integration, manifest writer
   integration, file writing, real-data use, metric use, or production
   readiness status.
+- Step528: added the docs-only / planning-only release-quality integration
+  design for the Step527 standalone target:
+  [Frozen policy generation artifact body generation integration fixture
+  validator release-quality integration design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md).
+  It proposes a future wrapper label, command, insertion point, expected
+  aggregate output, reason-code counts, safety boundary, and implementation
+  checks without changing the wrapper, workflow, Makefile, Python code/tests,
+  fixture JSON, runtime implementation, artifact body generation integration,
+  manifest writer integration, file writing, real-data use, metric use, or
+  production readiness status.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body generation integration fixture validator release-quality integration design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation artifact body generation integration fixture validator Makefile target design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)

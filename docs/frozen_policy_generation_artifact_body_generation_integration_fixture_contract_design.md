@@ -467,7 +467,19 @@ JSON, change runtime implementation, implement artifact body generation
 integration, connect manifest writer integration, enable file writing, use
 real data, compute metrics, or claim production readiness.
 
-## 23. Failure Interpretation
+## 23. Step528 Release-Quality Integration Design Status
+
+Step528 adds the docs-only / planning-only release-quality integration design
+for the Step527 standalone target:
+
+[Frozen policy generation artifact body generation integration fixture validator release-quality integration design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md)
+
+It does not change the wrapper, workflow files, Makefile, Python code/tests,
+fixture JSON, runtime implementation, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claims.
+
+## 24. Failure Interpretation
 
 Future failure interpretation:
 
@@ -482,7 +494,7 @@ Future failure interpretation:
   file-writing is explicitly in scope
 - raw stdout/stderr and payloads must not be copied into docs or reports
 
-## 24. Non-Claims
+## 25. Non-Claims
 
 This fixture contract design does not claim:
 
@@ -498,7 +510,7 @@ This fixture contract design does not claim:
 - runtime actual invocation correctness generally
 - Makefile or release-quality integration
 
-## 25. Public-Safe Checklist
+## 26. Public-Safe Checklist
 
 - no raw logs
 - no full job output

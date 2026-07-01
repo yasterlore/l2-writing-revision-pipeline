@@ -219,7 +219,22 @@ Suggested follow-up chain:
 Step527 completes the standalone Makefile target implementation. Step528 and
 later steps remain future work.
 
-## 10. Failure Interpretation
+## 10. Step528 Release-Quality Integration Design Status
+
+Step528 adds the docs-only / planning-only release-quality integration design
+for the Step527 standalone target:
+
+[Frozen policy generation artifact body generation integration fixture validator release-quality integration design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md)
+
+It proposes a future wrapper label, command, insertion point after actual
+invocation runtime smoke and before artifact body fixture validation, expected
+aggregate output, reason-code counts, safety boundary, implementation checks,
+and staging. It does not change the release-quality wrapper, workflow files,
+Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, or production readiness claims.
+
+## 11. Failure Interpretation
 
 Future target failure means the fixture validator failed or the CLI invocation
 failed. It may indicate a fixture metadata, sentinel policy, consistency, or
@@ -235,7 +250,7 @@ Future target failure does not prove:
 Raw stdout/stderr and payloads must not be copied into docs or reports.
 Interpret failures through public-safe reason codes only.
 
-## 11. Non-Claims
+## 12. Non-Claims
 
 This Makefile target design does not claim:
 
@@ -252,7 +267,7 @@ This Makefile target design does not claim:
 - a Makefile target has been added
 - release-quality wrapper inclusion
 
-## 12. Public-Safe Checklist
+## 13. Public-Safe Checklist
 
 - no raw logs
 - no full job output

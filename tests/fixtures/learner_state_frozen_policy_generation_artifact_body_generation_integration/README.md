@@ -209,6 +209,19 @@ artifact body generation integration, connect manifest writer integration,
 enable file writing, use real data, compute metrics, or claim production
 readiness.
 
+## Validator Release-Quality Integration Design
+
+Step528 adds the docs-only / planning-only release-quality integration design:
+
+`docs/frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md`
+
+The design proposes future wrapper inclusion for the Step527 standalone target
+after actual invocation runtime smoke and before artifact body fixture
+validation. It does not change the wrapper, workflow files, Makefile, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.
+
 ## Non-Claims
 
 These fixtures do not claim:

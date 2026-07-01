@@ -466,7 +466,21 @@ artifact body generation integration, connect manifest writer integration,
 enable file writing, use real data, compute metrics, or claim production
 readiness.
 
-## 22. Failure Interpretation
+## 22. Step528 Release-Quality Integration Design Status
+
+Step528 adds the docs-only / planning-only release-quality integration design
+for the Step527 standalone target:
+
+[Frozen policy generation artifact body generation integration fixture validator release-quality integration design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md)
+
+It proposes a future wrapper label, command, insertion point, expected
+aggregate output, reason-code counts, safety boundary, implementation checks,
+and staging. It does not change the wrapper, workflow files, Makefile, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.
+
+## 23. Failure Interpretation
 
 Future validator failure means a metadata fixture contract, sentinel policy,
 or consistency issue.
@@ -481,7 +495,7 @@ Future validator failure does not prove:
 Raw stdout/stderr and payloads must not be copied into docs or reports.
 Failure reports should use public-safe reason codes only.
 
-## 23. Non-Claims
+## 24. Non-Claims
 
 This fixture validator design does not claim:
 
@@ -497,7 +511,7 @@ This fixture validator design does not claim:
 - runtime actual invocation correctness generally
 - Makefile or release-quality integration
 
-## 24. Public-Safe Checklist
+## 25. Public-Safe Checklist
 
 - no raw logs
 - no full job output
