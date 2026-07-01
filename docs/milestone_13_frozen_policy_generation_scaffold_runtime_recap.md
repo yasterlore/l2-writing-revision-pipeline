@@ -1976,6 +1976,15 @@ written, no artifact body is produced, and no performance metric is computed.
   invocation, connect artifact body generation integration, connect manifest
   writer integration, write files, use real data, compute metrics, or claim
   production readiness.
+- Step510: added the docs-only / planning-only validator update design for
+  future v0.1/v0.2 validation of the 54-case / 324-JSON runtime fixture root:
+  [Frozen policy generation artifact writer CLI actual invocation runtime fixture validator update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_validator_update_design.md).
+  This does not change workflow files, change the release-quality wrapper,
+  change Makefile, change Python code/tests, change fixture JSON, update the
+  fixture validator, update runtime actual invocation, perform artifact writer
+  CLI actual invocation, connect artifact body generation integration, connect
+  manifest writer integration, write files, use real data, compute metrics, or
+  claim production readiness.
 
 ## Related Documents
 

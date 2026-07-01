@@ -448,6 +448,7 @@ production readiness.
 - actual invocation runtime update design: yes, Step507 docs-only / planning-only
 - actual invocation runtime fixture update design: yes, Step508 docs-only / planning-only
 - actual invocation runtime fixture cases added: yes, Step509 v0.2 metadata-only cases
+- actual invocation runtime fixture validator update design: yes, Step510 docs-only / planning-only
 - runtime fixture validator updated for v0.2 cases: no
 - actual invocation implemented: no
 - workflow changed: no
@@ -481,3 +482,17 @@ code/tests, change Makefile, change the release-quality wrapper, change
 workflow files, connect artifact body generation integration, connect manifest
 writer integration, enable file writing, use real data, compute metrics, or
 claim production readiness.
+
+## Actual Invocation Runtime Fixture Validator Update Design
+
+Step510 adds the docs-only / planning-only validator update design for future
+v0.1/v0.2 validation of this 54-case / 324-JSON runtime fixture root:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime fixture validator update design](../../../docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_validator_update_design.md)
+
+Step510 does not update the validator, change Python code/tests, change
+Makefile, change the release-quality wrapper, change workflow files, change
+fixture JSON, implement runtime actual invocation, perform artifact writer CLI
+actual invocation, connect artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.

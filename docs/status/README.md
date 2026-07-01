@@ -346,6 +346,12 @@ Related recap:
   cases. It is not a status marker, does not update validators, and does not
   claim artifact writer CLI actual invocation correctness, runtime actual
   invocation correctness, or production readiness.
+- [Frozen policy generation artifact writer CLI actual invocation runtime fixture validator update design](../frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_validator_update_design.md):
+  Step510 docs-only / planning-only validator update design for future
+  v0.1/v0.2 validation of the 54-case / 324-JSON runtime fixture root. It is
+  not a status marker, does not update validators, and does not claim artifact
+  writer CLI actual invocation correctness, runtime actual invocation
+  correctness, or production readiness.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

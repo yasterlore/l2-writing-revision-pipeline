@@ -670,3 +670,18 @@ code/tests, change Makefile, change the release-quality wrapper, change
 workflow files, connect artifact body generation integration, connect manifest
 writer integration, enable file writing, use real data, compute metrics, or
 claim production readiness.
+
+## 31. Step510 Validator Update Design Status
+
+Step510 adds the docs-only / planning-only validator update design for future
+v0.1/v0.2 validation of the Step509-expanded runtime fixture root:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime fixture validator update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_validator_update_design.md)
+
+This fixture contract document remains unchanged. Step510 does not update the
+validator, change Python code/tests, change Makefile, change the
+release-quality wrapper, change workflow files, change fixture JSON, implement
+runtime actual invocation, perform artifact writer CLI actual invocation,
+connect artifact body generation integration, connect manifest writer
+integration, enable file writing, use real data, compute metrics, or claim
+production readiness.

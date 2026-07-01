@@ -4396,6 +4396,15 @@ invocation implementation, artifact writer CLI actual invocation, artifact
 body generation integration, manifest writer integration, file writing,
 real-data use, metric use, or production readiness claims.
 
+For Step510, review the docs-only
+[artifact writer CLI actual invocation runtime fixture validator update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_validator_update_design.md).
+Confirm it designs only future validator v0.2 support for the 54-case /
+324-JSON runtime fixture root. Confirm it does not change validators, Python
+code/tests, Makefile, the wrapper, workflow files, fixture JSON, runtime
+actual invocation implementation, artifact writer CLI actual invocation,
+artifact body generation integration, manifest writer integration, file
+writing, real-data use, metric use, or production readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
