@@ -183,6 +183,18 @@ generating artifact bodies, invoking manifest writer code, writing files,
 computing metrics, using real data, or claiming production readiness. It emits
 aggregate metadata-only output and public-safe reason code counts only.
 
+## Validator Makefile Target Design
+
+Step526 adds the docs-only / planning-only standalone Makefile target design:
+
+`docs/frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md`
+
+The design proposes a future target for running the Step525 validator CLI
+against this fixture root. It does not change Makefile, the wrapper, workflow
+files, Python code/tests, fixture JSON, runtime implementation, artifact body
+generation integration, manifest writer integration, file writing, real-data
+use, metric use, or production readiness claims.
+
 ## Non-Claims
 
 These fixtures do not claim:

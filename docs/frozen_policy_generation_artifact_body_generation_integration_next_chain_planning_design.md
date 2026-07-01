@@ -370,7 +370,19 @@ wrapper, workflow files, fixture JSON, runtime implementation, artifact body
 generation integration, manifest writer integration, file writing,
 real-data use, metric use, or production readiness claims.
 
-## 20. Public-Safe Checklist
+## 20. Step526 Makefile Target Design Status
+
+Step526 adds the docs-only / planning-only standalone Makefile target design
+for running the Step525 validator CLI through a future Makefile target:
+
+[Frozen policy generation artifact body generation integration fixture validator Makefile target design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md)
+
+It does not change Makefile, the wrapper, workflow files, Python code/tests,
+fixture JSON, runtime implementation, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claims.
+
+## 21. Public-Safe Checklist
 
 - no raw logs
 - no full job output

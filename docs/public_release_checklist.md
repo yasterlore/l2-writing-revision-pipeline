@@ -4634,3 +4634,15 @@ change Makefile, change the wrapper, change workflow files, change fixture
 JSON, change runtime implementation, implement artifact body generation
 integration, connect manifest writer integration, enable file writing, use
 real data, compute metrics, or claim production readiness.
+
+## 24. Step526 Artifact Body Generation Integration Fixture Validator Makefile Target Design
+
+For Step526, review the docs-only / planning-only
+[artifact body generation integration fixture validator Makefile target design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md).
+Confirm it only designs a future standalone Makefile target for running the
+Step525 validator CLI with the Step523 fixture root. Confirm it does not
+change Makefile, change the wrapper, change workflow files, change Python
+code/tests, change fixture JSON, change runtime implementation, implement
+artifact body generation integration, connect manifest writer integration,
+enable file writing, use real data, compute metrics, or claim production
+readiness.

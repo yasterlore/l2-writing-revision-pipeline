@@ -438,7 +438,23 @@ workflow files, fixture JSON, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claims.
 
-## 20. Failure Interpretation
+## 20. Step526 Makefile Target Design Status
+
+Step526 adds the docs-only / planning-only standalone Makefile target design
+for the Step525 validator CLI:
+
+[Frozen policy generation artifact body generation integration fixture validator Makefile target design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md)
+
+It proposes
+`check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures`,
+the help text, command, expected aggregate output, public-safe reason-code
+counts, safety boundary, implementation checks, and future release-quality
+staging. It does not change Makefile, the release-quality wrapper, workflow
+files, Python code/tests, fixture JSON, runtime implementation, artifact body
+generation integration, manifest writer integration, file writing, real-data
+use, metric use, or production readiness claims.
+
+## 21. Failure Interpretation
 
 Future validator failure means a metadata fixture contract, sentinel policy,
 or consistency issue.
@@ -453,7 +469,7 @@ Future validator failure does not prove:
 Raw stdout/stderr and payloads must not be copied into docs or reports.
 Failure reports should use public-safe reason codes only.
 
-## 21. Non-Claims
+## 22. Non-Claims
 
 This fixture validator design does not claim:
 
@@ -469,7 +485,7 @@ This fixture validator design does not claim:
 - runtime actual invocation correctness generally
 - Makefile or release-quality integration
 
-## 22. Public-Safe Checklist
+## 23. Public-Safe Checklist
 
 - no raw logs
 - no full job output

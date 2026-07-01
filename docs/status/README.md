@@ -563,3 +563,14 @@ Makefile changes, wrapper changes, workflow changes, fixture JSON changes,
 runtime implementation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, model performance
 evidence, real-data readiness evidence, or production readiness evidence.
+
+## Step526 Artifact Body Generation Integration Fixture Validator Makefile Target Design
+
+Step526 adds the docs-only / planning-only
+[artifact body generation integration fixture validator Makefile target design](../frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md)
+for a future standalone target running the Step525 validator CLI. It creates no
+status marker and adds no Makefile changes, wrapper changes, workflow changes,
+Python/test changes, fixture JSON changes, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, model performance evidence, real-data readiness
+evidence, or production readiness evidence.

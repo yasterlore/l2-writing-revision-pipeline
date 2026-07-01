@@ -445,7 +445,19 @@ files, fixture JSON, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claims.
 
-## 21. Failure Interpretation
+## 21. Step526 Makefile Target Design Status
+
+Step526 adds the docs-only / planning-only standalone Makefile target design
+for the Step525 validator CLI:
+
+[Frozen policy generation artifact body generation integration fixture validator Makefile target design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md)
+
+It does not change Makefile, the release-quality wrapper, workflow files,
+Python code/tests, fixture JSON, runtime implementation, artifact body
+generation integration, manifest writer integration, file writing, real-data
+use, metric use, or production readiness claims.
+
+## 22. Failure Interpretation
 
 Future failure interpretation:
 
@@ -460,7 +472,7 @@ Future failure interpretation:
   file-writing is explicitly in scope
 - raw stdout/stderr and payloads must not be copied into docs or reports
 
-## 22. Non-Claims
+## 23. Non-Claims
 
 This fixture contract design does not claim:
 
@@ -476,7 +488,7 @@ This fixture contract design does not claim:
 - runtime actual invocation correctness generally
 - Makefile or release-quality integration
 
-## 23. Public-Safe Checklist
+## 24. Public-Safe Checklist
 
 - no raw logs
 - no full job output

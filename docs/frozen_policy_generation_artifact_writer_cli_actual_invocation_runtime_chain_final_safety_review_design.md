@@ -276,7 +276,21 @@ wrapper, workflow files, fixture JSON, runtime implementation, artifact body
 generation integration, manifest writer integration, file writing,
 real-data use, metric use, or production readiness claims.
 
-## 17. Non-Claims
+## 17. Step526 Fixture Validator Makefile Target Design Status
+
+Step526 adds the docs-only / planning-only standalone Makefile target design
+for the artifact body generation integration fixture validator:
+
+[Frozen policy generation artifact body generation integration fixture validator Makefile target design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md)
+
+It proposes a future target, help text, command, expected aggregate output,
+public-safe reason-code counts, safety boundary, and staging. It does not
+change Makefile, release-quality wrapper, workflow files, Python code/tests,
+fixture JSON, runtime implementation, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claims.
+
+## 18. Non-Claims
 
 This final safety review design does not claim:
 
@@ -291,7 +305,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 18. Public-Safe Checklist
+## 19. Public-Safe Checklist
 
 - no raw logs
 - no full job output

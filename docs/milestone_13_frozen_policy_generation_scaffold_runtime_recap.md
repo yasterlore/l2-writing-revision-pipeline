@@ -2125,9 +2125,20 @@ written, no artifact body is produced, and no performance metric is computed.
   JSON, runtime implementation, artifact body generation integration, manifest
   writer integration, file writing, real-data use, metric use, or production
   readiness claims.
+- Step526: added the docs-only / planning-only Makefile target design for the
+  Step525 artifact body generation integration fixture validator CLI:
+  [Frozen policy generation artifact body generation integration fixture
+  validator Makefile target design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md).
+  It proposes the future standalone target name, help text, command, expected
+  aggregate output, reason-code counts, safety boundary, and staging without
+  changing Makefile, wrapper, workflow, Python code/tests, fixture JSON,
+  runtime implementation, artifact body generation integration, manifest
+  writer integration, file writing, real-data use, metric use, or production
+  readiness status.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body generation integration fixture validator Makefile target design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)
 - [Frozen policy generation artifact body file writing fixture validator CLI design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_cli_design.md)
 - [Frozen policy generation artifact body file writing fixture validator Makefile target design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_makefile_target_design.md)
