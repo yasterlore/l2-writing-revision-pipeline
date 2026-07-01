@@ -338,3 +338,17 @@ Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
 body generation integration, manifest writer integration, file writing,
 real-data readiness evidence, model performance evidence, or production
 readiness evidence.
+
+## 16. Step520 Final Safety Review Design Status
+
+Step520 adds the docs-only final safety review design for the Step496-Step519
+actual invocation / `actual_invocation_metadata_only` runtime chain:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime chain final safety review design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_chain_final_safety_review_design.md)
+
+It summarizes completed scope, safety boundaries, release-quality status,
+remote marker status, risks / limitations, future handoff recommendations,
+and non-claims. It does not change workflow files, the wrapper, Makefile,
+Python code/tests, fixture JSON, runtime implementation, artifact body
+generation integration, manifest writer integration, file writing, real-data
+use, metric use, or production readiness claims.

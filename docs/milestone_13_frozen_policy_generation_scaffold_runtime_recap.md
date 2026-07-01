@@ -2068,6 +2068,16 @@ written, no artifact body is produced, and no performance metric is computed.
   workflow files, the wrapper, Makefile, Python code/tests, fixture JSON,
   runtime implementation, artifact body generation integration, manifest
   writer integration, file writing, or production readiness claims.
+- Step520: added the docs-only final safety review design for the Step496
+  through Step519 actual invocation / `actual_invocation_metadata_only`
+  runtime chain:
+  [Frozen policy generation artifact writer CLI actual invocation runtime chain final safety review design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_chain_final_safety_review_design.md).
+  This summarizes completed scope, safety boundaries, release-quality status,
+  remote marker status, risks / limitations, future handoff recommendations,
+  and non-claims. It does not change workflow files, the wrapper, Makefile,
+  Python code/tests, fixture JSON, runtime implementation, artifact body
+  generation integration, manifest writer integration, file writing,
+  real-data use, metric use, or production readiness claims.
 
 ## Related Documents
 

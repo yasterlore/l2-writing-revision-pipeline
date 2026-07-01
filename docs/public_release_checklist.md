@@ -4559,3 +4559,14 @@ writer CLI actual invocation correctness generally, runtime actual invocation
 correctness generally, artifact body generation integration correctness,
 manifest writer integration correctness, real-data readiness, model
 performance, or production readiness.
+
+## 18. Step520 Runtime Actual Invocation Chain Final Safety Review Design
+
+For Step520, review the docs-only
+[artifact writer CLI actual invocation runtime chain final safety review design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_chain_final_safety_review_design.md).
+Confirm it summarizes Step496-Step519 completed scope, safety boundaries,
+remote marker status, risks / limitations, future handoff recommendations,
+and non-claims. Confirm it does not change workflow files, the wrapper,
+Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, or production readiness claims.

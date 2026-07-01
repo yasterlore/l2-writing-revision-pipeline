@@ -498,3 +498,15 @@ writer CLI actual invocation correctness evidence generally, not runtime
 actual invocation correctness evidence generally, not artifact body generation
 integration evidence, not manifest writer integration evidence, and not
 production readiness evidence.
+
+## Step520 Runtime Actual Invocation Chain Final Safety Review Design
+
+Step520 adds the docs-only
+[runtime actual invocation chain final safety review design](../frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_chain_final_safety_review_design.md)
+for the Step496-Step519 chain. It summarizes completed scope, safety
+boundaries, non-claims, risks / limitations, and future handoff
+recommendations. No new status marker is created here, and no workflow,
+wrapper, Makefile, Python/test, fixture JSON, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, model performance evidence, real-data readiness
+evidence, or production readiness evidence is added.

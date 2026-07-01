@@ -162,3 +162,9 @@ Step508 runtime fixture update design:
 - design doc: `docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_fixture_update_design.md`
 - scope: future fixture update design for adapting the existing runtime fixture root to `actual_invocation_metadata_only` mode
 - implementation status: design-only; fixture JSON and runtime actual invocation remain unchanged
+
+Step520 final safety review design:
+
+- design doc: `docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_chain_final_safety_review_design.md`
+- scope: docs-only final safety review for the Step496-Step519 actual invocation / `actual_invocation_metadata_only` runtime chain
+- implementation status: design-only; this fixture root and fixture JSON remain unchanged
