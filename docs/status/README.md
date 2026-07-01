@@ -520,3 +520,15 @@ workflow, wrapper, Makefile, Python/test, fixture JSON, runtime implementation,
 artifact body generation integration, manifest writer integration, file
 writing, real-data use, metric use, model performance evidence, real-data
 readiness evidence, or production readiness evidence.
+
+## Step522 Artifact Body Generation Integration Fixture Contract Design
+
+Step522 adds the docs-only / planning-only
+[artifact body generation integration fixture contract design](../frozen_policy_generation_artifact_body_generation_integration_fixture_contract_design.md)
+for a future synthetic metadata-only bridge from actual invocation runtime
+summary metadata to the artifact body generation boundary. It creates no
+status marker and adds no workflow, wrapper, Makefile, Python/test, fixture
+root, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, model performance evidence, real-data readiness evidence, or production
+readiness evidence.

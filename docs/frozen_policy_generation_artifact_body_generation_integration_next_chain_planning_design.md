@@ -320,7 +320,23 @@ Possible next steps:
 
 Step521 does not proceed to those steps.
 
-## 16. Public-Safe Checklist
+## 16. Step522 Fixture Contract Design Status
+
+Step522 adds the docs-only / planning-only artifact body generation
+integration fixture contract design:
+
+[Frozen policy generation artifact body generation integration fixture contract design](frozen_policy_generation_artifact_body_generation_integration_fixture_contract_design.md)
+
+It proposes a future metadata-only fixture root, case layout, taxonomy,
+schema family, sentinel policy, validator implications, runtime implications,
+and release-quality staging for the artifact body boundary. It does not create
+fixture JSON, implement a validator, change workflow files, change the
+wrapper, change Makefile, change Python code/tests, change runtime
+implementation, implement artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.
+
+## 17. Public-Safe Checklist
 
 - no raw logs
 - no full job output

@@ -527,3 +527,15 @@ It does not change runtime implementation, Python code/tests, workflow files,
 the wrapper, Makefile, fixture JSON, artifact body generation integration,
 manifest writer integration, file writing, real-data use, metric use, or
 production readiness claims.
+
+## 29. Step522 Fixture Contract Design Status
+
+Step522 adds the docs-only / planning-only artifact body generation
+integration fixture contract design:
+
+[Frozen policy generation artifact body generation integration fixture contract design](frozen_policy_generation_artifact_body_generation_integration_fixture_contract_design.md)
+
+It does not change runtime implementation, Python code/tests, workflow files,
+the wrapper, Makefile, fixture JSON, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claims.

@@ -2087,6 +2087,15 @@ written, no artifact body is produced, and no performance metric is computed.
   JSON, runtime implementation, artifact body generation integration, manifest
   writer integration, file writing, real-data use, metric use, or production
   readiness claims.
+- Step522: added the docs-only / planning-only artifact body generation
+  integration fixture contract design:
+  [Frozen policy generation artifact body generation integration fixture contract design](frozen_policy_generation_artifact_body_generation_integration_fixture_contract_design.md).
+  This proposes a future metadata-only fixture root, layout, taxonomy, schema
+  family, sentinel policy, validator/runtime implications, and
+  release-quality staging. It does not change workflow files, the wrapper,
+  Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
+  body generation integration, manifest writer integration, file writing,
+  real-data use, metric use, or production readiness claims.
 
 ## Related Documents
 

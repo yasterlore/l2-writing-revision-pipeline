@@ -226,7 +226,21 @@ fixture JSON, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
 
-## 13. Non-Claims
+## 13. Step522 Fixture Contract Design Status
+
+Step522 adds the docs-only / planning-only artifact body generation
+integration fixture contract design:
+
+[Frozen policy generation artifact body generation integration fixture contract design](frozen_policy_generation_artifact_body_generation_integration_fixture_contract_design.md)
+
+It continues the future chain handoff by proposing a synthetic metadata-only
+fixture contract for the artifact body boundary. It does not change
+implementation, workflow files, the wrapper, Makefile, Python code/tests,
+fixture JSON, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.
+
+## 14. Non-Claims
 
 This final safety review design does not claim:
 
@@ -241,7 +255,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 14. Public-Safe Checklist
+## 15. Public-Safe Checklist
 
 - no raw logs
 - no full job output

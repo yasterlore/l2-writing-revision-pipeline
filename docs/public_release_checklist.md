@@ -4581,3 +4581,16 @@ the wrapper, Makefile, Python code/tests, fixture JSON, runtime
 implementation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
+
+## 20. Step522 Artifact Body Generation Integration Fixture Contract Design
+
+For Step522, review the docs-only / planning-only
+[artifact body generation integration fixture contract design](frozen_policy_generation_artifact_body_generation_integration_fixture_contract_design.md).
+Confirm it only designs a future synthetic metadata-only fixture contract for
+connecting actual invocation runtime summary metadata to the artifact body
+generation boundary. Confirm it does not create a fixture root, create fixture
+JSON, implement a validator, change workflow files, change the wrapper,
+change Makefile, change Python code/tests, change runtime implementation,
+implement artifact body generation integration, connect manifest writer
+integration, enable file writing, use real data, compute metrics, or claim
+production readiness.
