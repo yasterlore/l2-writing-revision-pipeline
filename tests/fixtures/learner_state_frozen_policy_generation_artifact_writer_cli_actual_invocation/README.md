@@ -93,6 +93,7 @@ learner-state estimator correctness.
 
 - fixture root created: yes, Step498
 - fixture JSON created: yes, 192 metadata-only JSON files
+- validator design: yes, Step499 docs-only / planning-only
 - validator implemented: no
 - runtime actual invocation update implemented: no
 - artifact writer CLI actual invocation implemented: no

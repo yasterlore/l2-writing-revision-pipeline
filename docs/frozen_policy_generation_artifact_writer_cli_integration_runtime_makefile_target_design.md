@@ -403,3 +403,18 @@ validator, update runtime actual invocation, change Python code/tests, change
 the release-quality wrapper, change workflow files, connect artifact body
 generation integration, connect manifest writer integration, enable file
 writing, use real data, compute metrics, or claim production readiness.
+
+## 23. Step499 Actual Invocation Fixture Validator Design Status
+
+Step499 adds the docs-only / planning-only validator design for the Step498
+fixture root:
+
+[Frozen policy generation artifact writer CLI actual invocation fixture validator design](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_design.md)
+
+This Makefile target design remains unchanged. Step499 does not add a Makefile
+target, implement a validator, change Python code/tests, change the
+release-quality wrapper, change workflow files, change fixture JSON, update
+runtime actual invocation, implement artifact writer CLI actual invocation,
+connect artifact body generation integration, connect manifest writer
+integration, enable file writing, use real data, compute metrics, or claim
+production readiness.

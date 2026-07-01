@@ -4284,6 +4284,19 @@ claim artifact writer CLI actual invocation correctness, artifact body
 generation integration correctness, manifest writer integration correctness,
 real-data readiness, model performance, F1, accuracy, ECE, or AURCC.
 
+For Step499, review the docs-only
+[artifact writer CLI actual invocation fixture validator design](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_design.md).
+Confirm it designs only a future validator for the Step498 fixture root. Confirm
+it does not implement a validator, change Python code/tests, change Makefile,
+change the release-quality wrapper, change workflow files, change fixture JSON,
+update runtime actual invocation, implement artifact writer CLI actual
+invocation, connect artifact body generation integration, connect manifest
+writer integration, write files, use real data, use metrics, or claim
+production readiness. Confirm it does not claim artifact writer CLI actual
+invocation correctness, artifact body generation integration correctness,
+manifest writer integration correctness, real-data readiness, model
+performance, F1, accuracy, ECE, or AURCC.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

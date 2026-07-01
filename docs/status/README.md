@@ -286,6 +286,11 @@ Related recap:
   actual invocation validation. It is not a status marker, does not implement a
   validator or actual invocation, and does not claim artifact writer CLI actual
   invocation correctness or production readiness.
+- [Frozen policy generation artifact writer CLI actual invocation fixture validator design](../frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_design.md):
+  Step499 docs-only / planning-only validator design for the Step498 fixture
+  root. It is not a status marker, does not implement a validator or actual
+  invocation, and does not claim artifact writer CLI actual invocation
+  correctness or production readiness.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

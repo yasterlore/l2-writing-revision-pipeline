@@ -1870,6 +1870,15 @@ written, no artifact body is produced, and no performance metric is computed.
   workflow files, connect artifact body generation integration, connect
   manifest writer integration, write files, use real data, compute metrics, or
   claim production readiness.
+- Step499: added the docs-only / planning-only artifact writer CLI actual
+  invocation fixture validator design:
+  [Frozen policy generation artifact writer CLI actual invocation fixture validator design](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_design.md).
+  This does not implement a validator, change Python code/tests, change
+  Makefile, change the release-quality wrapper, change workflow files, change
+  fixture JSON, update runtime actual invocation, implement artifact writer CLI
+  actual invocation, connect artifact body generation integration, connect
+  manifest writer integration, write files, use real data, compute metrics, or
+  claim production readiness.
 
 ## Related Documents
 
