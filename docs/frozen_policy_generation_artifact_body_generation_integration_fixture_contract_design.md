@@ -588,3 +588,16 @@ This fixture contract design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 23. Step535 Runtime Plan-Only Bridge Note
+
+Step535 implements a selected-case runtime bridge using the existing Step523
+fixture root without changing this fixture contract or any fixture JSON. The
+selected case is `valid/valid_minimal_suppressed_metadata_only_bridge`, the
+only supported mode is `plan-only-bridge`, and the runtime schema is
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`.
+
+This note does not add new fixture cases or schemas to the fixture root. The
+runtime CLI does not invoke artifact body generation runtime, call manifest
+writer code, write files, use real data, compute metrics, or claim production
+readiness.

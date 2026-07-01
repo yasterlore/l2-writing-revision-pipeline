@@ -310,6 +310,27 @@ Do not treat this fixture root as artifact body generation integration
 correctness, manifest writer integration correctness, production readiness,
 real-data readiness, or model performance evidence.
 
+Confirm the Step535 artifact body generation runtime integration plan-only
+bridge is documented and scoped:
+
+- module:
+  `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+- focused tests:
+  `python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+- selected fixture case:
+  `valid/valid_minimal_suppressed_metadata_only_bridge`
+- supported mode: `plan-only-bridge`
+- reserved modes: `suppressed-smoke`, `safe-metadata-smoke`
+- runtime schema:
+  `learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`
+
+Confirm this CLI emits selected-case public-safe metadata-only summaries only,
+requires no-file-writing and no-manifest-writer flags for pass, and does not
+invoke artifact body generation runtime, call manifest writer code, write
+files, change fixture JSON, change validators, change Makefile, change the
+release-quality wrapper, change workflow files, use real data, compute
+metrics, or claim production readiness.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

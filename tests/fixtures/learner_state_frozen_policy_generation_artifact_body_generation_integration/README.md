@@ -299,6 +299,26 @@ implement artifact body generation integration, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
 
+## Runtime Integration Plan-Only Bridge
+
+Step535 adds the selected-case runtime module and focused tests:
+
+- `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+
+The runtime uses this existing fixture root without modifying fixture JSON.
+The initial selected case is
+`valid/valid_minimal_suppressed_metadata_only_bridge`, the only supported mode
+is `plan-only-bridge`, and the runtime schema is
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`.
+Reserved `suppressed-smoke` and `safe-metadata-smoke` modes return
+public-safe usage errors. The runtime emits selected-case metadata-only
+summary output only, does not invoke artifact body generation runtime, does
+not call manifest writer code, does not write files, and does not claim
+artifact body generation integration correctness generally, manifest writer
+integration correctness, production readiness, real-data readiness, or model
+performance.
+
 ## Non-Claims
 
 These fixtures do not claim:

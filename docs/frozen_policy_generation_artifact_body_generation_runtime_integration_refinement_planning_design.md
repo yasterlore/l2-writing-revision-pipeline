@@ -437,3 +437,25 @@ metrics, or claim production readiness.
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 18. Step535 Implementation Status
+
+Step535 implements the initial plan-only runtime handoff as a selected-case
+public-safe CLI:
+
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+
+The focused tests are:
+
+`python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+
+The supported mode is `plan-only-bridge`, the selected case is
+`valid/valid_minimal_suppressed_metadata_only_bridge`, and the runtime schema
+is
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`.
+Step535 does not implement `suppressed-smoke` or `safe-metadata-smoke`; those
+reserved modes return public-safe usage errors. It does not invoke artifact
+body generation runtime, call manifest writer code, write files, change
+fixture JSON, change validators, add a Makefile target, change the
+release-quality wrapper, change workflow files, use real data, compute
+metrics, or claim production readiness.

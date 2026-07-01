@@ -281,3 +281,23 @@ This fixture/update design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 16. Step535 Implementation Status
+
+Step535 follows this Option A decision and implements the initial
+`plan-only-bridge` using the existing fixture root and selected case
+`valid/valid_minimal_suppressed_metadata_only_bridge`.
+
+Added implementation files:
+
+- `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+
+The runtime schema is
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`.
+The CLI emits selected-case public-safe metadata-only summaries only.
+Reserved modes `suppressed-smoke` and `safe-metadata-smoke` return
+public-safe usage errors. Step535 does not change fixture JSON, validators,
+Makefile, release-quality wrapper, workflow files, artifact body generation
+runtime invocation, manifest writer integration, file writing, real-data use,
+metric use, or production readiness status.

@@ -375,9 +375,14 @@ Minimal documentation links and coverage notes were applied:
   dependency/runtime/package/workflow versions, per-status-marker indexing,
   Rust crate review notes, logger-web UI behavior notes, and a standalone
   external review checklist
+- Step535 follow-up records the artifact body generation runtime integration
+  `plan-only-bridge` module, CLI, focused tests, selected fixture case,
+  runtime schema, and safety boundaries without adding Makefile,
+  release-quality wrapper, workflow, fixture JSON, manifest writer, file
+  writing, real-data, metric, or production-readiness changes
 
-No implementation, fixture JSON, Makefile, workflow, wrapper, Python, Rust, or
-TypeScript changes were made.
+No fixture JSON, Makefile, workflow, wrapper, Rust, or TypeScript changes were
+made by this coverage note.
 
 ## 20. Coverage Validation Result
 
@@ -412,4 +417,5 @@ privacy/legal/IRB readiness.
 - Later: artifact writer CLI integration runtime remote/manual run record
   staging, separate from this specification coverage work
 - Later: artifact body generation CLI integration design and implementation
+- Later: standalone Makefile target design for the Step535 runtime CLI
 - Later: manifest writer integration design and implementation

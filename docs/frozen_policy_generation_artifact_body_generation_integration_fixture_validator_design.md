@@ -590,3 +590,18 @@ This fixture validator design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 22. Step535 Runtime Plan-Only Bridge Note
+
+Step535 adds
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+and focused tests for a selected-case `plan-only-bridge`. The static fixture
+validator from Step525 remains the aggregate 28-case / 196-JSON validator and
+is not replaced by the Step535 runtime CLI.
+
+The Step535 runtime uses
+`valid/valid_minimal_suppressed_metadata_only_bridge`, emits schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`,
+and does not invoke artifact body generation runtime, call manifest writer
+code, write files, change fixture JSON, change this validator, use real data,
+compute metrics, or claim production readiness.

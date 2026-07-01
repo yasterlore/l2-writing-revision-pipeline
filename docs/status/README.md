@@ -661,3 +661,19 @@ wrapper change, workflow change, artifact body generation integration,
 manifest writer integration, file writing, real-data use, metric use, model
 performance evidence, real-data readiness evidence, or production readiness
 evidence.
+
+## Step535 Artifact Body Generation Runtime Integration Plan-Only Bridge
+
+Step535 adds
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+and focused tests for the selected-case `plan-only-bridge` runtime summary.
+It uses the existing Step523 fixture root and
+`valid/valid_minimal_suppressed_metadata_only_bridge` without changing fixture
+JSON. The runtime schema is
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`.
+
+This is not a remote status marker. It adds no workflow changes, Makefile
+target, release-quality wrapper change, fixture JSON change, validator
+change, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, model performance
+evidence, real-data readiness evidence, or production readiness evidence.

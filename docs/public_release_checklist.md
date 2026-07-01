@@ -4760,3 +4760,22 @@ Makefile, change the release-quality wrapper, change workflow files, implement
 artifact body generation integration, connect manifest writer integration,
 enable file writing, use real data, compute metrics, or claim production
 readiness.
+
+## 33. Step535 Artifact Body Generation Runtime Integration Plan-Only Bridge
+
+For Step535, review
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+and
+`python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_integration.py`.
+Confirm the only supported runtime mode is `plan-only-bridge`, the selected
+fixture case is `valid/valid_minimal_suppressed_metadata_only_bridge`, and the
+runtime schema is
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`.
+
+Confirm `suppressed-smoke` and `safe-metadata-smoke` remain reserved usage
+errors, the CLI requires `--summary-only`, `--no-file-writing`,
+`--no-manifest-writer`, and `--fail-closed-on-unsafe-output`, and it does not
+invoke artifact body generation runtime, call manifest writer code, write
+files, change fixture JSON, change validators, change Makefile, change the
+release-quality wrapper, change workflow files, use real data, compute
+metrics, or claim production readiness.

@@ -398,3 +398,17 @@ This release-quality integration design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 16. Step535 Runtime Plan-Only Bridge Note
+
+Step535 adds a separate selected-case runtime module and focused tests for the
+`plan-only-bridge`:
+
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+
+This release-quality integration design still covers only the static fixture
+validator check added in Step529. The Step535 runtime CLI has no Makefile
+target and is not release-quality integrated in this step; it does not invoke
+artifact body generation runtime, call manifest writer code, write files,
+change fixture JSON, use real data, compute metrics, or claim production
+readiness.

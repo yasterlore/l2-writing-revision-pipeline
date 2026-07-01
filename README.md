@@ -130,9 +130,12 @@ At a high level, it runs:
 - artifact writer CLI integration fixture/runtime-fixture checks; the initial
   artifact writer CLI integration runtime smoke target remains standalone and
   metadata-only until a later release-quality step
-- artifact body generation integration fixture root metadata, added as
-  fixture-only contract evidence with a standalone validator module but without
-  Makefile or release-quality integration
+- artifact body generation integration fixture validation, included through a
+  standalone Makefile target and release-quality wrapper check
+- artifact body generation runtime integration plan-only bridge, available as
+  `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+  over `valid/valid_minimal_suppressed_metadata_only_bridge` with no artifact
+  body runtime invocation, no manifest writer, and no file writing
 - artifact body fixture, generation, safe-metadata generation, file-writing
   fixture, and isolated write checks
 - manifest writer fixture, runtime fixture, no-file runtime, file-writing
@@ -202,6 +205,8 @@ Currently implemented:
   metadata-only root with v0.1 plan-only and v0.2 actual-invocation fixture
   schema support
 - artifact body suppressed and safe-metadata generation CLI checks
+- artifact body generation runtime integration plan-only bridge CLI with schema
+  `learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`
 - artifact body safe-metadata file writing and isolated write validation
 - manifest writer metadata-only no-file runtime
 - manifest writer metadata-only runtime file writing through opt-in
@@ -252,6 +257,7 @@ Not currently implemented or not claimed:
 - [Artifact body generation integration fixtures](tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration/README.md)
 - [Artifact body generation integration fixture validator Makefile target design](docs/frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md)
 - [Artifact body generation integration fixture validator release-quality integration design](docs/frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md)
+- [Artifact body generation runtime integration fixture update design](docs/frozen_policy_generation_artifact_body_generation_runtime_integration_fixture_update_design.md)
 
 ## CI
 

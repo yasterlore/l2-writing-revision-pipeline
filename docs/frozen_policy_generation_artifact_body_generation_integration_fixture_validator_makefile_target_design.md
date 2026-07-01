@@ -357,3 +357,16 @@ This Makefile target design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 14. Step535 Runtime Plan-Only Bridge Note
+
+Step535 adds the separate selected-case runtime module
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+with `plan-only-bridge` mode and schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`.
+
+This Makefile target design remains scoped to the Step525 static fixture
+validator. Step535 does not add a Makefile target for the runtime CLI, does
+not change this validator target, does not change release-quality wrapper or
+workflow files, does not change fixture JSON, and does not invoke artifact
+body generation runtime, manifest writer code, or file writing.

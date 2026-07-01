@@ -288,6 +288,20 @@ code/tests, fixture JSON, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claims.
 
+Step535 adds the selected-case artifact body generation runtime integration
+`plan-only-bridge` module and focused tests:
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`.
+It uses the existing Step523 fixture root and
+`valid/valid_minimal_suppressed_metadata_only_bridge`, emits schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`,
+and keeps `suppressed-smoke` and `safe-metadata-smoke` reserved as
+usage-error modes. It does not invoke artifact body generation runtime, call
+manifest writer code, write files, change fixture JSON, change validators,
+add a Makefile target, change the release-quality wrapper, change workflow
+files, use real data, compute metrics, or claim production readiness,
+real-data readiness, model performance, artifact body generation integration
+correctness generally, or manifest writer integration correctness.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

@@ -482,3 +482,16 @@ metrics, or claim production readiness.
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 16. Step535 Runtime Plan-Only Bridge Note
+
+The chain after this planning document proceeds through Step523-Step534 and
+Step535 adds the initial selected-case `plan-only-bridge` runtime module:
+
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+
+The Step535 runtime remains metadata-only and body-free. It does not invoke
+artifact body generation runtime, call manifest writer code, write files,
+change fixture JSON, add a Makefile target, change release-quality wrapper or
+workflow files, use real data, compute metrics, or claim production
+readiness.

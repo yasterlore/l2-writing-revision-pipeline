@@ -2213,6 +2213,24 @@ written, no artifact body is produced, and no performance metric is computed.
 ## Related Documents
 
 - [Frozen policy generation artifact body generation runtime integration fixture update design](frozen_policy_generation_artifact_body_generation_runtime_integration_fixture_update_design.md)
+- [Frozen policy generation artifact body generation runtime integration module](../python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py)
+
+## Step535 Artifact Body Generation Runtime Integration Plan-Only Bridge
+
+Step535 adds the initial selected-case runtime module and focused tests:
+
+- `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+- `python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+
+The supported mode is `plan-only-bridge` over
+`valid/valid_minimal_suppressed_metadata_only_bridge`, with runtime schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`.
+The reserved `suppressed-smoke` and `safe-metadata-smoke` modes return
+public-safe usage errors. The runtime emits a selected-case public-safe
+summary only, does not invoke artifact body generation runtime, does not call
+manifest writer code, does not write files, does not change fixture JSON or
+validators, and does not claim production readiness, real-data readiness, or
+model performance.
 - [Frozen policy generation artifact body generation runtime integration refinement design](frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_design.md)
 - [Frozen policy generation artifact body generation runtime integration refinement planning design](frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_planning_design.md)
 - [Learner-state frozen policy generation artifact body generation integration fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_status.md)

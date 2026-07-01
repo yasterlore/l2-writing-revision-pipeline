@@ -411,3 +411,19 @@ This final safety review design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 22. Step535 Runtime Plan-Only Bridge Note
+
+After the artifact body generation integration fixture validator chain,
+Step535 adds the selected-case runtime module
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+for `plan-only-bridge` over
+`valid/valid_minimal_suppressed_metadata_only_bridge`.
+
+This remains a metadata-only runtime boundary summary. It does not invoke
+artifact body generation runtime, call the manifest writer, write files,
+change fixture JSON, change validators, change Makefile, change the
+release-quality wrapper, change workflow files, use real data, compute
+metrics, or claim artifact body generation integration correctness generally,
+runtime actual invocation correctness generally, manifest writer integration
+correctness, production readiness, real-data readiness, or model performance.

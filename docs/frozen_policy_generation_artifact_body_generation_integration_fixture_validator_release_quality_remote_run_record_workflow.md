@@ -403,3 +403,14 @@ metrics, or claim production readiness.
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 16. Step535 Runtime Plan-Only Bridge Note
+
+After the Step531 marker and Step532-Step534 planning/design updates, Step535
+adds the selected-case runtime module
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+and focused tests for `plan-only-bridge`. This note does not change the
+remote/manual run record workflow design: no new remote marker, workflow
+change, release-quality wrapper change, Makefile target, fixture JSON change,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claim is added here.
