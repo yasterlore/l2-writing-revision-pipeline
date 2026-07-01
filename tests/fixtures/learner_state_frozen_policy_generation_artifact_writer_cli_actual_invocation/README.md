@@ -114,3 +114,10 @@ Step500 validator implementation:
   pointer body, expected body, raw stdout/stderr body, artifact body payload,
   manifest body, generated policy body, raw rows, logits/probabilities,
   private paths, absolute paths, raw learner text, or real participant data
+
+Step501 Makefile target design:
+
+- design doc: `docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_makefile_target_design.md`
+- proposed target: `check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures`
+- implementation status: design-only; Makefile target not added
+- release-quality status: not integrated

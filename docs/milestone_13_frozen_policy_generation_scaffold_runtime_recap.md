@@ -1890,6 +1890,15 @@ written, no artifact body is produced, and no performance metric is computed.
   release-quality wrapper, change workflow files, change fixture JSON, connect
   artifact body generation integration, connect manifest writer integration,
   write files, use real data, compute metrics, or claim production readiness.
+- Step501: added the docs-only / planning-only Makefile target design for the
+  Step500 artifact writer CLI actual invocation fixture validator:
+  [Frozen policy generation artifact writer CLI actual invocation fixture validator Makefile target design](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_makefile_target_design.md).
+  This does not change Makefile, add the target, change the release-quality
+  wrapper, change workflow files, change Python code/tests, change fixture
+  JSON, update runtime actual invocation, perform artifact writer CLI actual
+  invocation, connect artifact body generation integration, connect manifest
+  writer integration, write files, use real data, compute metrics, or claim
+  production readiness.
 
 ## Related Documents
 

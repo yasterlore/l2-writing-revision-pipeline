@@ -419,20 +419,29 @@ change workflows, change fixture JSON, connect artifact body generation
 integration, connect manifest writer integration, enable file writing, use
 real data, compute metrics, or claim production readiness.
 
+Step501 adds the design-only / planning-only Makefile target design for running
+this validator CLI from a future standalone target:
+
+[Frozen policy generation artifact writer CLI actual invocation fixture validator Makefile target design](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_makefile_target_design.md)
+
+Step501 does not change Makefile, implement the target, change release-quality,
+change workflow files, change Python code/tests, change fixture JSON, update
+runtime actual invocation, perform artifact writer CLI actual invocation, or
+enable file writing.
+
 ## 18. Planned Follow-Up Steps
 
 Possible follow-up steps:
 
-1. Step501: actual invocation fixture validator Makefile target design
-2. Step502: actual invocation fixture validator Makefile target implementation
-3. Step503: actual invocation runtime update design
-4. Step504: actual invocation runtime implementation update
-5. Step505: release-quality integration design
-6. Step506: release-quality wrapper integration
-7. Step507: remote/manual run record workflow design
-8. Step508: remote status marker
+1. Step502: actual invocation fixture validator Makefile target implementation
+2. Step503: actual invocation runtime update design
+3. Step504: actual invocation runtime implementation update
+4. Step505: release-quality integration design
+5. Step506: release-quality wrapper integration
+6. Step507: remote/manual run record workflow design
+7. Step508: remote status marker
 
-Step500 does not start these follow-up steps.
+Step501 does not start these follow-up steps.
 
 ## 19. Non-Claims
 

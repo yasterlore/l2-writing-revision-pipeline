@@ -485,3 +485,17 @@ artifact writer CLI actual invocation, change Makefile, change the
 release-quality wrapper, change workflow files, connect artifact body
 generation integration, connect manifest writer integration, enable file
 writing, use real data, compute metrics, or claim production readiness.
+
+## 23. Step501 Makefile Target Design Status
+
+Step501 adds the docs-only / planning-only Makefile target design for the
+Step500 validator CLI:
+
+[Frozen policy generation artifact writer CLI actual invocation fixture validator Makefile target design](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_makefile_target_design.md)
+
+This does not change Makefile, implement the target, change the
+release-quality wrapper, change workflow files, change Python code/tests,
+change fixture JSON, update runtime actual invocation, perform artifact writer
+CLI actual invocation, connect artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.
