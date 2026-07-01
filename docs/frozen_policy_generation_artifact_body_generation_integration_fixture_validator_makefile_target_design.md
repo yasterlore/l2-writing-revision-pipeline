@@ -255,7 +255,16 @@ code/tests, fixture JSON, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claims.
 
-## 12. Failure Interpretation
+## 12. Step530 Remote Run Record Workflow Design Status
+
+Step530 adds the docs-only remote/manual run record workflow design for future
+public-safe recording of the Step529 wrapper check. It creates no status
+marker and does not change workflow files, the wrapper, Makefile, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.
+
+## 13. Failure Interpretation
 
 Future target failure means the fixture validator failed or the CLI invocation
 failed. It may indicate a fixture metadata, sentinel policy, consistency, or
@@ -271,7 +280,7 @@ Future target failure does not prove:
 Raw stdout/stderr and payloads must not be copied into docs or reports.
 Interpret failures through public-safe reason codes only.
 
-## 13. Non-Claims
+## 14. Non-Claims
 
 This Makefile target design does not claim:
 
@@ -288,7 +297,7 @@ This Makefile target design does not claim:
 - a Makefile target has been added
 - release-quality wrapper inclusion
 
-## 14. Public-Safe Checklist
+## 15. Public-Safe Checklist
 
 - no raw logs
 - no full job output

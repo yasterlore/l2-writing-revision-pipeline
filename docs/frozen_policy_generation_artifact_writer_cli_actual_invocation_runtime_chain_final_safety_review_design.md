@@ -324,7 +324,17 @@ runtime implementation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
 
-## 21. Non-Claims
+## 21. Step530 Fixture Validator Remote Run Record Workflow Design Status
+
+Step530 adds the docs-only remote/manual run record workflow design for future
+public-safe recording of the artifact body generation integration fixture
+validator wrapper check. It creates no status marker and does not change
+workflow files, the wrapper, Makefile, Python code/tests, fixture JSON,
+runtime implementation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.
+
+## 22. Non-Claims
 
 This final safety review design does not claim:
 
@@ -339,7 +349,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 22. Public-Safe Checklist
+## 23. Public-Safe Checklist
 
 - no raw logs
 - no full job output

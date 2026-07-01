@@ -232,6 +232,19 @@ implementation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
 
+## Validator Remote Run Record Workflow Design
+
+Step530 adds the docs-only remote/manual run record workflow design:
+
+`docs/frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_record_workflow.md`
+
+The design is for future public-safe recording of the Step529 wrapper check.
+It does not create a status marker, change workflow files, change the wrapper,
+change Makefile, change Python code/tests, change fixture JSON, change runtime
+implementation, implement artifact body generation integration, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.
+
 ## Non-Claims
 
 These fixtures do not claim:

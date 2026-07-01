@@ -488,7 +488,16 @@ fixture JSON, runtime implementation, artifact body generation integration,
 manifest writer integration, file writing, real-data use, metric use, or
 production readiness claims.
 
-## 25. Failure Interpretation
+## 25. Step530 Remote Run Record Workflow Design Status
+
+Step530 adds the docs-only remote/manual run record workflow design for future
+public-safe recording of the Step529 wrapper check. It creates no status
+marker and does not change workflow files, the wrapper, Makefile, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.
+
+## 26. Failure Interpretation
 
 Future failure interpretation:
 
@@ -503,7 +512,7 @@ Future failure interpretation:
   file-writing is explicitly in scope
 - raw stdout/stderr and payloads must not be copied into docs or reports
 
-## 26. Non-Claims
+## 27. Non-Claims
 
 This fixture contract design does not claim:
 
@@ -519,7 +528,7 @@ This fixture contract design does not claim:
 - runtime actual invocation correctness generally
 - Makefile or release-quality integration
 
-## 27. Public-Safe Checklist
+## 28. Public-Safe Checklist
 
 - no raw logs
 - no full job output

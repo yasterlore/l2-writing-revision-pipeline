@@ -2163,9 +2163,19 @@ written, no artifact body is produced, and no performance metric is computed.
   Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
   body generation integration, manifest writer integration, file writing,
   real-data use, metric use, or production readiness status.
+- Step530: added the docs-only remote/manual run record workflow design for
+  future public-safe recording of the Step529 wrapper check:
+  [Frozen policy generation artifact body generation integration fixture
+  validator release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_record_workflow.md).
+  It does not create a remote status marker, change workflow files, change the
+  release-quality wrapper, change Makefile, change Python code/tests, change
+  fixture JSON, change runtime implementation, implement artifact body
+  generation integration, connect manifest writer integration, enable file
+  writing, use real data, compute metrics, or claim production readiness.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body generation integration fixture validator release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation integration fixture validator release-quality integration design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md)
 - [Frozen policy generation artifact body generation integration fixture validator Makefile target design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_makefile_target_design.md)
 - [Frozen policy generation artifact body file writing fixture validator design](frozen_policy_generation_artifact_body_file_writing_fixture_validator_design.md)

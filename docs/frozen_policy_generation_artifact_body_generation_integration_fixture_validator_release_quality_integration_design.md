@@ -288,7 +288,19 @@ validation over synthetic metadata-only fixtures. It does not replace artifact
 body fixture validation, artifact body generation smoke targets, artifact body
 file-writing checks, or manifest writer checks.
 
-## 13. Failure Interpretation
+## 13. Step530 Remote Run Record Workflow Design Status
+
+Step530 adds the docs-only remote/manual run record workflow design for future
+public-safe recording of the Step529 wrapper check:
+
+[Frozen policy generation artifact body generation integration fixture validator release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_record_workflow.md)
+
+It creates no status marker and does not change workflow files, the wrapper,
+Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, or production readiness claims.
+
+## 14. Failure Interpretation
 
 Future wrapper check failure means the artifact body generation integration
 fixture validator failed inside the release-quality wrapper.
@@ -307,7 +319,7 @@ or production readiness issue. Interpret failures through public-safe reason
 codes only. Raw stdout/stderr and payloads must not be copied into docs or
 reports.
 
-## 14. Non-Claims
+## 15. Non-Claims
 
 This release-quality integration design does not claim:
 
@@ -323,7 +335,7 @@ This release-quality integration design does not claim:
 - runtime actual invocation correctness generally
 - release-quality wrapper inclusion
 
-## 15. Public-Safe Checklist
+## 16. Public-Safe Checklist
 
 - no raw logs
 - no full job output
