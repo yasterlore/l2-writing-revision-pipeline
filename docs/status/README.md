@@ -510,3 +510,13 @@ wrapper, Makefile, Python/test, fixture JSON, runtime implementation, artifact
 body generation integration, manifest writer integration, file writing,
 real-data use, metric use, model performance evidence, real-data readiness
 evidence, or production readiness evidence is added.
+
+## Step521 Artifact Body Generation Integration Next-Chain Planning Design
+
+Step521 adds the docs-only / planning-only
+[artifact body generation integration next-chain planning design](../frozen_policy_generation_artifact_body_generation_integration_next_chain_planning_design.md)
+after the Step520 safety review. It creates no status marker and adds no
+workflow, wrapper, Makefile, Python/test, fixture JSON, runtime implementation,
+artifact body generation integration, manifest writer integration, file
+writing, real-data use, metric use, model performance evidence, real-data
+readiness evidence, or production readiness evidence.

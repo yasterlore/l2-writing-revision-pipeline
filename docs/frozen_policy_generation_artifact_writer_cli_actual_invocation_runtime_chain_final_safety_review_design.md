@@ -211,7 +211,22 @@ Possible next steps:
 
 Step520 does not proceed to those steps.
 
-## 12. Non-Claims
+## 12. Step521 Next-Chain Planning Design Status
+
+Step521 adds the docs-only / planning-only artifact body generation
+integration next-chain planning design:
+
+[Frozen policy generation artifact body generation integration next-chain planning design](frozen_policy_generation_artifact_body_generation_integration_next_chain_planning_design.md)
+
+It recommends starting with an artifact body generation integration fixture
+contract design before any fixture root, validator, runtime, Makefile,
+release-quality, workflow, or status marker work. It does not change
+implementation, workflow files, the wrapper, Makefile, Python code/tests,
+fixture JSON, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.
+
+## 13. Non-Claims
 
 This final safety review design does not claim:
 
@@ -226,7 +241,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 13. Public-Safe Checklist
+## 14. Public-Safe Checklist
 
 - no raw logs
 - no full job output

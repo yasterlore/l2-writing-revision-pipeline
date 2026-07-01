@@ -396,3 +396,15 @@ It does not change this Makefile target design, Makefile, workflow files, the
 wrapper, Python code/tests, fixture JSON, runtime implementation, artifact
 body generation integration, manifest writer integration, file writing,
 real-data use, metric use, or production readiness claims.
+
+## 20. Step521 Next-Chain Planning Design Status
+
+Step521 adds the docs-only / planning-only artifact body generation
+integration next-chain planning design:
+
+[Frozen policy generation artifact body generation integration next-chain planning design](frozen_policy_generation_artifact_body_generation_integration_next_chain_planning_design.md)
+
+It does not change this Makefile target design, Makefile, workflow files, the
+wrapper, Python code/tests, fixture JSON, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, or production readiness claims.

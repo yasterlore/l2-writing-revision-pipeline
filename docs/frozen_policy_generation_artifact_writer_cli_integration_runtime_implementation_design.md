@@ -644,3 +644,15 @@ It does not change this implementation design, runtime implementation, Python
 code/tests, workflow files, the wrapper, Makefile, fixture JSON, artifact body
 generation integration, manifest writer integration, file writing, real-data
 use, metric use, or production readiness claims.
+
+## Step521 Artifact Body Generation Integration Next-Chain Planning Design Status
+
+Step521 adds the docs-only / planning-only artifact body generation
+integration next-chain planning design:
+
+[Frozen policy generation artifact body generation integration next-chain planning design](frozen_policy_generation_artifact_body_generation_integration_next_chain_planning_design.md)
+
+It does not change this implementation design, runtime implementation, Python
+code/tests, workflow files, the wrapper, Makefile, fixture JSON, artifact body
+generation integration, manifest writer integration, file writing, real-data
+use, metric use, or production readiness claims.
