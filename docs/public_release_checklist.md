@@ -4455,3 +4455,14 @@ actual invocation evidence, artifact body generation integration evidence,
 manifest writer integration evidence, file-writing evidence, model
 performance evidence, real-data readiness evidence, or production readiness
 evidence.
+
+## 10. Step512 Runtime Implementation Refinement Design
+
+For Step512, review the docs-only / planning-only
+[artifact writer CLI actual invocation runtime implementation refinement design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_implementation_refinement_design.md).
+Confirm it only refines a future `actual_invocation_metadata_only`
+implementation boundary for the Step489 runtime. Confirm it does not change
+Python code/tests, Makefile, the wrapper, workflow files, fixture JSON,
+runtime actual invocation implementation, artifact writer CLI actual
+invocation, artifact body generation integration, manifest writer integration,
+file writing, real-data use, metric use, or production readiness claims.

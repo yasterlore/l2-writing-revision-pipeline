@@ -408,3 +408,13 @@ runtime actual invocation correctness, artifact writer CLI actual invocation
 correctness, artifact body generation integration correctness, manifest writer
 integration correctness, model performance, real-data readiness, or production
 readiness.
+
+## Step512 Runtime Implementation Refinement Design
+
+Step512 adds the docs-only / planning-only
+[runtime implementation refinement design](../frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_implementation_refinement_design.md)
+for a future Step489 `actual_invocation_metadata_only` runtime update. No
+remote status marker is created here, and no runtime actual invocation,
+artifact writer CLI actual invocation, artifact body generation integration,
+manifest writer integration, file writing, model performance, real-data
+readiness, or production readiness evidence is added.

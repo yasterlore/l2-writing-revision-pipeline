@@ -536,3 +536,17 @@ CLI actual invocation, change fixture JSON, change Makefile target names,
 change the release-quality wrapper, change workflows, connect artifact body
 generation integration, connect manifest writer integration, enable file
 writing, use real data, compute metrics, or claim production readiness.
+
+## Step512 Runtime Implementation Refinement Design Status
+
+Step512 adds the docs-only / planning-only implementation refinement design
+for a future `actual_invocation_metadata_only` update to this runtime module:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime implementation refinement design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_implementation_refinement_design.md)
+
+This implementation design remains unchanged. Step512 does not implement
+runtime actual invocation, perform artifact writer CLI actual invocation,
+change Python code/tests, change fixture JSON, change Makefile, change the
+release-quality wrapper, change workflows, connect artifact body generation
+integration, connect manifest writer integration, enable file writing, use
+real data, compute metrics, or claim production readiness.
