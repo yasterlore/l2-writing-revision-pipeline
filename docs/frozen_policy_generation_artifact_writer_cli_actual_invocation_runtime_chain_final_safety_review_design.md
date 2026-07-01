@@ -342,7 +342,17 @@ output and does not provide artifact body generation integration correctness
 evidence generally, manifest writer integration evidence, production readiness
 evidence, real-data readiness evidence, or model performance evidence.
 
-## 23. Non-Claims
+## 23. Step532 Runtime Refinement Planning Status
+
+Step532 adds the docs-only / planning-only runtime integration refinement
+planning design for the artifact body generation boundary after the Step531
+marker. It does not change runtime implementation, implement artifact body
+generation integration, change fixture JSON, change validators, change
+Makefile, change the wrapper, change workflow files, connect manifest writer
+integration, enable file writing, use real data, compute metrics, or claim
+production readiness.
+
+## 24. Non-Claims
 
 This final safety review design does not claim:
 
@@ -357,7 +367,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 24. Public-Safe Checklist
+## 25. Public-Safe Checklist
 
 - no raw logs
 - no full job output

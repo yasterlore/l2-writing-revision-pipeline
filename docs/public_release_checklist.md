@@ -4720,3 +4720,16 @@ manifest bodies are not stored, generated policy bodies are not stored, and it
 does not claim artifact body generation integration correctness generally,
 manifest writer integration evidence, production readiness, real-data
 readiness, or model performance.
+
+## 30. Step532 Artifact Body Generation Runtime Integration Refinement Planning Design
+
+For Step532, review the
+[artifact body generation runtime integration refinement planning design](frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_planning_design.md).
+Confirm it is design-only / planning-only and proposes future runtime
+refinement modes without implementing them.
+
+Confirm it does not change runtime implementation, implement artifact body
+generation integration, change fixture JSON, change validators, change
+Makefile, change the release-quality wrapper, change workflow files, connect
+manifest writer integration, enable file writing, use real data, compute
+metrics, or claim production readiness.

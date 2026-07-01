@@ -347,7 +347,20 @@ artifact body generation integration correctness evidence generally, manifest
 writer integration evidence, production readiness evidence, real-data
 readiness evidence, or model performance evidence.
 
-## 16. Public-Safe Checklist
+## 16. Step532 Runtime Refinement Planning Status
+
+Step532 adds the docs-only / planning-only runtime integration refinement
+planning design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_planning_design.md`
+
+It does not change runtime implementation, implement artifact body generation
+integration, change fixture JSON, change validators, change Makefile, change
+the wrapper, change workflow files, connect manifest writer integration,
+enable file writing, use real data, compute metrics, or claim production
+readiness.
+
+## 17. Public-Safe Checklist
 
 - no raw logs
 - no full job output

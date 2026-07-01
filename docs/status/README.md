@@ -627,3 +627,14 @@ is not stored. This marker is not artifact body generation integration
 correctness evidence generally, not manifest writer integration evidence, not
 production readiness evidence, not real-data readiness evidence, and not model
 performance evidence.
+
+## Step532 Artifact Body Generation Runtime Integration Refinement Planning Design
+
+Step532 adds the docs-only / planning-only
+[artifact body generation runtime integration refinement planning design](../frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_planning_design.md)
+for a future runtime refinement chain after the Step531 status marker. It
+creates no status marker and adds no runtime implementation change, artifact
+body generation integration, fixture JSON change, validator change, Makefile
+change, wrapper change, workflow change, manifest writer integration, file
+writing, real-data use, metric use, model performance evidence, real-data
+readiness evidence, or production readiness evidence.

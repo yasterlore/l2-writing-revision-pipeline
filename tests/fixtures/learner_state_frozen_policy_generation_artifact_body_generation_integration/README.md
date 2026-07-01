@@ -257,6 +257,20 @@ policy body, no private or absolute path values, no raw learner text, no
 metric bodies, and no production readiness, real-data readiness, or model
 performance evidence.
 
+## Runtime Integration Refinement Planning
+
+Step532 adds the docs-only / planning-only runtime integration refinement
+planning design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_planning_design.md`
+
+The design proposes future runtime modes for this fixture root boundary. It
+does not change runtime implementation, implement artifact body generation
+integration, change fixture JSON, change validators, change Makefile, change
+the wrapper, change workflow files, connect manifest writer integration,
+enable file writing, use real data, compute metrics, or claim production
+readiness.
+
 ## Non-Claims
 
 These fixtures do not claim:

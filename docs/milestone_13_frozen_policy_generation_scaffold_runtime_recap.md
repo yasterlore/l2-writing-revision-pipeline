@@ -2180,9 +2180,19 @@ written, no artifact body is produced, and no performance metric is computed.
   bodies, no artifact body payload, no manifest body, no generated policy body,
   no private/absolute paths, no raw learner text, no metric bodies, and no
   production readiness, real-data readiness, or model performance evidence.
+- Step532: added the docs-only / planning-only runtime integration refinement
+  planning design:
+  [Frozen policy generation artifact body generation runtime integration
+  refinement planning design](frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_planning_design.md).
+  It proposes future plan-only, suppressed-smoke, and safe-metadata-smoke
+  runtime modes without changing runtime implementation, artifact body
+  generation integration, fixture JSON, validators, Makefile, wrapper,
+  workflow files, manifest writer integration, file writing, real-data use,
+  metric use, or production readiness status.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body generation runtime integration refinement planning design](frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_planning_design.md)
 - [Learner-state frozen policy generation artifact body generation integration fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body generation integration fixture validator release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_record_workflow.md)
 - [Frozen policy generation artifact body generation integration fixture validator release-quality integration design](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md)

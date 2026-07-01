@@ -311,7 +311,16 @@ generation integration correctness evidence generally, manifest writer
 integration evidence, production readiness evidence, real-data readiness
 evidence, or model performance evidence.
 
-## 15. Failure Interpretation
+## 15. Step532 Runtime Refinement Planning Status
+
+Step532 adds the docs-only / planning-only runtime integration refinement
+planning design. It does not change runtime implementation, implement artifact
+body generation integration, change fixture JSON, change validators, change
+Makefile, change the wrapper, change workflow files, connect manifest writer
+integration, enable file writing, use real data, compute metrics, or claim
+production readiness.
+
+## 16. Failure Interpretation
 
 Future wrapper check failure means the artifact body generation integration
 fixture validator failed inside the release-quality wrapper.
@@ -330,7 +339,7 @@ or production readiness issue. Interpret failures through public-safe reason
 codes only. Raw stdout/stderr and payloads must not be copied into docs or
 reports.
 
-## 16. Non-Claims
+## 17. Non-Claims
 
 This release-quality integration design does not claim:
 
@@ -346,7 +355,7 @@ This release-quality integration design does not claim:
 - runtime actual invocation correctness generally
 - release-quality wrapper inclusion
 
-## 17. Public-Safe Checklist
+## 18. Public-Safe Checklist
 
 - no raw logs
 - no full job output
