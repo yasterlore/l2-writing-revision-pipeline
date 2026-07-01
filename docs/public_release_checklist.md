@@ -4733,3 +4733,16 @@ generation integration, change fixture JSON, change validators, change
 Makefile, change the release-quality wrapper, change workflow files, connect
 manifest writer integration, enable file writing, use real data, compute
 metrics, or claim production readiness.
+
+## 31. Step533 Artifact Body Generation Runtime Integration Refinement Design
+
+For Step533, review the
+[artifact body generation runtime integration refinement design](frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_design.md).
+Confirm it is design-only / planning-only and concretizes the future
+plan-only bridge without implementing it.
+
+Confirm it does not change runtime implementation, implement artifact body
+generation integration, change fixture JSON, change validators, change Python
+code/tests, change Makefile, change the release-quality wrapper, change
+workflow files, connect manifest writer integration, enable file writing, use
+real data, compute metrics, or claim production readiness.

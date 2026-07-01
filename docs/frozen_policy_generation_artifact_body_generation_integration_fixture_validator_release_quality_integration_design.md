@@ -320,7 +320,16 @@ Makefile, change the wrapper, change workflow files, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
 
-## 16. Failure Interpretation
+## 16. Step533 Runtime Refinement Design Status
+
+Step533 adds the docs-only / planning-only runtime integration refinement
+design. It does not change runtime implementation, implement artifact body
+generation integration, change fixture JSON, change validators, change Python
+code/tests, change Makefile, change the wrapper, change workflow files,
+connect manifest writer integration, enable file writing, use real data,
+compute metrics, or claim production readiness.
+
+## 17. Failure Interpretation
 
 Future wrapper check failure means the artifact body generation integration
 fixture validator failed inside the release-quality wrapper.
@@ -339,7 +348,7 @@ or production readiness issue. Interpret failures through public-safe reason
 codes only. Raw stdout/stderr and payloads must not be copied into docs or
 reports.
 
-## 17. Non-Claims
+## 18. Non-Claims
 
 This release-quality integration design does not claim:
 
@@ -355,7 +364,7 @@ This release-quality integration design does not claim:
 - runtime actual invocation correctness generally
 - release-quality wrapper inclusion
 
-## 18. Public-Safe Checklist
+## 19. Public-Safe Checklist
 
 - no raw logs
 - no full job output

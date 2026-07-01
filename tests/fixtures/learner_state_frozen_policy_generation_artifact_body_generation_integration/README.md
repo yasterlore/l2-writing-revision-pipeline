@@ -271,6 +271,20 @@ the wrapper, change workflow files, connect manifest writer integration,
 enable file writing, use real data, compute metrics, or claim production
 readiness.
 
+## Runtime Integration Refinement Design
+
+Step533 adds the docs-only / planning-only runtime integration refinement
+design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_design.md`
+
+The design concretizes the future plan-only bridge for this fixture root
+boundary. It does not change runtime implementation, implement artifact body
+generation integration, change fixture JSON, change validators, change Python
+code/tests, change Makefile, change the wrapper, change workflow files,
+connect manifest writer integration, enable file writing, use real data,
+compute metrics, or claim production readiness.
+
 ## Non-Claims
 
 These fixtures do not claim:

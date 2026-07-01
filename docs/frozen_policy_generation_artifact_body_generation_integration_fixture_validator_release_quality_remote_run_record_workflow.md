@@ -360,7 +360,16 @@ the wrapper, change workflow files, connect manifest writer integration,
 enable file writing, use real data, compute metrics, or claim production
 readiness.
 
-## 17. Public-Safe Checklist
+## 17. Step533 Runtime Refinement Design Status
+
+Step533 adds the docs-only / planning-only runtime integration refinement
+design. It does not change runtime implementation, implement artifact body
+generation integration, change fixture JSON, change validators, change Python
+code/tests, change Makefile, change the wrapper, change workflow files,
+connect manifest writer integration, enable file writing, use real data,
+compute metrics, or claim production readiness.
+
+## 18. Public-Safe Checklist
 
 - no raw logs
 - no full job output

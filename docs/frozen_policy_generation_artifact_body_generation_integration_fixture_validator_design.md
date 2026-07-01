@@ -516,7 +516,16 @@ Makefile, change the wrapper, change workflow files, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
 
-## 27. Failure Interpretation
+## 27. Step533 Runtime Refinement Design Status
+
+Step533 adds the docs-only / planning-only runtime integration refinement
+design. It does not change runtime implementation, implement artifact body
+generation integration, change fixture JSON, change validators, change Python
+code/tests, change Makefile, change the wrapper, change workflow files,
+connect manifest writer integration, enable file writing, use real data,
+compute metrics, or claim production readiness.
+
+## 28. Failure Interpretation
 
 Future validator failure means a metadata fixture contract, sentinel policy,
 or consistency issue.
@@ -531,7 +540,7 @@ Future validator failure does not prove:
 Raw stdout/stderr and payloads must not be copied into docs or reports.
 Failure reports should use public-safe reason codes only.
 
-## 28. Non-Claims
+## 29. Non-Claims
 
 This fixture validator design does not claim:
 
@@ -547,7 +556,7 @@ This fixture validator design does not claim:
 - runtime actual invocation correctness generally
 - Makefile or release-quality integration
 
-## 29. Public-Safe Checklist
+## 30. Public-Safe Checklist
 
 - no raw logs
 - no full job output

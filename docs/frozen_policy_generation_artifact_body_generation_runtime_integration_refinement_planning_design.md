@@ -388,7 +388,22 @@ This planning design does not claim:
 - runtime actual invocation correctness generally
 - runtime refinement implementation
 
-## 17. Public-Safe Checklist
+## 17. Step533 Runtime Refinement Design Status
+
+Step533 adds the docs-only / planning-only runtime integration refinement
+design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_design.md`
+
+It concretizes the future plan-only bridge, proposed runtime module/CLI,
+schema, selected fixture case, safety scan, reason codes, focused tests, and
+staging. It does not change runtime implementation, implement artifact body
+generation integration, change fixture JSON, change validators, change Python
+code/tests, change Makefile, change the wrapper, change workflow files,
+connect manifest writer integration, enable file writing, use real data,
+compute metrics, or claim production readiness.
+
+## 18. Public-Safe Checklist
 
 - no raw logs
 - no full job output

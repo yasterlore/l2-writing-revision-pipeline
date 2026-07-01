@@ -352,7 +352,17 @@ Makefile, change the wrapper, change workflow files, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
 
-## 24. Non-Claims
+## 24. Step533 Runtime Refinement Design Status
+
+Step533 adds the docs-only / planning-only runtime integration refinement
+design for the artifact body generation boundary. It does not change runtime
+implementation, implement artifact body generation integration, change fixture
+JSON, change validators, change Python code/tests, change Makefile, change
+the wrapper, change workflow files, connect manifest writer integration,
+enable file writing, use real data, compute metrics, or claim production
+readiness.
+
+## 25. Non-Claims
 
 This final safety review design does not claim:
 
@@ -367,7 +377,7 @@ This final safety review design does not claim:
 - generated policy quality
 - learner-state estimator correctness
 
-## 25. Public-Safe Checklist
+## 26. Public-Safe Checklist
 
 - no raw logs
 - no full job output

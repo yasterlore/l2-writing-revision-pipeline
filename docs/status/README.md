@@ -638,3 +638,14 @@ body generation integration, fixture JSON change, validator change, Makefile
 change, wrapper change, workflow change, manifest writer integration, file
 writing, real-data use, metric use, model performance evidence, real-data
 readiness evidence, or production readiness evidence.
+
+## Step533 Artifact Body Generation Runtime Integration Refinement Design
+
+Step533 adds the docs-only / planning-only
+[artifact body generation runtime integration refinement design](../frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_design.md)
+for a future plan-only runtime bridge. It creates no status marker and adds no
+runtime implementation change, artifact body generation integration, fixture
+JSON change, validator change, Python/test change, Makefile change, wrapper
+change, workflow change, manifest writer integration, file writing, real-data
+use, metric use, model performance evidence, real-data readiness evidence, or
+production readiness evidence.

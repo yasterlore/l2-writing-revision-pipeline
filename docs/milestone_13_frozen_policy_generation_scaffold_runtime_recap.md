@@ -2189,9 +2189,20 @@ written, no artifact body is produced, and no performance metric is computed.
   generation integration, fixture JSON, validators, Makefile, wrapper,
   workflow files, manifest writer integration, file writing, real-data use,
   metric use, or production readiness status.
+- Step533: added the docs-only / planning-only runtime integration refinement
+  design:
+  [Frozen policy generation artifact body generation runtime integration
+  refinement design](frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_design.md).
+  It concretizes the future plan-only bridge, proposed runtime module/CLI,
+  schema, selected fixture case, safety scan, reason codes, focused tests, and
+  staging without changing runtime implementation, artifact body generation
+  integration, fixture JSON, validators, Python code/tests, Makefile, wrapper,
+  workflow files, manifest writer integration, file writing, real-data use,
+  metric use, or production readiness status.
 
 ## Related Documents
 
+- [Frozen policy generation artifact body generation runtime integration refinement design](frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_design.md)
 - [Frozen policy generation artifact body generation runtime integration refinement planning design](frozen_policy_generation_artifact_body_generation_runtime_integration_refinement_planning_design.md)
 - [Learner-state frozen policy generation artifact body generation integration fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_status.md)
 - [Frozen policy generation artifact body generation integration fixture validator release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_remote_run_record_workflow.md)

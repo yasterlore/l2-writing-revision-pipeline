@@ -281,7 +281,16 @@ Makefile, change the wrapper, change workflow files, connect manifest writer
 integration, enable file writing, use real data, compute metrics, or claim
 production readiness.
 
-## 15. Failure Interpretation
+## 15. Step533 Runtime Refinement Design Status
+
+Step533 adds the docs-only / planning-only runtime integration refinement
+design. It does not change runtime implementation, implement artifact body
+generation integration, change fixture JSON, change validators, change Python
+code/tests, change Makefile, change the wrapper, change workflow files,
+connect manifest writer integration, enable file writing, use real data,
+compute metrics, or claim production readiness.
+
+## 16. Failure Interpretation
 
 Future target failure means the fixture validator failed or the CLI invocation
 failed. It may indicate a fixture metadata, sentinel policy, consistency, or
@@ -297,7 +306,7 @@ Future target failure does not prove:
 Raw stdout/stderr and payloads must not be copied into docs or reports.
 Interpret failures through public-safe reason codes only.
 
-## 16. Non-Claims
+## 17. Non-Claims
 
 This Makefile target design does not claim:
 
@@ -314,7 +323,7 @@ This Makefile target design does not claim:
 - a Makefile target has been added
 - release-quality wrapper inclusion
 
-## 17. Public-Safe Checklist
+## 18. Public-Safe Checklist
 
 - no raw logs
 - no full job output
