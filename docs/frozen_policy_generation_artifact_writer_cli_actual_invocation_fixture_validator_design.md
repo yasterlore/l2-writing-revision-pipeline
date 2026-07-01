@@ -464,13 +464,20 @@ Step506 does not change workflow files, wrapper, Makefile, Python code/tests,
 fixture JSON, runtime actual invocation, artifact writer CLI actual invocation,
 or file writing.
 
+Step507 adds the docs-only runtime update design:
+[Frozen policy generation artifact writer CLI actual invocation runtime update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_update_design.md).
+Step507 does not change workflow files, wrapper, Makefile, Python code/tests,
+fixture JSON, runtime actual invocation, artifact writer CLI actual invocation,
+or file writing.
+
 ## 18. Planned Follow-Up Steps
 
 Possible follow-up steps:
 
-1. Step507 or later: actual invocation runtime update design
+1. Step508: runtime actual invocation fixture update design, if needed
+2. Step509: runtime actual invocation implementation update
 
-Step506 does not start these follow-up steps.
+Step507 does not start these follow-up steps.
 
 ## 19. Non-Claims
 

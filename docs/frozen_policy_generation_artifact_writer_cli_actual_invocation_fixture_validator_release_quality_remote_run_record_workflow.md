@@ -226,6 +226,10 @@ Step505 does not create this marker. Step506 creates this public-safe
 pass-only / metadata-only / body-free status marker:
 [Learner-state frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md).
 
+Step507 adds the docs-only runtime update design for a future metadata-only
+body-free actual invocation boundary:
+[Frozen policy generation artifact writer CLI actual invocation runtime update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_update_design.md).
+
 ## 11. Planned Step506 Input Fields
 
 Step506 should collect public-safe metadata such as:

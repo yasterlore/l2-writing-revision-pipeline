@@ -471,3 +471,17 @@ actual invocation, perform artifact writer CLI actual invocation, connect
 artifact body generation integration, connect manifest writer integration,
 enable file writing, use real data, compute metrics, or claim production
 readiness.
+
+## 26. Step507 Runtime Update Design Status
+
+Step507 adds the docs-only runtime update design for a future metadata-only
+body-free actual invocation boundary in the Step489 runtime:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_update_design.md)
+
+This does not change workflow files, change the release-quality wrapper,
+change Makefile, change Python code/tests, change fixture JSON, update runtime
+actual invocation, perform artifact writer CLI actual invocation, connect
+artifact body generation integration, connect manifest writer integration,
+enable file writing, use real data, compute metrics, or claim production
+readiness.

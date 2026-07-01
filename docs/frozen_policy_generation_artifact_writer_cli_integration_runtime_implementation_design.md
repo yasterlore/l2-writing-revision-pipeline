@@ -73,6 +73,14 @@ Future CLI candidate:
 Step489 creates this module and CLI as an initial standalone metadata-only
 runtime boundary.
 
+Step507 adds a docs-only runtime update design for a future metadata-only
+body-free actual invocation boundary:
+[Frozen policy generation artifact writer CLI actual invocation runtime update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_update_design.md).
+It does not change Python code/tests, Makefile, wrapper, workflow files,
+fixture JSON, runtime actual invocation, artifact writer CLI actual invocation,
+artifact body generation integration, manifest writer integration, or file
+writing.
+
 ## 5. Proposed Runtime Inputs
 
 Allowed input categories:

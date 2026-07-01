@@ -4366,6 +4366,15 @@ raw stdout/stderr bodies, artifact body payloads, manifest bodies, generated
 policy bodies, private or absolute path values, raw learner text, real data,
 metrics, or production readiness claims.
 
+For Step507, review the docs-only
+[artifact writer CLI actual invocation runtime update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_update_design.md).
+Confirm it designs only a future update to the Step489 runtime for a
+metadata-only / body-free actual invocation boundary. Confirm it does not
+change Python code/tests, Makefile, the wrapper, workflow files, fixture JSON,
+runtime actual invocation implementation, artifact writer CLI actual
+invocation, artifact body generation integration, manifest writer integration,
+file writing, real-data use, metric use, or production readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual

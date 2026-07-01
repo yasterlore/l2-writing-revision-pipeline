@@ -228,6 +228,12 @@ It does not change workflow files, change the wrapper, change Makefile, change
 Python code/tests, change fixture JSON, update runtime actual invocation,
 perform artifact writer CLI actual invocation, or enable file writing.
 
+Step507 adds the docs-only runtime update design:
+[Frozen policy generation artifact writer CLI actual invocation runtime update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_update_design.md).
+It does not change workflow files, change the wrapper, change Makefile, change
+Python code/tests, change fixture JSON, update runtime actual invocation,
+perform artifact writer CLI actual invocation, or enable file writing.
+
 ## 13. Future Staging
 
 Possible future staging:

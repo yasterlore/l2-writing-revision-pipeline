@@ -1945,6 +1945,16 @@ written, no artifact body is produced, and no performance metric is computed.
   connect artifact body generation integration, connect manifest writer
   integration, write files, use real data, compute metrics, or claim production
   readiness.
+- Step507: added the docs-only / planning-only runtime update design for a
+  future metadata-only body-free actual invocation boundary in the Step489
+  runtime:
+  [Frozen policy generation artifact writer CLI actual invocation runtime update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_update_design.md).
+  This does not change workflow files, change the release-quality wrapper,
+  change Makefile, change Python code/tests, change fixture JSON, update
+  runtime actual invocation, perform artifact writer CLI actual invocation,
+  connect artifact body generation integration, connect manifest writer
+  integration, write files, use real data, compute metrics, or claim production
+  readiness.
 
 ## Related Documents
 

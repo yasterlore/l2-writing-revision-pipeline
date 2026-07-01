@@ -328,6 +328,12 @@ Related recap:
   artifact writer CLI actual invocation evidence, runtime actual invocation
   evidence, artifact body generation integration evidence, manifest writer
   integration evidence, or production readiness evidence.
+- [Frozen policy generation artifact writer CLI actual invocation runtime update design](../frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_update_design.md):
+  Step507 docs-only / planning-only runtime update design for a future
+  metadata-only body-free actual invocation boundary in the Step489 runtime.
+  It is not a status marker and does not claim artifact writer CLI actual
+  invocation correctness, runtime actual invocation correctness, or production
+  readiness.
 - [Frozen policy generation artifact body fixture release-quality remote run record workflow](../frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_record_workflow.md):
   future public-safe pass-only/count-only recording workflow for artifact body
   fixture validation release-quality wrapper integration.

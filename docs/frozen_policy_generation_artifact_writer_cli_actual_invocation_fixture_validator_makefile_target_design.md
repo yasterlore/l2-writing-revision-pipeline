@@ -219,6 +219,9 @@ Step504 wrapper check:
 Step506 adds the public-safe remote status marker:
 [Learner-state frozen policy generation artifact writer CLI actual invocation fixture validator release-quality remote run status](status/learner_state_frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_remote_run_status.md).
 
+Step507 adds the docs-only runtime update design:
+[Frozen policy generation artifact writer CLI actual invocation runtime update design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_update_design.md).
+
 ## 10. Proposed Checks For Step502
 
 If Step502 implements the standalone Makefile target, it should run checks such
