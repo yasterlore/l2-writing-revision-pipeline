@@ -119,7 +119,7 @@ include:
 - `exit_code_category=zero`
 - `case_id=valid/valid_actual_invocation_minimal_metadata_only`
 - `invocation_mode=actual_invocation_metadata_only`
-- `summary_mode=public_safe_count_only`
+- `summary_mode=summary_only_public_safe`
 - `content_suppressed=True`
 - `body_suppressed=True`
 - `runtime_actual_invocation_enabled=True`
@@ -313,7 +313,28 @@ Python code/tests, fixture JSON, runtime implementation, artifact body
 generation integration, manifest writer integration, file writing, real-data
 use, metric use, or production readiness claims.
 
-## 15. Public-Safe Checklist
+## 15. Step517 Release-Quality Wrapper Integration Status
+
+Step517 adds this standalone target to `scripts/check_release_quality.sh` with
+label:
+
+```text
+release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation runtime smoke
+```
+
+The wrapper command is:
+
+```bash
+make check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime
+```
+
+The block runs after static actual invocation fixture validation and before
+artifact body fixture validation. Step517 does not change workflow files,
+Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, or production readiness claims.
+
+## 16. Public-Safe Checklist
 
 - no raw logs
 - no full job output

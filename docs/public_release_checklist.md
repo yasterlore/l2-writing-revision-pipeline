@@ -4514,3 +4514,16 @@ Confirm it does not change the wrapper, workflow files, Makefile,
 Python code/tests, fixture JSON, runtime implementation, artifact body
 generation integration, manifest writer integration, file writing,
 real-data use, metric use, or production readiness claims.
+
+## 15. Step517 Runtime Actual Invocation Release-Quality Wrapper Integration
+
+For Step517, review `scripts/check_release_quality.sh` and the related docs.
+Confirm the wrapper includes label
+`release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation runtime smoke`
+and command
+`make check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime`
+immediately after static actual invocation fixture validation and before
+artifact body fixture validation. Confirm it does not change workflow files,
+Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
+body generation integration, manifest writer integration, file writing,
+real-data use, metric use, or production readiness claims.

@@ -538,3 +538,13 @@ the validator, release-quality wrapper, workflow files, Makefile, Python
 code/tests, runtime implementation, artifact body generation integration,
 manifest writer integration, file writing, real-data use, metric use, or
 production readiness claims.
+
+## 28. Step517 Release-Quality Wrapper Integration Status
+
+Step517 adds the Step515 standalone target to the release-quality wrapper
+after static actual invocation fixture validation and before artifact body
+fixture validation. The fixture root and fixture JSON remain unchanged.
+Step517 does not change the validator, workflow files, Makefile, Python
+code/tests, runtime implementation, artifact body generation integration,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness claims.

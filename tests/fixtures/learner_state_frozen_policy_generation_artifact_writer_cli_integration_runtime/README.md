@@ -610,3 +610,13 @@ release-quality wrapper, workflows, Makefile, Python code/tests, runtime
 implementation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
+
+## Actual Invocation Runtime Release-Quality Wrapper Integration Status
+
+Step517 adds the Step515 standalone target to `scripts/check_release_quality.sh`
+after static actual invocation fixture validation and before artifact body
+fixture validation. The fixture root and fixture JSON are unchanged. Step517
+does not change workflow files, Makefile, Python code/tests, runtime
+implementation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.

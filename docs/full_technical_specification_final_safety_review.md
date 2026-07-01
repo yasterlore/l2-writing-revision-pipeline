@@ -252,10 +252,12 @@ invocation correctness claim.
 
 Step515 adds a standalone Makefile target for the Step513 explicit
 `actual_invocation_metadata_only` runtime smoke over one valid v0.2 synthetic
-metadata-only fixture case. The target is not yet release-quality wrapper
-integrated and does not change workflow files, fixture JSON, Python code/tests,
-artifact body generation integration, manifest writer integration, file
-writing, real-data use, metric use, or production readiness claims.
+metadata-only fixture case. Step517 adds that target to the release-quality
+wrapper after static actual invocation fixture validation and before artifact
+body fixture validation. It does not change workflow files, Makefile,
+fixture JSON, Python code/tests, runtime implementation, artifact body
+generation integration, manifest writer integration, file writing, real-data
+use, metric use, or production readiness claims.
 
 ## 11. Final Safety Review Result
 

@@ -488,3 +488,13 @@ validation. Step516 does not change the release-quality wrapper, workflow
 files, Makefile, Python code/tests, fixture JSON, runtime implementation,
 artifact body generation integration, manifest writer integration, file
 writing, real-data use, metric use, or production readiness claims.
+
+## 29. Step517 Release-Quality Wrapper Integration Status
+
+Step517 adds the Step515 standalone actual invocation metadata-only runtime
+smoke target to `scripts/check_release_quality.sh`. The block runs after the
+static actual invocation fixture validation check and before artifact body
+fixture validation. Step517 does not change workflow files, Makefile, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.

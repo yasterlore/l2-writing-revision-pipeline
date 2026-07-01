@@ -79,6 +79,12 @@ make check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-inv
 Step516 does not add this label or command to
 `scripts/check_release_quality.sh`.
 
+Step517 adds this label and command to `scripts/check_release_quality.sh`.
+Step517 does not change workflow files, Makefile, Python code/tests, fixture
+JSON, runtime implementation, artifact body generation integration, manifest
+writer integration, file writing, real-data use, metric use, or production
+readiness claims.
+
 ## 6. Proposed Insertion Point
 
 Recommended insertion point:
@@ -117,7 +123,7 @@ fields, including:
 - `exit_code_category=zero`
 - `case_id=valid/valid_actual_invocation_minimal_metadata_only`
 - `invocation_mode=actual_invocation_metadata_only`
-- `summary_mode=public_safe_count_only`
+- `summary_mode=summary_only_public_safe`
 - `content_suppressed=True`
 - `body_suppressed=True`
 - `runtime_actual_invocation_enabled=True`
@@ -241,7 +247,35 @@ Possible follow-up:
 
 Step516 does not proceed to those stages.
 
-## 13. Non-Claims
+Step517 implements the wrapper integration stage by adding only the label /
+command block described above.
+
+## 13. Step517 Wrapper Integration Status
+
+Step517 adds the release-quality wrapper check:
+
+```text
+release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation runtime smoke
+```
+
+Wrapper command:
+
+```bash
+make check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime
+```
+
+Insertion point:
+
+- after `release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation fixture validation`
+- before `release_quality_check: learner-state frozen policy generation artifact body fixture validation`
+
+The wrapper integration preserves the expected safe output and safety boundary
+defined in this document. It does not change workflow files, Makefile, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.
+
+## 14. Non-Claims
 
 This design does not claim:
 
@@ -255,9 +289,9 @@ This design does not claim:
 - manifest writer integration correctness
 - generated policy quality
 - learner-state estimator correctness
-- release-quality wrapper integration
+- production readiness evidence from wrapper inclusion
 
-## 14. Public-Safe Checklist
+## 15. Public-Safe Checklist
 
 - no raw logs
 - no full job output

@@ -596,3 +596,14 @@ change the release-quality wrapper, workflow files, Makefile, Python
 code/tests, fixture JSON, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claims.
+
+## Step517 Runtime Actual Invocation Release-Quality Wrapper Integration Status
+
+Step517 adds the Step515 standalone target to `scripts/check_release_quality.sh`
+with label
+`release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation runtime smoke`.
+It runs after static actual invocation fixture validation and before artifact
+body fixture validation. Step517 does not change workflow files, Makefile,
+Python code/tests, fixture JSON, runtime implementation, artifact body
+generation integration, manifest writer integration, file writing, real-data
+use, metric use, or production readiness claims.

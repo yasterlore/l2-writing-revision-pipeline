@@ -735,3 +735,14 @@ workflow files, Makefile, Python code/tests, fixture JSON, runtime
 implementation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
+
+## Step517 Runtime Actual Invocation Release-Quality Wrapper Integration Status
+
+Step517 adds the explicit actual invocation metadata-only runtime smoke to
+`scripts/check_release_quality.sh`. The new wrapper block calls
+`make check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime`
+after static actual invocation fixture validation and before artifact body
+fixture validation. It does not change workflow files, Makefile, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.

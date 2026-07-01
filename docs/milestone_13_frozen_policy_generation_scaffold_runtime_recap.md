@@ -2038,6 +2038,14 @@ written, no artifact body is produced, and no performance metric is computed.
   fixture JSON, runtime implementation, artifact body generation integration,
   manifest writer integration, file writing, real-data use, metric use, or
   production readiness claims.
+- Step517: added the Step515 standalone target to the release-quality wrapper
+  with label
+  `release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation runtime smoke`.
+  The block runs after static actual invocation fixture validation and before
+  artifact body fixture validation. This does not change workflow files,
+  Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
+  body generation integration, manifest writer integration, file writing,
+  real-data use, metric use, or production readiness claims.
 
 ## Related Documents
 

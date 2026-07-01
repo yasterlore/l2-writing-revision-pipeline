@@ -272,10 +272,12 @@ Confirm the Step515 standalone Makefile target
 `check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime`
 runs only the valid v0.2 `actual_invocation_metadata_only` runtime smoke case
 with `--actual-invocation --summary-only --no-file-writing`. Reviewers should
-confirm it is not yet release-quality wrapper integrated and does not change
-workflow files, fixture JSON, Python code/tests, artifact body generation
-integration, manifest writer integration, file writing, or production
-readiness claims.
+confirm Step517 adds it to `scripts/check_release_quality.sh` with label
+`release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation runtime smoke`
+after static actual invocation fixture validation and before artifact body
+fixture validation. Reviewers should also confirm it does not change workflow
+files, fixture JSON, Python code/tests, artifact body generation integration,
+manifest writer integration, file writing, or production readiness claims.
 
 Do not treat this fixture update as artifact writer CLI actual invocation
 correctness, runtime actual invocation correctness, artifact body generation

@@ -460,3 +460,13 @@ change, fixture JSON change, runtime implementation change, artifact body
 generation integration, manifest writer integration, file writing, remote
 status marker, real-data use, metric use, or production readiness claim is
 added.
+
+## Step517 Runtime Actual Invocation Release-Quality Wrapper Integration
+
+Step517 adds the Step515 standalone target to `scripts/check_release_quality.sh`
+with label
+`release_quality_check: learner-state frozen policy generation artifact writer CLI actual invocation runtime smoke`.
+No remote status marker, workflow change, Makefile change, Python/test change,
+fixture JSON change, runtime implementation change, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claim is added.
