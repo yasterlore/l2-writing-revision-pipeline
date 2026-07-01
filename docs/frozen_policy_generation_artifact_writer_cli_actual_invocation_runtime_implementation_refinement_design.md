@@ -421,3 +421,16 @@ fixture JSON, Makefile targets, release-quality wrapper scripts, workflows,
 artifact body generation integration, manifest writer integration, generated
 policy body generation, artifact body file writing, manifest file writing,
 real-data use, metric use, or production readiness claims.
+
+## 21. Step514 Makefile Target Design Status
+
+Step514 adds a design-only / planning-only standalone Makefile target design
+for running the Step513 explicit `actual_invocation_metadata_only` runtime
+smoke:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_makefile_target_design.md)
+
+Step514 does not change Makefile, release-quality wrapper, workflows, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.

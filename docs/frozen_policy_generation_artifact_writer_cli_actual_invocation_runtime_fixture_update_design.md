@@ -503,3 +503,15 @@ plan-only as the default. The Step509 fixture JSON remains unchanged. The
 update does not change Makefile, release-quality wrapper, workflows, artifact
 body generation integration, manifest writer integration, file writing,
 real-data use, metric use, or production readiness claims.
+
+## 25. Step514 Makefile Target Design Status
+
+Step514 adds a design-only / planning-only standalone Makefile target design
+for running one valid v0.2 `actual_invocation_metadata_only` runtime smoke
+case from `make` in a future step. It does not change the fixture root,
+fixture JSON, validator, runtime implementation, Makefile, wrapper, workflows,
+artifact body generation integration, manifest writer integration, file
+writing, real-data use, metric use, or production readiness claims.
+
+See
+[Frozen policy generation artifact writer CLI actual invocation runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_makefile_target_design.md).

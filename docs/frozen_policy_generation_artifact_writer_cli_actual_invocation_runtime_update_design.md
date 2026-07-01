@@ -450,3 +450,16 @@ file-writing disabled. This does not connect artifact body generation
 integration, connect manifest writer integration, change fixture JSON, change
 Makefile, change the release-quality wrapper, change workflows, use real
 data, compute metrics, or claim production readiness.
+
+## 26. Step514 Makefile Target Design Status
+
+Step514 adds a design-only / planning-only standalone Makefile target design
+for a future `make` smoke over the Step513 explicit
+`actual_invocation_metadata_only` runtime path. It does not change Makefile,
+release-quality wrapper, workflows, Python code/tests, fixture JSON, runtime
+implementation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.
+
+See
+[Frozen policy generation artifact writer CLI actual invocation runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_makefile_target_design.md).

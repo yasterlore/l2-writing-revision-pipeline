@@ -452,6 +452,7 @@ production readiness.
 - runtime fixture validator updated for v0.2 cases: yes, Step511 static validator v0.2 support
 - actual invocation runtime implementation refinement design: yes, Step512 docs-only / planning-only
 - actual invocation runtime implementation support: yes, Step513 explicit metadata-only mode
+- actual invocation runtime Makefile target design: yes, Step514 docs-only / planning-only
 - artifact writer CLI actual invocation integration implemented: no
 - workflow changed: no
 - artifact body generation integration implemented: no
@@ -568,3 +569,17 @@ This fixture root and fixture JSON are unchanged by Step513. The update does
 not change Makefile, release-quality wrapper, workflows, artifact body
 generation integration, manifest writer integration, file writing, real-data
 use, metric use, or production readiness claims.
+
+## Actual Invocation Runtime Makefile Target Design Status
+
+Step514 adds a design-only / planning-only standalone Makefile target design
+for a future explicit `actual_invocation_metadata_only` runtime smoke over
+`valid/valid_actual_invocation_minimal_metadata_only`:
+
+[Frozen policy generation artifact writer CLI actual invocation runtime Makefile target design](../../../docs/frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_makefile_target_design.md)
+
+The fixture root and fixture JSON are unchanged. Step514 does not change
+Makefile, release-quality wrapper, workflows, Python code/tests, runtime
+implementation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.

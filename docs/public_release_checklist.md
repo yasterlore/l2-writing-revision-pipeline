@@ -4477,3 +4477,14 @@ fail closed, and file writing, artifact body generation integration, manifest
 writer integration, workflow changes, wrapper changes, fixture JSON changes,
 real-data use, metric use, and production readiness claims remain out of
 scope.
+
+## 12. Step514 Runtime Actual Invocation Makefile Target Design
+
+For Step514, review the docs-only / planning-only
+[artifact writer CLI actual invocation runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_makefile_target_design.md).
+Confirm it only proposes a future standalone target for the Step513 explicit
+`actual_invocation_metadata_only` runtime smoke. Confirm it does not change
+Makefile, release-quality wrapper, workflow files, Python code/tests, fixture
+JSON, runtime implementation, artifact body generation integration, manifest
+writer integration, file writing, real-data use, metric use, or production
+readiness claims.

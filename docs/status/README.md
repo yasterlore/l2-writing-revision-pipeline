@@ -427,3 +427,14 @@ Step513 updates the local runtime module and focused tests so explicit
 marker is created here. This is not production readiness, real-data
 readiness, model performance evidence, artifact body generation integration
 evidence, or manifest writer integration evidence.
+
+## Step514 Runtime Actual Invocation Makefile Target Design
+
+Step514 adds the docs-only / planning-only
+[runtime actual invocation Makefile target design](../frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_makefile_target_design.md)
+for a future standalone `make` smoke over the Step513 explicit
+`actual_invocation_metadata_only` runtime path. No Makefile target,
+release-quality wrapper entry, workflow change, Python/test change, fixture
+JSON change, runtime implementation change, artifact body generation
+integration, manifest writer integration, file writing, remote status marker,
+real-data use, metric use, or production readiness claim is added.

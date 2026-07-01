@@ -2014,6 +2014,14 @@ written, no artifact body is produced, and no performance metric is computed.
   release-quality wrapper, change Makefile, change fixture JSON, connect
   artifact body generation integration, connect manifest writer integration,
   use real data, compute metrics, or claim production readiness.
+- Step514: added the docs-only / planning-only standalone Makefile target
+  design for a future explicit `actual_invocation_metadata_only` runtime
+  smoke:
+  [Frozen policy generation artifact writer CLI actual invocation runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_makefile_target_design.md).
+  This does not change Makefile, release-quality wrapper, workflow files,
+  Python code/tests, fixture JSON, runtime implementation, artifact body
+  generation integration, manifest writer integration, file writing,
+  real-data use, metric use, or production readiness claims.
 
 ## Related Documents
 

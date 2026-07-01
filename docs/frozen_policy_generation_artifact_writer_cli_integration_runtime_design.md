@@ -698,3 +698,15 @@ default and explicit `--actual-invocation` enables runtime schema v0.2
 captures and suppresses stdout/stderr, reports safe reason codes only,
 preserves no-file-writing behavior, and does not connect artifact body
 generation integration or manifest writer integration.
+
+## Step514 Runtime Actual Invocation Makefile Target Design Status
+
+Step514 adds a design-only / planning-only standalone Makefile target design
+for a future explicit `actual_invocation_metadata_only` runtime smoke target.
+It does not change Makefile, release-quality wrapper, workflows, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.
+
+See
+[Frozen policy generation artifact writer CLI actual invocation runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_makefile_target_design.md).
