@@ -573,3 +573,13 @@ claims.
 
 See
 [Frozen policy generation artifact writer CLI actual invocation runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_makefile_target_design.md).
+
+## Step515 Runtime Actual Invocation Makefile Target Implementation Status
+
+Step515 implements the standalone target
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime`
+for the Step513 explicit `actual_invocation_metadata_only` runtime smoke. The
+target uses the valid synthetic metadata-only v0.2 fixture case and keeps
+file writing, artifact body generation integration, and manifest writer
+integration out of scope. It is not release-quality wrapper integrated in
+Step515.

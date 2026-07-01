@@ -438,3 +438,14 @@ release-quality wrapper entry, workflow change, Python/test change, fixture
 JSON change, runtime implementation change, artifact body generation
 integration, manifest writer integration, file writing, remote status marker,
 real-data use, metric use, or production readiness claim is added.
+
+## Step515 Runtime Actual Invocation Makefile Target Implementation
+
+Step515 implements the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime`
+for a local public-safe metadata-only runtime smoke over
+`valid/valid_actual_invocation_minimal_metadata_only`. No release-quality
+wrapper entry, workflow change, Python/test change, fixture JSON change,
+runtime implementation change, artifact body generation integration, manifest
+writer integration, file writing, remote status marker, real-data use, metric
+use, or production readiness claim is added.

@@ -434,3 +434,16 @@ Step514 does not change Makefile, release-quality wrapper, workflows, Python
 code/tests, fixture JSON, runtime implementation, artifact body generation
 integration, manifest writer integration, file writing, real-data use, metric
 use, or production readiness claims.
+
+## 22. Step515 Makefile Target Implementation Status
+
+Step515 implements the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime`
+for the Step513 explicit `actual_invocation_metadata_only` runtime smoke over
+`valid/valid_actual_invocation_minimal_metadata_only`. The target remains
+standalone and is not added to the release-quality wrapper in Step515.
+
+Step515 does not change workflow files, Python code/tests, fixture JSON,
+runtime implementation, artifact body generation integration, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+claims.

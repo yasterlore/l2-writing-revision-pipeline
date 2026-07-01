@@ -453,6 +453,7 @@ production readiness.
 - actual invocation runtime implementation refinement design: yes, Step512 docs-only / planning-only
 - actual invocation runtime implementation support: yes, Step513 explicit metadata-only mode
 - actual invocation runtime Makefile target design: yes, Step514 docs-only / planning-only
+- actual invocation runtime Makefile target implementation: yes, Step515 standalone target
 - artifact writer CLI actual invocation integration implemented: no
 - workflow changed: no
 - artifact body generation integration implemented: no
@@ -583,3 +584,16 @@ Makefile, release-quality wrapper, workflows, Python code/tests, runtime
 implementation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 claims.
+
+## Actual Invocation Runtime Makefile Target Implementation Status
+
+Step515 implements the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime`
+for this fixture root's valid v0.2 actual invocation metadata-only case:
+
+`valid/valid_actual_invocation_minimal_metadata_only`
+
+The fixture root and fixture JSON are unchanged. Step515 does not change the
+release-quality wrapper, workflows, Python code/tests, runtime implementation,
+artifact body generation integration, manifest writer integration, file
+writing, real-data use, metric use, or production readiness claims.

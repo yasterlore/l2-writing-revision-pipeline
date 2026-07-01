@@ -4488,3 +4488,15 @@ Makefile, release-quality wrapper, workflow files, Python code/tests, fixture
 JSON, runtime implementation, artifact body generation integration, manifest
 writer integration, file writing, real-data use, metric use, or production
 readiness claims.
+
+## 13. Step515 Runtime Actual Invocation Makefile Target Implementation
+
+For Step515, review `Makefile` and the related docs. Confirm the standalone
+target
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime`
+uses `valid/valid_actual_invocation_minimal_metadata_only` with
+`--actual-invocation --summary-only --no-file-writing`. Confirm it does not
+change the release-quality wrapper, workflow files, Python code/tests, fixture
+JSON, runtime implementation, artifact body generation integration, manifest
+writer integration, file writing, real-data use, metric use, or production
+readiness claims.

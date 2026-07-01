@@ -454,3 +454,13 @@ use, metric use, or production readiness claims.
 
 See
 [Frozen policy generation artifact writer CLI actual invocation runtime Makefile target design](frozen_policy_generation_artifact_writer_cli_actual_invocation_runtime_makefile_target_design.md).
+
+## 25. Step515 Makefile Target Implementation Status
+
+Step515 implements the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime`
+for one valid v0.2 actual invocation metadata-only runtime smoke case. It does
+not change the fixture validator, fixture JSON, Python code/tests, runtime
+implementation, release-quality wrapper, workflows, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.

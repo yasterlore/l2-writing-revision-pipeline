@@ -80,7 +80,12 @@ PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_wri
   --no-file-writing
 ```
 
-Step514 does not implement this target.
+Step514 does not implement this target. Step515 implements this target in the
+Makefile with the target name, help text, and command above. Step515 does not
+add release-quality wrapper integration, change workflow files, change Python
+code/tests, change fixture JSON, change the runtime implementation, connect
+artifact body generation integration, connect manifest writer integration, or
+enable file writing.
 
 ## 5. Target Fixture Case Selection
 
@@ -238,7 +243,7 @@ Step514 does not proceed to those stages.
 
 ## 12. Non-Claims
 
-This design does not claim:
+The Step514 design-only portion does not claim:
 
 - production readiness
 - real-data readiness
@@ -250,9 +255,41 @@ This design does not claim:
 - manifest writer integration correctness
 - generated policy quality
 - learner-state estimator correctness
-- Makefile target implementation
+- release-quality wrapper integration
 
-## 13. Public-Safe Checklist
+## 14. Step515 Implementation Status
+
+Step515 implements the standalone Makefile target:
+
+```text
+check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-runtime
+```
+
+Implemented help text:
+
+```text
+Run artifact writer CLI actual invocation metadata-only runtime smoke
+```
+
+Implemented command:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_writer_cli_integration_runtime \
+  --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_writer_cli_integration_runtime \
+  --fixture-case valid/valid_actual_invocation_minimal_metadata_only \
+  --actual-invocation \
+  --summary-only \
+  --no-file-writing
+```
+
+The target remains standalone. It is not added to the release-quality wrapper
+in Step515. Step515 does not change workflow files, Python code/tests, fixture
+JSON, runtime implementation, artifact body generation integration, manifest
+writer integration, generated policy body generation, artifact body file
+writing, manifest file writing, real-data use, metric use, or production
+readiness claims.
+
+## 15. Public-Safe Checklist
 
 - no raw logs
 - no full job output
