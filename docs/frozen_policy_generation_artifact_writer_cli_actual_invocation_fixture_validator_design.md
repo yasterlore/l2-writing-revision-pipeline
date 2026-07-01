@@ -437,18 +437,23 @@ Step502 does not change release-quality, change workflow files, change Python
 code/tests, change fixture JSON, update runtime actual invocation, perform
 artifact writer CLI actual invocation, or enable file writing.
 
+Step503 adds the docs-only release-quality integration design for that
+standalone target:
+[Frozen policy generation artifact writer CLI actual invocation fixture validator release-quality integration design](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_integration_design.md).
+Step503 does not change the release-quality wrapper, workflow files, Makefile,
+Python code/tests, fixture JSON, runtime actual invocation, artifact writer CLI
+actual invocation, or file writing.
+
 ## 18. Planned Follow-Up Steps
 
 Possible follow-up steps:
 
-1. Step503: actual invocation runtime update design
-2. Step504: actual invocation runtime implementation update
-3. Step505: release-quality integration design
-4. Step506: release-quality wrapper integration
-5. Step507: remote/manual run record workflow design
-6. Step508: remote status marker
+1. Step504: release-quality wrapper integration
+2. Step505: remote/manual run record workflow design
+3. Step506: remote status marker
+4. Step507 or later: actual invocation runtime update design
 
-Step502 does not start these follow-up steps.
+Step503 does not start these follow-up steps.
 
 ## 19. Non-Claims
 

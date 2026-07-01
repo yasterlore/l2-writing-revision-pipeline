@@ -191,7 +191,7 @@ Recommended staging:
 
 - Step501: docs-only Makefile target design
 - Step502: standalone Makefile target implementation
-- Step503 or later: release-quality integration design
+- Step503: release-quality integration design
 - later separate step: release-quality wrapper integration
 - later separate step: remote/manual run record workflow design
 - later separate step: remote status marker
@@ -199,6 +199,13 @@ Recommended staging:
 Step502 does not add the target to release-quality. Release-quality
 wrapper integration should remain separate from standalone target
 implementation.
+
+Step503 adds the release-quality integration design:
+[Frozen policy generation artifact writer CLI actual invocation fixture validator release-quality integration design](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_integration_design.md).
+It does not change the release-quality wrapper, workflow files, Makefile,
+Python code/tests, fixture JSON, runtime actual invocation, artifact writer CLI
+actual invocation, artifact body generation integration, manifest writer
+integration, or file writing.
 
 ## 10. Proposed Checks For Step502
 

@@ -4328,6 +4328,15 @@ CLI actual invocation, connect artifact body generation integration, connect
 manifest writer integration, write files, use real data, use metrics, or claim
 production readiness.
 
+For Step503, review the docs-only
+[artifact writer CLI actual invocation fixture validator release-quality integration design](frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validator_release_quality_integration_design.md).
+Confirm it designs only a future release-quality wrapper addition for the
+Step502 standalone validator target. Confirm it does not change the wrapper,
+workflow files, Makefile, Python code/tests, fixture JSON, runtime actual
+invocation, artifact writer CLI actual invocation, artifact body generation
+integration, manifest writer integration, file writing, real-data use, metric
+use, or production readiness claims.
+
 ## 7. Checks To Run
 
 The wrapper covers the normal success-path command bundle. The individual
