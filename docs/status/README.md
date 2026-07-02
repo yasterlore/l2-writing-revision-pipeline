@@ -1005,3 +1005,17 @@ fixture JSON change, runtime implementation change, validator change, artifact
 body generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, model performance evidence, real-data readiness
 evidence, or production readiness evidence.
+
+## Step561 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Makefile Target Implementation
+
+Step561 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`
+for the Step559 `safe-metadata-smoke` runtime CLI.
+
+The target emits public-safe metadata-only / body-free / count-only v0.2
+summary output over `valid/valid_safe_metadata_explicit_runtime_bridge`. It
+does not add release-quality wrapper integration, change workflows, change
+Python code/tests, change fixture JSON, change runtime implementation, change
+validator implementation, invoke artifact body generation runtime, invoke
+manifest writer, write files, use real data, compute metrics, or claim
+production readiness.

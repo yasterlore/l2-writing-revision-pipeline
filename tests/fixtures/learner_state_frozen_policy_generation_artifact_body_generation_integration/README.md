@@ -641,3 +641,12 @@ Step559 `safe-metadata-smoke` runtime CLI:
 This active fixture root remains unchanged, and no fixture JSON change,
 runtime implementation change, artifact body generation runtime invocation,
 manifest writer invocation, or file writing is added.
+
+## Step561 Safe-Metadata Runtime Makefile Target Implementation Status
+
+Step561 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`
+for the Step559 `safe-metadata-smoke` runtime CLI. This active fixture root
+remains unchanged, and no fixture JSON change, runtime implementation change,
+artifact body generation runtime invocation, manifest writer invocation, or
+file writing is added.

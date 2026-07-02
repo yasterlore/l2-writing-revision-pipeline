@@ -479,3 +479,15 @@ It does not change Makefile, release-quality wrapper, workflow files,
 Python code/tests, fixture JSON, runtime implementation, validator
 implementation, artifact body generation runtime invocation, manifest writer
 integration, or file writing.
+
+## 26. Step561 Makefile Target Implementation Status
+
+Step561 adds the standalone Makefile target for the Step559
+`safe-metadata-smoke` runtime CLI:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`
+
+It preserves the metadata handoff only boundary and does not add
+release-quality wrapper integration, change workflow files, change Python
+code/tests, change fixture JSON, change runtime implementation, invoke
+artifact body generation runtime, invoke manifest writer, or write files.

@@ -398,6 +398,12 @@ generation runtime invocation false, keeps manifest writer invocation false,
 keeps file writing disabled, fail-closes unsafe markers, and is not yet
 Makefile-targeted or release-quality wrapper integrated as a runtime smoke.
 
+Confirm Step561 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`.
+Reviewers should confirm the target runs the Step559 `safe-metadata-smoke`
+runtime CLI over the planned primary case, emits the v0.2 public-safe metadata
+handoff summary, and is not yet release-quality wrapper integrated.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

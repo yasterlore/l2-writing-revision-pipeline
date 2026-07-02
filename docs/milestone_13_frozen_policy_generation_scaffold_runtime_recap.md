@@ -2774,3 +2774,18 @@ release-quality wrapper, workflow files, Python code/tests, fixture JSON,
 runtime implementation, validator implementation, artifact body generation
 runtime invocation, manifest writer integration, file writing, real-data use,
 metric use, or production readiness status.
+
+## Step561 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Makefile Target Implementation
+
+Step561 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`
+with help text `Run artifact body generation runtime integration safe-metadata smoke`.
+The command runs the Step559 `safe-metadata-smoke` runtime CLI over the planned
+safe-metadata v0.2 primary case and emits public-safe v0.2 metadata handoff
+summary output.
+
+The target remains separate from release-quality wrapper integration and does
+not change workflow files, Python code/tests, fixture JSON, runtime
+implementation, validator implementation, artifact body generation runtime
+invocation, manifest writer integration, file writing, real-data use, metric
+use, or production readiness status.

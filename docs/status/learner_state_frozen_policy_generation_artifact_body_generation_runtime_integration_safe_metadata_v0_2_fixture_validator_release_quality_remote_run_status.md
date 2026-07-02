@@ -314,3 +314,9 @@ Step559 `safe-metadata-smoke` runtime CLI:
 
 This status marker remains unchanged and continues to describe only the
 planned-root validator wrapper run.
+
+## 17. Step561 Runtime Makefile Target Implementation Status
+
+Step561 adds the standalone Makefile target for the Step559
+`safe-metadata-smoke` runtime CLI. This status marker remains unchanged and
+continues to describe only the planned-root validator wrapper run.

@@ -438,6 +438,14 @@ writing, Makefile target addition, release-quality wrapper integration,
 workflow changes, fixture JSON changes, real-data use, metric use, and
 production-readiness status out of scope.
 
+Step561 follow-up adds a standalone Makefile target for the Step559
+`safe-metadata-smoke` runtime CLI. The target keeps the runtime smoke separate
+from release-quality wrapper integration and does not change workflow files,
+Python code/tests, fixture JSON, runtime implementation, validator
+implementation, artifact body generation runtime invocation, manifest writer
+invocation, file writing, real-data use, metric use, or production-readiness
+status.
+
 ## 20. Coverage Validation Result
 
 The full technical specification draft is suitable as a consolidated technical

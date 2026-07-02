@@ -255,3 +255,16 @@ release-quality wrapper, workflow files, Python code/tests, fixture JSON,
 runtime implementation, validator implementation, artifact body generation
 runtime invocation, manifest writer integration, file writing, real-data use,
 metric use, or production readiness status.
+
+## 14. Step561 Standalone Target Implementation Status
+
+Step561 implements the standalone Makefile target designed here:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`
+
+The target runs the Step559 `safe-metadata-smoke` runtime CLI over
+`valid/valid_safe_metadata_explicit_runtime_bridge` and remains metadata
+handoff only. Step561 does not add release-quality wrapper integration, change
+workflow files, change Python code/tests, change fixture JSON, change runtime
+implementation, invoke artifact body generation runtime, invoke manifest
+writer, or write files.

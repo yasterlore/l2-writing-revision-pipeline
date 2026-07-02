@@ -5180,3 +5180,15 @@ Python code/tests, fixture JSON, runtime implementation, validator
 implementation, artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 status.
+
+## 59. Step561 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Makefile Target Implementation
+
+For Step561, confirm the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`
+exists with help text `Run artifact body generation runtime integration safe-metadata smoke`.
+Confirm the target runs the Step559 `safe-metadata-smoke` runtime CLI over
+`valid/valid_safe_metadata_explicit_runtime_bridge`, emits v0.2 public-safe
+metadata handoff output, and does not change wrapper, workflow, Python
+code/tests, fixture JSON, runtime implementation, validator implementation,
+artifact body generation runtime invocation, manifest writer integration, file
+writing, real-data use, metric use, or production readiness status.

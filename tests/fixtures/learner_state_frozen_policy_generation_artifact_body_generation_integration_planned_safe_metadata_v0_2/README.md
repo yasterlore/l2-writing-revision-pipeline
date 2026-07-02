@@ -210,3 +210,11 @@ It proposes a future standalone target over this planned root's primary case
 but does not change fixture JSON, merge this root into the active root, change
 runtime implementation, invoke artifact body generation runtime, invoke
 manifest writer, or write files.
+
+## Step561 Runtime Makefile Target Implementation Status
+
+Step561 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`
+over this planned root's primary case. It does not change fixture JSON, merge
+this root into the active root, change runtime implementation, invoke artifact
+body generation runtime, invoke manifest writer, or write files.

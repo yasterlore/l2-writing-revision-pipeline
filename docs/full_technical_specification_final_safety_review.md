@@ -367,6 +367,13 @@ runtime correctness generally, artifact body generation correctness generally,
 safe-metadata free-form body safety, manifest writer readiness, production
 readiness, real-data readiness, or model performance.
 
+Step561 adds a standalone Makefile target for that `safe-metadata-smoke`
+runtime CLI. The target remains outside release-quality wrapper integration
+and preserves the same metadata handoff only boundary. It does not claim
+runtime correctness generally, artifact body generation correctness generally,
+safe-metadata free-form body safety, manifest writer readiness, production
+readiness, real-data readiness, or model performance.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

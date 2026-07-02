@@ -304,3 +304,13 @@ The planned-root validator chain remains separate. Step560 does not implement
 the target, change wrapper/workflow files, change fixture JSON, change runtime
 implementation, invoke artifact body generation runtime, invoke manifest
 writer, or write files.
+
+## 19. Step561 Runtime Makefile Target Implementation Status
+
+Step561 adds the standalone Makefile target for the Step559
+`safe-metadata-smoke` runtime CLI. The planned-root validator chain remains
+separate, and the runtime target is not yet release-quality integrated.
+
+Step561 does not change wrapper/workflow files, change fixture JSON, change
+runtime implementation, invoke artifact body generation runtime, invoke
+manifest writer, or write files.

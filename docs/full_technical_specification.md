@@ -1271,3 +1271,19 @@ Step559 updates focused runtime tests but does not add a Makefile target,
 release-quality wrapper integration, workflow changes, fixture JSON changes,
 artifact body generation implementation, manifest writer integration, file
 writing, real-data use, metric use, or production readiness status.
+
+## Appendix O. Step561 Safe-Metadata Runtime Makefile Target
+
+Step561 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`
+for the Step559 `safe-metadata-smoke` runtime CLI. The target command runs the
+planned safe-metadata v0.2 primary case
+`valid/valid_safe_metadata_explicit_runtime_bridge` and emits schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.2`
+with public-safe metadata-only / body-free / count-only summary output.
+
+The target is not yet release-quality integrated. Step561 does not change
+workflow files, Python code/tests, fixture JSON, runtime implementation,
+validator implementation, artifact body generation implementation, manifest
+writer integration, file writing, real-data use, metric use, or production
+readiness status.
