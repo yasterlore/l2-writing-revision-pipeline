@@ -172,3 +172,16 @@ It designs a future `safe-metadata-smoke` mode over planned fixture metadata,
 but does not change fixture JSON, validators, runtime implementation, artifact
 body generation runtime invocation, manifest writer invocation, or file
 writing.
+
+## Step558 Runtime Fixture Expected Output Design Status
+
+Step558 adds the design-only / planning-only safe-metadata runtime
+fixture/expected-output design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_fixture_expected_output_design.md`
+
+It recommends using this planned root as-is for the first metadata handoff
+runtime boundary, with `valid/valid_safe_metadata_explicit_runtime_bridge` as
+the primary case. It does not change fixture JSON, validators, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+invocation, or file writing.

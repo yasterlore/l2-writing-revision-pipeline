@@ -611,3 +611,14 @@ design:
 It does not change this active fixture root, change fixture JSON, change
 validators, change runtime implementation, invoke artifact body generation
 runtime, invoke manifest writer, or write files.
+
+## Step558 Safe-Metadata Runtime Fixture Expected Output Design Status
+
+Step558 adds the design-only / planning-only safe-metadata runtime
+fixture/expected-output design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_fixture_expected_output_design.md`
+
+It keeps this active fixture root unchanged and does not change fixture JSON,
+validators, runtime implementation, artifact body generation runtime
+invocation, manifest writer invocation, or file writing.

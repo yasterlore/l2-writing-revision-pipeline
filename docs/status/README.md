@@ -962,3 +962,17 @@ change, runtime implementation change, artifact body generation runtime
 invocation, manifest writer integration, file writing, real-data use, metric
 use, model performance evidence, real-data readiness evidence, or production
 readiness evidence.
+
+## Step558 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Fixture Expected Output Design
+
+Step558 adds the design-only / planning-only
+[safe-metadata runtime fixture expected output design](../frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_fixture_expected_output_design.md)
+for a future `safe-metadata-smoke` metadata handoff.
+
+It recommends using the existing planned safe-metadata v0.2 fixture root as-is
+for the first runtime boundary and adds no workflow change, release-quality
+wrapper change, Makefile change, Python code/test change, fixture JSON change,
+validator change, runtime implementation change, artifact body generation
+runtime invocation, manifest writer integration, file writing, real-data use,
+metric use, model performance evidence, real-data readiness evidence, or
+production readiness evidence.

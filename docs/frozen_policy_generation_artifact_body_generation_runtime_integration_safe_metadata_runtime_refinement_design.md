@@ -440,3 +440,17 @@ runtime implementation, Python code/tests, Makefile, release-quality wrapper,
 workflow files, fixture JSON, validator implementation, artifact body
 generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, or production readiness status.
+
+## 23. Step558 Fixture Expected Output Design Status
+
+Step558 adds the design-only / planning-only fixture/expected-output design
+recommended here:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_fixture_expected_output_design.md`
+
+It fixes the primary planned fixture case, expected public-safe runtime summary
+surface, failure categories, temporary mutation strategy, and implementation
+staging without changing runtime implementation, Python code/tests, Makefile,
+release-quality wrapper, workflow files, fixture JSON, validator
+implementation, artifact body generation runtime invocation, manifest writer
+integration, or file writing.

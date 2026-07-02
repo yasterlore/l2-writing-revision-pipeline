@@ -285,3 +285,15 @@ It designs a future `safe-metadata-smoke` mode and does not change this status
 marker, workflow files, wrapper, Makefile, Python code/tests, fixture JSON,
 validator/runtime implementation, artifact body generation runtime invocation,
 manifest writer integration, or file writing.
+
+## 14. Step558 Fixture Expected Output Design Status
+
+Step558 adds the design-only / planning-only fixture/expected-output design for
+the future `safe-metadata-smoke` metadata handoff:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_fixture_expected_output_design.md`
+
+It does not change this status marker, workflow files, wrapper, Makefile,
+Python code/tests, fixture JSON, validator/runtime implementation, artifact
+body generation runtime invocation, manifest writer integration, or file
+writing.

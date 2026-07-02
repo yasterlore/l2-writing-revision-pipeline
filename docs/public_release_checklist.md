@@ -5140,3 +5140,15 @@ without changing runtime implementation, Python code/tests, Makefile, wrapper,
 workflow, fixture JSON, validator implementation, artifact body generation
 runtime invocation, manifest writer integration, file writing, real-data use,
 metric use, or production readiness status.
+
+## 56. Step558 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Fixture Expected Output Design
+
+For Step558, confirm
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_fixture_expected_output_design.md`
+exists as a design-only / planning-only fixture/expected-output design for a
+future `safe-metadata-smoke` metadata handoff. Confirm it selects the primary
+planned case, records expected public-safe summary fields, and stages future
+implementation without changing runtime implementation, Python code/tests,
+Makefile, wrapper, workflow, fixture JSON, validator implementation, artifact
+body generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.
