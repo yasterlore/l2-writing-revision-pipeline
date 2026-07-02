@@ -5013,3 +5013,15 @@ Confirm Step547 does not change workflow files, the release-quality wrapper,
 Makefile, Python code/tests, validators, runtime implementation, artifact body
 generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, or production readiness status.
+
+## 46. Step548 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Update Design
+
+For Step548, review the
+[safe-metadata v0.2 fixture validator update design](frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_update_design.md).
+
+Confirm it is design-only / planning-only and recommends a separate future
+validator module for the planned root before any runtime implementation. It
+does not change fixture JSON, validators, runtime implementation, Python
+code/tests, Makefile, release-quality wrapper, workflow files, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.

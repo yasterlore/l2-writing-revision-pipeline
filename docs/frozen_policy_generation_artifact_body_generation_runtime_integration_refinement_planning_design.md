@@ -605,3 +605,10 @@ root:
 `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`
 
 Validator and runtime integration are future steps.
+
+## 31. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Status
+
+Step548 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_update_design.md`
+as a design-only / planning-only future validator update plan for the planned
+root. Validator implementation and runtime integration remain future steps.

@@ -640,3 +640,9 @@ root:
 
 The planned cases remain separate from runtime implementation and manifest
 writer integration.
+
+## 29. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Note
+
+Step548 adds a design-only / planning-only validator update design for the
+planned safe-metadata v0.2 root. It keeps runtime implementation and manifest
+writer integration separate.

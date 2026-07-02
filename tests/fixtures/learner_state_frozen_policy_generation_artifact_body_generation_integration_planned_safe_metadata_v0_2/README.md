@@ -76,3 +76,13 @@ performance, artifact body generation correctness generally, runtime
 correctness generally, manifest writer integration correctness, generated
 policy quality, learner-state estimator correctness, or safe-metadata
 free-form body safety.
+
+Step548 adds the design-only / planning-only validator update design for this
+planned root:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_update_design.md`
+
+The design recommends a separate future validator module. It does not change
+these fixture JSON files, implement validation, implement runtime behavior,
+add Makefile or release-quality wrapper integration, invoke artifact body
+generation runtime, invoke manifest writer integration, or write files.

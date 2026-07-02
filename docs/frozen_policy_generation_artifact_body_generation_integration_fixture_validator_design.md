@@ -757,3 +757,9 @@ root:
 
 The static fixture validator remains unchanged and does not yet validate these
 planned cases.
+
+## 35. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Note
+
+Step548 adds a design-only / planning-only validator update design for the
+planned safe-metadata v0.2 root. The existing active validator implementation
+remains unchanged.

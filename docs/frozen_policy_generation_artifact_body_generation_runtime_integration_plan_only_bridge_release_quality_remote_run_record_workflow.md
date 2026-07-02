@@ -418,3 +418,9 @@ root:
 
 Existing release-quality remote run recording remains unchanged until a later
 validator and wrapper integration chain.
+
+## 22. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Status
+
+Step548 adds the safe-metadata v0.2 fixture validator update design for future
+planned-root validation. It does not change the plan-only bridge
+release-quality run record workflow or create a new remote marker.

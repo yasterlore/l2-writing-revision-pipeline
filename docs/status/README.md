@@ -850,3 +850,17 @@ validator change, runtime implementation change, artifact body generation
 runtime invocation, manifest writer integration, file writing, real-data use,
 metric use, model performance evidence, real-data readiness evidence, or
 production readiness evidence.
+
+## Step548 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Update Design
+
+Step548 adds the design-only / planning-only
+[safe-metadata v0.2 fixture validator update design](../frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_update_design.md)
+for the Step547 planned fixture root.
+
+It recommends a separate future validator module for the planned root so the
+existing active validator and release-quality wrapper remain unchanged. It adds
+no fixture JSON change, validator implementation, runtime implementation,
+Python code/test change, Makefile change, release-quality wrapper change,
+workflow change, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, model performance
+evidence, real-data readiness evidence, or production readiness evidence.

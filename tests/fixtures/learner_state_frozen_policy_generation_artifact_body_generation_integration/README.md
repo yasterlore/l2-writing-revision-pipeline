@@ -494,6 +494,17 @@ correctness generally, runtime correctness generally, manifest writer
 integration correctness, generated policy quality, learner-state estimator
 correctness, or safe-metadata free-form body safety.
 
+## Safe-Metadata v0.2 Fixture Validator Update Design
+
+Step548 adds the design-only / planning-only safe-metadata v0.2 fixture
+validator update design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_update_design.md`
+
+It recommends a separate future validator module for the planned sibling root.
+The active validator root and existing release-quality behavior remain
+unchanged.
+
 ## Non-Claims
 
 These fixtures do not claim:

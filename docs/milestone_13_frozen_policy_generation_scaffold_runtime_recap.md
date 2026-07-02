@@ -2583,3 +2583,15 @@ Validator update, runtime implementation, Makefile target, release-quality
 wrapper integration, workflow update, artifact body generation runtime
 invocation, manifest writer integration, and file writing are not implemented
 in Step547.
+
+## Step548 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Update Design
+
+Step548 adds the design-only / planning-only
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_update_design.md`.
+
+The design recommends a separate future validator module for the Step547
+planned root so the active 28-case validator and release-quality wrapper remain
+unchanged. Step548 does not change fixture JSON, validators, runtime
+implementation, Python code/tests, Makefile, release-quality wrapper, workflow
+files, artifact body generation runtime invocation, manifest writer
+integration, or file writing.

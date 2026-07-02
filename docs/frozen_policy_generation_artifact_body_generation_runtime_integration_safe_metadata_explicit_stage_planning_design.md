@@ -355,3 +355,11 @@ outside the active validator root:
 
 Validator update and runtime implementation are not yet implemented. Existing
 release-quality wrapper behavior remains unchanged.
+
+## 22. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Status
+
+Step548 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_update_design.md`
+as the next planning document for validating the Step547 planned root. It
+recommends a separate future validator module and keeps runtime implementation
+and all integration targets out of scope.

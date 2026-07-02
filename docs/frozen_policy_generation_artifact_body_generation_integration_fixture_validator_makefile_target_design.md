@@ -524,3 +524,9 @@ root:
 
 The standalone validator target remains scoped to the existing active root
 until a later validator update.
+
+## 27. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Note
+
+Step548 adds a design-only / planning-only validator update design for the
+planned safe-metadata v0.2 root. No Makefile target changes are made in
+Step548.

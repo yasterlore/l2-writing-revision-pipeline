@@ -747,3 +747,9 @@ root:
 `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`
 
 The active fixture contract remains unchanged until a later validator update.
+
+## 36. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Note
+
+Step548 adds a design-only / planning-only validator update design for the
+planned safe-metadata v0.2 root. The active fixture contract remains unchanged
+in Step548.

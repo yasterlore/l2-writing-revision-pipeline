@@ -583,3 +583,9 @@ This does not change the artifact writer CLI actual invocation runtime chain
 and does not implement validator updates, runtime updates, manifest writer
 integration, file writing, real-data use, metric use, production readiness,
 real-data readiness, or model performance status.
+
+## 35. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Note
+
+Step548 adds a design-only / planning-only validator update design for the
+planned safe-metadata v0.2 root. This does not change the artifact writer CLI
+actual invocation runtime chain.

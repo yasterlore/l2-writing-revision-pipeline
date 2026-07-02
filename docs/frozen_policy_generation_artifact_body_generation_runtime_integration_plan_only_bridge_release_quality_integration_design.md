@@ -397,3 +397,9 @@ root:
 
 The release-quality wrapper remains unchanged; validator update and wrapper
 integration are future steps.
+
+## 24. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Status
+
+Step548 adds the safe-metadata v0.2 fixture validator update design for future
+planned-root validation. It does not change the existing plan-only bridge
+release-quality wrapper integration.

@@ -278,3 +278,14 @@ outside the active validator root:
 The placement keeps the existing validator and release-quality wrapper
 unchanged. Runtime implementation, manifest writer integration, and file
 writing remain out of scope.
+
+## 19. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Status
+
+Step548 adds the design-only / planning-only safe-metadata v0.2 fixture
+validator update design for the Step547 planned root:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_update_design.md`
+
+It recommends validating the planned root before any safe-metadata runtime
+implementation and keeps manifest writer integration and file writing out of
+scope.

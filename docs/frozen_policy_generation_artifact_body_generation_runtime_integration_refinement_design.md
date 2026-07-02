@@ -739,3 +739,9 @@ root:
 
 Runtime implementation remains unchanged and the future `safe-metadata-smoke`
 mode remains unimplemented.
+
+## 37. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Status
+
+Step548 adds the safe-metadata v0.2 fixture validator update design for future
+planned-root validation. Runtime implementation remains unchanged and
+`safe-metadata-smoke` remains unimplemented.

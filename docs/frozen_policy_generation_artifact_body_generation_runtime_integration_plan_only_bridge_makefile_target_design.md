@@ -381,3 +381,9 @@ root:
 `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`
 
 No Makefile target is added for these planned cases in Step547.
+
+## 23. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Status
+
+Step548 adds a design-only / planning-only validator update design for the
+planned root. No Makefile target is added for safe-metadata v0.2 fixture
+validation in Step548.

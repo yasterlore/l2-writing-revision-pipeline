@@ -286,3 +286,11 @@ root:
 
 Validator update, runtime implementation, wrapper integration, workflow
 update, manifest writer integration, and file writing are not implemented.
+
+## 19. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Status
+
+Step548 adds the safe-metadata v0.2 fixture validator update design as a
+future-chain handoff for the planned root. The plan-only bridge chain remains
+unchanged and this document does not add runtime implementation, validator
+implementation, wrapper changes, workflow changes, manifest writer
+integration, or file writing.

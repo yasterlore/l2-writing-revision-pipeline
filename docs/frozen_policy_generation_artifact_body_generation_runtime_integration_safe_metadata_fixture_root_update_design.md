@@ -382,3 +382,13 @@ root-level directories. Validator update, runtime implementation, Makefile
 target, release-quality wrapper integration, workflow update, artifact body
 generation runtime invocation, manifest writer integration, and file writing
 remain future work.
+
+## 22. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Status
+
+Step548 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_update_design.md`
+as a design-only / planning-only validator update design for the planned root.
+It recommends a separate future validator module and does not implement
+validator changes, runtime changes, fixture JSON changes, Makefile targets,
+release-quality wrapper integration, workflow changes, artifact body generation
+runtime invocation, manifest writer integration, or file writing.

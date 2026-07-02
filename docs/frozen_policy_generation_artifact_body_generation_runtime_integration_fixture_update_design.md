@@ -448,3 +448,9 @@ root:
 
 The active Step523 fixture root remains unchanged for existing validator
 purposes.
+
+## 29. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Status
+
+Step548 adds a design-only / planning-only validator update design for the
+Step547 planned root. It recommends a separate future validator module so the
+active Step523 root and existing validator remain unchanged.

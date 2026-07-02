@@ -428,3 +428,13 @@ validators, runtime implementation, Makefile, release-quality wrapper,
 workflow files, artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 status.
+
+## 24. Step548 Safe-Metadata v0.2 Fixture Validator Update Design Status
+
+Step548 adds the design-only / planning-only safe-metadata v0.2 fixture
+validator update design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_update_design.md`
+
+The design keeps the planned root separate from the active validator and
+recommends a future dedicated validator module before runtime implementation.
