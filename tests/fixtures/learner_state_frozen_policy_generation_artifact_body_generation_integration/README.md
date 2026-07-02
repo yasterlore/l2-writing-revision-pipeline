@@ -432,6 +432,19 @@ validators or runtime implementation, invoke artifact body generation runtime,
 call manifest writer code, write files, use real data, compute metrics, or
 claim production readiness.
 
+## Safe-Metadata Explicit Stage Planning
+
+Step544 adds the docs-only / planning-only safe-metadata explicit stage
+planning design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_explicit_stage_planning_design.md`
+
+The planning design evaluates the existing candidate safe-metadata fixture
+case without changing this fixture root or fixture JSON, changing validators
+or runtime implementation, invoking artifact body generation runtime, calling
+manifest writer code, writing files, using real data, computing metrics, or
+claiming production readiness.
+
 ## Non-Claims
 
 These fixtures do not claim:
