@@ -452,3 +452,15 @@ wrapper, workflow files, Makefile, Python code/tests, fixture JSON,
 validators, runtime implementation, artifact body generation runtime
 invocation, manifest writer integration, file writing, real-data use, metric
 use, or production readiness status.
+
+## 20. Step539 Runtime Release-Quality Wrapper Integration Note
+
+Step539 adds the separate Step537 runtime target to the release-quality
+wrapper with label
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration plan-only bridge smoke`.
+This document still covers the Step529 static fixture validator wrapper check;
+the Step539 runtime check runs after that static check and before artifact body
+fixture validation. Step539 does not change workflow files, Makefile, Python
+code/tests, fixture JSON, validators, runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.

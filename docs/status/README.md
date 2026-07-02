@@ -717,3 +717,18 @@ Python code/test change, fixture JSON change, validator change, runtime
 implementation change, artifact body generation runtime invocation, manifest
 writer integration, file writing, real-data use, metric use, model performance
 evidence, real-data readiness evidence, or production readiness evidence.
+
+## Step539 Artifact Body Generation Runtime Integration Release-Quality Wrapper Integration
+
+Step539 adds the Step537 standalone runtime target to the release-quality
+wrapper with label
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration plan-only bridge smoke`.
+The check is inserted after static artifact body generation integration fixture
+validation and before artifact body fixture validation. It creates no status
+marker.
+
+It adds no workflow change, Makefile change, Python code/test change, fixture
+JSON change, validator change, runtime implementation change, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, model performance evidence, real-data readiness
+evidence, or production readiness evidence.

@@ -386,6 +386,14 @@ Minimal documentation links and coverage notes were applied:
   workflow, fixture JSON, Python code/test, validator, runtime implementation,
   manifest writer, file writing, real-data, metric, or production-readiness
   changes
+- Step539 follow-up records the release-quality wrapper label
+  `release_quality_check: learner-state frozen policy generation artifact body generation runtime integration plan-only bridge smoke`
+  and command
+  `make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+  without changing workflow files, Makefile, Python code/test, fixture JSON,
+  validator, runtime implementation, artifact body generation runtime
+  invocation, manifest writer, file writing, real-data, metric, or
+  production-readiness status
 
 No fixture JSON, workflow, wrapper, Python code/test, Rust, or TypeScript
 changes were made by this coverage note.
@@ -423,5 +431,6 @@ privacy/legal/IRB readiness.
 - Later: artifact writer CLI integration runtime remote/manual run record
   staging, separate from this specification coverage work
 - Later: artifact body generation CLI integration design and implementation
-- Later: release-quality integration design for the Step537 runtime target
+- Later: remote/manual run record workflow design for the Step539 runtime
+  wrapper check
 - Later: manifest writer integration design and implementation

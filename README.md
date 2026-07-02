@@ -138,6 +138,8 @@ At a high level, it runs:
   body runtime invocation, no manifest writer, and no file writing; Step537
   adds standalone target
   `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+  and Step539 adds that target to the release-quality wrapper after static
+  artifact body generation integration fixture validation
 - artifact body fixture, generation, safe-metadata generation, file-writing
   fixture, and isolated write checks
 - manifest writer fixture, runtime fixture, no-file runtime, file-writing
@@ -211,6 +213,8 @@ Currently implemented:
   `learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`
   and standalone Makefile target
   `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+  now included in the release-quality wrapper as a metadata-only selected-case
+  smoke
 - artifact body safe-metadata file writing and isolated write validation
 - manifest writer metadata-only no-file runtime
 - manifest writer metadata-only runtime file writing through opt-in
@@ -263,6 +267,7 @@ Not currently implemented or not claimed:
 - [Artifact body generation integration fixture validator release-quality integration design](docs/frozen_policy_generation_artifact_body_generation_integration_fixture_validator_release_quality_integration_design.md)
 - [Artifact body generation runtime integration fixture update design](docs/frozen_policy_generation_artifact_body_generation_runtime_integration_fixture_update_design.md)
 - [Artifact body generation runtime integration plan-only bridge Makefile target design](docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md)
+- [Artifact body generation runtime integration plan-only bridge release-quality integration design](docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_integration_design.md)
 
 ## CI
 

@@ -341,6 +341,17 @@ code/tests, fixture JSON, validators, runtime implementation, artifact body
 generation runtime invocation, manifest writer integration, file writing, or
 production readiness claims.
 
+Confirm Step539 adds the release-quality wrapper check
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration plan-only bridge smoke`
+with command
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`.
+Reviewers should confirm it is inserted after artifact body generation
+integration fixture validation and before artifact body fixture validation,
+and that it does not change workflow files, Makefile, Python code/tests,
+fixture JSON, validators, runtime implementation, artifact body generation
+runtime invocation, manifest writer integration, file writing, or production
+readiness claims.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

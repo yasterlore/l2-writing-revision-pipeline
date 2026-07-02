@@ -638,3 +638,13 @@ JSON, change validators, change runtime implementation, change Makefile,
 change the release-quality wrapper, change workflow files, invoke artifact
 body generation runtime, call manifest writer code, write files, use real
 data, compute metrics, or claim production readiness.
+
+## 27. Step539 Runtime Release-Quality Wrapper Integration Note
+
+Step539 adds the separate Step537 runtime target to the release-quality
+wrapper after static artifact body generation integration fixture validation
+and before artifact body fixture validation. It does not change this fixture
+contract, add fixture cases, change fixture JSON, change validators, change
+runtime implementation, change Makefile, change workflow files, invoke
+artifact body generation runtime, call manifest writer code, write files, use
+real data, compute metrics, or claim production readiness.

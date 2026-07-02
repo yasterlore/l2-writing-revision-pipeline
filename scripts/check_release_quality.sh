@@ -151,6 +151,9 @@ run make check-learner-state-frozen-policy-generation-artifact-writer-cli-actual
 section "learner-state frozen policy generation artifact body generation integration fixture validation"
 run make check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures
 
+section "learner-state frozen policy generation artifact body generation runtime integration plan-only bridge smoke"
+run make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration
+
 section "learner-state frozen policy generation artifact body fixture validation"
 run make check-learner-state-frozen-policy-generation-artifact-body-fixtures
 

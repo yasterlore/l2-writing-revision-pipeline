@@ -269,3 +269,18 @@ Step538 does not change the release-quality wrapper, workflow files, Makefile,
 Python code/tests, fixture JSON, validators, runtime implementation, artifact
 body generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, or production readiness status.
+
+## 14. Step539 Release-Quality Wrapper Integration Status
+
+Step539 adds the Step537 standalone runtime target to the release-quality
+wrapper with label
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration plan-only bridge smoke`
+and command
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`.
+
+The check is inserted after artifact body generation integration fixture
+validation and before artifact body fixture validation. Step539 does not
+change workflow files, Makefile, Python code/tests, fixture JSON, validators,
+runtime implementation, artifact body generation runtime invocation, manifest
+writer integration, file writing, real-data use, metric use, or production
+readiness status.

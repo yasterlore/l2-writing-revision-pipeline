@@ -313,6 +313,17 @@ validators, runtime implementation, artifact body generation runtime
 invocation, manifest writer integration, file writing, real-data use, metric
 use, production readiness, real-data readiness, or model performance status.
 
+Step539 adds the release-quality wrapper label
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration plan-only bridge smoke`
+with command
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`.
+The check is placed after artifact body generation integration fixture
+validation and before artifact body fixture validation. It does not change
+workflow files, Makefile, Python code/tests, fixture JSON, validators, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, production readiness,
+real-data readiness, or model performance status.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:
