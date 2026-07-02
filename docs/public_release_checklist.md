@@ -4954,3 +4954,25 @@ Makefile, Python code/tests, fixture JSON, validators, runtime
 implementation, artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 status.
+
+## 43. Step545 Artifact Body Generation Runtime Integration Safe-Metadata Fixture Update Design
+
+For Step545, review the
+[artifact body generation runtime integration safe-metadata fixture/update design](frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_update_design.md).
+Confirm it is design-only / planning-only and does not update fixture JSON or
+runtime code.
+
+Confirm it summarizes prior chain dependency, existing fixture root
+assessment, candidate safe-metadata case assessment, fixture update decision,
+initial case candidates, required metadata fields, expected runtime output
+surface, validator implications, runtime schema implications, runtime mode
+naming, safety scan requirements, fail-closed behavior, next-step staging,
+relationships to existing safe-metadata CLI smoke, manifest writer and
+file-writing chains, non-equivalence cautions, recommended next step, failure
+interpretation, non-claims, and public-safe checklist.
+
+Confirm Step545 does not change workflow files, the release-quality wrapper,
+Makefile, Python code/tests, fixture JSON, validators, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+status.

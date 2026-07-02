@@ -662,6 +662,19 @@ change the release-quality wrapper, change workflow files, invoke artifact
 body generation runtime, call manifest writer code, write files, use real
 data, compute metrics, or claim production readiness.
 
+## 29. Step541 Runtime Remote Status Marker Note
+
+Step541 adds the separate public-safe pass-only metadata-only body-free remote
+status marker for the Step539 runtime wrapper check:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_remote_run_status.md`
+
+It does not change this fixture contract, add fixture cases, change fixture
+JSON, change validators, change runtime implementation, change Makefile,
+change the release-quality wrapper, change workflow files, invoke artifact
+body generation runtime, call manifest writer code, write files, use real
+data, compute metrics, or claim production readiness.
+
 ## 32. Step544 Safe-Metadata Explicit Stage Planning Note
 
 Step544 adds the docs-only / planning-only safe-metadata explicit stage
@@ -675,12 +688,11 @@ change the release-quality wrapper, change workflow files, invoke artifact
 body generation runtime, call manifest writer code, write files, use real
 data, compute metrics, or claim production readiness.
 
-## 29. Step541 Runtime Remote Status Marker Note
+## 33. Step545 Safe-Metadata Fixture Update Design Note
 
-Step541 adds the separate public-safe pass-only metadata-only body-free remote
-status marker for the Step539 runtime wrapper check:
+Step545 adds the docs-only / planning-only safe-metadata fixture/update design:
 
-`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_remote_run_status.md`
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_update_design.md`
 
 It does not change this fixture contract, add fixture cases, change fixture
 JSON, change validators, change runtime implementation, change Makefile,

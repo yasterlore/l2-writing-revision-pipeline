@@ -445,6 +445,19 @@ or runtime implementation, invoking artifact body generation runtime, calling
 manifest writer code, writing files, using real data, computing metrics, or
 claiming production readiness.
 
+## Safe-Metadata Fixture Update Design
+
+Step545 adds the docs-only / planning-only safe-metadata fixture/update design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_update_design.md`
+
+The design evaluates whether the existing fixture root and
+`valid/valid_safe_metadata_summary_bridge` are sufficient for a later
+safe-metadata runtime integration stage, without changing this fixture root or
+fixture JSON, changing validators or runtime implementation, invoking artifact
+body generation runtime, calling manifest writer code, writing files, using
+real data, computing metrics, or claiming production readiness.
+
 ## Non-Claims
 
 These fixtures do not claim:

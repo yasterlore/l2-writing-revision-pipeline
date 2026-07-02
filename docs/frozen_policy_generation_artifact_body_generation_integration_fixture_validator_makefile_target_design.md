@@ -488,3 +488,15 @@ does not change workflow files, the release-quality wrapper, Makefile, Python
 code/tests, fixture JSON, validators, runtime implementation, artifact body
 generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, or production readiness status.
+
+## 24. Step545 Safe-Metadata Fixture Update Design Note
+
+Step545 adds the docs-only / planning-only safe-metadata fixture/update design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_update_design.md`
+
+It does not replace the static fixture validator target described here and
+does not change workflow files, the release-quality wrapper, Makefile, Python
+code/tests, fixture JSON, validators, runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.
