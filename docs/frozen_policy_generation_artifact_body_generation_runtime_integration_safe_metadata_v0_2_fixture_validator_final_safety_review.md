@@ -332,3 +332,12 @@ fixture validator check and before artifact body fixture validation. The
 planned-root validator chain remains separate, and Step563 does not change
 workflow files, Makefile, fixture JSON, runtime implementation, invoke
 artifact body generation runtime, invoke manifest writer, or write files.
+
+## 22. Step564 Runtime Remote Run Record Workflow Design Status
+
+Step564 adds the public-safe remote/manual run record workflow design for the
+safe-metadata runtime smoke. The planned-root validator chain remains
+separate, and Step564 does not create a status marker, change workflow files,
+change the wrapper, change Makefile, change fixture JSON, change runtime
+implementation, invoke artifact body generation runtime, invoke manifest
+writer, or write files.

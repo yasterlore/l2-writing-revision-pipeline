@@ -5221,3 +5221,19 @@ Python code/tests, fixture JSON, runtime implementation, validator
 implementation, artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 status.
+
+## 62. Step564 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Remote Run Record Workflow Design
+
+For Step564, confirm
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_remote_run_record_workflow.md`
+exists and only designs a future public-safe remote/manual run status marker
+workflow for the Step563 wrapper check.
+
+Confirm the design includes the target label, command, insertion point,
+public-safe remote run fields, target runtime summary fields, interpretation
+rules, proposed future marker path, and public-safe checklist without creating
+a status marker, changing workflow files, changing the wrapper, changing
+Makefile, changing Python code/tests, changing fixture JSON, changing runtime
+or validator implementation, invoking artifact body generation runtime,
+invoking manifest writer, writing files, using real data, computing metrics,
+or claiming production readiness.

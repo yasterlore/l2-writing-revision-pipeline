@@ -236,3 +236,12 @@ to the release-quality wrapper after the planned-root validator check and
 before artifact body fixture validation. It does not change fixture JSON,
 merge this root into the active root, change runtime implementation, invoke
 artifact body generation runtime, invoke manifest writer, or write files.
+
+## Step564 Runtime Remote Run Record Workflow Design Status
+
+Step564 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_remote_run_record_workflow.md`
+as a design-only / docs-only workflow for a future status marker over the
+Step563 wrapper check. It does not change fixture JSON, merge this root into
+the active root, change runtime implementation, invoke artifact body
+generation runtime, invoke manifest writer, or write files.

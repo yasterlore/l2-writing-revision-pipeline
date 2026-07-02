@@ -512,3 +512,16 @@ validation. The check preserves the metadata handoff only boundary and does
 not change workflow files, Makefile, Python code/tests, fixture JSON, runtime
 implementation, invoke artifact body generation runtime, invoke manifest
 writer, or write files.
+
+## 29. Step564 Remote Run Record Workflow Design Status
+
+Step564 adds the design-only / docs-only remote/manual run record workflow for
+the Step563 wrapper check:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_remote_run_record_workflow.md`
+
+The design preserves the metadata handoff only boundary and does not create a
+status marker, change workflow files, change the wrapper, change Makefile,
+change Python code/tests, change fixture JSON, change runtime implementation,
+invoke artifact body generation runtime, invoke manifest writer, or write
+files.

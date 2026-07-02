@@ -332,3 +332,10 @@ and continues to describe only the planned-root validator wrapper run.
 Step563 adds the safe-metadata runtime smoke to the release-quality wrapper.
 This status marker remains unchanged and continues to describe only the
 planned-root validator wrapper run recorded in Step555.
+
+## 20. Step564 Runtime Remote Run Record Workflow Design Status
+
+Step564 adds the design-only / docs-only remote/manual run record workflow for
+the safe-metadata runtime smoke. This status marker remains unchanged and
+continues to describe only the planned-root validator wrapper run recorded in
+Step555.

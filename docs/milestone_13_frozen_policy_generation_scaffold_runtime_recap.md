@@ -2816,3 +2816,18 @@ workflow files, Makefile, Python code/tests, fixture JSON, runtime
 implementation, validator implementation, artifact body generation runtime
 invocation, manifest writer integration, file writing, real-data use, metric
 use, or production readiness status.
+
+## Step564 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Release-Quality Remote Run Record Workflow Design
+
+Step564 adds the design-only / docs-only remote/manual run record workflow:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_remote_run_record_workflow.md`
+
+The design proposes future public-safe status marker fields, target runtime
+summary fields, related chain summary policy, safety review workflow,
+interpretation rules, and the future status marker path. It does not create a
+status marker, change workflow files, change the wrapper, change Makefile,
+change Python code/tests, change fixture JSON, change runtime implementation,
+change validator implementation, invoke artifact body generation runtime,
+invoke manifest writer, write files, use real data, compute metrics, or claim
+production readiness.

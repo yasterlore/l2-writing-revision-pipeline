@@ -667,3 +667,12 @@ safe-metadata v0.2 fixture validation and before artifact body fixture
 validation. This active fixture root remains unchanged, and no fixture JSON
 change, runtime implementation change, artifact body generation runtime
 invocation, manifest writer invocation, or file writing is added.
+
+## Step564 Safe-Metadata Runtime Remote Run Record Workflow Design Status
+
+Step564 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_remote_run_record_workflow.md`
+as a design-only / docs-only workflow for a future status marker. This active
+fixture root remains unchanged, and no fixture JSON change, runtime
+implementation change, artifact body generation runtime invocation, manifest
+writer invocation, or file writing is added.

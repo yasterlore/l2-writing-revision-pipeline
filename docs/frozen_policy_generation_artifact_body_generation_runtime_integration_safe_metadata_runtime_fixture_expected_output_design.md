@@ -578,3 +578,12 @@ validation.
 Step563 does not change workflows, Makefile, Python code/tests, fixture JSON,
 runtime implementation, invoke artifact body generation runtime, invoke
 manifest writer, or write files.
+
+## 31. Step564 Remote Run Record Workflow Design Status
+
+Step564 adds the public-safe remote/manual run record workflow design for the
+Step563 wrapper check. The design references the expected public-safe output
+surface from this document and does not create a status marker, change
+workflows, change the wrapper, change Makefile, change Python code/tests,
+change fixture JSON, change runtime implementation, invoke artifact body
+generation runtime, invoke manifest writer, or write files.
