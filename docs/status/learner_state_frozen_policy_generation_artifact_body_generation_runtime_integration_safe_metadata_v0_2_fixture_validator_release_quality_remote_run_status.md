@@ -304,3 +304,13 @@ Step559 implements `safe-metadata-smoke` as metadata handoff only in the
 runtime integration module. This status marker remains unchanged and continues
 to describe only the planned-root validator wrapper run; it is not a runtime
 smoke marker.
+
+## 16. Step560 Runtime Makefile Target Design Status
+
+Step560 adds the design-only / planning-only Makefile target design for the
+Step559 `safe-metadata-smoke` runtime CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_makefile_target_design.md`
+
+This status marker remains unchanged and continues to describe only the
+planned-root validator wrapper run.

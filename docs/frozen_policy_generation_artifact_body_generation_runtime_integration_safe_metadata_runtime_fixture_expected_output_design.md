@@ -532,3 +532,15 @@ records public-safe count-only metadata, and fail-closes unsafe markers.
 Step559 does not add a Makefile target, add release-quality wrapper
 integration, change workflow files, change fixture JSON, invoke artifact body
 generation runtime, invoke manifest writer, or write files.
+
+## 27. Step560 Makefile Target Design Status
+
+Step560 adds the design-only / planning-only Makefile target design for the
+Step559 `safe-metadata-smoke` runtime CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_makefile_target_design.md`
+
+It does not implement the Makefile target, change release-quality wrapper,
+change workflow files, change Python code/tests, change fixture JSON, change
+runtime implementation, invoke artifact body generation runtime, invoke
+manifest writer, or write files.

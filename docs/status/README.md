@@ -992,3 +992,16 @@ metadata-only / body-free / count-only summary output and does not invoke
 artifact body generation runtime, invoke manifest writer, write files, change
 Makefile, change the release-quality wrapper, change workflows, change
 fixture JSON, use real data, compute metrics, or claim production readiness.
+
+## Step560 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Makefile Target Design
+
+Step560 adds the design-only / planning-only
+[safe-metadata runtime Makefile target design](../frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_makefile_target_design.md)
+for the Step559 `safe-metadata-smoke` runtime CLI.
+
+It proposes a future standalone target and adds no Makefile change,
+release-quality wrapper change, workflow change, Python code/test change,
+fixture JSON change, runtime implementation change, validator change, artifact
+body generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, model performance evidence, real-data readiness
+evidence, or production readiness evidence.

@@ -467,3 +467,15 @@ Step559 does not add a Makefile target, add release-quality wrapper
 integration, change workflow files, change fixture JSON, implement artifact
 body generation runtime invocation, implement manifest writer integration, or
 enable file writing.
+
+## 25. Step560 Makefile Target Design Status
+
+Step560 adds the design-only / planning-only Makefile target design for the
+Step559 `safe-metadata-smoke` runtime CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_makefile_target_design.md`
+
+It does not change Makefile, release-quality wrapper, workflow files,
+Python code/tests, fixture JSON, runtime implementation, validator
+implementation, artifact body generation runtime invocation, manifest writer
+integration, or file writing.

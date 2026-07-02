@@ -5166,3 +5166,17 @@ target, release-quality wrapper integration, workflow change, fixture JSON
 change, artifact body generation runtime invocation, manifest writer
 invocation, file writing, real-data use, metric use, or production readiness
 status.
+
+## 58. Step560 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Makefile Target Design
+
+For Step560, confirm
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_makefile_target_design.md`
+exists as a design-only / planning-only standalone Makefile target design for
+the Step559 `safe-metadata-smoke` runtime CLI. Confirm it proposes the future
+target name, help text, command, expected public-safe output, safety boundary,
+implementation checks, staging, failure interpretation, non-claims, and
+public-safe checklist without changing Makefile, wrapper, workflow,
+Python code/tests, fixture JSON, runtime implementation, validator
+implementation, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+status.

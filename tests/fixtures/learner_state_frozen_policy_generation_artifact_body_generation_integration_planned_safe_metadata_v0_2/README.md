@@ -198,3 +198,15 @@ The runtime emits schema
 and public-safe body-free summary output. This step does not change fixture
 JSON, merge this root into the active root, invoke artifact body generation
 runtime, invoke manifest writer, or write files.
+
+## Step560 Runtime Makefile Target Design Status
+
+Step560 adds the design-only / planning-only Makefile target design for the
+Step559 `safe-metadata-smoke` runtime CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_makefile_target_design.md`
+
+It proposes a future standalone target over this planned root's primary case
+but does not change fixture JSON, merge this root into the active root, change
+runtime implementation, invoke artifact body generation runtime, invoke
+manifest writer, or write files.

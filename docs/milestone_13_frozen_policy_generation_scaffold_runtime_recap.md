@@ -2758,3 +2758,19 @@ residue, and existing plan-only bridge behavior. Step559 does not change
 Makefile, release-quality wrapper, workflow files, fixture JSON, artifact body
 generation implementation, manifest writer integration, real-data use, metric
 use, or production readiness status.
+
+## Step560 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Makefile Target Design
+
+Step560 adds the design-only / planning-only Makefile target design for the
+Step559 `safe-metadata-smoke` runtime CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_makefile_target_design.md`
+
+The design proposes the future standalone target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`,
+help text, command, expected public-safe output, safety boundary, implementation
+checks, staging, and failure interpretation. It does not change Makefile,
+release-quality wrapper, workflow files, Python code/tests, fixture JSON,
+runtime implementation, validator implementation, artifact body generation
+runtime invocation, manifest writer integration, file writing, real-data use,
+metric use, or production readiness status.

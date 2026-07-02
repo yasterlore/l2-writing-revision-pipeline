@@ -292,3 +292,15 @@ file writing disabled.
 The completed planned-root validator chain remains separate from this runtime
 mode. Step559 does not merge the planned root into the active root and does
 not add a runtime Makefile target or release-quality runtime smoke.
+
+## 18. Step560 Runtime Makefile Target Design Status
+
+Step560 adds the design-only / planning-only Makefile target design for the
+Step559 `safe-metadata-smoke` runtime CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_makefile_target_design.md`
+
+The planned-root validator chain remains separate. Step560 does not implement
+the target, change wrapper/workflow files, change fixture JSON, change runtime
+implementation, invoke artifact body generation runtime, invoke manifest
+writer, or write files.

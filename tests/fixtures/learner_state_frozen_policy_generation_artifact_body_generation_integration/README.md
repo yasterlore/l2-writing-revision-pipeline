@@ -630,3 +630,14 @@ metadata handoff only over the separate planned safe-metadata v0.2 root. This
 active fixture root remains unchanged, and no active-root merge, fixture JSON
 change, artifact body generation runtime invocation, manifest writer
 invocation, or file writing is added.
+
+## Step560 Safe-Metadata Runtime Makefile Target Design Status
+
+Step560 adds the design-only / planning-only Makefile target design for the
+Step559 `safe-metadata-smoke` runtime CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_makefile_target_design.md`
+
+This active fixture root remains unchanged, and no fixture JSON change,
+runtime implementation change, artifact body generation runtime invocation,
+manifest writer invocation, or file writing is added.
