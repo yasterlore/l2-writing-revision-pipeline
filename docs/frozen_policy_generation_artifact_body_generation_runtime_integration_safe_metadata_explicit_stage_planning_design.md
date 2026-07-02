@@ -382,3 +382,8 @@ Step551 implements the standalone Makefile target for the Step549 planned-root
 validator CLI. It does not implement `safe-metadata-smoke` runtime behavior,
 invoke artifact body generation runtime, invoke manifest writer, or write
 files.
+
+## 26. Step552 Release-Quality Integration Design Status
+
+Step552 adds a design-only / planning-only release-quality integration design
+for the planned-root validator target. Runtime behavior remains unimplemented.

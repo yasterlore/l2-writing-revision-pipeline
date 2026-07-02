@@ -112,3 +112,10 @@ The target runs the planned-root validator CLI and keeps the expected
 public-safe aggregate at 24 cases / 168 JSON files, with 4 pass, 1 usage-error,
 18 fail-closed, and 1 mismatch case. Release-quality integration remains
 future work, and runtime implementation remains unimplemented.
+
+Step552 adds the design-only / planning-only release-quality integration
+design for this target:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_integration_design.md`
+
+No release-quality wrapper change is implemented in Step552.

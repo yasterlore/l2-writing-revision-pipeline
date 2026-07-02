@@ -310,3 +310,9 @@ Step549 validator CLI. The plan-only bridge runtime chain remains unchanged.
 Step551 implements the standalone Makefile target for the separate
 planned-root safe-metadata v0.2 validator. The plan-only bridge runtime chain
 and its release-quality wrapper check remain unchanged.
+
+## 23. Step552 Safe-Metadata v0.2 Fixture Validator Release-Quality Integration Design Status
+
+Step552 designs a future release-quality wrapper check for the planned-root
+validator target. The plan-only bridge runtime chain and its existing wrapper
+check remain unchanged.

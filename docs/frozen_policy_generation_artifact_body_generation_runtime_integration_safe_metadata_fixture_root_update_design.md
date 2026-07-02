@@ -415,3 +415,9 @@ Step551 implements the standalone Makefile target
 `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
 for the Step549 validator CLI. The planned fixture root remains separate from
 the active root, and release-quality wrapper integration remains future work.
+
+## 26. Step552 Release-Quality Integration Design Status
+
+Step552 adds a design-only / planning-only release-quality integration design
+for the Step551 standalone target. The planned fixture root remains separate
+from the active root.

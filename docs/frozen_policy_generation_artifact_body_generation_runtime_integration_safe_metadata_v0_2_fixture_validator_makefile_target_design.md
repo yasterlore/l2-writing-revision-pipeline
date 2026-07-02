@@ -47,6 +47,11 @@ Step551 later implements this proposed standalone target with the same name,
 help text, and command. Release-quality wrapper integration remains a later
 separate step.
 
+Step552 later adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_integration_design.md`
+as the design-only / planning-only release-quality integration design for this
+standalone target.
+
 ## 4. Expected Public-Safe Output
 
 The future standalone target should expose the validator's public-safe

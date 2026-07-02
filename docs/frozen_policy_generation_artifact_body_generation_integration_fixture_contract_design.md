@@ -768,3 +768,8 @@ safe-metadata v0.2 validator. The active fixture contract remains unchanged.
 
 Step551 implements the standalone Makefile target for the planned
 safe-metadata v0.2 validator. The active fixture contract remains unchanged.
+
+## 40. Step552 Safe-Metadata v0.2 Fixture Validator Release-Quality Integration Design Note
+
+Step552 designs future wrapper integration for the planned safe-metadata v0.2
+validator target. The active fixture contract remains unchanged.

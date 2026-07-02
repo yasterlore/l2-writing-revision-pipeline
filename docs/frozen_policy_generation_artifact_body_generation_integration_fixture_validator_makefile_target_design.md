@@ -545,3 +545,8 @@ validator. The existing active validator target remains unchanged.
 
 Step551 implements the separate planned-root validator Makefile target. The
 existing active validator target remains unchanged.
+
+## 31. Step552 Safe-Metadata v0.2 Fixture Validator Release-Quality Integration Design Note
+
+Step552 designs future wrapper integration for the planned-root validator
+target. The existing active validator target remains unchanged.

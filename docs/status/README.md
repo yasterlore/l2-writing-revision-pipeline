@@ -629,6 +629,22 @@ manifest writer integration, file writing, real-data use, metric use, model
 performance evidence, real-data readiness evidence, or production readiness
 evidence.
 
+## Step552 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Release-Quality Integration Design
+
+Step552 adds the design-only / planning-only
+[safe-metadata v0.2 fixture validator release-quality integration design](../frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_integration_design.md).
+
+It proposes the future wrapper label
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration safe-metadata v0.2 fixture validation`
+and command
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`.
+The proposed insertion point is after the plan-only bridge smoke and before
+artifact body fixture validation. Step552 changes no wrapper, workflow,
+Makefile, Python code/test, fixture JSON, validator implementation, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, model performance
+evidence, real-data readiness evidence, or production readiness evidence.
+
 ## Step531 Artifact Body Generation Integration Fixture Validator Remote Run Status
 
 Step531 adds the public-safe

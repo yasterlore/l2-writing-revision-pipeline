@@ -538,6 +538,15 @@ unchanged. The planned-root target is not yet release-quality integrated, and
 it does not implement runtime behavior, invoke artifact body generation
 runtime, invoke manifest writer integration, or write files.
 
+## Safe-Metadata v0.2 Fixture Validator Release-Quality Integration Design
+
+Step552 adds the design-only / planning-only release-quality integration
+design for the planned-root validator target:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_integration_design.md`
+
+The active validator root and existing active target remain unchanged.
+
 ## Non-Claims
 
 These fixtures do not claim:
