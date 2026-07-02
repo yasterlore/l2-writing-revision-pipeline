@@ -2708,3 +2708,19 @@ wrapper, change Makefile, change Python code/tests, change fixture JSON,
 change validator implementation, invoke artifact body generation runtime,
 invoke manifest writer, write files, use real data, compute metrics, or claim
 production readiness.
+
+## Step557 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Refinement Design
+
+Step557 adds the design-only / planning-only runtime refinement design for a
+future `safe-metadata-smoke` mode:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_refinement_design.md`
+
+The design covers proposed runtime mode, CLI shape, v0.2 schema, fixture case
+usage, expected output, fail-closed behavior, output suppression, future tests,
+Makefile/release-quality staging, and next-chain handoff. It recommends
+safe-metadata runtime fixture/expected-output design next and does not change
+runtime implementation, Python code/tests, Makefile, release-quality wrapper,
+workflow files, fixture JSON, validator implementation, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.

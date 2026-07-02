@@ -36,6 +36,9 @@ Current status-marker posture:
   count-only metadata.
 - The artifact body generation runtime integration safe-metadata v0.2 planned
   fixture validator chain now has a docs-only final safety review.
+- The artifact body generation runtime integration safe-metadata runtime
+  refinement is designed for a future `safe-metadata-smoke` mode, but runtime
+  implementation remains future work.
 
 Available markers:
 

@@ -651,6 +651,16 @@ safe-metadata v0.2 planned fixture validator chain:
 It does not change this refinement planning design or implement runtime
 integration.
 
+## 19. Step557 Safe-Metadata Runtime Refinement Design Status
+
+Step557 adds the design-only / planning-only safe-metadata runtime refinement
+design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_refinement_design.md`
+
+It designs a future `safe-metadata-smoke` mode but does not implement runtime
+integration.
+
 ## 33. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Status
 
 Step550 adds a design-only / planning-only Makefile target design for the

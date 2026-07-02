@@ -695,6 +695,16 @@ safe-metadata v0.2 planned fixture validator chain:
 It keeps runtime implementation, manifest writer integration, fixture JSON
 changes, workflow changes, and file writing separate.
 
+## 16. Step557 Safe-Metadata Runtime Refinement Design Status
+
+Step557 adds the design-only / planning-only safe-metadata runtime refinement
+design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_refinement_design.md`
+
+It keeps runtime implementation, manifest writer integration, fixture JSON
+changes, workflow changes, and file writing separate.
+
 ## 14. Step555 Safe-Metadata v0.2 Fixture Validator Remote Status Marker Status
 
 Step555 adds the public-safe pass-only metadata-only body-free remote status

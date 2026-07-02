@@ -504,3 +504,14 @@ safe-metadata v0.2 planned fixture validator chain:
 
 It reviews the planned fixture root through remote status marker boundary
 without changing fixture JSON, validators, or runtime implementation.
+
+## 25. Step557 Runtime Refinement Design Status
+
+Step557 adds the design-only / planning-only safe-metadata runtime refinement
+design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_refinement_design.md`
+
+It designs a future `safe-metadata-smoke` mode while leaving fixture JSON,
+validators, runtime implementation, wrapper, Makefile, and workflow files
+unchanged.

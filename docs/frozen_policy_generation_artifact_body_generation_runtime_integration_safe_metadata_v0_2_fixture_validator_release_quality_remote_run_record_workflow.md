@@ -374,3 +374,15 @@ next-chain handoff. It does not create runtime refinement design, change
 runtime implementation, change workflow, wrapper, Makefile, Python code/tests,
 fixture JSON, validator implementation, artifact body generation runtime
 invocation, manifest writer integration, or file writing.
+
+## 18. Step557 Runtime Refinement Design Status
+
+Step557 adds the design-only / planning-only safe-metadata runtime refinement
+design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_refinement_design.md`
+
+It designs a future `safe-metadata-smoke` mode while leaving this remote run
+record workflow, runtime implementation, wrapper, Makefile, Python code/tests,
+fixture JSON, validator implementation, manifest writer integration, and file
+writing unchanged.

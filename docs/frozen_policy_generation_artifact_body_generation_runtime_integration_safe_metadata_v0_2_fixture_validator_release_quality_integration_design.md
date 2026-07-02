@@ -325,3 +325,15 @@ safe-metadata v0.2 planned fixture validator chain:
 It reviews the planned fixture root, separate validator, standalone Makefile
 target, wrapper inclusion, remote status marker, residual risks, and
 next-chain handoff without changing implementation or runtime boundaries.
+
+## 18. Step557 Runtime Refinement Design Status
+
+Step557 adds the design-only / planning-only safe-metadata runtime refinement
+design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_refinement_design.md`
+
+It designs a future `safe-metadata-smoke` mode while leaving this
+release-quality integration design, wrapper, Makefile, Python code/tests,
+fixture JSON, validator implementation, runtime implementation, manifest
+writer integration, and file writing unchanged.

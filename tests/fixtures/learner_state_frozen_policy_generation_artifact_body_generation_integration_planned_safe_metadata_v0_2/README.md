@@ -160,3 +160,15 @@ Makefile target, release-quality wrapper inclusion, and remote status marker
 boundary. It does not change fixture JSON, validators, runtime implementation,
 artifact body generation runtime invocation, manifest writer invocation, or
 file writing.
+
+## Step557 Runtime Refinement Design Status
+
+Step557 adds the design-only / planning-only safe-metadata runtime refinement
+design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_refinement_design.md`
+
+It designs a future `safe-metadata-smoke` mode over planned fixture metadata,
+but does not change fixture JSON, validators, runtime implementation, artifact
+body generation runtime invocation, manifest writer invocation, or file
+writing.

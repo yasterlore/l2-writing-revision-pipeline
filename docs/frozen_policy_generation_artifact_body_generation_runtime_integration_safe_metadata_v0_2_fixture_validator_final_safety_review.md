@@ -256,3 +256,15 @@ code/tests, change fixture JSON, change validator implementation, invoke
 artifact body generation runtime, implement manifest writer integration,
 enable file writing, use real data, compute metrics, or claim production
 readiness.
+
+## 15. Step557 Runtime Refinement Design Status
+
+Step557 adds the design-only / planning-only safe-metadata runtime refinement
+design recommended by this review:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_refinement_design.md`
+
+It designs a future `safe-metadata-smoke` mode and next-chain staging without
+changing runtime implementation, Python code/tests, Makefile, release-quality
+wrapper, workflow files, fixture JSON, validator implementation, artifact body
+generation runtime invocation, manifest writer integration, or file writing.
