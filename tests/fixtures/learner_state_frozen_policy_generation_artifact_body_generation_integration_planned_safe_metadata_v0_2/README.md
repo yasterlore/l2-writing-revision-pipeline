@@ -185,3 +185,16 @@ runtime boundary, with `valid/valid_safe_metadata_explicit_runtime_bridge` as
 the primary case. It does not change fixture JSON, validators, runtime
 implementation, artifact body generation runtime invocation, manifest writer
 invocation, or file writing.
+
+## Step559 Runtime Implementation Status
+
+Step559 implements `safe-metadata-smoke` as metadata handoff only over this
+planned root's primary case:
+
+`valid/valid_safe_metadata_explicit_runtime_bridge`
+
+The runtime emits schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.2`
+and public-safe body-free summary output. This step does not change fixture
+JSON, merge this root into the active root, invoke artifact body generation
+runtime, invoke manifest writer, or write files.

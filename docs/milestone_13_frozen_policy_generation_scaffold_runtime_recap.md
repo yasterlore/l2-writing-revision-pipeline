@@ -2740,3 +2740,21 @@ implementation, Python code/tests, Makefile, release-quality wrapper, workflow
 files, fixture JSON, validator implementation, artifact body generation
 runtime invocation, manifest writer integration, file writing, real-data use,
 metric use, or production readiness status.
+
+## Step559 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Implementation
+
+Step559 implements `safe-metadata-smoke` in
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+as metadata handoff only. The mode reads the planned safe-metadata v0.2
+primary case, emits schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.2`,
+records count-only safe metadata fields, fail-closes unsafe markers, and keeps
+artifact body generation runtime invocation, manifest writer invocation, and
+file writing disabled.
+
+Focused runtime tests are updated for the primary pass case, usage errors,
+fail-closed marker mutations, mismatch handling, output suppression, no
+residue, and existing plan-only bridge behavior. Step559 does not change
+Makefile, release-quality wrapper, workflow files, fixture JSON, artifact body
+generation implementation, manifest writer integration, real-data use, metric
+use, or production readiness status.

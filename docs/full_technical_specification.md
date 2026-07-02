@@ -1247,3 +1247,27 @@ after the plan-only bridge smoke and before artifact body fixture validation.
 Step553 does not change workflow files, Makefile, Python code/tests, fixture
 JSON, validator implementation, runtime implementation, artifact body
 generation runtime invocation, manifest writer integration, or file writing.
+
+## Appendix N. Step559 Safe-Metadata Runtime Implementation
+
+Step559 adds `safe-metadata-smoke` to
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+as a metadata handoff only runtime mode. The mode reads the planned
+safe-metadata v0.2 primary case
+`valid/valid_safe_metadata_explicit_runtime_bridge` from
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`
+and emits runtime schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.2`.
+
+The output surface is public-safe, metadata-only, body-free, and count-only.
+It records safety flags, safe metadata availability/count fields, no artifact
+body generation runtime invocation, no manifest writer invocation, and no file
+writing. Unsafe body, payload, raw-output, path, data, performance,
+file-writing, and manifest-writer markers fail closed. Missing or unsupported
+inputs return usage-error summaries, and expected-status mismatches return
+mismatch summaries.
+
+Step559 updates focused runtime tests but does not add a Makefile target,
+release-quality wrapper integration, workflow changes, fixture JSON changes,
+artifact body generation implementation, manifest writer integration, file
+writing, real-data use, metric use, or production readiness status.

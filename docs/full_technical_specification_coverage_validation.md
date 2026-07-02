@@ -430,6 +430,14 @@ validation. It remains separate from runtime implementation, artifact body
 generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, and production-readiness status.
 
+Step559 follow-up implements `safe-metadata-smoke` as a metadata handoff only
+runtime mode in the artifact body generation runtime integration module. It
+adds v0.2 public-safe summary output and focused runtime tests while keeping
+artifact body generation runtime invocation, manifest writer invocation, file
+writing, Makefile target addition, release-quality wrapper integration,
+workflow changes, fixture JSON changes, real-data use, metric use, and
+production-readiness status out of scope.
+
 ## 20. Coverage Validation Result
 
 The full technical specification draft is suitable as a consolidated technical

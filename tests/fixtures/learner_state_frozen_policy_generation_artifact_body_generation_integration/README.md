@@ -622,3 +622,11 @@ fixture/expected-output design:
 It keeps this active fixture root unchanged and does not change fixture JSON,
 validators, runtime implementation, artifact body generation runtime
 invocation, manifest writer invocation, or file writing.
+
+## Step559 Safe-Metadata Runtime Implementation Status
+
+Step559 implements `safe-metadata-smoke` in the runtime integration module as
+metadata handoff only over the separate planned safe-metadata v0.2 root. This
+active fixture root remains unchanged, and no active-root merge, fixture JSON
+change, artifact body generation runtime invocation, manifest writer
+invocation, or file writing is added.

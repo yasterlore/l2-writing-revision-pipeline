@@ -297,3 +297,10 @@ It does not change this status marker, workflow files, wrapper, Makefile,
 Python code/tests, fixture JSON, validator/runtime implementation, artifact
 body generation runtime invocation, manifest writer integration, or file
 writing.
+
+## 15. Step559 Runtime Implementation Status
+
+Step559 implements `safe-metadata-smoke` as metadata handoff only in the
+runtime integration module. This status marker remains unchanged and continues
+to describe only the planned-root validator wrapper run; it is not a runtime
+smoke marker.

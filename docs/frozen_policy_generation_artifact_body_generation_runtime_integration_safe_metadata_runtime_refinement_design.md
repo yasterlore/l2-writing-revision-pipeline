@@ -454,3 +454,16 @@ staging without changing runtime implementation, Python code/tests, Makefile,
 release-quality wrapper, workflow files, fixture JSON, validator
 implementation, artifact body generation runtime invocation, manifest writer
 integration, or file writing.
+
+## 24. Step559 Runtime Implementation Status
+
+Step559 implements `safe-metadata-smoke` as the metadata handoff only runtime
+mode staged by this design. The implementation emits v0.2 public-safe summary
+output over the planned primary case, preserves existing `plan-only-bridge`
+behavior, and keeps artifact body generation runtime invocation, manifest
+writer invocation, and file writing disabled.
+
+Step559 does not add a Makefile target, add release-quality wrapper
+integration, change workflow files, change fixture JSON, implement artifact
+body generation runtime invocation, implement manifest writer integration, or
+enable file writing.

@@ -388,6 +388,16 @@ Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
 body generation runtime invocation, manifest writer integration, file writing,
 model performance evidence, or production readiness claims.
 
+Confirm Step559 adds `safe-metadata-smoke` runtime behavior as metadata
+handoff only in
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`.
+Reviewers should confirm the mode emits schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.2`
+for `valid/valid_safe_metadata_explicit_runtime_bridge`, keeps artifact body
+generation runtime invocation false, keeps manifest writer invocation false,
+keeps file writing disabled, fail-closes unsafe markers, and is not yet
+Makefile-targeted or release-quality wrapper integrated as a runtime smoke.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

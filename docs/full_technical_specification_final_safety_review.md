@@ -358,6 +358,15 @@ real-data use, metric use, or production readiness, real-data readiness, model
 performance, runtime correctness generally, manifest writer correctness, or
 safe-metadata free-form body safety claims.
 
+Step559 adds the `safe-metadata-smoke` runtime mode as metadata handoff only.
+The mode emits v0.2 public-safe summary output over the planned primary case
+and keeps artifact body generation runtime invocation, manifest writer
+invocation, and file writing disabled. It remains without a dedicated Makefile
+target or release-quality runtime smoke integration, and it does not claim
+runtime correctness generally, artifact body generation correctness generally,
+safe-metadata free-form body safety, manifest writer readiness, production
+readiness, real-data readiness, or model performance.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

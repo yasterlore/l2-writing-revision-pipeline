@@ -280,3 +280,15 @@ It uses this review and Step557 as inputs and does not change runtime
 implementation, Python code/tests, Makefile, release-quality wrapper, workflow
 files, fixture JSON, validator implementation, artifact body generation
 runtime invocation, manifest writer integration, or file writing.
+
+## 17. Step559 Runtime Implementation Status
+
+Step559 adds `safe-metadata-smoke` as a metadata handoff only runtime mode in
+the artifact body generation runtime integration module. It consumes the
+planned primary case and emits v0.2 public-safe summary output while keeping
+artifact body generation runtime invocation, manifest writer invocation, and
+file writing disabled.
+
+The completed planned-root validator chain remains separate from this runtime
+mode. Step559 does not merge the planned root into the active root and does
+not add a runtime Makefile target or release-quality runtime smoke.

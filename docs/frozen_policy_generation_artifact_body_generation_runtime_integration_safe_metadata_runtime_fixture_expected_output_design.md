@@ -520,3 +520,15 @@ runtime implementation, Python code/tests, Makefile, release-quality wrapper,
 workflow files, fixture JSON, validator implementation, artifact body
 generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, or production readiness status.
+
+## 26. Step559 Runtime Implementation Status
+
+Step559 implements the `safe-metadata-smoke` metadata handoff only runtime mode
+designed here. It uses the planned primary case
+`valid/valid_safe_metadata_explicit_runtime_bridge`, emits runtime schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.2`,
+records public-safe count-only metadata, and fail-closes unsafe markers.
+
+Step559 does not add a Makefile target, add release-quality wrapper
+integration, change workflow files, change fixture JSON, invoke artifact body
+generation runtime, invoke manifest writer, or write files.

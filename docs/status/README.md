@@ -976,3 +976,19 @@ validator change, runtime implementation change, artifact body generation
 runtime invocation, manifest writer integration, file writing, real-data use,
 metric use, model performance evidence, real-data readiness evidence, or
 production readiness evidence.
+
+## Step559 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Implementation
+
+Step559 adds `safe-metadata-smoke` to the artifact body generation runtime
+integration module as a metadata handoff only mode:
+
+`../../python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+
+The mode uses runtime schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.2`
+over the planned primary case
+`valid/valid_safe_metadata_explicit_runtime_bridge`. It emits public-safe
+metadata-only / body-free / count-only summary output and does not invoke
+artifact body generation runtime, invoke manifest writer, write files, change
+Makefile, change the release-quality wrapper, change workflows, change
+fixture JSON, use real data, compute metrics, or claim production readiness.
