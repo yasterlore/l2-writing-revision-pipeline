@@ -302,6 +302,18 @@ Step550 designs a future standalone Makefile target for the planned-root
 validator. It does not invoke artifact body generation runtime, manifest writer
 integration, or file writing.
 
+## 17. Step554 Remote Run Record Workflow Design Status
+
+Step554 adds the docs-only public-safe remote/manual run record workflow design
+for the Step553 wrapper check:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_remote_run_record_workflow.md`
+
+It proposes future metadata-only/body-free status marker fields and does not
+create a marker, change workflow, wrapper, Makefile, Python code/tests,
+fixture JSON, validator/runtime implementation, artifact body generation
+runtime invocation, manifest writer integration, or file writing.
+
 ## 22. Step551 Safe-Metadata v0.2 Fixture Validator Makefile Target Implementation Status
 
 Step551 implements the standalone planned-root validator Makefile target. This

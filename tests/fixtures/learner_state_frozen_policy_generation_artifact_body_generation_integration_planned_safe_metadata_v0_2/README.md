@@ -123,3 +123,15 @@ No release-quality wrapper change is implemented in Step552.
 Step553 adds the planned-root validator target to the release-quality wrapper
 after plan-only bridge smoke and before artifact body fixture validation.
 Runtime implementation remains unimplemented.
+
+## Step554 Remote Run Record Workflow Design Status
+
+Step554 adds the docs-only public-safe remote/manual run record workflow design
+for the Step553 wrapper check:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_remote_run_record_workflow.md`
+
+It proposes future metadata-only/body-free status marker fields for this
+planned root but does not create the marker, change fixture JSON, change
+validators, change runtime implementation, invoke artifact body generation
+runtime, invoke manifest writer, or write files.

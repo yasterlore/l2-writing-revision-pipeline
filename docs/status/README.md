@@ -30,6 +30,10 @@ Current status-marker posture:
 - The artifact body generation runtime integration plan-only bridge smoke
   target is in the release-quality wrapper, and its remote/manual status
   marker is now recorded as public-safe pass-only metadata.
+- The artifact body generation runtime integration safe-metadata v0.2 planned
+  fixture validator target is in the release-quality wrapper, and its
+  remote/manual status marker workflow is designed but the marker is not yet
+  recorded.
 
 Available markers:
 
@@ -156,8 +160,17 @@ Available markers:
   file JSON bodies, fixture JSON bodies, private paths, absolute paths, raw
   learner text, or performance evidence.
 
-Planned markers: none for the artifact body generation runtime integration
-plan-only bridge release-quality wrapper check.
+Planned marker for the safe-metadata v0.2 planned fixture validator
+release-quality wrapper check:
+
+- `docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_remote_run_status.md`
+
+Step554 designs the public-safe remote/manual run record workflow for this
+future marker. The marker is not yet created. Raw logs, full job output,
+fixture JSON bodies, request/pointer/expected bodies, artifact body payloads,
+manifest bodies, generated policy bodies, private paths, absolute paths, raw
+learner text, performance evidence, production readiness evidence, real-data
+readiness evidence, and model performance evidence must not be stored.
 
 Related recap:
 
