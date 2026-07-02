@@ -4892,3 +4892,24 @@ Makefile, Python code/tests, fixture JSON, validators, runtime
 implementation, artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 status.
+
+## 40. Step542 Artifact Body Generation Runtime Integration Final Safety Review
+
+For Step542, review the
+[artifact body generation runtime integration plan-only bridge final safety review](frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_final_safety_review.md).
+Confirm it is design-only / docs-only and reviews the completed
+Step532-Step541 chain before any safe-metadata explicit stage,
+suppressed-smoke stage, manifest writer handoff planning, or broader follow-up
+implementation.
+
+Confirm it summarizes the completed chain, current implementation status,
+public-safe Step541 marker summary, safety boundary, static validator
+relationship, artifact body generation implementation relationship, manifest
+writer chain relationship, risk assessment, recommended next-chain options,
+failure interpretation, non-claims, and public-safe checklist.
+
+Confirm Step542 does not change workflow files, the release-quality wrapper,
+Makefile, Python code/tests, fixture JSON, validators, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+status.

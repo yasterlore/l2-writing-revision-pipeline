@@ -756,3 +756,28 @@ Python code/test change, fixture JSON change, validator change, runtime
 implementation change, artifact body generation runtime invocation, manifest
 writer integration, file writing, real-data use, metric use, model performance
 evidence, real-data readiness evidence, or production readiness evidence.
+
+## Step541 Artifact Body Generation Runtime Integration Remote Status Marker
+
+Step541 adds the public-safe pass-only metadata-only body-free remote status
+marker for the Step539 wrapper check:
+
+[Learner-state frozen policy generation artifact body generation runtime integration plan-only bridge release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_remote_run_status.md)
+
+It stores no raw logs, full job output, fixture/request/pointer/expected
+bodies, artifact body payloads, manifest bodies, generated policy bodies, raw
+stdout/stderr bodies, real-data use, metric use, model performance evidence,
+real-data readiness evidence, or production readiness evidence.
+
+## Step542 Artifact Body Generation Runtime Integration Final Safety Review
+
+Step542 adds the docs-only
+[artifact body generation runtime integration plan-only bridge final safety review](../frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_final_safety_review.md)
+for the completed Step532-Step541 chain before any safe-metadata explicit
+stage, suppressed-smoke stage, or manifest writer handoff planning.
+
+It adds no workflow change, release-quality wrapper change, Makefile change,
+Python code/test change, fixture JSON change, validator change, runtime
+implementation change, artifact body generation runtime invocation, manifest
+writer integration, file writing, real-data use, metric use, model performance
+evidence, real-data readiness evidence, or production readiness evidence.
