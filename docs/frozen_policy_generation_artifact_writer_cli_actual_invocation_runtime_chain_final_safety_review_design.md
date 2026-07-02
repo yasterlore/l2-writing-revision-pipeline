@@ -571,3 +571,15 @@ change Makefile, change Python code/tests, invoke artifact body generation
 runtime, connect manifest writer integration, write files, use real data,
 compute metrics, claim production readiness, claim real-data readiness, or
 claim model performance.
+
+## 34. Step547 Safe-Metadata Fixture Root Update Implementation Note
+
+Step547 adds planned safe-metadata v0.2 fixtures outside the active validator
+root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`
+
+This does not change the artifact writer CLI actual invocation runtime chain
+and does not implement validator updates, runtime updates, manifest writer
+integration, file writing, real-data use, metric use, production readiness,
+real-data readiness, or model performance status.

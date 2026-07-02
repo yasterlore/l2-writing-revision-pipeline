@@ -414,3 +414,17 @@ change workflow files, change the release-quality wrapper, change Makefile,
 change Python code/tests, invoke artifact body generation runtime, connect
 manifest writer integration, write files, use real data, compute metrics, or
 claim production readiness.
+
+## 23. Step547 Safe-Metadata Fixture Root Update Implementation Status
+
+Step547 adds planned safe-metadata v0.2 fixture cases outside the active
+validator root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`
+
+This placement preserves the existing static validator and release-quality
+wrapper behavior until a later validator update step. Step547 does not change
+validators, runtime implementation, Makefile, release-quality wrapper,
+workflow files, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+status.

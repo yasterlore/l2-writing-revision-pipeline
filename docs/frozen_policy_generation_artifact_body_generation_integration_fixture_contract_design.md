@@ -738,3 +738,12 @@ fixture JSON, change validators, change runtime implementation, change
 Makefile, change the release-quality wrapper, change workflow files, invoke
 artifact body generation runtime, call manifest writer code, write files, use
 real data, compute metrics, or claim production readiness.
+
+## 35. Step547 Safe-Metadata Fixture Root Update Implementation Note
+
+Step547 adds planned safe-metadata v0.2 fixtures outside the active validator
+root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`
+
+The active fixture contract remains unchanged until a later validator update.

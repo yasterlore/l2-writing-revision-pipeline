@@ -1184,3 +1184,23 @@ The final safety and non-proof review is
 the documentation set is an external-review-ready draft with caveats, not a
 guarantee of no omissions and not a production, real-data, model-performance,
 or external-approval claim.
+
+## Appendix K. Step547 Planned Safe-Metadata Fixture Root Update
+
+Step547 adds a planned safe-metadata v0.2 fixture root at
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`.
+The planned root contains metadata-only / body-free safe-metadata runtime
+integration fixture cases using the seven-file layout. It is intentionally
+outside the active Step523 fixture root so the existing static validator and
+release-quality wrapper remain unchanged until a later validator update step.
+
+The planned taxonomy adds four valid cases and twenty invalid cases for a
+future `safe-metadata-smoke` runtime mode and future runtime schema v0.2.
+Validator update, runtime implementation, Makefile integration,
+release-quality wrapper integration, workflow updates, artifact body
+generation runtime invocation, manifest writer integration, and file writing
+are not implemented in Step547. This addition does not prove production
+readiness, real-data readiness, model performance, artifact body generation
+correctness generally, runtime correctness generally, manifest writer
+integration correctness, generated policy quality, learner-state estimator
+correctness, or safe-metadata free-form body safety.

@@ -268,6 +268,7 @@ Not currently implemented or not claimed:
 - [Artifact body generation runtime integration fixture update design](docs/frozen_policy_generation_artifact_body_generation_runtime_integration_fixture_update_design.md)
 - [Artifact body generation runtime integration plan-only bridge Makefile target design](docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_makefile_target_design.md)
 - [Artifact body generation runtime integration plan-only bridge release-quality integration design](docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_integration_design.md)
+- [Artifact body generation runtime integration planned safe-metadata v0.2 fixtures](tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/README.md): Step547 metadata-only/body-free planned fixture cases outside the active validator root; validator/runtime/release-quality integration is not yet implemented.
 
 ## CI
 

@@ -835,3 +835,18 @@ runtime implementation change, artifact body generation runtime invocation,
 manifest writer integration, file writing, real-data use, metric use, model
 performance evidence, real-data readiness evidence, or production readiness
 evidence.
+
+## Step547 Artifact Body Generation Runtime Integration Safe-Metadata Fixture Root Update Implementation
+
+Step547 adds planned metadata-only / body-free safe-metadata v0.2 fixture cases
+outside the active validator root:
+
+`../../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`
+
+The placement keeps the existing static validator and release-quality wrapper
+unchanged until a later validator update step. It adds no workflow change,
+release-quality wrapper change, Makefile change, Python code/test change,
+validator change, runtime implementation change, artifact body generation
+runtime invocation, manifest writer integration, file writing, real-data use,
+metric use, model performance evidence, real-data readiness evidence, or
+production readiness evidence.

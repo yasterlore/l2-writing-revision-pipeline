@@ -368,3 +368,17 @@ This fixture root/update design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 21. Step547 Safe-Metadata Fixture Root Update Implementation Status
+
+Step547 adds the planned safe-metadata v0.2 fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`
+
+The planned root contains 4 valid and 20 invalid metadata-only / body-free
+cases using the seven-file layout. It is outside the active validator root
+because the existing validator enforces fixed active counts and rejects extra
+root-level directories. Validator update, runtime implementation, Makefile
+target, release-quality wrapper integration, workflow update, artifact body
+generation runtime invocation, manifest writer integration, and file writing
+remain future work.

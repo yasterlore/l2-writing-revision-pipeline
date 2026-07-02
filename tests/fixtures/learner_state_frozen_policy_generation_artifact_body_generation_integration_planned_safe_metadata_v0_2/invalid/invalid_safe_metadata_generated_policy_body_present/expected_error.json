@@ -1,0 +1,14 @@
+{
+  "body_free": true,
+  "case_id": "invalid/invalid_safe_metadata_generated_policy_body_present",
+  "expected_exit_code_category": "fail_closed",
+  "expected_reason_code": "generated_policy_body_detected",
+  "expected_status": "fail_closed",
+  "metadata_only": true,
+  "no_oracle": true,
+  "no_payload_in_error": true,
+  "public_safe_reason_code_only": true,
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_expected_error_v0.2_safe_metadata_planned",
+  "synthetic_only": true,
+  "unsafe_signal_count": 1
+}

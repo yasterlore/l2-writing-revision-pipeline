@@ -352,6 +352,15 @@ fixture JSON, validators, runtime implementation, artifact body generation
 runtime invocation, manifest writer integration, file writing, or production
 readiness claims.
 
+Confirm Step547 adds planned safe-metadata v0.2 fixture cases outside the
+active artifact body generation integration validator root at
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`.
+Reviewers should confirm the planned cases are metadata-only / body-free,
+preserve the seven-file layout, remain validator/runtime/release-quality
+unintegrated, and do not include raw payloads, raw logs, real data, file
+writing, manifest writer invocation, model performance evidence, or production
+readiness claims.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

@@ -471,6 +471,29 @@ fixture JSON, change validators or runtime implementation, invoke artifact
 body generation runtime, call manifest writer code, write files, use real
 data, compute metrics, or claim production readiness.
 
+## Safe-Metadata Fixture Root Update Implementation
+
+Step547 adds planned safe-metadata v0.2 fixture cases outside this active
+validator root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`
+
+Placement decision: the new cases are in a sibling planned root, not active
+`valid/` and `invalid/` directories. The existing validator enforces the
+28-case / 196-JSON active aggregate and rejects extra root-level directories,
+so this placement keeps the existing validator target and release-quality
+wrapper unchanged until a later validator update step.
+
+The planned root adds 4 valid cases and 20 invalid cases, each with the
+existing seven-file layout. All planned fixture files are synthetic-only,
+metadata-only, body-free, and no-oracle. Validator update is not yet
+implemented. Runtime implementation is not yet implemented. Release-quality
+wrapper integration is unchanged. These fixtures do not claim production
+readiness, real-data readiness, model performance, artifact body generation
+correctness generally, runtime correctness generally, manifest writer
+integration correctness, generated policy quality, learner-state estimator
+correctness, or safe-metadata free-form body safety.
+
 ## Non-Claims
 
 These fixtures do not claim:

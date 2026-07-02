@@ -394,9 +394,17 @@ Minimal documentation links and coverage notes were applied:
   validator, runtime implementation, artifact body generation runtime
   invocation, manifest writer, file writing, real-data, metric, or
   production-readiness status
+- Step547 follow-up records the planned safe-metadata v0.2 fixture root
+  `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`
+  with metadata-only / body-free cases outside the active validator root; it
+  does not update validators, runtime implementation, Makefile,
+  release-quality wrapper, workflow files, artifact body generation runtime
+  invocation, manifest writer integration, file writing, real-data use,
+  metric use, or production-readiness status
 
-No fixture JSON, workflow, wrapper, Python code/test, Rust, or TypeScript
-changes were made by this coverage note.
+No workflow, wrapper, Python code/test, Rust, or TypeScript changes were made
+by this coverage note. Step547 itself adds planned fixture JSON outside the
+active validator root.
 
 ## 20. Coverage Validation Result
 

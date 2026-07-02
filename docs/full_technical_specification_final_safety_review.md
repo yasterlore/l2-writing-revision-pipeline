@@ -324,6 +324,17 @@ implementation, artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, production readiness,
 real-data readiness, or model performance status.
 
+Step547 adds the planned safe-metadata v0.2 fixture root
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2/`.
+The planned root is outside the active validator root so the existing
+validator and release-quality wrapper remain unchanged. It contains
+metadata-only / body-free planned cases for a future `safe-metadata-smoke`
+runtime stage. It does not implement validator updates, runtime updates,
+Makefile targets, release-quality wrapper changes, workflow changes, artifact
+body generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, production readiness, real-data readiness, or model
+performance status.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:
