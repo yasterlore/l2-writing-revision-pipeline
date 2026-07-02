@@ -582,3 +582,8 @@ remains scoped to the existing active fixture validator check.
 Step549 implements the separate planned-root validator, but it is not yet
 release-quality integrated. This document remains scoped to the existing active
 fixture validator check.
+
+## 31. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Note
+
+Step550 designs a future standalone Makefile target for the planned-root
+validator, but it does not connect that validator to release-quality.

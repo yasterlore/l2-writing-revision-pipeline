@@ -295,3 +295,9 @@ scope.
 Step549 implements the planned-root validator for the safe-metadata v0.2
 fixtures. It validates only the metadata contract and does not invoke artifact
 body generation runtime, manifest writer integration, or file writing.
+
+## 21. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Status
+
+Step550 designs a future standalone Makefile target for the planned-root
+validator. It does not invoke artifact body generation runtime, manifest writer
+integration, or file writing.

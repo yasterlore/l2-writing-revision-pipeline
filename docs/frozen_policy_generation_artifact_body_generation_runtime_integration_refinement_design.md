@@ -750,3 +750,9 @@ planned-root validation. Runtime implementation remains unchanged and
 
 Step549 implements the planned-root fixture validator. Runtime implementation
 remains unchanged and `safe-metadata-smoke` remains unimplemented.
+
+## 39. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Status
+
+Step550 designs a future standalone Makefile target for the planned-root
+validator. Runtime implementation remains unchanged and `safe-metadata-smoke`
+remains unimplemented.

@@ -368,3 +368,11 @@ mode `safe_metadata_fixture_validation` and schema
 Makefile target, release-quality wrapper integration, workflow update, runtime
 implementation, artifact body generation runtime invocation, manifest writer
 integration, and file writing remain future work.
+
+## 22. Step550 Makefile Target Design Status
+
+Step550 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_makefile_target_design.md`
+as a design-only / planning-only standalone Makefile target design for the
+Step549 validator CLI. It does not implement a Makefile target or connect the
+validator to release-quality.

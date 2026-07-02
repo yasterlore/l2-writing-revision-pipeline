@@ -444,3 +444,9 @@ recommends a future dedicated validator module before runtime implementation.
 Step549 implements that dedicated planned-root validator module and focused
 tests. The active fixture root validator remains separate, and Makefile /
 release-quality integration remains future work.
+
+## 26. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Status
+
+Step550 adds a design-only / planning-only Makefile target design for the
+Step549 validator CLI. Makefile and release-quality integration remain future
+work.

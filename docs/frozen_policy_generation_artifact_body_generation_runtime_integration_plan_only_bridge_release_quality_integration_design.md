@@ -409,3 +409,8 @@ release-quality wrapper integration.
 Step549 implements the planned-root validator, but it does not connect that
 validator to the release-quality wrapper. The existing plan-only bridge wrapper
 integration remains unchanged.
+
+## 26. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Status
+
+Step550 designs a future standalone Makefile target for the planned-root
+validator. The existing plan-only bridge wrapper integration remains unchanged.

@@ -459,3 +459,8 @@ active Step523 root and existing validator remain unchanged.
 
 Step549 implements that separate planned-root validator. The active Step523
 root and existing validator remain unchanged.
+
+## 31. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Status
+
+Step550 designs a future standalone Makefile target for the planned-root
+validator. The active Step523 root and existing validator remain unchanged.

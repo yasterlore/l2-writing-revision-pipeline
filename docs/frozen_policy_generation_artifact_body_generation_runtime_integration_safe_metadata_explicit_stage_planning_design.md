@@ -369,3 +369,8 @@ and all integration targets out of scope.
 Step549 implements the separate planned-root validator module and focused
 tests. Safe-metadata runtime implementation remains unimplemented, and the
 validator is not yet connected to Makefile or release-quality.
+
+## 24. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Status
+
+Step550 adds a design-only / planning-only standalone Makefile target design
+for the Step549 validator CLI. Runtime implementation remains unimplemented.

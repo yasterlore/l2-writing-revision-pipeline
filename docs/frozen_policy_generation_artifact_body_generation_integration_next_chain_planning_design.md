@@ -651,3 +651,9 @@ writer integration separate.
 
 Step549 implements the separate planned-root validator while keeping runtime
 implementation and manifest writer integration separate.
+
+## 31. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Note
+
+Step550 designs a future standalone Makefile target for the planned-root
+validator while keeping runtime implementation and manifest writer integration
+separate.

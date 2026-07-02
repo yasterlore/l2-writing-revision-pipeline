@@ -2606,3 +2606,15 @@ The validator checks 24 cases / 168 JSON files, maps the planned root to 4 pass
 cases, 1 usage-error case, 18 fail-closed cases, and 1 mismatch case, and emits
 public-safe aggregate output. The active root validator remains separate.
 Makefile and release-quality integration remain future work.
+
+## Step550 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Makefile Target Design
+
+Step550 adds the design-only / planning-only
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_makefile_target_design.md`.
+
+The design proposes the future standalone target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
+for the Step549 validator CLI. Step550 does not change Makefile,
+release-quality wrapper, workflow files, Python code/tests, fixture JSON,
+validator implementation, runtime implementation, artifact body generation
+runtime invocation, manifest writer integration, or file writing.

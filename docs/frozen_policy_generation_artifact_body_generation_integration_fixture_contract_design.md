@@ -758,3 +758,8 @@ in Step548.
 
 Step549 implements a separate validator for the planned safe-metadata v0.2
 root. The active fixture contract remains unchanged.
+
+## 38. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Note
+
+Step550 designs a future standalone Makefile target for the planned
+safe-metadata v0.2 validator. The active fixture contract remains unchanged.

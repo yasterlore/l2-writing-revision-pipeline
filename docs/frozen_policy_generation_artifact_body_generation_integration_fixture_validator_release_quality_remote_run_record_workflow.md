@@ -581,3 +581,8 @@ to the existing active fixture validator check.
 
 Step549 implements the separate planned-root validator, but it is not yet
 release-quality integrated and does not change this remote run record workflow.
+
+## 31. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Note
+
+Step550 designs a future standalone Makefile target for the planned-root
+validator. It does not change this remote run record workflow.

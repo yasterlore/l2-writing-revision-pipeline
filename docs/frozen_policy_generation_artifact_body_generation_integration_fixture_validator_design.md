@@ -768,3 +768,8 @@ remains unchanged.
 
 Step549 implements a separate planned-root validator module. The existing
 active validator implementation remains unchanged.
+
+## 37. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Note
+
+Step550 designs a future standalone Makefile target for the planned-root
+validator. The existing active validator implementation remains unchanged.

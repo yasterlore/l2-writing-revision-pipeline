@@ -400,3 +400,11 @@ planned root. The validator checks 24 cases / 168 JSON files with public-safe
 aggregate output. Makefile target, release-quality wrapper integration,
 workflow update, runtime implementation, artifact body generation runtime
 invocation, manifest writer integration, and file writing remain future work.
+
+## 24. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Status
+
+Step550 adds a design-only / planning-only standalone Makefile target design
+for the Step549 validator CLI. It does not change Makefile, release-quality
+wrapper, workflow files, Python code/tests, fixture JSON, validator
+implementation, runtime implementation, artifact body generation runtime
+invocation, manifest writer integration, or file writing.

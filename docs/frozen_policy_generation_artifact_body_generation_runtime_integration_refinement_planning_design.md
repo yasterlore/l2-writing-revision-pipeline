@@ -617,3 +617,8 @@ root. Validator implementation and runtime integration remain future steps.
 
 Step549 implements the planned-root validator module and focused tests.
 Runtime integration remains a future step.
+
+## 33. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Status
+
+Step550 adds a design-only / planning-only Makefile target design for the
+planned-root validator. Runtime integration remains a future step.

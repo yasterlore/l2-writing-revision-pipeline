@@ -392,3 +392,8 @@ validation in Step548.
 
 Step549 implements the planned-root validator module and focused tests, but it
 does not add a Makefile target for safe-metadata v0.2 fixture validation.
+
+## 25. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Status
+
+Step550 adds the design for a future standalone Makefile target for the
+planned-root validator. No Makefile change is made in Step550.

@@ -96,3 +96,10 @@ Step549 implements that separate validator module and focused tests:
 The validator checks this planned root as 24 cases / 168 JSON files with
 public-safe aggregate output. Makefile and release-quality integration remain
 future work, and runtime implementation remains unimplemented.
+
+Step550 adds the design-only / planning-only Makefile target design for the
+validator CLI:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_makefile_target_design.md`
+
+No Makefile target or release-quality integration is implemented in Step550.

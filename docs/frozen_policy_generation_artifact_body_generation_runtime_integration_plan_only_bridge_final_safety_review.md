@@ -299,3 +299,8 @@ integration, or file writing.
 
 Step549 implements a separate planned-root validator for the safe-metadata
 v0.2 fixtures. The plan-only bridge runtime chain remains unchanged.
+
+## 21. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Status
+
+Step550 adds a design-only / planning-only Makefile target design for the
+Step549 validator CLI. The plan-only bridge runtime chain remains unchanged.
