@@ -625,3 +625,16 @@ selected fixture case and does not change this contract, add fixture cases,
 change fixture JSON, change validators, change runtime implementation, invoke
 artifact body generation runtime, call manifest writer code, write files, use
 real data, compute metrics, or claim production readiness.
+
+## 26. Step538 Runtime Release-Quality Integration Design Note
+
+Step538 adds the docs-only / planning-only release-quality integration design
+for the Step537 standalone runtime target:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_integration_design.md`
+
+It does not change this fixture contract, add fixture cases, change fixture
+JSON, change validators, change runtime implementation, change Makefile,
+change the release-quality wrapper, change workflow files, invoke artifact
+body generation runtime, call manifest writer code, write files, use real
+data, compute metrics, or claim production readiness.

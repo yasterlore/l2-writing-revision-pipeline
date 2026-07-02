@@ -630,3 +630,16 @@ Step537 does not change validator code, fixture JSON, release-quality wrapper,
 workflow files, Python code/tests, runtime implementation, artifact body
 generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, or production readiness status.
+
+## 25. Step538 Runtime Release-Quality Integration Design Note
+
+Step538 adds the docs-only / planning-only release-quality integration design
+for the separate Step537 runtime target:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_integration_design.md`
+
+The static fixture validator remains the aggregate fixture-root validator.
+Step538 does not change validator code, fixture JSON, release-quality wrapper,
+workflow files, Python code/tests, runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.

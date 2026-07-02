@@ -452,3 +452,17 @@ files, Python code/tests, fixture JSON, validators, runtime implementation,
 artifact body generation runtime invocation, manifest writer integration,
 file writing, real-data use, metric use, production readiness status,
 real-data readiness status, or model performance status.
+
+## 25. Step538 Runtime Release-Quality Integration Design Note
+
+Step538 adds the docs-only / planning-only release-quality integration design
+for the Step537 standalone runtime target:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_integration_design.md`
+
+It proposes future wrapper inclusion only. It does not change the
+release-quality wrapper, workflow files, Makefile, Python code/tests, fixture
+JSON, validators, runtime implementation, artifact body generation runtime
+invocation, manifest writer integration, file writing, real-data use, metric
+use, production readiness status, real-data readiness status, or model
+performance status.

@@ -350,6 +350,21 @@ body generation integration correctness generally, manifest writer
 integration correctness, production readiness, real-data readiness, or model
 performance.
 
+## Runtime Integration Plan-Only Bridge Release-Quality Integration Design
+
+Step538 adds the docs-only / planning-only release-quality integration design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_integration_design.md`
+
+The design proposes future wrapper inclusion for the Step537 standalone target
+after static artifact body generation integration fixture validation and
+before artifact body fixture validation. It does not change this fixture root
+or fixture JSON, does not change validators or runtime implementation, does
+not invoke artifact body generation runtime, does not call manifest writer
+code, does not write files, and does not claim artifact body generation
+integration correctness generally, manifest writer integration correctness,
+production readiness, real-data readiness, or model performance.
+
 ## Non-Claims
 
 These fixtures do not claim:
