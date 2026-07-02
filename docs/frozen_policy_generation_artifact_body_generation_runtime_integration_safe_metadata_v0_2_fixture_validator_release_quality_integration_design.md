@@ -21,9 +21,10 @@ review. The safe-metadata planned fixture root exists. The safe-metadata v0.2
 validator implementation is complete, and the standalone Makefile target is
 available.
 
-The active root validator remains separate. The new safe-metadata v0.2
-planned-root target is not yet connected to the release-quality wrapper.
-Runtime implementation remains unchanged.
+The active root validator remains separate. At Step552, the new safe-metadata
+v0.2 planned-root target was not yet connected to the release-quality wrapper;
+Step553 later adds the wrapper integration. Runtime implementation remains
+unchanged.
 
 ## 3. Target Standalone Makefile Check
 
@@ -70,6 +71,9 @@ Proposed command:
 - `make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
 
 Do not implement this wrapper change in Step552.
+
+Step553 later implements this proposed wrapper label and command at the
+proposed insertion point.
 
 ## 5. Proposed Insertion Point
 

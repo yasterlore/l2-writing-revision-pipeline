@@ -421,3 +421,8 @@ the active root, and release-quality wrapper integration remains future work.
 Step552 adds a design-only / planning-only release-quality integration design
 for the Step551 standalone target. The planned fixture root remains separate
 from the active root.
+
+## 27. Step553 Release-Quality Wrapper Integration Status
+
+Step553 adds the planned-root validator target to the release-quality wrapper.
+The planned fixture root remains separate from the active root.

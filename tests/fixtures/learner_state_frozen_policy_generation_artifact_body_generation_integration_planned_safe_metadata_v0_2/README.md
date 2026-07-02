@@ -119,3 +119,7 @@ design for this target:
 `docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_integration_design.md`
 
 No release-quality wrapper change is implemented in Step552.
+
+Step553 adds the planned-root validator target to the release-quality wrapper
+after plan-only bridge smoke and before artifact body fixture validation.
+Runtime implementation remains unimplemented.

@@ -316,3 +316,8 @@ and its release-quality wrapper check remain unchanged.
 Step552 designs a future release-quality wrapper check for the planned-root
 validator target. The plan-only bridge runtime chain and its existing wrapper
 check remain unchanged.
+
+## 24. Step553 Safe-Metadata v0.2 Fixture Validator Release-Quality Wrapper Integration Status
+
+Step553 adds the planned-root validator target after the existing plan-only
+bridge wrapper check. The plan-only bridge runtime chain remains unchanged.

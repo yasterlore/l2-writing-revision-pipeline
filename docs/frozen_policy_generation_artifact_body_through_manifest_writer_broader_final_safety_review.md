@@ -307,10 +307,17 @@ integration, or file writing.
 Step551 implements the standalone planned-root validator Makefile target. This
 adds local Makefile access to the metadata-only validator only; it does not
 invoke artifact body generation runtime, manifest writer integration, or file
-writing, and it is not yet release-quality integrated.
+writing. Step553 later adds release-quality wrapper integration for the
+planned-root validator target.
 
 ## 23. Step552 Release-Quality Integration Design Status
 
 Step552 adds a design-only / planning-only release-quality integration design
 for the planned-root validator target. It does not invoke artifact body
 generation runtime, manifest writer integration, or file writing.
+
+## 24. Step553 Release-Quality Wrapper Integration Status
+
+Step553 adds the planned-root validator target to the release-quality wrapper.
+It does not invoke artifact body generation runtime, manifest writer
+integration, or file writing.

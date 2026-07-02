@@ -5077,3 +5077,17 @@ wrapper, workflow files, Makefile, Python code/tests, fixture JSON, validator
 implementation, runtime implementation, artifact body generation runtime
 invocation, manifest writer integration, file writing, real-data use, metric
 use, or production readiness status.
+
+## 51. Step553 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Release-Quality Wrapper Integration
+
+For Step553, confirm the wrapper contains
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration safe-metadata v0.2 fixture validation`
+and command
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`.
+
+Confirm the check runs after plan-only bridge smoke and before artifact body
+fixture validation, preserves the 24-case / 168-JSON public-safe aggregate,
+and does not change workflow files, Makefile, Python code/tests, fixture JSON,
+validator implementation, runtime implementation, artifact body generation
+runtime invocation, manifest writer integration, file writing, real-data use,
+metric use, or production readiness status.

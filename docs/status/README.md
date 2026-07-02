@@ -575,6 +575,23 @@ runtime implementation, artifact body generation integration, manifest writer
 integration, file writing, real-data use, metric use, model performance
 evidence, real-data readiness evidence, or production readiness evidence.
 
+## Step553 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Release-Quality Wrapper Integration
+
+Step553 adds the wrapper label
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration safe-metadata v0.2 fixture validation`
+and command
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`.
+
+The check runs after plan-only bridge smoke and before artifact body fixture
+validation. It validates only the planned safe-metadata v0.2 fixture root and
+keeps the expected public-safe aggregate at 24 cases / 168 JSON files, with 4
+pass cases, 1 usage-error case, 18 fail-closed cases, and 1 mismatch case. It
+adds no workflow change, Makefile change, Python code/test change, fixture JSON
+change, validator implementation change, runtime implementation change,
+artifact body generation runtime invocation, manifest writer integration, file
+writing, real-data use, metric use, model performance evidence, real-data
+readiness evidence, or production readiness evidence.
+
 ## Step526 Artifact Body Generation Integration Fixture Validator Makefile Target Design
 
 Step526 adds the docs-only / planning-only
@@ -892,12 +909,12 @@ JSON files with public-safe aggregate output, schema
 `learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation_v0.1`,
 and output mode `safe_metadata_fixture_validation`.
 
-It remains separate from the active 28-case validator and is not yet connected
-to Makefile or the release-quality wrapper. It adds no workflow change,
-runtime implementation change, artifact body generation runtime invocation,
-manifest writer integration, file writing, real-data use, metric use, model
-performance evidence, real-data readiness evidence, or production readiness
-evidence.
+It remains separate from the active 28-case validator. Step551 later adds
+Makefile integration, and Step553 later adds release-quality wrapper
+integration. It adds no workflow change, runtime implementation change,
+artifact body generation runtime invocation, manifest writer integration, file
+writing, real-data use, metric use, model performance evidence, real-data
+readiness evidence, or production readiness evidence.
 
 ## Step550 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Makefile Target Design
 
@@ -921,10 +938,10 @@ for the Step549 planned-root safe-metadata v0.2 validator CLI.
 
 The target is expected to report the same public-safe aggregate: 24 cases / 168
 JSON files, with 4 pass cases, 1 usage-error case, 18 fail-closed cases, and 1
-mismatch case. It remains separate from the active root validator target and
-is not yet release-quality integrated. It adds no workflow change, Python
-code/test change, fixture JSON change, validator implementation change,
-runtime implementation change, artifact body generation runtime invocation,
-manifest writer integration, file writing, real-data use, metric use, model
-performance evidence, real-data readiness evidence, or production readiness
-evidence.
+mismatch case. It remains separate from the active root validator target.
+Step553 later adds release-quality wrapper integration. It adds no workflow
+change, Python code/test change, fixture JSON change, validator implementation
+change, runtime implementation change, artifact body generation runtime
+invocation, manifest writer integration, file writing, real-data use, metric
+use, model performance evidence, real-data readiness evidence, or production
+readiness evidence.

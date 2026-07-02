@@ -2606,7 +2606,8 @@ The validator checks 24 cases / 168 JSON files, maps the planned root to 4 pass
 cases, 1 usage-error case, 18 fail-closed cases, and 1 mismatch case, and emits
 public-safe aggregate output. The active root validator remains separate.
 Makefile integration remained future work until Step551 adds the standalone
-target. Release-quality integration remains future work.
+target. Release-quality integration remained future work until Step553 adds
+the wrapper check.
 
 ## Step550 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Makefile Target Design
 
@@ -2628,11 +2629,12 @@ for the Step549 planned-root safe-metadata v0.2 validator CLI.
 
 The expected public-safe aggregate remains 24 cases / 168 JSON files, with 4
 pass cases, 1 usage-error case, 18 fail-closed cases, and 1 mismatch case.
-The target is not yet release-quality integrated and remains separate from the
-active root artifact body generation integration fixture validation target.
-Step551 does not change workflow files, Python code/tests, fixture JSON,
-validator implementation, runtime implementation, artifact body generation
-runtime invocation, manifest writer integration, or file writing.
+Step553 later adds release-quality wrapper integration for this target, which
+remains separate from the active root artifact body generation integration
+fixture validation target. Step551 does not change workflow files, Python
+code/tests, fixture JSON, validator implementation, runtime implementation,
+artifact body generation runtime invocation, manifest writer integration, or
+file writing.
 
 ## Step552 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Release-Quality Integration Design
 
@@ -2645,3 +2647,16 @@ before artifact body fixture validation. Step552 does not change the wrapper,
 workflow files, Makefile, Python code/tests, fixture JSON, validator
 implementation, runtime implementation, artifact body generation runtime
 invocation, manifest writer integration, or file writing.
+
+## Step553 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Release-Quality Wrapper Integration
+
+Step553 adds the release-quality wrapper label
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration safe-metadata v0.2 fixture validation`
+and command
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`.
+
+The check is inserted after plan-only bridge smoke and before artifact body
+fixture validation. It preserves the 24-case / 168-JSON planned-root aggregate
+boundary and does not change workflow files, Makefile, Python code/tests,
+fixture JSON, validator implementation, runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, or file writing.

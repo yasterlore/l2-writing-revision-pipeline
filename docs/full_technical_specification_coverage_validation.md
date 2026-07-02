@@ -422,6 +422,14 @@ runtime implementation, artifact body generation runtime invocation, manifest
 writer integration, file writing, real-data use, metric use, and
 production-readiness status.
 
+Step553 follow-up adds that standalone target to the release-quality wrapper
+with label
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration safe-metadata v0.2 fixture validation`.
+The check runs after plan-only bridge smoke and before artifact body fixture
+validation. It remains separate from runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, and production-readiness status.
+
 ## 20. Coverage Validation Result
 
 The full technical specification draft is suitable as a consolidated technical

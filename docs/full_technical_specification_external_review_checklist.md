@@ -378,6 +378,16 @@ changes, runtime implementation, artifact body generation runtime invocation,
 manifest writer integration, file writing, model performance evidence, or
 production readiness claims.
 
+Confirm Step553 adds the release-quality wrapper label
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration safe-metadata v0.2 fixture validation`
+and command
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`.
+Reviewers should confirm it is placed after plan-only bridge smoke and before
+artifact body fixture validation, and that it does not change workflow files,
+Makefile, Python code/tests, fixture JSON, runtime implementation, artifact
+body generation runtime invocation, manifest writer integration, file writing,
+model performance evidence, or production readiness claims.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

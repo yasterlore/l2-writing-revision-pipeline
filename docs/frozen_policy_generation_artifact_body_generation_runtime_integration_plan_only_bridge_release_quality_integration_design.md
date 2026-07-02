@@ -419,9 +419,15 @@ validator. The existing plan-only bridge wrapper integration remains unchanged.
 
 Step551 implements the standalone Makefile target for the planned-root
 validator. The existing plan-only bridge wrapper integration remains
-unchanged, and the new target is not yet release-quality integrated.
+unchanged. Step553 later adds release-quality wrapper integration for the new
+planned-root target.
 
 ## 28. Step552 Safe-Metadata v0.2 Fixture Validator Release-Quality Integration Design Status
 
 Step552 designs a future wrapper check for the planned-root validator target.
 The existing plan-only bridge wrapper integration remains unchanged.
+
+## 29. Step553 Safe-Metadata v0.2 Fixture Validator Release-Quality Wrapper Integration Status
+
+Step553 adds the planned-root validator target after the existing plan-only
+bridge wrapper check. The plan-only bridge wrapper check remains unchanged.

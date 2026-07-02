@@ -94,7 +94,8 @@ Recommended schema:
 
 This is preferable to extending the existing active validator schema because
 the planned root is separate, has distinct v0.2 runtime expectations, and is
-not yet release-quality integrated.
+not part of the active root validator. Step553 later adds release-quality
+wrapper integration for the separate planned-root validator target.
 
 ## 7. Expected Aggregate Summary
 
@@ -382,7 +383,8 @@ validator to release-quality.
 Step551 implements the standalone Makefile target
 `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
 for the Step549 validator CLI. The target preserves the 24-case / 168-JSON
-public-safe aggregate boundary and is not yet release-quality integrated.
+public-safe aggregate boundary. Step553 later adds release-quality wrapper
+integration for this target.
 
 ## 24. Step552 Release-Quality Integration Design Status
 
@@ -391,3 +393,11 @@ for the Step551 standalone target. It does not change the wrapper, workflow,
 Makefile, Python code/tests, fixture JSON, validator implementation, runtime
 implementation, artifact body generation runtime invocation, manifest writer
 integration, or file writing.
+
+## 25. Step553 Release-Quality Wrapper Integration Status
+
+Step553 adds the Step551 standalone target to the release-quality wrapper
+after plan-only bridge smoke and before artifact body fixture validation. It
+does not change workflow, Makefile, Python code/tests, fixture JSON, validator
+implementation, runtime implementation, artifact body generation runtime
+invocation, manifest writer integration, or file writing.

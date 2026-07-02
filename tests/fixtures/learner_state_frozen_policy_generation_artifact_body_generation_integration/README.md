@@ -513,9 +513,9 @@ Step549 adds the separate validator module for the planned sibling root:
 
 The active validator root remains separate at 28 cases / 196 JSON files. The
 planned-root validator is connected to a standalone Makefile target in
-Step551 but is not yet release-quality integrated, and it does not implement
-runtime behavior, invoke artifact body generation runtime, invoke manifest
-writer integration, or write files.
+Step551 and to the release-quality wrapper in Step553, and it does not
+implement runtime behavior, invoke artifact body generation runtime, invoke
+manifest writer integration, or write files.
 
 ## Safe-Metadata v0.2 Fixture Validator Makefile Target Design
 
@@ -534,9 +534,9 @@ Step551 adds the standalone Makefile target for the planned-root validator:
 `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
 
 The active validator root and existing active Makefile target remain
-unchanged. The planned-root target is not yet release-quality integrated, and
-it does not implement runtime behavior, invoke artifact body generation
-runtime, invoke manifest writer integration, or write files.
+unchanged. Step553 later adds the planned-root target to the release-quality
+wrapper, and it does not implement runtime behavior, invoke artifact body
+generation runtime, invoke manifest writer integration, or write files.
 
 ## Safe-Metadata v0.2 Fixture Validator Release-Quality Integration Design
 
@@ -545,6 +545,11 @@ design for the planned-root validator target:
 
 `docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_integration_design.md`
 
+The active validator root and existing active target remain unchanged.
+
+## Safe-Metadata v0.2 Fixture Validator Release-Quality Wrapper Integration
+
+Step553 adds the planned-root validator target to the release-quality wrapper.
 The active validator root and existing active target remain unchanged.
 
 ## Non-Claims

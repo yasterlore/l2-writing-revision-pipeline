@@ -349,13 +349,14 @@ safety.
 Step551 adds the standalone Makefile target
 `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
 for the Step549 validator CLI. The target keeps the planned root separate from
-the active root validator and is not release-quality integrated. It does not
-change workflow files, Python code/tests, fixture JSON, validator
-implementation, runtime implementation, artifact body generation runtime
-invocation, manifest writer integration, file writing, real-data use, metric
-use, or production readiness, real-data readiness, model performance, runtime
-correctness generally, manifest writer correctness, or safe-metadata
-free-form body safety claims.
+the active root validator. Step553 adds the target to the release-quality
+wrapper after plan-only bridge smoke and before artifact body fixture
+validation. It does not change workflow files, Makefile, Python code/tests,
+fixture JSON, validator implementation, runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness, real-data readiness, model
+performance, runtime correctness generally, manifest writer correctness, or
+safe-metadata free-form body safety claims.
 
 ## 11. Final Safety Review Result
 

@@ -442,24 +442,30 @@ recommends a future dedicated validator module before runtime implementation.
 ## 25. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Status
 
 Step549 implements that dedicated planned-root validator module and focused
-tests. The active fixture root validator remains separate, and Makefile /
-release-quality integration remains future work.
+tests. The active fixture root validator remains separate. Step551 later adds
+Makefile integration, and Step553 later adds release-quality wrapper
+integration.
 
 ## 26. Step550 Safe-Metadata v0.2 Fixture Validator Makefile Target Design Status
 
 Step550 adds a design-only / planning-only Makefile target design for the
-Step549 validator CLI. Makefile and release-quality integration remain future
-work.
+Step549 validator CLI. Step551 later adds Makefile integration, and Step553
+later adds release-quality wrapper integration.
 
 ## 27. Step551 Safe-Metadata v0.2 Fixture Validator Makefile Target Implementation Status
 
 Step551 implements the standalone Makefile target
 `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
 for the planned-root validator CLI. The expected aggregate remains 24 cases /
-168 JSON files, and release-quality integration remains future work.
+168 JSON files. Step553 later adds release-quality wrapper integration.
 
 ## 28. Step552 Release-Quality Integration Design Status
 
 Step552 adds a design-only / planning-only release-quality integration design
 for the planned-root validator target. Wrapper implementation remains future
 work.
+
+## 29. Step553 Release-Quality Wrapper Integration Status
+
+Step553 adds the planned-root validator target to the release-quality wrapper.
+Runtime implementation remains future work.

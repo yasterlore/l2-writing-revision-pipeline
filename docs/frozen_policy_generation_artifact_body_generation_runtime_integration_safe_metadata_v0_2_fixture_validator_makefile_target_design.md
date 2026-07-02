@@ -21,8 +21,10 @@ review. The safe-metadata planned fixture root exists. The safe-metadata v0.2
 fixture validator update design is complete, and the separate validator
 implementation is complete.
 
-The Step549 validator CLI exists, but it is not yet Makefile-connected and is
-not yet release-quality integrated. Runtime implementation remains unchanged.
+At Step550, the Step549 validator CLI existed but was not yet
+Makefile-connected or release-quality integrated. Step551 later adds the
+standalone Makefile target, and Step553 later adds wrapper integration.
+Runtime implementation remains unchanged.
 
 ## 3. Proposed Makefile Target
 
@@ -51,6 +53,9 @@ Step552 later adds
 `docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_integration_design.md`
 as the design-only / planning-only release-quality integration design for this
 standalone target.
+
+Step553 later adds this standalone target to the release-quality wrapper after
+plan-only bridge smoke and before artifact body fixture validation.
 
 ## 4. Expected Public-Safe Output
 
