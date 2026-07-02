@@ -2605,7 +2605,8 @@ and focused tests for the Step547 planned root.
 The validator checks 24 cases / 168 JSON files, maps the planned root to 4 pass
 cases, 1 usage-error case, 18 fail-closed cases, and 1 mismatch case, and emits
 public-safe aggregate output. The active root validator remains separate.
-Makefile and release-quality integration remain future work.
+Makefile integration remained future work until Step551 adds the standalone
+target. Release-quality integration remains future work.
 
 ## Step550 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Makefile Target Design
 
@@ -2616,5 +2617,19 @@ The design proposes the future standalone target
 `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
 for the Step549 validator CLI. Step550 does not change Makefile,
 release-quality wrapper, workflow files, Python code/tests, fixture JSON,
+validator implementation, runtime implementation, artifact body generation
+runtime invocation, manifest writer integration, or file writing.
+
+## Step551 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Makefile Target Implementation
+
+Step551 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
+for the Step549 planned-root safe-metadata v0.2 validator CLI.
+
+The expected public-safe aggregate remains 24 cases / 168 JSON files, with 4
+pass cases, 1 usage-error case, 18 fail-closed cases, and 1 mismatch case.
+The target is not yet release-quality integrated and remains separate from the
+active root artifact body generation integration fixture validation target.
+Step551 does not change workflow files, Python code/tests, fixture JSON,
 validator implementation, runtime implementation, artifact body generation
 runtime invocation, manifest writer integration, or file writing.

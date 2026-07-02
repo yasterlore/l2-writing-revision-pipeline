@@ -601,3 +601,9 @@ runtime chain.
 Step550 designs a future standalone Makefile target for the planned-root
 validator. This does not change the artifact writer CLI actual invocation
 runtime chain.
+
+## 38. Step551 Safe-Metadata v0.2 Fixture Validator Makefile Target Implementation Note
+
+Step551 implements the standalone Makefile target for the planned-root
+validator. This does not change the artifact writer CLI actual invocation
+runtime chain.

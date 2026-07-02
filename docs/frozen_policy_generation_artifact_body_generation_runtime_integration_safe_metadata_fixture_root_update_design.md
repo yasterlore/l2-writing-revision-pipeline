@@ -408,3 +408,10 @@ for the Step549 validator CLI. It does not change Makefile, release-quality
 wrapper, workflow files, Python code/tests, fixture JSON, validator
 implementation, runtime implementation, artifact body generation runtime
 invocation, manifest writer integration, or file writing.
+
+## 25. Step551 Safe-Metadata v0.2 Fixture Validator Makefile Target Implementation Status
+
+Step551 implements the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
+for the Step549 validator CLI. The planned fixture root remains separate from
+the active root, and release-quality wrapper integration remains future work.

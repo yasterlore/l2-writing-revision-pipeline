@@ -43,6 +43,10 @@ PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_bod
 
 Do not implement this target in Step550.
 
+Step551 later implements this proposed standalone target with the same name,
+help text, and command. Release-quality wrapper integration remains a later
+separate step.
+
 ## 4. Expected Public-Safe Output
 
 The future standalone target should expose the validator's public-safe

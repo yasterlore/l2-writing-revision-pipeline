@@ -338,12 +338,24 @@ performance status.
 Step549 adds a separate validator module and focused tests for the planned
 safe-metadata v0.2 fixture root. The validator checks 24 cases / 168 JSON files
 with public-safe aggregate output and keeps the active root validator separate.
-It is not yet connected to Makefile or release-quality and does not implement
-runtime behavior, invoke artifact body generation runtime, invoke manifest
-writer integration, write files, use real data, compute metrics, or claim
-production readiness, real-data readiness, model performance, runtime
+Step551 connects it to a standalone Makefile target while release-quality
+integration remains future work. The validator does not implement runtime
+behavior, invoke artifact body generation runtime, invoke manifest writer
+integration, write files, use real data, compute metrics, or claim production
+readiness, real-data readiness, model performance, runtime correctness
+generally, manifest writer correctness, or safe-metadata free-form body
+safety.
+
+Step551 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
+for the Step549 validator CLI. The target keeps the planned root separate from
+the active root validator and is not release-quality integrated. It does not
+change workflow files, Python code/tests, fixture JSON, validator
+implementation, runtime implementation, artifact body generation runtime
+invocation, manifest writer integration, file writing, real-data use, metric
+use, or production readiness, real-data readiness, model performance, runtime
 correctness generally, manifest writer correctness, or safe-metadata
-free-form body safety.
+free-form body safety claims.
 
 ## 11. Final Safety Review Result
 

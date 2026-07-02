@@ -414,3 +414,9 @@ integration remains unchanged.
 
 Step550 designs a future standalone Makefile target for the planned-root
 validator. The existing plan-only bridge wrapper integration remains unchanged.
+
+## 27. Step551 Safe-Metadata v0.2 Fixture Validator Makefile Target Implementation Status
+
+Step551 implements the standalone Makefile target for the planned-root
+validator. The existing plan-only bridge wrapper integration remains
+unchanged, and the new target is not yet release-quality integrated.

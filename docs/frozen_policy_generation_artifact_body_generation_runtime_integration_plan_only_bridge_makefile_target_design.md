@@ -397,3 +397,8 @@ does not add a Makefile target for safe-metadata v0.2 fixture validation.
 
 Step550 adds the design for a future standalone Makefile target for the
 planned-root validator. No Makefile change is made in Step550.
+
+## 26. Step551 Safe-Metadata v0.2 Fixture Validator Makefile Target Implementation Status
+
+Step551 implements that separate planned-root validator Makefile target. It
+does not change the existing plan-only bridge Makefile target.

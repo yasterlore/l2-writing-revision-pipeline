@@ -5031,7 +5031,8 @@ real-data use, metric use, or production readiness status.
 For Step549, review the separate planned-root validator module and focused
 tests for the safe-metadata v0.2 fixture root. Confirm the CLI validates 24
 cases / 168 JSON files, emits public-safe aggregate output, leaves fixture JSON
-unchanged, and remains unconnected to Makefile and release-quality.
+unchanged, and remains unconnected to release-quality. Step551 adds standalone
+Makefile access for the validator.
 
 Confirm Step549 does not change workflow files, the release-quality wrapper,
 Makefile, runtime implementation, artifact body generation runtime invocation,
@@ -5047,5 +5048,19 @@ Confirm it is design-only / planning-only and proposes a future standalone
 target for the Step549 validator CLI. It does not change Makefile,
 release-quality wrapper, workflow files, Python code/tests, fixture JSON,
 validators, runtime implementation, artifact body generation runtime
+invocation, manifest writer integration, file writing, real-data use, metric
+use, or production readiness status.
+
+## 49. Step551 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Makefile Target Implementation
+
+For Step551, confirm the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
+is present and runs the Step549 planned-root validator CLI.
+
+Confirm the target reports the public-safe aggregate of 24 cases / 168 JSON
+files with 4 pass, 1 usage-error, 18 fail-closed, and 1 mismatch case. Confirm
+release-quality wrapper integration remains future work and that Step551 does
+not change workflow files, Python code/tests, fixture JSON, validator
+implementation, runtime implementation, artifact body generation runtime
 invocation, manifest writer integration, file writing, real-data use, metric
 use, or production readiness status.

@@ -369,6 +369,15 @@ integration, workflow changes, runtime implementation, artifact body generation
 runtime invocation, manifest writer integration, file writing, model
 performance evidence, or production readiness claims.
 
+Confirm Step551 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
+for the planned-root validator CLI. Reviewers should confirm the target emits
+the same public-safe aggregate output, remains separate from the active root
+target, and does not add release-quality wrapper integration, workflow
+changes, runtime implementation, artifact body generation runtime invocation,
+manifest writer integration, file writing, model performance evidence, or
+production readiness claims.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

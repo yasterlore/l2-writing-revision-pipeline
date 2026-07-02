@@ -512,9 +512,10 @@ Step549 adds the separate validator module for the planned sibling root:
 `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation.py`
 
 The active validator root remains separate at 28 cases / 196 JSON files. The
-planned-root validator is not yet connected to Makefile or release-quality,
-and it does not implement runtime behavior, invoke artifact body generation
-runtime, invoke manifest writer integration, or write files.
+planned-root validator is connected to a standalone Makefile target in
+Step551 but is not yet release-quality integrated, and it does not implement
+runtime behavior, invoke artifact body generation runtime, invoke manifest
+writer integration, or write files.
 
 ## Safe-Metadata v0.2 Fixture Validator Makefile Target Design
 
@@ -525,6 +526,17 @@ planned-root validator:
 
 No Makefile target is implemented in Step550. The active validator root and
 existing active Makefile target remain unchanged.
+
+## Safe-Metadata v0.2 Fixture Validator Makefile Target Implementation
+
+Step551 adds the standalone Makefile target for the planned-root validator:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
+
+The active validator root and existing active Makefile target remain
+unchanged. The planned-root target is not yet release-quality integrated, and
+it does not implement runtime behavior, invoke artifact body generation
+runtime, invoke manifest writer integration, or write files.
 
 ## Non-Claims
 

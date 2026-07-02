@@ -414,6 +414,14 @@ integration, workflow changes, runtime implementation, artifact body generation
 runtime invocation, manifest writer integration, file writing, real-data use,
 metric use, or production-readiness status.
 
+Step551 follow-up adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
+for that validator CLI. The target preserves the public-safe aggregate
+boundary and remains separate from release-quality wrapper integration,
+runtime implementation, artifact body generation runtime invocation, manifest
+writer integration, file writing, real-data use, metric use, and
+production-readiness status.
+
 ## 20. Coverage Validation Result
 
 The full technical specification draft is suitable as a consolidated technical

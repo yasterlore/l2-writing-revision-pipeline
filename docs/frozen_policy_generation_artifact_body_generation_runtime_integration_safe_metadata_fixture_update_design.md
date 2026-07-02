@@ -450,3 +450,10 @@ release-quality integration remains future work.
 Step550 adds a design-only / planning-only Makefile target design for the
 Step549 validator CLI. Makefile and release-quality integration remain future
 work.
+
+## 27. Step551 Safe-Metadata v0.2 Fixture Validator Makefile Target Implementation Status
+
+Step551 implements the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
+for the planned-root validator CLI. The expected aggregate remains 24 cases /
+168 JSON files, and release-quality integration remains future work.

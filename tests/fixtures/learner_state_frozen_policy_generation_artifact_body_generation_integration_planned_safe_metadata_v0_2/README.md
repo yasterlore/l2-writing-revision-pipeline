@@ -103,3 +103,12 @@ validator CLI:
 `docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_makefile_target_design.md`
 
 No Makefile target or release-quality integration is implemented in Step550.
+
+Step551 adds the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
+
+The target runs the planned-root validator CLI and keeps the expected
+public-safe aggregate at 24 cases / 168 JSON files, with 4 pass, 1 usage-error,
+18 fail-closed, and 1 mismatch case. Release-quality integration remains
+future work, and runtime implementation remains unimplemented.

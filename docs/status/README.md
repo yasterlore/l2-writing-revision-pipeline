@@ -896,3 +896,19 @@ validator implementation change, runtime implementation change, artifact body
 generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, model performance evidence, real-data readiness
 evidence, or production readiness evidence.
+
+## Step551 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Makefile Target Implementation
+
+Step551 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures`
+for the Step549 planned-root safe-metadata v0.2 validator CLI.
+
+The target is expected to report the same public-safe aggregate: 24 cases / 168
+JSON files, with 4 pass cases, 1 usage-error case, 18 fail-closed cases, and 1
+mismatch case. It remains separate from the active root validator target and
+is not yet release-quality integrated. It adds no workflow change, Python
+code/test change, fixture JSON change, validator implementation change,
+runtime implementation change, artifact body generation runtime invocation,
+manifest writer integration, file writing, real-data use, metric use, model
+performance evidence, real-data readiness evidence, or production readiness
+evidence.
