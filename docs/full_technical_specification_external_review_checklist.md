@@ -411,6 +411,16 @@ validation. Reviewers should confirm the check remains metadata handoff only
 and does not invoke artifact body generation runtime, invoke manifest writer,
 write files, use real data, compute metrics, or claim production readiness.
 
+Confirm Step570 adds
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation/`
+as a planned metadata-only / body-free fixture root with 6 valid cases, 24
+invalid cases, 30 total cases, 7 JSON files per case, and 210 total JSON files.
+Reviewers should confirm this fixture root creation does not add validator
+implementation, runtime implementation, Makefile target integration,
+release-quality wrapper integration, workflow changes, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness claims.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

@@ -326,3 +326,13 @@ Step569 adds
 as the next design-only / planning-only / docs-only handoff for a future
 artifact body generation runtime invocation boundary. It follows this broader
 review and does not implement runtime invocation.
+
+## 15. Step570 Fixture Root Creation Status
+
+Step570 creates
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation/`
+as a planned metadata-only / body-free fixture root for a future artifact body
+generation runtime invocation boundary. The root contains 30 cases / 210 JSON
+files and remains separate from runtime implementation, validator
+implementation, Makefile target integration, release-quality wrapper
+integration, manifest writer integration, and file writing.

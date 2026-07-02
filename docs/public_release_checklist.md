@@ -5307,3 +5307,17 @@ expected bodies, no artifact body payloads, no manifest bodies, no generated
 policy bodies, no raw stdout/stderr bodies, no raw rows, no logits/
 probabilities, no private or absolute paths, no raw learner text, no real
 participant data, and no performance metric bodies.
+
+## 68. Step570 Artifact Body Generation Runtime Invocation Fixture Root Creation
+
+For Step570, confirm
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation/README.md`
+exists and describes a planned metadata-only / body-free fixture root for a
+future artifact body generation runtime invocation boundary.
+
+Confirm the root contains 6 valid cases, 24 invalid cases, 30 total cases,
+7 JSON files per case, and 210 total JSON files. Confirm this step does not
+change Makefile, release-quality wrapper, workflow files, Python code/tests,
+existing fixture JSON outside the new root, validator implementation, runtime
+implementation, artifact body generation implementation, manifest writer
+implementation, or file-writing implementation.

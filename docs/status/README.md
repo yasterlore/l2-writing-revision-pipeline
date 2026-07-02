@@ -1126,3 +1126,15 @@ as a design-only / planning-only / docs-only handoff toward a future runtime
 invocation boundary. It creates no fixture JSON and does not change runtime,
 wrapper, Makefile, workflow, Python code/tests, manifest writer integration,
 or file writing.
+
+## Step570 Artifact Body Generation Runtime Invocation Fixture Root Creation
+
+Step570 adds the planned fixture root
+[`learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation`](../../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation/README.md)
+for a future artifact body generation runtime invocation boundary.
+
+The root contains 6 valid cases, 24 invalid cases, and 210 metadata-only /
+body-free JSON files using a seven-file layout. Validator implementation,
+runtime implementation, Makefile target integration, release-quality wrapper
+integration, workflow changes, artifact body generation runtime invocation,
+manifest writer integration, and file writing remain future work.

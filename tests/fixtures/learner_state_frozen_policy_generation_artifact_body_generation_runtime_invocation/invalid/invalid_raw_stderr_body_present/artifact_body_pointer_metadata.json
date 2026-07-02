@@ -1,0 +1,23 @@
+{
+  "absolute_path_present": false,
+  "body_free": true,
+  "case_id": "invalid/invalid_raw_stderr_body_present",
+  "case_kind": "invalid",
+  "case_name": "invalid_raw_stderr_body_present",
+  "count_only_where_applicable": true,
+  "fixture_schema_version": "learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_v0.1",
+  "fixture_stage": "planned_runtime_invocation_contract",
+  "integration_mode": "artifact-body-runtime-invocation",
+  "manifest_body_present": false,
+  "metadata_only": true,
+  "no_oracle": true,
+  "planned_fixture_root": "learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation",
+  "pointer_body_present": false,
+  "pointer_metadata_only": true,
+  "pointer_reference_count": 0,
+  "private_path_present": false,
+  "runtime_schema_version": "learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.3",
+  "synthetic_only": true,
+  "unsafe_signal_count": 0,
+  "validation_schema_version": "learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation_v0.1"
+}

@@ -381,6 +381,16 @@ not claim runtime correctness generally, artifact body generation correctness
 generally, safe-metadata free-form body safety, manifest writer readiness,
 production readiness, real-data readiness, or model performance.
 
+Step570 adds a planned artifact body generation runtime invocation fixture
+root with 30 metadata-only / body-free cases and 210 JSON files. This is
+fixture root creation only. It does not add validator implementation, runtime
+implementation, Makefile target integration, release-quality wrapper
+integration, workflow changes, artifact body generation runtime invocation,
+manifest writer integration, file writing, production readiness, real-data
+readiness, model performance, runtime correctness generally, artifact body
+generation correctness generally, or safe-metadata free-form body safety
+claims.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

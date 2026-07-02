@@ -490,3 +490,19 @@ privacy/legal/IRB readiness.
 - Later: remote/manual run record workflow design for the Step539 runtime
   wrapper check
 - Later: manifest writer integration design and implementation
+
+## 22. Step570 Coverage Addendum
+
+Step570 adds the planned fixture root
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation/`
+for a future artifact body generation runtime invocation boundary. Coverage
+now records the fixture root existence, 30-case / 210-JSON aggregate, seven-file
+layout, fixture schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_v0.1`,
+and proposed mode `artifact-body-runtime-invocation`.
+
+This addendum does not claim validator coverage, runtime implementation
+coverage, Makefile target coverage, release-quality wrapper coverage,
+artifact body generation runtime invocation correctness, manifest writer
+integration correctness, file-writing readiness, production readiness,
+real-data readiness, or model performance.

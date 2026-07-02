@@ -2906,3 +2906,20 @@ change workflow files, wrapper files, Makefile, Python code/tests, runtime
 implementation, validator implementation, invoke artifact body generation
 runtime, invoke manifest writer, write files, use real data, compute metrics,
 or claim production readiness.
+
+## Step570 Artifact Body Generation Runtime Invocation Fixture Root Creation
+
+Step570 creates the planned fixture root:
+
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation/`
+
+The root follows the Step569 contract with 6 valid cases, 24 invalid cases,
+30 total cases, 7 metadata-only / body-free JSON files per case, and 210 total
+JSON files. It records schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_v0.1`
+and proposed mode `artifact-body-runtime-invocation`.
+
+This step does not implement a validator, runtime invocation, Makefile target,
+release-quality wrapper integration, workflow change, artifact body generation
+runtime invocation, manifest writer integration, file writing, real-data use,
+metric use, or production readiness status.

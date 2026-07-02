@@ -326,6 +326,15 @@ can remain separate follow-on work. If future reviewers find the 7-file layout
 insufficient before creation, Step570 can be narrowed to fixture layout
 refinement design instead.
 
+Step570 follow-up status: the planned fixture root has been created at
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation/`
+with 6 valid cases, 24 invalid cases, and 210 metadata-only / body-free JSON
+files. The root remains a planned fixture contract surface only; validator
+implementation, runtime implementation, Makefile target integration,
+release-quality wrapper integration, artifact body generation runtime
+invocation, manifest writer integration, and file writing remain separate
+future steps.
+
 ## 14. Non-Equivalence Cautions
 
 - Fixture contract design is not runtime invocation implementation.
