@@ -86,3 +86,13 @@ The design recommends a separate future validator module. It does not change
 these fixture JSON files, implement validation, implement runtime behavior,
 add Makefile or release-quality wrapper integration, invoke artifact body
 generation runtime, invoke manifest writer integration, or write files.
+
+Step549 implements that separate validator module and focused tests:
+
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation.py`
+
+`python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation.py`
+
+The validator checks this planned root as 24 cases / 168 JSON files with
+public-safe aggregate output. Makefile and release-quality integration remain
+future work, and runtime implementation remains unimplemented.

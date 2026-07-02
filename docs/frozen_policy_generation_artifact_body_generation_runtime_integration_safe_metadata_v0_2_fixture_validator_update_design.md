@@ -350,3 +350,21 @@ This document does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 21. Step549 Validator Implementation Status
+
+Step549 implements the separate planned-root validator module:
+
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation.py`
+
+It also adds focused tests:
+
+`python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation.py`
+
+The CLI validates the planned root as 24 cases / 168 JSON files with output
+mode `safe_metadata_fixture_validation` and schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation_v0.1`.
+
+Makefile target, release-quality wrapper integration, workflow update, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+integration, and file writing remain future work.

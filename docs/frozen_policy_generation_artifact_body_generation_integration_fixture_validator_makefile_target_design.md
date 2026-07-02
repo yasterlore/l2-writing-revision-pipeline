@@ -530,3 +530,8 @@ until a later validator update.
 Step548 adds a design-only / planning-only validator update design for the
 planned safe-metadata v0.2 root. No Makefile target changes are made in
 Step548.
+
+## 28. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Note
+
+Step549 implements the separate planned-root validator, but it does not add a
+Makefile target. The existing active validator target remains unchanged.

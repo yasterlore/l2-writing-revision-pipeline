@@ -363,3 +363,9 @@ Step548 adds
 as the next planning document for validating the Step547 planned root. It
 recommends a separate future validator module and keeps runtime implementation
 and all integration targets out of scope.
+
+## 23. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Status
+
+Step549 implements the separate planned-root validator module and focused
+tests. Safe-metadata runtime implementation remains unimplemented, and the
+validator is not yet connected to Makefile or release-quality.

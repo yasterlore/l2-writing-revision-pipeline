@@ -864,3 +864,21 @@ Python code/test change, Makefile change, release-quality wrapper change,
 workflow change, artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, model performance
 evidence, real-data readiness evidence, or production readiness evidence.
+
+## Step549 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Implementation
+
+Step549 adds the separate planned-root validator module:
+
+`../../python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation.py`
+
+The validator CLI checks the planned safe-metadata v0.2 root as 24 cases / 168
+JSON files with public-safe aggregate output, schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation_v0.1`,
+and output mode `safe_metadata_fixture_validation`.
+
+It remains separate from the active 28-case validator and is not yet connected
+to Makefile or the release-quality wrapper. It adds no workflow change,
+runtime implementation change, artifact body generation runtime invocation,
+manifest writer integration, file writing, real-data use, metric use, model
+performance evidence, real-data readiness evidence, or production readiness
+evidence.

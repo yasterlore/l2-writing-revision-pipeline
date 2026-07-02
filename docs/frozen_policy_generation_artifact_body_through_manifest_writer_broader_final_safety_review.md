@@ -289,3 +289,9 @@ validator update design for the Step547 planned root:
 It recommends validating the planned root before any safe-metadata runtime
 implementation and keeps manifest writer integration and file writing out of
 scope.
+
+## 20. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Status
+
+Step549 implements the planned-root validator for the safe-metadata v0.2
+fixtures. It validates only the metadata contract and does not invoke artifact
+body generation runtime, manifest writer integration, or file writing.

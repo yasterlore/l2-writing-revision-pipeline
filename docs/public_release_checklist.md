@@ -5025,3 +5025,15 @@ does not change fixture JSON, validators, runtime implementation, Python
 code/tests, Makefile, release-quality wrapper, workflow files, artifact body
 generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, or production readiness status.
+
+## 47. Step549 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Implementation
+
+For Step549, review the separate planned-root validator module and focused
+tests for the safe-metadata v0.2 fixture root. Confirm the CLI validates 24
+cases / 168 JSON files, emits public-safe aggregate output, leaves fixture JSON
+unchanged, and remains unconnected to Makefile and release-quality.
+
+Confirm Step549 does not change workflow files, the release-quality wrapper,
+Makefile, runtime implementation, artifact body generation runtime invocation,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness status.

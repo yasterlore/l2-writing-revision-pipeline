@@ -438,3 +438,9 @@ validator update design:
 
 The design keeps the planned root separate from the active validator and
 recommends a future dedicated validator module before runtime implementation.
+
+## 25. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Status
+
+Step549 implements that dedicated planned-root validator module and focused
+tests. The active fixture root validator remains separate, and Makefile /
+release-quality integration remains future work.

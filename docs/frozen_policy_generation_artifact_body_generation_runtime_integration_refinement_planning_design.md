@@ -612,3 +612,8 @@ Step548 adds
 `docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_update_design.md`
 as a design-only / planning-only future validator update plan for the planned
 root. Validator implementation and runtime integration remain future steps.
+
+## 32. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Status
+
+Step549 implements the planned-root validator module and focused tests.
+Runtime integration remains a future step.

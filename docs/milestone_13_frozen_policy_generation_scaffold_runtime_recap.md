@@ -2595,3 +2595,14 @@ unchanged. Step548 does not change fixture JSON, validators, runtime
 implementation, Python code/tests, Makefile, release-quality wrapper, workflow
 files, artifact body generation runtime invocation, manifest writer
 integration, or file writing.
+
+## Step549 Artifact Body Generation Runtime Integration Safe-Metadata v0.2 Fixture Validator Implementation
+
+Step549 adds
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation.py`
+and focused tests for the Step547 planned root.
+
+The validator checks 24 cases / 168 JSON files, maps the planned root to 4 pass
+cases, 1 usage-error case, 18 fail-closed cases, and 1 mismatch case, and emits
+public-safe aggregate output. The active root validator remains separate.
+Makefile and release-quality integration remain future work.

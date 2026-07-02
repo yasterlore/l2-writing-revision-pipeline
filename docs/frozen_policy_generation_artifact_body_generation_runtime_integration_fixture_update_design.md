@@ -454,3 +454,8 @@ purposes.
 Step548 adds a design-only / planning-only validator update design for the
 Step547 planned root. It recommends a separate future validator module so the
 active Step523 root and existing validator remain unchanged.
+
+## 30. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Status
+
+Step549 implements that separate planned-root validator. The active Step523
+root and existing validator remain unchanged.

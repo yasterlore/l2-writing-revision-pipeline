@@ -294,3 +294,8 @@ future-chain handoff for the planned root. The plan-only bridge chain remains
 unchanged and this document does not add runtime implementation, validator
 implementation, wrapper changes, workflow changes, manifest writer
 integration, or file writing.
+
+## 20. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Status
+
+Step549 implements a separate planned-root validator for the safe-metadata
+v0.2 fixtures. The plan-only bridge runtime chain remains unchanged.

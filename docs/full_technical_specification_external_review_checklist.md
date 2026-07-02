@@ -361,6 +361,14 @@ unintegrated, and do not include raw payloads, raw logs, real data, file
 writing, manifest writer invocation, model performance evidence, or production
 readiness claims.
 
+Confirm Step549 adds the separate planned safe-metadata v0.2 fixture validator
+module and focused tests. Reviewers should confirm it validates 24 cases / 168
+JSON files, emits only public-safe aggregate output, keeps the active root
+validator separate, and does not add Makefile target, release-quality wrapper
+integration, workflow changes, runtime implementation, artifact body generation
+runtime invocation, manifest writer integration, file writing, model
+performance evidence, or production readiness claims.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

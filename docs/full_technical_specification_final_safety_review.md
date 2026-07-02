@@ -335,6 +335,16 @@ body generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, production readiness, real-data readiness, or model
 performance status.
 
+Step549 adds a separate validator module and focused tests for the planned
+safe-metadata v0.2 fixture root. The validator checks 24 cases / 168 JSON files
+with public-safe aggregate output and keeps the active root validator separate.
+It is not yet connected to Makefile or release-quality and does not implement
+runtime behavior, invoke artifact body generation runtime, invoke manifest
+writer integration, write files, use real data, compute metrics, or claim
+production readiness, real-data readiness, model performance, runtime
+correctness generally, manifest writer correctness, or safe-metadata
+free-form body safety.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

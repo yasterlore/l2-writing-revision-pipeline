@@ -1204,3 +1204,24 @@ readiness, real-data readiness, model performance, artifact body generation
 correctness generally, runtime correctness generally, manifest writer
 integration correctness, generated policy quality, learner-state estimator
 correctness, or safe-metadata free-form body safety.
+
+## Appendix L. Step549 Safe-Metadata v0.2 Fixture Validator Implementation
+
+Step549 adds
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation.py`
+and focused tests for the planned safe-metadata v0.2 fixture root. The CLI is:
+
+`PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration_planned_safe_metadata_v0_2`
+
+The validator uses schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation_v0.1`,
+output mode `safe_metadata_fixture_validation`, and validates the planned root
+as 24 cases / 168 JSON files: 4 pass cases, 1 usage-error case, 18
+fail-closed cases, and 1 mismatch case. It remains separate from the active
+28-case validator and is not yet connected to Makefile or release-quality.
+
+Step549 does not implement safe-metadata runtime behavior, invoke artifact body
+generation runtime, invoke manifest writer integration, write files, change
+fixture JSON, or claim production readiness, real-data readiness, model
+performance, runtime correctness generally, manifest writer correctness, or
+safe-metadata free-form body safety.

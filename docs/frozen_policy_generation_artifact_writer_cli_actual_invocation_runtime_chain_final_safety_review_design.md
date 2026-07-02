@@ -589,3 +589,9 @@ real-data readiness, or model performance status.
 Step548 adds a design-only / planning-only validator update design for the
 planned safe-metadata v0.2 root. This does not change the artifact writer CLI
 actual invocation runtime chain.
+
+## 36. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Note
+
+Step549 implements a separate planned-root validator for safe-metadata v0.2
+fixtures. This does not change the artifact writer CLI actual invocation
+runtime chain.

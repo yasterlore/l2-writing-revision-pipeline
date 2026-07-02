@@ -392,3 +392,11 @@ It recommends a separate future validator module and does not implement
 validator changes, runtime changes, fixture JSON changes, Makefile targets,
 release-quality wrapper integration, workflow changes, artifact body generation
 runtime invocation, manifest writer integration, or file writing.
+
+## 23. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Status
+
+Step549 implements the separate validator module and focused tests for the
+planned root. The validator checks 24 cases / 168 JSON files with public-safe
+aggregate output. Makefile target, release-quality wrapper integration,
+workflow update, runtime implementation, artifact body generation runtime
+invocation, manifest writer integration, and file writing remain future work.

@@ -406,6 +406,14 @@ No workflow, wrapper, Python code/test, Rust, or TypeScript changes were made
 by this coverage note. Step547 itself adds planned fixture JSON outside the
 active validator root.
 
+Step549 follow-up adds a Python validator module and focused tests for the
+planned safe-metadata v0.2 fixture root. The validator emits public-safe
+aggregate output for 24 cases / 168 JSON files and remains separate from the
+active root validator. It does not add Makefile or release-quality wrapper
+integration, workflow changes, runtime implementation, artifact body generation
+runtime invocation, manifest writer integration, file writing, real-data use,
+metric use, or production-readiness status.
+
 ## 20. Coverage Validation Result
 
 The full technical specification draft is suitable as a consolidated technical

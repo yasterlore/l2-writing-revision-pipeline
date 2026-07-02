@@ -576,3 +576,9 @@ check. The planned fixtures are not yet validator-integrated.
 Step548 adds a design-only / planning-only validator update design for the
 planned safe-metadata v0.2 root. This release-quality integration design
 remains scoped to the existing active fixture validator check.
+
+## 30. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Note
+
+Step549 implements the separate planned-root validator, but it is not yet
+release-quality integrated. This document remains scoped to the existing active
+fixture validator check.

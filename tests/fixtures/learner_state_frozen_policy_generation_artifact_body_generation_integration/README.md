@@ -505,6 +505,17 @@ It recommends a separate future validator module for the planned sibling root.
 The active validator root and existing release-quality behavior remain
 unchanged.
 
+## Safe-Metadata v0.2 Fixture Validator Implementation
+
+Step549 adds the separate validator module for the planned sibling root:
+
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_validation.py`
+
+The active validator root remains separate at 28 cases / 196 JSON files. The
+planned-root validator is not yet connected to Makefile or release-quality,
+and it does not implement runtime behavior, invoke artifact body generation
+runtime, invoke manifest writer integration, or write files.
+
 ## Non-Claims
 
 These fixtures do not claim:

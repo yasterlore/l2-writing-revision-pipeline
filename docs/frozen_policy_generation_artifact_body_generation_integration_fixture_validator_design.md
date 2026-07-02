@@ -763,3 +763,8 @@ planned cases.
 Step548 adds a design-only / planning-only validator update design for the
 planned safe-metadata v0.2 root. The existing active validator implementation
 remains unchanged.
+
+## 36. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Note
+
+Step549 implements a separate planned-root validator module. The existing
+active validator implementation remains unchanged.

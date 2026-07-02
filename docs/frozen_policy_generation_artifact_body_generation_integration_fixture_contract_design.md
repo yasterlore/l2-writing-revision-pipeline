@@ -753,3 +753,8 @@ The active fixture contract remains unchanged until a later validator update.
 Step548 adds a design-only / planning-only validator update design for the
 planned safe-metadata v0.2 root. The active fixture contract remains unchanged
 in Step548.
+
+## 37. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Note
+
+Step549 implements a separate validator for the planned safe-metadata v0.2
+root. The active fixture contract remains unchanged.

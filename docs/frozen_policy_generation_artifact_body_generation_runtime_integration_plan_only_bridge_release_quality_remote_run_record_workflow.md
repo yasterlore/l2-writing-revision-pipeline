@@ -424,3 +424,9 @@ validator and wrapper integration chain.
 Step548 adds the safe-metadata v0.2 fixture validator update design for future
 planned-root validation. It does not change the plan-only bridge
 release-quality run record workflow or create a new remote marker.
+
+## 23. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Status
+
+Step549 implements the planned-root validator, but it does not change this
+plan-only bridge release-quality run record workflow or create a new remote
+marker.

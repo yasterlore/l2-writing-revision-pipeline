@@ -646,3 +646,8 @@ writer integration.
 Step548 adds a design-only / planning-only validator update design for the
 planned safe-metadata v0.2 root. It keeps runtime implementation and manifest
 writer integration separate.
+
+## 30. Step549 Safe-Metadata v0.2 Fixture Validator Implementation Note
+
+Step549 implements the separate planned-root validator while keeping runtime
+implementation and manifest writer integration separate.
