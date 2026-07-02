@@ -341,3 +341,11 @@ separate, and Step564 does not create a status marker, change workflow files,
 change the wrapper, change Makefile, change fixture JSON, change runtime
 implementation, invoke artifact body generation runtime, invoke manifest
 writer, or write files.
+
+## 23. Step565 Runtime Remote Status Marker Status
+
+Step565 adds the public-safe remote status marker for the safe-metadata
+runtime smoke. The planned-root validator chain remains separate, and Step565
+does not change workflow files, change the wrapper, change Makefile, change
+fixture JSON, change runtime implementation, invoke artifact body generation
+runtime, invoke manifest writer, or write files.

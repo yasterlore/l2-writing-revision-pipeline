@@ -525,3 +525,11 @@ status marker, change workflow files, change the wrapper, change Makefile,
 change Python code/tests, change fixture JSON, change runtime implementation,
 invoke artifact body generation runtime, invoke manifest writer, or write
 files.
+
+## 30. Step565 Remote Status Marker Status
+
+Step565 adds the public-safe pass-only / metadata-only / body-free status
+marker for the Step563 wrapper check. The marker preserves the metadata
+handoff only boundary and does not change workflow files, the wrapper,
+Makefile, Python code/tests, fixture JSON, runtime implementation, invoke
+artifact body generation runtime, invoke manifest writer, or write files.

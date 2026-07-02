@@ -2831,3 +2831,21 @@ change Python code/tests, change fixture JSON, change runtime implementation,
 change validator implementation, invoke artifact body generation runtime,
 invoke manifest writer, write files, use real data, compute metrics, or claim
 production readiness.
+
+## Step565 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Release-Quality Remote Status Marker
+
+Step565 adds the public-safe pass-only / metadata-only / body-free status
+marker:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_remote_run_status.md`
+
+The marker records the Step563 wrapper check label, command, insertion point,
+and target runtime pass summary without raw logs, full job output, copied log
+blocks, fixture JSON bodies, request/pointer/expected bodies, artifact body
+payloads, manifest bodies, generated policy bodies, raw stdout/stderr bodies,
+raw rows, logits/probabilities, private or absolute paths, raw learner text,
+real participant data, or performance metric bodies. It does not change
+workflow files, wrapper files, Makefile, Python code/tests, fixture JSON,
+runtime implementation, validator implementation, artifact body generation
+runtime invocation, manifest writer integration, file writing, real-data use,
+metric use, or production readiness status.

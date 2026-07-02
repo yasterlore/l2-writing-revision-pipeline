@@ -587,3 +587,11 @@ surface from this document and does not create a status marker, change
 workflows, change the wrapper, change Makefile, change Python code/tests,
 change fixture JSON, change runtime implementation, invoke artifact body
 generation runtime, invoke manifest writer, or write files.
+
+## 32. Step565 Remote Status Marker Status
+
+Step565 adds the public-safe remote status marker for the Step563 wrapper
+check. The marker records the expected body-free target runtime pass summary
+surface designed here and does not change workflows, the wrapper, Makefile,
+Python code/tests, fixture JSON, runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, or file writing.

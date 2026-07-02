@@ -339,3 +339,10 @@ Step564 adds the design-only / docs-only remote/manual run record workflow for
 the safe-metadata runtime smoke. This status marker remains unchanged and
 continues to describe only the planned-root validator wrapper run recorded in
 Step555.
+
+## 21. Step565 Runtime Remote Status Marker Status
+
+Step565 adds a separate public-safe remote status marker for the
+safe-metadata runtime smoke. This status marker remains unchanged and
+continues to describe only the planned-root validator wrapper run recorded in
+Step555.

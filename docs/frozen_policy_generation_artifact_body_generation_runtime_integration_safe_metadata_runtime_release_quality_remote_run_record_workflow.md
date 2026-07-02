@@ -336,3 +336,16 @@ correctness generally, or that the remote status marker has been created.
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 15. Step565 Remote Status Marker Status
+
+Step565 adds the future status marker path proposed here:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_remote_run_status.md`
+
+The marker is public-safe, pass-only, metadata-only, and body-free. It does
+not store raw logs, full job output, copied GitHub log blocks, screenshots
+containing raw logs, fixture JSON bodies, request/pointer/expected bodies,
+artifact body payloads, manifest bodies, generated policy bodies, raw
+stdout/stderr bodies, raw rows, logits/probabilities, private or absolute
+paths, raw learner text, real participant data, or performance metric bodies.

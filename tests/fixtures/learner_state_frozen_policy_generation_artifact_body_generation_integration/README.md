@@ -676,3 +676,12 @@ as a design-only / docs-only workflow for a future status marker. This active
 fixture root remains unchanged, and no fixture JSON change, runtime
 implementation change, artifact body generation runtime invocation, manifest
 writer invocation, or file writing is added.
+
+## Step565 Safe-Metadata Runtime Remote Status Marker Status
+
+Step565 adds
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_remote_run_status.md`
+as a public-safe status marker for the Step563 wrapper check. This active
+fixture root remains unchanged, and no fixture JSON change, runtime
+implementation change, artifact body generation runtime invocation, manifest
+writer invocation, or file writing is added.

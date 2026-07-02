@@ -5237,3 +5237,17 @@ Makefile, changing Python code/tests, changing fixture JSON, changing runtime
 or validator implementation, invoking artifact body generation runtime,
 invoking manifest writer, writing files, using real data, computing metrics,
 or claiming production readiness.
+
+## 63. Step565 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Remote Status Marker
+
+For Step565, confirm
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_remote_run_status.md`
+exists as a public-safe pass-only / metadata-only / body-free status marker
+for the Step563 wrapper check.
+
+Confirm the marker stores no raw logs, no full job output, no copied GitHub
+log blocks, no screenshots containing raw logs, no fixture JSON bodies, no
+request/pointer/expected bodies, no artifact body payloads, no manifest
+bodies, no generated policy bodies, no raw stdout/stderr bodies, no raw rows,
+no logits/probabilities, no private or absolute paths, no raw learner text, no
+real participant data, and no performance metric bodies.

@@ -34,11 +34,14 @@ Current status-marker posture:
   fixture validator target is in the release-quality wrapper, and its
   remote/manual status marker is now recorded as public-safe pass-only /
   count-only metadata.
+- The artifact body generation runtime integration safe-metadata runtime smoke
+  target is in the release-quality wrapper, and its remote/manual status
+  marker is now recorded as public-safe pass-only metadata.
 - The artifact body generation runtime integration safe-metadata v0.2 planned
   fixture validator chain now has a docs-only final safety review.
 - The artifact body generation runtime integration safe-metadata runtime
-  refinement is designed for a future `safe-metadata-smoke` mode, but runtime
-  implementation remains future work.
+  `safe-metadata-smoke` mode is implemented, wrapper-integrated, and now has a
+  public-safe remote/manual status marker.
 
 Available markers:
 
@@ -126,6 +129,14 @@ Available markers:
   free-form body safety evidence, not manifest writer readiness evidence, not
   production readiness evidence, not real-data readiness evidence, and not
   model performance evidence.
+- [Learner-state frozen policy generation artifact body generation runtime integration safe-metadata runtime release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after safe-metadata runtime
+  smoke integration. Raw logs and full job output are not stored. This is not
+  runtime correctness evidence generally, not artifact body generation
+  correctness evidence generally, not safe-metadata free-form body safety
+  evidence, not manifest writer readiness evidence, not production readiness
+  evidence, not real-data readiness evidence, and not model performance
+  evidence.
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after artifact body fixture
   validation integration.
@@ -1057,3 +1068,16 @@ wrapper, change Makefile, change Python code/tests, change fixture JSON,
 change runtime or validator implementation, invoke artifact body generation
 runtime, invoke manifest writer, write files, use real data, compute metrics,
 or claim production readiness.
+
+## Step565 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Remote Status Marker
+
+Step565 adds
+[safe-metadata runtime release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_remote_run_status.md)
+as a public-safe pass-only / metadata-only / body-free marker for the Step563
+wrapper check.
+
+Raw logs and full job output are not stored. This marker is not runtime
+correctness evidence generally, not artifact body generation correctness
+evidence generally, not safe-metadata free-form body safety evidence, not
+manifest writer readiness evidence, not production readiness evidence, not
+real-data readiness evidence, and not model performance evidence.

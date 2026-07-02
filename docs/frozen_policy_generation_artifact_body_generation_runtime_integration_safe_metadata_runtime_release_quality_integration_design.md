@@ -264,3 +264,13 @@ It does not create a status marker, change workflows, change the wrapper,
 change Makefile, change Python code/tests, change fixture JSON, change runtime
 implementation, invoke artifact body generation runtime, invoke manifest
 writer, or write files.
+
+## 17. Step565 Remote Status Marker Status
+
+Step565 adds
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_remote_run_status.md`
+as a public-safe pass-only / metadata-only / body-free status marker for the
+Step563 wrapper check. It does not change workflows, change the wrapper,
+change Makefile, change Python code/tests, change fixture JSON, change runtime
+implementation, invoke artifact body generation runtime, invoke manifest
+writer, or write files.
