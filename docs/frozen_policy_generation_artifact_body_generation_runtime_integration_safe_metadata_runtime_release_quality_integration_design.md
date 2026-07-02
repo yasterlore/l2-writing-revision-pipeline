@@ -274,3 +274,12 @@ Step563 wrapper check. It does not change workflows, change the wrapper,
 change Makefile, change Python code/tests, change fixture JSON, change runtime
 implementation, invoke artifact body generation runtime, invoke manifest
 writer, or write files.
+
+## 18. Step566 Final Safety Review Status
+
+Step566 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_final_safety_review.md`
+as the docs-only final safety review for the Step557-Step565 runtime chain.
+The review records that release-quality wrapper inclusion is not runtime
+correctness generally and that the Step565 marker has limited remote evidence
+strength because actual remote run metadata was not recorded.

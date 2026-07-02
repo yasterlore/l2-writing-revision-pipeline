@@ -595,3 +595,12 @@ check. The marker records the expected body-free target runtime pass summary
 surface designed here and does not change workflows, the wrapper, Makefile,
 Python code/tests, fixture JSON, runtime implementation, artifact body
 generation runtime invocation, manifest writer integration, or file writing.
+
+## 33. Step566 Final Safety Review Status
+
+Step566 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_final_safety_review.md`
+as the docs-only final safety review for the Step557-Step565 runtime chain. It
+keeps the expected-output surface public-safe and records that the Step565
+remote marker has limited evidence strength because actual remote run metadata
+was not recorded.

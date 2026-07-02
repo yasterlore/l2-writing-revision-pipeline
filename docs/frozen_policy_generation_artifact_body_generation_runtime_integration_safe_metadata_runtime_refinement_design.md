@@ -533,3 +533,15 @@ marker for the Step563 wrapper check. The marker preserves the metadata
 handoff only boundary and does not change workflow files, the wrapper,
 Makefile, Python code/tests, fixture JSON, runtime implementation, invoke
 artifact body generation runtime, invoke manifest writer, or write files.
+
+## 31. Step566 Final Safety Review Status
+
+Step566 adds the docs-only final safety review for the Step557-Step565
+`safe-metadata-smoke` runtime chain:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_final_safety_review.md`
+
+The review records the Step565 remote-marker evidence limitation and does not
+change workflow files, the wrapper, Makefile, Python code/tests, fixture JSON,
+runtime implementation, invoke artifact body generation runtime, invoke
+manifest writer, or write files.

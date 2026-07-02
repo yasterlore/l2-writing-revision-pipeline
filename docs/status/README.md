@@ -42,6 +42,9 @@ Current status-marker posture:
 - The artifact body generation runtime integration safe-metadata runtime
   `safe-metadata-smoke` mode is implemented, wrapper-integrated, and now has a
   public-safe remote/manual status marker.
+- The artifact body generation runtime integration safe-metadata runtime chain
+  now has a docs-only final safety review that records the Step565
+  remote-marker evidence limitation.
 
 Available markers:
 
@@ -1081,3 +1084,11 @@ correctness evidence generally, not artifact body generation correctness
 evidence generally, not safe-metadata free-form body safety evidence, not
 manifest writer readiness evidence, not production readiness evidence, not
 real-data readiness evidence, and not model performance evidence.
+
+## Step566 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Final Safety Review
+
+Step566 adds
+[safe-metadata runtime final safety review](../frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_final_safety_review.md)
+as a docs-only review for the Step557-Step565 runtime chain. It records that
+the Step565 marker is public-safe but has limited remote evidence strength
+because actual workflow/job/commit/run status metadata was not recorded.

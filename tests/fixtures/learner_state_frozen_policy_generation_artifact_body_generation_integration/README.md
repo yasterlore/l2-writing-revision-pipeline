@@ -685,3 +685,10 @@ as a public-safe status marker for the Step563 wrapper check. This active
 fixture root remains unchanged, and no fixture JSON change, runtime
 implementation change, artifact body generation runtime invocation, manifest
 writer invocation, or file writing is added.
+
+## Step566 Safe-Metadata Runtime Final Safety Review Status
+
+Step566 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_final_safety_review.md`
+as a docs-only final safety review for the `safe-metadata-smoke` runtime
+chain. This active fixture root remains unchanged.

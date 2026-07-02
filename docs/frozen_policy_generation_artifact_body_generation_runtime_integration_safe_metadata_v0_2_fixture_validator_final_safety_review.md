@@ -349,3 +349,12 @@ runtime smoke. The planned-root validator chain remains separate, and Step565
 does not change workflow files, change the wrapper, change Makefile, change
 fixture JSON, change runtime implementation, invoke artifact body generation
 runtime, invoke manifest writer, or write files.
+
+## 24. Step566 Runtime Final Safety Review Status
+
+Step566 adds the docs-only final safety review for the follow-on
+`safe-metadata-smoke` runtime chain. The planned-root validator chain remains
+separate, and the Step566 review does not change workflow files, change the
+wrapper, change Makefile, change fixture JSON, change runtime implementation,
+invoke artifact body generation runtime, invoke manifest writer, or write
+files.

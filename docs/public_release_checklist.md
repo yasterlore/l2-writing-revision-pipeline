@@ -5251,3 +5251,17 @@ request/pointer/expected bodies, no artifact body payloads, no manifest
 bodies, no generated policy bodies, no raw stdout/stderr bodies, no raw rows,
 no logits/probabilities, no private or absolute paths, no raw learner text, no
 real participant data, and no performance metric bodies.
+
+## 64. Step566 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Final Safety Review
+
+For Step566, confirm
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_final_safety_review.md`
+exists as a docs-only final safety review for the Step557-Step565
+`safe-metadata-smoke` runtime chain.
+
+Confirm it records the Step565 remote-marker evidence limitation without raw
+logs, full job output, copied GitHub log blocks, fixture JSON bodies,
+request/pointer/expected bodies, artifact body payloads, manifest bodies,
+generated policy bodies, raw stdout/stderr bodies, raw rows,
+logits/probabilities, private or absolute paths, raw learner text, real
+participant data, or performance metric bodies.

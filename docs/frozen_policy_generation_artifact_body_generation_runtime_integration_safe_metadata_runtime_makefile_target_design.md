@@ -315,3 +315,12 @@ wrapper check that runs the standalone target designed here:
 The marker does not change workflows, the wrapper, Makefile, Python
 code/tests, fixture JSON, runtime implementation, artifact body generation
 runtime invocation, manifest writer integration, or file writing.
+
+## 19. Step566 Final Safety Review Status
+
+Step566 adds the docs-only final safety review:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_final_safety_review.md`
+
+The review keeps the standalone target boundary separate and records the
+Step565 remote-marker evidence limitation.

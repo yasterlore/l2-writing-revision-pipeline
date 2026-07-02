@@ -349,3 +349,12 @@ containing raw logs, fixture JSON bodies, request/pointer/expected bodies,
 artifact body payloads, manifest bodies, generated policy bodies, raw
 stdout/stderr bodies, raw rows, logits/probabilities, private or absolute
 paths, raw learner text, real participant data, or performance metric bodies.
+
+## 16. Step566 Final Safety Review Status
+
+Step566 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_final_safety_review.md`
+as a docs-only final safety review for the runtime chain. The review records
+that the Step565 marker used public-safe placeholder/not-recorded remote
+metadata for workflow/job/commit/run status, which limits remote evidence
+strength.

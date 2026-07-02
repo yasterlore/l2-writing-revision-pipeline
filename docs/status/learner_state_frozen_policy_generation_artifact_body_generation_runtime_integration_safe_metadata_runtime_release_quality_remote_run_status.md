@@ -241,3 +241,12 @@ This marker does not claim:
 
 Possible later steps include a safe-metadata runtime final safety review.
 Step565 does not perform that review. Step565 stops at this status marker.
+
+## 12. Step566 Final Safety Review Status
+
+Step566 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_final_safety_review.md`
+as the docs-only final safety review for this `safe-metadata-smoke` runtime
+chain. The review records that this marker is public-safe but has limited
+remote evidence strength because actual workflow/job/commit/run status
+metadata was not recorded.
