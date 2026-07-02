@@ -567,3 +567,14 @@ target. It references the expected public-safe output designed here and does
 not change wrapper files, workflows, Makefile, Python code/tests, fixture JSON,
 runtime implementation, invoke artifact body generation runtime, invoke
 manifest writer, or write files.
+
+## 30. Step563 Release-Quality Wrapper Integration Status
+
+Step563 adds the Step561 runtime target to the release-quality wrapper. The
+check uses the expected public-safe output surface designed here and runs after
+safe-metadata v0.2 fixture validation and before artifact body fixture
+validation.
+
+Step563 does not change workflows, Makefile, Python code/tests, fixture JSON,
+runtime implementation, invoke artifact body generation runtime, invoke
+manifest writer, or write files.

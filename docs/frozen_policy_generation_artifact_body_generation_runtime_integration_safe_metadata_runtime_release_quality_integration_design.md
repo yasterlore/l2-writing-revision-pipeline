@@ -238,3 +238,16 @@ the proposed wrapper check has already been added.
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 15. Step563 Wrapper Integration Status
+
+Step563 adds the proposed release-quality wrapper check with label
+`learner-state frozen policy generation artifact body generation runtime integration safe-metadata runtime smoke`.
+
+The command is
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`.
+The insertion point is after safe-metadata v0.2 fixture validation and before
+artifact body fixture validation. The check remains metadata handoff only and
+does not change workflow files, Makefile, Python code/tests, fixture JSON,
+runtime implementation, validator implementation, artifact body generation
+runtime invocation, manifest writer integration, or file writing.

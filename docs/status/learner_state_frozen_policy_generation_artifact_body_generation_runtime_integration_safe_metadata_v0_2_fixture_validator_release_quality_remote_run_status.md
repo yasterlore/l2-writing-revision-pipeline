@@ -326,3 +326,9 @@ continues to describe only the planned-root validator wrapper run.
 Step562 adds the design-only / planning-only release-quality integration
 design for the Step561 runtime target. This status marker remains unchanged
 and continues to describe only the planned-root validator wrapper run.
+
+## 19. Step563 Runtime Release-Quality Wrapper Integration Status
+
+Step563 adds the safe-metadata runtime smoke to the release-quality wrapper.
+This status marker remains unchanged and continues to describe only the
+planned-root validator wrapper run recorded in Step555.

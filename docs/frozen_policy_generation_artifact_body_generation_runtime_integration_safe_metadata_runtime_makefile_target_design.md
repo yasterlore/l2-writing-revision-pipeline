@@ -280,3 +280,15 @@ public-safe output, and next-step checks. It does not add the wrapper check,
 change workflows, change Makefile, change Python code/tests, change fixture
 JSON, change runtime implementation, invoke artifact body generation runtime,
 invoke manifest writer, or write files.
+
+## 16. Step563 Release-Quality Wrapper Integration Status
+
+Step563 adds the standalone target designed here to the release-quality
+wrapper after safe-metadata v0.2 fixture validation and before artifact body
+fixture validation.
+
+The wrapper command is
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`.
+The check remains metadata handoff only and does not change workflows,
+Makefile, Python code/tests, fixture JSON, runtime implementation, invoke
+artifact body generation runtime, invoke manifest writer, or write files.

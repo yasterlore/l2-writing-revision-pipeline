@@ -446,6 +446,14 @@ implementation, artifact body generation runtime invocation, manifest writer
 invocation, file writing, real-data use, metric use, or production-readiness
 status.
 
+Step563 follow-up adds that standalone runtime target to the release-quality
+wrapper after safe-metadata v0.2 fixture validation and before artifact body
+fixture validation. The check remains metadata handoff only and does not
+change workflow files, Makefile, Python code/tests, fixture JSON, runtime
+implementation, validator implementation, artifact body generation runtime
+invocation, manifest writer invocation, file writing, real-data use, metric
+use, or production-readiness status.
+
 ## 20. Coverage Validation Result
 
 The full technical specification draft is suitable as a consolidated technical

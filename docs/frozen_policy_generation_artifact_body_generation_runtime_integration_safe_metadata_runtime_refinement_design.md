@@ -503,3 +503,12 @@ It preserves the metadata handoff only boundary and does not change wrapper
 files, workflow files, Makefile, Python code/tests, fixture JSON, runtime
 implementation, invoke artifact body generation runtime, invoke manifest
 writer, or write files.
+
+## 28. Step563 Release-Quality Wrapper Integration Status
+
+Step563 adds the Step561 runtime target to the release-quality wrapper after
+safe-metadata v0.2 fixture validation and before artifact body fixture
+validation. The check preserves the metadata handoff only boundary and does
+not change workflow files, Makefile, Python code/tests, fixture JSON, runtime
+implementation, invoke artifact body generation runtime, invoke manifest
+writer, or write files.

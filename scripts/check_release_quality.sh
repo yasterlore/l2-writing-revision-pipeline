@@ -157,6 +157,9 @@ run make check-learner-state-frozen-policy-generation-artifact-body-generation-r
 section "learner-state frozen policy generation artifact body generation runtime integration safe-metadata v0.2 fixture validation"
 run make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-fixtures
 
+section "learner-state frozen policy generation artifact body generation runtime integration safe-metadata runtime smoke"
+run make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime
+
 section "learner-state frozen policy generation artifact body fixture validation"
 run make check-learner-state-frozen-policy-generation-artifact-body-fixtures
 

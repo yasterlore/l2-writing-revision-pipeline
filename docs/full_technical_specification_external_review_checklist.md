@@ -402,7 +402,14 @@ Confirm Step561 adds the standalone Makefile target
 `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`.
 Reviewers should confirm the target runs the Step559 `safe-metadata-smoke`
 runtime CLI over the planned primary case, emits the v0.2 public-safe metadata
-handoff summary, and is not yet release-quality wrapper integrated.
+handoff summary, and remains metadata handoff only.
+
+Confirm Step563 adds wrapper label
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration safe-metadata runtime smoke`
+after safe-metadata v0.2 fixture validation and before artifact body fixture
+validation. Reviewers should confirm the check remains metadata handoff only
+and does not invoke artifact body generation runtime, invoke manifest writer,
+write files, use real data, compute metrics, or claim production readiness.
 
 ## 10. Rust Crate Review
 

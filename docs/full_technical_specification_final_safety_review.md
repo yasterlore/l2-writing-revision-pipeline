@@ -374,6 +374,13 @@ runtime correctness generally, artifact body generation correctness generally,
 safe-metadata free-form body safety, manifest writer readiness, production
 readiness, real-data readiness, or model performance.
 
+Step563 adds the Step561 target to the release-quality wrapper after the
+safe-metadata v0.2 fixture validation check and before artifact body fixture
+validation. The check preserves the metadata handoff only boundary and does
+not claim runtime correctness generally, artifact body generation correctness
+generally, safe-metadata free-form body safety, manifest writer readiness,
+production readiness, real-data readiness, or model performance.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

@@ -228,3 +228,11 @@ runtime target over this planned root's primary case. It does not change
 fixture JSON, merge this root into the active root, change runtime
 implementation, invoke artifact body generation runtime, invoke manifest
 writer, or write files.
+
+## Step563 Runtime Release-Quality Wrapper Integration Status
+
+Step563 adds the Step561 runtime target over this planned root's primary case
+to the release-quality wrapper after the planned-root validator check and
+before artifact body fixture validation. It does not change fixture JSON,
+merge this root into the active root, change runtime implementation, invoke
+artifact body generation runtime, invoke manifest writer, or write files.

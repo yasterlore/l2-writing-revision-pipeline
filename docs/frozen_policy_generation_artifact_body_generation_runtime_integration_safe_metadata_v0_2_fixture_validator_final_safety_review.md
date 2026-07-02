@@ -324,3 +324,11 @@ runtime target. The planned-root validator chain remains separate, and Step562
 does not change wrapper/workflow files, Makefile, fixture JSON, runtime
 implementation, invoke artifact body generation runtime, invoke manifest
 writer, or write files.
+
+## 21. Step563 Runtime Release-Quality Wrapper Integration Status
+
+Step563 adds the safe-metadata runtime smoke after the safe-metadata v0.2
+fixture validator check and before artifact body fixture validation. The
+planned-root validator chain remains separate, and Step563 does not change
+workflow files, Makefile, fixture JSON, runtime implementation, invoke
+artifact body generation runtime, invoke manifest writer, or write files.

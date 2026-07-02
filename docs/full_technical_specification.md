@@ -1282,8 +1282,13 @@ planned safe-metadata v0.2 primary case
 `learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.2`
 with public-safe metadata-only / body-free / count-only summary output.
 
-The target is not yet release-quality integrated. Step561 does not change
-workflow files, Python code/tests, fixture JSON, runtime implementation,
+Step563 adds the standalone target to the release-quality wrapper with label
+`release_quality_check: learner-state frozen policy generation artifact body generation runtime integration safe-metadata runtime smoke`.
+The wrapper check runs after safe-metadata v0.2 fixture validation and before
+artifact body fixture validation.
+
+The check remains metadata handoff only. Step563 does not change workflow
+files, Makefile, Python code/tests, fixture JSON, runtime implementation,
 validator implementation, artifact body generation implementation, manifest
 writer integration, file writing, real-data use, metric use, or production
 readiness status.

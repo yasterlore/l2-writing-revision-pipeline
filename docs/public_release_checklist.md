@@ -5206,3 +5206,18 @@ without changing wrapper files, workflow files, Makefile, Python code/tests,
 fixture JSON, runtime implementation, validator implementation, artifact body
 generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, or production readiness status.
+
+## 61. Step563 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Release-Quality Wrapper Integration
+
+For Step563, confirm `scripts/check_release_quality.sh` includes
+`learner-state frozen policy generation artifact body generation runtime integration safe-metadata runtime smoke`
+after safe-metadata v0.2 fixture validation and before artifact body fixture
+validation.
+
+Confirm the command is
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration-safe-metadata-runtime`
+and that this wrapper addition does not change workflow files, Makefile,
+Python code/tests, fixture JSON, runtime implementation, validator
+implementation, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+status.

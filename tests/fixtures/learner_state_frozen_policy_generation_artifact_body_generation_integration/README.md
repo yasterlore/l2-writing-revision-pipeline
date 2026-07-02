@@ -659,3 +659,11 @@ as a design-only / planning-only wrapper integration plan for the Step561
 target. This active fixture root remains unchanged, and no fixture JSON change,
 runtime implementation change, artifact body generation runtime invocation,
 manifest writer invocation, or file writing is added.
+
+## Step563 Safe-Metadata Runtime Release-Quality Wrapper Integration Status
+
+Step563 adds the Step561 runtime target to the release-quality wrapper after
+safe-metadata v0.2 fixture validation and before artifact body fixture
+validation. This active fixture root remains unchanged, and no fixture JSON
+change, runtime implementation change, artifact body generation runtime
+invocation, manifest writer invocation, or file writing is added.
