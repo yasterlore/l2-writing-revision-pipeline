@@ -5321,3 +5321,19 @@ change Makefile, release-quality wrapper, workflow files, Python code/tests,
 existing fixture JSON outside the new root, validator implementation, runtime
 implementation, artifact body generation implementation, manifest writer
 implementation, or file-writing implementation.
+
+## 69. Step571 Artifact Body Generation Runtime Invocation Fixture Validator Design
+
+For Step571, confirm
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_design.md`
+exists as a design-only / docs-only future validator design for the Step570
+planned fixture root.
+
+Confirm the design records the proposed module, CLI, validation schema,
+validator mode, expected aggregate output, validation checks, status / reason
+mapping, public-safe output policy, focused test plan, relationship to
+existing validators, and future staging without changing repository root
+README, full technical specification docs, Makefile, release-quality wrapper,
+workflow files, Python code/tests, fixture JSON, runtime implementation,
+validator implementation, artifact body generation implementation, manifest
+writer implementation, or file-writing implementation.

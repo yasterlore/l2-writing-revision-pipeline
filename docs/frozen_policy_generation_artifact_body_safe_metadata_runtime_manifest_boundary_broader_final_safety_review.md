@@ -336,3 +336,13 @@ generation runtime invocation boundary. The root contains 30 cases / 210 JSON
 files and remains separate from runtime implementation, validator
 implementation, Makefile target integration, release-quality wrapper
 integration, manifest writer integration, and file writing.
+
+## 16. Step571 Fixture Validator Design Status
+
+Step571 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_design.md`
+as a design-only / docs-only future validator design for the Step570 planned
+fixture root. It keeps validator implementation, runtime implementation,
+artifact body generation runtime invocation, manifest writer integration, file
+writing, Makefile target integration, and release-quality wrapper integration
+as later separate boundaries.

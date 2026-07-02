@@ -2923,3 +2923,18 @@ This step does not implement a validator, runtime invocation, Makefile target,
 release-quality wrapper integration, workflow change, artifact body generation
 runtime invocation, manifest writer integration, file writing, real-data use,
 metric use, or production readiness status.
+
+## Step571 Artifact Body Generation Runtime Invocation Fixture Validator Design
+
+Step571 adds the design-only / docs-only future validator design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_design.md`
+
+The design targets the Step570 planned fixture root and records the proposed
+validator module, CLI, validation schema, mode, public-safe aggregate output,
+validation checks, status / reason mapping, focused tests, relationship to
+existing validators, and future staging. It does not implement a validator,
+change Python code/tests, change Makefile, change wrapper or workflow files,
+change fixture JSON, change runtime implementation, invoke artifact body
+generation runtime, invoke manifest writer, write files, use real data,
+compute metrics, or claim production readiness.

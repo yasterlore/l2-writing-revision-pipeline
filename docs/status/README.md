@@ -1138,3 +1138,17 @@ body-free JSON files using a seven-file layout. Validator implementation,
 runtime implementation, Makefile target integration, release-quality wrapper
 integration, workflow changes, artifact body generation runtime invocation,
 manifest writer integration, and file writing remain future work.
+
+## Step571 Artifact Body Generation Runtime Invocation Fixture Validator Design
+
+Step571 adds
+[artifact body generation runtime invocation fixture validator design](../frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_design.md)
+as a design-only / docs-only future validator design for the Step570 planned
+fixture root.
+
+The design records the proposed validator module, CLI, validation schema,
+public-safe aggregate output, validation checks, reason mapping, and future
+staging. It does not change validator implementation, Python code/tests,
+Makefile, release-quality wrapper, workflow, fixture JSON, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+integration, or file writing.

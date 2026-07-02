@@ -335,6 +335,12 @@ release-quality wrapper integration, artifact body generation runtime
 invocation, manifest writer integration, and file writing remain separate
 future steps.
 
+Step571 follow-up status: the fixture validator design is available at
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_design.md`.
+It designs the future validator module, CLI, validation schema, aggregate
+output, checks, reason mapping, and test plan without implementing the
+validator or changing fixture JSON.
+
 ## 14. Non-Equivalence Cautions
 
 - Fixture contract design is not runtime invocation implementation.

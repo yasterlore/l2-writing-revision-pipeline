@@ -82,6 +82,15 @@ Aggregate:
 - future runtime schema: `learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.3`
 - proposed integration mode: `artifact-body-runtime-invocation`
 
+## Validator Design Status
+
+Step571 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_design.md`
+as a design-only / docs-only future validator design for this planned root.
+The validator is not implemented here, and this root is not yet connected to a
+Makefile target, release-quality wrapper, workflow, runtime invocation,
+manifest writer integration, or file-writing path.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,
