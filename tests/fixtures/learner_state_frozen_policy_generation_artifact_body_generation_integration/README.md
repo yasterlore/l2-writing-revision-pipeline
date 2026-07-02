@@ -420,6 +420,18 @@ or runtime implementation, invoke artifact body generation runtime, call
 manifest writer code, write files, use real data, compute metrics, or claim
 production readiness.
 
+## Artifact Body Through Manifest Writer Broader Final Safety Review
+
+Step543 adds the docs-only broader final safety review:
+
+`docs/frozen_policy_generation_artifact_body_through_manifest_writer_broader_final_safety_review.md`
+
+The review covers artifact body generation integration through manifest writer
+boundaries and does not change this fixture root or fixture JSON, change
+validators or runtime implementation, invoke artifact body generation runtime,
+call manifest writer code, write files, use real data, compute metrics, or
+claim production readiness.
+
 ## Non-Claims
 
 These fixtures do not claim:

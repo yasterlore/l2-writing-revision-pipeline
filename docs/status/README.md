@@ -781,3 +781,18 @@ Python code/test change, fixture JSON change, validator change, runtime
 implementation change, artifact body generation runtime invocation, manifest
 writer integration, file writing, real-data use, metric use, model performance
 evidence, real-data readiness evidence, or production readiness evidence.
+
+## Step543 Artifact Body Through Manifest Writer Broader Final Safety Review
+
+Step543 adds the docs-only
+[artifact body through manifest writer broader final safety review](../frozen_policy_generation_artifact_body_through_manifest_writer_broader_final_safety_review.md)
+for the artifact body generation integration through manifest writer boundary
+before any safe-metadata explicit stage, suppressed-smoke stage, or manifest
+writer handoff planning.
+
+It adds no workflow change, release-quality wrapper change, Makefile change,
+Python code/test change, fixture JSON change, validator change, runtime
+implementation change, artifact body generation runtime invocation, manifest
+writer integration implementation, file writing, real-data use, metric use,
+model performance evidence, real-data readiness evidence, or production
+readiness evidence.
