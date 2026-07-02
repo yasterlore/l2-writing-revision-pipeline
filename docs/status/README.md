@@ -34,6 +34,8 @@ Current status-marker posture:
   fixture validator target is in the release-quality wrapper, and its
   remote/manual status marker is now recorded as public-safe pass-only /
   count-only metadata.
+- The artifact body generation runtime integration safe-metadata v0.2 planned
+  fixture validator chain now has a docs-only final safety review.
 
 Available markers:
 
