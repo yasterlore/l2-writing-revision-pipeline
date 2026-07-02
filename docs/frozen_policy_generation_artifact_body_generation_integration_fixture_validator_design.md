@@ -619,3 +619,14 @@ not replace this validator, change validator code, change fixture JSON, change
 Makefile, change release-quality wrapper, change workflow files, invoke
 artifact body generation runtime, call manifest writer code, write files, use
 real data, compute metrics, or claim production readiness.
+
+## 24. Step537 Runtime Makefile Target Implementation Note
+
+Step537 implements
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+as a standalone selected-case runtime smoke target. The static fixture
+validator remains the aggregate fixture-root validator and is not replaced.
+Step537 does not change validator code, fixture JSON, release-quality wrapper,
+workflow files, Python code/tests, runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.

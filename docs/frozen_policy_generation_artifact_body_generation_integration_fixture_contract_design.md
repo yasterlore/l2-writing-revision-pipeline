@@ -615,3 +615,13 @@ contract, add fixture cases, change fixture JSON, change validators, change
 runtime implementation, invoke artifact body generation runtime, call
 manifest writer code, write files, use real data, compute metrics, or claim
 production readiness.
+
+## 25. Step537 Runtime Makefile Target Implementation Note
+
+Step537 implements the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+for the Step535 `plan-only-bridge` runtime CLI. The target uses the existing
+selected fixture case and does not change this contract, add fixture cases,
+change fixture JSON, change validators, change runtime implementation, invoke
+artifact body generation runtime, call manifest writer code, write files, use
+real data, compute metrics, or claim production readiness.

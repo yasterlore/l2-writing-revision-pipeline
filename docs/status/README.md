@@ -691,3 +691,16 @@ implementation change, artifact body generation runtime invocation, manifest
 writer integration, file writing, real-data use, metric use, model
 performance evidence, real-data readiness evidence, or production readiness
 evidence.
+
+## Step537 Artifact Body Generation Runtime Integration Makefile Target Implementation
+
+Step537 implements the standalone target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+for the Step535 `plan-only-bridge` runtime CLI. It creates no status marker
+and is not release-quality wrapper integrated in Step537.
+
+It adds no workflow change, Python code/test change, fixture JSON change,
+validator change, runtime implementation change, artifact body generation
+runtime invocation, manifest writer integration, file writing, real-data use,
+metric use, model performance evidence, real-data readiness evidence, or
+production readiness evidence.

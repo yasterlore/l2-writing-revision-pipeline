@@ -380,9 +380,15 @@ Minimal documentation links and coverage notes were applied:
   runtime schema, and safety boundaries without adding Makefile,
   release-quality wrapper, workflow, fixture JSON, manifest writer, file
   writing, real-data, metric, or production-readiness changes
+- Step537 follow-up records the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+  for the Step535 runtime CLI without adding release-quality wrapper,
+  workflow, fixture JSON, Python code/test, validator, runtime implementation,
+  manifest writer, file writing, real-data, metric, or production-readiness
+  changes
 
-No fixture JSON, Makefile, workflow, wrapper, Rust, or TypeScript changes were
-made by this coverage note.
+No fixture JSON, workflow, wrapper, Python code/test, Rust, or TypeScript
+changes were made by this coverage note.
 
 ## 20. Coverage Validation Result
 
@@ -417,5 +423,5 @@ privacy/legal/IRB readiness.
 - Later: artifact writer CLI integration runtime remote/manual run record
   staging, separate from this specification coverage work
 - Later: artifact body generation CLI integration design and implementation
-- Later: standalone Makefile target design for the Step535 runtime CLI
+- Later: release-quality integration design for the Step537 runtime target
 - Later: manifest writer integration design and implementation

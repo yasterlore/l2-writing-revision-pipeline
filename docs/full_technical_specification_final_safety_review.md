@@ -302,6 +302,17 @@ files, use real data, compute metrics, or claim production readiness,
 real-data readiness, model performance, artifact body generation integration
 correctness generally, or manifest writer integration correctness.
 
+Step537 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+for the Step535 runtime CLI with help text `Run artifact body generation
+runtime integration plan-only bridge smoke`. The target runs the selected
+case `valid/valid_minimal_suppressed_metadata_only_bridge` in
+`plan-only-bridge` mode. It is not release-quality wrapper integrated in
+Step537 and does not change workflow files, Python code/tests, fixture JSON,
+validators, runtime implementation, artifact body generation runtime
+invocation, manifest writer integration, file writing, real-data use, metric
+use, production readiness, real-data readiness, or model performance status.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

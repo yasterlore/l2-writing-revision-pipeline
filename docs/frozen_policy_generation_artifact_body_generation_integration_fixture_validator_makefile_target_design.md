@@ -385,3 +385,14 @@ does not change Makefile, release-quality wrapper, workflow files, Python
 code/tests, fixture JSON, validators, runtime implementation, artifact body
 generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, or production readiness status.
+
+## 16. Step537 Runtime Makefile Target Implementation Note
+
+Step537 implements the separate standalone runtime target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`.
+It does not replace the static fixture validator target described here and is
+not connected to the release-quality wrapper in Step537. It does not change
+workflow files, Python code/tests, fixture JSON, validators, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+status.

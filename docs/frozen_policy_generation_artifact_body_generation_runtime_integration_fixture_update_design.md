@@ -313,3 +313,16 @@ CLI. It does not change Makefile, release-quality wrapper, workflow files,
 Python code/tests, fixture JSON, validators, runtime implementation, artifact
 body generation runtime invocation, manifest writer integration, file
 writing, real-data use, metric use, or production readiness status.
+
+## 18. Step537 Makefile Target Implementation Status
+
+Step537 implements the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+
+The target runs the Step535 `plan-only-bridge` CLI over the existing selected
+case `valid/valid_minimal_suppressed_metadata_only_bridge`. It does not
+change release-quality wrapper, workflow files, Python code/tests, fixture
+JSON, validators, runtime implementation, artifact body generation runtime
+invocation, manifest writer integration, file writing, real-data use, metric
+use, or production readiness status.

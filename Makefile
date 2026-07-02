@@ -29,6 +29,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-artifact-writer-runtime
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures
+.PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
@@ -79,6 +80,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-artifact-writer-runtime  Run frozen policy generation artifact writer runtime smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-fixtures  Validate frozen policy generation artifact body fixtures"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures  Run artifact body generation integration fixture validation"
+	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration  Run artifact body generation runtime integration plan-only bridge smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation  Run artifact body generation CLI smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata  Run artifact body generation safe-metadata CLI smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures  Validate artifact body file writing fixture contracts"
@@ -194,6 +196,9 @@ check-learner-state-frozen-policy-generation-artifact-body-fixtures:
 
 check-learner-state-frozen-policy-generation-artifact-body-generation-integration-fixtures:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_generation_integration_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration
+
+check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_generation_runtime_integration --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_integration --fixture-case valid/valid_minimal_suppressed_metadata_only_bridge --mode plan-only-bridge --summary-only --no-file-writing --no-manifest-writer --fail-closed-on-unsafe-output
 
 check-learner-state-frozen-policy-generation-artifact-body-generation:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body --request tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/minimal_suppressed_metadata_only_body/artifact_body_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/minimal_suppressed_metadata_only_body/artifact_writer_result_pointer.json

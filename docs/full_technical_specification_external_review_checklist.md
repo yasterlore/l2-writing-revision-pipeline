@@ -331,6 +331,16 @@ files, change fixture JSON, change validators, change Makefile, change the
 release-quality wrapper, change workflow files, use real data, compute
 metrics, or claim production readiness.
 
+Confirm Step537 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+with help text `Run artifact body generation runtime integration plan-only
+bridge smoke`. Reviewers should confirm it runs the Step535 CLI over
+`valid/valid_minimal_suppressed_metadata_only_bridge`, remains outside the
+release-quality wrapper, and does not change workflow files, Python
+code/tests, fixture JSON, validators, runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, file writing, or
+production readiness claims.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

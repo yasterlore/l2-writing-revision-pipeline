@@ -2396,3 +2396,17 @@ workflow files, Python code/tests, fixture JSON, validators, runtime
 implementation, artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 status.
+
+## Step537 Artifact Body Generation Runtime Integration Makefile Target Implementation
+
+Step537 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`.
+The target runs the Step535 `plan-only-bridge` CLI over
+`valid/valid_minimal_suppressed_metadata_only_bridge` and keeps
+`--summary-only`, `--no-file-writing`, `--no-manifest-writer`, and
+`--fail-closed-on-unsafe-output` enabled.
+
+Step537 does not change release-quality wrapper, workflow files, Python
+code/tests, fixture JSON, validators, runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.

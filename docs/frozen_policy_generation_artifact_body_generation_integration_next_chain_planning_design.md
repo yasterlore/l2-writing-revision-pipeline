@@ -508,3 +508,15 @@ Makefile, release-quality wrapper, workflow files, Python code/tests, fixture
 JSON, validators, runtime implementation, artifact body generation runtime
 invocation, manifest writer integration, file writing, real-data use, metric
 use, or production readiness status.
+
+## 18. Step537 Runtime Makefile Target Implementation Note
+
+Step537 implements the standalone Makefile target proposed in Step536:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration`
+
+The target runs the Step535 `plan-only-bridge` runtime CLI and remains outside
+the release-quality wrapper. Step537 does not change workflow files, Python
+code/tests, fixture JSON, validators, runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.
