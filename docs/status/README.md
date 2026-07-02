@@ -27,6 +27,9 @@ Current status-marker posture:
 - The artifact writer CLI integration runtime smoke target is in the
   release-quality wrapper, and its remote/manual status marker is now recorded
   as public-safe pass-only metadata.
+- The artifact body generation runtime integration plan-only bridge smoke
+  target is in the release-quality wrapper, and its remote/manual status
+  marker is now recorded as public-safe pass-only metadata.
 
 Available markers:
 
@@ -98,6 +101,14 @@ Available markers:
   It is not artifact writer CLI actual invocation evidence, runtime actual
   invocation evidence, artifact body generation integration evidence, manifest
   writer integration evidence, or production readiness evidence.
+- [Learner-state frozen policy generation artifact body generation runtime integration plan-only bridge release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after artifact body generation
+  runtime integration plan-only bridge smoke integration. Raw logs and full
+  job output are not stored. This is not artifact body generation integration
+  correctness evidence generally, not artifact body generation runtime
+  correctness evidence generally, not manifest writer integration evidence,
+  not production readiness evidence, not real-data readiness evidence, and not
+  model performance evidence.
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after artifact body fixture
   validation integration.
@@ -145,8 +156,8 @@ Available markers:
   file JSON bodies, fixture JSON bodies, private paths, absolute paths, raw
   learner text, or performance evidence.
 
-Planned markers: none for the artifact writer CLI integration runtime smoke
-release-quality wrapper check.
+Planned markers: none for the artifact body generation runtime integration
+plan-only bridge release-quality wrapper check.
 
 Related recap:
 

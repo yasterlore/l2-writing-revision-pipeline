@@ -491,3 +491,18 @@ JSON, validators, runtime implementation, artifact body generation runtime
 invocation, manifest writer integration, file writing, real-data use, metric
 use, production readiness status, real-data readiness status, or model
 performance status.
+
+## 28. Step541 Runtime Remote Status Marker Note
+
+Step541 adds the public-safe pass-only metadata-only body-free remote status
+marker for the Step539 runtime wrapper check:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_remote_run_status.md`
+
+The marker stores no raw logs, full job output, fixture/request/pointer/
+expected bodies, artifact body payloads, manifest bodies, generated policy
+bodies, raw stdout/stderr bodies, real data, metrics, production readiness
+status, real-data readiness status, or model performance status. It does not
+change workflow files, the release-quality wrapper, Makefile, Python
+code/tests, fixture JSON, validators, runtime implementation, artifact body
+generation runtime invocation, manifest writer integration, or file writing.

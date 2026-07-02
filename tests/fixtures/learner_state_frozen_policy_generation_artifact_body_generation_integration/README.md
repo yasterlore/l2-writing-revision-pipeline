@@ -392,6 +392,22 @@ writer code, write files, or claim artifact body generation integration
 correctness generally, manifest writer integration correctness, production
 readiness, real-data readiness, or model performance.
 
+## Runtime Integration Plan-Only Bridge Remote Status Marker
+
+Step541 adds the public-safe pass-only metadata-only body-free remote status
+marker:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_remote_run_status.md`
+
+The marker records the actual remote/manual Release Quality run metadata and
+selected-case runtime summary for the Step539 wrapper check. It stores no raw
+logs, full job output, fixture/request/pointer/expected bodies, artifact body
+payloads, manifest bodies, generated policy bodies, raw stdout/stderr bodies,
+real data, metrics, or production readiness claims. It does not change this
+fixture root or fixture JSON, change validators or runtime implementation,
+invoke artifact body generation runtime, call manifest writer code, or write
+files.
+
 ## Non-Claims
 
 These fixtures do not claim:
