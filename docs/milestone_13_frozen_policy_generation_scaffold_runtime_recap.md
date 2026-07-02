@@ -2877,3 +2877,17 @@ The marker records actual public-safe remote metadata for the Step563
 It stores no raw logs, full job output, copied log blocks, payload bodies,
 real data, performance metric bodies, production readiness evidence,
 real-data readiness evidence, or model performance evidence.
+
+## Step568 Artifact Body Safe-Metadata Runtime and Manifest Boundary Broader Final Safety Review
+
+Step568 adds the docs-only broader final safety review:
+
+`docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
+
+The review compares the safe-metadata runtime smoke, artifact body
+safe-metadata CLI smoke, artifact body validation/file-writing checks, and
+manifest writer boundary. It records non-equivalence cautions and residual
+risks without changing workflow files, wrapper files, Makefile, Python
+code/tests, fixture JSON, runtime implementation, validator implementation,
+artifact body generation runtime invocation, manifest writer integration, file
+writing, real-data use, metric use, or production readiness status.

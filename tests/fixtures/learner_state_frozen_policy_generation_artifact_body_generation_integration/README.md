@@ -699,3 +699,10 @@ Step567 adds
 `docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_stronger_release_quality_remote_run_status.md`
 as a public-safe stronger remote marker for the `safe-metadata-smoke` runtime
 chain. This active fixture root remains unchanged.
+
+## Step568 Broader Final Safety Review Status
+
+Step568 adds
+`docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
+as a docs-only broader final safety review. This active fixture root remains
+unchanged.

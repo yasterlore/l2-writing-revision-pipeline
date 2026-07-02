@@ -5279,3 +5279,17 @@ request/pointer/expected bodies, no artifact body payloads, no manifest
 bodies, no generated policy bodies, no raw stdout/stderr bodies, no raw rows,
 no logits/probabilities, no private or absolute paths, no raw learner text, no
 real participant data, and no performance metric bodies.
+
+## 66. Step568 Artifact Body Safe-Metadata Runtime and Manifest Boundary Broader Final Safety Review
+
+For Step568, confirm
+`docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
+exists as a docs-only broader final safety review across the safe-metadata
+runtime, artifact body safe-metadata CLI smoke, artifact body
+validation/file-writing checks, and manifest writer boundary.
+
+Confirm it stores no raw logs, no full job output, no copied GitHub log blocks,
+no fixture JSON bodies, no request/pointer/expected bodies, no artifact body
+payloads, no manifest bodies, no generated policy bodies, no raw stdout/stderr
+bodies, no raw rows, no logits/probabilities, no private or absolute paths, no
+raw learner text, no real participant data, and no performance metric bodies.

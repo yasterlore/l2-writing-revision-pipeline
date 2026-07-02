@@ -553,3 +553,11 @@ metadata for the same `safe-metadata-smoke` wrapper check. It does not change
 workflow files, the wrapper, Makefile, Python code/tests, fixture JSON, runtime
 implementation, invoke artifact body generation runtime, invoke manifest
 writer, or write files.
+
+## 33. Step568 Broader Final Safety Review Status
+
+Step568 adds
+`docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
+as a docs-only broader final safety review across the safe-metadata runtime,
+artifact body safe-metadata CLI smoke, artifact body validation/file-writing
+checks, and manifest writer boundary.

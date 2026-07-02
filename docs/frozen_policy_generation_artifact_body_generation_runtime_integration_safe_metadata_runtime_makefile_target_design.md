@@ -330,3 +330,11 @@ Step565 remote-marker evidence limitation.
 Step567 adds a public-safe stronger remote status marker for the wrapper check
 that runs the standalone target designed here. The marker records actual
 remote metadata and does not change Makefile or wrapper implementation.
+
+## 21. Step568 Broader Final Safety Review Status
+
+Step568 adds
+`docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
+as a docs-only broader final safety review. The standalone runtime target
+remains separate from artifact body safe-metadata CLI smoke and manifest writer
+targets.

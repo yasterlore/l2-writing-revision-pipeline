@@ -289,3 +289,11 @@ as a public-safe stronger marker with actual remote metadata for the same
 `safe-metadata-smoke` release-quality boundary. It does not replace the
 Step565 marker and does not store raw logs, full job output, copied log
 blocks, payload bodies, real data, or performance metric bodies.
+
+## 15. Step568 Broader Final Safety Review Status
+
+Step568 adds
+`docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
+as a docs-only broader final safety review across the safe-metadata runtime,
+artifact body safe-metadata CLI smoke, artifact body validation/file-writing
+checks, and manifest writer boundary.

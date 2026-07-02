@@ -290,3 +290,10 @@ Step567 adds
 `docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_stronger_release_quality_remote_run_status.md`
 as a public-safe stronger marker with actual remote metadata for the Step563
 wrapper check. It does not change the release-quality wrapper.
+
+## 20. Step568 Broader Final Safety Review Status
+
+Step568 adds
+`docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
+as a docs-only broader final safety review. The release-quality wrapper order
+remains unchanged.

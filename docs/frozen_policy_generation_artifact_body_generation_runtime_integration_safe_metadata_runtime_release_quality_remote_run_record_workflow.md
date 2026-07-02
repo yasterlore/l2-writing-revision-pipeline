@@ -367,3 +367,10 @@ Step567 adds the stronger marker path anticipated by this workflow:
 
 The marker uses actual public-safe remote metadata and does not store raw logs,
 full job output, copied log blocks, screenshots, or payload bodies.
+
+## 18. Step568 Broader Final Safety Review Status
+
+Step568 adds
+`docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
+as a docs-only broader final safety review across runtime, artifact body CLI,
+file-writing, and manifest writer boundaries.

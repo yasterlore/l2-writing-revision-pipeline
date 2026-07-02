@@ -612,3 +612,11 @@ Step567 adds
 as a public-safe stronger marker with actual remote metadata. It keeps the
 expected-output surface body-free and does not change fixture JSON or runtime
 implementation.
+
+## 35. Step568 Broader Final Safety Review Status
+
+Step568 adds
+`docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
+as a docs-only broader final safety review. It keeps this expected-output
+surface separate from artifact body payload, manifest body, and file-writing
+boundaries.

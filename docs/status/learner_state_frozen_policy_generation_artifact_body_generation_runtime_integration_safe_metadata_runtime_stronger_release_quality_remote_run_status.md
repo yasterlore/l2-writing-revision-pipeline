@@ -262,3 +262,12 @@ Possible later steps include a broader final safety review or next runtime
 stage design. Step567 does not perform either. Step567 stops at this stronger
 status marker and does not proceed to actual artifact body generation runtime
 invocation implementation.
+
+## 13. Step568 Broader Final Safety Review Status
+
+Step568 adds
+`docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
+as a docs-only broader final safety review across the safe-metadata runtime,
+artifact body safe-metadata CLI smoke, artifact body validation/file-writing
+checks, and manifest writer boundary. This stronger marker remains available
+and unchanged.

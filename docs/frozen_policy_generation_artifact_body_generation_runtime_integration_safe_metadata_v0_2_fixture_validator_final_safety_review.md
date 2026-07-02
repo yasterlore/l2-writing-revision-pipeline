@@ -366,3 +366,9 @@ Step567 adds a separate stronger remote status marker for the follow-on
 separate, and the marker does not change fixture JSON, runtime implementation,
 artifact body generation runtime invocation, manifest writer invocation, or
 file writing.
+
+## 26. Step568 Broader Final Safety Review Status
+
+Step568 adds a docs-only broader final safety review across the follow-on
+runtime chain, artifact body safe-metadata CLI smoke, file-writing checks, and
+manifest writer boundary. The planned-root validator chain remains separate.

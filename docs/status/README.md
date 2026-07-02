@@ -1109,3 +1109,11 @@ Step567 adds
 as a public-safe pass-only / metadata-only / body-free marker with actual
 remote metadata. Raw logs and full job output are not stored, and the marker
 does not replace the Step565 marker.
+
+## Step568 Artifact Body Safe-Metadata Runtime and Manifest Boundary Broader Final Safety Review
+
+Step568 adds
+[artifact body safe-metadata runtime and manifest boundary broader final safety review](../frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md)
+as a docs-only review across the safe-metadata runtime, artifact body
+safe-metadata CLI smoke, artifact body validation/file-writing checks, and
+manifest writer boundary. It stores no raw logs or full job output.
