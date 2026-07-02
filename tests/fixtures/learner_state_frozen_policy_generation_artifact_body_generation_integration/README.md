@@ -650,3 +650,12 @@ for the Step559 `safe-metadata-smoke` runtime CLI. This active fixture root
 remains unchanged, and no fixture JSON change, runtime implementation change,
 artifact body generation runtime invocation, manifest writer invocation, or
 file writing is added.
+
+## Step562 Safe-Metadata Runtime Release-Quality Integration Design Status
+
+Step562 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_integration_design.md`
+as a design-only / planning-only wrapper integration plan for the Step561
+target. This active fixture root remains unchanged, and no fixture JSON change,
+runtime implementation change, artifact body generation runtime invocation,
+manifest writer invocation, or file writing is added.

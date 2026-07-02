@@ -268,3 +268,15 @@ handoff only. Step561 does not add release-quality wrapper integration, change
 workflow files, change Python code/tests, change fixture JSON, change runtime
 implementation, invoke artifact body generation runtime, invoke manifest
 writer, or write files.
+
+## 15. Step562 Release-Quality Integration Design Status
+
+Step562 adds the follow-on release-quality integration design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_integration_design.md`
+
+The design proposes a future wrapper label, command, insertion point, expected
+public-safe output, and next-step checks. It does not add the wrapper check,
+change workflows, change Makefile, change Python code/tests, change fixture
+JSON, change runtime implementation, invoke artifact body generation runtime,
+invoke manifest writer, or write files.

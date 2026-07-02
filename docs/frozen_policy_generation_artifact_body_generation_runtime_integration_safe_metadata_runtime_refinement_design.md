@@ -491,3 +491,15 @@ It preserves the metadata handoff only boundary and does not add
 release-quality wrapper integration, change workflow files, change Python
 code/tests, change fixture JSON, change runtime implementation, invoke
 artifact body generation runtime, invoke manifest writer, or write files.
+
+## 27. Step562 Release-Quality Integration Design Status
+
+Step562 adds the design-only / planning-only release-quality integration
+design for the Step561 target:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_integration_design.md`
+
+It preserves the metadata handoff only boundary and does not change wrapper
+files, workflow files, Makefile, Python code/tests, fixture JSON, runtime
+implementation, invoke artifact body generation runtime, invoke manifest
+writer, or write files.

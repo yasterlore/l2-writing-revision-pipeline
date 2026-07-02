@@ -314,3 +314,13 @@ separate, and the runtime target is not yet release-quality integrated.
 Step561 does not change wrapper/workflow files, change fixture JSON, change
 runtime implementation, invoke artifact body generation runtime, invoke
 manifest writer, or write files.
+
+## 20. Step562 Runtime Release-Quality Integration Design Status
+
+Step562 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_release_quality_integration_design.md`
+as a design-only / planning-only wrapper integration plan for the Step561
+runtime target. The planned-root validator chain remains separate, and Step562
+does not change wrapper/workflow files, Makefile, fixture JSON, runtime
+implementation, invoke artifact body generation runtime, invoke manifest
+writer, or write files.

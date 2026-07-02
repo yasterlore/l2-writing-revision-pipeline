@@ -320,3 +320,9 @@ planned-root validator wrapper run.
 Step561 adds the standalone Makefile target for the Step559
 `safe-metadata-smoke` runtime CLI. This status marker remains unchanged and
 continues to describe only the planned-root validator wrapper run.
+
+## 18. Step562 Runtime Release-Quality Integration Design Status
+
+Step562 adds the design-only / planning-only release-quality integration
+design for the Step561 runtime target. This status marker remains unchanged
+and continues to describe only the planned-root validator wrapper run.
