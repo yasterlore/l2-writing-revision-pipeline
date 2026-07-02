@@ -453,6 +453,20 @@ runtime invocation, manifest writer integration, file writing, real-data use,
 metric use, production readiness status, real-data readiness status, or model
 performance status.
 
+## 27. Step540 Runtime Remote Run Record Workflow Design Note
+
+Step540 adds the docs-only remote/manual run record workflow design for the
+Step539 runtime wrapper check:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_remote_run_record_workflow.md`
+
+It does not create a status marker, change workflow files, change the
+release-quality wrapper, change Makefile, change Python code/tests, change
+fixture JSON, change validators, change runtime implementation, invoke
+artifact body generation runtime, connect manifest writer integration, enable
+file writing, use real data, compute metrics, or claim production readiness,
+real-data readiness, or model performance.
+
 ## 24. Step537 Runtime Makefile Target Implementation Note
 
 Step537 implements the standalone Makefile target

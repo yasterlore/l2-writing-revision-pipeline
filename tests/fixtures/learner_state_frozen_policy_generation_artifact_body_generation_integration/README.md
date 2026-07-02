@@ -378,6 +378,20 @@ call manifest writer code, does not write files, and does not claim artifact
 body generation integration correctness generally, manifest writer integration
 correctness, production readiness, real-data readiness, or model performance.
 
+## Runtime Integration Plan-Only Bridge Remote Run Record Workflow Design
+
+Step540 adds the docs-only remote/manual run record workflow design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_remote_run_record_workflow.md`
+
+The design defines future public-safe remote run fields and selected-case
+runtime summary fields for the Step539 wrapper check. It does not create a
+status marker, change this fixture root or fixture JSON, change validators or
+runtime implementation, invoke artifact body generation runtime, call manifest
+writer code, write files, or claim artifact body generation integration
+correctness generally, manifest writer integration correctness, production
+readiness, real-data readiness, or model performance.
+
 ## Non-Claims
 
 These fixtures do not claim:

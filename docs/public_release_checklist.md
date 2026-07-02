@@ -4854,3 +4854,20 @@ Step539 does not change workflow files, Makefile, Python code/tests, fixture
 JSON, validators, runtime implementation, artifact body generation runtime
 invocation, manifest writer integration, file writing, real-data use, metric
 use, or production readiness status.
+
+## 38. Step540 Artifact Body Generation Runtime Integration Remote Run Record Workflow Design
+
+For Step540, review the
+[artifact body generation runtime integration plan-only bridge release-quality remote run record workflow](frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_remote_run_record_workflow.md).
+Confirm it is design-only / docs-only and defines only a future public-safe
+remote/manual run record workflow for the Step539 wrapper check.
+
+Confirm it records the target label, command, insertion point, runtime schema,
+selected fixture case, public-safe remote run fields, target runtime summary
+fields, interpretation rules, failure interpretation, and proposed future
+status marker path. Confirm Step540 does not create a status marker, change
+workflow files, change the release-quality wrapper, change Makefile, change
+Python code/tests, change fixture JSON, change validators, change runtime
+implementation, invoke artifact body generation runtime, connect manifest
+writer integration, enable file writing, use real data, compute metrics, or
+claim production readiness.

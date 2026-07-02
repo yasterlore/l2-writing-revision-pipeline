@@ -648,3 +648,16 @@ contract, add fixture cases, change fixture JSON, change validators, change
 runtime implementation, change Makefile, change workflow files, invoke
 artifact body generation runtime, call manifest writer code, write files, use
 real data, compute metrics, or claim production readiness.
+
+## 28. Step540 Runtime Remote Run Record Workflow Design Note
+
+Step540 adds a separate docs-only remote/manual run record workflow design for
+the Step539 runtime wrapper check:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_remote_run_record_workflow.md`
+
+It does not change this fixture contract, add fixture cases, change fixture
+JSON, change validators, change runtime implementation, change Makefile,
+change the release-quality wrapper, change workflow files, invoke artifact
+body generation runtime, call manifest writer code, write files, use real
+data, compute metrics, or claim production readiness.

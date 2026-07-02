@@ -284,3 +284,15 @@ change workflow files, Makefile, Python code/tests, fixture JSON, validators,
 runtime implementation, artifact body generation runtime invocation, manifest
 writer integration, file writing, real-data use, metric use, or production
 readiness status.
+
+## 15. Step540 Remote Run Record Workflow Design Status
+
+Step540 adds the docs-only remote/manual run record workflow design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_plan_only_bridge_release_quality_remote_run_record_workflow.md`
+
+It creates no status marker and does not change workflow files, the
+release-quality wrapper, Makefile, Python code/tests, fixture JSON,
+validators, runtime implementation, artifact body generation runtime
+invocation, manifest writer integration, file writing, real-data use, metric
+use, or production readiness status.
