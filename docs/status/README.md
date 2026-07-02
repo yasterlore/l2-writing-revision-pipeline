@@ -32,8 +32,8 @@ Current status-marker posture:
   marker is now recorded as public-safe pass-only metadata.
 - The artifact body generation runtime integration safe-metadata v0.2 planned
   fixture validator target is in the release-quality wrapper, and its
-  remote/manual status marker workflow is designed but the marker is not yet
-  recorded.
+  remote/manual status marker is now recorded as public-safe pass-only /
+  count-only metadata.
 
 Available markers:
 
@@ -113,6 +113,14 @@ Available markers:
   correctness evidence generally, not manifest writer integration evidence,
   not production readiness evidence, not real-data readiness evidence, and not
   model performance evidence.
+- [Learner-state frozen policy generation artifact body generation runtime integration safe-metadata v0.2 fixture validator release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_remote_run_status.md):
+  remote/manual release-quality wrapper status after safe-metadata v0.2
+  planned fixture validator integration. Raw logs and full job output are not
+  stored. This is not runtime correctness evidence generally, not artifact
+  body generation correctness evidence generally, not safe-metadata
+  free-form body safety evidence, not manifest writer readiness evidence, not
+  production readiness evidence, not real-data readiness evidence, and not
+  model performance evidence.
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after artifact body fixture
   validation integration.
@@ -160,17 +168,8 @@ Available markers:
   file JSON bodies, fixture JSON bodies, private paths, absolute paths, raw
   learner text, or performance evidence.
 
-Planned marker for the safe-metadata v0.2 planned fixture validator
-release-quality wrapper check:
-
-- `docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_remote_run_status.md`
-
-Step554 designs the public-safe remote/manual run record workflow for this
-future marker. The marker is not yet created. Raw logs, full job output,
-fixture JSON bodies, request/pointer/expected bodies, artifact body payloads,
-manifest bodies, generated policy bodies, private paths, absolute paths, raw
-learner text, performance evidence, production readiness evidence, real-data
-readiness evidence, and model performance evidence must not be stored.
+Planned markers: none for the safe-metadata v0.2 planned fixture validator
+release-quality wrapper check.
 
 Related recap:
 

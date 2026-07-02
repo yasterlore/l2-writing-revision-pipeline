@@ -135,3 +135,15 @@ It proposes future metadata-only/body-free status marker fields for this
 planned root but does not create the marker, change fixture JSON, change
 validators, change runtime implementation, invoke artifact body generation
 runtime, invoke manifest writer, or write files.
+
+## Step555 Remote Status Marker Status
+
+Step555 adds the public-safe pass-only metadata-only body-free remote status
+marker for the Step553 wrapper check:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_v0_2_fixture_validator_release_quality_remote_run_status.md`
+
+The marker records only public-safe remote/manual run metadata, target
+validator summary counts, and safety flags. It does not change fixture JSON,
+validators, runtime implementation, artifact body generation runtime
+invocation, manifest writer invocation, or file writing.
