@@ -545,3 +545,11 @@ The review records the Step565 remote-marker evidence limitation and does not
 change workflow files, the wrapper, Makefile, Python code/tests, fixture JSON,
 runtime implementation, invoke artifact body generation runtime, invoke
 manifest writer, or write files.
+
+## 32. Step567 Stronger Remote Status Marker Status
+
+Step567 adds the public-safe stronger remote status marker with actual remote
+metadata for the same `safe-metadata-smoke` wrapper check. It does not change
+workflow files, the wrapper, Makefile, Python code/tests, fixture JSON, runtime
+implementation, invoke artifact body generation runtime, invoke manifest
+writer, or write files.

@@ -283,3 +283,10 @@ as the docs-only final safety review for the Step557-Step565 runtime chain.
 The review records that release-quality wrapper inclusion is not runtime
 correctness generally and that the Step565 marker has limited remote evidence
 strength because actual remote run metadata was not recorded.
+
+## 19. Step567 Stronger Remote Status Marker Status
+
+Step567 adds
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_stronger_release_quality_remote_run_status.md`
+as a public-safe stronger marker with actual remote metadata for the Step563
+wrapper check. It does not change the release-quality wrapper.

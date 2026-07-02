@@ -604,3 +604,11 @@ as the docs-only final safety review for the Step557-Step565 runtime chain. It
 keeps the expected-output surface public-safe and records that the Step565
 remote marker has limited evidence strength because actual remote run metadata
 was not recorded.
+
+## 34. Step567 Stronger Remote Status Marker Status
+
+Step567 adds
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_stronger_release_quality_remote_run_status.md`
+as a public-safe stronger marker with actual remote metadata. It keeps the
+expected-output surface body-free and does not change fixture JSON or runtime
+implementation.

@@ -1,10 +1,10 @@
-# Learner State Frozen Policy Generation Artifact Body Generation Runtime Integration Safe-Metadata Runtime Release Quality Remote Run Status
+# Learner State Frozen Policy Generation Artifact Body Generation Runtime Integration Safe-Metadata Runtime Stronger Release Quality Remote Run Status
 
 ## 1. Scope
 
-This document is a public-safe status marker for an actual remote/manual
-Release Quality run that included the artifact body generation runtime
-integration `safe-metadata-smoke` runtime check added in Step563.
+This document is a public-safe stronger status marker for an actual
+remote/manual Release Quality run that included the artifact body generation
+runtime integration `safe-metadata-smoke` runtime check.
 
 This marker is pass-only, metadata-only, body-free, and count-only where
 applicable. It does not include raw logs, full job output, copied GitHub log
@@ -12,6 +12,9 @@ blocks, screenshots containing raw logs, fixture JSON body, fixture/request/
 pointer/expected body, raw stdout/stderr body, artifact body payload, manifest
 body, or generated policy body. It is not evidence of production readiness,
 real-data readiness, or model performance.
+
+This marker does not replace the Step565 marker. It adds actual public-safe
+remote metadata as a stronger marker for the same release-quality boundary.
 
 ## 2. Target Release-Quality Check
 
@@ -34,25 +37,25 @@ real-data readiness, or model performance.
 
 ## 3. Remote Run Summary
 
-- workflow name: not recorded in public-safe summary
-- job name: not recorded in public-safe summary
-- repository: not recorded in public-safe summary
-- branch: not recorded in public-safe summary
-- commit full hash: not recorded in public-safe summary
-- commit short hash: not recorded in public-safe summary
-- run status: not recorded in public-safe summary
-- job status: not recorded in public-safe summary
-- runner version: not recorded in public-safe summary
-- runner OS: not recorded in public-safe summary
-- runner image: not recorded in public-safe summary
-- runner image version: not recorded in public-safe summary
-- Python: not recorded in public-safe summary
-- Rust: not recorded in public-safe summary
-- Node: not recorded in public-safe summary
-- npm: not recorded in public-safe summary
-- run started: not recorded in public-safe summary
-- release_quality_check completed: not recorded in public-safe summary
-- approx duration: not recorded in public-safe summary
+- workflow name: Release Quality
+- job name: Release quality
+- repository: yasterlore/l2-writing-revision-pipeline
+- branch: main
+- commit full hash: 7fc041d324bb0b7430f2de0174a8541330629f36
+- commit short hash: 7fc041d
+- run status: success
+- job status: success
+- runner version: 2.335.1
+- runner OS: Ubuntu 24.04.4 LTS
+- runner image: ubuntu-24.04
+- runner image version: 20260628.225.1
+- Python: 3.11.15
+- Rust: 1.96.1
+- Node: 22.23.1
+- npm: 10.9.8
+- run started: 2026-07-02T22:38:01Z
+- release_quality_check completed: 2026-07-02T22:39:13Z
+- approx duration: about 72 seconds
 - artifacts recorded: no
 - raw logs stored in docs: no
 - full job output stored in docs: no
@@ -105,10 +108,25 @@ real-data readiness, or model performance.
 - production_readiness_claimed: False
 - real_data_readiness_claimed: False
 - performance_claims_present: False
+- runtime_summary_checked: True
+- artifact_body_request_checked: True
+- artifact_body_pointer_checked: True
+- artifact_body_generation_metadata_checked: True
 - metadata_file_count: 7
 - unsafe_signal_count: 0
 
-## 5. Related Release-Quality Chain Summary
+## 5. Relationship to Step565 Marker
+
+- Step565 marker remains available as the first remote status marker.
+- Step565 marker is public-safe but had limited remote evidence strength
+  because actual metadata was not provided.
+- This Step567 marker adds actual public-safe remote metadata.
+- Neither marker stores raw logs or full job output.
+- Neither marker proves production readiness, real-data readiness, model
+  performance, runtime correctness generally, artifact body generation
+  correctness generally, or safe-metadata free-form body safety.
+
+## 6. Related Release-Quality Chain Summary
 
 The remote/manual run summary is recorded as public-safe pass-only /
 count-only metadata. Raw logs and full job output are not stored.
@@ -132,9 +150,9 @@ count-only metadata. Raw logs and full job output are not stored.
 - Python unittest: included in wrapper
 - Rust checks: included in wrapper
 - logger-web checks: included in wrapper
-- final release_quality_check: not recorded in public-safe summary
+- final release_quality_check: run status success
 
-## 6. Safety Review
+## 7. Safety Review
 
 This marker does not include:
 
@@ -160,12 +178,11 @@ This marker does not include:
 - real participant data
 - performance metric body
 
-## 7. Interpretation
+## 8. Interpretation
 
 Allowed interpretations:
 
-- Remote Release Quality success means the wrapper completed successfully in
-  GitHub Actions when that status is available from a public-safe summary.
+- Remote Release Quality success means the wrapper passed in GitHub Actions.
 - Target label presence means `safe-metadata-smoke` runtime check is included
   in the wrapper.
 - Target runtime summary shows metadata-handoff `safe-metadata-smoke` runtime
@@ -173,6 +190,8 @@ Allowed interpretations:
 - Target insertion point shows `safe-metadata-smoke` runtime is checked after
   safe-metadata v0.2 fixture validation and before artifact body fixture
   validation.
+- This stronger marker has better remote evidence than Step565 because actual
+  workflow/job/commit/run status metadata is recorded.
 
 Disallowed interpretations:
 
@@ -192,7 +211,7 @@ Disallowed interpretations:
 - production data collection validity
 - F1 / accuracy / ECE / AURCC evidence
 
-## 8. Failure Interpretation
+## 9. Failure Interpretation
 
 Target failure means metadata-handoff `safe-metadata-smoke` runtime failed
 inside the release-quality wrapper. Possible reasons include missing planned
@@ -206,7 +225,7 @@ readiness issue. Failure should be interpreted through public-safe status and
 reason codes only. Raw stdout/stderr and payloads must not be copied into docs
 or reports.
 
-## 9. Non-Equivalence Cautions
+## 10. Non-Equivalence Cautions
 
 - safe-metadata-smoke runtime status is not runtime correctness generally
 - safe-metadata-smoke remains metadata handoff only
@@ -217,7 +236,7 @@ or reports.
 - release-quality success is not production readiness
 - synthetic-only pass is not real-data readiness
 
-## 10. Non-Claims
+## 11. Non-Claims
 
 This marker does not claim:
 
@@ -237,25 +256,9 @@ This marker does not claim:
 - artifact writer CLI actual invocation correctness generally
 - runtime actual invocation correctness generally
 
-## 11. Next-Step Boundary
+## 12. Next-Step Boundary
 
-Possible later steps include a safe-metadata runtime final safety review.
-Step565 does not perform that review. Step565 stops at this status marker.
-
-## 12. Step566 Final Safety Review Status
-
-Step566 adds
-`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_final_safety_review.md`
-as the docs-only final safety review for this `safe-metadata-smoke` runtime
-chain. The review records that this marker is public-safe but has limited
-remote evidence strength because actual workflow/job/commit/run status
-metadata was not recorded.
-
-## 13. Step567 Stronger Remote Status Marker Status
-
-Step567 adds a separate stronger marker with actual public-safe remote
-metadata:
-
-`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_stronger_release_quality_remote_run_status.md`
-
-This Step565 marker remains available and is not replaced.
+Possible later steps include a broader final safety review or next runtime
+stage design. Step567 does not perform either. Step567 stops at this stronger
+status marker and does not proceed to actual artifact body generation runtime
+invocation implementation.

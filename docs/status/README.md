@@ -140,6 +140,15 @@ Available markers:
   evidence, not manifest writer readiness evidence, not production readiness
   evidence, not real-data readiness evidence, and not model performance
   evidence.
+- [Learner-state frozen policy generation artifact body generation runtime integration safe-metadata runtime stronger release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_stronger_release_quality_remote_run_status.md):
+  stronger remote/manual release-quality wrapper status after safe-metadata
+  runtime smoke integration. Raw logs and full job output are not stored. This
+  is not runtime correctness evidence generally, not artifact body generation
+  correctness evidence generally, not safe-metadata free-form body safety
+  evidence, not manifest writer readiness evidence, not production readiness
+  evidence, not real-data readiness evidence, and not model performance
+  evidence. This has stronger remote evidence than Step565 because actual
+  public-safe remote metadata is recorded.
 - [Learner-state frozen policy generation artifact body fixture release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_fixture_release_quality_remote_run_status.md):
   remote/manual release-quality wrapper status after artifact body fixture
   validation integration.
@@ -1092,3 +1101,11 @@ Step566 adds
 as a docs-only review for the Step557-Step565 runtime chain. It records that
 the Step565 marker is public-safe but has limited remote evidence strength
 because actual workflow/job/commit/run status metadata was not recorded.
+
+## Step567 Artifact Body Generation Runtime Integration Safe-Metadata Runtime Stronger Remote Status Marker
+
+Step567 adds
+[safe-metadata runtime stronger release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_stronger_release_quality_remote_run_status.md)
+as a public-safe pass-only / metadata-only / body-free marker with actual
+remote metadata. Raw logs and full job output are not stored, and the marker
+does not replace the Step565 marker.

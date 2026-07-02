@@ -358,3 +358,11 @@ separate, and the Step566 review does not change workflow files, change the
 wrapper, change Makefile, change fixture JSON, change runtime implementation,
 invoke artifact body generation runtime, invoke manifest writer, or write
 files.
+
+## 25. Step567 Runtime Stronger Remote Status Marker Status
+
+Step567 adds a separate stronger remote status marker for the follow-on
+`safe-metadata-smoke` runtime chain. The planned-root validator chain remains
+separate, and the marker does not change fixture JSON, runtime implementation,
+artifact body generation runtime invocation, manifest writer invocation, or
+file writing.

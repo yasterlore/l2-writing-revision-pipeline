@@ -358,3 +358,12 @@ as a docs-only final safety review for the runtime chain. The review records
 that the Step565 marker used public-safe placeholder/not-recorded remote
 metadata for workflow/job/commit/run status, which limits remote evidence
 strength.
+
+## 17. Step567 Stronger Remote Status Marker Status
+
+Step567 adds the stronger marker path anticipated by this workflow:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_runtime_stronger_release_quality_remote_run_status.md`
+
+The marker uses actual public-safe remote metadata and does not store raw logs,
+full job output, copied log blocks, screenshots, or payload bodies.

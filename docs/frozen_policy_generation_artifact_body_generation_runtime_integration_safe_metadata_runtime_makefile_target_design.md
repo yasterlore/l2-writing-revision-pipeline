@@ -324,3 +324,9 @@ Step566 adds the docs-only final safety review:
 
 The review keeps the standalone target boundary separate and records the
 Step565 remote-marker evidence limitation.
+
+## 20. Step567 Stronger Remote Status Marker Status
+
+Step567 adds a public-safe stronger remote status marker for the wrapper check
+that runs the standalone target designed here. The marker records actual
+remote metadata and does not change Makefile or wrapper implementation.
