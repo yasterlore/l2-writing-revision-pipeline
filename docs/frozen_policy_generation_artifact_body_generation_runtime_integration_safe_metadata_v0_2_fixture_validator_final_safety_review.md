@@ -372,3 +372,9 @@ file writing.
 Step568 adds a docs-only broader final safety review across the follow-on
 runtime chain, artifact body safe-metadata CLI smoke, file-writing checks, and
 manifest writer boundary. The planned-root validator chain remains separate.
+
+## 27. Step569 Runtime Invocation Fixture Contract Design Status
+
+Step569 adds a docs-only fixture contract design for a future artifact body
+generation runtime invocation boundary. The planned-root validator chain
+remains separate.

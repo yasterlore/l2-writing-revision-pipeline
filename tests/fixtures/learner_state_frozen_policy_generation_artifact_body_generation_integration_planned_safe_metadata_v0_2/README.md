@@ -275,3 +275,10 @@ Step568 adds
 `docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
 as a docs-only broader final safety review. This planned fixture root remains
 separate from the active root.
+
+## Step569 Runtime Invocation Fixture Contract Design Status
+
+Step569 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_contract_design.md`
+as a design-only fixture contract for a future runtime invocation boundary.
+This planned fixture root remains separate from the active root.

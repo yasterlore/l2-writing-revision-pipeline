@@ -271,3 +271,10 @@ as a docs-only broader final safety review across the safe-metadata runtime,
 artifact body safe-metadata CLI smoke, artifact body validation/file-writing
 checks, and manifest writer boundary. This stronger marker remains available
 and unchanged.
+
+## 14. Step569 Runtime Invocation Fixture Contract Design Status
+
+Step569 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_contract_design.md`
+as a docs-only fixture contract design. This stronger marker remains available
+and unchanged.

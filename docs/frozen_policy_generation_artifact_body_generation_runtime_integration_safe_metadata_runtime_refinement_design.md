@@ -561,3 +561,10 @@ Step568 adds
 as a docs-only broader final safety review across the safe-metadata runtime,
 artifact body safe-metadata CLI smoke, artifact body validation/file-writing
 checks, and manifest writer boundary.
+
+## 34. Step569 Runtime Invocation Fixture Contract Design Status
+
+Step569 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_contract_design.md`
+as a design-only / planning-only / docs-only fixture contract design for a
+future runtime invocation boundary.

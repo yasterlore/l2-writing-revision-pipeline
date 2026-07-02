@@ -297,3 +297,10 @@ Step568 adds
 `docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
 as a docs-only broader final safety review. The release-quality wrapper order
 remains unchanged.
+
+## 21. Step569 Runtime Invocation Fixture Contract Design Status
+
+Step569 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_contract_design.md`
+as a design-only / planning-only fixture contract for a future runtime
+invocation boundary. It does not change the release-quality wrapper.

@@ -1117,3 +1117,12 @@ Step568 adds
 as a docs-only review across the safe-metadata runtime, artifact body
 safe-metadata CLI smoke, artifact body validation/file-writing checks, and
 manifest writer boundary. It stores no raw logs or full job output.
+
+## Step569 Artifact Body Generation Runtime Invocation Fixture Contract Design
+
+Step569 adds
+[artifact body generation runtime invocation fixture contract design](../frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_contract_design.md)
+as a design-only / planning-only / docs-only handoff toward a future runtime
+invocation boundary. It creates no fixture JSON and does not change runtime,
+wrapper, Makefile, workflow, Python code/tests, manifest writer integration,
+or file writing.

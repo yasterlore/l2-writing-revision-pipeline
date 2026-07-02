@@ -620,3 +620,10 @@ Step568 adds
 as a docs-only broader final safety review. It keeps this expected-output
 surface separate from artifact body payload, manifest body, and file-writing
 boundaries.
+
+## 36. Step569 Runtime Invocation Fixture Contract Design Status
+
+Step569 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_contract_design.md`
+as a docs-only fixture contract design for a future runtime invocation output
+surface. It creates no fixture JSON.

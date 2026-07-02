@@ -266,3 +266,10 @@ Step568 adds
 `docs/frozen_policy_generation_artifact_body_safe_metadata_runtime_manifest_boundary_broader_final_safety_review.md`
 as a docs-only broader final safety review. This Step565 marker remains
 available and unchanged.
+
+## 15. Step569 Runtime Invocation Fixture Contract Design Status
+
+Step569 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_contract_design.md`
+as a docs-only fixture contract design. This marker remains available and
+unchanged.

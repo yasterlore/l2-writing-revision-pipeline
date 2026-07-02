@@ -2891,3 +2891,18 @@ risks without changing workflow files, wrapper files, Makefile, Python
 code/tests, fixture JSON, runtime implementation, validator implementation,
 artifact body generation runtime invocation, manifest writer integration, file
 writing, real-data use, metric use, or production readiness status.
+
+## Step569 Artifact Body Generation Runtime Invocation Fixture Contract Design
+
+Step569 adds the design-only / planning-only / docs-only fixture contract
+design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_contract_design.md`
+
+The design proposes a future fixture root, metadata-only layout, case taxonomy,
+schema/mode names, public-safe output surface, failure mapping, and staging for
+artifact body generation runtime invocation. It does not create fixture JSON,
+change workflow files, wrapper files, Makefile, Python code/tests, runtime
+implementation, validator implementation, invoke artifact body generation
+runtime, invoke manifest writer, write files, use real data, compute metrics,
+or claim production readiness.

@@ -338,3 +338,10 @@ Step568 adds
 as a docs-only broader final safety review. The standalone runtime target
 remains separate from artifact body safe-metadata CLI smoke and manifest writer
 targets.
+
+## 22. Step569 Runtime Invocation Fixture Contract Design Status
+
+Step569 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_contract_design.md`
+as a design-only fixture contract for a future invocation boundary. It does not
+change Makefile.
