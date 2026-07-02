@@ -4976,3 +4976,25 @@ Makefile, Python code/tests, fixture JSON, validators, runtime
 implementation, artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 status.
+
+## 44. Step546 Artifact Body Generation Runtime Integration Safe-Metadata Fixture Root Update Design
+
+For Step546, review the
+[artifact body generation runtime integration safe-metadata fixture root/update design](frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_root_update_design.md).
+Confirm it is design-only / planning-only and does not create or change
+fixture JSON.
+
+Confirm it summarizes prior chain dependency, existing fixture root reuse
+decision, proposed fixture update strategy, case taxonomy, file layout,
+schema/version plan, required metadata fields, expected aggregate count impact,
+validator update implications, runtime schema implications, runtime mode
+naming, implementation staging, relationships to existing safe-metadata CLI
+smoke, manifest writer and file-writing chains, failure interpretation,
+non-equivalence cautions, recommended next step, non-claims, and public-safe
+checklist.
+
+Confirm Step546 does not change workflow files, the release-quality wrapper,
+Makefile, Python code/tests, fixture JSON, validators, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+status.

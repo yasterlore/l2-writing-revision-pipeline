@@ -458,6 +458,19 @@ fixture JSON, changing validators or runtime implementation, invoking artifact
 body generation runtime, calling manifest writer code, writing files, using
 real data, computing metrics, or claiming production readiness.
 
+## Safe-Metadata Fixture Root Update Design
+
+Step546 adds the docs-only / planning-only safe-metadata fixture root/update
+design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_root_update_design.md`
+
+The design proposes a future small metadata-only extension to this fixture
+root while preserving the seven-file layout. Step546 does not create or change
+fixture JSON, change validators or runtime implementation, invoke artifact
+body generation runtime, call manifest writer code, write files, use real
+data, compute metrics, or claim production readiness.
+
 ## Non-Claims
 
 These fixtures do not claim:

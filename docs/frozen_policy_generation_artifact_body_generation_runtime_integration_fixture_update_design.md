@@ -425,3 +425,16 @@ It does not change workflow files, the release-quality wrapper, Makefile,
 Python code/tests, fixture JSON, validators, runtime implementation, artifact
 body generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, or production readiness status.
+
+## 27. Step546 Safe-Metadata Fixture Root Update Design Status
+
+Step546 adds the docs-only / planning-only safe-metadata fixture root/update
+design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_root_update_design.md`
+
+It does not create or change fixture JSON, change validators, change runtime
+implementation, change workflow files, change the release-quality wrapper,
+change Makefile, change Python code/tests, invoke artifact body generation
+runtime, connect manifest writer integration, write files, use real data,
+compute metrics, or claim production readiness.

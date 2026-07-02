@@ -675,31 +675,6 @@ change the release-quality wrapper, change workflow files, invoke artifact
 body generation runtime, call manifest writer code, write files, use real
 data, compute metrics, or claim production readiness.
 
-## 32. Step544 Safe-Metadata Explicit Stage Planning Note
-
-Step544 adds the docs-only / planning-only safe-metadata explicit stage
-planning design:
-
-`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_explicit_stage_planning_design.md`
-
-It does not change this fixture contract, add fixture cases, change fixture
-JSON, change validators, change runtime implementation, change Makefile,
-change the release-quality wrapper, change workflow files, invoke artifact
-body generation runtime, call manifest writer code, write files, use real
-data, compute metrics, or claim production readiness.
-
-## 33. Step545 Safe-Metadata Fixture Update Design Note
-
-Step545 adds the docs-only / planning-only safe-metadata fixture/update design:
-
-`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_update_design.md`
-
-It does not change this fixture contract, add fixture cases, change fixture
-JSON, change validators, change runtime implementation, change Makefile,
-change the release-quality wrapper, change workflow files, invoke artifact
-body generation runtime, call manifest writer code, write files, use real
-data, compute metrics, or claim production readiness.
-
 ## 30. Step542 Runtime Final Safety Review Note
 
 Step542 adds the docs-only final safety review for the completed
@@ -725,3 +700,41 @@ JSON, change validators, change runtime implementation, change Makefile,
 change the release-quality wrapper, change workflow files, invoke artifact
 body generation runtime, call manifest writer code, write files, use real
 data, compute metrics, or claim production readiness.
+
+## 32. Step544 Safe-Metadata Explicit Stage Planning Note
+
+Step544 adds the docs-only / planning-only safe-metadata explicit stage
+planning design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_explicit_stage_planning_design.md`
+
+It does not change this fixture contract, add fixture cases, change fixture
+JSON, change validators, change runtime implementation, change Makefile,
+change the release-quality wrapper, change workflow files, invoke artifact
+body generation runtime, call manifest writer code, write files, use real
+data, compute metrics, or claim production readiness.
+
+## 33. Step545 Safe-Metadata Fixture Update Design Note
+
+Step545 adds the docs-only / planning-only safe-metadata fixture/update design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_update_design.md`
+
+It does not change this fixture contract, add fixture cases, change fixture
+JSON, change validators, change runtime implementation, change Makefile,
+change the release-quality wrapper, change workflow files, invoke artifact
+body generation runtime, call manifest writer code, write files, use real
+data, compute metrics, or claim production readiness.
+
+## 34. Step546 Safe-Metadata Fixture Root Update Design Note
+
+Step546 adds the docs-only / planning-only safe-metadata fixture root/update
+design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_integration_safe_metadata_fixture_root_update_design.md`
+
+It does not change this fixture contract, add fixture cases, create or change
+fixture JSON, change validators, change runtime implementation, change
+Makefile, change the release-quality wrapper, change workflow files, invoke
+artifact body generation runtime, call manifest writer code, write files, use
+real data, compute metrics, or claim production readiness.
