@@ -427,3 +427,11 @@ as a design-only / docs-only implementation design for a future
 `artifact-body-runtime-invocation` boundary. It keeps runtime implementation,
 actual artifact body generation runtime invocation, manifest writer
 integration, and file writing as later separate boundaries.
+
+## 19. Step576 Runtime Invocation Implementation Refinement Design Status
+
+Step576 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_refinement_design.md`
+as a design-only / docs-only refinement before implementation. It recommends
+Step577 implement planned-only v0.3 boundary markers first and keeps actual
+artifact body generation runtime invocation as later work.

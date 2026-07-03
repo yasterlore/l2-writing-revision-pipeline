@@ -321,3 +321,9 @@ available at
 `docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_design.md`.
 It is design-only / docs-only and recommends a refinement design before
 runtime implementation.
+
+Step576 follow-up status: the runtime invocation implementation refinement
+design is available at
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_refinement_design.md`.
+It recommends planned-only v0.3 boundary markers for Step577 before any actual
+runtime invocation.

@@ -5398,3 +5398,19 @@ full technical specification docs, Makefile, release-quality wrapper, workflow
 files, Python code/tests, fixture JSON, runtime implementation, validator
 implementation, artifact body generation implementation, manifest writer
 implementation, or file-writing implementation.
+
+## 74. Step576 Artifact Body Generation Runtime Invocation Implementation Refinement Design
+
+For Step576, confirm
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_refinement_design.md`
+exists as a design-only / docs-only refinement design before runtime
+implementation.
+
+Confirm the design compares planned-only v0.3 markers, controlled invocation,
+dedicated module, and additional fixture/schema refinement options, and
+recommends Step577 planned-only v0.3 mode implementation without changing
+repository root README, full technical specification docs, Makefile,
+release-quality wrapper, workflow files, Python code/tests, fixture JSON,
+runtime implementation, validator implementation, artifact body generation
+implementation, manifest writer implementation, or file-writing
+implementation.

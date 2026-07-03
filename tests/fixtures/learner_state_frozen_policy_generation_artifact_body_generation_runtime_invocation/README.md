@@ -120,6 +120,12 @@ as a design-only / docs-only implementation design for a future
 before runtime code changes and does not change this fixture root or fixture
 JSON.
 
+Step576 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_refinement_design.md`
+as a design-only / docs-only narrowing step. It recommends Step577 implement
+planned-only v0.3 invocation-boundary markers first and still does not change
+this fixture root or fixture JSON.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,

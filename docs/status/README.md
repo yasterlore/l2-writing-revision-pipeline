@@ -1206,3 +1206,15 @@ because controlled invocation behavior remains ambiguous. It does not change
 runtime implementation, Python code/tests, Makefile, release-quality wrapper,
 workflow, fixture JSON, validator implementation, manifest writer integration,
 or file writing.
+
+## Step576 Artifact Body Generation Runtime Invocation Implementation Refinement Design
+
+Step576 adds
+[artifact body generation runtime invocation implementation refinement design](../frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_refinement_design.md)
+as a design-only / docs-only narrowing step before runtime implementation.
+
+The refinement recommends Step577 implement planned-only v0.3
+`artifact-body-runtime-invocation` mode markers in the existing runtime module,
+without actual artifact body generation runtime invocation, manifest writer
+integration, file writing, Makefile changes, wrapper changes, workflow
+changes, Python code/tests changes, fixture JSON changes, or validator changes.

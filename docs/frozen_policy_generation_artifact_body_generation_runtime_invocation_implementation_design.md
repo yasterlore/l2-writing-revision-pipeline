@@ -439,3 +439,13 @@ This design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 18. Step576 Refinement Status
+
+Step576 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_refinement_design.md`
+as a design-only / docs-only narrowing step before runtime implementation. It
+recommends Step577 implement planned-only v0.3
+`artifact-body-runtime-invocation` mode markers first, without actual artifact
+body generation runtime invocation, manifest writer integration, or file
+writing.

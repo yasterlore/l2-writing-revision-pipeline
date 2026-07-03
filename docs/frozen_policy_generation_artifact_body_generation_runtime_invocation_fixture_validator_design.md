@@ -424,3 +424,9 @@ as a design-only / docs-only runtime invocation implementation design. It does
 not change runtime implementation, Python code/tests, Makefile, wrapper,
 workflow, fixture JSON, validator implementation, manifest writer integration,
 or file writing.
+
+Step576 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_refinement_design.md`
+as a design-only / docs-only refinement. It recommends Step577 start with
+planned-only v0.3 invocation-boundary markers rather than actual runtime
+invocation.
