@@ -3102,3 +3102,21 @@ code/tests, fixture JSON, runtime implementation, validator implementation,
 actual artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 status.
+
+## Step582 Artifact Body Generation Runtime Invocation Release-Quality Remote Run Record Workflow
+
+Step582 adds the design-only / docs-only workflow:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md`
+
+The workflow defines how a future remote/manual Release Quality run should be
+recorded for the Step581 adjacent runtime invocation checks using only
+public-safe metadata and count-only summaries. It proposes the future status
+marker path
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md`.
+
+Step582 does not create the marker, change workflow files, change wrapper
+files, change Makefile, change Python code/tests, change fixture JSON, change
+runtime or validator implementation, invoke actual artifact body generation
+runtime, invoke manifest writer, write files, use real data, use metrics, or
+claim production readiness.

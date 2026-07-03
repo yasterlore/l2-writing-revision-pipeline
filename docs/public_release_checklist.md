@@ -5495,3 +5495,19 @@ Makefile, workflow files, Python code/tests, fixture JSON, runtime
 implementation, validator implementation, artifact body generation
 implementation, manifest writer implementation, or file-writing
 implementation.
+
+## 80. Step582 Artifact Body Generation Runtime Invocation Release-Quality Remote Run Record Workflow
+
+For Step582, confirm
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md`
+exists as a design-only / docs-only workflow for a future public-safe
+remote/manual Release Quality run record covering the Step581 adjacent checks.
+
+Confirm it defines allowed evidence sources, public-safe metadata, count-only
+target summaries, the future status marker path, marker template, validation
+rules, missing metadata handling, failure interpretation, non-equivalence
+cautions, non-claims, and public-safe checklist. Confirm Step582 does not
+create a status marker, change workflow files, change wrapper files, change
+Makefile, change Python code/tests, change fixture JSON, implement actual
+artifact body generation runtime invocation, implement manifest writer
+integration, or perform file writing.

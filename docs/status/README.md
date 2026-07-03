@@ -1296,3 +1296,16 @@ fixture validation, with the fixture validator first. Step581 does not change
 workflow files, Makefile, Python code/tests, fixture JSON, runtime
 implementation, validator implementation, actual artifact body generation
 runtime invocation, manifest writer integration, or file writing.
+
+## Step582 Artifact Body Generation Runtime Invocation Release-Quality Remote Run Record Workflow
+
+Step582 adds
+[artifact body generation runtime invocation release-quality remote run record workflow](../frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md)
+as a design-only / docs-only workflow for recording a future public-safe
+remote/manual Release Quality run that includes the Step581 adjacent checks.
+
+The workflow defines allowed metadata, count-only target summaries, a future
+status marker path, missing metadata handling, and validation rules. Step582
+does not create a status marker, change workflow files, change the wrapper,
+change Makefile, change Python code/tests, change fixture JSON, invoke actual
+artifact body generation runtime, invoke manifest writer, or write files.

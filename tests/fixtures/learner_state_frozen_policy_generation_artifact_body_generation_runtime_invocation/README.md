@@ -158,6 +158,12 @@ order: fixture validator first, planned-only v0.3 runtime smoke second. The
 checks run after safe-metadata runtime smoke and before artifact body fixture
 validation. This root and its fixture JSON remain unchanged.
 
+Step582 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md`
+as a design-only / docs-only workflow for a future public-safe remote/manual
+Release Quality run record. This root and its fixture JSON remain unchanged,
+and no status marker is created in Step582.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,

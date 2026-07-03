@@ -154,6 +154,12 @@ Step581 implementation status: the wrapper follows this local ordering. The
 new checks run after safe-metadata runtime smoke and before artifact body
 fixture validation.
 
+Step582 follow-up status: the remote/manual run record workflow design is
+available at
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md`.
+It defines future public-safe recording rules for the Step581 adjacent checks
+without creating a status marker.
+
 ## 8. Expected Public-Safe Output
 
 For fixture validator:
