@@ -395,3 +395,12 @@ This workflow does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## Step584 Final Safety Review Status
+
+Step584 adds
+[frozen policy generation artifact body generation runtime invocation release-quality chain final safety review](frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md)
+as a final-safety-review / docs-only review for the Step569-Step583 planned-only
+v0.3 runtime invocation release-quality chain. The review does not copy raw logs,
+full job output, payload bodies, or fixture bodies, and it does not implement
+actual runtime invocation, manifest writer integration, or file writing.

@@ -1323,3 +1323,7 @@ cautions, non-claims, and a public-safe checklist. It stores no raw logs, full
 job output, payload bodies, real participant data, performance evidence,
 actual artifact body generation runtime invocation evidence, manifest writer
 invocation evidence, or file-writing evidence.
+
+## Step584 Final Safety Review Link
+
+- [Frozen policy generation artifact body generation runtime invocation release-quality chain final safety review](../frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md): docs-only final safety review for the Step569-Step583 planned-only v0.3 runtime invocation release-quality chain. It keeps the status-marker boundary public-safe / metadata-only / body-free / synthetic-only / no-oracle and does not add raw logs, payload bodies, actual runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance claims.

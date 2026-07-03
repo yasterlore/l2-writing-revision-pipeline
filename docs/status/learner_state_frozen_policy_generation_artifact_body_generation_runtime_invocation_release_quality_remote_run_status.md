@@ -219,9 +219,12 @@ This status marker does not claim:
 
 ## 14. Next Step Recommendation
 
-Recommended next step:
+Step584 final safety review is recorded in
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md`.
 
-- Step584: runtime invocation release-quality chain final safety review
+Recommended next step after Step584:
 
-Do not proceed to actual controlled artifact body generation runtime invocation
-before the final safety review.
+- Step585: actual controlled artifact body generation runtime invocation design
+
+Do not proceed to direct implementation of actual controlled artifact body
+generation runtime invocation before a new design doc.
