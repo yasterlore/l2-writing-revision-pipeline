@@ -103,6 +103,13 @@ the command designed above and remains separate from release-quality wrapper
 connection, workflow changes, actual artifact body generation runtime
 invocation, manifest writer integration, and file writing.
 
+Step580 follow-up status: the release-quality wrapper integration proposal is
+available at
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_integration_design.md`.
+It is design-only / docs-only and recommends keeping the Step574 fixture
+validator check before the Step579 planned-only v0.3 runtime smoke in any
+future wrapper change.
+
 ## 6. Expected Public-Safe Output
 
 Expected standalone target summary:

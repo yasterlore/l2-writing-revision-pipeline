@@ -109,7 +109,8 @@ Step574 adds the standalone Makefile target
 `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`.
 It runs the Step572 validator over this planned root and keeps the aggregate at
 30 cases / 210 JSON files with 6 pass, 1 usage-error, 22 fail-closed, and 1
-mismatch case. The target is not yet release-quality integrated and does not
+mismatch case. The target is not yet connected to the release-quality wrapper
+and does not
 invoke artifact body generation runtime, invoke manifest writer, or write
 files.
 
@@ -143,6 +144,13 @@ Step579 adds the standalone Makefile target
 for the Step577 planned-only v0.3 direct CLI. This root and its fixture JSON
 remain unchanged; the target does not invoke actual artifact body generation
 runtime, invoke manifest writer, or write files.
+
+Step580 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_integration_design.md`
+as a design-only / docs-only release-quality wrapper integration proposal. It
+recommends the fixture validator target run before the planned-only v0.3
+runtime smoke in any future wrapper change. This root and its fixture JSON
+remain unchanged.
 
 ## Non-Claims
 

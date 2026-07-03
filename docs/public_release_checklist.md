@@ -5462,3 +5462,20 @@ not change release-quality wrapper, workflow files, Python code/tests, fixture
 JSON, runtime implementation, validator implementation, artifact body
 generation implementation, manifest writer implementation, or file-writing
 implementation.
+
+## 78. Step580 Artifact Body Generation Runtime Invocation Release-Quality Integration Design
+
+For Step580, confirm
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_integration_design.md`
+exists as a design-only / docs-only release-quality wrapper integration
+proposal for the Step574 runtime invocation fixture validator target and the
+Step579 planned-only v0.3 runtime target.
+
+Confirm the design recommends fixture validator first ordering, records the
+future labels / commands, places the checks after safe-metadata runtime smoke
+and before artifact body fixture validation, and does not change repository
+root README, full technical specification docs, Makefile, release-quality
+wrapper, workflow files, Python code/tests, fixture JSON, runtime
+implementation, validator implementation, artifact body generation
+implementation, manifest writer implementation, or file-writing
+implementation.

@@ -3064,3 +3064,21 @@ changes, Python code/tests changes, fixture JSON changes, runtime
 implementation changes, validator implementation changes, actual artifact body
 generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, or production readiness status.
+
+## Step580 Artifact Body Generation Runtime Invocation Release-Quality Integration Design
+
+Step580 adds the design-only / docs-only wrapper integration proposal:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_integration_design.md`
+
+The design compares fixture-validator-first staging options and recommends
+keeping the Step574 runtime invocation fixture validator ahead of the Step579
+planned-only v0.3 runtime smoke in any future wrapper addition. It proposes
+placing the adjacent checks after safe-metadata runtime smoke and before
+artifact body fixture validation.
+
+Step580 does not change wrapper files, workflow files, Makefile, Python
+code/tests, fixture JSON, runtime implementation, validator implementation,
+actual artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+status.

@@ -1189,7 +1189,8 @@ for the Step572 validator CLI.
 
 The target runs the Step570 planned root validator and keeps the expected
 public-safe aggregate at 30 cases / 210 JSON files with 6 pass, 1 usage-error,
-22 fail-closed, and 1 mismatch case. It is not yet release-quality integrated
+22 fail-closed, and 1 mismatch case. It is not yet connected to the
+release-quality wrapper
 and does not invoke artifact body generation runtime, invoke manifest writer,
 write files, change workflow files, change Python code/tests, or change
 fixture JSON.
@@ -1262,6 +1263,21 @@ The target runs the Step577 planned-only v0.3 direct CLI over
 `valid/valid_minimal_safe_metadata_runtime_invocation` and emits public-safe
 metadata-only / body-free output with runtime invocation planned but not
 invoked. Step579 does not change release-quality wrapper, workflow files,
+Python code/tests, fixture JSON, runtime implementation, validator
+implementation, actual artifact body generation runtime invocation, manifest
+writer integration, or file writing.
+
+## Step580 Artifact Body Generation Runtime Invocation Release-Quality Integration Design
+
+Step580 adds
+[artifact body generation runtime invocation planned-only v0.3 release-quality integration design](../frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_integration_design.md)
+as a design-only / docs-only proposal for future wrapper placement of the
+Step574 runtime invocation fixture validator target and Step579 planned-only
+v0.3 runtime smoke.
+
+The design recommends fixture validator first ordering, preferably by adding
+the validator and planned-only runtime smoke as adjacent checks in one minimal
+wrapper step. Step580 does not change the wrapper, workflow files, Makefile,
 Python code/tests, fixture JSON, runtime implementation, validator
 implementation, actual artifact body generation runtime invocation, manifest
 writer integration, or file writing.
