@@ -418,3 +418,12 @@ The target validates the Step570 planned root as a metadata-only / body-free
 fixture-contract boundary and keeps release-quality wrapper integration,
 workflow changes, runtime invocation, manifest writer integration, and file
 writing as separate later boundaries.
+
+## 18. Step575 Runtime Invocation Implementation Design Status
+
+Step575 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_design.md`
+as a design-only / docs-only implementation design for a future
+`artifact-body-runtime-invocation` boundary. It keeps runtime implementation,
+actual artifact body generation runtime invocation, manifest writer
+integration, and file writing as later separate boundaries.

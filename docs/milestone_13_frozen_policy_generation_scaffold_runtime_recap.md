@@ -2982,3 +2982,18 @@ separate from release-quality wrapper integration, workflow changes, runtime
 implementation, artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 status.
+
+## Step575 Artifact Body Generation Runtime Invocation Implementation Design
+
+Step575 adds the design-only / docs-only implementation design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_design.md`
+
+The design proposes a future `artifact-body-runtime-invocation` boundary,
+runtime schema v0.3, public-safe output fields, failure mapping, safety scan,
+focused test plan, and staging. It recommends a refinement design before code
+changes and does not change runtime implementation, Python code/tests,
+Makefile, release-quality wrapper, workflow, fixture JSON, validator
+implementation, artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+status.

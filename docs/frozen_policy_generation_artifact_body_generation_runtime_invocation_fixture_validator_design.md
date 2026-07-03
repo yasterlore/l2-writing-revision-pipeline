@@ -417,3 +417,10 @@ Step574 implements that standalone Makefile target as
 The target runs the Step572 validator against the Step570 planned root and is
 not yet release-quality integrated. It still does not invoke artifact body
 generation runtime, invoke manifest writer, or write files.
+
+Step575 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_design.md`
+as a design-only / docs-only runtime invocation implementation design. It does
+not change runtime implementation, Python code/tests, Makefile, wrapper,
+workflow, fixture JSON, validator implementation, manifest writer integration,
+or file writing.

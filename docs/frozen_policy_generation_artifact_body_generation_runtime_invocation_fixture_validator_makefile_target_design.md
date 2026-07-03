@@ -315,3 +315,9 @@ release-quality wrapper integration, workflow changes, Python code/tests,
 fixture JSON changes, validator implementation changes, runtime
 implementation, artifact body generation runtime invocation, manifest writer
 integration, or file writing.
+
+Step575 follow-up status: the runtime invocation implementation design is
+available at
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_design.md`.
+It is design-only / docs-only and recommends a refinement design before
+runtime implementation.

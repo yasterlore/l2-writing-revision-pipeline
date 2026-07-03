@@ -371,3 +371,12 @@ for the Step572 runtime invocation fixture validator. The target remains a
 fixture-contract check only: it is not yet release-quality integrated and does
 not invoke artifact body generation runtime, invoke manifest writer, or write
 files.
+
+## 20. Step575 Runtime Invocation Implementation Design Status
+
+Step575 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_design.md`
+as a design-only / docs-only implementation design for a future controlled
+runtime invocation boundary. It recommends a refinement design before runtime
+code changes and does not implement runtime invocation, manifest writer
+integration, or file writing.

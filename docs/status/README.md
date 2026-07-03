@@ -1193,3 +1193,16 @@ public-safe aggregate at 30 cases / 210 JSON files with 6 pass, 1 usage-error,
 and does not invoke artifact body generation runtime, invoke manifest writer,
 write files, change workflow files, change Python code/tests, or change
 fixture JSON.
+
+## Step575 Artifact Body Generation Runtime Invocation Implementation Design
+
+Step575 adds
+[artifact body generation runtime invocation implementation design](../frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_design.md)
+as a design-only / docs-only plan for a future
+`artifact-body-runtime-invocation` runtime boundary.
+
+The design recommends one more refinement design before runtime code changes
+because controlled invocation behavior remains ambiguous. It does not change
+runtime implementation, Python code/tests, Makefile, release-quality wrapper,
+workflow, fixture JSON, validator implementation, manifest writer integration,
+or file writing.

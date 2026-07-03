@@ -5382,3 +5382,19 @@ case. Confirm this step does not change release-quality wrapper files,
 workflow files, Python code/tests, fixture JSON, validator implementation,
 runtime implementation, artifact body generation implementation, manifest
 writer implementation, or file-writing implementation.
+
+## 73. Step575 Artifact Body Generation Runtime Invocation Implementation Design
+
+For Step575, confirm
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_design.md`
+exists as a design-only / docs-only implementation design for a future
+`artifact-body-runtime-invocation` runtime boundary.
+
+Confirm the design covers implementation surface, mode/schema, proposed CLI,
+implementation boundary, expected public-safe output, failure mapping, safety
+scan, future tests, boundary relationships, staging, non-equivalence cautions,
+non-claims, and public-safe checklist without changing repository root README,
+full technical specification docs, Makefile, release-quality wrapper, workflow
+files, Python code/tests, fixture JSON, runtime implementation, validator
+implementation, artifact body generation implementation, manifest writer
+implementation, or file-writing implementation.

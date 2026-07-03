@@ -113,6 +113,13 @@ mismatch case. The target is not yet release-quality integrated and does not
 invoke artifact body generation runtime, invoke manifest writer, or write
 files.
 
+Step575 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_design.md`
+as a design-only / docs-only implementation design for a future
+`artifact-body-runtime-invocation` boundary. It recommends a refinement design
+before runtime code changes and does not change this fixture root or fixture
+JSON.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,
