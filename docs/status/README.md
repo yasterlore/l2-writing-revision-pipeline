@@ -1309,3 +1309,17 @@ status marker path, missing metadata handling, and validation rules. Step582
 does not create a status marker, change workflow files, change the wrapper,
 change Makefile, change Python code/tests, change fixture JSON, invoke actual
 artifact body generation runtime, invoke manifest writer, or write files.
+
+## Step583 Artifact Body Generation Runtime Invocation Release-Quality Remote Run Status
+
+Step583 adds
+[artifact body generation runtime invocation release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md)
+as a status-marker-only / docs-only record for the remote GitHub Actions
+Release Quality run that included the Step581 adjacent checks.
+
+The marker records public-safe remote metadata, observed wrapper labels,
+count-only target summaries, missing metadata handling, non-equivalence
+cautions, non-claims, and a public-safe checklist. It stores no raw logs, full
+job output, payload bodies, real participant data, performance evidence,
+actual artifact body generation runtime invocation evidence, manifest writer
+invocation evidence, or file-writing evidence.

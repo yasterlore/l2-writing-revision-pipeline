@@ -151,6 +151,11 @@ Proposed future status marker:
 
 Create that file in a later Step583 only after actual public-safe remote/manual run metadata is available. Do not create it in Step582.
 
+Step583 follow-up status: the status marker is now available at
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md`.
+It records only public-safe remote metadata and count-only summaries for the
+Step581 adjacent checks.
+
 ## 9. Status Marker Template
 
 Future Step583 marker template:

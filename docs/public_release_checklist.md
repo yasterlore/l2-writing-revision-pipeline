@@ -5511,3 +5511,23 @@ create a status marker, change workflow files, change wrapper files, change
 Makefile, change Python code/tests, change fixture JSON, implement actual
 artifact body generation runtime invocation, implement manifest writer
 integration, or perform file writing.
+
+## 81. Step583 Artifact Body Generation Runtime Invocation Release-Quality Remote Run Status
+
+For Step583, confirm
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md`
+exists as a status-marker-only / docs-only public-safe metadata record for the
+remote Release Quality run that included the Step581 adjacent checks.
+
+Confirm the marker records the evidence source, remote run metadata, observed
+release-quality labels, runtime invocation fixture validator count-only
+summary, planned-only v0.3 runtime smoke count-only summary, overall
+release-quality result, safety boundary, missing metadata handling,
+non-equivalence cautions, non-claims, public-safe checklist, and next-step
+recommendation. Confirm it stores no raw logs, full job output, copied GitHub
+log blocks, fixture JSON body, request / pointer / expected body, artifact
+body payload, manifest body, generated policy body, raw stdout/stderr body,
+raw rows, logits/probabilities, private or absolute paths, raw learner text,
+real participant data, performance evidence, actual artifact body generation
+runtime invocation evidence, manifest writer invocation evidence, or
+file-writing evidence.

@@ -3120,3 +3120,20 @@ files, change Makefile, change Python code/tests, change fixture JSON, change
 runtime or validator implementation, invoke actual artifact body generation
 runtime, invoke manifest writer, write files, use real data, use metrics, or
 claim production readiness.
+
+## Step583 Artifact Body Generation Runtime Invocation Release-Quality Remote Run Status
+
+Step583 adds the status-marker-only / docs-only marker:
+
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md`
+
+The marker records public-safe metadata for the remote GitHub Actions Release
+Quality run that included the Step581 runtime invocation fixture validator and
+planned-only v0.3 runtime smoke checks. It records count-only summaries for
+the 30 case / 210 JSON fixture validator aggregate and the planned-only v0.3
+runtime smoke while preserving the metadata-only / body-free boundary.
+
+Step583 does not change workflow files, wrapper files, Makefile, Python
+code/tests, fixture JSON, runtime or validator implementation, actual artifact
+body generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.

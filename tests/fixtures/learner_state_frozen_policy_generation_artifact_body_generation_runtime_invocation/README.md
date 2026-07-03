@@ -164,6 +164,12 @@ as a design-only / docs-only workflow for a future public-safe remote/manual
 Release Quality run record. This root and its fixture JSON remain unchanged,
 and no status marker is created in Step582.
 
+Step583 adds
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md`
+as a status-marker-only / docs-only remote Release Quality run record for the
+Step581 adjacent checks. This root and its fixture JSON remain unchanged, and
+the marker records no raw logs or payload bodies.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,

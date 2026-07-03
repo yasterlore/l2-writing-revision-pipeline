@@ -160,6 +160,13 @@ available at
 It defines future public-safe recording rules for the Step581 adjacent checks
 without creating a status marker.
 
+Step583 follow-up status: the public-safe remote run status marker is
+available at
+`docs/status/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md`.
+It records count-only summaries for the Step581 adjacent checks without
+storing raw logs, full job output, payload bodies, or runtime invocation
+evidence beyond the planned-only boundary.
+
 ## 8. Expected Public-Safe Output
 
 For fixture validator:
