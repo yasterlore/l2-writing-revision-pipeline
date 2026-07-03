@@ -95,6 +95,14 @@ PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_bod
 
 Do not implement this target in Step578.
 
+Step579 follow-up status: the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
+is now available with help text
+`Run artifact body generation runtime invocation planned-only smoke`. It runs
+the command designed above and remains separate from release-quality wrapper
+connection, workflow changes, actual artifact body generation runtime
+invocation, manifest writer integration, and file writing.
+
 ## 6. Expected Public-Safe Output
 
 Expected standalone target summary:

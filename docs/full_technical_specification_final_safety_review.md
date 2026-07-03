@@ -414,6 +414,15 @@ generation correctness generally, manifest writer integration correctness,
 production readiness, real-data readiness, model performance, or
 safe-metadata free-form body safety.
 
+Step579 adds standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
+for the same planned-only v0.3 direct CLI. The target does not connect the
+check to the release-quality wrapper, does not change workflows, does not
+perform actual artifact body generation runtime invocation, does not invoke
+manifest writer, and does not write files. Its pass status remains a
+selected-case planned-only smoke boundary, not production approval or runtime
+correctness generally.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

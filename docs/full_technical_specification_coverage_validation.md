@@ -555,3 +555,14 @@ invocation correctness, artifact body generation correctness generally,
 manifest writer integration correctness, file-writing readiness, production
 readiness, real-data readiness, model performance, or safe-metadata
 free-form body safety.
+
+Step579 adds standalone Makefile target coverage for the same planned-only
+v0.3 direct CLI:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
+
+The target coverage is limited to the public-safe metadata-only / body-free
+planned-only smoke. It does not add release-quality wrapper coverage, actual
+artifact body generation runtime invocation coverage, manifest writer
+integration coverage, file-writing coverage, production readiness, real-data
+readiness, or model performance.

@@ -3050,3 +3050,17 @@ workflow files, Python code/tests, fixture JSON, runtime implementation,
 validator implementation, actual artifact body generation runtime invocation,
 manifest writer integration, file writing, real-data use, metric use, or
 production readiness status.
+
+## Step579 Artifact Body Generation Runtime Invocation Standalone Makefile Target
+
+Step579 adds the standalone Makefile target:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
+
+The target runs the Step577 planned-only v0.3 direct CLI and emits public-safe
+metadata-only / body-free output with runtime invocation planned but not
+invoked. It remains separate from release-quality wrapper connection, workflow
+changes, Python code/tests changes, fixture JSON changes, runtime
+implementation changes, validator implementation changes, actual artifact body
+generation runtime invocation, manifest writer integration, file writing,
+real-data use, metric use, or production readiness status.

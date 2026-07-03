@@ -448,6 +448,16 @@ implementation, actual artifact body generation runtime invocation, manifest
 writer integration, file writing, model performance evidence, and production
 readiness claims are unchanged.
 
+Confirm Step579 adds standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
+with help text `Run artifact body generation runtime invocation planned-only smoke`.
+Reviewers should confirm the target runs the Step577 planned-only v0.3 direct
+CLI, emits public-safe metadata-only / body-free output, is not connected to
+the release-quality wrapper, does not change workflow files, Python code/tests,
+fixture JSON, runtime implementation, validator implementation, actual
+artifact body generation runtime invocation, manifest writer integration, file
+writing, model performance evidence, or production readiness claims.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

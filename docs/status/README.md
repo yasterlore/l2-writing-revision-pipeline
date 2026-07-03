@@ -1251,3 +1251,17 @@ Step578 does not change Makefile, release-quality wrapper, workflow files,
 Python code/tests, fixture JSON, runtime implementation, validator
 implementation, actual artifact body generation runtime invocation, manifest
 writer integration, or file writing.
+
+## Step579 Artifact Body Generation Runtime Invocation Standalone Makefile Target
+
+Step579 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
+with help text `Run artifact body generation runtime invocation planned-only smoke`.
+
+The target runs the Step577 planned-only v0.3 direct CLI over
+`valid/valid_minimal_safe_metadata_runtime_invocation` and emits public-safe
+metadata-only / body-free output with runtime invocation planned but not
+invoked. Step579 does not change release-quality wrapper, workflow files,
+Python code/tests, fixture JSON, runtime implementation, validator
+implementation, actual artifact body generation runtime invocation, manifest
+writer integration, or file writing.

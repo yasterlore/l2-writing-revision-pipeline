@@ -138,6 +138,12 @@ Step578 adds
 as a design-only / docs-only future Makefile target design for the Step577
 planned-only v0.3 direct CLI. This root and its fixture JSON remain unchanged.
 
+Step579 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
+for the Step577 planned-only v0.3 direct CLI. This root and its fixture JSON
+remain unchanged; the target does not invoke actual artifact body generation
+runtime, invoke manifest writer, or write files.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,

@@ -471,3 +471,12 @@ Step578 adds
 as a design-only / docs-only future target design for the planned-only v0.3
 direct CLI. Makefile target implementation and release-quality wrapper staging
 remain later work.
+
+## 21. Step579 Makefile Target Implementation Status
+
+Step579 adds
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
+as a standalone Makefile target for the planned-only v0.3 direct CLI. The
+target is not connected to the release-quality wrapper and does not perform
+actual artifact body generation runtime invocation, invoke manifest writer, or
+write files.

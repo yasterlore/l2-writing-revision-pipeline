@@ -444,3 +444,12 @@ direct CLI. It does not change Makefile, release-quality wrapper, workflow
 files, Python code/tests, fixture JSON, runtime implementation, validator
 implementation, actual artifact body generation runtime invocation, manifest
 writer integration, or file writing.
+
+## 19. Step579 Makefile Target Implementation Status
+
+Step579 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
+for the Step577 planned-only v0.3 direct CLI. The target remains public-safe,
+metadata-only, body-free, and separate from release-quality wrapper
+connection, workflow changes, actual artifact body generation runtime
+invocation, manifest writer integration, and file writing.
