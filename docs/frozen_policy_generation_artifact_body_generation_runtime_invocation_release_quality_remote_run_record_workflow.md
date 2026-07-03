@@ -404,3 +404,12 @@ as a final-safety-review / docs-only review for the Step569-Step583 planned-only
 v0.3 runtime invocation release-quality chain. The review does not copy raw logs,
 full job output, payload bodies, or fixture bodies, and it does not implement
 actual runtime invocation, manifest writer integration, or file writing.
+
+## Step585 Actual-Controlled Invocation Design Status
+
+Step585 adds
+[frozen policy generation actual controlled artifact body generation runtime invocation design](frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_design.md)
+as a design-only / docs-only handoff from the Step584 final safety review toward
+a future actual-controlled metadata-only runtime invocation chain. It does not
+implement actual invocation, change wrapper/workflow/Makefile/Python code/tests,
+change fixture JSON, invoke manifest writer, or write files.

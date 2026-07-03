@@ -224,10 +224,13 @@ This review does not claim:
 
 ## 12. Recommended Next Chain
 
-Recommended next chain:
+Step585 actual controlled artifact body generation runtime invocation design is recorded in
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_design.md`.
 
-- Step585: actual controlled artifact body generation runtime invocation design
+Recommended next chain after Step585:
 
-Do not proceed to direct implementation before a new design doc.
+- Step586: actual-controlled runtime invocation fixture/schema contract design
 
-The next design should start from this final safety review and explicitly decide whether to move from planned-only marker to actual controlled metadata-only runtime invocation.
+Do not proceed to direct implementation before a new fixture/schema contract design.
+
+The next design should start from this final safety review and the Step585 handoff, and explicitly decide the actual-controlled fixture/schema contract before any implementation.

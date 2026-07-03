@@ -1327,3 +1327,7 @@ invocation evidence, or file-writing evidence.
 ## Step584 Final Safety Review Link
 
 - [Frozen policy generation artifact body generation runtime invocation release-quality chain final safety review](../frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md): docs-only final safety review for the Step569-Step583 planned-only v0.3 runtime invocation release-quality chain. It keeps the status-marker boundary public-safe / metadata-only / body-free / synthetic-only / no-oracle and does not add raw logs, payload bodies, actual runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance claims.
+
+## Step585 Actual-Controlled Invocation Design Link
+
+- [Frozen policy generation actual controlled artifact body generation runtime invocation design](../frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_design.md): design-only / docs-only handoff from the Step584 final safety review toward a future actual-controlled metadata-only runtime invocation chain. It does not implement actual invocation, change wrapper/workflow/Makefile/Python/fixture JSON, invoke manifest writer, write files, or claim production readiness, real-data readiness, or model performance.

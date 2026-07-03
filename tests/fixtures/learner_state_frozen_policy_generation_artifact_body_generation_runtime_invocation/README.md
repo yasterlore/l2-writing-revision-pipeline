@@ -179,6 +179,14 @@ remain unchanged, and the review records no fixture JSON bodies, payload bodies,
 raw logs, actual runtime invocation, manifest writer integration, or file
 writing.
 
+
+Step585 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_design.md`
+as a design-only / docs-only handoff toward a future actual-controlled
+metadata-only runtime invocation chain. This root and its fixture JSON remain
+unchanged; Step585 does not create the proposed actual-controlled fixture root,
+implement actual invocation, invoke manifest writer, or write files.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,

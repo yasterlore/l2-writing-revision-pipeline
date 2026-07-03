@@ -222,9 +222,12 @@ This status marker does not claim:
 Step584 final safety review is recorded in
 `docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md`.
 
-Recommended next step after Step584:
+Step585 design is recorded in
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_design.md`.
 
-- Step585: actual controlled artifact body generation runtime invocation design
+Recommended next step after Step585:
+
+- Step586: actual-controlled runtime invocation fixture/schema contract design
 
 Do not proceed to direct implementation of actual controlled artifact body
-generation runtime invocation before a new design doc.
+generation runtime invocation before a new fixture/schema contract design.
