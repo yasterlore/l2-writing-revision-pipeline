@@ -3033,3 +3033,20 @@ workflow files, fixture JSON, validator implementation, artifact body
 generation implementation, manifest writer integration, file writing,
 real-data use, metric use, production readiness status, real-data readiness
 status, or model performance claims.
+
+## Step578 Artifact Body Generation Runtime Invocation Makefile Target Design
+
+Step578 adds the design-only / docs-only future standalone target design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_makefile_target_design.md`
+
+The design proposes
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`,
+help text `Run artifact body generation runtime invocation planned-only smoke`,
+the Step577 direct CLI command, expected public-safe output, safety boundary,
+relationship to existing targets, next-step checks, failure interpretation,
+and future staging. It does not change Makefile, release-quality wrapper,
+workflow files, Python code/tests, fixture JSON, runtime implementation,
+validator implementation, actual artifact body generation runtime invocation,
+manifest writer integration, file writing, real-data use, metric use, or
+production readiness status.

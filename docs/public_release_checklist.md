@@ -5431,3 +5431,20 @@ files, fixture JSON, validator implementation, artifact body generation
 implementation, manifest writer implementation, file-writing implementation,
 real-data use, metric use, production readiness status, real-data readiness
 status, or model performance claims.
+
+## 76. Step578 Artifact Body Generation Runtime Invocation Makefile Target Design
+
+For Step578, confirm
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_makefile_target_design.md`
+exists as a design-only / docs-only future Makefile target design for the
+Step577 planned-only v0.3 direct CLI.
+
+Confirm the design records the proposed target name, help text, command,
+expected public-safe output, safety boundary, relationship to existing
+targets, next-step checks, future staging, failure interpretation,
+non-equivalence cautions, non-claims, and public-safe checklist without
+changing repository root README, full technical specification docs, Makefile,
+release-quality wrapper, workflow files, Python code/tests, fixture JSON,
+runtime implementation, validator implementation, artifact body generation
+implementation, manifest writer implementation, or file-writing
+implementation.

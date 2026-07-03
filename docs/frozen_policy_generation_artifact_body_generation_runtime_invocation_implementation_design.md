@@ -463,3 +463,11 @@ manifest writer integration, file writing, Makefile changes, release-quality
 wrapper changes, workflow changes, fixture JSON changes, validator changes,
 real-data use, metric use, production readiness, real-data readiness, and
 model performance claims out of scope.
+
+## 20. Step578 Makefile Target Design Status
+
+Step578 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_makefile_target_design.md`
+as a design-only / docs-only future target design for the planned-only v0.3
+direct CLI. Makefile target implementation and release-quality wrapper staging
+remain later work.

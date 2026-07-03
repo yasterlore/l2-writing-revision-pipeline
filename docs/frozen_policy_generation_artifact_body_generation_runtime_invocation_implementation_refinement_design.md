@@ -434,3 +434,13 @@ including `artifact_body_runtime_invocation_planned=True`,
 usage-error, fail-closed, mismatch, public-safe output, no residue, and
 existing mode compatibility. Actual artifact body generation runtime
 invocation remains future work.
+
+## 18. Step578 Makefile Target Design Status
+
+Step578 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_makefile_target_design.md`
+as a design-only / docs-only future standalone target design for the Step577
+direct CLI. It does not change Makefile, release-quality wrapper, workflow
+files, Python code/tests, fixture JSON, runtime implementation, validator
+implementation, actual artifact body generation runtime invocation, manifest
+writer integration, or file writing.

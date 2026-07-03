@@ -133,6 +133,11 @@ invocation planned but not invoked. This step does not change fixture JSON,
 the fixture validator, Makefile targets, release-quality wrapper checks,
 workflow files, manifest writer integration, or file writing.
 
+Step578 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_makefile_target_design.md`
+as a design-only / docs-only future Makefile target design for the Step577
+planned-only v0.3 direct CLI. This root and its fixture JSON remain unchanged.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,
