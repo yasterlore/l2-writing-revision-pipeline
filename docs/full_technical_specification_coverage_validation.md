@@ -520,3 +520,19 @@ coverage, runtime implementation coverage, actual artifact body generation
 runtime invocation correctness, manifest writer integration correctness,
 file-writing readiness, production readiness, real-data readiness, or model
 performance.
+
+## 24. Step574 Coverage Addendum
+
+Step574 adds standalone Makefile target coverage for the Step572 runtime
+invocation fixture validator:
+
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`
+
+The target runs the Step570 root validator and preserves public-safe
+metadata-only / body-free / count-only output for 30 cases / 210 JSON files
+with 6 pass, 1 usage-error, 22 fail-closed, and 1 mismatch case.
+
+This addendum does not claim release-quality wrapper coverage, runtime
+implementation coverage, actual artifact body generation runtime invocation
+correctness, manifest writer integration correctness, file-writing readiness,
+production readiness, real-data readiness, or model performance.

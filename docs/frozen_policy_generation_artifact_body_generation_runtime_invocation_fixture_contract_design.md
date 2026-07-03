@@ -330,10 +330,10 @@ Step570 follow-up status: the planned fixture root has been created at
 `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation/`
 with 6 valid cases, 24 invalid cases, and 210 metadata-only / body-free JSON
 files. The root remains a planned fixture contract surface only; validator
-implementation, runtime implementation, Makefile target integration,
-release-quality wrapper integration, artifact body generation runtime
-invocation, manifest writer integration, and file writing remain separate
-future steps.
+implementation and standalone Makefile target integration are now available
+through later steps, while runtime implementation, release-quality wrapper
+integration, artifact body generation runtime invocation, manifest writer
+integration, and file writing remain separate future steps.
 
 Step571 follow-up status: the fixture validator design is available at
 `docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_design.md`.
@@ -407,3 +407,14 @@ This design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 17. Step574 Makefile Target Implementation Status
+
+Step574 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`
+for the Step572 runtime invocation fixture validator.
+
+The target validates the Step570 planned root as a metadata-only / body-free
+fixture-contract boundary and keeps release-quality wrapper integration,
+workflow changes, runtime invocation, manifest writer integration, and file
+writing as separate later boundaries.

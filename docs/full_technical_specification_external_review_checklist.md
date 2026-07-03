@@ -426,11 +426,18 @@ Confirm Step572 adds standalone validator module
 and focused tests for the Step570 root. Reviewers should confirm the CLI emits
 schema
 `learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation_v0.1`
-and validates 30 cases / 210 JSON files without adding Makefile target
-integration, release-quality wrapper integration, workflow changes, runtime
-implementation, artifact body generation runtime invocation, manifest writer
-integration, file writing, model performance evidence, or production readiness
-claims.
+and validates 30 cases / 210 JSON files without adding release-quality wrapper
+integration, workflow changes, runtime implementation, artifact body generation
+runtime invocation, manifest writer integration, file writing, model
+performance evidence, or production readiness claims.
+
+Confirm Step574 adds standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`
+for the Step572 validator CLI. Reviewers should confirm the target is not yet
+release-quality integrated and does not change workflow files, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+runtime invocation, manifest writer integration, file writing, model
+performance evidence, or production readiness claims.
 
 ## 10. Rust Crate Review
 

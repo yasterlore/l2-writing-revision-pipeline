@@ -94,14 +94,24 @@ manifest writer integration, or file-writing path.
 Step572 implements the standalone validator module
 `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py`
 and focused tests. The validator checks this root as 30 cases / 210 JSON files
-with public-safe metadata-only / body-free / count-only output. Makefile target
-integration, release-quality wrapper integration, workflow changes, runtime
-invocation, manifest writer integration, and file writing remain future work.
+with public-safe metadata-only / body-free / count-only output. Step574 adds a
+standalone Makefile target for the validator, while release-quality wrapper
+integration, workflow changes, runtime invocation, manifest writer
+integration, and file writing remain future work.
 
 Step573 adds
 `docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_makefile_target_design.md`
 as a design-only / docs-only future standalone target design for the Step572
-validator. The Makefile target is not added in Step573.
+validator. The Makefile target was not added in Step573; Step574 adds it as a
+separate implementation step.
+
+Step574 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`.
+It runs the Step572 validator over this planned root and keeps the aggregate at
+30 cases / 210 JSON files with 6 pass, 1 usage-error, 22 fail-closed, and 1
+mismatch case. The target is not yet release-quality integrated and does not
+invoke artifact body generation runtime, invoke manifest writer, or write
+files.
 
 ## Non-Claims
 

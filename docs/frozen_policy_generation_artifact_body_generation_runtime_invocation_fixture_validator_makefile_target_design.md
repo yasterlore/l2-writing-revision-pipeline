@@ -25,8 +25,7 @@ model performance.
 - Step570 fixture root creation completed.
 - Step571 validator design completed.
 - Step572 validator implementation completed.
-- The validator is currently a standalone CLI only.
-- The validator is not yet connected to a Makefile target.
+- Step574 implements the standalone Makefile target proposed by this design.
 - The validator is not yet release-quality integrated.
 - Runtime invocation implementation is not implemented.
 - Manifest writer and file-writing boundaries remain separate.
@@ -299,3 +298,20 @@ This design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 15. Step574 Implementation Status
+
+Step574 implements the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`
+with help text `Run artifact body generation runtime invocation fixture validation`.
+
+The target runs:
+
+`PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation`
+
+The expected public-safe aggregate remains 30 cases / 210 JSON files with 6
+pass, 1 usage-error, 22 fail-closed, and 1 mismatch case. Step574 does not add
+release-quality wrapper integration, workflow changes, Python code/tests,
+fixture JSON changes, validator implementation changes, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+integration, or file writing.

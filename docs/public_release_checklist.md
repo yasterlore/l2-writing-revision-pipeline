@@ -5368,3 +5368,17 @@ technical specification docs, Makefile, release-quality wrapper, workflow
 files, Python code/tests, fixture JSON, runtime implementation, artifact body
 generation implementation, manifest writer implementation, or file-writing
 implementation.
+
+## 72. Step574 Artifact Body Generation Runtime Invocation Fixture Validator Standalone Makefile Target
+
+For Step574, confirm the Makefile exposes
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`
+with help text `Run artifact body generation runtime invocation fixture validation`.
+
+Confirm the target runs the Step572 validator CLI over the Step570 root and
+emits public-safe metadata-only / body-free / count-only output for 30 cases /
+210 JSON files, with 6 pass, 1 usage-error, 22 fail-closed, and 1 mismatch
+case. Confirm this step does not change release-quality wrapper files,
+workflow files, Python code/tests, fixture JSON, validator implementation,
+runtime implementation, artifact body generation implementation, manifest
+writer implementation, or file-writing implementation.

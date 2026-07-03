@@ -393,12 +393,16 @@ claims.
 
 Step572 adds a standalone public-safe validator for the Step570 fixture root.
 The validator checks fixture metadata and expected status / reason mappings
-only. It does not add Makefile target integration, release-quality wrapper
-integration, workflow changes, runtime implementation, actual artifact body
-generation runtime invocation, manifest writer integration, file writing,
-production readiness, real-data readiness, model performance, runtime
-correctness generally, artifact body generation correctness generally, or
-safe-metadata free-form body safety claims.
+only.
+
+Step574 adds a standalone Makefile target for the Step572 validator:
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`.
+The target keeps the same metadata-only / body-free fixture-contract boundary.
+It does not add release-quality wrapper integration, workflow changes, runtime
+implementation, actual artifact body generation runtime invocation, manifest
+writer integration, file writing, production readiness, real-data readiness,
+model performance, runtime correctness generally, artifact body generation
+correctness generally, or safe-metadata free-form body safety claims.
 
 ## 11. Final Safety Review Result
 

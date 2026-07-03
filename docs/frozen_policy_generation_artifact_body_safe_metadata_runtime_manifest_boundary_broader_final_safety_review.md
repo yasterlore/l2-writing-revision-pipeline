@@ -362,3 +362,12 @@ as a design-only / docs-only future target design for the Step572 validator.
 It keeps Makefile changes, wrapper integration, workflow changes, runtime
 implementation, artifact body generation runtime invocation, manifest writer
 integration, and file writing as later separate boundaries.
+
+## 19. Step574 Makefile Target Implementation Status
+
+Step574 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`
+for the Step572 runtime invocation fixture validator. The target remains a
+fixture-contract check only: it is not yet release-quality integrated and does
+not invoke artifact body generation runtime, invoke manifest writer, or write
+files.
