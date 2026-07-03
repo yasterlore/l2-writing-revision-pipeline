@@ -340,3 +340,8 @@ runtime invocation fixture validator target before the Step579 planned-only
 v0.3 runtime smoke. The wrapper insertion does not change this validator
 target, fixture JSON, runtime implementation, manifest writer integration, or
 file writing.
+
+
+## Step590 Later-Chain Note
+
+Step590 designs a separate future Makefile target for the actual-controlled fixture validator. It does not replace the planned-only runtime invocation fixture validator Makefile target design recorded here.

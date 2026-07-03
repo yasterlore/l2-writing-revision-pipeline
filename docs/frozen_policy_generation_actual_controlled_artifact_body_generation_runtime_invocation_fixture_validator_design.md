@@ -435,3 +435,8 @@ This design does not claim:
 ## Step589 Implementation Status
 
 Step589 implements this design as the standalone module `python/learner_state/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py` with focused tests at `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py`. The direct CLI validates the Step587 root and emits public-safe key-value metadata only. Makefile target design remains the next step: Step590. Runtime invocation, manifest writer integration, file writing, release-quality wrapper integration, workflow changes, and fixture JSON changes remain out of scope.
+
+
+## Step590 Makefile Target Design Reference
+
+Step590 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validator_makefile_target_design.md` as the design-only handoff for a future standalone Makefile target around the Step589 validator. Step590 does not implement the target or change Makefile, wrapper, workflow, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, or file writing.

@@ -436,3 +436,8 @@ Step577 follow-up status: the existing runtime integration module now supports
 planned-only v0.3 `artifact-body-runtime-invocation` over the Step570 primary
 fixture case. The fixture validator design and validator implementation remain
 separate from this runtime mode; fixture JSON is unchanged.
+
+
+## Step590 Later-Chain Note
+
+Step590 concerns a later actual-controlled fixture validator Makefile target design. It does not replace the planned-only fixture validator design recorded here.

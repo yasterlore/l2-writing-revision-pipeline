@@ -488,3 +488,8 @@ in adjacent order. The fixture validator runs first, after safe-metadata
 runtime smoke and before the planned-only v0.3 runtime smoke. Actual artifact
 body generation runtime invocation, manifest writer integration, and file
 writing remain out of scope.
+
+
+## Step590 Later-Chain Note
+
+Step590 is a later actual-controlled fixture validator Makefile target design. It does not implement actual runtime invocation or change the planned-only runtime invocation implementation design recorded here.

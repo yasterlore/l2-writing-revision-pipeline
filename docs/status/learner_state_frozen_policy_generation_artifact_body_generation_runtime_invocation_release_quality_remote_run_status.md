@@ -245,3 +245,8 @@ generation runtime invocation before the future validator implementation chain i
 ## Step589 Later-Chain Note
 
 Step589 later adds a standalone validator for the Step587 actual-controlled fixture root. This status marker remains a Step583 record for the planned-only release-quality chain and is not raw evidence for the Step589 validator, actual controlled runtime invocation, manifest writer integration, or file writing.
+
+
+## Step590 Later-Chain Note
+
+Step590 later designs a standalone Makefile target for the Step589 actual-controlled fixture validator. This status marker remains a Step583 planned-only release-quality record and is not evidence for actual controlled runtime invocation, manifest writer integration, or file writing.

@@ -217,3 +217,8 @@ generation correctness generally, runtime correctness generally, artifact body
 payload correctness, manifest writer integration correctness, generated policy
 quality, learner-state estimator correctness, or safe-metadata free-form body
 safety.
+
+
+## Step590 Later-Chain Note
+
+Step590 designs a separate future Makefile target for the actual-controlled fixture validator over `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled/`. It does not change this planned-only fixture root.

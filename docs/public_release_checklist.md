@@ -5549,3 +5549,8 @@ file-writing evidence.
 ## Step589 Actual-Controlled Fixture Validator Implementation Check
 
 Confirm the Step589 standalone validator module and focused tests exist for the Step587 actual-controlled fixture root. Confirm the direct CLI aggregate remains 36 total cases, 6 valid cases, 30 invalid cases, 252 JSON files, 6 pass cases, 3 usage-error cases, 26 fail-closed cases, and 1 mismatch case. Confirm output remains public-safe metadata only, and confirm this step does not add Makefile integration, release-quality wrapper integration, runtime implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+
+## Step590 Actual-Controlled Fixture Validator Makefile Target Design Check
+
+Confirm the Step590 Makefile target design doc exists and proposes only a future standalone target for the Step589 validator. Confirm Step590 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

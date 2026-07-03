@@ -444,3 +444,8 @@ manifest writer, or write files.
 ## Step589 Later-Chain Note
 
 Step589 adds a standalone actual-controlled fixture validator after this workflow design. That later validator is not part of the Step582 remote record workflow and is not yet integrated into Makefile targets, release-quality wrapper checks, or workflow runs.
+
+
+## Step590 Later-Chain Note
+
+Step590 designs a future standalone Makefile target for the actual-controlled fixture validator after this workflow design. It is not part of the Step582 remote record workflow and is not release-quality integrated in Step590.

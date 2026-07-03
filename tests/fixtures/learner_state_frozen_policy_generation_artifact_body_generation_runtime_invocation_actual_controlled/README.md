@@ -196,3 +196,8 @@ PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_actual_contr
 ```
 
 Expected direct aggregate remains 36 cases, 6 valid cases, 30 invalid cases, 252 JSON files, 6 pass cases, 3 usage-error cases, 26 fail-closed cases, and 1 mismatch case. The validator is standalone only; Makefile target design is expected in Step590. Runtime invocation, manifest writer integration, file writing, release-quality wrapper integration, workflow changes, and fixture JSON changes remain out of scope.
+
+
+## Step590 Makefile Target Design
+
+Step590 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validator_makefile_target_design.md` as a design-only plan for a future standalone Makefile target around the Step589 validator. The proposed target is `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation-fixtures`. Step590 does not implement the target, change fixture JSON, invoke runtime code, invoke manifest writer code, or write files.

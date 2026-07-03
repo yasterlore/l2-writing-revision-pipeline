@@ -451,3 +451,8 @@ v0.3 runtime smoke target to the release-quality wrapper in adjacent order.
 The fixture root and fixture JSON remain unchanged, and the wrapper checks do
 not perform actual artifact body generation runtime invocation, invoke
 manifest writer, or write files.
+
+
+## Step590 Later-Chain Note
+
+Step590 designs a Makefile target for the later actual-controlled fixture validator. It does not alter the planned-only fixture contract recorded here.

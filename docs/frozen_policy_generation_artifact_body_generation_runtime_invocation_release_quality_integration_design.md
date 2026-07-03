@@ -354,3 +354,8 @@ This design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+
+## Step590 Later-Chain Note
+
+Step590 concerns a later actual-controlled fixture validator Makefile target design. It does not alter this planned-only v0.3 release-quality integration design or add the actual-controlled validator to the release-quality wrapper.

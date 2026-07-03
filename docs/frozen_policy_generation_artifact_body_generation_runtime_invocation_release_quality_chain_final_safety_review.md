@@ -246,3 +246,8 @@ Do not proceed to direct runtime implementation before the fixture validator cha
 ## Step589 Forward Reference
 
 After this final safety review, Step589 adds a standalone validator for the later Step587 actual-controlled fixture root. That validator remains outside the Step569-Step583 planned-only release-quality chain and is not yet Makefile- or release-quality-integrated. It does not change the non-equivalence cautions recorded in this review.
+
+
+## Step590 Forward Reference
+
+Step590 adds a design-only Makefile target plan for the later actual-controlled fixture validator. It remains outside the Step569-Step583 planned-only release-quality chain and does not change the non-equivalence cautions recorded in this review.

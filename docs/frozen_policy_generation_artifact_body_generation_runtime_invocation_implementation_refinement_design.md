@@ -461,3 +461,8 @@ planned-only v0.3 runtime smoke target to the release-quality wrapper in
 adjacent order. The wrapper checks remain metadata-only / body-free and do not
 perform actual artifact body generation runtime invocation, invoke manifest
 writer, or write files.
+
+
+## Step590 Later-Chain Note
+
+Step590 is a later actual-controlled fixture validator Makefile target design. It does not change the planned-only runtime invocation implementation refinement boundary recorded here.
