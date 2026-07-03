@@ -327,3 +327,9 @@ design is available at
 `docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_refinement_design.md`.
 It recommends planned-only v0.3 boundary markers for Step577 before any actual
 runtime invocation.
+
+Step577 follow-up status: planned-only v0.3
+`artifact-body-runtime-invocation` mode is implemented in the existing runtime
+integration module with public-safe metadata-only / body-free output. The
+Step574 fixture validator Makefile target remains unchanged and separate from
+runtime mode execution.

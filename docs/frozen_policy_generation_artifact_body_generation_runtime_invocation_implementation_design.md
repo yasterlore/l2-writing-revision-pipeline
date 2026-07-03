@@ -449,3 +449,17 @@ recommends Step577 implement planned-only v0.3
 `artifact-body-runtime-invocation` mode markers first, without actual artifact
 body generation runtime invocation, manifest writer integration, or file
 writing.
+
+## 19. Step577 Planned-Only Runtime Mode Status
+
+Step577 implements the planned-only v0.3 `artifact-body-runtime-invocation`
+mode in the existing runtime integration module. It uses the Step570 fixture
+root and selected case `valid/valid_minimal_safe_metadata_runtime_invocation`
+to emit public-safe metadata-only / body-free summary output with runtime
+invocation planned but not invoked.
+
+The implementation keeps actual artifact body generation runtime invocation,
+manifest writer integration, file writing, Makefile changes, release-quality
+wrapper changes, workflow changes, fixture JSON changes, validator changes,
+real-data use, metric use, production readiness, real-data readiness, and
+model performance claims out of scope.

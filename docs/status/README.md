@@ -1218,3 +1218,21 @@ The refinement recommends Step577 implement planned-only v0.3
 without actual artifact body generation runtime invocation, manifest writer
 integration, file writing, Makefile changes, wrapper changes, workflow
 changes, Python code/tests changes, fixture JSON changes, or validator changes.
+
+## Step577 Artifact Body Generation Runtime Invocation Planned-Only Runtime Mode
+
+Step577 adds planned-only v0.3 `artifact-body-runtime-invocation` support to
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
+and focused runtime integration tests. The selected primary case is
+`valid/valid_minimal_safe_metadata_runtime_invocation` under the Step570
+fixture root, and the runtime schema is
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.3`.
+
+The mode emits public-safe metadata-only / body-free summary output with
+`artifact_body_runtime_invocation_planned=True`,
+`artifact_body_runtime_invoked=False`, `manifest_writer_invoked=False`, and
+`file_writing_enabled=False`. Actual artifact body generation runtime
+invocation, manifest writer integration, file writing, Makefile changes,
+release-quality wrapper changes, workflow changes, fixture JSON changes,
+validator implementation changes, real-data use, metric use, and production
+readiness status remain unchanged.

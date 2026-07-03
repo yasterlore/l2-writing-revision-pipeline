@@ -126,6 +126,13 @@ as a design-only / docs-only narrowing step. It recommends Step577 implement
 planned-only v0.3 invocation-boundary markers first and still does not change
 this fixture root or fixture JSON.
 
+Step577 adds planned-only v0.3 `artifact-body-runtime-invocation` support to
+the existing runtime integration module. The runtime reads this root's primary
+valid case as metadata-only / body-free input and emits a summary with runtime
+invocation planned but not invoked. This step does not change fixture JSON,
+the fixture validator, Makefile targets, release-quality wrapper checks,
+workflow files, manifest writer integration, or file writing.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,

@@ -404,6 +404,16 @@ writer integration, file writing, production readiness, real-data readiness,
 model performance, runtime correctness generally, artifact body generation
 correctness generally, or safe-metadata free-form body safety claims.
 
+Step577 adds planned-only v0.3 `artifact-body-runtime-invocation` mode to the
+existing runtime integration module. The mode reads the Step570 primary valid
+case and emits public-safe metadata-only / body-free summary output with
+runtime invocation planned but not invoked, manifest writer invocation false,
+and file writing disabled. This is not actual artifact body generation runtime
+invocation and does not claim runtime correctness generally, artifact body
+generation correctness generally, manifest writer integration correctness,
+production readiness, real-data readiness, model performance, or
+safe-metadata free-form body safety.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

@@ -536,3 +536,22 @@ This addendum does not claim release-quality wrapper coverage, runtime
 implementation coverage, actual artifact body generation runtime invocation
 correctness, manifest writer integration correctness, file-writing readiness,
 production readiness, real-data readiness, or model performance.
+
+## 25. Step577 Coverage Addendum
+
+Step577 adds focused runtime integration coverage for planned-only v0.3
+`artifact-body-runtime-invocation` mode in the existing runtime integration
+module. The covered selected case is
+`valid/valid_minimal_safe_metadata_runtime_invocation` under the Step570 root,
+with schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.3`.
+
+The tests cover the pass summary, public-safe CLI output, usage-error paths,
+fail-closed unsafe markers, mismatch interpretation, no-residue behavior,
+existing plan-only and safe-metadata smoke compatibility, the Step570 fixture
+validator target, and the existing artifact body generation safe-metadata CLI
+smoke. This coverage does not claim actual artifact body generation runtime
+invocation correctness, artifact body generation correctness generally,
+manifest writer integration correctness, file-writing readiness, production
+readiness, real-data readiness, model performance, or safe-metadata
+free-form body safety.

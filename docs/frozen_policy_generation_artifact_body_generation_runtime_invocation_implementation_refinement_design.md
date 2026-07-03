@@ -417,3 +417,20 @@ This design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 17. Step577 Implementation Status
+
+Step577 implements the recommended planned-only v0.3 boundary in
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`.
+The mode name is `artifact-body-runtime-invocation`, the runtime schema is
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.3`,
+and the primary selected fixture case remains
+`valid/valid_minimal_safe_metadata_runtime_invocation`.
+
+The implementation emits public-safe metadata-only / body-free summary output,
+including `artifact_body_runtime_invocation_planned=True`,
+`artifact_body_runtime_invoked=False`, `manifest_writer_invoked=False`, and
+`file_writing_enabled=False`. It also adds focused tests for pass,
+usage-error, fail-closed, mismatch, public-safe output, no residue, and
+existing mode compatibility. Actual artifact body generation runtime
+invocation remains future work.

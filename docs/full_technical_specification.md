@@ -703,6 +703,7 @@ draft should be validated in Step-pretec-doc3 or later.
 | Artifact writer CLI actual invocation fixtures | static validator implemented | yes, Step498 fixture root | focused tests | standalone target | yes | no | contract docs exist | wrapper-integrated static validation; actual invocation not implemented |
 | Artifact body generation runtime integration plan-only bridge | selected-case runtime implemented | existing Step523 fixture root | focused tests | standalone target | yes | no | Step532-Step539 docs exist | Step535 CLI emits metadata-only selected-case summary; Step537 adds a standalone target; Step539 adds the release-quality wrapper label after static integration fixture validation; no artifact body runtime invocation, manifest writer, or file writing |
 | Artifact body generation runtime invocation fixture root | standalone validator implemented | 30-case Step570 root | focused validator tests | standalone target | no | no | Step569-Step574 docs plus fixture README | Step574 adds a standalone target for the Step572 public-safe validator over the metadata-only / body-free Step570 root with 30 cases / 210 JSON; runtime implementation, release-quality integration, manifest writer integration, and file writing are not implemented |
+| Artifact body generation runtime invocation planned-only mode | selected-case runtime mode implemented | Step570 primary valid case | focused runtime integration tests | none | no | no | Step575-Step577 docs plus fixture README | Step577 adds `artifact-body-runtime-invocation` with schema `learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.3`; it records invocation as planned but not invoked, with no manifest writer invocation and no file writing |
 | Artifact body generation | safe/suppressed smokes | yes | yes | yes | yes | yes | no | broader CLI integration |
 | Artifact body generation CLI integration | no | partial supporting fixtures | no full integration | no | no | no | design fragments | not implemented |
 | Manifest writer | yes metadata-only | yes | yes | yes | yes | yes | no | broader integration |
@@ -733,6 +734,7 @@ draft should be validated in Step-pretec-doc3 or later.
 | Artifact writer CLI actual invocation fixture | `frozen_policy_generation_artifact_writer_cli_actual_invocation_fixture_validation.py` | actual invocation fixture validator focused tests | actual invocation fixture root | actual invocation design / contract / validator docs | `check-learner-state-frozen-policy-generation-artifact-writer-cli-actual-invocation-fixtures` | actual invocation fixture validation | none | release-quality integrated static validation in Step504; actual invocation not implemented |
 | Artifact body generation runtime integration plan-only bridge | `frozen_policy_generation_artifact_body_generation_runtime_integration.py` | runtime integration focused tests | existing integration fixture root selected case | Step532-Step539 docs and fixture README | `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-integration` | artifact body generation runtime integration plan-only bridge smoke | none | selected-case `plan-only-bridge` CLI with schema `learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.1`; standalone target added in Step537 and wrapper label added in Step539; no artifact body runtime invocation, manifest writer, or file writing |
 | Artifact body generation runtime invocation fixture root | `frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py` | focused validator tests | `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation/` | Step569-Step574 docs and fixture README | `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures` | none | none | standalone metadata-only / body-free fixture validation with 30 cases / 210 JSON; Step574 adds the standalone target; no release-quality integration, runtime implementation, artifact body generation runtime invocation, manifest writer integration, or file writing |
+| Artifact body generation runtime invocation planned-only mode | `frozen_policy_generation_artifact_body_generation_runtime_integration.py` | runtime integration focused tests | Step570 primary valid case | Step575-Step577 docs and fixture README | none | none | none | selected-case v0.3 CLI mode `artifact-body-runtime-invocation`; emits public-safe metadata-only output with runtime invocation planned but not invoked, no manifest writer invocation, and no file writing |
 | Artifact body | artifact body module/validators | body tests | body fixture roots | body docs | body targets | body labels | body markers | body-suppressed checks |
 | Manifest writer | manifest writer module/validators | manifest writer tests | manifest fixture roots | manifest docs | manifest targets | manifest labels | manifest markers | metadata-only writer/file-writing checks |
 | Release Quality | wrapper script/workflow | wrapper execution | not applicable | release-quality docs | `check-release-quality` | wrapper labels | status markers | implemented wrapper |
@@ -1332,6 +1334,25 @@ usage-error, 22 fail-closed, and 1 mismatch case.
 
 Step574 does not add release-quality wrapper integration, workflow change,
 runtime implementation, actual artifact body generation runtime invocation,
+manifest writer integration, file writing, real-data use, metric use,
+production readiness, real-data readiness, model performance evidence, or
+safe-metadata free-form body safety evidence.
+
+Step577 adds planned-only v0.3 `artifact-body-runtime-invocation` support to
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`.
+The selected primary fixture case is
+`valid/valid_minimal_safe_metadata_runtime_invocation`, and the runtime schema
+is
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.3`.
+
+The Step577 CLI output remains public-safe, metadata-only, body-free, and
+count-only where applicable. It records `artifact_body_runtime_invocation_planned`
+as true and `artifact_body_runtime_invoked` as false, keeps manifest writer
+invocation false, and keeps file writing disabled. Step577 adds focused tests
+for pass, usage-error, fail-closed, mismatch, public-safe output, no residue,
+and existing mode compatibility. It does not add Makefile targets,
+release-quality wrapper integration, workflow changes, fixture JSON changes,
+validator changes, actual artifact body generation runtime invocation,
 manifest writer integration, file writing, real-data use, metric use,
 production readiness, real-data readiness, model performance evidence, or
 safe-metadata free-form body safety evidence.

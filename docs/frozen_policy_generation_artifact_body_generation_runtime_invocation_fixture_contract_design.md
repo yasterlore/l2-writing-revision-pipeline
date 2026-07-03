@@ -435,3 +435,11 @@ Step576 adds
 as a design-only / docs-only refinement before implementation. It recommends
 Step577 implement planned-only v0.3 boundary markers first and keeps actual
 artifact body generation runtime invocation as later work.
+
+## 20. Step577 Planned-Only Runtime Mode Status
+
+Step577 adds planned-only v0.3 `artifact-body-runtime-invocation` support to
+the existing runtime integration module. It uses the Step570 fixture root and
+primary valid case to emit public-safe metadata-only / body-free summary
+output with runtime invocation planned but not invoked. The fixture contract
+root and fixture JSON are unchanged.

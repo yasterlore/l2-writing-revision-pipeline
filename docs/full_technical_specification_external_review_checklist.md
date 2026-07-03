@@ -439,6 +439,15 @@ code/tests, fixture JSON, runtime implementation, artifact body generation
 runtime invocation, manifest writer integration, file writing, model
 performance evidence, or production readiness claims.
 
+Confirm Step577 adds planned-only v0.3 `artifact-body-runtime-invocation`
+support in the existing runtime integration module. Reviewers should confirm
+that CLI output is public-safe, metadata-only, and body-free; that it records
+runtime invocation as planned but not invoked; and that Makefile targets,
+release-quality wrapper checks, workflow files, fixture JSON, validator
+implementation, actual artifact body generation runtime invocation, manifest
+writer integration, file writing, model performance evidence, and production
+readiness claims are unchanged.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

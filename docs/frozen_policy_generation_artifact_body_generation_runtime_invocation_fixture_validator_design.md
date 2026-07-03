@@ -430,3 +430,8 @@ Step576 adds
 as a design-only / docs-only refinement. It recommends Step577 start with
 planned-only v0.3 invocation-boundary markers rather than actual runtime
 invocation.
+
+Step577 follow-up status: the existing runtime integration module now supports
+planned-only v0.3 `artifact-body-runtime-invocation` over the Step570 primary
+fixture case. The fixture validator design and validator implementation remain
+separate from this runtime mode; fixture JSON is unchanged.
