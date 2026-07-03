@@ -476,11 +476,14 @@ Do not perform any of these in Step585.
 
 ## 16. Recommended Next Step
 
-Recommended next step:
+Step586 fixture/schema contract design is recorded in
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_schema_contract_design.md`.
 
-- Step586: actual-controlled runtime invocation fixture/schema contract design
+Recommended next step after Step586:
 
-Do not proceed to direct actual invocation implementation as the next step.
+- Step587: actual-controlled fixture root creation
+
+Do not proceed to direct runtime implementation as the next step.
 
 ## 17. Non-Equivalence Cautions
 

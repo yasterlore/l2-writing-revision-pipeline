@@ -413,3 +413,12 @@ as a design-only / docs-only handoff from the Step584 final safety review toward
 a future actual-controlled metadata-only runtime invocation chain. It does not
 implement actual invocation, change wrapper/workflow/Makefile/Python code/tests,
 change fixture JSON, invoke manifest writer, or write files.
+
+## Step586 Fixture/Schema Contract Design Status
+
+Step586 adds
+[frozen policy generation actual-controlled artifact body generation runtime invocation fixture schema contract design](frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_schema_contract_design.md)
+as a design-only / docs-only contract for a future actual-controlled fixture root
+and schema. It does not create fixture JSON, implement validators or runtime
+behavior, change wrapper/workflow/Makefile/Python code/tests, invoke manifest
+writer, or write files.

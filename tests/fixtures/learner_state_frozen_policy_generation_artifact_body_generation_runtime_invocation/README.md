@@ -187,6 +187,15 @@ metadata-only runtime invocation chain. This root and its fixture JSON remain
 unchanged; Step585 does not create the proposed actual-controlled fixture root,
 implement actual invocation, invoke manifest writer, or write files.
 
+
+Step586 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_schema_contract_design.md`
+as a design-only / docs-only contract for a future separate actual-controlled
+fixture root and schema. This Step570 planned-only root and its fixture JSON
+remain unchanged; Step586 does not create the proposed actual-controlled root,
+create fixture JSON, implement validators, invoke runtime behavior, invoke
+manifest writer, or write files.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,

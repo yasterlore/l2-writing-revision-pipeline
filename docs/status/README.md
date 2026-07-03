@@ -1331,3 +1331,7 @@ invocation evidence, or file-writing evidence.
 ## Step585 Actual-Controlled Invocation Design Link
 
 - [Frozen policy generation actual controlled artifact body generation runtime invocation design](../frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_design.md): design-only / docs-only handoff from the Step584 final safety review toward a future actual-controlled metadata-only runtime invocation chain. It does not implement actual invocation, change wrapper/workflow/Makefile/Python/fixture JSON, invoke manifest writer, write files, or claim production readiness, real-data readiness, or model performance.
+
+## Step586 Fixture/Schema Contract Design Link
+
+- [Frozen policy generation actual-controlled artifact body generation runtime invocation fixture schema contract design](../frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_schema_contract_design.md): design-only / docs-only contract for a future actual-controlled fixture root and schema. It does not create fixture JSON, implement validators or runtime behavior, change wrapper/workflow/Makefile/Python, invoke manifest writer, write files, or claim production readiness, real-data readiness, or model performance.

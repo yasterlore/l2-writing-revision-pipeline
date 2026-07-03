@@ -227,10 +227,11 @@ This review does not claim:
 Step585 actual controlled artifact body generation runtime invocation design is recorded in
 `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_design.md`.
 
-Recommended next chain after Step585:
+Step586 fixture/schema contract design is recorded in
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_schema_contract_design.md`.
 
-- Step586: actual-controlled runtime invocation fixture/schema contract design
+Recommended next chain after Step586:
 
-Do not proceed to direct implementation before a new fixture/schema contract design.
+- Step587: actual-controlled fixture root creation
 
-The next design should start from this final safety review and the Step585 handoff, and explicitly decide the actual-controlled fixture/schema contract before any implementation.
+Do not proceed to direct runtime implementation before the future fixture root exists and has its own validator design chain.
