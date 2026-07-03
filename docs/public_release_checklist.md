@@ -5531,3 +5531,10 @@ raw rows, logits/probabilities, private or absolute paths, raw learner text,
 real participant data, performance evidence, actual artifact body generation
 runtime invocation evidence, manifest writer invocation evidence, or
 file-writing evidence.
+
+## Step587 Actual-Controlled Runtime Invocation Fixture Root
+
+- Confirm the actual-controlled fixture root exists at `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled/`.
+- Confirm it contains 6 valid cases, 30 invalid cases, 36 total cases, and 252 parseable metadata-only JSON files.
+- Confirm each case uses the exact 7-file layout from the Step586 contract.
+- Confirm this root is not validator implementation, runtime implementation, actual invocation evidence, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

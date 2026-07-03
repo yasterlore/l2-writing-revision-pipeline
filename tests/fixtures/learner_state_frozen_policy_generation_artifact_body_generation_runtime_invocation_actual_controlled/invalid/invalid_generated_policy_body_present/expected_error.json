@@ -1,0 +1,12 @@
+{
+  "body_payload_available": false,
+  "body_payload_emitted": false,
+  "body_suppressed": true,
+  "error_body_available": false,
+  "error_body_emitted": false,
+  "error_expected": true,
+  "expected_error_class": "fail_closed",
+  "expected_reason_code": "generated_policy_body_present",
+  "expected_status": "fail_closed",
+  "metadata_only": true
+}

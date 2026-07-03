@@ -433,9 +433,12 @@ Do not perform these in Step586.
 
 ## 17. Recommended Next Step
 
-Recommended next step:
+Step587 actual-controlled fixture root is recorded in
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled/README.md`.
 
-- Step587: actual-controlled fixture root creation
+Recommended next step after Step587:
+
+- Step588: actual-controlled fixture validator design
 
 Do not recommend direct runtime implementation.
 

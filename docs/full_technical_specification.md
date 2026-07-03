@@ -1368,3 +1368,7 @@ validator changes, actual artifact body generation runtime invocation,
 manifest writer integration, file writing, real-data use, metric use,
 production readiness, real-data readiness, model performance evidence, or
 safe-metadata free-form body safety evidence.
+
+## Appendix Q. Step587 Actual-Controlled Runtime Invocation Fixture Root
+
+Step587 creates the fixture root `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled/` for a future v0.4 actual-controlled artifact body generation runtime invocation chain. The root contains 6 valid cases, 30 invalid cases, 36 total cases, 7 parseable metadata-only JSON files per case, and 252 total JSON files. The fixture schema is `learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled_fixture_v0.1`; the validation schema is `learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled_fixture_validation_v0.1`; the future runtime schema is `learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.4`; and the future integration mode is `artifact-body-runtime-invocation-controlled`. Step587 does not implement a validator, runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, model performance evidence, or safe-metadata free-form body safety evidence.

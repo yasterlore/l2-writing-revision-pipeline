@@ -464,3 +464,7 @@ Recommended next steps:
 - keep manifest writer integration work separate
 - keep production readiness review as future work
 - keep real-data readiness review as future work
+
+## Step587 Safety Review Addendum
+
+Step587 adds a future actual-controlled runtime invocation fixture root only. The root is synthetic-only, metadata-only, body-free, count-only where applicable, and no-oracle. It contains no request body, pointer body, expected body, written file JSON body, manifest body, artifact body payload, generated policy body, raw stdout/stderr body, raw rows, logits/probabilities values, private or absolute path values, raw learner text, real participant data, or performance metric body. This addendum does not claim validator coverage, runtime implementation, actual invocation correctness, production readiness, real-data readiness, or model performance.

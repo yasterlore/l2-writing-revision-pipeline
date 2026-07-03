@@ -422,3 +422,11 @@ as a design-only / docs-only contract for a future actual-controlled fixture roo
 and schema. It does not create fixture JSON, implement validators or runtime
 behavior, change wrapper/workflow/Makefile/Python code/tests, invoke manifest
 writer, or write files.
+
+## Step587 Actual-Controlled Fixture Root Status
+
+Step587 creates the future actual-controlled fixture root
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled/`
+with 36 cases / 252 parseable metadata-only JSON files. It does not implement
+validators, runtime behavior, actual invocation, manifest writer integration,
+or file writing.

@@ -1,0 +1,19 @@
+{
+  "absolute_path_values_available": false,
+  "artifact_file_written": false,
+  "body_suppressed": true,
+  "file_writing_detected": false,
+  "file_writing_enabled": false,
+  "file_writing_requested_marker": false,
+  "manifest_file_written": false,
+  "manifest_writer_invoked": false,
+  "manifest_writer_requested_marker": true,
+  "private_path_values_available": false,
+  "residue_allowed": false,
+  "residue_file_count": 0,
+  "residue_policy_checked": true,
+  "temp_root_isolated": true,
+  "temp_root_value_available": false,
+  "temp_root_value_emitted": false,
+  "unsafe_output_residue_risk_marker": false
+}

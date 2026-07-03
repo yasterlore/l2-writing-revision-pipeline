@@ -1,0 +1,21 @@
+{
+  "artifact_body_cli_output_not_body_free_marker": false,
+  "artifact_body_generation_cli_exit_code_category": "not_applicable",
+  "artifact_body_generation_cli_invoked": false,
+  "artifact_body_generation_cli_metadata_available": true,
+  "artifact_body_generation_cli_output_body_free": true,
+  "artifact_body_generation_cli_output_scanned": false,
+  "artifact_body_generation_cli_schema_version": "actual_controlled_artifact_body_generation_cli_metadata_v0.1",
+  "artifact_body_payload_available": false,
+  "artifact_body_payload_emitted": false,
+  "artifact_body_payload_field_count": 0,
+  "artifact_body_payload_present_marker": false,
+  "body_suppressed": true,
+  "raw_stderr_body_present_marker": false,
+  "raw_stdout_body_present_marker": false,
+  "stderr_body_available": false,
+  "stderr_body_field_count": 0,
+  "stdout_body_available": false,
+  "stdout_body_field_count": 0,
+  "summary_only": true
+}

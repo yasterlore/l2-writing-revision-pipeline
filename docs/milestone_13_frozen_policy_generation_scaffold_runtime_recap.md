@@ -3137,3 +3137,7 @@ Step583 does not change workflow files, wrapper files, Makefile, Python
 code/tests, fixture JSON, runtime or validator implementation, actual artifact
 body generation runtime invocation, manifest writer integration, file writing,
 real-data use, metric use, or production readiness status.
+
+## Step587 Actual-Controlled Runtime Invocation Fixture Root
+
+Step587 creates the separate future v0.4 actual-controlled runtime invocation fixture root with 36 cases / 252 parseable metadata-only JSON files. The root follows the Step586 contract and keeps the Step570 planned-only root unchanged. Validator implementation, runtime implementation, actual runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, and model performance remain out of scope.

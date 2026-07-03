@@ -1,0 +1,11 @@
+{
+  "body_suppressed": true,
+  "metadata_only_checked": true,
+  "pointer_body_available": false,
+  "pointer_body_emitted": false,
+  "pointer_body_field_count": 0,
+  "pointer_body_present_marker": false,
+  "pointer_id": "synthetic_pointer_invalid_generated_policy_body_present",
+  "pointer_metadata_available": true,
+  "pointer_schema_version": "actual_controlled_runtime_pointer_metadata_v0.1"
+}

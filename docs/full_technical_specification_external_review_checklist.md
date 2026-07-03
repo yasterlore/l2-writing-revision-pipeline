@@ -501,3 +501,7 @@ Before treating the specification as external-review-ready, confirm:
 
 This checklist does not itself prove production readiness, real-data readiness,
 model performance, or legal/privacy readiness.
+
+## Step587 Actual-Controlled Fixture Root Review
+
+For Step587, confirm the actual-controlled fixture root exists with 6 valid cases, 30 invalid cases, 36 total cases, 252 parseable metadata-only JSON files, and the exact 7-file layout. Confirm the root is separate from the Step570 planned-only root and does not implement validators, runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

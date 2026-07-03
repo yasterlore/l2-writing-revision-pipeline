@@ -1,0 +1,12 @@
+{
+  "body_payload_available": false,
+  "body_payload_emitted": false,
+  "body_suppressed": true,
+  "error_body_available": false,
+  "error_body_emitted": false,
+  "error_expected": false,
+  "expected_error_class": "none",
+  "expected_reason_code": "none",
+  "expected_status": "pass",
+  "metadata_only": true
+}

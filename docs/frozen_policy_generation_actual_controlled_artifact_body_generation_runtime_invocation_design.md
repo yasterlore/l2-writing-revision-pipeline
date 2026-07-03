@@ -479,9 +479,12 @@ Do not perform any of these in Step585.
 Step586 fixture/schema contract design is recorded in
 `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_schema_contract_design.md`.
 
-Recommended next step after Step586:
+Step587 actual-controlled fixture root is recorded in
+`tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled/README.md`.
 
-- Step587: actual-controlled fixture root creation
+Recommended next step after Step587:
+
+- Step588: actual-controlled fixture validator design
 
 Do not proceed to direct runtime implementation as the next step.
 

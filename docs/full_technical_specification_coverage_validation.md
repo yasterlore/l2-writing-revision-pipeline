@@ -579,3 +579,7 @@ metadata-only fixture contract and the planned-only selected-case smoke, but
 does not add actual artifact body generation runtime invocation coverage,
 manifest writer coverage, file-writing coverage, production readiness,
 real-data readiness, model performance, or artifact body payload correctness.
+
+## Step587 Coverage Addendum
+
+Step587 adds fixture-root coverage only for the future actual-controlled runtime invocation contract. The new root contains 36 cases / 252 parseable metadata-only JSON files and is not yet connected to a validator, Makefile target, release-quality wrapper, runtime implementation, actual runtime invocation, manifest writer integration, or file-writing path. This addendum does not claim runtime correctness generally, artifact body payload correctness, production readiness, real-data readiness, or model performance.

@@ -1,0 +1,15 @@
+{
+  "artifact_body_generation_request_expected": true,
+  "body_suppressed": true,
+  "metadata_only_checked": true,
+  "no_oracle_checked": true,
+  "request_body_available": false,
+  "request_body_emitted": false,
+  "request_body_field_count": 0,
+  "request_body_present_marker": false,
+  "request_id": "synthetic_request_invalid_raw_learner_text_present",
+  "request_metadata_available": true,
+  "request_schema_version": "actual_controlled_runtime_request_metadata_v0.1",
+  "synthetic_only_checked": true,
+  "unexpected_artifact_body_generation_request_marker": false
+}

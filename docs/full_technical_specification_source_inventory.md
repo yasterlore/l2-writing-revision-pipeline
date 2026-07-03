@@ -470,3 +470,7 @@ Items for the full specification step:
 - Any component not explicitly listed here should be treated as `not yet
   confirmed from repository scan` until the full specification step verifies
   it.
+
+## Step587 Source Inventory Addendum
+
+Step587 adds the fixture root `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled/README.md` and 252 parseable metadata-only JSON fixture files under the same root. The root follows the Step586 contract with 6 valid cases, 30 invalid cases, and the 7-file layout. No Python source, Makefile, workflow, release-quality wrapper, runtime implementation, validator implementation, manifest writer implementation, or existing fixture JSON outside the new root is added or changed.
