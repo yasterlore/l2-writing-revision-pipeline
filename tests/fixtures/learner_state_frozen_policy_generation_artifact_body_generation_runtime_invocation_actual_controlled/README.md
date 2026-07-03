@@ -175,8 +175,11 @@ performance evidence.
 
 ## Next Expected Step
 
-Recommended next step:
+Step588 fixture validator design is recorded in
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validator_design.md`.
 
-- Step588: actual-controlled fixture validator design
+Recommended next step after Step588:
+
+- Step589: actual-controlled fixture validator implementation
 
 Do not proceed directly to runtime implementation from this fixture root.

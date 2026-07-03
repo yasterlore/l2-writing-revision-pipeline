@@ -430,3 +430,12 @@ Step587 creates the future actual-controlled fixture root
 with 36 cases / 252 parseable metadata-only JSON files. It does not implement
 validators, runtime behavior, actual invocation, manifest writer integration,
 or file writing.
+
+## Step588 Actual-Controlled Fixture Validator Design Status
+
+Step588 adds
+[frozen policy generation actual-controlled artifact body generation runtime invocation fixture validator design](frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validator_design.md)
+as a design-only / docs-only validator design for the Step587 actual-controlled
+fixture root. It does not implement validators, change Python code/tests, change
+Makefile, wrapper, workflow, fixture JSON, runtime implementation, invoke
+manifest writer, or write files.

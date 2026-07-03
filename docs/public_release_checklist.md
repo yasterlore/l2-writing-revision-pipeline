@@ -5538,3 +5538,9 @@ file-writing evidence.
 - Confirm it contains 6 valid cases, 30 invalid cases, 36 total cases, and 252 parseable metadata-only JSON files.
 - Confirm each case uses the exact 7-file layout from the Step586 contract.
 - Confirm this root is not validator implementation, runtime implementation, actual invocation evidence, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## Step588 Actual-Controlled Fixture Validator Design
+
+- Confirm the Step588 validator design doc exists.
+- Confirm it covers the Step587 actual-controlled fixture root, 36 cases, 252 JSON files, exact 7-file layout, status/reason mapping, safety checks, public-safe output policy, and future tests.
+- Confirm Step588 does not implement validators, change Python code/tests, Makefile, wrapper, workflow, fixture JSON, runtime implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

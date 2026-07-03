@@ -3141,3 +3141,7 @@ real-data use, metric use, or production readiness status.
 ## Step587 Actual-Controlled Runtime Invocation Fixture Root
 
 Step587 creates the separate future v0.4 actual-controlled runtime invocation fixture root with 36 cases / 252 parseable metadata-only JSON files. The root follows the Step586 contract and keeps the Step570 planned-only root unchanged. Validator implementation, runtime implementation, actual runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, and model performance remain out of scope.
+
+## Step588 Actual-Controlled Fixture Validator Design
+
+Step588 adds a design-only / docs-only validator design for the Step587 actual-controlled fixture root. It proposes a future module path, CLI, validation schema, expected aggregate, layout/taxonomy/safety checks, focused tests, and Step589 handoff. It does not implement validators, change Python code/tests, Makefile, release-quality wrapper, workflow, fixture JSON, runtime implementation, manifest writer integration, or file writing.

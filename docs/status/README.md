@@ -1339,3 +1339,7 @@ invocation evidence, or file-writing evidence.
 ## Step587 Actual-Controlled Fixture Root Link
 
 - [Actual-controlled artifact body generation runtime invocation fixtures](../../tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled/README.md): fixture root creation for a future v0.4 actual-controlled metadata-only invocation chain. It contains 36 cases / 252 parseable JSON files and does not implement validators, runtime invocation, manifest writer integration, or file writing.
+
+## Step588 Actual-Controlled Fixture Validator Design Link
+
+- [Frozen policy generation actual-controlled artifact body generation runtime invocation fixture validator design](../frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validator_design.md): design-only / docs-only validator design for the Step587 actual-controlled fixture root. It does not implement validators, change Python code/tests, Makefile, wrapper, workflow, fixture JSON, runtime implementation, manifest writer integration, file writing, or claim production readiness, real-data readiness, or model performance.

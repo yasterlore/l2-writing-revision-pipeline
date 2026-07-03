@@ -202,6 +202,13 @@ Step587 creates the separate future actual-controlled fixture root
 with 36 cases / 252 parseable metadata-only JSON files. This Step570
 planned-only root and its fixture JSON remain unchanged.
 
+
+Step588 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validator_design.md`
+as a design-only / docs-only validator design for the separate Step587
+actual-controlled fixture root. This Step570 planned-only root and its fixture
+JSON remain unchanged.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,

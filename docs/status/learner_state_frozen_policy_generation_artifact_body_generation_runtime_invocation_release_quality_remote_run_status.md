@@ -231,9 +231,12 @@ Step586 fixture/schema contract design is recorded in
 Step587 actual-controlled fixture root is recorded in
 `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled/README.md`.
 
-Recommended next step after Step587:
+Step588 fixture validator design is recorded in
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validator_design.md`.
 
-- Step588: actual-controlled fixture validator design
+Recommended next step after Step588:
+
+- Step589: actual-controlled fixture validator implementation
 
 Do not proceed to direct implementation of actual controlled artifact body
-generation runtime invocation before the future validator design chain is available.
+generation runtime invocation before the future validator implementation chain is available.
