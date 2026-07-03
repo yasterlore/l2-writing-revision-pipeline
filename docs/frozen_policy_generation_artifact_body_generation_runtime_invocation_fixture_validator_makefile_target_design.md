@@ -26,7 +26,8 @@ model performance.
 - Step571 validator design completed.
 - Step572 validator implementation completed.
 - Step574 implements the standalone Makefile target proposed by this design.
-- The validator is not yet release-quality integrated.
+- Step581 connects the validator target to the release-quality wrapper before
+  the planned-only v0.3 runtime smoke.
 - Runtime invocation implementation is not implemented.
 - Manifest writer and file-writing boundaries remain separate.
 
@@ -333,3 +334,9 @@ Step577 follow-up status: planned-only v0.3
 integration module with public-safe metadata-only / body-free output. The
 Step574 fixture validator Makefile target remains unchanged and separate from
 runtime mode execution.
+
+Step581 follow-up status: the release-quality wrapper now runs the Step574
+runtime invocation fixture validator target before the Step579 planned-only
+v0.3 runtime smoke. The wrapper insertion does not change this validator
+target, fixture JSON, runtime implementation, manifest writer integration, or
+file writing.

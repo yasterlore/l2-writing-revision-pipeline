@@ -26,7 +26,9 @@ Step580 does not implement actual artifact body generation runtime invocation, d
 - Step578 planned-only v0.3 Makefile target design completed.
 - Step579 planned-only v0.3 standalone Makefile target implementation completed.
 
-The runtime invocation fixture validator target is standalone Makefile-connected but not yet connected to the release-quality wrapper. The planned-only v0.3 runtime target is also standalone Makefile-connected but not yet connected to the release-quality wrapper.
+Step581 follow-up status: the runtime invocation fixture validator target and
+the planned-only v0.3 runtime target are connected to the release-quality
+wrapper in adjacent order.
 
 Actual artifact body generation runtime invocation is not implemented. Manifest writer and file-writing boundaries remain separate.
 
@@ -116,6 +118,10 @@ make check-learner-state-frozen-policy-generation-artifact-body-generation-runti
 
 Do not implement these wrapper additions in Step580.
 
+Step581 follow-up status: `scripts/check_release_quality.sh` now includes both
+recommended checks in adjacent order. The fixture validator label runs first,
+followed by the planned-only v0.3 runtime smoke label.
+
 ## 7. Proposed Insertion Point
 
 Recommended insertion point:
@@ -143,6 +149,10 @@ Expected local ordering around this area:
 5. artifact body generation runtime invocation fixture validation
 6. artifact body generation runtime invocation planned-only v0.3 smoke
 7. artifact body fixture validation
+
+Step581 implementation status: the wrapper follows this local ordering. The
+new checks run after safe-metadata runtime smoke and before artifact body
+fixture validation.
 
 ## 8. Expected Public-Safe Output
 
@@ -306,7 +316,6 @@ This design does not claim:
 - learner-state estimator correctness
 - artifact writer CLI actual invocation correctness generally
 - runtime actual invocation correctness generally
-- release-quality wrapper connection completed
 
 ## 16. Public-Safe Checklist
 

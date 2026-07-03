@@ -423,6 +423,17 @@ manifest writer, and does not write files. Its pass status remains a
 selected-case planned-only smoke boundary, not production approval or runtime
 correctness generally.
 
+Step581 connects the Step574 runtime invocation fixture validator target and
+the Step579 planned-only v0.3 runtime smoke to the release-quality wrapper in
+adjacent order. The fixture validator runs first, after safe-metadata runtime
+smoke and before the planned-only v0.3 runtime smoke; the planned-only smoke
+runs before artifact body fixture validation. This wrapper addition keeps the
+metadata-only / body-free / synthetic-only / no-oracle boundaries and does not
+perform actual artifact body generation runtime invocation, invoke manifest
+writer, write files, prove runtime correctness generally, prove artifact body
+payload correctness, or provide production readiness, real-data readiness, or
+model performance evidence.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

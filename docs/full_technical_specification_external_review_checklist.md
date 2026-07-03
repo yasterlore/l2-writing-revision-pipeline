@@ -458,6 +458,20 @@ fixture JSON, runtime implementation, validator implementation, actual
 artifact body generation runtime invocation, manifest writer integration, file
 writing, model performance evidence, or production readiness claims.
 
+Confirm Step581 adds the two runtime invocation checks to
+`scripts/check_release_quality.sh` in adjacent order:
+
+- `learner-state frozen policy generation artifact body generation runtime invocation fixture validation`
+- `learner-state frozen policy generation artifact body generation runtime invocation planned-only v0.3 smoke`
+
+Reviewers should confirm the checks run after safe-metadata runtime smoke and
+before artifact body fixture validation. The fixture validator must run before
+the planned-only v0.3 smoke. Confirm Step581 does not change workflow files,
+Makefile, Python code/tests, fixture JSON, runtime implementation, validator
+implementation, actual artifact body generation runtime invocation, manifest
+writer integration, file writing, model performance evidence, or production
+readiness claims.
+
 ## 10. Rust Crate Review
 
 Confirm Rust coverage against workspace and crate evidence:

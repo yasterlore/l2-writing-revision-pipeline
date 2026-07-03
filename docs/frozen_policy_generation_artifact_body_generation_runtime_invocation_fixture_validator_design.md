@@ -414,9 +414,10 @@ integration, or file writing.
 
 Step574 implements that standalone Makefile target as
 `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`.
-The target runs the Step572 validator against the Step570 planned root and is
-not yet release-quality integrated. It still does not invoke artifact body
-generation runtime, invoke manifest writer, or write files.
+The target runs the Step572 validator against the Step570 planned root. Step581
+adds it to the release-quality wrapper before the planned-only v0.3 runtime
+smoke. It still does not invoke artifact body generation runtime, invoke
+manifest writer, or write files.
 
 Step575 adds
 `docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_design.md`

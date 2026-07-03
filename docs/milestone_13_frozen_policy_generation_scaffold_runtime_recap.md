@@ -3082,3 +3082,23 @@ code/tests, fixture JSON, runtime implementation, validator implementation,
 actual artifact body generation runtime invocation, manifest writer
 integration, file writing, real-data use, metric use, or production readiness
 status.
+
+## Step581 Artifact Body Generation Runtime Invocation Release-Quality Wrapper Integration
+
+Step581 adds two adjacent release-quality wrapper checks:
+
+- `learner-state frozen policy generation artifact body generation runtime invocation fixture validation`
+- `learner-state frozen policy generation artifact body generation runtime invocation planned-only v0.3 smoke`
+
+The first check runs
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`.
+The second check runs
+`make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`.
+
+The insertion point is after safe-metadata runtime smoke and before artifact
+body fixture validation. The fixture validator runs before the planned-only
+v0.3 runtime smoke. Step581 does not change workflow files, Makefile, Python
+code/tests, fixture JSON, runtime implementation, validator implementation,
+actual artifact body generation runtime invocation, manifest writer
+integration, file writing, real-data use, metric use, or production readiness
+status.

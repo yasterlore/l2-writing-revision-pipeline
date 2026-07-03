@@ -443,3 +443,11 @@ the existing runtime integration module. It uses the Step570 fixture root and
 primary valid case to emit public-safe metadata-only / body-free summary
 output with runtime invocation planned but not invoked. The fixture contract
 root and fixture JSON are unchanged.
+
+## 21. Step581 Release-Quality Wrapper Integration Status
+
+Step581 adds the runtime invocation fixture validator target and planned-only
+v0.3 runtime smoke target to the release-quality wrapper in adjacent order.
+The fixture root and fixture JSON remain unchanged, and the wrapper checks do
+not perform actual artifact body generation runtime invocation, invoke
+manifest writer, or write files.

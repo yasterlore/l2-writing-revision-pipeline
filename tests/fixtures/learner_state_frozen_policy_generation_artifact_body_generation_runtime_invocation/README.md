@@ -87,17 +87,19 @@ Aggregate:
 Step571 adds
 `docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_design.md`
 as a design-only / docs-only future validator design for this planned root.
-The validator is not implemented here, and this root is not yet connected to a
-Makefile target, release-quality wrapper, workflow, runtime invocation,
-manifest writer integration, or file-writing path.
+The validator is not implemented in Step571. Step574 later adds the standalone
+Makefile target, and Step581 later adds the target to the release-quality
+wrapper. This root is still separate from workflow changes, actual runtime
+invocation, manifest writer integration, and file-writing paths.
 
 Step572 implements the standalone validator module
 `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py`
 and focused tests. The validator checks this root as 30 cases / 210 JSON files
 with public-safe metadata-only / body-free / count-only output. Step574 adds a
-standalone Makefile target for the validator, while release-quality wrapper
-integration, workflow changes, runtime invocation, manifest writer
-integration, and file writing remain future work.
+standalone Makefile target for the validator, and Step581 adds that target to
+the release-quality wrapper before the planned-only v0.3 runtime smoke.
+Workflow changes, actual runtime invocation, manifest writer integration, and
+file writing remain future work.
 
 Step573 adds
 `docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_makefile_target_design.md`
@@ -109,10 +111,9 @@ Step574 adds the standalone Makefile target
 `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`.
 It runs the Step572 validator over this planned root and keeps the aggregate at
 30 cases / 210 JSON files with 6 pass, 1 usage-error, 22 fail-closed, and 1
-mismatch case. The target is not yet connected to the release-quality wrapper
-and does not
-invoke artifact body generation runtime, invoke manifest writer, or write
-files.
+mismatch case. Step581 adds the target to the release-quality wrapper before
+the planned-only v0.3 runtime smoke. It does not invoke artifact body
+generation runtime, invoke manifest writer, or write files.
 
 Step575 adds
 `docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_implementation_design.md`
@@ -151,6 +152,11 @@ as a design-only / docs-only release-quality wrapper integration proposal. It
 recommends the fixture validator target run before the planned-only v0.3
 runtime smoke in any future wrapper change. This root and its fixture JSON
 remain unchanged.
+
+Step581 adds both checks to `scripts/check_release_quality.sh` in adjacent
+order: fixture validator first, planned-only v0.3 runtime smoke second. The
+checks run after safe-metadata runtime smoke and before artifact body fixture
+validation. This root and its fixture JSON remain unchanged.
 
 ## Non-Claims
 

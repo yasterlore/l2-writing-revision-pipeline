@@ -25,8 +25,9 @@ model performance.
 - Step574 standalone Makefile target implementation is complete.
 - The runtime invocation fixture validator target is standalone
   Makefile-connected.
-- The runtime invocation fixture validator target is not yet release-quality
-  integrated.
+- Step581 connects the runtime invocation fixture validator target and
+  planned-only v0.3 runtime smoke target to the release-quality wrapper in
+  adjacent order.
 - Runtime invocation implementation is not implemented.
 - The artifact body safe-metadata CLI smoke remains separate.
 - Manifest writer and file-writing boundaries remain separate.
@@ -343,9 +344,8 @@ Mutation tests should use temporary fixture copies.
 - manifest writer runtime smoke: remains separate and must not be inferred
   from runtime invocation work.
 - manifest writer file-writing smoke: remains separate and out of scope.
-- release-quality wrapper: currently includes earlier checks, while the
-  runtime invocation fixture validator target is not yet release-quality
-  integrated.
+- release-quality wrapper: Step581 adds the runtime invocation fixture
+  validator target immediately before the planned-only v0.3 runtime smoke.
 
 This future implementation does not replace any existing boundary.
 
@@ -477,6 +477,14 @@ remain later work.
 Step579 adds
 `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
 as a standalone Makefile target for the planned-only v0.3 direct CLI. The
-target is not connected to the release-quality wrapper and does not perform
-actual artifact body generation runtime invocation, invoke manifest writer, or
-write files.
+target does not perform actual artifact body generation runtime invocation,
+invoke manifest writer, or write files.
+
+## 22. Step581 Release-Quality Wrapper Integration Status
+
+Step581 adds the runtime invocation fixture validator target and the
+planned-only v0.3 runtime smoke target to `scripts/check_release_quality.sh`
+in adjacent order. The fixture validator runs first, after safe-metadata
+runtime smoke and before the planned-only v0.3 runtime smoke. Actual artifact
+body generation runtime invocation, manifest writer integration, and file
+writing remain out of scope.

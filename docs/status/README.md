@@ -1163,9 +1163,10 @@ The validator emits schema
 `learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation_v0.1`
 with mode `artifact_body_generation_runtime_invocation_fixture_validation`.
 The expected aggregate is 30 cases / 210 JSON files with 6 pass, 1 usage-error,
-22 fail-closed, and 1 mismatch case. The validator is not yet connected to a
-Makefile target or release-quality wrapper, and it does not invoke artifact
-body generation runtime, invoke manifest writer, or write files.
+22 fail-closed, and 1 mismatch case. Step574 adds the standalone Makefile
+target, and Step581 adds that target to the release-quality wrapper. The
+validator does not invoke artifact body generation runtime, invoke manifest
+writer, or write files.
 
 ## Step573 Artifact Body Generation Runtime Invocation Fixture Validator Makefile Target Design
 
@@ -1189,11 +1190,11 @@ for the Step572 validator CLI.
 
 The target runs the Step570 planned root validator and keeps the expected
 public-safe aggregate at 30 cases / 210 JSON files with 6 pass, 1 usage-error,
-22 fail-closed, and 1 mismatch case. It is not yet connected to the
-release-quality wrapper
-and does not invoke artifact body generation runtime, invoke manifest writer,
-write files, change workflow files, change Python code/tests, or change
-fixture JSON.
+22 fail-closed, and 1 mismatch case. Step581 adds this target to the
+release-quality wrapper after safe-metadata runtime smoke and before the
+planned-only v0.3 runtime invocation smoke. It does not invoke artifact body
+generation runtime, invoke manifest writer, write files, change workflow
+files, change Python code/tests, or change fixture JSON.
 
 ## Step575 Artifact Body Generation Runtime Invocation Implementation Design
 
@@ -1281,3 +1282,17 @@ wrapper step. Step580 does not change the wrapper, workflow files, Makefile,
 Python code/tests, fixture JSON, runtime implementation, validator
 implementation, actual artifact body generation runtime invocation, manifest
 writer integration, or file writing.
+
+## Step581 Artifact Body Generation Runtime Invocation Release-Quality Wrapper Integration
+
+Step581 updates `scripts/check_release_quality.sh` with two adjacent
+release-quality checks:
+
+- `learner-state frozen policy generation artifact body generation runtime invocation fixture validation`
+- `learner-state frozen policy generation artifact body generation runtime invocation planned-only v0.3 smoke`
+
+The checks run after safe-metadata runtime smoke and before artifact body
+fixture validation, with the fixture validator first. Step581 does not change
+workflow files, Makefile, Python code/tests, fixture JSON, runtime
+implementation, validator implementation, actual artifact body generation
+runtime invocation, manifest writer integration, or file writing.

@@ -110,6 +110,12 @@ It is design-only / docs-only and recommends keeping the Step574 fixture
 validator check before the Step579 planned-only v0.3 runtime smoke in any
 future wrapper change.
 
+Step581 follow-up status: the release-quality wrapper now runs the Step574
+runtime invocation fixture validator target immediately before the Step579
+planned-only v0.3 runtime smoke target. Both checks remain public-safe,
+metadata-only / body-free, and do not invoke actual artifact body generation
+runtime, invoke manifest writer, or write files.
+
 ## 6. Expected Public-Safe Output
 
 Expected standalone target summary:
@@ -207,8 +213,9 @@ integration fixture validation, planned safe-metadata v0.2 fixture validation,
 CLI smoke, artifact body fixture validation, or manifest writer validators.
 
 It does not invoke actual artifact body generation runtime, does not invoke
-manifest writer, does not write files, and is not yet connected to the
-release-quality wrapper.
+manifest writer, and does not write files. Step581 connects this target to the
+release-quality wrapper immediately after the runtime invocation fixture
+validator check.
 
 ## 9. Proposed Implementation Checks For Next Step
 

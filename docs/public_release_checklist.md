@@ -5479,3 +5479,19 @@ wrapper, workflow files, Python code/tests, fixture JSON, runtime
 implementation, validator implementation, artifact body generation
 implementation, manifest writer implementation, or file-writing
 implementation.
+
+## 79. Step581 Artifact Body Generation Runtime Invocation Release-Quality Wrapper Integration
+
+For Step581, confirm `scripts/check_release_quality.sh` includes:
+
+- `release_quality_check: learner-state frozen policy generation artifact body generation runtime invocation fixture validation`
+- `make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`
+- `release_quality_check: learner-state frozen policy generation artifact body generation runtime invocation planned-only v0.3 smoke`
+- `make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
+
+Confirm the checks are adjacent, run after safe-metadata runtime smoke, and
+run before artifact body fixture validation. Confirm this step does not change
+Makefile, workflow files, Python code/tests, fixture JSON, runtime
+implementation, validator implementation, artifact body generation
+implementation, manifest writer implementation, or file-writing
+implementation.

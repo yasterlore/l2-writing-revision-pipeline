@@ -566,3 +566,16 @@ planned-only smoke. It does not add release-quality wrapper coverage, actual
 artifact body generation runtime invocation coverage, manifest writer
 integration coverage, file-writing coverage, production readiness, real-data
 readiness, or model performance.
+
+Step581 adds release-quality wrapper coverage for both runtime invocation
+targets in adjacent order:
+
+- `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`
+- `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
+
+The fixture validator check runs first, after safe-metadata runtime smoke and
+before the planned-only v0.3 runtime smoke. This adds wrapper coverage for the
+metadata-only fixture contract and the planned-only selected-case smoke, but
+does not add actual artifact body generation runtime invocation coverage,
+manifest writer coverage, file-writing coverage, production readiness,
+real-data readiness, model performance, or artifact body payload correctness.

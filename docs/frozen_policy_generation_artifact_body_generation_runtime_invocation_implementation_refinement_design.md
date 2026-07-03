@@ -26,7 +26,8 @@ model performance.
 - Step574 standalone Makefile target implementation is complete.
 - Step575 implementation design is complete.
 - The fixture validator target is standalone Makefile-connected.
-- The fixture validator target is not yet release-quality integrated.
+- Step581 connects the fixture validator target and planned-only v0.3 runtime
+  smoke target to the release-quality wrapper in adjacent order.
 - Runtime invocation implementation is not implemented.
 - Actual artifact body generation runtime invocation is not implemented.
 
@@ -450,6 +451,13 @@ writer integration, or file writing.
 Step579 adds the standalone Makefile target
 `check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation`
 for the Step577 planned-only v0.3 direct CLI. The target remains public-safe,
-metadata-only, body-free, and separate from release-quality wrapper
-connection, workflow changes, actual artifact body generation runtime
-invocation, manifest writer integration, and file writing.
+metadata-only, body-free, and does not perform actual artifact body generation
+runtime invocation, manifest writer integration, or file writing.
+
+## 20. Step581 Release-Quality Wrapper Integration Status
+
+Step581 adds the runtime invocation fixture validator target and the
+planned-only v0.3 runtime smoke target to the release-quality wrapper in
+adjacent order. The wrapper checks remain metadata-only / body-free and do not
+perform actual artifact body generation runtime invocation, invoke manifest
+writer, or write files.
