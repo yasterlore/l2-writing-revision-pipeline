@@ -474,3 +474,8 @@ Items for the full specification step:
 ## Step587 Source Inventory Addendum
 
 Step587 adds the fixture root `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled/README.md` and 252 parseable metadata-only JSON fixture files under the same root. The root follows the Step586 contract with 6 valid cases, 30 invalid cases, and the 7-file layout. No Python source, Makefile, workflow, release-quality wrapper, runtime implementation, validator implementation, manifest writer implementation, or existing fixture JSON outside the new root is added or changed.
+
+
+## Step589 Source Inventory Addendum
+
+Step589 adds `python/learner_state/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py` and `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py`. The validator is standalone only and targets the Step587 fixture root with public-safe aggregate output. No Makefile, workflow, release-quality wrapper, fixture JSON, runtime implementation, artifact body generation implementation, or manifest writer implementation is added or changed.

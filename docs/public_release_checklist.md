@@ -5544,3 +5544,8 @@ file-writing evidence.
 - Confirm the Step588 validator design doc exists.
 - Confirm it covers the Step587 actual-controlled fixture root, 36 cases, 252 JSON files, exact 7-file layout, status/reason mapping, safety checks, public-safe output policy, and future tests.
 - Confirm Step588 does not implement validators, change Python code/tests, Makefile, wrapper, workflow, fixture JSON, runtime implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+
+## Step589 Actual-Controlled Fixture Validator Implementation Check
+
+Confirm the Step589 standalone validator module and focused tests exist for the Step587 actual-controlled fixture root. Confirm the direct CLI aggregate remains 36 total cases, 6 valid cases, 30 invalid cases, 252 JSON files, 6 pass cases, 3 usage-error cases, 26 fail-closed cases, and 1 mismatch case. Confirm output remains public-safe metadata only, and confirm this step does not add Makefile integration, release-quality wrapper integration, runtime implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

@@ -583,3 +583,8 @@ real-data readiness, model performance, or artifact body payload correctness.
 ## Step587 Coverage Addendum
 
 Step587 adds fixture-root coverage only for the future actual-controlled runtime invocation contract. The new root contains 36 cases / 252 parseable metadata-only JSON files and is not yet connected to a validator, Makefile target, release-quality wrapper, runtime implementation, actual runtime invocation, manifest writer integration, or file-writing path. This addendum does not claim runtime correctness generally, artifact body payload correctness, production readiness, real-data readiness, or model performance.
+
+
+## Step589 Coverage Addendum
+
+Step589 adds focused validator coverage for the actual-controlled fixture root. The focused tests cover direct aggregate counts, exact 7-file layout, JSON parsing, required case taxonomy, valid/pass mapping, usage-error marker cases, mismatch marker handling, fail-closed unsafe marker cases, public-safe flags, body/value suppression in rendered output, temporary-copy physical missing/malformed/unexpected JSON input errors, duplicate case-id input errors, and fixture non-mutation. This coverage is static fixture validation only; it does not claim runtime invocation correctness generally, artifact body payload correctness, production readiness, real-data readiness, or model performance.

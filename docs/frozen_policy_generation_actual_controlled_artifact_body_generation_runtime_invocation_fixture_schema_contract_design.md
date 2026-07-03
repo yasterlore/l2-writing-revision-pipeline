@@ -504,3 +504,8 @@ This design does not claim:
 - [x] no performance claims
 - [x] no production readiness claims
 - [x] no real-data readiness claims
+
+
+## Step589 Validator Implementation Reference
+
+Step589 adds the standalone actual-controlled fixture validator module and focused tests for the Step587 root. The validator consumes the schema and 7-file layout designed here and reports the expected public-safe aggregate without changing fixture JSON, invoking runtime code, invoking manifest writer code, or writing files. Step590 is expected to design a Makefile target for this validator.

@@ -550,3 +550,8 @@ This design does not claim:
 - [x] no performance claims
 - [x] no production readiness claims
 - [x] no real-data readiness claims
+
+
+## Step589 Fixture Validator Implementation Reference
+
+Step589 implements a standalone validator for the Step587 actual-controlled fixture root. This is still fixture validation only; it does not implement actual controlled runtime invocation, manifest writer integration, file writing, wrapper integration, or workflow integration. The next expected step is Step590 Makefile target design.

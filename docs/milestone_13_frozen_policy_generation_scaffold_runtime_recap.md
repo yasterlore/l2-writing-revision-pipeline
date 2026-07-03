@@ -3145,3 +3145,8 @@ Step587 creates the separate future v0.4 actual-controlled runtime invocation fi
 ## Step588 Actual-Controlled Fixture Validator Design
 
 Step588 adds a design-only / docs-only validator design for the Step587 actual-controlled fixture root. It proposes a future module path, CLI, validation schema, expected aggregate, layout/taxonomy/safety checks, focused tests, and Step589 handoff. It does not implement validators, change Python code/tests, Makefile, release-quality wrapper, workflow, fixture JSON, runtime implementation, manifest writer integration, or file writing.
+
+
+## Step589 Actual-Controlled Fixture Validator Implementation
+
+Step589 adds the standalone validator module `python/learner_state/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py` and focused tests at `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py`. The validator checks the Step587 root with public-safe metadata-only output and keeps runtime invocation, manifest writer integration, file writing, Makefile target integration, and release-quality wrapper integration out of scope. Step590 is the next expected Makefile target design step.

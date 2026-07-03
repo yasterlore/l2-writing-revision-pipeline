@@ -468,3 +468,8 @@ Recommended next steps:
 ## Step587 Safety Review Addendum
 
 Step587 adds a future actual-controlled runtime invocation fixture root only. The root is synthetic-only, metadata-only, body-free, count-only where applicable, and no-oracle. It contains no request body, pointer body, expected body, written file JSON body, manifest body, artifact body payload, generated policy body, raw stdout/stderr body, raw rows, logits/probabilities values, private or absolute path values, raw learner text, real participant data, or performance metric body. This addendum does not claim validator coverage, runtime implementation, actual invocation correctness, production readiness, real-data readiness, or model performance.
+
+
+## Step589 Safety Review Addendum
+
+Step589 adds a standalone public-safe fixture validator and focused tests for the Step587 actual-controlled root. The validator output is metadata-only and count-only where applicable, checks no body/value fields are present, and treats physical temporary-copy fixture breakage as input errors. This addendum does not claim runtime implementation, actual controlled invocation correctness, manifest writer integration correctness, artifact body payload correctness, production readiness, real-data readiness, or model performance.

@@ -439,3 +439,8 @@ as a design-only / docs-only validator design for the Step587 actual-controlled
 fixture root. It does not implement validators, change Python code/tests, change
 Makefile, wrapper, workflow, fixture JSON, runtime implementation, invoke
 manifest writer, or write files.
+
+
+## Step589 Later-Chain Note
+
+Step589 adds a standalone actual-controlled fixture validator after this workflow design. That later validator is not part of the Step582 remote record workflow and is not yet integrated into Makefile targets, release-quality wrapper checks, or workflow runs.

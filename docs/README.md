@@ -707,3 +707,9 @@ Recommended entry points:
 - [Public release checklist](public_release_checklist.md): public GitHub readiness checklist.
 
 Do not paste JSONL contents, real participant text, private data, or production outputs into documentation.
+
+
+## Step589 Actual-Controlled Fixture Validator Implementation
+
+- `python/learner_state/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py`: standalone validator CLI for the Step587 actual-controlled fixture root. It emits public-safe key-value metadata only and validates 36 cases / 252 JSON without runtime invocation, manifest writer invocation, or file writing.
+- `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py`: focused tests for aggregate counts, exact 7-file layout, taxonomy, status/reason mapping, public-safe output flags, physical mutation input errors, and fixture non-mutation. Step590 is the expected Makefile target design step.

@@ -183,3 +183,16 @@ Recommended next step after Step588:
 - Step589: actual-controlled fixture validator implementation
 
 Do not proceed directly to runtime implementation from this fixture root.
+
+
+## Step589 Validator Implementation
+
+Step589 adds the standalone validator module `python/learner_state/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py` and focused tests at `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py`.
+
+Direct CLI:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled
+```
+
+Expected direct aggregate remains 36 cases, 6 valid cases, 30 invalid cases, 252 JSON files, 6 pass cases, 3 usage-error cases, 26 fail-closed cases, and 1 mismatch case. The validator is standalone only; Makefile target design is expected in Step590. Runtime invocation, manifest writer integration, file writing, release-quality wrapper integration, workflow changes, and fixture JSON changes remain out of scope.

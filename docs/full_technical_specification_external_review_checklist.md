@@ -505,3 +505,8 @@ model performance, or legal/privacy readiness.
 ## Step587 Actual-Controlled Fixture Root Review
 
 For Step587, confirm the actual-controlled fixture root exists with 6 valid cases, 30 invalid cases, 36 total cases, 252 parseable metadata-only JSON files, and the exact 7-file layout. Confirm the root is separate from the Step570 planned-only root and does not implement validators, runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+
+## Step589 Actual-Controlled Fixture Validator Review
+
+Confirm the Step589 validator CLI exists, is standalone, and targets the Step587 actual-controlled fixture root. Confirm the focused tests validate the expected 36-case / 252-JSON aggregate and public-safe output policy. Confirm no Makefile target, release-quality wrapper integration, workflow change, fixture JSON change, runtime implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance claim is added by this step.

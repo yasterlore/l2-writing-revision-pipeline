@@ -1343,3 +1343,8 @@ invocation evidence, or file-writing evidence.
 ## Step588 Actual-Controlled Fixture Validator Design Link
 
 - [Frozen policy generation actual-controlled artifact body generation runtime invocation fixture validator design](../frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validator_design.md): design-only / docs-only validator design for the Step587 actual-controlled fixture root. It does not implement validators, change Python code/tests, Makefile, wrapper, workflow, fixture JSON, runtime implementation, manifest writer integration, file writing, or claim production readiness, real-data readiness, or model performance.
+
+
+## Step589 Actual-Controlled Fixture Validator Implementation Link
+
+- `python/learner_state/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py`: Step589 standalone validator implementation for the Step587 actual-controlled fixture root. It is not yet Makefile- or release-quality-integrated and does not perform runtime invocation, manifest writer integration, or file writing.

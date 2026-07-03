@@ -241,3 +241,8 @@ Recommended next chain after Step588:
 - Step589: actual-controlled fixture validator implementation
 
 Do not proceed to direct runtime implementation before the fixture validator chain is implemented and reviewed.
+
+
+## Step589 Forward Reference
+
+After this final safety review, Step589 adds a standalone validator for the later Step587 actual-controlled fixture root. That validator remains outside the Step569-Step583 planned-only release-quality chain and is not yet Makefile- or release-quality-integrated. It does not change the non-equivalence cautions recorded in this review.

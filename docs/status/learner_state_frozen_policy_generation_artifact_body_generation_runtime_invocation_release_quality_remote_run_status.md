@@ -240,3 +240,8 @@ Recommended next step after Step588:
 
 Do not proceed to direct implementation of actual controlled artifact body
 generation runtime invocation before the future validator implementation chain is available.
+
+
+## Step589 Later-Chain Note
+
+Step589 later adds a standalone validator for the Step587 actual-controlled fixture root. This status marker remains a Step583 record for the planned-only release-quality chain and is not raw evidence for the Step589 validator, actual controlled runtime invocation, manifest writer integration, or file writing.
