@@ -1152,3 +1152,17 @@ staging. It does not change validator implementation, Python code/tests,
 Makefile, release-quality wrapper, workflow, fixture JSON, runtime
 implementation, artifact body generation runtime invocation, manifest writer
 integration, or file writing.
+
+## Step572 Artifact Body Generation Runtime Invocation Fixture Validator Implementation
+
+Step572 adds
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py`
+and focused tests for the Step570 planned fixture root.
+
+The validator emits schema
+`learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation_v0.1`
+with mode `artifact_body_generation_runtime_invocation_fixture_validation`.
+The expected aggregate is 30 cases / 210 JSON files with 6 pass, 1 usage-error,
+22 fail-closed, and 1 mismatch case. The validator is not yet connected to a
+Makefile target or release-quality wrapper, and it does not invoke artifact
+body generation runtime, invoke manifest writer, or write files.

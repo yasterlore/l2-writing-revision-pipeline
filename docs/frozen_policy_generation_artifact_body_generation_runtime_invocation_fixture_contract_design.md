@@ -341,6 +341,11 @@ It designs the future validator module, CLI, validation schema, aggregate
 output, checks, reason mapping, and test plan without implementing the
 validator or changing fixture JSON.
 
+Step572 follow-up status: the fixture validator is implemented at
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py`
+with focused tests. It validates the Step570 root without changing fixture
+JSON, invoking runtime code, invoking manifest writer code, or writing files.
+
 ## 14. Non-Equivalence Cautions
 
 - Fixture contract design is not runtime invocation implementation.

@@ -5337,3 +5337,18 @@ README, full technical specification docs, Makefile, release-quality wrapper,
 workflow files, Python code/tests, fixture JSON, runtime implementation,
 validator implementation, artifact body generation implementation, manifest
 writer implementation, or file-writing implementation.
+
+## 70. Step572 Artifact Body Generation Runtime Invocation Fixture Validator Implementation
+
+For Step572, confirm
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py`
+and
+`python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py`
+exist.
+
+Confirm the validator CLI emits public-safe metadata-only / body-free /
+count-only output for the Step570 root with 30 cases / 210 JSON files, 6 pass,
+1 usage-error, 22 fail-closed, and 1 mismatch case. Confirm this step does not
+change Makefile, release-quality wrapper, workflow files, fixture JSON,
+runtime implementation, artifact body generation implementation, manifest
+writer implementation, or file-writing implementation.

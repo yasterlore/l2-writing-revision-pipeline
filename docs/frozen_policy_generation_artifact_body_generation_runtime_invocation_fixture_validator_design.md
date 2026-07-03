@@ -391,3 +391,16 @@ This design does not claim:
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## 18. Step572 Implementation Status
+
+Step572 implements the validator module
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py`
+and focused tests
+`python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py`.
+
+The CLI validates the Step570 fixture root as 30 cases / 210 JSON files with
+6 pass, 1 usage-error, 22 fail-closed, and 1 mismatch case. The implementation
+remains standalone and is not yet connected to a Makefile target,
+release-quality wrapper, workflow, runtime invocation, manifest writer
+integration, or file-writing path.

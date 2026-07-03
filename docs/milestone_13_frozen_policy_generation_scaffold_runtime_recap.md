@@ -2938,3 +2938,18 @@ change Python code/tests, change Makefile, change wrapper or workflow files,
 change fixture JSON, change runtime implementation, invoke artifact body
 generation runtime, invoke manifest writer, write files, use real data,
 compute metrics, or claim production readiness.
+
+## Step572 Artifact Body Generation Runtime Invocation Fixture Validator Implementation
+
+Step572 adds the standalone validator module and focused tests:
+
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py`
+
+`python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py`
+
+The validator checks the Step570 root as 30 cases / 210 JSON files with
+public-safe metadata-only / body-free / count-only output. It remains separate
+from Makefile target integration, release-quality wrapper integration,
+workflow changes, runtime implementation, artifact body generation runtime
+invocation, manifest writer integration, file writing, real-data use, metric
+use, or production readiness status.

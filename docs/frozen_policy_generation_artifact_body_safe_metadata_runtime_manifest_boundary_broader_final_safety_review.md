@@ -346,3 +346,10 @@ fixture root. It keeps validator implementation, runtime implementation,
 artifact body generation runtime invocation, manifest writer integration, file
 writing, Makefile target integration, and release-quality wrapper integration
 as later separate boundaries.
+
+## 17. Step572 Fixture Validator Implementation Status
+
+Step572 implements the standalone runtime invocation fixture validator for the
+Step570 root. The validator remains a fixture-contract check only: it does not
+invoke artifact body generation runtime, invoke manifest writer, write files,
+change Makefile, change the release-quality wrapper, or change workflows.

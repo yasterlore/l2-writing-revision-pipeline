@@ -391,6 +391,15 @@ readiness, model performance, runtime correctness generally, artifact body
 generation correctness generally, or safe-metadata free-form body safety
 claims.
 
+Step572 adds a standalone public-safe validator for the Step570 fixture root.
+The validator checks fixture metadata and expected status / reason mappings
+only. It does not add Makefile target integration, release-quality wrapper
+integration, workflow changes, runtime implementation, actual artifact body
+generation runtime invocation, manifest writer integration, file writing,
+production readiness, real-data readiness, model performance, runtime
+correctness generally, artifact body generation correctness generally, or
+safe-metadata free-form body safety claims.
+
 ## 11. Final Safety Review Result
 
 Current cautious result:

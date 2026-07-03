@@ -91,6 +91,13 @@ The validator is not implemented here, and this root is not yet connected to a
 Makefile target, release-quality wrapper, workflow, runtime invocation,
 manifest writer integration, or file-writing path.
 
+Step572 implements the standalone validator module
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py`
+and focused tests. The validator checks this root as 30 cases / 210 JSON files
+with public-safe metadata-only / body-free / count-only output. Makefile target
+integration, release-quality wrapper integration, workflow changes, runtime
+invocation, manifest writer integration, and file writing remain future work.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,

@@ -506,3 +506,17 @@ coverage, Makefile target coverage, release-quality wrapper coverage,
 artifact body generation runtime invocation correctness, manifest writer
 integration correctness, file-writing readiness, production readiness,
 real-data readiness, or model performance.
+
+## 23. Step572 Coverage Addendum
+
+Step572 adds standalone validator coverage for the Step570 runtime invocation
+fixture root. The module
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validation.py`
+and focused tests validate the root as 30 cases / 210 JSON files with
+public-safe metadata-only / body-free / count-only output.
+
+This addendum does not claim Makefile target coverage, release-quality wrapper
+coverage, runtime implementation coverage, actual artifact body generation
+runtime invocation correctness, manifest writer integration correctness,
+file-writing readiness, production readiness, real-data readiness, or model
+performance.
