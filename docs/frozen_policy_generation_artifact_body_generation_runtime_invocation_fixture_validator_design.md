@@ -404,3 +404,10 @@ The CLI validates the Step570 fixture root as 30 cases / 210 JSON files with
 remains standalone and is not yet connected to a Makefile target,
 release-quality wrapper, workflow, runtime invocation, manifest writer
 integration, or file-writing path.
+
+Step573 follow-up status: the Makefile target design is available at
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_makefile_target_design.md`.
+It proposes a future standalone target for this validator without changing
+Makefile, wrapper, workflow, Python code/tests, fixture JSON, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+integration, or file writing.

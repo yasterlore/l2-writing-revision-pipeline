@@ -353,3 +353,12 @@ Step572 implements the standalone runtime invocation fixture validator for the
 Step570 root. The validator remains a fixture-contract check only: it does not
 invoke artifact body generation runtime, invoke manifest writer, write files,
 change Makefile, change the release-quality wrapper, or change workflows.
+
+## 18. Step573 Makefile Target Design Status
+
+Step573 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_makefile_target_design.md`
+as a design-only / docs-only future target design for the Step572 validator.
+It keeps Makefile changes, wrapper integration, workflow changes, runtime
+implementation, artifact body generation runtime invocation, manifest writer
+integration, and file writing as later separate boundaries.

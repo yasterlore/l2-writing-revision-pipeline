@@ -346,6 +346,10 @@ Step572 follow-up status: the fixture validator is implemented at
 with focused tests. It validates the Step570 root without changing fixture
 JSON, invoking runtime code, invoking manifest writer code, or writing files.
 
+Step573 follow-up status: the future Makefile target design is available at
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_makefile_target_design.md`.
+It does not add the target.
+
 ## 14. Non-Equivalence Cautions
 
 - Fixture contract design is not runtime invocation implementation.

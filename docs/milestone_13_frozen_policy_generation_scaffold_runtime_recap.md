@@ -2953,3 +2953,18 @@ from Makefile target integration, release-quality wrapper integration,
 workflow changes, runtime implementation, artifact body generation runtime
 invocation, manifest writer integration, file writing, real-data use, metric
 use, or production readiness status.
+
+## Step573 Artifact Body Generation Runtime Invocation Fixture Validator Makefile Target Design
+
+Step573 adds the design-only / docs-only future Makefile target design:
+
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_makefile_target_design.md`
+
+The design proposes target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`,
+help text, command, expected output, safety boundary, relationship to existing
+targets, next-step checks, failure interpretation, and staging. It does not
+change Makefile, wrapper or workflow files, Python code/tests, fixture JSON,
+runtime implementation, artifact body generation runtime invocation, manifest
+writer integration, file writing, real-data use, metric use, or production
+readiness status.

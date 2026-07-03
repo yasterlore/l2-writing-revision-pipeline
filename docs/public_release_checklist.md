@@ -5352,3 +5352,19 @@ count-only output for the Step570 root with 30 cases / 210 JSON files, 6 pass,
 change Makefile, release-quality wrapper, workflow files, fixture JSON,
 runtime implementation, artifact body generation implementation, manifest
 writer implementation, or file-writing implementation.
+
+## 71. Step573 Artifact Body Generation Runtime Invocation Fixture Validator Makefile Target Design
+
+For Step573, confirm
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_makefile_target_design.md`
+exists as a design-only / docs-only future Makefile target design for the
+Step572 validator CLI.
+
+Confirm the design includes the proposed target name, help text, command,
+expected public-safe output, safety boundary, relationship to existing targets,
+next-step checks, failure interpretation, non-equivalence cautions, non-claims,
+and public-safe checklist without changing repository root README, full
+technical specification docs, Makefile, release-quality wrapper, workflow
+files, Python code/tests, fixture JSON, runtime implementation, artifact body
+generation implementation, manifest writer implementation, or file-writing
+implementation.

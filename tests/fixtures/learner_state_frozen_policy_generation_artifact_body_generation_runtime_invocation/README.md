@@ -98,6 +98,11 @@ with public-safe metadata-only / body-free / count-only output. Makefile target
 integration, release-quality wrapper integration, workflow changes, runtime
 invocation, manifest writer integration, and file writing remain future work.
 
+Step573 adds
+`docs/frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_makefile_target_design.md`
+as a design-only / docs-only future standalone target design for the Step572
+validator. The Makefile target is not added in Step573.
+
 ## Non-Claims
 
 This planned root does not claim production readiness, real-data readiness,

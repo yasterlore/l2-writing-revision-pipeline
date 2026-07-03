@@ -1166,3 +1166,17 @@ The expected aggregate is 30 cases / 210 JSON files with 6 pass, 1 usage-error,
 22 fail-closed, and 1 mismatch case. The validator is not yet connected to a
 Makefile target or release-quality wrapper, and it does not invoke artifact
 body generation runtime, invoke manifest writer, or write files.
+
+## Step573 Artifact Body Generation Runtime Invocation Fixture Validator Makefile Target Design
+
+Step573 adds
+[artifact body generation runtime invocation fixture validator Makefile target design](../frozen_policy_generation_artifact_body_generation_runtime_invocation_fixture_validator_makefile_target_design.md)
+as a design-only / docs-only future standalone target design for the Step572
+validator CLI.
+
+The design proposes target
+`check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation-fixtures`
+and help text `Run artifact body generation runtime invocation fixture validation`.
+It does not change Makefile, release-quality wrapper, workflow, Python
+code/tests, fixture JSON, runtime implementation, artifact body generation
+runtime invocation, manifest writer integration, or file writing.
