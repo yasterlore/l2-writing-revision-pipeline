@@ -351,3 +351,9 @@ Step590 designs a separate future Makefile target for the actual-controlled fixt
 Step596 adds a design-only release-quality integration plan for the
 actual-controlled fixture validator and v0.4 runtime smoke targets. This
 planned-only fixture validator Makefile target design remains unchanged.
+
+## Step598 Later-Chain Note
+
+Step598 adds a separate design-only remote/manual run record workflow for the
+actual-controlled wrapper checks. This planned-only fixture validator
+Makefile target design remains unchanged.

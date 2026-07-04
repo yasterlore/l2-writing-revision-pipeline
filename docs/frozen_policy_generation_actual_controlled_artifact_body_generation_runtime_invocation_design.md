@@ -599,3 +599,12 @@ Step595 v0.4 runtime smoke target to `scripts/check_release_quality.sh` in
 adjacent order. It does not change Makefile, workflow files, Python
 code/tests, fixture JSON, runtime implementation, manifest writer integration,
 or file writing.
+
+## Step598 Remote Run Record Workflow Reference
+
+Step598 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md`
+as a design-only workflow for a future public-safe status marker after
+Step597. It does not create the marker or change wrapper, Makefile, workflow
+files, Python code/tests, fixture JSON, runtime implementation, manifest
+writer integration, or file writing.

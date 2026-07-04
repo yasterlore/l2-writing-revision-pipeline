@@ -288,3 +288,9 @@ release-quality wrapper. This status marker remains a Step583 planned-only
 release-quality record and is not evidence for the Step597 wrapper run,
 manifest writer integration, file writing, production readiness, real-data
 readiness, or model performance.
+
+## Step598 Later-Chain Note
+
+Step598 later adds a design-only remote/manual run record workflow for a
+future actual-controlled status marker. This status marker remains the
+Step583 planned-only release-quality record and is not replaced by Step598.

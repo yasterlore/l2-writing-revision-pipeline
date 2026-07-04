@@ -233,3 +233,9 @@ Step596 adds a design-only / docs-only release-quality integration plan for
 future wrapper integration of the actual-controlled fixture validator and
 v0.4 runtime smoke targets. It does not change this planned-only fixture root
 or fixture JSON.
+
+## Step598 Later-Chain Note
+
+Step598 adds a separate design-only / docs-only remote/manual run record
+workflow for a future actual-controlled status marker. It does not change this
+planned-only fixture root or fixture JSON.

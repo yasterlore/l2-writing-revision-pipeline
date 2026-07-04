@@ -375,3 +375,12 @@ The checks run after the planned-only v0.3 runtime invocation smoke and before
 artifact body fixture / CLI checks. Step597 does not change Makefile,
 workflow files, Python code/tests, fixture JSON, runtime implementation,
 manifest writer integration, or file writing.
+
+## Step598 Remote Run Record Workflow Reference
+
+Step598 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md`
+as a design-only / docs-only workflow for a future public-safe status marker
+covering the Step597 wrapper checks. It does not create the marker or change
+wrapper, Makefile, workflow files, Python code/tests, fixture JSON, manifest
+writer integration, or file writing.

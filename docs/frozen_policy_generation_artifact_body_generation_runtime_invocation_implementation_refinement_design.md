@@ -473,3 +473,9 @@ Step596 adds a separate design-only release-quality integration plan for the
 actual-controlled standalone targets. It remains separate from this
 planned-only v0.3 refinement and does not change wrapper, Makefile, Python
 code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step598 Later-Chain Note
+
+Step598 adds a separate design-only remote/manual run record workflow for the
+actual-controlled wrapper checks. It remains separate from this planned-only
+v0.3 refinement.

@@ -549,3 +549,9 @@ Step597 adds release-quality wrapper checks for the actual-controlled fixture
 validator target and v0.4 runtime smoke target. This fixture/schema contract
 and fixture JSON remain unchanged, and manifest writer integration and file
 writing remain out of scope.
+
+## Step598 Remote Run Record Workflow Reference
+
+Step598 adds a design-only / docs-only workflow for a future status marker for
+the Step597 wrapper checks. This fixture/schema contract and fixture JSON
+remain unchanged.

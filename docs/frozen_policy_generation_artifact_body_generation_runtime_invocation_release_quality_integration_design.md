@@ -181,6 +181,12 @@ It is a separate design-only plan for future wrapper integration of the
 Step591 and Step595 targets and does not change this planned-only wrapper
 design.
 
+Step598 later-chain status: a separate actual-controlled remote/manual run
+record workflow design is available at
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md`.
+It is for a future status marker and does not change this planned-only
+release-quality integration design.
+
 ## 8. Expected Public-Safe Output
 
 For fixture validator:

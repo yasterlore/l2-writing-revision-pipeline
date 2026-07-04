@@ -5582,3 +5582,7 @@ Confirm `docs/frozen_policy_generation_actual_controlled_artifact_body_generatio
 ## Step597 Actual-Controlled Runtime Release-Quality Integration Check
 
 Confirm `scripts/check_release_quality.sh` runs `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation-fixtures` before `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`. Confirm both run after the planned-only v0.3 runtime invocation smoke and before artifact body fixture / CLI checks, and that the wrapper output remains public-safe with no manifest writer invocation, no file writing, and no production readiness, real-data readiness, or model performance evidence.
+
+## Step598 Actual-Controlled Runtime Remote Run Record Workflow Check
+
+Confirm `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md` exists as a design-only / docs-only plan for a future Step599 status marker. Confirm it defines allowed public-safe metadata, count-only target summaries, missing metadata handling, the future status marker path, and exclusions for raw logs, full job output, fixture JSON bodies, payload bodies, production readiness, real-data readiness, and model performance evidence.

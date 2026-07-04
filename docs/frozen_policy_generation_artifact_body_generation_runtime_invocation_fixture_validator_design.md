@@ -448,3 +448,9 @@ Step596 adds a separate design-only release-quality integration plan for
 future wrapper integration of the actual-controlled fixture validator and
 v0.4 runtime smoke targets. This planned-only validator design remains
 unchanged.
+
+## Step598 Later-Chain Note
+
+Step598 adds a separate design-only remote/manual run record workflow for a
+future actual-controlled status marker. This planned-only validator design
+remains unchanged.

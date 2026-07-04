@@ -355,3 +355,8 @@ actual-controlled fixture validator target and before artifact body fixture /
 CLI checks. The Makefile target remains unchanged, and Step597 does not change
 workflow files, Python code/tests, fixture JSON, manifest writer integration,
 or file writing.
+
+## Step598 Remote Run Record Workflow Reference
+
+Step598 adds a design-only / docs-only workflow for a future status marker for
+the Step597 wrapper checks. This Makefile target design remains unchanged.

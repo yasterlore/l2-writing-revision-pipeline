@@ -289,3 +289,11 @@ targets to the release-quality wrapper after the planned-only v0.3 runtime
 invocation smoke. It remains outside this planned-only final safety review and
 does not change Makefile, workflow, Python code/tests, fixture JSON, manifest
 writer integration, or file writing.
+
+## Step598 Forward Reference
+
+Step598 later adds a design-only / docs-only remote/manual run record workflow
+for a future status marker covering the Step597 actual-controlled wrapper
+checks. It remains outside this planned-only final safety review and does not
+create a status marker, change wrapper files, change workflow files, or copy
+raw logs or payload bodies.

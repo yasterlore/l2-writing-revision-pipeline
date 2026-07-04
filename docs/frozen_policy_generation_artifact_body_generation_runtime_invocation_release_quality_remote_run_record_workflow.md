@@ -486,3 +486,10 @@ Step597 adds the Step591 and Step595 actual-controlled targets to the
 release-quality wrapper after this workflow design. It is not part of the
 Step582 remote record workflow and does not add workflow, Makefile, Python
 code/tests, fixture JSON, manifest writer, or file-writing changes.
+
+## Step598 Later-Chain Note
+
+Step598 adds a separate design-only / docs-only remote/manual run record
+workflow for a future status marker covering the Step597 actual-controlled
+wrapper checks. It does not replace this planned-only workflow and does not
+create a marker in Step598.

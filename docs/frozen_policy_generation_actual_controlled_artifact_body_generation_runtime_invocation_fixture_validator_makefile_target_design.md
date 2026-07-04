@@ -304,3 +304,8 @@ Step597 follow-up status: this fixture validator target is now connected to
 the release-quality wrapper before the Step595 v0.4 runtime smoke target. The
 target and fixture JSON remain unchanged, and Step597 does not invoke manifest
 writer or write files.
+
+Step598 follow-up status: a design-only remote/manual run record workflow for
+the Step597 wrapper checks is available at
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md`.
+It does not create a status marker or change fixture JSON.

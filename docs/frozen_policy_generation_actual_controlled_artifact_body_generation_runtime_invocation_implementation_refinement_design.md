@@ -611,3 +611,10 @@ Step597 connects the Step591 actual-controlled fixture validator target and
 the Step595 v0.4 runtime smoke target to the release-quality wrapper in
 adjacent order. It does not change Python code/tests, fixture JSON, runtime
 implementation, manifest writer integration, or file writing.
+
+## Step598 Remote Run Record Workflow Reference
+
+Step598 adds a design-only / docs-only workflow for a future public-safe
+status marker for the Step597 wrapper checks. It does not change runtime
+implementation, Python code/tests, fixture JSON, manifest writer integration,
+or file writing.

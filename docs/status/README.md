@@ -1380,3 +1380,7 @@ invocation evidence, or file-writing evidence.
 ## Step597 Actual-Controlled Runtime Release-Quality Integration
 
 - `scripts/check_release_quality.sh`: Step597 adds the Step591 actual-controlled fixture validator target and Step595 v0.4 runtime smoke target in adjacent order. They run after the planned-only v0.3 runtime invocation smoke and before artifact body fixture / CLI checks.
+
+## Step598 Actual-Controlled Runtime Remote Run Record Workflow
+
+- [Actual-controlled artifact body generation runtime invocation release-quality remote run record workflow](../frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md): design-only / docs-only plan for a future public-safe status marker for the Step597 wrapper checks. Step598 does not create the marker or change wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, or file writing.
