@@ -519,3 +519,8 @@ Step590 designs a future standalone Makefile target for the Step589 validator th
 ## Step591 Makefile Target Implementation Reference
 
 Step591 implements the standalone Makefile target for the Step589 validator against this fixture/schema contract. The fixture JSON remains unchanged, and release-quality wrapper integration, actual runtime invocation, manifest writer integration, and file writing remain deferred.
+
+
+## Step592 Implementation Refinement Design Reference
+
+Step592 adds the implementation refinement design for the future v0.4 runtime behavior that consumes this fixture/schema contract. The fixture JSON remains unchanged, and Makefile, wrapper, workflow, manifest writer, and file-writing changes remain out of scope in Step592.

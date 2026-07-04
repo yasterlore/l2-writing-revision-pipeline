@@ -454,3 +454,8 @@ Step590 designs a future standalone Makefile target for the actual-controlled fi
 ## Step591 Later-Chain Note
 
 Step591 adds the standalone Makefile target for the actual-controlled fixture validator after this workflow design. It is not part of the Step582 remote record workflow and remains outside release-quality in Step591.
+
+
+## Step592 Later-Chain Note
+
+Step592 adds a design-only implementation refinement for future v0.4 actual-controlled runtime behavior after this workflow design. It is not part of the Step582 remote record workflow and does not add wrapper, workflow, Makefile, Python code/tests, fixture JSON, manifest writer, or file-writing changes.

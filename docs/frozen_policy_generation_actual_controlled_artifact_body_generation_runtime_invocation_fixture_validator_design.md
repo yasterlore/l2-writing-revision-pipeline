@@ -445,3 +445,8 @@ Step590 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_gene
 ## Step591 Makefile Target Implementation Reference
 
 Step591 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation-fixtures` for the Step589 validator. It remains outside release-quality and does not invoke actual artifact body generation runtime, manifest writer, or file writing.
+
+
+## Step592 Implementation Refinement Design Reference
+
+Step592 adds the design-only refinement for a future v0.4 runtime behavior step. It preserves the Step589/Step591 validator target boundary and does not change validator code, fixture JSON, Makefile, wrapper, workflow, manifest writer integration, or file writing.

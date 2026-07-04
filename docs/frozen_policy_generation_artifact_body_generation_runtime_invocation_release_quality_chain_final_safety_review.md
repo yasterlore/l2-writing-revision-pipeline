@@ -256,3 +256,8 @@ Step590 adds a design-only Makefile target plan for the later actual-controlled 
 ## Step591 Forward Reference
 
 Step591 adds the standalone Makefile target for the later actual-controlled fixture validator. It remains outside the Step569-Step583 planned-only release-quality chain, is not release-quality integrated, and does not change the non-equivalence cautions recorded in this review.
+
+
+## Step592 Forward Reference
+
+Step592 adds a design-only implementation refinement for the later v0.4 actual-controlled runtime behavior. It remains outside the Step569-Step583 planned-only release-quality chain and does not change the non-equivalence cautions recorded in this review.

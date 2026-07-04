@@ -565,3 +565,8 @@ Step590 designs a future standalone Makefile target for the actual-controlled fi
 ## Step591 Makefile Target Implementation Reference
 
 Step591 implements the standalone Makefile target for the actual-controlled fixture validator. This remains fixture validation only and does not implement actual controlled runtime invocation, manifest writer integration, file writing, wrapper integration, or workflow integration.
+
+
+## Step592 Implementation Refinement Design Reference
+
+Step592 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_implementation_refinement_design.md` as the design-only refinement before future v0.4 direct runtime behavior. It keeps this chain out of Makefile, wrapper, workflow, fixture JSON, manifest writer, and file-writing changes in Step592.

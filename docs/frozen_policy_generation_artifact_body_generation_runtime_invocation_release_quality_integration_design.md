@@ -167,6 +167,13 @@ It records count-only summaries for the Step581 adjacent checks without
 storing raw logs, full job output, payload bodies, or runtime invocation
 evidence beyond the planned-only boundary.
 
+Step592 later-chain status: the actual-controlled implementation refinement
+design is available at
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_implementation_refinement_design.md`.
+It remains outside this planned-only release-quality integration design and
+does not add wrapper, workflow, Makefile, Python code/tests, fixture JSON,
+manifest writer, or file-writing changes.
+
 ## 8. Expected Public-Safe Output
 
 For fixture validator:

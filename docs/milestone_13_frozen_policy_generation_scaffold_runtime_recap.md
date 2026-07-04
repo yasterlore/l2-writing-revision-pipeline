@@ -3161,3 +3161,9 @@ Step590 adds a design-only / docs-only Makefile target design for the Step589 st
 Step591 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation-fixtures` with help text `Run actual-controlled artifact body generation runtime invocation fixture validation`. The target runs the Step589 validator against the Step587 actual-controlled fixture root and keeps the expected aggregate at 36 cases / 252 JSON, 6 pass, 3 usage-error, 26 fail-closed, and 1 mismatch case.
 
 Step591 does not add the target to release-quality, change workflow files, change Python code/tests, change fixture JSON, change runtime implementation, invoke actual artifact body generation runtime, invoke manifest writer, write files, use real data, use metrics, or claim production readiness.
+
+## Step592 Actual-Controlled Runtime Invocation Implementation Refinement Design
+
+Step592 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_implementation_refinement_design.md` as a design-only / docs-only refinement before the future v0.4 direct runtime behavior step. The design recommends extending the existing runtime integration module with explicit v0.4 schema/mode separation, preserving v0.1 / v0.2 / v0.3 behavior, using the Step587 primary case, scanning stdout/stderr summaries, and keeping output public-safe and body-free.
+
+Step592 does not change Python code/tests, Makefile, release-quality wrapper, workflow files, fixture JSON, runtime implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

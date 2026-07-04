@@ -267,3 +267,9 @@ is now available with help text
 `Run actual-controlled artifact body generation runtime invocation fixture validation`.
 It remains outside the release-quality wrapper and does not invoke actual
 artifact body generation runtime, manifest writer, or file writing.
+
+Step592 follow-up status: the implementation refinement design is available at
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_implementation_refinement_design.md`.
+It narrows the future v0.4 runtime behavior step without changing Makefile,
+wrapper, workflow, Python code/tests, fixture JSON, manifest writer, or file
+writing.
