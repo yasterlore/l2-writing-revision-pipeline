@@ -3191,3 +3191,9 @@ Step595 does not add release-quality wrapper integration, change workflow files,
 Step596 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_integration_design.md` as a design-only / docs-only plan for future wrapper integration of the Step591 actual-controlled fixture validator target and the Step595 v0.4 runtime smoke target.
 
 Step596 recommends adding fixture validation before runtime smoke, adjacent to the planned-only runtime invocation checks and before broader artifact body / manifest writer checks. It does not change the release-quality wrapper, Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step597 Actual-Controlled Runtime Release-Quality Wrapper Integration
+
+Step597 adds the Step591 actual-controlled fixture validator target and Step595 v0.4 runtime smoke target to `scripts/check_release_quality.sh` in adjacent order. The fixture validator runs first, followed by the v0.4 runtime smoke, after the planned-only v0.3 runtime invocation smoke and before artifact body fixture / CLI checks.
+
+Step597 does not change Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

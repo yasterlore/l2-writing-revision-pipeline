@@ -591,3 +591,11 @@ as the design-only plan for adding the Step591 fixture validator target and
 Step595 v0.4 runtime smoke target to release-quality in a later step. It does
 not change wrapper, Makefile, workflow files, Python code/tests, fixture JSON,
 runtime implementation, manifest writer integration, or file writing.
+
+## Step597 Release-Quality Integration Status
+
+Step597 adds the Step591 actual-controlled fixture validator target and
+Step595 v0.4 runtime smoke target to `scripts/check_release_quality.sh` in
+adjacent order. It does not change Makefile, workflow files, Python
+code/tests, fixture JSON, runtime implementation, manifest writer integration,
+or file writing.

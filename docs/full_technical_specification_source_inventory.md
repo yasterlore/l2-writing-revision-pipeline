@@ -491,3 +491,7 @@ Step593 updates `python/learner_state/frozen_policy_generation_artifact_body_gen
 ## Step595 Source Inventory Addendum
 
 Step595 updates `Makefile` with the standalone target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`. README/docs references are updated. No release-quality wrapper, workflow, Python code/tests, fixture JSON, runtime implementation, validator implementation, artifact body generation implementation, or manifest writer implementation is added or changed.
+
+## Step597 Source Inventory Addendum
+
+Step597 updates `scripts/check_release_quality.sh` to run the Step591 actual-controlled fixture validator target and the Step595 v0.4 runtime smoke target in adjacent order after the planned-only v0.3 runtime invocation smoke. README/docs references are updated. No Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, validator implementation, artifact body generation implementation, or manifest writer implementation is added or changed.

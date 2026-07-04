@@ -604,3 +604,10 @@ Step596 adds a design-only / docs-only release-quality integration plan for
 the Step591 and Step595 standalone actual-controlled targets. It does not
 change the wrapper, Makefile, workflows, Python code/tests, fixture JSON,
 runtime implementation, manifest writer integration, or file writing.
+
+## Step597 Release-Quality Integration Status
+
+Step597 connects the Step591 actual-controlled fixture validator target and
+the Step595 v0.4 runtime smoke target to the release-quality wrapper in
+adjacent order. It does not change Python code/tests, fixture JSON, runtime
+implementation, manifest writer integration, or file writing.

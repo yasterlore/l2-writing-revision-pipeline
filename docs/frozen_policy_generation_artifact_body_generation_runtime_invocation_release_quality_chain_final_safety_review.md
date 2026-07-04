@@ -281,3 +281,11 @@ for the Step591 and Step595 actual-controlled standalone targets. It remains
 outside this planned-only final safety review and does not change wrapper,
 Makefile, workflow, Python code/tests, fixture JSON, manifest writer
 integration, or file writing.
+
+## Step597 Forward Reference
+
+Step597 later adds the Step591 and Step595 actual-controlled standalone
+targets to the release-quality wrapper after the planned-only v0.3 runtime
+invocation smoke. It remains outside this planned-only final safety review and
+does not change Makefile, workflow, Python code/tests, fixture JSON, manifest
+writer integration, or file writing.

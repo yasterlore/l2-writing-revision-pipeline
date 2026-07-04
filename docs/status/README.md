@@ -1376,3 +1376,7 @@ invocation evidence, or file-writing evidence.
 ## Step596 Actual-Controlled Runtime Release-Quality Integration Design
 
 - [Actual-controlled artifact body generation runtime invocation release-quality integration design](../frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_integration_design.md): design-only / docs-only plan for future release-quality wrapper integration of the Step591 and Step595 standalone targets. Step596 does not change the wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step597 Actual-Controlled Runtime Release-Quality Integration
+
+- `scripts/check_release_quality.sh`: Step597 adds the Step591 actual-controlled fixture validator target and Step595 v0.4 runtime smoke target in adjacent order. They run after the planned-only v0.3 runtime invocation smoke and before artifact body fixture / CLI checks.

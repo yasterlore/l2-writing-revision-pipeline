@@ -347,3 +347,11 @@ as a design-only / docs-only plan for future wrapper integration of this
 target together with the Step591 actual-controlled fixture validator target.
 It does not change the wrapper, Makefile, workflows, Python code/tests,
 fixture JSON, manifest writer integration, or file writing.
+
+## Step597 Release-Quality Integration Status
+
+Step597 adds this target to `scripts/check_release_quality.sh` after the
+actual-controlled fixture validator target and before artifact body fixture /
+CLI checks. The Makefile target remains unchanged, and Step597 does not change
+workflow files, Python code/tests, fixture JSON, manifest writer integration,
+or file writing.

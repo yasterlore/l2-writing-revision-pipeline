@@ -600,3 +600,7 @@ Step593 adds focused runtime integration coverage for v0.4 `artifact-body-runtim
 ## Step595 Coverage Addendum
 
 Step595 adds standalone Makefile coverage for running the Step593 v0.4 actual-controlled runtime CLI through `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`. This is standalone target coverage only; it is not release-quality wrapper coverage, manifest writer coverage, file-writing coverage, production readiness, real-data readiness, or model performance evidence.
+
+## Step597 Coverage Addendum
+
+Step597 adds release-quality wrapper coverage for the Step591 actual-controlled fixture validator target and the Step595 v0.4 runtime smoke target. The fixture validator check runs before the runtime smoke check, after the planned-only v0.3 runtime invocation smoke and before artifact body fixture / CLI checks. This is wrapper coverage for public-safe metadata-only checks only; it is not manifest writer coverage, file-writing coverage, production readiness, real-data readiness, or model performance evidence.

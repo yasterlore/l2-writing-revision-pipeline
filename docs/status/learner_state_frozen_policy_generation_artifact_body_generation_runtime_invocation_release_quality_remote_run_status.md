@@ -280,3 +280,11 @@ for the Step591 and Step595 actual-controlled targets. This status marker
 remains a Step583 planned-only release-quality record and is not evidence for
 actual-controlled wrapper integration, manifest writer integration, file
 writing, production readiness, real-data readiness, or model performance.
+
+## Step597 Later-Chain Note
+
+Step597 later adds the Step591 and Step595 actual-controlled targets to the
+release-quality wrapper. This status marker remains a Step583 planned-only
+release-quality record and is not evidence for the Step597 wrapper run,
+manifest writer integration, file writing, production readiness, real-data
+readiness, or model performance.

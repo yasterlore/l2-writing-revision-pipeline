@@ -470,3 +470,10 @@ Step591 fixture validator target and the Step595 v0.4 runtime smoke target to
 the wrapper in a later step. The fixture validator implementation remains
 unchanged, and Step596 does not change wrapper, Makefile, workflow,
 Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step597 Release-Quality Integration Status
+
+Step597 adds the Step591 fixture validator target to release-quality before
+the Step595 v0.4 runtime smoke target. The fixture validator implementation,
+Python code/tests, fixture JSON, manifest writer integration, and file writing
+remain unchanged.

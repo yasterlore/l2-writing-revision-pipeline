@@ -738,3 +738,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step596 Actual-Controlled Runtime Release-Quality Integration Design
 
 - [Actual-controlled artifact body generation runtime invocation release-quality integration design](frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_integration_design.md): design-only / docs-only plan for future wrapper integration of the Step591 fixture validator target and Step595 v0.4 runtime smoke target. It recommends adding both checks in order, with no wrapper change in Step596.
+
+## Step597 Actual-Controlled Runtime Release-Quality Integration
+
+- `scripts/check_release_quality.sh`: now runs actual-controlled fixture validation followed by the v0.4 actual-controlled runtime smoke after the planned-only v0.3 runtime invocation smoke and before artifact body fixture / CLI checks. The checks remain public-safe and do not invoke manifest writer or write files.

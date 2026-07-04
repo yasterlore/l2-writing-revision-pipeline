@@ -5578,3 +5578,7 @@ Confirm `Makefile` exposes `check-learner-state-frozen-policy-generation-actual-
 ## Step596 Actual-Controlled Runtime Release-Quality Integration Design Check
 
 Confirm `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_integration_design.md` exists as a design-only / docs-only plan for future wrapper integration of the Step591 actual-controlled fixture validator target and Step595 v0.4 runtime smoke target. Confirm it recommends fixture validation before runtime smoke, keeps planned-only checks unchanged, and does not change wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## Step597 Actual-Controlled Runtime Release-Quality Integration Check
+
+Confirm `scripts/check_release_quality.sh` runs `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation-fixtures` before `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`. Confirm both run after the planned-only v0.3 runtime invocation smoke and before artifact body fixture / CLI checks, and that the wrapper output remains public-safe with no manifest writer invocation, no file writing, and no production readiness, real-data readiness, or model performance evidence.

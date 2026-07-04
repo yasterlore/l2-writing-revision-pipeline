@@ -166,6 +166,12 @@ run make check-learner-state-frozen-policy-generation-artifact-body-generation-r
 section "learner-state frozen policy generation artifact body generation runtime invocation planned-only v0.3 smoke"
 run make check-learner-state-frozen-policy-generation-artifact-body-generation-runtime-invocation
 
+section "learner-state frozen policy generation actual-controlled artifact body generation runtime invocation fixture validation"
+run make check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation-fixtures
+
+section "learner-state frozen policy generation actual-controlled artifact body generation runtime invocation smoke"
+run make check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation
+
 section "learner-state frozen policy generation artifact body fixture validation"
 run make check-learner-state-frozen-policy-generation-artifact-body-fixtures
 

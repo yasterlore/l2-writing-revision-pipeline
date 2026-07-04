@@ -479,3 +479,10 @@ the Step591 and Step595 actual-controlled targets after this workflow design.
 It is not part of the Step582 remote record workflow and does not add wrapper,
 workflow, Makefile, Python code/tests, fixture JSON, manifest writer, or
 file-writing changes.
+
+## Step597 Later-Chain Note
+
+Step597 adds the Step591 and Step595 actual-controlled targets to the
+release-quality wrapper after this workflow design. It is not part of the
+Step582 remote record workflow and does not add workflow, Makefile, Python
+code/tests, fixture JSON, manifest writer, or file-writing changes.

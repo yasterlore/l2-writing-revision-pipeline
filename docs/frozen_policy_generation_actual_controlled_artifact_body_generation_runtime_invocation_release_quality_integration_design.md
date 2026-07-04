@@ -362,3 +362,16 @@ Recommended next step:
 - Step597: actual-controlled runtime invocation release-quality wrapper integration
 
 Step597 should update only the wrapper and necessary README/docs. It should not change Makefile, Python code/tests, fixture JSON, workflow files, runtime implementation, validator implementation, manifest writer integration, or file writing.
+
+## Step597 Implementation Status
+
+Step597 adds both proposed checks to `scripts/check_release_quality.sh` in the
+recommended order:
+
+1. `release_quality_check: learner-state frozen policy generation actual-controlled artifact body generation runtime invocation fixture validation`
+2. `release_quality_check: learner-state frozen policy generation actual-controlled artifact body generation runtime invocation smoke`
+
+The checks run after the planned-only v0.3 runtime invocation smoke and before
+artifact body fixture / CLI checks. Step597 does not change Makefile,
+workflow files, Python code/tests, fixture JSON, runtime implementation,
+manifest writer integration, or file writing.

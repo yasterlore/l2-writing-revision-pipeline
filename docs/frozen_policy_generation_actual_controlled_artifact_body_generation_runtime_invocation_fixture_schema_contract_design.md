@@ -542,3 +542,10 @@ Step595 adds the standalone Makefile target for the Step593 v0.4 runtime CLI tha
 Step596 adds a design-only / docs-only plan for future release-quality wrapper
 integration of the actual-controlled fixture validator target and v0.4 runtime
 smoke target. This fixture/schema contract and fixture JSON remain unchanged.
+
+## Step597 Release-Quality Integration Status
+
+Step597 adds release-quality wrapper checks for the actual-controlled fixture
+validator target and v0.4 runtime smoke target. This fixture/schema contract
+and fixture JSON remain unchanged, and manifest writer integration and file
+writing remain out of scope.
