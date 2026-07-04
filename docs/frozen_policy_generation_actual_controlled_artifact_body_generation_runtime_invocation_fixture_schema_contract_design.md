@@ -514,3 +514,8 @@ Step589 adds the standalone actual-controlled fixture validator module and focus
 ## Step590 Makefile Target Design Reference
 
 Step590 designs a future standalone Makefile target for the Step589 validator that consumes this fixture/schema contract. The target is not implemented in Step590, and release-quality wrapper integration remains deferred.
+
+
+## Step591 Makefile Target Implementation Reference
+
+Step591 implements the standalone Makefile target for the Step589 validator against this fixture/schema contract. The fixture JSON remains unchanged, and release-quality wrapper integration, actual runtime invocation, manifest writer integration, and file writing remain deferred.

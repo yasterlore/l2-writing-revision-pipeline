@@ -260,3 +260,10 @@ Recommended next step:
 - Step591: actual-controlled fixture validator Makefile target implementation
 
 Do not proceed directly to runtime implementation.
+
+Step591 implementation status: the standalone Makefile target
+`check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation-fixtures`
+is now available with help text
+`Run actual-controlled artifact body generation runtime invocation fixture validation`.
+It remains outside the release-quality wrapper and does not invoke actual
+artifact body generation runtime, manifest writer, or file writing.

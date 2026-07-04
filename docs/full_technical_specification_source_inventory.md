@@ -479,3 +479,7 @@ Step587 adds the fixture root `tests/fixtures/learner_state_frozen_policy_genera
 ## Step589 Source Inventory Addendum
 
 Step589 adds `python/learner_state/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py` and `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation.py`. The validator is standalone only and targets the Step587 fixture root with public-safe aggregate output. No Makefile, workflow, release-quality wrapper, fixture JSON, runtime implementation, artifact body generation implementation, or manifest writer implementation is added or changed.
+
+## Step591 Source Inventory Addendum
+
+Step591 adds the Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation-fixtures` for the Step589 validator CLI. It also updates README/docs status references. No release-quality wrapper, workflow, Python code/tests, fixture JSON, runtime implementation, artifact body generation implementation, or manifest writer implementation is added or changed.

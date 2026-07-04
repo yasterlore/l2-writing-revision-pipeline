@@ -560,3 +560,8 @@ Step589 implements a standalone validator for the Step587 actual-controlled fixt
 ## Step590 Makefile Target Design Reference
 
 Step590 designs a future standalone Makefile target for the actual-controlled fixture validator. This remains fixture validation only and does not implement actual controlled runtime invocation, manifest writer integration, file writing, wrapper integration, or workflow integration.
+
+
+## Step591 Makefile Target Implementation Reference
+
+Step591 implements the standalone Makefile target for the actual-controlled fixture validator. This remains fixture validation only and does not implement actual controlled runtime invocation, manifest writer integration, file writing, wrapper integration, or workflow integration.

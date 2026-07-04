@@ -250,3 +250,8 @@ Step589 later adds a standalone validator for the Step587 actual-controlled fixt
 ## Step590 Later-Chain Note
 
 Step590 later designs a standalone Makefile target for the Step589 actual-controlled fixture validator. This status marker remains a Step583 planned-only release-quality record and is not evidence for actual controlled runtime invocation, manifest writer integration, or file writing.
+
+
+## Step591 Later-Chain Note
+
+Step591 later adds the standalone Makefile target for the Step589 actual-controlled fixture validator. This status marker remains a Step583 planned-only release-quality record and is not evidence for actual controlled runtime invocation, manifest writer integration, file writing, or release-quality integration of the Step591 target.

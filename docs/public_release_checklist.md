@@ -5554,3 +5554,7 @@ Confirm the Step589 standalone validator module and focused tests exist for the 
 ## Step590 Actual-Controlled Fixture Validator Makefile Target Design Check
 
 Confirm the Step590 Makefile target design doc exists and proposes only a future standalone target for the Step589 validator. Confirm Step590 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## Step591 Actual-Controlled Fixture Validator Makefile Target Check
+
+Confirm the Makefile exposes `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation-fixtures` with help text `Run actual-controlled artifact body generation runtime invocation fixture validation`. Confirm the target runs the Step589 validator over the Step587 actual-controlled fixture root with expected aggregate 36 cases / 252 JSON, 6 pass, 3 usage-error, 26 fail-closed, and 1 mismatch case. Confirm this step does not change the release-quality wrapper, workflow files, Python code/tests, fixture JSON, runtime implementation, actual artifact body generation runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

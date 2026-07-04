@@ -3155,3 +3155,9 @@ Step589 adds the standalone validator module `python/learner_state/frozen_policy
 ## Step590 Actual-Controlled Fixture Validator Makefile Target Design
 
 Step590 adds a design-only / docs-only Makefile target design for the Step589 standalone actual-controlled fixture validator. It proposes target name, help text, command, expected aggregate, placement near the planned-only runtime invocation fixture target, relationship to existing targets, Step591 implementation plan, and safety boundaries. It does not change Makefile, release-quality wrapper, workflow, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, or file writing.
+
+## Step591 Actual-Controlled Fixture Validator Makefile Target Implementation
+
+Step591 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation-fixtures` with help text `Run actual-controlled artifact body generation runtime invocation fixture validation`. The target runs the Step589 validator against the Step587 actual-controlled fixture root and keeps the expected aggregate at 36 cases / 252 JSON, 6 pass, 3 usage-error, 26 fail-closed, and 1 mismatch case.
+
+Step591 does not add the target to release-quality, change workflow files, change Python code/tests, change fixture JSON, change runtime implementation, invoke actual artifact body generation runtime, invoke manifest writer, write files, use real data, use metrics, or claim production readiness.

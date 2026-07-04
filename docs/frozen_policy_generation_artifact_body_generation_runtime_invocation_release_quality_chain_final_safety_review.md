@@ -251,3 +251,8 @@ After this final safety review, Step589 adds a standalone validator for the late
 ## Step590 Forward Reference
 
 Step590 adds a design-only Makefile target plan for the later actual-controlled fixture validator. It remains outside the Step569-Step583 planned-only release-quality chain and does not change the non-equivalence cautions recorded in this review.
+
+
+## Step591 Forward Reference
+
+Step591 adds the standalone Makefile target for the later actual-controlled fixture validator. It remains outside the Step569-Step583 planned-only release-quality chain, is not release-quality integrated, and does not change the non-equivalence cautions recorded in this review.

@@ -473,3 +473,5 @@ Step587 adds a future actual-controlled runtime invocation fixture root only. Th
 ## Step589 Safety Review Addendum
 
 Step589 adds a standalone public-safe fixture validator and focused tests for the Step587 actual-controlled root. The validator output is metadata-only and count-only where applicable, checks no body/value fields are present, and treats physical temporary-copy fixture breakage as input errors. This addendum does not claim runtime implementation, actual controlled invocation correctness, manifest writer integration correctness, artifact body payload correctness, production readiness, real-data readiness, or model performance.
+
+Step591 adds a standalone Makefile target for the Step589 actual-controlled fixture validator. The target is a public-safe fixture validation entry point only and is not release-quality integrated. It does not implement actual artifact body generation runtime invocation, invoke manifest writer, write files, or claim runtime correctness generally, artifact body payload correctness, production readiness, real-data readiness, or model performance.

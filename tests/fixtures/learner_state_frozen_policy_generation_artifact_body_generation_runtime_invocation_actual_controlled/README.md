@@ -201,3 +201,7 @@ Expected direct aggregate remains 36 cases, 6 valid cases, 30 invalid cases, 252
 ## Step590 Makefile Target Design
 
 Step590 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validator_makefile_target_design.md` as a design-only plan for a future standalone Makefile target around the Step589 validator. The proposed target is `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation-fixtures`. Step590 does not implement the target, change fixture JSON, invoke runtime code, invoke manifest writer code, or write files.
+
+## Step591 Makefile Target Implementation
+
+Step591 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation-fixtures` for the Step589 validator. The target runs this root with the expected 36-case / 252-JSON aggregate and remains outside release-quality. This root and its fixture JSON remain unchanged; actual artifact body generation runtime invocation, manifest writer integration, and file writing remain out of scope.
