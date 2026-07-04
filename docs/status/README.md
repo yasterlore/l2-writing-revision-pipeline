@@ -1384,3 +1384,7 @@ invocation evidence, or file-writing evidence.
 ## Step598 Actual-Controlled Runtime Remote Run Record Workflow
 
 - [Actual-controlled artifact body generation runtime invocation release-quality remote run record workflow](../frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md): design-only / docs-only plan for a future public-safe status marker for the Step597 wrapper checks. Step598 does not create the marker or change wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step599 Actual-Controlled Runtime Remote Run Status
+
+- [Actual-controlled artifact body generation runtime invocation release-quality remote run status](learner_state_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md): status-marker-only / docs-only record for the remote Release Quality run after Step597 wrapper integration. It records public-safe metadata and count-only target summaries, and stores no raw logs, full job output, or payload bodies.

@@ -618,3 +618,9 @@ Step598 adds a design-only / docs-only workflow for a future public-safe
 status marker for the Step597 wrapper checks. It does not change runtime
 implementation, Python code/tests, fixture JSON, manifest writer integration,
 or file writing.
+
+## Step599 Remote Run Status Reference
+
+Step599 adds the public-safe remote run status marker for the Step597 wrapper
+checks. Runtime implementation, Python code/tests, fixture JSON, manifest
+writer integration, and file writing remain unchanged.

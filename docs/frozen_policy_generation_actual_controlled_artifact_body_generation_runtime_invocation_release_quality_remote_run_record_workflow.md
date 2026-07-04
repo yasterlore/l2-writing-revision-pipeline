@@ -378,3 +378,11 @@ Recommended next step:
 - Step599: actual-controlled runtime invocation release-quality remote status marker
 
 Step599 should create the status marker only from public-safe metadata. It should not copy raw logs, alter wrapper / Makefile / Python / fixture JSON / workflow, implement manifest writer integration, or enable file writing.
+
+## Step599 Implementation Status
+
+Step599 creates the public-safe status marker at
+`docs/status/learner_state_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md`.
+It records the provided remote Release Quality metadata and count-only target
+summaries without copying raw logs, full job output, fixture JSON bodies, or
+payload bodies.

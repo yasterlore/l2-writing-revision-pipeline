@@ -3203,3 +3203,9 @@ Step597 does not change Makefile, workflow files, Python code/tests, fixture JSO
 Step598 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future Step599 public-safe status marker after Step597 wrapper integration.
 
 Step598 defines allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, count-only target summaries, missing metadata handling, and the future status marker path. It does not create the marker, change wrapper files, change Makefile, change workflow files, change Python code/tests, change fixture JSON, invoke manifest writer, write files, use real data, use metrics, or claim production readiness.
+
+## Step599 Actual-Controlled Runtime Remote Run Status
+
+Step599 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step597 wrapper integration.
+
+The marker records public-safe metadata, observed actual-controlled labels, count-only summaries for the 36-case fixture validator and v0.4 runtime smoke, and missing metadata handling. It stores no raw logs, full job output, fixture JSON bodies, payload bodies, real-data evidence, metric evidence, manifest writer evidence, file-writing evidence, or production readiness status.

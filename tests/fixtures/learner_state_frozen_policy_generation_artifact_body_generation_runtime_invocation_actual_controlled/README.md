@@ -248,3 +248,12 @@ as a design-only / docs-only plan for a future public-safe status marker after
 Step597 wrapper integration. The fixture JSON remains unchanged, and Step598
 does not change wrapper, Makefile, workflow, Python code/tests, runtime
 implementation, manifest writer integration, or file writing.
+
+## Step599 Remote Run Status Marker
+
+Step599 adds
+`docs/status/learner_state_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md`
+as a public-safe status marker for the remote Release Quality run after
+Step597 wrapper integration. The fixture JSON remains unchanged, and Step599
+does not change wrapper, Makefile, workflow, Python code/tests, runtime
+implementation, manifest writer integration, or file writing.

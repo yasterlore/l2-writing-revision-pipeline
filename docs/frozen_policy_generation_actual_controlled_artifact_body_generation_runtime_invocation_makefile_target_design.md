@@ -360,3 +360,9 @@ or file writing.
 
 Step598 adds a design-only / docs-only workflow for a future status marker for
 the Step597 wrapper checks. This Makefile target design remains unchanged.
+
+## Step599 Remote Run Status Reference
+
+Step599 adds a public-safe status marker for the remote Release Quality run
+after Step597 wrapper integration. This Makefile target design remains
+unchanged.

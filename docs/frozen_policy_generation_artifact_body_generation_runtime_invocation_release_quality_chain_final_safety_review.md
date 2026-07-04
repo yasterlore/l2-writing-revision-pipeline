@@ -297,3 +297,9 @@ for a future status marker covering the Step597 actual-controlled wrapper
 checks. It remains outside this planned-only final safety review and does not
 create a status marker, change wrapper files, change workflow files, or copy
 raw logs or payload bodies.
+
+## Step599 Forward Reference
+
+Step599 later adds a public-safe status marker for the remote Release Quality
+run after Step597 wrapper integration. It remains outside this planned-only
+final safety review and does not replace the Step583 planned-only marker.

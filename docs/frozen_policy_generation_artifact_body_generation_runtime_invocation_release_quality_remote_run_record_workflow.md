@@ -493,3 +493,9 @@ Step598 adds a separate design-only / docs-only remote/manual run record
 workflow for a future status marker covering the Step597 actual-controlled
 wrapper checks. It does not replace this planned-only workflow and does not
 create a marker in Step598.
+
+## Step599 Later-Chain Note
+
+Step599 adds the separate actual-controlled remote run status marker. This
+planned-only workflow remains the Step582 design and is not replaced by
+Step599.

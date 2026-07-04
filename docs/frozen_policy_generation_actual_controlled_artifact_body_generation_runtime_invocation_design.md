@@ -608,3 +608,12 @@ as a design-only workflow for a future public-safe status marker after
 Step597. It does not create the marker or change wrapper, Makefile, workflow
 files, Python code/tests, fixture JSON, runtime implementation, manifest
 writer integration, or file writing.
+
+## Step599 Remote Run Status Reference
+
+Step599 adds
+`docs/status/learner_state_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md`
+as the public-safe status marker for the remote Release Quality run after
+Step597 wrapper integration. It does not change wrapper, Makefile, workflow
+files, Python code/tests, fixture JSON, runtime implementation, manifest
+writer integration, or file writing.

@@ -5586,3 +5586,7 @@ Confirm `scripts/check_release_quality.sh` runs `check-learner-state-frozen-poli
 ## Step598 Actual-Controlled Runtime Remote Run Record Workflow Check
 
 Confirm `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_record_workflow.md` exists as a design-only / docs-only plan for a future Step599 status marker. Confirm it defines allowed public-safe metadata, count-only target summaries, missing metadata handling, the future status marker path, and exclusions for raw logs, full job output, fixture JSON bodies, payload bodies, production readiness, real-data readiness, and model performance evidence.
+
+## Step599 Actual-Controlled Runtime Remote Run Status Check
+
+Confirm `docs/status/learner_state_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md` exists as a status-marker-only / docs-only record for the remote Release Quality run after Step597 wrapper integration. Confirm it records public-safe metadata, observed labels, count-only target summaries, missing metadata handling, and no raw logs, full job output, fixture JSON bodies, payload bodies, production readiness, real-data readiness, or model performance evidence.

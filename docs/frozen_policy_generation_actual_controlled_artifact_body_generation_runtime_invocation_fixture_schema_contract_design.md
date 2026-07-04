@@ -555,3 +555,8 @@ writing remain out of scope.
 Step598 adds a design-only / docs-only workflow for a future status marker for
 the Step597 wrapper checks. This fixture/schema contract and fixture JSON
 remain unchanged.
+
+## Step599 Remote Run Status Reference
+
+Step599 adds the public-safe remote run status marker for the Step597 wrapper
+checks. This fixture/schema contract and fixture JSON remain unchanged.

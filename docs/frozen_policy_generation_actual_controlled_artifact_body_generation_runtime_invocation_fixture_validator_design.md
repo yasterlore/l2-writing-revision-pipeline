@@ -483,3 +483,8 @@ remain unchanged.
 Step598 adds a design-only workflow for a future public-safe status marker
 covering the Step597 wrapper checks. The fixture validator design and fixture
 JSON remain unchanged.
+
+## Step599 Remote Run Status Reference
+
+Step599 adds the public-safe remote run status marker for the Step597 wrapper
+checks. The fixture validator design and fixture JSON remain unchanged.
