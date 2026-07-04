@@ -524,3 +524,7 @@ Step591 implements the standalone Makefile target for the Step589 validator agai
 ## Step592 Implementation Refinement Design Reference
 
 Step592 adds the implementation refinement design for the future v0.4 runtime behavior that consumes this fixture/schema contract. The fixture JSON remains unchanged, and Makefile, wrapper, workflow, manifest writer, and file-writing changes remain out of scope in Step592.
+
+## Step593 Runtime Implementation Reference
+
+Step593 consumes this contract for the selected actual-controlled primary case through v0.4 `artifact-body-runtime-invocation-controlled` runtime CLI behavior. The fixture JSON remains unchanged, and Step593 does not change Makefile, wrapper, workflow, manifest writer integration, or file writing.

@@ -261,3 +261,7 @@ Step591 adds the standalone Makefile target for the later actual-controlled fixt
 ## Step592 Forward Reference
 
 Step592 adds a design-only implementation refinement for the later v0.4 actual-controlled runtime behavior. It remains outside the Step569-Step583 planned-only release-quality chain and does not change the non-equivalence cautions recorded in this review.
+
+## Step593 Forward Reference
+
+Step593 later implements v0.4 actual-controlled runtime CLI behavior in the runtime integration module. It remains outside the Step569-Step583 planned-only release-quality chain and does not change this review's non-equivalence cautions, manifest writer boundary, file-writing boundary, production-readiness boundary, real-data-readiness boundary, or model-performance boundary.

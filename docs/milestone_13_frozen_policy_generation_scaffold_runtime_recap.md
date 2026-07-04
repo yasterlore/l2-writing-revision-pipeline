@@ -3167,3 +3167,9 @@ Step591 does not add the target to release-quality, change workflow files, chang
 Step592 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_implementation_refinement_design.md` as a design-only / docs-only refinement before the future v0.4 direct runtime behavior step. The design recommends extending the existing runtime integration module with explicit v0.4 schema/mode separation, preserving v0.1 / v0.2 / v0.3 behavior, using the Step587 primary case, scanning stdout/stderr summaries, and keeping output public-safe and body-free.
 
 Step592 does not change Python code/tests, Makefile, release-quality wrapper, workflow files, fixture JSON, runtime implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step593 Actual-Controlled Runtime Invocation Implementation
+
+Step593 extends `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py` with v0.4 `artifact-body-runtime-invocation-controlled` behavior guarded by `--actual-invocation`. The selected Step587 case emits public-safe metadata-only summary output with controlled safe-metadata artifact body CLI scanning, no manifest writer invocation, no file writing, and no payload emission.
+
+Step593 does not change Makefile, release-quality wrapper, workflow files, fixture JSON, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

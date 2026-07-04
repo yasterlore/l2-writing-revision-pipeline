@@ -9,6 +9,8 @@ import unittest
 from pathlib import Path
 
 from learner_state.frozen_policy_generation_artifact_body_generation_runtime_integration import (
+    ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+    ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION,
     DEFAULT_FIXTURE_CASE,
     DEFAULT_FIXTURE_ROOT,
     ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
@@ -39,6 +41,12 @@ RUNTIME_INVOCATION_FIXTURE_ROOT = Path(
     "learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation"
 )
 RUNTIME_INVOCATION_SELECTED_CASE = "valid/valid_minimal_safe_metadata_runtime_invocation"
+ACTUAL_CONTROLLED_FIXTURE_ROOT = Path(
+    "tests/fixtures/"
+    "learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation"
+    "_actual_controlled"
+)
+ACTUAL_CONTROLLED_SELECTED_CASE = "valid/valid_actual_controlled_safe_metadata_invocation"
 
 
 class ArtifactBodyGenerationRuntimeIntegrationTests(unittest.TestCase):
@@ -231,6 +239,214 @@ class ArtifactBodyGenerationRuntimeIntegrationTests(unittest.TestCase):
         self.assertIn("unsafe_signal_count=0", completed.stdout)
         assert_safe_output(self, completed.stdout)
         assert_safe_output(self, completed.stderr)
+
+    def test_actual_controlled_runtime_invocation_primary_valid_case_pass(self) -> None:
+        summary = run_actual_controlled_runtime_invocation()
+        payload = summary.to_public_dict()
+
+        self.assertEqual(payload["mode"], MODE)
+        self.assertEqual(
+            payload["runtime_schema_version"],
+            ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION,
+        )
+        self.assertEqual(payload["status"], "pass")
+        self.assertEqual(payload["reason_code"], "none")
+        self.assertEqual(payload["exit_code_category"], "zero")
+        self.assertEqual(payload["case_id"], ACTUAL_CONTROLLED_SELECTED_CASE)
+        self.assertEqual(
+            payload["integration_mode"],
+            ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+        )
+        self.assertTrue(payload["artifact_body_runtime_invoked"])
+        self.assertFalse(payload["artifact_body_runtime_invocation_planned"])
+        self.assertEqual(
+            payload["artifact_body_runtime_mode"],
+            "controlled_metadata_only_invocation",
+        )
+        self.assertTrue(payload["artifact_body_generation_cli_invoked"])
+        self.assertEqual(payload["artifact_body_generation_cli_exit_code_category"], "zero")
+        self.assertTrue(payload["artifact_body_generation_cli_output_scanned"])
+        self.assertTrue(payload["artifact_body_generation_cli_output_body_free"])
+        self.assertFalse(payload["artifact_body_payload_available"])
+        self.assertFalse(payload["artifact_body_payload_emitted"])
+        self.assertTrue(payload["safe_metadata_body_available"])
+        self.assertEqual(payload["safe_metadata_body_field_count"], 5)
+        self.assertTrue(payload["content_suppressed"])
+        self.assertTrue(payload["body_suppressed"])
+        self.assertTrue(payload["summary_only"])
+        self.assertFalse(payload["request_body_detected"])
+        self.assertFalse(payload["pointer_body_detected"])
+        self.assertFalse(payload["expected_body_detected"])
+        self.assertFalse(payload["artifact_body_payload_detected"])
+        self.assertFalse(payload["manifest_body_detected"])
+        self.assertFalse(payload["generated_policy_body_detected"])
+        self.assertTrue(payload["raw_stdout_body_suppressed"])
+        self.assertTrue(payload["raw_stderr_body_suppressed"])
+        self.assertFalse(payload["raw_rows_detected"])
+        self.assertFalse(payload["logits_detected"])
+        self.assertFalse(payload["probabilities_detected"])
+        self.assertFalse(payload["private_path_detected"])
+        self.assertFalse(payload["absolute_path_detected"])
+        self.assertFalse(payload["raw_learner_text_detected"])
+        self.assertFalse(payload["real_data_marker_detected"])
+        self.assertFalse(payload["performance_metric_body_detected"])
+        self.assertFalse(payload["file_writing_enabled"])
+        self.assertFalse(payload["file_writing_detected"])
+        self.assertFalse(payload["manifest_writer_invoked"])
+        self.assertFalse(payload["artifact_file_written"])
+        self.assertFalse(payload["manifest_file_written"])
+        self.assertTrue(payload["runtime_safety_scan_passed"])
+        self.assertFalse(payload["runtime_fail_closed"])
+        self.assertEqual(payload["residue_file_count"], 0)
+        self.assertFalse(payload["production_readiness_claimed"])
+        self.assertFalse(payload["real_data_readiness_claimed"])
+        self.assertFalse(payload["performance_claims_present"])
+        self.assertEqual(payload["metadata_file_count"], 7)
+        self.assertEqual(payload["unsafe_signal_count"], 0)
+
+    def test_actual_controlled_cli_output_public_safe(self) -> None:
+        completed = run_actual_controlled_runtime_invocation_cli()
+
+        self.assertEqual(completed.returncode, 0)
+        self.assertIn(
+            "runtime_schema_version="
+            "learner_state_frozen_policy_generation_artifact_body_generation_"
+            "runtime_integration_v0.4",
+            completed.stdout,
+        )
+        self.assertIn("status=pass", completed.stdout)
+        self.assertIn(
+            "integration_mode=artifact-body-runtime-invocation-controlled",
+            completed.stdout,
+        )
+        self.assertIn("artifact_body_runtime_invoked=True", completed.stdout)
+        self.assertIn("artifact_body_generation_cli_invoked=True", completed.stdout)
+        self.assertIn(
+            "artifact_body_generation_cli_exit_code_category=zero",
+            completed.stdout,
+        )
+        self.assertIn("safe_metadata_body_field_count=5", completed.stdout)
+        self.assertIn("manifest_writer_invoked=False", completed.stdout)
+        self.assertIn("file_writing_enabled=False", completed.stdout)
+        self.assertIn("residue_file_count=0", completed.stdout)
+        self.assertIn("unsafe_signal_count=0", completed.stdout)
+        assert_safe_output(self, completed.stdout)
+        assert_safe_output(self, completed.stderr)
+
+    def test_actual_controlled_mode_requires_actual_invocation_flag(self) -> None:
+        summary = run_artifact_body_generation_runtime_integration_for_fixture_case(
+            ACTUAL_CONTROLLED_FIXTURE_ROOT,
+            ACTUAL_CONTROLLED_SELECTED_CASE,
+            mode=ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+            summary_only=True,
+            no_file_writing=True,
+            no_manifest_writer=True,
+            fail_closed_on_unsafe_output=True,
+        )
+
+        self.assertEqual(summary.status, "usage_error")
+        self.assertEqual(summary.reason_code, "missing_required_cli_flag")
+        self.assertEqual(summary.runtime_schema_version, ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION)
+
+    def test_actual_invocation_flag_rejected_for_older_modes(self) -> None:
+        cases = (
+            (
+                DEFAULT_FIXTURE_ROOT,
+                SELECTED_CASE,
+                PLAN_ONLY_BRIDGE_MODE,
+                RUNTIME_SCHEMA_VERSION,
+            ),
+            (
+                SAFE_METADATA_FIXTURE_ROOT,
+                SAFE_METADATA_SELECTED_CASE,
+                SAFE_METADATA_SMOKE_MODE,
+                SAFE_METADATA_RUNTIME_SCHEMA_VERSION,
+            ),
+            (
+                RUNTIME_INVOCATION_FIXTURE_ROOT,
+                RUNTIME_INVOCATION_SELECTED_CASE,
+                ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+                RUNTIME_INVOCATION_RUNTIME_SCHEMA_VERSION,
+            ),
+        )
+        for fixture_root, fixture_case, mode, expected_schema in cases:
+            with self.subTest(mode=mode):
+                summary = run_artifact_body_generation_runtime_integration_for_fixture_case(
+                    fixture_root,
+                    fixture_case,
+                    mode=mode,
+                    summary_only=True,
+                    no_file_writing=True,
+                    no_manifest_writer=True,
+                    fail_closed_on_unsafe_output=True,
+                    actual_invocation=True,
+                )
+
+                self.assertEqual(summary.status, "usage_error")
+                self.assertEqual(summary.reason_code, "missing_required_cli_flag")
+                self.assertEqual(summary.runtime_schema_version, expected_schema)
+
+    def test_actual_controlled_requires_safety_flags(self) -> None:
+        summary = run_artifact_body_generation_runtime_integration_for_fixture_case(
+            ACTUAL_CONTROLLED_FIXTURE_ROOT,
+            ACTUAL_CONTROLLED_SELECTED_CASE,
+            mode=ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+            summary_only=True,
+            no_file_writing=False,
+            no_manifest_writer=True,
+            fail_closed_on_unsafe_output=True,
+            actual_invocation=True,
+        )
+
+        self.assertEqual(summary.status, "usage_error")
+        self.assertEqual(summary.reason_code, "missing_required_cli_flag")
+        self.assertEqual(summary.runtime_schema_version, ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION)
+
+    def test_actual_controlled_unsupported_schema_usage_error(self) -> None:
+        summary = run_actual_controlled_runtime_invocation(
+            fixture_case="invalid/invalid_unsupported_schema"
+        )
+
+        self.assertEqual(summary.status, "usage_error")
+        self.assertEqual(summary.reason_code, "unsupported_schema")
+
+    def test_actual_controlled_malformed_metadata_marker_usage_error(self) -> None:
+        summary = run_actual_controlled_runtime_invocation(
+            fixture_case="invalid/invalid_malformed_metadata_json"
+        )
+
+        self.assertEqual(summary.status, "usage_error")
+        self.assertEqual(summary.reason_code, "malformed_metadata_json")
+
+    def test_actual_controlled_mismatched_expected_status(self) -> None:
+        summary = run_actual_controlled_runtime_invocation(
+            fixture_case="invalid/invalid_mismatched_expected_status"
+        )
+
+        self.assertEqual(summary.status, "mismatch")
+        self.assertEqual(summary.reason_code, "mismatched_expected_status")
+
+    def test_actual_controlled_cli_nonzero_marker_fail_closed(self) -> None:
+        summary = run_actual_controlled_runtime_invocation(
+            fixture_case="invalid/invalid_artifact_body_cli_nonzero_exit"
+        )
+
+        self.assertEqual(summary.status, "fail_closed")
+        self.assertEqual(summary.reason_code, "artifact_body_cli_nonzero_exit")
+        self.assertEqual(summary.artifact_body_generation_cli_exit_code_category, "nonzero")
+        self.assertTrue(summary.runtime_fail_closed)
+        self.assertFalse(summary.runtime_safety_scan_passed)
+
+    def test_actual_controlled_cli_output_not_body_free_marker_fail_closed(self) -> None:
+        summary = run_actual_controlled_runtime_invocation(
+            fixture_case="invalid/invalid_artifact_body_cli_output_not_body_free"
+        )
+
+        self.assertEqual(summary.status, "fail_closed")
+        self.assertEqual(summary.reason_code, "artifact_body_cli_output_not_body_free")
+        self.assertFalse(summary.artifact_body_generation_cli_output_body_free)
+        self.assertTrue(summary.runtime_fail_closed)
+        self.assertFalse(summary.runtime_safety_scan_passed)
 
     def test_unsupported_mode_usage_error(self) -> None:
         summary = run_runtime(mode="unsupported-mode")
@@ -881,6 +1097,23 @@ def run_runtime_invocation(
     )
 
 
+def run_actual_controlled_runtime_invocation(
+    *,
+    fixture_root: Path = ACTUAL_CONTROLLED_FIXTURE_ROOT,
+    fixture_case: str = ACTUAL_CONTROLLED_SELECTED_CASE,
+):
+    return run_artifact_body_generation_runtime_integration_for_fixture_case(
+        fixture_root,
+        fixture_case,
+        mode=ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+        summary_only=True,
+        no_file_writing=True,
+        no_manifest_writer=True,
+        fail_closed_on_unsafe_output=True,
+        actual_invocation=True,
+    )
+
+
 def run_cli() -> subprocess.CompletedProcess[str]:
     return subprocess.run(
         [
@@ -943,6 +1176,30 @@ def run_runtime_invocation_cli() -> subprocess.CompletedProcess[str]:
             "--no-file-writing",
             "--no-manifest-writer",
             "--fail-closed-on-unsafe-output",
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+
+
+def run_actual_controlled_runtime_invocation_cli() -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            MODULE,
+            "--fixture-root",
+            str(ACTUAL_CONTROLLED_FIXTURE_ROOT),
+            "--fixture-case",
+            ACTUAL_CONTROLLED_SELECTED_CASE,
+            "--mode",
+            ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+            "--summary-only",
+            "--no-file-writing",
+            "--no-manifest-writer",
+            "--fail-closed-on-unsafe-output",
+            "--actual-invocation",
         ],
         check=False,
         capture_output=True,

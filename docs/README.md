@@ -722,3 +722,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step592 Actual-Controlled Runtime Invocation Implementation Refinement Design
 
 - [Actual-controlled artifact body generation runtime invocation implementation refinement design](frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_implementation_refinement_design.md): design-only / docs-only refinement for the future Step593 v0.4 runtime behavior. It recommends explicit v0.4 schema/mode separation, controlled metadata-only invocation, stdout/stderr summary scanning, fail-closed mapping, focused tests, and no Makefile, wrapper, workflow, fixture JSON, manifest writer, or file-writing changes in Step592.
+
+## Step593 Actual-Controlled Runtime Invocation Implementation
+
+- `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`: adds v0.4 `artifact-body-runtime-invocation-controlled` behavior with `--actual-invocation` and focused tests. The CLI uses the Step587 primary actual-controlled case and emits public-safe key-value summary output only; Makefile, release-quality wrapper, workflow, fixture JSON, manifest writer integration, and file writing remain unchanged.

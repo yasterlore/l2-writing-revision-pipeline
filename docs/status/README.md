@@ -1360,3 +1360,7 @@ invocation evidence, or file-writing evidence.
 ## Step592 Actual-Controlled Runtime Invocation Implementation Refinement Design
 
 - [Actual-controlled artifact body generation runtime invocation implementation refinement design](../frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_implementation_refinement_design.md): design-only / docs-only refinement for the future v0.4 runtime behavior. It narrows Step593 to direct runtime CLI behavior and focused tests, with no Makefile, wrapper, workflow, fixture JSON, manifest writer, or file-writing changes in Step592.
+
+## Step593 Actual-Controlled Runtime Invocation Implementation
+
+- `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`: direct v0.4 actual-controlled runtime CLI behavior for `artifact-body-runtime-invocation-controlled` with `--actual-invocation`. The selected case is `valid/valid_actual_controlled_safe_metadata_invocation`, the runtime schema is `learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.4`, and output remains public-safe / metadata-only / body-free / summary-only. Step593 does not change Makefile, release-quality wrapper, workflows, fixture JSON, manifest writer integration, or file writing.

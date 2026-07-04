@@ -570,3 +570,7 @@ Step591 implements the standalone Makefile target for the actual-controlled fixt
 ## Step592 Implementation Refinement Design Reference
 
 Step592 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_implementation_refinement_design.md` as the design-only refinement before future v0.4 direct runtime behavior. It keeps this chain out of Makefile, wrapper, workflow, fixture JSON, manifest writer, and file-writing changes in Step592.
+
+## Step593 Runtime Implementation Reference
+
+Step593 adds v0.4 direct runtime behavior for `artifact-body-runtime-invocation-controlled` with `--actual-invocation`, using public-safe summary-only output. It does not add release-quality wrapper integration, workflow changes, fixture JSON changes, manifest writer integration, or file writing.

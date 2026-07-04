@@ -585,3 +585,7 @@ Step593 should implement only direct runtime CLI behavior and focused tests. It
 should not add a Makefile target, should not add release-quality wrapper
 integration, should not change workflows, should not invoke manifest writer,
 and should not enable file writing.
+
+## Step593 Implementation Status
+
+Step593 implements the direct v0.4 runtime CLI behavior in `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py` with mode `artifact-body-runtime-invocation-controlled` and `--actual-invocation`. The implementation keeps output public-safe / metadata-only / body-free / summary-only, preserves v0.1/v0.2/v0.3 behavior, and does not change Makefile, release-quality wrapper, workflows, fixture JSON, manifest writer integration, or file writing.

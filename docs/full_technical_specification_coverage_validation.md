@@ -592,3 +592,7 @@ Step589 adds focused validator coverage for the actual-controlled fixture root. 
 ## Step591 Coverage Addendum
 
 Step591 adds standalone Makefile coverage for running the Step589 actual-controlled fixture validator target. The expected target output remains public-safe and count-only with 36 cases / 252 JSON, 6 pass, 3 usage-error, 26 fail-closed, and 1 mismatch case. This is Makefile target coverage only; it is not release-quality wrapper coverage, runtime implementation coverage, actual runtime invocation coverage, manifest writer coverage, file-writing coverage, production readiness, real-data readiness, or model performance evidence.
+
+## Step593 Coverage Addendum
+
+Step593 adds focused runtime integration coverage for v0.4 `artifact-body-runtime-invocation-controlled`, including the primary selected case, CLI output safety, `--actual-invocation` gating, older-mode flag rejection, unsupported schema, malformed metadata marker, mismatched expected status, and representative fail-closed CLI marker cases. This is controlled metadata-only runtime CLI coverage; it is not release-quality wrapper coverage, manifest writer coverage, file-writing coverage, production readiness, real-data readiness, or model performance evidence.

@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -56,6 +57,21 @@ from learner_state.frozen_policy_generation_artifact_body_generation_runtime_inv
     RUNTIME_SUMMARY_FILE as RUNTIME_INVOCATION_SUMMARY_FILE,
     VALIDATION_SCHEMA_VERSION as RUNTIME_INVOCATION_VALIDATION_SCHEMA_VERSION,
 )
+from learner_state.frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_fixture_validation import (
+    CASE_METADATA_FILE as ACTUAL_CONTROLLED_CASE_METADATA_FILE,
+    CLI_METADATA_FILE as ACTUAL_CONTROLLED_CLI_METADATA_FILE,
+    CONTROLLED_RUNTIME_MODE as ACTUAL_CONTROLLED_RUNTIME_MODE,
+    EXPECTED_ERROR_FILE as ACTUAL_CONTROLLED_EXPECTED_ERROR_FILE,
+    EXPECTED_SUMMARY_FILE as ACTUAL_CONTROLLED_EXPECTED_SUMMARY_FILE,
+    FIXTURE_SCHEMA_VERSION as ACTUAL_CONTROLLED_FIXTURE_SCHEMA_VERSION,
+    FUTURE_RUNTIME_SCHEMA as ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION,
+    INTEGRATION_MODE as ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+    POINTER_METADATA_FILE as ACTUAL_CONTROLLED_POINTER_METADATA_FILE,
+    REQUEST_METADATA_FILE as ACTUAL_CONTROLLED_REQUEST_METADATA_FILE,
+    REQUIRED_FILES as ACTUAL_CONTROLLED_REQUIRED_FILES,
+    RESIDUE_POLICY_FILE as ACTUAL_CONTROLLED_RESIDUE_POLICY_FILE,
+    VALIDATION_SCHEMA_VERSION as ACTUAL_CONTROLLED_VALIDATION_SCHEMA_VERSION,
+)
 
 DEFAULT_FIXTURE_ROOT = Path(
     "tests/fixtures/"
@@ -72,6 +88,14 @@ PLAN_ONLY_BRIDGE_MODE = "plan-only-bridge"
 SAFE_METADATA_SMOKE_MODE = "safe-metadata-smoke"
 SUPPRESSED_SMOKE_MODE = "suppressed-smoke"
 RESERVED_MODES = frozenset({SUPPRESSED_SMOKE_MODE})
+SAFE_METADATA_ARTIFACT_BODY_REQUEST = Path(
+    "tests/fixtures/learner_state_frozen_policy_generation_artifact_body/"
+    "valid/safe_metadata_body_summary/artifact_body_request.json"
+)
+SAFE_METADATA_ARTIFACT_BODY_POINTER = Path(
+    "tests/fixtures/learner_state_frozen_policy_generation_artifact_body/"
+    "valid/safe_metadata_body_summary/artifact_writer_result_pointer.json"
+)
 
 EXPECTED_FILE_SCHEMAS = {
     CASE_METADATA_FILE: CASE_SCHEMA_VERSION,
@@ -96,6 +120,10 @@ SUMMARY_KEYS = (
     "artifact_body_runtime_invoked",
     "artifact_body_runtime_invocation_planned",
     "artifact_body_runtime_mode",
+    "artifact_body_generation_cli_invoked",
+    "artifact_body_generation_cli_exit_code_category",
+    "artifact_body_generation_cli_output_scanned",
+    "artifact_body_generation_cli_output_body_free",
     "artifact_body_payload_available",
     "artifact_body_payload_emitted",
     "safe_metadata_body_available",
@@ -126,6 +154,7 @@ SUMMARY_KEYS = (
     "manifest_file_written",
     "runtime_safety_scan_passed",
     "runtime_fail_closed",
+    "residue_file_count",
     "production_readiness_claimed",
     "real_data_readiness_claimed",
     "performance_claims_present",
@@ -196,6 +225,13 @@ UNSAFE_REASON_FIELDS = {
     "no_oracle_forbidden_field": {},
     "unsafe_output_residue_risk": {},
     "active_root_merge_attempted": {},
+    "artifact_body_cli_nonzero_exit": {
+        "artifact_body_generation_cli_exit_code_category": "nonzero",
+    },
+    "artifact_body_cli_output_not_body_free": {
+        "artifact_body_generation_cli_output_body_free": False,
+    },
+    "unexpected_artifact_body_generation_request": {},
 }
 
 FORBIDDEN_VALUE_KEYS = frozenset(
@@ -285,6 +321,11 @@ class ArtifactBodyGenerationRuntimeIntegrationSummary:
     artifact_body_runtime_invoked: bool = False
     artifact_body_runtime_invocation_planned: bool = False
     artifact_body_runtime_mode: str = "not_invoked"
+    artifact_body_generation_cli_invoked: bool = False
+    artifact_body_generation_cli_exit_code_category: str = "not_invoked"
+    artifact_body_generation_cli_output_scanned: bool = False
+    artifact_body_generation_cli_output_body_free: bool = True
+    residue_file_count: int = 0
 
     @property
     def return_code(self) -> int:
@@ -312,6 +353,18 @@ class ArtifactBodyGenerationRuntimeIntegrationSummary:
                 self.artifact_body_runtime_invocation_planned
             ),
             "artifact_body_runtime_mode": self.artifact_body_runtime_mode,
+            "artifact_body_generation_cli_invoked": (
+                self.artifact_body_generation_cli_invoked
+            ),
+            "artifact_body_generation_cli_exit_code_category": (
+                self.artifact_body_generation_cli_exit_code_category
+            ),
+            "artifact_body_generation_cli_output_scanned": (
+                self.artifact_body_generation_cli_output_scanned
+            ),
+            "artifact_body_generation_cli_output_body_free": (
+                self.artifact_body_generation_cli_output_body_free
+            ),
             "artifact_body_payload_available": self.artifact_body_payload_available,
             "artifact_body_payload_emitted": self.artifact_body_payload_emitted,
             "safe_metadata_body_available": self.safe_metadata_body_available,
@@ -344,6 +397,7 @@ class ArtifactBodyGenerationRuntimeIntegrationSummary:
             "manifest_file_written": self.manifest_file_written,
             "runtime_safety_scan_passed": self.runtime_safety_scan_passed,
             "runtime_fail_closed": self.runtime_fail_closed,
+            "residue_file_count": self.residue_file_count,
             "production_readiness_claimed": self.production_readiness_claimed,
             "real_data_readiness_claimed": self.real_data_readiness_claimed,
             "performance_claims_present": self.performance_claims_present,
@@ -368,6 +422,7 @@ def run_artifact_body_generation_runtime_integration_for_fixture_case(
     no_file_writing: bool,
     no_manifest_writer: bool,
     fail_closed_on_unsafe_output: bool,
+    actual_invocation: bool = False,
 ) -> ArtifactBodyGenerationRuntimeIntegrationSummary:
     safe_case_id = _safe_case_id_for_output(fixture_case)
     if not _is_safe_fixture_case_selector(fixture_case):
@@ -376,6 +431,7 @@ def run_artifact_body_generation_runtime_integration_for_fixture_case(
         PLAN_ONLY_BRIDGE_MODE,
         SAFE_METADATA_SMOKE_MODE,
         ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+        ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
     }:
         return _safe_error(
             "usage_error",
@@ -383,11 +439,28 @@ def run_artifact_body_generation_runtime_integration_for_fixture_case(
             case_id=safe_case_id,
             integration_mode="reserved" if mode in RESERVED_MODES else "unsupported",
         )
+    if actual_invocation and mode != ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE:
+        return _safe_error(
+            "usage_error",
+            "missing_required_cli_flag",
+            case_id=safe_case_id,
+            integration_mode=mode,
+            runtime_schema_version=_runtime_schema_version_for_mode(mode),
+            planned_root=mode == SAFE_METADATA_SMOKE_MODE,
+            safe_metadata_v0_2_planned_checked=mode == SAFE_METADATA_SMOKE_MODE,
+            artifact_body_runtime_invocation_planned=(
+                mode == ARTIFACT_BODY_RUNTIME_INVOCATION_MODE
+            ),
+        )
     if not (
         summary_only
         and no_file_writing
         and no_manifest_writer
         and fail_closed_on_unsafe_output
+        and (
+            mode != ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE
+            or actual_invocation
+        )
     ):
         return _safe_error(
             "usage_error",
@@ -399,6 +472,12 @@ def run_artifact_body_generation_runtime_integration_for_fixture_case(
             safe_metadata_v0_2_planned_checked=mode == SAFE_METADATA_SMOKE_MODE,
             artifact_body_runtime_invocation_planned=(
                 mode == ARTIFACT_BODY_RUNTIME_INVOCATION_MODE
+            ),
+            artifact_body_runtime_invoked=False,
+            artifact_body_runtime_mode=(
+                ACTUAL_CONTROLLED_RUNTIME_MODE
+                if mode == ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE
+                else "not_invoked"
             ),
         )
 
@@ -415,6 +494,12 @@ def run_artifact_body_generation_runtime_integration_for_fixture_case(
             artifact_body_runtime_invocation_planned=(
                 mode == ARTIFACT_BODY_RUNTIME_INVOCATION_MODE
             ),
+            artifact_body_runtime_invoked=False,
+            artifact_body_runtime_mode=(
+                ACTUAL_CONTROLLED_RUNTIME_MODE
+                if mode == ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE
+                else "not_invoked"
+            ),
         )
 
     required_files = _required_files_for_mode(mode)
@@ -430,6 +515,12 @@ def run_artifact_body_generation_runtime_integration_for_fixture_case(
             safe_metadata_v0_2_planned_checked=mode == SAFE_METADATA_SMOKE_MODE,
             artifact_body_runtime_invocation_planned=(
                 mode == ARTIFACT_BODY_RUNTIME_INVOCATION_MODE
+            ),
+            artifact_body_runtime_invoked=False,
+            artifact_body_runtime_mode=(
+                ACTUAL_CONTROLLED_RUNTIME_MODE
+                if mode == ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE
+                else "not_invoked"
             ),
         )
 
@@ -450,6 +541,12 @@ def run_artifact_body_generation_runtime_integration_for_fixture_case(
             artifact_body_runtime_invocation_planned=(
                 mode == ARTIFACT_BODY_RUNTIME_INVOCATION_MODE
             ),
+            artifact_body_runtime_invoked=False,
+            artifact_body_runtime_mode=(
+                ACTUAL_CONTROLLED_RUNTIME_MODE
+                if mode == ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE
+                else "not_invoked"
+            ),
         )
 
     if mode == SAFE_METADATA_SMOKE_MODE:
@@ -459,6 +556,11 @@ def run_artifact_body_generation_runtime_integration_for_fixture_case(
         )
     if mode == ARTIFACT_BODY_RUNTIME_INVOCATION_MODE:
         return _summarize_artifact_body_runtime_invocation(
+            payloads,
+            expected_case_id=safe_case_id,
+        )
+    if mode == ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE:
+        return _summarize_actual_controlled_artifact_body_runtime_invocation(
             payloads,
             expected_case_id=safe_case_id,
         )
@@ -683,6 +785,156 @@ def _summarize_artifact_body_runtime_invocation(
     )
 
 
+def _summarize_actual_controlled_artifact_body_runtime_invocation(
+    payloads: Mapping[str, Mapping[str, Any]],
+    *,
+    expected_case_id: str,
+) -> ArtifactBodyGenerationRuntimeIntegrationSummary:
+    schema_reason = _actual_controlled_schema_reason(payloads)
+    if schema_reason != "none":
+        return _safe_error(
+            "usage_error",
+            schema_reason,
+            case_id=expected_case_id,
+            integration_mode=ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+            runtime_schema_version=ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION,
+            metadata_file_count=len(payloads),
+            artifact_body_runtime_invoked=False,
+            artifact_body_runtime_mode=ACTUAL_CONTROLLED_RUNTIME_MODE,
+        )
+
+    identity_reason = _actual_controlled_identity_reason(payloads, expected_case_id)
+    if identity_reason != "none":
+        return _safe_error(
+            "usage_error",
+            identity_reason,
+            case_id=expected_case_id,
+            integration_mode=ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+            runtime_schema_version=ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION,
+            metadata_file_count=len(payloads),
+            artifact_body_runtime_invoked=False,
+            artifact_body_runtime_mode=ACTUAL_CONTROLLED_RUNTIME_MODE,
+        )
+
+    usage_reason = _actual_controlled_usage_marker_reason(payloads)
+    if usage_reason != "none":
+        return _safe_error(
+            "usage_error",
+            usage_reason,
+            case_id=expected_case_id,
+            integration_mode=ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+            runtime_schema_version=ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION,
+            metadata_file_count=len(payloads),
+            artifact_body_runtime_invoked=False,
+            artifact_body_runtime_mode=ACTUAL_CONTROLLED_RUNTIME_MODE,
+        )
+
+    unsafe_reason = _first_actual_controlled_unsafe_reason(payloads)
+    if unsafe_reason != "none":
+        return _safe_error(
+            "fail_closed",
+            unsafe_reason,
+            case_id=expected_case_id,
+            integration_mode=ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+            runtime_schema_version=ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION,
+            metadata_file_count=len(payloads),
+            unsafe_signal_count=_actual_controlled_unsafe_signal_count(payloads),
+            artifact_body_runtime_invoked=True,
+            artifact_body_runtime_mode=ACTUAL_CONTROLLED_RUNTIME_MODE,
+            artifact_body_generation_cli_invoked=True,
+            artifact_body_generation_cli_exit_code_category=(
+                _actual_controlled_cli_exit_code_category(payloads)
+            ),
+            artifact_body_generation_cli_output_scanned=True,
+            artifact_body_generation_cli_output_body_free=(
+                unsafe_reason != "artifact_body_cli_output_not_body_free"
+            ),
+        )
+
+    mismatch_reason = _actual_controlled_mismatch_reason(payloads)
+    if mismatch_reason != "none":
+        return _safe_error(
+            "mismatch",
+            mismatch_reason,
+            case_id=expected_case_id,
+            integration_mode=ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+            runtime_schema_version=ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION,
+            metadata_file_count=len(payloads),
+            artifact_body_runtime_invoked=True,
+            artifact_body_runtime_mode=ACTUAL_CONTROLLED_RUNTIME_MODE,
+            artifact_body_generation_cli_invoked=True,
+            artifact_body_generation_cli_exit_code_category="zero",
+            artifact_body_generation_cli_output_scanned=True,
+            artifact_body_generation_cli_output_body_free=True,
+        )
+
+    cli_observation = _invoke_artifact_body_generation_safe_metadata_cli()
+    if cli_observation["exit_code_category"] != "zero":
+        return _safe_error(
+            "fail_closed",
+            "artifact_body_cli_nonzero_exit",
+            case_id=expected_case_id,
+            integration_mode=ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+            runtime_schema_version=ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION,
+            metadata_file_count=len(payloads),
+            artifact_body_runtime_invoked=True,
+            artifact_body_runtime_mode=ACTUAL_CONTROLLED_RUNTIME_MODE,
+            artifact_body_generation_cli_invoked=True,
+            artifact_body_generation_cli_exit_code_category=(
+                cli_observation["exit_code_category"]
+            ),
+            artifact_body_generation_cli_output_scanned=True,
+            artifact_body_generation_cli_output_body_free=(
+                cli_observation["output_body_free"]
+            ),
+        )
+    if cli_observation["output_body_free"] is not True:
+        return _safe_error(
+            "fail_closed",
+            "artifact_body_cli_output_not_body_free",
+            case_id=expected_case_id,
+            integration_mode=ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+            runtime_schema_version=ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION,
+            metadata_file_count=len(payloads),
+            artifact_body_runtime_invoked=True,
+            artifact_body_runtime_mode=ACTUAL_CONTROLLED_RUNTIME_MODE,
+            artifact_body_generation_cli_invoked=True,
+            artifact_body_generation_cli_exit_code_category=(
+                cli_observation["exit_code_category"]
+            ),
+            artifact_body_generation_cli_output_scanned=True,
+            artifact_body_generation_cli_output_body_free=False,
+        )
+
+    return ArtifactBodyGenerationRuntimeIntegrationSummary(
+        status="pass",
+        reason_code="none",
+        exit_code_category="zero",
+        case_id=expected_case_id,
+        integration_mode=ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE,
+        artifact_body_runtime_invoked=True,
+        artifact_body_runtime_invocation_planned=False,
+        artifact_body_runtime_mode=ACTUAL_CONTROLLED_RUNTIME_MODE,
+        artifact_body_generation_cli_invoked=True,
+        artifact_body_generation_cli_exit_code_category="zero",
+        artifact_body_generation_cli_output_scanned=True,
+        artifact_body_generation_cli_output_body_free=True,
+        artifact_body_payload_available=False,
+        artifact_body_payload_emitted=False,
+        safe_metadata_body_available=cli_observation["safe_metadata_body_available"],
+        safe_metadata_body_field_count=cli_observation["safe_metadata_body_field_count"],
+        runtime_schema_version=ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION,
+        artifact_file_written=cli_observation["artifact_file_written"],
+        manifest_file_written=cli_observation["manifest_file_written"],
+        runtime_summary_checked=True,
+        artifact_body_request_checked=True,
+        artifact_body_pointer_checked=True,
+        artifact_body_generation_metadata_checked=True,
+        metadata_file_count=len(payloads),
+        residue_file_count=0,
+    )
+
+
 def _schema_reason(payloads: Mapping[str, Mapping[str, Any]]) -> str:
     for file_name, expected_schema in EXPECTED_FILE_SCHEMAS.items():
         if payloads[file_name].get("schema_version") != expected_schema:
@@ -745,6 +997,33 @@ def _runtime_invocation_schema_reason(
     return "none"
 
 
+def _actual_controlled_schema_reason(
+    payloads: Mapping[str, Mapping[str, Any]]
+) -> str:
+    metadata = payloads[ACTUAL_CONTROLLED_CASE_METADATA_FILE]
+    if metadata.get("fixture_schema_version") != ACTUAL_CONTROLLED_FIXTURE_SCHEMA_VERSION:
+        return "unsupported_schema"
+    if metadata.get("validation_schema_version") != ACTUAL_CONTROLLED_VALIDATION_SCHEMA_VERSION:
+        return "unsupported_schema"
+    if metadata.get("future_runtime_schema") != ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION:
+        return "unsupported_schema"
+    if (
+        metadata.get("future_integration_mode")
+        != ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE
+    ):
+        return "unsupported_mode"
+
+    summary = payloads[ACTUAL_CONTROLLED_EXPECTED_SUMMARY_FILE]
+    if summary.get("runtime_schema_version") != ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION:
+        return "unsupported_schema"
+    if (
+        summary.get("integration_mode")
+        != ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE
+    ):
+        return "unsupported_mode"
+    return "none"
+
+
 def _runtime_invocation_identity_reason(
     payloads: Mapping[str, Mapping[str, Any]],
     expected_case_id: str,
@@ -764,6 +1043,39 @@ def _runtime_invocation_identity_reason(
         for key in ("synthetic_only", "metadata_only", "no_oracle", "body_free"):
             if payload.get(key) is not True:
                 return "missing_required_metadata"
+    return "none"
+
+
+def _actual_controlled_identity_reason(
+    payloads: Mapping[str, Mapping[str, Any]],
+    expected_case_id: str,
+) -> str:
+    case_metadata = payloads[ACTUAL_CONTROLLED_CASE_METADATA_FILE]
+    if case_metadata.get("case_id") != expected_case_id:
+        return "missing_required_runtime_metadata"
+    if case_metadata.get("case_group") not in {"valid", "invalid"}:
+        return "missing_required_runtime_metadata"
+    for payload in payloads.values():
+        if "case_id" in payload and payload.get("case_id") != expected_case_id:
+            return "missing_required_runtime_metadata"
+    return "none"
+
+
+def _actual_controlled_usage_marker_reason(
+    payloads: Mapping[str, Mapping[str, Any]]
+) -> str:
+    metadata = payloads[ACTUAL_CONTROLLED_CASE_METADATA_FILE]
+    summary = payloads[ACTUAL_CONTROLLED_EXPECTED_SUMMARY_FILE]
+    if (
+        metadata.get("required_metadata_file_missing_marker") is True
+        or summary.get("required_metadata_file_missing_marker") is True
+    ):
+        return "missing_required_metadata_file"
+    if (
+        metadata.get("malformed_metadata_json_marker") is True
+        or summary.get("malformed_metadata_json_marker") is True
+    ):
+        return "malformed_metadata_json"
     return "none"
 
 
@@ -792,6 +1104,29 @@ def _runtime_invocation_mismatch_reason(
     for mapping, key, expected_value in checks:
         if mapping.get(key) != expected_value:
             return "mismatched_expected_status"
+    return "none"
+
+
+def _actual_controlled_mismatch_reason(
+    payloads: Mapping[str, Mapping[str, Any]]
+) -> str:
+    case_metadata = payloads[ACTUAL_CONTROLLED_CASE_METADATA_FILE]
+    expected_summary = payloads[ACTUAL_CONTROLLED_EXPECTED_SUMMARY_FILE]
+    expected_error = payloads[ACTUAL_CONTROLLED_EXPECTED_ERROR_FILE]
+    if (
+        case_metadata.get("mismatched_expected_status_marker") is True
+        or expected_summary.get("mismatched_expected_status_marker") is True
+    ):
+        return "mismatched_expected_status"
+    if (
+        case_metadata.get("expected_status") != "pass"
+        or case_metadata.get("expected_reason_code") != "none"
+        or expected_summary.get("status") != "pass"
+        or expected_summary.get("reason_code") != "none"
+        or expected_error.get("expected_status") != "pass"
+        or expected_error.get("expected_reason_code") != "none"
+    ):
+        return "mismatched_expected_status"
     return "none"
 
 
@@ -1106,6 +1441,88 @@ def _first_runtime_invocation_unsafe_reason(
     return "none"
 
 
+def _first_actual_controlled_unsafe_reason(
+    payloads: Mapping[str, Mapping[str, Any]]
+) -> str:
+    recursive_reason = _normalize_runtime_invocation_reason(
+        _recursive_unsafe_reason(payloads)
+    )
+    if recursive_reason != "none":
+        return recursive_reason
+
+    checks: tuple[tuple[str, str], ...] = (
+        ("request_body_present_marker", "request_body_present"),
+        ("request_body_present", "request_body_present"),
+        ("pointer_body_present_marker", "pointer_body_present"),
+        ("pointer_body_present", "pointer_body_present"),
+        ("expected_body_present_marker", "expected_body_present"),
+        ("expected_body_present", "expected_body_present"),
+        ("artifact_body_payload_present_marker", "artifact_body_payload_present"),
+        ("artifact_body_payload_detected", "artifact_body_payload_present"),
+        ("artifact_body_payload_emitted", "artifact_body_payload_present"),
+        ("manifest_body_present_marker", "manifest_body_present"),
+        ("manifest_body_detected", "manifest_body_present"),
+        ("generated_policy_body_present_marker", "generated_policy_body_present"),
+        ("generated_policy_body_detected", "generated_policy_body_present"),
+        ("raw_stdout_body_present_marker", "raw_stdout_body_present"),
+        ("raw_stderr_body_present_marker", "raw_stderr_body_present"),
+        ("raw_rows_present_marker", "raw_rows_present"),
+        ("raw_rows_detected", "raw_rows_present"),
+        ("logits_present_marker", "logits_present"),
+        ("logits_detected", "logits_present"),
+        ("probabilities_present_marker", "probabilities_present"),
+        ("probabilities_detected", "probabilities_present"),
+        ("private_path_present_marker", "private_path_present"),
+        ("private_path_detected", "private_path_present"),
+        ("absolute_path_present_marker", "absolute_path_present"),
+        ("absolute_path_detected", "absolute_path_present"),
+        ("raw_learner_text_present_marker", "raw_learner_text_present"),
+        ("raw_learner_text_detected", "raw_learner_text_present"),
+        ("real_data_marker_present", "real_data_marker_present"),
+        ("real_data_marker_detected", "real_data_marker_present"),
+        ("performance_metric_body_present_marker", "performance_metric_body_present"),
+        ("performance_metric_body_detected", "performance_metric_body_present"),
+        ("file_writing_requested_marker", "file_writing_requested"),
+        ("file_writing_requested", "file_writing_requested"),
+        ("file_writing_detected_marker", "file_writing_detected"),
+        ("file_writing_detected", "file_writing_detected"),
+        ("manifest_writer_requested_marker", "manifest_writer_requested"),
+        ("manifest_writer_requested", "manifest_writer_requested"),
+        ("manifest_writer_invoked_marker", "manifest_writer_invoked"),
+        ("manifest_writer_invoked", "manifest_writer_invoked"),
+        ("unsafe_artifact_body_runtime_mode_marker", "unsafe_artifact_body_runtime_mode"),
+        ("no_oracle_forbidden_field_marker", "no_oracle_forbidden_field"),
+        ("unsafe_output_residue_risk_marker", "unsafe_output_residue_risk"),
+        ("unexpected_artifact_body_generation_request_marker", "unexpected_artifact_body_generation_request"),
+        ("production_readiness_claimed", "unsafe_output_residue_risk"),
+        ("real_data_readiness_claimed", "real_data_marker_present"),
+        ("performance_claims_present", "performance_metric_body_present"),
+    )
+    for key, reason in checks:
+        for payload in payloads.values():
+            if payload.get(key) is True:
+                return reason
+
+    for payload in payloads.values():
+        if payload.get("content_suppressed") is False:
+            return "unsafe_output_residue_risk"
+        if payload.get("body_suppressed") is False:
+            return "unsafe_output_residue_risk"
+        if payload.get("raw_stdout_body_suppressed") is False:
+            return "raw_stdout_body_present"
+        if payload.get("raw_stderr_body_suppressed") is False:
+            return "raw_stderr_body_present"
+        if payload.get("artifact_body_generation_cli_exit_code_category") == "nonzero":
+            return "artifact_body_cli_nonzero_exit"
+        if payload.get("artifact_body_generation_cli_output_body_free") is False:
+            return "artifact_body_cli_output_not_body_free"
+        if payload.get("artifact_body_cli_output_not_body_free_marker") is True:
+            return "artifact_body_cli_output_not_body_free"
+        if payload.get("residue_file_count", 0) not in {0, "0"}:
+            return "unsafe_output_residue_risk"
+    return "none"
+
+
 def _first_unsafe_reason(payloads: Mapping[str, Mapping[str, Any]]) -> str:
     recursive_reason = _recursive_unsafe_reason(payloads)
     if recursive_reason != "none":
@@ -1252,6 +1669,132 @@ def _runtime_invocation_unsafe_signal_count(
     return max([1, *counts])
 
 
+def _actual_controlled_unsafe_signal_count(
+    payloads: Mapping[str, Mapping[str, Any]]
+) -> int:
+    counts = [
+        payload.get("unsafe_signal_count")
+        for payload in payloads.values()
+        if isinstance(payload.get("unsafe_signal_count"), int)
+    ]
+    return max([1, *counts])
+
+
+def _actual_controlled_cli_exit_code_category(
+    payloads: Mapping[str, Mapping[str, Any]]
+) -> str:
+    values = [
+        payload.get("artifact_body_generation_cli_exit_code_category")
+        for payload in payloads.values()
+        if isinstance(payload.get("artifact_body_generation_cli_exit_code_category"), str)
+    ]
+    if "nonzero" in values:
+        return "nonzero"
+    if "zero" in values:
+        return "zero"
+    return "not_invoked"
+
+
+def _invoke_artifact_body_generation_safe_metadata_cli() -> dict[str, Any]:
+    completed = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "learner_state.frozen_policy_generation_artifact_body",
+            "--request",
+            str(SAFE_METADATA_ARTIFACT_BODY_REQUEST),
+            "--pointer",
+            str(SAFE_METADATA_ARTIFACT_BODY_POINTER),
+            "--mode",
+            "safe-metadata",
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    parsed = _parse_public_key_value_output(completed.stdout)
+    count_summary = _parse_public_json_mapping(parsed.get("count_summary", "{}"))
+    output_body_free = _artifact_body_generation_cli_output_is_body_free(
+        parsed,
+        count_summary,
+        completed.stderr,
+    )
+    return {
+        "exit_code_category": "zero" if completed.returncode == 0 else "nonzero",
+        "output_body_free": output_body_free,
+        "safe_metadata_body_available": parsed.get("artifact_body_available") == "true",
+        "safe_metadata_body_field_count": _int_from_mapping(count_summary, "body_field_count"),
+        "artifact_file_written": parsed.get("artifact_file_written") == "true",
+        "manifest_file_written": parsed.get("manifest_file_written") == "true",
+    }
+
+
+def _parse_public_key_value_output(output: str) -> dict[str, str]:
+    parsed: dict[str, str] = {}
+    for line in output.splitlines():
+        if "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        if SAFE_FIXTURE_CASE_PATTERN.fullmatch(key):
+            parsed[key] = value
+    return parsed
+
+
+def _parse_public_json_mapping(value: str) -> dict[str, Any]:
+    try:
+        decoded = json.loads(value)
+    except json.JSONDecodeError:
+        return {}
+    if isinstance(decoded, dict):
+        return decoded
+    return {}
+
+
+def _artifact_body_generation_cli_output_is_body_free(
+    parsed: Mapping[str, str],
+    count_summary: Mapping[str, Any],
+    stderr: str,
+) -> bool:
+    if stderr.strip():
+        return False
+    required_pairs = {
+        "artifact_body_available": "true",
+        "artifact_file_written": "false",
+        "body_status": "generated_safe_metadata_body",
+        "generation_status": "pass",
+        "manifest_file_written": "false",
+        "mode": "artifact_body_generation",
+        "validation_status": "pass",
+        "safe_summary": "generated_safe_metadata_artifact_body_result",
+    }
+    for key, expected_value in required_pairs.items():
+        if parsed.get(key) != expected_value:
+            return False
+    zero_count_keys = (
+        "expected_body_count",
+        "logits_dump_count",
+        "manifest_body_count",
+        "performance_metric_count",
+        "pointer_body_count",
+        "private_path_count",
+        "raw_row_count",
+        "request_body_count",
+    )
+    for key in zero_count_keys:
+        if _int_from_mapping(count_summary, key) != 0:
+            return False
+    return _int_from_mapping(count_summary, "body_field_count") > 0
+
+
+def _int_from_mapping(mapping: Mapping[str, Any], key: str) -> int:
+    value = mapping.get(key)
+    if isinstance(value, int):
+        return value
+    if isinstance(value, str) and value.isdigit():
+        return int(value)
+    return 0
+
+
 def _normalize_safe_metadata_reason(reason: str) -> str:
     aliases = {
         "absolute_path_detected": "absolute_path_present",
@@ -1368,6 +1911,13 @@ def _safe_error(
     planned_root: bool = False,
     safe_metadata_v0_2_planned_checked: bool = False,
     artifact_body_runtime_invocation_planned: bool = False,
+    artifact_body_runtime_invoked: bool = False,
+    artifact_body_runtime_mode: str = "not_invoked",
+    artifact_body_generation_cli_invoked: bool = False,
+    artifact_body_generation_cli_exit_code_category: str = "not_invoked",
+    artifact_body_generation_cli_output_scanned: bool = False,
+    artifact_body_generation_cli_output_body_free: bool = True,
+    residue_file_count: int = 0,
     metadata_file_count: int = 0,
     unsafe_signal_count: int = 0,
 ) -> ArtifactBodyGenerationRuntimeIntegrationSummary:
@@ -1389,6 +1939,14 @@ def _safe_error(
                 "unsafe_signal_count": unsafe_signal_count,
             }
         )
+    artifact_body_generation_cli_exit_code_category = kwargs.pop(
+        "artifact_body_generation_cli_exit_code_category",
+        artifact_body_generation_cli_exit_code_category,
+    )
+    artifact_body_generation_cli_output_body_free = kwargs.pop(
+        "artifact_body_generation_cli_output_body_free",
+        artifact_body_generation_cli_output_body_free,
+    )
     return ArtifactBodyGenerationRuntimeIntegrationSummary(
         status=status,
         reason_code=reason_code,
@@ -1399,6 +1957,15 @@ def _safe_error(
         planned_root=planned_root,
         safe_metadata_v0_2_planned_checked=safe_metadata_v0_2_planned_checked,
         artifact_body_runtime_invocation_planned=artifact_body_runtime_invocation_planned,
+        artifact_body_runtime_invoked=artifact_body_runtime_invoked,
+        artifact_body_runtime_mode=artifact_body_runtime_mode,
+        artifact_body_generation_cli_invoked=artifact_body_generation_cli_invoked,
+        artifact_body_generation_cli_exit_code_category=(
+            artifact_body_generation_cli_exit_code_category
+        ),
+        artifact_body_generation_cli_output_scanned=artifact_body_generation_cli_output_scanned,
+        artifact_body_generation_cli_output_body_free=artifact_body_generation_cli_output_body_free,
+        residue_file_count=residue_file_count,
         metadata_file_count=metadata_file_count,
         runtime_summary_checked=metadata_file_count == len(REQUIRED_FILES),
         artifact_body_request_checked=metadata_file_count == len(REQUIRED_FILES),
@@ -1435,12 +2002,16 @@ def _runtime_schema_version_for_mode(mode: str) -> str:
         return SAFE_METADATA_RUNTIME_SCHEMA_VERSION
     if mode == ARTIFACT_BODY_RUNTIME_INVOCATION_MODE:
         return RUNTIME_INVOCATION_RUNTIME_SCHEMA_VERSION
+    if mode == ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE:
+        return ACTUAL_CONTROLLED_RUNTIME_SCHEMA_VERSION
     return RUNTIME_SCHEMA_VERSION
 
 
 def _required_files_for_mode(mode: str) -> tuple[str, ...]:
     if mode == ARTIFACT_BODY_RUNTIME_INVOCATION_MODE:
         return RUNTIME_INVOCATION_REQUIRED_FILES
+    if mode == ACTUAL_CONTROLLED_ARTIFACT_BODY_RUNTIME_INVOCATION_MODE:
+        return ACTUAL_CONTROLLED_REQUIRED_FILES
     return REQUIRED_FILES
 
 
@@ -1464,6 +2035,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--no-file-writing", action="store_true")
     parser.add_argument("--no-manifest-writer", action="store_true")
     parser.add_argument("--fail-closed-on-unsafe-output", action="store_true")
+    parser.add_argument("--actual-invocation", action="store_true")
     return parser
 
 
@@ -1478,6 +2050,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         no_file_writing=args.no_file_writing,
         no_manifest_writer=args.no_manifest_writer,
         fail_closed_on_unsafe_output=args.fail_closed_on_unsafe_output,
+        actual_invocation=args.actual_invocation,
     )
     print(format_public_summary(summary.to_public_dict()))
     return summary.return_code

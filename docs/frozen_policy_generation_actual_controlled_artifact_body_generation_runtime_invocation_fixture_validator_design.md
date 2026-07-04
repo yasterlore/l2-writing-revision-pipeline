@@ -450,3 +450,7 @@ Step591 adds the standalone Makefile target `check-learner-state-frozen-policy-g
 ## Step592 Implementation Refinement Design Reference
 
 Step592 adds the design-only refinement for a future v0.4 runtime behavior step. It preserves the Step589/Step591 validator target boundary and does not change validator code, fixture JSON, Makefile, wrapper, workflow, manifest writer integration, or file writing.
+
+## Step593 Runtime Implementation Reference
+
+Step593 implements v0.4 `artifact-body-runtime-invocation-controlled` behavior in the runtime integration module with `--actual-invocation` and focused tests. The fixture validator remains separate; Step593 does not change fixture JSON, validator implementation, Makefile, wrapper, workflow, manifest writer integration, or file writing.

@@ -273,3 +273,10 @@ Step592 follow-up status: the implementation refinement design is available at
 It narrows the future v0.4 runtime behavior step without changing Makefile,
 wrapper, workflow, Python code/tests, fixture JSON, manifest writer, or file
 writing.
+
+Step593 follow-up status: v0.4 `artifact-body-runtime-invocation-controlled`
+runtime CLI behavior is implemented in
+`python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`.
+The Step591 fixture-validator target remains standalone and outside
+release-quality; Step593 does not change Makefile, wrapper, workflow, fixture
+JSON, manifest writer integration, or file writing.
