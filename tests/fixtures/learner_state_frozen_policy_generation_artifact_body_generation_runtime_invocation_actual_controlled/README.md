@@ -217,3 +217,7 @@ Step593 uses this root's selected primary case, `valid/valid_actual_controlled_s
 ## Step594 Makefile Target Design
 
 Step594 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_makefile_target_design.md` as a design-only plan for a future standalone Makefile target around the Step593 v0.4 runtime CLI. The fixture JSON remains unchanged, and Step594 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step595 Makefile Target Implementation
+
+Step595 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation` for the Step593 v0.4 runtime CLI over this root's selected primary case. The fixture JSON remains unchanged, and Step595 does not change wrapper, workflow, Python code/tests, runtime implementation, manifest writer integration, or file writing.

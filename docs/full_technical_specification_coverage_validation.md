@@ -596,3 +596,7 @@ Step591 adds standalone Makefile coverage for running the Step589 actual-control
 ## Step593 Coverage Addendum
 
 Step593 adds focused runtime integration coverage for v0.4 `artifact-body-runtime-invocation-controlled`, including the primary selected case, CLI output safety, `--actual-invocation` gating, older-mode flag rejection, unsupported schema, malformed metadata marker, mismatched expected status, and representative fail-closed CLI marker cases. This is controlled metadata-only runtime CLI coverage; it is not release-quality wrapper coverage, manifest writer coverage, file-writing coverage, production readiness, real-data readiness, or model performance evidence.
+
+## Step595 Coverage Addendum
+
+Step595 adds standalone Makefile coverage for running the Step593 v0.4 actual-controlled runtime CLI through `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`. This is standalone target coverage only; it is not release-quality wrapper coverage, manifest writer coverage, file-writing coverage, production readiness, real-data readiness, or model performance evidence.

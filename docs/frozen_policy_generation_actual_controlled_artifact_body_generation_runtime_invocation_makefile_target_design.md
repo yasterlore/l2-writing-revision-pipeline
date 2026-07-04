@@ -329,3 +329,12 @@ Recommended next step:
 
 Do not proceed to release-quality wrapper integration before the standalone
 target is implemented and checked.
+
+## Step595 Implementation Status
+
+Step595 implements the standalone Makefile target
+`check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`
+with help text `Run actual-controlled artifact body generation runtime
+invocation smoke`. The target runs the Step593 v0.4 runtime CLI against
+`valid/valid_actual_controlled_safe_metadata_invocation`, remains outside
+release-quality, does not invoke manifest writer, and does not write files.

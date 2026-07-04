@@ -286,3 +286,8 @@ v0.4 runtime CLI is available at
 `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_makefile_target_design.md`.
 It does not implement the target or change wrapper, workflow, Python code/tests,
 fixture JSON, manifest writer integration, or file writing.
+
+Step595 follow-up status: the standalone Makefile target
+`check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`
+is now available for the Step593 v0.4 runtime CLI. It remains outside
+release-quality and does not invoke manifest writer or write files.

@@ -593,3 +593,7 @@ Step593 implements the direct v0.4 runtime CLI behavior in `python/learner_state
 ## Step594 Makefile Target Design Status
 
 Step594 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_makefile_target_design.md` as a design-only plan for a future standalone Makefile target around the Step593 v0.4 runtime CLI. It does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step595 Makefile Target Implementation Status
+
+Step595 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation` for the Step593 v0.4 runtime CLI. It remains outside release-quality and does not change Python code/tests, fixture JSON, runtime implementation, manifest writer integration, or file writing.

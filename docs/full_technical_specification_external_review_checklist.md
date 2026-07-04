@@ -516,3 +516,7 @@ For Step591, confirm the standalone Makefile target `check-learner-state-frozen-
 ## Step593 Actual-Controlled Runtime Invocation Review
 
 Confirm Step593 adds v0.4 `artifact-body-runtime-invocation-controlled` runtime CLI behavior guarded by `--actual-invocation`, keeps v0.1/v0.2/v0.3 behavior unchanged, emits only public-safe key-value summary output, and adds focused tests for pass, gating, usage-error, mismatch, and fail-closed marker paths. Confirm Step593 does not change Makefile, release-quality wrapper, workflow files, fixture JSON, validator implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance claims.
+
+## Step595 Actual-Controlled Runtime Makefile Target Review
+
+Confirm Step595 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation` with help text `Run actual-controlled artifact body generation runtime invocation smoke`. Confirm it runs the Step593 v0.4 runtime CLI against the selected Step587 primary case and does not change release-quality wrapper, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance claims.

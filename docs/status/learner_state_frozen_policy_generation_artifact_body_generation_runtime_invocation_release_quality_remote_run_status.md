@@ -268,3 +268,7 @@ Step593 later implements v0.4 actual-controlled runtime CLI behavior for the sel
 ## Step594 Later-Chain Note
 
 Step594 later adds a design-only Makefile target plan for the Step593 v0.4 runtime CLI. This status marker remains a Step583 planned-only release-quality record and is not evidence for Step594 target implementation, release-quality integration, manifest writer integration, file writing, production readiness, real-data readiness, or model performance.
+
+## Step595 Later-Chain Note
+
+Step595 later adds a standalone Makefile target for the Step593 v0.4 runtime CLI. This status marker remains a Step583 planned-only release-quality record and is not evidence for Step595 release-quality integration, manifest writer integration, file writing, production readiness, real-data readiness, or model performance.

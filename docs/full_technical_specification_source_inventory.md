@@ -487,3 +487,7 @@ Step591 adds the Makefile target `check-learner-state-frozen-policy-generation-a
 ## Step593 Source Inventory Addendum
 
 Step593 updates `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py` and `python/learner_state/tests/test_frozen_policy_generation_artifact_body_generation_runtime_integration.py` for the v0.4 actual-controlled runtime CLI boundary. README/docs references are updated. No Makefile, release-quality wrapper, workflow, fixture JSON, validator implementation, manifest writer implementation, artifact body file writing, or manifest file writing is added or changed.
+
+## Step595 Source Inventory Addendum
+
+Step595 updates `Makefile` with the standalone target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`. README/docs references are updated. No release-quality wrapper, workflow, Python code/tests, fixture JSON, runtime implementation, validator implementation, artifact body generation implementation, or manifest writer implementation is added or changed.

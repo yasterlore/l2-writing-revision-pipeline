@@ -458,3 +458,7 @@ Step593 implements v0.4 `artifact-body-runtime-invocation-controlled` behavior i
 ## Step594 Makefile Target Design Reference
 
 Step594 adds the design-only Makefile target plan for the Step593 v0.4 runtime CLI. The fixture validator remains separate, and Step594 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step595 Makefile Target Implementation Reference
+
+Step595 adds the standalone Makefile target for the Step593 v0.4 runtime CLI. The fixture validator remains separate, and Step595 does not change wrapper, workflow, Python code/tests, fixture JSON, validator implementation, manifest writer integration, or file writing.

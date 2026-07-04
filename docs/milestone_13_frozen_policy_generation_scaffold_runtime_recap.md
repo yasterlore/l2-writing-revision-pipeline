@@ -3179,3 +3179,9 @@ Step593 does not change Makefile, release-quality wrapper, workflow files, fixtu
 Step594 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step593 v0.4 runtime CLI. It proposes the target name, help text, command, placement, expected output, Step595 implementation checks, and public-safe boundary.
 
 Step594 does not change Makefile, release-quality wrapper, workflow files, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step595 Actual-Controlled Runtime Makefile Target Implementation
+
+Step595 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation` with help text `Run actual-controlled artifact body generation runtime invocation smoke`. The target runs the Step593 v0.4 runtime CLI against `valid/valid_actual_controlled_safe_metadata_invocation` and expects public-safe summary output.
+
+Step595 does not add release-quality wrapper integration, change workflow files, change Python code/tests, change fixture JSON, change runtime implementation, invoke manifest writer, write files, use real data, use metrics, or claim production readiness.

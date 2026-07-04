@@ -730,3 +730,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step594 Actual-Controlled Runtime Makefile Target Design
 
 - [Actual-controlled artifact body generation runtime invocation Makefile target design](frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_makefile_target_design.md): design-only / docs-only plan for adding a future standalone target for the Step593 v0.4 runtime CLI. It records the proposed target name, help text, command, expected output, placement, existing-target relationship, Step595 plan, and safety boundary.
+
+## Step595 Actual-Controlled Runtime Makefile Target
+
+- `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`: standalone Makefile target for the Step593 v0.4 actual-controlled runtime CLI. It is not release-quality integrated and does not invoke manifest writer or write files.

@@ -5570,3 +5570,7 @@ Confirm `python/learner_state/frozen_policy_generation_artifact_body_generation_
 ## Step594 Actual-Controlled Runtime Makefile Target Design Check
 
 Confirm `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_makefile_target_design.md` exists as a design-only / docs-only plan for a future standalone target around the Step593 v0.4 runtime CLI. Confirm it proposes `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`, records the help text and command, and does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## Step595 Actual-Controlled Runtime Makefile Target Check
+
+Confirm `Makefile` exposes `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation` with help text `Run actual-controlled artifact body generation runtime invocation smoke`. Confirm the target runs the Step593 v0.4 runtime CLI against `valid/valid_actual_controlled_safe_metadata_invocation`, emits public-safe summary output, remains outside release-quality, does not invoke manifest writer, does not write files, and does not add production readiness, real-data readiness, or model performance evidence.

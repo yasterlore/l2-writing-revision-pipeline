@@ -269,3 +269,7 @@ Step593 later implements v0.4 actual-controlled runtime CLI behavior in the runt
 ## Step594 Forward Reference
 
 Step594 later adds a design-only Makefile target plan for the Step593 v0.4 runtime CLI. It remains outside the Step569-Step583 planned-only release-quality chain and does not change this review's release-quality, manifest writer, file-writing, production-readiness, real-data-readiness, or model-performance boundaries.
+
+## Step595 Forward Reference
+
+Step595 later adds a standalone Makefile target for the Step593 v0.4 runtime CLI. It remains outside the Step569-Step583 planned-only release-quality chain and is not release-quality integrated in this review. It does not change this review's manifest writer, file-writing, production-readiness, real-data-readiness, or model-performance boundaries.

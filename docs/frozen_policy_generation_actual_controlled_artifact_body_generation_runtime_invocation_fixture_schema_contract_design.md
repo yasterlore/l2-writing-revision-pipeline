@@ -532,3 +532,7 @@ Step593 consumes this contract for the selected actual-controlled primary case t
 ## Step594 Makefile Target Design Reference
 
 Step594 adds a design-only / docs-only plan for a future standalone Makefile target around the Step593 v0.4 runtime CLI. This fixture/schema contract remains unchanged, and Step594 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step595 Makefile Target Implementation Reference
+
+Step595 adds the standalone Makefile target for the Step593 v0.4 runtime CLI that consumes this fixture/schema contract's selected primary case. Fixture JSON remains unchanged, and Step595 does not change wrapper, workflow, Python code/tests, runtime implementation, manifest writer integration, or file writing.
