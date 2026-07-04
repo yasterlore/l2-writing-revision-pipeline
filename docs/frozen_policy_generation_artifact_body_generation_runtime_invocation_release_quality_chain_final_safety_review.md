@@ -265,3 +265,7 @@ Step592 adds a design-only implementation refinement for the later v0.4 actual-c
 ## Step593 Forward Reference
 
 Step593 later implements v0.4 actual-controlled runtime CLI behavior in the runtime integration module. It remains outside the Step569-Step583 planned-only release-quality chain and does not change this review's non-equivalence cautions, manifest writer boundary, file-writing boundary, production-readiness boundary, real-data-readiness boundary, or model-performance boundary.
+
+## Step594 Forward Reference
+
+Step594 later adds a design-only Makefile target plan for the Step593 v0.4 runtime CLI. It remains outside the Step569-Step583 planned-only release-quality chain and does not change this review's release-quality, manifest writer, file-writing, production-readiness, real-data-readiness, or model-performance boundaries.

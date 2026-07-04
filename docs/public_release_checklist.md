@@ -5566,3 +5566,7 @@ Confirm `docs/frozen_policy_generation_actual_controlled_artifact_body_generatio
 ## Step593 Actual-Controlled Runtime Invocation Implementation Check
 
 Confirm `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py` supports runtime schema `learner_state_frozen_policy_generation_artifact_body_generation_runtime_integration_v0.4`, mode `artifact-body-runtime-invocation-controlled`, and `--actual-invocation` for the Step587 primary case. Confirm output remains public-safe, metadata-only, body-free, summary-only, no-oracle, and count-only where applicable. Confirm Step593 does not change Makefile, release-quality wrapper, workflow files, fixture JSON, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## Step594 Actual-Controlled Runtime Makefile Target Design Check
+
+Confirm `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_makefile_target_design.md` exists as a design-only / docs-only plan for a future standalone target around the Step593 v0.4 runtime CLI. Confirm it proposes `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`, records the help text and command, and does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

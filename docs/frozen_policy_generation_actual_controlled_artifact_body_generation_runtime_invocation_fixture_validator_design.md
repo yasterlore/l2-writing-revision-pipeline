@@ -454,3 +454,7 @@ Step592 adds the design-only refinement for a future v0.4 runtime behavior step.
 ## Step593 Runtime Implementation Reference
 
 Step593 implements v0.4 `artifact-body-runtime-invocation-controlled` behavior in the runtime integration module with `--actual-invocation` and focused tests. The fixture validator remains separate; Step593 does not change fixture JSON, validator implementation, Makefile, wrapper, workflow, manifest writer integration, or file writing.
+
+## Step594 Makefile Target Design Reference
+
+Step594 adds the design-only Makefile target plan for the Step593 v0.4 runtime CLI. The fixture validator remains separate, and Step594 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

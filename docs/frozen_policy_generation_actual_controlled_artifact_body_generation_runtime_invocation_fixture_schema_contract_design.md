@@ -528,3 +528,7 @@ Step592 adds the implementation refinement design for the future v0.4 runtime be
 ## Step593 Runtime Implementation Reference
 
 Step593 consumes this contract for the selected actual-controlled primary case through v0.4 `artifact-body-runtime-invocation-controlled` runtime CLI behavior. The fixture JSON remains unchanged, and Step593 does not change Makefile, wrapper, workflow, manifest writer integration, or file writing.
+
+## Step594 Makefile Target Design Reference
+
+Step594 adds a design-only / docs-only plan for a future standalone Makefile target around the Step593 v0.4 runtime CLI. This fixture/schema contract remains unchanged, and Step594 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

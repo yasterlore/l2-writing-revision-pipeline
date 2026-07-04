@@ -222,3 +222,7 @@ safety.
 ## Step590 Later-Chain Note
 
 Step590 designs a separate future Makefile target for the actual-controlled fixture validator over `tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled/`. It does not change this planned-only fixture root.
+
+## Step594 Later-Chain Note
+
+Step594 designs a separate future Makefile target for the Step593 v0.4 actual-controlled runtime CLI over the actual-controlled fixture root. It does not change this planned-only fixture root, fixture JSON, Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.

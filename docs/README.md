@@ -726,3 +726,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step593 Actual-Controlled Runtime Invocation Implementation
 
 - `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`: adds v0.4 `artifact-body-runtime-invocation-controlled` behavior with `--actual-invocation` and focused tests. The CLI uses the Step587 primary actual-controlled case and emits public-safe key-value summary output only; Makefile, release-quality wrapper, workflow, fixture JSON, manifest writer integration, and file writing remain unchanged.
+
+## Step594 Actual-Controlled Runtime Makefile Target Design
+
+- [Actual-controlled artifact body generation runtime invocation Makefile target design](frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_makefile_target_design.md): design-only / docs-only plan for adding a future standalone target for the Step593 v0.4 runtime CLI. It records the proposed target name, help text, command, expected output, placement, existing-target relationship, Step595 plan, and safety boundary.

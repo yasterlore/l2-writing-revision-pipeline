@@ -574,3 +574,7 @@ Step592 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_gene
 ## Step593 Runtime Implementation Reference
 
 Step593 adds v0.4 direct runtime behavior for `artifact-body-runtime-invocation-controlled` with `--actual-invocation`, using public-safe summary-only output. It does not add release-quality wrapper integration, workflow changes, fixture JSON changes, manifest writer integration, or file writing.
+
+## Step594 Makefile Target Design Reference
+
+Step594 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_makefile_target_design.md` as a design-only plan for a future standalone target around the Step593 v0.4 runtime CLI. It does not change Makefile, release-quality wrapper, workflow files, Python code/tests, fixture JSON, manifest writer integration, or file writing.

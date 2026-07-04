@@ -280,3 +280,9 @@ runtime CLI behavior is implemented in
 The Step591 fixture-validator target remains standalone and outside
 release-quality; Step593 does not change Makefile, wrapper, workflow, fixture
 JSON, manifest writer integration, or file writing.
+
+Step594 follow-up status: the design-only Makefile target plan for the Step593
+v0.4 runtime CLI is available at
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_makefile_target_design.md`.
+It does not implement the target or change wrapper, workflow, Python code/tests,
+fixture JSON, manifest writer integration, or file writing.

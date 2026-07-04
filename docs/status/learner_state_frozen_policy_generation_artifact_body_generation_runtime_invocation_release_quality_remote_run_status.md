@@ -264,3 +264,7 @@ Step592 later adds a design-only implementation refinement for future v0.4 actua
 ## Step593 Later-Chain Note
 
 Step593 later implements v0.4 actual-controlled runtime CLI behavior for the selected metadata-only fixture case. This status marker remains a Step583 planned-only release-quality record and is not evidence for Step593 release-quality integration, manifest writer integration, file writing, production readiness, real-data readiness, or model performance.
+
+## Step594 Later-Chain Note
+
+Step594 later adds a design-only Makefile target plan for the Step593 v0.4 runtime CLI. This status marker remains a Step583 planned-only release-quality record and is not evidence for Step594 target implementation, release-quality integration, manifest writer integration, file writing, production readiness, real-data readiness, or model performance.

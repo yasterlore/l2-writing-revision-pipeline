@@ -213,3 +213,7 @@ Step592 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_gene
 ## Step593 Runtime Implementation
 
 Step593 uses this root's selected primary case, `valid/valid_actual_controlled_safe_metadata_invocation`, for v0.4 `artifact-body-runtime-invocation-controlled` runtime CLI behavior with `--actual-invocation`. The fixture JSON remains unchanged. The runtime output is public-safe, metadata-only, body-free, summary-only, and count-only where applicable; manifest writer integration and file writing remain disabled and unchanged.
+
+## Step594 Makefile Target Design
+
+Step594 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_makefile_target_design.md` as a design-only plan for a future standalone Makefile target around the Step593 v0.4 runtime CLI. The fixture JSON remains unchanged, and Step594 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.

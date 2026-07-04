@@ -3173,3 +3173,9 @@ Step592 does not change Python code/tests, Makefile, release-quality wrapper, wo
 Step593 extends `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py` with v0.4 `artifact-body-runtime-invocation-controlled` behavior guarded by `--actual-invocation`. The selected Step587 case emits public-safe metadata-only summary output with controlled safe-metadata artifact body CLI scanning, no manifest writer invocation, no file writing, and no payload emission.
 
 Step593 does not change Makefile, release-quality wrapper, workflow files, fixture JSON, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step594 Actual-Controlled Runtime Makefile Target Design
+
+Step594 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step593 v0.4 runtime CLI. It proposes the target name, help text, command, placement, expected output, Step595 implementation checks, and public-safe boundary.
+
+Step594 does not change Makefile, release-quality wrapper, workflow files, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
