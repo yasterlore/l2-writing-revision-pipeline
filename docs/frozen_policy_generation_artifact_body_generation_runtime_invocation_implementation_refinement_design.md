@@ -466,3 +466,10 @@ writer, or write files.
 ## Step590 Later-Chain Note
 
 Step590 is a later actual-controlled fixture validator Makefile target design. It does not change the planned-only runtime invocation implementation refinement boundary recorded here.
+
+## Step596 Later-Chain Note
+
+Step596 adds a separate design-only release-quality integration plan for the
+actual-controlled standalone targets. It remains separate from this
+planned-only v0.3 refinement and does not change wrapper, Makefile, Python
+code/tests, fixture JSON, manifest writer integration, or file writing.

@@ -1372,3 +1372,7 @@ invocation evidence, or file-writing evidence.
 ## Step595 Actual-Controlled Runtime Makefile Target
 
 - `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`: standalone Makefile target for the Step593 v0.4 actual-controlled runtime CLI. It runs the selected Step587 primary case, remains outside release-quality, and keeps manifest writer invocation and file writing disabled.
+
+## Step596 Actual-Controlled Runtime Release-Quality Integration Design
+
+- [Actual-controlled artifact body generation runtime invocation release-quality integration design](../frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_integration_design.md): design-only / docs-only plan for future release-quality wrapper integration of the Step591 and Step595 standalone targets. Step596 does not change the wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, or file writing.

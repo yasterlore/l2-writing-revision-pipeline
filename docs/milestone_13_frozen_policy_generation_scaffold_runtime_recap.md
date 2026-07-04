@@ -3185,3 +3185,9 @@ Step594 does not change Makefile, release-quality wrapper, workflow files, Pytho
 Step595 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation` with help text `Run actual-controlled artifact body generation runtime invocation smoke`. The target runs the Step593 v0.4 runtime CLI against `valid/valid_actual_controlled_safe_metadata_invocation` and expects public-safe summary output.
 
 Step595 does not add release-quality wrapper integration, change workflow files, change Python code/tests, change fixture JSON, change runtime implementation, invoke manifest writer, write files, use real data, use metrics, or claim production readiness.
+
+## Step596 Actual-Controlled Runtime Release-Quality Integration Design
+
+Step596 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_integration_design.md` as a design-only / docs-only plan for future wrapper integration of the Step591 actual-controlled fixture validator target and the Step595 v0.4 runtime smoke target.
+
+Step596 recommends adding fixture validation before runtime smoke, adjacent to the planned-only runtime invocation checks and before broader artifact body / manifest writer checks. It does not change the release-quality wrapper, Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

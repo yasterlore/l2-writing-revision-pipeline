@@ -493,3 +493,10 @@ writing remain out of scope.
 ## Step590 Later-Chain Note
 
 Step590 is a later actual-controlled fixture validator Makefile target design. It does not implement actual runtime invocation or change the planned-only runtime invocation implementation design recorded here.
+
+## Step596 Later-Chain Note
+
+Step596 adds a separate design-only release-quality integration plan for
+future wrapper integration of the actual-controlled fixture validator and
+v0.4 runtime smoke targets. It remains separate from this planned-only v0.3
+implementation design.

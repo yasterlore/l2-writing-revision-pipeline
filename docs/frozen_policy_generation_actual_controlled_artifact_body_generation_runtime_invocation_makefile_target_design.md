@@ -338,3 +338,12 @@ with help text `Run actual-controlled artifact body generation runtime
 invocation smoke`. The target runs the Step593 v0.4 runtime CLI against
 `valid/valid_actual_controlled_safe_metadata_invocation`, remains outside
 release-quality, does not invoke manifest writer, and does not write files.
+
+## Step596 Release-Quality Integration Design Reference
+
+Step596 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_integration_design.md`
+as a design-only / docs-only plan for future wrapper integration of this
+target together with the Step591 actual-controlled fixture validator target.
+It does not change the wrapper, Makefile, workflows, Python code/tests,
+fixture JSON, manifest writer integration, or file writing.

@@ -582,3 +582,12 @@ Step594 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_gene
 ## Step595 Makefile Target Implementation Reference
 
 Step595 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation` for the Step593 v0.4 runtime CLI. It remains outside release-quality and does not change workflow files, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, or file writing.
+
+## Step596 Release-Quality Integration Design Reference
+
+Step596 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_integration_design.md`
+as the design-only plan for adding the Step591 fixture validator target and
+Step595 v0.4 runtime smoke target to release-quality in a later step. It does
+not change wrapper, Makefile, workflow files, Python code/tests, fixture JSON,
+runtime implementation, manifest writer integration, or file writing.

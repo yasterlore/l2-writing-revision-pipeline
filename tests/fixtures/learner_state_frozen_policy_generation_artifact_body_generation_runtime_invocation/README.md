@@ -226,3 +226,10 @@ Step590 designs a separate future Makefile target for the actual-controlled fixt
 ## Step594 Later-Chain Note
 
 Step594 designs a separate future Makefile target for the Step593 v0.4 actual-controlled runtime CLI over the actual-controlled fixture root. It does not change this planned-only fixture root, fixture JSON, Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step596 Later-Chain Note
+
+Step596 adds a design-only / docs-only release-quality integration plan for
+future wrapper integration of the actual-controlled fixture validator and
+v0.4 runtime smoke targets. It does not change this planned-only fixture root
+or fixture JSON.

@@ -291,3 +291,11 @@ Step595 follow-up status: the standalone Makefile target
 `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`
 is now available for the Step593 v0.4 runtime CLI. It remains outside
 release-quality and does not invoke manifest writer or write files.
+
+Step596 follow-up status: the release-quality integration design for this
+fixture validator target and the Step595 v0.4 runtime smoke target is
+available at
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_integration_design.md`.
+It is design-only / docs-only and does not change wrapper, Makefile,
+workflow, Python code/tests, fixture JSON, manifest writer integration, or
+file writing.

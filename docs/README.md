@@ -734,3 +734,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step595 Actual-Controlled Runtime Makefile Target
 
 - `check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation`: standalone Makefile target for the Step593 v0.4 actual-controlled runtime CLI. It is not release-quality integrated and does not invoke manifest writer or write files.
+
+## Step596 Actual-Controlled Runtime Release-Quality Integration Design
+
+- [Actual-controlled artifact body generation runtime invocation release-quality integration design](frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_integration_design.md): design-only / docs-only plan for future wrapper integration of the Step591 fixture validator target and Step595 v0.4 runtime smoke target. It recommends adding both checks in order, with no wrapper change in Step596.

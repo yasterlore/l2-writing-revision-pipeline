@@ -272,3 +272,11 @@ Step594 later adds a design-only Makefile target plan for the Step593 v0.4 runti
 ## Step595 Later-Chain Note
 
 Step595 later adds a standalone Makefile target for the Step593 v0.4 runtime CLI. This status marker remains a Step583 planned-only release-quality record and is not evidence for Step595 release-quality integration, manifest writer integration, file writing, production readiness, real-data readiness, or model performance.
+
+## Step596 Later-Chain Note
+
+Step596 later adds a design-only / docs-only release-quality integration plan
+for the Step591 and Step595 actual-controlled targets. This status marker
+remains a Step583 planned-only release-quality record and is not evidence for
+actual-controlled wrapper integration, manifest writer integration, file
+writing, production readiness, real-data readiness, or model performance.

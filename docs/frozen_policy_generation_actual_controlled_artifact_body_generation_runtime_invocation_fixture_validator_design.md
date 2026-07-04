@@ -462,3 +462,11 @@ Step594 adds the design-only Makefile target plan for the Step593 v0.4 runtime C
 ## Step595 Makefile Target Implementation Reference
 
 Step595 adds the standalone Makefile target for the Step593 v0.4 runtime CLI. The fixture validator remains separate, and Step595 does not change wrapper, workflow, Python code/tests, fixture JSON, validator implementation, manifest writer integration, or file writing.
+
+## Step596 Release-Quality Integration Design Reference
+
+Step596 adds the design-only release-quality integration plan for adding the
+Step591 fixture validator target and the Step595 v0.4 runtime smoke target to
+the wrapper in a later step. The fixture validator implementation remains
+unchanged, and Step596 does not change wrapper, Makefile, workflow,
+Python code/tests, fixture JSON, manifest writer integration, or file writing.

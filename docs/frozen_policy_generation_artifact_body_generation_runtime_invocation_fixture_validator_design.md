@@ -441,3 +441,10 @@ separate from this runtime mode; fixture JSON is unchanged.
 ## Step590 Later-Chain Note
 
 Step590 concerns a later actual-controlled fixture validator Makefile target design. It does not replace the planned-only fixture validator design recorded here.
+
+## Step596 Later-Chain Note
+
+Step596 adds a separate design-only release-quality integration plan for
+future wrapper integration of the actual-controlled fixture validator and
+v0.4 runtime smoke targets. This planned-only validator design remains
+unchanged.

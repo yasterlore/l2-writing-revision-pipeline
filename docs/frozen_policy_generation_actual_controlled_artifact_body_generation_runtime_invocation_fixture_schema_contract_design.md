@@ -536,3 +536,9 @@ Step594 adds a design-only / docs-only plan for a future standalone Makefile tar
 ## Step595 Makefile Target Implementation Reference
 
 Step595 adds the standalone Makefile target for the Step593 v0.4 runtime CLI that consumes this fixture/schema contract's selected primary case. Fixture JSON remains unchanged, and Step595 does not change wrapper, workflow, Python code/tests, runtime implementation, manifest writer integration, or file writing.
+
+## Step596 Release-Quality Integration Design Reference
+
+Step596 adds a design-only / docs-only plan for future release-quality wrapper
+integration of the actual-controlled fixture validator target and v0.4 runtime
+smoke target. This fixture/schema contract and fixture JSON remain unchanged.

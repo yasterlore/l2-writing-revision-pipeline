@@ -337,3 +337,9 @@ This design does not claim:
 ## Step590 Later-Chain Note
 
 Step590 designs a separate future Makefile target for the Step589 actual-controlled fixture validator. It does not replace the planned-only v0.3 runtime Makefile target design recorded here.
+
+## Step596 Later-Chain Note
+
+Step596 adds a separate design-only release-quality integration plan for the
+actual-controlled fixture validator and v0.4 runtime smoke targets. This
+planned-only v0.3 Makefile target design remains unchanged.

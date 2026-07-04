@@ -471,3 +471,11 @@ Step594 adds a design-only Makefile target plan for the Step593 v0.4 runtime CLI
 ## Step595 Later-Chain Note
 
 Step595 adds a standalone Makefile target for the Step593 v0.4 runtime CLI after this workflow design. It is not part of the Step582 remote record workflow, is not release-quality integrated here, and does not add wrapper, workflow, Python code/tests, fixture JSON, manifest writer, or file-writing changes.
+
+## Step596 Later-Chain Note
+
+Step596 adds a design-only / docs-only release-quality integration plan for
+the Step591 and Step595 actual-controlled targets after this workflow design.
+It is not part of the Step582 remote record workflow and does not add wrapper,
+workflow, Makefile, Python code/tests, fixture JSON, manifest writer, or
+file-writing changes.

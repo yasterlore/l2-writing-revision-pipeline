@@ -174,6 +174,13 @@ It remains outside this planned-only release-quality integration design and
 does not add wrapper, workflow, Makefile, Python code/tests, fixture JSON,
 manifest writer, or file-writing changes.
 
+Step596 later-chain status: the actual-controlled release-quality integration
+design is available at
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_integration_design.md`.
+It is a separate design-only plan for future wrapper integration of the
+Step591 and Step595 targets and does not change this planned-only wrapper
+design.
+
 ## 8. Expected Public-Safe Output
 
 For fixture validator:

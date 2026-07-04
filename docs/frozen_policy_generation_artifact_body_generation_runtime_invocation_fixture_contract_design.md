@@ -456,3 +456,10 @@ manifest writer, or write files.
 ## Step590 Later-Chain Note
 
 Step590 designs a Makefile target for the later actual-controlled fixture validator. It does not alter the planned-only fixture contract recorded here.
+
+## Step596 Later-Chain Note
+
+Step596 adds a separate design-only release-quality integration plan for
+future wrapper integration of the actual-controlled fixture validator and
+v0.4 runtime smoke targets. This planned-only fixture contract remains
+unchanged.
