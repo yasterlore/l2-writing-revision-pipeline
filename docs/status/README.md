@@ -1417,3 +1417,7 @@ invocation evidence, or file-writing evidence.
 ## Step606 Actual-Controlled v0.4 Multi-Case Runtime Smoke Makefile Target
 
 - `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke`: standalone Makefile target for the Step604 all-valid multi-case runtime smoke. Step606 keeps release-quality wrapper, workflows, Python code/tests, fixture JSON, manifest writer integration, and file writing unchanged.
+
+## Step607 Actual-Controlled v0.4 Multi-Case Runtime Smoke Release-Quality Integration Design
+
+- [Actual-controlled v0.4 multi-case runtime smoke release-quality integration design](../frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_integration_design.md): design-only / docs-only plan for future Step608 wrapper integration of the Step606 standalone target. Step607 keeps wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, and file writing unchanged.

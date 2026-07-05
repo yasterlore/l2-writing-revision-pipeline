@@ -666,3 +666,7 @@ Step605 designs a future standalone Makefile target for the Step604 runner. This
 ## Step606 Makefile Target Implementation Reference
 
 Step606 adds the standalone Makefile target for the Step604 runner. This refinement design remains unchanged; Step606 does not change Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step607 Release-Quality Integration Design Reference
+
+Step607 designs future wrapper integration for the Step606 standalone multi-case target. This refinement design remains unchanged; Step607 does not change wrapper, Makefile, Python code/tests, fixture JSON, manifest writer integration, or file writing.

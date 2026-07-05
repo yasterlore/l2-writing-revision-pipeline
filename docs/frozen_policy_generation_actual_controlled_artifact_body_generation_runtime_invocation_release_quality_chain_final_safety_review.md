@@ -335,3 +335,7 @@ Step605 adds a design-only / docs-only plan for a future standalone Makefile tar
 ## Step606 Makefile Target Implementation Reference
 
 Step606 adds the standalone Makefile target for the Step604 runner. This final safety review remains unchanged and does not record release-quality integration evidence for the multi-case target.
+
+## Step607 Release-Quality Integration Design Reference
+
+Step607 designs future release-quality wrapper integration for the Step606 standalone multi-case target. This final safety review remains unchanged and does not record wrapper implementation or remote run evidence for the multi-case target.

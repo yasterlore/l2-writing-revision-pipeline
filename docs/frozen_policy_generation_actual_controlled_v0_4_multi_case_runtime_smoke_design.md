@@ -569,3 +569,7 @@ Step605 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_ru
 ## Step606 Makefile Target Implementation Reference
 
 Step606 adds the standalone Makefile target for the Step604 runner. The target remains outside release-quality integration and does not change Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step607 Release-Quality Integration Design Reference
+
+Step607 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_integration_design.md` as a design-only / docs-only handoff for future wrapper integration of the Step606 standalone target. This multi-case runtime smoke design remains unchanged.

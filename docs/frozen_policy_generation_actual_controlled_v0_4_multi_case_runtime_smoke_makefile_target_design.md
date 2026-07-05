@@ -313,3 +313,7 @@ Step606 should update Makefile and necessary README/docs only. Step606 should no
 ## Step606 Implementation Reference
 
 Step606 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke` using the command proposed in this design. The target remains standalone and is not release-quality integrated in Step606.
+
+## Step607 Release-Quality Integration Design Reference
+
+Step607 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_integration_design.md` as a design-only / docs-only plan for future wrapper integration of the Step606 standalone target. This Makefile target design remains unchanged; Step607 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

@@ -435,3 +435,7 @@ Step605 designs the future standalone Makefile target for the Step604 runner. Th
 ## Step606 Makefile Target Implementation Reference
 
 Step606 adds the standalone Makefile target for the Step604 runner. This release-quality integration design remains unchanged; the new target is not added to release-quality in Step606.
+
+## Step607 Multi-Case Release-Quality Integration Design Reference
+
+Step607 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_integration_design.md` as the future wrapper integration design for the Step606 standalone multi-case target. This earlier release-quality integration design remains unchanged and continues to cover the Step591 fixture validator plus Step595 single-case smoke checks.
