@@ -254,3 +254,7 @@ Do not recommend invalid runtime execution, payload audit, manifest writer integ
 ## Step611 Final Safety Review Reference
 
 Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review of the Step602-Step610 all-valid multi-case runtime smoke chain. This status marker remains unchanged as the public-safe metadata summary for the remote Release Quality run after Step608 wrapper integration.
+
+## Step612 Next Boundary Planning Reference
+
+Step612 adds `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after the Step611 final safety review. This status marker remains unchanged and is not new runtime evidence.

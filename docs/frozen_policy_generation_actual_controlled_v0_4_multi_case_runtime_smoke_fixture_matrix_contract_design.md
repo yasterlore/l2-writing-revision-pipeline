@@ -490,3 +490,7 @@ Step610 adds the public-safe status marker for the Step608 wrapper-integrated mu
 ## Step611 Final Safety Review Reference
 
 Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain. This matrix contract remains unchanged; fixture JSON, Python code/tests, Makefile, wrapper, manifest writer integration, and file writing remain unchanged.
+
+## Step612 Next Boundary Planning Reference
+
+Step612 adds `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after the Step611 final safety review. This matrix contract remains unchanged; fixture JSON, Python code/tests, Makefile, wrapper, manifest writer integration, and file writing remain unchanged.

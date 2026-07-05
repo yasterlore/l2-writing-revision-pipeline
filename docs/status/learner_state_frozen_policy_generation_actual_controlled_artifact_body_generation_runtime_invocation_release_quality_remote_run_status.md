@@ -342,3 +342,7 @@ Step610 adds `docs/status/learner_state_frozen_policy_generation_actual_controll
 ## Step611 Multi-Case Final Safety Review Reference
 
 Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` as the final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain. This single-case remote status marker remains unchanged and remains separate evidence for the Step597 single-case boundary.
+
+## Step612 Next Boundary Planning Reference
+
+Step612 adds `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after the Step611 multi-case final safety review. This single-case remote status marker remains unchanged and is not new runtime evidence.

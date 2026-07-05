@@ -1437,3 +1437,7 @@ invocation evidence, or file-writing evidence.
 ## Step611 Actual-Controlled v0.4 Multi-Case Runtime Smoke Final Safety Review
 
 - [Actual-controlled v0.4 multi-case runtime smoke release-quality chain final safety review](../frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md): final-safety-review-only / docs-only review of the Step602-Step610 all-valid multi-case runtime smoke boundary. It does not change wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step612 Frozen Policy Generation Runtime Chain Next Boundary Planning
+
+- [Frozen policy generation runtime chain post multi-case final safety review next boundary planning](../frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison after Step611. It recommends a future invalid-case runtime fail-closed matrix design while keeping invalid runtime execution, payload audit, manifest writer integration, and file writing out of Step612.

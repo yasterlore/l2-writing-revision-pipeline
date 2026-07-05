@@ -3281,3 +3281,9 @@ The marker records provided public-safe metadata, observed release-quality label
 Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain.
 
 The review accepts the chain only as a release-quality-integrated, remote-status-recorded, actual-controlled v0.4 all-valid multi-case runtime smoke boundary for controlled metadata-only invocation. It records remaining limitations, relationships to earlier planned-only and single-case reviews, non-equivalence cautions, non-claims, and a Step612 planning-only handoff. It does not add implementation, wrapper changes, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, manifest writer integration, file writing, real-data evidence, metric evidence, or production readiness status.
+
+## Step612 Frozen Policy Generation Runtime Chain Next Boundary Planning
+
+Step612 adds `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison of next boundary options after the Step611 all-valid multi-case final safety review.
+
+The planning document compares invalid-case runtime fail-closed matrix design, payload audit design without payload emission, manifest writer handoff design, remote metadata refresh / status consolidation, and documentation consolidation. It recommends Step613 actual-controlled v0.4 invalid-case runtime fail-closed matrix design as the next boundary, while keeping Step613 design-only and excluding invalid runtime execution, payload audit implementation, manifest writer integration, file writing, real-data readiness, and model performance claims.

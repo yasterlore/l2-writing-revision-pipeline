@@ -448,3 +448,7 @@ Step610 adds the public-safe status marker for the Step608 wrapper-integrated mu
 ## Step611 Multi-Case Final Safety Review Reference
 
 Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` as the final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain. This earlier remote/manual run record workflow remains unchanged and continues to cover the Step597 fixture validation plus single-case runtime smoke checks.
+
+## Step612 Next Boundary Planning Reference
+
+Step612 adds `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after the Step611 multi-case final safety review. This earlier remote/manual run record workflow remains unchanged and continues to cover the Step597 fixture validation plus single-case runtime smoke checks.

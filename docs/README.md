@@ -799,3 +799,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step611 Actual-Controlled v0.4 Multi-Case Runtime Smoke Final Safety Review
 
 - [Actual-controlled v0.4 multi-case runtime smoke release-quality chain final safety review](frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md): final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain. It accepts only the release-quality-integrated, remote-status-recorded, metadata-only / body-free boundary and records limitations, non-equivalence cautions, non-claims, and the Step612 planning handoff.
+
+## Step612 Frozen Policy Generation Runtime Chain Next Boundary Planning
+
+- [Frozen policy generation runtime chain post multi-case final safety review next boundary planning](frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison of next boundary options after Step611. It recommends Step613 actual-controlled v0.4 invalid-case runtime fail-closed matrix design and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

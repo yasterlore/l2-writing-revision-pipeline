@@ -264,3 +264,7 @@ Step612 should be planning-only / docs-only and should compare possible next bou
 - documentation consolidation
 
 Do not recommend implementing invalid runtime execution, payload audit, manifest writer integration, or file writing directly before planning.
+
+## Step612 Next Boundary Planning Reference
+
+Step612 adds `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after this final safety review. This final safety review remains unchanged; Step612 does not add runtime evidence, change wrapper, change Makefile, change workflow, change Python code/tests, change fixture JSON, invoke manifest writer, or enable file writing.

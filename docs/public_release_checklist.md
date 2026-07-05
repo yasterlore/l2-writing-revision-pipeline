@@ -5638,3 +5638,7 @@ Confirm `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0
 ## Step611 Actual-Controlled v0.4 Multi-Case Runtime Smoke Final Safety Review Check
 
 Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` exists as a final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain. Confirm it accepts only the release-quality-integrated, remote-status-recorded, metadata-only / body-free boundary and does not add implementation, wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## Step612 Frozen Policy Generation Runtime Chain Next Boundary Planning Check
+
+Confirm `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md` exists as a planning-only / docs-only comparison after Step611. Confirm it recommends Step613 invalid-case runtime fail-closed matrix design without executing invalid cases, changing implementation files, changing fixture JSON, changing Makefile, changing wrapper, changing workflow, invoking manifest writer, enabling file writing, or adding production readiness, real-data readiness, or model performance claims.

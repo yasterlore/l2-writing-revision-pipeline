@@ -337,3 +337,10 @@ safety review at
 `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md`.
 This Step583 marker remains the planned-only release-quality record and is not
 replaced by Step611.
+
+## Step612 Later-Chain Note
+
+Step612 adds the separate next-boundary planning doc at
+`docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md`.
+This Step583 marker remains the planned-only release-quality record and is not
+replaced by Step612.
