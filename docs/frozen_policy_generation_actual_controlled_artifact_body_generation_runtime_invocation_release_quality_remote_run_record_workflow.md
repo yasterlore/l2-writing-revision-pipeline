@@ -452,3 +452,7 @@ Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_ru
 ## Step612 Next Boundary Planning Reference
 
 Step612 adds `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after the Step611 multi-case final safety review. This earlier remote/manual run record workflow remains unchanged and continues to cover the Step597 fixture validation plus single-case runtime smoke checks.
+
+## Step613 Invalid-Case Matrix Design Reference
+
+Step613 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md` as a design-only / docs-only plan for a future invalid-case runtime fail-closed smoke. This earlier remote/manual run record workflow remains unchanged and continues to cover the Step597 fixture validation plus single-case runtime smoke checks.

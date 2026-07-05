@@ -306,3 +306,7 @@ Recommended next step:
 - Step613: actual-controlled v0.4 invalid-case runtime fail-closed matrix design
 
 Step613 should be design-only / docs-only. Step613 should not execute invalid cases, change Python code/tests, change fixture JSON, change Makefile, change the release-quality wrapper, change workflow, implement manifest writer integration, or enable file writing.
+
+## Step613 Matrix Design Reference
+
+Step613 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md` as the design-only / docs-only matrix plan recommended by this planning document. Step613 does not execute invalid cases, change Python code/tests, change fixture JSON, change Makefile, change wrapper, change workflow, invoke manifest writer, or enable file writing.

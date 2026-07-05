@@ -5642,3 +5642,7 @@ Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime
 ## Step612 Frozen Policy Generation Runtime Chain Next Boundary Planning Check
 
 Confirm `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md` exists as a planning-only / docs-only comparison after Step611. Confirm it recommends Step613 invalid-case runtime fail-closed matrix design without executing invalid cases, changing implementation files, changing fixture JSON, changing Makefile, changing wrapper, changing workflow, invoking manifest writer, enabling file writing, or adding production readiness, real-data readiness, or model performance claims.
+
+## Step613 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Matrix Design Check
+
+Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md` exists as a design-only / docs-only matrix plan. Confirm it inventories invalid cases by directory names only, recommends a fail_closed-only future matrix, and does not copy fixture JSON bodies, execute invalid cases, change Python code/tests, change fixture JSON, change Makefile, change wrapper, change workflow, invoke manifest writer, enable file writing, or add production readiness, real-data readiness, or model performance claims.

@@ -3287,3 +3287,9 @@ The review accepts the chain only as a release-quality-integrated, remote-status
 Step612 adds `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison of next boundary options after the Step611 all-valid multi-case final safety review.
 
 The planning document compares invalid-case runtime fail-closed matrix design, payload audit design without payload emission, manifest writer handoff design, remote metadata refresh / status consolidation, and documentation consolidation. It recommends Step613 actual-controlled v0.4 invalid-case runtime fail-closed matrix design as the next boundary, while keeping Step613 design-only and excluding invalid runtime execution, payload audit implementation, manifest writer integration, file writing, real-data readiness, and model performance claims.
+
+## Step613 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Matrix Design
+
+Step613 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md` as a design-only / docs-only plan for a future invalid-case runtime fail-closed smoke.
+
+The design inventories invalid case IDs by directory names only, records public-safe aggregate counts, compares runtime matrix selection options, recommends a fail_closed-only invalid matrix, defines future aggregate and per-case public-safe contracts, and stages Step614 fixture/matrix contract design. It does not execute invalid cases, read or copy fixture JSON bodies, change wrapper files, change Makefile, change workflow files, change Python code/tests, change fixture JSON, invoke manifest writer, enable file writing, use real data, use metrics, or claim production readiness.

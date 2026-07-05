@@ -268,3 +268,7 @@ Do not recommend implementing invalid runtime execution, payload audit, manifest
 ## Step612 Next Boundary Planning Reference
 
 Step612 adds `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after this final safety review. This final safety review remains unchanged; Step612 does not add runtime evidence, change wrapper, change Makefile, change workflow, change Python code/tests, change fixture JSON, invoke manifest writer, or enable file writing.
+
+## Step613 Invalid-Case Matrix Design Reference
+
+Step613 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md` as a design-only / docs-only plan for a future invalid-case runtime fail-closed smoke. This final safety review remains unchanged; Step613 does not add runtime evidence or execute invalid cases.

@@ -803,3 +803,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step612 Frozen Policy Generation Runtime Chain Next Boundary Planning
 
 - [Frozen policy generation runtime chain post multi-case final safety review next boundary planning](frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison of next boundary options after Step611. It recommends Step613 actual-controlled v0.4 invalid-case runtime fail-closed matrix design and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step613 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Matrix Design
+
+- [Actual-controlled v0.4 invalid-case runtime fail-closed matrix design](frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md): design-only / docs-only matrix plan for a future invalid-case runtime fail-closed smoke. It inventories invalid case directory names only, recommends a fail_closed-only invalid matrix, and does not execute invalid cases or change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

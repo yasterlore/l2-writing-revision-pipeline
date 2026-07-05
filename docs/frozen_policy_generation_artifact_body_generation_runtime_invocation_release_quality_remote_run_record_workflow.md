@@ -542,3 +542,10 @@ Step612 adds the separate next-boundary planning doc at
 `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md`.
 This planned-only workflow remains the Step582 design and is not replaced by
 Step612.
+
+## Step613 Later-Chain Note
+
+Step613 adds the separate invalid-case runtime fail-closed matrix design at
+`docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md`.
+This planned-only workflow remains the Step582 design and is not replaced by
+Step613.

@@ -1441,3 +1441,7 @@ invocation evidence, or file-writing evidence.
 ## Step612 Frozen Policy Generation Runtime Chain Next Boundary Planning
 
 - [Frozen policy generation runtime chain post multi-case final safety review next boundary planning](../frozen_policy_generation_runtime_chain_post_multi_case_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison after Step611. It recommends a future invalid-case runtime fail-closed matrix design while keeping invalid runtime execution, payload audit, manifest writer integration, and file writing out of Step612.
+
+## Step613 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Matrix Design
+
+- [Actual-controlled v0.4 invalid-case runtime fail-closed matrix design](../frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md): design-only / docs-only matrix plan after Step612. It uses directory-name-only invalid case inventory and keeps invalid runtime execution, fixture JSON changes, wrapper changes, Makefile changes, workflow changes, Python code/tests changes, manifest writer integration, and file writing out of scope.
