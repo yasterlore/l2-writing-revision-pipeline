@@ -316,3 +316,7 @@ The target follows this design with help text `Run actual-controlled v0.4 deferr
 Step629 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_integration_design.md` as a design-only / docs-only plan for future release-quality wrapper integration of the Step628 standalone target.
 
 The design proposes the wrapper label, command, insertion after the invalid fail_closed smoke, expected aggregate public-safe output, validation plan, and safety boundary without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.
+
+## Step630 Release-Quality Integration Reference
+
+Step630 adds the Step628 standalone target to `scripts/check_release_quality.sh` after the invalid fail_closed smoke and before artifact body fixture / CLI checks. It does not change Makefile, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.

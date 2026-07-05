@@ -634,3 +634,7 @@ Step626 adds focused Python test coverage for the direct CLI-only deferred inval
 ## Step628 Coverage Addendum
 
 Step628 adds standalone Makefile coverage for running the Step626 deferred invalid-case usage_error / mismatch smoke through `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke`. This is standalone target coverage only; it is not release-quality wrapper coverage, manifest writer coverage, file-writing coverage, production readiness, real-data readiness, model performance evidence, artifact body payload correctness evidence, all invalid-case runtime behavior evidence, usage_error / mismatch behavior generally evidence, or runtime correctness generally evidence.
+
+## Step630 Coverage Addendum
+
+Step630 adds release-quality wrapper coverage for the Step628 standalone deferred invalid-case usage_error / mismatch target through `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 deferred invalid-case usage_error/mismatch smoke`. This wrapper coverage is ordered after the invalid fail_closed smoke and before artifact body fixture / CLI checks. It is not manifest writer coverage, file-writing coverage, production readiness, real-data readiness, model performance evidence, artifact body payload correctness evidence, all invalid-case runtime behavior evidence, usage_error / mismatch behavior generally evidence, or runtime correctness generally evidence.

@@ -372,3 +372,9 @@ Recommended next step:
 - Step630: deferred invalid-case usage_error / mismatch release-quality wrapper integration
 
 Step630 should update only wrapper and necessary README/docs. Step630 should not change Makefile, Python code/tests, fixture JSON, workflows, payload audit implementation, manifest writer integration, or file writing.
+
+## Step630 Implementation Reference
+
+Step630 adds `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 deferred invalid-case usage_error/mismatch smoke` to `scripts/check_release_quality.sh`.
+
+The wrapper check follows this design with command `make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke`, insertion after the invalid fail_closed smoke and before artifact body fixture / CLI checks, and the same aggregate public-safe output boundary. Remote/manual run record workflow design remains future work.

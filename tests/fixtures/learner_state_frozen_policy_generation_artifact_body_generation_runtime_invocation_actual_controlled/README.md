@@ -396,3 +396,7 @@ Step628 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-
 ## Step629 Deferred Invalid-Case usage_error / mismatch Release-Quality Integration Design Reference
 
 Step629 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_integration_design.md` as a design-only / docs-only plan for future wrapper integration of the Step628 standalone target. This root and fixture JSON remain unchanged, and Step629 does not change wrapper, Makefile, workflow, Python code/tests, payload audit implementation, manifest writer integration, or file writing.
+
+## Step630 Deferred Invalid-Case usage_error / mismatch Release-Quality Integration Status
+
+Step630 adds the Step628 standalone target to `scripts/check_release_quality.sh` after the invalid fail_closed smoke and before artifact body fixture / CLI checks. This root and fixture JSON remain unchanged, and Step630 does not change Makefile, workflow, Python code/tests, payload audit implementation, manifest writer integration, or file writing.

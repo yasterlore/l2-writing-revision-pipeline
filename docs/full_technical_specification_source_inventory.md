@@ -525,3 +525,7 @@ Step626 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0
 ## Step628 Source Inventory Addendum
 
 Step628 updates `Makefile` with the standalone target `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke`. README/docs references are updated. No release-quality wrapper, workflow, Python code/tests, fixture JSON, existing runtime implementation, existing validator implementation, payload audit implementation, artifact body generation implementation, manifest writer implementation, artifact body file writing, or manifest file writing is added or changed.
+
+## Step630 Source Inventory Addendum
+
+Step630 updates `scripts/check_release_quality.sh` to run the Step628 standalone deferred invalid-case usage_error / mismatch target after the invalid fail_closed smoke and before artifact body fixture / CLI checks. README/docs references are updated. No Makefile, workflow, Python code/tests, fixture JSON, existing runtime implementation, existing validator implementation, payload audit implementation, artifact body generation implementation, manifest writer implementation, artifact body file writing, or manifest file writing is added or changed.
