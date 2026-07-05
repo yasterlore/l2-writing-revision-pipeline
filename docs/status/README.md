@@ -1404,3 +1404,8 @@ invocation evidence, or file-writing evidence.
 ## Step603 Actual-Controlled v0.4 Multi-Case Runtime Smoke Fixture Matrix Contract Design
 
 - [Actual-controlled v0.4 multi-case runtime smoke fixture matrix contract design](../frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md): design-only / docs-only fixture/matrix contract for the future Step604 runner. It inventories the existing actual-controlled root by case ID only, selects all 6 valid cases, records expected count-only aggregate metadata, and keeps invalid runtime execution, manifest writer integration, file writing, and payload emission out of scope.
+
+## Step604 Actual-Controlled v0.4 Multi-Case Runtime Smoke Implementation
+
+- `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py`: direct CLI-only runner for the all-valid 6-case actual-controlled v0.4 runtime smoke. It emits aggregate public-safe metadata with schema `learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_v0.1` and remains outside Makefile and release-quality integration.
+- `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py`: focused implementation tests. Step604 does not change Makefile, wrapper, workflow, fixture JSON, manifest writer integration, file writing, real-data use, or performance-claim surfaces.

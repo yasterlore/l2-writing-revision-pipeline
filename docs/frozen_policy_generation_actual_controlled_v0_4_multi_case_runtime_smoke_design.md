@@ -557,3 +557,7 @@ as a design-only / docs-only fixture/matrix contract for the future all-valid
 multi-case runtime smoke. It records case IDs only, fixes the 6-case matrix,
 and leaves implementation, Makefile, wrapper, workflow, fixture JSON, manifest
 writer integration, and file writing unchanged.
+
+## Step604 Implementation Reference
+
+Step604 implements the direct CLI-only all-valid 6-case runner at `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py` with focused tests. The runner follows this design's public-safe aggregate boundary and remains outside Makefile and release-quality integration.

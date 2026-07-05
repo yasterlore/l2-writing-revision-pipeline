@@ -334,3 +334,5 @@ Step603 follow-up status: the design-only / docs-only fixture/matrix contract
 for the future all-valid multi-case runtime smoke is available at
 `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md`.
 This fixture validator Makefile target design remains unchanged.
+
+Step604 follow-up status: the direct CLI-only all-valid multi-case runner is implemented at `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py` with focused tests. This fixture validator Makefile target design remains unchanged.

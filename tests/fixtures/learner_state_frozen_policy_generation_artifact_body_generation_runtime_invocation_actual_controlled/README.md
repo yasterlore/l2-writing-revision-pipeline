@@ -292,3 +292,7 @@ as a design-only / docs-only fixture/matrix contract for the future all-valid
 multi-case runtime smoke. It records case IDs and counts only. The fixture JSON
 remains unchanged, and Step603 does not change validators, runtime
 implementation, manifest writer integration, or file writing.
+
+## Step604 Multi-Case Runtime Smoke Implementation Reference
+
+Step604 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py` and focused tests for direct CLI-only all-valid runtime smoke over this root. The runner selects the 6 valid case directories by name, emits aggregate public-safe metadata only, and leaves fixture JSON unchanged. Makefile target design, release-quality integration, manifest writer integration, and file writing remain out of scope for Step604.

@@ -423,3 +423,7 @@ Step603 adds
 as a design-only / docs-only fixture/matrix contract for a future all-valid
 multi-case runtime smoke. This release-quality integration design remains
 unchanged.
+
+## Step604 Implementation Reference
+
+Step604 implements the all-valid multi-case runner as a direct CLI-only Python module with focused tests. This release-quality integration design remains for the prior actual-controlled checks; the new Step604 runner is not yet Makefile-targeted or release-quality integrated.

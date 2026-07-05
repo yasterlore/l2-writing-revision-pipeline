@@ -5606,3 +5606,7 @@ Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime
 ## Step603 Actual-Controlled v0.4 Multi-Case Runtime Smoke Fixture Matrix Contract Check
 
 Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md` exists as a design-only / docs-only fixture/matrix contract. Confirm it lists only valid case IDs, records 36 total cases / 6 valid / 30 invalid / 252 JSON / 7 JSON per case, selects all 6 valid cases for the first matrix, keeps invalid cases fixture-validator-covered only, and does not change Python code/tests, Makefile, wrapper, workflow, fixture JSON, runtime implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## Step604 Actual-Controlled v0.4 Multi-Case Runtime Smoke Implementation Check
+
+Confirm `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py` and `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py` exist. Confirm the direct CLI runs `--case-selection all-valid`, selects 6 valid cases and 0 invalid cases, emits aggregate public-safe metadata with 6 pass cases, no usage-error / fail-closed / mismatch cases for the canonical root, suppresses body surfaces, keeps manifest writer invocation and file writing disabled, and does not change Makefile, wrapper, workflow, fixture JSON, production readiness, real-data readiness, or model performance evidence.

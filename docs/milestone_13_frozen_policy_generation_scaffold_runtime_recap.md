@@ -3233,3 +3233,9 @@ The design recommends a future dedicated runner, public-safe aggregate key-value
 Step603 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md` as a design-only / docs-only fixture/matrix contract for the future all-valid multi-case runtime smoke.
 
 The contract inventories the existing actual-controlled fixture root by directory name only, records the 6 valid case IDs and count-only aggregate 36 cases / 252 JSON, defines the all-valid matrix and future runner contract, and keeps invalid runtime execution, manifest writer integration, file writing, payload emission, real-data use, metric use, and production readiness status out of scope.
+
+## Step604 Actual-Controlled v0.4 Multi-Case Runtime Smoke Implementation
+
+Step604 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py` and focused tests for a direct CLI-only all-valid multi-case runtime smoke.
+
+The runner discovers the 6 valid actual-controlled fixture cases lexicographically, executes each through the existing v0.4 controlled metadata-only helper, and emits aggregate public-safe key-value metadata only. It does not add a Makefile target, release-quality wrapper integration, workflow changes, fixture JSON changes, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

@@ -398,3 +398,7 @@ Step603 adds
 as a design-only / docs-only fixture/matrix contract for the future multi-case
 runtime smoke target. This single-case Makefile target design remains
 unchanged.
+
+## Step604 Implementation Reference
+
+Step604 adds a direct CLI-only multi-case runner and focused tests. This single-case Makefile target design remains unchanged; a standalone Makefile target for the multi-case runner is deferred to a later design step.

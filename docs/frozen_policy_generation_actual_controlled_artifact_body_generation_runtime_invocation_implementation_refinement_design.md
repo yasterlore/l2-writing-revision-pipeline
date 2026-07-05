@@ -654,3 +654,7 @@ Step603 adds
 `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md`
 as a design-only / docs-only fixture/matrix contract for the future all-valid
 multi-case runtime smoke. This refinement design remains unchanged.
+
+## Step604 Implementation Reference
+
+Step604 adds the direct CLI-only all-valid multi-case runner and focused tests using the existing v0.4 public-safe helper. This refinement design remains unchanged; Step604 does not change fixture JSON, manifest writer integration, or file writing.

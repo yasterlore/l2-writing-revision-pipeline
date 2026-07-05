@@ -766,3 +766,8 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step603 Actual-Controlled v0.4 Multi-Case Runtime Smoke Fixture Matrix Contract Design
 
 - [Actual-controlled v0.4 multi-case runtime smoke fixture matrix contract design](frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md): design-only / docs-only fixture/matrix contract for the future all-valid multi-case runtime smoke. It records case IDs only, defines the 6-case all-valid matrix, aggregate and per-case public-safe contracts, failure mapping, future runner contract, and Step604 handoff without changing code, targets, wrapper, workflow, fixture JSON, manifest writer integration, or file writing.
+
+## Step604 Actual-Controlled v0.4 Multi-Case Runtime Smoke Implementation
+
+- `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py`: direct CLI-only implementation for the all-valid 6-case v0.4 multi-case runtime smoke. It uses the existing v0.4 public-safe helper in-process, emits aggregate key-value metadata only, keeps per-case output suppressed by default, and does not change Makefile, wrapper, workflow, fixture JSON, manifest writer integration, or file writing.
+- `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py`: focused tests for discovery, aggregate pass counts, required safety flags, usage-error mapping, fail-closed mapping, mismatch mapping, compatibility with existing single-case behavior, fixture non-mutation, and public-safe output. Step605 is expected to design a standalone Makefile target.

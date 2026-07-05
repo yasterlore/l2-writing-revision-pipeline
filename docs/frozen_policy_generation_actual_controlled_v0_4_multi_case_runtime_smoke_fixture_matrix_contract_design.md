@@ -458,3 +458,7 @@ Recommended next step:
 - Step604: actual-controlled v0.4 multi-case runtime smoke implementation
 
 Step604 should implement the dedicated runner and focused tests. Step604 should not modify Makefile, modify the release-quality wrapper, modify workflow, modify fixture JSON, invoke manifest writer, enable file writing, or use real data.
+
+## Step604 Implementation Reference
+
+Step604 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py` and focused tests for the all-valid 6-case runner described by this contract. The implementation remains direct CLI-only, emits aggregate public-safe metadata, and does not change Makefile, release-quality wrapper, workflow, fixture JSON, manifest writer integration, or file writing.

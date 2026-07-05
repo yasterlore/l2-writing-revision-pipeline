@@ -495,3 +495,5 @@ Step595 updates `Makefile` with the standalone target `check-learner-state-froze
 ## Step597 Source Inventory Addendum
 
 Step597 updates `scripts/check_release_quality.sh` to run the Step591 actual-controlled fixture validator target and the Step595 v0.4 runtime smoke target in adjacent order after the planned-only v0.3 runtime invocation smoke. README/docs references are updated. No Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, validator implementation, artifact body generation implementation, or manifest writer implementation is added or changed.
+
+Step604 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py` and `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py`. README/docs references are updated. No Makefile, release-quality wrapper, workflow, fixture JSON, manifest writer implementation, artifact body file writing, or manifest file writing is added or changed.

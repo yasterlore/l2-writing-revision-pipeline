@@ -519,3 +519,7 @@ Step603 adds
 `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md`
 as a design-only / docs-only fixture/matrix contract for the future all-valid
 multi-case runtime smoke. This validator design remains unchanged.
+
+## Step604 Implementation Reference
+
+Step604 adds a separate direct CLI-only all-valid multi-case runtime smoke runner and focused tests. The fixture validator design remains unchanged and continues to cover invalid metadata-only categories separately.
