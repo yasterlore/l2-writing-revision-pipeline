@@ -762,3 +762,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step602 Actual-Controlled v0.4 Multi-Case Runtime Smoke Design
 
 - [Actual-controlled v0.4 multi-case runtime smoke design](frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md): design-only / docs-only plan for expanding the v0.4 actual-controlled runtime smoke from one primary valid case to an all-valid multi-case smoke. It recommends a future dedicated runner, public-safe aggregate summary, no invalid runtime execution in the first expansion, no manifest writer invocation, no file writing, and no payload emission.
+
+## Step603 Actual-Controlled v0.4 Multi-Case Runtime Smoke Fixture Matrix Contract Design
+
+- [Actual-controlled v0.4 multi-case runtime smoke fixture matrix contract design](frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md): design-only / docs-only fixture/matrix contract for the future all-valid multi-case runtime smoke. It records case IDs only, defines the 6-case all-valid matrix, aggregate and per-case public-safe contracts, failure mapping, future runner contract, and Step604 handoff without changing code, targets, wrapper, workflow, fixture JSON, manifest writer integration, or file writing.

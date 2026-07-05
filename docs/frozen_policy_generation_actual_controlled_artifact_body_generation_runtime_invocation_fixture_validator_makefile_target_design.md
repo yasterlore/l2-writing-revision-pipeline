@@ -329,3 +329,8 @@ Step602 follow-up status: the design-only / docs-only multi-case runtime smoke
 plan is available at
 `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md`.
 This fixture validator Makefile target design remains unchanged.
+
+Step603 follow-up status: the design-only / docs-only fixture/matrix contract
+for the future all-valid multi-case runtime smoke is available at
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md`.
+This fixture validator Makefile target design remains unchanged.

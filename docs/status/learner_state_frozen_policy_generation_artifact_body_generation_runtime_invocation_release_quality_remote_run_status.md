@@ -322,3 +322,10 @@ Step602 adds the separate actual-controlled multi-case runtime smoke design at
 `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md`.
 This Step583 marker remains the planned-only release-quality record and is not
 replaced by Step602.
+
+## Step603 Later-Chain Note
+
+Step603 adds the separate actual-controlled fixture/matrix contract design at
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md`.
+This Step583 marker remains the planned-only release-quality record and is not
+replaced by Step603.

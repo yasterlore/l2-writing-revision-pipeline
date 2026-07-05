@@ -303,3 +303,10 @@ Step602 adds
 as a design-only / docs-only plan for the next multi-case runtime smoke
 boundary. This marker remains a public-safe metadata summary and is not
 expanded into raw evidence.
+
+## Step603 Fixture Matrix Contract Reference
+
+Step603 adds
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md`
+as a design-only / docs-only fixture/matrix contract for the future all-valid
+multi-case runtime smoke. This marker remains a public-safe metadata summary.

@@ -390,3 +390,11 @@ Step602 adds
 `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md`
 as a design-only / docs-only plan for a future multi-case runtime smoke target.
 This single-case Makefile target design remains unchanged.
+
+## Step603 Fixture Matrix Contract Reference
+
+Step603 adds
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md`
+as a design-only / docs-only fixture/matrix contract for the future multi-case
+runtime smoke target. This single-case Makefile target design remains
+unchanged.

@@ -548,3 +548,12 @@ Recommended next step:
 - Step603: actual-controlled v0.4 multi-case runtime smoke fixture/matrix contract design
 
 Step603 should inventory case IDs and define the exact all-valid case matrix. Step603 should remain design-only / docs-only unless explicitly changed. Step603 should not implement Python code, modify Makefile, modify the release-quality wrapper, modify workflow, modify fixture JSON unless it explicitly becomes a fixture-contract creation step, invoke manifest writer, enable file writing, or use real data.
+
+## Step603 Fixture Matrix Contract Reference
+
+Step603 adds
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md`
+as a design-only / docs-only fixture/matrix contract for the future all-valid
+multi-case runtime smoke. It records case IDs only, fixes the 6-case matrix,
+and leaves implementation, Makefile, wrapper, workflow, fixture JSON, manifest
+writer integration, and file writing unchanged.

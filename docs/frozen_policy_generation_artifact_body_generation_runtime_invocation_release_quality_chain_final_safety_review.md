@@ -328,3 +328,11 @@ Step602 adds
 as a separate design-only / docs-only plan for a future actual-controlled
 multi-case runtime smoke. This planned-only final safety review remains
 separate and is not replaced by Step602.
+
+## Step603 Actual-Controlled Fixture Matrix Contract Reference
+
+Step603 adds
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md`
+as a separate design-only / docs-only fixture/matrix contract for the future
+actual-controlled multi-case runtime smoke. This planned-only final safety
+review remains separate and is not replaced by Step603.

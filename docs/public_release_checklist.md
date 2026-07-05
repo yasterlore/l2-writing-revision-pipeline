@@ -5602,3 +5602,7 @@ Confirm `docs/frozen_policy_generation_actual_controlled_post_final_safety_revie
 ## Step602 Actual-Controlled v0.4 Multi-Case Runtime Smoke Design Check
 
 Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md` exists as a design-only / docs-only plan for expanding the actual-controlled v0.4 runtime smoke to all 6 valid cases. Confirm it designs public-safe case inventory, all-valid selection, aggregation, output suppression, fail-closed mapping, future tests, future Makefile target staging, and release-quality staging without changing Python code/tests, Makefile, wrapper, workflow, fixture JSON, runtime implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## Step603 Actual-Controlled v0.4 Multi-Case Runtime Smoke Fixture Matrix Contract Check
+
+Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md` exists as a design-only / docs-only fixture/matrix contract. Confirm it lists only valid case IDs, records 36 total cases / 6 valid / 30 invalid / 252 JSON / 7 JSON per case, selects all 6 valid cases for the first matrix, keeps invalid cases fixture-validator-covered only, and does not change Python code/tests, Makefile, wrapper, workflow, fixture JSON, runtime implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

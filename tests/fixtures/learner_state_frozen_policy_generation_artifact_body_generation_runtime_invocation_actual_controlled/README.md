@@ -283,3 +283,12 @@ as a design-only / docs-only plan for a future all-valid multi-case runtime
 smoke over this fixture root. The fixture JSON remains unchanged, and Step602
 does not change validators, runtime implementation, manifest writer
 integration, or file writing.
+
+## Step603 Fixture Matrix Contract Reference
+
+Step603 adds
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md`
+as a design-only / docs-only fixture/matrix contract for the future all-valid
+multi-case runtime smoke. It records case IDs and counts only. The fixture JSON
+remains unchanged, and Step603 does not change validators, runtime
+implementation, manifest writer integration, or file writing.

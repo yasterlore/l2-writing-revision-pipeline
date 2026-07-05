@@ -1400,3 +1400,7 @@ invocation evidence, or file-writing evidence.
 ## Step602 Actual-Controlled v0.4 Multi-Case Runtime Smoke Design
 
 - [Actual-controlled v0.4 multi-case runtime smoke design](../frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md): design-only / docs-only plan for a future all-valid multi-case runtime smoke after Step601. It defines case-selection, aggregation, failure mapping, residue/output suppression, compatibility, tests, future target staging, and public-safe boundaries without changing implementation files.
+
+## Step603 Actual-Controlled v0.4 Multi-Case Runtime Smoke Fixture Matrix Contract Design
+
+- [Actual-controlled v0.4 multi-case runtime smoke fixture matrix contract design](../frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md): design-only / docs-only fixture/matrix contract for the future Step604 runner. It inventories the existing actual-controlled root by case ID only, selects all 6 valid cases, records expected count-only aggregate metadata, and keeps invalid runtime execution, manifest writer integration, file writing, and payload emission out of scope.

@@ -310,3 +310,10 @@ multi-case runtime smoke boundary. It keeps the Step601 recommendation
 planning-only and does not change Python code/tests, Makefile, wrapper,
 workflow, fixture JSON, runtime implementation, manifest writer integration,
 or file writing.
+
+## Step603 Fixture Matrix Contract Reference
+
+Step603 adds
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_fixture_matrix_contract_design.md`
+as a design-only / docs-only contract for the future all-valid multi-case
+runtime smoke matrix. This planning doc remains unchanged.
