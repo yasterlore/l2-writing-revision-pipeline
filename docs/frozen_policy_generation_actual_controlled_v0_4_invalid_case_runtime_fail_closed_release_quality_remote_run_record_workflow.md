@@ -370,3 +370,7 @@ Step621 should create the status marker only from public-safe metadata. Step621 
 Step621 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step619 wrapper integration.
 
 The marker follows this workflow design by recording provided public-safe metadata, observed labels, count-only invalid-case summary fields, missing metadata handling, non-equivalence cautions, non-claims, and the Step622 handoff. It does not copy raw logs, full job output, fixture JSON bodies, request / pointer / expected bodies, payload bodies, raw stdout/stderr bodies, raw rows, logits/probabilities, private / absolute path values, raw learner text, real participant data, manifest writer evidence, or file-writing evidence.
+
+## Step622 Final Safety Review Reference
+
+Step622 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review after the Step621 status marker. This workflow design remains unchanged and continues to exclude raw logs, full job output, payload bodies, manifest writer integration, and file writing.

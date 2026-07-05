@@ -1477,3 +1477,7 @@ invocation evidence, or file-writing evidence.
 ## Step621 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Remote Run Status
 
 - [Actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality remote run status](learner_state_frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_status.md): status-marker-only / docs-only record for the remote Release Quality run after Step619 wrapper integration. It records public-safe metadata and count-only invalid-case target summary, and stores no raw logs, full job output, fixture JSON bodies, payload bodies, manifest writer evidence, file-writing evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step622 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Final Safety Review
+
+- [Actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality chain final safety review](../frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_chain_final_safety_review.md): final-safety-review-only / docs-only review for the Step613-Step621 invalid-case fail-closed smoke chain. It accepts only the fixed 26 selected invalid fail_closed case boundary and keeps production readiness, real-data readiness, model performance, all invalid-case behavior, usage_error / mismatch runtime behavior, manifest writer integration, and file writing out of scope.

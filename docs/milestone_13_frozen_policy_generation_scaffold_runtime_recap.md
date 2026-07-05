@@ -3341,3 +3341,9 @@ The workflow design records allowed evidence sources, forbidden raw log / payloa
 Step621 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step619 wrapper integration.
 
 The marker records provided public-safe metadata, observed release-quality labels, count-only invalid-case target summary, overall release-quality result, missing metadata handling, relationships to existing status markers, non-equivalence cautions, non-claims, and the Step622 handoff. It stores no raw logs, full job output, fixture JSON bodies, payload bodies, real-data evidence, metric evidence, manifest writer evidence, file-writing evidence, or production readiness status.
+
+## Step622 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Final Safety Review
+
+Step622 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step613-Step621 invalid-case fail-closed smoke chain.
+
+The review accepts only the release-quality-integrated, remote-status-recorded, actual-controlled v0.4 invalid-case runtime fail-closed smoke boundary for the fixed 26 selected invalid fail_closed cases. It records the 4 deferred non-fail_closed invalid cases, safety conditions, remaining limitations, non-equivalence cautions, non-claims, and the Step623 planning-only handoff. Step622 does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

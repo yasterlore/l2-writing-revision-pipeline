@@ -364,3 +364,7 @@ Step620 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_
 ## Step621 Invalid-Case Runtime Fail-Closed Remote Status Marker Reference
 
 Step621 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step619 wrapper integration. This root and fixture JSON remain unchanged, and Step621 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step622 Invalid-Case Runtime Fail-Closed Final Safety Review Reference
+
+Step622 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step613-Step621 invalid-case fail-closed smoke chain. This root and fixture JSON remain unchanged, and Step622 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.

@@ -245,3 +245,7 @@ Recommended next step:
 - Step622: actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality chain final safety review
 
 Do not recommend payload audit, manifest writer integration, or file writing before Step622.
+
+## Step622 Final Safety Review Reference
+
+Step622 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review of the Step613-Step621 invalid-case fail-closed smoke chain. This status marker remains unchanged as the public-safe metadata summary for the remote Release Quality run after Step619 wrapper integration.
