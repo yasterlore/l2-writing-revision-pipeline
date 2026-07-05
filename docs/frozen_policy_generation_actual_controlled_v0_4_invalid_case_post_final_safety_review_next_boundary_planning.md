@@ -278,3 +278,7 @@ Step629 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_inva
 ## Step630 Release-Quality Integration Reference
 
 Step630 adds the Step628 deferred usage_error / mismatch target to `scripts/check_release_quality.sh` after the invalid fail_closed smoke and before artifact body fixture / CLI checks. It does not reopen the accepted fail_closed boundary and does not change Makefile, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.
+
+## Step631 Remote Run Record Workflow Reference
+
+Step631 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_record_workflow.md` as the next design-only / docs-only handoff for future Step632 status marker creation. It does not reopen accepted fail_closed, all-valid, single-case, or planned-only boundaries.

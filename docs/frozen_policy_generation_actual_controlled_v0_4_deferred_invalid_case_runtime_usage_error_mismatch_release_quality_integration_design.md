@@ -378,3 +378,7 @@ Step630 should update only wrapper and necessary README/docs. Step630 should not
 Step630 adds `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 deferred invalid-case usage_error/mismatch smoke` to `scripts/check_release_quality.sh`.
 
 The wrapper check follows this design with command `make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke`, insertion after the invalid fail_closed smoke and before artifact body fixture / CLI checks, and the same aggregate public-safe output boundary. Remote/manual run record workflow design remains future work.
+
+## Step631 Remote Run Record Workflow Reference
+
+Step631 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future public-safe status marker after Step630 wrapper integration. It keeps wrapper, Makefile, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, and file writing unchanged.

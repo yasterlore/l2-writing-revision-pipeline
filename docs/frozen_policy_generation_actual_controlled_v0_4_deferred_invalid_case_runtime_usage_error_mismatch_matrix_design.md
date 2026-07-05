@@ -592,3 +592,7 @@ Step629 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_inva
 ## Step630 Release-Quality Integration Reference
 
 Step630 adds the Step628 standalone target to `scripts/check_release_quality.sh` after the invalid fail_closed smoke and before artifact body fixture / CLI checks. It keeps Makefile, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, and file writing unchanged.
+
+## Step631 Remote Run Record Workflow Reference
+
+Step631 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future Step632 public-safe status marker. It keeps wrapper, Makefile, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, and file writing unchanged.

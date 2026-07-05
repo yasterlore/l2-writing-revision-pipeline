@@ -1514,3 +1514,7 @@ invocation evidence, or file-writing evidence.
 ## Step630 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Release-Quality Integration
 
 - `scripts/check_release_quality.sh`: Step630 adds the Step628 deferred invalid-case usage_error / mismatch target to release-quality after the invalid fail_closed smoke and before artifact body fixture / CLI checks. Step630 keeps Makefile, workflows, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, and file writing unchanged.
+
+## Step631 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Remote Run Record Workflow Design
+
+- [Actual-controlled v0.4 deferred invalid-case usage_error / mismatch release-quality remote run record workflow](../frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_record_workflow.md): design-only / docs-only plan for a future Step632 status marker. Step631 defines public-safe metadata fields, count-only deferred target summary fields, missing metadata handling, label recording rules, and Step632 / Step633 staging without creating a marker or changing wrapper, Makefile, workflows, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.

@@ -400,3 +400,7 @@ Step629 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_inva
 ## Step630 Deferred Invalid-Case usage_error / mismatch Release-Quality Integration Status
 
 Step630 adds the Step628 standalone target to `scripts/check_release_quality.sh` after the invalid fail_closed smoke and before artifact body fixture / CLI checks. This root and fixture JSON remain unchanged, and Step630 does not change Makefile, workflow, Python code/tests, payload audit implementation, manifest writer integration, or file writing.
+
+## Step631 Deferred Invalid-Case usage_error / mismatch Remote Run Record Workflow Reference
+
+Step631 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for future public-safe status marker recording after Step630. This root and fixture JSON remain unchanged, and Step631 does not change wrapper, Makefile, workflow, Python code/tests, payload audit implementation, manifest writer integration, or file writing.
