@@ -287,3 +287,15 @@ Recommended next step:
 - Step617: actual-controlled v0.4 invalid-case runtime fail-closed smoke Makefile target implementation
 
 Step617 should update Makefile and necessary README/docs only. Step617 should not change Python code/tests, change fixture JSON, change the release-quality wrapper, change workflows, invoke manifest writer, or enable file writing.
+
+## 15. Step617 Implementation Status
+
+Step617 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke` with help text `Run actual-controlled v0.4 invalid-case runtime fail-closed smoke`.
+
+The target runs the Step615 direct CLI with `--case-selection fail-closed-invalid`, `--summary-only`, `--no-file-writing`, `--no-manifest-writer`, and `--fail-closed-on-unsafe-output`. It is placed after `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke`, remains a standalone target only, is not release-quality integrated, does not change Python code/tests or fixture JSON, does not invoke manifest writer, and does not enable file writing.
+
+Expected aggregate output remains public-safe and metadata-only: 26 selected invalid cases, 4 deferred invalid cases, 26 executed cases, 26 observed fail_closed cases, `unsafe_signal_total_count=26`, `forbidden_body_emitted_case_count=0`, and `residue_file_count=0`.
+
+Recommended next step:
+
+- Step618: actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality integration design

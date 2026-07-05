@@ -284,3 +284,7 @@ The Step612 planning and Step613/Step614 design handoff later led to Step615 dir
 ## Step616 Makefile Target Design Reference
 
 Step616 adds a design-only / docs-only plan for a future standalone Makefile target around the Step615 invalid-case runner. This final safety review remains unchanged and is not replaced by Step616.
+
+## Step617 Makefile Target Status Reference
+
+Step617 adds the standalone Makefile target for the Step615 invalid-case runner. This final safety review remains the Step602-Step610 all-valid multi-case boundary review and is not replaced by Step617; the new invalid-case target remains outside release-quality.

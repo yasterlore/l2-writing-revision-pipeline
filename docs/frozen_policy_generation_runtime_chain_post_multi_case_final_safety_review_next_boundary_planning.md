@@ -322,3 +322,7 @@ Following the Step613 and Step614 design steps, Step615 implements a direct CLI-
 ## Step616 Makefile Target Design Reference
 
 Step616 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_makefile_target_design.md` as the design-only / docs-only plan for the future standalone target around the Step615 runner. This planning document remains unchanged; Step616 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step617 Makefile Target Status
+
+Step617 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke` for the Step615 runner. It preserves the Step612 planning boundary by staying metadata-only / body-free, remaining outside release-quality, not changing Python code/tests or fixture JSON, not invoking manifest writer, and not enabling file writing. The next conservative handoff is Step618 release-quality integration design.

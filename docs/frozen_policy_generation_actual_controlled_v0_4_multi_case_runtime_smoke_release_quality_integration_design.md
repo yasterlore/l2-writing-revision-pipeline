@@ -412,3 +412,7 @@ Step615 implements a direct CLI-only invalid-case fail-closed runner and focused
 ## Step616 Makefile Target Design Reference
 
 Step616 adds a design-only / docs-only plan for a future standalone Makefile target around the Step615 runner. This release-quality integration design remains unchanged; Step616 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step617 Makefile Target Status Reference
+
+Step617 adds the standalone invalid-case fail-closed Makefile target for the Step615 runner. This Step607 all-valid release-quality integration design remains unchanged and is not replaced by Step617; the invalid-case target is not release-quality integrated yet.

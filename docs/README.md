@@ -820,3 +820,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step616 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Makefile Target Design
 
 - [Actual-controlled v0.4 invalid-case runtime fail-closed smoke Makefile target design](frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_makefile_target_design.md): design-only / docs-only plan for a future standalone target around the Step615 direct CLI. It proposes the target name, help text, command, expected aggregate output, placement after the all-valid multi-case target, Step617 implementation plan, and safety boundaries without changing Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step617 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Makefile Target
+
+- `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke`: standalone Makefile target for the Step615 selected 26-case invalid fail_closed runner. It runs `--case-selection fail-closed-invalid`, emits aggregate public-safe metadata only, remains outside release-quality, and does not change Python code/tests, fixture JSON, manifest writer integration, or file writing.

@@ -510,3 +510,7 @@ Step615 implements a separate direct CLI-only invalid-case fail-closed runner an
 ## Step616 Makefile Target Design Reference
 
 Step616 adds a design-only / docs-only plan for the future invalid-case fail-closed standalone target. This all-valid matrix contract remains unchanged and is not replaced by Step616.
+
+## Step617 Makefile Target Status Reference
+
+Step617 adds the separate invalid-case fail-closed standalone Makefile target. This all-valid matrix contract remains unchanged and is not replaced by Step617.

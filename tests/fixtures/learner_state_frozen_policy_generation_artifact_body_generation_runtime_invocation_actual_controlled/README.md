@@ -344,3 +344,7 @@ Step615 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0
 ## Step616 Invalid-Case Runtime Fail-Closed Makefile Target Design Reference
 
 Step616 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step615 runner. The fixture JSON remains unchanged, and Step616 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step617 Invalid-Case Runtime Fail-Closed Makefile Target Status
+
+Step617 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke` as a standalone Makefile target for the Step615 runner. It uses this root's fixed 26 selected invalid fail_closed case directories and 4 deferred invalid case directories, emits aggregate public-safe metadata only, and remains outside release-quality. The fixture JSON remains unchanged, and Step617 does not change Python code/tests, wrapper, workflow, manifest writer integration, or file writing.

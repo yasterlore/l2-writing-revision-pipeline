@@ -501,3 +501,7 @@ The implemented direct CLI uses `--case-selection fail-closed-invalid`, selects 
 ## 26. Step616 Makefile Target Design Status
 
 Step616 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_makefile_target_design.md` as a design-only / docs-only plan for the future standalone Makefile target. This contract remains unchanged; Step616 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## 27. Step617 Makefile Target Status
+
+Step617 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke` as a standalone Makefile target for the Step615 runner. The target uses the fixed 26 selected invalid fail_closed cases and 4 deferred invalid cases from this contract, emits aggregate public-safe metadata only, and remains outside release-quality. This contract and fixture JSON remain unchanged; Step617 does not change Python code/tests, wrapper, workflow, manifest writer integration, or file writing.

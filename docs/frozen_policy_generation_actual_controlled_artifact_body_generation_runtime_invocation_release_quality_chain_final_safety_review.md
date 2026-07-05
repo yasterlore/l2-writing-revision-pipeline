@@ -375,3 +375,7 @@ Step615 implements a direct CLI-only invalid-case fail-closed runner and focused
 ## Step616 Makefile Target Design Reference
 
 Step616 adds a design-only / docs-only plan for the future standalone target around the Step615 runner. This earlier single-case final safety review remains unchanged and is not replaced by Step616.
+
+## Step617 Makefile Target Status Reference
+
+Step617 adds the standalone invalid-case fail-closed Makefile target for the Step615 runner. This earlier single-case final safety review remains unchanged and is not replaced by Step617.

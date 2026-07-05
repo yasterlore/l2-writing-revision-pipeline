@@ -609,3 +609,7 @@ Step615 implements a separate direct CLI-only invalid-case fail-closed runner an
 ## Step616 Makefile Target Design Reference
 
 Step616 adds a design-only / docs-only plan for the future invalid-case fail-closed standalone target. This all-valid runtime smoke design remains unchanged and is not replaced by Step616.
+
+## Step617 Makefile Target Status Reference
+
+Step617 adds the separate invalid-case fail-closed standalone Makefile target after the all-valid multi-case target. This all-valid runtime smoke design remains unchanged and is not replaced by Step617.

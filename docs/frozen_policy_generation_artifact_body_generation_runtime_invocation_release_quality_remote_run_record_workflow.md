@@ -569,3 +569,7 @@ Step582 design and is not replaced by Step615.
 Step616 adds the separate design-only / docs-only Makefile target plan for the
 Step615 runner. This planned-only workflow remains the Step582 design and is
 not replaced by Step616.
+
+Step617 adds the separate standalone invalid-case fail-closed Makefile target
+for the Step615 runner. This planned-only workflow remains the Step582 design
+and is not replaced by Step617.

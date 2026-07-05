@@ -371,3 +371,7 @@ planned-only release-quality record and is not replaced by Step615.
 Step616 adds the separate design-only / docs-only Makefile target plan for the
 Step615 runner. This Step583 marker remains the planned-only release-quality
 record and is not replaced by Step616.
+
+Step617 adds the separate standalone invalid-case fail-closed Makefile target
+for the Step615 runner. This Step583 marker remains the planned-only
+release-quality record and is not replaced by Step617.

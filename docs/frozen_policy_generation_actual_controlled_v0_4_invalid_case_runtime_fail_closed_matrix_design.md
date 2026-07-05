@@ -630,3 +630,7 @@ Step615 implements the direct CLI-only invalid-case fail-closed runner after the
 ## Step616 Makefile Target Design Reference
 
 Step616 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_makefile_target_design.md` as a design-only / docs-only plan for the future standalone target around the Step615 runner. This matrix design remains unchanged; Step616 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step617 Makefile Target Status
+
+Step617 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke` as a standalone Makefile target for the Step615 invalid-case fail-closed runner. It runs the fixed fail_closed invalid matrix, emits aggregate public-safe metadata only, remains outside release-quality, and does not change this matrix design, fixture JSON, Python code/tests, wrapper, workflow, manifest writer integration, or file writing.

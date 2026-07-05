@@ -3311,3 +3311,9 @@ The runner uses the Step614 selected 26 invalid fail_closed case IDs, defers the
 Step616 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step615 runner.
 
 The design proposes `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke`, help text `Run actual-controlled v0.4 invalid-case runtime fail-closed smoke`, the direct Step615 command, expected aggregate public-safe output, placement after the all-valid multi-case target, and Step617 implementation checks. Step616 does not change Makefile, wrapper, workflow files, Python code/tests, fixture JSON, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step617 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Makefile Target
+
+Step617 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke` immediately after the all-valid multi-case target.
+
+The target runs the Step615 direct CLI with `--case-selection fail-closed-invalid`, `--summary-only`, `--no-file-writing`, `--no-manifest-writer`, and `--fail-closed-on-unsafe-output`. It expects aggregate public-safe metadata for 26 selected / executed / observed fail_closed cases, `unsafe_signal_total_count=26`, `forbidden_body_emitted_case_count=0`, and `residue_file_count=0`. Step617 keeps release-quality wrapper files, workflow files, Python code/tests, fixture JSON, manifest writer integration, file writing, real-data use, metric use, and production readiness status unchanged.
