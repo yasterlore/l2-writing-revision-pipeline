@@ -551,3 +551,7 @@ Step610 adds the public-safe status marker for the Step608 wrapper-integrated mu
 ## Step611 Final Safety Review Reference
 
 Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain. The fixture validator design remains unchanged and continues to cover invalid categories separately.
+
+## Step615 Implementation Status Reference
+
+Step615 later implements a direct CLI-only invalid-case fail-closed runner and focused tests. The fixture validator design remains unchanged and continues to be separate from runtime execution. Step615 does not change fixture JSON, Makefile, wrapper, workflow, manifest writer integration, or file writing.

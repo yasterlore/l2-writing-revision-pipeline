@@ -614,3 +614,7 @@ Step606 adds standalone Makefile coverage for running the Step604 all-valid v0.4
 ## Step608 Coverage Addendum
 
 Step608 adds release-quality wrapper coverage for the Step606 standalone multi-case target through `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 multi-case runtime smoke`. This wrapper coverage is ordered after the actual-controlled v0.4 single-case smoke and before artifact body fixture / CLI checks. It is not manifest writer coverage, file-writing coverage, production readiness, real-data readiness, or model performance evidence.
+
+## Step615 Coverage Addendum
+
+Step615 adds focused Python test coverage for the direct CLI-only invalid-case v0.4 fail-closed runtime smoke. The tests cover fixed 26 selected invalid case IDs, 4 deferred invalid case IDs, discovery against the canonical root, aggregate fail-closed counts, required CLI flags, invalid selections, missing selected fixture directory behavior through a temporary copy, public-safe aggregate-only output, existing all-valid multi-case behavior, existing v0.4 single-case behavior, existing v0.3 planned-only behavior, and fixture non-mutation. This is direct runner coverage only; it is not Makefile target coverage, release-quality wrapper coverage, manifest writer coverage, file-writing coverage, production readiness, real-data readiness, model performance evidence, artifact body payload correctness evidence, or runtime correctness generally evidence.

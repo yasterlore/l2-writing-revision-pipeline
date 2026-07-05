@@ -811,3 +811,8 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step614 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Fixture Matrix Contract Design
 
 - [Actual-controlled v0.4 invalid-case runtime fail-closed fixture matrix contract design](frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_fixture_matrix_contract_design.md): design-only / docs-only contract for the future invalid-case fail-closed runner. It fixes the exact 26 selected fail_closed cases, 4 deferred cases, aggregate and per-case contracts, and failure mapping without executing invalid cases or changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step615 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Runner Implementation
+
+- `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py`: direct CLI-only runner for the selected 26 invalid fail_closed v0.4 cases from the Step614 matrix. It emits aggregate public-safe metadata only, records 26 selected / executed / observed fail_closed cases, defers 4 non-fail_closed invalid cases, and keeps Makefile, wrapper, workflow, fixture JSON, manifest writer integration, and file writing unchanged.
+- `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py`: focused tests for fixed matrix discovery, required CLI flags, aggregate fail-closed counts, public-safe output, fixture non-mutation, and existing v0.4 / v0.3 compatibility. Step616 is expected to design a standalone Makefile target.

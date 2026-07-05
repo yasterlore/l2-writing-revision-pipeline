@@ -359,3 +359,9 @@ contract design at
 `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_fixture_matrix_contract_design.md`.
 This Step583 marker remains the planned-only release-quality record and is not
 replaced by Step614.
+
+## Step615 Later-Chain Note
+
+Step615 adds the separate actual-controlled v0.4 invalid-case runtime
+fail-closed runner implementation. This Step583 marker remains the
+planned-only release-quality record and is not replaced by Step615.

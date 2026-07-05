@@ -354,3 +354,7 @@ Step613 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_
 ## Step614 Fixture Matrix Contract Reference
 
 Step614 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_fixture_matrix_contract_design.md` as a design-only / docs-only contract for the future invalid-case runtime fail-closed smoke. This single-case remote status marker remains unchanged and is not invalid-case runtime evidence.
+
+## Step615 Implementation Status Reference
+
+Step615 later implements a direct CLI-only invalid-case fail-closed runner. This single-case remote status marker remains unchanged, remains separate from the invalid-case runner, and is not replaced by Step615.

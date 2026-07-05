@@ -350,3 +350,5 @@ Step609 follow-up status: `docs/frozen_policy_generation_actual_controlled_v0_4_
 Step610 follow-up status: `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_status.md` records public-safe metadata for the Step608 wrapper-integrated multi-case check. This fixture validator Makefile target design remains unchanged.
 
 Step611 follow-up status: `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` reviews the Step602-Step610 all-valid multi-case runtime smoke chain. This fixture validator Makefile target design remains unchanged.
+
+Step615 follow-up status: `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py` implements a direct CLI-only invalid-case fail-closed runner with focused tests. This fixture validator Makefile target design remains unchanged; Step615 does not add Makefile integration, wrapper integration, workflow changes, fixture JSON changes, manifest writer integration, or file writing.

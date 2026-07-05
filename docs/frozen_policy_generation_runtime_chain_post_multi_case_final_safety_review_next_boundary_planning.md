@@ -314,3 +314,7 @@ Step613 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_
 ## Step614 Fixture Matrix Contract Reference
 
 Step614 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_fixture_matrix_contract_design.md` as a design-only / docs-only contract after the Step613 matrix design. This planning document remains unchanged; Step614 does not execute invalid cases, change Python code/tests, change fixture JSON, change Makefile, change wrapper, change workflow, invoke manifest writer, or enable file writing.
+
+## Step615 Implementation Status Reference
+
+Following the Step613 and Step614 design steps, Step615 implements a direct CLI-only invalid-case runtime fail-closed runner and focused tests. It remains outside Makefile and release-quality wrapper integration, does not change fixture JSON, does not invoke manifest writer, and does not enable file writing. The next conservative handoff is Step616 Makefile target design for the implemented runner.

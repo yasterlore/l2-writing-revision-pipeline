@@ -3299,3 +3299,9 @@ The design inventories invalid case IDs by directory names only, records public-
 Step614 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_fixture_matrix_contract_design.md` as a design-only / docs-only contract for a future invalid-case runtime fail-closed smoke runner.
 
 The contract fixes the exact selected 26 fail_closed invalid cases, deferred 3 usage_error cases, deferred 1 mismatch case, future aggregate output contract, per-case summary contract, failure mapping, output suppression policy, residue policy, and Step615 implementation handoff. It does not execute invalid cases, read or copy fixture JSON bodies, change wrapper files, change Makefile, change workflow files, change Python code/tests, change fixture JSON, invoke manifest writer, enable file writing, use real data, use metrics, or claim production readiness.
+
+## Step615 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Runner Implementation
+
+Step615 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py` and focused tests for a direct CLI-only invalid-case runtime fail-closed smoke.
+
+The runner uses the Step614 selected 26 invalid fail_closed case IDs, defers the 4 non-fail_closed invalid cases, executes the selected cases through the existing v0.4 controlled metadata-only helper, and emits aggregate public-safe key-value metadata only. The observed canonical aggregate records 26 selected / executed / observed fail_closed cases, unsafe signal total 26, residue count 0, manifest writer invocation count 0, file-writing enabled count 0, and artifact body payload emitted count 0. Step615 does not change Makefile, wrapper, workflow files, fixture JSON, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

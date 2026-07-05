@@ -491,3 +491,9 @@ Recommended next step:
 - Step615: actual-controlled v0.4 invalid-case runtime fail-closed runner implementation
 
 Step615 should implement runner and focused tests only. Step615 should not change fixture JSON, change Makefile, change the release-quality wrapper, change workflow, implement manifest writer integration, enable file writing, or claim invalid-case runtime fail-closed behavior beyond the focused smoke implementation result.
+
+## 25. Step615 Implementation Status
+
+Step615 implements `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py` and focused tests at `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py`.
+
+The implemented direct CLI uses `--case-selection fail-closed-invalid`, selects the fixed 26 invalid fail_closed cases from this contract, defers the 4 non-fail_closed invalid cases, and emits aggregate public-safe metadata only. The canonical summary records 26 selected / executed / observed fail_closed cases, unsafe signal total 26, residue count 0, artifact body payload emitted count 0, manifest writer invocation count 0, and file-writing enabled count 0. Step615 does not add a Makefile target, release-quality wrapper integration, workflow changes, fixture JSON changes, manifest writer integration, or file writing. Step616 is expected to design the standalone Makefile target.

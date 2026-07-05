@@ -1449,3 +1449,7 @@ invocation evidence, or file-writing evidence.
 ## Step614 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Fixture Matrix Contract Design
 
 - [Actual-controlled v0.4 invalid-case runtime fail-closed fixture matrix contract design](../frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_fixture_matrix_contract_design.md): design-only / docs-only contract after Step613. It fixes selected/deferred case IDs by directory name only and keeps invalid runtime execution, fixture JSON changes, wrapper changes, Makefile changes, workflow changes, Python code/tests changes, manifest writer integration, and file writing out of scope.
+
+## Step615 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Runner Implementation
+
+- `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py`: direct CLI-only invalid fail-closed runner for the Step614 selected 26-case matrix. It is not Makefile-targeted or release-quality integrated yet and keeps fixture JSON, workflows, manifest writer integration, and file writing unchanged.

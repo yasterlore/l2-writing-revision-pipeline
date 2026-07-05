@@ -505,3 +505,7 @@ Step606 updates `Makefile` with the standalone target `check-learner-state-froze
 ## Step608 Source Inventory Addendum
 
 Step608 updates `scripts/check_release_quality.sh` to run the Step606 standalone multi-case target after the actual-controlled v0.4 single-case smoke and before artifact body fixture / CLI checks. README/docs references are updated. No Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, validator implementation, artifact body generation implementation, manifest writer implementation, artifact body file writing, or manifest file writing is added or changed.
+
+## Step615 Source Inventory Addendum
+
+Step615 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py` and `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py`. README/docs references are updated. No Makefile, release-quality wrapper, workflow, fixture JSON, validator implementation, artifact body generation implementation, manifest writer implementation, artifact body file writing, or manifest file writing is added or changed.
