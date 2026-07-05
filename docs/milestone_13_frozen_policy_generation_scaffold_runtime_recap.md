@@ -3347,3 +3347,9 @@ The marker records provided public-safe metadata, observed release-quality label
 Step622 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step613-Step621 invalid-case fail-closed smoke chain.
 
 The review accepts only the release-quality-integrated, remote-status-recorded, actual-controlled v0.4 invalid-case runtime fail-closed smoke boundary for the fixed 26 selected invalid fail_closed cases. It records the 4 deferred non-fail_closed invalid cases, safety conditions, remaining limitations, non-equivalence cautions, non-claims, and the Step623 planning-only handoff. Step622 does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step623 Post Invalid-Case Final Safety Review Next-Boundary Planning
+
+Step623 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_post_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after the Step622 final safety review.
+
+The planning document compares deferred usage_error / mismatch invalid runtime matrix design, payload audit design without payload emission, manifest writer handoff design, remote metadata consolidation, and documentation consolidation. It recommends Step624 actual-controlled v0.4 deferred invalid-case runtime usage_error / mismatch matrix design as the next boundary while keeping Step623 free of implementation, Makefile changes, wrapper changes, workflow changes, Python code/tests changes, fixture JSON changes, payload audit implementation, manifest writer integration, file writing, real-data readiness, and model performance claims.

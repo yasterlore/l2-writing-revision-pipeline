@@ -262,3 +262,9 @@ Candidate options may include:
 - documentation consolidation
 
 Do not recommend payload audit implementation, manifest writer integration, or file writing implementation before a new planning step.
+
+## Step623 Next-Boundary Planning Reference
+
+Step623 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_post_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after this final safety review.
+
+It recommends Step624 actual-controlled v0.4 deferred invalid-case runtime usage_error / mismatch matrix design as the next small boundary. This final safety review remains unchanged and does not accept usage_error / mismatch runtime behavior, payload correctness, manifest writer correctness, file-writing readiness, real-data readiness, or model performance.

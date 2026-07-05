@@ -368,3 +368,7 @@ Step621 adds `docs/status/learner_state_frozen_policy_generation_actual_controll
 ## Step622 Invalid-Case Runtime Fail-Closed Final Safety Review Reference
 
 Step622 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step613-Step621 invalid-case fail-closed smoke chain. This root and fixture JSON remain unchanged, and Step622 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step623 Post Invalid-Case Final Safety Review Planning Reference
+
+Step623 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_post_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after Step622. It recommends a future deferred usage_error / mismatch invalid runtime matrix design. This root and fixture JSON remain unchanged, and Step623 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.

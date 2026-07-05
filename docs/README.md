@@ -844,3 +844,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step622 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Final Safety Review
 
 - [Actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality chain final safety review](frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_chain_final_safety_review.md): final-safety-review-only / docs-only review for the Step613-Step621 invalid-case fail-closed smoke chain. It accepts only the release-quality-integrated, remote-status-recorded boundary for the fixed 26 selected invalid fail_closed cases, records the 4 deferred cases and remaining limitations, and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step623 Post Invalid-Case Final Safety Review Next-Boundary Planning
+
+- [Post invalid-case final safety review next-boundary planning](frozen_policy_generation_actual_controlled_v0_4_invalid_case_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison after Step622. It recommends Step624 deferred usage_error / mismatch invalid runtime matrix design as the next small boundary and keeps implementation, payload audit implementation, manifest writer integration, file writing, real-data readiness, and model performance claims out of scope.
