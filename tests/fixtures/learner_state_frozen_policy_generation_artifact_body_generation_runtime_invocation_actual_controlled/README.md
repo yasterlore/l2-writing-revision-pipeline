@@ -352,3 +352,7 @@ Step617 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-
 ## Step618 Invalid-Case Runtime Fail-Closed Release-Quality Integration Design Reference
 
 Step618 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_integration_design.md` as a design-only / docs-only plan for future wrapper integration of the Step617 standalone target. This root and fixture JSON remain unchanged, and Step618 does not change wrapper, Makefile, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step619 Invalid-Case Runtime Fail-Closed Release-Quality Integration Status
+
+Step619 adds the Step617 standalone invalid-case fail-closed target to `scripts/check_release_quality.sh`. This root and fixture JSON remain unchanged, and Step619 does not change Makefile, workflow, Python code/tests, manifest writer integration, or file writing.

@@ -3323,3 +3323,9 @@ The target runs the Step615 direct CLI with `--case-selection fail-closed-invali
 Step618 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_integration_design.md` as a design-only / docs-only plan for a future Step619 wrapper integration of the Step617 standalone target.
 
 The design recommends adding `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 invalid-case runtime fail-closed smoke` after the all-valid multi-case runtime smoke and before artifact body fixture / CLI checks. Step618 does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step619 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Release-Quality Integration
+
+Step619 adds `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 invalid-case runtime fail-closed smoke` to `scripts/check_release_quality.sh`.
+
+The check runs `make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke` after the all-valid multi-case runtime smoke and before artifact body fixture / CLI checks. It expects aggregate public-safe metadata for the fixed 26 invalid fail_closed cases and 4 deferred cases. `unsafe_signal_total_count=26` is expected for this invalid fail-closed smoke and is not raw body emission. Step619 keeps Makefile, workflow files, Python code/tests, fixture JSON, manifest writer integration, file writing, real-data use, metric use, and production readiness status unchanged.

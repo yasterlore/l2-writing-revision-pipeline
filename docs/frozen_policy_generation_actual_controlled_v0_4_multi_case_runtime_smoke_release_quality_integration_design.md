@@ -420,3 +420,7 @@ Step617 adds the standalone invalid-case fail-closed Makefile target for the Ste
 ## Step618 Release-Quality Integration Design Reference
 
 Step618 adds a separate design-only / docs-only release-quality integration plan for the Step617 invalid-case target. This Step607 all-valid release-quality integration design remains unchanged and is not replaced by Step618.
+
+## Step619 Release-Quality Integration Status Reference
+
+Step619 adds the separate invalid-case fail-closed target to release-quality after the all-valid multi-case runtime smoke. This Step607 all-valid release-quality integration design remains unchanged and is not replaced by Step619.

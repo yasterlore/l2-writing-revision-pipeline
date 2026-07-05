@@ -330,3 +330,7 @@ Step617 adds the standalone Makefile target `check-learner-state-frozen-policy-g
 ## Step618 Release-Quality Integration Design Reference
 
 Step618 adds the design-only / docs-only release-quality integration plan for the Step617 standalone target. It preserves this planning boundary by not changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step619 Release-Quality Integration Status
+
+Step619 adds the Step617 standalone invalid-case fail-closed target to release-quality after the all-valid multi-case runtime smoke. It preserves this planning boundary by not changing Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

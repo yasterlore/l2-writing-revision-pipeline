@@ -509,3 +509,7 @@ Step617 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-
 ## 28. Step618 Release-Quality Integration Design Reference
 
 Step618 adds a design-only / docs-only release-quality integration plan for the Step617 standalone target. This contract and fixture JSON remain unchanged; Step618 does not change wrapper, Makefile, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## 29. Step619 Release-Quality Integration Status
+
+Step619 adds the Step617 standalone invalid-case fail-closed target to release-quality. This contract and fixture JSON remain unchanged; Step619 does not change Makefile, workflow, Python code/tests, manifest writer integration, or file writing.

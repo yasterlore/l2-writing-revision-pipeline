@@ -292,3 +292,7 @@ Step617 adds the standalone Makefile target for the Step615 invalid-case runner.
 ## Step618 Release-Quality Integration Design Reference
 
 Step618 adds a design-only / docs-only plan for future release-quality wrapper integration of the Step617 invalid-case target. This final safety review remains the Step602-Step610 all-valid multi-case boundary review and is not replaced by Step618.
+
+## Step619 Release-Quality Integration Status Reference
+
+Step619 adds the separate invalid-case fail-closed target to release-quality. This final safety review remains the Step602-Step610 all-valid multi-case boundary review and is not replaced by Step619.

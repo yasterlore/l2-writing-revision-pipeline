@@ -513,3 +513,7 @@ Step615 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0
 ## Step617 Source Inventory Addendum
 
 Step617 updates `Makefile` with the standalone target `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke`. README/docs references are updated. No release-quality wrapper, workflow, Python code/tests, fixture JSON, runtime implementation, validator implementation, artifact body generation implementation, manifest writer implementation, artifact body file writing, or manifest file writing is added or changed.
+
+## Step619 Source Inventory Addendum
+
+Step619 updates `scripts/check_release_quality.sh` to run the Step617 standalone invalid-case target after the all-valid multi-case runtime smoke and before artifact body fixture / CLI checks. README/docs references are updated. No Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, validator implementation, artifact body generation implementation, manifest writer implementation, artifact body file writing, or manifest file writing is added or changed.

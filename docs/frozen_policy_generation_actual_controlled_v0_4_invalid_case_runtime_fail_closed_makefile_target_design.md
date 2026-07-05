@@ -303,3 +303,7 @@ Recommended next step:
 ## 16. Step618 Release-Quality Integration Design Reference
 
 Step618 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_integration_design.md` as a design-only / docs-only plan for future wrapper integration of the Step617 standalone target. Step618 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## 17. Step619 Release-Quality Integration Status
+
+Step619 adds the Step617 standalone target to `scripts/check_release_quality.sh` after the all-valid multi-case runtime smoke and before artifact body fixture / CLI checks. This Makefile target design remains unchanged; Step619 does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

@@ -357,3 +357,15 @@ Recommended next step:
 - Step619: actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality wrapper integration
 
 Step619 should update only wrapper and necessary README/docs. Step619 should not change Makefile, change Python code/tests, change fixture JSON, change workflow, implement manifest writer integration, or enable file writing.
+
+## 16. Step619 Implementation Status
+
+Step619 adds `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 invalid-case runtime fail-closed smoke` to `scripts/check_release_quality.sh`.
+
+The check runs `make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke` after the actual-controlled v0.4 all-valid multi-case runtime smoke and before artifact body fixture / CLI checks. It is release-quality wrapper integration only; Step619 does not change Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer integration, or file writing.
+
+Expected aggregate output remains public-safe and metadata-only: 26 selected invalid cases, 4 deferred cases, 26 executed cases, 26 observed fail_closed cases, `unsafe_signal_total_count=26`, `forbidden_body_emitted_case_count=0`, and `residue_file_count=0`. `unsafe_signal_total_count=26` is expected for this invalid fail-closed smoke and is not raw body emission.
+
+Recommended next step:
+
+- Step620: actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality remote/manual run record workflow design

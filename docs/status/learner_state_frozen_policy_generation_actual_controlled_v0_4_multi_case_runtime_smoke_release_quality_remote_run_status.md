@@ -282,3 +282,7 @@ Step617 later adds `check-learner-state-frozen-policy-generation-actual-controll
 ## Step618 Release-Quality Integration Design Reference
 
 Step618 later adds a design-only / docs-only plan for future wrapper integration of the Step617 invalid-case target. This status marker remains the Step608 all-valid multi-case release-quality remote status record and is not replaced by Step618.
+
+## Step619 Release-Quality Integration Status Reference
+
+Step619 later adds the separate invalid-case fail-closed target to release-quality. This status marker remains the Step608 all-valid multi-case release-quality remote status record and is not replaced by Step619.

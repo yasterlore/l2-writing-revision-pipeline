@@ -383,3 +383,7 @@ Step617 adds the standalone invalid-case fail-closed Makefile target for the Ste
 ## Step618 Release-Quality Integration Design Reference
 
 Step618 adds a design-only / docs-only release-quality integration plan for the Step617 invalid-case target. This earlier single-case final safety review remains unchanged and is not replaced by Step618.
+
+## Step619 Release-Quality Integration Status Reference
+
+Step619 adds the separate invalid-case fail-closed target to release-quality. This earlier single-case final safety review remains unchanged and is not replaced by Step619.
