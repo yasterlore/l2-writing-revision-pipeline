@@ -5646,3 +5646,7 @@ Confirm `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_safet
 ## Step613 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Matrix Design Check
 
 Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md` exists as a design-only / docs-only matrix plan. Confirm it inventories invalid cases by directory names only, recommends a fail_closed-only future matrix, and does not copy fixture JSON bodies, execute invalid cases, change Python code/tests, change fixture JSON, change Makefile, change wrapper, change workflow, invoke manifest writer, enable file writing, or add production readiness, real-data readiness, or model performance claims.
+
+## Step614 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Fixture Matrix Contract Design Check
+
+Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_fixture_matrix_contract_design.md` exists as a design-only / docs-only contract. Confirm it fixes the exact selected 26 fail_closed invalid cases and 4 deferred cases by directory names only, and does not copy fixture JSON bodies, execute invalid cases, change Python code/tests, change fixture JSON, change Makefile, change wrapper, change workflow, invoke manifest writer, enable file writing, or add production readiness, real-data readiness, or model performance claims.

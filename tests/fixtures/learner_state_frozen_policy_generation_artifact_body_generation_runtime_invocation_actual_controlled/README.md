@@ -332,3 +332,7 @@ Step612 adds `docs/frozen_policy_generation_runtime_chain_post_multi_case_final_
 ## Step613 Invalid-Case Runtime Fail-Closed Matrix Design Reference
 
 Step613 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md` as a design-only / docs-only plan for a future invalid-case runtime fail-closed smoke. The fixture JSON remains unchanged, invalid cases are not runtime-executed, and Step613 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step614 Invalid-Case Runtime Fail-Closed Fixture Matrix Contract Reference
+
+Step614 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_fixture_matrix_contract_design.md` as a design-only / docs-only contract fixing selected/deferred invalid case IDs by directory name only. The fixture JSON remains unchanged, invalid cases are not runtime-executed, and Step614 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.

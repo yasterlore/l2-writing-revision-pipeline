@@ -618,3 +618,7 @@ Recommended next step:
 - Step614: actual-controlled v0.4 invalid-case runtime fail-closed fixture/matrix contract design
 
 Step614 should remain design-only / docs-only unless Step613 clearly fixed the exact selected matrix. Step614 should not execute invalid cases, change Python code/tests, change fixture JSON, change Makefile, change the release-quality wrapper, change workflow, implement manifest writer integration, or enable file writing.
+
+## Step614 Fixture Matrix Contract Reference
+
+Step614 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_fixture_matrix_contract_design.md` as the design-only / docs-only contract fixing the exact selected/deferred matrix for the future runner. This matrix design remains unchanged; Step614 does not execute invalid cases, change Python code/tests, change fixture JSON, change Makefile, change wrapper, change workflow, invoke manifest writer, or enable file writing.

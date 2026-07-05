@@ -807,3 +807,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step613 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Matrix Design
 
 - [Actual-controlled v0.4 invalid-case runtime fail-closed matrix design](frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md): design-only / docs-only matrix plan for a future invalid-case runtime fail-closed smoke. It inventories invalid case directory names only, recommends a fail_closed-only invalid matrix, and does not execute invalid cases or change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step614 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Fixture Matrix Contract Design
+
+- [Actual-controlled v0.4 invalid-case runtime fail-closed fixture matrix contract design](frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_fixture_matrix_contract_design.md): design-only / docs-only contract for the future invalid-case fail-closed runner. It fixes the exact 26 selected fail_closed cases, 4 deferred cases, aggregate and per-case contracts, and failure mapping without executing invalid cases or changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

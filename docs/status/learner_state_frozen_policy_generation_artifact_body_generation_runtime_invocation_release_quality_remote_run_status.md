@@ -351,3 +351,11 @@ Step613 adds the separate invalid-case runtime fail-closed matrix design at
 `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md`.
 This Step583 marker remains the planned-only release-quality record and is not
 replaced by Step613.
+
+## Step614 Later-Chain Note
+
+Step614 adds the separate invalid-case runtime fail-closed fixture/matrix
+contract design at
+`docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_fixture_matrix_contract_design.md`.
+This Step583 marker remains the planned-only release-quality record and is not
+replaced by Step614.

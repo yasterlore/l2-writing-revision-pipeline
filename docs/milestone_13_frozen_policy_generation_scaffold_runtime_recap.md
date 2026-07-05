@@ -3293,3 +3293,9 @@ The planning document compares invalid-case runtime fail-closed matrix design, p
 Step613 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_matrix_design.md` as a design-only / docs-only plan for a future invalid-case runtime fail-closed smoke.
 
 The design inventories invalid case IDs by directory names only, records public-safe aggregate counts, compares runtime matrix selection options, recommends a fail_closed-only invalid matrix, defines future aggregate and per-case public-safe contracts, and stages Step614 fixture/matrix contract design. It does not execute invalid cases, read or copy fixture JSON bodies, change wrapper files, change Makefile, change workflow files, change Python code/tests, change fixture JSON, invoke manifest writer, enable file writing, use real data, use metrics, or claim production readiness.
+
+## Step614 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Fixture Matrix Contract Design
+
+Step614 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_fixture_matrix_contract_design.md` as a design-only / docs-only contract for a future invalid-case runtime fail-closed smoke runner.
+
+The contract fixes the exact selected 26 fail_closed invalid cases, deferred 3 usage_error cases, deferred 1 mismatch case, future aggregate output contract, per-case summary contract, failure mapping, output suppression policy, residue policy, and Step615 implementation handoff. It does not execute invalid cases, read or copy fixture JSON bodies, change wrapper files, change Makefile, change workflow files, change Python code/tests, change fixture JSON, invoke manifest writer, enable file writing, use real data, use metrics, or claim production readiness.
