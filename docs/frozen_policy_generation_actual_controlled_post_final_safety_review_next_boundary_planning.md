@@ -333,3 +333,7 @@ Step606 implements the standalone Makefile target for the Step604 runner. This p
 ## Step607 Release-Quality Integration Design Reference
 
 Step607 designs future release-quality wrapper integration for the Step606 standalone multi-case target. This planning document remains unchanged; Step607 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step608 Release-Quality Integration Reference
+
+Step608 adds the Step606 standalone multi-case target to the release-quality wrapper. This planning document remains unchanged; Step608 does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

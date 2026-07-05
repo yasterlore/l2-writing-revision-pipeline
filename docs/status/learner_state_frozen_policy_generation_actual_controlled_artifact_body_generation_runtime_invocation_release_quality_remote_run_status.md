@@ -326,3 +326,7 @@ Step606 adds a standalone Makefile target for the Step604 runner. This remote st
 ## Step607 Release-Quality Integration Design Reference
 
 Step607 designs future release-quality wrapper integration for the Step606 standalone multi-case target. This remote status marker remains unchanged and does not record wrapper implementation or remote run evidence for the multi-case target.
+
+## Step608 Release-Quality Integration Reference
+
+Step608 adds the Step606 standalone multi-case target to the release-quality wrapper. This remote status marker remains unchanged and does not record remote run evidence for the multi-case target.

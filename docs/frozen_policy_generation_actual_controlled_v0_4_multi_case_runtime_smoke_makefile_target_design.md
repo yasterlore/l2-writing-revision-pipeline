@@ -317,3 +317,7 @@ Step606 adds the standalone Makefile target `check-learner-state-frozen-policy-g
 ## Step607 Release-Quality Integration Design Reference
 
 Step607 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_integration_design.md` as a design-only / docs-only plan for future wrapper integration of the Step606 standalone target. This Makefile target design remains unchanged; Step607 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step608 Release-Quality Integration Reference
+
+Step608 adds the Step606 standalone target to the release-quality wrapper after the actual-controlled v0.4 single-case smoke. This Makefile target design remains unchanged; Step608 does not change Makefile, Python code/tests, fixture JSON, manifest writer integration, or file writing.

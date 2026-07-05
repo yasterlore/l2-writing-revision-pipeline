@@ -610,3 +610,7 @@ Step604 adds focused Python test coverage for the direct CLI-only all-valid v0.4
 ## Step606 Coverage Addendum
 
 Step606 adds standalone Makefile coverage for running the Step604 all-valid v0.4 multi-case runtime smoke through `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke`. This is standalone target coverage only; it is not release-quality wrapper coverage, manifest writer coverage, file-writing coverage, production readiness, real-data readiness, or model performance evidence.
+
+## Step608 Coverage Addendum
+
+Step608 adds release-quality wrapper coverage for the Step606 standalone multi-case target through `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 multi-case runtime smoke`. This wrapper coverage is ordered after the actual-controlled v0.4 single-case smoke and before artifact body fixture / CLI checks. It is not manifest writer coverage, file-writing coverage, production readiness, real-data readiness, or model performance evidence.

@@ -342,3 +342,5 @@ Step605 follow-up status: `docs/frozen_policy_generation_actual_controlled_v0_4_
 Step606 follow-up status: `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke` is now a standalone Makefile target for the Step604 runner. This fixture validator Makefile target design remains unchanged.
 
 Step607 follow-up status: `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_integration_design.md` designs future wrapper integration for the Step606 standalone multi-case target. This fixture validator Makefile target design remains unchanged.
+
+Step608 follow-up status: `scripts/check_release_quality.sh` now includes the Step606 standalone multi-case target after the v0.4 single-case smoke. This fixture validator Makefile target design remains unchanged.

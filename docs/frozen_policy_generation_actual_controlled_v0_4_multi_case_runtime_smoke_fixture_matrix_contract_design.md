@@ -474,3 +474,7 @@ Step606 adds the standalone Makefile target for the Step604 runner. This matrix 
 ## Step607 Release-Quality Integration Design Reference
 
 Step607 designs future release-quality wrapper integration for the Step606 standalone multi-case target. This matrix contract remains unchanged; fixture JSON, Python code/tests, Makefile, wrapper, manifest writer integration, and file writing remain unchanged.
+
+## Step608 Release-Quality Integration Reference
+
+Step608 adds the Step606 standalone multi-case target to the release-quality wrapper. This matrix contract remains unchanged; fixture JSON, Python code/tests, Makefile, manifest writer integration, and file writing remain unchanged.

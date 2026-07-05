@@ -3257,3 +3257,9 @@ The target runs the Step604 direct CLI over the all-valid 6-case matrix and expe
 Step607 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_integration_design.md` as a design-only / docs-only plan for adding the Step606 standalone target to `scripts/check_release_quality.sh` in a future Step608.
 
 The design recommends inserting `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 multi-case runtime smoke` after the existing actual-controlled v0.4 single-case runtime smoke and before artifact body fixture / CLI checks. Step607 does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step608 Actual-Controlled v0.4 Multi-Case Runtime Smoke Release-Quality Integration
+
+Step608 adds `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 multi-case runtime smoke` to `scripts/check_release_quality.sh`.
+
+The check runs `make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke` after the actual-controlled v0.4 single-case runtime smoke and before artifact body fixture / CLI checks. It expects the all-valid 6-case aggregate public-safe summary and keeps Makefile, workflow files, Python code/tests, fixture JSON, manifest writer integration, file writing, real-data use, metric use, and production readiness status unchanged.

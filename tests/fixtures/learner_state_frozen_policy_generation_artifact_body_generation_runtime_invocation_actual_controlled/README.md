@@ -308,3 +308,7 @@ Step606 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-
 ## Step607 Multi-Case Runtime Smoke Release-Quality Integration Design Reference
 
 Step607 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_integration_design.md` as a design-only plan for future release-quality wrapper integration of the Step606 standalone target. The fixture JSON remains unchanged, and Step607 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step608 Multi-Case Runtime Smoke Release-Quality Integration Reference
+
+Step608 adds the Step606 standalone multi-case target to `scripts/check_release_quality.sh`. The fixture JSON remains unchanged, and Step608 does not change Makefile, workflow, Python code/tests, manifest writer integration, or file writing.

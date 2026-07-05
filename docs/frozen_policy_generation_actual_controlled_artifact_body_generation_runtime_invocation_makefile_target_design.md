@@ -414,3 +414,7 @@ Step606 adds the standalone multi-case Makefile target. This single-case Makefil
 ## Step607 Multi-Case Release-Quality Integration Design Reference
 
 Step607 designs future release-quality wrapper integration for the Step606 standalone multi-case target. This single-case Makefile target design remains unchanged.
+
+## Step608 Multi-Case Release-Quality Integration Reference
+
+Step608 adds the Step606 standalone multi-case target to the release-quality wrapper after the single-case target. This single-case Makefile target design remains unchanged.

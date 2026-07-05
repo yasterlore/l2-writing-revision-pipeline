@@ -606,3 +606,7 @@ Step606 adds the standalone Makefile target for the Step604 runner. The fixture/
 ## Step607 Release-Quality Integration Design Reference
 
 Step607 designs future release-quality wrapper integration for the Step606 standalone multi-case target. The fixture/schema contract and fixture JSON remain unchanged.
+
+## Step608 Release-Quality Integration Reference
+
+Step608 adds the Step606 standalone multi-case target to the release-quality wrapper. The fixture/schema contract and fixture JSON remain unchanged.
