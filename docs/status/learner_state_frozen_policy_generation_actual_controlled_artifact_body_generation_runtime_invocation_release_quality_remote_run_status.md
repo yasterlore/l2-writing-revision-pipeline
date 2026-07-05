@@ -278,3 +278,12 @@ Recommended next step:
 - Step600: actual-controlled runtime invocation release-quality chain final safety review
 
 Do not recommend manifest writer integration or file writing before Step600.
+
+## Step600 Final Safety Review Reference
+
+Step600 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md`
+as the final-safety-review / docs-only review for the Step585-Step599
+actual-controlled release-quality chain. This marker remains a public-safe
+metadata summary and does not store raw logs, full job output, fixture JSON
+bodies, or payload bodies.

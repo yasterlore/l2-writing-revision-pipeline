@@ -303,3 +303,12 @@ raw logs or payload bodies.
 Step599 later adds a public-safe status marker for the remote Release Quality
 run after Step597 wrapper integration. It remains outside this planned-only
 final safety review and does not replace the Step583 planned-only marker.
+
+## Step600 Actual-Controlled Final Safety Review Reference
+
+Step600 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md`
+as a separate final-safety-review / docs-only review for the Step585-Step599
+actual-controlled v0.4 metadata-only runtime invocation chain. This
+planned-only final safety review remains separate and is not replaced by the
+actual-controlled review.

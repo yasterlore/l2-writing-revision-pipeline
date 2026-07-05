@@ -366,3 +366,13 @@ the Step597 wrapper checks. This Makefile target design remains unchanged.
 Step599 adds a public-safe status marker for the remote Release Quality run
 after Step597 wrapper integration. This Makefile target design remains
 unchanged.
+
+## Step600 Final Safety Review Reference
+
+Step600 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md`
+as a final-safety-review / docs-only review for the Step585-Step599
+actual-controlled release-quality chain. This Makefile target design remains
+unchanged, and Step600 does not change Makefile, wrapper, workflow, Python,
+fixture JSON, runtime implementation, manifest writer integration, or file
+writing.

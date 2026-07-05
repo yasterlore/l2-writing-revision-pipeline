@@ -301,3 +301,10 @@ Step599 later adds the separate actual-controlled remote run status marker at
 `docs/status/learner_state_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md`.
 This Step583 marker remains the planned-only release-quality record and is not
 replaced by Step599.
+
+## Step600 Later-Chain Note
+
+Step600 adds the separate actual-controlled final safety review at
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md`.
+This Step583 marker remains the planned-only release-quality record and is not
+replaced by Step600.

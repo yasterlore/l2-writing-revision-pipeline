@@ -3209,3 +3209,9 @@ Step598 defines allowed evidence sources, forbidden raw log / payload sources, p
 Step599 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step597 wrapper integration.
 
 The marker records public-safe metadata, observed actual-controlled labels, count-only summaries for the 36-case fixture validator and v0.4 runtime smoke, and missing metadata handling. It stores no raw logs, full job output, fixture JSON bodies, payload bodies, real-data evidence, metric evidence, manifest writer evidence, file-writing evidence, or production readiness status.
+
+## Step600 Actual-Controlled Runtime Release-Quality Chain Final Safety Review
+
+Step600 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md` as a final-safety-review / docs-only review for the Step585-Step599 actual-controlled v0.4 metadata-only runtime invocation chain.
+
+The review records the relationship to the planned-only chain, final reviewed artifacts, Step599 public-safe evidence, fixture validator result, v0.4 runtime smoke result, safety boundary, residual risks, recommended stop points, and Step601 planning-only handoff. It does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

@@ -5590,3 +5590,7 @@ Confirm `docs/frozen_policy_generation_actual_controlled_artifact_body_generatio
 ## Step599 Actual-Controlled Runtime Remote Run Status Check
 
 Confirm `docs/status/learner_state_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md` exists as a status-marker-only / docs-only record for the remote Release Quality run after Step597 wrapper integration. Confirm it records public-safe metadata, observed labels, count-only target summaries, missing metadata handling, and no raw logs, full job output, fixture JSON bodies, payload bodies, production readiness, real-data readiness, or model performance evidence.
+
+## Step600 Actual-Controlled Runtime Release-Quality Chain Final Safety Review Check
+
+Confirm `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md` exists as a final-safety-review / docs-only review for the Step585-Step599 actual-controlled chain. Confirm it records the reviewed chain, planned-only relationship, reviewed artifacts, Step599 public-safe evidence, fixture validator result, v0.4 runtime smoke result, safety boundary, remaining risks, stop points before later boundaries, non-equivalence cautions, non-claims, and public-safe checklist. Confirm it does not add raw logs, full job output, fixture JSON bodies, payload bodies, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

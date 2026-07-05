@@ -560,3 +560,12 @@ remain unchanged.
 
 Step599 adds the public-safe remote run status marker for the Step597 wrapper
 checks. This fixture/schema contract and fixture JSON remain unchanged.
+
+## Step600 Final Safety Review Reference
+
+Step600 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md`
+as the final-safety-review / docs-only review for the Step585-Step599
+actual-controlled release-quality chain. This fixture/schema contract remains
+unchanged, and Step600 does not change fixture JSON, validator implementation,
+runtime implementation, manifest writer integration, or file writing.

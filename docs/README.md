@@ -750,3 +750,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step599 Actual-Controlled Runtime Remote Run Status
 
 - [Actual-controlled artifact body generation runtime invocation release-quality remote run status](status/learner_state_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md): status-marker-only / docs-only record for the remote Release Quality run after Step597 wrapper integration. It records public-safe metadata and count-only summaries without raw logs, full job output, or payload bodies.
+
+## Step600 Actual-Controlled Runtime Release-Quality Chain Final Safety Review
+
+- [Actual-controlled artifact body generation runtime invocation release-quality chain final safety review](frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md): final-safety-review / docs-only review for the Step585-Step599 actual-controlled v0.4 metadata-only runtime invocation chain after release-quality integration and remote status recording. It records reviewed artifacts, public-safe evidence, remaining risks, stop points, and non-claims without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, or adding raw logs / payload bodies.

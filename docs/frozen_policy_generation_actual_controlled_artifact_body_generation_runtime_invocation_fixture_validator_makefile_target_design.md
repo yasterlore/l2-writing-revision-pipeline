@@ -314,3 +314,8 @@ Step599 follow-up status: the public-safe status marker for the Step597
 wrapper checks is available at
 `docs/status/learner_state_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md`.
 It records count-only summaries and does not change fixture JSON.
+
+Step600 follow-up status: the final-safety-review / docs-only review for the
+Step585-Step599 actual-controlled release-quality chain is available at
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md`.
+This Makefile target design remains unchanged.

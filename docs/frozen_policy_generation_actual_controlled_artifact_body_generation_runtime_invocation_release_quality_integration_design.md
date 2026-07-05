@@ -392,3 +392,12 @@ Step599 adds the public-safe status marker
 for the remote Release Quality run after Step597 wrapper integration. It does
 not change wrapper, Makefile, workflow files, Python code/tests, fixture JSON,
 manifest writer integration, or file writing.
+
+## Step600 Final Safety Review Reference
+
+Step600 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md`
+as a final-safety-review / docs-only review for the Step585-Step599
+actual-controlled release-quality chain. This integration design remains
+unchanged, and no wrapper, Makefile, workflow, Python, fixture JSON, runtime,
+manifest writer, or file-writing change is made by Step600.

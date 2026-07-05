@@ -1388,3 +1388,7 @@ invocation evidence, or file-writing evidence.
 ## Step599 Actual-Controlled Runtime Remote Run Status
 
 - [Actual-controlled artifact body generation runtime invocation release-quality remote run status](learner_state_frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_remote_run_status.md): status-marker-only / docs-only record for the remote Release Quality run after Step597 wrapper integration. It records public-safe metadata and count-only target summaries, and stores no raw logs, full job output, or payload bodies.
+
+## Step600 Actual-Controlled Runtime Release-Quality Chain Final Safety Review
+
+- [Actual-controlled artifact body generation runtime invocation release-quality chain final safety review](../frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md): final-safety-review / docs-only review for the Step585-Step599 actual-controlled v0.4 metadata-only runtime invocation chain. It records the release-quality-integrated and remote-status-recorded boundary, residual risks, stop points, non-equivalence cautions, and non-claims without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, or file writing.
