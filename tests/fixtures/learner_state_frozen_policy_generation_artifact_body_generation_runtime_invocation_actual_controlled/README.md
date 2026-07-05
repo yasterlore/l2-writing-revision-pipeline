@@ -316,3 +316,7 @@ Step608 adds the Step606 standalone multi-case target to `scripts/check_release_
 ## Step609 Multi-Case Runtime Smoke Remote Run Record Workflow Reference
 
 Step609 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_record_workflow.md` as a design-only plan for a future public-safe status marker after Step608 wrapper integration. The fixture JSON remains unchanged, and Step609 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step610 Multi-Case Runtime Smoke Remote Status Marker Reference
+
+Step610 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the Step608 wrapper-integrated multi-case check. The fixture JSON remains unchanged, and Step610 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.

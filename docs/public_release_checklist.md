@@ -5630,3 +5630,7 @@ Confirm `scripts/check_release_quality.sh` runs `release_quality_check: learner-
 ## Step609 Actual-Controlled v0.4 Multi-Case Runtime Smoke Remote Run Record Workflow Check
 
 Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_record_workflow.md` exists as a design-only / docs-only plan for a future Step610 status marker. Confirm it defines allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, count-only multi-case target summary, missing metadata handling, status marker template, relationship to existing status markers, and Step610 handoff without creating a marker or changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## Step610 Actual-Controlled v0.4 Multi-Case Runtime Smoke Remote Run Status Check
+
+Confirm `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_status.md` exists as a status-marker-only / docs-only record for the remote Release Quality run after Step608 wrapper integration. Confirm it records only provided public-safe metadata, observed labels, count-only multi-case target summary, missing metadata handling, relationships to existing status markers, and no raw logs, full job output, fixture JSON bodies, payload bodies, production readiness, real-data readiness, or model performance evidence.

@@ -384,3 +384,7 @@ Step608 adds `release_quality_check: learner-state frozen policy generation actu
 ## Step609 Remote Run Record Workflow Reference
 
 Step609 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future public-safe status marker after Step608 wrapper integration. This release-quality integration design remains unchanged; Step609 does not create the marker or change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step610 Remote Status Marker Reference
+
+Step610 adds the future public-safe status marker designed in Step609. This release-quality integration design remains unchanged; Step610 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

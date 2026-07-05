@@ -581,3 +581,7 @@ Step608 integrates the Step606 standalone multi-case target into `scripts/check_
 ## Step609 Remote Run Record Workflow Reference
 
 Step609 adds a design-only / docs-only workflow for a future public-safe status marker after Step608 wrapper integration. This multi-case runtime smoke design remains unchanged; Step609 does not create the marker or change wrapper, Makefile, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step610 Remote Status Marker Reference
+
+Step610 adds the public-safe status marker for the Step608 wrapper-integrated multi-case check. This multi-case runtime smoke design remains unchanged; Step610 does not change wrapper, Makefile, Python code/tests, fixture JSON, manifest writer integration, or file writing.

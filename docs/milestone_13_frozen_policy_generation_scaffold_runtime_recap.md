@@ -3269,3 +3269,9 @@ The check runs `make check-learner-state-frozen-policy-generation-actual-control
 Step609 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future Step610 public-safe status marker after Step608 wrapper integration.
 
 The workflow design records allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, count-only multi-case target summary fields, missing metadata handling, relationships to existing status markers, and Step610 / Step611 staging. Step609 does not create the status marker, change wrapper files, change Makefile, change workflow files, change Python code/tests, change fixture JSON, invoke manifest writer, write files, use real data, use metrics, or claim production readiness.
+
+## Step610 Actual-Controlled v0.4 Multi-Case Runtime Smoke Remote Run Status
+
+Step610 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step608 wrapper integration.
+
+The marker records provided public-safe metadata, observed release-quality labels, count-only multi-case target summary, overall release-quality result, missing metadata handling, relationships to existing status markers, non-equivalence cautions, non-claims, and the Step611 handoff. It stores no raw logs, full job output, fixture JSON bodies, payload bodies, real-data evidence, metric evidence, manifest writer evidence, file-writing evidence, or production readiness status.

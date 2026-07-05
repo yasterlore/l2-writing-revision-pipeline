@@ -1429,3 +1429,7 @@ invocation evidence, or file-writing evidence.
 ## Step609 Actual-Controlled v0.4 Multi-Case Runtime Smoke Remote Run Record Workflow
 
 - [Actual-controlled v0.4 multi-case runtime smoke release-quality remote run record workflow](../frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_record_workflow.md): design-only / docs-only plan for a future public-safe Step610 status marker. Step609 does not create the marker and keeps wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, and file writing unchanged.
+
+## Step610 Actual-Controlled v0.4 Multi-Case Runtime Smoke Remote Run Status
+
+- [Actual-controlled v0.4 multi-case runtime smoke release-quality remote run status](learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_status.md): status-marker-only / docs-only record for the remote Release Quality run after Step608 wrapper integration. It records public-safe metadata and count-only target summary, and stores no raw logs, full job output, fixture JSON bodies, payload bodies, manifest writer evidence, or file-writing evidence.

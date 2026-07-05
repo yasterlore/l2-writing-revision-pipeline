@@ -440,3 +440,7 @@ Step608 adds the Step606 standalone multi-case target to the release-quality wra
 ## Step609 Multi-Case Remote Run Record Workflow Reference
 
 Step609 adds a separate workflow design for the future status marker covering the Step608 wrapper-integrated multi-case check. This earlier remote/manual run record workflow remains unchanged and continues to cover the Step597 fixture validation plus single-case runtime smoke checks.
+
+## Step610 Multi-Case Remote Status Marker Reference
+
+Step610 adds the public-safe status marker for the Step608 wrapper-integrated multi-case check. This earlier remote/manual run record workflow remains unchanged and continues to cover the Step597 fixture validation plus single-case runtime smoke checks.

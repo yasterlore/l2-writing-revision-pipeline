@@ -791,3 +791,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step609 Actual-Controlled v0.4 Multi-Case Runtime Smoke Remote Run Record Workflow
 
 - [Actual-controlled v0.4 multi-case runtime smoke release-quality remote run record workflow](frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_record_workflow.md): design-only / docs-only plan for a future Step610 status marker after Step608 wrapper integration. It defines allowed public-safe metadata, count-only multi-case target summary, missing metadata handling, status marker template, and raw-log / payload exclusions without creating the marker or changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step610 Actual-Controlled v0.4 Multi-Case Runtime Smoke Remote Run Status
+
+- [Actual-controlled v0.4 multi-case runtime smoke release-quality remote run status](status/learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_status.md): status-marker-only / docs-only record for the remote Release Quality run after Step608 wrapper integration. It records public-safe metadata, observed labels, count-only multi-case target summary, missing metadata handling, and no raw logs, full job output, or payload bodies.

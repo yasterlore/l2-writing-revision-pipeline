@@ -364,3 +364,7 @@ Recommended next step:
 - Step610: actual-controlled v0.4 multi-case runtime smoke release-quality remote status marker
 
 Step610 should create the status marker only from public-safe metadata. Step610 should not copy raw logs, alter wrapper / Makefile / Python / fixture JSON / workflow, implement manifest writer integration, or enable file writing.
+
+## Step610 Status Marker Reference
+
+Step610 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step608 wrapper integration. This workflow design remains unchanged; Step610 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

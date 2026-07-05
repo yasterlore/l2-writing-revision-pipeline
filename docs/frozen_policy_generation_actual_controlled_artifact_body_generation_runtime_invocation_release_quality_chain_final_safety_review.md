@@ -347,3 +347,7 @@ Step608 adds the Step606 standalone multi-case target to the release-quality wra
 ## Step609 Remote Run Record Workflow Reference
 
 Step609 designs a future public-safe remote/manual run status marker for the Step608 wrapper-integrated multi-case check. This final safety review remains unchanged and does not record remote run evidence for the multi-case target.
+
+## Step610 Remote Status Marker Reference
+
+Step610 adds the public-safe status marker for the Step608 wrapper-integrated multi-case check. This final safety review remains unchanged; the Step608 multi-case chain still needs a later final safety review.
