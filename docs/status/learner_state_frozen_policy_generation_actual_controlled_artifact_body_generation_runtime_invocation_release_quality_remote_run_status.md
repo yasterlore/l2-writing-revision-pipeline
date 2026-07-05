@@ -318,3 +318,7 @@ Step604 adds a direct CLI-only all-valid multi-case runtime smoke runner and foc
 ## Step605 Makefile Target Design Reference
 
 Step605 adds a design-only / docs-only Makefile target plan for the Step604 runner. This remote status marker remains unchanged and does not record Step605 target implementation, wrapper integration, or remote run evidence.
+
+## Step606 Makefile Target Implementation Reference
+
+Step606 adds a standalone Makefile target for the Step604 runner. This remote status marker remains unchanged and does not record release-quality wrapper or remote run evidence for the multi-case target.

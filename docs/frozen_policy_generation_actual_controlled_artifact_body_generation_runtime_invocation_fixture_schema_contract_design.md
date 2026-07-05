@@ -598,3 +598,7 @@ Step604 implements the all-valid multi-case runtime smoke runner against the exi
 ## Step605 Makefile Target Design Reference
 
 Step605 designs a future standalone Makefile target for the Step604 runner. The fixture/schema contract and fixture JSON remain unchanged.
+
+## Step606 Makefile Target Implementation Reference
+
+Step606 adds the standalone Makefile target for the Step604 runner. The fixture/schema contract and fixture JSON remain unchanged.

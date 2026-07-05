@@ -331,3 +331,7 @@ Step604 adds a direct CLI-only all-valid multi-case runner and focused tests aft
 ## Step605 Makefile Target Design Reference
 
 Step605 adds a design-only / docs-only plan for a future standalone Makefile target around the Step604 runner. This final safety review remains unchanged and does not record Step605 implementation or release-quality evidence.
+
+## Step606 Makefile Target Implementation Reference
+
+Step606 adds the standalone Makefile target for the Step604 runner. This final safety review remains unchanged and does not record release-quality integration evidence for the multi-case target.

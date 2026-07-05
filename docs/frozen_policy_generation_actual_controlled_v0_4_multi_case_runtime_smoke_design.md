@@ -565,3 +565,7 @@ Step604 implements the direct CLI-only all-valid 6-case runner at `python/learne
 ## Step605 Makefile Target Design Reference
 
 Step605 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_makefile_target_design.md` as a design-only / docs-only handoff for adding the Step604 runner as a future standalone Makefile target. This multi-case runtime smoke design remains unchanged.
+
+## Step606 Makefile Target Implementation Reference
+
+Step606 adds the standalone Makefile target for the Step604 runner. The target remains outside release-quality integration and does not change Python code/tests, fixture JSON, manifest writer integration, or file writing.

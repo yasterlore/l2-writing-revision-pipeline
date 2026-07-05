@@ -5614,3 +5614,7 @@ Confirm `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_mu
 ## Step605 Actual-Controlled v0.4 Multi-Case Runtime Smoke Makefile Target Design Check
 
 Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_makefile_target_design.md` exists as a design-only / docs-only plan. Confirm it proposes the future standalone target `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke`, help text, command, expected public-safe output, Makefile placement, relationship to existing targets, Step606 implementation plan, and safety boundary without changing Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## Step606 Actual-Controlled v0.4 Multi-Case Runtime Smoke Makefile Target Check
+
+Confirm `Makefile` exposes `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke` with help text `Run actual-controlled v0.4 multi-case runtime smoke`. Confirm the target runs the Step604 direct CLI, emits aggregate public-safe metadata with 6 selected / executed / pass cases, remains outside release-quality, and does not change Python code/tests, fixture JSON, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

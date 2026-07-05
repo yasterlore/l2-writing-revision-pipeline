@@ -775,3 +775,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step605 Actual-Controlled v0.4 Multi-Case Runtime Smoke Makefile Target Design
 
 - [Actual-controlled v0.4 multi-case runtime smoke Makefile target design](frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_makefile_target_design.md): design-only / docs-only plan for adding a future standalone Makefile target around the Step604 direct CLI. It proposes target name, help text, command, expected public-safe output, placement, relationship to existing targets, Step606 implementation plan, and safety boundaries without changing Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step606 Actual-Controlled v0.4 Multi-Case Runtime Smoke Makefile Target
+
+- `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke`: standalone Makefile target for the Step604 all-valid 6-case runner. It runs the direct CLI, emits aggregate public-safe metadata, remains outside release-quality, and does not change Python code/tests, fixture JSON, manifest writer integration, or file writing.

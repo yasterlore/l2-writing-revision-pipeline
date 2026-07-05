@@ -662,3 +662,7 @@ Step604 adds the direct CLI-only all-valid multi-case runner and focused tests u
 ## Step605 Makefile Target Design Reference
 
 Step605 designs a future standalone Makefile target for the Step604 runner. This refinement design remains unchanged; Step605 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step606 Makefile Target Implementation Reference
+
+Step606 adds the standalone Makefile target for the Step604 runner. This refinement design remains unchanged; Step606 does not change Python code/tests, fixture JSON, manifest writer integration, or file writing.

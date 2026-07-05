@@ -406,3 +406,7 @@ Step604 adds a direct CLI-only multi-case runner and focused tests. This single-
 ## Step605 Multi-Case Makefile Target Design Reference
 
 Step605 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_makefile_target_design.md` for the future all-valid multi-case runner target. This single-case Makefile target design remains unchanged.
+
+## Step606 Multi-Case Makefile Target Implementation Reference
+
+Step606 adds the standalone multi-case Makefile target. This single-case Makefile target design remains unchanged.

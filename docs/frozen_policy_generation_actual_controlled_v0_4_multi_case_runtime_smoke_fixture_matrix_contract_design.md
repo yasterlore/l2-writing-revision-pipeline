@@ -466,3 +466,7 @@ Step604 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0
 ## Step605 Makefile Target Design Reference
 
 Step605 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_makefile_target_design.md` as a design-only plan for a future standalone Makefile target around the Step604 runner. This matrix contract remains unchanged.
+
+## Step606 Makefile Target Implementation Reference
+
+Step606 adds the standalone Makefile target for the Step604 runner. This matrix contract remains unchanged; fixture JSON, Python code/tests, release-quality wrapper, manifest writer integration, and file writing remain unchanged.

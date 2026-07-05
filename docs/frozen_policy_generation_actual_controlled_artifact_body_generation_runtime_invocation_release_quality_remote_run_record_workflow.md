@@ -424,3 +424,7 @@ Step604 adds the direct CLI-only all-valid multi-case runner and focused tests. 
 ## Step605 Makefile Target Design Reference
 
 Step605 designs a future standalone Makefile target for the Step604 runner. This remote/manual run record workflow design remains unchanged; Step605 does not add Makefile target implementation or release-quality wrapper integration.
+
+## Step606 Makefile Target Implementation Reference
+
+Step606 adds the standalone Makefile target for the Step604 runner. This remote/manual run record workflow design remains unchanged; release-quality wrapper integration remains deferred.

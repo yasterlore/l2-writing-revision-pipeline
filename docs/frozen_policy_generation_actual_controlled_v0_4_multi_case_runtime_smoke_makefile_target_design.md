@@ -309,3 +309,7 @@ Recommended next step:
 - Step606: actual-controlled v0.4 multi-case runtime smoke Makefile target implementation
 
 Step606 should update Makefile and necessary README/docs only. Step606 should not change Python code/tests, fixture JSON, release-quality wrapper, workflows, manifest writer integration, file writing, or real-data boundaries.
+
+## Step606 Implementation Reference
+
+Step606 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke` using the command proposed in this design. The target remains standalone and is not release-quality integrated in Step606.

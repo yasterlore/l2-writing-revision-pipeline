@@ -527,3 +527,7 @@ Step604 adds a separate direct CLI-only all-valid multi-case runtime smoke runne
 ## Step605 Makefile Target Design Reference
 
 Step605 designs a future standalone Makefile target for the Step604 runner. The fixture validator design remains unchanged and does not add multi-case target implementation.
+
+## Step606 Makefile Target Implementation Reference
+
+Step606 adds the standalone Makefile target for the Step604 runner. The fixture validator design remains unchanged and continues to cover invalid categories separately.

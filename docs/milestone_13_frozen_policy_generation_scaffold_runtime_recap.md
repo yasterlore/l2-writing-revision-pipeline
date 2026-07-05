@@ -3245,3 +3245,9 @@ The runner discovers the 6 valid actual-controlled fixture cases lexicographical
 Step605 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_makefile_target_design.md` as a design-only / docs-only plan for the future standalone Makefile target around the Step604 runner.
 
 The design proposes `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke`, expected public-safe aggregate output, placement near the existing actual-controlled v0.4 single-case target, Step606 implementation checks, and safety boundaries. Step605 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step606 Actual-Controlled v0.4 Multi-Case Runtime Smoke Makefile Target Implementation
+
+Step606 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke` with help text `Run actual-controlled v0.4 multi-case runtime smoke`.
+
+The target runs the Step604 direct CLI over the all-valid 6-case matrix and expects aggregate public-safe metadata with 6 selected / executed / pass cases, unsafe signal count 0, and residue count 0. Step606 does not change release-quality wrapper, workflow files, Python code/tests, fixture JSON, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

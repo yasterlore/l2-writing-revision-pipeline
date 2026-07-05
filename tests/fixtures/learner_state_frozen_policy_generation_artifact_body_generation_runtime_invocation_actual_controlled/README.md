@@ -300,3 +300,7 @@ Step604 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0
 ## Step605 Multi-Case Runtime Smoke Makefile Target Design Reference
 
 Step605 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_makefile_target_design.md` as a design-only plan for a future standalone Makefile target around the Step604 runner. The fixture JSON remains unchanged, and Step605 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step606 Multi-Case Runtime Smoke Makefile Target Implementation Reference
+
+Step606 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke` as a standalone Makefile target around the Step604 runner. The fixture JSON remains unchanged, and Step606 does not change Python code/tests, release-quality wrapper, workflow, manifest writer integration, or file writing.
