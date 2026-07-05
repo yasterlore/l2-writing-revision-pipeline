@@ -561,3 +561,7 @@ writer integration, and file writing unchanged.
 ## Step604 Implementation Reference
 
 Step604 implements the direct CLI-only all-valid 6-case runner at `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py` with focused tests. The runner follows this design's public-safe aggregate boundary and remains outside Makefile and release-quality integration.
+
+## Step605 Makefile Target Design Reference
+
+Step605 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_makefile_target_design.md` as a design-only / docs-only handoff for adding the Step604 runner as a future standalone Makefile target. This multi-case runtime smoke design remains unchanged.

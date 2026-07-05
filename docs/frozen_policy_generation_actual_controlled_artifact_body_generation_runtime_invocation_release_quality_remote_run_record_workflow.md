@@ -420,3 +420,7 @@ multi-case runtime smoke. This workflow design remains unchanged.
 ## Step604 Implementation Reference
 
 Step604 adds the direct CLI-only all-valid multi-case runner and focused tests. This remote/manual run record workflow design remains unchanged; Step604 does not add a Makefile target, release-quality wrapper check, workflow change, manifest writer invocation, or file writing.
+
+## Step605 Makefile Target Design Reference
+
+Step605 designs a future standalone Makefile target for the Step604 runner. This remote/manual run record workflow design remains unchanged; Step605 does not add Makefile target implementation or release-quality wrapper integration.

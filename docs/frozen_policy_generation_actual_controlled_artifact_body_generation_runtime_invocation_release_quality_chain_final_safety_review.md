@@ -327,3 +327,7 @@ multi-case runtime smoke. This final safety review remains unchanged.
 ## Step604 Implementation Reference
 
 Step604 adds a direct CLI-only all-valid multi-case runner and focused tests after this final safety review. It expands valid-case smoke coverage while keeping output public-safe, metadata-only, body-free, and outside Makefile / release-quality integration for Step604.
+
+## Step605 Makefile Target Design Reference
+
+Step605 adds a design-only / docs-only plan for a future standalone Makefile target around the Step604 runner. This final safety review remains unchanged and does not record Step605 implementation or release-quality evidence.

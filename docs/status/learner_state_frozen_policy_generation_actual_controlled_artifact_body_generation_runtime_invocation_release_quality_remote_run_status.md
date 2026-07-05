@@ -314,3 +314,7 @@ multi-case runtime smoke. This marker remains a public-safe metadata summary.
 ## Step604 Implementation Reference
 
 Step604 adds a direct CLI-only all-valid multi-case runtime smoke runner and focused tests. This remote status marker remains unchanged and does not record Step604 remote evidence, Makefile target status, or release-quality integration status.
+
+## Step605 Makefile Target Design Reference
+
+Step605 adds a design-only / docs-only Makefile target plan for the Step604 runner. This remote status marker remains unchanged and does not record Step605 target implementation, wrapper integration, or remote run evidence.

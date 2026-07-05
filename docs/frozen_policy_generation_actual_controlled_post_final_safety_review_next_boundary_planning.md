@@ -321,3 +321,7 @@ runtime smoke matrix. This planning doc remains unchanged.
 ## Step604 Implementation Reference
 
 Step604 implements the recommended direct CLI-only all-valid multi-case runner and focused tests. The implementation keeps Makefile target design, release-quality integration, manifest writer integration, file writing, payload audit, and real-data use outside this boundary.
+
+## Step605 Makefile Target Design Reference
+
+Step605 designs the future standalone Makefile target for the Step604 runner. This planning document remains unchanged; Step605 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

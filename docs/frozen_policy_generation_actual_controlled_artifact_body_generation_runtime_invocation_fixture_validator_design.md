@@ -523,3 +523,7 @@ multi-case runtime smoke. This validator design remains unchanged.
 ## Step604 Implementation Reference
 
 Step604 adds a separate direct CLI-only all-valid multi-case runtime smoke runner and focused tests. The fixture validator design remains unchanged and continues to cover invalid metadata-only categories separately.
+
+## Step605 Makefile Target Design Reference
+
+Step605 designs a future standalone Makefile target for the Step604 runner. The fixture validator design remains unchanged and does not add multi-case target implementation.

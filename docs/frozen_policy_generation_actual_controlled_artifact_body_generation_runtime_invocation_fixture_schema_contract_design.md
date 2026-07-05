@@ -594,3 +594,7 @@ multi-case runtime smoke. This fixture/schema contract remains unchanged.
 ## Step604 Implementation Reference
 
 Step604 implements the all-valid multi-case runtime smoke runner against the existing actual-controlled fixture root without changing fixture JSON. The fixture/schema contract remains unchanged; manifest writer integration and file writing remain out of scope.
+
+## Step605 Makefile Target Design Reference
+
+Step605 designs a future standalone Makefile target for the Step604 runner. The fixture/schema contract and fixture JSON remain unchanged.

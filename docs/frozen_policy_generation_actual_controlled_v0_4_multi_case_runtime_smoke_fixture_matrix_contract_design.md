@@ -462,3 +462,7 @@ Step604 should implement the dedicated runner and focused tests. Step604 should 
 ## Step604 Implementation Reference
 
 Step604 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py` and focused tests for the all-valid 6-case runner described by this contract. The implementation remains direct CLI-only, emits aggregate public-safe metadata, and does not change Makefile, release-quality wrapper, workflow, fixture JSON, manifest writer integration, or file writing.
+
+## Step605 Makefile Target Design Reference
+
+Step605 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_makefile_target_design.md` as a design-only plan for a future standalone Makefile target around the Step604 runner. This matrix contract remains unchanged.

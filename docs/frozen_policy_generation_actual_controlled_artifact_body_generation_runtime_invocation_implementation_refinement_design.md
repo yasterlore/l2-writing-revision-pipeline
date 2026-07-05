@@ -658,3 +658,7 @@ multi-case runtime smoke. This refinement design remains unchanged.
 ## Step604 Implementation Reference
 
 Step604 adds the direct CLI-only all-valid multi-case runner and focused tests using the existing v0.4 public-safe helper. This refinement design remains unchanged; Step604 does not change fixture JSON, manifest writer integration, or file writing.
+
+## Step605 Makefile Target Design Reference
+
+Step605 designs a future standalone Makefile target for the Step604 runner. This refinement design remains unchanged; Step605 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

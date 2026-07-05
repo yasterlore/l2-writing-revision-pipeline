@@ -427,3 +427,7 @@ unchanged.
 ## Step604 Implementation Reference
 
 Step604 implements the all-valid multi-case runner as a direct CLI-only Python module with focused tests. This release-quality integration design remains for the prior actual-controlled checks; the new Step604 runner is not yet Makefile-targeted or release-quality integrated.
+
+## Step605 Makefile Target Design Reference
+
+Step605 designs the future standalone Makefile target for the Step604 runner. This release-quality integration design remains unchanged; release-quality integration for the multi-case runner is still deferred.

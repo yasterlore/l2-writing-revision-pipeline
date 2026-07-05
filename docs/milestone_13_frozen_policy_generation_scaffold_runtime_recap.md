@@ -3239,3 +3239,9 @@ The contract inventories the existing actual-controlled fixture root by director
 Step604 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py` and focused tests for a direct CLI-only all-valid multi-case runtime smoke.
 
 The runner discovers the 6 valid actual-controlled fixture cases lexicographically, executes each through the existing v0.4 controlled metadata-only helper, and emits aggregate public-safe key-value metadata only. It does not add a Makefile target, release-quality wrapper integration, workflow changes, fixture JSON changes, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step605 Actual-Controlled v0.4 Multi-Case Runtime Smoke Makefile Target Design
+
+Step605 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_makefile_target_design.md` as a design-only / docs-only plan for the future standalone Makefile target around the Step604 runner.
+
+The design proposes `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke`, expected public-safe aggregate output, placement near the existing actual-controlled v0.4 single-case target, Step606 implementation checks, and safety boundaries. Step605 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

@@ -1409,3 +1409,7 @@ invocation evidence, or file-writing evidence.
 
 - `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py`: direct CLI-only runner for the all-valid 6-case actual-controlled v0.4 runtime smoke. It emits aggregate public-safe metadata with schema `learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_v0.1` and remains outside Makefile and release-quality integration.
 - `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py`: focused implementation tests. Step604 does not change Makefile, wrapper, workflow, fixture JSON, manifest writer integration, file writing, real-data use, or performance-claim surfaces.
+
+## Step605 Actual-Controlled v0.4 Multi-Case Runtime Smoke Makefile Target Design
+
+- [Actual-controlled v0.4 multi-case runtime smoke Makefile target design](../frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_makefile_target_design.md): design-only / docs-only plan for the future Step606 standalone target. It proposes `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke` and keeps Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, and file writing unchanged in Step605.

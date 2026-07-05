@@ -296,3 +296,7 @@ implementation, manifest writer integration, or file writing.
 ## Step604 Multi-Case Runtime Smoke Implementation Reference
 
 Step604 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke.py` and focused tests for direct CLI-only all-valid runtime smoke over this root. The runner selects the 6 valid case directories by name, emits aggregate public-safe metadata only, and leaves fixture JSON unchanged. Makefile target design, release-quality integration, manifest writer integration, and file writing remain out of scope for Step604.
+
+## Step605 Multi-Case Runtime Smoke Makefile Target Design Reference
+
+Step605 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_makefile_target_design.md` as a design-only plan for a future standalone Makefile target around the Step604 runner. The fixture JSON remains unchanged, and Step605 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
