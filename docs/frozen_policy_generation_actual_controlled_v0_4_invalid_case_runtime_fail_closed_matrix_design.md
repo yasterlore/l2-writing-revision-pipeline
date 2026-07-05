@@ -634,3 +634,7 @@ Step616 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_
 ## Step617 Makefile Target Status
 
 Step617 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke` as a standalone Makefile target for the Step615 invalid-case fail-closed runner. It runs the fixed fail_closed invalid matrix, emits aggregate public-safe metadata only, remains outside release-quality, and does not change this matrix design, fixture JSON, Python code/tests, wrapper, workflow, manifest writer integration, or file writing.
+
+## Step618 Release-Quality Integration Design Reference
+
+Step618 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_integration_design.md` as a design-only / docs-only plan for future wrapper integration of the Step617 standalone target. This matrix design remains unchanged; Step618 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

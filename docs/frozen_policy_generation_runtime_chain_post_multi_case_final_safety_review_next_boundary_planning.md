@@ -326,3 +326,7 @@ Step616 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_
 ## Step617 Makefile Target Status
 
 Step617 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke` for the Step615 runner. It preserves the Step612 planning boundary by staying metadata-only / body-free, remaining outside release-quality, not changing Python code/tests or fixture JSON, not invoking manifest writer, and not enabling file writing. The next conservative handoff is Step618 release-quality integration design.
+
+## Step618 Release-Quality Integration Design Reference
+
+Step618 adds the design-only / docs-only release-quality integration plan for the Step617 standalone target. It preserves this planning boundary by not changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

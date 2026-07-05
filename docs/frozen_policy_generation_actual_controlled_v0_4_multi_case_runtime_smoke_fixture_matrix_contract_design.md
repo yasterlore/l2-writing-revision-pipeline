@@ -514,3 +514,7 @@ Step616 adds a design-only / docs-only plan for the future invalid-case fail-clo
 ## Step617 Makefile Target Status Reference
 
 Step617 adds the separate invalid-case fail-closed standalone Makefile target. This all-valid matrix contract remains unchanged and is not replaced by Step617.
+
+## Step618 Release-Quality Integration Design Reference
+
+Step618 adds a separate design-only / docs-only release-quality integration plan for the Step617 invalid-case target. This all-valid matrix contract remains unchanged and is not replaced by Step618.

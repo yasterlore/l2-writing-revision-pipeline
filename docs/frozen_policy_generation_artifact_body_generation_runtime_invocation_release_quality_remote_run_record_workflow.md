@@ -573,3 +573,7 @@ not replaced by Step616.
 Step617 adds the separate standalone invalid-case fail-closed Makefile target
 for the Step615 runner. This planned-only workflow remains the Step582 design
 and is not replaced by Step617.
+
+Step618 adds the separate design-only / docs-only release-quality integration
+plan for the Step617 invalid-case target. This planned-only workflow remains
+the Step582 design and is not replaced by Step618.

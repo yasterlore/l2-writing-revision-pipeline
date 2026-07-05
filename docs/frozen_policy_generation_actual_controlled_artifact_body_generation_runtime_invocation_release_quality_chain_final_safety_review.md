@@ -379,3 +379,7 @@ Step616 adds a design-only / docs-only plan for the future standalone target aro
 ## Step617 Makefile Target Status Reference
 
 Step617 adds the standalone invalid-case fail-closed Makefile target for the Step615 runner. This earlier single-case final safety review remains unchanged and is not replaced by Step617.
+
+## Step618 Release-Quality Integration Design Reference
+
+Step618 adds a design-only / docs-only release-quality integration plan for the Step617 invalid-case target. This earlier single-case final safety review remains unchanged and is not replaced by Step618.

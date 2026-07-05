@@ -299,3 +299,7 @@ Expected aggregate output remains public-safe and metadata-only: 26 selected inv
 Recommended next step:
 
 - Step618: actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality integration design
+
+## 16. Step618 Release-Quality Integration Design Reference
+
+Step618 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_integration_design.md` as a design-only / docs-only plan for future wrapper integration of the Step617 standalone target. Step618 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

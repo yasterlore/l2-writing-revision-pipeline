@@ -278,3 +278,7 @@ Step616 later adds a design-only / docs-only plan for a future standalone Makefi
 ## Step617 Makefile Target Status Reference
 
 Step617 later adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke` as a standalone target for the Step615 runner. This status marker remains the Step608 all-valid multi-case release-quality remote status record and is not replaced by Step617.
+
+## Step618 Release-Quality Integration Design Reference
+
+Step618 later adds a design-only / docs-only plan for future wrapper integration of the Step617 invalid-case target. This status marker remains the Step608 all-valid multi-case release-quality remote status record and is not replaced by Step618.

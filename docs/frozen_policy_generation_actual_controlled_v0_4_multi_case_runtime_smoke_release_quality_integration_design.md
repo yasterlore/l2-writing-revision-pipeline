@@ -416,3 +416,7 @@ Step616 adds a design-only / docs-only plan for a future standalone Makefile tar
 ## Step617 Makefile Target Status Reference
 
 Step617 adds the standalone invalid-case fail-closed Makefile target for the Step615 runner. This Step607 all-valid release-quality integration design remains unchanged and is not replaced by Step617; the invalid-case target is not release-quality integrated yet.
+
+## Step618 Release-Quality Integration Design Reference
+
+Step618 adds a separate design-only / docs-only release-quality integration plan for the Step617 invalid-case target. This Step607 all-valid release-quality integration design remains unchanged and is not replaced by Step618.

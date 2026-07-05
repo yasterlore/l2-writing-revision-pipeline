@@ -1461,3 +1461,7 @@ invocation evidence, or file-writing evidence.
 ## Step617 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Makefile Target
 
 - `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke`: standalone Makefile target for the Step615 invalid-case v0.4 fail-closed runner. It is placed after the all-valid multi-case target, emits aggregate public-safe metadata for the fixed 26 selected invalid fail_closed cases, remains outside release-quality, and does not change Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step618 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Release-Quality Integration Design
+
+- [Actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality integration design](../frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_integration_design.md): design-only / docs-only plan for future Step619 release-quality wrapper integration. Step618 keeps wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, and file writing unchanged.
