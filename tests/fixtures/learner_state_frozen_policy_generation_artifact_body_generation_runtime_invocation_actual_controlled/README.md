@@ -274,3 +274,12 @@ Step601 adds
 as a planning-only / docs-only next-boundary plan after Step600. The fixture
 JSON remains unchanged, and Step601 does not change validators, runtime
 implementation, manifest writer integration, or file writing.
+
+## Step602 Multi-Case Runtime Smoke Design Reference
+
+Step602 adds
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md`
+as a design-only / docs-only plan for a future all-valid multi-case runtime
+smoke over this fixture root. The fixture JSON remains unchanged, and Step602
+does not change validators, runtime implementation, manifest writer
+integration, or file writing.

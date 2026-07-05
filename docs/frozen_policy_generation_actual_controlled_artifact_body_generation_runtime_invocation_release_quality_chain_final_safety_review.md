@@ -309,3 +309,10 @@ as a planning-only / docs-only next-boundary plan after this final safety
 review. It recommends Step602 actual-controlled v0.4 multi-case runtime smoke
 design and keeps payload audit, manifest writer handoff, file writing,
 real-data use, and performance claims outside the next immediate boundary.
+
+## Step602 Design Reference
+
+Step602 adds
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md`
+as a design-only / docs-only plan for the next all-valid multi-case v0.4
+runtime smoke boundary. This final safety review remains unchanged.

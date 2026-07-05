@@ -1396,3 +1396,7 @@ invocation evidence, or file-writing evidence.
 ## Step601 Actual-Controlled Next Boundary Planning
 
 - [Post-final-safety-review planning for the next actual-controlled boundary](../frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only plan after Step600. It recommends Step602 actual-controlled v0.4 multi-case runtime smoke design as the next conservative boundary and keeps payload audit, manifest writer handoff, file writing, real-data use, and performance claims out of scope.
+
+## Step602 Actual-Controlled v0.4 Multi-Case Runtime Smoke Design
+
+- [Actual-controlled v0.4 multi-case runtime smoke design](../frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md): design-only / docs-only plan for a future all-valid multi-case runtime smoke after Step601. It defines case-selection, aggregation, failure mapping, residue/output suppression, compatibility, tests, future target staging, and public-safe boundaries without changing implementation files.

@@ -5598,3 +5598,7 @@ Confirm `docs/frozen_policy_generation_actual_controlled_artifact_body_generatio
 ## Step601 Actual-Controlled Next Boundary Planning Check
 
 Confirm `docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md` exists as a planning-only / docs-only next-boundary plan after Step600. Confirm it compares multi-case runtime smoke, payload audit, manifest writer handoff, remote metadata refresh, and consolidation-only options; recommends Step602 actual-controlled v0.4 multi-case runtime smoke design; and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## Step602 Actual-Controlled v0.4 Multi-Case Runtime Smoke Design Check
+
+Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md` exists as a design-only / docs-only plan for expanding the actual-controlled v0.4 runtime smoke to all 6 valid cases. Confirm it designs public-safe case inventory, all-valid selection, aggregation, output suppression, fail-closed mapping, future tests, future Makefile target staging, and release-quality staging without changing Python code/tests, Makefile, wrapper, workflow, fixture JSON, runtime implementation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

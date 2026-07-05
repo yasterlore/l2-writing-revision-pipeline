@@ -3221,3 +3221,9 @@ The review records the relationship to the planned-only chain, final reviewed ar
 Step601 adds `docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only next-boundary plan after the Step600 final safety review.
 
 The plan compares multi-case runtime smoke, artifact body payload audit, manifest writer handoff, remote metadata refresh, and consolidation-only options. It recommends Step602 actual-controlled v0.4 multi-case runtime smoke design as the next conservative boundary and does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step602 Actual-Controlled v0.4 Multi-Case Runtime Smoke Design
+
+Step602 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md` as a design-only / docs-only plan for expanding the v0.4 actual-controlled runtime smoke from one primary valid case to all 6 valid cases.
+
+The design recommends a future dedicated runner, public-safe aggregate key-value output, no invalid runtime execution in the first multi-case expansion, no manifest writer invocation, no file writing, no payload emission, and Step603 fixture/matrix contract design as the next handoff.

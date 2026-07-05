@@ -320,3 +320,11 @@ Step601 adds
 as a separate planning-only / docs-only next-boundary plan after the
 actual-controlled Step600 final safety review. This planned-only final safety
 review remains separate and is not replaced by Step601.
+
+## Step602 Actual-Controlled Design Reference
+
+Step602 adds
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md`
+as a separate design-only / docs-only plan for a future actual-controlled
+multi-case runtime smoke. This planned-only final safety review remains
+separate and is not replaced by Step602.

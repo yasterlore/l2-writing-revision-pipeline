@@ -324,3 +324,8 @@ Step601 follow-up status: the planning-only / docs-only next-boundary plan is
 available at
 `docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md`.
 This fixture validator Makefile target design remains unchanged.
+
+Step602 follow-up status: the design-only / docs-only multi-case runtime smoke
+plan is available at
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md`.
+This fixture validator Makefile target design remains unchanged.

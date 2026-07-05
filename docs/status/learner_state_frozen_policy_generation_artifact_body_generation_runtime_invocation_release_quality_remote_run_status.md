@@ -315,3 +315,10 @@ Step601 adds the separate actual-controlled next-boundary planning doc at
 `docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md`.
 This Step583 marker remains the planned-only release-quality record and is not
 replaced by Step601.
+
+## Step602 Later-Chain Note
+
+Step602 adds the separate actual-controlled multi-case runtime smoke design at
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md`.
+This Step583 marker remains the planned-only release-quality record and is not
+replaced by Step602.

@@ -383,3 +383,10 @@ Step601 adds
 `docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md`
 as a planning-only / docs-only next-boundary plan after Step600. This Makefile
 target design remains unchanged.
+
+## Step602 Design Reference
+
+Step602 adds
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md`
+as a design-only / docs-only plan for a future multi-case runtime smoke target.
+This single-case Makefile target design remains unchanged.

@@ -758,3 +758,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step601 Actual-Controlled Next Boundary Planning
 
 - [Post-final-safety-review planning for the next actual-controlled boundary](frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only next-boundary plan after Step600. It compares multi-case runtime smoke, payload audit, manifest writer handoff, remote metadata refresh, and consolidation-only options, recommends Step602 actual-controlled v0.4 multi-case runtime smoke design, and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, or file writing.
+
+## Step602 Actual-Controlled v0.4 Multi-Case Runtime Smoke Design
+
+- [Actual-controlled v0.4 multi-case runtime smoke design](frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md): design-only / docs-only plan for expanding the v0.4 actual-controlled runtime smoke from one primary valid case to an all-valid multi-case smoke. It recommends a future dedicated runner, public-safe aggregate summary, no invalid runtime execution in the first expansion, no manifest writer invocation, no file writing, and no payload emission.

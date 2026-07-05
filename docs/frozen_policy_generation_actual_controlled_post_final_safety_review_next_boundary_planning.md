@@ -300,3 +300,13 @@ Recommended next step:
 - Step602: actual-controlled v0.4 multi-case runtime smoke design
 
 Step602 should be design-only. Step602 should not implement runtime code, modify Makefile, modify the release-quality wrapper, modify workflow, modify fixture JSON unless it explicitly chooses a later fixture contract step, invoke manifest writer, enable file writing, or use real data.
+
+## Step602 Design Reference
+
+Step602 adds
+`docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_design.md`
+as a design-only / docs-only plan for the recommended actual-controlled v0.4
+multi-case runtime smoke boundary. It keeps the Step601 recommendation
+planning-only and does not change Python code/tests, Makefile, wrapper,
+workflow, fixture JSON, runtime implementation, manifest writer integration,
+or file writing.
