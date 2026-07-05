@@ -3383,3 +3383,9 @@ The design proposes `check-learner-state-frozen-policy-generation-actual-control
 Step628 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke` as a standalone Makefile target for the Step626 direct CLI.
 
 The target runs `--case-selection deferred-invalid-usage-error-mismatch`, records aggregate public-safe metadata for 4 processed deferred invalid cases, 3 expected/observed usage_error categories, 1 expected/observed mismatch category, zero payload emission, zero manifest writer invocation, zero file-writing enablement, zero forbidden body emission, and zero residue. Step628 keeps release-quality wrapper integration, workflow changes, Python code/tests changes, fixture JSON changes, payload audit implementation, manifest writer integration, file writing, real-data use, metric use, and production readiness status out of scope.
+
+## Step629 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Release-Quality Integration Design
+
+Step629 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_integration_design.md` as a design-only / docs-only plan for future wrapper integration of the Step628 standalone target.
+
+The design recommends adding `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 deferred invalid-case usage_error/mismatch smoke` after the invalid fail_closed smoke and before artifact body fixture / CLI checks. Step629 does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

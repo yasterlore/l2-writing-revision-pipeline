@@ -1506,3 +1506,7 @@ invocation evidence, or file-writing evidence.
 ## Step628 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Makefile Target
 
 - `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke`: standalone Makefile target for the Step626 direct CLI. It is placed after the accepted invalid fail_closed target, remains outside release-quality, and keeps Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, and file writing unchanged.
+
+## Step629 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Release-Quality Integration Design
+
+- [Actual-controlled v0.4 deferred invalid-case usage_error / mismatch release-quality integration design](../frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_integration_design.md): design-only / docs-only plan for future Step630 wrapper integration of the Step628 standalone target. Step629 keeps wrapper, Makefile, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, and file writing unchanged.

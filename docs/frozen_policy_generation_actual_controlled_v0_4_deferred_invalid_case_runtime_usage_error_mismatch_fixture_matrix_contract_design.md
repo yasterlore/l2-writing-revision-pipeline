@@ -561,3 +561,7 @@ The design proposes target name, help text, command, expected aggregate public-s
 ## Step628 Makefile Target Reference
 
 Step628 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke` for the Step626 direct CLI. It follows this contract, remains outside release-quality, and does not change Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.
+
+## Step629 Release-Quality Integration Design Reference
+
+Step629 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_integration_design.md` as a design-only / docs-only plan for future wrapper integration of the Step628 standalone target. It keeps wrapper, Makefile, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, and file writing unchanged.

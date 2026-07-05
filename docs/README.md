@@ -869,3 +869,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step628 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Makefile Target
 
 - `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke`: standalone Makefile target for the Step626 deferred invalid-case usage_error / mismatch runner. It runs `--case-selection deferred-invalid-usage-error-mismatch`, emits aggregate public-safe metadata for 4 processed deferred invalid cases, remains outside release-quality, and does not change Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.
+
+## Step629 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Release-Quality Integration Design
+
+- [Actual-controlled v0.4 deferred invalid-case usage_error / mismatch release-quality integration design](frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_integration_design.md): design-only / docs-only plan for future Step630 wrapper integration of the Step628 standalone target. It proposes the release-quality label, command, ordering after the invalid fail_closed smoke, expected public-safe output, validation plan, and safety boundary without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.

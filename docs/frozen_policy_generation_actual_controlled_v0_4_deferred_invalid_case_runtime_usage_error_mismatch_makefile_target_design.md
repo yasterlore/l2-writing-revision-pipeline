@@ -310,3 +310,9 @@ Step628 should update Makefile and necessary README/docs only. Step628 should no
 Step628 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke` as a standalone Makefile target for the Step626 direct CLI.
 
 The target follows this design with help text `Run actual-controlled v0.4 deferred invalid-case usage_error/mismatch smoke`, placement after the accepted invalid fail_closed target, and the same public-safe aggregate-output boundary. Release-quality wrapper integration remains future work.
+
+## Step629 Release-Quality Integration Design Reference
+
+Step629 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_integration_design.md` as a design-only / docs-only plan for future release-quality wrapper integration of the Step628 standalone target.
+
+The design proposes the wrapper label, command, insertion after the invalid fail_closed smoke, expected aggregate public-safe output, validation plan, and safety boundary without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.
