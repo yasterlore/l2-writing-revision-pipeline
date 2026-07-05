@@ -3377,3 +3377,9 @@ The direct CLI uses `--case-selection deferred-invalid-usage-error-mismatch`, pr
 Step627 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step626 direct CLI.
 
 The design proposes `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke`, help text `Run actual-controlled v0.4 deferred invalid-case usage_error/mismatch smoke`, the direct Step626 command, expected aggregate public-safe output, placement after the accepted invalid fail_closed target, relationship to existing targets, and Step628 implementation handoff. Step627 does not change Makefile, wrapper files, workflow files, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step628 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Makefile Target
+
+Step628 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke` as a standalone Makefile target for the Step626 direct CLI.
+
+The target runs `--case-selection deferred-invalid-usage-error-mismatch`, records aggregate public-safe metadata for 4 processed deferred invalid cases, 3 expected/observed usage_error categories, 1 expected/observed mismatch category, zero payload emission, zero manifest writer invocation, zero file-writing enablement, zero forbidden body emission, and zero residue. Step628 keeps release-quality wrapper integration, workflow changes, Python code/tests changes, fixture JSON changes, payload audit implementation, manifest writer integration, file writing, real-data use, metric use, and production readiness status out of scope.

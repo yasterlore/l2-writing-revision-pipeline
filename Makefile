@@ -38,6 +38,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation
 .PHONY: check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke
 .PHONY: check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke
+.PHONY: check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
@@ -97,6 +98,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-actual-controlled-artifact-body-generation-runtime-invocation  Run actual-controlled artifact body generation runtime invocation smoke"
 	@echo "  check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke  Run actual-controlled v0.4 multi-case runtime smoke"
 	@echo "  check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke  Run actual-controlled v0.4 invalid-case runtime fail-closed smoke"
+	@echo "  check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke  Run actual-controlled v0.4 deferred invalid-case usage_error/mismatch smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation  Run artifact body generation CLI smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata  Run artifact body generation safe-metadata CLI smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures  Validate artifact body file writing fixture contracts"
@@ -239,6 +241,9 @@ check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-r
 
 check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled --case-selection fail-closed-invalid --summary-only --no-file-writing --no-manifest-writer --fail-closed-on-unsafe-output
+
+check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_smoke --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled --case-selection deferred-invalid-usage-error-mismatch --summary-only --no-file-writing --no-manifest-writer --fail-closed-on-unsafe-output
 
 check-learner-state-frozen-policy-generation-artifact-body-generation:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body --request tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/minimal_suppressed_metadata_only_body/artifact_body_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/minimal_suppressed_metadata_only_body/artifact_writer_result_pointer.json

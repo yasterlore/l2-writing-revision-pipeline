@@ -304,3 +304,9 @@ Recommended next step:
 - Step628: deferred invalid-case usage_error / mismatch Makefile target implementation
 
 Step628 should update Makefile and necessary README/docs only. Step628 should not change Python code/tests, fixture JSON, release-quality wrapper, workflows, manifest writer integration, or file writing.
+
+## Step628 Implementation Reference
+
+Step628 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke` as a standalone Makefile target for the Step626 direct CLI.
+
+The target follows this design with help text `Run actual-controlled v0.4 deferred invalid-case usage_error/mismatch smoke`, placement after the accepted invalid fail_closed target, and the same public-safe aggregate-output boundary. Release-quality wrapper integration remains future work.

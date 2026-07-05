@@ -388,3 +388,7 @@ Step626 adds a direct CLI-only runner and focused tests for this root's 4 deferr
 ## Step627 Deferred Invalid-Case usage_error / mismatch Makefile Target Design Reference
 
 Step627 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step626 runner. This root and fixture JSON remain unchanged, and Step627 does not change Makefile, wrapper, workflow, Python code/tests, payload audit implementation, manifest writer integration, or file writing.
+
+## Step628 Deferred Invalid-Case usage_error / mismatch Makefile Target Status
+
+Step628 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke` as a standalone Makefile target for the Step626 runner. It uses this root's fixed 4 deferred non-fail_closed invalid case directories, emits aggregate public-safe metadata only, and remains outside release-quality. This root and fixture JSON remain unchanged, and Step628 does not change Python code/tests, wrapper, workflow, payload audit implementation, manifest writer integration, or file writing.
