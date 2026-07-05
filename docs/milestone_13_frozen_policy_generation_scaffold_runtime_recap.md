@@ -3305,3 +3305,9 @@ The contract fixes the exact selected 26 fail_closed invalid cases, deferred 3 u
 Step615 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py` and focused tests for a direct CLI-only invalid-case runtime fail-closed smoke.
 
 The runner uses the Step614 selected 26 invalid fail_closed case IDs, defers the 4 non-fail_closed invalid cases, executes the selected cases through the existing v0.4 controlled metadata-only helper, and emits aggregate public-safe key-value metadata only. The observed canonical aggregate records 26 selected / executed / observed fail_closed cases, unsafe signal total 26, residue count 0, manifest writer invocation count 0, file-writing enabled count 0, and artifact body payload emitted count 0. Step615 does not change Makefile, wrapper, workflow files, fixture JSON, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step616 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Makefile Target Design
+
+Step616 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step615 runner.
+
+The design proposes `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke`, help text `Run actual-controlled v0.4 invalid-case runtime fail-closed smoke`, the direct Step615 command, expected aggregate public-safe output, placement after the all-valid multi-case target, and Step617 implementation checks. Step616 does not change Makefile, wrapper, workflow files, Python code/tests, fixture JSON, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

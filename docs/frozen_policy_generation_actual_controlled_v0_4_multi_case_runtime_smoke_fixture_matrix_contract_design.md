@@ -506,3 +506,7 @@ Step614 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_
 ## Step615 Implementation Status Reference
 
 Step615 implements a separate direct CLI-only invalid-case fail-closed runner and focused tests. This all-valid matrix contract remains unchanged and is not replaced by the invalid-case matrix. Step615 does not change fixture JSON, Makefile, wrapper, workflow, manifest writer integration, or file writing.
+
+## Step616 Makefile Target Design Reference
+
+Step616 adds a design-only / docs-only plan for the future invalid-case fail-closed standalone target. This all-valid matrix contract remains unchanged and is not replaced by Step616.

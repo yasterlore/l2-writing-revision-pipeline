@@ -280,3 +280,7 @@ Step614 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_
 ## Step615 Implementation Status Reference
 
 The Step612 planning and Step613/Step614 design handoff later led to Step615 direct CLI-only implementation of the selected invalid-case fail-closed runner. This does not reopen the Step611 all-valid multi-case review and does not add Makefile, release-quality wrapper, workflow, fixture JSON, manifest writer, file-writing, production readiness, real-data readiness, or model performance claims to the Step602-Step611 boundary.
+
+## Step616 Makefile Target Design Reference
+
+Step616 adds a design-only / docs-only plan for a future standalone Makefile target around the Step615 invalid-case runner. This final safety review remains unchanged and is not replaced by Step616.

@@ -340,3 +340,7 @@ Step614 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_
 ## Step615 Invalid-Case Runtime Fail-Closed Runner Implementation Reference
 
 Step615 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py` and focused tests for a direct CLI-only invalid-case fail-closed smoke over this root. The runner selects the Step614 fixed 26 invalid fail_closed case directories, defers 4 non-fail_closed invalid cases, emits aggregate public-safe metadata only, and leaves fixture JSON unchanged. Makefile target design, release-quality integration, manifest writer integration, and file writing remain out of scope for Step615.
+
+## Step616 Invalid-Case Runtime Fail-Closed Makefile Target Design Reference
+
+Step616 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step615 runner. The fixture JSON remains unchanged, and Step616 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.

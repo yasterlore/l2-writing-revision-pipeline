@@ -371,3 +371,7 @@ Step614 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_
 ## Step615 Implementation Status Reference
 
 Step615 implements a direct CLI-only invalid-case fail-closed runner and focused tests after the later multi-case and invalid-case planning/design chain. This earlier single-case final safety review remains unchanged and is not replaced by Step615. Step615 does not add Makefile integration, release-quality wrapper integration, workflow changes, fixture JSON changes, manifest writer integration, file writing, production readiness, real-data readiness, or model performance claims.
+
+## Step616 Makefile Target Design Reference
+
+Step616 adds a design-only / docs-only plan for the future standalone target around the Step615 runner. This earlier single-case final safety review remains unchanged and is not replaced by Step616.

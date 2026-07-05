@@ -358,3 +358,7 @@ Step614 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_
 ## Step615 Implementation Status Reference
 
 Step615 later implements a direct CLI-only invalid-case fail-closed runner. This single-case remote status marker remains unchanged, remains separate from the invalid-case runner, and is not replaced by Step615.
+
+## Step616 Makefile Target Design Reference
+
+Step616 later adds a design-only / docs-only plan for the future standalone target around the Step615 runner. This single-case remote status marker remains unchanged and is not replaced by Step616.

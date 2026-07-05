@@ -497,3 +497,7 @@ Step615 should implement runner and focused tests only. Step615 should not chang
 Step615 implements `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py` and focused tests at `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py`.
 
 The implemented direct CLI uses `--case-selection fail-closed-invalid`, selects the fixed 26 invalid fail_closed cases from this contract, defers the 4 non-fail_closed invalid cases, and emits aggregate public-safe metadata only. The canonical summary records 26 selected / executed / observed fail_closed cases, unsafe signal total 26, residue count 0, artifact body payload emitted count 0, manifest writer invocation count 0, and file-writing enabled count 0. Step615 does not add a Makefile target, release-quality wrapper integration, workflow changes, fixture JSON changes, manifest writer integration, or file writing. Step616 is expected to design the standalone Makefile target.
+
+## 26. Step616 Makefile Target Design Status
+
+Step616 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_makefile_target_design.md` as a design-only / docs-only plan for the future standalone Makefile target. This contract remains unchanged; Step616 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

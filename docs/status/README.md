@@ -1453,3 +1453,7 @@ invocation evidence, or file-writing evidence.
 ## Step615 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Runner Implementation
 
 - `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_smoke.py`: direct CLI-only invalid fail-closed runner for the Step614 selected 26-case matrix. It is not Makefile-targeted or release-quality integrated yet and keeps fixture JSON, workflows, manifest writer integration, and file writing unchanged.
+
+## Step616 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Makefile Target Design
+
+- [Actual-controlled v0.4 invalid-case runtime fail-closed smoke Makefile target design](../frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_makefile_target_design.md): design-only / docs-only plan for future Step617 standalone target implementation. Step616 keeps Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, and file writing unchanged.

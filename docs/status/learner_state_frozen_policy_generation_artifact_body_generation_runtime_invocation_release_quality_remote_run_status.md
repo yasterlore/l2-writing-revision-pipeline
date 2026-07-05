@@ -365,3 +365,9 @@ replaced by Step614.
 Step615 adds the separate actual-controlled v0.4 invalid-case runtime
 fail-closed runner implementation. This Step583 marker remains the
 planned-only release-quality record and is not replaced by Step615.
+
+## Step616 Later-Chain Note
+
+Step616 adds the separate design-only / docs-only Makefile target plan for the
+Step615 runner. This Step583 marker remains the planned-only release-quality
+record and is not replaced by Step616.

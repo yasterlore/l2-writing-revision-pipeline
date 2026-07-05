@@ -563,3 +563,9 @@ Step614.
 Step615 adds the separate actual-controlled v0.4 invalid-case runtime
 fail-closed runner implementation. This planned-only workflow remains the
 Step582 design and is not replaced by Step615.
+
+## Step616 Later-Chain Note
+
+Step616 adds the separate design-only / docs-only Makefile target plan for the
+Step615 runner. This planned-only workflow remains the Step582 design and is
+not replaced by Step616.
