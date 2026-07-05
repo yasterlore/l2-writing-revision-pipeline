@@ -380,3 +380,7 @@ Step608 should update only the wrapper and necessary README/docs. Step608 should
 ## Step608 Implementation Reference
 
 Step608 adds `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 multi-case runtime smoke` to `scripts/check_release_quality.sh` using the command proposed in this design. The check is inserted after the actual-controlled v0.4 single-case runtime smoke and before artifact body fixture / CLI checks. Step608 does not change Makefile, workflows, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer integration, or file writing.
+
+## Step609 Remote Run Record Workflow Reference
+
+Step609 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future public-safe status marker after Step608 wrapper integration. This release-quality integration design remains unchanged; Step609 does not create the marker or change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

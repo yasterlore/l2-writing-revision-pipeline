@@ -3263,3 +3263,9 @@ The design recommends inserting `release_quality_check: learner-state frozen pol
 Step608 adds `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 multi-case runtime smoke` to `scripts/check_release_quality.sh`.
 
 The check runs `make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-multi-case-runtime-smoke` after the actual-controlled v0.4 single-case runtime smoke and before artifact body fixture / CLI checks. It expects the all-valid 6-case aggregate public-safe summary and keeps Makefile, workflow files, Python code/tests, fixture JSON, manifest writer integration, file writing, real-data use, metric use, and production readiness status unchanged.
+
+## Step609 Actual-Controlled v0.4 Multi-Case Runtime Smoke Remote Run Record Workflow Design
+
+Step609 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future Step610 public-safe status marker after Step608 wrapper integration.
+
+The workflow design records allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, count-only multi-case target summary fields, missing metadata handling, relationships to existing status markers, and Step610 / Step611 staging. Step609 does not create the status marker, change wrapper files, change Makefile, change workflow files, change Python code/tests, change fixture JSON, invoke manifest writer, write files, use real data, use metrics, or claim production readiness.

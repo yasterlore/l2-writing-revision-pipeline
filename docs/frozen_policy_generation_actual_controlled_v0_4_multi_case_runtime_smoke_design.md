@@ -577,3 +577,7 @@ Step607 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_ru
 ## Step608 Release-Quality Integration Reference
 
 Step608 integrates the Step606 standalone multi-case target into `scripts/check_release_quality.sh` after the actual-controlled v0.4 single-case smoke. This multi-case runtime smoke design remains unchanged; Step608 does not change Makefile, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step609 Remote Run Record Workflow Reference
+
+Step609 adds a design-only / docs-only workflow for a future public-safe status marker after Step608 wrapper integration. This multi-case runtime smoke design remains unchanged; Step609 does not create the marker or change wrapper, Makefile, Python code/tests, fixture JSON, manifest writer integration, or file writing.

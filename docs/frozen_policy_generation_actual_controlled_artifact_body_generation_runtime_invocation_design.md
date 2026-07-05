@@ -668,3 +668,7 @@ Step607 designs future release-quality wrapper integration for the Step606 stand
 ## Step608 Release-Quality Integration Reference
 
 Step608 adds the Step606 standalone multi-case target to the release-quality wrapper after the v0.4 single-case smoke. This original design remains unchanged; Step608 does not change Makefile, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step609 Remote Run Record Workflow Reference
+
+Step609 designs a future public-safe remote/manual run status marker for the Step608 wrapper-integrated multi-case check. This original design remains unchanged; Step609 does not change wrapper, Makefile, Python code/tests, fixture JSON, manifest writer integration, or file writing.

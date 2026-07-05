@@ -1425,3 +1425,7 @@ invocation evidence, or file-writing evidence.
 ## Step608 Actual-Controlled v0.4 Multi-Case Runtime Smoke Release-Quality Integration
 
 - `scripts/check_release_quality.sh`: Step608 adds the Step606 standalone multi-case target to release-quality after the actual-controlled v0.4 single-case smoke and before artifact body fixture / CLI checks. Step608 keeps Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, and file writing unchanged.
+
+## Step609 Actual-Controlled v0.4 Multi-Case Runtime Smoke Remote Run Record Workflow
+
+- [Actual-controlled v0.4 multi-case runtime smoke release-quality remote run record workflow](../frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_record_workflow.md): design-only / docs-only plan for a future public-safe Step610 status marker. Step609 does not create the marker and keeps wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, and file writing unchanged.

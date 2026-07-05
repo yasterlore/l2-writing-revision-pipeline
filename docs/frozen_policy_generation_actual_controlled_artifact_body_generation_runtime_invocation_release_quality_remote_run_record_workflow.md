@@ -436,3 +436,7 @@ Step607 designs future release-quality wrapper integration for the Step606 stand
 ## Step608 Multi-Case Release-Quality Integration Reference
 
 Step608 adds the Step606 standalone multi-case target to the release-quality wrapper. This remote/manual run record workflow design remains unchanged; remote status evidence for the multi-case target remains a later step.
+
+## Step609 Multi-Case Remote Run Record Workflow Reference
+
+Step609 adds a separate workflow design for the future status marker covering the Step608 wrapper-integrated multi-case check. This earlier remote/manual run record workflow remains unchanged and continues to cover the Step597 fixture validation plus single-case runtime smoke checks.

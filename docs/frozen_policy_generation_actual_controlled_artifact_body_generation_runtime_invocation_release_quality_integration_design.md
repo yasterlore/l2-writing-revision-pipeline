@@ -443,3 +443,7 @@ Step607 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_ru
 ## Step608 Multi-Case Release-Quality Integration Reference
 
 Step608 adds the Step606 standalone multi-case target to `scripts/check_release_quality.sh` after the Step595 single-case smoke. This earlier release-quality integration design remains unchanged and continues to cover the Step591 fixture validator plus Step595 single-case smoke checks.
+
+## Step609 Multi-Case Remote Run Record Workflow Reference
+
+Step609 designs a future public-safe remote/manual run status marker for the Step608 wrapper-integrated multi-case check. This earlier release-quality integration design remains unchanged.

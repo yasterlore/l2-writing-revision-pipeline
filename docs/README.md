@@ -787,3 +787,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step608 Actual-Controlled v0.4 Multi-Case Runtime Smoke Release-Quality Integration
 
 - `scripts/check_release_quality.sh`: release-quality wrapper now includes `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 multi-case runtime smoke` after the actual-controlled v0.4 single-case smoke and before artifact body fixture / CLI checks. The check runs the Step606 standalone target, keeps output aggregate public-safe / metadata-only / body-free, and does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step609 Actual-Controlled v0.4 Multi-Case Runtime Smoke Remote Run Record Workflow
+
+- [Actual-controlled v0.4 multi-case runtime smoke release-quality remote run record workflow](frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_record_workflow.md): design-only / docs-only plan for a future Step610 status marker after Step608 wrapper integration. It defines allowed public-safe metadata, count-only multi-case target summary, missing metadata handling, status marker template, and raw-log / payload exclusions without creating the marker or changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

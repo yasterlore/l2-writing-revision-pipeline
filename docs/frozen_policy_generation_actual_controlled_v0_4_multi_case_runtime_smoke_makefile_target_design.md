@@ -321,3 +321,7 @@ Step607 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_ru
 ## Step608 Release-Quality Integration Reference
 
 Step608 adds the Step606 standalone target to the release-quality wrapper after the actual-controlled v0.4 single-case smoke. This Makefile target design remains unchanged; Step608 does not change Makefile, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step609 Remote Run Record Workflow Reference
+
+Step609 designs a future public-safe remote/manual run status marker for the Step608 wrapper-integrated multi-case check. This Makefile target design remains unchanged; Step609 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
