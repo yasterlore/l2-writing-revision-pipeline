@@ -444,3 +444,7 @@ Step609 adds a separate workflow design for the future status marker covering th
 ## Step610 Multi-Case Remote Status Marker Reference
 
 Step610 adds the public-safe status marker for the Step608 wrapper-integrated multi-case check. This earlier remote/manual run record workflow remains unchanged and continues to cover the Step597 fixture validation plus single-case runtime smoke checks.
+
+## Step611 Multi-Case Final Safety Review Reference
+
+Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` as the final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain. This earlier remote/manual run record workflow remains unchanged and continues to cover the Step597 fixture validation plus single-case runtime smoke checks.

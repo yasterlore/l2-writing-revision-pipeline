@@ -3275,3 +3275,9 @@ The workflow design records allowed evidence sources, forbidden raw log / payloa
 Step610 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step608 wrapper integration.
 
 The marker records provided public-safe metadata, observed release-quality labels, count-only multi-case target summary, overall release-quality result, missing metadata handling, relationships to existing status markers, non-equivalence cautions, non-claims, and the Step611 handoff. It stores no raw logs, full job output, fixture JSON bodies, payload bodies, real-data evidence, metric evidence, manifest writer evidence, file-writing evidence, or production readiness status.
+
+## Step611 Actual-Controlled v0.4 Multi-Case Runtime Smoke Final Safety Review
+
+Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain.
+
+The review accepts the chain only as a release-quality-integrated, remote-status-recorded, actual-controlled v0.4 all-valid multi-case runtime smoke boundary for controlled metadata-only invocation. It records remaining limitations, relationships to earlier planned-only and single-case reviews, non-equivalence cautions, non-claims, and a Step612 planning-only handoff. It does not add implementation, wrapper changes, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, manifest writer integration, file writing, real-data evidence, metric evidence, or production readiness status.

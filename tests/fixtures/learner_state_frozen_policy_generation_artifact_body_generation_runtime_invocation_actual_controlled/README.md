@@ -320,3 +320,7 @@ Step609 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_ru
 ## Step610 Multi-Case Runtime Smoke Remote Status Marker Reference
 
 Step610 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the Step608 wrapper-integrated multi-case check. The fixture JSON remains unchanged, and Step610 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step611 Multi-Case Runtime Smoke Final Safety Review Reference
+
+Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain. The fixture JSON remains unchanged, and Step611 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.

@@ -368,3 +368,7 @@ Step610 should create the status marker only from public-safe metadata. Step610 
 ## Step610 Status Marker Reference
 
 Step610 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step608 wrapper integration. This workflow design remains unchanged; Step610 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step611 Final Safety Review Reference
+
+Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain. This remote run record workflow remains unchanged; Step611 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

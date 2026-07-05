@@ -5634,3 +5634,7 @@ Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime
 ## Step610 Actual-Controlled v0.4 Multi-Case Runtime Smoke Remote Run Status Check
 
 Confirm `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_status.md` exists as a status-marker-only / docs-only record for the remote Release Quality run after Step608 wrapper integration. Confirm it records only provided public-safe metadata, observed labels, count-only multi-case target summary, missing metadata handling, relationships to existing status markers, and no raw logs, full job output, fixture JSON bodies, payload bodies, production readiness, real-data readiness, or model performance evidence.
+
+## Step611 Actual-Controlled v0.4 Multi-Case Runtime Smoke Final Safety Review Check
+
+Confirm `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` exists as a final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain. Confirm it accepts only the release-quality-integrated, remote-status-recorded, metadata-only / body-free boundary and does not add implementation, wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

@@ -329,3 +329,7 @@ Step609 designs a future public-safe remote/manual run status marker for the Ste
 ## Step610 Remote Status Marker Reference
 
 Step610 adds the public-safe status marker for the Step608 wrapper-integrated multi-case check. This Makefile target design remains unchanged; Step610 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step611 Final Safety Review Reference
+
+Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain. This Makefile target design remains unchanged; Step611 does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer integration, or file writing.

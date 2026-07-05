@@ -795,3 +795,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step610 Actual-Controlled v0.4 Multi-Case Runtime Smoke Remote Run Status
 
 - [Actual-controlled v0.4 multi-case runtime smoke release-quality remote run status](status/learner_state_frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_remote_run_status.md): status-marker-only / docs-only record for the remote Release Quality run after Step608 wrapper integration. It records public-safe metadata, observed labels, count-only multi-case target summary, missing metadata handling, and no raw logs, full job output, or payload bodies.
+
+## Step611 Actual-Controlled v0.4 Multi-Case Runtime Smoke Final Safety Review
+
+- [Actual-controlled v0.4 multi-case runtime smoke release-quality chain final safety review](frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md): final-safety-review-only / docs-only review for the Step602-Step610 all-valid multi-case runtime smoke chain. It accepts only the release-quality-integrated, remote-status-recorded, metadata-only / body-free boundary and records limitations, non-equivalence cautions, non-claims, and the Step612 planning handoff.

@@ -250,3 +250,7 @@ Recommended next step:
 - Step611: actual-controlled v0.4 multi-case runtime smoke release-quality chain final safety review
 
 Do not recommend invalid runtime execution, payload audit, manifest writer integration, or file writing before Step611.
+
+## Step611 Final Safety Review Reference
+
+Step611 adds `docs/frozen_policy_generation_actual_controlled_v0_4_multi_case_runtime_smoke_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review of the Step602-Step610 all-valid multi-case runtime smoke chain. This status marker remains unchanged as the public-safe metadata summary for the remote Release Quality run after Step608 wrapper integration.
