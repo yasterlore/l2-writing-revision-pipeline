@@ -545,3 +545,9 @@ Recommended next step:
 - Step626: deferred invalid-case usage_error / mismatch runner implementation
 
 Step626 should implement runner and focused tests only. Step626 should not change Makefile. Step626 should not change release-quality wrapper. Step626 should not change workflow. Step626 should not change fixture JSON. Step626 should not implement payload audit. Step626 should not invoke manifest writer. Step626 should not enable file writing. Step626 should update root README and full technical specification related docs because it is an implementation Step.
+
+## Step626 Implementation Reference
+
+Step626 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_smoke.py` and focused tests at `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_smoke.py`.
+
+The implementation follows this contract as a direct CLI-only runner. It keeps the 4 selected deferred invalid cases, `processed_case_count=4`, expected 3 usage_error and 1 mismatch per-case categories, aggregate public-safe output, no payload emission, no manifest writer invocation, no file writing, and no fixture JSON changes. Makefile target design and release-quality integration remain future work.

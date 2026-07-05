@@ -572,3 +572,7 @@ Step625 should remain design-only / docs-only. It should fix the exact selected/
 Step625 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_fixture_matrix_contract_design.md` as the design-only / docs-only contract for the combined deferred invalid status matrix recommended here.
 
 The contract fixes the 4 selected deferred invalid case IDs, expected usage_error / mismatch categories, primary count policy, aggregate and per-case contracts, allowed/forbidden per-case fields, runner-level versus per-case status semantics, selection policy, failure mapping, future CLI contract, and Step626 implementation handoff without runtime execution, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, payload audit implementation, manifest writer integration, or file writing.
+
+## Step626 Implementation Reference
+
+Step626 implements the direct CLI-only runner and focused tests for this deferred invalid status matrix. The runner processes the 4 selected non-fail_closed invalid cases with `--case-selection deferred-invalid-usage-error-mismatch`, emits aggregate public-safe metadata with `processed_case_count=4`, and keeps Makefile target design, release-quality integration, manifest writer integration, file writing, and fixture JSON changes out of scope.

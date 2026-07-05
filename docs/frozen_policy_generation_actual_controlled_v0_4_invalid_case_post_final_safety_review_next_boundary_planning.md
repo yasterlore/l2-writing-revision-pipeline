@@ -258,3 +258,7 @@ It recommends a combined deferred invalid status matrix for the 4 deferred non-f
 ## Step625 Fixture Matrix Contract Reference
 
 Step625 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_fixture_matrix_contract_design.md` as a design-only / docs-only contract for the combined deferred invalid status matrix. It fixes selected case IDs, expected usage_error / mismatch categories, primary count policy, aggregate and per-case contracts, selection policy, failure mapping, and Step626 handoff while keeping runtime execution, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, payload audit implementation, manifest writer integration, file writing, real-data readiness, and model performance claims out of scope.
+
+## Step626 Implementation Reference
+
+Step626 adds a direct CLI-only runner and focused tests for the deferred usage_error / mismatch invalid matrix recommended by this planning chain. It remains outside Makefile target and release-quality integration, does not change fixture JSON, does not implement payload audit, does not invoke manifest writer, and does not enable file writing.

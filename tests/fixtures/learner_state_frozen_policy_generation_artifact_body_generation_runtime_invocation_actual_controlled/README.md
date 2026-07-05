@@ -380,3 +380,7 @@ Step624 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_inva
 ## Step625 Deferred Invalid-Case usage_error / mismatch Fixture Matrix Contract Reference
 
 Step625 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_fixture_matrix_contract_design.md` as a design-only / docs-only contract for this root's 4 deferred non-fail_closed invalid case directories. It fixes selected case IDs, expected usage_error / mismatch categories, count policy, aggregate and per-case contracts, and future Step626 handoff. This root and fixture JSON remain unchanged, and Step625 does not execute runtime cases, change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step626 Deferred Invalid-Case usage_error / mismatch Runner Reference
+
+Step626 adds a direct CLI-only runner and focused tests for this root's 4 deferred non-fail_closed invalid case directories. The runner uses safe preflight / contract observation, records `processed_case_count=4`, expects 3 usage_error cases and 1 mismatch case, emits aggregate public-safe metadata only, and remains outside Makefile target and release-quality integration. This root and fixture JSON remain unchanged, and Step626 does not invoke manifest writer or write files.
