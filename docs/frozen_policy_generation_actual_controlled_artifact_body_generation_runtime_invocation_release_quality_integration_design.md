@@ -401,3 +401,10 @@ as a final-safety-review / docs-only review for the Step585-Step599
 actual-controlled release-quality chain. This integration design remains
 unchanged, and no wrapper, Makefile, workflow, Python, fixture JSON, runtime,
 manifest writer, or file-writing change is made by Step600.
+
+## Step601 Planning Reference
+
+Step601 adds
+`docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md`
+as a planning-only / docs-only next-boundary plan after Step600. This
+release-quality integration design remains unchanged.

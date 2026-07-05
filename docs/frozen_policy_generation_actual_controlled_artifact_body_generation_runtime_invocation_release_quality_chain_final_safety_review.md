@@ -300,3 +300,12 @@ Recommended next step:
 - Step601: post-final-safety-review planning for next actual-controlled boundary
 
 Step601 should be planning-only. It should decide whether the next boundary is multi-case runtime smoke, artifact body payload audit design, or manifest writer handoff design. Step601 should not implement manifest writer integration, enable file writing, use real data, or claim production readiness.
+
+## Step601 Planning Reference
+
+Step601 adds
+`docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md`
+as a planning-only / docs-only next-boundary plan after this final safety
+review. It recommends Step602 actual-controlled v0.4 multi-case runtime smoke
+design and keeps payload audit, manifest writer handoff, file writing,
+real-data use, and performance claims outside the next immediate boundary.

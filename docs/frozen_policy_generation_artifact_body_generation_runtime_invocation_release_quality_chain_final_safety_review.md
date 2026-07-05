@@ -312,3 +312,11 @@ as a separate final-safety-review / docs-only review for the Step585-Step599
 actual-controlled v0.4 metadata-only runtime invocation chain. This
 planned-only final safety review remains separate and is not replaced by the
 actual-controlled review.
+
+## Step601 Actual-Controlled Planning Reference
+
+Step601 adds
+`docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md`
+as a separate planning-only / docs-only next-boundary plan after the
+actual-controlled Step600 final safety review. This planned-only final safety
+review remains separate and is not replaced by Step601.

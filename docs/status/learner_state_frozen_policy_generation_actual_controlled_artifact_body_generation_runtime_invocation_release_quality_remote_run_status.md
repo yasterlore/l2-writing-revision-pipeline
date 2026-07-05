@@ -287,3 +287,11 @@ as the final-safety-review / docs-only review for the Step585-Step599
 actual-controlled release-quality chain. This marker remains a public-safe
 metadata summary and does not store raw logs, full job output, fixture JSON
 bodies, or payload bodies.
+
+## Step601 Planning Reference
+
+Step601 adds
+`docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md`
+as a planning-only / docs-only next-boundary plan after the Step600 final
+safety review. This marker remains a public-safe metadata summary and is not
+expanded into raw evidence.

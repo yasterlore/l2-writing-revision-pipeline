@@ -754,3 +754,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step600 Actual-Controlled Runtime Release-Quality Chain Final Safety Review
 
 - [Actual-controlled artifact body generation runtime invocation release-quality chain final safety review](frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md): final-safety-review / docs-only review for the Step585-Step599 actual-controlled v0.4 metadata-only runtime invocation chain after release-quality integration and remote status recording. It records reviewed artifacts, public-safe evidence, remaining risks, stop points, and non-claims without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, or adding raw logs / payload bodies.
+
+## Step601 Actual-Controlled Next Boundary Planning
+
+- [Post-final-safety-review planning for the next actual-controlled boundary](frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only next-boundary plan after Step600. It compares multi-case runtime smoke, payload audit, manifest writer handoff, remote metadata refresh, and consolidation-only options, recommends Step602 actual-controlled v0.4 multi-case runtime smoke design, and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, or file writing.

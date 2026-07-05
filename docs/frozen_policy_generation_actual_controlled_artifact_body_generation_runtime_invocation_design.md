@@ -627,3 +627,10 @@ actual-controlled release-quality chain. This design remains unchanged, and
 Step600 does not change wrapper, Makefile, workflow, Python code/tests,
 fixture JSON, runtime implementation, manifest writer integration, or file
 writing.
+
+## Step601 Planning Reference
+
+Step601 adds
+`docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md`
+as a planning-only / docs-only next-boundary plan after Step600. This design
+remains unchanged.

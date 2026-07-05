@@ -3215,3 +3215,9 @@ The marker records public-safe metadata, observed actual-controlled labels, coun
 Step600 adds `docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md` as a final-safety-review / docs-only review for the Step585-Step599 actual-controlled v0.4 metadata-only runtime invocation chain.
 
 The review records the relationship to the planned-only chain, final reviewed artifacts, Step599 public-safe evidence, fixture validator result, v0.4 runtime smoke result, safety boundary, residual risks, recommended stop points, and Step601 planning-only handoff. It does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step601 Actual-Controlled Next Boundary Planning
+
+Step601 adds `docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only next-boundary plan after the Step600 final safety review.
+
+The plan compares multi-case runtime smoke, artifact body payload audit, manifest writer handoff, remote metadata refresh, and consolidation-only options. It recommends Step602 actual-controlled v0.4 multi-case runtime smoke design as the next conservative boundary and does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

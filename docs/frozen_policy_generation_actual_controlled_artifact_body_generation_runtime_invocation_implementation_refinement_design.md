@@ -633,3 +633,10 @@ as a final-safety-review / docs-only review of the Step585-Step599
 actual-controlled release-quality chain. This refinement design remains
 unchanged, and no runtime implementation, wrapper, Makefile, workflow, Python,
 fixture JSON, manifest writer, or file-writing change is made by Step600.
+
+## Step601 Planning Reference
+
+Step601 adds
+`docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md`
+as a planning-only / docs-only next-boundary plan after Step600. This
+refinement design remains unchanged.

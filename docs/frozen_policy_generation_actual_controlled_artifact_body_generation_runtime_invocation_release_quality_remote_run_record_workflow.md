@@ -386,3 +386,19 @@ Step599 creates the public-safe status marker at
 It records the provided remote Release Quality metadata and count-only target
 summaries without copying raw logs, full job output, fixture JSON bodies, or
 payload bodies.
+
+## Step600 Final Safety Review Reference
+
+Step600 adds
+`docs/frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md`
+as a final-safety-review / docs-only review of the Step585-Step599
+actual-controlled chain. This workflow design remains unchanged and does not
+add raw logs, payload bodies, wrapper changes, workflow changes, manifest
+writer integration, or file writing.
+
+## Step601 Planning Reference
+
+Step601 adds
+`docs/frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md`
+as a planning-only / docs-only next-boundary plan after Step600. This workflow
+design remains unchanged.

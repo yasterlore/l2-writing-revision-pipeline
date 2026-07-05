@@ -1392,3 +1392,7 @@ invocation evidence, or file-writing evidence.
 ## Step600 Actual-Controlled Runtime Release-Quality Chain Final Safety Review
 
 - [Actual-controlled artifact body generation runtime invocation release-quality chain final safety review](../frozen_policy_generation_actual_controlled_artifact_body_generation_runtime_invocation_release_quality_chain_final_safety_review.md): final-safety-review / docs-only review for the Step585-Step599 actual-controlled v0.4 metadata-only runtime invocation chain. It records the release-quality-integrated and remote-status-recorded boundary, residual risks, stop points, non-equivalence cautions, and non-claims without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, manifest writer integration, or file writing.
+
+## Step601 Actual-Controlled Next Boundary Planning
+
+- [Post-final-safety-review planning for the next actual-controlled boundary](../frozen_policy_generation_actual_controlled_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only plan after Step600. It recommends Step602 actual-controlled v0.4 multi-case runtime smoke design as the next conservative boundary and keeps payload audit, manifest writer handoff, file writing, real-data use, and performance claims out of scope.
