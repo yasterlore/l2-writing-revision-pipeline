@@ -1473,3 +1473,7 @@ invocation evidence, or file-writing evidence.
 ## Step620 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Remote Run Record Workflow Design
 
 - [Actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality remote run record workflow](../frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_record_workflow.md): design-only / docs-only plan for a future public-safe Step621 status marker. Step620 defines allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, invalid-case count-only summary fields, missing metadata handling, status marker template, and Step621 / Step622 staging without creating a marker or changing wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, or file writing.
+
+## Step621 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Remote Run Status
+
+- [Actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality remote run status](learner_state_frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_status.md): status-marker-only / docs-only record for the remote Release Quality run after Step619 wrapper integration. It records public-safe metadata and count-only invalid-case target summary, and stores no raw logs, full job output, fixture JSON bodies, payload bodies, manifest writer evidence, file-writing evidence, production readiness, real-data readiness, or model performance evidence.

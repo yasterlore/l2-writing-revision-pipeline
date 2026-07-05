@@ -360,3 +360,7 @@ Step619 adds the Step617 standalone invalid-case fail-closed target to `scripts/
 ## Step620 Invalid-Case Runtime Fail-Closed Remote Run Record Workflow Reference
 
 Step620 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future public-safe status marker after Step619 wrapper integration. This root and fixture JSON remain unchanged, and Step620 does not create a marker, change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step621 Invalid-Case Runtime Fail-Closed Remote Status Marker Reference
+
+Step621 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step619 wrapper integration. This root and fixture JSON remain unchanged, and Step621 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.

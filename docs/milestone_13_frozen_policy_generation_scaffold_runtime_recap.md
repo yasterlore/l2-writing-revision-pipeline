@@ -3335,3 +3335,9 @@ The check runs `make check-learner-state-frozen-policy-generation-actual-control
 Step620 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future Step621 public-safe status marker after Step619 wrapper integration.
 
 The workflow design records allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, invalid-case count-only target summary fields, missing metadata handling, existing status marker relationships, and Step621 / Step622 staging. Step620 does not create a status marker, change wrapper files, change Makefile, change workflow files, change Python code/tests, change fixture JSON, invoke manifest writer, write files, use real data, use metrics, or claim production readiness.
+
+## Step621 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Remote Run Status
+
+Step621 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step619 wrapper integration.
+
+The marker records provided public-safe metadata, observed release-quality labels, count-only invalid-case target summary, overall release-quality result, missing metadata handling, relationships to existing status markers, non-equivalence cautions, non-claims, and the Step622 handoff. It stores no raw logs, full job output, fixture JSON bodies, payload bodies, real-data evidence, metric evidence, manifest writer evidence, file-writing evidence, or production readiness status.
