@@ -3329,3 +3329,9 @@ The design recommends adding `release_quality_check: learner-state frozen policy
 Step619 adds `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 invalid-case runtime fail-closed smoke` to `scripts/check_release_quality.sh`.
 
 The check runs `make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-invalid-case-runtime-fail-closed-smoke` after the all-valid multi-case runtime smoke and before artifact body fixture / CLI checks. It expects aggregate public-safe metadata for the fixed 26 invalid fail_closed cases and 4 deferred cases. `unsafe_signal_total_count=26` is expected for this invalid fail-closed smoke and is not raw body emission. Step619 keeps Makefile, workflow files, Python code/tests, fixture JSON, manifest writer integration, file writing, real-data use, metric use, and production readiness status unchanged.
+
+## Step620 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Remote Run Record Workflow Design
+
+Step620 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future Step621 public-safe status marker after Step619 wrapper integration.
+
+The workflow design records allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, invalid-case count-only target summary fields, missing metadata handling, existing status marker relationships, and Step621 / Step622 staging. Step620 does not create a status marker, change wrapper files, change Makefile, change workflow files, change Python code/tests, change fixture JSON, invoke manifest writer, write files, use real data, use metrics, or claim production readiness.

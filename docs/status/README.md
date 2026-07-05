@@ -1469,3 +1469,7 @@ invocation evidence, or file-writing evidence.
 ## Step619 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Release-Quality Integration
 
 - `scripts/check_release_quality.sh`: Step619 adds the Step617 invalid-case fail-closed target to release-quality after the all-valid multi-case runtime smoke and before artifact body fixture / CLI checks. Step619 keeps Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, and file writing unchanged.
+
+## Step620 Actual-Controlled v0.4 Invalid-Case Runtime Fail-Closed Remote Run Record Workflow Design
+
+- [Actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality remote run record workflow](../frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_record_workflow.md): design-only / docs-only plan for a future public-safe Step621 status marker. Step620 defines allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, invalid-case count-only summary fields, missing metadata handling, status marker template, and Step621 / Step622 staging without creating a marker or changing wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer integration, or file writing.

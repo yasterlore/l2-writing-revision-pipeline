@@ -369,3 +369,9 @@ Expected aggregate output remains public-safe and metadata-only: 26 selected inv
 Recommended next step:
 
 - Step620: actual-controlled v0.4 invalid-case runtime fail-closed smoke release-quality remote/manual run record workflow design
+
+## 17. Step620 Remote Run Record Workflow Design Reference
+
+Step620 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_runtime_fail_closed_release_quality_remote_run_record_workflow.md` as a design-only / docs-only workflow for a future Step621 public-safe status marker after Step619 wrapper integration.
+
+The workflow design keeps this release-quality integration unchanged. It defines allowed evidence sources, forbidden raw log / payload sources, metadata fields, invalid-case count-only summary fields, missing metadata handling, and Step621 / Step622 staging without creating a marker, changing wrapper, changing Makefile, changing workflow, changing Python code/tests, changing fixture JSON, invoking manifest writer, or enabling file writing.
