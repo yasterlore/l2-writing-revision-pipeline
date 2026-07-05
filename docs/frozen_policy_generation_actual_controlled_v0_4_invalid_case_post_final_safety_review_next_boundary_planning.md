@@ -262,3 +262,7 @@ Step625 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_inva
 ## Step626 Implementation Reference
 
 Step626 adds a direct CLI-only runner and focused tests for the deferred usage_error / mismatch invalid matrix recommended by this planning chain. It remains outside Makefile target and release-quality integration, does not change fixture JSON, does not implement payload audit, does not invoke manifest writer, and does not enable file writing.
+
+## Step627 Makefile Target Design Reference
+
+Step627 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step626 runner. It does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.

@@ -576,3 +576,7 @@ The contract fixes the 4 selected deferred invalid case IDs, expected usage_erro
 ## Step626 Implementation Reference
 
 Step626 implements the direct CLI-only runner and focused tests for this deferred invalid status matrix. The runner processes the 4 selected non-fail_closed invalid cases with `--case-selection deferred-invalid-usage-error-mismatch`, emits aggregate public-safe metadata with `processed_case_count=4`, and keeps Makefile target design, release-quality integration, manifest writer integration, file writing, and fixture JSON changes out of scope.
+
+## Step627 Makefile Target Design Reference
+
+Step627 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step626 direct CLI. It keeps Makefile changes, release-quality wrapper changes, workflow changes, Python code/tests changes, fixture JSON changes, payload audit implementation, manifest writer integration, and file writing out of Step627.

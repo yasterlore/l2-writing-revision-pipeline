@@ -1498,3 +1498,7 @@ invocation evidence, or file-writing evidence.
 
 - `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_smoke.py`: direct CLI-only runner for the Step625 4-case deferred invalid usage_error / mismatch matrix. It emits aggregate public-safe metadata with `processed_case_count=4`, 3 observed usage_error cases, 1 observed mismatch case, no payload emission, no manifest writer invocation, no file writing, and no residue. It is not Makefile-targeted or release-quality integrated yet.
 - `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_smoke.py`: focused tests for the direct runner, output suppression, failure mapping, fixture non-mutation, and compatibility with existing v0.4 / v0.3 boundaries.
+
+## Step627 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Makefile Target Design
+
+- [Actual-controlled v0.4 deferred invalid-case usage_error / mismatch Makefile target design](../frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_makefile_target_design.md): design-only / docs-only plan for future Step628 standalone target implementation around the Step626 direct CLI. Step627 keeps Makefile, wrapper, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, and file writing unchanged.

@@ -384,3 +384,7 @@ Step625 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_inva
 ## Step626 Deferred Invalid-Case usage_error / mismatch Runner Reference
 
 Step626 adds a direct CLI-only runner and focused tests for this root's 4 deferred non-fail_closed invalid case directories. The runner uses safe preflight / contract observation, records `processed_case_count=4`, expects 3 usage_error cases and 1 mismatch case, emits aggregate public-safe metadata only, and remains outside Makefile target and release-quality integration. This root and fixture JSON remain unchanged, and Step626 does not invoke manifest writer or write files.
+
+## Step627 Deferred Invalid-Case usage_error / mismatch Makefile Target Design Reference
+
+Step627 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step626 runner. This root and fixture JSON remain unchanged, and Step627 does not change Makefile, wrapper, workflow, Python code/tests, payload audit implementation, manifest writer integration, or file writing.

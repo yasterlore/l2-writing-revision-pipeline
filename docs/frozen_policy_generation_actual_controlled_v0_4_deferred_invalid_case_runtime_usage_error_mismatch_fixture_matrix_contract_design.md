@@ -551,3 +551,9 @@ Step626 should implement runner and focused tests only. Step626 should not chang
 Step626 adds `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_smoke.py` and focused tests at `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_smoke.py`.
 
 The implementation follows this contract as a direct CLI-only runner. It keeps the 4 selected deferred invalid cases, `processed_case_count=4`, expected 3 usage_error and 1 mismatch per-case categories, aggregate public-safe output, no payload emission, no manifest writer invocation, no file writing, and no fixture JSON changes. Makefile target design and release-quality integration remain future work.
+
+## Step627 Makefile Target Design Reference
+
+Step627 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step626 direct CLI.
+
+The design proposes target name, help text, command, expected aggregate public-safe output, placement after the accepted invalid fail_closed target, and Step628 implementation handoff. It does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.
