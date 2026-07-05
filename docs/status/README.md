@@ -1485,3 +1485,7 @@ invocation evidence, or file-writing evidence.
 ## Step623 Post Invalid-Case Final Safety Review Next-Boundary Planning
 
 - [Post invalid-case final safety review next-boundary planning](../frozen_policy_generation_actual_controlled_v0_4_invalid_case_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison after Step622. It recommends future Step624 deferred usage_error / mismatch invalid runtime matrix design and keeps implementation, payload audit implementation, manifest writer integration, file writing, real-data readiness, and model performance claims out of Step623.
+
+## Step624 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Matrix Design
+
+- [Actual-controlled v0.4 deferred invalid-case runtime usage_error / mismatch matrix design](../frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_matrix_design.md): design-only / docs-only matrix design for the 4 deferred non-fail_closed invalid cases. It recommends a combined deferred invalid status matrix and keeps runtime execution, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, payload audit implementation, manifest writer integration, and file writing out of Step624.

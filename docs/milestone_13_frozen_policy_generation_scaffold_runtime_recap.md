@@ -3353,3 +3353,9 @@ The review accepts only the release-quality-integrated, remote-status-recorded, 
 Step623 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_post_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after the Step622 final safety review.
 
 The planning document compares deferred usage_error / mismatch invalid runtime matrix design, payload audit design without payload emission, manifest writer handoff design, remote metadata consolidation, and documentation consolidation. It recommends Step624 actual-controlled v0.4 deferred invalid-case runtime usage_error / mismatch matrix design as the next boundary while keeping Step623 free of implementation, Makefile changes, wrapper changes, workflow changes, Python code/tests changes, fixture JSON changes, payload audit implementation, manifest writer integration, file writing, real-data readiness, and model performance claims.
+
+## Step624 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Matrix Design
+
+Step624 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_matrix_design.md` as a design-only / docs-only matrix design for the 4 deferred non-fail_closed invalid cases from the Step614-Step622 fail_closed chain.
+
+The design recommends a combined deferred invalid status matrix for 3 usage_error cases and 1 mismatch case, defines future aggregate and per-case summary contracts, separates runner-level status semantics from per-case expected categories, and stages Step625 fixture/matrix contract design. Step624 does not execute runtime cases, change Python code/tests, change Makefile, change wrapper files, change workflow files, change fixture JSON, implement payload audit, invoke manifest writer, enable file writing, use real data, use metrics, or claim production readiness.

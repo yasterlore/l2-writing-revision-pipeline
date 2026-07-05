@@ -248,3 +248,9 @@ The proposed next boundary would address deferred usage_error / mismatch cases w
 - no performance claims
 - no production readiness claims
 - no real-data readiness claims
+
+## Step624 Matrix Design Reference
+
+Step624 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_matrix_design.md` as the design-only / docs-only matrix design recommended by this planning document.
+
+It recommends a combined deferred invalid status matrix for the 4 deferred non-fail_closed invalid cases and keeps runtime execution, implementation, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, payload audit implementation, manifest writer integration, file writing, real-data readiness, and model performance claims out of Step624.

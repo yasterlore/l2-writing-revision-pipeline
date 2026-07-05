@@ -372,3 +372,7 @@ Step622 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_
 ## Step623 Post Invalid-Case Final Safety Review Planning Reference
 
 Step623 adds `docs/frozen_policy_generation_actual_controlled_v0_4_invalid_case_post_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after Step622. It recommends a future deferred usage_error / mismatch invalid runtime matrix design. This root and fixture JSON remain unchanged, and Step623 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step624 Deferred Invalid-Case usage_error / mismatch Matrix Design Reference
+
+Step624 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_matrix_design.md` as a design-only / docs-only matrix design for this root's 4 deferred non-fail_closed invalid case directories. This root and fixture JSON remain unchanged, and Step624 does not execute runtime cases, change Makefile, wrapper, workflow, Python code/tests, manifest writer integration, or file writing.
