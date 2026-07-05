@@ -566,3 +566,9 @@ Recommended next step:
 - Step625: deferred invalid-case usage_error / mismatch fixture/matrix contract design
 
 Step625 should remain design-only / docs-only. It should fix the exact selected/deferred contract and decide whether to use `processed_case_count`, `executed_case_count`, or both. Step625 should not execute the cases, change Python code/tests, change Makefile, change release-quality wrapper, change workflow, change fixture JSON, implement payload audit, implement manifest writer integration, or enable file writing.
+
+## Step625 Fixture Matrix Contract Reference
+
+Step625 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_fixture_matrix_contract_design.md` as the design-only / docs-only contract for the combined deferred invalid status matrix recommended here.
+
+The contract fixes the 4 selected deferred invalid case IDs, expected usage_error / mismatch categories, primary count policy, aggregate and per-case contracts, allowed/forbidden per-case fields, runner-level versus per-case status semantics, selection policy, failure mapping, future CLI contract, and Step626 implementation handoff without runtime execution, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, payload audit implementation, manifest writer integration, or file writing.

@@ -3359,3 +3359,9 @@ The planning document compares deferred usage_error / mismatch invalid runtime m
 Step624 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_matrix_design.md` as a design-only / docs-only matrix design for the 4 deferred non-fail_closed invalid cases from the Step614-Step622 fail_closed chain.
 
 The design recommends a combined deferred invalid status matrix for 3 usage_error cases and 1 mismatch case, defines future aggregate and per-case summary contracts, separates runner-level status semantics from per-case expected categories, and stages Step625 fixture/matrix contract design. Step624 does not execute runtime cases, change Python code/tests, change Makefile, change wrapper files, change workflow files, change fixture JSON, implement payload audit, invoke manifest writer, enable file writing, use real data, use metrics, or claim production readiness.
+
+## Step625 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Fixture Matrix Contract Design
+
+Step625 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_fixture_matrix_contract_design.md` as a design-only / docs-only fixture/matrix contract for the combined deferred invalid status matrix recommended in Step624.
+
+The contract fixes the 4 selected deferred invalid case IDs, the 3 usage_error and 1 mismatch expected categories, `processed_case_count=4` as the primary count, aggregate and per-case summary contracts, allowed and forbidden per-case fields, runner-level versus per-case status semantics, selection policy, failure mapping, future runner handoff, and future CLI contract. Step625 does not execute runtime cases, change Python code/tests, change Makefile, change wrapper files, change workflow files, change fixture JSON, implement payload audit, invoke manifest writer, enable file writing, use real data, use metrics, or claim production readiness.

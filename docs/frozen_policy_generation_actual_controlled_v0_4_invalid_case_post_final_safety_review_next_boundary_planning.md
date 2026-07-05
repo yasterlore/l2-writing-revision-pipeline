@@ -254,3 +254,7 @@ The proposed next boundary would address deferred usage_error / mismatch cases w
 Step624 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_matrix_design.md` as the design-only / docs-only matrix design recommended by this planning document.
 
 It recommends a combined deferred invalid status matrix for the 4 deferred non-fail_closed invalid cases and keeps runtime execution, implementation, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, payload audit implementation, manifest writer integration, file writing, real-data readiness, and model performance claims out of Step624.
+
+## Step625 Fixture Matrix Contract Reference
+
+Step625 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_fixture_matrix_contract_design.md` as a design-only / docs-only contract for the combined deferred invalid status matrix. It fixes selected case IDs, expected usage_error / mismatch categories, primary count policy, aggregate and per-case contracts, selection policy, failure mapping, and Step626 handoff while keeping runtime execution, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, payload audit implementation, manifest writer integration, file writing, real-data readiness, and model performance claims out of scope.

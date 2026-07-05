@@ -1489,3 +1489,7 @@ invocation evidence, or file-writing evidence.
 ## Step624 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Matrix Design
 
 - [Actual-controlled v0.4 deferred invalid-case runtime usage_error / mismatch matrix design](../frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_matrix_design.md): design-only / docs-only matrix design for the 4 deferred non-fail_closed invalid cases. It recommends a combined deferred invalid status matrix and keeps runtime execution, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, payload audit implementation, manifest writer integration, and file writing out of Step624.
+
+## Step625 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Fixture Matrix Contract Design
+
+- [Actual-controlled v0.4 deferred invalid-case runtime usage_error / mismatch fixture matrix contract design](../frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_fixture_matrix_contract_design.md): design-only / docs-only contract for the combined 4-case deferred invalid status matrix. It fixes selected cases, expected categories, count policy, aggregate/per-case contracts, selection policy, failure mapping, and Step626 handoff while keeping runtime execution, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, payload audit implementation, manifest writer integration, and file writing out of Step625.
