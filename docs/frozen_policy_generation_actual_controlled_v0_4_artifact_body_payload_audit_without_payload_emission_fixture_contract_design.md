@@ -501,3 +501,7 @@ Step641 adds a design-only / docs-only release-quality integration plan for the 
 ## 28. Step642 Release-Quality Integration Reference
 
 Step642 adds the Step640 standalone target to the release-quality wrapper while keeping this 36-case fixture contract unchanged. The wrapper check remains count-only / metadata-only / body-free and does not change fixture JSON, Makefile, workflow files, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.
+
+## 29. Step643 Remote Run Record Workflow Design Reference
+
+Step643 adds a design-only / docs-only workflow for a future public-safe status marker for the Step642 wrapper-integrated check. The status marker design records this 36-case contract only through count-only metadata and does not change fixture JSON, Makefile, workflow files, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

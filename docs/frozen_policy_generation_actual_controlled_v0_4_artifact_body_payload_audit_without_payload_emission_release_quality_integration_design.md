@@ -373,3 +373,7 @@ Step642 should update only wrapper and necessary README/docs. Step642 should not
 Step642 implements this design by adding `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 artifact body payload audit without payload emission` to `scripts/check_release_quality.sh`. The command is `make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission`, inserted after the deferred usage_error / mismatch smoke and before artifact body fixture / CLI checks.
 
 The integration remains wrapper-only plus necessary README/docs updates. It does not change Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, payload body emission, artifact body payload output, generated policy body output, manifest body output, manifest writer integration, or file writing. Next recommended step is Step643 remote/manual run record workflow design.
+
+## 18. Step643 Remote Run Record Workflow Design Reference
+
+Step643 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future Step644 public-safe status marker. It does not create the marker, change wrapper files, change Makefile, change workflow files, change Python code/tests, change fixture JSON, emit payload bodies, invoke manifest writer integration, or enable file writing.

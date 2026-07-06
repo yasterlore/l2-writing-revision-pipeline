@@ -448,3 +448,7 @@ Step641 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body
 ## Step642 Artifact Body Payload Audit Release-Quality Integration Reference
 
 Step642 adds the Step640 payload audit without payload emission target to `scripts/check_release_quality.sh` after the deferred invalid-case usage_error / mismatch smoke and before artifact body fixture / CLI checks. This fixture root and fixture JSON remain unchanged; Step642 does not change Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, artifact body payload output, generated policy body output, manifest body output, manifest writer integration, or file writing.
+
+## Step643 Artifact Body Payload Audit Remote Run Record Workflow Design Reference
+
+Step643 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_remote_run_record_workflow.md` as a design-only / docs-only workflow for a future public-safe status marker after Step642. This fixture root and fixture JSON remain unchanged; Step643 does not create the marker, change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

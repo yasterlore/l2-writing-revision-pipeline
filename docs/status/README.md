@@ -1562,3 +1562,7 @@ invocation evidence, or file-writing evidence.
 ## Step642 Actual-Controlled v0.4 Artifact Body Payload Audit Release-Quality Integration
 
 - `scripts/check_release_quality.sh`: Step642 adds the Step640 payload audit without payload emission target to release-quality after the deferred usage_error / mismatch smoke and before artifact body fixture / CLI checks. The check records aggregate count-only metadata for the 36-case contract and keeps Makefile, workflows, Python code/tests, fixture JSON, payload body emission, manifest writer integration, and file writing unchanged.
+
+## Step643 Actual-Controlled v0.4 Artifact Body Payload Audit Remote Run Record Workflow Design
+
+- [Actual-controlled v0.4 artifact body payload audit without payload emission release-quality remote run record workflow](../frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_remote_run_record_workflow.md): design-only / docs-only plan for a future Step644 status marker. Step643 defines public-safe metadata fields, count-only payload audit summary fields, missing metadata handling, label recording rules, existing status marker relationships, and Step644 / Step645 staging without creating a marker or changing wrapper, Makefile, workflows, Python code/tests, fixture JSON, payload body emission, manifest writer integration, or file writing.

@@ -526,3 +526,7 @@ Step641 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body
 ## 27. Step642 Release-Quality Integration Reference
 
 Step642 adds the Step640 standalone payload audit target to the release-quality wrapper after the deferred invalid-case usage_error / mismatch smoke and before artifact body fixture / CLI checks. It preserves this runner's metadata-only / body-free / count-only boundary and does not change Python code/tests, fixture JSON, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.
+
+## 28. Step643 Remote Run Record Workflow Design Reference
+
+Step643 adds a design-only / docs-only workflow for recording a future public-safe remote/manual status marker for the Step642 wrapper-integrated target. It preserves this runner's metadata-only / body-free / count-only boundary and does not change Python code/tests, fixture JSON, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

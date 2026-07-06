@@ -270,3 +270,7 @@ The review uses this marker as public-safe metadata evidence and does not copy r
 ## Step642 Payload Audit Release-Quality Integration Reference
 
 Step642 later adds the payload audit without payload emission check after this deferred usage_error / mismatch release-quality check in the wrapper order. This status marker remains limited to the Step630 remote run and does not record Step642 remote evidence, payload correctness evidence, manifest writer evidence, file-writing evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step643 Payload Audit Remote Run Record Workflow Design Reference
+
+Step643 later adds a design-only / docs-only workflow for a future payload audit status marker. This status marker remains limited to the Step630 deferred invalid-case remote run and should not be treated as recording Step642 or Step644 payload audit remote evidence.

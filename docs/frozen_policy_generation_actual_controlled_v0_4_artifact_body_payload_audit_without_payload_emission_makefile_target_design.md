@@ -343,3 +343,7 @@ Step641 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body
 ## Step642 Release-Quality Integration Reference
 
 Step642 adds the Step640 standalone target to `scripts/check_release_quality.sh` with label `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 artifact body payload audit without payload emission`. The wrapper insertion is after the deferred usage_error / mismatch smoke and before artifact body fixture / CLI checks. Step642 does not change Makefile, workflow files, Python code/tests, fixture JSON, payload body emission, manifest writer integration, or file writing.
+
+## Step643 Remote Run Record Workflow Design Reference
+
+Step643 adds a design-only / docs-only workflow for a future public-safe remote/manual status marker for the Step642 release-quality check. It keeps this Makefile target unchanged and does not change wrapper files, workflow files, Python code/tests, fixture JSON, payload body emission, manifest writer integration, or file writing.

@@ -342,3 +342,7 @@ It recommends Step635 actual-controlled v0.4 payload audit without payload emiss
 ## Step642 Payload Audit Release-Quality Integration Reference
 
 Step642 later adds the payload audit without payload emission target to the release-quality wrapper after the deferred usage_error / mismatch smoke. This does not reopen, replace, or broaden the Step633 accepted boundary for the fixed 4 selected deferred invalid cases, and it does not add payload correctness, artifact body payload quality, manifest writer correctness, file-writing readiness, real-data readiness, or model performance evidence.
+
+## Step643 Payload Audit Remote Run Record Workflow Design Reference
+
+Step643 later adds a design-only / docs-only workflow for recording a future public-safe status marker for the Step642 payload audit release-quality check. This final safety review remains limited to the deferred invalid-case usage_error / mismatch boundary and is not replaced by the future payload audit marker.

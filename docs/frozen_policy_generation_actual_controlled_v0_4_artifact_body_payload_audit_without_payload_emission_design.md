@@ -424,3 +424,7 @@ Step641 later adds a design-only / docs-only plan for future release-quality int
 ## 24. Step642 Release-Quality Integration Reference
 
 Step642 adds the Step640 standalone target to `scripts/check_release_quality.sh` after the deferred usage_error / mismatch smoke and before artifact body fixture / CLI checks. The check still represents payload audit without payload emission only: metadata-only, body-free, count-only, no manifest writer invocation, no file writing, and no claim of payload correctness or artifact body payload quality.
+
+## 25. Step643 Remote Run Record Workflow Design Reference
+
+Step643 adds a design-only / docs-only remote/manual run record workflow for the Step642 wrapper-integrated check. The future status marker should record only public-safe metadata and count-only payload audit summary fields, and should not copy raw logs, payload bodies, manifest bodies, generated policy bodies, raw stdout/stderr bodies, private / absolute path values, or real participant data.

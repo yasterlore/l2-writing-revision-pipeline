@@ -439,3 +439,7 @@ The Step635 design keeps payload audit implementation, payload body emission, ar
 ## 18. Step642 Release-Quality Integration Reference
 
 The Step635-Step641 payload audit without payload emission chain later reaches Step642 wrapper integration. Step642 adds only the standalone count-only payload audit target to release-quality; it does not reopen the Step633 accepted deferred invalid-case boundary and does not add payload body emission, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## 19. Step643 Remote Run Record Workflow Design Reference
+
+Step643 later adds a design-only / docs-only workflow for a future Step644 public-safe status marker for the Step642 payload audit release-quality check. It does not create the status marker and does not add payload body emission, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
