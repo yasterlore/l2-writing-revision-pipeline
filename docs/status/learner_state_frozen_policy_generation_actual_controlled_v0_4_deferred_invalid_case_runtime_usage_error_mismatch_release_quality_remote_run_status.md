@@ -266,3 +266,7 @@ Do not recommend payload audit, manifest writer integration, or file writing bef
 Step633 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step624-Step632 chain.
 
 The review uses this marker as public-safe metadata evidence and does not copy raw logs, full job output, fixture JSON bodies, request / pointer / expected bodies, payload bodies, raw stdout/stderr bodies, raw rows, logits/probabilities, private / absolute path values, raw learner text, real participant data, payload audit implementation evidence, manifest writer evidence, or file-writing evidence.
+
+## Step642 Payload Audit Release-Quality Integration Reference
+
+Step642 later adds the payload audit without payload emission check after this deferred usage_error / mismatch release-quality check in the wrapper order. This status marker remains limited to the Step630 remote run and does not record Step642 remote evidence, payload correctness evidence, manifest writer evidence, file-writing evidence, production readiness, real-data readiness, or model performance evidence.

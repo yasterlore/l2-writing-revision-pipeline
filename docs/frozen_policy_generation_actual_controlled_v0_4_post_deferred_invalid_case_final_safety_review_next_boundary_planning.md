@@ -435,3 +435,7 @@ Step635 should be design-only / docs-only and should not implement payload audit
 Step635 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_design.md` as the design-only / docs-only follow-up selected by this planning document.
 
 The Step635 design keeps payload audit implementation, payload body emission, artifact body payload output, generated policy body output, manifest body output, manifest writer integration, file writing, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, runtime implementation changes, and validator implementation changes out of scope.
+
+## 18. Step642 Release-Quality Integration Reference
+
+The Step635-Step641 payload audit without payload emission chain later reaches Step642 wrapper integration. Step642 adds only the standalone count-only payload audit target to release-quality; it does not reopen the Step633 accepted deferred invalid-case boundary and does not add payload body emission, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

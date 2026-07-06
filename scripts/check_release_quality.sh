@@ -181,6 +181,9 @@ run make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-inv
 section "learner-state frozen policy generation actual-controlled v0.4 deferred invalid-case usage_error/mismatch smoke"
 run make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke
 
+section "learner-state frozen policy generation actual-controlled v0.4 artifact body payload audit without payload emission"
+run make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission
+
 section "learner-state frozen policy generation artifact body fixture validation"
 run make check-learner-state-frozen-policy-generation-artifact-body-fixtures
 

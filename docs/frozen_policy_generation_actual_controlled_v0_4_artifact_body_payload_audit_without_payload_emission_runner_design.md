@@ -522,3 +522,7 @@ Step640 adds the standalone Makefile target `check-learner-state-frozen-policy-g
 ## 26. Step641 Release-Quality Integration Design Reference
 
 Step641 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_integration_design.md` as a design-only / docs-only plan for future release-quality wrapper integration of the Step640 standalone target. It keeps wrapper implementation, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, payload body emission, manifest writer integration, and file writing out of scope.
+
+## 27. Step642 Release-Quality Integration Reference
+
+Step642 adds the Step640 standalone payload audit target to the release-quality wrapper after the deferred invalid-case usage_error / mismatch smoke and before artifact body fixture / CLI checks. It preserves this runner's metadata-only / body-free / count-only boundary and does not change Python code/tests, fixture JSON, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

@@ -338,3 +338,7 @@ Recommend only planning next. Do not recommend payload audit implementation, man
 Step634 adds `docs/frozen_policy_generation_actual_controlled_v0_4_post_deferred_invalid_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after this final safety review.
 
 It recommends Step635 actual-controlled v0.4 payload audit without payload emission design. This final safety review remains unchanged and does not accept payload correctness, manifest writer correctness, file-writing readiness, real-data readiness, or model performance.
+
+## Step642 Payload Audit Release-Quality Integration Reference
+
+Step642 later adds the payload audit without payload emission target to the release-quality wrapper after the deferred usage_error / mismatch smoke. This does not reopen, replace, or broaden the Step633 accepted boundary for the fixed 4 selected deferred invalid cases, and it does not add payload correctness, artifact body payload quality, manifest writer correctness, file-writing readiness, real-data readiness, or model performance evidence.

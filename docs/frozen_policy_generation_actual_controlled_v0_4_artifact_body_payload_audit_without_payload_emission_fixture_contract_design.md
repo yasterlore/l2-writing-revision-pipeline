@@ -497,3 +497,7 @@ Step640 adds a standalone Makefile target for the Step638 direct runner while ke
 ## 27. Step641 Release-Quality Integration Design Reference
 
 Step641 adds a design-only / docs-only release-quality integration plan for the Step640 standalone target. It does not change fixture JSON, wrapper implementation, Makefile, workflow files, Python code/tests, payload body emission, manifest writer integration, or file writing.
+
+## 28. Step642 Release-Quality Integration Reference
+
+Step642 adds the Step640 standalone target to the release-quality wrapper while keeping this 36-case fixture contract unchanged. The wrapper check remains count-only / metadata-only / body-free and does not change fixture JSON, Makefile, workflow files, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

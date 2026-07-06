@@ -646,3 +646,7 @@ Step638 adds focused Python test coverage for the direct CLI-only artifact body 
 ## Step640 Coverage Addendum
 
 Step640 adds standalone Makefile coverage for running the Step638 payload audit without payload emission runner through `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission`. This is standalone target coverage only; it is not release-quality wrapper coverage, workflow coverage, payload body emission coverage, artifact body payload correctness evidence, artifact body payload quality evidence, manifest writer coverage, file-writing coverage, production readiness, real-data readiness, model performance evidence, safe-metadata free-form body safety evidence, or runtime correctness generally evidence.
+
+## Step642 Coverage Addendum
+
+Step642 adds release-quality wrapper coverage for the Step640 standalone payload audit target through `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 artifact body payload audit without payload emission`. This wrapper coverage is ordered after the deferred invalid-case usage_error / mismatch smoke and before artifact body fixture / CLI checks. It is not workflow coverage, payload body emission coverage, payload correctness evidence, artifact body payload quality evidence, manifest writer coverage, file-writing coverage, production readiness, real-data readiness, model performance evidence, safe-metadata free-form body safety evidence, or runtime correctness generally evidence.

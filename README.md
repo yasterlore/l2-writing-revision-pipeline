@@ -135,13 +135,15 @@ At a high level, it runs:
 - artifact body generation integration fixture validation, included through a
   standalone Makefile target and release-quality wrapper check
 - actual-controlled v0.4 artifact body payload audit without payload emission,
-  available through the standalone Makefile target
+  available through the standalone Makefile target and release-quality wrapper
+  check
   `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission`
   and direct runner
   `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission.py`;
   it checks the 36-case synthetic metadata-only root with aggregate
   count-only output, emits no payload bodies, invokes no manifest writer,
-  writes no files, and is not yet release-quality integrated
+  writes no files, and runs after the deferred invalid-case usage_error /
+  mismatch smoke and before artifact body fixture / CLI checks
 - artifact body generation runtime integration plan-only bridge, available as
   `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
   over `valid/valid_minimal_suppressed_metadata_only_bridge` with no artifact
@@ -322,6 +324,7 @@ Not currently implemented or not claimed:
 - `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_smoke.py`: Step626 adds a direct CLI-only deferred invalid-case usage_error / mismatch runner with focused tests at `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_smoke.py`. It processes the 4 deferred non-fail_closed invalid cases with `--case-selection deferred-invalid-usage-error-mismatch`, uses `processed_case_count=4` as the primary count, expects 3 usage_error and 1 mismatch per-case categories, emits aggregate public-safe metadata only, is not Makefile-targeted or release-quality integrated yet, does not change fixture JSON, does not invoke manifest writer, and does not write files.
 - `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke`: Step628 standalone Makefile target for the Step626 deferred invalid-case usage_error / mismatch runner. It runs the `deferred-invalid-usage-error-mismatch` matrix with 4 processed deferred invalid cases, expects 3 usage_error and 1 mismatch per-case categories, remains outside release-quality, does not change Python code/tests or fixture JSON, does not implement payload audit, does not invoke manifest writer, and does not write files.
 - `scripts/check_release_quality.sh`: Step630 adds `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 deferred invalid-case usage_error/mismatch smoke` after the invalid fail_closed smoke and before artifact body fixture / CLI checks. The check runs `make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-deferred-invalid-case-runtime-usage-error-mismatch-smoke`, expects aggregate public-safe metadata for 4 processed deferred invalid cases with 3 observed usage_error categories and 1 observed mismatch category, does not change Makefile, Python code/tests, or fixture JSON, does not implement payload audit, does not invoke manifest writer, and does not write files.
+- `scripts/check_release_quality.sh`: Step642 adds `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 artifact body payload audit without payload emission` after the actual-controlled v0.4 deferred invalid-case usage_error / mismatch smoke and before artifact body fixture / CLI checks. The check runs the Step640 standalone target, expects the 36-case count-only metadata contract, emits no payload bodies, invokes no manifest writer, writes no files, and does not claim payload correctness, artifact body payload quality, production readiness, real-data readiness, or model performance.
 
 ## CI
 

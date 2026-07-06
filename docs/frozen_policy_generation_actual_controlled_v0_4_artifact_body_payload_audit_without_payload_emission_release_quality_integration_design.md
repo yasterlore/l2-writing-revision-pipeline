@@ -367,3 +367,9 @@ Recommended next step:
 - Step642: actual-controlled v0.4 artifact body payload audit without payload emission release-quality wrapper integration
 
 Step642 should update only wrapper and necessary README/docs. Step642 should not change Makefile, Python code/tests, fixture JSON, workflow files, emit payload bodies, implement manifest writer integration, or enable file writing.
+
+## 17. Step642 Release-Quality Integration Reference
+
+Step642 implements this design by adding `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 artifact body payload audit without payload emission` to `scripts/check_release_quality.sh`. The command is `make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission`, inserted after the deferred usage_error / mismatch smoke and before artifact body fixture / CLI checks.
+
+The integration remains wrapper-only plus necessary README/docs updates. It does not change Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, payload body emission, artifact body payload output, generated policy body output, manifest body output, manifest writer integration, or file writing. Next recommended step is Step643 remote/manual run record workflow design.
