@@ -1530,3 +1530,7 @@ invocation evidence, or file-writing evidence.
 ## Step634 Post Deferred Invalid-Case Final Safety Review Next-Boundary Planning
 
 - [Actual-controlled v0.4 post deferred invalid-case final safety review next-boundary planning](../frozen_policy_generation_actual_controlled_v0_4_post_deferred_invalid_case_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison after Step633. It recommends Step635 payload audit without payload emission design and keeps implementation, wrapper, Makefile, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, and file writing out of scope.
+
+## Step635 Actual-Controlled v0.4 Artifact Body Payload Audit Without Payload Emission Design
+
+- [Actual-controlled v0.4 artifact body payload audit without payload emission design](../frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_design.md): design-only / docs-only payload audit boundary design. It records only future public-safe metadata / count-only surrogate concepts and keeps payload audit implementation, payload body emission, generated policy body output, manifest body output, manifest writer integration, file writing, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, and fixture JSON changes out of scope.

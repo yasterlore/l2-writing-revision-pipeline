@@ -416,3 +416,7 @@ Step633 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_inva
 ## Step634 Post Deferred Invalid-Case Final Safety Review Planning Reference
 
 Step634 adds `docs/frozen_policy_generation_actual_controlled_v0_4_post_deferred_invalid_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after Step633. This root and fixture JSON remain unchanged, and Step634 does not change wrapper, Makefile, workflow, Python code/tests, payload audit implementation, manifest writer integration, or file writing.
+
+## Step635 Artifact Body Payload Audit Without Payload Emission Design Reference
+
+Step635 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_design.md` as a design-only / docs-only payload audit boundary design. This root and fixture JSON remain unchanged, and Step635 does not implement payload audit, emit payload bodies, change wrapper, Makefile, workflow, Python code/tests, manifest writer integration, or file writing.

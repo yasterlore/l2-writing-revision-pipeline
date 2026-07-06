@@ -3419,3 +3419,9 @@ The review accepts only the release-quality-integrated, remote-status-recorded b
 Step634 adds `docs/frozen_policy_generation_actual_controlled_v0_4_post_deferred_invalid_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after Step633.
 
 The plan compares payload audit design without payload emission, manifest writer handoff design, documentation consolidation, remote metadata consolidation / status index cleanup, and artifact body / manifest / file-writing readiness planning without implementation. It recommends Step635 actual-controlled v0.4 payload audit without payload emission design and keeps implementation, wrapper changes, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, payload audit implementation, manifest writer integration, file writing, real-data use, metric use, and production readiness status out of scope.
+
+## Step635 Actual-Controlled v0.4 Artifact Body Payload Audit Without Payload Emission Design
+
+Step635 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_design.md` as a design-only / docs-only boundary design after Step634.
+
+The design defines a future payload audit shape that remains metadata-only, body-free, and count-only. It records allowed public-safe metadata categories, forbidden input/output surfaces, payload suppression and forbidden body emission concepts, relationship to the accepted actual-controlled v0.4 smoke boundaries, relationship to artifact body safe-metadata CLI smoke, and Step636 handoff. Step635 does not implement payload audit, emit payload bodies, output generated policy or manifest bodies, change Makefile, change wrapper files, change workflow files, change Python code/tests, change fixture JSON, invoke manifest writer integration, enable file writing, use real data, use metrics, or claim production readiness.

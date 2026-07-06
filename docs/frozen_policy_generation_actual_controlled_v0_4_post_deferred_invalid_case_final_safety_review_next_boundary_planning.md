@@ -293,7 +293,7 @@ Step635: actual-controlled v0.4 payload audit without payload emission design
 Proposed doc path:
 
 ```text
-docs/frozen_policy_generation_actual_controlled_v0_4_payload_audit_without_payload_emission_design.md
+docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_design.md
 ```
 
 Step635 should:
@@ -429,3 +429,9 @@ Step635: actual-controlled v0.4 payload audit without payload emission design
 ```
 
 Step635 should be design-only / docs-only and should not implement payload audit, emit payload bodies, change wrapper, change Makefile, change workflow, change Python code/tests, change fixture JSON, implement manifest writer integration, or enable file writing.
+
+## 17. Step635 Design Reference
+
+Step635 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_design.md` as the design-only / docs-only follow-up selected by this planning document.
+
+The Step635 design keeps payload audit implementation, payload body emission, artifact body payload output, generated policy body output, manifest body output, manifest writer integration, file writing, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, runtime implementation changes, and validator implementation changes out of scope.
