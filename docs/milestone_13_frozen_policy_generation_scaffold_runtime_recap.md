@@ -3413,3 +3413,9 @@ The marker records provided public-safe metadata, observed release-quality label
 Step633 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step624-Step632 deferred invalid-case usage_error / mismatch chain.
 
 The review accepts only the release-quality-integrated, remote-status-recorded boundary for the fixed 4 selected deferred invalid cases, with 3 expected/observed usage_error categories, 1 expected/observed mismatch category, `processed_case_count=4`, zero payload emission, zero manifest writer invocation, zero file-writing enablement, zero forbidden body emission, and zero residue. It does not accept production readiness, real-data readiness, model performance, general runtime correctness, all invalid-case behavior generally, payload correctness, manifest writer correctness, or file-writing readiness.
+
+## Step634 Post Deferred Invalid-Case Final Safety Review Next-Boundary Planning
+
+Step634 adds `docs/frozen_policy_generation_actual_controlled_v0_4_post_deferred_invalid_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after Step633.
+
+The plan compares payload audit design without payload emission, manifest writer handoff design, documentation consolidation, remote metadata consolidation / status index cleanup, and artifact body / manifest / file-writing readiness planning without implementation. It recommends Step635 actual-controlled v0.4 payload audit without payload emission design and keeps implementation, wrapper changes, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, payload audit implementation, manifest writer integration, file writing, real-data use, metric use, and production readiness status out of scope.

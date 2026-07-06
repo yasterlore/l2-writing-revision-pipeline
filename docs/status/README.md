@@ -1526,3 +1526,7 @@ invocation evidence, or file-writing evidence.
 ## Step633 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Final Safety Review
 
 - [Actual-controlled v0.4 deferred invalid-case usage_error / mismatch release-quality chain final safety review](../frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_chain_final_safety_review.md): final-safety-review-only / docs-only review for the Step624-Step632 chain. It accepts only the fixed 4 selected deferred invalid usage_error / mismatch boundary and keeps payload audit implementation, manifest writer integration, file writing, production readiness, real-data readiness, model performance, and general runtime correctness out of scope.
+
+## Step634 Post Deferred Invalid-Case Final Safety Review Next-Boundary Planning
+
+- [Actual-controlled v0.4 post deferred invalid-case final safety review next-boundary planning](../frozen_policy_generation_actual_controlled_v0_4_post_deferred_invalid_case_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison after Step633. It recommends Step635 payload audit without payload emission design and keeps implementation, wrapper, Makefile, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, and file writing out of scope.

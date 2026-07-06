@@ -332,3 +332,9 @@ The next planning step should compare at least:
 - Option E: artifact body / manifest / file-writing readiness planning, without implementation
 
 Recommend only planning next. Do not recommend payload audit implementation, manifest writer integration, or file writing implementation before Step634 planning.
+
+## Step634 Next-Boundary Planning Reference
+
+Step634 adds `docs/frozen_policy_generation_actual_controlled_v0_4_post_deferred_invalid_case_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after this final safety review.
+
+It recommends Step635 actual-controlled v0.4 payload audit without payload emission design. This final safety review remains unchanged and does not accept payload correctness, manifest writer correctness, file-writing readiness, real-data readiness, or model performance.
