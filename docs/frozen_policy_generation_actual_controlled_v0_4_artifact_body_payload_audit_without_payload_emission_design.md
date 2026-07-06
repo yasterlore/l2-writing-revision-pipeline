@@ -416,3 +416,7 @@ Step638 later adds the direct CLI-only runner `python/learner_state/frozen_polic
 ## 22. Step640 Makefile Target Reference
 
 Step640 later adds a standalone Makefile target for the Step638 direct runner. The boundary remains metadata-only, body-free, count-only, standalone from release-quality, and without payload body emission, manifest writer integration, or file writing.
+
+## 23. Step641 Release-Quality Integration Design Reference
+
+Step641 later adds a design-only / docs-only plan for future release-quality integration of the Step640 standalone target. The planning keeps wrapper implementation, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, payload body emission, manifest writer integration, and file writing out of scope.

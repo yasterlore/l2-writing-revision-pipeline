@@ -335,3 +335,7 @@ Step640 should update Makefile and necessary README/docs only. Step640 should no
 Step640 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission` as a standalone Makefile target for the Step638 direct CLI.
 
 The target follows this design with help text `Run actual-controlled v0.4 artifact body payload audit without payload emission`, placement after the deferred invalid-case usage_error / mismatch target, and the same public-safe aggregate-output boundary. Release-quality wrapper integration remains future work.
+
+## Step641 Release-Quality Integration Design Reference
+
+Step641 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_integration_design.md` as a design-only / docs-only plan for future release-quality wrapper integration of the Step640 standalone target. It does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, payload body emission, manifest writer integration, or file writing.

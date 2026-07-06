@@ -3455,3 +3455,9 @@ The design proposes `check-learner-state-frozen-policy-generation-actual-control
 Step640 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission` as a standalone Makefile target for the Step638 direct CLI.
 
 The target runs `--case-selection payload-audit-without-payload-emission` with `--fail-closed-on-forbidden-body`, records aggregate public-safe metadata for the 36-case count-only contract, zero payload body emission, zero manifest writer invocation, zero file-writing enablement, and zero residue. Step640 keeps release-quality wrapper integration, workflow changes, Python code/tests changes, fixture JSON changes, payload body emission, manifest writer integration, file writing, real-data use, metric use, and production readiness status out of scope.
+
+## Step641 Actual-Controlled v0.4 Artifact Body Payload Audit Release-Quality Integration Design
+
+Step641 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_integration_design.md` as a design-only / docs-only plan for future wrapper integration of the Step640 standalone target.
+
+The design recommends adding `release_quality_check: learner-state frozen policy generation actual-controlled v0.4 artifact body payload audit without payload emission` after the deferred usage_error / mismatch smoke and before artifact body fixture / CLI checks. Step641 does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, payload body emission, manifest writer integration, file writing, real-data use, metric use, or production readiness status.

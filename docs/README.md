@@ -917,3 +917,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step640 Actual-Controlled v0.4 Artifact Body Payload Audit Makefile Target
 
 - `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission`: standalone Makefile target for the Step638 payload audit without payload emission runner. It runs `--case-selection payload-audit-without-payload-emission` with `--fail-closed-on-forbidden-body`, emits aggregate public-safe metadata for the 36-case count-only contract, remains outside release-quality, and does not change Python code/tests, fixture JSON, payload body emission, manifest writer integration, or file writing.
+
+## Step641 Actual-Controlled v0.4 Artifact Body Payload Audit Release-Quality Integration Design
+
+- [Actual-controlled v0.4 artifact body payload audit without payload emission release-quality integration design](frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_integration_design.md): design-only / docs-only plan for future wrapper integration of the Step640 standalone target. It proposes the release-quality label, command, insertion after deferred usage_error / mismatch smoke and before artifact body fixture / CLI checks, expected public-safe output, validation plan, and safety boundary without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, payload body emission, manifest writer integration, or file writing.

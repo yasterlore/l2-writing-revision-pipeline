@@ -493,3 +493,7 @@ Step638 later implements the standalone direct CLI-only runner and focused tests
 ## 26. Step640 Makefile Target Reference
 
 Step640 adds a standalone Makefile target for the Step638 direct runner while keeping this 36-case fixture contract unchanged. It does not change fixture JSON, release-quality wrapper integration, workflow files, Python code/tests, payload body emission, manifest writer integration, or file writing.
+
+## 27. Step641 Release-Quality Integration Design Reference
+
+Step641 adds a design-only / docs-only release-quality integration plan for the Step640 standalone target. It does not change fixture JSON, wrapper implementation, Makefile, workflow files, Python code/tests, payload body emission, manifest writer integration, or file writing.
