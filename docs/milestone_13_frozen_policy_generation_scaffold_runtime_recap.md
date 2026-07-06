@@ -3515,3 +3515,9 @@ The design defines proposed runner module/tests, future CLI, input model, fixtur
 Step650 adds `python/learner_state/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation.py`, focused tests, and a synthetic body-free fixture root for the Step648 8-case metadata-only handoff contract.
 
 The runner emits aggregate public-safe key-value metadata only. It requires summary-only, no-manifest-writer, no-file-writing, and fail-closed-on-forbidden-body flags; classifies 3 valid metadata-only cases as pass and 5 invalid metadata-category cases as fail_closed; and keeps actual unsafe output counts, manifest writer invocation, file writing, payload body emission, and residue at zero for the canonical fixture. Step650 does not add a Makefile target, release-quality wrapper integration, workflow changes, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, or production readiness status.
+
+## Step651 Artifact Body to Manifest Handoff Makefile Target Design
+
+Step651 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step650 direct CLI.
+
+The design proposes the target name `check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation`, help text, command, placement, expected aggregate public-safe output, relationship to existing targets, Step652 implementation plan, failure interpretation, and safety boundary. Step651 does not change Makefile, wrapper files, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, or production readiness status.

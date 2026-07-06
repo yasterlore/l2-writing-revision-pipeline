@@ -18,3 +18,7 @@ fixture actual unsafe counters remain false or zero. These fixtures do not
 invoke manifest writer, generate manifest body, write files, emit payload
 bodies, include raw learner text, include private paths, or use real
 participant data.
+
+Step651 records the future standalone Makefile target design for this fixture
+root in
+`docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_makefile_target_design.md`.
