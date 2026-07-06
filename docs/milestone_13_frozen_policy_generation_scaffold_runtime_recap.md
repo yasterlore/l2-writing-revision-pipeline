@@ -3503,3 +3503,9 @@ The design defines the `artifact_body_to_manifest_handoff_metadata_only_no_write
 Step648 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_fixture_contract_design.md` as a design-only / docs-only future fixture / matrix / metadata contract for the Step647 handoff boundary.
 
 The contract fixes the future fixture root, matrix identity, 8 selected cases, expected pass / fail_closed counts, per-case metadata rules, aggregate count-only metadata, future fixture file shape, runner selection policy, status semantics, and failure mapping. Step648 does not create fixture JSON, implement runner code, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, use real data, use metrics, or claim production readiness.
+
+## Step649 Artifact Body to Manifest Handoff Runner Design
+
+Step649 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_runner_design.md` as a design-only / docs-only future runner behavior design for the Step648 contract.
+
+The design defines proposed runner module/tests, future CLI, input model, fixture file reading policy, case selection algorithm, per-case classification, aggregate output contract, per-case output policy, status semantics, failure mapping, safety scan, residue policy, and Step650 focused tests. Step649 does not create fixture JSON, implement runner code, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, use real data, use metrics, or claim production readiness.

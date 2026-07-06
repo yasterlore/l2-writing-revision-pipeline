@@ -420,3 +420,7 @@ Step648 should be design-only / docs-only. It should fix the future fixture / ma
 ## 19. Step648 Fixture Contract Design Reference
 
 Step648 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_fixture_contract_design.md` as a design-only / docs-only fixture contract for this handoff boundary. It fixes the future fixture root, matrix identity, selected cases, aggregate count-only metadata contract, status semantics, and failure mapping while still not creating fixture JSON, implementing a runner, invoking manifest writer, generating manifest body, enabling file writing, or changing Python code/tests, Makefile, wrapper, workflow, or fixture JSON.
+
+## 20. Step649 Runner Design Reference
+
+Step649 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_runner_design.md` as a design-only / docs-only future runner behavior design. It keeps this handoff boundary no-writer-invocation and no-file-writing, and does not implement Python code/tests, create fixture JSON, change Makefile, change wrapper, change workflow, invoke manifest writer, generate manifest body, or emit payload bodies.

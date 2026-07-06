@@ -347,3 +347,7 @@ Step647 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_me
 ## 15. Step648 Fixture Contract Design Reference
 
 Step648 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_fixture_contract_design.md` as a design-only / docs-only fixture contract for the Step647 handoff boundary. It does not create fixture JSON, implement a runner, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, or fixture JSON.
+
+## 16. Step649 Runner Design Reference
+
+Step649 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_runner_design.md` as a design-only / docs-only future runner behavior design for the Step648 contract. It does not implement runner code, create fixture JSON, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, or fixture JSON.

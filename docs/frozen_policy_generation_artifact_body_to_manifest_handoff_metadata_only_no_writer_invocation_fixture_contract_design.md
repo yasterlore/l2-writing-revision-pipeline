@@ -481,3 +481,7 @@ Recommended:
 `Step649: artifact body to manifest handoff metadata-only no-writer-invocation runner design`
 
 Step649 should be design-only / docs-only. It should design future runner behavior from this fixture contract. It should not create fixture JSON, implement runner, invoke manifest writer, generate manifest body, enable file writing, or change Python code/tests, Makefile, wrapper, workflow, or fixture JSON.
+
+## 20. Step649 Runner Design Reference
+
+Step649 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_runner_design.md` as a design-only / docs-only runner behavior design for this fixed contract. It does not create fixture JSON, implement runner code, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, or fixture JSON.
