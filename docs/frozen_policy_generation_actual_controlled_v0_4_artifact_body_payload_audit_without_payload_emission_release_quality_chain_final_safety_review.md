@@ -262,3 +262,7 @@ Option A is preferred if remote evidence is available soon. Otherwise, Option B 
 ## 15. Step646 Next Boundary Planning Reference
 
 Step646 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_post_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after this final safety review. It preserves the local/manual-status-recorded limitation and recommends a future artifact body to manifest handoff metadata-only no-writer-invocation design if public-safe remote metadata remains unavailable.
+
+## 16. Step647 Handoff Design Reference
+
+Step647 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_design.md` as a design-only / docs-only handoff boundary. This final safety review remains limited to the Step645 accepted-with-limitation payload audit boundary and is not broadened into manifest writer integration, manifest body generation, file writing, payload correctness, or artifact body payload quality.

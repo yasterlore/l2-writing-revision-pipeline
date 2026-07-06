@@ -3491,3 +3491,9 @@ The review accepts the release-quality-integrated, local/manual-status-recorded 
 Step646 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_post_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after the Step645 final safety review.
 
 The planning compares a public-safe remote metadata status update, artifact body to manifest handoff metadata-only no-writer-invocation design, documentation consolidation, waiting for metadata, and direct manifest writer / file-writing work. It recommends Step647 artifact body to manifest handoff metadata-only no-writer-invocation design if public-safe remote metadata remains unavailable, and keeps wrapper changes, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, payload body emission, manifest writer integration, file writing, real-data use, metric use, and production readiness status out of scope.
+
+## Step647 Artifact Body to Manifest Handoff Metadata-Only No-Writer-Invocation Design
+
+Step647 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_design.md` as a design-only / docs-only pre-writer handoff design.
+
+The design defines the `artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation` boundary, allowed public-safe handoff metadata, forbidden body / payload / private content, count-only surrogate fields, future fixture / matrix scope, future no-writer-invocation runner concept, status semantics, failure mapping, relationships to the Step645 payload audit limitation and manifest writer / file-writing boundaries, and a tentative Step648-Step657 chain. It does not invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, use real data, use metrics, or claim production readiness.

@@ -464,3 +464,7 @@ Step645 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body
 ## Step646 Artifact Body Payload Audit Next Boundary Planning Reference
 
 Step646 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning. This fixture root and fixture JSON remain unchanged; Step646 does not change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.
+
+## Step647 Artifact Body to Manifest Handoff Design Reference
+
+Step647 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_design.md` as design-only / docs-only handoff planning. This fixture root and fixture JSON remain unchanged; Step647 does not invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, runtime implementation, or validator implementation.

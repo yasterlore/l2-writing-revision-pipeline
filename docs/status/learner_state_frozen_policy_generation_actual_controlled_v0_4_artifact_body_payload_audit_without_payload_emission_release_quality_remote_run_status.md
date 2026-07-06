@@ -312,3 +312,7 @@ Step645 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body
 ## 18. Step646 Next Boundary Planning Reference
 
 Step646 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning. It does not change this status marker or create remote evidence.
+
+## 19. Step647 Handoff Design Reference
+
+Step647 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_design.md` as design-only / docs-only handoff planning. It does not change this status marker, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or create remote evidence.

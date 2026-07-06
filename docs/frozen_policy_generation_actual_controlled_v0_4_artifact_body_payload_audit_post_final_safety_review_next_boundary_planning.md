@@ -339,3 +339,7 @@ Recommended:
 `Step647: artifact body to manifest handoff metadata-only no-writer-invocation design`
 
 Step647 should be design-only / docs-only. It should not implement manifest writer integration, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, or fixture JSON.
+
+## 14. Step647 Handoff Design Reference
+
+Step647 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_design.md` as a design-only / docs-only handoff boundary. It keeps the Step645 local/manual-status-recorded limitation active and does not invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, or fixture JSON.

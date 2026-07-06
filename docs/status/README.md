@@ -1578,3 +1578,7 @@ invocation evidence, or file-writing evidence.
 ## Step646 Artifact Body Payload Audit Post-Final-Safety-Review Next Boundary Planning
 
 - [Actual-controlled v0.4 artifact body payload audit post-final-safety-review next boundary planning](../frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison after Step645. It preserves the local/manual-status-recorded limitation and recommends Step647 artifact body to manifest handoff metadata-only no-writer-invocation design if public-safe remote metadata remains unavailable.
+
+## Step647 Artifact Body to Manifest Handoff Metadata-Only No-Writer-Invocation Design
+
+- [Artifact body to manifest handoff metadata-only no-writer-invocation design](../frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_design.md): design-only / docs-only pre-writer handoff boundary. It records allowed metadata, forbidden content, count-only surrogates, future runner concept, status semantics, failure mapping, and Step648 handoff while keeping manifest writer invocation, manifest body generation, file writing, payload body emission, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, and fixture JSON changes out of scope.

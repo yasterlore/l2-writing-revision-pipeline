@@ -941,3 +941,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step646 Artifact Body Payload Audit Post-Final-Safety-Review Next Boundary Planning
 
 - [Actual-controlled v0.4 artifact body payload audit post-final-safety-review next boundary planning](frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison after Step645. It preserves the local/manual-status-recorded limitation, compares remote metadata update, no-writer-invocation handoff design, docs consolidation, waiting, and direct manifest writer/file-writing options, and recommends Step647 artifact body to manifest handoff metadata-only no-writer-invocation design if public-safe remote metadata remains unavailable.
+
+## Step647 Artifact Body to Manifest Handoff Metadata-Only No-Writer-Invocation Design
+
+- [Artifact body to manifest handoff metadata-only no-writer-invocation design](frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_design.md): design-only / docs-only pre-writer handoff boundary. It defines allowed public-safe handoff metadata, forbidden body / payload / private content, count-only surrogate fields, future no-writer-invocation runner concept, status semantics, failure mapping, and Step648 fixture contract handoff without invoking manifest writer, generating manifest body, enabling file writing, emitting payload bodies, or changing Python code/tests, Makefile, wrapper, workflow, or fixture JSON.
