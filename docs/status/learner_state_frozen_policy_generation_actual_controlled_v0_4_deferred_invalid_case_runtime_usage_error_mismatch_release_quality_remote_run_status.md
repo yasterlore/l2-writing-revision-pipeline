@@ -274,3 +274,7 @@ Step642 later adds the payload audit without payload emission check after this d
 ## Step643 Payload Audit Remote Run Record Workflow Design Reference
 
 Step643 later adds a design-only / docs-only workflow for a future payload audit status marker. This status marker remains limited to the Step630 deferred invalid-case remote run and should not be treated as recording Step642 or Step644 payload audit remote evidence.
+
+## Step644 Payload Audit Status Marker Reference
+
+Step644 later adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_remote_run_status.md`. This Step632 marker remains limited to the deferred invalid-case usage_error / mismatch release-quality run and does not record payload audit correctness, manifest writer evidence, file-writing evidence, production readiness, real-data readiness, or model performance evidence.

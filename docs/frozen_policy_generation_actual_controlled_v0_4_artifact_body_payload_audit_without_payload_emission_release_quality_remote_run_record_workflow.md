@@ -406,3 +406,7 @@ Recommended next step:
 - Step644: actual-controlled v0.4 artifact body payload audit without payload emission release-quality remote status marker
 
 Step644 should create the status marker only from public-safe metadata. Step644 should not copy raw logs, alter wrapper / Makefile / Python / fixture JSON / workflow, emit payload bodies, implement manifest writer integration, or enable file writing.
+
+## 20. Step644 Status Marker Reference
+
+Step644 creates `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_remote_run_status.md` as a status-marker-only / docs-only record. Remote metadata was unavailable from provided public-safe metadata, so the marker uses the Step642 local/manual summary fallback and records missing remote fields as `not available from provided public-safe metadata`.

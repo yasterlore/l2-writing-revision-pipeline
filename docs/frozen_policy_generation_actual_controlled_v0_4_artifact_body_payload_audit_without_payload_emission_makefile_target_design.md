@@ -347,3 +347,7 @@ Step642 adds the Step640 standalone target to `scripts/check_release_quality.sh`
 ## Step643 Remote Run Record Workflow Design Reference
 
 Step643 adds a design-only / docs-only workflow for a future public-safe remote/manual status marker for the Step642 release-quality check. It keeps this Makefile target unchanged and does not change wrapper files, workflow files, Python code/tests, fixture JSON, payload body emission, manifest writer integration, or file writing.
+
+## Step644 Status Marker Reference
+
+Step644 adds a status-marker-only / docs-only record for the Step642 wrapper-integrated payload audit check. It keeps this Makefile target unchanged and records no raw logs, payload bodies, manifest writer evidence, file-writing evidence, production readiness, real-data readiness, or model performance evidence.

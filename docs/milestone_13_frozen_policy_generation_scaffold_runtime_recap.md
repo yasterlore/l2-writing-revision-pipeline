@@ -3473,3 +3473,9 @@ The check runs `make check-learner-state-frozen-policy-generation-actual-control
 Step643 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future remote/manual status marker after Step642.
 
 The design defines public-safe evidence sources, forbidden raw log / payload sources, public-safe metadata fields, the count-only payload audit target summary, missing metadata handling, status marker template, relationship to existing status markers, and Step644 / Step645 staging. Step643 does not create a status marker, change wrapper files, change Makefile, change workflow files, change Python code/tests, change fixture JSON, emit payload bodies, invoke manifest writer integration, enable file writing, use real data, use metrics, or claim production readiness.
+
+## Step644 Actual-Controlled v0.4 Artifact Body Payload Audit Remote Run Status
+
+Step644 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_remote_run_status.md` as a status-marker-only / docs-only record after Step642 wrapper integration.
+
+Remote metadata was unavailable from provided public-safe metadata, so the marker uses the Step642 local/manual summary fallback and records `local_fallback_used=yes`. It records the payload audit label, final release-quality result, count-only 36-case payload audit summary, missing metadata handling, relationships to existing status markers, and Step645 handoff. Step644 does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, emit payload bodies, invoke manifest writer integration, enable file writing, use real data, use metrics, or claim production readiness.

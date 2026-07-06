@@ -346,3 +346,7 @@ Step642 later adds the payload audit without payload emission target to the rele
 ## Step643 Payload Audit Remote Run Record Workflow Design Reference
 
 Step643 later adds a design-only / docs-only workflow for recording a future public-safe status marker for the Step642 payload audit release-quality check. This final safety review remains limited to the deferred invalid-case usage_error / mismatch boundary and is not replaced by the future payload audit marker.
+
+## Step644 Payload Audit Status Marker Reference
+
+Step644 later adds the payload audit release-quality status marker. This final safety review remains limited to the fixed 4 selected deferred invalid cases and is not reopened, replaced, or broadened by the payload audit marker.

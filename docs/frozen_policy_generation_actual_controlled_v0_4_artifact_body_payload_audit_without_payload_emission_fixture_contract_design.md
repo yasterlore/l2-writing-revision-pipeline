@@ -505,3 +505,7 @@ Step642 adds the Step640 standalone target to the release-quality wrapper while 
 ## 29. Step643 Remote Run Record Workflow Design Reference
 
 Step643 adds a design-only / docs-only workflow for a future public-safe status marker for the Step642 wrapper-integrated check. The status marker design records this 36-case contract only through count-only metadata and does not change fixture JSON, Makefile, workflow files, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.
+
+## 30. Step644 Status Marker Reference
+
+Step644 adds a status-marker-only / docs-only record for the Step642 wrapper-integrated check. The marker records this 36-case contract through count-only metadata only, leaves fixture JSON unchanged, and does not add payload body emission, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

@@ -428,3 +428,7 @@ Step642 adds the Step640 standalone target to `scripts/check_release_quality.sh`
 ## 25. Step643 Remote Run Record Workflow Design Reference
 
 Step643 adds a design-only / docs-only remote/manual run record workflow for the Step642 wrapper-integrated check. The future status marker should record only public-safe metadata and count-only payload audit summary fields, and should not copy raw logs, payload bodies, manifest bodies, generated policy bodies, raw stdout/stderr bodies, private / absolute path values, or real participant data.
+
+## 26. Step644 Status Marker Reference
+
+Step644 adds the payload audit release-quality status marker as a public-safe, metadata-only, body-free, count-only record using local/manual summary fallback. It does not prove payload correctness or artifact body payload quality, and it does not add payload body emission, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

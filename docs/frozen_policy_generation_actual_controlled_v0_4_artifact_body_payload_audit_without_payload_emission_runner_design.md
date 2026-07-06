@@ -530,3 +530,7 @@ Step642 adds the Step640 standalone payload audit target to the release-quality 
 ## 28. Step643 Remote Run Record Workflow Design Reference
 
 Step643 adds a design-only / docs-only workflow for recording a future public-safe remote/manual status marker for the Step642 wrapper-integrated target. It preserves this runner's metadata-only / body-free / count-only boundary and does not change Python code/tests, fixture JSON, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.
+
+## 29. Step644 Status Marker Reference
+
+Step644 adds a status-marker-only / docs-only record for the Step642 wrapper-integrated target. The marker records this runner's public-safe count-only summary with local/manual fallback and does not change Python code/tests, fixture JSON, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

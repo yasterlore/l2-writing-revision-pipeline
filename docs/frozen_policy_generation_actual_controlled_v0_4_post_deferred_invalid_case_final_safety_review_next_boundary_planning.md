@@ -443,3 +443,7 @@ The Step635-Step641 payload audit without payload emission chain later reaches S
 ## 19. Step643 Remote Run Record Workflow Design Reference
 
 Step643 later adds a design-only / docs-only workflow for a future Step644 public-safe status marker for the Step642 payload audit release-quality check. It does not create the status marker and does not add payload body emission, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## 20. Step644 Status Marker Reference
+
+Step644 later adds the payload audit status marker using local/manual summary fallback. The marker records the Step642 wrapper-integrated count-only payload audit check and does not reopen the Step633 accepted deferred invalid-case boundary or add payload correctness, manifest writer correctness, file-writing readiness, real-data readiness, or model performance evidence.
