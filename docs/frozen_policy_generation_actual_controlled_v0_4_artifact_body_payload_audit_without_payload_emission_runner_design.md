@@ -534,3 +534,7 @@ Step643 adds a design-only / docs-only workflow for recording a future public-sa
 ## 29. Step644 Status Marker Reference
 
 Step644 adds a status-marker-only / docs-only record for the Step642 wrapper-integrated target. The marker records this runner's public-safe count-only summary with local/manual fallback and does not change Python code/tests, fixture JSON, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.
+
+## 30. Step645 Final Safety Review Reference
+
+Step645 adds a final-safety-review-only / docs-only review for the Step635-Step644 chain. It accepts the release-quality-integrated, local/manual-status-recorded 36-case count-only metadata contract with limitation and does not change this runner, Python code/tests, fixture JSON, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

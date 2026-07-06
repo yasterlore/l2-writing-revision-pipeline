@@ -447,3 +447,7 @@ Step643 later adds a design-only / docs-only workflow for a future Step644 publi
 ## 20. Step644 Status Marker Reference
 
 Step644 later adds the payload audit status marker using local/manual summary fallback. The marker records the Step642 wrapper-integrated count-only payload audit check and does not reopen the Step633 accepted deferred invalid-case boundary or add payload correctness, manifest writer correctness, file-writing readiness, real-data readiness, or model performance evidence.
+
+## 21. Step645 Final Safety Review Reference
+
+Step645 later adds a final-safety-review-only / docs-only review for the Step635-Step644 payload audit without payload emission chain. It accepts the local/manual-status-recorded 36-case count-only metadata contract with limitation and does not reopen the Step633 accepted deferred invalid-case boundary or add payload correctness, manifest writer correctness, file-writing readiness, real-data readiness, or model performance evidence.

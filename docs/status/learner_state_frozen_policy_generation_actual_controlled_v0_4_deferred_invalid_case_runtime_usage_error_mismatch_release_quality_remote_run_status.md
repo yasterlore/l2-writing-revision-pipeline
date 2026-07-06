@@ -278,3 +278,7 @@ Step643 later adds a design-only / docs-only workflow for a future payload audit
 ## Step644 Payload Audit Status Marker Reference
 
 Step644 later adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_remote_run_status.md`. This Step632 marker remains limited to the deferred invalid-case usage_error / mismatch release-quality run and does not record payload audit correctness, manifest writer evidence, file-writing evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step645 Payload Audit Final Safety Review Reference
+
+Step645 later adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_chain_final_safety_review.md`. This Step632 marker remains limited to the deferred invalid-case usage_error / mismatch release-quality run and is not replaced or broadened by the payload audit final review.

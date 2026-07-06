@@ -509,3 +509,7 @@ Step643 adds a design-only / docs-only workflow for a future public-safe status 
 ## 30. Step644 Status Marker Reference
 
 Step644 adds a status-marker-only / docs-only record for the Step642 wrapper-integrated check. The marker records this 36-case contract through count-only metadata only, leaves fixture JSON unchanged, and does not add payload body emission, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.
+
+## 31. Step645 Final Safety Review Reference
+
+Step645 adds a final-safety-review-only / docs-only review for the Step635-Step644 chain. It accepts this 36-case count-only metadata contract only as release-quality-integrated and local/manual-status-recorded with limitation, leaves fixture JSON unchanged, and does not accept payload correctness, artifact body payload quality, manifest writer correctness, file-writing readiness, production readiness, real-data readiness, or model performance.

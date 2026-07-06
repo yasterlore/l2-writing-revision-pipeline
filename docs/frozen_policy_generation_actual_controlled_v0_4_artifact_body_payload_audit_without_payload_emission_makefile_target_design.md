@@ -351,3 +351,7 @@ Step643 adds a design-only / docs-only workflow for a future public-safe remote/
 ## Step644 Status Marker Reference
 
 Step644 adds a status-marker-only / docs-only record for the Step642 wrapper-integrated payload audit check. It keeps this Makefile target unchanged and records no raw logs, payload bodies, manifest writer evidence, file-writing evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step645 Final Safety Review Reference
+
+Step645 adds a final-safety-review-only / docs-only review for the Step635-Step644 chain. It accepts the release-quality-integrated, local/manual-status-recorded 36-case count-only metadata contract with limitation while keeping this Makefile target unchanged and not accepting payload correctness, artifact body payload quality, manifest writer correctness, file-writing readiness, production readiness, real-data readiness, or model performance.
