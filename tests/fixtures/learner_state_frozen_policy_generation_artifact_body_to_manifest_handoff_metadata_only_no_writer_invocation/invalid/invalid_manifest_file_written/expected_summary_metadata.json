@@ -1,0 +1,6 @@
+{
+  "expected_status": "fail_closed",
+  "expected_category": "invalid_fail_closed",
+  "reason_code": "none",
+  "residue_file_count": 0
+}

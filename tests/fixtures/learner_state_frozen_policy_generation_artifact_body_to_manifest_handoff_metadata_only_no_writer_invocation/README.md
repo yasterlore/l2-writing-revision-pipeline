@@ -1,0 +1,20 @@
+# Artifact Body to Manifest Handoff Metadata-Only No-Writer-Invocation Fixtures
+
+This fixture root contains synthetic, body-free metadata fixtures for the
+artifact body to manifest handoff no-writer-invocation runner.
+
+The fixture contract is aggregate-only and count-only:
+
+- `matrix_name=artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_matrix`
+- `case_selection=artifact-body-to-manifest-handoff-metadata-only-no-writer`
+- `schema_version=learner_state_frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_v0.1`
+- `handoff_mode=artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation`
+- `selected_case_count=8`
+- `selected_valid_metadata_only_case_count=3`
+- `selected_invalid_fail_closed_case_count=5`
+
+The invalid cases model unsafe categories through metadata only. Canonical
+fixture actual unsafe counters remain false or zero. These fixtures do not
+invoke manifest writer, generate manifest body, write files, emit payload
+bodies, include raw learner text, include private paths, or use real
+participant data.

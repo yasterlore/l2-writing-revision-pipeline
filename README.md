@@ -68,6 +68,8 @@ Python is used for research scaffolds and validation prototypes:
 - metadata-only runtime smoke checks, including opt-in manifest file writing
 - actual-controlled v0.4 artifact body payload audit without payload emission
   as a standalone Makefile-targeted count-only metadata runner
+- artifact body to manifest handoff metadata-only no-writer-invocation runner
+  as a direct CLI-only synthetic 8-case contract check
 
 ## Safety Posture
 
@@ -201,6 +203,13 @@ Run the same audit through the standalone Makefile target:
 
 ```bash
 make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission
+```
+
+Run the direct artifact body to manifest handoff metadata-only no-writer-invocation
+check:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation --case-selection artifact-body-to-manifest-handoff-metadata-only-no-writer --summary-only --no-manifest-writer --no-file-writing --fail-closed-on-forbidden-body
 ```
 
 This direct runner emits aggregate public-safe metadata only. It does not emit

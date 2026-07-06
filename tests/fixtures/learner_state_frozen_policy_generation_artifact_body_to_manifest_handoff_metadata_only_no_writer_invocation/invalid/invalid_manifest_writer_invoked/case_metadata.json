@@ -1,0 +1,10 @@
+{
+  "case_id": "invalid/invalid_manifest_writer_invoked",
+  "schema_version": "learner_state_frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_v0.1",
+  "matrix_name": "artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_matrix",
+  "case_selection": "artifact-body-to-manifest-handoff-metadata-only-no-writer",
+  "handoff_mode": "artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation",
+  "expected_status": "fail_closed",
+  "expected_category": "invalid_fail_closed",
+  "unsafe_condition_category": "manifest_writer_invoked"
+}

@@ -3509,3 +3509,9 @@ The contract fixes the future fixture root, matrix identity, 8 selected cases, e
 Step649 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_runner_design.md` as a design-only / docs-only future runner behavior design for the Step648 contract.
 
 The design defines proposed runner module/tests, future CLI, input model, fixture file reading policy, case selection algorithm, per-case classification, aggregate output contract, per-case output policy, status semantics, failure mapping, safety scan, residue policy, and Step650 focused tests. Step649 does not create fixture JSON, implement runner code, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, use real data, use metrics, or claim production readiness.
+
+## Step650 Artifact Body to Manifest Handoff Runner Implementation
+
+Step650 adds `python/learner_state/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation.py`, focused tests, and a synthetic body-free fixture root for the Step648 8-case metadata-only handoff contract.
+
+The runner emits aggregate public-safe key-value metadata only. It requires summary-only, no-manifest-writer, no-file-writing, and fail-closed-on-forbidden-body flags; classifies 3 valid metadata-only cases as pass and 5 invalid metadata-category cases as fail_closed; and keeps actual unsafe output counts, manifest writer invocation, file writing, payload body emission, and residue at zero for the canonical fixture. Step650 does not add a Makefile target, release-quality wrapper integration, workflow changes, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, or production readiness status.
