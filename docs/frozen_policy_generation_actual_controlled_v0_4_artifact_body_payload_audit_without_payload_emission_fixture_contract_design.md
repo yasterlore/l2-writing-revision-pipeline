@@ -373,15 +373,18 @@ Step636 intentionally excludes any surface that would require payload body conte
 
 ## 18. Future Implementation Handoff
 
-Recommended next implementation-oriented step:
+Recommended next design step:
 
 ```text
-Step637: actual-controlled v0.4 artifact body payload audit without payload emission runner implementation
+Step637: actual-controlled v0.4 artifact body payload audit without payload emission runner design
 ```
 
-Step637 should only proceed if it can keep output body-free and aggregate. It should:
+Step637 should design the future runner before implementation. It should:
 
-- implement the count-only metadata contract
+- define how the future runner reads the count-only metadata contract
+- define how it classifies selected cases
+- define how it emits aggregate summary fields
+- define usage_error / input_error / mismatch / fail_closed semantics
 - avoid payload body emission
 - avoid fixture JSON body copying
 - avoid request / pointer / expected body copying
@@ -389,7 +392,6 @@ Step637 should only proceed if it can keep output body-free and aggregate. It sh
 - avoid manifest body output
 - avoid manifest writer integration
 - avoid file writing
-- add focused tests only for metadata and count-only behavior
 
 If Step637 cannot preserve those constraints, the next step should be another design refinement instead of implementation.
 
@@ -473,7 +475,13 @@ Do not select now:
 Recommended next step:
 
 ```text
-Step637: actual-controlled v0.4 artifact body payload audit without payload emission runner implementation
+Step637: actual-controlled v0.4 artifact body payload audit without payload emission runner design
 ```
 
-Step637 should remain body-free, metadata-only, and count-only. It should not emit payload bodies, change fixture JSON, invoke manifest writer integration, or enable file writing.
+Step637 should remain design-only / docs-only. It should not implement the runner, emit payload bodies, change fixture JSON, invoke manifest writer integration, or enable file writing.
+
+## 24. Step637 Runner Design Reference
+
+Step637 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_runner_design.md` as the design-only / docs-only runner design for the Step636 contract.
+
+The Step637 design keeps payload audit runner implementation, payload body emission, artifact body payload output, generated policy body output, manifest body output, manifest writer integration, file writing, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, runtime implementation changes, and validator implementation changes out of scope.
