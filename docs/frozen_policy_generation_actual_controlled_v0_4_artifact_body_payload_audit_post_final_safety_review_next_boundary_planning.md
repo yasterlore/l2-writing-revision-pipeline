@@ -343,3 +343,7 @@ Step647 should be design-only / docs-only. It should not implement manifest writ
 ## 14. Step647 Handoff Design Reference
 
 Step647 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_design.md` as a design-only / docs-only handoff boundary. It keeps the Step645 local/manual-status-recorded limitation active and does not invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, or fixture JSON.
+
+## 15. Step648 Fixture Contract Design Reference
+
+Step648 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_fixture_contract_design.md` as a design-only / docs-only fixture contract for the Step647 handoff boundary. It does not create fixture JSON, implement a runner, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, or fixture JSON.

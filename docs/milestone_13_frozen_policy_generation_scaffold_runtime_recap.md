@@ -3497,3 +3497,9 @@ The planning compares a public-safe remote metadata status update, artifact body
 Step647 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_design.md` as a design-only / docs-only pre-writer handoff design.
 
 The design defines the `artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation` boundary, allowed public-safe handoff metadata, forbidden body / payload / private content, count-only surrogate fields, future fixture / matrix scope, future no-writer-invocation runner concept, status semantics, failure mapping, relationships to the Step645 payload audit limitation and manifest writer / file-writing boundaries, and a tentative Step648-Step657 chain. It does not invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, use real data, use metrics, or claim production readiness.
+
+## Step648 Artifact Body to Manifest Handoff Fixture Contract Design
+
+Step648 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_fixture_contract_design.md` as a design-only / docs-only future fixture / matrix / metadata contract for the Step647 handoff boundary.
+
+The contract fixes the future fixture root, matrix identity, 8 selected cases, expected pass / fail_closed counts, per-case metadata rules, aggregate count-only metadata, future fixture file shape, runner selection policy, status semantics, and failure mapping. Step648 does not create fixture JSON, implement runner code, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, use real data, use metrics, or claim production readiness.

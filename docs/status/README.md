@@ -1582,3 +1582,7 @@ invocation evidence, or file-writing evidence.
 ## Step647 Artifact Body to Manifest Handoff Metadata-Only No-Writer-Invocation Design
 
 - [Artifact body to manifest handoff metadata-only no-writer-invocation design](../frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_design.md): design-only / docs-only pre-writer handoff boundary. It records allowed metadata, forbidden content, count-only surrogates, future runner concept, status semantics, failure mapping, and Step648 handoff while keeping manifest writer invocation, manifest body generation, file writing, payload body emission, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, and fixture JSON changes out of scope.
+
+## Step648 Artifact Body to Manifest Handoff Fixture Contract Design
+
+- [Artifact body to manifest handoff metadata-only no-writer-invocation fixture contract design](../frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_fixture_contract_design.md): design-only / docs-only future fixture / matrix / metadata contract for the Step647 handoff boundary. It fixes the future 8-case contract, aggregate count-only metadata, status semantics, and failure mapping while keeping fixture JSON creation, runner implementation, manifest writer invocation, manifest body generation, file writing, payload body emission, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, and fixture JSON changes out of scope.

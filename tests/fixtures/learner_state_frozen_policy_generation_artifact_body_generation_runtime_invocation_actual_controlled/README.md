@@ -468,3 +468,7 @@ Step646 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body
 ## Step647 Artifact Body to Manifest Handoff Design Reference
 
 Step647 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_design.md` as design-only / docs-only handoff planning. This fixture root and fixture JSON remain unchanged; Step647 does not invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, runtime implementation, or validator implementation.
+
+## Step648 Artifact Body to Manifest Handoff Fixture Contract Reference
+
+Step648 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_fixture_contract_design.md` as design-only / docs-only future fixture contract planning. This fixture root and fixture JSON remain unchanged; Step648 does not create fixture JSON, implement runner code, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, runtime implementation, or validator implementation.
