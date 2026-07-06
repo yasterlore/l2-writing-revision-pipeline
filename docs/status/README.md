@@ -1550,3 +1550,7 @@ invocation evidence, or file-writing evidence.
 ## Step639 Actual-Controlled v0.4 Artifact Body Payload Audit Makefile Target Design
 
 - [Actual-controlled v0.4 artifact body payload audit without payload emission Makefile target design](../frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_makefile_target_design.md): design-only / docs-only plan for a future standalone Makefile target. It records the proposed target name, help text, command, expected output, placement, existing-target relationship, Step640 implementation plan, and safety boundary while keeping Makefile, wrapper, workflow, Python code/tests, fixture JSON, payload body emission, manifest writer integration, and file writing unchanged.
+
+## Step640 Actual-Controlled v0.4 Artifact Body Payload Audit Makefile Target
+
+- `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission`: standalone Makefile target for the Step638 direct runner. It records aggregate payload-capable / payload-not-applicable counts, body suppression counts, no-payload-emission fields, no manifest writer invocation, no file writing, and no residue while staying outside release-quality wrapper integration, workflow changes, Python code/tests changes, fixture JSON changes, payload body emission, manifest writer integration, and file writing.

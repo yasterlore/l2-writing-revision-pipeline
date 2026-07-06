@@ -412,3 +412,7 @@ Step636 should remain design-only / docs-only and should not implement payload a
 ## 21. Step638 Implementation Status Reference
 
 Step638 later adds the direct CLI-only runner `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission.py` and focused tests for the metadata-only / body-free / count-only audit boundary. The implementation remains outside Makefile target integration, release-quality wrapper integration, workflow changes, fixture JSON changes, manifest writer integration, file writing, payload body emission, generated policy body output, and manifest body output.
+
+## 22. Step640 Makefile Target Reference
+
+Step640 later adds a standalone Makefile target for the Step638 direct runner. The boundary remains metadata-only, body-free, count-only, standalone from release-quality, and without payload body emission, manifest writer integration, or file writing.

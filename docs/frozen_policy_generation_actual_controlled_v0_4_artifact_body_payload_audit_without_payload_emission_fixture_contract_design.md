@@ -489,3 +489,7 @@ The Step637 design keeps payload audit runner implementation, payload body emiss
 ## 25. Step638 Implementation Status Reference
 
 Step638 later implements the standalone direct CLI-only runner and focused tests for this 36-case count-only metadata contract. The runner records aggregate payload-capable and payload-not-applicable counts, payload suppression counts, no-payload-emission fields, no manifest writer invocation, no file writing, and no residue. Step638 does not change fixture JSON, add a Makefile target, add release-quality wrapper integration, change workflows, invoke manifest writer integration, enable file writing, or emit payload bodies.
+
+## 26. Step640 Makefile Target Reference
+
+Step640 adds a standalone Makefile target for the Step638 direct runner while keeping this 36-case fixture contract unchanged. It does not change fixture JSON, release-quality wrapper integration, workflow files, Python code/tests, payload body emission, manifest writer integration, or file writing.

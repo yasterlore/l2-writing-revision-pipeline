@@ -67,7 +67,7 @@ Python is used for research scaffolds and validation prototypes:
   writer CLI actual invocation metadata-only mode cases
 - metadata-only runtime smoke checks, including opt-in manifest file writing
 - actual-controlled v0.4 artifact body payload audit without payload emission
-  as a direct CLI-only count-only metadata runner
+  as a standalone Makefile-targeted count-only metadata runner
 
 ## Safety Posture
 
@@ -135,12 +135,13 @@ At a high level, it runs:
 - artifact body generation integration fixture validation, included through a
   standalone Makefile target and release-quality wrapper check
 - actual-controlled v0.4 artifact body payload audit without payload emission,
-  available as the direct CLI-only runner
+  available through the standalone Makefile target
+  `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission`
+  and direct runner
   `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission.py`;
   it checks the 36-case synthetic metadata-only root with aggregate
   count-only output, emits no payload bodies, invokes no manifest writer,
-  writes no files, and is not yet Makefile-targeted or release-quality
-  integrated
+  writes no files, and is not yet release-quality integrated
 - artifact body generation runtime integration plan-only bridge, available as
   `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
   over `valid/valid_minimal_suppressed_metadata_only_bridge` with no artifact
@@ -192,6 +193,12 @@ Run the direct actual-controlled v0.4 payload audit without payload emission:
 
 ```bash
 PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled --case-selection payload-audit-without-payload-emission --summary-only --no-file-writing --no-manifest-writer --fail-closed-on-forbidden-body
+```
+
+Run the same audit through the standalone Makefile target:
+
+```bash
+make check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission
 ```
 
 This direct runner emits aggregate public-safe metadata only. It does not emit

@@ -3449,3 +3449,9 @@ The runner uses `mode=actual_controlled_v0_4_artifact_body_payload_audit_without
 Step639 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step638 direct CLI.
 
 The design proposes `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission`, help text `Run actual-controlled v0.4 artifact body payload audit without payload emission`, the implemented direct CLI command using `--fail-closed-on-forbidden-body`, expected aggregate public-safe output, placement after the deferred invalid-case target, relationship to existing targets, and Step640 implementation handoff. Step639 does not change Makefile, wrapper files, workflow files, Python code/tests, fixture JSON, payload body emission, manifest writer integration, file writing, real-data use, metric use, or production readiness status.
+
+## Step640 Actual-Controlled v0.4 Artifact Body Payload Audit Makefile Target
+
+Step640 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission` as a standalone Makefile target for the Step638 direct CLI.
+
+The target runs `--case-selection payload-audit-without-payload-emission` with `--fail-closed-on-forbidden-body`, records aggregate public-safe metadata for the 36-case count-only contract, zero payload body emission, zero manifest writer invocation, zero file-writing enablement, and zero residue. Step640 keeps release-quality wrapper integration, workflow changes, Python code/tests changes, fixture JSON changes, payload body emission, manifest writer integration, file writing, real-data use, metric use, and production readiness status out of scope.

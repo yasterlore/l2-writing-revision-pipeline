@@ -514,3 +514,7 @@ The implementation remains standalone direct CLI-only. It does not add a Makefil
 ## 24. Step639 Makefile Target Design Reference
 
 Step639 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step638 direct CLI. It does not change Makefile, release-quality wrapper, workflow files, Python code/tests, fixture JSON, payload body emission, manifest writer integration, or file writing.
+
+## 25. Step640 Makefile Target Implementation Reference
+
+Step640 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission` for the Step638 direct CLI. It does not add release-quality wrapper integration, workflow changes, Python code/tests changes, fixture JSON changes, payload body emission, manifest writer integration, or file writing.

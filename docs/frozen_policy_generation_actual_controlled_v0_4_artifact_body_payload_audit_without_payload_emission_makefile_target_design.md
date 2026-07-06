@@ -329,3 +329,9 @@ Recommended next step:
 - Step640: actual-controlled v0.4 artifact body payload audit without payload emission Makefile target implementation
 
 Step640 should update Makefile and necessary README/docs only. Step640 should not change Python code/tests, fixture JSON, release-quality wrapper, workflows, payload body emission, manifest writer integration, or file writing.
+
+## Step640 Implementation Reference
+
+Step640 adds `check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission` as a standalone Makefile target for the Step638 direct CLI.
+
+The target follows this design with help text `Run actual-controlled v0.4 artifact body payload audit without payload emission`, placement after the deferred invalid-case usage_error / mismatch target, and the same public-safe aggregate-output boundary. Release-quality wrapper integration remains future work.
