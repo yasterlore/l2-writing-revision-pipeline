@@ -324,3 +324,7 @@ Step630 adds the Step628 standalone target to `scripts/check_release_quality.sh`
 ## Step631 Remote Run Record Workflow Reference
 
 Step631 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_record_workflow.md` as a design-only / docs-only workflow for a future Step632 status marker. It does not create the marker and does not change Makefile, wrapper, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.
+
+## Step632 Remote Status Marker Reference
+
+Step632 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step630. It does not change Makefile, wrapper, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.

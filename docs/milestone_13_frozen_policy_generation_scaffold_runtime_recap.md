@@ -3401,3 +3401,9 @@ The check runs `make check-learner-state-frozen-policy-generation-actual-control
 Step631 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future Step632 status marker after Step630 wrapper integration.
 
 The workflow design defines allowed public-safe evidence, forbidden raw log / payload evidence, metadata fields, count-only deferred target summary fields, missing metadata handling, status marker template, relationship to existing remote status markers, and Step632 / Step633 staging. Step631 does not create the status marker and keeps wrapper, Makefile, workflow files, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, file writing, real-data use, metric use, and production readiness status unchanged.
+
+## Step632 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Remote Run Status
+
+Step632 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step630 wrapper integration.
+
+The marker records provided public-safe metadata, observed release-quality labels, count-only deferred target summary, overall release-quality result, missing metadata handling, relationships to existing status markers, non-equivalence cautions, non-claims, and the Step633 handoff. It stores no raw logs, full job output, fixture JSON bodies, payload bodies, real-data evidence, metric evidence, payload audit implementation evidence, manifest writer evidence, file-writing evidence, or production readiness status.

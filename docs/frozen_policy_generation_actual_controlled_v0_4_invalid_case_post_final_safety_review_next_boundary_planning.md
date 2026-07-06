@@ -282,3 +282,7 @@ Step630 adds the Step628 deferred usage_error / mismatch target to `scripts/chec
 ## Step631 Remote Run Record Workflow Reference
 
 Step631 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_record_workflow.md` as the next design-only / docs-only handoff for future Step632 status marker creation. It does not reopen accepted fail_closed, all-valid, single-case, or planned-only boundaries.
+
+## Step632 Remote Status Marker Reference
+
+Step632 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_status.md` as a status-marker-only / docs-only record. It does not reopen accepted fail_closed, all-valid, single-case, or planned-only boundaries.

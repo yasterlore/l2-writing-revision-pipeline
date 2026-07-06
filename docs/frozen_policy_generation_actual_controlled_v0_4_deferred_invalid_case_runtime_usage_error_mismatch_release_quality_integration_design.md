@@ -382,3 +382,7 @@ The wrapper check follows this design with command `make check-learner-state-fro
 ## Step631 Remote Run Record Workflow Reference
 
 Step631 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_record_workflow.md` as a design-only / docs-only plan for a future public-safe status marker after Step630 wrapper integration. It keeps wrapper, Makefile, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, and file writing unchanged.
+
+## Step632 Remote Status Marker Reference
+
+Step632 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_status.md` as a status-marker-only / docs-only record using provided public-safe metadata. It does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.
