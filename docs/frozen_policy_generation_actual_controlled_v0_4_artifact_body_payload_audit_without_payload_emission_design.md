@@ -408,3 +408,7 @@ Step636: actual-controlled v0.4 artifact body payload audit count-only metadata 
 ```
 
 Step636 should remain design-only / docs-only and should not implement payload audit, emit payload bodies, change Python code/tests, change fixture JSON, change Makefile, change release-quality wrapper, change workflow, implement manifest writer integration, or enable file writing.
+
+## 21. Step638 Implementation Status Reference
+
+Step638 later adds the direct CLI-only runner `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission.py` and focused tests for the metadata-only / body-free / count-only audit boundary. The implementation remains outside Makefile target integration, release-quality wrapper integration, workflow changes, fixture JSON changes, manifest writer integration, file writing, payload body emission, generated policy body output, and manifest body output.

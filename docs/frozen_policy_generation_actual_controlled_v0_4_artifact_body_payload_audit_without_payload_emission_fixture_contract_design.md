@@ -485,3 +485,7 @@ Step637 should remain design-only / docs-only. It should not implement the runne
 Step637 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_runner_design.md` as the design-only / docs-only runner design for the Step636 contract.
 
 The Step637 design keeps payload audit runner implementation, payload body emission, artifact body payload output, generated policy body output, manifest body output, manifest writer integration, file writing, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, runtime implementation changes, and validator implementation changes out of scope.
+
+## 25. Step638 Implementation Status Reference
+
+Step638 later implements the standalone direct CLI-only runner and focused tests for this 36-case count-only metadata contract. The runner records aggregate payload-capable and payload-not-applicable counts, payload suppression counts, no-payload-emission fields, no manifest writer invocation, no file writing, and no residue. Step638 does not change fixture JSON, add a Makefile target, add release-quality wrapper integration, change workflows, invoke manifest writer integration, enable file writing, or emit payload bodies.

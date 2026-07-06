@@ -66,6 +66,8 @@ Python is used for research scaffolds and validation prototypes:
 - an expanded synthetic metadata-only runtime fixture root for future artifact
   writer CLI actual invocation metadata-only mode cases
 - metadata-only runtime smoke checks, including opt-in manifest file writing
+- actual-controlled v0.4 artifact body payload audit without payload emission
+  as a direct CLI-only count-only metadata runner
 
 ## Safety Posture
 
@@ -132,6 +134,13 @@ At a high level, it runs:
   metadata-only until a later release-quality step
 - artifact body generation integration fixture validation, included through a
   standalone Makefile target and release-quality wrapper check
+- actual-controlled v0.4 artifact body payload audit without payload emission,
+  available as the direct CLI-only runner
+  `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission.py`;
+  it checks the 36-case synthetic metadata-only root with aggregate
+  count-only output, emits no payload bodies, invokes no manifest writer,
+  writes no files, and is not yet Makefile-targeted or release-quality
+  integrated
 - artifact body generation runtime integration plan-only bridge, available as
   `python/learner_state/frozen_policy_generation_artifact_body_generation_runtime_integration.py`
   over `valid/valid_minimal_suppressed_metadata_only_bridge` with no artifact
@@ -178,6 +187,18 @@ Run manifest writer file-writing checks:
 make check-learner-state-frozen-policy-generation-manifest-writer-production-file-writing-fixtures
 make check-learner-state-frozen-policy-generation-manifest-writer-runtime-file-writing
 ```
+
+Run the direct actual-controlled v0.4 payload audit without payload emission:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_generation_runtime_invocation_actual_controlled --case-selection payload-audit-without-payload-emission --summary-only --no-file-writing --no-manifest-writer --fail-closed-on-forbidden-body
+```
+
+This direct runner emits aggregate public-safe metadata only. It does not emit
+artifact body payloads, generated policy bodies, manifest bodies, fixture JSON
+bodies, raw stdout/stderr bodies, raw rows, logits/probabilities, private or
+absolute path values, raw learner text, real participant data, or performance
+metric bodies.
 
 Run one synthetic E2E case:
 

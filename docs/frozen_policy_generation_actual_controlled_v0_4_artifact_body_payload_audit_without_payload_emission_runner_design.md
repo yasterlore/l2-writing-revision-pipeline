@@ -504,3 +504,9 @@ Step638: actual-controlled v0.4 artifact body payload audit without payload emis
 ```
 
 Step638 should remain body-free, metadata-only, and count-only. It should not emit payload bodies, change fixture JSON, add Makefile target integration, add release-quality wrapper integration, invoke manifest writer integration, or enable file writing.
+
+## 23. Step638 Implementation Status Reference
+
+Step638 implements the designed direct CLI-only runner as `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission.py` with focused tests in `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission.py`. The implemented CLI uses `--fixture-root`, `--case-selection payload-audit-without-payload-emission`, `--summary-only`, `--no-file-writing`, `--no-manifest-writer`, and `--fail-closed-on-forbidden-body`.
+
+The implementation remains standalone direct CLI-only. It does not add a Makefile target, does not add release-quality wrapper integration, does not change workflow files, does not change fixture JSON, does not emit payload bodies, does not invoke manifest writer integration, and does not enable file writing.
