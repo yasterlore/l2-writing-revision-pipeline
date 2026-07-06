@@ -460,3 +460,7 @@ Step644 adds `docs/status/learner_state_frozen_policy_generation_actual_controll
 ## Step645 Artifact Body Payload Audit Final Safety Review Reference
 
 Step645 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review. This fixture root and fixture JSON remain unchanged; Step645 does not change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.
+
+## Step646 Artifact Body Payload Audit Next Boundary Planning Reference
+
+Step646 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning. This fixture root and fixture JSON remain unchanged; Step646 does not change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

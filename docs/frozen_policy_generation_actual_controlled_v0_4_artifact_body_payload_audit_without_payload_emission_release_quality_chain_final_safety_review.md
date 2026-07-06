@@ -258,3 +258,7 @@ Next recommended boundary:
 - Option B: proceed to the next body-free design boundary while preserving the local/manual fallback limitation.
 
 Option A is preferred if remote evidence is available soon. Otherwise, Option B is acceptable. Manifest writer integration or file writing should not be the immediate next step unless a separate design step is created first.
+
+## 15. Step646 Next Boundary Planning Reference
+
+Step646 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_post_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after this final safety review. It preserves the local/manual-status-recorded limitation and recommends a future artifact body to manifest handoff metadata-only no-writer-invocation design if public-safe remote metadata remains unavailable.

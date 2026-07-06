@@ -308,3 +308,7 @@ Step645 should review the completed Step635-Step644 chain. Step645 should not im
 ## 17. Step645 Final Safety Review Reference
 
 Step645 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review. The review accepts the release-quality-integrated, local/manual-status-recorded 36-case count-only metadata contract with limitation and does not convert this local/manual fallback marker into remote execution evidence.
+
+## 18. Step646 Next Boundary Planning Reference
+
+Step646 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning. It does not change this status marker or create remote evidence.

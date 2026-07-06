@@ -3485,3 +3485,9 @@ Remote metadata was unavailable from provided public-safe metadata, so the marke
 Step645 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step635-Step644 payload audit without payload emission chain.
 
 The review accepts the release-quality-integrated, local/manual-status-recorded 36-case count-only metadata contract with limitation. It does not accept remote execution metadata, payload correctness, artifact body payload quality, manifest writer correctness, file-writing readiness, real-data use, metric use, or production readiness status.
+
+## Step646 Artifact Body Payload Audit Post-Final-Safety-Review Next Boundary Planning
+
+Step646 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_post_final_safety_review_next_boundary_planning.md` as a planning-only / docs-only comparison after the Step645 final safety review.
+
+The planning compares a public-safe remote metadata status update, artifact body to manifest handoff metadata-only no-writer-invocation design, documentation consolidation, waiting for metadata, and direct manifest writer / file-writing work. It recommends Step647 artifact body to manifest handoff metadata-only no-writer-invocation design if public-safe remote metadata remains unavailable, and keeps wrapper changes, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, payload body emission, manifest writer integration, file writing, real-data use, metric use, and production readiness status out of scope.
