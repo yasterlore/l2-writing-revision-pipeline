@@ -432,3 +432,7 @@ Step637 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body
 ## Step638 Artifact Body Payload Audit Runner Implementation Reference
 
 Step638 adds the direct CLI-only runner `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission.py` and focused tests for the Step636 36-case count-only metadata contract. The runner reads this existing fixture root, records aggregate public-safe counts for 6 payload-capable valid cases and 30 payload-not-applicable invalid cases, emits no payload bodies, invokes no manifest writer, writes no files, and leaves this fixture root and all fixture JSON unchanged.
+
+## Step639 Artifact Body Payload Audit Makefile Target Design Reference
+
+Step639 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step638 direct CLI. This fixture root and fixture JSON remain unchanged; Step639 does not change Makefile, wrapper, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

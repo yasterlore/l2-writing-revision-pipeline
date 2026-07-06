@@ -510,3 +510,7 @@ Step638 should remain body-free, metadata-only, and count-only. It should not em
 Step638 implements the designed direct CLI-only runner as `python/learner_state/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission.py` with focused tests in `python/learner_state/tests/test_frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission.py`. The implemented CLI uses `--fixture-root`, `--case-selection payload-audit-without-payload-emission`, `--summary-only`, `--no-file-writing`, `--no-manifest-writer`, and `--fail-closed-on-forbidden-body`.
 
 The implementation remains standalone direct CLI-only. It does not add a Makefile target, does not add release-quality wrapper integration, does not change workflow files, does not change fixture JSON, does not emit payload bodies, does not invoke manifest writer integration, and does not enable file writing.
+
+## 24. Step639 Makefile Target Design Reference
+
+Step639 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step638 direct CLI. It does not change Makefile, release-quality wrapper, workflow files, Python code/tests, fixture JSON, payload body emission, manifest writer integration, or file writing.
