@@ -385,3 +385,7 @@ Step632 should create the status marker only from public-safe metadata. Step632 
 Step632 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step630 wrapper integration.
 
 The marker follows this workflow design by recording provided public-safe metadata, observed labels, count-only deferred target summary fields, missing metadata handling, non-equivalence cautions, non-claims, and the Step633 handoff. It does not copy raw logs, full job output, fixture JSON bodies, request / pointer / expected bodies, payload bodies, raw stdout/stderr bodies, raw rows, logits/probabilities, private / absolute path values, raw learner text, real participant data, payload audit implementation evidence, manifest writer evidence, or file-writing evidence.
+
+## Step633 Final Safety Review Reference
+
+Step633 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review using the Step632 public-safe status marker. It does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, payload audit implementation, manifest writer integration, or file writing.

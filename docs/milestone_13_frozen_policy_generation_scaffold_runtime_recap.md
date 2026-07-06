@@ -3407,3 +3407,9 @@ The workflow design defines allowed public-safe evidence, forbidden raw log / pa
 Step632 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the remote Release Quality run after Step630 wrapper integration.
 
 The marker records provided public-safe metadata, observed release-quality labels, count-only deferred target summary, overall release-quality result, missing metadata handling, relationships to existing status markers, non-equivalence cautions, non-claims, and the Step633 handoff. It stores no raw logs, full job output, fixture JSON bodies, payload bodies, real-data evidence, metric evidence, payload audit implementation evidence, manifest writer evidence, file-writing evidence, or production readiness status.
+
+## Step633 Actual-Controlled v0.4 Deferred Invalid-Case usage_error / mismatch Final Safety Review
+
+Step633 adds `docs/frozen_policy_generation_actual_controlled_v0_4_deferred_invalid_case_runtime_usage_error_mismatch_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for the Step624-Step632 deferred invalid-case usage_error / mismatch chain.
+
+The review accepts only the release-quality-integrated, remote-status-recorded boundary for the fixed 4 selected deferred invalid cases, with 3 expected/observed usage_error categories, 1 expected/observed mismatch category, `processed_case_count=4`, zero payload emission, zero manifest writer invocation, zero file-writing enablement, zero forbidden body emission, and zero residue. It does not accept production readiness, real-data readiness, model performance, general runtime correctness, all invalid-case behavior generally, payload correctness, manifest writer correctness, or file-writing readiness.
