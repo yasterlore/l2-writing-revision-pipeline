@@ -1534,3 +1534,7 @@ invocation evidence, or file-writing evidence.
 ## Step635 Actual-Controlled v0.4 Artifact Body Payload Audit Without Payload Emission Design
 
 - [Actual-controlled v0.4 artifact body payload audit without payload emission design](../frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_design.md): design-only / docs-only payload audit boundary design. It records only future public-safe metadata / count-only surrogate concepts and keeps payload audit implementation, payload body emission, generated policy body output, manifest body output, manifest writer integration, file writing, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, and fixture JSON changes out of scope.
+
+## Step636 Actual-Controlled v0.4 Artifact Body Payload Audit Fixture Contract Design
+
+- [Actual-controlled v0.4 artifact body payload audit without payload emission fixture contract design](../frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_fixture_contract_design.md): design-only / docs-only contract for a future body-free payload audit. It fixes metadata-only / count-only Surface A + Surface C expectations and keeps payload audit implementation, payload body emission, generated policy body output, manifest body output, manifest writer integration, file writing, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, fixture JSON changes, runtime implementation changes, and validator implementation changes out of scope.

@@ -300,8 +300,10 @@ Step636: actual-controlled v0.4 artifact body payload audit count-only metadata 
 Proposed doc path:
 
 ```text
-docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_count_only_metadata_contract_design.md
+docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_fixture_contract_design.md
 ```
+
+Step636 later uses this path as the fixture / matrix / metadata contract design for Surface A + Surface C.
 
 Step636 should:
 

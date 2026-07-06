@@ -420,3 +420,7 @@ Step634 adds `docs/frozen_policy_generation_actual_controlled_v0_4_post_deferred
 ## Step635 Artifact Body Payload Audit Without Payload Emission Design Reference
 
 Step635 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_design.md` as a design-only / docs-only payload audit boundary design. This root and fixture JSON remain unchanged, and Step635 does not implement payload audit, emit payload bodies, change wrapper, Makefile, workflow, Python code/tests, manifest writer integration, or file writing.
+
+## Step636 Artifact Body Payload Audit Fixture Contract Design Reference
+
+Step636 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_fixture_contract_design.md` as a design-only / docs-only fixture / matrix / metadata contract. This root and fixture JSON remain unchanged, and Step636 does not implement payload audit, emit payload bodies, change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, manifest writer integration, or file writing.
