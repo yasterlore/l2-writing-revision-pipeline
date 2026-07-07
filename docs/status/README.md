@@ -1692,3 +1692,7 @@ invocation evidence, or file-writing evidence.
 ## Step674 Manifest Writer Dry-Run No-Body No-File-Writing Runner Design
 
 - [Manifest writer dry-run no-body no-file-writing runner design](../frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_runner_design.md): design-only / docs-only future validator / runner behavior design. It maps the Step673 matrix to a future CLI, selection algorithm, status semantics, failure mapping, safety scan, residue policy, and Step675 focused tests without implementing code or creating fixture JSON.
+
+## Step675 Manifest Writer Dry-Run No-Body No-File-Writing Fixture / Runner Implementation
+
+- `python/learner_state/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_validation.py`: direct CLI-only validator for the fixed 34-case synthetic metadata-only dry-run contract, with focused tests and body-free fixture root. It remains outside Makefile target integration and release-quality wrapper integration, and does not invoke manifest writer, generate or output manifest body, write files, create output directories, emit payload bodies, use real data, or add metric evidence.

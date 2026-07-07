@@ -1025,3 +1025,9 @@ Clarifications:
 - Step675 should not enable file writing.
 - Step675 should not emit payload bodies.
 - Step675 should update root README and full technical specification related docs because it is an implementation Step.
+
+## 28. Step675 Implementation Status
+
+Step675 implements the runner proposed here as `python/learner_state/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_validation.py`, with focused tests at `python/learner_state/tests/test_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_validation.py` and synthetic body-free fixtures at `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing/`.
+
+The direct CLI uses the required summary-only, dry-run, no-writer, no-body, no-file-writing, no-output-directory, and fail-closed flags. It validates the fixed 34-case contract with 4 pass, 20 fail_closed, 5 usage_error, and 5 mismatch cases while keeping writer/body/file/output-directory/payload/residue counts at 0 for the canonical fixture. Step675 does not add a Makefile target or release-quality wrapper integration.
