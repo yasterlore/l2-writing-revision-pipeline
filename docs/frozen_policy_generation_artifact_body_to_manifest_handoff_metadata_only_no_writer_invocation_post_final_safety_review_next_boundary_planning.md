@@ -368,3 +368,9 @@ Final recommendation:
 Proceed to `Step659: manifest writer handoff input contract design`.
 
 Do not proceed directly to manifest writer invocation, manifest body generation, file writing, or production file-writing readiness claims.
+
+## 15. Step659 Contract Design
+
+Step659 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_contract_design.md` as design-only / docs-only future manifest writer handoff input contract design.
+
+The design defines proposed identity, allowed metadata fields, required source and safety summaries, forbidden fields, future validator semantics, future fixture categories, safety scan requirements, and public-safe reason codes. It does not create fixture JSON, implement Python code/tests, invoke manifest writer, generate manifest body, write files, or emit payload bodies.

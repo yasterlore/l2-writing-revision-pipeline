@@ -507,3 +507,7 @@ Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff
 ## 25. Step658 Next Boundary Planning
 
 Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning. It recommends defining a manifest writer handoff input contract before future fixture contract work for writer-facing handoff metadata.
+
+## 26. Step659 Contract Design
+
+Step659 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_contract_design.md` as design-only / docs-only future input contract design. It does not create fixture JSON, change fixture contracts, implement Python code/tests, invoke manifest writer, generate manifest body, write files, or emit payload bodies.

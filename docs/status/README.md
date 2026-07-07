@@ -1628,3 +1628,7 @@ invocation evidence, or file-writing evidence.
 ## Step658 Artifact Body to Manifest Handoff Next Boundary Planning
 
 - [Artifact body to manifest handoff metadata-only no-writer-invocation post-final-safety-review next boundary planning](../frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only next-boundary comparison after Step657. It recommends Step659 manifest writer handoff input contract design and keeps Step645 payload audit limitation separate.
+
+## Step659 Manifest Writer Handoff Input Contract Design
+
+- [Manifest writer handoff input contract design](../frozen_policy_generation_manifest_writer_handoff_input_contract_design.md): design-only / docs-only future input metadata contract before any manifest writer invocation. It keeps fixture JSON creation, runner implementation, Makefile changes, wrapper changes, workflow changes, manifest body generation, file writing, and payload body emission out of scope.

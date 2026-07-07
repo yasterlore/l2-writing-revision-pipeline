@@ -991,3 +991,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step658 Artifact Body to Manifest Handoff Post-Final-Safety-Review Next Boundary Planning
 
 - [Artifact body to manifest handoff metadata-only no-writer-invocation post-final-safety-review next boundary planning](frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison after Step657. It recommends Step659 manifest writer handoff input contract design before any manifest writer invocation, manifest body generation, file writing, payload body emission, production readiness, real-data readiness, or model performance claims.
+
+## Step659 Manifest Writer Handoff Input Contract Design
+
+- [Manifest writer handoff input contract design](frozen_policy_generation_manifest_writer_handoff_input_contract_design.md): design-only / docs-only contract for future manifest writer handoff input metadata. It defines proposed identity, allowed metadata fields, required source summary and safety fields, forbidden fields, future validator status semantics, future fixture categories, safety scan requirements, and public-safe reason codes without creating fixture JSON, implementing Python code/tests, invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.

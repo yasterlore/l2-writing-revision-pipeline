@@ -438,3 +438,7 @@ Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff
 ## 22. Step658 Next Boundary Planning Reference
 
 Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only comparison after Step657. It recommends a future manifest writer handoff input contract design while keeping no-writer-invocation and no-file-writing boundaries staged.
+
+## 23. Step659 Contract Design Reference
+
+Step659 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_contract_design.md` as design-only / docs-only future manifest writer handoff input contract design. It defines metadata that may cross toward a future writer-facing boundary while still not invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.

@@ -52,3 +52,7 @@ metadata-only, body-free, no-writer-invocation, and no-file-writing.
 Step658 creates the handoff post-final-safety-review next boundary planning in
 `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md`.
 The fixture JSON remains unchanged.
+
+Step659 creates the manifest writer handoff input contract design in
+`docs/frozen_policy_generation_manifest_writer_handoff_input_contract_design.md`.
+The fixture JSON remains unchanged.

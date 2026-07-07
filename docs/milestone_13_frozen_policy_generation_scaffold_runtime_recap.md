@@ -3563,3 +3563,9 @@ The review accepts the release-quality-integrated, remote-status-recorded, artif
 Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after Step657.
 
 The planning compares manifest writer handoff input contract design, fixture contract design, metadata-only dry-run runner design, direct writer invocation, direct manifest body / file-writing work, and docs consolidation. It recommends Step659 manifest writer handoff input contract design while preserving the Step645 payload audit limitation and keeping wrapper changes, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, and production readiness status out of scope.
+
+## Step659 Manifest Writer Handoff Input Contract Design
+
+Step659 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_contract_design.md` as design-only / docs-only contract design for future manifest writer handoff input metadata.
+
+The contract records proposed identifiers, allowed top-level metadata, required identity/source/safety fields, nested metadata objects, forbidden fields, notices, future validator status semantics, future fixture categories, safety scan requirements, and public-safe reason codes. Step659 does not create fixture JSON, implement Python code/tests, change Makefile, change wrapper files, change workflow files, invoke manifest writer, generate manifest body, write files, emit payload bodies, use real data, add metric evidence, or change production readiness status.
