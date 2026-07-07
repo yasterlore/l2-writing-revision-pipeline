@@ -347,3 +347,17 @@ Recommended:
 `Step666: manifest writer handoff input validation release-quality wrapper integration`
 
 Step666 should update only wrapper and necessary README/docs. Step666 should not change Makefile, Python code/tests, fixture JSON, workflow files, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
+
+## 17. Step666 Release-Quality Wrapper Integration
+
+Step666 adds `release_quality_check: learner-state frozen policy generation manifest writer handoff input validation` to `scripts/check_release_quality.sh`.
+
+The command is:
+
+```bash
+make check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation
+```
+
+The check is inserted after the artifact body to manifest handoff metadata-only no-writer-invocation check and before artifact / manifest file-writing and manifest writer checks. It expects the Step664 23-case metadata-only public-safe summary, including zero manifest writer invocation requested / invoked counts, zero manifest body generation / output counts, zero file-writing counts, zero payload body emission counts, zero artifact body payload output, zero generated policy body output, zero forbidden body detection, zero private / absolute path detection, zero raw learner text / real data marker detection, zero raw log count, and zero residue.
+
+Step666 does not change Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, payload body emission, artifact body payload output, or generated policy body output. The next recommended step is Step667 remote/manual status marker workflow design.

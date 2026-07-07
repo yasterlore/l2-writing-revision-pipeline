@@ -681,3 +681,9 @@ The target runs the Step662 direct CLI over the 23-case metadata-only contract. 
 Step665 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md` as design-only / docs-only release-quality integration planning for the Step664 standalone target.
 
 The design keeps this input contract unchanged and proposes future wrapper label, command, ordering, expected aggregate output, and validation plan. Step665 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 31. Step666 Release-Quality Wrapper Integration
+
+Step666 adds `release_quality_check: learner-state frozen policy generation manifest writer handoff input validation` to `scripts/check_release_quality.sh`.
+
+The wrapper check runs the Step664 standalone target for this 23-case metadata-only input contract. Step666 does not change this contract, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

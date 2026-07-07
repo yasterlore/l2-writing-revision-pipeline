@@ -644,3 +644,9 @@ This fixture contract and fixture JSON remain unchanged. The target is not relea
 Step665 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md` as design-only / docs-only planning for adding the Step664 standalone target to the release-quality wrapper in a future step.
 
 This fixture contract and fixture JSON remain unchanged. Step665 does not change wrapper, Makefile, workflow, Python code/tests, manifest writer invocation, manifest body generation, file writing, payload body emission, artifact body payload output, or generated policy body output.
+
+## 30. Step666 Release-Quality Wrapper Integration
+
+Step666 adds the Step664 standalone manifest writer handoff input validation target to the release-quality wrapper.
+
+The wrapper check expects the fixed 23-case metadata-only contract from this fixture matrix. This fixture contract and fixture JSON remain unchanged, and Step666 does not change Makefile, workflow, Python code/tests, manifest writer invocation, manifest body generation, file writing, payload body emission, artifact body payload output, or generated policy body output.

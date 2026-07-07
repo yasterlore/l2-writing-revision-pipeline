@@ -50,3 +50,9 @@ Step665 creates
 as design-only / docs-only planning for future release-quality wrapper
 integration of the Step664 standalone target. This fixture root and fixture JSON
 remain unchanged.
+
+Step666 adds the Step664 standalone target to `scripts/check_release_quality.sh`
+as `release_quality_check: learner-state frozen policy generation manifest writer
+handoff input validation`. This fixture root and fixture JSON remain unchanged,
+and no manifest writer is invoked, no manifest body is generated, no files are
+written, and no payload bodies are emitted.

@@ -80,3 +80,8 @@ Step665 creates
 as design-only / docs-only planning for future release-quality wrapper
 integration of that separate manifest writer handoff input validation target.
 This fixture root and fixture JSON remain unchanged.
+
+Step666 integrates that separate manifest writer handoff input validation target
+into `scripts/check_release_quality.sh` after this no-writer-invocation check
+and before artifact / manifest file-writing and manifest writer checks. This
+fixture root and fixture JSON remain unchanged.

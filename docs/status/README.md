@@ -1656,3 +1656,7 @@ invocation evidence, or file-writing evidence.
 ## Step665 Manifest Writer Handoff Input Validation Release-Quality Integration Design
 
 - [Manifest writer handoff input validation release-quality integration design](../frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md): design-only / docs-only planning for future wrapper integration of the Step664 standalone target. It keeps wrapper changes, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, manifest writer invocation, manifest body generation, file writing, and payload body emission out of scope for Step665.
+
+## Step666 Manifest Writer Handoff Input Validation Release-Quality Integration
+
+- `scripts/check_release_quality.sh`: Step666 integrates the Step664 standalone target with label `release_quality_check: learner-state frozen policy generation manifest writer handoff input validation`. It does not change Makefile, workflow files, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

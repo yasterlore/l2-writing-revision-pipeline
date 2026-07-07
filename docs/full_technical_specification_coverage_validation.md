@@ -670,3 +670,7 @@ Step662 adds focused Python test coverage for the direct CLI-only manifest write
 ## Step664 Coverage Addendum
 
 Step664 adds standalone Makefile coverage for running the Step662 manifest writer handoff input validator through `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation`. This is standalone target coverage only; it is not release-quality wrapper coverage, workflow coverage, manifest writer coverage, manifest body generation coverage, file-writing coverage, payload correctness evidence, artifact body payload quality evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step666 Coverage Addendum
+
+Step666 adds release-quality wrapper coverage for the Step664 standalone manifest writer handoff input validation target. The wrapper check covers the 23-case metadata-only handoff input contract in release-quality order after artifact body to manifest handoff no-writer-invocation and before artifact / manifest file-writing and manifest writer checks. This is wrapper integration coverage only; it is not workflow coverage, manifest writer correctness evidence, manifest body correctness evidence, file-writing readiness evidence, payload correctness evidence, artifact body payload quality evidence, production readiness, real-data readiness, or model performance evidence.

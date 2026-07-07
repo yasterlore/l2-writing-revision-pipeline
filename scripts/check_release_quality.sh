@@ -196,6 +196,9 @@ run make check-learner-state-frozen-policy-generation-artifact-body-generation-s
 section "learner-state frozen policy generation artifact body to manifest handoff metadata-only no-writer-invocation"
 run make check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation
 
+section "learner-state frozen policy generation manifest writer handoff input validation"
+run make check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation
+
 section "learner-state frozen policy generation artifact body file writing fixture validation"
 run make check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
 

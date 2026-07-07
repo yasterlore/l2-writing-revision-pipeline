@@ -410,3 +410,9 @@ The target remains outside release-quality wrapper integration and does not revi
 Step665 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md` as design-only / docs-only planning for future wrapper integration of the Step664 standalone manifest writer handoff input validation target.
 
 The planning preserves the Step645 payload audit limitation and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 22. Step666 Release-Quality Wrapper Integration
+
+Step666 adds the manifest writer handoff input validation standalone target to `scripts/check_release_quality.sh` after the artifact body to manifest handoff no-writer-invocation check and before artifact / manifest file-writing and manifest writer checks.
+
+The integration preserves the Step645 payload audit limitation and does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

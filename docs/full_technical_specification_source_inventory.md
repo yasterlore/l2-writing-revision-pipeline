@@ -556,3 +556,7 @@ Step662 adds `python/learner_state/frozen_policy_generation_manifest_writer_hand
 ## Step664 Source Inventory Addendum
 
 Step664 updates `Makefile` with the standalone target `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation`. README/docs/full technical specification references are updated. No release-quality wrapper, workflow, Python code/tests, fixture JSON, existing runtime implementation, existing validator implementation, artifact body generation implementation, manifest writer integration, manifest writer invocation, manifest body generation, payload body emission, artifact body payload output, generated policy body output, artifact body file writing, or manifest file writing is added or changed.
+
+## Step666 Source Inventory Addendum
+
+Step666 updates `scripts/check_release_quality.sh` to run the Step664 standalone manifest writer handoff input validation target after the artifact body to manifest handoff no-writer-invocation check and before artifact / manifest file-writing and manifest writer checks. README/docs/full technical specification references are updated. No Makefile, workflow, Python code/tests, fixture JSON, existing runtime implementation, existing validator implementation, artifact body generation implementation, manifest writer integration, manifest writer invocation, manifest body generation, payload body emission, artifact body payload output, generated policy body output, artifact body file writing, or manifest file writing is added or changed.

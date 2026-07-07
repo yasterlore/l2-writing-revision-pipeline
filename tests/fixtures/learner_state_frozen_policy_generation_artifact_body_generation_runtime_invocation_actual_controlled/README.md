@@ -504,3 +504,7 @@ Step664 adds the standalone Makefile target `check-learner-state-frozen-policy-g
 ## Step665 Manifest Writer Handoff Input Validation Release-Quality Integration Design Reference
 
 Step665 adds `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md` as design-only / docs-only release-quality integration planning for a separate manifest writer handoff input validation target. This fixture root and fixture JSON remain unchanged; Step665 does not change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.
+
+## Step666 Manifest Writer Handoff Input Validation Release-Quality Integration Reference
+
+Step666 adds the separate manifest writer handoff input validation target to `scripts/check_release_quality.sh` after the artifact body to manifest handoff no-writer-invocation check and before artifact / manifest file-writing and manifest writer checks. This fixture root and fixture JSON remain unchanged; Step666 does not change Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

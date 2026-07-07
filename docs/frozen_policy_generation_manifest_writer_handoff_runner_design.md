@@ -824,3 +824,9 @@ The target uses the required summary-only, no-manifest-writer, no-file-writing, 
 Step665 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md` as design-only / docs-only release-quality wrapper integration planning for the Step664 standalone target.
 
 The design leaves this runner, focused tests, fixture JSON, workflows, Makefile, and wrapper unchanged in Step665 and does not authorize manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 30. Step666 Release-Quality Wrapper Integration
+
+Step666 integrates the Step664 standalone target into `scripts/check_release_quality.sh` using label `release_quality_check: learner-state frozen policy generation manifest writer handoff input validation`.
+
+The integration runs the existing runner through the Makefile target only. This runner, focused tests, fixture JSON, workflows, and Makefile remain unchanged; Step666 does not authorize manifest writer invocation, manifest body generation, file writing, or payload body emission.

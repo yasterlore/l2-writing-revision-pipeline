@@ -332,3 +332,9 @@ Step664 adds the standalone Makefile target `check-learner-state-frozen-policy-g
 Step665 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md` as design-only / docs-only planning for a future wrapper check around the Step664 standalone target.
 
 Step665 does not change this status marker, release-quality wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 27. Step666 Release-Quality Wrapper Integration
+
+Step666 adds the manifest writer handoff input validation check to `scripts/check_release_quality.sh` with command `make check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation`.
+
+Step666 does not change this status marker, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
