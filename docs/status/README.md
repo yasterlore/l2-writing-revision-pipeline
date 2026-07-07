@@ -1696,3 +1696,7 @@ invocation evidence, or file-writing evidence.
 ## Step675 Manifest Writer Dry-Run No-Body No-File-Writing Fixture / Runner Implementation
 
 - `python/learner_state/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_validation.py`: direct CLI-only validator for the fixed 34-case synthetic metadata-only dry-run contract, with focused tests and body-free fixture root. It remains outside Makefile target integration and release-quality wrapper integration, and does not invoke manifest writer, generate or output manifest body, write files, create output directories, emit payload bodies, use real data, or add metric evidence.
+
+## Step676 Manifest Writer Dry-Run No-Body No-File-Writing Makefile Target Design
+
+- [Manifest writer dry-run no-body no-file-writing Makefile target design](../frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md): design-only / docs-only target planning for a future standalone Makefile target around the Step675 direct CLI runner. It keeps Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, and payload body emission out of scope.

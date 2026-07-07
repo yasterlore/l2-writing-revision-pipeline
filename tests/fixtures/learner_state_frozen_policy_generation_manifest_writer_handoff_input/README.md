@@ -103,3 +103,9 @@ Step675 creates a separate dry-run fixture root at
 `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing/`
 with a direct CLI-only validator and focused tests. This 23-case handoff input
 fixture root and fixture JSON remain unchanged.
+
+Step676 creates
+`docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md`
+as design-only / docs-only planning for a future standalone target around the
+separate Step675 dry-run validator. This 23-case handoff input fixture root and
+fixture JSON remain unchanged.

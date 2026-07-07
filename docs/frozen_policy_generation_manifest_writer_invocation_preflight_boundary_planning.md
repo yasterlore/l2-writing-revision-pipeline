@@ -529,3 +529,9 @@ Clarifications:
 Step672 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_contract_design.md` as design-only / docs-only contract design for a future dry-run no-body no-file-writing boundary.
 
 The contract design defines proposed identifiers, allowed future metadata, required source boundary fields, required safety flags, notices, forbidden fields, forbidden actions, future validator status semantics, future fixture categories, future matrix principles, and safety gates before implementation. Step672 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
+
+## 23. Step676 Makefile Target Design
+
+Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a future standalone Makefile target after the Step675 dry-run no-body no-file-writing direct CLI runner.
+
+Step676 does not change this preflight boundary and does not invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.

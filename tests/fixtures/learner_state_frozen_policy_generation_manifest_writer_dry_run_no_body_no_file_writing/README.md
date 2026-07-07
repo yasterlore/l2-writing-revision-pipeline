@@ -14,3 +14,9 @@ Synthetic fixture root for the Step675 direct CLI runner.
 The fixture files are metadata-only and body-free. Unsafe categories are modeled with count/category metadata only; canonical files do not invoke a writer, generate bodies, write files, create output directories, emit payloads, include private path values, include raw learner text, or use real participant data.
 
 Step675 adds the direct CLI runner and focused tests only. No Makefile target or release-quality wrapper entry is added here.
+
+Step676 creates
+`docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md`
+as design-only / docs-only planning for a future standalone Makefile target. This
+fixture root and fixture JSON remain unchanged, and no Makefile target or
+release-quality wrapper entry is added in Step676.

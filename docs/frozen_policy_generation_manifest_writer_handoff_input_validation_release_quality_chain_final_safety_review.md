@@ -335,3 +335,9 @@ Step670 should be planning-only / docs-only. It should not alter wrapper / Makef
 Step670 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after this accepted-with-limitation review.
 
 The planning doc compares supplemental remote-status, manifest writer invocation preflight planning, no-body no-file-writing dry-run contract design, direct invocation, separate payload audit supplemental planning, and documentation consolidation options. It recommends Step671 manifest writer invocation preflight boundary planning by default if remote public-safe metadata for the Step666 chain is not available.
+
+## 21. Step676 Makefile Target Design
+
+Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a future standalone Makefile target around the Step675 dry-run no-body no-file-writing direct CLI runner.
+
+Step676 does not revise this final safety review and does not upgrade the Step659-Step669 chain from local/manual-status-recorded to remote-status-recorded. It does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.

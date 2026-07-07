@@ -96,3 +96,7 @@ Step668 creates
 `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md`
 as a status-marker-only / docs-only local/manual record for that separate check.
 This fixture root and fixture JSON remain unchanged.
+
+## Step676 Manifest Writer Dry-Run Makefile Target Design Reference
+
+Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a separate future dry-run no-body no-file-writing standalone target. This fixture root and fixture JSON remain unchanged; Step676 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

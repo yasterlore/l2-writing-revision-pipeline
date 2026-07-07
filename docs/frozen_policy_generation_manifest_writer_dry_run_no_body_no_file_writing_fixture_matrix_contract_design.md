@@ -824,3 +824,9 @@ The runner design records the future module proposal, CLI, input model, fixture 
 Step675 creates the fixture root proposed by Step673 at `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing/` and adds the direct CLI-only validator and focused tests.
 
 The canonical fixture keeps unsafe categories as metadata-only labels. Actual writer/body/file/output-directory/payload/residue counts remain 0 in the pass aggregate. Step675 does not add a Makefile target, release-quality wrapper entry, workflow change, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 30. Step676 Makefile Target Design
+
+Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a future standalone Makefile target around the Step675 direct CLI runner.
+
+The Step673 fixture root remains unchanged. Step676 does not change fixture JSON, Makefile, release-quality wrapper, workflow, Python code/tests, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

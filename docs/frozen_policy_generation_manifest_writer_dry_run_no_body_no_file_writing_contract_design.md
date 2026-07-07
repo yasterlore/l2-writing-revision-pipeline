@@ -629,3 +629,9 @@ The design fixes the future fixture root, matrix identity, 34-case selected cont
 Step675 adds the direct CLI-only validator `python/learner_state/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_validation.py`, focused tests, and the synthetic body-free fixture root `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing/`.
 
 The implementation uses the Step672 contract through the Step673 34-case matrix and Step674 runner design. It remains outside Makefile target integration and release-quality wrapper integration, and does not invoke manifest writer, generate or output manifest body, write files, create output directories, emit payload bodies, or claim production readiness, real-data readiness, model performance, manifest writer correctness, file-writing readiness, manifest body correctness, or payload correctness.
+
+## 27. Step676 Makefile Target Design
+
+Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a future standalone Makefile target around the Step675 direct CLI runner.
+
+Step676 does not change Makefile, release-quality wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

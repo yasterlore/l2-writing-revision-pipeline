@@ -351,3 +351,9 @@ Clarifications:
 Step671 creates `docs/frozen_policy_generation_manifest_writer_invocation_preflight_boundary_planning.md` as planning-only / docs-only preflight boundary planning before any manifest writer invocation is considered.
 
 The planning doc records current accepted boundaries, non-authorized boundaries, current evidence state, future invocation risks, required preconditions, candidate preflight paths, no-body / no-file-writing constraints, future manifest body generation gates, future file-writing gates, and the recommended Step672 dry-run no-body no-file-writing contract design. It does not alter wrapper, Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
+
+## 16. Step676 Makefile Target Design
+
+Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a future standalone Makefile target around the Step675 direct CLI runner.
+
+Step676 does not revise Step669, Step657, or Step645. It does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.

@@ -493,6 +493,10 @@ Step648 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_me
 
 Step649 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_runner_design.md` as design-only / docs-only future runner behavior planning. This fixture root and fixture JSON remain unchanged; Step649 does not create fixture JSON, implement runner code, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, runtime implementation, or validator implementation.
 
+## Step676 Manifest Writer Dry-Run Makefile Target Design Reference
+
+Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a separate future dry-run no-body no-file-writing standalone target. This actual-controlled fixture root and fixture JSON remain unchanged; Step676 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
 ## Step663 Manifest Writer Handoff Input Validation Makefile Target Design Reference
 
 Step663 adds `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md` as design-only / docs-only Makefile target planning for a separate manifest writer handoff input validation runner. This fixture root and fixture JSON remain unchanged; Step663 does not change Makefile, wrapper, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.
