@@ -363,3 +363,7 @@ Step655 designs the future status marker workflow for the Step654 wrapper-integr
 ## 19. Step656 Handoff Remote Status Marker
 
 Step656 creates a remote status marker for the Step654 handoff wrapper-integrated check using provided public-safe remote GitHub Actions metadata. It does not revise the Step645 payload audit final safety review or remove the Step645 local/manual fallback limitation.
+
+## 20. Step657 Handoff Final Safety Review
+
+Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as the final-safety-review-only / docs-only review for the Step647-Step656 handoff chain. This does not revise the Step645 payload audit accepted boundary or remove the local/manual fallback limitation for that separate chain.

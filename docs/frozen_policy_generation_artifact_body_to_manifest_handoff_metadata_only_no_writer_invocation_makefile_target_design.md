@@ -334,3 +334,7 @@ Step655 is design-only / docs-only. It does not create the status marker or chan
 ## 19. Step656 Remote Status Marker
 
 Step656 creates the handoff release-quality remote status marker at `docs/status/learner_state_frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_status.md`. The standalone target and Makefile remain unchanged.
+
+## 20. Step657 Final Safety Review
+
+Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only acceptance review for the Step647-Step656 chain. It does not change the Makefile target or convert the target into manifest writer invocation, manifest body generation, file writing, or payload body emission.

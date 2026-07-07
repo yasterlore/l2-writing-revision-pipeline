@@ -638,3 +638,7 @@ Step655 adds a design-only / docs-only workflow for a future public-safe status 
 ## 25. Step656 Remote Status Marker
 
 Step656 creates the remote status marker for the Step654 wrapper-integrated handoff check. The marker records public-safe remote metadata and aggregate count-only runner summary only; it does not change runner code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 26. Step657 Final Safety Review
+
+Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as the final-safety-review-only / docs-only review for the handoff chain. It accepts the fixed 8-case count-only metadata boundary and does not change runner behavior, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

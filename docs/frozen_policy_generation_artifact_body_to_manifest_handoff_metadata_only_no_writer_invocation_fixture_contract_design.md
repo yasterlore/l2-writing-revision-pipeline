@@ -499,3 +499,7 @@ Step655 designs the future status marker workflow for the Step654 wrapper-integr
 ## 23. Step656 Remote Status Marker
 
 Step656 creates the remote status marker for the Step654 wrapper-integrated handoff check. The fixture contract and fixture JSON remain unchanged; the marker records only public-safe remote metadata and count-only summary fields.
+
+## 24. Step657 Final Safety Review
+
+Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as a docs-only final safety review. It accepts the fixed 8-case metadata-only contract with explicit boundary while leaving fixture JSON unchanged and keeping manifest writer invocation, manifest body generation, file writing, and payload body emission out of scope.

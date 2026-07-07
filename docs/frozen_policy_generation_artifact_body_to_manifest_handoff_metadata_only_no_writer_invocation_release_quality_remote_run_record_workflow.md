@@ -361,3 +361,7 @@ Step656 should create the status marker only from public-safe metadata. It shoul
 Step656 creates `docs/status/learner_state_frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_status.md` as a status-marker-only / docs-only record using remote GitHub Actions metadata provided after Step654 wrapper integration.
 
 The marker records public-safe remote metadata, observed release-quality labels, ordering, and the count-only handoff target summary. It does not copy raw logs, full job output, fixture bodies, payload bodies, or manifest bodies. It does not change wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 20. Step657 Final Safety Review
+
+Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review of the Step647-Step656 chain. It accepts the handoff boundary with explicit limits and keeps manifest writer invocation, manifest body generation, file writing, payload body emission, production readiness, real-data readiness, and model performance out of scope.

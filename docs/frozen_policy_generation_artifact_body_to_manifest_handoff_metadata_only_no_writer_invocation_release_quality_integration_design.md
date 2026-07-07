@@ -378,3 +378,7 @@ The workflow records allowed evidence sources, forbidden raw log / payload sourc
 ## 18. Step656 Remote Status Marker
 
 Step656 creates `docs/status/learner_state_frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_status.md` using provided remote GitHub Actions public-safe metadata. The marker records the Step654 handoff wrapper-integrated check, observed label ordering, final release-quality pass, and count-only target summary without copying raw logs, full job output, fixture bodies, payload bodies, or manifest bodies.
+
+## 19. Step657 Final Safety Review
+
+Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review. It accepts the handoff release-quality chain with explicit boundary and does not broaden it into manifest writer invocation, manifest body generation, file writing, payload correctness, production readiness, real-data readiness, or model performance.
