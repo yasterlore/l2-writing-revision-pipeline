@@ -1676,3 +1676,7 @@ invocation evidence, or file-writing evidence.
 ## Step670 Manifest Writer Handoff Input Validation Next Boundary Planning
 
 - [Manifest writer handoff input validation post-final-safety-review next boundary planning](../frozen_policy_generation_manifest_writer_handoff_input_validation_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only next-boundary comparison after Step669. It keeps Step657 and Step645 separate and recommends Step671 manifest writer invocation preflight boundary planning by default when remote public-safe metadata for the Step666 chain is unavailable.
+
+## Step671 Manifest Writer Invocation Preflight Boundary Planning
+
+- [Manifest writer invocation preflight boundary planning](../frozen_policy_generation_manifest_writer_invocation_preflight_boundary_planning.md): planning-only / docs-only preflight boundary planning. It keeps Step645, Step657, and Step669 separate, forbids manifest writer invocation / body generation / file writing in Step671, and recommends Step672 dry-run no-body no-file-writing contract design.

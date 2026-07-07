@@ -77,3 +77,9 @@ Step670 creates
 `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_post_final_safety_review_next_boundary_planning.md`
 as planning-only / docs-only next-boundary planning after Step669. This fixture
 root and fixture JSON remain unchanged.
+
+Step671 creates
+`docs/frozen_policy_generation_manifest_writer_invocation_preflight_boundary_planning.md`
+as planning-only / docs-only preflight boundary planning before any manifest
+writer invocation is considered. This fixture root and fixture JSON remain
+unchanged.

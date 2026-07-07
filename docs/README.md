@@ -1039,3 +1039,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step670 Manifest Writer Handoff Input Validation Next Boundary Planning
 
 - [Manifest writer handoff input validation post-final-safety-review next boundary planning](frozen_policy_generation_manifest_writer_handoff_input_validation_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison of next boundaries after the Step669 accepted-with-limitation review. It recommends Step671 manifest writer invocation preflight boundary planning by default when remote public-safe metadata for the Step666 chain is unavailable, and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## Step671 Manifest Writer Invocation Preflight Boundary Planning
+
+- [Manifest writer invocation preflight boundary planning](frozen_policy_generation_manifest_writer_invocation_preflight_boundary_planning.md): planning-only / docs-only preflight boundary planning before any manifest writer invocation is considered. It records required safety gates, current evidence limits, candidate preflight paths, no-body / no-file-writing constraints, and recommends Step672 dry-run no-body no-file-writing contract design without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

@@ -345,3 +345,9 @@ Clarifications:
 - Step671 should not enable file writing.
 - Step671 should not emit payload bodies.
 - Step671 should maintain local/manual-status-recorded limitation unless remote metadata is provided separately.
+
+## 15. Step671 Preflight Boundary Planning
+
+Step671 creates `docs/frozen_policy_generation_manifest_writer_invocation_preflight_boundary_planning.md` as planning-only / docs-only preflight boundary planning before any manifest writer invocation is considered.
+
+The planning doc records current accepted boundaries, non-authorized boundaries, current evidence state, future invocation risks, required preconditions, candidate preflight paths, no-body / no-file-writing constraints, future manifest body generation gates, future file-writing gates, and the recommended Step672 dry-run no-body no-file-writing contract design. It does not alter wrapper, Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
