@@ -682,3 +682,7 @@ Step675 adds focused Python test coverage for the direct CLI-only manifest write
 ## Step677 Coverage Addendum
 
 Step677 adds standalone Makefile coverage for running the Step675 manifest writer dry-run no-body no-file-writing validator through `check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation`. This is standalone target coverage only; it is not release-quality wrapper coverage, workflow coverage, manifest writer correctness evidence, manifest body correctness evidence, file-writing readiness evidence, payload correctness evidence, artifact body payload quality evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step679 Coverage Addendum
+
+Step679 adds release-quality wrapper coverage for the Step677 standalone manifest writer dry-run no-body no-file-writing validation target. The wrapper check covers the 34-case metadata-only / body-free / no-file-writing contract in release-quality order after manifest writer handoff input validation and before artifact / manifest file-writing and broader manifest writer checks. This is wrapper integration coverage only; it is not workflow coverage, manifest writer correctness evidence, manifest body correctness evidence, file-writing readiness evidence, payload correctness evidence, artifact body payload quality evidence, production readiness, real-data readiness, or model performance evidence.

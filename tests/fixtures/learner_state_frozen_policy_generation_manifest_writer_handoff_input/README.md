@@ -119,3 +119,6 @@ Step678 creates
 as design-only / docs-only planning for future wrapper integration of the
 separate dry-run validator. This 23-case handoff input fixture root and fixture
 JSON remain unchanged.
+
+Step679 adds release-quality wrapper coverage for the separate dry-run validator.
+This 23-case handoff input fixture root and fixture JSON remain unchanged.

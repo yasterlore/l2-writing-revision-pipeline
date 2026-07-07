@@ -842,3 +842,9 @@ The fixture root and fixture JSON remain unchanged. The target is not release-qu
 Step678 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md` as design-only / docs-only planning for future wrapper integration of the Step677 target.
 
 The fixture root and fixture JSON remain unchanged. Step678 does not change wrapper, Makefile, workflow, Python code/tests, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 33. Step679 Release-Quality Wrapper Integration
+
+Step679 adds the Step677 standalone dry-run target to `scripts/check_release_quality.sh`.
+
+The fixture root and fixture JSON remain unchanged. Step679 does not change Makefile, workflow, Python code/tests, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

@@ -32,3 +32,8 @@ Step678 creates
 as design-only / docs-only planning for future release-quality wrapper
 integration. This fixture root and fixture JSON remain unchanged, and no
 wrapper entry is added in Step678.
+
+Step679 adds the Step677 standalone target to `scripts/check_release_quality.sh`.
+This fixture root and fixture JSON remain unchanged, and the wrapper entry does
+not invoke manifest writer, generate or output manifest body, write files,
+create output directories, or emit payload bodies.

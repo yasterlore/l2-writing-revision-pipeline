@@ -444,3 +444,21 @@ Clarifications:
 - Step679 should not enable file writing.
 - Step679 should not create output directories.
 - Step679 should not emit payload bodies.
+
+## 17. Step679 Implementation Status
+
+Step679 implements the proposed release-quality wrapper integration in `scripts/check_release_quality.sh`.
+
+Added label:
+
+`release_quality_check: learner-state frozen policy generation manifest writer dry-run no-body no-file-writing validation`
+
+Added command:
+
+`make check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation`
+
+The wrapper entry is ordered after manifest writer handoff input validation and before artifact / manifest file-writing and broader manifest writer checks. Step679 does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+Recommended next step:
+
+Step680: manifest writer dry-run no-body no-file-writing release-quality remote/manual status marker workflow design

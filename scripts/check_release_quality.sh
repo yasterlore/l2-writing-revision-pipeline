@@ -199,6 +199,9 @@ run make check-learner-state-frozen-policy-generation-artifact-body-to-manifest-
 section "learner-state frozen policy generation manifest writer handoff input validation"
 run make check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation
 
+section "learner-state frozen policy generation manifest writer dry-run no-body no-file-writing validation"
+run make check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation
+
 section "learner-state frozen policy generation artifact body file writing fixture validation"
 run make check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
 

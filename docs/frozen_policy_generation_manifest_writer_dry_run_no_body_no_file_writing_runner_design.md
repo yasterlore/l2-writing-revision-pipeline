@@ -1049,3 +1049,9 @@ The target runs the Step675 direct CLI with the required summary-only, dry-run, 
 Step678 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md` as design-only / docs-only planning for future wrapper integration of the Step677 standalone target.
 
 Step678 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 32. Step679 Release-Quality Wrapper Integration
+
+Step679 adds this runner's standalone Makefile target to `scripts/check_release_quality.sh`.
+
+The wrapper entry runs after manifest writer handoff input validation and before artifact / manifest file-writing and broader manifest writer checks. Step679 does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

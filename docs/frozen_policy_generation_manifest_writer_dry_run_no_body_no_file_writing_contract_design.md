@@ -647,3 +647,9 @@ The target keeps this contract metadata-only, body-free, and no-file-writing. It
 Step678 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md` as design-only / docs-only planning for future wrapper integration of the Step677 standalone target.
 
 Step678 keeps this contract metadata-only, body-free, and no-file-writing. It does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 30. Step679 Release-Quality Wrapper Integration
+
+Step679 adds the Step677 standalone target to `scripts/check_release_quality.sh` for release-quality wrapper coverage of this fixed 34-case contract.
+
+Step679 keeps this contract metadata-only, body-free, and no-file-writing. It does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
