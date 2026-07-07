@@ -26,3 +26,9 @@ Step677 adds
 as a standalone Makefile target around the Step675 runner. This fixture root and
 fixture JSON remain unchanged, and no release-quality wrapper entry is added in
 Step677.
+
+Step678 creates
+`docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md`
+as design-only / docs-only planning for future release-quality wrapper
+integration. This fixture root and fixture JSON remain unchanged, and no
+wrapper entry is added in Step678.

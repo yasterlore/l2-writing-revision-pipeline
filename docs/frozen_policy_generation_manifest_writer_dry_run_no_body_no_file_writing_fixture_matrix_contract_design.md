@@ -836,3 +836,9 @@ The Step673 fixture root remains unchanged. Step676 does not change fixture JSON
 Step677 adds `check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation` as a standalone Makefile target around the Step675 runner.
 
 The fixture root and fixture JSON remain unchanged. The target is not release-quality integrated yet and does not invoke manifest writer, generate or output manifest body, write files, create output directories, or emit payload bodies.
+
+## 32. Step678 Release-Quality Integration Design
+
+Step678 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md` as design-only / docs-only planning for future wrapper integration of the Step677 target.
+
+The fixture root and fixture JSON remain unchanged. Step678 does not change wrapper, Makefile, workflow, Python code/tests, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

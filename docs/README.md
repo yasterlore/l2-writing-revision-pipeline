@@ -1067,3 +1067,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step677 Manifest Writer Dry-Run No-Body No-File-Writing Makefile Target Implementation
 
 - `check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation`: standalone Makefile target for the Step675 dry-run validator. It runs the fixed 34-case metadata-only contract with the required summary-only, dry-run, no-body, no-file-writing, no-output-directory, and fail-closed flags; it remains outside release-quality wrapper integration and does not change Python code/tests, fixture JSON, workflow, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## Step678 Manifest Writer Dry-Run No-Body No-File-Writing Release-Quality Integration Design
+
+- [Manifest writer dry-run no-body no-file-writing release-quality integration design](frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md): design-only / docs-only planning for adding the Step677 standalone target to the release-quality wrapper in a future step. It proposes the label, command, insertion point after manifest writer handoff input validation, expected public-safe output, safety boundary, failure interpretation, and Step679 validation plan without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

@@ -641,3 +641,9 @@ Step676 does not change Makefile, release-quality wrapper, workflow, Python code
 Step677 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation` for the Step675 direct CLI runner.
 
 The target keeps this contract metadata-only, body-free, and no-file-writing. It remains outside release-quality wrapper integration and does not change Python code/tests, fixture JSON, workflow, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 29. Step678 Release-Quality Integration Design
+
+Step678 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md` as design-only / docs-only planning for future wrapper integration of the Step677 standalone target.
+
+Step678 keeps this contract metadata-only, body-free, and no-file-writing. It does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

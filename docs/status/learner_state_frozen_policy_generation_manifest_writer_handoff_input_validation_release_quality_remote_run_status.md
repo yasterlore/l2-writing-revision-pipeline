@@ -309,3 +309,9 @@ Step676 does not change this status marker, does not add remote metadata, and do
 Step677 adds a standalone Makefile target for the separate Step675 dry-run no-body no-file-writing validator.
 
 Step677 does not change this status marker, does not add remote metadata, and does not revise the local/manual-status-recorded limitation for the Step659-Step669 chain.
+
+## 21. Step678 Release-Quality Integration Design
+
+Step678 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md` as design-only / docs-only planning for future wrapper integration of the separate dry-run no-body no-file-writing target.
+
+Step678 does not change this status marker, does not add remote metadata, and does not revise the local/manual-status-recorded limitation for the Step659-Step669 chain.

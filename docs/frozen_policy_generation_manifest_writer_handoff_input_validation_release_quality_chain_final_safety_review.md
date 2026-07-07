@@ -347,3 +347,9 @@ Step676 does not revise this final safety review and does not upgrade the Step65
 Step677 adds a standalone Makefile target for the separate Step675 dry-run no-body no-file-writing validator.
 
 Step677 does not revise this final safety review and does not upgrade the Step659-Step669 chain from local/manual-status-recorded to remote-status-recorded. It does not change release-quality wrapper, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.
+
+## 23. Step678 Release-Quality Integration Design
+
+Step678 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md` as design-only / docs-only planning for future wrapper integration of the separate Step675 / Step677 dry-run validation target.
+
+Step678 does not revise this final safety review and does not upgrade the Step659-Step669 chain from local/manual-status-recorded to remote-status-recorded. It does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.

@@ -1704,3 +1704,7 @@ invocation evidence, or file-writing evidence.
 ## Step677 Manifest Writer Dry-Run No-Body No-File-Writing Makefile Target Implementation
 
 - `check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation`: standalone Makefile target for the Step675 dry-run no-body no-file-writing validator. It is not release-quality integrated yet and keeps workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, and payload body emission unchanged.
+
+## Step678 Manifest Writer Dry-Run No-Body No-File-Writing Release-Quality Integration Design
+
+- [Manifest writer dry-run no-body no-file-writing release-quality integration design](../frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md): design-only / docs-only planning for a future wrapper entry around the Step677 standalone target. It keeps wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, and payload body emission unchanged in Step678.

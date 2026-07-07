@@ -399,3 +399,9 @@ Step677 does not change Python code/tests, fixture JSON, workflow, release-quali
 Recommended next step:
 
 Step678: manifest writer dry-run no-body no-file-writing release-quality integration design
+
+## 17. Step678 Release-Quality Integration Design
+
+Step678 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md` as design-only / docs-only planning for future wrapper integration of this standalone target.
+
+The design proposes the wrapper label, command, insertion point, expected public-safe output, failure interpretation, and Step679 validation plan. Step678 does not change the release-quality wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

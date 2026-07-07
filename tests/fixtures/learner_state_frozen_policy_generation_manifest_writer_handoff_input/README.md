@@ -113,3 +113,9 @@ fixture JSON remain unchanged.
 Step677 adds the standalone Makefile target for the separate Step675 dry-run
 validator. This 23-case handoff input fixture root and fixture JSON remain
 unchanged, and the target is not release-quality integrated here.
+
+Step678 creates
+`docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md`
+as design-only / docs-only planning for future wrapper integration of the
+separate dry-run validator. This 23-case handoff input fixture root and fixture
+JSON remain unchanged.

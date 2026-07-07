@@ -524,3 +524,7 @@ Step668 adds `docs/status/learner_state_frozen_policy_generation_manifest_writer
 ## Step677 Manifest Writer Dry-Run Makefile Target Implementation Reference
 
 Step677 adds the separate standalone Makefile target for manifest writer dry-run no-body no-file-writing validation. This actual-controlled fixture root and fixture JSON remain unchanged; Step677 does not change wrapper, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, manifest body generation/output, output directory creation, or file writing.
+
+## Step678 Manifest Writer Dry-Run Release-Quality Integration Design Reference
+
+Step678 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_integration_design.md` as design-only / docs-only planning for future wrapper integration of the separate dry-run target. This actual-controlled fixture root and fixture JSON remain unchanged; Step678 does not change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, manifest body generation/output, output directory creation, or file writing.
