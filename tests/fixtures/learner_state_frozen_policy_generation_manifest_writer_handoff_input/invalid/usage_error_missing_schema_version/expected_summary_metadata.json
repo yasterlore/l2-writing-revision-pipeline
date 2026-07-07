@@ -1,0 +1,14 @@
+{
+  "boundary_name": "manifest_writer_handoff_input_metadata_only_no_writer_invocation",
+  "case_id": "invalid/usage_error_missing_schema_version",
+  "case_selection": "manifest-writer-handoff-input-contract",
+  "contract_name": "manifest_writer_handoff_input_contract",
+  "expected_category": "invalid_usage_error",
+  "expected_status": "usage_error",
+  "handoff_input_id": "handoff-input-invalid__usage_error_missing_schema_version",
+  "handoff_input_mode": "manifest_writer_handoff_input_metadata_only_no_invocation",
+  "matrix_name": "manifest_writer_handoff_input_contract_matrix",
+  "reason_code": "missing_schema_version",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_handoff_input_v0.1",
+  "unsafe_condition_category": "missing_schema_version"
+}

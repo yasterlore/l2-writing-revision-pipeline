@@ -653,3 +653,13 @@ It defines the future fixture root, matrix identity, fixed 23-case selection, ca
 ## 26. Step661 Runner Design
 
 Step661 creates `docs/frozen_policy_generation_manifest_writer_handoff_runner_design.md` as design-only / docs-only future runner / validator behavior design for the Step660 matrix. It does not create fixture JSON, implement Python code/tests, invoke manifest writer, generate manifest body, write files, or emit payload bodies.
+
+## 27. Step662 Fixture / Runner Implementation
+
+Step662 implements the manifest writer handoff input validator / runner as a direct CLI-only check with focused tests and a synthetic body-free fixture root:
+
+- `python/learner_state/frozen_policy_generation_manifest_writer_handoff_input_validation.py`
+- `python/learner_state/tests/test_frozen_policy_generation_manifest_writer_handoff_input_validation.py`
+- `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_handoff_input/`
+
+The implementation validates the 23-case metadata-only contract from Step660. It does not add a Makefile target, release-quality wrapper entry, workflow change, manifest writer invocation, manifest body generation, artifact / manifest file writing, payload body emission, artifact body payload output, or generated policy body output.

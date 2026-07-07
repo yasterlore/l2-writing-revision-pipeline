@@ -1003,3 +1003,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step661 Manifest Writer Handoff Runner Design
 
 - [Manifest writer handoff input validator / runner design](frozen_policy_generation_manifest_writer_handoff_runner_design.md): design-only / docs-only future runner behavior design for the Step660 23-case matrix. It defines the proposed module/tests, CLI, input model, fixture reading policy, case selection, per-case classification, aggregate output, status semantics, failure mapping, safety scan, residue policy, focused tests for Step662, and implementation staging without creating fixture JSON, implementing Python code/tests, invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.
+
+## Step662 Manifest Writer Handoff Fixture / Runner Implementation
+
+- Manifest writer handoff input validation runner: direct CLI-only implementation in `python/learner_state/frozen_policy_generation_manifest_writer_handoff_input_validation.py` with focused tests in `python/learner_state/tests/test_frozen_policy_generation_manifest_writer_handoff_input_validation.py` and synthetic body-free fixture root `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_handoff_input/`. The runner validates the fixed 23-case metadata-only contract without Makefile target integration, release-quality wrapper integration, workflow changes, manifest writer invocation, manifest body generation, file writing, or payload body emission.

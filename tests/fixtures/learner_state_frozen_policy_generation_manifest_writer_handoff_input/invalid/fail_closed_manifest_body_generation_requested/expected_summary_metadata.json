@@ -1,0 +1,14 @@
+{
+  "boundary_name": "manifest_writer_handoff_input_metadata_only_no_writer_invocation",
+  "case_id": "invalid/fail_closed_manifest_body_generation_requested",
+  "case_selection": "manifest-writer-handoff-input-contract",
+  "contract_name": "manifest_writer_handoff_input_contract",
+  "expected_category": "invalid_fail_closed",
+  "expected_status": "fail_closed",
+  "handoff_input_id": "handoff-input-invalid__fail_closed_manifest_body_generation_requested",
+  "handoff_input_mode": "manifest_writer_handoff_input_metadata_only_no_invocation",
+  "matrix_name": "manifest_writer_handoff_input_contract_matrix",
+  "reason_code": "manifest_body_generation_requested",
+  "schema_version": "learner_state_frozen_policy_generation_manifest_writer_handoff_input_v0.1",
+  "unsafe_condition_category": "manifest_body_generation_requested"
+}

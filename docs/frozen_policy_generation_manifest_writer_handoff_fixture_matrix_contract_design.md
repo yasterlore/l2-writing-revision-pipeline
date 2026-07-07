@@ -620,3 +620,9 @@ Step661 should be design-only / docs-only. It should design how a future validat
 Step661 creates `docs/frozen_policy_generation_manifest_writer_handoff_runner_design.md` as design-only / docs-only runner / validator behavior design for this 23-case fixture / matrix contract.
 
 It defines the future module, CLI, input model, fixture reading policy, selection algorithm, per-case classification, aggregate output, status semantics, failure mapping, safety scan, residue policy, and Step662 focused test plan without creating fixture JSON, implementing Python code/tests, invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.
+
+## 26. Step662 Fixture / Runner Implementation
+
+Step662 creates the synthetic body-free fixture root `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_handoff_input/` and implements the direct CLI runner and focused tests for this 23-case contract.
+
+The implementation keeps the canonical fixture metadata-only: invalid categories are represented by `unsafe_condition_category` and public-safe reason codes while actual writer/body/file/payload flags remain false / 0. Step662 does not add a Makefile target, release-quality wrapper entry, workflow change, manifest writer invocation, manifest body generation, artifact / manifest file writing, payload body emission, artifact body payload output, or generated policy body output.
