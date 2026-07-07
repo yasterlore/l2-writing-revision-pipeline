@@ -1604,3 +1604,7 @@ invocation evidence, or file-writing evidence.
 ## Step652 Artifact Body to Manifest Handoff Makefile Target Implementation
 
 - `check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation`: standalone Makefile target for the Step650 runner. It runs the 8-case metadata-only / body-free / no-writer-invocation handoff check, remains outside release-quality, and keeps Python code/tests, fixture JSON, workflows, manifest writer invocation, manifest body generation, file writing, and payload body emission unchanged.
+
+## Step653 Artifact Body to Manifest Handoff Release-Quality Integration Design
+
+- [Artifact body to manifest handoff metadata-only no-writer-invocation release-quality integration design](../frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_integration_design.md): design-only / docs-only plan for future release-quality wrapper integration of the Step652 standalone target. It records the proposed label, command, insertion point, expected output, relationships, validation plan, and safety boundary while keeping wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, and payload body emission out of scope.

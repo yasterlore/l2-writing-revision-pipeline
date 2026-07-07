@@ -967,3 +967,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step652 Artifact Body to Manifest Handoff Makefile Target Implementation
 
 - `check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation`: standalone Makefile target for the Step650 metadata-only / body-free handoff runner. It uses `--summary-only`, `--no-manifest-writer`, `--no-file-writing`, and `--fail-closed-on-forbidden-body`, emits aggregate public-safe metadata for the 8-case contract, remains outside release-quality, and does not change Python code/tests, fixture JSON, workflows, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## Step653 Artifact Body to Manifest Handoff Release-Quality Integration Design
+
+- [Artifact body to manifest handoff metadata-only no-writer-invocation release-quality integration design](frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_integration_design.md): design-only / docs-only plan for future wrapper integration of the Step652 standalone target. It proposes the release-quality label, command, insertion after artifact body safe-metadata CLI smoke and before manifest writer / file-writing checks, expected public-safe output, validation plan, and safety boundary without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

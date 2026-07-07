@@ -26,3 +26,6 @@ root in
 Step652 adds the standalone Makefile target
 `check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation`
 for this fixture root. The target remains outside release-quality.
+
+Step653 records the future release-quality integration design for that target in
+`docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_integration_design.md`.

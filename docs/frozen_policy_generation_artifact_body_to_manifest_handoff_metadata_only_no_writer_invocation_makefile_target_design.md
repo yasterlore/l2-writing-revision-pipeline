@@ -312,3 +312,9 @@ Step652 should update Makefile and necessary README/docs only. Step652 should no
 Step652 adds the proposed standalone Makefile target with the target name, help text, and command recorded in this design.
 
 The target remains standalone only. It is not release-quality integrated. Step652 does not change Python code/tests, fixture JSON, workflows, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 16. Step653 Handoff
+
+Step653 records the future release-quality integration design for this standalone target in `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_integration_design.md`.
+
+Step653 is design-only / docs-only. It does not implement wrapper integration.
