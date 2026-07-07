@@ -1668,3 +1668,7 @@ invocation evidence, or file-writing evidence.
 ## Step668 Manifest Writer Handoff Input Validation Status Marker
 
 - [Manifest writer handoff input validation release-quality run status](learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md): status-marker-only / docs-only record using local/manual public-safe evidence after Step666 wrapper integration. It records the wrapper-integrated label, command, order, final release-quality pass, local fallback status, unavailable remote metadata, and the 23-case count-only summary without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## Step669 Manifest Writer Handoff Input Validation Final Safety Review
+
+- [Manifest writer handoff input validation release-quality chain final safety review](../frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_chain_final_safety_review.md): final-safety-review-only / docs-only review of the Step659-Step668 chain. It records the accepted-with-limitation local/manual-status-recorded boundary and does not revise the separate Step657 handoff review or Step645 payload audit limitation.

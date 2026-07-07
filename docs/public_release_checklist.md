@@ -5866,3 +5866,7 @@ Confirm `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_
 ## Step668 Manifest Writer Handoff Input Validation Status Marker Check
 
 Confirm `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` exists as status-marker-only / docs-only local/manual public-safe record after Step666. Confirm it records `local_fallback_used=yes`, unavailable remote metadata as `not available from provided public-safe metadata`, the observed wrapper labels and order, the 23-case count-only target summary, final release-quality pass, safety boundary, Step657 / Step645 relationships, non-equivalence cautions, non-claims, and public-safe checklist without copying raw logs, full job output, fixture bodies, payload bodies, manifest bodies, or private data.
+
+## Step669 Manifest Writer Handoff Input Validation Final Safety Review Check
+
+Confirm `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_chain_final_safety_review.md` exists as final-safety-review-only / docs-only review for Step659-Step668. Confirm it accepts only the release-quality-integrated, local/manual-status-recorded fixed 23-case synthetic count-only metadata contract with limitation and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, payload body emission, artifact body payload output, generated policy body output, or production / real-data / model performance claims.

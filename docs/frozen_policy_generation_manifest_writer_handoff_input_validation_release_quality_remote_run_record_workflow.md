@@ -382,3 +382,9 @@ Step668 should create the status marker only from public-safe metadata. It shoul
 Step668 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` as a status-marker-only / docs-only record using local/manual release-quality summary evidence after Step666 wrapper integration.
 
 The marker records `local_fallback_used=yes`, leaves unavailable remote metadata as `not available from provided public-safe metadata`, and does not copy raw logs, full job output, fixture JSON bodies, payload bodies, manifest bodies, generated policy bodies, private paths, raw learner text, or real participant data. Step668 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 21. Step669 Final Safety Review
+
+Step669 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review after the Step668 local/manual status marker.
+
+The review accepts the release-quality-integrated, local/manual-status-recorded fixed 23-case synthetic count-only metadata contract with limitation and keeps manifest writer invocation, manifest body generation, file writing, payload body emission, Step657 revision, and Step645 revision out of scope.

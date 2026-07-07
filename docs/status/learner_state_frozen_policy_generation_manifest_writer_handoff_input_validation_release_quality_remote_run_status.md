@@ -291,3 +291,9 @@ Recommended:
 `Step669: manifest writer handoff input validation release-quality chain final safety review`
 
 Step669 should review Step659-Step668 as a bounded chain. Step669 should not alter wrapper / Makefile / Python / fixture JSON / workflow, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies. Because Step668 uses only local/manual evidence, Step669 accepted boundary should say local/manual-status-recorded, not remote-status-recorded.
+
+## 18. Step669 Final Safety Review
+
+Step669 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for Step659-Step668.
+
+The review accepts the release-quality-integrated, local/manual-status-recorded fixed 23-case synthetic count-only metadata contract with limitation. It does not change wrapper / Makefile / Python / fixture JSON / workflow, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, revise Step657, or revise the Step645 payload audit limitation.

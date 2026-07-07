@@ -842,3 +842,9 @@ The workflow design leaves this runner, focused tests, fixture JSON, workflows, 
 Step668 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` as a status-marker-only / docs-only local/manual record after Step666.
 
 The status marker does not change this runner, focused tests, fixture JSON, workflows, Makefile, wrapper, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 33. Step669 Final Safety Review
+
+Step669 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review for this runner chain after Step668.
+
+The review keeps this runner, focused tests, fixture JSON, workflows, Makefile, wrapper, manifest writer invocation, manifest body generation, file writing, and payload body emission unchanged.

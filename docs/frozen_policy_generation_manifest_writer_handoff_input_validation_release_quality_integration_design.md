@@ -373,3 +373,9 @@ The workflow design does not create the status marker, change wrapper, Makefile,
 Step668 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the Step666 wrapper-integrated check.
 
 The marker uses local/manual public-safe evidence, records `local_fallback_used=yes`, does not infer unavailable remote metadata, and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 20. Step669 Final Safety Review
+
+Step669 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review after the Step668 local/manual status marker.
+
+The review accepts the release-quality-integrated, local/manual-status-recorded fixed 23-case synthetic count-only metadata contract with limitation and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

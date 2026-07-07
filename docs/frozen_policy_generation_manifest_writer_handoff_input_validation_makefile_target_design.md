@@ -379,3 +379,9 @@ Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_val
 Step668 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` using local/manual public-safe evidence from the Step666 wrapper-integrated check.
 
 The status marker records the Step664 target command and 23-case metadata-only summary without changing Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 21. Step669 Final Safety Review
+
+Step669 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review of the Step659-Step668 chain.
+
+The review accepts the release-quality-integrated, local/manual-status-recorded fixed 23-case synthetic count-only metadata contract with limitation. It does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
