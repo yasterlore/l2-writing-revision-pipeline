@@ -654,3 +654,7 @@ Step659 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_con
 ## 29. Step660 Fixture / Matrix Contract Design
 
 Step660 creates `docs/frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md` as design-only / docs-only future fixture / matrix contract design. It does not implement a runner, create fixture JSON, invoke manifest writer, generate manifest body, write files, or emit payload bodies.
+
+## 30. Step661 Runner Design
+
+Step661 creates `docs/frozen_policy_generation_manifest_writer_handoff_runner_design.md` as design-only / docs-only future runner / validator behavior design for the Step660 matrix. It does not implement Python code/tests, create fixture JSON, invoke manifest writer, generate manifest body, write files, or emit payload bodies.

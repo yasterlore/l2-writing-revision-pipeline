@@ -649,3 +649,7 @@ Step660 should be design-only / docs-only. It should define future synthetic fix
 Step660 creates `docs/frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md` as design-only / docs-only fixture / matrix contract design for this input contract.
 
 It defines the future fixture root, matrix identity, fixed 23-case selection, case IDs, expected statuses, fixture file shape, allowed metadata, aggregate pass values, forbidden fixture content, and future validator expectations without creating fixture JSON, implementing Python code/tests, invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.
+
+## 26. Step661 Runner Design
+
+Step661 creates `docs/frozen_policy_generation_manifest_writer_handoff_runner_design.md` as design-only / docs-only future runner / validator behavior design for the Step660 matrix. It does not create fixture JSON, implement Python code/tests, invoke manifest writer, generate manifest body, write files, or emit payload bodies.

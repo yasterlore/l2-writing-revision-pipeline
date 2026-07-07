@@ -379,3 +379,7 @@ Step659 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_con
 ## 23. Step660 Manifest Writer Handoff Fixture / Matrix Contract Design
 
 Step660 creates `docs/frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md` as design-only / docs-only future fixture / matrix contract design. It does not revise the Step645 payload audit accepted boundary or remove the local/manual fallback limitation for that separate chain.
+
+## 24. Step661 Manifest Writer Handoff Runner Design
+
+Step661 creates `docs/frozen_policy_generation_manifest_writer_handoff_runner_design.md` as design-only / docs-only future runner / validator behavior design. It does not revise the Step645 payload audit accepted boundary or remove the local/manual fallback limitation for that separate chain.

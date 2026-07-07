@@ -60,3 +60,7 @@ The fixture JSON remains unchanged.
 Step660 creates the manifest writer handoff fixture / matrix contract design in
 `docs/frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md`.
 The fixture JSON remains unchanged.
+
+Step661 creates the manifest writer handoff runner design in
+`docs/frozen_policy_generation_manifest_writer_handoff_runner_design.md`.
+The fixture JSON remains unchanged.

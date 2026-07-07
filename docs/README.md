@@ -999,3 +999,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step660 Manifest Writer Handoff Fixture / Matrix Contract Design
 
 - [Manifest writer handoff fixture and matrix contract design](frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md): design-only / docs-only future fixture / matrix contract for the Step659 handoff input contract. It defines the proposed future fixture root, matrix identity, fixed 23-case selection, case IDs, expected statuses, future fixture file shape, allowed metadata, aggregate pass values, forbidden fixture content, validator selection policy, and Step661 handoff without creating fixture JSON, implementing Python code/tests, invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.
+
+## Step661 Manifest Writer Handoff Runner Design
+
+- [Manifest writer handoff input validator / runner design](frozen_policy_generation_manifest_writer_handoff_runner_design.md): design-only / docs-only future runner behavior design for the Step660 23-case matrix. It defines the proposed module/tests, CLI, input model, fixture reading policy, case selection, per-case classification, aggregate output, status semantics, failure mapping, safety scan, residue policy, focused tests for Step662, and implementation staging without creating fixture JSON, implementing Python code/tests, invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.

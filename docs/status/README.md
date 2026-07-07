@@ -1636,3 +1636,7 @@ invocation evidence, or file-writing evidence.
 ## Step660 Manifest Writer Handoff Fixture / Matrix Contract Design
 
 - [Manifest writer handoff fixture and matrix contract design](../frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md): design-only / docs-only future 23-case fixture / matrix contract for the Step659 input contract. It keeps fixture JSON creation, runner implementation, Makefile changes, wrapper changes, workflow changes, manifest writer invocation, manifest body generation, file writing, and payload body emission out of scope.
+
+## Step661 Manifest Writer Handoff Runner Design
+
+- [Manifest writer handoff input validator / runner design](../frozen_policy_generation_manifest_writer_handoff_runner_design.md): design-only / docs-only future runner / validator behavior design for the Step660 matrix. It keeps fixture JSON creation, Python code/tests implementation, Makefile changes, wrapper changes, workflow changes, manifest writer invocation, manifest body generation, file writing, and payload body emission out of scope.

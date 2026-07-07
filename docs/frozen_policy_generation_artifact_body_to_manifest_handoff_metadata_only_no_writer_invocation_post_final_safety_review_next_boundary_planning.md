@@ -380,3 +380,9 @@ The design defines proposed identity, allowed metadata fields, required source a
 Step660 creates `docs/frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md` as design-only / docs-only fixture / matrix contract design for the Step659 contract.
 
 It keeps Step645 payload audit limitation separate and does not create fixture JSON, implement Python code/tests, invoke manifest writer, generate manifest body, write files, or emit payload bodies.
+
+## 17. Step661 Runner Design
+
+Step661 creates `docs/frozen_policy_generation_manifest_writer_handoff_runner_design.md` as design-only / docs-only future runner / validator behavior design for the Step660 matrix.
+
+It keeps Step645 payload audit limitation separate and does not create fixture JSON, implement Python code/tests, invoke manifest writer, generate manifest body, write files, or emit payload bodies.

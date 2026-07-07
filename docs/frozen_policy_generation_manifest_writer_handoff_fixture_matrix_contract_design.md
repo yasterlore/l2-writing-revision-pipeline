@@ -614,3 +614,9 @@ Recommended:
 `Step661: manifest writer handoff runner design`
 
 Step661 should be design-only / docs-only. It should design how a future validator/runner reads the Step660 fixture matrix. It should not create fixture JSON, implement Python code/tests, change Makefile, change release-quality wrapper, change workflow, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
+
+## 25. Step661 Runner Design
+
+Step661 creates `docs/frozen_policy_generation_manifest_writer_handoff_runner_design.md` as design-only / docs-only runner / validator behavior design for this 23-case fixture / matrix contract.
+
+It defines the future module, CLI, input model, fixture reading policy, selection algorithm, per-case classification, aggregate output, status semantics, failure mapping, safety scan, residue policy, and Step662 focused test plan without creating fixture JSON, implementing Python code/tests, invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.
