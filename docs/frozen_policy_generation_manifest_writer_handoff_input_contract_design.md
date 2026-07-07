@@ -675,3 +675,9 @@ The design proposes `check-learner-state-frozen-policy-generation-manifest-write
 Step664 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` with help text `Run manifest writer handoff input metadata-only validation`.
 
 The target runs the Step662 direct CLI over the 23-case metadata-only contract. It is not release-quality integrated in Step664 and does not change this input contract, Python code/tests, fixture JSON, workflows, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 30. Step665 Release-Quality Integration Design
+
+Step665 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md` as design-only / docs-only release-quality integration planning for the Step664 standalone target.
+
+The design keeps this input contract unchanged and proposes future wrapper label, command, ordering, expected aggregate output, and validation plan. Step665 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

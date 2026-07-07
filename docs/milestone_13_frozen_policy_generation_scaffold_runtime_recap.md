@@ -3599,3 +3599,9 @@ The design records the proposed target name, help text, command, placement, expe
 Step664 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` with help text `Run manifest writer handoff input metadata-only validation`.
 
 The target runs the Step662 manifest writer handoff input validator over the fixed 23-case metadata-only contract with summary-only, no-manifest-writer, no-file-writing, and fail-closed-on-forbidden-body flags. It remains outside release-quality wrapper integration and does not change workflow files, Python code/tests, fixture JSON, invoke manifest writer, generate manifest body, write files, emit payload bodies, use real data, add metric evidence, or change production readiness status.
+
+## Step665 Manifest Writer Handoff Input Validation Release-Quality Integration Design
+
+Step665 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md` as design-only / docs-only planning for adding the Step664 standalone target to the release-quality wrapper in a future step.
+
+The design records the proposed release-quality label, command, ordering after artifact body to manifest handoff no-writer-invocation and before manifest writer / file-writing checks, expected aggregate public-safe output, Step666 validation plan, safety boundary, non-equivalence cautions, non-claims, and public-safe checklist. Step665 does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, invoke manifest writer, generate manifest body, write files, emit payload bodies, use real data, add metric evidence, or change production readiness status.

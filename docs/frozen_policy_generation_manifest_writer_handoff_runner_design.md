@@ -818,3 +818,9 @@ It records the proposed target name, help text, command, placement, expected pub
 Step664 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` for the Step662 direct CLI runner.
 
 The target uses the required summary-only, no-manifest-writer, no-file-writing, and fail-closed-on-forbidden-body flags. It remains standalone only and is not release-quality integrated. Step664 does not change this runner, focused tests, fixture JSON, workflows, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 29. Step665 Release-Quality Integration Design
+
+Step665 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md` as design-only / docs-only release-quality wrapper integration planning for the Step664 standalone target.
+
+The design leaves this runner, focused tests, fixture JSON, workflows, Makefile, and wrapper unchanged in Step665 and does not authorize manifest writer invocation, manifest body generation, file writing, or payload body emission.

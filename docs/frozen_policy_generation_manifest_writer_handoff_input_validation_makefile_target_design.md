@@ -357,3 +357,9 @@ PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_wri
 ```
 
 The target is standalone only and is not release-quality integrated in Step664. Step664 does not change Python code/tests, fixture JSON, workflows, release-quality wrapper, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies. The next recommended step is Step665 release-quality integration design.
+
+## 17. Step665 Release-Quality Integration Design
+
+Step665 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md` as design-only / docs-only release-quality wrapper integration planning for the Step664 standalone target.
+
+The design proposes the future release-quality label, command, insertion after the artifact body to manifest handoff no-writer-invocation check and before manifest writer / file-writing checks, expected public-safe output, Step666 validation plan, safety boundary, non-equivalence cautions, and non-claims. Step665 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

@@ -404,3 +404,9 @@ It preserves the Step645 payload audit limitation and does not change Makefile, 
 Step664 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` for the Step662 direct CLI runner.
 
 The target remains outside release-quality wrapper integration and does not revise the Step645 payload audit limitation, invoke manifest writer, generate manifest body, write files, or emit payload bodies.
+
+## 21. Step665 Release-Quality Integration Design
+
+Step665 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md` as design-only / docs-only planning for future wrapper integration of the Step664 standalone manifest writer handoff input validation target.
+
+The planning preserves the Step645 payload audit limitation and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

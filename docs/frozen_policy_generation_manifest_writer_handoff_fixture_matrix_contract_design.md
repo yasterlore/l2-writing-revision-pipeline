@@ -638,3 +638,9 @@ The design keeps this fixture contract unchanged and does not modify Makefile, r
 Step664 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` for the Step662 direct CLI runner.
 
 This fixture contract and fixture JSON remain unchanged. The target is not release-quality integrated and does not invoke manifest writer, generate manifest body, write files, emit payload body, output artifact body payload, or output generated policy body.
+
+## 29. Step665 Release-Quality Integration Design
+
+Step665 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md` as design-only / docs-only planning for adding the Step664 standalone target to the release-quality wrapper in a future step.
+
+This fixture contract and fixture JSON remain unchanged. Step665 does not change wrapper, Makefile, workflow, Python code/tests, manifest writer invocation, manifest body generation, file writing, payload body emission, artifact body payload output, or generated policy body output.

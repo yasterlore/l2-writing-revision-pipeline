@@ -74,3 +74,9 @@ Step664 adds the standalone Makefile target
 `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation`
 for the separate manifest writer handoff input validation runner. This fixture
 root and fixture JSON remain unchanged.
+
+Step665 creates
+`docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md`
+as design-only / docs-only planning for future release-quality wrapper
+integration of that separate manifest writer handoff input validation target.
+This fixture root and fixture JSON remain unchanged.

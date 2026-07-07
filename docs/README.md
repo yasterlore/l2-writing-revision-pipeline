@@ -1015,3 +1015,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step664 Manifest Writer Handoff Input Validation Makefile Target Implementation
 
 - `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation`: standalone Makefile target for the Step662 manifest writer handoff input validation runner. It uses the required summary-only, no-manifest-writer, no-file-writing, and fail-closed-on-forbidden-body flags, remains outside release-quality wrapper integration, and does not change Python code/tests, fixture JSON, workflow files, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## Step665 Manifest Writer Handoff Input Validation Release-Quality Integration Design
+
+- [Manifest writer handoff input validation release-quality integration design](frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_integration_design.md): design-only / docs-only planning for adding the Step664 standalone target to `scripts/check_release_quality.sh` in a future step. It proposes the release-quality label, command, insertion after artifact body to manifest handoff no-writer-invocation and before manifest writer / file-writing checks, expected public-safe output, validation plan, safety boundary, non-equivalence cautions, and non-claims without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
