@@ -3557,3 +3557,9 @@ The marker records `local_fallback_used=no`, observed release-quality label orde
 Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review of the Step647-Step656 handoff chain.
 
 The review accepts the release-quality-integrated, remote-status-recorded, artifact body to manifest handoff metadata-only no-writer-invocation boundary for the fixed 8-case synthetic count-only metadata contract. It does not revise the separate Step645 payload audit local/manual fallback limitation, and it keeps manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, and production readiness status out of scope.
+
+## Step658 Artifact Body to Manifest Handoff Next Boundary Planning
+
+Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after Step657.
+
+The planning compares manifest writer handoff input contract design, fixture contract design, metadata-only dry-run runner design, direct writer invocation, direct manifest body / file-writing work, and docs consolidation. It recommends Step659 manifest writer handoff input contract design while preserving the Step645 payload audit limitation and keeping wrapper changes, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, and production readiness status out of scope.

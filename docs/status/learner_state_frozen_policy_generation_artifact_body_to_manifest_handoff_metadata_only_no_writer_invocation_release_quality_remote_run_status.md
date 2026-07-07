@@ -298,3 +298,7 @@ Step657 should review the completed Step647-Step656 chain. It should not impleme
 Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review of this status marker and the Step647-Step656 chain.
 
 The review accepts the handoff chain with explicit boundary and does not revise the separate Step645 payload audit final safety review or its local/manual fallback limitation.
+
+## 19. Step658 Next Boundary Planning
+
+Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning. It does not change this status marker or introduce manifest writer invocation, manifest body generation, file writing, or payload body emission.

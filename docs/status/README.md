@@ -1624,3 +1624,7 @@ invocation evidence, or file-writing evidence.
 ## Step657 Artifact Body to Manifest Handoff Final Safety Review
 
 - [Artifact body to manifest handoff metadata-only no-writer-invocation release-quality chain final safety review](../frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md): final-safety-review-only / docs-only review accepting the handoff chain with explicit boundary. It records the Step656 remote status marker relationship and does not revise the separate Step645 payload audit limitation.
+
+## Step658 Artifact Body to Manifest Handoff Next Boundary Planning
+
+- [Artifact body to manifest handoff metadata-only no-writer-invocation post-final-safety-review next boundary planning](../frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only next-boundary comparison after Step657. It recommends Step659 manifest writer handoff input contract design and keeps Step645 payload audit limitation separate.

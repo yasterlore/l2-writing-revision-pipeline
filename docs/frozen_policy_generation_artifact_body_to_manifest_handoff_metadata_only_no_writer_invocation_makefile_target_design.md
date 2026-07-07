@@ -338,3 +338,7 @@ Step656 creates the handoff release-quality remote status marker at `docs/status
 ## 20. Step657 Final Safety Review
 
 Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only acceptance review for the Step647-Step656 chain. It does not change the Makefile target or convert the target into manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 21. Step658 Next Boundary Planning
+
+Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning. It does not change this Makefile target and recommends a future manifest writer handoff input contract design before any writer invocation or file-writing boundary.

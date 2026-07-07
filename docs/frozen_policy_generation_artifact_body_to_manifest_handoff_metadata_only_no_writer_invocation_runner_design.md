@@ -642,3 +642,7 @@ Step656 creates the remote status marker for the Step654 wrapper-integrated hand
 ## 26. Step657 Final Safety Review
 
 Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as the final-safety-review-only / docs-only review for the handoff chain. It accepts the fixed 8-case count-only metadata boundary and does not change runner behavior, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 27. Step658 Next Boundary Planning
+
+Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning. It recommends a future manifest writer handoff input contract design before runner work that would approach writer invocation, manifest body generation, file writing, or payload body emission.

@@ -367,3 +367,7 @@ Step656 creates a remote status marker for the Step654 handoff wrapper-integrate
 ## 20. Step657 Handoff Final Safety Review
 
 Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as the final-safety-review-only / docs-only review for the Step647-Step656 handoff chain. This does not revise the Step645 payload audit accepted boundary or remove the local/manual fallback limitation for that separate chain.
+
+## 21. Step658 Handoff Next Boundary Planning
+
+Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after the handoff final safety review. It does not revise the Step645 payload audit accepted boundary or remove the local/manual fallback limitation for that separate chain.

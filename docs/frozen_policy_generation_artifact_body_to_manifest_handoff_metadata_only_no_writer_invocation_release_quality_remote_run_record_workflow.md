@@ -365,3 +365,7 @@ The marker records public-safe remote metadata, observed release-quality labels,
 ## 20. Step657 Final Safety Review
 
 Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review of the Step647-Step656 chain. It accepts the handoff boundary with explicit limits and keeps manifest writer invocation, manifest body generation, file writing, payload body emission, production readiness, real-data readiness, and model performance out of scope.
+
+## 21. Step658 Next Boundary Planning
+
+Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning. It recommends a future manifest writer handoff input contract design before any writer invocation, manifest body generation, file writing, or payload body emission.

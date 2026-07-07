@@ -382,3 +382,7 @@ Step656 creates `docs/status/learner_state_frozen_policy_generation_artifact_bod
 ## 19. Step657 Final Safety Review
 
 Step657 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review. It accepts the handoff release-quality chain with explicit boundary and does not broaden it into manifest writer invocation, manifest body generation, file writing, payload correctness, production readiness, real-data readiness, or model performance.
+
+## 20. Step658 Next Boundary Planning
+
+Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after Step657. It recommends Step659 manifest writer handoff input contract design and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

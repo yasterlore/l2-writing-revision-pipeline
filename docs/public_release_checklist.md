@@ -5822,3 +5822,7 @@ Confirm `docs/status/learner_state_frozen_policy_generation_artifact_body_to_man
 ## Step657 Artifact Body to Manifest Handoff Final Safety Review Check
 
 Confirm `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md` exists as a final-safety-review-only / docs-only review of Step647-Step656. Confirm it accepts only the release-quality-integrated, remote-status-recorded, fixed 8-case synthetic count-only metadata handoff boundary; preserves the separate Step645 payload audit limitation; and does not claim manifest writer correctness, file-writing readiness, manifest body correctness, payload correctness, production readiness, real-data readiness, or model performance.
+
+## Step658 Artifact Body to Manifest Handoff Next Boundary Planning Check
+
+Confirm `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md` exists as a planning-only / docs-only comparison after Step657. Confirm it recommends Step659 manifest writer handoff input contract design before any manifest writer invocation, manifest body generation, file writing, fixture JSON creation, Python code/tests changes, Makefile changes, wrapper changes, workflow changes, production readiness, real-data readiness, or model performance claims.

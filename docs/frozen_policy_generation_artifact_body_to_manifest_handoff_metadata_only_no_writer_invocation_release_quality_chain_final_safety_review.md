@@ -247,3 +247,9 @@ Recommended:
 `Step658: post-final-safety-review next boundary planning for manifest writer handoff / manifest writer integration staging`
 
 Step658 should be planning-only. It should compare options before any manifest writer integration. It should not implement manifest writer integration, invoke manifest writer, generate manifest body, enable file writing, claim manifest writer correctness, claim file-writing readiness, or claim production readiness / real-data readiness.
+
+## 17. Step658 Next Boundary Planning
+
+Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after this final safety review.
+
+The planning recommends `Step659: manifest writer handoff input contract design` before any manifest writer invocation, manifest body generation, file writing, payload body emission, production readiness, real-data readiness, or model performance claims.

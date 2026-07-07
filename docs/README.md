@@ -987,3 +987,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step657 Artifact Body to Manifest Handoff Final Safety Review
 
 - [Artifact body to manifest handoff metadata-only no-writer-invocation release-quality chain final safety review](frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_chain_final_safety_review.md): final-safety-review-only / docs-only review of the Step647-Step656 chain. It accepts the release-quality-integrated, remote-status-recorded, fixed 8-case synthetic count-only metadata contract with explicit boundary, and keeps manifest writer invocation, manifest body generation, file writing, payload body emission, production readiness, real-data readiness, and model performance out of scope.
+
+## Step658 Artifact Body to Manifest Handoff Post-Final-Safety-Review Next Boundary Planning
+
+- [Artifact body to manifest handoff metadata-only no-writer-invocation post-final-safety-review next boundary planning](frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison after Step657. It recommends Step659 manifest writer handoff input contract design before any manifest writer invocation, manifest body generation, file writing, payload body emission, production readiness, real-data readiness, or model performance claims.
