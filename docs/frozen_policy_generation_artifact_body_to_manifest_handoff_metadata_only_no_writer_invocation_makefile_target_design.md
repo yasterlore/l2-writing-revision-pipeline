@@ -330,3 +330,7 @@ The target order is after artifact body generation safe-metadata CLI smoke and b
 Step655 records the future remote/manual status marker workflow for the Step654 wrapper-integrated handoff target in `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_record_workflow.md`.
 
 Step655 is design-only / docs-only. It does not create the status marker or change Makefile, wrapper, workflows, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 19. Step656 Remote Status Marker
+
+Step656 creates the handoff release-quality remote status marker at `docs/status/learner_state_frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_status.md`. The standalone target and Makefile remain unchanged.

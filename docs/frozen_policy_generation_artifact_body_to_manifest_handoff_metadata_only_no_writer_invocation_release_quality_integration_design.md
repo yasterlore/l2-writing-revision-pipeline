@@ -374,3 +374,7 @@ Recommended next step:
 Step655 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_record_workflow.md` as a design-only / docs-only workflow for a future public-safe Step656 status marker.
 
 The workflow records allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, handoff count-only target summary fields, missing metadata handling, label recording rules, status marker template, and Step656 / Step657 staging. Step655 does not create the status marker, change wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 18. Step656 Remote Status Marker
+
+Step656 creates `docs/status/learner_state_frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_status.md` using provided remote GitHub Actions public-safe metadata. The marker records the Step654 handoff wrapper-integrated check, observed label ordering, final release-quality pass, and count-only target summary without copying raw logs, full job output, fixture bodies, payload bodies, or manifest bodies.

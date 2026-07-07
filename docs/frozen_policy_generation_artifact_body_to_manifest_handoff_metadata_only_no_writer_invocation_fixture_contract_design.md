@@ -495,3 +495,7 @@ Step654 does not change fixture JSON or broaden this fixture contract into manif
 ## 22. Step655 Remote/Manual Run Record Workflow Design
 
 Step655 designs the future status marker workflow for the Step654 wrapper-integrated handoff check. The fixture contract remains unchanged, and Step655 does not create status marker files, change fixture JSON, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
+
+## 23. Step656 Remote Status Marker
+
+Step656 creates the remote status marker for the Step654 wrapper-integrated handoff check. The fixture contract and fixture JSON remain unchanged; the marker records only public-safe remote metadata and count-only summary fields.

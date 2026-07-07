@@ -413,6 +413,8 @@ Step654 adds the Step652 standalone handoff target to the release-quality wrappe
 
 Step655 adds the remote/manual run record workflow design for a future public-safe status marker after Step654. It does not create the marker, remove the Step645 local/manual fallback limitation, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change implementation files.
 
+Step656 creates the handoff release-quality remote status marker from provided public-safe remote GitHub Actions metadata. It records the Step654 handoff wrapper-integrated check and does not remove the Step645 payload audit local/manual fallback limitation.
+
 ## 18. Recommended Next Step
 
 Recommended:

@@ -355,3 +355,9 @@ Recommended:
 `Step656: artifact body to manifest handoff metadata-only no-writer-invocation release-quality status marker`
 
 Step656 should create the status marker only from public-safe metadata. It should not copy raw logs, alter wrapper / Makefile / Python / fixture JSON / workflow, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
+
+## 19. Step656 Remote Status Marker
+
+Step656 creates `docs/status/learner_state_frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_status.md` as a status-marker-only / docs-only record using remote GitHub Actions metadata provided after Step654 wrapper integration.
+
+The marker records public-safe remote metadata, observed release-quality labels, ordering, and the count-only handoff target summary. It does not copy raw logs, full job output, fixture bodies, payload bodies, or manifest bodies. It does not change wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

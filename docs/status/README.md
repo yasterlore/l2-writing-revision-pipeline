@@ -1616,3 +1616,7 @@ invocation evidence, or file-writing evidence.
 ## Step655 Artifact Body to Manifest Handoff Remote Run Record Workflow Design
 
 - [Artifact body to manifest handoff metadata-only no-writer-invocation release-quality remote run record workflow](../frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_record_workflow.md): design-only / docs-only workflow for a future Step656 public-safe status marker. It records what remote/manual metadata and count-only handoff summary fields may be captured, how to mark missing metadata, and why raw logs, fixture bodies, payload bodies, manifest bodies, manifest writer invocation, file writing, production readiness, real-data readiness, and model performance evidence remain out of scope.
+
+## Step656 Artifact Body to Manifest Handoff Remote Status Marker
+
+- [Artifact body to manifest handoff metadata-only no-writer-invocation release-quality remote run status](learner_state_frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_status.md): status-marker-only / docs-only record using provided remote GitHub Actions public-safe metadata after Step654 wrapper integration. It records `local_fallback_used=no`, observed handoff label ordering, final release-quality pass, and count-only target summary fields without copying raw logs, full job output, payload bodies, or manifest bodies.

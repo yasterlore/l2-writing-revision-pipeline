@@ -359,3 +359,7 @@ Step654 integrates the Step652 artifact body to manifest handoff metadata-only n
 ## 18. Step655 Handoff Remote/Manual Run Record Workflow Design
 
 Step655 designs the future status marker workflow for the Step654 wrapper-integrated handoff check. It preserves the Step645 local/manual fallback limitation, creates no status marker, and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 19. Step656 Handoff Remote Status Marker
+
+Step656 creates a remote status marker for the Step654 handoff wrapper-integrated check using provided public-safe remote GitHub Actions metadata. It does not revise the Step645 payload audit final safety review or remove the Step645 local/manual fallback limitation.

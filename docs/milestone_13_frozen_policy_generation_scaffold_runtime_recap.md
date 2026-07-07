@@ -3545,3 +3545,9 @@ The check runs after artifact body generation safe-metadata CLI smoke and before
 Step655 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_record_workflow.md` as a design-only / docs-only workflow for a future public-safe status marker after Step654.
 
 The workflow defines allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, handoff count-only target summary fields, missing metadata handling, status marker template, relationships to existing payload audit status/review docs, and Step656 / Step657 staging. Step655 does not create the marker, change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, or production readiness status.
+
+## Step656 Artifact Body to Manifest Handoff Remote Status Marker
+
+Step656 creates `docs/status/learner_state_frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_status.md` as a status-marker-only / docs-only record from provided remote GitHub Actions public-safe metadata after Step654 wrapper integration.
+
+The marker records `local_fallback_used=no`, observed release-quality label ordering, final release-quality pass, and count-only handoff target summary fields. It does not copy raw logs, full job output, fixture bodies, payload bodies, manifest bodies, or change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, or production readiness status.
