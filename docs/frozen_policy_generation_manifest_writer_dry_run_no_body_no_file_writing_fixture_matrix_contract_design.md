@@ -830,3 +830,9 @@ The canonical fixture keeps unsafe categories as metadata-only labels. Actual wr
 Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a future standalone Makefile target around the Step675 direct CLI runner.
 
 The Step673 fixture root remains unchanged. Step676 does not change fixture JSON, Makefile, release-quality wrapper, workflow, Python code/tests, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 31. Step677 Makefile Target Implementation
+
+Step677 adds `check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation` as a standalone Makefile target around the Step675 runner.
+
+The fixture root and fixture JSON remain unchanged. The target is not release-quality integrated yet and does not invoke manifest writer, generate or output manifest body, write files, create output directories, or emit payload bodies.

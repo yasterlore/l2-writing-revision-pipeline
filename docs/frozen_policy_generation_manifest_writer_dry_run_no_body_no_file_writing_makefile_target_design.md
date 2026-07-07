@@ -385,3 +385,17 @@ Clarifications:
 - Step677 should not enable file writing.
 - Step677 should not create output directories.
 - Step677 should not emit payload bodies.
+
+## 16. Step677 Implementation Status
+
+Step677 implements the proposed standalone Makefile target as:
+
+`check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation`
+
+The target uses the proposed help text and command, is placed after manifest writer handoff input validation and before broader manifest writer / file-writing checks, and remains outside release-quality wrapper integration.
+
+Step677 does not change Python code/tests, fixture JSON, workflow, release-quality wrapper, manifest writer invocation, manifest body generation/output, file writing, output directory creation, artifact body payload output, generated policy body output, or payload body emission.
+
+Recommended next step:
+
+Step678: manifest writer dry-run no-body no-file-writing release-quality integration design

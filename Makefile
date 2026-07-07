@@ -44,6 +44,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation
 .PHONY: check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation
+.PHONY: check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation
@@ -107,6 +108,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata  Run artifact body generation safe-metadata CLI smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation  Run artifact body to manifest handoff metadata-only no-writer-invocation"
 	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation  Run manifest writer handoff input metadata-only validation"
+	@echo "  check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation  Run manifest writer dry-run no-body no-file-writing metadata-only validation"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures  Validate artifact body file writing fixture contracts"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke  Run artifact body safe-metadata file writing smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation  Validate isolated artifact body file writing cases"
@@ -265,6 +267,9 @@ check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-m
 
 check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer_handoff_input_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_handoff_input --case-selection manifest-writer-handoff-input-contract --summary-only --no-manifest-writer --no-file-writing --fail-closed-on-forbidden-body
+
+check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing --case-selection manifest-writer-dry-run-no-body-no-file-writing-contract --summary-only --dry-run-mode manifest_writer_dry_run_no_body_no_file_writing --no-manifest-writer --no-manifest-body --no-generated-policy-body --no-file-writing --no-output-directory --fail-closed-on-forbidden-body --fail-closed-on-file-writing
 
 check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_file_writing_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing

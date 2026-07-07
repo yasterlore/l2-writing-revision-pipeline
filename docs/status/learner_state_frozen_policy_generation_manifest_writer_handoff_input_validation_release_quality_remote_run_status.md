@@ -303,3 +303,9 @@ The review accepts the release-quality-integrated, local/manual-status-recorded 
 Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a future standalone Makefile target around the Step675 dry-run no-body no-file-writing direct CLI runner.
 
 Step676 does not change this status marker, does not add remote metadata, and does not revise the local/manual-status-recorded limitation for the Step659-Step669 chain.
+
+## 20. Step677 Makefile Target Implementation
+
+Step677 adds a standalone Makefile target for the separate Step675 dry-run no-body no-file-writing validator.
+
+Step677 does not change this status marker, does not add remote metadata, and does not revise the local/manual-status-recorded limitation for the Step659-Step669 chain.

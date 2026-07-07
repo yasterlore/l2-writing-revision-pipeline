@@ -109,3 +109,7 @@ Step676 creates
 as design-only / docs-only planning for a future standalone target around the
 separate Step675 dry-run validator. This 23-case handoff input fixture root and
 fixture JSON remain unchanged.
+
+Step677 adds the standalone Makefile target for the separate Step675 dry-run
+validator. This 23-case handoff input fixture root and fixture JSON remain
+unchanged, and the target is not release-quality integrated here.

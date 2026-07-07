@@ -341,3 +341,9 @@ The planning doc compares supplemental remote-status, manifest writer invocation
 Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a future standalone Makefile target around the Step675 dry-run no-body no-file-writing direct CLI runner.
 
 Step676 does not revise this final safety review and does not upgrade the Step659-Step669 chain from local/manual-status-recorded to remote-status-recorded. It does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.
+
+## 22. Step677 Makefile Target Implementation
+
+Step677 adds a standalone Makefile target for the separate Step675 dry-run no-body no-file-writing validator.
+
+Step677 does not revise this final safety review and does not upgrade the Step659-Step669 chain from local/manual-status-recorded to remote-status-recorded. It does not change release-quality wrapper, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.

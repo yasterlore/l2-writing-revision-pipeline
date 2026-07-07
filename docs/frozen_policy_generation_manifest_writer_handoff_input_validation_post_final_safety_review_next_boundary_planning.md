@@ -357,3 +357,9 @@ The planning doc records current accepted boundaries, non-authorized boundaries,
 Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a future standalone Makefile target around the Step675 direct CLI runner.
 
 Step676 does not revise Step669, Step657, or Step645. It does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.
+
+## 17. Step677 Makefile Target Implementation
+
+Step677 adds the standalone Makefile target for the Step675 dry-run no-body no-file-writing validator.
+
+Step677 does not revise Step669, Step657, or Step645. It does not change release-quality wrapper, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.

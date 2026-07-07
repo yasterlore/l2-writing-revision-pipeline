@@ -1037,3 +1037,9 @@ The direct CLI uses the required summary-only, dry-run, no-writer, no-body, no-f
 Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for the future standalone Makefile target around this runner.
 
 The design proposes target name, help text, command, placement, expected public-safe output, Step677 validation plan, and safety boundary. Step676 does not implement the target and does not change Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 30. Step677 Makefile Target Implementation
+
+Step677 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation` for this runner.
+
+The target runs the Step675 direct CLI with the required summary-only, dry-run, no-writer, no-body, no-file-writing, no-output-directory, and fail-closed flags. It is not release-quality integrated yet. Step677 does not change Python code/tests, fixture JSON, workflow, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

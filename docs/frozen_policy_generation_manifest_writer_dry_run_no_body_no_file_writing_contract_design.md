@@ -635,3 +635,9 @@ The implementation uses the Step672 contract through the Step673 34-case matrix 
 Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a future standalone Makefile target around the Step675 direct CLI runner.
 
 Step676 does not change Makefile, release-quality wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 28. Step677 Makefile Target Implementation
+
+Step677 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation` for the Step675 direct CLI runner.
+
+The target keeps this contract metadata-only, body-free, and no-file-writing. It remains outside release-quality wrapper integration and does not change Python code/tests, fixture JSON, workflow, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

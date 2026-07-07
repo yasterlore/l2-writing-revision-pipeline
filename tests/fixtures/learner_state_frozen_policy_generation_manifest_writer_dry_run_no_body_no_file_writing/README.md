@@ -20,3 +20,9 @@ Step676 creates
 as design-only / docs-only planning for a future standalone Makefile target. This
 fixture root and fixture JSON remain unchanged, and no Makefile target or
 release-quality wrapper entry is added in Step676.
+
+Step677 adds
+`check-learner-state-frozen-policy-generation-manifest-writer-dry-run-no-body-no-file-writing-validation`
+as a standalone Makefile target around the Step675 runner. This fixture root and
+fixture JSON remain unchanged, and no release-quality wrapper entry is added in
+Step677.

@@ -100,3 +100,7 @@ This fixture root and fixture JSON remain unchanged.
 ## Step676 Manifest Writer Dry-Run Makefile Target Design Reference
 
 Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a separate future dry-run no-body no-file-writing standalone target. This fixture root and fixture JSON remain unchanged; Step676 does not change Makefile, wrapper, workflow, Python code/tests, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## Step677 Manifest Writer Dry-Run Makefile Target Implementation Reference
+
+Step677 adds the separate standalone Makefile target for manifest writer dry-run no-body no-file-writing validation. This fixture root and fixture JSON remain unchanged; Step677 does not change wrapper, workflow, Python code/tests, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

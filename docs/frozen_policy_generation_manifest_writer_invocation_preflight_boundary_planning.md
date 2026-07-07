@@ -535,3 +535,9 @@ The contract design defines proposed identifiers, allowed future metadata, requi
 Step676 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_makefile_target_design.md` as design-only / docs-only planning for a future standalone Makefile target after the Step675 dry-run no-body no-file-writing direct CLI runner.
 
 Step676 does not change this preflight boundary and does not invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.
+
+## 24. Step677 Makefile Target Implementation
+
+Step677 adds the standalone Makefile target for the Step675 dry-run no-body no-file-writing validator.
+
+This does not change the preflight boundary into manifest writer invocation. The target remains no-body, no-file-writing, no-output-directory, not release-quality integrated yet, and does not generate or output manifest body or emit payload bodies.

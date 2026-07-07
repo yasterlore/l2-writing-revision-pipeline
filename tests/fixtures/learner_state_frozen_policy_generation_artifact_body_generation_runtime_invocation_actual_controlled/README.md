@@ -520,3 +520,7 @@ Step667 adds `docs/frozen_policy_generation_manifest_writer_handoff_input_valida
 ## Step668 Manifest Writer Handoff Input Validation Status Marker Reference
 
 Step668 adds `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` as a status-marker-only / docs-only local/manual record for a separate manifest writer handoff input validation check. This fixture root and fixture JSON remain unchanged; Step668 does not change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.
+
+## Step677 Manifest Writer Dry-Run Makefile Target Implementation Reference
+
+Step677 adds the separate standalone Makefile target for manifest writer dry-run no-body no-file-writing validation. This actual-controlled fixture root and fixture JSON remain unchanged; Step677 does not change wrapper, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, manifest body generation/output, output directory creation, or file writing.
