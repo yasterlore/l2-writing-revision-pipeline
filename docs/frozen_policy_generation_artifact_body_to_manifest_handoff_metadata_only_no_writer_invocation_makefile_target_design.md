@@ -318,3 +318,9 @@ The target remains standalone only. It is not release-quality integrated. Step65
 Step653 records the future release-quality integration design for this standalone target in `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_integration_design.md`.
 
 Step653 is design-only / docs-only. It does not implement wrapper integration.
+
+## 17. Step654 Release-Quality Integration Status
+
+Step654 adds the standalone target to `scripts/check_release_quality.sh` with label `release_quality_check: learner-state frozen policy generation artifact body to manifest handoff metadata-only no-writer-invocation`.
+
+The target order is after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks. Step654 does not change Makefile, Python code/tests, fixture JSON, workflows, manifest writer invocation, manifest body generation, file writing, or payload body emission.

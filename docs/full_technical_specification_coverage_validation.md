@@ -658,3 +658,7 @@ Step650 adds focused Python test coverage for the direct CLI-only artifact body 
 ## Step652 Coverage Addendum
 
 Step652 adds standalone Makefile coverage for running the Step650 handoff runner through `check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation`. This is standalone target coverage only; it is not release-quality wrapper coverage, workflow coverage, manifest writer coverage, manifest body generation coverage, file-writing coverage, payload correctness evidence, artifact body payload quality evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step654 Coverage Addendum
+
+Step654 adds release-quality wrapper coverage for the Step652 standalone handoff target through `release_quality_check: learner-state frozen policy generation artifact body to manifest handoff metadata-only no-writer-invocation`. This wrapper coverage is ordered after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks. It is not workflow coverage, manifest writer coverage, manifest body generation coverage, file-writing coverage, payload correctness evidence, artifact body payload quality evidence, production readiness, real-data readiness, model performance evidence, or a change to the Step645 local/manual fallback limitation.

@@ -344,3 +344,27 @@ Recommended:
 `Step654: artifact body to manifest handoff metadata-only no-writer-invocation release-quality wrapper integration`
 
 Step654 should update only wrapper and necessary README/docs. Step654 should not change Makefile, Python code/tests, fixture JSON, workflows, runtime implementation, or validator implementation. Step654 should not invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
+
+## 16. Step654 Implementation Status
+
+Step654 adds the proposed release-quality wrapper check to `scripts/check_release_quality.sh`.
+
+Added label:
+
+```text
+release_quality_check: learner-state frozen policy generation artifact body to manifest handoff metadata-only no-writer-invocation
+```
+
+Added command:
+
+```bash
+make check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation
+```
+
+The check is inserted after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks. The expected public-safe summary remains the 8-case metadata-only handoff contract with zero manifest writer invocation, zero manifest body generation/output, zero file writing, zero payload body emission, and zero residue.
+
+Step654 does not change Makefile, workflows, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, artifact body payload output, generated policy body output, production readiness, real-data readiness, or model performance evidence.
+
+Recommended next step:
+
+`Step655: artifact body to manifest handoff metadata-only no-writer-invocation remote/manual status marker workflow design`

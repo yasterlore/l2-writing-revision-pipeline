@@ -409,6 +409,8 @@ Suggested future chain:
 
 This chain is tentative. It must remain no-writer-invocation until a later final safety review accepts the boundary. It must not silently become manifest writer integration. It must not silently enable file writing.
 
+Step654 adds the Step652 standalone handoff target to the release-quality wrapper after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks. This keeps the Step647 handoff boundary metadata-only, body-free, no-writer-invocation, and no-file-writing.
+
 ## 18. Recommended Next Step
 
 Recommended:

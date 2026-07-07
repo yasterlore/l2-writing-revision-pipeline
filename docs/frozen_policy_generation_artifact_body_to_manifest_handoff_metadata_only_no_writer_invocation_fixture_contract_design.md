@@ -485,3 +485,9 @@ Step649 should be design-only / docs-only. It should design future runner behavi
 ## 20. Step649 Runner Design Reference
 
 Step649 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_runner_design.md` as a design-only / docs-only runner behavior design for this fixed contract. It does not create fixture JSON, implement runner code, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, or fixture JSON.
+
+## 21. Step654 Release-Quality Integration Status
+
+Step654 adds the Step652 standalone handoff target to the release-quality wrapper. The fixture contract remains unchanged: 8 selected cases, 3 valid metadata-only cases, 5 invalid fail_closed metadata-category cases, zero manifest writer invocation, zero manifest body generation/output, zero file writing, zero payload body emission, and zero residue for the canonical fixture.
+
+Step654 does not change fixture JSON or broaden this fixture contract into manifest writer integration, manifest body generation, file writing, payload body emission, production readiness, real-data readiness, or model performance evidence.

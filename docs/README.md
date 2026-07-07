@@ -971,3 +971,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step653 Artifact Body to Manifest Handoff Release-Quality Integration Design
 
 - [Artifact body to manifest handoff metadata-only no-writer-invocation release-quality integration design](frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_integration_design.md): design-only / docs-only plan for future wrapper integration of the Step652 standalone target. It proposes the release-quality label, command, insertion after artifact body safe-metadata CLI smoke and before manifest writer / file-writing checks, expected public-safe output, validation plan, and safety boundary without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## Step654 Artifact Body to Manifest Handoff Release-Quality Integration
+
+- `scripts/check_release_quality.sh`: Step654 adds the Step652 standalone handoff target to release-quality after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks. The check records the 8-case metadata-only / body-free / no-writer-invocation handoff contract and keeps Makefile, workflows, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, and payload body emission unchanged.

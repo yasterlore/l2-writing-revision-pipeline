@@ -449,6 +449,8 @@ Step641 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body
 
 Step642 adds the Step640 payload audit without payload emission target to `scripts/check_release_quality.sh` after the deferred invalid-case usage_error / mismatch smoke and before artifact body fixture / CLI checks. This fixture root and fixture JSON remain unchanged; Step642 does not change Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, artifact body payload output, generated policy body output, manifest body output, manifest writer integration, or file writing.
 
+Step654 adds the separate artifact body to manifest handoff metadata-only no-writer-invocation target to the release-quality wrapper after artifact body generation safe-metadata CLI smoke. This actual-controlled fixture root remains unchanged; no fixture JSON is modified, no manifest writer is invoked, no manifest body is generated, no files are written, and no payload bodies are emitted by that handoff wrapper integration.
+
 ## Step643 Artifact Body Payload Audit Remote Run Record Workflow Design Reference
 
 Step643 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_remote_run_record_workflow.md` as a design-only / docs-only workflow for a future public-safe status marker after Step642. This fixture root and fixture JSON remain unchanged; Step643 does not create the marker, change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

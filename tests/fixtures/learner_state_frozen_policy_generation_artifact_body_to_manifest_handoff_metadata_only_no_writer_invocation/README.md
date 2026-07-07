@@ -29,3 +29,9 @@ for this fixture root. The target remains outside release-quality.
 
 Step653 records the future release-quality integration design for that target in
 `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_integration_design.md`.
+
+Step654 adds the standalone target to `scripts/check_release_quality.sh` after
+artifact body generation safe-metadata CLI smoke and before artifact body
+file-writing / manifest writer checks. The fixture JSON remains unchanged, and
+the release-quality check still invokes no manifest writer, generates no
+manifest body, writes no files, and emits no payload bodies.

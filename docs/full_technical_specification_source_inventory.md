@@ -544,3 +544,7 @@ Step640 updates `Makefile` with the standalone target `check-learner-state-froze
 ## Step642 Source Inventory Addendum
 
 Step642 updates `scripts/check_release_quality.sh` to run the Step640 standalone payload audit without payload emission target after the deferred invalid-case usage_error / mismatch smoke and before artifact body fixture / CLI checks. README/docs/full technical specification references are updated. No Makefile, workflow, Python code/tests, fixture JSON, existing runtime implementation, existing validator implementation, payload body emission, artifact body payload output, generated policy body output, manifest body output, manifest writer integration, artifact body file writing, or manifest file writing is added or changed.
+
+## Step654 Source Inventory Addendum
+
+Step654 updates `scripts/check_release_quality.sh` to run the Step652 standalone artifact body to manifest handoff metadata-only no-writer-invocation target after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks. README/docs/full technical specification references are updated. No Makefile, workflow, Python code/tests, fixture JSON, existing runtime implementation, existing validator implementation, manifest writer invocation, manifest body generation, payload body emission, artifact body payload output, generated policy body output, artifact body file writing, or manifest file writing is added or changed.

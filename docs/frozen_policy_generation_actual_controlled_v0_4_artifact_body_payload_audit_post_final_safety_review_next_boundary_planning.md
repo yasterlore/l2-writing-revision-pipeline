@@ -351,3 +351,7 @@ Step648 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_me
 ## 16. Step649 Runner Design Reference
 
 Step649 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_runner_design.md` as a design-only / docs-only future runner behavior design for the Step648 contract. It does not implement runner code, create fixture JSON, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change Python code/tests, Makefile, wrapper, workflow, or fixture JSON.
+
+## 17. Step654 Handoff Release-Quality Integration Status
+
+Step654 integrates the Step652 artifact body to manifest handoff metadata-only no-writer-invocation standalone target into `scripts/check_release_quality.sh`. This follows the Option B planning path from Step646 while preserving the Step645 local/manual fallback limitation. It does not invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, change Makefile, change Python code/tests, or change fixture JSON.

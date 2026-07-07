@@ -193,6 +193,9 @@ run make check-learner-state-frozen-policy-generation-artifact-body-generation
 section "learner-state frozen policy generation artifact body generation safe-metadata CLI smoke"
 run make check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata
 
+section "learner-state frozen policy generation artifact body to manifest handoff metadata-only no-writer-invocation"
+run make check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation
+
 section "learner-state frozen policy generation artifact body file writing fixture validation"
 run make check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
 

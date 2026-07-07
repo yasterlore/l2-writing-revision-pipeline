@@ -624,3 +624,9 @@ Recommended:
 `Step650: artifact body to manifest handoff metadata-only no-writer-invocation runner implementation`
 
 Step650 should implement the future runner and focused tests. Step650 may create the synthetic fixture root and body-free fixture JSON if no separate fixture implementation step is inserted. Step650 should not change Makefile, release-quality wrapper, or workflow. Step650 should not invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies. Step650 should update root README and full technical specification related docs because it is an implementation Step.
+
+## 23. Step654 Release-Quality Integration Status
+
+Step654 integrates the Step652 standalone Makefile target into `scripts/check_release_quality.sh` after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks.
+
+The wrapper check runs the existing runner through `make check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation`. It preserves the runner's metadata-only / body-free / no-writer-invocation contract and does not change Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, or payload body emission.

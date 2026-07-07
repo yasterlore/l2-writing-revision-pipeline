@@ -3533,3 +3533,9 @@ The target is placed near artifact body generation checks after the safe-metadat
 Step653 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_integration_design.md` as a design-only / docs-only plan for future release-quality wrapper integration of the Step652 standalone target.
 
 The design recommends adding a future wrapper check after artifact body generation safe-metadata CLI smoke and before manifest writer / file-writing checks. It records the proposed label, command, expected aggregate public-safe output, relationship to existing checks, failure interpretation, validation plan, and safety boundary. Step653 does not change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, or production readiness status.
+
+## Step654 Artifact Body to Manifest Handoff Release-Quality Integration
+
+Step654 adds the Step652 standalone handoff target to `scripts/check_release_quality.sh` with label `release_quality_check: learner-state frozen policy generation artifact body to manifest handoff metadata-only no-writer-invocation`.
+
+The check runs after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks. It keeps Makefile, workflows, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, and production readiness status unchanged.
