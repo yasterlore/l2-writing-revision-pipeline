@@ -88,3 +88,8 @@ Step672 creates
 `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_contract_design.md`
 as design-only / docs-only contract design for a future dry-run boundary. This
 fixture root and fixture JSON remain unchanged.
+
+Step673 creates
+`docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_fixture_matrix_contract_design.md`
+as design-only / docs-only future fixture / matrix contract design. This fixture
+root and fixture JSON remain unchanged.

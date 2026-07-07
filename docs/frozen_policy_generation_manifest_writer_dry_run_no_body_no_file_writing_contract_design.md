@@ -617,3 +617,9 @@ Clarifications:
 - Step673 should not generate manifest body.
 - Step673 should not enable file writing.
 - Step673 should not emit payload bodies.
+
+## 25. Step673 Fixture / Matrix Contract Design
+
+Step673 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_fixture_matrix_contract_design.md` as design-only / docs-only future fixture / matrix contract design for the dry-run no-body no-file-writing boundary.
+
+The design fixes the future fixture root, matrix identity, 34-case selected contract, exact future case IDs, expected status by case, future fixture file shape, allowed per-case metadata fields, allowed aggregate metadata fields, expected aggregate pass values, forbidden fixture content/actions, future validator selection policy, future validator status semantics, future fixture safety rules, and future implementation staging. Step673 does not create fixture JSON, implement Python code/tests, change Makefile, change release-quality wrapper, change workflow, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.

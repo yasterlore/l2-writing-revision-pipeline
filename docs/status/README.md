@@ -1684,3 +1684,7 @@ invocation evidence, or file-writing evidence.
 ## Step672 Manifest Writer Dry-Run No-Body No-File-Writing Contract Design
 
 - [Manifest writer dry-run no-body no-file-writing contract design](../frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_contract_design.md): design-only / docs-only contract design for a future dry-run boundary. It keeps the Step669 local/manual-status-recorded limitation, defines no-body / no-file-writing constraints, and recommends Step673 fixture / matrix contract design.
+
+## Step673 Manifest Writer Dry-Run No-Body No-File-Writing Fixture / Matrix Contract Design
+
+- [Manifest writer dry-run no-body no-file-writing fixture / matrix contract design](../frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_fixture_matrix_contract_design.md): design-only / docs-only future fixture / matrix contract design for the Step672 dry-run contract. It defines a 34-case synthetic metadata-only matrix and keeps fixture JSON creation, manifest writer invocation, manifest body generation, and file writing out of scope.
