@@ -643,3 +643,9 @@ Recommended:
 `Step660: manifest writer handoff fixture / matrix contract design`
 
 Step660 should be design-only / docs-only. It should define future synthetic fixture cases. It should not create fixture JSON, implement Python code/tests, change Makefile, change release-quality wrapper, change workflow, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
+
+## 25. Step660 Fixture / Matrix Contract Design
+
+Step660 creates `docs/frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md` as design-only / docs-only fixture / matrix contract design for this input contract.
+
+It defines the future fixture root, matrix identity, fixed 23-case selection, case IDs, expected statuses, fixture file shape, allowed metadata, aggregate pass values, forbidden fixture content, and future validator expectations without creating fixture JSON, implementing Python code/tests, invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.

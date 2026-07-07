@@ -257,3 +257,7 @@ The planning recommends `Step659: manifest writer handoff input contract design`
 ## 18. Step659 Contract Design
 
 Step659 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_contract_design.md` as the next design-only / docs-only boundary. It defines future manifest writer handoff input metadata and does not invoke manifest writer, generate manifest body, write files, create fixtures, implement a runner, or add release-quality checks.
+
+## 19. Step660 Fixture / Matrix Contract Design
+
+Step660 creates `docs/frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md` as design-only / docs-only fixture / matrix contract design for the Step659 handoff input contract. It does not change the Step657 accepted boundary or authorize manifest writer invocation, manifest body generation, or file writing.

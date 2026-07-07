@@ -306,3 +306,7 @@ Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff
 ## 20. Step659 Contract Design
 
 Step659 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_contract_design.md` as design-only / docs-only future manifest writer handoff input contract design. It does not change this status marker or add manifest writer invocation, manifest body generation, file writing, fixture JSON, or Python code/tests.
+
+## 21. Step660 Fixture / Matrix Contract Design
+
+Step660 creates `docs/frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md` as design-only / docs-only future fixture / matrix contract design. It does not change this status marker or add fixture JSON, Python code/tests, manifest writer invocation, manifest body generation, file writing, or payload body emission.

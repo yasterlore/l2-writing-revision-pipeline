@@ -995,3 +995,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step659 Manifest Writer Handoff Input Contract Design
 
 - [Manifest writer handoff input contract design](frozen_policy_generation_manifest_writer_handoff_input_contract_design.md): design-only / docs-only contract for future manifest writer handoff input metadata. It defines proposed identity, allowed metadata fields, required source summary and safety fields, forbidden fields, future validator status semantics, future fixture categories, safety scan requirements, and public-safe reason codes without creating fixture JSON, implementing Python code/tests, invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.
+
+## Step660 Manifest Writer Handoff Fixture / Matrix Contract Design
+
+- [Manifest writer handoff fixture and matrix contract design](frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md): design-only / docs-only future fixture / matrix contract for the Step659 handoff input contract. It defines the proposed future fixture root, matrix identity, fixed 23-case selection, case IDs, expected statuses, future fixture file shape, allowed metadata, aggregate pass values, forbidden fixture content, validator selection policy, and Step661 handoff without creating fixture JSON, implementing Python code/tests, invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.

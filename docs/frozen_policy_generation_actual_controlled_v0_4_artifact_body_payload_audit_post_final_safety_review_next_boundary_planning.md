@@ -375,3 +375,7 @@ Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff
 ## 22. Step659 Manifest Writer Handoff Input Contract Design
 
 Step659 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_contract_design.md` as design-only / docs-only future handoff input contract design. It does not revise the Step645 payload audit accepted boundary or remove the local/manual fallback limitation for that separate chain.
+
+## 23. Step660 Manifest Writer Handoff Fixture / Matrix Contract Design
+
+Step660 creates `docs/frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md` as design-only / docs-only future fixture / matrix contract design. It does not revise the Step645 payload audit accepted boundary or remove the local/manual fallback limitation for that separate chain.

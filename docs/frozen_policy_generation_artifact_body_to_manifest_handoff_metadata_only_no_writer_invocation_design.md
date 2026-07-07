@@ -442,3 +442,7 @@ Step658 creates `docs/frozen_policy_generation_artifact_body_to_manifest_handoff
 ## 23. Step659 Contract Design Reference
 
 Step659 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_contract_design.md` as design-only / docs-only future manifest writer handoff input contract design. It defines metadata that may cross toward a future writer-facing boundary while still not invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.
+
+## 24. Step660 Fixture / Matrix Contract Design Reference
+
+Step660 creates `docs/frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md` as design-only / docs-only future fixture / matrix contract design. It defines future synthetic cases for the Step659 contract while still not creating fixture JSON, invoking manifest writer, generating manifest body, writing files, or emitting payload bodies.

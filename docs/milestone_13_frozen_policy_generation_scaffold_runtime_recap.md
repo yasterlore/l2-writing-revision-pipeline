@@ -3569,3 +3569,9 @@ The planning compares manifest writer handoff input contract design, fixture con
 Step659 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_contract_design.md` as design-only / docs-only contract design for future manifest writer handoff input metadata.
 
 The contract records proposed identifiers, allowed top-level metadata, required identity/source/safety fields, nested metadata objects, forbidden fields, notices, future validator status semantics, future fixture categories, safety scan requirements, and public-safe reason codes. Step659 does not create fixture JSON, implement Python code/tests, change Makefile, change wrapper files, change workflow files, invoke manifest writer, generate manifest body, write files, emit payload bodies, use real data, add metric evidence, or change production readiness status.
+
+## Step660 Manifest Writer Handoff Fixture / Matrix Contract Design
+
+Step660 creates `docs/frozen_policy_generation_manifest_writer_handoff_fixture_matrix_contract_design.md` as design-only / docs-only fixture / matrix contract design for the Step659 handoff input contract.
+
+The design records a proposed future fixture root, matrix identity, fixed 23-case contract, exact case IDs, expected statuses, future fixture file shape, allowed metadata fields, expected aggregate pass values, forbidden fixture content, validator selection policy, status semantics, fixture safety rules, and Step661 staging. Step660 does not create fixture JSON, implement Python code/tests, change Makefile, change wrapper files, change workflow files, invoke manifest writer, generate manifest body, write files, emit payload bodies, use real data, add metric evidence, or change production readiness status.
