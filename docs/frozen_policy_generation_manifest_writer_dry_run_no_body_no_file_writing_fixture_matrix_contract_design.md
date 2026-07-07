@@ -812,3 +812,9 @@ Clarifications:
 - Step674 should not generate manifest body.
 - Step674 should not enable file writing.
 - Step674 should not emit payload bodies.
+
+## 28. Step674 Runner Design
+
+Step674 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_runner_design.md` as design-only / docs-only future validator / runner behavior design for the Step673 34-case matrix.
+
+The runner design records the future module proposal, CLI, input model, fixture file reading policy, case selection algorithm, per-case classification algorithm, aggregate output contract, expected aggregate pass values, per-case output policy, status semantics, failure mapping, safety scan, residue policy, focused test design for Step675, relationships, and future implementation staging. Step674 does not create fixture JSON, implement Python code/tests, change Makefile, change release-quality wrapper, change workflow, invoke manifest writer, generate manifest body, enable file writing, create output directories, or emit payload bodies.
