@@ -1664,3 +1664,7 @@ invocation evidence, or file-writing evidence.
 ## Step667 Manifest Writer Handoff Input Validation Remote/Manual Run Record Workflow Design
 
 - [Manifest writer handoff input validation release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md): design-only / docs-only planning for a future status marker after Step666. It keeps status marker creation, wrapper changes, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, manifest writer invocation, manifest body generation, file writing, and payload body emission out of scope for Step667.
+
+## Step668 Manifest Writer Handoff Input Validation Status Marker
+
+- [Manifest writer handoff input validation release-quality run status](learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md): status-marker-only / docs-only record using local/manual public-safe evidence after Step666 wrapper integration. It records the wrapper-integrated label, command, order, final release-quality pass, local fallback status, unavailable remote metadata, and the 23-case count-only summary without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

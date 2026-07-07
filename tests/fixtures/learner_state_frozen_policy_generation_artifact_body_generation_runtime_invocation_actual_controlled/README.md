@@ -512,3 +512,7 @@ Step666 adds the separate manifest writer handoff input validation target to `sc
 ## Step667 Manifest Writer Handoff Input Validation Remote/Manual Run Record Workflow Design Reference
 
 Step667 adds `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future status marker for a separate manifest writer handoff input validation check. This fixture root and fixture JSON remain unchanged; Step667 does not create a status marker, change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.
+
+## Step668 Manifest Writer Handoff Input Validation Status Marker Reference
+
+Step668 adds `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` as a status-marker-only / docs-only local/manual record for a separate manifest writer handoff input validation check. This fixture root and fixture JSON remain unchanged; Step668 does not change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

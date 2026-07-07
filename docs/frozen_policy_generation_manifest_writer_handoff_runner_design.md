@@ -836,3 +836,9 @@ The integration runs the existing runner through the Makefile target only. This 
 Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step666.
 
 The workflow design leaves this runner, focused tests, fixture JSON, workflows, Makefile, and wrapper unchanged and does not authorize manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 32. Step668 Status Marker
+
+Step668 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` as a status-marker-only / docs-only local/manual record after Step666.
+
+The status marker does not change this runner, focused tests, fixture JSON, workflows, Makefile, wrapper, manifest writer invocation, manifest body generation, file writing, or payload body emission.

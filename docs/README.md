@@ -1027,3 +1027,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step667 Manifest Writer Handoff Input Validation Remote/Manual Run Record Workflow Design
 
 - [Manifest writer handoff input validation release-quality remote run record workflow](frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md): design-only / docs-only planning for a future public-safe status marker after Step666. It defines allowed evidence sources, forbidden raw log / body sources, public-safe metadata fields, count-only target summary fields, missing metadata handling, status marker template, relationship to existing reviews, future Step668 / Step669 staging, and safety boundaries without creating a status marker or changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## Step668 Manifest Writer Handoff Input Validation Status Marker
+
+- [Manifest writer handoff input validation release-quality run status](status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md): status-marker-only / docs-only record using local/manual public-safe evidence after Step666 wrapper integration. It records `local_fallback_used=yes`, label order, final release-quality pass, and the 23-case count-only target summary without copying raw logs, full job output, fixture bodies, payload bodies, manifest bodies, or private data.

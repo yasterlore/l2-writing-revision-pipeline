@@ -693,3 +693,9 @@ The wrapper check runs the Step664 standalone target for this 23-case metadata-o
 Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for future public-safe status marker metadata after Step666.
 
 The workflow design keeps this input contract unchanged and does not create the status marker, change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 33. Step668 Status Marker
+
+Step668 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` as a local/manual status marker after Step666 wrapper integration.
+
+The status marker keeps this input contract unchanged and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

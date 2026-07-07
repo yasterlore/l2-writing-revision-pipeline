@@ -295,3 +295,9 @@ Step666 does not change the Step657 accepted boundary, does not revise the Step6
 Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future status marker after Step666.
 
 Step667 does not change the Step657 accepted boundary, does not revise the Step645 payload audit limitation, and does not create a status marker, invoke manifest writer, generate manifest body, or write files.
+
+## 27. Step668 Status Marker
+
+Step668 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` as a status-marker-only / docs-only record after Step666.
+
+The marker does not change the Step657 accepted boundary, does not revise the Step645 payload audit limitation, and does not invoke manifest writer, generate manifest body, write files, or emit payload bodies.

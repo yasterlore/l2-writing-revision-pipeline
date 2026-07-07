@@ -656,3 +656,9 @@ The wrapper check expects the fixed 23-case metadata-only contract from this fix
 Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future release-quality status marker.
 
 This fixture contract and fixture JSON remain unchanged. Step667 does not create a status marker, change wrapper, Makefile, workflow, Python code/tests, manifest writer invocation, manifest body generation, file writing, payload body emission, artifact body payload output, or generated policy body output.
+
+## 32. Step668 Status Marker
+
+Step668 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the Step666 wrapper-integrated check.
+
+This fixture contract and fixture JSON remain unchanged. The marker records the 23-case metadata-only summary and does not change wrapper, Makefile, workflow, Python code/tests, manifest writer invocation, manifest body generation, file writing, payload body emission, artifact body payload output, or generated policy body output.

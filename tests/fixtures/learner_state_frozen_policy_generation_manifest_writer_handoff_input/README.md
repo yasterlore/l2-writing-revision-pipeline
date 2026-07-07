@@ -61,3 +61,8 @@ Step667 creates
 `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md`
 as design-only / docs-only planning for a future public-safe status marker after
 Step666. This fixture root and fixture JSON remain unchanged.
+
+Step668 creates
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md`
+as a status-marker-only / docs-only local/manual record after Step666. This
+fixture root and fixture JSON remain unchanged.

@@ -367,3 +367,9 @@ Step666 does not change Makefile, workflow files, Python code/tests, fixture JSO
 Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step666 wrapper integration.
 
 The workflow design does not create the status marker, change wrapper, Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, payload body emission, artifact body payload output, or generated policy body output.
+
+## 19. Step668 Status Marker
+
+Step668 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` as a status-marker-only / docs-only record for the Step666 wrapper-integrated check.
+
+The marker uses local/manual public-safe evidence, records `local_fallback_used=yes`, does not infer unavailable remote metadata, and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

@@ -373,3 +373,9 @@ The wrapper check runs `make check-learner-state-frozen-policy-generation-manife
 ## 19. Step667 Remote/Manual Run Record Workflow Design
 
 Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future status marker. It records allowed public-safe metadata, forbidden raw log / body sources, target summary fields, missing metadata handling, and future Step668 staging without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 20. Step668 Status Marker
+
+Step668 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` using local/manual public-safe evidence from the Step666 wrapper-integrated check.
+
+The status marker records the Step664 target command and 23-case metadata-only summary without changing Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

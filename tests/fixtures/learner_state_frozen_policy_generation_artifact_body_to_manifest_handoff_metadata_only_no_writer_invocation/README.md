@@ -91,3 +91,8 @@ Step667 creates
 as design-only / docs-only planning for a future status marker for that separate
 manifest writer handoff input validation check. This fixture root and fixture
 JSON remain unchanged.
+
+Step668 creates
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md`
+as a status-marker-only / docs-only local/manual record for that separate check.
+This fixture root and fixture JSON remain unchanged.

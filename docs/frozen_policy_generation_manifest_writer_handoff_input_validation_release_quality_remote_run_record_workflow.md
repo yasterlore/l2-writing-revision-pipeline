@@ -376,3 +376,9 @@ Recommended:
 `Step668: manifest writer handoff input validation release-quality status marker`
 
 Step668 should create the status marker only from public-safe metadata. It should not copy raw logs, alter wrapper / Makefile / Python / fixture JSON / workflow, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
+
+## 20. Step668 Status Marker
+
+Step668 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_status.md` as a status-marker-only / docs-only record using local/manual release-quality summary evidence after Step666 wrapper integration.
+
+The marker records `local_fallback_used=yes`, leaves unavailable remote metadata as `not available from provided public-safe metadata`, and does not copy raw logs, full job output, fixture JSON bodies, payload bodies, manifest bodies, generated policy bodies, private paths, raw learner text, or real participant data. Step668 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
