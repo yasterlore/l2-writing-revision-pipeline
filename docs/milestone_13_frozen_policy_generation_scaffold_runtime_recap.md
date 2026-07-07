@@ -3521,3 +3521,9 @@ The runner emits aggregate public-safe key-value metadata only. It requires summ
 Step651 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_makefile_target_design.md` as a design-only / docs-only plan for a future standalone Makefile target around the Step650 direct CLI.
 
 The design proposes the target name `check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation`, help text, command, placement, expected aggregate public-safe output, relationship to existing targets, Step652 implementation plan, failure interpretation, and safety boundary. Step651 does not change Makefile, wrapper files, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, or production readiness status.
+
+## Step652 Artifact Body to Manifest Handoff Makefile Target Implementation
+
+Step652 adds `check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation` as a standalone Makefile target for the Step650 direct CLI.
+
+The target is placed near artifact body generation checks after the safe-metadata CLI smoke and before file-writing / manifest writer checks. It emits aggregate public-safe metadata for the 8-case handoff contract and remains outside release-quality. Step652 does not change wrapper files, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, or production readiness status.

@@ -22,3 +22,7 @@ participant data.
 Step651 records the future standalone Makefile target design for this fixture
 root in
 `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_makefile_target_design.md`.
+
+Step652 adds the standalone Makefile target
+`check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation`
+for this fixture root. The target remains outside release-quality.

@@ -42,6 +42,7 @@
 .PHONY: check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata
+.PHONY: check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke
 .PHONY: check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation
@@ -103,6 +104,7 @@ help:
 	@echo "  check-learner-state-frozen-policy-generation-actual-controlled-v0-4-artifact-body-payload-audit-without-payload-emission  Run actual-controlled v0.4 artifact body payload audit without payload emission"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation  Run artifact body generation CLI smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata  Run artifact body generation safe-metadata CLI smoke"
+	@echo "  check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation  Run artifact body to manifest handoff metadata-only no-writer-invocation"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures  Validate artifact body file writing fixture contracts"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-file-writing-smoke  Run artifact body safe-metadata file writing smoke"
 	@echo "  check-learner-state-frozen-policy-generation-artifact-body-isolated-write-validation  Validate isolated artifact body file writing cases"
@@ -255,6 +257,9 @@ check-learner-state-frozen-policy-generation-artifact-body-generation:
 
 check-learner-state-frozen-policy-generation-artifact-body-generation-safe-metadata:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body --request tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/safe_metadata_body_summary/artifact_body_request.json --pointer tests/fixtures/learner_state_frozen_policy_generation_artifact_body/valid/safe_metadata_body_summary/artifact_writer_result_pointer.json --mode safe-metadata
+
+check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation:
+	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation --case-selection artifact-body-to-manifest-handoff-metadata-only-no-writer --summary-only --no-manifest-writer --no-file-writing --fail-closed-on-forbidden-body
 
 check-learner-state-frozen-policy-generation-artifact-body-file-writing-fixtures:
 	PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_artifact_body_file_writing_fixture_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_artifact_body_file_writing

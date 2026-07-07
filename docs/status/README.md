@@ -1600,3 +1600,7 @@ invocation evidence, or file-writing evidence.
 ## Step651 Artifact Body to Manifest Handoff Makefile Target Design
 
 - [Artifact body to manifest handoff metadata-only no-writer-invocation Makefile target design](../frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_makefile_target_design.md): design-only / docs-only plan for a future standalone Makefile target around the Step650 direct CLI. It records the proposed target name, help text, command, placement, expected public-safe output, existing-target relationship, Step652 plan, and safety boundary while keeping Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, and payload body emission out of scope.
+
+## Step652 Artifact Body to Manifest Handoff Makefile Target Implementation
+
+- `check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation`: standalone Makefile target for the Step650 runner. It runs the 8-case metadata-only / body-free / no-writer-invocation handoff check, remains outside release-quality, and keeps Python code/tests, fixture JSON, workflows, manifest writer invocation, manifest body generation, file writing, and payload body emission unchanged.

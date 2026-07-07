@@ -306,3 +306,9 @@ Recommended:
 `Step652: artifact body to manifest handoff metadata-only no-writer-invocation Makefile target implementation`
 
 Step652 should update Makefile and necessary README/docs only. Step652 should not change Python code/tests, fixture JSON, release-quality wrapper, workflows, runtime implementation, or validator implementation. Step652 should not invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
+
+## 15. Step652 Implementation Status
+
+Step652 adds the proposed standalone Makefile target with the target name, help text, and command recorded in this design.
+
+The target remains standalone only. It is not release-quality integrated. Step652 does not change Python code/tests, fixture JSON, workflows, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, or payload body emission.
