@@ -553,3 +553,9 @@ This does not change the preflight boundary into manifest writer invocation. Ste
 Step679 adds the Step677 dry-run no-body no-file-writing validation target to the release-quality wrapper.
 
 This does not change the preflight boundary into manifest writer invocation. Step679 does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 27. Step680 Remote/Manual Run Record Workflow Design
+
+Step680 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step679.
+
+This does not change the preflight boundary into manifest writer invocation. Step680 does not create a status marker, change wrapper, Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate/output manifest body, enable file writing, create output directories, or emit payload bodies.

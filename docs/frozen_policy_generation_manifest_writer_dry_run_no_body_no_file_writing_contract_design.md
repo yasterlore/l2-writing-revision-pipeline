@@ -653,3 +653,9 @@ Step678 keeps this contract metadata-only, body-free, and no-file-writing. It do
 Step679 adds the Step677 standalone target to `scripts/check_release_quality.sh` for release-quality wrapper coverage of this fixed 34-case contract.
 
 Step679 keeps this contract metadata-only, body-free, and no-file-writing. It does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 31. Step680 Remote/Manual Run Record Workflow Design
+
+Step680 adds `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step679.
+
+The workflow design preserves the dry-run contract boundary: metadata-only, body-free, synthetic-only, no-oracle, no manifest writer invocation, no manifest body generation/output, no file writing, no output directory creation, and no payload body emission.

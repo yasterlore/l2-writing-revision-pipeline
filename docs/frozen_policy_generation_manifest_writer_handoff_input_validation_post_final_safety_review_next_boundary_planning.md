@@ -375,3 +375,9 @@ Step678 does not revise Step669, Step657, or Step645. It does not change wrapper
 Step679 adds the separate Step675 / Step677 dry-run target to `scripts/check_release_quality.sh`.
 
 Step679 does not revise Step669, Step657, or Step645. It does not change Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.
+
+## 20. Step680 Remote/Manual Run Record Workflow Design
+
+Step680 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step679.
+
+Step680 does not revise Step669, Step657, or Step645. It does not create a status marker, change wrapper, Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.

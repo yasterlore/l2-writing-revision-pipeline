@@ -1055,3 +1055,9 @@ Step678 does not change wrapper, Makefile, workflow, Python code/tests, fixture 
 Step679 adds this runner's standalone Makefile target to `scripts/check_release_quality.sh`.
 
 The wrapper entry runs after manifest writer handoff input validation and before artifact / manifest file-writing and broader manifest writer checks. Step679 does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 33. Step680 Remote/Manual Run Record Workflow Design
+
+Step680 adds `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step679 wrapper integration.
+
+The workflow design records planned evidence sources, public-safe metadata fields, count-only target summary fields, missing metadata handling, and future Step681 / Step682 staging without creating a status marker or changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

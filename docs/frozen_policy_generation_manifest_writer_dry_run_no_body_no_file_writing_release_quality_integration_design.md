@@ -462,3 +462,13 @@ The wrapper entry is ordered after manifest writer handoff input validation and 
 Recommended next step:
 
 Step680: manifest writer dry-run no-body no-file-writing release-quality remote/manual status marker workflow design
+
+## 18. Step680 Remote/Manual Run Record Workflow Design
+
+Step680 adds the design-only / docs-only remote/manual run record workflow for a future status marker after this Step679 wrapper integration.
+
+See:
+
+`docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md`
+
+Step680 does not create the status marker, change wrapper, Makefile, workflow files, Python code/tests, fixture JSON, invoke manifest writer, generate/output manifest body, write files, create output directories, or emit payload bodies.

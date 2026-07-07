@@ -411,3 +411,9 @@ The design proposes the wrapper label, command, insertion point, expected public
 Step679 adds the Step677 standalone target to `scripts/check_release_quality.sh` with label `release_quality_check: learner-state frozen policy generation manifest writer dry-run no-body no-file-writing validation`.
 
 The wrapper entry remains after manifest writer handoff input validation and before artifact / manifest file-writing and broader manifest writer checks. Step679 does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 19. Step680 Remote/Manual Run Record Workflow Design
+
+Step680 adds `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step679 wrapper integration.
+
+Step680 keeps status marker creation, wrapper changes, Makefile changes, workflow changes, Python code/tests changes, fixture JSON changes, manifest writer invocation, manifest body generation/output, file writing, output directory creation, and payload body emission out of scope.

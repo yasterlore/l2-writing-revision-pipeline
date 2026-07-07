@@ -37,3 +37,11 @@ Step679 adds the Step677 standalone target to `scripts/check_release_quality.sh`
 This fixture root and fixture JSON remain unchanged, and the wrapper entry does
 not invoke manifest writer, generate or output manifest body, write files,
 create output directories, or emit payload bodies.
+
+Step680 creates
+`docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md`
+as design-only / docs-only planning for a future public-safe status marker.
+This fixture root and fixture JSON remain unchanged, and no status marker,
+wrapper, Makefile, workflow, Python code/tests, manifest writer invocation,
+manifest body generation/output, file writing, output directory creation, or
+payload body emission is added in Step680.

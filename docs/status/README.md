@@ -1712,3 +1712,7 @@ invocation evidence, or file-writing evidence.
 ## Step679 Manifest Writer Dry-Run No-Body No-File-Writing Release-Quality Wrapper Integration
 
 - `scripts/check_release_quality.sh`: release-quality wrapper integration for the Step677 standalone dry-run target. It runs after manifest writer handoff input validation and before artifact / manifest file-writing and broader manifest writer checks, and keeps Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, and payload body emission unchanged.
+
+## Step680 Manifest Writer Dry-Run No-Body No-File-Writing Remote/Manual Run Record Workflow Design
+
+- [Manifest writer dry-run no-body no-file-writing release-quality remote run record workflow](../frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md): design-only / docs-only workflow planning for a future status marker after Step679. It defines public-safe evidence sources, forbidden raw log / body sources, count-only target summary fields, missing metadata handling, future status marker path, Step681 / Step682 staging, and safety boundaries without creating the status marker or changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

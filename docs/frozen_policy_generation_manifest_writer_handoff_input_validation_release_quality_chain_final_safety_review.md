@@ -359,3 +359,9 @@ Step678 does not revise this final safety review and does not upgrade the Step65
 Step679 adds release-quality wrapper coverage for the separate Step675 / Step677 dry-run no-body no-file-writing validation target.
 
 Step679 does not revise this final safety review and does not upgrade the Step659-Step669 chain from local/manual-status-recorded to remote-status-recorded. It does not change Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.
+
+## 25. Step680 Remote/Manual Run Record Workflow Design
+
+Step680 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after the separate Step679 dry-run wrapper integration.
+
+Step680 does not revise this final safety review and does not upgrade the Step659-Step669 chain from local/manual-status-recorded to remote-status-recorded. It does not create a status marker, change wrapper, Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.

@@ -1075,3 +1075,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step679 Manifest Writer Dry-Run No-Body No-File-Writing Release-Quality Wrapper Integration
 
 - `scripts/check_release_quality.sh`: release-quality wrapper entry for the Step677 standalone dry-run no-body no-file-writing validation target. It is ordered after manifest writer handoff input validation and before artifact / manifest file-writing and broader manifest writer checks; it does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## Step680 Manifest Writer Dry-Run No-Body No-File-Writing Remote/Manual Run Record Workflow Design
+
+- [Manifest writer dry-run no-body no-file-writing release-quality remote run record workflow](frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md): design-only / docs-only planning for a future public-safe status marker after Step679 wrapper integration. It defines allowed evidence sources, forbidden raw log / body sources, public-safe metadata fields, count-only target summary fields, missing metadata handling, status marker template, future Step681 / Step682 staging, and safety boundaries without creating a status marker or changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

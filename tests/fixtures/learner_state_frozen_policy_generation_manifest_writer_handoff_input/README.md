@@ -122,3 +122,9 @@ JSON remain unchanged.
 
 Step679 adds release-quality wrapper coverage for the separate dry-run validator.
 This 23-case handoff input fixture root and fixture JSON remain unchanged.
+
+Step680 creates
+`docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md`
+as design-only / docs-only planning for a future public-safe status marker for
+the separate dry-run validator. This 23-case handoff input fixture root and
+fixture JSON remain unchanged.

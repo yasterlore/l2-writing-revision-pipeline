@@ -532,3 +532,7 @@ Step678 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_n
 ## Step679 Manifest Writer Dry-Run Release-Quality Wrapper Integration Reference
 
 Step679 adds release-quality wrapper coverage for the separate dry-run no-body no-file-writing target. This actual-controlled fixture root and fixture JSON remain unchanged; Step679 does not change Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, manifest body generation/output, output directory creation, or file writing.
+
+## Step680 Manifest Writer Dry-Run Remote/Manual Run Record Workflow Design Reference
+
+Step680 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future status marker for the separate dry-run no-body no-file-writing target. This actual-controlled fixture root and fixture JSON remain unchanged; Step680 does not create the status marker, change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, invoke manifest writer, generate/output manifest body, create output directories, emit payload bodies, or write files.
