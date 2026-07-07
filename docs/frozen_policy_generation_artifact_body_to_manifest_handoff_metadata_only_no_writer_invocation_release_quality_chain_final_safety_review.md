@@ -289,3 +289,9 @@ Step665 does not change this final safety review boundary, release-quality wrapp
 Step666 adds the manifest writer handoff input validation check to `scripts/check_release_quality.sh` after the handoff no-writer-invocation wrapper check and before artifact / manifest file-writing and manifest writer checks.
 
 Step666 does not change the Step657 accepted boundary, does not revise the Step645 payload audit limitation, and does not authorize manifest writer invocation, manifest body generation, or file writing.
+
+## 26. Step667 Remote/Manual Run Record Workflow Design
+
+Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future status marker after Step666.
+
+Step667 does not change the Step657 accepted boundary, does not revise the Step645 payload audit limitation, and does not create a status marker, invoke manifest writer, generate manifest body, or write files.

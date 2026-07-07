@@ -85,3 +85,9 @@ Step666 integrates that separate manifest writer handoff input validation target
 into `scripts/check_release_quality.sh` after this no-writer-invocation check
 and before artifact / manifest file-writing and manifest writer checks. This
 fixture root and fixture JSON remain unchanged.
+
+Step667 creates
+`docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md`
+as design-only / docs-only planning for a future status marker for that separate
+manifest writer handoff input validation check. This fixture root and fixture
+JSON remain unchanged.

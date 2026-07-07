@@ -361,3 +361,9 @@ make check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-
 The check is inserted after the artifact body to manifest handoff metadata-only no-writer-invocation check and before artifact / manifest file-writing and manifest writer checks. It expects the Step664 23-case metadata-only public-safe summary, including zero manifest writer invocation requested / invoked counts, zero manifest body generation / output counts, zero file-writing counts, zero payload body emission counts, zero artifact body payload output, zero generated policy body output, zero forbidden body detection, zero private / absolute path detection, zero raw learner text / real data marker detection, zero raw log count, and zero residue.
 
 Step666 does not change Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, payload body emission, artifact body payload output, or generated policy body output. The next recommended step is Step667 remote/manual status marker workflow design.
+
+## 18. Step667 Remote/Manual Run Record Workflow Design
+
+Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step666 wrapper integration.
+
+The workflow design does not create the status marker, change wrapper, Makefile, workflow, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, payload body emission, artifact body payload output, or generated policy body output.

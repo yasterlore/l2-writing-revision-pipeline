@@ -56,3 +56,8 @@ as `release_quality_check: learner-state frozen policy generation manifest write
 handoff input validation`. This fixture root and fixture JSON remain unchanged,
 and no manifest writer is invoked, no manifest body is generated, no files are
 written, and no payload bodies are emitted.
+
+Step667 creates
+`docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md`
+as design-only / docs-only planning for a future public-safe status marker after
+Step666. This fixture root and fixture JSON remain unchanged.

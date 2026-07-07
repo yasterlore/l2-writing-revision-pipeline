@@ -687,3 +687,9 @@ The design keeps this input contract unchanged and proposes future wrapper label
 Step666 adds `release_quality_check: learner-state frozen policy generation manifest writer handoff input validation` to `scripts/check_release_quality.sh`.
 
 The wrapper check runs the Step664 standalone target for this 23-case metadata-only input contract. Step666 does not change this contract, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 32. Step667 Remote/Manual Run Record Workflow Design
+
+Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for future public-safe status marker metadata after Step666.
+
+The workflow design keeps this input contract unchanged and does not create the status marker, change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

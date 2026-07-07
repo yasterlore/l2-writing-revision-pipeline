@@ -416,3 +416,9 @@ The planning preserves the Step645 payload audit limitation and does not change 
 Step666 adds the manifest writer handoff input validation standalone target to `scripts/check_release_quality.sh` after the artifact body to manifest handoff no-writer-invocation check and before artifact / manifest file-writing and manifest writer checks.
 
 The integration preserves the Step645 payload audit limitation and does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 23. Step667 Remote/Manual Run Record Workflow Design
+
+Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker for the Step666 wrapper-integrated manifest writer handoff input validation check.
+
+The planning preserves the Step645 payload audit limitation and does not create a status marker, change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

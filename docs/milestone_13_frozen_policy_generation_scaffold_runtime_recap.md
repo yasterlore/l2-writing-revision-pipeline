@@ -3611,3 +3611,9 @@ The design records the proposed release-quality label, command, ordering after a
 Step666 adds `release_quality_check: learner-state frozen policy generation manifest writer handoff input validation` to `scripts/check_release_quality.sh`.
 
 The wrapper check runs `make check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` after artifact body to manifest handoff no-writer-invocation and before artifact / manifest file-writing and manifest writer checks. It expects the 23-case metadata-only contract summary with zero writer/body/file/payload/residue counts. Step666 does not change Makefile, workflow files, Python code/tests, fixture JSON, invoke manifest writer, generate manifest body, write files, emit payload bodies, use real data, add metric evidence, or change production readiness status.
+
+## Step667 Manifest Writer Handoff Input Validation Remote/Manual Run Record Workflow Design
+
+Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step666 wrapper integration.
+
+The workflow design records allowed evidence sources, forbidden raw log / body sources, public-safe metadata fields, count-only target summary fields, release-quality label ordering fields, missing metadata handling, future status marker template, Step668 / Step669 staging, safety boundary, non-equivalence cautions, non-claims, and public-safe checklist. Step667 does not create a status marker, change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, invoke manifest writer, generate manifest body, write files, emit payload bodies, use real data, add metric evidence, or change production readiness status.

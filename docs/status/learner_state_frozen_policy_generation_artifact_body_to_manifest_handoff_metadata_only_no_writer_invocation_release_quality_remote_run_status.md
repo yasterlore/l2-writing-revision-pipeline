@@ -338,3 +338,9 @@ Step665 does not change this status marker, release-quality wrapper, Makefile, w
 Step666 adds the manifest writer handoff input validation check to `scripts/check_release_quality.sh` with command `make check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation`.
 
 Step666 does not change this status marker, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 28. Step667 Remote/Manual Run Record Workflow Design
+
+Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future manifest writer handoff input validation status marker.
+
+Step667 does not change this status marker, create the future marker, change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

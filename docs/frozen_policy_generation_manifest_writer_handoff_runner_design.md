@@ -830,3 +830,9 @@ The design leaves this runner, focused tests, fixture JSON, workflows, Makefile,
 Step666 integrates the Step664 standalone target into `scripts/check_release_quality.sh` using label `release_quality_check: learner-state frozen policy generation manifest writer handoff input validation`.
 
 The integration runs the existing runner through the Makefile target only. This runner, focused tests, fixture JSON, workflows, and Makefile remain unchanged; Step666 does not authorize manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 31. Step667 Remote/Manual Run Record Workflow Design
+
+Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step666.
+
+The workflow design leaves this runner, focused tests, fixture JSON, workflows, Makefile, and wrapper unchanged and does not authorize manifest writer invocation, manifest body generation, file writing, or payload body emission.

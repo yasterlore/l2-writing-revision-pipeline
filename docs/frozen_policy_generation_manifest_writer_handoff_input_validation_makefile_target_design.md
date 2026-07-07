@@ -369,3 +369,7 @@ The design proposes the future release-quality label, command, insertion after t
 Step666 adds the Step664 standalone target to `scripts/check_release_quality.sh` with label `release_quality_check: learner-state frozen policy generation manifest writer handoff input validation`.
 
 The wrapper check runs `make check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` after the artifact body to manifest handoff no-writer-invocation check and before artifact / manifest file-writing and manifest writer checks. Step666 does not change Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 19. Step667 Remote/Manual Run Record Workflow Design
+
+Step667 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future status marker. It records allowed public-safe metadata, forbidden raw log / body sources, target summary fields, missing metadata handling, and future Step668 staging without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
