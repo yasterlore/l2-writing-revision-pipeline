@@ -329,3 +329,9 @@ Recommended:
 `Step670: manifest writer handoff input validation post-final-safety-review next boundary planning`
 
 Step670 should be planning-only / docs-only. It should not alter wrapper / Makefile / Python / fixture JSON / workflow, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
+
+## 20. Step670 Next Boundary Planning
+
+Step670 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after this accepted-with-limitation review.
+
+The planning doc compares supplemental remote-status, manifest writer invocation preflight planning, no-body no-file-writing dry-run contract design, direct invocation, separate payload audit supplemental planning, and documentation consolidation options. It recommends Step671 manifest writer invocation preflight boundary planning by default if remote public-safe metadata for the Step666 chain is not available.

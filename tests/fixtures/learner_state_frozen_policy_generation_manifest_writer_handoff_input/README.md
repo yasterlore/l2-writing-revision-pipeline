@@ -72,3 +72,8 @@ Step669 creates
 as a final-safety-review-only / docs-only review accepting the fixed 23-case
 synthetic count-only metadata contract with limitation. This fixture root and
 fixture JSON remain unchanged.
+
+Step670 creates
+`docs/frozen_policy_generation_manifest_writer_handoff_input_validation_post_final_safety_review_next_boundary_planning.md`
+as planning-only / docs-only next-boundary planning after Step669. This fixture
+root and fixture JSON remain unchanged.

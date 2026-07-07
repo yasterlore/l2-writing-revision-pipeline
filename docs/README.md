@@ -1035,3 +1035,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step669 Manifest Writer Handoff Input Validation Final Safety Review
 
 - [Manifest writer handoff input validation release-quality chain final safety review](frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_chain_final_safety_review.md): final-safety-review-only / docs-only review for the Step659-Step668 chain. It accepts the release-quality-integrated, local/manual-status-recorded fixed 23-case synthetic count-only metadata contract with limitation, and keeps manifest writer invocation, manifest body generation, file writing, payload body emission, production readiness, real-data readiness, and model performance out of scope.
+
+## Step670 Manifest Writer Handoff Input Validation Next Boundary Planning
+
+- [Manifest writer handoff input validation post-final-safety-review next boundary planning](frozen_policy_generation_manifest_writer_handoff_input_validation_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison of next boundaries after the Step669 accepted-with-limitation review. It recommends Step671 manifest writer invocation preflight boundary planning by default when remote public-safe metadata for the Step666 chain is unavailable, and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

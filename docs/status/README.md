@@ -1672,3 +1672,7 @@ invocation evidence, or file-writing evidence.
 ## Step669 Manifest Writer Handoff Input Validation Final Safety Review
 
 - [Manifest writer handoff input validation release-quality chain final safety review](../frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_chain_final_safety_review.md): final-safety-review-only / docs-only review of the Step659-Step668 chain. It records the accepted-with-limitation local/manual-status-recorded boundary and does not revise the separate Step657 handoff review or Step645 payload audit limitation.
+
+## Step670 Manifest Writer Handoff Input Validation Next Boundary Planning
+
+- [Manifest writer handoff input validation post-final-safety-review next boundary planning](../frozen_policy_generation_manifest_writer_handoff_input_validation_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only next-boundary comparison after Step669. It keeps Step657 and Step645 separate and recommends Step671 manifest writer invocation preflight boundary planning by default when remote public-safe metadata for the Step666 chain is unavailable.

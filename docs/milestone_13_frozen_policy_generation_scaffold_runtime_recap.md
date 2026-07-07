@@ -3629,3 +3629,9 @@ The status marker records `local_fallback_used=yes`, unavailable remote metadata
 Step669 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_release_quality_chain_final_safety_review.md` as a final-safety-review-only / docs-only review of the Step659-Step668 chain.
 
 The review accepts the release-quality-integrated, local/manual-status-recorded fixed 23-case synthetic count-only metadata contract with limitation. It records that remote GitHub Actions public-safe metadata was unavailable for Step668 and does not revise Step657, Step645, wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data readiness, production readiness, or model performance status.
+
+## Step670 Manifest Writer Handoff Input Validation Next Boundary Planning
+
+Step670 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after the Step669 accepted-with-limitation final safety review.
+
+The planning doc compares supplemental remote-status, manifest writer invocation preflight planning, no-body no-file-writing dry-run contract design, direct invocation, separate payload audit supplemental planning, and documentation consolidation options. Because Step668 / Step669 used local/manual evidence, the default recommendation is Step671 manifest writer invocation preflight boundary planning without invoking manifest writer, generating manifest body, enabling file writing, emitting payload bodies, or changing wrapper files, Makefile, workflow files, Python code/tests, or fixture JSON.
