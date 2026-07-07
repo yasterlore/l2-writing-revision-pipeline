@@ -386,3 +386,15 @@ It keeps Step645 payload audit limitation separate and does not create fixture J
 Step661 creates `docs/frozen_policy_generation_manifest_writer_handoff_runner_design.md` as design-only / docs-only future runner / validator behavior design for the Step660 matrix.
 
 It keeps Step645 payload audit limitation separate and does not create fixture JSON, implement Python code/tests, invoke manifest writer, generate manifest body, write files, or emit payload bodies.
+
+## 18. Step662 Fixture / Runner Implementation
+
+Step662 implements the manifest writer handoff input validation runner, focused tests, and synthetic body-free fixture root for the Step660 23-case contract.
+
+The implementation remains direct CLI-only and does not add a Makefile target, release-quality wrapper entry, workflow change, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 19. Step663 Makefile Target Design
+
+Step663 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md` as design-only / docs-only Makefile target design for the Step662 direct CLI runner.
+
+It preserves the Step645 payload audit limitation and does not change Makefile, release-quality wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

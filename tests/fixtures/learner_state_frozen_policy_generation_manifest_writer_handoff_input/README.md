@@ -34,3 +34,8 @@ policy body, or store raw logs.
 This fixture root does not prove manifest writer correctness, file-writing
 readiness, manifest body correctness, payload correctness, production readiness,
 real-data readiness, or model performance.
+
+Step663 creates
+`docs/frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md`
+as design-only / docs-only Makefile target design for the direct CLI runner.
+This fixture root and fixture JSON remain unchanged.

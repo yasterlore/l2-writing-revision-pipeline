@@ -64,3 +64,8 @@ The fixture JSON remains unchanged.
 Step661 creates the manifest writer handoff runner design in
 `docs/frozen_policy_generation_manifest_writer_handoff_runner_design.md`.
 The fixture JSON remains unchanged.
+
+Step663 creates the manifest writer handoff input validation Makefile target
+design in
+`docs/frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md`.
+This fixture root and fixture JSON remain unchanged.

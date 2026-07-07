@@ -663,3 +663,9 @@ Step662 implements the manifest writer handoff input validator / runner as a dir
 - `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_handoff_input/`
 
 The implementation validates the 23-case metadata-only contract from Step660. It does not add a Makefile target, release-quality wrapper entry, workflow change, manifest writer invocation, manifest body generation, artifact / manifest file writing, payload body emission, artifact body payload output, or generated policy body output.
+
+## 28. Step663 Makefile Target Design
+
+Step663 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md` as design-only / docs-only Makefile target design for the Step662 direct CLI runner.
+
+The design proposes `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` as a future standalone target and keeps this input contract unchanged. Step663 does not change Makefile, release-quality wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

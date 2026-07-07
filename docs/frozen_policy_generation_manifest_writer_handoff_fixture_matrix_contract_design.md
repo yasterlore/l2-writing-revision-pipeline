@@ -626,3 +626,9 @@ It defines the future module, CLI, input model, fixture reading policy, selectio
 Step662 creates the synthetic body-free fixture root `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_handoff_input/` and implements the direct CLI runner and focused tests for this 23-case contract.
 
 The implementation keeps the canonical fixture metadata-only: invalid categories are represented by `unsafe_condition_category` and public-safe reason codes while actual writer/body/file/payload flags remain false / 0. Step662 does not add a Makefile target, release-quality wrapper entry, workflow change, manifest writer invocation, manifest body generation, artifact / manifest file writing, payload body emission, artifact body payload output, or generated policy body output.
+
+## 27. Step663 Makefile Target Design
+
+Step663 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md` as design-only / docs-only standalone Makefile target design for the Step662 direct CLI runner.
+
+The design keeps this fixture contract unchanged and does not modify Makefile, release-quality wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, artifact / manifest file writing, payload body emission, artifact body payload output, or generated policy body output.

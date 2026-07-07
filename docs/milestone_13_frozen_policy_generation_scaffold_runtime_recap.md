@@ -3587,3 +3587,9 @@ The design records the proposed module/tests, CLI, input model, fixture reading 
 Step662 adds `python/learner_state/frozen_policy_generation_manifest_writer_handoff_input_validation.py`, `python/learner_state/tests/test_frozen_policy_generation_manifest_writer_handoff_input_validation.py`, and `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_handoff_input/`.
 
 The implementation validates the fixed 23-case manifest writer handoff input contract as direct CLI-only metadata output. It keeps writer/body/file/payload/residue counts at 0 for the canonical fixture and does not add a Makefile target, release-quality wrapper entry, workflow change, manifest writer invocation, manifest body generation, artifact / manifest file writing, payload body emission, artifact body payload output, generated policy body output, real-data use, metric evidence, or production readiness status.
+
+## Step663 Manifest Writer Handoff Input Validation Makefile Target Design
+
+Step663 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md` as design-only / docs-only standalone Makefile target design for the Step662 direct CLI runner.
+
+The design records the proposed target name, help text, command, placement, expected aggregate public-safe output, relationship to existing targets, Step664 implementation and validation plan, safety boundary, failure interpretation, non-equivalence cautions, non-claims, and public-safe checklist. Step663 does not change Makefile, wrapper files, workflow files, Python code/tests, fixture JSON, invoke manifest writer, generate manifest body, write files, emit payload bodies, use real data, add metric evidence, or change production readiness status.

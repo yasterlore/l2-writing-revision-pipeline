@@ -1007,3 +1007,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step662 Manifest Writer Handoff Fixture / Runner Implementation
 
 - Manifest writer handoff input validation runner: direct CLI-only implementation in `python/learner_state/frozen_policy_generation_manifest_writer_handoff_input_validation.py` with focused tests in `python/learner_state/tests/test_frozen_policy_generation_manifest_writer_handoff_input_validation.py` and synthetic body-free fixture root `tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_handoff_input/`. The runner validates the fixed 23-case metadata-only contract without Makefile target integration, release-quality wrapper integration, workflow changes, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## Step663 Manifest Writer Handoff Input Validation Makefile Target Design
+
+- [Manifest writer handoff input validation Makefile target design](frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md): design-only / docs-only standalone Makefile target design for the Step662 direct CLI runner. It proposes the target name, help text, command, placement, expected output, Step664 validation plan, and safety boundary without changing Makefile, wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
