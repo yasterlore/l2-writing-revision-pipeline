@@ -1043,3 +1043,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step671 Manifest Writer Invocation Preflight Boundary Planning
 
 - [Manifest writer invocation preflight boundary planning](frozen_policy_generation_manifest_writer_invocation_preflight_boundary_planning.md): planning-only / docs-only preflight boundary planning before any manifest writer invocation is considered. It records required safety gates, current evidence limits, candidate preflight paths, no-body / no-file-writing constraints, and recommends Step672 dry-run no-body no-file-writing contract design without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## Step672 Manifest Writer Dry-Run No-Body No-File-Writing Contract Design
+
+- [Manifest writer dry-run no-body no-file-writing contract design](frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_contract_design.md): design-only / docs-only contract design for a future dry-run boundary. It defines proposed identifiers, metadata-only fields, required safety flags, forbidden fields/actions, status semantics, future fixture categories, matrix principles, and recommends Step673 fixture / matrix contract design without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

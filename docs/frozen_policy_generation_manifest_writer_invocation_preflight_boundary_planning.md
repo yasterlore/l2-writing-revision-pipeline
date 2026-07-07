@@ -523,3 +523,9 @@ Clarifications:
 - Step672 should not claim manifest writer correctness.
 - Step672 should not claim file-writing readiness.
 - Step672 should not claim manifest body correctness.
+
+## 22. Step672 Contract Design
+
+Step672 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_contract_design.md` as design-only / docs-only contract design for a future dry-run no-body no-file-writing boundary.
+
+The contract design defines proposed identifiers, allowed future metadata, required source boundary fields, required safety flags, notices, forbidden fields, forbidden actions, future validator status semantics, future fixture categories, future matrix principles, and safety gates before implementation. Step672 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.

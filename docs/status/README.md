@@ -1680,3 +1680,7 @@ invocation evidence, or file-writing evidence.
 ## Step671 Manifest Writer Invocation Preflight Boundary Planning
 
 - [Manifest writer invocation preflight boundary planning](../frozen_policy_generation_manifest_writer_invocation_preflight_boundary_planning.md): planning-only / docs-only preflight boundary planning. It keeps Step645, Step657, and Step669 separate, forbids manifest writer invocation / body generation / file writing in Step671, and recommends Step672 dry-run no-body no-file-writing contract design.
+
+## Step672 Manifest Writer Dry-Run No-Body No-File-Writing Contract Design
+
+- [Manifest writer dry-run no-body no-file-writing contract design](../frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_contract_design.md): design-only / docs-only contract design for a future dry-run boundary. It keeps the Step669 local/manual-status-recorded limitation, defines no-body / no-file-writing constraints, and recommends Step673 fixture / matrix contract design.
