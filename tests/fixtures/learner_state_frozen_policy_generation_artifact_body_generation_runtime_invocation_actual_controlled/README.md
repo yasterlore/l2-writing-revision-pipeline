@@ -496,3 +496,7 @@ Step649 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_me
 ## Step663 Manifest Writer Handoff Input Validation Makefile Target Design Reference
 
 Step663 adds `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md` as design-only / docs-only Makefile target planning for a separate manifest writer handoff input validation runner. This fixture root and fixture JSON remain unchanged; Step663 does not change Makefile, wrapper, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.
+
+## Step664 Manifest Writer Handoff Input Validation Makefile Target Reference
+
+Step664 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` for a separate manifest writer handoff input validation runner. This fixture root and fixture JSON remain unchanged; Step664 does not change wrapper, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

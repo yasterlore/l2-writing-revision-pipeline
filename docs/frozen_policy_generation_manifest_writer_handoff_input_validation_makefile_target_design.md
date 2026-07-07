@@ -335,3 +335,25 @@ Recommended:
 `Step664: manifest writer handoff input validation Makefile target implementation`
 
 Step664 should update Makefile and necessary README/docs only. Step664 should not change Python code/tests, fixture JSON, release-quality wrapper, workflows, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.
+
+## 16. Step664 Makefile Target Implementation
+
+Step664 implements the standalone Makefile target:
+
+```text
+check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation
+```
+
+Help text:
+
+```text
+Run manifest writer handoff input metadata-only validation
+```
+
+Command:
+
+```bash
+PYTHONPATH=python python3 -m learner_state.frozen_policy_generation_manifest_writer_handoff_input_validation --fixture-root tests/fixtures/learner_state_frozen_policy_generation_manifest_writer_handoff_input --case-selection manifest-writer-handoff-input-contract --summary-only --no-manifest-writer --no-file-writing --fail-closed-on-forbidden-body
+```
+
+The target is standalone only and is not release-quality integrated in Step664. Step664 does not change Python code/tests, fixture JSON, workflows, release-quality wrapper, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies. The next recommended step is Step665 release-quality integration design.

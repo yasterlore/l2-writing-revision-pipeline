@@ -632,3 +632,9 @@ The implementation keeps the canonical fixture metadata-only: invalid categories
 Step663 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md` as design-only / docs-only standalone Makefile target design for the Step662 direct CLI runner.
 
 The design keeps this fixture contract unchanged and does not modify Makefile, release-quality wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, artifact / manifest file writing, payload body emission, artifact body payload output, or generated policy body output.
+
+## 28. Step664 Makefile Target Implementation
+
+Step664 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` for the Step662 direct CLI runner.
+
+This fixture contract and fixture JSON remain unchanged. The target is not release-quality integrated and does not invoke manifest writer, generate manifest body, write files, emit payload body, output artifact body payload, or output generated policy body.

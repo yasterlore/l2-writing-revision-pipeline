@@ -669,3 +669,9 @@ The implementation validates the 23-case metadata-only contract from Step660. It
 Step663 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md` as design-only / docs-only Makefile target design for the Step662 direct CLI runner.
 
 The design proposes `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` as a future standalone target and keeps this input contract unchanged. Step663 does not change Makefile, release-quality wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 29. Step664 Makefile Target Implementation
+
+Step664 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` with help text `Run manifest writer handoff input metadata-only validation`.
+
+The target runs the Step662 direct CLI over the 23-case metadata-only contract. It is not release-quality integrated in Step664 and does not change this input contract, Python code/tests, fixture JSON, workflows, manifest writer invocation, manifest body generation, file writing, or payload body emission.

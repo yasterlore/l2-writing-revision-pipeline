@@ -398,3 +398,9 @@ The implementation remains direct CLI-only and does not add a Makefile target, r
 Step663 creates `docs/frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md` as design-only / docs-only Makefile target design for the Step662 direct CLI runner.
 
 It preserves the Step645 payload audit limitation and does not change Makefile, release-quality wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 20. Step664 Makefile Target Implementation
+
+Step664 adds the standalone Makefile target `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation` for the Step662 direct CLI runner.
+
+The target remains outside release-quality wrapper integration and does not revise the Step645 payload audit limitation, invoke manifest writer, generate manifest body, write files, or emit payload bodies.

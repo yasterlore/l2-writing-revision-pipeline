@@ -1648,3 +1648,7 @@ invocation evidence, or file-writing evidence.
 ## Step663 Manifest Writer Handoff Input Validation Makefile Target Design
 
 - [Manifest writer handoff input validation Makefile target design](../frozen_policy_generation_manifest_writer_handoff_input_validation_makefile_target_design.md): design-only / docs-only standalone Makefile target design for the Step662 direct CLI runner. It keeps Makefile changes, release-quality wrapper changes, workflow changes, Python code/tests changes, fixture JSON changes, manifest writer invocation, manifest body generation, file writing, and payload body emission out of scope.
+
+## Step664 Manifest Writer Handoff Input Validation Makefile Target Implementation
+
+- `check-learner-state-frozen-policy-generation-manifest-writer-handoff-input-validation`: standalone Makefile target for the Step662 direct CLI runner. It is not release-quality integrated and keeps workflow changes, Python code/tests changes, fixture JSON changes, manifest writer invocation, manifest body generation, file writing, and payload body emission out of scope.
