@@ -491,3 +491,7 @@ Step649 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_me
 Step654 adds the Step652 standalone handoff target to the release-quality wrapper. The fixture contract remains unchanged: 8 selected cases, 3 valid metadata-only cases, 5 invalid fail_closed metadata-category cases, zero manifest writer invocation, zero manifest body generation/output, zero file writing, zero payload body emission, and zero residue for the canonical fixture.
 
 Step654 does not change fixture JSON or broaden this fixture contract into manifest writer integration, manifest body generation, file writing, payload body emission, production readiness, real-data readiness, or model performance evidence.
+
+## 22. Step655 Remote/Manual Run Record Workflow Design
+
+Step655 designs the future status marker workflow for the Step654 wrapper-integrated handoff check. The fixture contract remains unchanged, and Step655 does not create status marker files, change fixture JSON, invoke manifest writer, generate manifest body, enable file writing, or emit payload bodies.

@@ -355,3 +355,7 @@ Step649 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_me
 ## 17. Step654 Handoff Release-Quality Integration Status
 
 Step654 integrates the Step652 artifact body to manifest handoff metadata-only no-writer-invocation standalone target into `scripts/check_release_quality.sh`. This follows the Option B planning path from Step646 while preserving the Step645 local/manual fallback limitation. It does not invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, change Makefile, change Python code/tests, or change fixture JSON.
+
+## 18. Step655 Handoff Remote/Manual Run Record Workflow Design
+
+Step655 designs the future status marker workflow for the Step654 wrapper-integrated handoff check. It preserves the Step645 local/manual fallback limitation, creates no status marker, and does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

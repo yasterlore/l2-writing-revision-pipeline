@@ -411,6 +411,8 @@ This chain is tentative. It must remain no-writer-invocation until a later final
 
 Step654 adds the Step652 standalone handoff target to the release-quality wrapper after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks. This keeps the Step647 handoff boundary metadata-only, body-free, no-writer-invocation, and no-file-writing.
 
+Step655 adds the remote/manual run record workflow design for a future public-safe status marker after Step654. It does not create the marker, remove the Step645 local/manual fallback limitation, invoke manifest writer, generate manifest body, enable file writing, emit payload bodies, or change implementation files.
+
 ## 18. Recommended Next Step
 
 Recommended:

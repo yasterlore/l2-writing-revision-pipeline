@@ -451,6 +451,8 @@ Step642 adds the Step640 payload audit without payload emission target to `scrip
 
 Step654 adds the separate artifact body to manifest handoff metadata-only no-writer-invocation target to the release-quality wrapper after artifact body generation safe-metadata CLI smoke. This actual-controlled fixture root remains unchanged; no fixture JSON is modified, no manifest writer is invoked, no manifest body is generated, no files are written, and no payload bodies are emitted by that handoff wrapper integration.
 
+Step655 adds a design-only / docs-only remote/manual run record workflow for the separate handoff wrapper check. This actual-controlled fixture root remains unchanged; no fixture JSON is modified, no status marker is created, and the Step645 local/manual fallback limitation remains active.
+
 ## Step643 Artifact Body Payload Audit Remote Run Record Workflow Design Reference
 
 Step643 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_release_quality_remote_run_record_workflow.md` as a design-only / docs-only workflow for a future public-safe status marker after Step642. This fixture root and fixture JSON remain unchanged; Step643 does not create the marker, change wrapper, Makefile, workflow, Python code/tests, runtime implementation, validator implementation, payload body emission, manifest writer integration, or file writing.

@@ -324,3 +324,9 @@ Step653 is design-only / docs-only. It does not implement wrapper integration.
 Step654 adds the standalone target to `scripts/check_release_quality.sh` with label `release_quality_check: learner-state frozen policy generation artifact body to manifest handoff metadata-only no-writer-invocation`.
 
 The target order is after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks. Step654 does not change Makefile, Python code/tests, fixture JSON, workflows, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 18. Step655 Remote/Manual Run Record Workflow Design
+
+Step655 records the future remote/manual status marker workflow for the Step654 wrapper-integrated handoff target in `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_record_workflow.md`.
+
+Step655 is design-only / docs-only. It does not create the status marker or change Makefile, wrapper, workflows, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

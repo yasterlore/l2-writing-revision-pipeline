@@ -1612,3 +1612,7 @@ invocation evidence, or file-writing evidence.
 ## Step654 Artifact Body to Manifest Handoff Release-Quality Integration
 
 - `scripts/check_release_quality.sh`: Step654 adds `release_quality_check: learner-state frozen policy generation artifact body to manifest handoff metadata-only no-writer-invocation` using `make check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation`. It is ordered after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks. A future Step655 should design the remote/manual status marker workflow without copying raw logs or payload bodies.
+
+## Step655 Artifact Body to Manifest Handoff Remote Run Record Workflow Design
+
+- [Artifact body to manifest handoff metadata-only no-writer-invocation release-quality remote run record workflow](../frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_record_workflow.md): design-only / docs-only workflow for a future Step656 public-safe status marker. It records what remote/manual metadata and count-only handoff summary fields may be captured, how to mark missing metadata, and why raw logs, fixture bodies, payload bodies, manifest bodies, manifest writer invocation, file writing, production readiness, real-data readiness, and model performance evidence remain out of scope.

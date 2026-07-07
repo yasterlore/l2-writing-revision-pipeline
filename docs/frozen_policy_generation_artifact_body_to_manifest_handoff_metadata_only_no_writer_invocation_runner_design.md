@@ -630,3 +630,7 @@ Step650 should implement the future runner and focused tests. Step650 may create
 Step654 integrates the Step652 standalone Makefile target into `scripts/check_release_quality.sh` after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks.
 
 The wrapper check runs the existing runner through `make check-learner-state-frozen-policy-generation-artifact-body-to-manifest-handoff-metadata-only-no-writer-invocation`. It preserves the runner's metadata-only / body-free / no-writer-invocation contract and does not change Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, or payload body emission.
+
+## 24. Step655 Remote/Manual Run Record Workflow Design
+
+Step655 adds a design-only / docs-only workflow for a future public-safe status marker after the Step654 wrapper integration. The future status marker should record only remote/manual metadata and aggregate count-only handoff summary fields, use `not available from provided public-safe metadata` for missing values, and avoid raw logs, fixture bodies, payload bodies, manifest bodies, manifest writer invocation, and file-writing evidence.

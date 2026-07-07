@@ -975,3 +975,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step654 Artifact Body to Manifest Handoff Release-Quality Integration
 
 - `scripts/check_release_quality.sh`: Step654 adds the Step652 standalone handoff target to release-quality after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks. The check records the 8-case metadata-only / body-free / no-writer-invocation handoff contract and keeps Makefile, workflows, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, and payload body emission unchanged.
+
+## Step655 Artifact Body to Manifest Handoff Remote Run Record Workflow Design
+
+- [Artifact body to manifest handoff metadata-only no-writer-invocation release-quality remote run record workflow](frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_record_workflow.md): design-only / docs-only plan for a future Step656 public-safe status marker after Step654 wrapper integration. It defines allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, handoff count-only target summary fields, missing metadata handling, status marker template, existing marker relationships, and Step656 / Step657 staging without creating a marker or changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

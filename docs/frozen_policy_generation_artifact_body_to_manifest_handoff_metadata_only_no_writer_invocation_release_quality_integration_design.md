@@ -368,3 +368,9 @@ Step654 does not change Makefile, workflows, Python code/tests, fixture JSON, ru
 Recommended next step:
 
 `Step655: artifact body to manifest handoff metadata-only no-writer-invocation remote/manual status marker workflow design`
+
+## 17. Step655 Remote/Manual Run Record Workflow Design
+
+Step655 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_record_workflow.md` as a design-only / docs-only workflow for a future public-safe Step656 status marker.
+
+The workflow records allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, handoff count-only target summary fields, missing metadata handling, label recording rules, status marker template, and Step656 / Step657 staging. Step655 does not create the status marker, change wrapper, Makefile, workflows, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, or payload body emission.

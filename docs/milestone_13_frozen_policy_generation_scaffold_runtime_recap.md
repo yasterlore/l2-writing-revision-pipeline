@@ -3539,3 +3539,9 @@ The design recommends adding a future wrapper check after artifact body generati
 Step654 adds the Step652 standalone handoff target to `scripts/check_release_quality.sh` with label `release_quality_check: learner-state frozen policy generation artifact body to manifest handoff metadata-only no-writer-invocation`.
 
 The check runs after artifact body generation safe-metadata CLI smoke and before artifact body file-writing / manifest writer checks. It keeps Makefile, workflows, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, and production readiness status unchanged.
+
+## Step655 Artifact Body to Manifest Handoff Remote Run Record Workflow Design
+
+Step655 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_record_workflow.md` as a design-only / docs-only workflow for a future public-safe status marker after Step654.
+
+The workflow defines allowed evidence sources, forbidden raw log / payload sources, public-safe metadata fields, handoff count-only target summary fields, missing metadata handling, status marker template, relationships to existing payload audit status/review docs, and Step656 / Step657 staging. Step655 does not create the marker, change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, manifest writer invocation, manifest body generation, file writing, payload body emission, real-data use, metric use, or production readiness status.

@@ -35,3 +35,7 @@ artifact body generation safe-metadata CLI smoke and before artifact body
 file-writing / manifest writer checks. The fixture JSON remains unchanged, and
 the release-quality check still invokes no manifest writer, generates no
 manifest body, writes no files, and emits no payload bodies.
+
+Step655 records the future remote/manual status marker workflow in
+`docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_release_quality_remote_run_record_workflow.md`.
+The fixture JSON remains unchanged.
