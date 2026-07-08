@@ -1728,3 +1728,7 @@ invocation evidence, or file-writing evidence.
 ## Step683 Manifest Writer Dry-Run No-Body No-File-Writing Next Boundary Planning
 
 - [Manifest writer dry-run no-body no-file-writing post-final-safety-review next boundary planning](../frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison of possible next boundaries after Step682. It recommends a supplemental remote update path for the separate Step645 payload audit limitation before higher-risk manifest writer / body / file-writing boundaries.
+
+## Step684 Actual-Controlled v0.4 Artifact Body Payload Audit Supplemental Remote Run Record Workflow
+
+- [Actual-controlled v0.4 artifact body payload audit without payload emission supplemental remote run record workflow](../frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_supplemental_remote_run_record_workflow.md): design-only / docs-only workflow for a future supplemental remote status marker. It does not create the marker or revise Step645; it defines public-safe metadata, count-only payload audit target summary fields, missing metadata handling, and Step685 / Step686 staging.

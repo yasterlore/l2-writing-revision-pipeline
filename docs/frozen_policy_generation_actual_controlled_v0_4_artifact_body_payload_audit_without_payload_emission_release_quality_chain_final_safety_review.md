@@ -272,3 +272,9 @@ Step647 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_me
 Step683 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after the separate Step682 dry-run final safety review.
 
 Step683 does not revise this Step645 final safety review. It recommends a possible supplemental remote update path for this payload audit boundary, requiring a separate workflow/status/review chain and no payload correctness claim.
+
+## 18. Step684 Supplemental Remote Run Record Workflow Reference
+
+Step684 creates `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_supplemental_remote_run_record_workflow.md` as design-only / docs-only workflow planning for a future supplemental remote status marker.
+
+Step684 does not revise this Step645 final safety review and does not update the accepted boundary. It defines what a future Step685 public-safe status marker may record and leaves any boundary update to a separate Step686 supplemental final safety review.
