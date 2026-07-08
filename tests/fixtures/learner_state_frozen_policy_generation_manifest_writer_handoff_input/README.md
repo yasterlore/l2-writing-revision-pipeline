@@ -140,3 +140,9 @@ Step682 creates
 as final-safety-review / docs-only review of the separate Step672-Step681 dry-run
 chain. This 23-case handoff input fixture root and fixture JSON remain
 unchanged.
+
+Step683 creates
+`docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_post_final_safety_review_next_boundary_planning.md`
+as planning-only / docs-only next-boundary planning after the separate Step682
+dry-run final safety review. This 23-case handoff input fixture root and fixture
+JSON remain unchanged.

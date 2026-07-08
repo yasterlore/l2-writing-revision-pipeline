@@ -1724,3 +1724,7 @@ invocation evidence, or file-writing evidence.
 ## Step682 Manifest Writer Dry-Run No-Body No-File-Writing Final Safety Review
 
 - [Manifest writer dry-run no-body no-file-writing release-quality chain final safety review](../frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md): final-safety-review / docs-only review of the Step672-Step681 bounded chain. It records an accepted-with-explicit-boundary decision for this dry-run chain only and does not revise Step669, Step657, or Step645.
+
+## Step683 Manifest Writer Dry-Run No-Body No-File-Writing Next Boundary Planning
+
+- [Manifest writer dry-run no-body no-file-writing post-final-safety-review next boundary planning](../frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_post_final_safety_review_next_boundary_planning.md): planning-only / docs-only comparison of possible next boundaries after Step682. It recommends a supplemental remote update path for the separate Step645 payload audit limitation before higher-risk manifest writer / body / file-writing boundaries.

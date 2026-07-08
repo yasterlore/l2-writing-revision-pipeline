@@ -378,3 +378,9 @@ Clarifications:
 - Step683 should not emit payload bodies.
 - Step683 should compare possible next boundaries, such as supplemental remote update for Step645 payload audit, manifest writer invocation preflight planning, manifest body metadata-only planning, file-writing boundary planning, or stop and consolidate docs.
 - Step683 should not automatically choose a higher-risk implementation boundary without documenting alternatives and safety gates.
+
+## 20. Step683 Next Boundary Planning
+
+Step683 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after this final safety review.
+
+Step683 does not revise this accepted boundary. It recommends Step684 actual-controlled v0.4 artifact body payload audit without payload emission supplemental remote run record workflow design as the conservative next boundary, while keeping manifest writer invocation, manifest body generation/output, file writing, output directory creation, and payload emission out of scope.

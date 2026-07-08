@@ -321,3 +321,9 @@ Because Step681 uses remote GitHub Actions public-safe metadata, Step682 may use
 Step682 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only review of the Step672-Step681 bounded chain.
 
 The review accepts this dry-run chain as release-quality-integrated, remote-status-recorded, and limited to the fixed 34-case synthetic count-only metadata contract. Step682 does not revise Step669, Step657, or Step645.
+
+## 19. Step683 Next Boundary Planning
+
+Step683 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after the Step682 final safety review.
+
+Step683 does not change this status marker, does not revise Step682, Step669, Step657, or Step645, and does not authorize manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload emission.

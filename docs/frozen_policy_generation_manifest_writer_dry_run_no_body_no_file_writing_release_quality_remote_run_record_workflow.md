@@ -422,3 +422,9 @@ The status marker records public-safe remote metadata after Step679, with `local
 Step682 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only review of the Step672-Step681 bounded chain.
 
 The review accepts the release-quality-integrated, remote-status-recorded fixed 34-case synthetic count-only metadata contract with explicit boundary. It does not revise Step669, Step657, or Step645, and does not authorize manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 22. Step683 Next Boundary Planning
+
+Step683 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after the Step682 final safety review.
+
+Step683 recommends a conservative supplemental remote update path for the separate Step645 payload audit limitation and does not implement code, create a status marker, create a final safety review, or authorize manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload emission.

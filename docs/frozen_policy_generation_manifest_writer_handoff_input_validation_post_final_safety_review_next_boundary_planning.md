@@ -393,3 +393,9 @@ Step681 does not revise Step669, Step657, or Step645. It does not change wrapper
 Step682 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only review of the separate Step672-Step681 dry-run chain.
 
 Step682 does not revise Step669, Step657, or Step645. It does not authorize manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 23. Step683 Next Boundary Planning
+
+Step683 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after the separate Step682 dry-run final safety review.
+
+Step683 does not revise Step669, Step657, or Step645. It recommends a possible supplemental remote update path for Step645 while keeping Step669 handoff input validation separate.

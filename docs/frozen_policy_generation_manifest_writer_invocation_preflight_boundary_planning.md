@@ -571,3 +571,9 @@ This does not change the preflight boundary into manifest writer invocation. Ste
 Step682 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only review of the Step672-Step681 bounded chain.
 
 This does not change the preflight boundary into manifest writer invocation. Step682 accepts only the dry-run no-body/no-file-writing fixed 34-case metadata contract and does not authorize manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 30. Step683 Next Boundary Planning
+
+Step683 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after Step682.
+
+Step683 does not change the preflight boundary into manifest writer invocation. It recommends a supplemental remote update path for the separate Step645 payload audit limitation before higher-risk invocation/body/file-writing boundaries.

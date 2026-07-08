@@ -339,3 +339,9 @@ Step681 does not change this handoff input status marker, does not revise the lo
 Step682 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only review of the separate dry-run no-body/no-file-writing chain.
 
 Step682 does not change this handoff input status marker, does not revise the local/manual-status-recorded limitation for the Step659-Step669 chain, and does not authorize manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 26. Step683 Next Boundary Planning
+
+Step683 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after the separate Step682 dry-run final safety review.
+
+Step683 does not change this handoff input status marker and does not revise the local/manual-status-recorded limitation for the Step659-Step669 chain.

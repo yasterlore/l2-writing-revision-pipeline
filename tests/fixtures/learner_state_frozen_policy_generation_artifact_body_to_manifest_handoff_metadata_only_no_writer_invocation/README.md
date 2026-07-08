@@ -124,3 +124,7 @@ Step681 creates `docs/status/learner_state_frozen_policy_generation_manifest_wri
 ## Step682 Manifest Writer Dry-Run Final Safety Review Reference
 
 Step682 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only review of the separate dry-run no-body/no-file-writing chain. This fixture root and fixture JSON remain unchanged; Step682 does not invoke manifest writer, generate/output manifest body, write files, create output directories, or emit payload bodies.
+
+## Step683 Manifest Writer Dry-Run Next Boundary Planning Reference
+
+Step683 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after the separate Step682 dry-run final safety review. This fixture root and fixture JSON remain unchanged; Step683 does not implement code, create a status marker, create a final safety review, invoke manifest writer, generate/output manifest body, write files, create output directories, or emit payload bodies.

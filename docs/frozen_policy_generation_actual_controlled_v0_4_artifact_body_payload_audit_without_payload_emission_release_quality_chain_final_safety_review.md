@@ -266,3 +266,9 @@ Step646 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body
 ## 16. Step647 Handoff Design Reference
 
 Step647 adds `docs/frozen_policy_generation_artifact_body_to_manifest_handoff_metadata_only_no_writer_invocation_design.md` as a design-only / docs-only handoff boundary. This final safety review remains limited to the Step645 accepted-with-limitation payload audit boundary and is not broadened into manifest writer integration, manifest body generation, file writing, payload correctness, or artifact body payload quality.
+
+## 17. Step683 Next Boundary Planning Reference
+
+Step683 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_post_final_safety_review_next_boundary_planning.md` as planning-only / docs-only next-boundary planning after the separate Step682 dry-run final safety review.
+
+Step683 does not revise this Step645 final safety review. It recommends a possible supplemental remote update path for this payload audit boundary, requiring a separate workflow/status/review chain and no payload correctness claim.
