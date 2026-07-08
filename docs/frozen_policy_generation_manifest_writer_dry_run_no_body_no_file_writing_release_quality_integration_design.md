@@ -472,3 +472,9 @@ See:
 `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md`
 
 Step680 does not create the status marker, change wrapper, Makefile, workflow files, Python code/tests, fixture JSON, invoke manifest writer, generate/output manifest body, write files, create output directories, or emit payload bodies.
+
+## 19. Step681 Status Marker
+
+Step681 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_status.md` as status-marker-only / docs-only public-safe remote metadata record after this Step679 wrapper integration.
+
+Step681 records the dry-run release-quality label, command, order, final release-quality pass, and fixed 34-case count-only summary without changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, invoking manifest writer, generating/outputting manifest body, writing files, creating output directories, or emitting payload bodies.

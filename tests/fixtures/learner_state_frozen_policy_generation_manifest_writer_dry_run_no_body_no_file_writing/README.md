@@ -45,3 +45,11 @@ This fixture root and fixture JSON remain unchanged, and no status marker,
 wrapper, Makefile, workflow, Python code/tests, manifest writer invocation,
 manifest body generation/output, file writing, output directory creation, or
 payload body emission is added in Step680.
+
+Step681 creates
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_status.md`
+as status-marker-only / docs-only public-safe remote metadata record after
+Step679. This fixture root and fixture JSON remain unchanged, and no wrapper,
+Makefile, workflow, Python code/tests, manifest writer invocation, manifest body
+generation/output, file writing, output directory creation, or payload body
+emission is added in Step681.

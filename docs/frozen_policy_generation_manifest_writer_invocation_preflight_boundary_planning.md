@@ -559,3 +559,9 @@ This does not change the preflight boundary into manifest writer invocation. Ste
 Step680 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step679.
 
 This does not change the preflight boundary into manifest writer invocation. Step680 does not create a status marker, change wrapper, Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate/output manifest body, enable file writing, create output directories, or emit payload bodies.
+
+## 28. Step681 Status Marker
+
+Step681 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_status.md` as status-marker-only / docs-only public-safe remote metadata record after Step679.
+
+This does not change the preflight boundary into manifest writer invocation. Step681 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate/output manifest body, enable file writing, create output directories, or emit payload bodies.

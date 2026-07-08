@@ -659,3 +659,9 @@ Step679 keeps this contract metadata-only, body-free, and no-file-writing. It do
 Step680 adds `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step679.
 
 The workflow design preserves the dry-run contract boundary: metadata-only, body-free, synthetic-only, no-oracle, no manifest writer invocation, no manifest body generation/output, no file writing, no output directory creation, and no payload body emission.
+
+## 32. Step681 Status Marker
+
+Step681 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_status.md` as status-marker-only / docs-only public-safe remote metadata record after Step679.
+
+Step681 records remote-status-recorded evidence for this dry-run no-body/no-file-writing chain while preserving the contract boundary: metadata-only, body-free, count-only, synthetic-only, no-oracle, no manifest writer invocation, no manifest body generation/output, no file writing, no output directory creation, and no payload body emission.

@@ -408,3 +408,11 @@ Clarifications:
 - Step681 should not generate or output manifest body.
 - Step681 should not enable file writing or create output directories.
 - Step681 should not emit payload bodies.
+
+## 20. Step681 Status Marker
+
+Step681 creates the future status marker proposed by this workflow design:
+
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_status.md`
+
+The status marker records public-safe remote metadata after Step679, with `local_fallback_used=no`, observed release-quality labels, final release-quality pass, and the 34-case count-only dry-run target summary. It does not copy raw logs, full job output, fixture bodies, payload bodies, manifest bodies, private data, or metric bodies.

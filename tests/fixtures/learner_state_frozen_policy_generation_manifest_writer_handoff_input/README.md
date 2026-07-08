@@ -128,3 +128,9 @@ Step680 creates
 as design-only / docs-only planning for a future public-safe status marker for
 the separate dry-run validator. This 23-case handoff input fixture root and
 fixture JSON remain unchanged.
+
+Step681 creates
+`docs/status/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_status.md`
+as status-marker-only / docs-only public-safe remote metadata record for the
+separate dry-run validator. This 23-case handoff input fixture root and fixture
+JSON remain unchanged.

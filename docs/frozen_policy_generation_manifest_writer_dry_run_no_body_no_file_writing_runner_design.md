@@ -1061,3 +1061,9 @@ The wrapper entry runs after manifest writer handoff input validation and before
 Step680 adds `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_record_workflow.md` as design-only / docs-only planning for a future public-safe status marker after Step679 wrapper integration.
 
 The workflow design records planned evidence sources, public-safe metadata fields, count-only target summary fields, missing metadata handling, and future Step681 / Step682 staging without creating a status marker or changing wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 34. Step681 Status Marker
+
+Step681 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_status.md` as status-marker-only / docs-only public-safe remote metadata record after Step679 wrapper integration.
+
+Step681 leaves this runner unchanged and records only remote metadata, observed labels, final release-quality pass, and count-only aggregate output. It does not change Python code/tests, fixture JSON, wrapper, Makefile, workflow, invoke manifest writer, generate/output manifest body, write files, create output directories, or emit payload bodies.
