@@ -1067,3 +1067,9 @@ The workflow design records planned evidence sources, public-safe metadata field
 Step681 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_status.md` as status-marker-only / docs-only public-safe remote metadata record after Step679 wrapper integration.
 
 Step681 leaves this runner unchanged and records only remote metadata, observed labels, final release-quality pass, and count-only aggregate output. It does not change Python code/tests, fixture JSON, wrapper, Makefile, workflow, invoke manifest writer, generate/output manifest body, write files, create output directories, or emit payload bodies.
+
+## 35. Step682 Final Safety Review
+
+Step682 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only review of the Step672-Step681 bounded chain.
+
+The Step675 runner remains unchanged. Step682 accepts only the fixed 34-case synthetic count-only metadata contract and does not invoke manifest writer, generate/output manifest body, write files, create output directories, or emit payload bodies.

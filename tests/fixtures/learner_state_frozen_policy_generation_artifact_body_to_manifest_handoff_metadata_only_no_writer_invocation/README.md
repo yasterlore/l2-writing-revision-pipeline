@@ -120,3 +120,7 @@ Step680 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_n
 ## Step681 Manifest Writer Dry-Run Status Marker Reference
 
 Step681 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_status.md` as status-marker-only / docs-only public-safe remote metadata record for the separate dry-run no-body/no-file-writing target. This fixture root and fixture JSON remain unchanged; Step681 does not change wrapper, Makefile, workflow, Python code/tests, invoke manifest writer, generate/output manifest body, write files, create output directories, or emit payload bodies.
+
+## Step682 Manifest Writer Dry-Run Final Safety Review Reference
+
+Step682 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only review of the separate dry-run no-body/no-file-writing chain. This fixture root and fixture JSON remain unchanged; Step682 does not invoke manifest writer, generate/output manifest body, write files, create output directories, or emit payload bodies.

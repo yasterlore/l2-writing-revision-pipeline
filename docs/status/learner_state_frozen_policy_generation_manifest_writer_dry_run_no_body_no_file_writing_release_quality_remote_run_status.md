@@ -315,3 +315,9 @@ Recommended:
 Step682 should review Step672-Step681 as a bounded chain. Step682 should not alter wrapper / Makefile / Python / fixture JSON / workflow, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.
 
 Because Step681 uses remote GitHub Actions public-safe metadata, Step682 may use remote-status-recorded for this dry-run no-body/no-file-writing chain while still keeping Step669 and Step645 limitations separate.
+
+## 18. Step682 Final Safety Review
+
+Step682 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only review of the Step672-Step681 bounded chain.
+
+The review accepts this dry-run chain as release-quality-integrated, remote-status-recorded, and limited to the fixed 34-case synthetic count-only metadata contract. Step682 does not revise Step669, Step657, or Step645.

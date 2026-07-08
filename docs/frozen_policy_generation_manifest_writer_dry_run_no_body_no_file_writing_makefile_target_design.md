@@ -423,3 +423,9 @@ Step680 keeps status marker creation, wrapper changes, Makefile changes, workflo
 Step681 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_status.md` as status-marker-only / docs-only public-safe remote metadata record after Step679.
 
 Step681 leaves this Makefile target unchanged and does not change wrapper, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 21. Step682 Final Safety Review
+
+Step682 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only review of the Step672-Step681 bounded chain.
+
+The Step677 Makefile target remains unchanged. Step682 does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

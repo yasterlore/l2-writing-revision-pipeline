@@ -333,3 +333,9 @@ Step680 does not change this status marker, does not add remote metadata, does n
 Step681 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_status.md` as status-marker-only / docs-only public-safe remote metadata record for the separate dry-run no-body/no-file-writing chain after Step679.
 
 Step681 does not change this handoff input status marker, does not revise the local/manual-status-recorded limitation for the Step659-Step669 chain, and does not authorize manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.
+
+## 25. Step682 Dry-Run Final Safety Review
+
+Step682 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only review of the separate dry-run no-body/no-file-writing chain.
+
+Step682 does not change this handoff input status marker, does not revise the local/manual-status-recorded limitation for the Step659-Step669 chain, and does not authorize manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

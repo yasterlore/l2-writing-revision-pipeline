@@ -387,3 +387,9 @@ Step680 does not revise Step669, Step657, or Step645. It does not create a statu
 Step681 creates `docs/status/learner_state_frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_remote_run_status.md` as status-marker-only / docs-only public-safe remote metadata record for the separate dry-run chain after Step679.
 
 Step681 does not revise Step669, Step657, or Step645. It does not change wrapper, Makefile, workflow, Python code/tests, fixture JSON, invoke manifest writer, generate or output manifest body, enable file writing, create output directories, or emit payload bodies.
+
+## 22. Step682 Dry-Run Final Safety Review
+
+Step682 creates `docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only review of the separate Step672-Step681 dry-run chain.
+
+Step682 does not revise Step669, Step657, or Step645. It does not authorize manifest writer invocation, manifest body generation/output, file writing, output directory creation, or payload body emission.

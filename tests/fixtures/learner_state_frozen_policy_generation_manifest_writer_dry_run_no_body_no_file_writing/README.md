@@ -53,3 +53,10 @@ Step679. This fixture root and fixture JSON remain unchanged, and no wrapper,
 Makefile, workflow, Python code/tests, manifest writer invocation, manifest body
 generation/output, file writing, output directory creation, or payload body
 emission is added in Step681.
+
+Step682 creates
+`docs/frozen_policy_generation_manifest_writer_dry_run_no_body_no_file_writing_release_quality_chain_final_safety_review.md`
+as final-safety-review / docs-only review of the Step672-Step681 dry-run chain.
+This fixture root and fixture JSON remain unchanged, and Step682 does not invoke
+manifest writer, generate/output manifest body, write files, create output
+directories, or emit payload bodies.
