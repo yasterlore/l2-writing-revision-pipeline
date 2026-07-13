@@ -392,3 +392,9 @@ The design plans a future shared synthetic vector fixture root for Unicode, UTF-
 Step-web-logger-004 creates `tests/fixtures/web_logger_unicode_hash_vectors/README.md` and `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`.
 
 The fixture root provides synthetic-only vector data for future TypeScript / Rust validation of UTF-16 code unit offsets, UTF-8 byte offset expectations, SHA-256 UTF-8 lowercase-hex hash expectations, invalid surrogate-boundary failures, and out-of-range offset failures. It remains fixture-data only and does not implement helper code, tests, CI, Makefile targets, release-quality checks, schema changes, runtime changes, validator changes, or event durability.
+
+## 24. Step-web-logger-005 Shared Vector Fixture Validator Design
+
+Step-web-logger-005 is recorded in `docs/web_logger_unicode_hash_vector_fixture_validator_design.md`.
+
+The design specifies a future validator for the Step-web-logger-004 fixture root. It covers structure checks, metadata policy checks, hash validation, UTF-16 / UTF-8 length validation, offset mapping validation, expected failure handling, public-safe diagnostics, future tests, and later Makefile / release-quality staging. It does not implement event durability or any validator/runtime/helper code.

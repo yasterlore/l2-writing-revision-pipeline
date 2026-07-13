@@ -1119,3 +1119,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step-web-logger-004 Shared Unicode and Hash Vector Fixtures
 
 - [Web logger shared Unicode and hash vector fixtures](../tests/fixtures/web_logger_unicode_hash_vectors/README.md): fixture-data implementation for the Step-web-logger-003 design. The root contains `vectors.json` with 15 synthetic-only vectors, `position_unit=utf16_code_unit`, SHA-256 / UTF-8 / lowercase-hex hashes, no Unicode normalization, no newline normalization, trailing-newline preservation, valid UTF-16-to-UTF-8 offset expectations, and invalid offset metadata. It does not add TypeScript/Rust/Python code, tests, CI workflow changes, Makefile targets, release-quality checks, helper implementations, event durability, production readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-005 Unicode and Hash Vector Fixture Validator Design
+
+- [Web logger Unicode and hash vector fixture validator design](web_logger_unicode_hash_vector_fixture_validator_design.md): validator-design / docs-only plan for a future public-safe validator of `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`. It defines metadata checks, vector-level checks, UTF-16 / UTF-8 length checks, SHA-256 hash checks, offset mapping checks, expected failure checks, forbidden marker scans, public-safe diagnostics, failure semantics, future tests, and later Makefile / release-quality staging without implementing validator code or changing fixture JSON.

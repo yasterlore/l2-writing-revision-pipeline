@@ -318,3 +318,9 @@ The design defines future shared synthetic vector structure, required vector cat
 Step-web-logger-004 creates `tests/fixtures/web_logger_unicode_hash_vectors/README.md` and `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`.
 
 The fixture root records the Step-web-logger-002 schema clarification as synthetic fixture data: UTF-16 code unit offsets, expected UTF-8 byte offsets, SHA-256 UTF-8 lowercase-hex hashes over decoded stored text, no Unicode normalization, no newline normalization, and invalid offset metadata. It does not implement the future Rust UTF-16 conversion helper, TypeScript hash helper, Rust hash helper, tests, CI, Makefile targets, or event durability implementation.
+
+## 24. Step-web-logger-005 Validator Design Handoff
+
+Step-web-logger-005 is recorded in `docs/web_logger_unicode_hash_vector_fixture_validator_design.md`.
+
+The design translates the schema clarification and Step-web-logger-004 fixture root into a future validator contract. It remains docs-only and does not implement validation code, modify vectors, add tests, add Makefile targets, add release-quality checks, or implement TypeScript / Rust helpers.
