@@ -372,3 +372,16 @@ Clarification:
 - Step-web-logger-004 should not yet implement full TypeScript/Rust helpers unless explicitly scoped.
 - Step-web-logger-004 should still avoid event durability implementation.
 - Step-web-logger-004 should keep all examples synthetic and minimal.
+
+## 21. Step-web-logger-004 Fixture Root Implementation
+
+Step-web-logger-004 creates the shared synthetic vector fixture root at `tests/fixtures/web_logger_unicode_hash_vectors/`.
+
+The root contains:
+
+- `README.md`
+- `vectors.json`
+
+`vectors.json` fixes `vector_schema_version=web_logger_unicode_hash_vectors_v0.1`, `position_unit=utf16_code_unit`, SHA-256 / UTF-8 / lowercase-hex hash metadata, no Unicode normalization, no newline normalization, trailing-newline preservation, and 15 synthetic vectors covering empty, ASCII, Japanese, full-width, emoji surrogate pair, mixed Japanese/emoji, combining sequence, precomposed accent, LF, CRLF, trailing newline, tab, invalid surrogate boundary, invalid beyond-length, and compact mixed Unicode cases.
+
+This step creates fixture data only. It does not implement TypeScript helpers, Rust helpers, test code, CI, Makefile targets, release-quality checks, schema implementation, runtime implementation, validator implementation, or event durability queue / IndexedDB / acknowledgement / retry / deduplication.

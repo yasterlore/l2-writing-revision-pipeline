@@ -3725,3 +3725,9 @@ The workflow design records allowed and forbidden evidence sources, public-safe 
 Step685 creates `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_supplemental_remote_run_status.md` as status-marker-only / docs-only supplemental remote public-safe metadata for the Step645 payload audit target.
 
 The marker records `local_fallback_used=no`, remote metadata availability, observed release-quality labels, final release-quality pass, missing metadata fields, relationships to Step645, Step682, Step657, and Step669, and the fixed 36-case count-only payload audit summary. Step685 does not revise Step645 by itself, create a supplemental final safety review, change wrapper files, Makefile, workflow files, Python code/tests, fixture JSON, runtime implementation, validator implementation, invoke manifest writer, generate/output manifest body, write files, create output directories, emit payload bodies, use real data, add metric evidence, or change production readiness status.
+
+## Step-web-logger-004 Shared Unicode and Hash Vector Fixtures
+
+Step-web-logger-004 creates `tests/fixtures/web_logger_unicode_hash_vectors/README.md` and `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`.
+
+The fixture root records 15 synthetic-only Unicode/hash vectors for future TypeScript / Rust checks, including UTF-16 code unit offsets, expected UTF-8 byte offsets, SHA-256 UTF-8 lowercase-hex hashes, invalid surrogate-boundary metadata, invalid out-of-range metadata, and no-normalization policy. Step-web-logger-004 does not change TypeScript, Rust, Python, tests, Makefile, release-quality wrapper, workflow files, package files, Cargo files, schema implementation, runtime implementation, validator implementation, event durability, real-data use, metric evidence, or production readiness status.

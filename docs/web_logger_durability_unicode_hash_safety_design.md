@@ -386,3 +386,9 @@ The clarification fixes intended schema policy for `position_unit=utf16_code_uni
 Step-web-logger-003 is recorded in `docs/web_logger_shared_unicode_hash_test_vector_design.md`.
 
 The design plans a future shared synthetic vector fixture root for Unicode, UTF-16 offset, UTF-8 byte index, and SHA-256 hash checks. It does not create fixture files, compute final hash values, implement helpers, add tests, add CI, change Makefile, change release-quality wrapper, or implement event durability.
+
+## 23. Step-web-logger-004 Shared Unicode and Hash Vector Fixtures
+
+Step-web-logger-004 creates `tests/fixtures/web_logger_unicode_hash_vectors/README.md` and `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`.
+
+The fixture root provides synthetic-only vector data for future TypeScript / Rust validation of UTF-16 code unit offsets, UTF-8 byte offset expectations, SHA-256 UTF-8 lowercase-hex hash expectations, invalid surrogate-boundary failures, and out-of-range offset failures. It remains fixture-data only and does not implement helper code, tests, CI, Makefile targets, release-quality checks, schema changes, runtime changes, validator changes, or event durability.

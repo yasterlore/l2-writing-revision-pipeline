@@ -320,6 +320,8 @@ Step-web-logger-002 has been added as `docs/web_logger_position_unit_and_hash_sc
 
 Step-web-logger-003 has been added as `docs/web_logger_shared_unicode_hash_test_vector_design.md`. It designs the future shared synthetic vector structure and review path only; it does not create vector fixture JSON, implement hash helpers, implement UTF-16 conversion, add tests, or add CI.
 
+Step-web-logger-004 has been added as `tests/fixtures/web_logger_unicode_hash_vectors/`. It creates synthetic vector fixture data and README documentation for future Unicode/hash checks; it does not implement TypeScript/Rust helpers, tests, CI, Makefile targets, release-quality checks, queue, IndexedDB, acknowledgement, retry, or deduplication.
+
 ## 14. Relationship to Existing No-Oracle and Synthetic-Only Boundaries
 
 This audit does not relax no-oracle constraints, does not authorize real participant data collection, does not introduce real data, and does not validate model performance.

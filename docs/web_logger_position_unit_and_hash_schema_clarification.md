@@ -312,3 +312,9 @@ Reason:
 Step-web-logger-003 is recorded in `docs/web_logger_shared_unicode_hash_test_vector_design.md`.
 
 The design defines future shared synthetic vector structure, required vector categories, initial vector set, offset expectation policy, hash expectation policy, invalid vector policy, cross-language validation design, future CI integration design, and review/generation procedure. It remains docs-only and does not create fixture JSON, tests, helper code, Makefile targets, release-quality labels, workflow changes, or event durability implementation.
+
+## 23. Step-web-logger-004 Shared Vector Fixture Root
+
+Step-web-logger-004 creates `tests/fixtures/web_logger_unicode_hash_vectors/README.md` and `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`.
+
+The fixture root records the Step-web-logger-002 schema clarification as synthetic fixture data: UTF-16 code unit offsets, expected UTF-8 byte offsets, SHA-256 UTF-8 lowercase-hex hashes over decoded stored text, no Unicode normalization, no newline normalization, and invalid offset metadata. It does not implement the future Rust UTF-16 conversion helper, TypeScript hash helper, Rust hash helper, tests, CI, Makefile targets, or event durability implementation.

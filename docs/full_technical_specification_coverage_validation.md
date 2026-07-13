@@ -714,3 +714,9 @@ This is not implementation coverage, test coverage, fixture coverage, CI coverag
 `docs/web_logger_shared_unicode_hash_test_vector_design.md` adds design coverage for future shared Unicode/hash test vectors. It covers proposed vector file shape, canonical vector metadata, required Unicode categories, a recommended initial vector set, valid/invalid offset expectations, hash expectation policy, invalid vector policy, cross-language validation design, future CI integration design, and review/generation procedure.
 
 This is design coverage only. It is not fixture coverage, implementation coverage, test coverage, CI coverage, production readiness, real-data readiness, model performance evidence, Unicode implementation evidence, or hash compatibility evidence.
+
+## Step-web-logger-004 Coverage Addendum
+
+`tests/fixtures/web_logger_unicode_hash_vectors/vectors.json` adds fixture-data coverage for 15 synthetic Unicode/hash vectors. The vectors cover SHA-256 UTF-8 lowercase-hex expected values, UTF-16 code unit lengths, UTF-8 byte lengths, valid offset mappings, invalid surrogate-boundary metadata, invalid beyond-length metadata, newline preservation, tab handling, combining sequence behavior, and no-normalization policy.
+
+This is fixture-data coverage only. It is not TypeScript helper coverage, Rust helper coverage, automated test coverage, CI coverage, production readiness, real-data readiness, model performance evidence, event durability implementation evidence, or collection authorization.

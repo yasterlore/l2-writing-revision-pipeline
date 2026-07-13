@@ -1115,3 +1115,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step-web-logger-003 Shared Unicode and Hash Test Vector Design
 
 - [Web logger shared Unicode and text hash test vector design](web_logger_shared_unicode_hash_test_vector_design.md): test-vector-design / docs-only plan for future synthetic vectors shared by TypeScript and Rust. It defines vector file shape, canonical metadata, required categories, recommended initial vectors, offset/hash expectations, invalid vector policy, cross-language validation design, future CI/Makefile/release-quality proposals, and review procedure without creating fixture JSON, code, tests, CI workflow changes, Makefile targets, or release-quality checks.
+
+## Step-web-logger-004 Shared Unicode and Hash Vector Fixtures
+
+- [Web logger shared Unicode and hash vector fixtures](../tests/fixtures/web_logger_unicode_hash_vectors/README.md): fixture-data implementation for the Step-web-logger-003 design. The root contains `vectors.json` with 15 synthetic-only vectors, `position_unit=utf16_code_unit`, SHA-256 / UTF-8 / lowercase-hex hashes, no Unicode normalization, no newline normalization, trailing-newline preservation, valid UTF-16-to-UTF-8 offset expectations, and invalid offset metadata. It does not add TypeScript/Rust/Python code, tests, CI workflow changes, Makefile targets, release-quality checks, helper implementations, event durability, production readiness, real-data readiness, or model performance evidence.

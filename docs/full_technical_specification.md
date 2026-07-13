@@ -1573,3 +1573,11 @@ This appendix is policy clarification only. It does not implement TypeScript has
 The design proposes a future `tests/fixtures/web_logger_unicode_hash_vectors/` root, top-level vector metadata, per-vector fields, offset case fields, canonical `position_unit=utf16_code_unit` / SHA-256 / UTF-8 / no-normalization metadata, required Unicode categories, an initial 15-vector set, invalid vector categories, cross-language validation expectations, future Makefile and release-quality labels, and a reviewed hash generation procedure.
 
 This appendix is design only. It does not create fixture JSON, compute hash values, implement TypeScript or Rust helpers, add tests, add CI, change Makefile, change release-quality wrapper, change schema/runtime/validator implementation, or implement event durability.
+
+## Appendix AV. Web Logger Shared Unicode and Hash Vector Fixtures
+
+`tests/fixtures/web_logger_unicode_hash_vectors/` records fixture-data implementation for the Step-web-logger-003 vector design.
+
+The root contains `README.md` and `vectors.json`. The vector file declares `vector_schema_version=web_logger_unicode_hash_vectors_v0.1`, `position_unit=utf16_code_unit`, `hash_algorithm=SHA-256`, `hash_encoding=UTF-8`, no Unicode normalization, no newline normalization, trailing-newline preservation, lowercase hex output, `real_data_allowed=false`, and 15 synthetic vectors. The vectors cover empty string, ASCII, Japanese, full-width alphanumerics, emoji surrogate pairs, Japanese plus emoji, combining sequences, precomposed accents, LF, CRLF, trailing newline, tab, invalid surrogate boundary, invalid beyond-length, and compact mixed Unicode cases.
+
+This appendix records fixture data only. It does not implement TypeScript helpers, Rust helpers, Python code, test code, schema implementation, runtime implementation, validator implementation, Makefile targets, CI workflows, release-quality checks, package metadata changes, Cargo metadata changes, or event durability queue / IndexedDB / acknowledgement / retry / deduplication.

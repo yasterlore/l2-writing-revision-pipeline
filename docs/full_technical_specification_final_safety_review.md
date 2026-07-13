@@ -555,3 +555,11 @@ This addendum does not change TypeScript, Rust, Python, tests, fixture JSON, Mak
 The design requires synthetic/minimal vectors, no real participant data, no raw learner text in docs, no raw event payload bodies in docs, reviewed hash generation, metadata-only diagnostics, invalid offset fail-closed expectations, and explicit separation from event durability implementation.
 
 This addendum does not create fixture JSON, compute final hash values, implement TypeScript/Rust checks, change tests, change CI, change Makefile, change release-quality wrapper, change schema/runtime/validator implementation, or implement event durability. It does not claim Unicode correctness implementation completion, hash compatibility implementation completion, event durability implementation completion, data collection authorization, production readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-004 Shared Unicode and Hash Vector Fixture Safety Review Addendum
+
+`tests/fixtures/web_logger_unicode_hash_vectors/` is added as fixture-data implementation for future shared TypeScript / Rust Unicode/hash checks.
+
+The root contains synthetic-only minimal text, expected SHA-256 UTF-8 lowercase-hex hashes, UTF-16 code unit lengths, UTF-8 byte lengths, expected valid offset mappings, invalid offset metadata, no-normalization metadata, and README safety notes. It contains no real participant data, private paths, absolute local paths, raw event payload bodies, logits / probabilities, or performance metric bodies.
+
+This addendum does not implement TypeScript/Rust helpers, Python code, test code, CI, Makefile targets, release-quality checks, schema implementation, runtime implementation, validator implementation, or event durability. It does not claim Unicode correctness implementation completion, hash compatibility implementation completion, event durability implementation completion, data collection authorization, production readiness, real-data readiness, model performance, or deployment readiness.

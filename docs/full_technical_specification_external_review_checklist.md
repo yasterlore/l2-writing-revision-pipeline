@@ -546,6 +546,14 @@ Reviewers should verify that it defines future vector fixture paths, vector meta
 
 Confirm the vector design does not change TypeScript, Rust, Python, tests, fixtures, CI, Makefile, release-quality wrapper, package metadata, Cargo metadata, schema implementation, runtime implementation, or validator implementation, and does not authorize data collection.
 
+## Step-web-logger-004 Shared Vector Fixture External Review Addendum
+
+Confirm `tests/fixtures/web_logger_unicode_hash_vectors/README.md` and `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json` exist and are treated as fixture-data only.
+
+Reviewers should verify that the vector file contains exactly 15 unique synthetic vectors, uses `position_unit=utf16_code_unit`, uses SHA-256 over decoded UTF-8 source text with lowercase hex output, preserves Unicode and newline text without normalization, includes valid offset cases and expected invalid offset metadata, and contains no real participant data, private paths, absolute local paths, raw event payload bodies, logits / probabilities, or performance metric bodies.
+
+Confirm Step-web-logger-004 does not implement TypeScript helpers, Rust helpers, Python code, tests, CI, Makefile targets, release-quality checks, schema implementation, runtime implementation, validator implementation, or event durability.
+
 ## Step587 Actual-Controlled Fixture Root Review
 
 For Step587, confirm the actual-controlled fixture root exists with 6 valid cases, 30 invalid cases, 36 total cases, 252 parseable metadata-only JSON files, and the exact 7-file layout. Confirm the root is separate from the Step570 planned-only root and does not implement validators, runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

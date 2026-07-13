@@ -1,0 +1,830 @@
+{
+  "vector_schema_version": "web_logger_unicode_hash_vectors_v0.1",
+  "position_unit": "utf16_code_unit",
+  "hash_algorithm": "SHA-256",
+  "hash_encoding": "UTF-8",
+  "unicode_normalization": "none",
+  "newline_normalization": "none",
+  "trailing_newline_policy": "preserve_as_is",
+  "hash_output_format": "lowercase_hex",
+  "source_text_policy": "synthetic_minimal_text_only",
+  "real_data_allowed": false,
+  "non_real_data_notice": "synthetic examples only; no real participant data",
+  "no_oracle_notice": "no final text, observed_after_text, gold labels, or post-hoc annotation",
+  "generated_by": "one_off_python_hash_length_offset_generation_for_step_web_logger_004",
+  "reviewed_by": "codex_step_web_logger_004_metadata_self_check",
+  "vectors": [
+    {
+      "vector_id": "V001",
+      "category": "empty_string",
+      "priority": "P0",
+      "source_text": "",
+      "source_text_description": "empty string",
+      "utf16_code_unit_length": 0,
+      "utf8_byte_length": 0,
+      "code_point_count": 0,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "offset_cases": [
+        {
+          "case_id": "V001_C001",
+          "description": "empty selection at offset zero",
+          "utf16_start": 0,
+          "utf16_end": 0,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 0,
+          "expected_selected_text": "",
+          "expected_selected_text_description": "empty selection at offset zero",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [
+        {
+          "failure_id": "V001_F001",
+          "description": "end offset beyond empty UTF-16 length",
+          "utf16_start": 0,
+          "utf16_end": 1,
+          "expected_status": "validation_error",
+          "reason_code": "offset_out_of_range",
+          "raw_text_emission_allowed": false,
+          "public_safe_note": "diagnostics should include metadata and reason_code only"
+        }
+      ],
+      "notes": "zero-length UTF-8 byte sequence baseline"
+    },
+    {
+      "vector_id": "V002",
+      "category": "ascii",
+      "priority": "P0",
+      "source_text": "abcde",
+      "source_text_description": "short synthetic ASCII token",
+      "utf16_code_unit_length": 5,
+      "utf8_byte_length": 5,
+      "code_point_count": 5,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "36bbe50ed96841d10443bcb670d6554f0a34b761be67ec9c4a8ad2c0c44ca42c",
+      "offset_cases": [
+        {
+          "case_id": "V002_C001",
+          "description": "whole ASCII string",
+          "utf16_start": 0,
+          "utf16_end": 5,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 5,
+          "expected_selected_text": "abcde",
+          "expected_selected_text_description": "whole ASCII string",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V002_C002",
+          "description": "first ASCII character",
+          "utf16_start": 0,
+          "utf16_end": 1,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 1,
+          "expected_selected_text": "a",
+          "expected_selected_text_description": "first ASCII character",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V002_C003",
+          "description": "middle ASCII span",
+          "utf16_start": 1,
+          "utf16_end": 4,
+          "expected_utf8_start_byte": 1,
+          "expected_utf8_end_byte": 4,
+          "expected_selected_text": "bcd",
+          "expected_selected_text_description": "middle ASCII span",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [
+        {
+          "failure_id": "V002_F001",
+          "description": "end offset beyond ASCII length",
+          "utf16_start": 0,
+          "utf16_end": 6,
+          "expected_status": "validation_error",
+          "reason_code": "offset_out_of_range",
+          "raw_text_emission_allowed": false,
+          "public_safe_note": "diagnostics should include metadata and reason_code only"
+        },
+        {
+          "failure_id": "V002_F002",
+          "description": "start greater than end",
+          "utf16_start": 4,
+          "utf16_end": 2,
+          "expected_status": "validation_error",
+          "reason_code": "offset_range_inverted",
+          "raw_text_emission_allowed": false,
+          "public_safe_note": "diagnostics should include metadata and reason_code only"
+        }
+      ],
+      "notes": "baseline where UTF-16 offsets equal UTF-8 byte offsets"
+    },
+    {
+      "vector_id": "V003",
+      "category": "japanese",
+      "priority": "P0",
+      "source_text": "\u3042\u3044",
+      "source_text_description": "minimal synthetic Japanese text",
+      "utf16_code_unit_length": 2,
+      "utf8_byte_length": 6,
+      "code_point_count": 2,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "30b83af1978fb5e53a0e088538ae58c1dcbf33f3def2f403ebb6499f82f6105b",
+      "offset_cases": [
+        {
+          "case_id": "V003_C001",
+          "description": "first Japanese character",
+          "utf16_start": 0,
+          "utf16_end": 1,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 3,
+          "expected_selected_text": "\u3042",
+          "expected_selected_text_description": "first Japanese character",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V003_C002",
+          "description": "whole Japanese string",
+          "utf16_start": 0,
+          "utf16_end": 2,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 6,
+          "expected_selected_text": "\u3042\u3044",
+          "expected_selected_text_description": "whole Japanese string",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [],
+      "notes": "UTF-16 length and code point count match while UTF-8 byte length differs"
+    },
+    {
+      "vector_id": "V004",
+      "category": "full_width_alphanumerics",
+      "priority": "P0",
+      "source_text": "\uff21\uff11",
+      "source_text_description": "minimal full-width letter and number",
+      "utf16_code_unit_length": 2,
+      "utf8_byte_length": 6,
+      "code_point_count": 2,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "11a2927354f1fa4dbcfb30c7f9d9ffbb376175e7c56bb582a765d03ac58a11dd",
+      "offset_cases": [
+        {
+          "case_id": "V004_C001",
+          "description": "first full-width character",
+          "utf16_start": 0,
+          "utf16_end": 1,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 3,
+          "expected_selected_text": "\uff21",
+          "expected_selected_text_description": "first full-width character",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V004_C002",
+          "description": "whole full-width string",
+          "utf16_start": 0,
+          "utf16_end": 2,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 6,
+          "expected_selected_text": "\uff21\uff11",
+          "expected_selected_text_description": "whole full-width string",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [],
+      "notes": "display width is not the stored offset unit"
+    },
+    {
+      "vector_id": "V005",
+      "category": "emoji_surrogate_pair",
+      "priority": "P0",
+      "source_text": "\ud83d\ude42",
+      "source_text_description": "single emoji requiring a UTF-16 surrogate pair",
+      "utf16_code_unit_length": 2,
+      "utf8_byte_length": 4,
+      "code_point_count": 1,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "d06f1525f791397809f9bc98682b5c13318eca4c3123433467fd4dffda44fd14",
+      "offset_cases": [
+        {
+          "case_id": "V005_C001",
+          "description": "whole emoji",
+          "utf16_start": 0,
+          "utf16_end": 2,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 4,
+          "expected_selected_text": "\ud83d\ude42",
+          "expected_selected_text_description": "whole emoji",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [
+        {
+          "failure_id": "V005_F001",
+          "description": "end offset inside surrogate pair",
+          "utf16_start": 0,
+          "utf16_end": 1,
+          "expected_status": "validation_error",
+          "reason_code": "offset_inside_surrogate_pair",
+          "raw_text_emission_allowed": false,
+          "public_safe_note": "diagnostics should include metadata and reason_code only"
+        },
+        {
+          "failure_id": "V005_F002",
+          "description": "start offset inside surrogate pair",
+          "utf16_start": 1,
+          "utf16_end": 2,
+          "expected_status": "validation_error",
+          "reason_code": "offset_inside_surrogate_pair",
+          "raw_text_emission_allowed": false,
+          "public_safe_note": "diagnostics should include metadata and reason_code only"
+        }
+      ],
+      "notes": "valid offsets are before and after the surrogate pair"
+    },
+    {
+      "vector_id": "V006",
+      "category": "mixed_japanese_emoji",
+      "priority": "P0",
+      "source_text": "\u3042\ud83d\ude42\u3044",
+      "source_text_description": "minimal Japanese plus emoji string",
+      "utf16_code_unit_length": 4,
+      "utf8_byte_length": 10,
+      "code_point_count": 3,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "6ffa90ddb86ef4eec61def2b2247cd4d6320f10daa6fc3f88ac6654f6107d72a",
+      "offset_cases": [
+        {
+          "case_id": "V006_C001",
+          "description": "emoji span between Japanese characters",
+          "utf16_start": 1,
+          "utf16_end": 3,
+          "expected_utf8_start_byte": 3,
+          "expected_utf8_end_byte": 7,
+          "expected_selected_text": "\ud83d\ude42",
+          "expected_selected_text_description": "emoji span between Japanese characters",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V006_C002",
+          "description": "whole mixed Japanese emoji string",
+          "utf16_start": 0,
+          "utf16_end": 4,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 10,
+          "expected_selected_text": "\u3042\ud83d\ude42\u3044",
+          "expected_selected_text_description": "whole mixed Japanese emoji string",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V006_C003",
+          "description": "character after emoji",
+          "utf16_start": 3,
+          "utf16_end": 4,
+          "expected_utf8_start_byte": 7,
+          "expected_utf8_end_byte": 10,
+          "expected_selected_text": "\u3044",
+          "expected_selected_text_description": "character after emoji",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [
+        {
+          "failure_id": "V006_F001",
+          "description": "offset inside emoji surrogate pair",
+          "utf16_start": 1,
+          "utf16_end": 2,
+          "expected_status": "validation_error",
+          "reason_code": "offset_inside_surrogate_pair",
+          "raw_text_emission_allowed": false,
+          "public_safe_note": "diagnostics should include metadata and reason_code only"
+        }
+      ],
+      "notes": "mixed BMP and non-BMP offset accounting"
+    },
+    {
+      "vector_id": "V007",
+      "category": "combining_sequence",
+      "priority": "P0",
+      "source_text": "e\u0301",
+      "source_text_description": "letter e followed by combining acute accent",
+      "utf16_code_unit_length": 2,
+      "utf8_byte_length": 3,
+      "code_point_count": 2,
+      "grapheme_cluster_note": "boundaries between base and combining mark may be code-unit-valid but grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "bf12767b0f2a56b2190075bae8169f656e3ce8d6357d4aff184bc6c7ea48f9f6",
+      "offset_cases": [
+        {
+          "case_id": "V007_C001",
+          "description": "base letter only",
+          "utf16_start": 0,
+          "utf16_end": 1,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 1,
+          "expected_selected_text": "e",
+          "expected_selected_text_description": "base letter only",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "code-unit-valid but grapheme-sensitive boundary"
+        },
+        {
+          "case_id": "V007_C002",
+          "description": "combining mark only",
+          "utf16_start": 1,
+          "utf16_end": 2,
+          "expected_utf8_start_byte": 1,
+          "expected_utf8_end_byte": 3,
+          "expected_selected_text": "\u0301",
+          "expected_selected_text_description": "combining mark only",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "code-unit-valid but grapheme-sensitive boundary"
+        },
+        {
+          "case_id": "V007_C003",
+          "description": "whole combining sequence",
+          "utf16_start": 0,
+          "utf16_end": 2,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 3,
+          "expected_selected_text": "e\u0301",
+          "expected_selected_text_description": "whole combining sequence",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [],
+      "notes": "no Unicode normalization; distinct from precomposed accented character"
+    },
+    {
+      "vector_id": "V008",
+      "category": "precomposed_accented_character",
+      "priority": "P0",
+      "source_text": "\u00e9",
+      "source_text_description": "precomposed accented character",
+      "utf16_code_unit_length": 1,
+      "utf8_byte_length": 2,
+      "code_point_count": 1,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "4a99557e4033c3539de2eb65472017cad5f9557f7a0625a09f1c3f6e2ba69c4c",
+      "offset_cases": [
+        {
+          "case_id": "V008_C001",
+          "description": "whole precomposed accented character",
+          "utf16_start": 0,
+          "utf16_end": 1,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 2,
+          "expected_selected_text": "\u00e9",
+          "expected_selected_text_description": "whole precomposed accented character",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [],
+      "notes": "no Unicode normalization; hash differs from decomposed combining sequence"
+    },
+    {
+      "vector_id": "V009",
+      "category": "lf_multiline",
+      "priority": "P0",
+      "source_text": "a\nb",
+      "source_text_description": "two-line synthetic text with LF",
+      "utf16_code_unit_length": 3,
+      "utf8_byte_length": 3,
+      "code_point_count": 3,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "7e18f737311b2dc3b2f269dd78396b0351f14fb66efa879f768cb23181883c78",
+      "offset_cases": [
+        {
+          "case_id": "V009_C001",
+          "description": "LF newline only",
+          "utf16_start": 1,
+          "utf16_end": 2,
+          "expected_utf8_start_byte": 1,
+          "expected_utf8_end_byte": 2,
+          "expected_selected_text": "\n",
+          "expected_selected_text_description": "LF newline only",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V009_C002",
+          "description": "whole LF multiline string",
+          "utf16_start": 0,
+          "utf16_end": 3,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 3,
+          "expected_selected_text": "a\nb",
+          "expected_selected_text_description": "whole LF multiline string",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [],
+      "notes": "LF is preserved as captured"
+    },
+    {
+      "vector_id": "V010",
+      "category": "crlf_multiline",
+      "priority": "P0",
+      "source_text": "a\r\nb",
+      "source_text_description": "two-line synthetic text with CRLF",
+      "utf16_code_unit_length": 4,
+      "utf8_byte_length": 4,
+      "code_point_count": 4,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "18745f36a05e29072709042d6062ce54f1b08ff36c27ba80c39f81fb010c8ce2",
+      "offset_cases": [
+        {
+          "case_id": "V010_C001",
+          "description": "CRLF sequence",
+          "utf16_start": 1,
+          "utf16_end": 3,
+          "expected_utf8_start_byte": 1,
+          "expected_utf8_end_byte": 3,
+          "expected_selected_text": "\r\n",
+          "expected_selected_text_description": "CRLF sequence",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V010_C002",
+          "description": "whole CRLF multiline string",
+          "utf16_start": 0,
+          "utf16_end": 4,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 4,
+          "expected_selected_text": "a\r\nb",
+          "expected_selected_text_description": "whole CRLF multiline string",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [],
+      "notes": "CRLF is preserved as two code units"
+    },
+    {
+      "vector_id": "V011",
+      "category": "trailing_newline",
+      "priority": "P0",
+      "source_text": "end\n",
+      "source_text_description": "short synthetic token with trailing newline",
+      "utf16_code_unit_length": 4,
+      "utf8_byte_length": 4,
+      "code_point_count": 4,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "48332fe667bc51ac4a51ba0efe734441c90def55c60a26d7db275ecbbcf42f15",
+      "offset_cases": [
+        {
+          "case_id": "V011_C001",
+          "description": "text before trailing newline",
+          "utf16_start": 0,
+          "utf16_end": 3,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 3,
+          "expected_selected_text": "end",
+          "expected_selected_text_description": "text before trailing newline",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V011_C002",
+          "description": "whole string including trailing newline",
+          "utf16_start": 0,
+          "utf16_end": 4,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 4,
+          "expected_selected_text": "end\n",
+          "expected_selected_text_description": "whole string including trailing newline",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [],
+      "notes": "trailing newline is preserved in hash and offsets"
+    },
+    {
+      "vector_id": "V012",
+      "category": "tab",
+      "priority": "P0",
+      "source_text": "a\tb",
+      "source_text_description": "two synthetic tokens separated by tab",
+      "utf16_code_unit_length": 3,
+      "utf8_byte_length": 3,
+      "code_point_count": 3,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "894891f8b78a9945b0aa07e70d5f71f10b1f1990af127de561cc0ac36024c188",
+      "offset_cases": [
+        {
+          "case_id": "V012_C001",
+          "description": "tab only",
+          "utf16_start": 1,
+          "utf16_end": 2,
+          "expected_utf8_start_byte": 1,
+          "expected_utf8_end_byte": 2,
+          "expected_selected_text": "\t",
+          "expected_selected_text_description": "tab only",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V012_C002",
+          "description": "whole tab-separated string",
+          "utf16_start": 0,
+          "utf16_end": 3,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 3,
+          "expected_selected_text": "a\tb",
+          "expected_selected_text_description": "whole tab-separated string",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V012_C003",
+          "description": "character after tab",
+          "utf16_start": 2,
+          "utf16_end": 3,
+          "expected_utf8_start_byte": 2,
+          "expected_utf8_end_byte": 3,
+          "expected_selected_text": "b",
+          "expected_selected_text_description": "character after tab",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [],
+      "notes": "tab is one UTF-16 code unit; display width is irrelevant"
+    },
+    {
+      "vector_id": "V013",
+      "category": "invalid_surrogate_boundary",
+      "priority": "P0",
+      "source_text": "\ud83d\ude42",
+      "source_text_description": "single emoji used for invalid surrogate boundary cases",
+      "utf16_code_unit_length": 2,
+      "utf8_byte_length": 4,
+      "code_point_count": 1,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "d06f1525f791397809f9bc98682b5c13318eca4c3123433467fd4dffda44fd14",
+      "offset_cases": [
+        {
+          "case_id": "V013_C001",
+          "description": "whole emoji control case",
+          "utf16_start": 0,
+          "utf16_end": 2,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 4,
+          "expected_selected_text": "\ud83d\ude42",
+          "expected_selected_text_description": "whole emoji control case",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [
+        {
+          "failure_id": "V013_F001",
+          "description": "end offset inside surrogate pair",
+          "utf16_start": 0,
+          "utf16_end": 1,
+          "expected_status": "validation_error",
+          "reason_code": "offset_inside_surrogate_pair",
+          "raw_text_emission_allowed": false,
+          "public_safe_note": "diagnostics should include metadata and reason_code only"
+        },
+        {
+          "failure_id": "V013_F002",
+          "description": "start offset inside surrogate pair",
+          "utf16_start": 1,
+          "utf16_end": 2,
+          "expected_status": "validation_error",
+          "reason_code": "offset_inside_surrogate_pair",
+          "raw_text_emission_allowed": false,
+          "public_safe_note": "diagnostics should include metadata and reason_code only"
+        }
+      ],
+      "notes": "invalid surrogate boundaries should fail closed"
+    },
+    {
+      "vector_id": "V014",
+      "category": "invalid_beyond_length",
+      "priority": "P0",
+      "source_text": "abc",
+      "source_text_description": "short synthetic ASCII text for out-of-range failure",
+      "utf16_code_unit_length": 3,
+      "utf8_byte_length": 3,
+      "code_point_count": 3,
+      "grapheme_cluster_note": "not grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+      "offset_cases": [
+        {
+          "case_id": "V014_C001",
+          "description": "whole ASCII control case",
+          "utf16_start": 0,
+          "utf16_end": 3,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 3,
+          "expected_selected_text": "abc",
+          "expected_selected_text_description": "whole ASCII control case",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [
+        {
+          "failure_id": "V014_F001",
+          "description": "end offset beyond UTF-16 length",
+          "utf16_start": 0,
+          "utf16_end": 4,
+          "expected_status": "validation_error",
+          "reason_code": "offset_out_of_range",
+          "raw_text_emission_allowed": false,
+          "public_safe_note": "diagnostics should include metadata and reason_code only"
+        }
+      ],
+      "notes": "out-of-range offsets should fail closed"
+    },
+    {
+      "vector_id": "V015",
+      "category": "mixed_long_synthetic_unicode",
+      "priority": "P1",
+      "source_text": "A\u3042\uff21\ud83d\ude42e\u0301\nB\t\u7d42",
+      "source_text_description": "short mixed synthetic Unicode text",
+      "utf16_code_unit_length": 11,
+      "utf8_byte_length": 20,
+      "code_point_count": 10,
+      "grapheme_cluster_note": "contains a combining sequence that may be grapheme-sensitive",
+      "hash_sha256_utf8_lowercase_hex": "030a3cdc07871ec14e9f75c8c9993ac87dca6b3984e2a1b371ce7eb550cbc82a",
+      "offset_cases": [
+        {
+          "case_id": "V015_C001",
+          "description": "initial ASCII character",
+          "utf16_start": 0,
+          "utf16_end": 1,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 1,
+          "expected_selected_text": "A",
+          "expected_selected_text_description": "initial ASCII character",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V015_C002",
+          "description": "Japanese character",
+          "utf16_start": 1,
+          "utf16_end": 2,
+          "expected_utf8_start_byte": 1,
+          "expected_utf8_end_byte": 4,
+          "expected_selected_text": "\u3042",
+          "expected_selected_text_description": "Japanese character",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V015_C003",
+          "description": "full-width character",
+          "utf16_start": 2,
+          "utf16_end": 3,
+          "expected_utf8_start_byte": 4,
+          "expected_utf8_end_byte": 7,
+          "expected_selected_text": "\uff21",
+          "expected_selected_text_description": "full-width character",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V015_C004",
+          "description": "emoji span",
+          "utf16_start": 3,
+          "utf16_end": 5,
+          "expected_utf8_start_byte": 7,
+          "expected_utf8_end_byte": 11,
+          "expected_selected_text": "\ud83d\ude42",
+          "expected_selected_text_description": "emoji span",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V015_C005",
+          "description": "combining sequence span",
+          "utf16_start": 5,
+          "utf16_end": 7,
+          "expected_utf8_start_byte": 11,
+          "expected_utf8_end_byte": 14,
+          "expected_selected_text": "e\u0301",
+          "expected_selected_text_description": "combining sequence span",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "code-unit-valid but grapheme-sensitive boundary"
+        },
+        {
+          "case_id": "V015_C006",
+          "description": "newline character",
+          "utf16_start": 7,
+          "utf16_end": 8,
+          "expected_utf8_start_byte": 14,
+          "expected_utf8_end_byte": 15,
+          "expected_selected_text": "\n",
+          "expected_selected_text_description": "newline character",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V015_C007",
+          "description": "tab character",
+          "utf16_start": 9,
+          "utf16_end": 10,
+          "expected_utf8_start_byte": 16,
+          "expected_utf8_end_byte": 17,
+          "expected_selected_text": "\t",
+          "expected_selected_text_description": "tab character",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        },
+        {
+          "case_id": "V015_C008",
+          "description": "whole mixed synthetic string",
+          "utf16_start": 0,
+          "utf16_end": 11,
+          "expected_utf8_start_byte": 0,
+          "expected_utf8_end_byte": 20,
+          "expected_selected_text": "A\u3042\uff21\ud83d\ude42e\u0301\nB\t\u7d42",
+          "expected_selected_text_description": "whole mixed synthetic string",
+          "expected_status": "pass",
+          "reason_code": "none",
+          "public_safe_note": "synthetic metadata-only offset case"
+        }
+      ],
+      "expected_failures": [
+        {
+          "failure_id": "V015_F001",
+          "description": "offset inside emoji surrogate pair",
+          "utf16_start": 3,
+          "utf16_end": 4,
+          "expected_status": "validation_error",
+          "reason_code": "offset_inside_surrogate_pair",
+          "raw_text_emission_allowed": false,
+          "public_safe_note": "diagnostics should include metadata and reason_code only"
+        },
+        {
+          "failure_id": "V015_F002",
+          "description": "end offset beyond mixed string length",
+          "utf16_start": 0,
+          "utf16_end": 12,
+          "expected_status": "validation_error",
+          "reason_code": "offset_out_of_range",
+          "raw_text_emission_allowed": false,
+          "public_safe_note": "diagnostics should include metadata and reason_code only"
+        }
+      ],
+      "notes": "compact mixed vector for accumulated offset accounting"
+    }
+  ]
+}
