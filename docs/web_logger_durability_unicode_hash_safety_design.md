@@ -374,3 +374,9 @@ Purpose:
 Step-web-logger-001 is recorded in `docs/web_logger_durability_unicode_hash_current_implementation_audit.md`.
 
 The audit remains audit-only / docs-only. It inventories current TypeScript logger, Rust schema/validation/replay, docs, and tests against this design without changing TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflow, package files, Cargo files, schema implementation, runtime implementation, or validator implementation.
+
+## 21. Step-web-logger-002 Position Unit and Hash Schema Clarification
+
+Step-web-logger-002 is recorded in `docs/web_logger_position_unit_and_hash_schema_clarification.md`.
+
+The clarification fixes intended schema policy for `position_unit=utf16_code_unit`, replay-critical offset conversion expectations, Unicode/newline preservation, and `text_hash_before` / `text_hash_after` SHA-256 UTF-8 lowercase-hex canonicalization. It remains schema-clarification / docs-only and does not implement TypeScript, Rust, Python, tests, fixture JSON, CI, Makefile, release-quality wrapper, schema implementation, runtime implementation, or validator implementation changes.

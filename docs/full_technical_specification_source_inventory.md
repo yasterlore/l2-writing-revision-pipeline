@@ -584,3 +584,9 @@ This addendum does not change TypeScript, Rust, Python, tests, fixture JSON, Mak
 `docs/web_logger_durability_unicode_hash_current_implementation_audit.md` is added as an audit-only / docs-only source inventory for the current Web logger durability, Unicode position, and text hash state. It audits `apps/logger-web/`, `crates/kslog_schema/`, `crates/kslog_validate/`, `crates/kslog_replay/`, `crates/kslog_extract/`, `crates/kslog_micro_episode/`, `crates/kslog_no_oracle_audit/`, `crates/kslog_cli/`, `docs/04_raw_event_schema.md`, `docs/05_text_replay_spec.md`, and synthetic raw-event fixture documentation.
 
 This addendum records observed implementation surfaces and likely future change inventory only. It does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, or validator implementation files.
+
+## Step-web-logger-002 Source Inventory Addendum
+
+`docs/web_logger_position_unit_and_hash_schema_clarification.md` is added as a schema-clarification / docs-only source for future Web logger position unit and text hash implementation work. It derives from the safety design and current implementation audit, and it will guide future updates to schema docs, Rust validation/replay helpers, TypeScript hash helpers, and shared synthetic vector tests.
+
+This addendum records intended policy only. It does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, or validator implementation files.

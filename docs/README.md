@@ -1107,3 +1107,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step-web-logger-001 Web Logger Durability / Unicode / Hash Current Implementation Audit
 
 - [Web logger durability, Unicode position, and text hash current implementation audit](web_logger_durability_unicode_hash_current_implementation_audit.md): audit-only / docs-only inventory of current TypeScript logger, Rust schema/validation/replay, docs, fixtures, and tests against the durability / UTF-16 position / text hash safety design. It records current partial coverage and gaps, recommends Step-web-logger-002 schema clarification, and does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflow, package files, Cargo files, schema implementation, runtime implementation, or validator implementation.
+
+## Step-web-logger-002 Position Unit and Hash Schema Clarification
+
+- [Web logger position unit and text hash schema clarification](web_logger_position_unit_and_hash_schema_clarification.md): schema-clarification / docs-only policy for UTF-16 code unit position fields and SHA-256 UTF-8 lowercase-hex text hash canonicalization. It fixes intended future schema semantics, versioning expectations, required vectors, P0/P1 priorities, and the Step-web-logger-003 handoff without changing TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflow, package files, Cargo files, schema implementation, runtime implementation, or validator implementation.

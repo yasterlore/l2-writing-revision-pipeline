@@ -530,6 +530,14 @@ Reviewers should verify that the audit distinguishes `implemented and tested`, `
 
 Confirm the audit does not change TypeScript, Rust, Python, tests, fixtures, CI, Makefile, release-quality wrapper, package metadata, Cargo metadata, schema implementation, runtime implementation, or validator implementation, and does not authorize data collection.
 
+## Step-web-logger-002 Schema Clarification External Review Addendum
+
+Confirm `docs/web_logger_position_unit_and_hash_schema_clarification.md` exists and is treated as schema-clarification / docs-only policy, not implementation evidence.
+
+Reviewers should verify that it fixes intended future policy for UTF-16 code unit offsets, `position_unit=utf16_code_unit`, Rust UTF-16 to UTF-8 conversion requirements, invalid offset fail-closed behavior, no Unicode/newline normalization, grapheme non-equivalence, SHA-256 UTF-8 lowercase-hex text hashes, hash mismatch diagnostics, schema versioning, required future vectors, P0/P1 classification, and event durability relationship.
+
+Confirm the clarification does not change TypeScript, Rust, Python, tests, fixtures, CI, Makefile, release-quality wrapper, package metadata, Cargo metadata, schema implementation, runtime implementation, or validator implementation, and does not authorize data collection.
+
 ## Step587 Actual-Controlled Fixture Root Review
 
 For Step587, confirm the actual-controlled fixture root exists with 6 valid cases, 30 invalid cases, 36 total cases, 252 parseable metadata-only JSON files, and the exact 7-file layout. Confirm the root is separate from the Step570 planned-only root and does not implement validators, runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

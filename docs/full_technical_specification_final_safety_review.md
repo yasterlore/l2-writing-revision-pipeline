@@ -539,3 +539,11 @@ This addendum does not claim implementation completion, data collection authoriz
 The audit records partial current coverage and explicit gaps before any collection boundary is considered. It identifies no durable network queue, no IndexedDB persistence, no server ack/retry/dedup path, no `event_id`, no schema-declared UTF-16 code unit position unit, no Rust UTF-16 code unit to UTF-8 byte conversion helper, no SHA-256 TypeScript/Rust canonical hash helper, and no shared Unicode/hash vectors in the audited current files.
 
 This addendum does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflow files, package files, Cargo files, schema implementation, runtime implementation, or validator implementation. It does not claim event durability implementation completion, Unicode correctness implementation completion, hash compatibility implementation completion, data collection authorization, production readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-002 Position Unit and Hash Schema Clarification Safety Review Addendum
+
+`docs/web_logger_position_unit_and_hash_schema_clarification.md` is added as schema-clarification / docs-only safety policy for replay-critical position units and text hash canonicalization.
+
+The clarification states that browser-originated selection/cursor/edit offsets are intended to be UTF-16 code unit offsets, Rust must use a future validated UTF-16 to UTF-8 conversion helper, invalid offsets must fail closed, stored strings must be preserved without default Unicode/newline normalization, and `text_hash_before` / `text_hash_after` are intended to use SHA-256 over exact UTF-8 stored text with lowercase hex output.
+
+This addendum does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflow files, package files, Cargo files, schema implementation, runtime implementation, or validator implementation. It does not claim Unicode correctness implementation completion, hash compatibility implementation completion, event durability implementation completion, data collection authorization, production readiness, real-data readiness, model performance, or deployment readiness.

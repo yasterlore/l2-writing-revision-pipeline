@@ -700,3 +700,11 @@ This is design coverage only. It is not implemented coverage, test coverage, CI 
 The audit also records missing or incomplete coverage for durable queue / IndexedDB / ack / retry / dedup, authoritative client-seq server ordering, explicit `event_id`, UTF-16 code unit schema declaration, Rust UTF-16 to UTF-8 conversion, SHA-256 canonical hash helpers, shared TypeScript / Rust test vectors, Unicode offset vectors, and transport failure injection tests.
 
 This is audit coverage only. It is not new implementation coverage, new test coverage, CI coverage, production readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-002 Coverage Addendum
+
+`docs/web_logger_position_unit_and_hash_schema_clarification.md` adds schema-policy coverage for the UTF-16 position unit and SHA-256 text hash canonicalization gaps identified by Step-web-logger-001.
+
+The coverage is clarification-only: position-related fields, future UTF-16 to UTF-8 conversion contract, Unicode/newline/tab/grapheme policy, hash-related fields, mismatch policy, versioning recommendation, required future vectors, required future implementation tasks, P0/P1 classification, and relationship to event durability are documented.
+
+This is not implementation coverage, test coverage, fixture coverage, CI coverage, production readiness, real-data readiness, or model performance evidence.

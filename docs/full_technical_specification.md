@@ -1557,3 +1557,11 @@ This appendix is not implementation evidence. It does not change TypeScript, Rus
 The audit finds partial current support for in-memory event recording, `session_id`, `seq`, basic JSONL validation, sequence-gap validation, cursor/selection range validation, replay diagnostics, and placeholder-aware replay hash checks. It also records gaps: no durable client queue, no IndexedDB persistence, no server batch/ack/retry/dedup/reconciliation path, no `event_id`, no schema-declared UTF-16 position unit, no Rust UTF-16 code unit to UTF-8 byte conversion helper, no SHA-256 TypeScript/Rust canonical hash implementation, and no shared TypeScript / Rust Unicode/hash vectors.
 
 This appendix is audit evidence only. It does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflow files, package files, Cargo files, schema implementation, runtime implementation, or validator implementation. It recommends Step-web-logger-002 schema clarification for position units and hash canonicalization before queue / IndexedDB implementation.
+
+## Appendix AT. Web Logger Position Unit and Hash Schema Clarification
+
+`docs/web_logger_position_unit_and_hash_schema_clarification.md` records a schema-clarification / docs-only policy for the Step-web-logger-001 P0 gaps around position units and hash canonicalization.
+
+The clarification fixes intended future schema semantics: browser-originated selection, cursor, and edit span offsets use UTF-16 code unit offsets; schema should expose or document `position_unit=utf16_code_unit`; Rust must convert those offsets to UTF-8 byte indices through a validated future helper; invalid offsets fail closed; stored strings are preserved without Unicode or newline normalization; and `text_hash_before` / `text_hash_after` use SHA-256 over exact UTF-8 stored text with lowercase hex output.
+
+This appendix is policy clarification only. It does not implement TypeScript hash helpers, Rust hash helpers, Rust UTF-16 conversion helpers, tests, fixture JSON, CI, Makefile targets, release-quality checks, schema implementation, runtime implementation, validator implementation, event durability queueing, IndexedDB, acknowledgement, retry, or deduplication.
