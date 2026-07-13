@@ -547,3 +547,11 @@ This addendum does not change TypeScript, Rust, Python, tests, fixture JSON, Mak
 The clarification states that browser-originated selection/cursor/edit offsets are intended to be UTF-16 code unit offsets, Rust must use a future validated UTF-16 to UTF-8 conversion helper, invalid offsets must fail closed, stored strings must be preserved without default Unicode/newline normalization, and `text_hash_before` / `text_hash_after` are intended to use SHA-256 over exact UTF-8 stored text with lowercase hex output.
 
 This addendum does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflow files, package files, Cargo files, schema implementation, runtime implementation, or validator implementation. It does not claim Unicode correctness implementation completion, hash compatibility implementation completion, event durability implementation completion, data collection authorization, production readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-003 Shared Unicode and Hash Test Vector Design Safety Review Addendum
+
+`docs/web_logger_shared_unicode_hash_test_vector_design.md` is added as test-vector-design / docs-only safety planning for future shared synthetic vectors.
+
+The design requires synthetic/minimal vectors, no real participant data, no raw learner text in docs, no raw event payload bodies in docs, reviewed hash generation, metadata-only diagnostics, invalid offset fail-closed expectations, and explicit separation from event durability implementation.
+
+This addendum does not create fixture JSON, compute final hash values, implement TypeScript/Rust checks, change tests, change CI, change Makefile, change release-quality wrapper, change schema/runtime/validator implementation, or implement event durability. It does not claim Unicode correctness implementation completion, hash compatibility implementation completion, event durability implementation completion, data collection authorization, production readiness, real-data readiness, model performance, or deployment readiness.

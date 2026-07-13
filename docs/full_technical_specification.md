@@ -1565,3 +1565,11 @@ This appendix is audit evidence only. It does not change TypeScript, Rust, Pytho
 The clarification fixes intended future schema semantics: browser-originated selection, cursor, and edit span offsets use UTF-16 code unit offsets; schema should expose or document `position_unit=utf16_code_unit`; Rust must convert those offsets to UTF-8 byte indices through a validated future helper; invalid offsets fail closed; stored strings are preserved without Unicode or newline normalization; and `text_hash_before` / `text_hash_after` use SHA-256 over exact UTF-8 stored text with lowercase hex output.
 
 This appendix is policy clarification only. It does not implement TypeScript hash helpers, Rust hash helpers, Rust UTF-16 conversion helpers, tests, fixture JSON, CI, Makefile targets, release-quality checks, schema implementation, runtime implementation, validator implementation, event durability queueing, IndexedDB, acknowledgement, retry, or deduplication.
+
+## Appendix AU. Web Logger Shared Unicode and Hash Test Vector Design
+
+`docs/web_logger_shared_unicode_hash_test_vector_design.md` records a test-vector-design / docs-only plan for future shared TypeScript / Rust Unicode and hash vectors.
+
+The design proposes a future `tests/fixtures/web_logger_unicode_hash_vectors/` root, top-level vector metadata, per-vector fields, offset case fields, canonical `position_unit=utf16_code_unit` / SHA-256 / UTF-8 / no-normalization metadata, required Unicode categories, an initial 15-vector set, invalid vector categories, cross-language validation expectations, future Makefile and release-quality labels, and a reviewed hash generation procedure.
+
+This appendix is design only. It does not create fixture JSON, compute hash values, implement TypeScript or Rust helpers, add tests, add CI, change Makefile, change release-quality wrapper, change schema/runtime/validator implementation, or implement event durability.

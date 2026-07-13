@@ -318,6 +318,8 @@ Reason:
 
 Step-web-logger-002 has been added as `docs/web_logger_position_unit_and_hash_schema_clarification.md`. It clarifies the intended schema policy only; it does not implement Rust UTF-16 conversion, TypeScript/Rust SHA-256 helpers, shared vectors, queue, IndexedDB, acknowledgement, retry, or deduplication.
 
+Step-web-logger-003 has been added as `docs/web_logger_shared_unicode_hash_test_vector_design.md`. It designs the future shared synthetic vector structure and review path only; it does not create vector fixture JSON, implement hash helpers, implement UTF-16 conversion, add tests, or add CI.
+
 ## 14. Relationship to Existing No-Oracle and Synthetic-Only Boundaries
 
 This audit does not relax no-oracle constraints, does not authorize real participant data collection, does not introduce real data, and does not validate model performance.

@@ -538,6 +538,14 @@ Reviewers should verify that it fixes intended future policy for UTF-16 code uni
 
 Confirm the clarification does not change TypeScript, Rust, Python, tests, fixtures, CI, Makefile, release-quality wrapper, package metadata, Cargo metadata, schema implementation, runtime implementation, or validator implementation, and does not authorize data collection.
 
+## Step-web-logger-003 Shared Vector Design External Review Addendum
+
+Confirm `docs/web_logger_shared_unicode_hash_test_vector_design.md` exists and is treated as test-vector-design / docs-only planning, not fixture or implementation evidence.
+
+Reviewers should verify that it defines future vector fixture paths, vector metadata, canonical position/hash policy metadata, required Unicode categories, recommended initial vector set, invalid vector policy, TypeScript/Rust validation responsibilities, future CI/Makefile/release-quality proposals, and reviewed hash generation procedure. Confirm it does not hardcode final SHA-256 values.
+
+Confirm the vector design does not change TypeScript, Rust, Python, tests, fixtures, CI, Makefile, release-quality wrapper, package metadata, Cargo metadata, schema implementation, runtime implementation, or validator implementation, and does not authorize data collection.
+
 ## Step587 Actual-Controlled Fixture Root Review
 
 For Step587, confirm the actual-controlled fixture root exists with 6 valid cases, 30 invalid cases, 36 total cases, 252 parseable metadata-only JSON files, and the exact 7-file layout. Confirm the root is separate from the Step570 planned-only root and does not implement validators, runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

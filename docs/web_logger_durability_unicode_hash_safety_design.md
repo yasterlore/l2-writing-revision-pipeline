@@ -380,3 +380,9 @@ The audit remains audit-only / docs-only. It inventories current TypeScript logg
 Step-web-logger-002 is recorded in `docs/web_logger_position_unit_and_hash_schema_clarification.md`.
 
 The clarification fixes intended schema policy for `position_unit=utf16_code_unit`, replay-critical offset conversion expectations, Unicode/newline preservation, and `text_hash_before` / `text_hash_after` SHA-256 UTF-8 lowercase-hex canonicalization. It remains schema-clarification / docs-only and does not implement TypeScript, Rust, Python, tests, fixture JSON, CI, Makefile, release-quality wrapper, schema implementation, runtime implementation, or validator implementation changes.
+
+## 22. Step-web-logger-003 Shared Unicode and Hash Test Vector Design
+
+Step-web-logger-003 is recorded in `docs/web_logger_shared_unicode_hash_test_vector_design.md`.
+
+The design plans a future shared synthetic vector fixture root for Unicode, UTF-16 offset, UTF-8 byte index, and SHA-256 hash checks. It does not create fixture files, compute final hash values, implement helpers, add tests, add CI, change Makefile, change release-quality wrapper, or implement event durability.

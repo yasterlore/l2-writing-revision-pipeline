@@ -1111,3 +1111,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step-web-logger-002 Position Unit and Hash Schema Clarification
 
 - [Web logger position unit and text hash schema clarification](web_logger_position_unit_and_hash_schema_clarification.md): schema-clarification / docs-only policy for UTF-16 code unit position fields and SHA-256 UTF-8 lowercase-hex text hash canonicalization. It fixes intended future schema semantics, versioning expectations, required vectors, P0/P1 priorities, and the Step-web-logger-003 handoff without changing TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflow, package files, Cargo files, schema implementation, runtime implementation, or validator implementation.
+
+## Step-web-logger-003 Shared Unicode and Hash Test Vector Design
+
+- [Web logger shared Unicode and text hash test vector design](web_logger_shared_unicode_hash_test_vector_design.md): test-vector-design / docs-only plan for future synthetic vectors shared by TypeScript and Rust. It defines vector file shape, canonical metadata, required categories, recommended initial vectors, offset/hash expectations, invalid vector policy, cross-language validation design, future CI/Makefile/release-quality proposals, and review procedure without creating fixture JSON, code, tests, CI workflow changes, Makefile targets, or release-quality checks.

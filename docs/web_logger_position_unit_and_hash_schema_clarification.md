@@ -306,3 +306,9 @@ Reason:
 - after schema clarification, test vectors should be designed before implementation
 - vectors will guide both Rust UTF-16 conversion helper and TypeScript/Rust SHA-256 helpers
 - this still avoids large durability implementation until offset and hash semantics are testable
+
+## 22. Step-web-logger-003 Test Vector Design Handoff
+
+Step-web-logger-003 is recorded in `docs/web_logger_shared_unicode_hash_test_vector_design.md`.
+
+The design defines future shared synthetic vector structure, required vector categories, initial vector set, offset expectation policy, hash expectation policy, invalid vector policy, cross-language validation design, future CI integration design, and review/generation procedure. It remains docs-only and does not create fixture JSON, tests, helper code, Makefile targets, release-quality labels, workflow changes, or event durability implementation.

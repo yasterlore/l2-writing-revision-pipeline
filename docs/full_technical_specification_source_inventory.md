@@ -590,3 +590,9 @@ This addendum records observed implementation surfaces and likely future change 
 `docs/web_logger_position_unit_and_hash_schema_clarification.md` is added as a schema-clarification / docs-only source for future Web logger position unit and text hash implementation work. It derives from the safety design and current implementation audit, and it will guide future updates to schema docs, Rust validation/replay helpers, TypeScript hash helpers, and shared synthetic vector tests.
 
 This addendum records intended policy only. It does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, or validator implementation files.
+
+## Step-web-logger-003 Source Inventory Addendum
+
+`docs/web_logger_shared_unicode_hash_test_vector_design.md` is added as a test-vector-design / docs-only source for future shared Unicode/hash vector fixtures and checks.
+
+The document names future fixture paths and check targets as proposals only. It does not create files under `tests/fixtures/`, change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, or validator implementation files.

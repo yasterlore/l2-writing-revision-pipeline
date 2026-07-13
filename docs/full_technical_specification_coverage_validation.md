@@ -708,3 +708,9 @@ This is audit coverage only. It is not new implementation coverage, new test cov
 The coverage is clarification-only: position-related fields, future UTF-16 to UTF-8 conversion contract, Unicode/newline/tab/grapheme policy, hash-related fields, mismatch policy, versioning recommendation, required future vectors, required future implementation tasks, P0/P1 classification, and relationship to event durability are documented.
 
 This is not implementation coverage, test coverage, fixture coverage, CI coverage, production readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-003 Coverage Addendum
+
+`docs/web_logger_shared_unicode_hash_test_vector_design.md` adds design coverage for future shared Unicode/hash test vectors. It covers proposed vector file shape, canonical vector metadata, required Unicode categories, a recommended initial vector set, valid/invalid offset expectations, hash expectation policy, invalid vector policy, cross-language validation design, future CI integration design, and review/generation procedure.
+
+This is design coverage only. It is not fixture coverage, implementation coverage, test coverage, CI coverage, production readiness, real-data readiness, model performance evidence, Unicode implementation evidence, or hash compatibility evidence.
