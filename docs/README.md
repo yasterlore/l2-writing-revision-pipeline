@@ -1103,3 +1103,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Web Logger Durability / Unicode / Hash Safety Design
 
 - [Web logger durability, Unicode position, and text hash safety design](web_logger_durability_unicode_hash_safety_design.md): design-only / docs-only pre-collection blocker design for event durability, UTF-16 code unit position policy, and SHA-256 text hash canonicalization across TypeScript logger and Rust replay/validation. It proposes schema clarifications, shared test vectors, failure injection tests, integration tests, and staged future implementation without changing TypeScript, Rust, Python, fixtures, CI, Makefile, schema implementation, runtime implementation, or validator implementation.
+
+## Step-web-logger-001 Web Logger Durability / Unicode / Hash Current Implementation Audit
+
+- [Web logger durability, Unicode position, and text hash current implementation audit](web_logger_durability_unicode_hash_current_implementation_audit.md): audit-only / docs-only inventory of current TypeScript logger, Rust schema/validation/replay, docs, fixtures, and tests against the durability / UTF-16 position / text hash safety design. It records current partial coverage and gaps, recommends Step-web-logger-002 schema clarification, and does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflow, package files, Cargo files, schema implementation, runtime implementation, or validator implementation.

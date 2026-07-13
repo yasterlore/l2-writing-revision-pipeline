@@ -531,3 +531,11 @@ Step679 adds the Step677 manifest writer dry-run no-body no-file-writing validat
 The document defines current risks, event durability design, client seq ordering policy, UTF-16 code unit position policy, Unicode/newline preservation, SHA-256 UTF-8 lowercase-hex hash policy, schema clarification needs, shared synthetic vector design, failure injection test design, integration test design, Go / No-Go gates, implementation staging, no-oracle relationship, non-claims, and public-safe documentation policy.
 
 This addendum does not claim implementation completion, data collection authorization, production readiness, real-data readiness, model performance, perfect event delivery, completed Unicode implementation, completed hash compatibility implementation, or deployment readiness. It does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflow files, package files, Cargo files, schema implementation, runtime implementation, or validator implementation.
+
+## Step-web-logger-001 Current Implementation Audit Safety Review Addendum
+
+`docs/web_logger_durability_unicode_hash_current_implementation_audit.md` is added as audit-only / docs-only inventory of the current implementation state against the Web logger durability / Unicode / hash safety design.
+
+The audit records partial current coverage and explicit gaps before any collection boundary is considered. It identifies no durable network queue, no IndexedDB persistence, no server ack/retry/dedup path, no `event_id`, no schema-declared UTF-16 code unit position unit, no Rust UTF-16 code unit to UTF-8 byte conversion helper, no SHA-256 TypeScript/Rust canonical hash helper, and no shared Unicode/hash vectors in the audited current files.
+
+This addendum does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflow files, package files, Cargo files, schema implementation, runtime implementation, or validator implementation. It does not claim event durability implementation completion, Unicode correctness implementation completion, hash compatibility implementation completion, data collection authorization, production readiness, real-data readiness, model performance, or deployment readiness.

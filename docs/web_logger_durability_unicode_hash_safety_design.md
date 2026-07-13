@@ -368,3 +368,9 @@ Purpose:
 - identify exact files requiring future changes
 - produce an implementation checklist
 - make no code changes yet
+
+## 20. Step-web-logger-001 Audit Handoff
+
+Step-web-logger-001 is recorded in `docs/web_logger_durability_unicode_hash_current_implementation_audit.md`.
+
+The audit remains audit-only / docs-only. It inventories current TypeScript logger, Rust schema/validation/replay, docs, and tests against this design without changing TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflow, package files, Cargo files, schema implementation, runtime implementation, or validator implementation.

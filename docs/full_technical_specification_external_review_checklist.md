@@ -522,6 +522,14 @@ Reviewers should verify that the design covers:
 
 Confirm the design does not change TypeScript, Rust, Python, tests, fixtures, CI, Makefile, schema implementation, runtime implementation, or validator implementation, and does not authorize data collection.
 
+## Step-web-logger-001 Current Implementation Audit External Review Addendum
+
+Confirm `docs/web_logger_durability_unicode_hash_current_implementation_audit.md` exists and is treated as audit-only / docs-only inventory, not implementation evidence.
+
+Reviewers should verify that the audit distinguishes `implemented and tested`, `partially implemented`, `design documented but not implemented`, `not found in current implementation`, and `unclear from current files`. Confirm it inventories event durability, event ordering, UTF-16 position units, text hash canonicalization, current tests, gaps, future file-level changes, staged implementation planning, no-oracle / synthetic-only relationship, non-claims, and public-safe documentation policy.
+
+Confirm the audit does not change TypeScript, Rust, Python, tests, fixtures, CI, Makefile, release-quality wrapper, package metadata, Cargo metadata, schema implementation, runtime implementation, or validator implementation, and does not authorize data collection.
+
 ## Step587 Actual-Controlled Fixture Root Review
 
 For Step587, confirm the actual-controlled fixture root exists with 6 valid cases, 30 invalid cases, 36 total cases, 252 parseable metadata-only JSON files, and the exact 7-file layout. Confirm the root is separate from the Step570 planned-only root and does not implement validators, runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

@@ -692,3 +692,11 @@ Step679 adds release-quality wrapper coverage for the Step677 standalone manifes
 `docs/web_logger_durability_unicode_hash_safety_design.md` adds design coverage for a previously explicit pre-collection risk area: Web logger event durability, TypeScript / Rust UTF-16 position consistency, and TypeScript / Rust text hash canonicalization. The covered design topics include event queue durability, IndexedDB persistence, batch ack/retry, event_id deduplication, client seq ordering, JSONL partial-write detection, UTF-16 to UTF-8 conversion requirements, Unicode/newline preservation, SHA-256 UTF-8 lowercase-hex hash policy, shared synthetic test vector design, failure injection tests, and TypeScript / Rust integration tests.
 
 This is design coverage only. It is not implemented coverage, test coverage, CI coverage, production readiness, real-data readiness, model performance evidence, completed Unicode implementation evidence, or completed hash compatibility implementation evidence.
+
+## Step-web-logger-001 Coverage Addendum
+
+`docs/web_logger_durability_unicode_hash_current_implementation_audit.md` adds audit coverage for the current implementation state. It records existing partial coverage for in-memory Web logger event capture, synthetic RawEvent builder tests, Rust schema serde tests, Rust JSONL validation tests, sequence-gap and range checks, replay checks, and content-suppressed diagnostics.
+
+The audit also records missing or incomplete coverage for durable queue / IndexedDB / ack / retry / dedup, authoritative client-seq server ordering, explicit `event_id`, UTF-16 code unit schema declaration, Rust UTF-16 to UTF-8 conversion, SHA-256 canonical hash helpers, shared TypeScript / Rust test vectors, Unicode offset vectors, and transport failure injection tests.
+
+This is audit coverage only. It is not new implementation coverage, new test coverage, CI coverage, production readiness, real-data readiness, or model performance evidence.

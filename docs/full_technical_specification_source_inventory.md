@@ -578,3 +578,9 @@ Step679 updates `scripts/check_release_quality.sh` to run the Step677 standalone
 `docs/web_logger_durability_unicode_hash_safety_design.md` is added as a design-only / docs-only source for future Web logger durability, UTF-16 position, and text hash safety work. It references existing source surfaces conceptually: `apps/logger-web/` for TypeScript event capture, `crates/kslog_schema/`, `crates/kslog_validate/`, and `crates/kslog_replay/` for Rust schema/validation/replay, and existing docs for raw event and replay behavior.
 
 This addendum does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, or validator implementation files.
+
+## Step-web-logger-001 Source Inventory Addendum
+
+`docs/web_logger_durability_unicode_hash_current_implementation_audit.md` is added as an audit-only / docs-only source inventory for the current Web logger durability, Unicode position, and text hash state. It audits `apps/logger-web/`, `crates/kslog_schema/`, `crates/kslog_validate/`, `crates/kslog_replay/`, `crates/kslog_extract/`, `crates/kslog_micro_episode/`, `crates/kslog_no_oracle_audit/`, `crates/kslog_cli/`, `docs/04_raw_event_schema.md`, `docs/05_text_replay_spec.md`, and synthetic raw-event fixture documentation.
+
+This addendum records observed implementation surfaces and likely future change inventory only. It does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, or validator implementation files.
