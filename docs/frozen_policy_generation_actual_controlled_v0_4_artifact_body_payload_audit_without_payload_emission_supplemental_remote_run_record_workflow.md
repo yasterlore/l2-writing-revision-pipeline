@@ -426,3 +426,9 @@ Recommended next step:
 Step685: actual-controlled v0.4 artifact body payload audit without payload emission supplemental remote status marker
 
 Step685 should create only the supplemental status marker. It should not alter wrapper, Makefile, Python code/tests, fixture JSON, or workflow files. It should use only public-safe remote metadata, should not copy raw logs, should not claim payload correctness, should not invoke manifest writer, should not generate or output manifest body, should not enable file writing or create output directories, and should not emit payload bodies.
+
+## 23. Step685 Supplemental Remote Status Marker Reference
+
+Step685 creates `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_supplemental_remote_run_status.md` as the supplemental remote status marker described by this workflow.
+
+Step685 records public-safe remote metadata and the 36-case count-only payload audit summary. It does not revise Step645 by itself; Step686 supplemental final safety review remains required before any evidence-boundary update.

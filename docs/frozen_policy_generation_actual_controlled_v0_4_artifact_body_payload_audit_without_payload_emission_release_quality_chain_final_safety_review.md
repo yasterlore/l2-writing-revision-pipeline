@@ -278,3 +278,9 @@ Step683 does not revise this Step645 final safety review. It recommends a possib
 Step684 creates `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_supplemental_remote_run_record_workflow.md` as design-only / docs-only workflow planning for a future supplemental remote status marker.
 
 Step684 does not revise this Step645 final safety review and does not update the accepted boundary. It defines what a future Step685 public-safe status marker may record and leaves any boundary update to a separate Step686 supplemental final safety review.
+
+## 19. Step685 Supplemental Remote Status Marker Reference
+
+Step685 creates `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_supplemental_remote_run_status.md` as status-marker-only / docs-only supplemental remote metadata for the payload audit target.
+
+Step685 does not revise this Step645 final safety review by itself. Any change from local/manual-status-recorded to remote-status-recorded for this payload audit boundary remains reserved for a separate Step686 supplemental final safety review.

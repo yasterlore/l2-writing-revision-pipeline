@@ -264,6 +264,8 @@ Clarifications:
 
 Step684 adds `docs/frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_supplemental_remote_run_record_workflow.md` as that design-only / docs-only supplemental workflow. It does not create the future status marker, create a final safety review, or revise Step645.
 
+Step685 adds `docs/status/learner_state_frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_supplemental_remote_run_status.md` as the follow-on status-marker-only / docs-only supplemental remote record. Step686 remains required before Step645's evidence boundary can be reconsidered.
+
 ## 7. Why Not Immediately Proceed To Manifest Writer Invocation
 
 - Step682 dry-run boundary is pre-invocation.

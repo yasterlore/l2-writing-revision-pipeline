@@ -1732,3 +1732,7 @@ invocation evidence, or file-writing evidence.
 ## Step684 Actual-Controlled v0.4 Artifact Body Payload Audit Supplemental Remote Run Record Workflow
 
 - [Actual-controlled v0.4 artifact body payload audit without payload emission supplemental remote run record workflow](../frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_supplemental_remote_run_record_workflow.md): design-only / docs-only workflow for a future supplemental remote status marker. It does not create the marker or revise Step645; it defines public-safe metadata, count-only payload audit target summary fields, missing metadata handling, and Step685 / Step686 staging.
+
+## Step685 Actual-Controlled v0.4 Artifact Body Payload Audit Supplemental Remote Status Marker
+
+- [Actual-controlled v0.4 artifact body payload audit without payload emission supplemental remote run status](learner_state_frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_supplemental_remote_run_status.md): status-marker-only / docs-only supplemental remote public-safe marker. It records remote metadata availability, `local_fallback_used=no`, observed payload audit release-quality label, final ok label, unavailable metadata, and the fixed 36-case count-only payload audit summary without raw logs, full job output, payload bodies, manifest bodies, private data, or Step645 revision.
