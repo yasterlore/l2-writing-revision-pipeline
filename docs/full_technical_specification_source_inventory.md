@@ -572,3 +572,9 @@ Step677 updates `Makefile` with the standalone target `check-learner-state-froze
 ## Step679 Source Inventory Addendum
 
 Step679 updates `scripts/check_release_quality.sh` to run the Step677 standalone manifest writer dry-run no-body no-file-writing validation target after manifest writer handoff input validation and before artifact / manifest file-writing and broader manifest writer checks. README/docs/full technical specification references are updated. No Makefile, workflow, Python code/tests, fixture JSON, existing runtime implementation, existing validator implementation, artifact body generation implementation, manifest writer integration, manifest writer invocation, manifest body generation/output, payload body emission, artifact body payload output, generated policy body output, artifact body file writing, manifest file writing, output directory creation, or file-writing enablement is added or changed.
+
+## Web Logger Durability / Unicode / Hash Safety Design Source Inventory Addendum
+
+`docs/web_logger_durability_unicode_hash_safety_design.md` is added as a design-only / docs-only source for future Web logger durability, UTF-16 position, and text hash safety work. It references existing source surfaces conceptually: `apps/logger-web/` for TypeScript event capture, `crates/kslog_schema/`, `crates/kslog_validate/`, and `crates/kslog_replay/` for Rust schema/validation/replay, and existing docs for raw event and replay behavior.
+
+This addendum does not change TypeScript, Rust, Python, tests, fixture JSON, Makefile, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, or validator implementation files.

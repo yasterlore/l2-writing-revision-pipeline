@@ -502,6 +502,26 @@ Before treating the specification as external-review-ready, confirm:
 This checklist does not itself prove production readiness, real-data readiness,
 model performance, or legal/privacy readiness.
 
+## Web Logger Durability / Unicode / Hash Safety External Review Addendum
+
+Confirm `docs/web_logger_durability_unicode_hash_safety_design.md` exists and is treated as a pre-collection blocker design, not implementation evidence.
+
+Reviewers should verify that the design covers:
+
+- event queue and durable browser storage requirements
+- batch send, ack, retry, event_id deduplication, and seq reconciliation
+- client seq as authoritative order, with arrival order diagnostic only
+- partial JSONL write detection and safe failure behavior
+- UTF-16 code unit position policy for browser-originated offsets
+- Rust-side validated UTF-16 to UTF-8 conversion requirement
+- no default Unicode or newline normalization
+- SHA-256 over exact UTF-8 stored string with lowercase hex output
+- shared TypeScript / Rust synthetic test vector design
+- failure injection and integration test design
+- Go / No-Go gates before collection
+
+Confirm the design does not change TypeScript, Rust, Python, tests, fixtures, CI, Makefile, schema implementation, runtime implementation, or validator implementation, and does not authorize data collection.
+
 ## Step587 Actual-Controlled Fixture Root Review
 
 For Step587, confirm the actual-controlled fixture root exists with 6 valid cases, 30 invalid cases, 36 total cases, 252 parseable metadata-only JSON files, and the exact 7-file layout. Confirm the root is separate from the Step570 planned-only root and does not implement validators, runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

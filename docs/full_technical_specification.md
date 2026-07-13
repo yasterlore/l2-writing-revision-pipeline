@@ -1541,3 +1541,11 @@ The check runs the Step675 runner through the Step677 standalone target over the
 `status=pass` means the 34-case metadata-only dry-run no-body no-file-writing contract matched. It does not prove manifest writer correctness, manifest body correctness, file-writing readiness, payload correctness, production readiness, real-data readiness, model performance, or any change to the Step669 or Step645 limitations.
 
 Step679 does not change Makefile, workflows, Python code/tests, fixture JSON, existing runtime implementation, validator implementation, artifact body generation implementation, manifest writer integration, manifest writer invocation, manifest body generation/output, artifact body file writing, manifest file writing, file-writing enablement, output directory creation, payload body emission, artifact body payload output, generated policy body output, production readiness, real-data readiness, or model performance evidence.
+
+## Appendix AR. Web Logger Durability / Unicode / Hash Safety Design
+
+`docs/web_logger_durability_unicode_hash_safety_design.md` records a design-only / docs-only pre-collection blocker for the Web logger and Rust replay boundary.
+
+The design fixes the intended future policy for three risks: event data durability under network/browser lifecycle failures, UTF-16 code unit position interpretation across TypeScript and Rust, and SHA-256 text hash canonicalization over exact UTF-8 stored strings. It proposes client queue and IndexedDB persistence, batch ack/retry, event_id deduplication, client seq reconciliation, server-side idempotency, client-seq authoritative ordering, safe JSONL partial-write handling, UTF-16 to UTF-8 validated conversion, no Unicode or newline normalization by default, shared synthetic test vectors, failure injection tests, TypeScript / Rust integration tests, and Go / No-Go criteria before collection.
+
+This appendix is not implementation evidence. It does not change TypeScript, Rust, Python, fixtures, CI workflows, Makefile, release-quality wrapper, package metadata, schema implementation, runtime implementation, or validator implementation. It does not authorize data collection and does not claim production readiness, real-data readiness, model performance, perfect event delivery, completed Unicode implementation, or completed hash compatibility implementation.

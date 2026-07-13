@@ -686,3 +686,9 @@ Step677 adds standalone Makefile coverage for running the Step675 manifest write
 ## Step679 Coverage Addendum
 
 Step679 adds release-quality wrapper coverage for the Step677 standalone manifest writer dry-run no-body no-file-writing validation target. The wrapper check covers the 34-case metadata-only / body-free / no-file-writing contract in release-quality order after manifest writer handoff input validation and before artifact / manifest file-writing and broader manifest writer checks. This is wrapper integration coverage only; it is not workflow coverage, manifest writer correctness evidence, manifest body correctness evidence, file-writing readiness evidence, payload correctness evidence, artifact body payload quality evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Web Logger Durability / Unicode / Hash Safety Design Coverage Addendum
+
+`docs/web_logger_durability_unicode_hash_safety_design.md` adds design coverage for a previously explicit pre-collection risk area: Web logger event durability, TypeScript / Rust UTF-16 position consistency, and TypeScript / Rust text hash canonicalization. The covered design topics include event queue durability, IndexedDB persistence, batch ack/retry, event_id deduplication, client seq ordering, JSONL partial-write detection, UTF-16 to UTF-8 conversion requirements, Unicode/newline preservation, SHA-256 UTF-8 lowercase-hex hash policy, shared synthetic test vector design, failure injection tests, and TypeScript / Rust integration tests.
+
+This is design coverage only. It is not implemented coverage, test coverage, CI coverage, production readiness, real-data readiness, model performance evidence, completed Unicode implementation evidence, or completed hash compatibility implementation evidence.

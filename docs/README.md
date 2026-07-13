@@ -1099,3 +1099,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step685 Actual-Controlled v0.4 Artifact Body Payload Audit Supplemental Remote Status Marker
 
 - [Actual-controlled v0.4 artifact body payload audit without payload emission supplemental remote run status](status/learner_state_frozen_policy_generation_actual_controlled_v0_4_artifact_body_payload_audit_without_payload_emission_supplemental_remote_run_status.md): status-marker-only / docs-only supplemental remote public-safe record for the Step645 payload audit target. It records `local_fallback_used=no`, remote metadata availability, observed payload audit label, final release-quality pass, and the 36-case count-only target summary, while leaving any Step645 evidence-boundary update to Step686.
+
+## Web Logger Durability / Unicode / Hash Safety Design
+
+- [Web logger durability, Unicode position, and text hash safety design](web_logger_durability_unicode_hash_safety_design.md): design-only / docs-only pre-collection blocker design for event durability, UTF-16 code unit position policy, and SHA-256 text hash canonicalization across TypeScript logger and Rust replay/validation. It proposes schema clarifications, shared test vectors, failure injection tests, integration tests, and staged future implementation without changing TypeScript, Rust, Python, fixtures, CI, Makefile, schema implementation, runtime implementation, or validator implementation.
