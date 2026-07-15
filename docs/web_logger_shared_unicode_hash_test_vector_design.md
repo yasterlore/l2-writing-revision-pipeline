@@ -397,3 +397,15 @@ It designs a future public-safe validator for `tests/fixtures/web_logger_unicode
 Step-web-logger-006 adds `python/web_logger_unicode_hash_vector_validation.py` and `python/test_support/tests/test_web_logger_unicode_hash_vector_validation.py`.
 
 The validator makes the Step-web-logger-004 fixture checks repeatable for metadata, hashes, lengths, offset mappings, expected failures, and public-safe summary behavior. It does not implement TypeScript or Rust helpers, change fixture JSON, add Makefile / release-quality integration, add CI, or implement event durability.
+
+## 24. Step-web-logger-007 Vector Validator Makefile Target Design
+
+Step-web-logger-007 is recorded in `docs/web_logger_unicode_hash_vector_validator_makefile_target_design.md`.
+
+It designs a future standalone Makefile target for the Step-web-logger-006 validator:
+
+```text
+check-web-logger-unicode-hash-vector-fixtures
+```
+
+The design fixes the proposed command, help text, placement, expected metadata/count-only output, failure semantics, preconditions, future Step-web-logger-008 checks, and later release-quality staging. It does not add the Makefile target, release-quality integration, CI workflow changes, TypeScript/Rust helpers, fixture JSON changes, or event durability.

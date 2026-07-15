@@ -326,6 +326,8 @@ Step-web-logger-005 has been added as `docs/web_logger_unicode_hash_vector_fixtu
 
 Step-web-logger-006 has been added as `python/web_logger_unicode_hash_vector_validation.py` with focused tests under `python/test_support/tests/`. It validates the shared synthetic Unicode/hash fixture metadata, hashes, lengths, offset mappings, and expected failures. It does not implement TypeScript/Rust helper compatibility, event durability, Makefile integration, release-quality integration, or CI integration.
 
+Step-web-logger-007 has been added as `docs/web_logger_unicode_hash_vector_validator_makefile_target_design.md`. It designs the future standalone Makefile target for the Step-web-logger-006 validator, including target name, help text, command, placement, output expectations, failure semantics, and future Step-web-logger-008 checks. It does not modify Makefile, Python code, tests, fixture JSON, release-quality wrapper, CI workflow, TypeScript, Rust, or event durability.
+
 ## 14. Relationship to Existing No-Oracle and Synthetic-Only Boundaries
 
 This audit does not relax no-oracle constraints, does not authorize real participant data collection, does not introduce real data, and does not validate model performance.

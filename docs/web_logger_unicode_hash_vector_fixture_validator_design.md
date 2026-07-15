@@ -543,3 +543,9 @@ PYTHONPATH=python python3 -m web_logger_unicode_hash_vector_validation \
 ```
 
 This implementation does not add a Makefile target, release-quality wrapper entry, CI workflow, TypeScript helper, Rust UTF-16 conversion helper, Rust hash helper, schema implementation change, replay/runtime implementation change, or event durability queue / IndexedDB / acknowledgement / retry / deduplication.
+
+## 27. Step-web-logger-007 Makefile Target Design Handoff
+
+Step-web-logger-007 is recorded in `docs/web_logger_unicode_hash_vector_validator_makefile_target_design.md`.
+
+It designs the future standalone Makefile target `check-web-logger-unicode-hash-vector-fixtures` for the Step-web-logger-006 Python validator. It records the proposed help text, command, placement, expected public-safe output, failure semantics, preconditions, future focused checks, and release-quality staging. It remains makefile-target-design / docs-only and does not change Makefile, validator code, tests, fixture JSON, release-quality wrapper, CI workflow, TypeScript, Rust, or event durability implementation.

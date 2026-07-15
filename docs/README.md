@@ -1128,3 +1128,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 
 - `python/web_logger_unicode_hash_vector_validation.py`: Python validator CLI for `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`. It validates top-level metadata, vector fields, SHA-256 hashes, UTF-16 lengths, UTF-8 byte lengths, offset mappings, expected failures, and forbidden marker counts with public-safe summary output.
 - `python/test_support/tests/test_web_logger_unicode_hash_vector_validation.py`: focused tests for valid fixture pass, metadata failures, hash/length/offset mismatches, expected failure handling, forbidden marker handling, and CLI output suppression. Step-web-logger-006 does not add Makefile targets, release-quality integration, CI workflow changes, TypeScript helpers, Rust helpers, fixture JSON changes, or event durability implementation.
+
+## Step-web-logger-007 Unicode and Hash Vector Validator Makefile Target Design
+
+- [Web logger Unicode and hash vector validator Makefile target design](web_logger_unicode_hash_vector_validator_makefile_target_design.md): makefile-target-design / docs-only plan for the future `check-web-logger-unicode-hash-vector-fixtures` target. It records the proposed help text, command, placement, expected metadata/count-only output, failure semantics, preconditions, future Step-web-logger-008 checks, and release-quality staging without changing Makefile, validator code, tests, fixture JSON, release-quality wrapper, CI workflow, TypeScript, Rust, package metadata, Cargo metadata, or event durability.

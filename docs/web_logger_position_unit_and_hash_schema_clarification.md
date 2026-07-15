@@ -330,3 +330,9 @@ The design translates the schema clarification and Step-web-logger-004 fixture r
 Step-web-logger-006 adds a Python fixture validator for the shared Unicode/hash vector fixture root.
 
 The validator checks the clarified UTF-16 code unit position policy, decoded-text SHA-256 hash policy, no-normalization policy, and invalid offset expectations at the fixture-data level. It does not implement the future Rust replay-critical conversion helper or TypeScript / Rust hash helpers.
+
+## 26. Step-web-logger-007 Makefile Target Design Handoff
+
+Step-web-logger-007 is recorded in `docs/web_logger_unicode_hash_vector_validator_makefile_target_design.md`.
+
+It designs a future Makefile target for running the Step-web-logger-006 Python validator against `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`. The target remains future work; this docs-only handoff does not change Makefile, code, tests, fixture JSON, release-quality wrapper, CI workflow, or the clarified schema policy.

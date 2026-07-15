@@ -404,3 +404,9 @@ The design specifies a future validator for the Step-web-logger-004 fixture root
 Step-web-logger-006 adds a Python validator and focused tests for `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`.
 
 The validator is limited to fixture-data validation and public-safe summary output. It does not implement Web logger durability, TypeScript helper code, Rust helper code, replay/runtime changes, Makefile targets, release-quality checks, or CI workflow changes.
+
+## 26. Step-web-logger-007 Shared Vector Validator Makefile Target Design
+
+Step-web-logger-007 is recorded in `docs/web_logger_unicode_hash_vector_validator_makefile_target_design.md`.
+
+It designs the future standalone target `check-web-logger-unicode-hash-vector-fixtures` for the Step-web-logger-006 validator. The design covers help text, command, Makefile placement, expected metadata/count-only output, failure semantics, public-safe diagnostics, and later release-quality staging. It remains docs-only and does not change Makefile, release-quality wrapper, CI workflow, code, tests, fixture JSON, TypeScript/Rust helpers, or event durability.
