@@ -446,3 +446,9 @@ It records public-safe remote release-quality metadata for the Step-web-logger-0
 Step-web-logger-013 is recorded in `docs/web_logger_unicode_hash_vector_validator_release_quality_chain_final_safety_review.md`.
 
 It accepts the Web logger Unicode/hash vector validator release-quality chain with explicit boundary for the fixed 15-vector synthetic metadata/count-only fixture contract. It leaves TypeScript/Rust helpers, Rust replay Unicode correctness, TypeScript logger hash correctness, and event durability as future work.
+
+## 33. Step-web-logger-014 Rust UTF-16 Offset Conversion Helper Design
+
+Step-web-logger-014 is recorded in `docs/web_logger_rust_utf16_offset_conversion_helper_design.md`.
+
+It designs a future Rust helper for converting browser-originated UTF-16 code unit offsets into UTF-8 byte offsets at valid Rust char boundaries. It does not implement the helper, change replay behavior, change fixture JSON, or alter the event durability gap.

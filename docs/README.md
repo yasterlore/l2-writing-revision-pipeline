@@ -1156,3 +1156,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step-web-logger-013 Unicode and Hash Vector Validator Final Safety Review
 
 - [Web logger Unicode and hash vector validator release-quality chain final safety review](web_logger_unicode_hash_vector_validator_release_quality_chain_final_safety_review.md): final-safety-review / docs-only review of Step-web-logger-004 through Step-web-logger-012. It records `accepted with explicit boundary` for the release-quality-integrated, remote-status-recorded Web logger Unicode/hash vector fixture validation chain for the fixed 15-vector synthetic metadata/count-only fixture contract, while keeping TypeScript/Rust helper compatibility, event durability, production readiness, real-data readiness, and model performance out of scope.
+
+## Step-web-logger-014 Rust UTF-16 Offset Conversion Helper Design
+
+- [Rust UTF-16 offset conversion helper design for Web logger events](web_logger_rust_utf16_offset_conversion_helper_design.md): design-only / docs-only plan for a future Rust helper that converts browser-originated UTF-16 code unit offsets into UTF-8 byte offsets at valid Rust char boundaries. It proposes helper location, API, error semantics, mapping algorithm, range policy, fixture reuse, future Rust tests, diagnostics, and integration staging without changing Rust, TypeScript, Python, tests, fixture JSON, Makefile, release-quality wrapper, CI workflow, package metadata, Cargo metadata, or event durability.

@@ -350,3 +350,9 @@ Clarification:
 - It should not modify fixture JSON.
 - It should not implement event durability.
 - It should not claim broader Unicode correctness until implementation and tests are complete.
+
+## 19. Step-web-logger-014 Rust UTF-16 Offset Conversion Helper Design
+
+Step-web-logger-014 adds [Rust UTF-16 Offset Conversion Helper Design for Web Logger Events](web_logger_rust_utf16_offset_conversion_helper_design.md) as design-only / docs-only planning for the remaining Rust UTF-16 code unit to UTF-8 byte offset helper P0 gap.
+
+The design proposes API shape, error semantics, boundary mapping algorithm, range conversion policy, fixture reuse, future Rust tests, and integration staging. It does not implement Rust code, modify tests, change fixture JSON, alter replay behavior, or claim broader Unicode correctness.

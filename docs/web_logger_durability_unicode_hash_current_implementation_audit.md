@@ -340,6 +340,8 @@ Step-web-logger-012 adds `docs/status/web_logger_unicode_hash_vector_validator_r
 
 Step-web-logger-013 adds `docs/web_logger_unicode_hash_vector_validator_release_quality_chain_final_safety_review.md` as final-safety-review / docs-only. It accepts the Step-web-logger-004 through Step-web-logger-012 chain only within the fixed 15-vector Python validator fixture boundary and leaves remaining P0 gaps open.
 
+Step-web-logger-014 adds `docs/web_logger_rust_utf16_offset_conversion_helper_design.md` as design-only / docs-only planning for the Rust UTF-16 code unit offset to UTF-8 byte offset helper. It addresses one remaining P0 gap at the design level only; Rust implementation, Rust tests, broad replay integration, and event durability remain future work.
+
 ## 14. Relationship to Existing No-Oracle and Synthetic-Only Boundaries
 
 This audit does not relax no-oracle constraints, does not authorize real participant data collection, does not introduce real data, and does not validate model performance.

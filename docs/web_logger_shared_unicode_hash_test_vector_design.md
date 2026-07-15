@@ -439,3 +439,7 @@ Step-web-logger-012 adds [Web Logger Unicode and Hash Vector Validator Release Q
 ## 30. Step-web-logger-013 Final Safety Review
 
 Step-web-logger-013 adds [Web Logger Unicode and Hash Vector Validator Release Quality Chain Final Safety Review](web_logger_unicode_hash_vector_validator_release_quality_chain_final_safety_review.md). It accepts the fixed 15-vector fixture only as part of the release-quality-integrated, remote-status-recorded Python validator boundary.
+
+## 31. Step-web-logger-014 Rust UTF-16 Offset Conversion Helper Design
+
+Step-web-logger-014 adds [Rust UTF-16 Offset Conversion Helper Design for Web Logger Events](web_logger_rust_utf16_offset_conversion_helper_design.md). It plans how future Rust tests should reuse the shared Unicode/hash vectors for UTF-16 offset to UTF-8 byte boundary conversion without modifying `vectors.json`.
