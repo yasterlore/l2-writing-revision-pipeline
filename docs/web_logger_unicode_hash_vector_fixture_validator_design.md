@@ -549,3 +549,9 @@ This implementation does not add a Makefile target, release-quality wrapper entr
 Step-web-logger-007 is recorded in `docs/web_logger_unicode_hash_vector_validator_makefile_target_design.md`.
 
 It designs the future standalone Makefile target `check-web-logger-unicode-hash-vector-fixtures` for the Step-web-logger-006 Python validator. It records the proposed help text, command, placement, expected public-safe output, failure semantics, preconditions, future focused checks, and release-quality staging. It remains makefile-target-design / docs-only and does not change Makefile, validator code, tests, fixture JSON, release-quality wrapper, CI workflow, TypeScript, Rust, or event durability implementation.
+
+## 28. Step-web-logger-008 Makefile Target Implementation
+
+Step-web-logger-008 adds `check-web-logger-unicode-hash-vector-fixtures` as a standalone Makefile target for the Step-web-logger-006 validator.
+
+The target runs `PYTHONPATH=python python3 -m web_logger_unicode_hash_vector_validation --fixture tests/fixtures/web_logger_unicode_hash_vectors/vectors.json --summary-only`. It validates fixture metadata, SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, and expected failures with public-safe summary-only output. It does not change validator code, fixture JSON, release-quality wrapper, CI workflow, TypeScript/Rust helpers, or event durability.

@@ -1132,3 +1132,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step-web-logger-007 Unicode and Hash Vector Validator Makefile Target Design
 
 - [Web logger Unicode and hash vector validator Makefile target design](web_logger_unicode_hash_vector_validator_makefile_target_design.md): makefile-target-design / docs-only plan for the future `check-web-logger-unicode-hash-vector-fixtures` target. It records the proposed help text, command, placement, expected metadata/count-only output, failure semantics, preconditions, future Step-web-logger-008 checks, and release-quality staging without changing Makefile, validator code, tests, fixture JSON, release-quality wrapper, CI workflow, TypeScript, Rust, package metadata, Cargo metadata, or event durability.
+
+## Step-web-logger-008 Unicode and Hash Vector Validator Makefile Target
+
+- `check-web-logger-unicode-hash-vector-fixtures`: standalone Makefile target for the Step-web-logger-006 Python validator. It runs `web_logger_unicode_hash_vector_validation` against `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json` with summary-only output, validating fixture metadata, SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, and expected failures without printing raw source text, selected text, or the full fixture JSON body. Release-quality integration, CI workflow integration, TypeScript/Rust helpers, fixture JSON changes, and event durability remain out of scope.

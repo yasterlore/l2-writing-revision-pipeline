@@ -726,3 +726,9 @@ This is fixture-data coverage only. It is not TypeScript helper coverage, Rust h
 `python/test_support/tests/test_web_logger_unicode_hash_vector_validation.py` adds focused test coverage for the Python fixture validator. It covers valid canonical fixture validation, unsupported schema version, missing top-level metadata, unsupported position unit, hash mismatch, invalid hash format, UTF-16 length mismatch, UTF-8 length mismatch, code point count mismatch, offset mapping mismatch, invalid surrogate-boundary valid cases, expected invalid offset records, forbidden marker handling, missing fixture handling, malformed JSON handling, and summary output suppression.
 
 This is focused fixture-validator coverage only. It is not TypeScript helper coverage, Rust helper coverage, cross-language helper evidence, event durability evidence, Makefile/release-quality evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-008 Coverage Addendum
+
+Makefile now exposes `check-web-logger-unicode-hash-vector-fixtures` as a standalone check for the shared Unicode/hash vector fixture validator.
+
+The target provides local Makefile coverage for invoking the Python validator and confirming the fixture metadata, SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, expected invalid offset records, and public-safe summary behavior. This is Makefile target coverage only. It is not release-quality coverage, CI coverage, TypeScript helper coverage, Rust helper coverage, cross-language helper evidence, event durability evidence, production readiness, real-data readiness, or model performance evidence.

@@ -571,3 +571,11 @@ This addendum does not implement TypeScript/Rust helpers, Python code, test code
 The validator emits public-safe summary output and checks fixture metadata, decoded-text hashes, lengths, offset mappings, expected invalid offset records, and forbidden marker counts. It does not output source text in normal summary output.
 
 This addendum does not implement TypeScript helpers, Rust helpers, event durability, Makefile targets, release-quality checks, CI workflow changes, fixture JSON changes, schema implementation changes, replay/runtime implementation changes, production readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-008 Unicode and Hash Vector Validator Makefile Target Safety Review Addendum
+
+Makefile adds `check-web-logger-unicode-hash-vector-fixtures` as a standalone target for the Step-web-logger-006 Python validator.
+
+The target runs the shared synthetic Unicode/hash vector fixture validation with public-safe summary-only output. It validates fixture metadata, decoded-text SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, and expected invalid offset records. It does not output source text in normal summary output.
+
+This addendum does not add release-quality integration, CI workflow integration, TypeScript helpers, Rust helpers, event durability, fixture JSON changes, schema implementation changes, replay/runtime implementation changes, production readiness, real-data readiness, model performance, or deployment readiness.

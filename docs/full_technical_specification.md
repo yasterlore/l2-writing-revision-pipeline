@@ -1589,3 +1589,11 @@ This appendix records fixture data only. It does not implement TypeScript helper
 The validator checks the fixed vector schema version, top-level metadata, vector IDs and required fields, UTF-16 code unit lengths, UTF-8 byte lengths, code point counts, SHA-256 UTF-8 lowercase-hex hashes over decoded source text, valid offset mappings, expected invalid offset records, conservative forbidden marker counts, and public-safe summary output. The direct CLI is `PYTHONPATH=python python3 -m web_logger_unicode_hash_vector_validation --fixture tests/fixtures/web_logger_unicode_hash_vectors/vectors.json --summary-only`.
 
 This appendix records fixture validator implementation only. It does not implement TypeScript helper code, Rust UTF-16 conversion helper code, Rust hash helper code, event durability queue / IndexedDB / acknowledgement / retry / deduplication, Makefile targets, release-quality integration, CI workflow changes, schema implementation changes, replay/runtime changes, production readiness, real-data readiness, or model performance evidence.
+
+## Appendix AX. Web Logger Unicode and Hash Vector Validator Makefile Target
+
+`check-web-logger-unicode-hash-vector-fixtures` is added as a standalone Makefile target for the Step-web-logger-006 Python validator.
+
+The target runs `PYTHONPATH=python python3 -m web_logger_unicode_hash_vector_validation --fixture tests/fixtures/web_logger_unicode_hash_vectors/vectors.json --summary-only`. It validates the shared synthetic Unicode/hash vector fixture metadata, SHA-256 hashes over decoded UTF-8 source text, UTF-16 code unit lengths, UTF-8 byte lengths, offset mappings, expected invalid offset records, and public-safe summary output.
+
+This appendix records Makefile target integration only. It does not add release-quality integration, CI workflow integration, TypeScript helper code, Rust UTF-16 conversion helper code, Rust hash helper code, fixture JSON changes, schema implementation changes, replay/runtime changes, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.

@@ -275,3 +275,29 @@ Clarification:
 - It should not add release-quality integration yet.
 - It should not implement TypeScript/Rust helpers.
 - It should not implement event durability.
+
+## 18. Step-web-logger-008 Makefile Target Implementation Status
+
+Step-web-logger-008 adds the standalone Makefile target:
+
+```text
+check-web-logger-unicode-hash-vector-fixtures
+```
+
+The target command is:
+
+```bash
+PYTHONPATH=python python3 -m web_logger_unicode_hash_vector_validation --fixture tests/fixtures/web_logger_unicode_hash_vectors/vectors.json --summary-only
+```
+
+The help text is:
+
+```text
+Run web logger Unicode/hash vector fixture validation
+```
+
+The target is placed near the general logger / fixture validation checks: `.PHONY` and help listing are near `check-logger` / `check-fixtures`, and the target body is after `check-fixtures` and before learner-state-specific validation targets.
+
+The target invokes the Step-web-logger-006 Python validator and validates the shared synthetic Unicode/hash fixture metadata, SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, and expected invalid offset records. Its normal output is public-safe summary-only key=value metadata. It should not print raw source text, selected raw text, or the full fixture JSON body.
+
+Step-web-logger-008 does not redesign validator code, change fixture JSON, add release-quality integration, add CI workflow integration, implement TypeScript/Rust helpers, or implement event durability queue / IndexedDB / acknowledgement / retry / deduplication.

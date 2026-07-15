@@ -608,3 +608,9 @@ The new root contains synthetic-only data for future TypeScript / Rust helper te
 `python/web_logger_unicode_hash_vector_validation.py` and `python/test_support/tests/test_web_logger_unicode_hash_vector_validation.py` are added as implementation and focused-test sources for shared Unicode/hash vector fixture validation.
 
 The validator source is limited to fixture validation. It does not change TypeScript, Rust, existing Python modules, existing tests, fixture JSON, Makefile, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, replay implementation files, or existing validator implementation files.
+
+## Step-web-logger-008 Source Inventory Addendum
+
+Makefile adds `check-web-logger-unicode-hash-vector-fixtures` as a standalone target for `python/web_logger_unicode_hash_vector_validation.py`.
+
+The source inventory addition is limited to Makefile target wiring and related docs. It does not change TypeScript, Rust, Python code, tests, fixture JSON, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, replay implementation files, or validator implementation files.
