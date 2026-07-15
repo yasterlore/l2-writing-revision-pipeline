@@ -720,3 +720,9 @@ This is design coverage only. It is not fixture coverage, implementation coverag
 `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json` adds fixture-data coverage for 15 synthetic Unicode/hash vectors. The vectors cover SHA-256 UTF-8 lowercase-hex expected values, UTF-16 code unit lengths, UTF-8 byte lengths, valid offset mappings, invalid surrogate-boundary metadata, invalid beyond-length metadata, newline preservation, tab handling, combining sequence behavior, and no-normalization policy.
 
 This is fixture-data coverage only. It is not TypeScript helper coverage, Rust helper coverage, automated test coverage, CI coverage, production readiness, real-data readiness, model performance evidence, event durability implementation evidence, or collection authorization.
+
+## Step-web-logger-006 Coverage Addendum
+
+`python/test_support/tests/test_web_logger_unicode_hash_vector_validation.py` adds focused test coverage for the Python fixture validator. It covers valid canonical fixture validation, unsupported schema version, missing top-level metadata, unsupported position unit, hash mismatch, invalid hash format, UTF-16 length mismatch, UTF-8 length mismatch, code point count mismatch, offset mapping mismatch, invalid surrogate-boundary valid cases, expected invalid offset records, forbidden marker handling, missing fixture handling, malformed JSON handling, and summary output suppression.
+
+This is focused fixture-validator coverage only. It is not TypeScript helper coverage, Rust helper coverage, cross-language helper evidence, event durability evidence, Makefile/release-quality evidence, production readiness, real-data readiness, or model performance evidence.

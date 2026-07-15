@@ -516,3 +516,30 @@ Clarification:
 - It should not yet add Makefile / release-quality integration unless explicitly scoped.
 - It should not modify TypeScript / Rust helpers yet.
 - It should not implement event durability yet.
+
+## 26. Step-web-logger-006 Validator Implementation Status
+
+Step-web-logger-006 adds `python/web_logger_unicode_hash_vector_validation.py` and focused tests at `python/test_support/tests/test_web_logger_unicode_hash_vector_validation.py`.
+
+The validator checks the Step-web-logger-004 fixture at `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json` for:
+
+- top-level metadata policy
+- vector-level required fields and unique IDs
+- UTF-16 code unit lengths
+- UTF-8 byte lengths
+- code point counts
+- SHA-256 UTF-8 lowercase-hex hashes over decoded source text
+- valid UTF-16 offset to UTF-8 byte offset mappings
+- expected invalid offset records
+- conservative forbidden marker counts
+- public-safe summary output
+
+The CLI is:
+
+```bash
+PYTHONPATH=python python3 -m web_logger_unicode_hash_vector_validation \
+  --fixture tests/fixtures/web_logger_unicode_hash_vectors/vectors.json \
+  --summary-only
+```
+
+This implementation does not add a Makefile target, release-quality wrapper entry, CI workflow, TypeScript helper, Rust UTF-16 conversion helper, Rust hash helper, schema implementation change, replay/runtime implementation change, or event durability queue / IndexedDB / acknowledgement / retry / deduplication.

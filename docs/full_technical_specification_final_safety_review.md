@@ -563,3 +563,11 @@ This addendum does not create fixture JSON, compute final hash values, implement
 The root contains synthetic-only minimal text, expected SHA-256 UTF-8 lowercase-hex hashes, UTF-16 code unit lengths, UTF-8 byte lengths, expected valid offset mappings, invalid offset metadata, no-normalization metadata, and README safety notes. It contains no real participant data, private paths, absolute local paths, raw event payload bodies, logits / probabilities, or performance metric bodies.
 
 This addendum does not implement TypeScript/Rust helpers, Python code, test code, CI, Makefile targets, release-quality checks, schema implementation, runtime implementation, validator implementation, or event durability. It does not claim Unicode correctness implementation completion, hash compatibility implementation completion, event durability implementation completion, data collection authorization, production readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-006 Unicode and Hash Vector Fixture Validator Safety Review Addendum
+
+`python/web_logger_unicode_hash_vector_validation.py` and `python/test_support/tests/test_web_logger_unicode_hash_vector_validation.py` are added for focused validation of the shared Unicode/hash vector fixture.
+
+The validator emits public-safe summary output and checks fixture metadata, decoded-text hashes, lengths, offset mappings, expected invalid offset records, and forbidden marker counts. It does not output source text in normal summary output.
+
+This addendum does not implement TypeScript helpers, Rust helpers, event durability, Makefile targets, release-quality checks, CI workflow changes, fixture JSON changes, schema implementation changes, replay/runtime implementation changes, production readiness, real-data readiness, model performance, or deployment readiness.

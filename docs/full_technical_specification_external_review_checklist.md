@@ -554,6 +554,12 @@ Reviewers should verify that the vector file contains exactly 15 unique syntheti
 
 Confirm Step-web-logger-004 does not implement TypeScript helpers, Rust helpers, Python code, tests, CI, Makefile targets, release-quality checks, schema implementation, runtime implementation, validator implementation, or event durability.
 
+## Step-web-logger-006 Vector Fixture Validator External Review Addendum
+
+Confirm `python/web_logger_unicode_hash_vector_validation.py` validates the Step-web-logger-004 fixture root without printing source text or full fixture bodies in normal summary output.
+
+Reviewers should verify top-level metadata checks, vector-level checks, hash checks, UTF-16 / UTF-8 length checks, offset mapping checks, expected failure handling, conservative forbidden marker counts, failure status categories, and focused tests. Confirm no TypeScript helper, Rust helper, Makefile target, release-quality wrapper entry, CI workflow, fixture JSON, schema implementation, runtime implementation, replay implementation, or event durability code is added.
+
 ## Step587 Actual-Controlled Fixture Root Review
 
 For Step587, confirm the actual-controlled fixture root exists with 6 valid cases, 30 invalid cases, 36 total cases, 252 parseable metadata-only JSON files, and the exact 7-file layout. Confirm the root is separate from the Step570 planned-only root and does not implement validators, runtime invocation, manifest writer integration, file writing, production readiness, real-data readiness, or model performance evidence.

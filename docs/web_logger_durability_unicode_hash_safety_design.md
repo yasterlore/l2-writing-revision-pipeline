@@ -398,3 +398,9 @@ The fixture root provides synthetic-only vector data for future TypeScript / Rus
 Step-web-logger-005 is recorded in `docs/web_logger_unicode_hash_vector_fixture_validator_design.md`.
 
 The design specifies a future validator for the Step-web-logger-004 fixture root. It covers structure checks, metadata policy checks, hash validation, UTF-16 / UTF-8 length validation, offset mapping validation, expected failure handling, public-safe diagnostics, future tests, and later Makefile / release-quality staging. It does not implement event durability or any validator/runtime/helper code.
+
+## 25. Step-web-logger-006 Shared Vector Fixture Validator Implementation
+
+Step-web-logger-006 adds a Python validator and focused tests for `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`.
+
+The validator is limited to fixture-data validation and public-safe summary output. It does not implement Web logger durability, TypeScript helper code, Rust helper code, replay/runtime changes, Makefile targets, release-quality checks, or CI workflow changes.

@@ -3731,3 +3731,9 @@ The marker records `local_fallback_used=no`, remote metadata availability, obser
 Step-web-logger-004 creates `tests/fixtures/web_logger_unicode_hash_vectors/README.md` and `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`.
 
 The fixture root records 15 synthetic-only Unicode/hash vectors for future TypeScript / Rust checks, including UTF-16 code unit offsets, expected UTF-8 byte offsets, SHA-256 UTF-8 lowercase-hex hashes, invalid surrogate-boundary metadata, invalid out-of-range metadata, and no-normalization policy. Step-web-logger-004 does not change TypeScript, Rust, Python, tests, Makefile, release-quality wrapper, workflow files, package files, Cargo files, schema implementation, runtime implementation, validator implementation, event durability, real-data use, metric evidence, or production readiness status.
+
+## Step-web-logger-006 Shared Unicode and Hash Vector Fixture Validator
+
+Step-web-logger-006 creates `python/web_logger_unicode_hash_vector_validation.py` and `python/test_support/tests/test_web_logger_unicode_hash_vector_validation.py`.
+
+The validator checks the Step-web-logger-004 vector fixture metadata, decoded-text SHA-256 hashes, UTF-16 code unit lengths, UTF-8 byte lengths, offset mappings, expected invalid offset records, and public-safe summary output. Step-web-logger-006 does not change TypeScript, Rust, existing Python modules, existing tests, fixture JSON, Makefile, release-quality wrapper, workflow files, package files, Cargo files, schema implementation, runtime implementation, replay implementation, event durability, real-data use, metric evidence, or production readiness status.

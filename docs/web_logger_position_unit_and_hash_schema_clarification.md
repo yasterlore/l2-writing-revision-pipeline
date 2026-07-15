@@ -324,3 +324,9 @@ The fixture root records the Step-web-logger-002 schema clarification as synthet
 Step-web-logger-005 is recorded in `docs/web_logger_unicode_hash_vector_fixture_validator_design.md`.
 
 The design translates the schema clarification and Step-web-logger-004 fixture root into a future validator contract. It remains docs-only and does not implement validation code, modify vectors, add tests, add Makefile targets, add release-quality checks, or implement TypeScript / Rust helpers.
+
+## 25. Step-web-logger-006 Validator Implementation Handoff
+
+Step-web-logger-006 adds a Python fixture validator for the shared Unicode/hash vector fixture root.
+
+The validator checks the clarified UTF-16 code unit position policy, decoded-text SHA-256 hash policy, no-normalization policy, and invalid offset expectations at the fixture-data level. It does not implement the future Rust replay-critical conversion helper or TypeScript / Rust hash helpers.

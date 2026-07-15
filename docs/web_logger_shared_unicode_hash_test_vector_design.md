@@ -391,3 +391,9 @@ This step creates fixture data only. It does not implement TypeScript helpers, R
 Step-web-logger-005 is recorded in `docs/web_logger_unicode_hash_vector_fixture_validator_design.md`.
 
 It designs a future public-safe validator for `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`, including top-level metadata checks, vector-level checks, UTF-16 length checks, UTF-8 byte length checks, SHA-256 hash checks, offset mapping checks, expected failure checks, forbidden marker scans, diagnostics, failure semantics, future focused tests, and future Makefile / release-quality staging. It remains validator-design / docs-only and does not implement a validator, change fixture JSON, add tests, add CI, add Makefile targets, or add release-quality checks.
+
+## 23. Step-web-logger-006 Vector Fixture Validator Implementation
+
+Step-web-logger-006 adds `python/web_logger_unicode_hash_vector_validation.py` and `python/test_support/tests/test_web_logger_unicode_hash_vector_validation.py`.
+
+The validator makes the Step-web-logger-004 fixture checks repeatable for metadata, hashes, lengths, offset mappings, expected failures, and public-safe summary behavior. It does not implement TypeScript or Rust helpers, change fixture JSON, add Makefile / release-quality integration, add CI, or implement event durability.

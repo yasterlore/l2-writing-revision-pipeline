@@ -602,3 +602,9 @@ The document names future fixture paths and check targets as proposals only. It 
 `tests/fixtures/web_logger_unicode_hash_vectors/README.md` and `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json` are added as fixture-data sources for future Web logger Unicode/hash checks.
 
 The new root contains synthetic-only data for future TypeScript / Rust helper tests. It does not change TypeScript, Rust, Python, test code, Makefile, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, validator implementation files, or existing fixture JSON outside the new root.
+
+## Step-web-logger-006 Source Inventory Addendum
+
+`python/web_logger_unicode_hash_vector_validation.py` and `python/test_support/tests/test_web_logger_unicode_hash_vector_validation.py` are added as implementation and focused-test sources for shared Unicode/hash vector fixture validation.
+
+The validator source is limited to fixture validation. It does not change TypeScript, Rust, existing Python modules, existing tests, fixture JSON, Makefile, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, replay implementation files, or existing validator implementation files.
