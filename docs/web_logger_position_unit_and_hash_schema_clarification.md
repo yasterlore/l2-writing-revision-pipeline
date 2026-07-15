@@ -342,3 +342,9 @@ It designs a future Makefile target for running the Step-web-logger-006 Python v
 Step-web-logger-008 adds `check-web-logger-unicode-hash-vector-fixtures` to Makefile.
 
 The target runs the Python validator for the shared Unicode/hash vector fixture and checks the clarified fixture-level position/hash metadata, decoded-text SHA-256 values, UTF-16 lengths, UTF-8 lengths, offset mappings, and expected invalid offset records. It does not implement the future Rust replay-critical conversion helper, TypeScript hash helper, Rust hash helper, release-quality integration, CI integration, or event durability.
+
+## 28. Step-web-logger-009 Release-Quality Integration Design Handoff
+
+Step-web-logger-009 is recorded in `docs/web_logger_unicode_hash_vector_validator_release_quality_integration_design.md`.
+
+It plans future wrapper integration for the Makefile-targeted vector validator. This handoff does not change the clarified schema policy, wrapper, Makefile, code, tests, fixture JSON, CI workflow, TypeScript/Rust helper work, or event durability.

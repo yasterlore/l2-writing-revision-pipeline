@@ -1136,3 +1136,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step-web-logger-008 Unicode and Hash Vector Validator Makefile Target
 
 - `check-web-logger-unicode-hash-vector-fixtures`: standalone Makefile target for the Step-web-logger-006 Python validator. It runs `web_logger_unicode_hash_vector_validation` against `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json` with summary-only output, validating fixture metadata, SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, and expected failures without printing raw source text, selected text, or the full fixture JSON body. Release-quality integration, CI workflow integration, TypeScript/Rust helpers, fixture JSON changes, and event durability remain out of scope.
+
+## Step-web-logger-009 Unicode and Hash Vector Validator Release-Quality Integration Design
+
+- [Web logger Unicode and hash vector validator release-quality integration design](web_logger_unicode_hash_vector_validator_release_quality_integration_design.md): release-quality-integration-design / docs-only plan for integrating `check-web-logger-unicode-hash-vector-fixtures` into the wrapper in a later step. It defines the proposed label, command, insertion point, expected public-safe output, failure semantics, Step-web-logger-010 preconditions, and safety boundaries without changing `scripts/check_release_quality.sh`, Makefile, code, tests, fixture JSON, CI workflow, TypeScript/Rust helpers, or event durability.

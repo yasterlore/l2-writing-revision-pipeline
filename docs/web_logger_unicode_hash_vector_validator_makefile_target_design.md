@@ -301,3 +301,9 @@ The target is placed near the general logger / fixture validation checks: `.PHON
 The target invokes the Step-web-logger-006 Python validator and validates the shared synthetic Unicode/hash fixture metadata, SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, and expected invalid offset records. Its normal output is public-safe summary-only key=value metadata. It should not print raw source text, selected raw text, or the full fixture JSON body.
 
 Step-web-logger-008 does not redesign validator code, change fixture JSON, add release-quality integration, add CI workflow integration, implement TypeScript/Rust helpers, or implement event durability queue / IndexedDB / acknowledgement / retry / deduplication.
+
+## 19. Step-web-logger-009 Release-Quality Integration Design Handoff
+
+Step-web-logger-009 is recorded in `docs/web_logger_unicode_hash_vector_validator_release_quality_integration_design.md`.
+
+It designs future release-quality wrapper integration for `check-web-logger-unicode-hash-vector-fixtures`, including the proposed label, wrapper command, insertion point, expected public-safe output, failure semantics, Step-web-logger-010 preconditions, and safety boundaries. It remains release-quality-integration-design / docs-only and does not change `scripts/check_release_quality.sh`, Makefile, code, tests, fixture JSON, CI workflow, package metadata, Cargo metadata, or event durability.
