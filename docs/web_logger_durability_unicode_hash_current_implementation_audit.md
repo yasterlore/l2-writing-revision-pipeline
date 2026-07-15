@@ -336,6 +336,8 @@ Step-web-logger-010 adds `release_quality_check: web logger unicode hash vector 
 
 Step-web-logger-011 adds `docs/web_logger_unicode_hash_vector_validator_release_quality_remote_run_record_workflow.md` as remote/manual-run-record-workflow-design / docs-only planning for a future public-safe status marker. It defines evidence hierarchy, future metadata fields, target summary fields, missing metadata handling, and future Step-web-logger-012 / Step-web-logger-013 staging while keeping the audit gaps for TypeScript/Rust helpers and event durability open.
 
+Step-web-logger-012 adds `docs/status/web_logger_unicode_hash_vector_validator_release_quality_remote_run_status.md` as a status-marker-only / docs-only remote public-safe record for the Step-web-logger-010 wrapper check. It records the observed label, target command, final release-quality ok label, and count-only validator summary while keeping TypeScript/Rust helper and event durability gaps open.
+
 ## 14. Relationship to Existing No-Oracle and Synthetic-Only Boundaries
 
 This audit does not relax no-oracle constraints, does not authorize real participant data collection, does not introduce real data, and does not validate model performance.

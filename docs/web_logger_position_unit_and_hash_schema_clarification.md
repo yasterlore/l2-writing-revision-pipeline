@@ -358,3 +358,7 @@ The wrapper integration validates the shared fixture-level position/hash metadat
 ## 30. Step-web-logger-011 Remote/Manual Run Record Workflow Design
 
 Step-web-logger-011 adds [Web Logger Unicode and Hash Vector Validator Release Quality Remote/Manual Run Record Workflow](web_logger_unicode_hash_vector_validator_release_quality_remote_run_record_workflow.md). It defines future status-marker evidence and metadata handling for the release-quality-integrated vector validator without changing the clarified position/hash policy or implementing TypeScript/Rust helpers.
+
+## 31. Step-web-logger-012 Remote Status Marker
+
+Step-web-logger-012 adds [Web Logger Unicode and Hash Vector Validator Release Quality Remote Run Status](status/web_logger_unicode_hash_vector_validator_release_quality_remote_run_status.md). It records public-safe remote release-quality evidence for the Python fixture validator and does not change the clarified UTF-16 position unit or hash canonicalization policy.

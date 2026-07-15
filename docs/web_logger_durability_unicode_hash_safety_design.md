@@ -434,3 +434,9 @@ The wrapper calls `make check-web-logger-unicode-hash-vector-fixtures` and recor
 Step-web-logger-011 is recorded in `docs/web_logger_unicode_hash_vector_validator_release_quality_remote_run_record_workflow.md`.
 
 It designs future public-safe status marker evidence handling for the release-quality-integrated vector validator. It defines remote/manual evidence hierarchy, future metadata fields, target summary fields, missing metadata handling, failure interpretation, non-equivalence cautions, and future staging. It does not create a status marker, change wrapper/Makefile/code/tests/fixture JSON/workflow files, implement TypeScript/Rust helpers, or implement event durability.
+
+## 31. Step-web-logger-012 Shared Vector Validator Remote Status Marker
+
+Step-web-logger-012 is recorded in `docs/status/web_logger_unicode_hash_vector_validator_release_quality_remote_run_status.md`.
+
+It records public-safe remote release-quality metadata for the Step-web-logger-010 wrapper check, including the observed label, Makefile target command, final ok label, and 15-vector count-only summary. It does not alter the pre-collection blocker status for TypeScript/Rust helper implementation or event durability.

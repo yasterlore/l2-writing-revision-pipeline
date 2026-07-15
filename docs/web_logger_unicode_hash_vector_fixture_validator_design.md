@@ -571,3 +571,7 @@ The wrapper now calls `make check-web-logger-unicode-hash-vector-fixtures` under
 ## 31. Step-web-logger-011 Remote/Manual Run Record Workflow Design
 
 Step-web-logger-011 adds [Web Logger Unicode and Hash Vector Validator Release Quality Remote/Manual Run Record Workflow](web_logger_unicode_hash_vector_validator_release_quality_remote_run_record_workflow.md). The workflow design is docs-only and describes how a future status marker should record public-safe release-quality metadata for the validator check without modifying validator implementation, fixture JSON, Makefile, wrapper code, TypeScript/Rust helpers, or event durability.
+
+## 32. Step-web-logger-012 Remote Status Marker
+
+Step-web-logger-012 adds [Web Logger Unicode and Hash Vector Validator Release Quality Remote Run Status](status/web_logger_unicode_hash_vector_validator_release_quality_remote_run_status.md). It records public-safe remote evidence that the release-quality wrapper executed the Python validator through Makefile and observed `status=pass` for the current 15-vector fixture. It does not modify validator behavior or prove TypeScript/Rust helper compatibility.

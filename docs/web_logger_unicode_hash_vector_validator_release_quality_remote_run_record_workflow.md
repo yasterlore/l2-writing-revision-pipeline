@@ -342,3 +342,9 @@ Clarification:
 - Step-web-logger-012 should not alter wrapper, Makefile, Python, TypeScript, Rust, fixture JSON, or workflow files.
 - Step-web-logger-012 should not claim TypeScript / Rust compatibility.
 - Step-web-logger-012 should not claim production readiness or real-data readiness.
+
+## 24. Step-web-logger-012 Remote Status Marker
+
+Step-web-logger-012 adds [Web Logger Unicode and Hash Vector Validator Release Quality Remote Run Status](status/web_logger_unicode_hash_vector_validator_release_quality_remote_run_status.md) as a status-marker-only / docs-only public-safe remote metadata record after Step-web-logger-010 wrapper integration.
+
+The status marker records `local_fallback_used=no`, remote metadata availability, the observed Web logger Unicode/hash vector validator release-quality label, the Makefile target command, final `release_quality_check: ok`, and the 15-vector count-only validator summary. It does not copy raw logs, full job output, raw source text, selected text, full fixture JSON body, raw event payload body, private paths, real participant data, logits / probabilities, or performance metric body.

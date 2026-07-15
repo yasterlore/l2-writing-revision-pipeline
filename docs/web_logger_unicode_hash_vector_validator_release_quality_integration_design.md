@@ -319,3 +319,7 @@ Step-web-logger-010 does not change Makefile, validator behavior, fixture JSON, 
 Step-web-logger-011 adds [Web Logger Unicode and Hash Vector Validator Release Quality Remote/Manual Run Record Workflow](web_logger_unicode_hash_vector_validator_release_quality_remote_run_record_workflow.md) as docs-only design for a future public-safe status marker after Step-web-logger-010 wrapper integration.
 
 The workflow design defines the evidence hierarchy, future status marker path, public-safe metadata fields, target summary fields, missing metadata handling, non-equivalence cautions, and future Step-web-logger-012 / Step-web-logger-013 staging. It does not create the status marker, revise the wrapper, change Makefile, change validator code, change fixture JSON, implement TypeScript/Rust helpers, or implement event durability.
+
+## 21. Step-web-logger-012 Remote Status Marker
+
+Step-web-logger-012 adds [Web Logger Unicode and Hash Vector Validator Release Quality Remote Run Status](status/web_logger_unicode_hash_vector_validator_release_quality_remote_run_status.md). It records public-safe remote metadata for the Step-web-logger-010 wrapper check and the `make check-web-logger-unicode-hash-vector-fixtures` summary without changing wrapper, Makefile, validator code, fixture JSON, TypeScript/Rust helpers, CI workflow, or event durability.
