@@ -313,3 +313,9 @@ The check is inserted after the existing `python checks` block and before `learn
 The check validates the shared Unicode/hash vector fixture through the Step-web-logger-006 Python validator. It covers fixture metadata, SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, and expected invalid offset records with public-safe summary-only output.
 
 Step-web-logger-010 does not change Makefile, validator behavior, fixture JSON, CI workflow, TypeScript/Rust helpers, schema/runtime/replay implementation, or event durability queue / IndexedDB / acknowledgement / retry / deduplication.
+
+## 20. Step-web-logger-011 Remote/Manual Run Record Workflow Design
+
+Step-web-logger-011 adds [Web Logger Unicode and Hash Vector Validator Release Quality Remote/Manual Run Record Workflow](web_logger_unicode_hash_vector_validator_release_quality_remote_run_record_workflow.md) as docs-only design for a future public-safe status marker after Step-web-logger-010 wrapper integration.
+
+The workflow design defines the evidence hierarchy, future status marker path, public-safe metadata fields, target summary fields, missing metadata handling, non-equivalence cautions, and future Step-web-logger-012 / Step-web-logger-013 staging. It does not create the status marker, revise the wrapper, change Makefile, change validator code, change fixture JSON, implement TypeScript/Rust helpers, or implement event durability.

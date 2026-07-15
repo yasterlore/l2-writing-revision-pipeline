@@ -313,3 +313,7 @@ It designs future release-quality wrapper integration for `check-web-logger-unic
 Step-web-logger-010 integrates the Makefile target into `scripts/check_release_quality.sh`.
 
 The wrapper adds `release_quality_check: web logger unicode hash vector fixture validation` and runs `make check-web-logger-unicode-hash-vector-fixtures` after Python checks and before learner-state target groups. The Makefile target remains the command source of truth. Step-web-logger-010 does not change Makefile, validator code, tests, fixture JSON, TypeScript/Rust helpers, CI workflow, or event durability.
+
+## 21. Step-web-logger-011 Remote/Manual Run Record Workflow Design
+
+Step-web-logger-011 adds [Web Logger Unicode and Hash Vector Validator Release Quality Remote/Manual Run Record Workflow](web_logger_unicode_hash_vector_validator_release_quality_remote_run_record_workflow.md) as docs-only planning for a future status marker after release-quality wrapper integration. It records how future evidence should distinguish remote GitHub Actions metadata from local/manual fallback without changing the Makefile target, validator code, tests, fixture JSON, or release-quality wrapper.

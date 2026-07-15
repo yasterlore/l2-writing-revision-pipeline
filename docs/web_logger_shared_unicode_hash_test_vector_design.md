@@ -427,3 +427,7 @@ It designs future release-quality integration for the Makefile-targeted vector v
 Step-web-logger-010 adds `release_quality_check: web logger unicode hash vector fixture validation` to `scripts/check_release_quality.sh`.
 
 The wrapper calls `make check-web-logger-unicode-hash-vector-fixtures`, so shared vector validation is now part of local release-quality checks. This does not implement TypeScript/Rust helpers, cross-language vector checks, CI workflow changes, fixture JSON changes, or event durability.
+
+## 28. Step-web-logger-011 Remote/Manual Run Record Workflow Design
+
+Step-web-logger-011 adds [Web Logger Unicode and Hash Vector Validator Release Quality Remote/Manual Run Record Workflow](web_logger_unicode_hash_vector_validator_release_quality_remote_run_record_workflow.md). It designs future public-safe status recording for the release-quality-integrated vector validator while keeping the shared vector fixture, TypeScript/Rust helper work, and event durability implementation unchanged.

@@ -334,6 +334,8 @@ Step-web-logger-009 adds `docs/web_logger_unicode_hash_vector_validator_release_
 
 Step-web-logger-010 adds `release_quality_check: web logger unicode hash vector fixture validation` to `scripts/check_release_quality.sh`. The wrapper calls `make check-web-logger-unicode-hash-vector-fixtures` after Python checks and before learner-state target groups. This integrates the Python vector fixture validator into release-quality while leaving CI workflow integration, TypeScript/Rust helper work, fixture JSON, and event durability unchanged.
 
+Step-web-logger-011 adds `docs/web_logger_unicode_hash_vector_validator_release_quality_remote_run_record_workflow.md` as remote/manual-run-record-workflow-design / docs-only planning for a future public-safe status marker. It defines evidence hierarchy, future metadata fields, target summary fields, missing metadata handling, and future Step-web-logger-012 / Step-web-logger-013 staging while keeping the audit gaps for TypeScript/Rust helpers and event durability open.
+
 ## 14. Relationship to Existing No-Oracle and Synthetic-Only Boundaries
 
 This audit does not relax no-oracle constraints, does not authorize real participant data collection, does not introduce real data, and does not validate model performance.

@@ -354,3 +354,7 @@ It plans future wrapper integration for the Makefile-targeted vector validator. 
 Step-web-logger-010 adds the Makefile-targeted vector validator to the release-quality wrapper.
 
 The wrapper integration validates the shared fixture-level position/hash metadata through the Python validator. It does not implement the future Rust replay-critical conversion helper, TypeScript hash helper, Rust hash helper, CI workflow integration, or event durability.
+
+## 30. Step-web-logger-011 Remote/Manual Run Record Workflow Design
+
+Step-web-logger-011 adds [Web Logger Unicode and Hash Vector Validator Release Quality Remote/Manual Run Record Workflow](web_logger_unicode_hash_vector_validator_release_quality_remote_run_record_workflow.md). It defines future status-marker evidence and metadata handling for the release-quality-integrated vector validator without changing the clarified position/hash policy or implementing TypeScript/Rust helpers.
