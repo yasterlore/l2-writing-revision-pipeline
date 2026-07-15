@@ -732,3 +732,9 @@ This is focused fixture-validator coverage only. It is not TypeScript helper cov
 Makefile now exposes `check-web-logger-unicode-hash-vector-fixtures` as a standalone check for the shared Unicode/hash vector fixture validator.
 
 The target provides local Makefile coverage for invoking the Python validator and confirming the fixture metadata, SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, expected invalid offset records, and public-safe summary behavior. This is Makefile target coverage only. It is not release-quality coverage, CI coverage, TypeScript helper coverage, Rust helper coverage, cross-language helper evidence, event durability evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-010 Coverage Addendum
+
+`scripts/check_release_quality.sh` now includes `release_quality_check: web logger unicode hash vector fixture validation`.
+
+The wrapper coverage invokes the existing Makefile target and confirms the shared Unicode/hash vector fixture validator participates in local release-quality checks. This is release-quality wrapper coverage only. It is not CI coverage, TypeScript helper coverage, Rust helper coverage, cross-language helper evidence, event durability evidence, production readiness, real-data readiness, or model performance evidence.

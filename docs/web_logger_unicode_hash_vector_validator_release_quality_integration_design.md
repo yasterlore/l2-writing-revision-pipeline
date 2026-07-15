@@ -293,3 +293,23 @@ Clarification:
 - Step-web-logger-010 should not modify fixture JSON.
 - Step-web-logger-010 should not implement TypeScript/Rust helpers.
 - Step-web-logger-010 should not implement event durability.
+
+## 19. Step-web-logger-010 Release-Quality Wrapper Integration Status
+
+Step-web-logger-010 adds one release-quality wrapper check:
+
+```text
+release_quality_check: web logger unicode hash vector fixture validation
+```
+
+The wrapper command is:
+
+```text
+command: make check-web-logger-unicode-hash-vector-fixtures
+```
+
+The check is inserted after the existing `python checks` block and before `learner-state audit fixtures`, matching the Step-web-logger-009 design. It calls the Step-web-logger-008 Makefile target, which remains the source of truth for the validator command.
+
+The check validates the shared Unicode/hash vector fixture through the Step-web-logger-006 Python validator. It covers fixture metadata, SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, and expected invalid offset records with public-safe summary-only output.
+
+Step-web-logger-010 does not change Makefile, validator behavior, fixture JSON, CI workflow, TypeScript/Rust helpers, schema/runtime/replay implementation, or event durability queue / IndexedDB / acknowledgement / retry / deduplication.

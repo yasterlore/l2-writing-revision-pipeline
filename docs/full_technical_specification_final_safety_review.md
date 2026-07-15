@@ -579,3 +579,11 @@ Makefile adds `check-web-logger-unicode-hash-vector-fixtures` as a standalone ta
 The target runs the shared synthetic Unicode/hash vector fixture validation with public-safe summary-only output. It validates fixture metadata, decoded-text SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, and expected invalid offset records. It does not output source text in normal summary output.
 
 This addendum does not add release-quality integration, CI workflow integration, TypeScript helpers, Rust helpers, event durability, fixture JSON changes, schema implementation changes, replay/runtime implementation changes, production readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-010 Unicode and Hash Vector Validator Release-Quality Integration Safety Review Addendum
+
+`scripts/check_release_quality.sh` adds `release_quality_check: web logger unicode hash vector fixture validation` and calls `make check-web-logger-unicode-hash-vector-fixtures`.
+
+The release-quality check runs the shared synthetic Unicode/hash vector fixture validation with public-safe summary-only output. It validates fixture metadata, decoded-text SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, and expected invalid offset records. It does not output source text in normal summary output.
+
+This addendum does not add CI workflow integration, TypeScript helpers, Rust helpers, event durability, fixture JSON changes, schema implementation changes, replay/runtime implementation changes, production readiness, real-data readiness, model performance, or deployment readiness.

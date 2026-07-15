@@ -3743,3 +3743,9 @@ The validator checks the Step-web-logger-004 vector fixture metadata, decoded-te
 Step-web-logger-008 adds `check-web-logger-unicode-hash-vector-fixtures` to Makefile.
 
 The target runs the Step-web-logger-006 Python validator against `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json` with summary-only output. It validates fixture metadata, decoded-text SHA-256 hashes, UTF-16 code unit lengths, UTF-8 byte lengths, offset mappings, expected invalid offset records, and public-safe output. Step-web-logger-008 does not change TypeScript, Rust, Python code/tests, fixture JSON, release-quality wrapper, workflow files, package files, Cargo files, schema implementation, runtime implementation, replay implementation, TypeScript/Rust helper implementation, event durability, real-data use, metric evidence, or production readiness status.
+
+## Step-web-logger-010 Shared Unicode and Hash Vector Validator Release-Quality Integration
+
+Step-web-logger-010 adds `release_quality_check: web logger unicode hash vector fixture validation` to `scripts/check_release_quality.sh`.
+
+The wrapper calls `make check-web-logger-unicode-hash-vector-fixtures` after Python checks and before learner-state target groups. It validates the Step-web-logger-004 vector fixture through the Step-web-logger-006 Python validator with public-safe summary-only output. Step-web-logger-010 does not change Makefile, workflow files, TypeScript, Rust, Python code/tests, fixture JSON, package files, Cargo files, schema implementation, runtime implementation, replay implementation, TypeScript/Rust helper implementation, event durability, real-data use, metric evidence, or production readiness status.

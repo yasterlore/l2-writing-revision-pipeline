@@ -332,6 +332,8 @@ Step-web-logger-008 adds the standalone Makefile target `check-web-logger-unicod
 
 Step-web-logger-009 adds `docs/web_logger_unicode_hash_vector_validator_release_quality_integration_design.md` as release-quality-integration-design / docs-only planning for the Step-web-logger-008 target. It designs the future wrapper label, command, insertion point, expected output, failure semantics, and Step-web-logger-010 scope without changing wrapper code, Makefile, Python code, tests, fixture JSON, TypeScript, Rust, CI, or event durability.
 
+Step-web-logger-010 adds `release_quality_check: web logger unicode hash vector fixture validation` to `scripts/check_release_quality.sh`. The wrapper calls `make check-web-logger-unicode-hash-vector-fixtures` after Python checks and before learner-state target groups. This integrates the Python vector fixture validator into release-quality while leaving CI workflow integration, TypeScript/Rust helper work, fixture JSON, and event durability unchanged.
+
 ## 14. Relationship to Existing No-Oracle and Synthetic-Only Boundaries
 
 This audit does not relax no-oracle constraints, does not authorize real participant data collection, does not introduce real data, and does not validate model performance.

@@ -1597,3 +1597,11 @@ This appendix records fixture validator implementation only. It does not impleme
 The target runs `PYTHONPATH=python python3 -m web_logger_unicode_hash_vector_validation --fixture tests/fixtures/web_logger_unicode_hash_vectors/vectors.json --summary-only`. It validates the shared synthetic Unicode/hash vector fixture metadata, SHA-256 hashes over decoded UTF-8 source text, UTF-16 code unit lengths, UTF-8 byte lengths, offset mappings, expected invalid offset records, and public-safe summary output.
 
 This appendix records Makefile target integration only. It does not add release-quality integration, CI workflow integration, TypeScript helper code, Rust UTF-16 conversion helper code, Rust hash helper code, fixture JSON changes, schema implementation changes, replay/runtime changes, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.
+
+## Appendix AY. Web Logger Unicode and Hash Vector Validator Release-Quality Check
+
+`scripts/check_release_quality.sh` adds `release_quality_check: web logger unicode hash vector fixture validation` for the Step-web-logger-008 Makefile target.
+
+The wrapper calls `make check-web-logger-unicode-hash-vector-fixtures` after Python checks and before learner-state target groups. The check validates the shared synthetic Unicode/hash vector fixture through the Python validator, including fixture metadata, SHA-256 hashes over decoded UTF-8 source text, UTF-16 code unit lengths, UTF-8 byte lengths, offset mappings, expected invalid offset records, and public-safe summary output.
+
+This appendix records release-quality wrapper integration only. It does not add CI workflow integration, TypeScript helper code, Rust UTF-16 conversion helper code, Rust hash helper code, fixture JSON changes, schema implementation changes, replay/runtime changes, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.

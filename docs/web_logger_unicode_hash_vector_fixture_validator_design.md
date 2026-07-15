@@ -561,3 +561,9 @@ The target runs `PYTHONPATH=python python3 -m web_logger_unicode_hash_vector_val
 Step-web-logger-009 is recorded in `docs/web_logger_unicode_hash_vector_validator_release_quality_integration_design.md`.
 
 It designs a future wrapper check for the Step-web-logger-008 Makefile target. The proposed label is `release_quality_check: web logger unicode hash vector fixture validation`, and the proposed command is `make check-web-logger-unicode-hash-vector-fixtures`. The step is docs-only and does not alter wrapper behavior, validator behavior, fixture data, TypeScript/Rust helpers, or event durability.
+
+## 30. Step-web-logger-010 Release-Quality Wrapper Integration
+
+Step-web-logger-010 adds the Step-web-logger-008 target to `scripts/check_release_quality.sh`.
+
+The wrapper now calls `make check-web-logger-unicode-hash-vector-fixtures` under `release_quality_check: web logger unicode hash vector fixture validation`. It reuses the Python validator through Makefile and keeps validator behavior, fixture JSON, TypeScript/Rust helpers, CI workflow, and event durability unchanged.

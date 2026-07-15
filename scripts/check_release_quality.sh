@@ -97,6 +97,9 @@ PYTHONPATH=python python3 -m unittest discover -s python
 echo "command: PYTHONPATH=python python3 -m compileall python"
 PYTHONPATH=python python3 -m compileall python
 
+section "web logger unicode hash vector fixture validation"
+run make check-web-logger-unicode-hash-vector-fixtures
+
 section "learner-state audit fixtures"
 run make check-learner-state-audit-fixtures
 

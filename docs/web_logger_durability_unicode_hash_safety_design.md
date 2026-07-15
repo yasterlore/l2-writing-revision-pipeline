@@ -422,3 +422,9 @@ The target invokes the Step-web-logger-006 Python validator for the shared synth
 Step-web-logger-009 is recorded in `docs/web_logger_unicode_hash_vector_validator_release_quality_integration_design.md`.
 
 It designs future release-quality integration for the Step-web-logger-008 Makefile target. It records the proposed wrapper label, command, insertion point, output expectations, failure semantics, Step-web-logger-010 preconditions, and public-safe boundaries. It does not change the wrapper, Makefile, code, tests, fixture JSON, CI workflow, TypeScript/Rust helpers, or event durability.
+
+## 29. Step-web-logger-010 Shared Vector Validator Release-Quality Integration
+
+Step-web-logger-010 adds `release_quality_check: web logger unicode hash vector fixture validation` to `scripts/check_release_quality.sh`.
+
+The wrapper calls `make check-web-logger-unicode-hash-vector-fixtures` and records the shared Unicode/hash vector fixture validation as part of local release-quality checks. It remains public-safe summary-only and does not add CI workflow integration, TypeScript/Rust helpers, fixture JSON changes, schema/runtime changes, or event durability.

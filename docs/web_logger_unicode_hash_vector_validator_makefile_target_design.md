@@ -307,3 +307,9 @@ Step-web-logger-008 does not redesign validator code, change fixture JSON, add r
 Step-web-logger-009 is recorded in `docs/web_logger_unicode_hash_vector_validator_release_quality_integration_design.md`.
 
 It designs future release-quality wrapper integration for `check-web-logger-unicode-hash-vector-fixtures`, including the proposed label, wrapper command, insertion point, expected public-safe output, failure semantics, Step-web-logger-010 preconditions, and safety boundaries. It remains release-quality-integration-design / docs-only and does not change `scripts/check_release_quality.sh`, Makefile, code, tests, fixture JSON, CI workflow, package metadata, Cargo metadata, or event durability.
+
+## 20. Step-web-logger-010 Release-Quality Wrapper Integration
+
+Step-web-logger-010 integrates the Makefile target into `scripts/check_release_quality.sh`.
+
+The wrapper adds `release_quality_check: web logger unicode hash vector fixture validation` and runs `make check-web-logger-unicode-hash-vector-fixtures` after Python checks and before learner-state target groups. The Makefile target remains the command source of truth. Step-web-logger-010 does not change Makefile, validator code, tests, fixture JSON, TypeScript/Rust helpers, CI workflow, or event durability.

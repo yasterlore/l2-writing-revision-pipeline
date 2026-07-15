@@ -614,3 +614,9 @@ The validator source is limited to fixture validation. It does not change TypeSc
 Makefile adds `check-web-logger-unicode-hash-vector-fixtures` as a standalone target for `python/web_logger_unicode_hash_vector_validation.py`.
 
 The source inventory addition is limited to Makefile target wiring and related docs. It does not change TypeScript, Rust, Python code, tests, fixture JSON, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, replay implementation files, or validator implementation files.
+
+## Step-web-logger-010 Source Inventory Addendum
+
+`scripts/check_release_quality.sh` adds `release_quality_check: web logger unicode hash vector fixture validation` and calls `make check-web-logger-unicode-hash-vector-fixtures`.
+
+The source inventory addition is limited to release-quality wrapper wiring and related docs. It does not change Makefile, TypeScript, Rust, Python code, tests, fixture JSON, workflows, package files, Cargo files, schema implementation files, runtime implementation files, replay implementation files, or validator implementation files.
