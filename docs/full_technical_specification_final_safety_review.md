@@ -587,3 +587,11 @@ This addendum does not add release-quality integration, CI workflow integration,
 The release-quality check runs the shared synthetic Unicode/hash vector fixture validation with public-safe summary-only output. It validates fixture metadata, decoded-text SHA-256 hashes, UTF-16 lengths, UTF-8 lengths, offset mappings, and expected invalid offset records. It does not output source text in normal summary output.
 
 This addendum does not add CI workflow integration, TypeScript helpers, Rust helpers, event durability, fixture JSON changes, schema implementation changes, replay/runtime implementation changes, production readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-015 Rust UTF-16 Offset Conversion Helper Safety Review Addendum
+
+`crates/kslog_replay/src/utf16_offsets.rs` and `crates/kslog_replay/tests/utf16_offsets.rs` add a focused helper/test boundary for browser-originated UTF-16 code unit offsets in Rust.
+
+The helper converts valid UTF-16 code unit boundaries to UTF-8 byte offsets, returns public-safe reason codes for invalid offsets, avoids raw text in error display output, and preserves the no-normalization policy for Unicode and newlines. The focused tests include shared synthetic vector offset cases without changing `vectors.json`.
+
+This addendum does not add broad replay / validate / extract / micro_episode runtime integration, TypeScript helpers, Rust SHA-256 helpers, TypeScript/Rust cross-language vector checks, Makefile targets, release-quality wrapper changes, CI workflow changes, fixture JSON changes, event durability, production readiness, real-data readiness, model performance, or deployment readiness.

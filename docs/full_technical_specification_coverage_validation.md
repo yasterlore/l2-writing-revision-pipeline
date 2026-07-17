@@ -738,3 +738,9 @@ The target provides local Makefile coverage for invoking the Python validator an
 `scripts/check_release_quality.sh` now includes `release_quality_check: web logger unicode hash vector fixture validation`.
 
 The wrapper coverage invokes the existing Makefile target and confirms the shared Unicode/hash vector fixture validator participates in local release-quality checks. This is release-quality wrapper coverage only. It is not CI coverage, TypeScript helper coverage, Rust helper coverage, cross-language helper evidence, event durability evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-015 Coverage Addendum
+
+`crates/kslog_replay/tests/utf16_offsets.rs` adds focused Rust test coverage for the UTF-16 code unit offset conversion helper in `crates/kslog_replay/src/utf16_offsets.rs`.
+
+The coverage includes empty, ASCII, Japanese, full-width, emoji surrogate pair, mixed Japanese/emoji, combining sequence, precomposed accent, LF, CRLF, trailing newline, tab, end offset, range conversion, empty range, beyond-length failure, `start > end` failure, stable reason codes, public-safe error text, and direct shared vector offset cases. This is focused Rust utility coverage only. It is not broad replay/runtime integration coverage, TypeScript helper coverage, Rust SHA-256 helper coverage, TypeScript/Rust cross-language helper evidence, event durability evidence, production readiness, real-data readiness, or model performance evidence.

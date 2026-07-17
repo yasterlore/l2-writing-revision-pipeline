@@ -3,6 +3,8 @@
 //! This crate reconstructs document state from `RawEvent` values. It does not
 //! extract revision events or construct micro-episodes.
 
+pub mod utf16_offsets;
+
 use std::{
     error::Error,
     fmt::{self, Display, Formatter},

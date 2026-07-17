@@ -370,3 +370,11 @@ Step-web-logger-013 adds [Web Logger Unicode and Hash Vector Validator Release Q
 ## 33. Step-web-logger-014 Rust UTF-16 Offset Conversion Helper Design
 
 Step-web-logger-014 adds [Rust UTF-16 Offset Conversion Helper Design for Web Logger Events](web_logger_rust_utf16_offset_conversion_helper_design.md). It designs the future Rust helper for converting browser-originated UTF-16 code unit offsets into UTF-8 byte offsets without changing the clarified schema policy or implementing Rust code.
+
+## 34. Step-web-logger-015 Rust UTF-16 Offset Conversion Helper
+
+Step-web-logger-015 adds the focused Rust helper described by Step-web-logger-014 in `crates/kslog_replay/src/utf16_offsets.rs`, with tests in `crates/kslog_replay/tests/utf16_offsets.rs`.
+
+The helper supports the clarified `position_unit=utf16_code_unit` policy at a focused utility level by converting browser-originated UTF-16 code unit offsets into UTF-8 byte offsets at valid Rust char boundaries. It fails closed for surrogate-pair internal offsets, offsets beyond UTF-16 length, and `start > end`, and it keeps diagnostics public-safe.
+
+This does not change schema behavior, does not integrate the helper into broader replay/runtime paths, and does not implement Rust or TypeScript SHA-256 helpers, TypeScript/Rust cross-language vector checks, or event durability.

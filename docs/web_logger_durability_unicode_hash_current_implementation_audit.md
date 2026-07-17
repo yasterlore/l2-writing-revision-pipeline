@@ -342,6 +342,8 @@ Step-web-logger-013 adds `docs/web_logger_unicode_hash_vector_validator_release_
 
 Step-web-logger-014 adds `docs/web_logger_rust_utf16_offset_conversion_helper_design.md` as design-only / docs-only planning for the Rust UTF-16 code unit offset to UTF-8 byte offset helper. It addresses one remaining P0 gap at the design level only; Rust implementation, Rust tests, broad replay integration, and event durability remain future work.
 
+Step-web-logger-015 adds `crates/kslog_replay/src/utf16_offsets.rs` and `crates/kslog_replay/tests/utf16_offsets.rs` as a focused Rust utility and test boundary for UTF-16 code unit offset to UTF-8 byte offset conversion. This closes the narrow helper/test gap for `kslog_replay` utility behavior, while broad replay / validate / extract / micro_episode runtime integration, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust cross-language vector checks, schema/runtime policy integration, and event durability remain open.
+
 ## 14. Relationship to Existing No-Oracle and Synthetic-Only Boundaries
 
 This audit does not relax no-oracle constraints, does not authorize real participant data collection, does not introduce real data, and does not validate model performance.

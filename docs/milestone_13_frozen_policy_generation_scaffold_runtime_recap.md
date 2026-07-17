@@ -3749,3 +3749,9 @@ The target runs the Step-web-logger-006 Python validator against `tests/fixtures
 Step-web-logger-010 adds `release_quality_check: web logger unicode hash vector fixture validation` to `scripts/check_release_quality.sh`.
 
 The wrapper calls `make check-web-logger-unicode-hash-vector-fixtures` after Python checks and before learner-state target groups. It validates the Step-web-logger-004 vector fixture through the Step-web-logger-006 Python validator with public-safe summary-only output. Step-web-logger-010 does not change Makefile, workflow files, TypeScript, Rust, Python code/tests, fixture JSON, package files, Cargo files, schema implementation, runtime implementation, replay implementation, TypeScript/Rust helper implementation, event durability, real-data use, metric evidence, or production readiness status.
+
+## Step-web-logger-015 Rust UTF-16 Offset Conversion Helper
+
+Step-web-logger-015 adds `crates/kslog_replay/src/utf16_offsets.rs` and `crates/kslog_replay/tests/utf16_offsets.rs`.
+
+The helper converts browser-originated UTF-16 code unit offsets into UTF-8 byte offsets at valid Rust char boundaries and fails closed for surrogate-pair internal offsets, offsets beyond UTF-16 length, and `start > end`. The focused tests cover direct synthetic Unicode cases and shared vector offset cases. Step-web-logger-015 does not change TypeScript, Python, fixture JSON, Makefile, release-quality wrapper, workflow files, package files, Cargo files, schema/runtime integration, broader replay behavior, TypeScript/Rust cross-language checks, event durability, real-data use, metric evidence, or production readiness status.

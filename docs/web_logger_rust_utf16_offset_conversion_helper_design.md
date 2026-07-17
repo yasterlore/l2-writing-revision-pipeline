@@ -350,3 +350,22 @@ Clarification:
 - It should not integrate broadly into replay / validate / extract yet unless explicitly scoped.
 - It should not implement event durability.
 - It should update README and full technical specification docs only because it will be an implementation step.
+
+## 22. Step-web-logger-015 Implementation Status
+
+Step-web-logger-015 adds the first focused Rust helper in `crates/kslog_replay/src/utf16_offsets.rs` and focused tests in `crates/kslog_replay/tests/utf16_offsets.rs`.
+
+The helper follows this design's narrow boundary:
+
+- converts a single UTF-16 code unit offset to a UTF-8 byte offset at a valid Rust char boundary
+- converts a UTF-16 code unit range to a UTF-8 byte range
+- rejects offsets beyond the UTF-16 length
+- rejects surrogate-pair internal offsets
+- rejects `start > end`
+- preserves Unicode and newline content without normalization
+- exposes stable public-safe reason codes
+- avoids raw text in error display output
+
+The focused tests include direct shared-vector reuse through the existing `kslog_replay` dev dependency surface, so `Cargo.toml` and `vectors.json` are unchanged.
+
+This implementation step does not integrate the helper into replay / validate / extract / micro_episode runtime behavior, does not implement Rust or TypeScript SHA-256 helpers, does not add TypeScript/Rust cross-language vector checks, does not change Makefile or release-quality wrapper wiring, and does not implement event durability.

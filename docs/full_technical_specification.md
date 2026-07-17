@@ -1605,3 +1605,13 @@ This appendix records Makefile target integration only. It does not add release-
 The wrapper calls `make check-web-logger-unicode-hash-vector-fixtures` after Python checks and before learner-state target groups. The check validates the shared synthetic Unicode/hash vector fixture through the Python validator, including fixture metadata, SHA-256 hashes over decoded UTF-8 source text, UTF-16 code unit lengths, UTF-8 byte lengths, offset mappings, expected invalid offset records, and public-safe summary output.
 
 This appendix records release-quality wrapper integration only. It does not add CI workflow integration, TypeScript helper code, Rust UTF-16 conversion helper code, Rust hash helper code, fixture JSON changes, schema implementation changes, replay/runtime changes, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.
+
+## Appendix AZ. Web Logger Rust UTF-16 Offset Conversion Helper
+
+`crates/kslog_replay/src/utf16_offsets.rs` adds a focused Rust utility for converting browser-originated UTF-16 code unit offsets into UTF-8 byte offsets at valid Rust char boundaries. `crates/kslog_replay/tests/utf16_offsets.rs` adds focused Rust tests for the helper.
+
+The helper exposes `utf16_code_unit_offset_to_utf8_byte_index` and `utf16_code_unit_range_to_utf8_byte_range`. It preserves Unicode and newline content without normalization, rejects offsets beyond the UTF-16 code unit length, rejects surrogate-pair internal offsets, rejects `start > end`, permits valid empty ranges, returns byte ranges suitable for Rust string slicing, and exposes public-safe reason codes without including raw text in error display output.
+
+The focused tests cover empty strings, ASCII, Japanese, full-width alphanumerics, emoji surrogate pairs, mixed Japanese plus emoji, combining sequences, precomposed accents, LF, CRLF, trailing newline, tab, range conversion, empty ranges, stable reason codes, public-safe error text, and direct shared vector offset cases from `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`.
+
+This appendix records focused helper and test implementation only. It does not add broad replay / validate / extract / micro_episode runtime integration, TypeScript helper code, Rust SHA-256 helper code, TypeScript/Rust cross-language vector checks, fixture JSON changes, Makefile targets, release-quality wrapper changes, CI workflow integration, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.
