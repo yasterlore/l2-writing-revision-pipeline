@@ -631,3 +631,9 @@ The marker keeps the Python validator chain and Rust helper chain as separate ev
 Step-web-logger-022 adds [Rust UTF-16 Offset Conversion Helper Release Quality Chain Final Safety Review](web_logger_rust_utf16_offset_conversion_helper_release_quality_chain_final_safety_review.md).
 
 The review keeps the Python validator chain and Rust helper chain as separate evidence boundaries. It accepts the focused Rust helper/test chain only and does not change validator behavior, Rust helper behavior, fixture JSON, Makefile, wrapper, TypeScript/Rust helper compatibility posture, or event durability.
+
+## 43. Step-web-logger-023 Broader Replay Integration Design
+
+Step-web-logger-023 adds [Rust UTF-16 Offset Conversion Helper Broader Replay Integration Design](web_logger_rust_utf16_offset_conversion_helper_broader_replay_integration_design.md).
+
+The design keeps the Python validator chain, focused Rust helper chain, and future replay integration chain as separate evidence boundaries. It does not change validator behavior, Rust helper behavior, fixture JSON, Makefile, wrapper, TypeScript/Rust helper compatibility posture, or event durability.

@@ -491,3 +491,9 @@ The marker records public-safe remote metadata/count-only evidence for release-q
 Step-web-logger-022 adds [Rust UTF-16 Offset Conversion Helper Release Quality Chain Final Safety Review](web_logger_rust_utf16_offset_conversion_helper_release_quality_chain_final_safety_review.md).
 
 The review accepts the focused Rust helper chain with shared vector reuse, but not exhaustive Unicode coverage. It does not change vector data, Rust tests, Makefile, wrapper implementation, TypeScript/Rust cross-language checks, broader runtime integration, or event durability.
+
+## 40. Step-web-logger-023 Broader Replay Integration Design
+
+Step-web-logger-023 adds [Rust UTF-16 Offset Conversion Helper Broader Replay Integration Design](web_logger_rust_utf16_offset_conversion_helper_broader_replay_integration_design.md).
+
+The design recommends reusing shared Unicode/hash vectors where practical for future replay-focused tests. It does not change vector data, Rust tests, Makefile, wrapper implementation, TypeScript/Rust cross-language checks, broader runtime implementation, or event durability.

@@ -358,6 +358,8 @@ Step-web-logger-021 adds `docs/status/web_logger_rust_utf16_offset_conversion_he
 
 Step-web-logger-022 adds `docs/web_logger_rust_utf16_offset_conversion_helper_release_quality_chain_final_safety_review.md` as a docs-only final safety review for the Rust helper release-quality chain. It accepts only the focused helper/test boundary and does not add broader runtime integration, TypeScript/Rust hash work, event durability, production readiness, or real-data readiness.
 
+Step-web-logger-023 adds `docs/web_logger_rust_utf16_offset_conversion_helper_broader_replay_integration_design.md` as docs-only planning for replay-first integration of the existing helper. It does not change Rust code, tests, fixture JSON, Makefile, wrapper, CI workflow, validate / extract / micro_episode behavior, TypeScript/Rust hash work, or event durability.
+
 ## 14. Relationship to Existing No-Oracle and Synthetic-Only Boundaries
 
 This audit does not relax no-oracle constraints, does not authorize real participant data collection, does not introduce real data, and does not validate model performance.

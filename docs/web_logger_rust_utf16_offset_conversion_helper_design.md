@@ -411,3 +411,9 @@ The marker records public-safe remote release-quality evidence for the focused h
 Step-web-logger-022 adds [Rust UTF-16 Offset Conversion Helper Release Quality Chain Final Safety Review](web_logger_rust_utf16_offset_conversion_helper_release_quality_chain_final_safety_review.md).
 
 The review accepts the helper release-quality chain only within the focused helper/test boundary. It does not change helper behavior, focused tests, fixture JSON, Makefile, wrapper, CI workflow, broader runtime behavior, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust cross-language checks, or event durability.
+
+## 30. Step-web-logger-023 Broader Replay Integration Design
+
+Step-web-logger-023 adds [Rust UTF-16 Offset Conversion Helper Broader Replay Integration Design](web_logger_rust_utf16_offset_conversion_helper_broader_replay_integration_design.md).
+
+The design audits current Rust call sites and recommends replay-first integration for the helper. It does not change helper behavior, focused tests, fixture JSON, Makefile, wrapper, CI workflow, validate / extract / micro_episode behavior, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust cross-language checks, or event durability.

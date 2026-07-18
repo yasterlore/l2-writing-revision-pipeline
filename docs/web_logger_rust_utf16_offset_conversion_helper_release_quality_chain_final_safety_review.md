@@ -255,3 +255,9 @@ Clarification:
 - It should not implement TypeScript/Rust hash checks.
 - It should not implement event durability.
 - It should not claim broader Unicode correctness until implementation and tests are complete.
+
+## 20. Step-web-logger-023 Broader Replay Integration Design
+
+Step-web-logger-023 adds [Rust UTF-16 Offset Conversion Helper Broader Replay Integration Design](web_logger_rust_utf16_offset_conversion_helper_broader_replay_integration_design.md).
+
+The design plans future replay-first integration of the focused helper while keeping validate / extract / micro_episode integration as later chains. It does not change Rust code, tests, fixture JSON, Makefile, wrapper, CI workflow, TypeScript/Rust hash work, event durability, production readiness, or real-data readiness.
