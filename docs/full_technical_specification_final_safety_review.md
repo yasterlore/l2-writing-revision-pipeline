@@ -595,3 +595,11 @@ This addendum does not add CI workflow integration, TypeScript helpers, Rust hel
 The helper converts valid UTF-16 code unit boundaries to UTF-8 byte offsets, returns public-safe reason codes for invalid offsets, avoids raw text in error display output, and preserves the no-normalization policy for Unicode and newlines. The focused tests include shared synthetic vector offset cases without changing `vectors.json`.
 
 This addendum does not add broad replay / validate / extract / micro_episode runtime integration, TypeScript helpers, Rust SHA-256 helpers, TypeScript/Rust cross-language vector checks, Makefile targets, release-quality wrapper changes, CI workflow changes, fixture JSON changes, event durability, production readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-017 Rust UTF-16 Offset Conversion Helper Makefile Target Safety Review Addendum
+
+Makefile adds `check-web-logger-rust-utf16-offset-conversion` for the Step-web-logger-015 focused Rust helper tests.
+
+The target runs `cargo test -p kslog_replay utf16` and provides a local Makefile path for validating the focused helper tests. It does not print raw fixture bodies in normal output and does not modify the shared vector fixture.
+
+This addendum does not change Rust helper code, focused Rust tests, fixture JSON, release-quality wrapper integration, CI workflow integration, broader replay / validate / extract / micro_episode runtime integration, TypeScript helpers, Rust SHA-256 helpers, TypeScript/Rust cross-language vector checks, event durability, production readiness, real-data readiness, model performance, or deployment readiness.

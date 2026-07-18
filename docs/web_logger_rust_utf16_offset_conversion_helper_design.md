@@ -375,3 +375,9 @@ This implementation step does not integrate the helper into replay / validate / 
 Step-web-logger-016 adds [Rust UTF-16 Offset Conversion Helper Makefile Target Design](web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md).
 
 The design proposes a future standalone target, `check-web-logger-rust-utf16-offset-conversion`, that runs `cargo test -p kslog_replay utf16` for the focused Rust helper tests. It does not change Makefile, Rust code, tests, fixture JSON, release-quality wrapper, CI workflow, or broader replay/runtime behavior.
+
+## 24. Step-web-logger-017 Makefile Target
+
+Step-web-logger-017 adds `check-web-logger-rust-utf16-offset-conversion` to Makefile.
+
+The target runs `cargo test -p kslog_replay utf16` for the Step-web-logger-015 focused helper tests. It is a Makefile execution path only; it does not change helper code, tests, fixture JSON, release-quality wrapper, CI workflow, or broader replay/runtime behavior.

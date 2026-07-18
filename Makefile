@@ -11,6 +11,7 @@
 .PHONY: check-policy
 .PHONY: check-fixtures
 .PHONY: check-web-logger-unicode-hash-vector-fixtures
+.PHONY: check-web-logger-rust-utf16-offset-conversion
 .PHONY: check-learner-state-audit-fixtures
 .PHONY: check-learner-state-exporter-cli
 .PHONY: check-learner-state-estimator-input
@@ -76,6 +77,7 @@ help:
 	@echo "  check-policy                 Run synthetic policy checks"
 	@echo "  check-fixtures               Run fixture/config validation checks"
 	@echo "  check-web-logger-unicode-hash-vector-fixtures  Run web logger Unicode/hash vector fixture validation"
+	@echo "  check-web-logger-rust-utf16-offset-conversion  Run Rust UTF-16 offset conversion helper tests"
 	@echo "  check-learner-state-audit-fixtures  Audit synthetic learner-state fixtures"
 	@echo "  check-learner-state-exporter-cli  Smoke-test learner-state exporter CLI"
 	@echo "  check-learner-state-estimator-input  Smoke-test learner-state estimator input validation"
@@ -168,6 +170,9 @@ check-fixtures:
 
 check-web-logger-unicode-hash-vector-fixtures:
 	PYTHONPATH=python python3 -m web_logger_unicode_hash_vector_validation --fixture tests/fixtures/web_logger_unicode_hash_vectors/vectors.json --summary-only
+
+check-web-logger-rust-utf16-offset-conversion:
+	cargo test -p kslog_replay utf16
 
 check-learner-state-audit-fixtures:
 	PYTHONPATH=python python3 -m learner_state.sequence_audit --fixture-root tests/fixtures/learner_state_sequence_audit

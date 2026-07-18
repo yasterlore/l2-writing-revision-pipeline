@@ -346,6 +346,8 @@ Step-web-logger-015 adds `crates/kslog_replay/src/utf16_offsets.rs` and `crates/
 
 Step-web-logger-016 adds `docs/web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md` as makefile-target-design / docs-only planning for a future focused Rust helper test target. It does not add the target, change Makefile, alter Rust helper code, change tests, or close the broader runtime / hash / durability gaps.
 
+Step-web-logger-017 adds `check-web-logger-rust-utf16-offset-conversion` to Makefile. It provides a focused Makefile path for `cargo test -p kslog_replay utf16`, while leaving Rust helper code, focused tests, fixture JSON, release-quality integration, broader runtime integration, TypeScript/Rust hash work, and event durability unchanged.
+
 ## 14. Relationship to Existing No-Oracle and Synthetic-Only Boundaries
 
 This audit does not relax no-oracle constraints, does not authorize real participant data collection, does not introduce real data, and does not validate model performance.

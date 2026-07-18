@@ -626,3 +626,9 @@ The source inventory addition is limited to release-quality wrapper wiring and r
 `crates/kslog_replay/src/utf16_offsets.rs` is added as a focused Rust helper source for UTF-16 code unit offset to UTF-8 byte offset conversion. `crates/kslog_replay/tests/utf16_offsets.rs` is added as the focused Rust test source for the helper.
 
 The source inventory addition is limited to `kslog_replay` helper/test files and related docs. It does not change TypeScript, Python, Rust files outside the focused helper/test boundary, fixture JSON, Makefile, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, validator implementation files, or the Web logger status marker.
+
+## Step-web-logger-017 Source Inventory Addendum
+
+Makefile adds `check-web-logger-rust-utf16-offset-conversion` as a standalone target for the Step-web-logger-015 focused Rust helper tests.
+
+The source inventory addition is limited to Makefile target wiring and related docs. It does not change Rust helper code, focused Rust tests, TypeScript, Python, fixture JSON, release-quality wrapper, workflows, package files, Cargo files, schema implementation files, runtime implementation files, replay implementation files, validator implementation files, or the Web logger status marker.

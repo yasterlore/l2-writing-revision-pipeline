@@ -595,3 +595,9 @@ The Rust tests consume the shared vector fixture for offset expectations while l
 Step-web-logger-016 adds [Rust UTF-16 Offset Conversion Helper Makefile Target Design](web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md).
 
 The design is separate from the Python validator target. It proposes a future Rust helper test target while keeping the Python validator, Python Makefile target, release-quality wrapper, and `vectors.json` unchanged.
+
+## 37. Step-web-logger-017 Rust Helper Makefile Target
+
+Step-web-logger-017 adds `check-web-logger-rust-utf16-offset-conversion` as a separate Makefile target from the Python validator target.
+
+The Rust helper target runs focused Rust offset conversion tests. The Python validator target continues to validate the shared fixture contract. The two targets remain complementary and neither target replaces the other.

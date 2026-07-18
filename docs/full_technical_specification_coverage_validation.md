@@ -744,3 +744,9 @@ The wrapper coverage invokes the existing Makefile target and confirms the share
 `crates/kslog_replay/tests/utf16_offsets.rs` adds focused Rust test coverage for the UTF-16 code unit offset conversion helper in `crates/kslog_replay/src/utf16_offsets.rs`.
 
 The coverage includes empty, ASCII, Japanese, full-width, emoji surrogate pair, mixed Japanese/emoji, combining sequence, precomposed accent, LF, CRLF, trailing newline, tab, end offset, range conversion, empty range, beyond-length failure, `start > end` failure, stable reason codes, public-safe error text, and direct shared vector offset cases. This is focused Rust utility coverage only. It is not broad replay/runtime integration coverage, TypeScript helper coverage, Rust SHA-256 helper coverage, TypeScript/Rust cross-language helper evidence, event durability evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-017 Coverage Addendum
+
+Makefile now exposes `check-web-logger-rust-utf16-offset-conversion` as a standalone check for the focused Rust UTF-16 offset conversion helper tests.
+
+The target provides local Makefile coverage for invoking `cargo test -p kslog_replay utf16`. This is focused Makefile target coverage only. It is not release-quality coverage, CI coverage, broader replay/runtime integration coverage, TypeScript helper coverage, Rust SHA-256 helper coverage, TypeScript/Rust cross-language helper evidence, event durability evidence, production readiness, real-data readiness, or model performance evidence.

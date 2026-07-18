@@ -1615,3 +1615,17 @@ The helper exposes `utf16_code_unit_offset_to_utf8_byte_index` and `utf16_code_u
 The focused tests cover empty strings, ASCII, Japanese, full-width alphanumerics, emoji surrogate pairs, mixed Japanese plus emoji, combining sequences, precomposed accents, LF, CRLF, trailing newline, tab, range conversion, empty ranges, stable reason codes, public-safe error text, and direct shared vector offset cases from `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json`.
 
 This appendix records focused helper and test implementation only. It does not add broad replay / validate / extract / micro_episode runtime integration, TypeScript helper code, Rust SHA-256 helper code, TypeScript/Rust cross-language vector checks, fixture JSON changes, Makefile targets, release-quality wrapper changes, CI workflow integration, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.
+
+## Appendix BA. Web Logger Rust UTF-16 Offset Conversion Helper Makefile Target
+
+`check-web-logger-rust-utf16-offset-conversion` is added as a standalone Makefile target for the Step-web-logger-015 focused Rust helper tests.
+
+The target runs:
+
+```bash
+cargo test -p kslog_replay utf16
+```
+
+It exercises the `kslog_replay` UTF-16 code unit offset to UTF-8 byte offset helper tests, including shared synthetic vector reuse. The target is placed near the existing Web logger Unicode/hash vector fixture target.
+
+This appendix records Makefile target integration only. It does not change Rust helper code, focused Rust tests, fixture JSON, release-quality wrapper integration, CI workflow integration, broader replay / validate / extract / micro_episode runtime integration, Rust SHA-256 helper code, TypeScript SHA-256 helper code, TypeScript/Rust cross-language vector checks, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.

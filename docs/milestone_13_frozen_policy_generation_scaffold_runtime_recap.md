@@ -3755,3 +3755,9 @@ The wrapper calls `make check-web-logger-unicode-hash-vector-fixtures` after Pyt
 Step-web-logger-015 adds `crates/kslog_replay/src/utf16_offsets.rs` and `crates/kslog_replay/tests/utf16_offsets.rs`.
 
 The helper converts browser-originated UTF-16 code unit offsets into UTF-8 byte offsets at valid Rust char boundaries and fails closed for surrogate-pair internal offsets, offsets beyond UTF-16 length, and `start > end`. The focused tests cover direct synthetic Unicode cases and shared vector offset cases. Step-web-logger-015 does not change TypeScript, Python, fixture JSON, Makefile, release-quality wrapper, workflow files, package files, Cargo files, schema/runtime integration, broader replay behavior, TypeScript/Rust cross-language checks, event durability, real-data use, metric evidence, or production readiness status.
+
+## Step-web-logger-017 Rust UTF-16 Offset Conversion Helper Makefile Target
+
+Step-web-logger-017 adds `check-web-logger-rust-utf16-offset-conversion` to Makefile.
+
+The target runs `cargo test -p kslog_replay utf16` for the Step-web-logger-015 focused Rust helper tests. Step-web-logger-017 does not change Rust helper code, focused Rust tests, TypeScript, Python, fixture JSON, release-quality wrapper, workflow files, package files, Cargo files, schema/runtime integration, broader replay behavior, TypeScript/Rust cross-language checks, event durability, real-data use, metric evidence, or production readiness status.

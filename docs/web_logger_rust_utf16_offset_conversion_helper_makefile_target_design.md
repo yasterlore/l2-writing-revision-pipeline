@@ -286,3 +286,25 @@ Clarification:
 - Step-web-logger-017 should not add release-quality integration yet.
 - Step-web-logger-017 should not implement TypeScript/Rust hash checks.
 - Step-web-logger-017 should not implement event durability.
+
+## 22. Step-web-logger-017 Target Status
+
+Step-web-logger-017 adds the standalone Makefile target:
+
+```text
+check-web-logger-rust-utf16-offset-conversion
+```
+
+The target runs:
+
+```bash
+cargo test -p kslog_replay utf16
+```
+
+The target is placed near the existing Web logger Unicode/hash vector fixture target, with help text:
+
+```text
+Run Rust UTF-16 offset conversion helper tests
+```
+
+This status update records Makefile target availability only. It does not change Rust helper code, focused Rust tests, fixture JSON, release-quality wrapper, CI workflow, broader replay / validate / extract / micro_episode runtime integration, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust cross-language vector checks, or event durability.

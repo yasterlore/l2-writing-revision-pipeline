@@ -1169,3 +1169,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step-web-logger-016 Rust UTF-16 Offset Conversion Helper Makefile Target Design
 
 - [Rust UTF-16 offset conversion helper Makefile target design](web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md): makefile-target-design / docs-only plan for a future `check-web-logger-rust-utf16-offset-conversion` target. It proposes `cargo test -p kslog_replay utf16`, Makefile placement next to the existing Web logger Unicode/hash vector target, expected public-safe output, failure semantics, Step-web-logger-017 checks, release-quality staging, and non-claims without changing Makefile, Rust code, tests, fixture JSON, wrapper, workflow, package metadata, Cargo metadata, broader runtime integration, or event durability.
+
+## Step-web-logger-017 Rust UTF-16 Offset Conversion Helper Makefile Target
+
+- `check-web-logger-rust-utf16-offset-conversion`: standalone Makefile target for the Step-web-logger-015 focused Rust helper tests. It runs `cargo test -p kslog_replay utf16` and keeps the check focused on UTF-16 code unit offset to UTF-8 byte offset conversion behavior. The target does not change Rust helper code, focused Rust tests, fixture JSON, release-quality wrapper, CI workflow, broader replay / validate / extract / micro_episode runtime integration, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust cross-language vector checks, or event durability.

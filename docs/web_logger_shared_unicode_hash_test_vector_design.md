@@ -455,3 +455,9 @@ The focused tests reuse `tests/fixtures/web_logger_unicode_hash_vectors/vectors.
 Step-web-logger-016 adds [Rust UTF-16 Offset Conversion Helper Makefile Target Design](web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md).
 
 The design keeps shared vector reuse in the focused Rust tests and proposes `cargo test -p kslog_replay utf16` as the future standalone Makefile target command. It does not change vector fixture data, Rust tests, Makefile, release-quality wrapper, or TypeScript/Rust cross-language checks.
+
+## 34. Step-web-logger-017 Rust Helper Makefile Target
+
+Step-web-logger-017 adds the standalone Makefile target `check-web-logger-rust-utf16-offset-conversion`.
+
+The target runs `cargo test -p kslog_replay utf16`, which exercises the focused Rust helper tests and their shared vector reuse. It does not change shared vector data, Rust tests, release-quality wrapper, TypeScript/Rust cross-language checks, or event durability.

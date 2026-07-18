@@ -464,3 +464,9 @@ The helper follows the safety design for offset semantics: no Unicode normalizat
 Step-web-logger-016 adds [Rust UTF-16 Offset Conversion Helper Makefile Target Design](web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md).
 
 The design proposes a future focused Makefile target for the Step-web-logger-015 Rust helper tests. It keeps event durability, broader runtime integration, TypeScript/Rust hash work, release-quality integration, CI workflow changes, and collection readiness outside this step.
+
+## 36. Step-web-logger-017 Rust Helper Makefile Target
+
+Step-web-logger-017 adds the focused Makefile target `check-web-logger-rust-utf16-offset-conversion`.
+
+The target runs `cargo test -p kslog_replay utf16` for the Rust helper tests. It keeps release-quality integration, CI workflow changes, broader runtime integration, TypeScript/Rust hash work, queueing, IndexedDB buffering, acknowledgement, retry, deduplication, and collection readiness outside this step.
