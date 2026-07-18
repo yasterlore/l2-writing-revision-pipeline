@@ -380,3 +380,9 @@ This follow-on design remains outside the accepted Python validator chain bounda
 Step-web-logger-019 adds the Rust UTF-16 helper focused test target to `scripts/check_release_quality.sh`.
 
 This is a follow-on wrapper integration for the Rust helper target. It does not alter this review's accepted Python validator boundary, does not claim TypeScript/Rust helper compatibility, does not claim broader replay runtime integration, and does not claim production readiness or real-data readiness.
+
+## 24. Step-web-logger-020 Rust Helper Remote/Manual Run Record Workflow Design
+
+Step-web-logger-020 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_record_workflow.md).
+
+This follow-on design remains outside the accepted Python validator chain boundary reviewed here. It does not create a status marker, does not alter this review's decision, does not claim broader replay runtime integration, does not claim TypeScript/Rust helper compatibility, and does not claim production readiness or real-data readiness.

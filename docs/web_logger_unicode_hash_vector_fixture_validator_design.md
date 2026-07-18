@@ -613,3 +613,9 @@ The design proposes future release-quality execution of the Rust helper Makefile
 Step-web-logger-019 adds the Rust helper target to the release-quality wrapper while keeping the Python validator chain separate.
 
 The wrapper now contains both the Python Unicode/hash vector fixture validation check and the Rust UTF-16 helper focused test check. The two checks remain complementary; neither proves the other's correctness, and neither claims TypeScript/Rust helper compatibility or event durability.
+
+## 40. Step-web-logger-020 Rust Helper Remote/Manual Run Record Workflow Design
+
+Step-web-logger-020 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_record_workflow.md).
+
+The workflow design keeps the Python validator chain and Rust helper chain as separate evidence boundaries. It does not create a status marker, change validator behavior, change Rust helper behavior, change fixture JSON, change Makefile, change wrapper, claim TypeScript/Rust helper compatibility, or add event durability.

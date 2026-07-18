@@ -304,3 +304,9 @@ make check-web-logger-rust-utf16-offset-conversion
 The check is inserted after `release_quality_check: web logger unicode hash vector fixture validation` and before `release_quality_check: learner-state audit fixtures`. It calls the Makefile target as the command source of truth and does not duplicate the Cargo command in the wrapper.
 
 This status update records wrapper integration only. It does not change Makefile, Rust helper code, focused Rust tests, fixture JSON, CI workflow, broader replay / validate / extract / micro_episode runtime integration, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust cross-language vector checks, or event durability.
+
+## 23. Step-web-logger-020 Remote/Manual Run Record Workflow Design
+
+Step-web-logger-020 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_record_workflow.md).
+
+The workflow design plans a future public-safe status marker for the Step-web-logger-019 wrapper check. It does not create the status marker, change the wrapper, change Makefile, change Rust code or tests, change fixture JSON, change CI workflow, add broader runtime integration, add TypeScript/Rust hash work, or add event durability.

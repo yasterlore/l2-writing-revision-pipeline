@@ -482,3 +482,9 @@ The design proposes future wrapper execution of `make check-web-logger-rust-utf1
 Step-web-logger-019 adds `release_quality_check: web logger Rust UTF-16 offset conversion helper` to the release-quality wrapper.
 
 The wrapper calls `make check-web-logger-rust-utf16-offset-conversion` after the Web logger Unicode/hash vector fixture validation check. This remains focused on Rust helper tests and does not add CI workflow changes, broader runtime integration, TypeScript/Rust hash work, queueing, IndexedDB buffering, acknowledgement, retry, deduplication, or collection readiness.
+
+## 39. Step-web-logger-020 Rust Helper Remote/Manual Run Record Workflow Design
+
+Step-web-logger-020 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_record_workflow.md).
+
+The design plans future public-safe status evidence for the Step-web-logger-019 wrapper check. It does not create the status marker, change wrapper code, change Makefile, change Rust code or tests, change fixture JSON, add CI workflow changes, add broader runtime integration, add TypeScript/Rust hash work, add queueing, add IndexedDB buffering, add acknowledgement, add retry, add deduplication, or add collection readiness.

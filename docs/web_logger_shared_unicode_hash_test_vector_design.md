@@ -473,3 +473,9 @@ The design keeps shared vector reuse in the focused Rust tests and proposes futu
 Step-web-logger-019 integrates the Rust helper Makefile target into the release-quality wrapper.
 
 The Rust helper focused tests continue to reuse the shared synthetic vectors. This step does not change vector data, Rust tests, Makefile, TypeScript/Rust cross-language checks, broader runtime integration, or event durability.
+
+## 37. Step-web-logger-020 Rust Helper Remote/Manual Run Record Workflow Design
+
+Step-web-logger-020 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_record_workflow.md).
+
+The workflow design plans future metadata-only evidence recording for release-quality execution of the Rust helper target. It does not change vector data, Rust tests, Makefile, wrapper implementation, TypeScript/Rust cross-language checks, broader runtime integration, or event durability.
