@@ -601,3 +601,9 @@ The design is separate from the Python validator target. It proposes a future Ru
 Step-web-logger-017 adds `check-web-logger-rust-utf16-offset-conversion` as a separate Makefile target from the Python validator target.
 
 The Rust helper target runs focused Rust offset conversion tests. The Python validator target continues to validate the shared fixture contract. The two targets remain complementary and neither target replaces the other.
+
+## 38. Step-web-logger-018 Rust Helper Release-Quality Integration Design
+
+Step-web-logger-018 adds [Rust UTF-16 Offset Conversion Helper Release Quality Integration Design](web_logger_rust_utf16_offset_conversion_helper_release_quality_integration_design.md).
+
+The design proposes future release-quality execution of the Rust helper Makefile target while keeping the Python validator chain separate. It does not change validator behavior, Rust helper behavior, fixture JSON, Makefile, wrapper, TypeScript/Rust helper compatibility claims, or event durability.

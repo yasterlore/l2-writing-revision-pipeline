@@ -368,3 +368,9 @@ This update is outside the Step-web-logger-013 accepted Python validator chain. 
 Step-web-logger-016 adds [Rust UTF-16 Offset Conversion Helper Makefile Target Design](web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md) as makefile-target-design / docs-only planning for a future standalone target.
 
 It does not add the target, does not change Makefile, and does not alter the Step-web-logger-013 final safety review decision.
+
+## 22. Step-web-logger-018 Rust Helper Release-Quality Integration Design
+
+Step-web-logger-018 adds [Rust UTF-16 Offset Conversion Helper Release Quality Integration Design](web_logger_rust_utf16_offset_conversion_helper_release_quality_integration_design.md) as docs-only planning for future wrapper integration of the Rust helper Makefile target.
+
+This follow-on design remains outside the accepted Python validator chain boundary reviewed here. It does not alter this review's decision, does not claim TypeScript/Rust helper compatibility, does not claim broader replay runtime integration, and does not claim production readiness or real-data readiness.
