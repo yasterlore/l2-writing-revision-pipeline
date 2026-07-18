@@ -611,3 +611,11 @@ This addendum does not change Rust helper code, focused Rust tests, fixture JSON
 The check is ordered after the Web logger Unicode/hash vector fixture validation check and before learner-state audit fixtures. It reuses the Makefile target rather than duplicating the Cargo command in the wrapper.
 
 This addendum does not change Makefile, Rust helper code, focused Rust tests, fixture JSON, CI workflow integration, broader replay / validate / extract / micro_episode runtime integration, TypeScript helpers, Rust SHA-256 helpers, TypeScript/Rust cross-language vector checks, event durability, production readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-024 Rust UTF-16 Offset Replay Integration Safety Review Addendum
+
+`crates/kslog_replay/src/lib.rs` integrates the existing Rust UTF-16 offset helper into replay string-index boundaries.
+
+Replay converts browser-originated cursor and selection offsets to UTF-8 byte ranges before string slicing / replacement, uses UTF-16 code unit document length checks, validates cursor-after metadata against the updated text state, and fail-closes invalid UTF-16 offsets with public-safe reason_code behavior. Focused `utf16` replay tests cover success and fail-closed synthetic cases and diagnostics content suppression.
+
+This addendum does not change `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, fixture JSON, Makefile, release-quality wrapper, CI workflow integration, schema-level position_unit behavior, TypeScript helpers, Rust SHA-256 helpers, TypeScript/Rust cross-language vector checks, event durability, production readiness, real-data readiness, model performance, or deployment readiness.

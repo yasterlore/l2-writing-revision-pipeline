@@ -497,3 +497,11 @@ The review accepts the focused Rust helper chain with shared vector reuse, but n
 Step-web-logger-023 adds [Rust UTF-16 Offset Conversion Helper Broader Replay Integration Design](web_logger_rust_utf16_offset_conversion_helper_broader_replay_integration_design.md).
 
 The design recommends reusing shared Unicode/hash vectors where practical for future replay-focused tests. It does not change vector data, Rust tests, Makefile, wrapper implementation, TypeScript/Rust cross-language checks, broader runtime implementation, or event durability.
+
+## 41. Step-web-logger-024 Replay-Focused Integration
+
+Step-web-logger-024 adds replay-focused UTF-16 offset integration in `kslog_replay`.
+
+The existing shared Unicode/hash vectors remain unchanged and continue to be reused by the focused helper tests. The new replay-focused tests use synthetic Rust literals for replay behavior so no replay-specific fixture JSON changes are introduced.
+
+This step does not add TypeScript/Rust cross-language checks, Rust SHA-256 helper work, TypeScript SHA-256 helper work, validate / extract / micro_episode integration, Makefile changes, wrapper changes, CI workflow changes, event durability, production readiness, real-data readiness, or model performance evidence.

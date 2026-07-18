@@ -426,3 +426,11 @@ The review accepts the focused Rust helper chain within an explicit boundary. It
 Step-web-logger-023 adds [Rust UTF-16 Offset Conversion Helper Broader Replay Integration Design](web_logger_rust_utf16_offset_conversion_helper_broader_replay_integration_design.md).
 
 The design applies the clarified UTF-16 code unit policy to future replay-first integration planning. It does not change schema behavior, Makefile, wrapper, Rust helper code, tests, fixture JSON, TypeScript/Rust hash work, broader runtime implementation, or event durability.
+
+## 43. Step-web-logger-024 Replay-Focused Integration
+
+Step-web-logger-024 applies the UTF-16 code unit position policy inside `kslog_replay` only.
+
+Replay now converts browser-originated cursor and selection offsets to UTF-8 byte ranges before string indexing / replacement and validates replay document lengths as UTF-16 code unit counts. Invalid surrogate-pair internal offsets, offsets beyond length, and `start > end` fail closed with public-safe reason_code behavior.
+
+The schema still has no new explicit position_unit implementation in this step. Validate / extract / micro_episode integration, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust checks, event durability, fixture JSON changes, Makefile changes, wrapper changes, and CI workflow changes remain future work.

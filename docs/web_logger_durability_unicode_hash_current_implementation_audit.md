@@ -360,6 +360,8 @@ Step-web-logger-022 adds `docs/web_logger_rust_utf16_offset_conversion_helper_re
 
 Step-web-logger-023 adds `docs/web_logger_rust_utf16_offset_conversion_helper_broader_replay_integration_design.md` as docs-only planning for replay-first integration of the existing helper. It does not change Rust code, tests, fixture JSON, Makefile, wrapper, CI workflow, validate / extract / micro_episode behavior, TypeScript/Rust hash work, or event durability.
 
+Step-web-logger-024 adds replay-focused UTF-16 offset integration inside `kslog_replay`. Replay cursor and selection offsets are converted through the existing helper before string indexing / replacement, and replay document length checks use UTF-16 code unit counts. This does not change `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, fixture JSON, Makefile, wrapper, CI workflow, TypeScript/Rust hash work, or event durability.
+
 ## 14. Relationship to Existing No-Oracle and Synthetic-Only Boundaries
 
 This audit does not relax no-oracle constraints, does not authorize real participant data collection, does not introduce real data, and does not validate model performance.

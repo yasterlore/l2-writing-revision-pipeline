@@ -261,3 +261,11 @@ Clarification:
 Step-web-logger-023 adds [Rust UTF-16 Offset Conversion Helper Broader Replay Integration Design](web_logger_rust_utf16_offset_conversion_helper_broader_replay_integration_design.md).
 
 The design plans future replay-first integration of the focused helper while keeping validate / extract / micro_episode integration as later chains. It does not change Rust code, tests, fixture JSON, Makefile, wrapper, CI workflow, TypeScript/Rust hash work, event durability, production readiness, or real-data readiness.
+
+## 21. Step-web-logger-024 Replay-Focused Integration
+
+Step-web-logger-024 integrates the existing helper into `kslog_replay` replay validation / string-index boundaries.
+
+The change converts cursor and selection offsets from UTF-16 code units to UTF-8 byte ranges before replay string slicing or replacement, uses UTF-16 code unit document length checks in replay, and fail-closes surrogate-pair internal offsets, offsets beyond length, and `start > end`. Focused `utf16` replay tests are added.
+
+This update remains outside the accepted focused-helper release-quality chain reviewed here. It does not add validate / extract / micro_episode integration, schema-level position_unit behavior, fixture JSON changes, Makefile changes, wrapper changes, CI workflow changes, TypeScript/Rust hash work, event durability, production readiness, or real-data readiness.

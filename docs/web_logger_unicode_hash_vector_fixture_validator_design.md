@@ -637,3 +637,11 @@ The review keeps the Python validator chain and Rust helper chain as separate ev
 Step-web-logger-023 adds [Rust UTF-16 Offset Conversion Helper Broader Replay Integration Design](web_logger_rust_utf16_offset_conversion_helper_broader_replay_integration_design.md).
 
 The design keeps the Python validator chain, focused Rust helper chain, and future replay integration chain as separate evidence boundaries. It does not change validator behavior, Rust helper behavior, fixture JSON, Makefile, wrapper, TypeScript/Rust helper compatibility posture, or event durability.
+
+## 44. Step-web-logger-024 Replay-Focused Integration
+
+Step-web-logger-024 adds a separate replay-focused Rust integration boundary in `kslog_replay`.
+
+The Python validator chain remains unchanged and still validates the fixed shared Unicode/hash vector fixture contract. The replay integration uses the existing Rust helper to convert browser-originated UTF-16 offsets before replay string indexing, but it does not alter validator behavior or fixture JSON.
+
+The Python validator chain, focused Rust helper chain, and replay-focused integration chain remain separate evidence boundaries. This step does not add TypeScript/Rust compatibility proof, Rust SHA-256 helper work, TypeScript SHA-256 helper work, Makefile changes, wrapper changes, CI workflow changes, validate / extract / micro_episode integration, or event durability.

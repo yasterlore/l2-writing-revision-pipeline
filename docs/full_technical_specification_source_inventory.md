@@ -638,3 +638,9 @@ The source inventory addition is limited to Makefile target wiring and related d
 `scripts/check_release_quality.sh` adds `release_quality_check: web logger Rust UTF-16 offset conversion helper` and calls `make check-web-logger-rust-utf16-offset-conversion`.
 
 The source inventory addition is limited to release-quality wrapper wiring and related docs. It does not change Makefile, Rust helper code, focused Rust tests, TypeScript, Python, fixture JSON, workflows, package files, Cargo files, schema implementation files, runtime implementation files, replay implementation files, validator implementation files, or the Web logger status marker.
+
+## Step-web-logger-024 Source Inventory Addendum
+
+`crates/kslog_replay/src/lib.rs` adds replay-focused integration for the existing Rust UTF-16 offset conversion helper and focused `utf16` replay tests in the same crate.
+
+The source inventory addition is limited to `kslog_replay` replay string-index boundaries and related docs. It does not change `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, TypeScript, Python, fixture JSON, Makefile, release-quality wrapper, workflows, package files, Cargo files, validator implementation files, or existing status markers.

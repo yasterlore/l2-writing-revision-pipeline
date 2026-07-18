@@ -333,3 +333,13 @@ Clarification:
 - It should not implement Rust SHA-256 helper, TypeScript SHA-256 helper, or TypeScript/Rust vector checks.
 - It should not implement event durability.
 - Because Step-web-logger-024 is implementation, it should update README and full technical specification related docs minimally.
+
+## 26. Step-web-logger-024 Replay-Focused Integration
+
+Step-web-logger-024 implements the replay-first boundary proposed in this design.
+
+The integration is limited to `kslog_replay`. It uses the existing UTF-16 offset helper to resolve browser-originated cursor and selection offsets to UTF-8 byte ranges before replay string indexing / replacement. It validates replay document lengths as UTF-16 code unit counts and fail-closes surrogate-pair internal offsets, offsets beyond UTF-16 length, and `start > end`.
+
+Step-web-logger-024 adds focused `utf16` replay tests for ASCII preservation, Japanese cursor insertion, emoji selection replacement, mixed Japanese/emoji offsets, invalid offset fail-closed behavior, and diagnostics content suppression.
+
+This implementation does not change `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, fixture JSON, Makefile, release-quality wrapper, CI workflow, schema-level position_unit behavior, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust checks, or event durability.

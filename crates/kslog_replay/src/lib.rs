@@ -8,8 +8,13 @@ pub mod utf16_offsets;
 use std::{
     error::Error,
     fmt::{self, Display, Formatter},
+    ops::Range,
 };
 
+use crate::utf16_offsets::{
+    utf16_code_unit_offset_to_utf8_byte_index, utf16_code_unit_range_to_utf8_byte_range,
+    Utf16OffsetError,
+};
 use kslog_schema::{EventType, RawEvent};
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -28,6 +33,7 @@ impl Default for ReplayOptions {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ReplayState {
     text: String,
+    /// Browser-originated cursor position in UTF-16 code units.
     cursor_pos: usize,
 }
 
@@ -49,6 +55,10 @@ impl ReplayState {
 
     pub fn char_len(&self) -> usize {
         char_count(&self.text)
+    }
+
+    pub fn utf16_len(&self) -> usize {
+        utf16_code_unit_len(&self.text)
     }
 }
 
@@ -172,11 +182,32 @@ pub enum ReplayErrorKind {
         start: usize,
         end: usize,
     },
+    InvalidUtf16Offset {
+        field: &'static str,
+        reason_code: &'static str,
+    },
     AmbiguousEditLocation,
     DeletedTextMismatch {
         expected: String,
         actual: String,
     },
+}
+
+impl ReplayErrorKind {
+    pub fn reason_code(&self) -> &'static str {
+        match self {
+            Self::DocLenBeforeMismatch { .. } => "doc_len_before_mismatch",
+            Self::DocLenAfterMismatch { .. } => "doc_len_after_mismatch",
+            Self::TextHashBeforeMismatch { .. } => "text_hash_before_mismatch",
+            Self::TextHashAfterMismatch { .. } => "text_hash_after_mismatch",
+            Self::CursorOutOfBounds { .. } => "offset_beyond_utf16_length",
+            Self::SelectionOutOfBounds { .. } => "offset_beyond_utf16_length",
+            Self::SelectionRangeInverted { .. } => "start_greater_than_end",
+            Self::InvalidUtf16Offset { reason_code, .. } => reason_code,
+            Self::AmbiguousEditLocation => "ambiguous_edit_location",
+            Self::DeletedTextMismatch { .. } => "deleted_text_mismatch",
+        }
+    }
 }
 
 impl Display for ReplayError {
@@ -226,6 +257,12 @@ impl Display for ReplayErrorKind {
             ),
             Self::SelectionRangeInverted { start, end } => {
                 write!(formatter, "selection start exceeds end: {start} > {end}")
+            }
+            Self::InvalidUtf16Offset { field, reason_code } => {
+                write!(
+                    formatter,
+                    "invalid UTF-16 offset for {field}: {reason_code}"
+                )
             }
             Self::AmbiguousEditLocation => write!(formatter, "ambiguous edit location"),
             Self::DeletedTextMismatch { expected, actual } => write!(
@@ -331,6 +368,13 @@ fn failure_kind_name(kind: &ReplayErrorKind) -> ReplayDiagnosticFailureKind {
         ReplayErrorKind::SelectionRangeInverted { .. } => {
             ReplayDiagnosticFailureKind::SelectionRangeInverted
         }
+        ReplayErrorKind::InvalidUtf16Offset { field, .. } => {
+            if field.starts_with("cursor_pos") {
+                ReplayDiagnosticFailureKind::CursorOutOfBounds
+            } else {
+                ReplayDiagnosticFailureKind::SelectionOutOfBounds
+            }
+        }
         ReplayErrorKind::AmbiguousEditLocation => {
             ReplayDiagnosticFailureKind::AmbiguousEditLocation
         }
@@ -351,6 +395,7 @@ fn probable_layer(
         ReplayErrorKind::CursorOutOfBounds { .. }
         | ReplayErrorKind::SelectionOutOfBounds { .. }
         | ReplayErrorKind::SelectionRangeInverted { .. }
+        | ReplayErrorKind::InvalidUtf16Offset { .. }
         | ReplayErrorKind::AmbiguousEditLocation => {
             ReplayDiagnosticProbableLayer::CursorOrSelectionCapture
         }
@@ -413,7 +458,7 @@ pub fn replay_events_with_options(
         replay_one_event(&mut state, event, event_index, options)?;
     }
 
-    let final_doc_len = state.char_len();
+    let final_doc_len = state.utf16_len();
     Ok(ReplayReport {
         final_text: state.text,
         event_count: events.len(),
@@ -428,7 +473,7 @@ fn replay_one_event(
     event_index: usize,
     options: &ReplayOptions,
 ) -> ReplayResult<()> {
-    let current_len = state.char_len();
+    let current_len = state.utf16_len();
 
     if let Some(doc_len_before) = event.doc_len_before {
         let doc_len_before = doc_len_before as usize;
@@ -450,7 +495,7 @@ fn replay_one_event(
 
     apply_event(state, event, event_index)?;
 
-    let updated_len = state.char_len();
+    let updated_len = state.utf16_len();
     if let Some(doc_len_after) = event.doc_len_after {
         let doc_len_after = doc_len_after as usize;
         if doc_len_after != updated_len {
@@ -470,7 +515,15 @@ fn replay_one_event(
     }
 
     if let Some(cursor_pos_after) = event.cursor_pos_after {
-        state.cursor_pos = cursor_pos_after as usize;
+        let cursor_pos_after = cursor_pos_after as usize;
+        resolve_utf16_cursor(
+            state,
+            event,
+            event_index,
+            "cursor_pos_after",
+            cursor_pos_after,
+        )?;
+        state.cursor_pos = cursor_pos_after;
     }
 
     Ok(())
@@ -487,27 +540,33 @@ fn apply_event(state: &mut ReplayState, event: &RawEvent, event_index: usize) ->
     match (&event.inserted_text, &event.deleted_text) {
         (None, None) => Ok(()),
         (Some(inserted_text), None) => {
-            let (start, end) = edit_range_for_insert_or_replace(state, event, event_index)?;
-            replace_range(state, event, event_index, start, end, inserted_text)
+            let range = edit_range_for_insert_or_replace(state, event, event_index)?;
+            replace_range(state, range, inserted_text)
         }
         (None, Some(deleted_text)) => {
-            let (start, end) = edit_range_for_delete(state, event, event_index, deleted_text)?;
-            check_deleted_text(state, event, event_index, start, end, deleted_text)?;
-            replace_range(state, event, event_index, start, end, "")
+            let range = edit_range_for_delete(state, event, event_index, deleted_text)?;
+            check_deleted_text(state, event, event_index, &range, deleted_text)?;
+            replace_range(state, range, "")
         }
         (Some(inserted_text), Some(deleted_text)) => {
-            let (start, end) = edit_range_for_insert_or_replace(state, event, event_index)?;
-            check_deleted_text(state, event, event_index, start, end, deleted_text)?;
-            replace_range(state, event, event_index, start, end, inserted_text)
+            let range = edit_range_for_insert_or_replace(state, event, event_index)?;
+            check_deleted_text(state, event, event_index, &range, deleted_text)?;
+            replace_range(state, range, inserted_text)
         }
     }
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct ReplayEditRange {
+    utf16_start: usize,
+    utf8_byte_range: Range<usize>,
 }
 
 fn edit_range_for_insert_or_replace(
     state: &ReplayState,
     event: &RawEvent,
     event_index: usize,
-) -> ReplayResult<(usize, usize)> {
+) -> ReplayResult<ReplayEditRange> {
     if let Some(range) = selection_range_before(state, event, event_index)? {
         return Ok(range);
     }
@@ -518,8 +577,11 @@ fn edit_range_for_insert_or_replace(
         .ok_or_else(|| {
             ReplayError::new(event_index, event, ReplayErrorKind::AmbiguousEditLocation)
         })?;
-    ensure_cursor_in_bounds(state, event, event_index, cursor)?;
-    Ok((cursor, cursor))
+    let byte_index = resolve_utf16_cursor(state, event, event_index, "cursor_pos_before", cursor)?;
+    Ok(ReplayEditRange {
+        utf16_start: cursor,
+        utf8_byte_range: byte_index..byte_index,
+    })
 }
 
 fn edit_range_for_delete(
@@ -527,7 +589,7 @@ fn edit_range_for_delete(
     event: &RawEvent,
     event_index: usize,
     deleted_text: &str,
-) -> ReplayResult<(usize, usize)> {
+) -> ReplayResult<ReplayEditRange> {
     if let Some(range) = selection_range_before(state, event, event_index)? {
         return Ok(range);
     }
@@ -537,8 +599,14 @@ fn edit_range_for_delete(
     {
         let start = cursor_after as usize;
         let end = cursor_before as usize;
-        ensure_range_in_bounds(state, event, event_index, start, end)?;
-        return Ok((start, end));
+        return resolve_utf16_range(
+            state,
+            event,
+            event_index,
+            "cursor_pos_after..cursor_pos_before",
+            start,
+            end,
+        );
     }
 
     let cursor = event
@@ -547,35 +615,47 @@ fn edit_range_for_delete(
         .ok_or_else(|| {
             ReplayError::new(event_index, event, ReplayErrorKind::AmbiguousEditLocation)
         })?;
-    ensure_cursor_in_bounds(state, event, event_index, cursor)?;
+    resolve_utf16_cursor(state, event, event_index, "cursor_pos_before", cursor)?;
 
-    let deleted_len = char_count(deleted_text);
+    let deleted_len = utf16_code_unit_len(deleted_text);
     let start = cursor.checked_sub(deleted_len).ok_or_else(|| {
         ReplayError::new(
             event_index,
             event,
             ReplayErrorKind::CursorOutOfBounds {
                 cursor,
-                doc_len: state.char_len(),
+                doc_len: state.utf16_len(),
             },
         )
     })?;
 
-    ensure_range_in_bounds(state, event, event_index, start, cursor)?;
-    Ok((start, cursor))
+    resolve_utf16_range(
+        state,
+        event,
+        event_index,
+        "cursor_pos_before_minus_deleted_text",
+        start,
+        cursor,
+    )
 }
 
 fn selection_range_before(
     state: &ReplayState,
     event: &RawEvent,
     event_index: usize,
-) -> ReplayResult<Option<(usize, usize)>> {
+) -> ReplayResult<Option<ReplayEditRange>> {
     match (event.selection_start_before, event.selection_end_before) {
         (Some(start), Some(end)) => {
             let start = start as usize;
             let end = end as usize;
-            ensure_range_in_bounds(state, event, event_index, start, end)?;
-            Ok(Some((start, end)))
+            Ok(Some(resolve_utf16_range(
+                state,
+                event,
+                event_index,
+                "selection_start_before..selection_end_before",
+                start,
+                end,
+            )?))
         }
         (None, None) => Ok(None),
         _ => Err(ReplayError::new(
@@ -586,70 +666,119 @@ fn selection_range_before(
     }
 }
 
-fn ensure_cursor_in_bounds(
+fn resolve_utf16_cursor(
     state: &ReplayState,
     event: &RawEvent,
     event_index: usize,
+    field: &'static str,
     cursor: usize,
-) -> ReplayResult<()> {
-    let doc_len = state.char_len();
-    if cursor > doc_len {
-        return Err(ReplayError::new(
-            event_index,
-            event,
-            ReplayErrorKind::CursorOutOfBounds { cursor, doc_len },
-        ));
-    }
-    Ok(())
+) -> ReplayResult<usize> {
+    utf16_code_unit_offset_to_utf8_byte_index(&state.text, cursor)
+        .map_err(|error| utf16_offset_error(event_index, event, field, error))
 }
 
-fn ensure_range_in_bounds(
+fn resolve_utf16_range(
     state: &ReplayState,
     event: &RawEvent,
     event_index: usize,
+    field: &'static str,
     start: usize,
     end: usize,
-) -> ReplayResult<()> {
-    if start > end {
-        return Err(ReplayError::new(
-            event_index,
-            event,
-            ReplayErrorKind::SelectionRangeInverted { start, end },
-        ));
-    }
+) -> ReplayResult<ReplayEditRange> {
+    let utf8_byte_range = utf16_code_unit_range_to_utf8_byte_range(&state.text, start, end)
+        .map_err(|error| utf16_range_error(event_index, event, field, start, end, error))?;
+    Ok(ReplayEditRange {
+        utf16_start: start,
+        utf8_byte_range,
+    })
+}
 
-    let doc_len = state.char_len();
-    if end > doc_len {
-        return Err(ReplayError::new(
-            event_index,
-            event,
+fn utf16_range_error(
+    event_index: usize,
+    event: &RawEvent,
+    field: &'static str,
+    start: usize,
+    end: usize,
+    error: Utf16OffsetError,
+) -> ReplayError {
+    let kind = match error {
+        Utf16OffsetError::OffsetBeyondUtf16Length { utf16_len, .. } => {
             ReplayErrorKind::SelectionOutOfBounds {
                 start,
                 end,
-                doc_len,
-            },
-        ));
-    }
+                doc_len: utf16_len,
+            }
+        }
+        Utf16OffsetError::StartAfterEnd { start, end } => {
+            ReplayErrorKind::SelectionRangeInverted { start, end }
+        }
+        other => ReplayErrorKind::InvalidUtf16Offset {
+            field,
+            reason_code: other.reason_code(),
+        },
+    };
+    ReplayError::new(event_index, event, kind)
+}
 
-    Ok(())
+fn utf16_offset_error(
+    event_index: usize,
+    event: &RawEvent,
+    field: &'static str,
+    error: Utf16OffsetError,
+) -> ReplayError {
+    let kind = match error {
+        Utf16OffsetError::OffsetBeyondUtf16Length { offset, utf16_len } => {
+            if field == "cursor_pos_before" || field == "cursor_pos_after" {
+                ReplayErrorKind::CursorOutOfBounds {
+                    cursor: offset,
+                    doc_len: utf16_len,
+                }
+            } else {
+                ReplayErrorKind::SelectionOutOfBounds {
+                    start: offset,
+                    end: offset,
+                    doc_len: utf16_len,
+                }
+            }
+        }
+        Utf16OffsetError::StartAfterEnd { start, end } => {
+            ReplayErrorKind::SelectionRangeInverted { start, end }
+        }
+        other => ReplayErrorKind::InvalidUtf16Offset {
+            field,
+            reason_code: other.reason_code(),
+        },
+    };
+    ReplayError::new(event_index, event, kind)
 }
 
 fn check_deleted_text(
     state: &ReplayState,
     event: &RawEvent,
     event_index: usize,
-    start: usize,
-    end: usize,
+    range: &ReplayEditRange,
     deleted_text: &str,
 ) -> ReplayResult<()> {
-    let actual = slice_chars(&state.text, start, end);
+    let actual = state
+        .text
+        .get(range.utf8_byte_range.clone())
+        .ok_or_else(|| {
+            ReplayError::new(
+                event_index,
+                event,
+                ReplayErrorKind::InvalidUtf16Offset {
+                    field: "deleted_text_range",
+                    reason_code: "internal_invariant_violation",
+                },
+            )
+        })?;
     if actual != deleted_text {
         return Err(ReplayError::new(
             event_index,
             event,
             ReplayErrorKind::DeletedTextMismatch {
                 expected: deleted_text.to_string(),
-                actual,
+                actual: actual.to_string(),
             },
         ));
     }
@@ -658,20 +787,14 @@ fn check_deleted_text(
 
 fn replace_range(
     state: &mut ReplayState,
-    event: &RawEvent,
-    event_index: usize,
-    start: usize,
-    end: usize,
+    range: ReplayEditRange,
     inserted_text: &str,
 ) -> ReplayResult<()> {
-    ensure_range_in_bounds(state, event, event_index, start, end)?;
-
-    let start_byte = char_to_byte_index(&state.text, start);
-    let end_byte = char_to_byte_index(&state.text, end);
+    let new_cursor = range.utf16_start + utf16_code_unit_len(inserted_text);
     state
         .text
-        .replace_range(start_byte..end_byte, inserted_text);
-    state.cursor_pos = start + char_count(inserted_text);
+        .replace_range(range.utf8_byte_range, inserted_text);
+    state.cursor_pos = new_cursor;
     Ok(())
 }
 
@@ -737,15 +860,8 @@ fn char_count(text: &str) -> usize {
     text.chars().count()
 }
 
-fn char_to_byte_index(text: &str, char_index: usize) -> usize {
-    text.char_indices()
-        .nth(char_index)
-        .map(|(byte_index, _)| byte_index)
-        .unwrap_or(text.len())
-}
-
-fn slice_chars(text: &str, start: usize, end: usize) -> String {
-    text.chars().skip(start).take(end - start).collect()
+fn utf16_code_unit_len(text: &str) -> usize {
+    text.chars().map(char::len_utf16).sum()
 }
 
 #[cfg(test)]
@@ -814,6 +930,49 @@ mod tests {
             diff_op: Some(DiffOp::Insert),
             quality_flags: vec![],
         }
+    }
+
+    fn synthetic_insert_text_event(
+        seq: u64,
+        doc_len_before: u32,
+        doc_len_after: u32,
+        cursor_pos_before: u32,
+        cursor_pos_after: u32,
+        inserted_text: &str,
+    ) -> RawEvent {
+        let mut event = synthetic_event(seq, doc_len_before, doc_len_after);
+        event.cursor_pos_before = Some(cursor_pos_before);
+        event.cursor_pos_after = Some(cursor_pos_after);
+        event.inserted_text = Some(inserted_text.to_string());
+        event
+    }
+
+    fn synthetic_selection_replace_event(
+        seq: u64,
+        doc_len_before: u32,
+        doc_len_after: u32,
+        selection_start_before: u32,
+        selection_end_before: u32,
+        cursor_pos_after: u32,
+        inserted_text: &str,
+        deleted_text: &str,
+    ) -> RawEvent {
+        let mut event = synthetic_insert_text_event(
+            seq,
+            doc_len_before,
+            doc_len_after,
+            selection_start_before,
+            cursor_pos_after,
+            inserted_text,
+        );
+        event.cursor_pos_before = None;
+        event.selection_start_before = Some(selection_start_before);
+        event.selection_end_before = Some(selection_end_before);
+        event.selection_start_after = Some(cursor_pos_after);
+        event.selection_end_after = Some(cursor_pos_after);
+        event.deleted_text = Some(deleted_text.to_string());
+        event.diff_op = Some(DiffOp::Replace);
+        event
     }
 
     #[test]
@@ -901,6 +1060,142 @@ mod tests {
         let report = replay_events(&events).expect("IME case should replay minimally");
 
         assert_eq!(report.final_text, "ime_token");
+    }
+
+    #[test]
+    fn utf16_replay_ascii_behavior_remains_unchanged() {
+        let events = vec![
+            synthetic_insert_text_event(1, 0, 1, 0, 1, "a"),
+            synthetic_insert_text_event(2, 1, 2, 1, 2, "b"),
+        ];
+
+        let report = replay_events(&events).expect("ASCII UTF-16 replay should pass");
+
+        assert_eq!(report.final_text, "ab");
+        assert_eq!(report.final_doc_len, 2);
+        assert_eq!(report.final_cursor_pos, 2);
+    }
+
+    #[test]
+    fn utf16_replay_japanese_cursor_position_converts_before_insert() {
+        let events = vec![
+            synthetic_insert_text_event(1, 0, 2, 0, 2, "あい"),
+            synthetic_insert_text_event(2, 2, 3, 1, 2, "X"),
+        ];
+
+        let report = replay_events(&events).expect("Japanese UTF-16 cursor replay should pass");
+
+        assert_eq!(report.final_text.as_bytes(), "あXい".as_bytes());
+        assert_eq!(report.final_doc_len, 3);
+        assert_eq!(report.final_cursor_pos, 2);
+    }
+
+    #[test]
+    fn utf16_replay_selection_range_converts_before_replace() {
+        let events = vec![
+            synthetic_insert_text_event(1, 0, 4, 0, 4, "a😀b"),
+            synthetic_selection_replace_event(2, 4, 3, 1, 3, 2, "Z", "😀"),
+        ];
+
+        let report = replay_events(&events).expect("emoji UTF-16 selection replay should pass");
+
+        assert_eq!(report.final_text.as_bytes(), "aZb".as_bytes());
+        assert_eq!(report.final_doc_len, 3);
+        assert_eq!(report.final_cursor_pos, 2);
+    }
+
+    #[test]
+    fn utf16_replay_mixed_japanese_and_emoji_valid_offsets_are_accepted() {
+        let events = vec![
+            synthetic_insert_text_event(1, 0, 4, 0, 4, "あ😀い"),
+            synthetic_insert_text_event(2, 4, 5, 3, 4, "X"),
+        ];
+
+        let report = replay_events(&events).expect("mixed UTF-16 cursor replay should pass");
+
+        assert_eq!(report.final_text.as_bytes(), "あ😀Xい".as_bytes());
+        assert_eq!(report.final_doc_len, 5);
+        assert_eq!(report.final_cursor_pos, 4);
+    }
+
+    #[test]
+    fn utf16_replay_surrogate_pair_internal_offset_fails_closed() {
+        let events = vec![
+            synthetic_insert_text_event(1, 0, 4, 0, 4, "a😀b"),
+            synthetic_insert_text_event(2, 4, 5, 2, 3, "X"),
+        ];
+
+        let err = replay_events(&events).expect_err("surrogate internal offset should fail");
+
+        assert_eq!(err.kind.reason_code(), "offset_inside_surrogate_pair");
+        assert!(matches!(
+            err.kind,
+            ReplayErrorKind::InvalidUtf16Offset {
+                field: "cursor_pos_before",
+                reason_code: "offset_inside_surrogate_pair"
+            }
+        ));
+    }
+
+    #[test]
+    fn utf16_replay_offset_beyond_length_fails_closed() {
+        let events = vec![
+            synthetic_insert_text_event(1, 0, 4, 0, 4, "a😀b"),
+            synthetic_insert_text_event(2, 4, 5, 5, 5, "X"),
+        ];
+
+        let err = replay_events(&events).expect_err("beyond-length UTF-16 offset should fail");
+
+        assert_eq!(err.kind.reason_code(), "offset_beyond_utf16_length");
+        assert!(matches!(
+            err.kind,
+            ReplayErrorKind::CursorOutOfBounds {
+                cursor: 5,
+                doc_len: 4
+            }
+        ));
+    }
+
+    #[test]
+    fn utf16_replay_selection_start_greater_than_end_fails_closed() {
+        let events = vec![
+            synthetic_insert_text_event(1, 0, 4, 0, 4, "a😀b"),
+            synthetic_selection_replace_event(2, 4, 5, 3, 1, 4, "X", ""),
+        ];
+
+        let err = replay_events(&events).expect_err("inverted UTF-16 selection should fail");
+
+        assert_eq!(err.kind.reason_code(), "start_greater_than_end");
+        assert!(matches!(
+            err.kind,
+            ReplayErrorKind::SelectionRangeInverted { start: 3, end: 1 }
+        ));
+    }
+
+    #[test]
+    fn utf16_replay_invalid_offset_diagnostics_suppress_raw_text() {
+        let probe = "UTF16_REPLAY_SUPPRESSION_PROBE";
+        let events = vec![
+            synthetic_insert_text_event(1, 0, 4, 0, 4, "a😀b"),
+            synthetic_insert_text_event(2, 4, 5, 2, 3, probe),
+        ];
+
+        let err = replay_events(&events).expect_err("invalid UTF-16 offset should fail");
+        let report = diagnose_replay_events(&events);
+
+        assert!(!format!("{err}").contains(probe));
+        assert!(!format!("{:?}", err.kind).contains(probe));
+        assert_eq!(
+            report.failure_kind,
+            Some(ReplayDiagnosticFailureKind::CursorOutOfBounds)
+        );
+        assert_eq!(
+            report.probable_layer,
+            ReplayDiagnosticProbableLayer::CursorOrSelectionCapture
+        );
+        assert!(report.content_suppressed);
+        assert_eq!(report.inserted_text_present, Some(true));
+        assert_eq!(report.inserted_text_len, Some(probe.chars().count()));
     }
 
     #[test]

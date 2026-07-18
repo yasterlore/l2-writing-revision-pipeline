@@ -3767,3 +3767,9 @@ The target runs `cargo test -p kslog_replay utf16` for the Step-web-logger-015 f
 Step-web-logger-019 adds `release_quality_check: web logger Rust UTF-16 offset conversion helper` to `scripts/check_release_quality.sh`.
 
 The wrapper calls `make check-web-logger-rust-utf16-offset-conversion` after the Web logger Unicode/hash vector fixture validation check and before learner-state audit fixtures. Step-web-logger-019 does not change Makefile, Rust helper code, focused Rust tests, TypeScript, Python, fixture JSON, workflow files, package files, Cargo files, schema/runtime integration, broader replay behavior, TypeScript/Rust cross-language checks, event durability, real-data use, metric evidence, or production readiness status.
+
+## Step-web-logger-024 Rust UTF-16 Offset Replay Integration
+
+Step-web-logger-024 integrates the existing Rust UTF-16 offset helper into `kslog_replay` replay string-index boundaries.
+
+Replay now converts browser-originated cursor and selection offsets to UTF-8 byte ranges before string slicing / replacement, checks document lengths as UTF-16 code unit counts, validates cursor-after metadata against the updated text state, and fail-closes invalid UTF-16 offsets. Focused `utf16` replay tests cover successful and invalid synthetic cases. Step-web-logger-024 does not change `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, fixture JSON, Makefile, release-quality wrapper, workflow files, package files, Cargo files, schema-level position_unit behavior, TypeScript/Rust cross-language checks, event durability, real-data use, metric evidence, or production readiness status.

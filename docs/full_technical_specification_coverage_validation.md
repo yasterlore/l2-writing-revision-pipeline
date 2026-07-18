@@ -756,3 +756,9 @@ The target provides local Makefile coverage for invoking `cargo test -p kslog_re
 Release-quality now invokes `make check-web-logger-rust-utf16-offset-conversion` through `scripts/check_release_quality.sh`.
 
 This adds wrapper coverage for the focused Rust UTF-16 helper Makefile target. It is not CI workflow coverage, broader replay/runtime integration coverage, TypeScript helper coverage, Rust SHA-256 helper coverage, TypeScript/Rust cross-language helper evidence, event durability evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-024 Coverage Addendum
+
+`crates/kslog_replay/src/lib.rs` adds replay-focused test coverage for using the UTF-16 offset helper at replay string-index boundaries.
+
+The coverage includes ASCII replay preservation, Japanese cursor insertion, emoji selection replacement, mixed Japanese/emoji valid offsets, surrogate-pair internal offset failure, beyond-length failure, inverted selection failure, and diagnostics content suppression. This is `kslog_replay` replay-focused coverage only. It is not `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, or `kslog_schema` coverage; it is not Makefile target coverage beyond the existing focused target, release-quality wrapper change coverage, CI workflow coverage, TypeScript helper coverage, Rust SHA-256 helper coverage, TypeScript/Rust cross-language helper evidence, event durability evidence, production readiness, real-data readiness, or model performance evidence.

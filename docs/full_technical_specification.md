@@ -1643,3 +1643,13 @@ make check-web-logger-rust-utf16-offset-conversion
 The check runs the Step-web-logger-015 focused Rust helper tests through Makefile, after the Web logger Unicode/hash vector fixture validation check and before learner-state audit fixtures. It exercises UTF-16 code unit offset to UTF-8 byte offset conversion behavior, including fail-closed behavior for surrogate-pair internal offsets, offsets beyond length, and `start > end` cases through the focused test target.
 
 This appendix records release-quality wrapper integration only. It does not change Makefile, Rust helper code, focused Rust tests, fixture JSON, CI workflow integration, broader replay / validate / extract / micro_episode runtime integration, Rust SHA-256 helper code, TypeScript SHA-256 helper code, TypeScript/Rust cross-language vector checks, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.
+
+## Appendix BC. Web Logger Rust UTF-16 Offset Replay Integration
+
+`crates/kslog_replay/src/lib.rs` adds replay-focused integration for the existing Rust UTF-16 offset conversion helper.
+
+Replay now resolves browser-originated cursor and selection offsets from UTF-16 code units to UTF-8 byte ranges before string slicing or replacement. Replay document length checks use UTF-16 code unit counts, cursor-after metadata is validated against the updated text state, and invalid surrogate-pair internal offsets, offsets beyond length, and `start > end` fail closed with public-safe reason_code behavior.
+
+Focused `utf16` replay tests cover ASCII preservation, Japanese cursor insertion, emoji selection replacement, mixed Japanese/emoji valid offsets, surrogate-pair internal offset failure, beyond-length failure, inverted selection failure, and diagnostics content suppression.
+
+This appendix records `kslog_replay` replay-focused integration only. It does not change `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, fixture JSON, Makefile, release-quality wrapper, CI workflow, Rust SHA-256 helper code, TypeScript SHA-256 helper code, TypeScript/Rust cross-language vector checks, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.
