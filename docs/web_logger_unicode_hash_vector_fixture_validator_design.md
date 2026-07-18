@@ -589,3 +589,9 @@ Step-web-logger-014 adds [Rust UTF-16 Offset Conversion Helper Design for Web Lo
 Step-web-logger-015 adds a focused Rust UTF-16 offset conversion helper and tests in `kslog_replay`.
 
 The Rust tests consume the shared vector fixture for offset expectations while leaving the Python validator, Makefile target, release-quality wrapper, and `vectors.json` unchanged. The helper does not replace the Python fixture validator, does not compute hashes, and does not prove TypeScript/Rust helper compatibility.
+
+## 36. Step-web-logger-016 Rust Helper Makefile Target Design
+
+Step-web-logger-016 adds [Rust UTF-16 Offset Conversion Helper Makefile Target Design](web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md).
+
+The design is separate from the Python validator target. It proposes a future Rust helper test target while keeping the Python validator, Python Makefile target, release-quality wrapper, and `vectors.json` unchanged.

@@ -449,3 +449,9 @@ Step-web-logger-014 adds [Rust UTF-16 Offset Conversion Helper Design for Web Lo
 Step-web-logger-015 adds a focused Rust helper and tests for UTF-16 code unit offset to UTF-8 byte offset conversion in `kslog_replay`.
 
 The focused tests reuse `tests/fixtures/web_logger_unicode_hash_vectors/vectors.json` directly where practical, checking valid offset mappings and expected invalid offset cases without changing the fixture. This is Rust helper utility coverage only; it is not TypeScript/Rust cross-language vector check coverage, Rust SHA-256 helper work, TypeScript SHA-256 helper work, broader replay/runtime integration, or event durability.
+
+## 33. Step-web-logger-016 Rust Helper Makefile Target Design
+
+Step-web-logger-016 adds [Rust UTF-16 Offset Conversion Helper Makefile Target Design](web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md).
+
+The design keeps shared vector reuse in the focused Rust tests and proposes `cargo test -p kslog_replay utf16` as the future standalone Makefile target command. It does not change vector fixture data, Rust tests, Makefile, release-quality wrapper, or TypeScript/Rust cross-language checks.

@@ -378,3 +378,9 @@ Step-web-logger-015 adds the focused Rust helper described by Step-web-logger-01
 The helper supports the clarified `position_unit=utf16_code_unit` policy at a focused utility level by converting browser-originated UTF-16 code unit offsets into UTF-8 byte offsets at valid Rust char boundaries. It fails closed for surrogate-pair internal offsets, offsets beyond UTF-16 length, and `start > end`, and it keeps diagnostics public-safe.
 
 This does not change schema behavior, does not integrate the helper into broader replay/runtime paths, and does not implement Rust or TypeScript SHA-256 helpers, TypeScript/Rust cross-language vector checks, or event durability.
+
+## 35. Step-web-logger-016 Rust Helper Makefile Target Design
+
+Step-web-logger-016 adds [Rust UTF-16 Offset Conversion Helper Makefile Target Design](web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md).
+
+It proposes a future focused Makefile target for running the Step-web-logger-015 Rust helper tests. It does not change Makefile, schema behavior, Rust code, tests, fixture JSON, release-quality wrapper, or event durability.

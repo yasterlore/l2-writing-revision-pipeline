@@ -369,3 +369,9 @@ The helper follows this design's narrow boundary:
 The focused tests include direct shared-vector reuse through the existing `kslog_replay` dev dependency surface, so `Cargo.toml` and `vectors.json` are unchanged.
 
 This implementation step does not integrate the helper into replay / validate / extract / micro_episode runtime behavior, does not implement Rust or TypeScript SHA-256 helpers, does not add TypeScript/Rust cross-language vector checks, does not change Makefile or release-quality wrapper wiring, and does not implement event durability.
+
+## 23. Step-web-logger-016 Makefile Target Design Handoff
+
+Step-web-logger-016 adds [Rust UTF-16 Offset Conversion Helper Makefile Target Design](web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md).
+
+The design proposes a future standalone target, `check-web-logger-rust-utf16-offset-conversion`, that runs `cargo test -p kslog_replay utf16` for the focused Rust helper tests. It does not change Makefile, Rust code, tests, fixture JSON, release-quality wrapper, CI workflow, or broader replay/runtime behavior.

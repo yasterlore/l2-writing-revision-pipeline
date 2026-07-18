@@ -458,3 +458,9 @@ It designs a future Rust helper for converting browser-originated UTF-16 code un
 Step-web-logger-015 adds the focused Rust helper and tests for UTF-16 code unit offset to UTF-8 byte offset conversion in `kslog_replay`.
 
 The helper follows the safety design for offset semantics: no Unicode normalization, no newline normalization, no rounding or repair, valid Rust char boundaries only, fail-closed behavior for out-of-range / surrogate-pair internal / `start > end` cases, and public-safe diagnostics. This is a utility implementation boundary only. It does not add broader runtime integration, Rust or TypeScript SHA-256 helper work, TypeScript/Rust cross-language checks, queueing, IndexedDB buffering, acknowledgement, retry, deduplication, or collection readiness.
+
+## 35. Step-web-logger-016 Rust Helper Makefile Target Design
+
+Step-web-logger-016 adds [Rust UTF-16 Offset Conversion Helper Makefile Target Design](web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md).
+
+The design proposes a future focused Makefile target for the Step-web-logger-015 Rust helper tests. It keeps event durability, broader runtime integration, TypeScript/Rust hash work, release-quality integration, CI workflow changes, and collection readiness outside this step.

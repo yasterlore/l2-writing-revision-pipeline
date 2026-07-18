@@ -356,3 +356,15 @@ Clarification:
 Step-web-logger-014 adds [Rust UTF-16 Offset Conversion Helper Design for Web Logger Events](web_logger_rust_utf16_offset_conversion_helper_design.md) as design-only / docs-only planning for the remaining Rust UTF-16 code unit to UTF-8 byte offset helper P0 gap.
 
 The design proposes API shape, error semantics, boundary mapping algorithm, range conversion policy, fixture reuse, future Rust tests, and integration staging. It does not implement Rust code, modify tests, change fixture JSON, alter replay behavior, or claim broader Unicode correctness.
+
+## 20. Step-web-logger-015 Rust UTF-16 Offset Conversion Helper
+
+Step-web-logger-015 adds the focused Rust helper and tests in `kslog_replay`. The helper converts browser-originated UTF-16 code unit offsets to UTF-8 byte offsets at valid Rust char boundaries and rejects surrogate-pair internal offsets, offsets beyond UTF-16 length, and `start > end`.
+
+This update is outside the Step-web-logger-013 accepted Python validator chain. It does not alter that accepted boundary, does not add broader runtime integration, and does not prove TypeScript/Rust helper compatibility.
+
+## 21. Step-web-logger-016 Rust Helper Makefile Target Design
+
+Step-web-logger-016 adds [Rust UTF-16 Offset Conversion Helper Makefile Target Design](web_logger_rust_utf16_offset_conversion_helper_makefile_target_design.md) as makefile-target-design / docs-only planning for a future standalone target.
+
+It does not add the target, does not change Makefile, and does not alter the Step-web-logger-013 final safety review decision.
