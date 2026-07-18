@@ -316,3 +316,9 @@ The workflow design plans a future public-safe status marker for the Step-web-lo
 Step-web-logger-021 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote Run Status](status/web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_status.md).
 
 The marker records the observed `release_quality_check: web logger Rust UTF-16 offset conversion helper` label, command, final ok label, remote metadata, focused Rust helper test counts, broader Rust check counts, and safety flags as public-safe metadata/count-only evidence. It does not change the wrapper, Makefile, Rust helper code, focused tests, fixture JSON, CI workflow, broader runtime integration, TypeScript/Rust hash work, or event durability.
+
+## 25. Step-web-logger-022 Final Safety Review
+
+Step-web-logger-022 adds [Rust UTF-16 Offset Conversion Helper Release Quality Chain Final Safety Review](web_logger_rust_utf16_offset_conversion_helper_release_quality_chain_final_safety_review.md).
+
+The review accepts the wrapper-integrated Rust helper chain only within the focused helper/test boundary. It does not change wrapper integration, Makefile, Rust helper code, focused tests, fixture JSON, broader runtime integration, TypeScript/Rust hash work, or event durability.
