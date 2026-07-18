@@ -374,3 +374,9 @@ It does not add the target, does not change Makefile, and does not alter the Ste
 Step-web-logger-018 adds [Rust UTF-16 Offset Conversion Helper Release Quality Integration Design](web_logger_rust_utf16_offset_conversion_helper_release_quality_integration_design.md) as docs-only planning for future wrapper integration of the Rust helper Makefile target.
 
 This follow-on design remains outside the accepted Python validator chain boundary reviewed here. It does not alter this review's decision, does not claim TypeScript/Rust helper compatibility, does not claim broader replay runtime integration, and does not claim production readiness or real-data readiness.
+
+## 23. Step-web-logger-019 Rust Helper Release-Quality Integration
+
+Step-web-logger-019 adds the Rust UTF-16 helper focused test target to `scripts/check_release_quality.sh`.
+
+This is a follow-on wrapper integration for the Rust helper target. It does not alter this review's accepted Python validator boundary, does not claim TypeScript/Rust helper compatibility, does not claim broader replay runtime integration, and does not claim production readiness or real-data readiness.

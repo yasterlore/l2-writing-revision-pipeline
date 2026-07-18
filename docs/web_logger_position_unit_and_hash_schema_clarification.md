@@ -396,3 +396,9 @@ The target runs the focused Rust helper tests for the clarified UTF-16 code unit
 Step-web-logger-018 adds [Rust UTF-16 Offset Conversion Helper Release Quality Integration Design](web_logger_rust_utf16_offset_conversion_helper_release_quality_integration_design.md).
 
 The design proposes future wrapper execution of the existing focused Rust helper target. It does not change schema behavior, Makefile, wrapper, Rust code, tests, fixture JSON, TypeScript/Rust hash work, broader runtime integration, or event durability.
+
+## 38. Step-web-logger-019 Rust Helper Release-Quality Integration
+
+Step-web-logger-019 adds `release_quality_check: web logger Rust UTF-16 offset conversion helper` to the release-quality wrapper.
+
+The wrapper calls the existing Makefile target for focused Rust UTF-16 offset conversion tests. It does not change schema behavior, Makefile, Rust helper code, tests, fixture JSON, TypeScript/Rust hash work, broader runtime integration, or event durability.

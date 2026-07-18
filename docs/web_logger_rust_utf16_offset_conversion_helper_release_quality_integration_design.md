@@ -286,3 +286,21 @@ Clarification:
 - Step-web-logger-019 should not add broader replay integration.
 - Step-web-logger-019 should not add TypeScript/Rust hash checks.
 - Step-web-logger-019 should not add event durability.
+
+## 22. Step-web-logger-019 Integration Status
+
+Step-web-logger-019 adds the wrapper check:
+
+```text
+release_quality_check: web logger Rust UTF-16 offset conversion helper
+```
+
+The wrapper command is:
+
+```text
+make check-web-logger-rust-utf16-offset-conversion
+```
+
+The check is inserted after `release_quality_check: web logger unicode hash vector fixture validation` and before `release_quality_check: learner-state audit fixtures`. It calls the Makefile target as the command source of truth and does not duplicate the Cargo command in the wrapper.
+
+This status update records wrapper integration only. It does not change Makefile, Rust helper code, focused Rust tests, fixture JSON, CI workflow, broader replay / validate / extract / micro_episode runtime integration, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust cross-language vector checks, or event durability.

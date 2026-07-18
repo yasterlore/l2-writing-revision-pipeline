@@ -603,3 +603,11 @@ Makefile adds `check-web-logger-rust-utf16-offset-conversion` for the Step-web-l
 The target runs `cargo test -p kslog_replay utf16` and provides a local Makefile path for validating the focused helper tests. It does not print raw fixture bodies in normal output and does not modify the shared vector fixture.
 
 This addendum does not change Rust helper code, focused Rust tests, fixture JSON, release-quality wrapper integration, CI workflow integration, broader replay / validate / extract / micro_episode runtime integration, TypeScript helpers, Rust SHA-256 helpers, TypeScript/Rust cross-language vector checks, event durability, production readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-019 Rust UTF-16 Offset Conversion Helper Release-Quality Safety Review Addendum
+
+`scripts/check_release_quality.sh` adds `release_quality_check: web logger Rust UTF-16 offset conversion helper` and calls `make check-web-logger-rust-utf16-offset-conversion`.
+
+The check is ordered after the Web logger Unicode/hash vector fixture validation check and before learner-state audit fixtures. It reuses the Makefile target rather than duplicating the Cargo command in the wrapper.
+
+This addendum does not change Makefile, Rust helper code, focused Rust tests, fixture JSON, CI workflow integration, broader replay / validate / extract / micro_episode runtime integration, TypeScript helpers, Rust SHA-256 helpers, TypeScript/Rust cross-language vector checks, event durability, production readiness, real-data readiness, model performance, or deployment readiness.

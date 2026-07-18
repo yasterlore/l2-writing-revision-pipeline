@@ -607,3 +607,9 @@ The Rust helper target runs focused Rust offset conversion tests. The Python val
 Step-web-logger-018 adds [Rust UTF-16 Offset Conversion Helper Release Quality Integration Design](web_logger_rust_utf16_offset_conversion_helper_release_quality_integration_design.md).
 
 The design proposes future release-quality execution of the Rust helper Makefile target while keeping the Python validator chain separate. It does not change validator behavior, Rust helper behavior, fixture JSON, Makefile, wrapper, TypeScript/Rust helper compatibility claims, or event durability.
+
+## 39. Step-web-logger-019 Rust Helper Release-Quality Integration
+
+Step-web-logger-019 adds the Rust helper target to the release-quality wrapper while keeping the Python validator chain separate.
+
+The wrapper now contains both the Python Unicode/hash vector fixture validation check and the Rust UTF-16 helper focused test check. The two checks remain complementary; neither proves the other's correctness, and neither claims TypeScript/Rust helper compatibility or event durability.

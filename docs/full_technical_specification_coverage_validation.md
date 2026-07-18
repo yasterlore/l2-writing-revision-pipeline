@@ -750,3 +750,9 @@ The coverage includes empty, ASCII, Japanese, full-width, emoji surrogate pair, 
 Makefile now exposes `check-web-logger-rust-utf16-offset-conversion` as a standalone check for the focused Rust UTF-16 offset conversion helper tests.
 
 The target provides local Makefile coverage for invoking `cargo test -p kslog_replay utf16`. This is focused Makefile target coverage only. It is not release-quality coverage, CI coverage, broader replay/runtime integration coverage, TypeScript helper coverage, Rust SHA-256 helper coverage, TypeScript/Rust cross-language helper evidence, event durability evidence, production readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-019 Coverage Addendum
+
+Release-quality now invokes `make check-web-logger-rust-utf16-offset-conversion` through `scripts/check_release_quality.sh`.
+
+This adds wrapper coverage for the focused Rust UTF-16 helper Makefile target. It is not CI workflow coverage, broader replay/runtime integration coverage, TypeScript helper coverage, Rust SHA-256 helper coverage, TypeScript/Rust cross-language helper evidence, event durability evidence, production readiness, real-data readiness, or model performance evidence.

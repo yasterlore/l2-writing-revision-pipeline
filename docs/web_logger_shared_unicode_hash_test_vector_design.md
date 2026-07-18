@@ -467,3 +467,9 @@ The target runs `cargo test -p kslog_replay utf16`, which exercises the focused 
 Step-web-logger-018 adds [Rust UTF-16 Offset Conversion Helper Release Quality Integration Design](web_logger_rust_utf16_offset_conversion_helper_release_quality_integration_design.md).
 
 The design keeps shared vector reuse in the focused Rust tests and proposes future wrapper execution through the existing Makefile target. It does not change vector data, Rust tests, wrapper implementation, TypeScript/Rust cross-language checks, or event durability.
+
+## 36. Step-web-logger-019 Rust Helper Release-Quality Integration
+
+Step-web-logger-019 integrates the Rust helper Makefile target into the release-quality wrapper.
+
+The Rust helper focused tests continue to reuse the shared synthetic vectors. This step does not change vector data, Rust tests, Makefile, TypeScript/Rust cross-language checks, broader runtime integration, or event durability.

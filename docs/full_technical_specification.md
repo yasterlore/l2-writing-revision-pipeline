@@ -1629,3 +1629,17 @@ cargo test -p kslog_replay utf16
 It exercises the `kslog_replay` UTF-16 code unit offset to UTF-8 byte offset helper tests, including shared synthetic vector reuse. The target is placed near the existing Web logger Unicode/hash vector fixture target.
 
 This appendix records Makefile target integration only. It does not change Rust helper code, focused Rust tests, fixture JSON, release-quality wrapper integration, CI workflow integration, broader replay / validate / extract / micro_episode runtime integration, Rust SHA-256 helper code, TypeScript SHA-256 helper code, TypeScript/Rust cross-language vector checks, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.
+
+## Appendix BB. Web Logger Rust UTF-16 Offset Conversion Helper Release-Quality Check
+
+`scripts/check_release_quality.sh` adds `release_quality_check: web logger Rust UTF-16 offset conversion helper` for the Step-web-logger-017 Makefile target.
+
+The wrapper calls:
+
+```bash
+make check-web-logger-rust-utf16-offset-conversion
+```
+
+The check runs the Step-web-logger-015 focused Rust helper tests through Makefile, after the Web logger Unicode/hash vector fixture validation check and before learner-state audit fixtures. It exercises UTF-16 code unit offset to UTF-8 byte offset conversion behavior, including fail-closed behavior for surrogate-pair internal offsets, offsets beyond length, and `start > end` cases through the focused test target.
+
+This appendix records release-quality wrapper integration only. It does not change Makefile, Rust helper code, focused Rust tests, fixture JSON, CI workflow integration, broader replay / validate / extract / micro_episode runtime integration, Rust SHA-256 helper code, TypeScript SHA-256 helper code, TypeScript/Rust cross-language vector checks, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.

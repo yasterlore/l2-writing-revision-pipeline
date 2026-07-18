@@ -350,6 +350,8 @@ Step-web-logger-017 adds `check-web-logger-rust-utf16-offset-conversion` to Make
 
 Step-web-logger-018 adds `docs/web_logger_rust_utf16_offset_conversion_helper_release_quality_integration_design.md` as docs-only planning for future wrapper integration of the Rust helper Makefile target. It leaves the wrapper, Makefile, Rust code, focused tests, fixture JSON, broader runtime integration, TypeScript/Rust hash work, and event durability unchanged.
 
+Step-web-logger-019 adds `release_quality_check: web logger Rust UTF-16 offset conversion helper` to `scripts/check_release_quality.sh` and calls `make check-web-logger-rust-utf16-offset-conversion`. It leaves Makefile, Rust helper code, focused tests, fixture JSON, CI workflow, broader runtime integration, TypeScript/Rust hash work, and event durability unchanged.
+
 ## 14. Relationship to Existing No-Oracle and Synthetic-Only Boundaries
 
 This audit does not relax no-oracle constraints, does not authorize real participant data collection, does not introduce real data, and does not validate model performance.

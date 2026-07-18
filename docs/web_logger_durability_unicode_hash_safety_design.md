@@ -476,3 +476,9 @@ The target runs `cargo test -p kslog_replay utf16` for the Rust helper tests. It
 Step-web-logger-018 adds [Rust UTF-16 Offset Conversion Helper Release Quality Integration Design](web_logger_rust_utf16_offset_conversion_helper_release_quality_integration_design.md).
 
 The design proposes future wrapper execution of `make check-web-logger-rust-utf16-offset-conversion` after the existing Web logger Unicode/hash vector fixture validation check. It does not change wrapper code, Makefile, Rust code, tests, fixture JSON, CI workflow, broader runtime integration, TypeScript/Rust hash work, queueing, IndexedDB buffering, acknowledgement, retry, deduplication, or collection readiness.
+
+## 38. Step-web-logger-019 Rust Helper Release-Quality Integration
+
+Step-web-logger-019 adds `release_quality_check: web logger Rust UTF-16 offset conversion helper` to the release-quality wrapper.
+
+The wrapper calls `make check-web-logger-rust-utf16-offset-conversion` after the Web logger Unicode/hash vector fixture validation check. This remains focused on Rust helper tests and does not add CI workflow changes, broader runtime integration, TypeScript/Rust hash work, queueing, IndexedDB buffering, acknowledgement, retry, deduplication, or collection readiness.
