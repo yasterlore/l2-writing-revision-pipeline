@@ -364,3 +364,9 @@ Clarification:
 - Step-web-logger-021 should not claim broader replay integration.
 - Step-web-logger-021 should not claim TypeScript/Rust compatibility.
 - Step-web-logger-021 should not claim production readiness or real-data readiness.
+
+## 26. Step-web-logger-021 Remote Status Marker
+
+Step-web-logger-021 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote Run Status](status/web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_status.md).
+
+The status marker records public-safe remote metadata for the Step-web-logger-019 wrapper check with `local_fallback_used=no`. It does not copy raw logs, full job output, source text, selected text, fixture JSON body, or raw event payload body, and it does not change wrapper, Makefile, Rust code, tests, fixture JSON, broader runtime integration, TypeScript/Rust hash work, or event durability.

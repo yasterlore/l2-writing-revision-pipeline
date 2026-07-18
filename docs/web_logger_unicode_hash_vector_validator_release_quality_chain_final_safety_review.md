@@ -386,3 +386,9 @@ This is a follow-on wrapper integration for the Rust helper target. It does not 
 Step-web-logger-020 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_record_workflow.md).
 
 This follow-on design remains outside the accepted Python validator chain boundary reviewed here. It does not create a status marker, does not alter this review's decision, does not claim broader replay runtime integration, does not claim TypeScript/Rust helper compatibility, and does not claim production readiness or real-data readiness.
+
+## 25. Step-web-logger-021 Rust Helper Remote Status Marker
+
+Step-web-logger-021 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote Run Status](status/web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_status.md).
+
+This follow-on status marker remains outside the accepted Python validator chain boundary reviewed here. It records public-safe remote metadata for the Rust helper wrapper check only, and it does not alter this review's decision, claim broader replay runtime integration, claim TypeScript/Rust helper compatibility, or claim production readiness or real-data readiness.

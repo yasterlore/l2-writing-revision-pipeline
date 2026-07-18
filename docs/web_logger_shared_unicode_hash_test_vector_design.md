@@ -479,3 +479,9 @@ The Rust helper focused tests continue to reuse the shared synthetic vectors. Th
 Step-web-logger-020 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_record_workflow.md).
 
 The workflow design plans future metadata-only evidence recording for release-quality execution of the Rust helper target. It does not change vector data, Rust tests, Makefile, wrapper implementation, TypeScript/Rust cross-language checks, broader runtime integration, or event durability.
+
+## 38. Step-web-logger-021 Rust Helper Remote Status Marker
+
+Step-web-logger-021 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote Run Status](status/web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_status.md).
+
+The marker records public-safe remote metadata/count-only evidence for release-quality execution of the Rust helper target. It does not change vector data, Rust tests, Makefile, wrapper implementation, TypeScript/Rust cross-language checks, broader runtime integration, or event durability.

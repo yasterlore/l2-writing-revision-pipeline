@@ -45,6 +45,9 @@ Current status-marker posture:
 - The artifact body generation runtime integration safe-metadata runtime chain
   now has a docs-only final safety review that records the Step565
   remote-marker evidence limitation.
+- The Rust UTF-16 offset conversion helper target is in the release-quality
+  wrapper, and its remote status marker is now recorded as public-safe
+  metadata-only/count-only evidence.
 
 Available markers:
 
@@ -1740,6 +1743,10 @@ invocation evidence, or file-writing evidence.
 ## Step-web-logger-012 Web Logger Unicode and Hash Vector Validator Remote Status Marker
 
 - [Web logger Unicode and hash vector validator release-quality remote run status](web_logger_unicode_hash_vector_validator_release_quality_remote_run_status.md): status-marker-only / docs-only public-safe remote metadata record after Step-web-logger-010 wrapper integration. It records `local_fallback_used=no`, remote metadata availability, the observed Web logger Unicode/hash vector validator label, Makefile target command, final ok label, and 15-vector count-only validator summary without raw logs, full job output, source text, selected text, fixture JSON body, raw event payload body, private data, real participant data, logits / probabilities, performance metric body, TypeScript/Rust helper compatibility claims, or event durability claims.
+
+## Step-web-logger-021 Rust UTF-16 Offset Conversion Helper Remote Status Marker
+
+- [Rust UTF-16 offset conversion helper release-quality remote run status](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_status.md): status-marker-only / docs-only public-safe remote metadata record after Step-web-logger-019 wrapper integration. It records `local_fallback_used=no`, remote metadata availability, the observed Rust UTF-16 helper label, Makefile target command, final ok label, focused Rust helper test counts, broader Rust check counts, and safety flags without raw logs, full job output, source text, selected text, fixture JSON body, raw event payload body, private data, real participant data, logits / probabilities, performance metric body, broader replay integration claims, TypeScript/Rust compatibility claims, or event durability claims.
 
 ## Step-web-logger-013 Web Logger Unicode and Hash Vector Validator Final Safety Review
 

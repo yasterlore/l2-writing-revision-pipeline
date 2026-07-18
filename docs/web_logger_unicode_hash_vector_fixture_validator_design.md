@@ -619,3 +619,9 @@ The wrapper now contains both the Python Unicode/hash vector fixture validation 
 Step-web-logger-020 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_record_workflow.md).
 
 The workflow design keeps the Python validator chain and Rust helper chain as separate evidence boundaries. It does not create a status marker, change validator behavior, change Rust helper behavior, change fixture JSON, change Makefile, change wrapper, claim TypeScript/Rust helper compatibility, or add event durability.
+
+## 41. Step-web-logger-021 Rust Helper Remote Status Marker
+
+Step-web-logger-021 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote Run Status](status/web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_status.md).
+
+The marker keeps the Python validator chain and Rust helper chain as separate evidence boundaries. It records public-safe metadata for the Rust helper wrapper check and does not change validator behavior, Rust helper behavior, fixture JSON, Makefile, wrapper, TypeScript/Rust helper compatibility posture, or event durability.

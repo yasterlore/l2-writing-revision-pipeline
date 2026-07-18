@@ -488,3 +488,9 @@ The wrapper calls `make check-web-logger-rust-utf16-offset-conversion` after the
 Step-web-logger-020 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_record_workflow.md).
 
 The design plans future public-safe status evidence for the Step-web-logger-019 wrapper check. It does not create the status marker, change wrapper code, change Makefile, change Rust code or tests, change fixture JSON, add CI workflow changes, add broader runtime integration, add TypeScript/Rust hash work, add queueing, add IndexedDB buffering, add acknowledgement, add retry, add deduplication, or add collection readiness.
+
+## 40. Step-web-logger-021 Rust Helper Remote Status Marker
+
+Step-web-logger-021 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote Run Status](status/web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_status.md).
+
+The marker records public-safe remote metadata/count-only evidence for the Step-web-logger-019 wrapper check. It does not change wrapper code, change Makefile, change Rust code or tests, change fixture JSON, add CI workflow changes, add broader runtime integration, add TypeScript/Rust hash work, add queueing, add IndexedDB buffering, add acknowledgement, add retry, add deduplication, or add collection readiness.
