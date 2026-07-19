@@ -362,3 +362,9 @@ Clarification:
 - Step-web-logger-031 should not claim TypeScript/Rust compatibility.
 - Step-web-logger-031 should not claim production readiness or real-data readiness.
 - Step-web-logger-031 should not implement helpers or event durability.
+
+## 24. Step-web-logger-031 Final Safety Review
+
+Step-web-logger-031 adds [Rust UTF-16 Replay Integration Release Quality Chain Final Safety Review](../web_logger_rust_utf16_replay_integration_release_quality_chain_final_safety_review.md).
+
+The final safety review accepts this marker only within the explicit `kslog_replay` replay-focused boundary. It does not reinterpret the Step-web-logger-021 helper-focused marker and does not claim validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust compatibility, event durability, production readiness, real-data readiness, or model performance.

@@ -421,3 +421,9 @@ Clarification:
 Step-web-logger-030 adds [Rust UTF-16 Replay Integration Release Quality Remote Run Status](status/web_logger_rust_utf16_replay_integration_release_quality_remote_run_status.md).
 
 The marker records public-safe remote metadata/count-only evidence for the Step-web-logger-028 label and combined helper-focused plus replay-focused target output. It does not copy raw logs, full job output, or raw Cargo output, and it does not change wrapper, Makefile, code, tests, fixture JSON, workflow files, validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, or event durability.
+
+## 28. Step-web-logger-031 Final Safety Review
+
+Step-web-logger-031 adds [Rust UTF-16 Replay Integration Release Quality Chain Final Safety Review](web_logger_rust_utf16_replay_integration_release_quality_chain_final_safety_review.md).
+
+The final review accepts the Step-web-logger-024 through Step-web-logger-030 chain with explicit boundary and leaves validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, and event durability as future work.

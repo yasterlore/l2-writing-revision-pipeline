@@ -305,3 +305,9 @@ The workflow design does not revise this final safety review decision. It only p
 Step-web-logger-030 adds [Rust UTF-16 Replay Integration Release Quality Remote Run Status](status/web_logger_rust_utf16_replay_integration_release_quality_remote_run_status.md).
 
 This marker does not revise the accepted focused-helper boundary recorded by this final safety review. It is a separate replay-focused evidence marker for Step-web-logger-024 through Step-web-logger-030.
+
+## 28. Step-web-logger-031 Replay-Focused Final Safety Review
+
+Step-web-logger-031 adds [Rust UTF-16 Replay Integration Release Quality Chain Final Safety Review](web_logger_rust_utf16_replay_integration_release_quality_chain_final_safety_review.md).
+
+That review is separate from this focused-helper final safety review. It does not revise the Step-web-logger-014 through Step-web-logger-022 accepted boundary.

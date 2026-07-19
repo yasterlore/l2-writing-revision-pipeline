@@ -205,6 +205,8 @@ Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/
 
 Step-web-logger-030 adds [Rust UTF-16 Replay Integration Release Quality Remote Run Status](status/web_logger_rust_utf16_replay_integration_release_quality_remote_run_status.md) as that separate public-safe evidence boundary. It does not change the existing target.
 
+Step-web-logger-031 adds [Rust UTF-16 Replay Integration Release Quality Chain Final Safety Review](web_logger_rust_utf16_replay_integration_release_quality_chain_final_safety_review.md). It accepts the existing target coverage only within the explicit `kslog_replay` replay-focused boundary.
+
 ## 11. Expected Target Output Boundary
 
 Allowed target output:

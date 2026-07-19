@@ -379,3 +379,9 @@ The design defines how future public-safe status evidence should be recorded for
 Step-web-logger-030 adds [Rust UTF-16 Replay Integration Release Quality Remote Run Status](status/web_logger_rust_utf16_replay_integration_release_quality_remote_run_status.md).
 
 The marker records public-safe remote evidence for the replay-focused release-quality label while keeping the evidence limited to `kslog_replay` tests. It does not implement validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, or event durability.
+
+## 33. Step-web-logger-031 Final Safety Review
+
+Step-web-logger-031 adds [Rust UTF-16 Replay Integration Release Quality Chain Final Safety Review](web_logger_rust_utf16_replay_integration_release_quality_chain_final_safety_review.md).
+
+The review accepts the replay-focused chain with explicit `kslog_replay` boundary and leaves validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, and event durability as remaining P0 gaps.

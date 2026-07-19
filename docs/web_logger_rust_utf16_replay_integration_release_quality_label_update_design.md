@@ -346,3 +346,9 @@ The workflow design specifies how a future status marker should record public-sa
 Step-web-logger-030 adds [Rust UTF-16 Replay Integration Release Quality Remote Run Status](status/web_logger_rust_utf16_replay_integration_release_quality_remote_run_status.md).
 
 The marker records remote public-safe metadata for the updated label. It keeps Step-web-logger-021 as helper-focused evidence only and does not change wrapper wording, Makefile, Rust code, tests, fixture JSON, or broader runtime integration.
+
+## 27. Step-web-logger-031 Final Safety Review
+
+Step-web-logger-031 adds [Rust UTF-16 Replay Integration Release Quality Chain Final Safety Review](web_logger_rust_utf16_replay_integration_release_quality_chain_final_safety_review.md).
+
+The review accepts the updated label chain only within the focused `kslog_replay` replay boundary and keeps broader runtime integration, schema-level policy, TypeScript/Rust compatibility, hash work, and event durability outside the accepted boundary.
