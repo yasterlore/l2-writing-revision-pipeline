@@ -421,3 +421,18 @@ and bounded UTF-16 metadata expectations. It does not implement Rust schema
 behavior, Rust validation behavior, Makefile target, release-quality wrapper
 changes, validate / extract / micro_episode integration, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 30. Step-web-logger-037 Makefile Target Design
+
+Step-web-logger-037 adds
+[Schema-Level Position Unit Fixture Validator Makefile Target Design](web_logger_schema_position_unit_fixture_validator_makefile_target_design.md).
+
+The design plans a future Makefile target for the Python-first fixture contract
+validator. The recommended target is
+`check-web-logger-position-unit-fixtures`, with help text
+`Run Web logger position_unit fixture contract validation`, calling the
+summary-only validator CLI over `tests/fixtures/web_logger_position_unit_schema/`.
+This remains a fixture contract boundary and does not implement Rust schema
+behavior, Rust validation behavior, release-quality wrapper changes, validate /
+extract / micro_episode integration, event durability, production readiness,
+real-data readiness, or model performance evidence.

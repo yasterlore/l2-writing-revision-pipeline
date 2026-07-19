@@ -645,3 +645,15 @@ The validator now checks this fixture design's 17-case / 24-record contract
 with public-safe summary output. It does not change fixture JSON, add a
 Makefile target, add release-quality integration, implement Rust schema /
 validator behavior, or alter validate / extract / micro_episode boundaries.
+
+## 29. Step-web-logger-037 Makefile Target Design
+
+Step-web-logger-037 adds
+[Schema-Level Position Unit Fixture Validator Makefile Target Design](web_logger_schema_position_unit_fixture_validator_makefile_target_design.md).
+
+The design recommends exposing this fixture root through future target
+`check-web-logger-position-unit-fixtures`, using the Step-web-logger-036
+summary-only validator CLI. It keeps the target bounded to fixture contract
+validation and does not mutate fixture files, regenerate metadata, change
+tests, change Makefile in this step, add release-quality integration, or
+implement Rust schema / validator behavior.

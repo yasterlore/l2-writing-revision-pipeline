@@ -526,3 +526,19 @@ public-safe safety markers. It does not implement Rust `kslog_schema` or
 `kslog_validate` behavior, add a Makefile target, add release-quality
 integration, change fixture JSON, or alter validate / extract / micro_episode
 boundaries.
+
+## 29. Step-web-logger-037 Makefile Target Design
+
+Step-web-logger-037 adds
+[Schema-Level Position Unit Fixture Validator Makefile Target Design](web_logger_schema_position_unit_fixture_validator_makefile_target_design.md).
+
+The design plans a future Makefile target named
+`check-web-logger-position-unit-fixtures` with help text
+`Run Web logger position_unit fixture contract validation` and command
+`PYTHONPATH=python python3 -m web_logger_position_unit_fixture_validation --fixture-root tests/fixtures/web_logger_position_unit_schema --summary-only`.
+
+The proposed target is CLI-only: it validates the fixture root contract through
+the Step-web-logger-036 validator and leaves focused unit tests in the Python
+test suite. Step-web-logger-037 does not add the Makefile target, change the
+validator, change tests, change fixtures, add release-quality integration, or
+implement Rust schema / validator behavior.

@@ -463,3 +463,15 @@ acknowledgement, retry, deduplication, ordering, delivery durability,
 TypeScript/Rust hash work, validate / extract / micro_episode integration,
 Rust schema / validator behavior, Makefile changes, wrapper changes, or CI
 workflow changes.
+
+## 26. Step-web-logger-037 Schema-Level Position Unit Fixture Validator Makefile Target Design
+
+Step-web-logger-037 adds
+[Schema-Level Position Unit Fixture Validator Makefile Target Design](web_logger_schema_position_unit_fixture_validator_makefile_target_design.md).
+
+This does not change the event durability audit conclusion. It designs only a
+future Makefile target for the summary-only fixture contract validator and does
+not add queueing, IndexedDB buffering, acknowledgement, retry, deduplication,
+ordering, delivery durability, TypeScript/Rust hash work, validate / extract /
+micro_episode integration, Rust schema / validator behavior, Makefile changes,
+wrapper changes, or CI workflow changes.
