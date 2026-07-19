@@ -410,3 +410,14 @@ fixture root into a future validator plan. It does not implement schema
 behavior, validation behavior, fixture validator CLI, code changes, tests,
 Makefile target, release-quality wrapper changes, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 29. Step-web-logger-036 Fixture Validator Implementation
+
+Step-web-logger-036 adds a Python-first fixture contract validator for
+`tests/fixtures/web_logger_position_unit_schema/`.
+
+The validator checks the fixture-level `position_unit=utf16_code_unit` contract
+and bounded UTF-16 metadata expectations. It does not implement Rust schema
+behavior, Rust validation behavior, Makefile target, release-quality wrapper
+changes, validate / extract / micro_episode integration, event durability,
+production readiness, real-data readiness, or model performance evidence.

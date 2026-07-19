@@ -501,3 +501,15 @@ not change schema behavior, validation behavior, replay behavior, fixture
 content, Makefile targets, release-quality checks, TypeScript/Rust hash work,
 event durability, production readiness, real-data readiness, or model
 performance evidence.
+
+## 53. Step-web-logger-036 Schema-Level Position Unit Fixture Validator
+
+Step-web-logger-036 adds `python/web_logger_position_unit_fixture_validation.py`
+and focused tests for the Step-web-logger-034 fixture root.
+
+The validator verifies fixture contract metadata, JSONL structure, expected
+reason-code counts, and bounded UTF-16 position metadata with public-safe
+summary output. It does not change schema behavior, validation behavior,
+replay behavior, Makefile targets, release-quality checks, TypeScript/Rust hash
+work, event durability, production readiness, real-data readiness, or model
+performance evidence.

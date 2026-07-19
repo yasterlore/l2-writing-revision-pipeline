@@ -788,3 +788,20 @@ CLI coverage, not Makefile target coverage, not release-quality wrapper
 coverage, not validate / extract / micro_episode coverage, not TypeScript/Rust
 compatibility evidence, not event durability evidence, not production
 readiness, not real-data readiness, and not model performance evidence.
+
+## Step-web-logger-036 Coverage Addendum
+
+`python/web_logger_position_unit_fixture_validation.py` adds fixture contract
+validation coverage for the Step-web-logger-034 Web logger position-unit
+fixture root.
+
+Focused tests cover valid root pass, expected counts, duplicate case IDs,
+missing / escaping fixture paths, invalid JSONL, missing metadata, position-unit
+failure categories, UTF-16 metadata reason codes, legacy gating, forbidden
+no-oracle fields, private / absolute path markers, and public-safe summary
+output. This is fixture contract coverage only. It is not Rust schema behavior
+coverage, not Rust validator behavior coverage, not Makefile target coverage,
+not release-quality wrapper coverage, not validate / extract / micro_episode
+coverage, not TypeScript/Rust compatibility evidence, not event durability
+evidence, not production readiness, not real-data readiness, and not model
+performance evidence.

@@ -507,3 +507,22 @@ Clarification:
   because validator implementation is an implementation artifact.
 - It should not claim Rust schema / validator implementation.
 - It should not claim production readiness or real-data readiness.
+
+## 28. Step-web-logger-036 Implementation Note
+
+Step-web-logger-036 implements this design's Python-first fixture contract
+validator at `python/web_logger_position_unit_fixture_validation.py` with
+focused tests at
+`python/test_support/tests/test_web_logger_position_unit_fixture_validation.py`.
+
+The implemented CLI is:
+
+`PYTHONPATH=python python3 -m web_logger_position_unit_fixture_validation --fixture-root tests/fixtures/web_logger_position_unit_schema --summary-only`
+
+The validator checks the Step-web-logger-034 fixture contract only:
+`case_index.json`, JSONL syntax, fixed counts, position-unit metadata, bounded
+UTF-16 metadata expectations, expected reason-code counts, and no-oracle /
+public-safe safety markers. It does not implement Rust `kslog_schema` or
+`kslog_validate` behavior, add a Makefile target, add release-quality
+integration, change fixture JSON, or alter validate / extract / micro_episode
+boundaries.

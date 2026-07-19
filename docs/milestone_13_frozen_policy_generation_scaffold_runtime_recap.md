@@ -3800,3 +3800,15 @@ release-quality wrapper, workflow files, package files, Cargo files, validate /
 extract / micro_episode integration, TypeScript/Rust cross-language checks,
 event durability, real-data use, metric evidence, or production readiness
 status.
+
+## Step-web-logger-036 Schema-Level Position Unit Fixture Validator
+
+Step-web-logger-036 adds `python/web_logger_position_unit_fixture_validation.py`
+and focused tests for the Web logger position-unit fixture root.
+
+The validator checks the 17-case / 24-record synthetic fixture contract with
+summary-only public-safe output. It does not change Rust schema / validator
+behavior, Makefile, release-quality wrapper, workflow files, package files,
+Cargo files, validate / extract / micro_episode integration, TypeScript/Rust
+cross-language checks, event durability, real-data use, metric evidence, or
+production readiness status.

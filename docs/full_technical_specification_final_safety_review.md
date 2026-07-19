@@ -654,3 +654,20 @@ fixture JSON, Makefile, release-quality wrapper, CI workflow integration,
 validate / extract / micro_episode integration, TypeScript/Rust cross-language
 vector checks, event durability, production readiness, real-data readiness,
 model performance, or deployment readiness.
+
+## Step-web-logger-036 Schema-Level Position Unit Fixture Validator Safety Review Addendum
+
+Step-web-logger-036 adds a Python-first fixture contract validator for
+`tests/fixtures/web_logger_position_unit_schema/` and focused tests for that
+validator.
+
+The validator emits summary-only public-safe output and checks case index
+metadata, JSONL syntax, fixed counts, expected reason-code counts,
+position-unit policy metadata, bounded UTF-16 metadata expectations, and
+no-oracle safety markers. It does not print fixture bodies or raw text.
+
+This addendum does not change Rust schema / validator behavior, Makefile,
+release-quality wrapper, CI workflow integration, validate / extract /
+micro_episode integration, TypeScript/Rust cross-language vector checks, event
+durability, production readiness, real-data readiness, model performance, or
+deployment readiness.

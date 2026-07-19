@@ -675,3 +675,18 @@ Rust code, TypeScript code, Python code, tests outside the new fixture root,
 existing fixture JSON, package files, Cargo files, `kslog_validate`,
 `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, replay implementation
 files, validator implementation files, or existing status markers.
+
+## Step-web-logger-036 Source Inventory Addendum
+
+`python/web_logger_position_unit_fixture_validation.py` adds a Python-first
+fixture contract validator for
+`tests/fixtures/web_logger_position_unit_schema/`.
+
+`python/test_support/tests/test_web_logger_position_unit_fixture_validation.py`
+adds focused tests for that validator.
+
+The source inventory addition is limited to the new validator, its focused
+tests, and related docs. It does not change Makefile, release-quality wrapper
+scripts, workflows, Rust code, TypeScript code, fixture JSON, package files,
+Cargo files, `kslog_schema`, `kslog_validate`, `kslog_replay`, `kslog_extract`,
+`kslog_micro_episode`, or existing status markers.

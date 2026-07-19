@@ -634,3 +634,14 @@ The validator design plans a future Python-first contract validator for the
 Step-web-logger-034 fixture root. It does not modify the fixture root, implement
 Python / Rust / TypeScript code, add tests, add a Makefile target, add
 release-quality integration, or change schema / validator behavior.
+
+## 28. Step-web-logger-036 Fixture Validator Implementation
+
+Step-web-logger-036 adds `python/web_logger_position_unit_fixture_validation.py`
+and focused tests at
+`python/test_support/tests/test_web_logger_position_unit_fixture_validation.py`.
+
+The validator now checks this fixture design's 17-case / 24-record contract
+with public-safe summary output. It does not change fixture JSON, add a
+Makefile target, add release-quality integration, implement Rust schema /
+validator behavior, or alter validate / extract / micro_episode boundaries.

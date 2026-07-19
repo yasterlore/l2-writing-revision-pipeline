@@ -580,3 +580,15 @@ buffering, acknowledgement, retry, deduplication, ordering, delivery
 durability, TypeScript/Rust hash work, validate / extract / micro_episode
 integration, schema / validator behavior, code changes, tests, fixture changes,
 Makefile changes, wrapper changes, or CI workflow changes.
+
+## 53. Step-web-logger-036 Schema-Level Position Unit Fixture Validator
+
+Step-web-logger-036 adds a Python-first fixture contract validator with
+summary-only public-safe output for
+`tests/fixtures/web_logger_position_unit_schema/`.
+
+The validator preserves the durability safety boundary. It does not implement
+queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering,
+delivery durability, TypeScript/Rust hash work, validate / extract /
+micro_episode integration, Rust schema / validator behavior, Makefile changes,
+wrapper changes, or CI workflow changes.

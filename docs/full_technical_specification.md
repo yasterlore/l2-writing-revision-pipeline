@@ -1711,3 +1711,21 @@ micro_episode integration, Rust / TypeScript SHA-256 helpers, TypeScript/Rust
 cross-language vector checks, event durability queue / IndexedDB /
 acknowledgement / retry / deduplication, production readiness, real-data
 readiness, or model performance evidence.
+
+## Step-web-logger-036 Schema-Level Position Unit Fixture Validator Appendix
+
+Step-web-logger-036 adds
+`python/web_logger_position_unit_fixture_validation.py` and focused tests at
+`python/test_support/tests/test_web_logger_position_unit_fixture_validation.py`.
+
+The CLI
+`PYTHONPATH=python python3 -m web_logger_position_unit_fixture_validation --fixture-root tests/fixtures/web_logger_position_unit_schema --summary-only`
+validates the Step-web-logger-034 fixture contract with public-safe key=value
+summary output. It checks fixed case counts, JSONL records, position-unit
+policy metadata, bounded UTF-16 metadata expectations, expected reason-code
+counts, and no-oracle safety markers. It does not implement Rust
+`kslog_schema` / `kslog_validate` behavior, add Makefile target,
+release-quality wrapper integration, validate / extract / micro_episode
+integration, Rust / TypeScript SHA-256 helpers, TypeScript/Rust checks, event
+durability, production readiness, real-data readiness, or model performance
+evidence.
