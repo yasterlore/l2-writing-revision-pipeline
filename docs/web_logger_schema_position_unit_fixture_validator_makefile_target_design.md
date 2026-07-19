@@ -343,7 +343,7 @@ This design does not claim:
 - extract integration completion
 - micro_episode integration completion
 - completed schema-level position-unit policy behavior
-- an already-present schema-level position-unit Makefile target
+- release-quality integration for the position-unit fixture target
 - Rust schema position-unit behavior
 - Rust validator position-unit behavior
 - hash compatibility implementation completion
@@ -374,3 +374,22 @@ Clarification:
   Makefile-visible behavior changes.
 - It should not claim Rust schema / validator implementation.
 - It should not claim production readiness or real-data readiness.
+
+## 25. Step-web-logger-038 Implementation Note
+
+Step-web-logger-038 implements this design by adding Makefile target
+`check-web-logger-position-unit-fixtures`.
+
+Implemented target details:
+
+- help text: `Run Web logger position_unit fixture contract validation`
+- command:
+  `PYTHONPATH=python python3 -m web_logger_position_unit_fixture_validation --fixture-root tests/fixtures/web_logger_position_unit_schema --summary-only`
+- placement: near the existing Web logger fixture validation targets
+- scope: CLI-only fixture contract validation
+
+The target does not run focused unit tests, mutate fixtures, regenerate
+metadata, add release-quality wrapper integration, implement Rust schema /
+validator behavior, change validate / extract / micro_episode behavior, add
+TypeScript/Rust hash checks, implement event durability, or provide production
+readiness, real-data readiness, or model performance evidence.

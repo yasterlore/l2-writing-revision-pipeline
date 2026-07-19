@@ -1729,3 +1729,24 @@ release-quality wrapper integration, validate / extract / micro_episode
 integration, Rust / TypeScript SHA-256 helpers, TypeScript/Rust checks, event
 durability, production readiness, real-data readiness, or model performance
 evidence.
+
+## Step-web-logger-038 Schema-Level Position Unit Fixture Validator Makefile Target Appendix
+
+Step-web-logger-038 adds Makefile target
+`check-web-logger-position-unit-fixtures` for the Step-web-logger-036
+position-unit fixture contract validator.
+
+The target help text is:
+
+`Run Web logger position_unit fixture contract validation`
+
+The target command is:
+
+`PYTHONPATH=python python3 -m web_logger_position_unit_fixture_validation --fixture-root tests/fixtures/web_logger_position_unit_schema --summary-only`
+
+The target runs the validator CLI only. It does not run focused tests, mutate
+fixtures, regenerate metadata, add release-quality wrapper integration,
+implement Rust `kslog_schema` / `kslog_validate` behavior, change validate /
+extract / micro_episode behavior, add Rust / TypeScript SHA-256 helpers, add
+TypeScript/Rust checks, implement event durability, or provide production
+readiness, real-data readiness, or model performance evidence.

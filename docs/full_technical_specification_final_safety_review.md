@@ -671,3 +671,19 @@ release-quality wrapper, CI workflow integration, validate / extract /
 micro_episode integration, TypeScript/Rust cross-language vector checks, event
 durability, production readiness, real-data readiness, model performance, or
 deployment readiness.
+
+## Step-web-logger-038 Schema-Level Position Unit Fixture Validator Makefile Target Safety Review Addendum
+
+Step-web-logger-038 adds Makefile target
+`check-web-logger-position-unit-fixtures`.
+
+The target runs the Step-web-logger-036 summary-only validator CLI over
+`tests/fixtures/web_logger_position_unit_schema/` and emits public-safe
+key=value output. It runs the fixture contract validator only and does not run
+focused tests or print fixture bodies.
+
+This addendum does not change Rust schema / validator behavior,
+release-quality wrapper integration, CI workflow integration, validate /
+extract / micro_episode integration, TypeScript/Rust cross-language vector
+checks, event durability, production readiness, real-data readiness, model
+performance, or deployment readiness.

@@ -690,3 +690,18 @@ tests, and related docs. It does not change Makefile, release-quality wrapper
 scripts, workflows, Rust code, TypeScript code, fixture JSON, package files,
 Cargo files, `kslog_schema`, `kslog_validate`, `kslog_replay`, `kslog_extract`,
 `kslog_micro_episode`, or existing status markers.
+
+## Step-web-logger-038 Source Inventory Addendum
+
+`Makefile` adds target `check-web-logger-position-unit-fixtures` near the
+existing Web logger fixture validation targets.
+
+The target runs:
+
+`PYTHONPATH=python python3 -m web_logger_position_unit_fixture_validation --fixture-root tests/fixtures/web_logger_position_unit_schema --summary-only`
+
+The source inventory addition is limited to the Makefile target and related
+docs. It does not change release-quality wrapper scripts, workflows, Rust
+code, TypeScript code, Python code, tests, fixture JSON, package files, Cargo
+files, `kslog_schema`, `kslog_validate`, `kslog_replay`, `kslog_extract`,
+`kslog_micro_episode`, or existing status markers.

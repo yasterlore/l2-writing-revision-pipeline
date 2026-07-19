@@ -604,3 +604,15 @@ implement queueing, IndexedDB buffering, acknowledgement, retry,
 deduplication, ordering, delivery durability, TypeScript/Rust hash work,
 validate / extract / micro_episode integration, Rust schema / validator
 behavior, Makefile changes, wrapper changes, or CI workflow changes.
+
+## 55. Step-web-logger-038 Schema-Level Position Unit Fixture Validator Makefile Target
+
+Step-web-logger-038 adds Makefile target
+`check-web-logger-position-unit-fixtures`.
+
+The target preserves the durability safety boundary. It runs summary-only
+fixture contract validation and does not implement queueing, IndexedDB
+buffering, acknowledgement, retry, deduplication, ordering, delivery
+durability, TypeScript/Rust hash work, validate / extract / micro_episode
+integration, Rust schema / validator behavior, wrapper changes, or CI workflow
+changes.

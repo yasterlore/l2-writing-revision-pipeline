@@ -11,6 +11,7 @@
 .PHONY: check-policy
 .PHONY: check-fixtures
 .PHONY: check-web-logger-unicode-hash-vector-fixtures
+.PHONY: check-web-logger-position-unit-fixtures
 .PHONY: check-web-logger-rust-utf16-offset-conversion
 .PHONY: check-learner-state-audit-fixtures
 .PHONY: check-learner-state-exporter-cli
@@ -77,6 +78,7 @@ help:
 	@echo "  check-policy                 Run synthetic policy checks"
 	@echo "  check-fixtures               Run fixture/config validation checks"
 	@echo "  check-web-logger-unicode-hash-vector-fixtures  Run web logger Unicode/hash vector fixture validation"
+	@echo "  check-web-logger-position-unit-fixtures  Run Web logger position_unit fixture contract validation"
 	@echo "  check-web-logger-rust-utf16-offset-conversion  Run Rust UTF-16 offset conversion and replay integration tests"
 	@echo "  check-learner-state-audit-fixtures  Audit synthetic learner-state fixtures"
 	@echo "  check-learner-state-exporter-cli  Smoke-test learner-state exporter CLI"
@@ -170,6 +172,9 @@ check-fixtures:
 
 check-web-logger-unicode-hash-vector-fixtures:
 	PYTHONPATH=python python3 -m web_logger_unicode_hash_vector_validation --fixture tests/fixtures/web_logger_unicode_hash_vectors/vectors.json --summary-only
+
+check-web-logger-position-unit-fixtures:
+	PYTHONPATH=python python3 -m web_logger_position_unit_fixture_validation --fixture-root tests/fixtures/web_logger_position_unit_schema --summary-only
 
 check-web-logger-rust-utf16-offset-conversion:
 	cargo test -p kslog_replay utf16

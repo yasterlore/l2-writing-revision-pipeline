@@ -657,3 +657,13 @@ summary-only validator CLI. It keeps the target bounded to fixture contract
 validation and does not mutate fixture files, regenerate metadata, change
 tests, change Makefile in this step, add release-quality integration, or
 implement Rust schema / validator behavior.
+
+## 30. Step-web-logger-038 Makefile Target Implementation
+
+Step-web-logger-038 adds Makefile target
+`check-web-logger-position-unit-fixtures` for this fixture root.
+
+The target uses the Step-web-logger-036 summary-only validator CLI to validate
+the 17-case / 24-record fixture contract. It does not run focused tests,
+mutate fixture files, regenerate metadata, add release-quality integration, or
+implement Rust schema / validator behavior.

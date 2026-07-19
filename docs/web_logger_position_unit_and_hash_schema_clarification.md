@@ -524,3 +524,14 @@ to run the summary-only Python fixture contract validator. It does not change
 schema behavior, validation behavior, replay behavior, Makefile targets in this
 step, release-quality checks, TypeScript/Rust hash work, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 55. Step-web-logger-038 Schema-Level Position Unit Fixture Validator Makefile Target
+
+Step-web-logger-038 adds Makefile target
+`check-web-logger-position-unit-fixtures`.
+
+The target runs the summary-only Python fixture contract validator for
+`tests/fixtures/web_logger_position_unit_schema/`. It does not change
+`scripts/check_release_quality.sh`, schema behavior, validation behavior,
+replay behavior, TypeScript/Rust hash work, event durability, production
+readiness, real-data readiness, or model performance evidence.

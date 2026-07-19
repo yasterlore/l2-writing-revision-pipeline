@@ -436,3 +436,15 @@ This remains a fixture contract boundary and does not implement Rust schema
 behavior, Rust validation behavior, release-quality wrapper changes, validate /
 extract / micro_episode integration, event durability, production readiness,
 real-data readiness, or model performance evidence.
+
+## 31. Step-web-logger-038 Makefile Target Implementation
+
+Step-web-logger-038 adds Makefile target
+`check-web-logger-position-unit-fixtures`.
+
+The target exposes the Python-first fixture contract validator for
+`tests/fixtures/web_logger_position_unit_schema/` through summary-only CLI
+output. It does not add release-quality wrapper integration, implement Rust
+schema behavior, implement Rust validation behavior, change validate / extract
+/ micro_episode behavior, implement event durability, or provide production
+readiness, real-data readiness, or model performance evidence.

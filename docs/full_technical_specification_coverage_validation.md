@@ -805,3 +805,17 @@ not release-quality wrapper coverage, not validate / extract / micro_episode
 coverage, not TypeScript/Rust compatibility evidence, not event durability
 evidence, not production readiness, not real-data readiness, and not model
 performance evidence.
+
+## Step-web-logger-038 Coverage Addendum
+
+`check-web-logger-position-unit-fixtures` adds Makefile-visible coverage for
+running the Step-web-logger-036 position-unit fixture contract validator over
+`tests/fixtures/web_logger_position_unit_schema/`.
+
+The target validates the 17-case / 24-record fixture contract through the
+summary-only CLI. This is Makefile target coverage for fixture contract
+validation only. It is not focused unit test coverage, not Rust schema behavior
+coverage, not Rust validator behavior coverage, not release-quality wrapper
+coverage, not validate / extract / micro_episode coverage, not TypeScript/Rust
+compatibility evidence, not event durability evidence, not production
+readiness, not real-data readiness, and not model performance evidence.

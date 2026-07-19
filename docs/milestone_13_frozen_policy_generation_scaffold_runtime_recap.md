@@ -3812,3 +3812,15 @@ behavior, Makefile, release-quality wrapper, workflow files, package files,
 Cargo files, validate / extract / micro_episode integration, TypeScript/Rust
 cross-language checks, event durability, real-data use, metric evidence, or
 production readiness status.
+
+## Step-web-logger-038 Schema-Level Position Unit Fixture Validator Makefile Target
+
+Step-web-logger-038 adds Makefile target
+`check-web-logger-position-unit-fixtures`.
+
+The target runs the Step-web-logger-036 summary-only Python validator CLI for
+`tests/fixtures/web_logger_position_unit_schema/`. It does not change Rust
+schema / validator behavior, release-quality wrapper, workflow files, package
+files, Cargo files, validate / extract / micro_episode integration,
+TypeScript/Rust cross-language checks, event durability, real-data use, metric
+evidence, or production readiness status.

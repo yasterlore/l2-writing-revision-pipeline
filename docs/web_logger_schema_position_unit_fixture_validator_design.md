@@ -542,3 +542,16 @@ the Step-web-logger-036 validator and leaves focused unit tests in the Python
 test suite. Step-web-logger-037 does not add the Makefile target, change the
 validator, change tests, change fixtures, add release-quality integration, or
 implement Rust schema / validator behavior.
+
+## 30. Step-web-logger-038 Makefile Target Implementation
+
+Step-web-logger-038 adds Makefile target
+`check-web-logger-position-unit-fixtures`.
+
+The target runs the Step-web-logger-036 validator CLI in summary-only mode:
+
+`PYTHONPATH=python python3 -m web_logger_position_unit_fixture_validation --fixture-root tests/fixtures/web_logger_position_unit_schema --summary-only`
+
+The target validates the fixture contract only and does not run focused tests,
+change the validator, change fixtures, add release-quality integration, or
+implement Rust schema / validator behavior.
