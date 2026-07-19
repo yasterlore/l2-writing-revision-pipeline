@@ -488,3 +488,16 @@ public-safe expected reason codes. It does not change current schema behavior,
 validation behavior, replay behavior, Makefile targets, release-quality
 wrapper checks, TypeScript/Rust hash work, event durability, production
 readiness, real-data readiness, or model performance evidence.
+
+## 52. Step-web-logger-035 Schema-Level Position Unit Fixture Validator Design
+
+Step-web-logger-035 adds
+[Schema-Level Position Unit Fixture Validator Design](web_logger_schema_position_unit_fixture_validator_design.md).
+
+The design recommends a future Python-first validator for the Step-web-logger-034
+fixture root. It fixes planned CLI behavior, public-safe summary output,
+reason-code coverage, UTF-16 metadata checks, and failure semantics. It does
+not change schema behavior, validation behavior, replay behavior, fixture
+content, Makefile targets, release-quality checks, TypeScript/Rust hash work,
+event durability, production readiness, real-data readiness, or model
+performance evidence.

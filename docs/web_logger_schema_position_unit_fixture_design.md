@@ -624,3 +624,13 @@ wrapper integration, Rust / TypeScript / Python code changes, existing fixture
 JSON changes, validate / extract / micro_episode integration, TypeScript/Rust
 hash work, event durability, production readiness, real-data readiness, and
 model performance remain future work.
+
+## 27. Step-web-logger-035 Fixture Validator Design
+
+Step-web-logger-035 adds
+[Schema-Level Position Unit Fixture Validator Design](web_logger_schema_position_unit_fixture_validator_design.md).
+
+The validator design plans a future Python-first contract validator for the
+Step-web-logger-034 fixture root. It does not modify the fixture root, implement
+Python / Rust / TypeScript code, add tests, add a Makefile target, add
+release-quality integration, or change schema / validator behavior.

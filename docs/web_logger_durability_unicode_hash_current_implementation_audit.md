@@ -439,3 +439,15 @@ retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work,
 validate / extract / micro_episode integration, Rust / TypeScript / Python
 code changes, tests outside the new fixture root, Makefile changes, wrapper
 changes, or CI workflow changes.
+
+## 24. Step-web-logger-035 Schema-Level Position Unit Fixture Validator Design
+
+Step-web-logger-035 adds
+[Schema-Level Position Unit Fixture Validator Design](web_logger_schema_position_unit_fixture_validator_design.md).
+
+This does not change the event durability audit conclusion. It designs only a
+future fixture contract validator and does not add queueing, IndexedDB
+buffering, acknowledgement, retry, deduplication, ordering, delivery
+durability, TypeScript/Rust hash work, validate / extract / micro_episode
+integration, schema / validator behavior, code changes, tests, fixture changes,
+Makefile changes, wrapper changes, or CI workflow changes.

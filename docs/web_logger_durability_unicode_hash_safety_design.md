@@ -568,3 +568,15 @@ implement queueing, IndexedDB buffering, acknowledgement, retry, deduplication,
 ordering, delivery durability, TypeScript/Rust hash work, validate / extract /
 micro_episode integration, schema / validator behavior, Makefile changes,
 wrapper changes, or CI workflow changes.
+
+## 52. Step-web-logger-035 Schema-Level Position Unit Fixture Validator Design
+
+Step-web-logger-035 adds
+[Schema-Level Position Unit Fixture Validator Design](web_logger_schema_position_unit_fixture_validator_design.md).
+
+The design preserves the durability safety boundary. It plans a future
+public-safe fixture validator and does not implement queueing, IndexedDB
+buffering, acknowledgement, retry, deduplication, ordering, delivery
+durability, TypeScript/Rust hash work, validate / extract / micro_episode
+integration, schema / validator behavior, code changes, tests, fixture changes,
+Makefile changes, wrapper changes, or CI workflow changes.

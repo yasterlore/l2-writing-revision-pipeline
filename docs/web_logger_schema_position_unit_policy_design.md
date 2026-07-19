@@ -399,3 +399,14 @@ implement schema behavior, validation behavior, fixture validator CLI,
 Makefile target, release-quality wrapper changes, validate / extract /
 micro_episode integration, TypeScript/Rust hash work, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 28. Step-web-logger-035 Fixture Validator Design
+
+Step-web-logger-035 adds
+[Schema-Level Position Unit Fixture Validator Design](web_logger_schema_position_unit_fixture_validator_design.md).
+
+The design translates the Step-web-logger-032 policy and Step-web-logger-034
+fixture root into a future validator plan. It does not implement schema
+behavior, validation behavior, fixture validator CLI, code changes, tests,
+Makefile target, release-quality wrapper changes, event durability,
+production readiness, real-data readiness, or model performance evidence.
