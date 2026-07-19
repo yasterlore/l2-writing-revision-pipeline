@@ -526,3 +526,9 @@ The design recommends future help text/docs alignment for the existing Rust UTF-
 Step-web-logger-026 updates the existing Rust UTF-16 target help text to `Run Rust UTF-16 offset conversion and replay integration tests`.
 
 The command remains `cargo test -p kslog_replay utf16`, and no new target or wrapper label change is introduced. This preserves the durability safety boundary: queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, and collection readiness remain future work.
+
+## 46. Step-web-logger-027 Release-Quality Label Update Design
+
+Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
+
+The design recommends future wrapper label wording alignment for helper-focused plus replay-focused UTF-16 coverage. It does not change the command, add a new target, update the wrapper in this step, or alter the durability safety boundary.

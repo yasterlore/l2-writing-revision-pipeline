@@ -446,3 +446,9 @@ The design covers future Makefile-visible naming/help text for replay-focused UT
 Step-web-logger-026 updates the existing `check-web-logger-rust-utf16-offset-conversion` help text to `Run Rust UTF-16 offset conversion and replay integration tests`.
 
 The target command remains `cargo test -p kslog_replay utf16`, and no new target is added. This aligns Makefile-visible wording with the existing `utf16` test filter after replay-focused integration. It does not change schema-level position_unit behavior, validate / extract / micro_episode integration, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust checks, event durability, fixture JSON, wrapper behavior, or CI workflow.
+
+## 46. Step-web-logger-027 Release-Quality Label Update Design
+
+Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
+
+The design proposes future release-quality label wording for the existing Rust UTF-16 target. It does not change schema-level position_unit behavior, command behavior, validate / extract / micro_episode integration, TypeScript/Rust hash work, event durability, or replay-focused remote status.

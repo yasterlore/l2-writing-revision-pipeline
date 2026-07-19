@@ -657,3 +657,9 @@ The design keeps the Python validator chain separate from the Rust helper and re
 Step-web-logger-026 updates only the Rust UTF-16 target help text, leaving the Python validator chain unchanged.
 
 The Python validator target still validates the fixed shared Unicode/hash fixture contract. The Rust target now visibly covers helper-focused and replay-focused UTF-16 tests through the same `cargo test -p kslog_replay utf16` command, but the Python validator chain and Rust replay-focused chain remain separate evidence boundaries.
+
+## 47. Step-web-logger-027 Release-Quality Label Update Design
+
+Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
+
+The design keeps the Python validator chain separate from the Rust label update path. It does not change validator behavior, fixture JSON, Makefile command behavior, wrapper implementation, TypeScript/Rust compatibility posture, validate / extract / micro_episode integration, or event durability.

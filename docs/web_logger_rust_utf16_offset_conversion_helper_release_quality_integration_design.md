@@ -322,3 +322,9 @@ The marker records the observed `release_quality_check: web logger Rust UTF-16 o
 Step-web-logger-022 adds [Rust UTF-16 Offset Conversion Helper Release Quality Chain Final Safety Review](web_logger_rust_utf16_offset_conversion_helper_release_quality_chain_final_safety_review.md).
 
 The review accepts the wrapper-integrated Rust helper chain only within the focused helper/test boundary. It does not change wrapper integration, Makefile, Rust helper code, focused tests, fixture JSON, broader runtime integration, TypeScript/Rust hash work, or event durability.
+
+## 26. Step-web-logger-027 Release-Quality Label Update Design
+
+Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
+
+The design records that the current Step-web-logger-019 label is now narrower than the post-Step-web-logger-024 target behavior. It recommends a future label-only wrapper update while keeping `make check-web-logger-rust-utf16-offset-conversion` as the command source of truth.

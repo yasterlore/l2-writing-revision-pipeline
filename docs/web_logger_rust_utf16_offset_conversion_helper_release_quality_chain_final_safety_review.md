@@ -281,3 +281,9 @@ The design treats replay-focused integration as a new evidence boundary and warn
 Step-web-logger-026 updates only the visible help text for the existing `check-web-logger-rust-utf16-offset-conversion` target.
 
 The accepted focused-helper boundary from this final safety review is not expanded by this wording update. The target now advertises that `cargo test -p kslog_replay utf16` covers both helper-focused UTF-16 tests and replay-focused UTF-16 tests after Step-web-logger-024, but Step-web-logger-021 remains helper-focused remote status evidence and replay-focused release-quality evidence remains future work.
+
+## 24. Step-web-logger-027 Release-Quality Label Update Design
+
+Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
+
+The design proposes future wrapper label wording for the existing target after replay-focused integration. It does not revise this final safety review decision and does not reinterpret the Step-web-logger-021 status marker as replay-focused remote evidence.

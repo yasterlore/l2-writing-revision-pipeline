@@ -327,6 +327,12 @@ Step-web-logger-026 keeps the existing target name `check-web-logger-rust-utf16-
 
 This reflects the post-Step-web-logger-024 test-filter behavior: the same target now runs helper-focused UTF-16 tests and replay-focused UTF-16 tests. No new target is added, and the release-quality wrapper label is not changed in Step-web-logger-026.
 
+## Step-web-logger-027 Release-Quality Label Update Design
+
+Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
+
+The design keeps this Makefile target unchanged and proposes only a future wrapper label wording update. It does not add a new target, duplicate Cargo commands, change tests, change fixture JSON, or create replay-focused remote status.
+
 ## 25. Step-web-logger-020 Remote/Manual Run Record Workflow Design
 
 Step-web-logger-020 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_record_workflow.md).

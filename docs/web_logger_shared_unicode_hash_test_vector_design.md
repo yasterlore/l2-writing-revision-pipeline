@@ -517,3 +517,9 @@ The design keeps shared vector fixture data unchanged and recommends future targ
 Step-web-logger-026 updates the help text for the existing Rust UTF-16 Makefile target while keeping `cargo test -p kslog_replay utf16` unchanged.
 
 The shared Unicode/hash vector fixture remains unchanged. The target now advertises helper-focused plus replay-focused UTF-16 coverage, while shared vector reuse remains limited to the existing synthetic test boundary and does not become TypeScript/Rust compatibility evidence or real-data evidence.
+
+## 44. Step-web-logger-027 Release-Quality Label Update Design
+
+Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
+
+The design keeps the shared vectors unchanged and plans only future release-quality label wording alignment for the existing Rust UTF-16 target. It does not add TypeScript/Rust vector checks, hash helpers, fixture changes, or replay-focused remote status.

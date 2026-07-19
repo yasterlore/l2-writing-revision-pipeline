@@ -396,3 +396,9 @@ Future examples should remain synthetic and minimal. Future summaries should be 
 Step-web-logger-026 updates the existing Rust UTF-16 Makefile target help text to reflect that `cargo test -p kslog_replay utf16` now covers helper-focused and replay-focused UTF-16 tests.
 
 This does not change the event durability audit conclusion. Queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, schema-level position_unit policy, and fixture JSON remain outside this update.
+
+## 18. Step-web-logger-027 Release-Quality Label Update Design
+
+Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
+
+The design does not change the event durability audit conclusion. It plans only future wrapper label wording alignment and does not add queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, or schema-level position_unit policy.

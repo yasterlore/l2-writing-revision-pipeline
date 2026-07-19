@@ -437,3 +437,9 @@ The design keeps the helper implementation unchanged and recommends future docum
 Step-web-logger-026 updates the visible Makefile help text for `check-web-logger-rust-utf16-offset-conversion` to `Run Rust UTF-16 offset conversion and replay integration tests`.
 
 The helper API, helper tests, replay integration code, target name, and target command remain unchanged. The wording update does not claim validate / extract / micro_episode integration, schema-level position_unit policy, hash compatibility, event durability, production readiness, real-data readiness, or model performance.
+
+## Step-web-logger-027 Release-Quality Label Update Design
+
+Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
+
+The design does not change the helper API or tests. It proposes future release-quality label wording that acknowledges both helper-focused and replay-focused `utf16` test coverage while preserving separate evidence boundaries.

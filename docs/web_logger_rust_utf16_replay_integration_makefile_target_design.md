@@ -346,3 +346,9 @@ The existing target name remains `check-web-logger-rust-utf16-offset-conversion`
 The Makefile help text is updated to `Run Rust UTF-16 offset conversion and replay integration tests` so the visible target description matches the post-Step-web-logger-024 behavior: helper-focused UTF-16 tests and replay-focused UTF-16 tests are both selected by the `utf16` filter.
 
 No new target is added. `scripts/check_release_quality.sh` is not changed in this step, so its current label still uses helper-focused wording. The Step-web-logger-021 remote status marker remains helper-focused pre-Step-web-logger-024 evidence and is not reinterpreted as replay-focused remote status.
+
+## 23. Step-web-logger-027 Release-Quality Label Update Design
+
+Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
+
+The design keeps the existing Makefile target and command unchanged and proposes a future wrapper label update to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`. It does not change Makefile, wrapper, Rust code, tests, fixture JSON, CI workflow, validate / extract / micro_episode behavior, schema-level position_unit behavior, TypeScript/Rust hash work, event durability, or replay-focused remote status.
