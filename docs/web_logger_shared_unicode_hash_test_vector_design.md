@@ -511,3 +511,9 @@ This step does not add TypeScript/Rust cross-language checks, Rust SHA-256 helpe
 Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
 
 The design keeps shared vector fixture data unchanged and recommends future target help/docs alignment for the existing `cargo test -p kslog_replay utf16` command. It does not add TypeScript/Rust cross-language checks, Rust SHA-256 helper work, TypeScript SHA-256 helper work, validate / extract / micro_episode integration, Makefile changes, wrapper changes, CI workflow changes, event durability, production readiness, real-data readiness, or model performance evidence.
+
+## 43. Step-web-logger-026 Makefile Help Text Alignment
+
+Step-web-logger-026 updates the help text for the existing Rust UTF-16 Makefile target while keeping `cargo test -p kslog_replay utf16` unchanged.
+
+The shared Unicode/hash vector fixture remains unchanged. The target now advertises helper-focused plus replay-focused UTF-16 coverage, while shared vector reuse remains limited to the existing synthetic test boundary and does not become TypeScript/Rust compatibility evidence or real-data evidence.

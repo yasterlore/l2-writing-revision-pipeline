@@ -77,7 +77,7 @@ help:
 	@echo "  check-policy                 Run synthetic policy checks"
 	@echo "  check-fixtures               Run fixture/config validation checks"
 	@echo "  check-web-logger-unicode-hash-vector-fixtures  Run web logger Unicode/hash vector fixture validation"
-	@echo "  check-web-logger-rust-utf16-offset-conversion  Run Rust UTF-16 offset conversion helper tests"
+	@echo "  check-web-logger-rust-utf16-offset-conversion  Run Rust UTF-16 offset conversion and replay integration tests"
 	@echo "  check-learner-state-audit-fixtures  Audit synthetic learner-state fixtures"
 	@echo "  check-learner-state-exporter-cli  Smoke-test learner-state exporter CLI"
 	@echo "  check-learner-state-estimator-input  Smoke-test learner-state estimator input validation"

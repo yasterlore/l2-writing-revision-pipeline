@@ -390,3 +390,9 @@ This audit does not claim:
 This audit keeps evidence to file paths, metadata, and implementation summaries. It does not include raw learner text, real participant data, raw event payload bodies, fixture JSON bodies, private paths, absolute local paths, logits / probabilities, or performance metric bodies.
 
 Future examples should remain synthetic and minimal. Future summaries should be metadata-only / count-only where possible.
+
+## 17. Step-web-logger-026 Makefile Help Text Alignment
+
+Step-web-logger-026 updates the existing Rust UTF-16 Makefile target help text to reflect that `cargo test -p kslog_replay utf16` now covers helper-focused and replay-focused UTF-16 tests.
+
+This does not change the event durability audit conclusion. Queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, schema-level position_unit policy, and fixture JSON remain outside this update.

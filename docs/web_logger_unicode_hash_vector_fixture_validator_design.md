@@ -651,3 +651,9 @@ The Python validator chain, focused Rust helper chain, and replay-focused integr
 Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
 
 The design keeps the Python validator chain separate from the Rust helper and replay integration target semantics. It recommends future Makefile help/docs alignment for the existing Rust `utf16` target and does not change validator behavior, fixture JSON, Makefile, wrapper, TypeScript/Rust compatibility posture, validate / extract / micro_episode integration, or event durability.
+
+## 46. Step-web-logger-026 Makefile Help Text Alignment
+
+Step-web-logger-026 updates only the Rust UTF-16 target help text, leaving the Python validator chain unchanged.
+
+The Python validator target still validates the fixed shared Unicode/hash fixture contract. The Rust target now visibly covers helper-focused and replay-focused UTF-16 tests through the same `cargo test -p kslog_replay utf16` command, but the Python validator chain and Rust replay-focused chain remain separate evidence boundaries.

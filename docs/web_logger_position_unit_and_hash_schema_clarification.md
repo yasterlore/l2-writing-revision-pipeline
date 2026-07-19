@@ -440,3 +440,9 @@ The schema still has no new explicit position_unit implementation in this step. 
 Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
 
 The design covers future Makefile-visible naming/help text for replay-focused UTF-16 coverage and does not change schema-level position_unit behavior. Validate / extract / micro_episode integration, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust checks, event durability, fixture JSON changes, Makefile changes, wrapper changes, and CI workflow changes remain future work.
+
+## 45. Step-web-logger-026 Makefile Help Text Alignment
+
+Step-web-logger-026 updates the existing `check-web-logger-rust-utf16-offset-conversion` help text to `Run Rust UTF-16 offset conversion and replay integration tests`.
+
+The target command remains `cargo test -p kslog_replay utf16`, and no new target is added. This aligns Makefile-visible wording with the existing `utf16` test filter after replay-focused integration. It does not change schema-level position_unit behavior, validate / extract / micro_episode integration, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust checks, event durability, fixture JSON, wrapper behavior, or CI workflow.

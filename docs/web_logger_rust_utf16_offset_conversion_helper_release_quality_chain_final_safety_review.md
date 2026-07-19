@@ -275,3 +275,9 @@ This update remains outside the accepted focused-helper release-quality chain re
 Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
 
 The design treats replay-focused integration as a new evidence boundary and warns that the Step-web-logger-021 helper-focused remote status marker should not be reinterpreted as replay-focused remote status. It recommends a future existing-target help text/docs update and does not change Makefile, wrapper, Rust code, tests, fixture JSON, CI workflow, validate / extract / micro_episode behavior, schema-level position_unit behavior, TypeScript/Rust hash work, event durability, production readiness, or real-data readiness.
+
+## 23. Step-web-logger-026 Makefile Help Text Alignment
+
+Step-web-logger-026 updates only the visible help text for the existing `check-web-logger-rust-utf16-offset-conversion` target.
+
+The accepted focused-helper boundary from this final safety review is not expanded by this wording update. The target now advertises that `cargo test -p kslog_replay utf16` covers both helper-focused UTF-16 tests and replay-focused UTF-16 tests after Step-web-logger-024, but Step-web-logger-021 remains helper-focused remote status evidence and replay-focused release-quality evidence remains future work.

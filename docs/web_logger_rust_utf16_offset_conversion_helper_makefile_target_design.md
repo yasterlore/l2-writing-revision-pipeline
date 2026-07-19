@@ -321,6 +321,12 @@ Step-web-logger-019 adds `release_quality_check: web logger Rust UTF-16 offset c
 
 The wrapper calls `make check-web-logger-rust-utf16-offset-conversion` after the Web logger Unicode/hash vector fixture validation check and before learner-state audit fixtures. It does not change Makefile, Rust helper code, focused tests, fixture JSON, CI workflow, broader runtime integration, TypeScript/Rust hash work, or event durability.
 
+## Step-web-logger-026 Makefile Help Text Alignment
+
+Step-web-logger-026 keeps the existing target name `check-web-logger-rust-utf16-offset-conversion` and command `cargo test -p kslog_replay utf16`, but updates the Makefile help text to `Run Rust UTF-16 offset conversion and replay integration tests`.
+
+This reflects the post-Step-web-logger-024 test-filter behavior: the same target now runs helper-focused UTF-16 tests and replay-focused UTF-16 tests. No new target is added, and the release-quality wrapper label is not changed in Step-web-logger-026.
+
 ## 25. Step-web-logger-020 Remote/Manual Run Record Workflow Design
 
 Step-web-logger-020 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_record_workflow.md).

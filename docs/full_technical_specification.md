@@ -1653,3 +1653,21 @@ Replay now resolves browser-originated cursor and selection offsets from UTF-16 
 Focused `utf16` replay tests cover ASCII preservation, Japanese cursor insertion, emoji selection replacement, mixed Japanese/emoji valid offsets, surrogate-pair internal offset failure, beyond-length failure, inverted selection failure, and diagnostics content suppression.
 
 This appendix records `kslog_replay` replay-focused integration only. It does not change `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, fixture JSON, Makefile, release-quality wrapper, CI workflow, Rust SHA-256 helper code, TypeScript SHA-256 helper code, TypeScript/Rust cross-language vector checks, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.
+
+## Appendix BD. Web Logger Rust UTF-16 Makefile Target Help Text Alignment
+
+Step-web-logger-026 updates the visible help text for the existing `check-web-logger-rust-utf16-offset-conversion` target to:
+
+```text
+Run Rust UTF-16 offset conversion and replay integration tests
+```
+
+The target name and command remain unchanged:
+
+```bash
+cargo test -p kslog_replay utf16
+```
+
+This records Makefile-visible wording alignment after Step-web-logger-024. The target now describes both helper-focused UTF-16 tests and replay-focused UTF-16 tests selected by the `utf16` filter. No new target is added, `scripts/check_release_quality.sh` is unchanged, and the Step-web-logger-021 remote status marker remains helper-focused pre-Step-web-logger-024 evidence rather than replay-focused remote status.
+
+This appendix does not change Rust code, tests, fixture JSON, release-quality wrapper behavior, CI workflow, `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, schema-level position_unit behavior, Rust SHA-256 helper code, TypeScript SHA-256 helper code, TypeScript/Rust cross-language vector checks, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.

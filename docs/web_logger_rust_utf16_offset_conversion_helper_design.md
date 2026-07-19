@@ -431,3 +431,9 @@ This does not move the helper across crates, change fixture JSON, change Makefil
 Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
 
 The design keeps the helper implementation unchanged and recommends future documentation/help-text alignment for the existing `check-web-logger-rust-utf16-offset-conversion` target now that it also runs replay-focused `utf16` tests. It does not change helper behavior, tests, fixture JSON, Makefile, wrapper, CI workflow, validate / extract / micro_episode behavior, schema-level position_unit behavior, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust checks, or event durability.
+
+## Step-web-logger-026 Makefile Help Text Alignment
+
+Step-web-logger-026 updates the visible Makefile help text for `check-web-logger-rust-utf16-offset-conversion` to `Run Rust UTF-16 offset conversion and replay integration tests`.
+
+The helper API, helper tests, replay integration code, target name, and target command remain unchanged. The wording update does not claim validate / extract / micro_episode integration, schema-level position_unit policy, hash compatibility, event durability, production readiness, real-data readiness, or model performance.

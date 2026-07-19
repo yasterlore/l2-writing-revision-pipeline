@@ -349,3 +349,9 @@ This implementation does not change `kslog_validate`, `kslog_extract`, `kslog_mi
 Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
 
 The design observes that the existing `check-web-logger-rust-utf16-offset-conversion` target now runs both helper-focused and replay-focused UTF-16 tests through `cargo test -p kslog_replay utf16`. It recommends a future help text/docs update for the existing target rather than adding a duplicate target immediately. It does not change Makefile, wrapper, Rust code, tests, fixture JSON, CI workflow, validate / extract / micro_episode behavior, schema-level position_unit behavior, TypeScript/Rust hash work, or event durability.
+
+## 28. Step-web-logger-026 Makefile Help Text Alignment
+
+Step-web-logger-026 updates the existing Makefile target help text to `Run Rust UTF-16 offset conversion and replay integration tests`.
+
+The target name remains `check-web-logger-rust-utf16-offset-conversion`, and the command remains `cargo test -p kslog_replay utf16`. The change aligns the help text with the post-Step-web-logger-024 behavior without adding a duplicate target, changing Rust code or tests, changing fixture JSON, changing the release-quality wrapper label, or recording replay-focused remote status.

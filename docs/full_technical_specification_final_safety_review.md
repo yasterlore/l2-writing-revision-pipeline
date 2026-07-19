@@ -619,3 +619,11 @@ This addendum does not change Makefile, Rust helper code, focused Rust tests, fi
 Replay converts browser-originated cursor and selection offsets to UTF-8 byte ranges before string slicing / replacement, uses UTF-16 code unit document length checks, validates cursor-after metadata against the updated text state, and fail-closes invalid UTF-16 offsets with public-safe reason_code behavior. Focused `utf16` replay tests cover success and fail-closed synthetic cases and diagnostics content suppression.
 
 This addendum does not change `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, fixture JSON, Makefile, release-quality wrapper, CI workflow integration, schema-level position_unit behavior, TypeScript helpers, Rust SHA-256 helpers, TypeScript/Rust cross-language vector checks, event durability, production readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-026 Rust UTF-16 Makefile Help Text Safety Review Addendum
+
+Makefile updates the help text for the existing `check-web-logger-rust-utf16-offset-conversion` target to `Run Rust UTF-16 offset conversion and replay integration tests`.
+
+The target name and command remain unchanged, no new target is added, and the release-quality wrapper is not changed. This makes the target description match the post-Step-web-logger-024 behavior where `cargo test -p kslog_replay utf16` selects helper-focused and replay-focused UTF-16 tests.
+
+This addendum does not change Rust code, tests, fixture JSON, CI workflow integration, validate / extract / micro_episode integration, schema-level position_unit behavior, TypeScript helpers, Rust SHA-256 helpers, TypeScript/Rust cross-language vector checks, event durability, production readiness, real-data readiness, model performance, or deployment readiness.

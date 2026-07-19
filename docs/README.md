@@ -1172,7 +1172,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 
 ## Step-web-logger-017 Rust UTF-16 Offset Conversion Helper Makefile Target
 
-- `check-web-logger-rust-utf16-offset-conversion`: standalone Makefile target for the Step-web-logger-015 focused Rust helper tests. It runs `cargo test -p kslog_replay utf16` and keeps the check focused on UTF-16 code unit offset to UTF-8 byte offset conversion behavior. The target does not change Rust helper code, focused Rust tests, fixture JSON, release-quality wrapper, CI workflow, broader replay / validate / extract / micro_episode runtime integration, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust cross-language vector checks, or event durability.
+- `check-web-logger-rust-utf16-offset-conversion`: standalone Makefile target that runs `cargo test -p kslog_replay utf16`. Step-web-logger-026 keeps the target name and command unchanged and updates the help text to `Run Rust UTF-16 offset conversion and replay integration tests`. After Step-web-logger-024, the target runs both helper-focused UTF-16 tests and replay-focused UTF-16 tests. This does not add a new target, change release-quality wrapper wording, reinterpret the Step-web-logger-021 remote status marker as replay-focused evidence, change fixture JSON, or implement validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash checks, event durability, production readiness, real-data readiness, or model performance evidence.
 
 ## Step-web-logger-018 Rust UTF-16 Offset Conversion Helper Release-Quality Integration Design
 
@@ -1205,3 +1205,7 @@ Do not paste JSONL contents, real participant text, private data, or production 
 ## Step-web-logger-025 Rust UTF-16 Replay Integration Makefile Target Design
 
 - [Rust UTF-16 replay integration Makefile target design](web_logger_rust_utf16_replay_integration_makefile_target_design.md): Makefile-target-design / docs-only assessment of whether Step-web-logger-024 replay-focused tests should reuse the existing `check-web-logger-rust-utf16-offset-conversion` target or get a separate target. It recommends updating the existing target help text/docs in a future step while keeping the command `cargo test -p kslog_replay utf16`, avoiding duplicate target execution, and preserving separate helper-focused and replay-focused evidence boundaries.
+
+## Step-web-logger-026 Rust UTF-16 Makefile Target Help Text Update
+
+- `Makefile`: Step-web-logger-026 updates only the help text for `check-web-logger-rust-utf16-offset-conversion` to `Run Rust UTF-16 offset conversion and replay integration tests`. The target name and command remain unchanged, no new target is added, and `scripts/check_release_quality.sh` remains unchanged. The current wrapper label still uses helper-focused wording, and the Step-web-logger-021 remote status marker remains helper-focused pre-Step-web-logger-024 evidence rather than replay-focused remote status.

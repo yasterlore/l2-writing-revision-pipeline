@@ -336,3 +336,13 @@ Clarification:
 - It should not implement validate / extract / micro_episode integration.
 - It should not implement TypeScript/Rust hash checks.
 - It should not implement event durability.
+
+## 22. Step-web-logger-026 Help Text Update Status
+
+Step-web-logger-026 follows Option A from this design.
+
+The existing target name remains `check-web-logger-rust-utf16-offset-conversion`, and the command remains `cargo test -p kslog_replay utf16`.
+
+The Makefile help text is updated to `Run Rust UTF-16 offset conversion and replay integration tests` so the visible target description matches the post-Step-web-logger-024 behavior: helper-focused UTF-16 tests and replay-focused UTF-16 tests are both selected by the `utf16` filter.
+
+No new target is added. `scripts/check_release_quality.sh` is not changed in this step, so its current label still uses helper-focused wording. The Step-web-logger-021 remote status marker remains helper-focused pre-Step-web-logger-024 evidence and is not reinterpreted as replay-focused remote status.

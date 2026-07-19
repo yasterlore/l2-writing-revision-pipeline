@@ -520,3 +520,9 @@ This does not change validate / extract / micro_episode behavior, schema-level p
 Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
 
 The design recommends future help text/docs alignment for the existing Rust UTF-16 target now that it covers helper-focused and replay-focused tests. It does not change Makefile, wrapper, Rust code, tests, fixture JSON, validate / extract / micro_episode behavior, schema-level position_unit behavior, CI workflow, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust checks, queueing, IndexedDB buffering, acknowledgement, retry, deduplication, or collection readiness.
+
+## 45. Step-web-logger-026 Makefile Help Text Alignment
+
+Step-web-logger-026 updates the existing Rust UTF-16 target help text to `Run Rust UTF-16 offset conversion and replay integration tests`.
+
+The command remains `cargo test -p kslog_replay utf16`, and no new target or wrapper label change is introduced. This preserves the durability safety boundary: queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, and collection readiness remain future work.
