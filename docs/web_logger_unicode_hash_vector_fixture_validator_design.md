@@ -645,3 +645,9 @@ Step-web-logger-024 adds a separate replay-focused Rust integration boundary in 
 The Python validator chain remains unchanged and still validates the fixed shared Unicode/hash vector fixture contract. The replay integration uses the existing Rust helper to convert browser-originated UTF-16 offsets before replay string indexing, but it does not alter validator behavior or fixture JSON.
 
 The Python validator chain, focused Rust helper chain, and replay-focused integration chain remain separate evidence boundaries. This step does not add TypeScript/Rust compatibility proof, Rust SHA-256 helper work, TypeScript SHA-256 helper work, Makefile changes, wrapper changes, CI workflow changes, validate / extract / micro_episode integration, or event durability.
+
+## 45. Step-web-logger-025 Makefile Target Semantics Design
+
+Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
+
+The design keeps the Python validator chain separate from the Rust helper and replay integration target semantics. It recommends future Makefile help/docs alignment for the existing Rust `utf16` target and does not change validator behavior, fixture JSON, Makefile, wrapper, TypeScript/Rust compatibility posture, validate / extract / micro_episode integration, or event durability.

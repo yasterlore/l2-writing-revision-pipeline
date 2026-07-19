@@ -505,3 +505,9 @@ Step-web-logger-024 adds replay-focused UTF-16 offset integration in `kslog_repl
 The existing shared Unicode/hash vectors remain unchanged and continue to be reused by the focused helper tests. The new replay-focused tests use synthetic Rust literals for replay behavior so no replay-specific fixture JSON changes are introduced.
 
 This step does not add TypeScript/Rust cross-language checks, Rust SHA-256 helper work, TypeScript SHA-256 helper work, validate / extract / micro_episode integration, Makefile changes, wrapper changes, CI workflow changes, event durability, production readiness, real-data readiness, or model performance evidence.
+
+## 42. Step-web-logger-025 Makefile Target Semantics Design
+
+Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
+
+The design keeps shared vector fixture data unchanged and recommends future target help/docs alignment for the existing `cargo test -p kslog_replay utf16` command. It does not add TypeScript/Rust cross-language checks, Rust SHA-256 helper work, TypeScript SHA-256 helper work, validate / extract / micro_episode integration, Makefile changes, wrapper changes, CI workflow changes, event durability, production readiness, real-data readiness, or model performance evidence.

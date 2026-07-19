@@ -338,3 +338,9 @@ The marker records remote release-quality execution of the Makefile target as pu
 Step-web-logger-022 adds [Rust UTF-16 Offset Conversion Helper Release Quality Chain Final Safety Review](web_logger_rust_utf16_offset_conversion_helper_release_quality_chain_final_safety_review.md).
 
 The review accepts the Makefile-targeted Rust helper chain only within the focused helper/test boundary. It does not change Makefile, wrapper, Rust helper code, focused tests, fixture JSON, broader runtime integration, TypeScript/Rust hash work, or event durability.
+
+## 28. Step-web-logger-025 Replay Integration Target Semantics Design
+
+Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
+
+The design records that, after Step-web-logger-024, the existing `cargo test -p kslog_replay utf16` command runs both helper-focused and replay-focused UTF-16 tests. It recommends updating the existing target help text/docs in a future step rather than adding a duplicate target immediately. It does not change Makefile, wrapper, Rust code, tests, fixture JSON, CI workflow, validate / extract / micro_episode behavior, schema-level position_unit behavior, TypeScript/Rust hash work, or event durability.

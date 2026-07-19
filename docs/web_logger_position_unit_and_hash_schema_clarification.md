@@ -434,3 +434,9 @@ Step-web-logger-024 applies the UTF-16 code unit position policy inside `kslog_r
 Replay now converts browser-originated cursor and selection offsets to UTF-8 byte ranges before string indexing / replacement and validates replay document lengths as UTF-16 code unit counts. Invalid surrogate-pair internal offsets, offsets beyond length, and `start > end` fail closed with public-safe reason_code behavior.
 
 The schema still has no new explicit position_unit implementation in this step. Validate / extract / micro_episode integration, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust checks, event durability, fixture JSON changes, Makefile changes, wrapper changes, and CI workflow changes remain future work.
+
+## 44. Step-web-logger-025 Makefile Target Semantics Design
+
+Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
+
+The design covers future Makefile-visible naming/help text for replay-focused UTF-16 coverage and does not change schema-level position_unit behavior. Validate / extract / micro_episode integration, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust checks, event durability, fixture JSON changes, Makefile changes, wrapper changes, and CI workflow changes remain future work.

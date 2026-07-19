@@ -343,3 +343,9 @@ The integration is limited to `kslog_replay`. It uses the existing UTF-16 offset
 Step-web-logger-024 adds focused `utf16` replay tests for ASCII preservation, Japanese cursor insertion, emoji selection replacement, mixed Japanese/emoji offsets, invalid offset fail-closed behavior, and diagnostics content suppression.
 
 This implementation does not change `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, fixture JSON, Makefile, release-quality wrapper, CI workflow, schema-level position_unit behavior, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust checks, or event durability.
+
+## 27. Step-web-logger-025 Makefile Target Semantics Design
+
+Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
+
+The design observes that the existing `check-web-logger-rust-utf16-offset-conversion` target now runs both helper-focused and replay-focused UTF-16 tests through `cargo test -p kslog_replay utf16`. It recommends a future help text/docs update for the existing target rather than adding a duplicate target immediately. It does not change Makefile, wrapper, Rust code, tests, fixture JSON, CI workflow, validate / extract / micro_episode behavior, schema-level position_unit behavior, TypeScript/Rust hash work, or event durability.

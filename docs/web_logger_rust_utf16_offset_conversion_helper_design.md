@@ -425,3 +425,9 @@ Step-web-logger-024 integrates the existing helper into `kslog_replay` replay st
 The replay path now resolves browser-originated cursor and selection offsets through the helper before string slicing / replacement, checks replay document length as UTF-16 code unit length, and returns fail-closed errors for surrogate-pair internal offsets, offsets beyond length, and `start > end`. Focused replay tests with `utf16` names cover the new boundary.
 
 This does not move the helper across crates, change fixture JSON, change Makefile or release-quality wrapper wiring, add schema-level position_unit behavior, add validate / extract / micro_episode integration, add Rust SHA-256 helper work, add TypeScript SHA-256 helper work, add TypeScript/Rust checks, or add event durability.
+
+## 32. Step-web-logger-025 Makefile Target Semantics Design
+
+Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
+
+The design keeps the helper implementation unchanged and recommends future documentation/help-text alignment for the existing `check-web-logger-rust-utf16-offset-conversion` target now that it also runs replay-focused `utf16` tests. It does not change helper behavior, tests, fixture JSON, Makefile, wrapper, CI workflow, validate / extract / micro_episode behavior, schema-level position_unit behavior, Rust SHA-256 helper work, TypeScript SHA-256 helper work, TypeScript/Rust checks, or event durability.
