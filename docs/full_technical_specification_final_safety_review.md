@@ -627,3 +627,11 @@ Makefile updates the help text for the existing `check-web-logger-rust-utf16-off
 The target name and command remain unchanged, no new target is added, and the release-quality wrapper is not changed. This makes the target description match the post-Step-web-logger-024 behavior where `cargo test -p kslog_replay utf16` selects helper-focused and replay-focused UTF-16 tests.
 
 This addendum does not change Rust code, tests, fixture JSON, CI workflow integration, validate / extract / micro_episode integration, schema-level position_unit behavior, TypeScript helpers, Rust SHA-256 helpers, TypeScript/Rust cross-language vector checks, event durability, production readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-028 Rust UTF-16 Release-Quality Label Safety Review Addendum
+
+`scripts/check_release_quality.sh` updates the existing Rust UTF-16 label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
+
+The command and insertion point remain unchanged. The wrapper still calls the Makefile target and does not duplicate the Cargo command.
+
+This addendum does not change Makefile, Rust code, tests, fixture JSON, CI workflow integration, validate / extract / micro_episode integration, schema-level position_unit behavior, TypeScript helpers, Rust SHA-256 helpers, TypeScript/Rust cross-language vector checks, event durability, production readiness, real-data readiness, model performance, or deployment readiness. The Step-web-logger-021 status marker remains focused-helper evidence and is not reinterpreted as replay-focused remote status.

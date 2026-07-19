@@ -361,3 +361,9 @@ The target name remains `check-web-logger-rust-utf16-offset-conversion`, and the
 Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
 
 The design plans a future label wording update so release-quality output matches helper-focused plus replay-focused UTF-16 target coverage. It keeps the command and insertion point unchanged and does not implement validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, event durability, or replay-focused remote status.
+
+## 30. Step-web-logger-028 Release-Quality Label Update
+
+Step-web-logger-028 updates the wrapper label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
+
+The wrapper still calls `make check-web-logger-rust-utf16-offset-conversion` at the same insertion point. This aligns visible release-quality wording with the replay-focused integration while leaving validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, event durability, and replay-focused remote status as future work.

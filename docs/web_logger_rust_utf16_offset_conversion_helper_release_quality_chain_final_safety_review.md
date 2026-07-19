@@ -287,3 +287,9 @@ The accepted focused-helper boundary from this final safety review is not expand
 Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
 
 The design proposes future wrapper label wording for the existing target after replay-focused integration. It does not revise this final safety review decision and does not reinterpret the Step-web-logger-021 status marker as replay-focused remote evidence.
+
+## 25. Step-web-logger-028 Release-Quality Label Update
+
+Step-web-logger-028 updates the wrapper label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
+
+This does not revise the accepted focused-helper boundary recorded by this final safety review. The Step-web-logger-021 status marker remains valid only for its original focused-helper boundary; replay-focused status evidence remains future work.

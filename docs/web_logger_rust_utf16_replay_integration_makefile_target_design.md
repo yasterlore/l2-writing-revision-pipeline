@@ -352,3 +352,9 @@ No new target is added. `scripts/check_release_quality.sh` is not changed in thi
 Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
 
 The design keeps the existing Makefile target and command unchanged and proposes a future wrapper label update to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`. It does not change Makefile, wrapper, Rust code, tests, fixture JSON, CI workflow, validate / extract / micro_episode behavior, schema-level position_unit behavior, TypeScript/Rust hash work, event durability, or replay-focused remote status.
+
+## 24. Step-web-logger-028 Release-Quality Label Update
+
+Step-web-logger-028 updates the existing wrapper label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
+
+The Makefile target name, help text, and command remain unchanged. The wrapper command remains `make check-web-logger-rust-utf16-offset-conversion`, so this target design's Option A command source remains intact.

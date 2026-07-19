@@ -1671,3 +1671,27 @@ cargo test -p kslog_replay utf16
 This records Makefile-visible wording alignment after Step-web-logger-024. The target now describes both helper-focused UTF-16 tests and replay-focused UTF-16 tests selected by the `utf16` filter. No new target is added, `scripts/check_release_quality.sh` is unchanged, and the Step-web-logger-021 remote status marker remains helper-focused pre-Step-web-logger-024 evidence rather than replay-focused remote status.
 
 This appendix does not change Rust code, tests, fixture JSON, release-quality wrapper behavior, CI workflow, `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, schema-level position_unit behavior, Rust SHA-256 helper code, TypeScript SHA-256 helper code, TypeScript/Rust cross-language vector checks, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence.
+
+## Appendix BE. Web Logger Rust UTF-16 Release-Quality Label Alignment
+
+Step-web-logger-028 updates the existing release-quality wrapper label from:
+
+```text
+release_quality_check: web logger Rust UTF-16 offset conversion helper
+```
+
+to:
+
+```text
+release_quality_check: web logger Rust UTF-16 offset conversion and replay integration
+```
+
+The wrapper command remains unchanged:
+
+```bash
+make check-web-logger-rust-utf16-offset-conversion
+```
+
+The check remains ordered after `release_quality_check: web logger unicode hash vector fixture validation` and before `release_quality_check: learner-state audit fixtures`. The wrapper still calls the Makefile target and does not duplicate `cargo test -p kslog_replay utf16`.
+
+This appendix records release-quality visible label wording only. It does not change Makefile, Rust code, tests, fixture JSON, CI workflow, `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, schema-level position_unit behavior, Rust SHA-256 helper code, TypeScript SHA-256 helper code, TypeScript/Rust cross-language vector checks, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence. The Step-web-logger-021 status marker remains focused-helper evidence and is not reinterpreted as replay-focused remote status.

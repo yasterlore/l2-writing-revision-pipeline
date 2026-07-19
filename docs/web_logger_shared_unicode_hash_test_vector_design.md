@@ -523,3 +523,9 @@ The shared Unicode/hash vector fixture remains unchanged. The target now adverti
 Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
 
 The design keeps the shared vectors unchanged and plans only future release-quality label wording alignment for the existing Rust UTF-16 target. It does not add TypeScript/Rust vector checks, hash helpers, fixture changes, or replay-focused remote status.
+
+## 45. Step-web-logger-028 Release-Quality Label Update
+
+Step-web-logger-028 updates the Rust UTF-16 release-quality label to mention offset conversion and replay integration.
+
+The shared Unicode/hash vectors remain unchanged. This label update does not add fixture data, regenerate hashes, implement TypeScript/Rust vector checks, or record replay-focused remote status.

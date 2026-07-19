@@ -100,7 +100,7 @@ PYTHONPATH=python python3 -m compileall python
 section "web logger unicode hash vector fixture validation"
 run make check-web-logger-unicode-hash-vector-fixtures
 
-section "web logger Rust UTF-16 offset conversion helper"
+section "web logger Rust UTF-16 offset conversion and replay integration"
 run make check-web-logger-rust-utf16-offset-conversion
 
 section "learner-state audit fixtures"

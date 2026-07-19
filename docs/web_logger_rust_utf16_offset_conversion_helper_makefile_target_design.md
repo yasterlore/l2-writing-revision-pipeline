@@ -333,6 +333,12 @@ Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label U
 
 The design keeps this Makefile target unchanged and proposes only a future wrapper label wording update. It does not add a new target, duplicate Cargo commands, change tests, change fixture JSON, or create replay-focused remote status.
 
+## Step-web-logger-028 Release-Quality Label Update
+
+Step-web-logger-028 updates the wrapper label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
+
+The Makefile target name and command remain unchanged. The wrapper continues to call this target rather than duplicating `cargo test -p kslog_replay utf16`.
+
 ## 25. Step-web-logger-020 Remote/Manual Run Record Workflow Design
 
 Step-web-logger-020 adds [Rust UTF-16 Offset Conversion Helper Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_record_workflow.md).

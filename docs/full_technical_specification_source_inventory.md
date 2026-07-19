@@ -650,3 +650,9 @@ The source inventory addition is limited to `kslog_replay` replay string-index b
 Makefile updates only the help text for the existing `check-web-logger-rust-utf16-offset-conversion` target to `Run Rust UTF-16 offset conversion and replay integration tests`.
 
 The target name and command `cargo test -p kslog_replay utf16` remain unchanged. This source inventory update is limited to Makefile-visible wording and related docs. It does not change Rust code, tests, fixture JSON, `scripts/check_release_quality.sh`, workflows, package files, Cargo files, `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, validator implementation files, or existing status markers.
+
+## Step-web-logger-028 Source Inventory Addendum
+
+`scripts/check_release_quality.sh` updates the existing Rust UTF-16 label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
+
+The command `make check-web-logger-rust-utf16-offset-conversion` and insertion point remain unchanged. This source inventory update is limited to release-quality label wording and related docs. It does not change Makefile, Rust code, tests, fixture JSON, workflows, package files, Cargo files, `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, validator implementation files, or existing status markers.

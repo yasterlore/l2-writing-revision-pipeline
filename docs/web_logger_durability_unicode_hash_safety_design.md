@@ -532,3 +532,9 @@ The command remains `cargo test -p kslog_replay utf16`, and no new target or wra
 Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
 
 The design recommends future wrapper label wording alignment for helper-focused plus replay-focused UTF-16 coverage. It does not change the command, add a new target, update the wrapper in this step, or alter the durability safety boundary.
+
+## 47. Step-web-logger-028 Release-Quality Label Update
+
+Step-web-logger-028 updates the wrapper label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
+
+The command and target remain unchanged. This update does not alter the durability safety boundary or implement queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, or schema-level position_unit policy.

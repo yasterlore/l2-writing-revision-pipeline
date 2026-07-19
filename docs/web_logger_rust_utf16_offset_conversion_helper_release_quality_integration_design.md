@@ -328,3 +328,9 @@ The review accepts the wrapper-integrated Rust helper chain only within the focu
 Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
 
 The design records that the current Step-web-logger-019 label is now narrower than the post-Step-web-logger-024 target behavior. It recommends a future label-only wrapper update while keeping `make check-web-logger-rust-utf16-offset-conversion` as the command source of truth.
+
+## 27. Step-web-logger-028 Release-Quality Label Update
+
+Step-web-logger-028 updates the existing wrapper label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
+
+The wrapper command remains `make check-web-logger-rust-utf16-offset-conversion`, and the insertion point remains after the Web logger Unicode/hash vector fixture validation check and before learner-state audit fixtures. The wrapper still does not duplicate the Cargo command.

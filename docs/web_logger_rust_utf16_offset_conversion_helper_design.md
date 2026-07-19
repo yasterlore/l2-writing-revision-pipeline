@@ -443,3 +443,9 @@ The helper API, helper tests, replay integration code, target name, and target c
 Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
 
 The design does not change the helper API or tests. It proposes future release-quality label wording that acknowledges both helper-focused and replay-focused `utf16` test coverage while preserving separate evidence boundaries.
+
+## Step-web-logger-028 Release-Quality Label Update
+
+Step-web-logger-028 updates release-quality label wording to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
+
+The helper API, helper tests, replay-focused tests, target command, and fixture JSON remain unchanged. The update does not make TypeScript/Rust compatibility, hash compatibility, event durability, production readiness, real-data readiness, or model performance claims.

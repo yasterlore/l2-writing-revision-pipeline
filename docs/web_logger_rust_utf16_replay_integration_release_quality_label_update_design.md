@@ -312,3 +312,25 @@ Clarification:
 - It should not implement validate / extract / micro_episode integration.
 - It should not implement TypeScript/Rust hash checks.
 - It should not implement event durability.
+
+## 24. Step-web-logger-028 Label Update Status
+
+Step-web-logger-028 implements the label wording recommended by this design.
+
+Updated label:
+
+```text
+release_quality_check: web logger Rust UTF-16 offset conversion and replay integration
+```
+
+The command remains:
+
+```text
+make check-web-logger-rust-utf16-offset-conversion
+```
+
+The insertion point remains after `release_quality_check: web logger unicode hash vector fixture validation` and before `release_quality_check: learner-state audit fixtures`.
+
+Step-web-logger-028 does not change Makefile, Rust code, tests, fixture JSON, CI workflow, validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, or event durability.
+
+The Step-web-logger-021 remote status marker remains helper-focused pre-Step-web-logger-024 evidence. Replay-focused release-quality status evidence still needs a future run-record workflow, status marker, and final safety review.

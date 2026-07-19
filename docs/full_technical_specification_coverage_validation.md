@@ -768,3 +768,9 @@ The coverage includes ASCII replay preservation, Japanese cursor insertion, emoj
 Makefile help now describes `check-web-logger-rust-utf16-offset-conversion` as `Run Rust UTF-16 offset conversion and replay integration tests`.
 
 The command remains `cargo test -p kslog_replay utf16`, so the target coverage now visibly includes both helper-focused UTF-16 tests and replay-focused UTF-16 tests after Step-web-logger-024. This is Makefile-visible coverage wording only. It is not a new target, not a release-quality label update, not remote status for replay-focused integration, not CI workflow coverage, not validate / extract / micro_episode coverage, not schema-level position_unit behavior, not TypeScript/Rust compatibility evidence, not event durability evidence, not production readiness, not real-data readiness, and not model performance evidence.
+
+## Step-web-logger-028 Coverage Addendum
+
+Release-quality now labels the Rust UTF-16 check as `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
+
+The command remains `make check-web-logger-rust-utf16-offset-conversion`, so the wrapper coverage still comes through the existing Makefile target. This is release-quality label wording coverage only. It is not a new target, not a command change, not remote status for replay-focused integration, not CI workflow coverage, not validate / extract / micro_episode coverage, not schema-level position_unit behavior, not TypeScript/Rust compatibility evidence, not event durability evidence, not production readiness, not real-data readiness, and not model performance evidence.

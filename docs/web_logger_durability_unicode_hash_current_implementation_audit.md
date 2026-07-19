@@ -402,3 +402,9 @@ This does not change the event durability audit conclusion. Queueing, IndexedDB 
 Step-web-logger-027 adds [Rust UTF-16 Replay Integration Release Quality Label Update Design](web_logger_rust_utf16_replay_integration_release_quality_label_update_design.md).
 
 The design does not change the event durability audit conclusion. It plans only future wrapper label wording alignment and does not add queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, or schema-level position_unit policy.
+
+## 19. Step-web-logger-028 Release-Quality Label Update
+
+Step-web-logger-028 updates only the Rust UTF-16 release-quality label wording.
+
+This does not change the event durability audit conclusion. Queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, and schema-level position_unit policy remain outside this update.
