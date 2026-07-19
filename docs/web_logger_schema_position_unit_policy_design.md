@@ -380,3 +380,9 @@ Clarification:
 - It should not implement validate / extract / micro_episode integration.
 - It should not implement TypeScript/Rust hash checks.
 - It should not implement event durability.
+
+## 26. Step-web-logger-033 Schema-Level Position Unit Fixture Design
+
+Step-web-logger-033 adds [Schema-Level Position Unit Fixture Design for Web Logger Events](web_logger_schema_position_unit_fixture_design.md).
+
+The fixture design translates this policy into a future synthetic valid / invalid / legacy fixture matrix for schema and validator work. It does not create fixtures, modify fixture JSON, implement schema behavior, implement validator behavior, change replay, or alter release-quality checks.

@@ -470,3 +470,9 @@ The workflow design plans public-safe status evidence for the updated Rust UTF-1
 Step-web-logger-032 adds [Schema-Level Position Unit Policy Design for Web Logger Events](web_logger_schema_position_unit_policy_design.md).
 
 The design recommends a future explicit `position_unit=utf16_code_unit` field policy for Web logger schema / validation boundaries. It does not change current schema behavior, validation behavior, replay behavior, fixtures, Makefile targets, wrapper checks, TypeScript/Rust hash work, event durability, production readiness, real-data readiness, or model performance evidence.
+
+## 50. Step-web-logger-033 Schema-Level Position Unit Fixture Design
+
+Step-web-logger-033 adds [Schema-Level Position Unit Fixture Design for Web Logger Events](web_logger_schema_position_unit_fixture_design.md).
+
+The design recommends a future dedicated fixture root and valid / invalid / legacy case matrix for explicit `position_unit=utf16_code_unit` schema / validation policy. It does not create fixtures, modify existing fixture JSON, change current schema behavior, change validation behavior, change replay behavior, alter TypeScript/Rust hash work, or alter event durability.
