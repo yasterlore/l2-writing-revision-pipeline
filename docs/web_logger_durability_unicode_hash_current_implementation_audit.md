@@ -414,3 +414,9 @@ This does not change the event durability audit conclusion. Queueing, IndexedDB 
 Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
 
 This does not change the event durability audit conclusion. It designs only future public-safe status recording for the updated Rust UTF-16 replay release-quality label and does not add queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, or schema-level position_unit policy.
+
+## 21. Step-web-logger-032 Schema-Level Position Unit Policy Design
+
+Step-web-logger-032 adds [Schema-Level Position Unit Policy Design for Web Logger Events](web_logger_schema_position_unit_policy_design.md).
+
+This does not change the event durability audit conclusion. It designs future schema / validation position-unit policy only and does not add queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, code changes, tests, fixture JSON changes, Makefile changes, wrapper changes, or CI workflow changes.

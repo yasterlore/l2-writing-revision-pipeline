@@ -427,3 +427,9 @@ The marker records public-safe remote metadata/count-only evidence for the Step-
 Step-web-logger-031 adds [Rust UTF-16 Replay Integration Release Quality Chain Final Safety Review](web_logger_rust_utf16_replay_integration_release_quality_chain_final_safety_review.md).
 
 The final review accepts the Step-web-logger-024 through Step-web-logger-030 chain with explicit boundary and leaves validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, and event durability as future work.
+
+## 29. Step-web-logger-032 Schema-Level Position Unit Policy Design
+
+Step-web-logger-032 adds [Schema-Level Position Unit Policy Design for Web Logger Events](web_logger_schema_position_unit_policy_design.md).
+
+The design is a follow-up planning step for the remaining schema-level `position_unit` gap. It does not change this run-record workflow, remote status marker evidence, wrapper behavior, Makefile target behavior, code, tests, fixture JSON, validate / extract / micro_episode integration, TypeScript/Rust hash work, or event durability.

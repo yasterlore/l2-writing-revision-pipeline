@@ -385,3 +385,9 @@ The marker records public-safe remote evidence for the replay-focused release-qu
 Step-web-logger-031 adds [Rust UTF-16 Replay Integration Release Quality Chain Final Safety Review](web_logger_rust_utf16_replay_integration_release_quality_chain_final_safety_review.md).
 
 The review accepts the replay-focused chain with explicit `kslog_replay` boundary and leaves validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, and event durability as remaining P0 gaps.
+
+## 34. Step-web-logger-032 Schema-Level Position Unit Policy Design
+
+Step-web-logger-032 adds [Schema-Level Position Unit Policy Design for Web Logger Events](web_logger_schema_position_unit_policy_design.md).
+
+The design turns the remaining schema-level `position_unit` gap into a future staged policy chain. It does not change the replay implementation, validator behavior, schema structs, extraction behavior, micro_episode behavior, fixture JSON, Makefile, wrapper, CI workflow, TypeScript/Rust hash work, or event durability.

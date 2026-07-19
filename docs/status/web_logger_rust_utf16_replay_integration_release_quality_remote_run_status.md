@@ -368,3 +368,9 @@ Clarification:
 Step-web-logger-031 adds [Rust UTF-16 Replay Integration Release Quality Chain Final Safety Review](../web_logger_rust_utf16_replay_integration_release_quality_chain_final_safety_review.md).
 
 The final safety review accepts this marker only within the explicit `kslog_replay` replay-focused boundary. It does not reinterpret the Step-web-logger-021 helper-focused marker and does not claim validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust compatibility, event durability, production readiness, real-data readiness, or model performance.
+
+## 25. Step-web-logger-032 Schema-Level Position Unit Policy Design
+
+Step-web-logger-032 adds [Schema-Level Position Unit Policy Design for Web Logger Events](../web_logger_schema_position_unit_policy_design.md).
+
+This marker remains remote metadata/count-only evidence for the `kslog_replay` release-quality boundary. The Step-web-logger-032 design does not alter this status marker and does not convert it into schema-level validation evidence.

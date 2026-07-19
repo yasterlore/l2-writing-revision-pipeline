@@ -464,3 +464,9 @@ This label update reflects existing `kslog_replay` helper + replay-focused test 
 Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
 
 The workflow design plans public-safe status evidence for the updated Rust UTF-16 replay label. It does not change schema-level position_unit behavior, validate / extract / micro_episode integration, TypeScript/Rust hash work, event durability, wrapper behavior, Makefile, code, tests, fixture JSON, or CI workflow.
+
+## 49. Step-web-logger-032 Schema-Level Position Unit Policy Design
+
+Step-web-logger-032 adds [Schema-Level Position Unit Policy Design for Web Logger Events](web_logger_schema_position_unit_policy_design.md).
+
+The design recommends a future explicit `position_unit=utf16_code_unit` field policy for Web logger schema / validation boundaries. It does not change current schema behavior, validation behavior, replay behavior, fixtures, Makefile targets, wrapper checks, TypeScript/Rust hash work, event durability, production readiness, real-data readiness, or model performance evidence.
