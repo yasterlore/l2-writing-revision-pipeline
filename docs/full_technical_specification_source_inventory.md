@@ -656,3 +656,22 @@ The target name and command `cargo test -p kslog_replay utf16` remain unchanged.
 `scripts/check_release_quality.sh` updates the existing Rust UTF-16 label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
 
 The command `make check-web-logger-rust-utf16-offset-conversion` and insertion point remain unchanged. This source inventory update is limited to release-quality label wording and related docs. It does not change Makefile, Rust code, tests, fixture JSON, workflows, package files, Cargo files, `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, validator implementation files, or existing status markers.
+
+## Step-web-logger-034 Source Inventory Addendum
+
+`tests/fixtures/web_logger_position_unit_schema/` adds synthetic fixture
+artifacts for future Web logger `position_unit=utf16_code_unit` schema /
+validator policy checks:
+
+- `README.md`
+- `case_index.json`
+- `valid/*.jsonl`
+- `invalid/*.jsonl`
+- `legacy/*.jsonl`
+
+The source inventory addition is limited to the new fixture root and related
+docs. It does not change Makefile, release-quality wrapper scripts, workflows,
+Rust code, TypeScript code, Python code, tests outside the new fixture root,
+existing fixture JSON, package files, Cargo files, `kslog_validate`,
+`kslog_extract`, `kslog_micro_episode`, `kslog_schema`, replay implementation
+files, validator implementation files, or existing status markers.

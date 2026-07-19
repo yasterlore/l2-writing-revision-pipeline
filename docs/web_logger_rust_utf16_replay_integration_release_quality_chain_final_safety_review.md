@@ -430,3 +430,16 @@ The design addresses the remaining schema-level `position_unit` gap at the plann
 Step-web-logger-033 adds [Schema-Level Position Unit Fixture Design for Web Logger Events](web_logger_schema_position_unit_fixture_design.md).
 
 The fixture design plans future schema / validator fixture coverage for the remaining `position_unit` gap. It does not create fixtures and does not expand this final safety review's accepted `kslog_replay` boundary.
+
+## 27. Step-web-logger-034 Schema-Level Position Unit Fixtures
+
+Step-web-logger-034 adds `tests/fixtures/web_logger_position_unit_schema/`
+as a synthetic-only fixture root for future schema-level
+`position_unit=utf16_code_unit` checks.
+
+This fixture root records valid, invalid, and legacy case expectations for
+future schema / validator work. It does not expand this final safety review's
+accepted `kslog_replay` replay-focused boundary and does not add schema /
+validator behavior, validate / extract / micro_episode integration,
+TypeScript/Rust hash work, event durability, production readiness, real-data
+readiness, or model performance evidence.

@@ -635,3 +635,22 @@ This addendum does not change Rust code, tests, fixture JSON, CI workflow integr
 The command and insertion point remain unchanged. The wrapper still calls the Makefile target and does not duplicate the Cargo command.
 
 This addendum does not change Makefile, Rust code, tests, fixture JSON, CI workflow integration, validate / extract / micro_episode integration, schema-level position_unit behavior, TypeScript helpers, Rust SHA-256 helpers, TypeScript/Rust cross-language vector checks, event durability, production readiness, real-data readiness, model performance, or deployment readiness. The Step-web-logger-021 status marker remains focused-helper evidence and is not reinterpreted as replay-focused remote status.
+
+## Step-web-logger-034 Schema-Level Position Unit Fixture Safety Review Addendum
+
+Step-web-logger-034 adds `tests/fixtures/web_logger_position_unit_schema/`
+as a synthetic-only fixture root for future Web logger
+`position_unit=utf16_code_unit` schema / validator policy checks.
+
+The fixture matrix contains 5 valid, 11 invalid, and 1 legacy case with
+public-safe metadata in `case_index.json`. Fixture bodies use short synthetic
+content only and do not add oracle labels, post-hoc annotations, real
+participant data, raw learner text, logs, private paths, logits,
+probabilities, or performance metric bodies.
+
+This addendum does not change schema / validator implementation, Rust code,
+TypeScript code, Python code, tests outside the new fixture root, existing
+fixture JSON, Makefile, release-quality wrapper, CI workflow integration,
+validate / extract / micro_episode integration, TypeScript/Rust cross-language
+vector checks, event durability, production readiness, real-data readiness,
+model performance, or deployment readiness.

@@ -3785,3 +3785,18 @@ The target name and command `cargo test -p kslog_replay utf16` remain unchanged.
 Step-web-logger-028 updates the existing Rust UTF-16 release-quality label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
 
 The wrapper command remains `make check-web-logger-rust-utf16-offset-conversion`, and the insertion point remains after the Web logger Unicode/hash vector fixture validation check and before learner-state audit fixtures. Step-web-logger-028 does not change Makefile, Rust code, tests, fixture JSON, workflow files, package files, Cargo files, validate / extract / micro_episode integration, schema-level position_unit behavior, TypeScript/Rust cross-language checks, event durability, real-data use, metric evidence, or production readiness status.
+
+## Step-web-logger-034 Schema-Level Position Unit Fixture Root
+
+Step-web-logger-034 adds `tests/fixtures/web_logger_position_unit_schema/`
+for future Web logger schema-level `position_unit=utf16_code_unit` policy
+checks.
+
+The root contains a public-safe README, `case_index.json`, and a synthetic
+valid / invalid / legacy JSONL case matrix. Step-web-logger-034 does not change
+schema / validator implementation, Rust code, TypeScript code, Python code,
+tests outside the new fixture root, existing fixture JSON, Makefile,
+release-quality wrapper, workflow files, package files, Cargo files, validate /
+extract / micro_episode integration, TypeScript/Rust cross-language checks,
+event durability, real-data use, metric evidence, or production readiness
+status.

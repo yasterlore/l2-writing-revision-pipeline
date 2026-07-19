@@ -426,3 +426,16 @@ This does not change the event durability audit conclusion. It designs future sc
 Step-web-logger-033 adds [Schema-Level Position Unit Fixture Design for Web Logger Events](web_logger_schema_position_unit_fixture_design.md).
 
 This does not change the event durability audit conclusion. It designs future synthetic schema / validator fixtures only and does not add queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, code changes, tests, fixture JSON changes, Makefile changes, wrapper changes, or CI workflow changes.
+
+## 23. Step-web-logger-034 Schema-Level Position Unit Fixtures
+
+Step-web-logger-034 adds `tests/fixtures/web_logger_position_unit_schema/`
+as a synthetic fixture root for future Web logger position-unit schema /
+validator checks.
+
+This does not change the event durability audit conclusion. It adds fixture
+files only and does not add queueing, IndexedDB buffering, acknowledgement,
+retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work,
+validate / extract / micro_episode integration, Rust / TypeScript / Python
+code changes, tests outside the new fixture root, Makefile changes, wrapper
+changes, or CI workflow changes.

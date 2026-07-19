@@ -774,3 +774,17 @@ The command remains `cargo test -p kslog_replay utf16`, so the target coverage n
 Release-quality now labels the Rust UTF-16 check as `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
 
 The command remains `make check-web-logger-rust-utf16-offset-conversion`, so the wrapper coverage still comes through the existing Makefile target. This is release-quality label wording coverage only. It is not a new target, not a command change, not remote status for replay-focused integration, not CI workflow coverage, not validate / extract / micro_episode coverage, not schema-level position_unit behavior, not TypeScript/Rust compatibility evidence, not event durability evidence, not production readiness, not real-data readiness, and not model performance evidence.
+
+## Step-web-logger-034 Coverage Addendum
+
+`tests/fixtures/web_logger_position_unit_schema/` adds fixture coverage inputs
+for future schema-level Web logger `position_unit=utf16_code_unit` policy
+checks.
+
+The fixture matrix covers 5 valid, 11 invalid, and 1 legacy synthetic case with
+public-safe expected statuses and reason codes. This is fixture input coverage
+only. It is not schema / validator behavior coverage, not fixture validator
+CLI coverage, not Makefile target coverage, not release-quality wrapper
+coverage, not validate / extract / micro_episode coverage, not TypeScript/Rust
+compatibility evidence, not event durability evidence, not production
+readiness, not real-data readiness, and not model performance evidence.

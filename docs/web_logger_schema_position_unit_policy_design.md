@@ -386,3 +386,16 @@ Clarification:
 Step-web-logger-033 adds [Schema-Level Position Unit Fixture Design for Web Logger Events](web_logger_schema_position_unit_fixture_design.md).
 
 The fixture design translates this policy into a future synthetic valid / invalid / legacy fixture matrix for schema and validator work. It does not create fixtures, modify fixture JSON, implement schema behavior, implement validator behavior, change replay, or alter release-quality checks.
+
+## 27. Step-web-logger-034 Fixture Root
+
+Step-web-logger-034 adds the dedicated synthetic fixture root
+`tests/fixtures/web_logger_position_unit_schema/` for this policy.
+
+The root contains README guidance, `case_index.json`, and a 17-case valid /
+invalid / legacy JSONL matrix for future Web logger
+`position_unit=utf16_code_unit` schema and validator checks. It does not
+implement schema behavior, validation behavior, fixture validator CLI,
+Makefile target, release-quality wrapper changes, validate / extract /
+micro_episode integration, TypeScript/Rust hash work, event durability,
+production readiness, real-data readiness, or model performance evidence.

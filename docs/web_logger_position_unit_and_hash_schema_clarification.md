@@ -476,3 +476,15 @@ The design recommends a future explicit `position_unit=utf16_code_unit` field po
 Step-web-logger-033 adds [Schema-Level Position Unit Fixture Design for Web Logger Events](web_logger_schema_position_unit_fixture_design.md).
 
 The design recommends a future dedicated fixture root and valid / invalid / legacy case matrix for explicit `position_unit=utf16_code_unit` schema / validation policy. It does not create fixtures, modify existing fixture JSON, change current schema behavior, change validation behavior, change replay behavior, alter TypeScript/Rust hash work, or alter event durability.
+
+## 51. Step-web-logger-034 Schema-Level Position Unit Fixtures
+
+Step-web-logger-034 adds `tests/fixtures/web_logger_position_unit_schema/`
+with README guidance, `case_index.json`, and 17 synthetic JSONL cases for
+future Web logger `position_unit=utf16_code_unit` schema / validator policy.
+
+The fixture root separates valid, invalid, and legacy cases and records
+public-safe expected reason codes. It does not change current schema behavior,
+validation behavior, replay behavior, Makefile targets, release-quality
+wrapper checks, TypeScript/Rust hash work, event durability, production
+readiness, real-data readiness, or model performance evidence.

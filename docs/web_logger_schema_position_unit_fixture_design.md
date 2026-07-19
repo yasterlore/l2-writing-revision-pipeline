@@ -600,3 +600,27 @@ Clarification:
 - It should update README and full technical specification related docs because
   fixture files are implementation artifacts.
 - It should preserve synthetic-only, no-oracle, and public-safe boundaries.
+
+## 26. Step-web-logger-034 Fixture Root Implementation Note
+
+Step-web-logger-034 implements the dedicated fixture root recommended by this
+design:
+
+- `tests/fixtures/web_logger_position_unit_schema/README.md`
+- `tests/fixtures/web_logger_position_unit_schema/case_index.json`
+- `tests/fixtures/web_logger_position_unit_schema/valid/*.jsonl`
+- `tests/fixtures/web_logger_position_unit_schema/invalid/*.jsonl`
+- `tests/fixtures/web_logger_position_unit_schema/legacy/*.jsonl`
+
+The implemented matrix contains 5 valid, 11 invalid, and 1 legacy synthetic
+case. It fixes future schema / validator expectations for explicit
+`position_unit=utf16_code_unit`, missing units, unsupported units, schema /
+logger mismatch, UTF-16 document length mismatch, invalid UTF-16 boundaries,
+and explicit legacy missing-unit gating.
+
+This implementation note does not change the design boundary: schema /
+validator behavior, fixture validator CLI, Makefile target, release-quality
+wrapper integration, Rust / TypeScript / Python code changes, existing fixture
+JSON changes, validate / extract / micro_episode integration, TypeScript/Rust
+hash work, event durability, production readiness, real-data readiness, and
+model performance remain future work.

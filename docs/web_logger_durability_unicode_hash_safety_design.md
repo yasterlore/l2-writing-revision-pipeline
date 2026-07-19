@@ -556,3 +556,15 @@ The design preserves the durability safety boundary. It plans future explicit `p
 Step-web-logger-033 adds [Schema-Level Position Unit Fixture Design for Web Logger Events](web_logger_schema_position_unit_fixture_design.md).
 
 The design preserves the durability safety boundary. It plans future synthetic fixture cases for explicit `position_unit=utf16_code_unit` schema / validation policy but does not implement queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, code changes, tests, fixture JSON changes, Makefile changes, wrapper changes, or CI workflow changes.
+
+## 51. Step-web-logger-034 Schema-Level Position Unit Fixtures
+
+Step-web-logger-034 adds `tests/fixtures/web_logger_position_unit_schema/`
+with synthetic valid / invalid / legacy cases for future schema-level
+`position_unit=utf16_code_unit` checks.
+
+The new fixture root preserves the durability safety boundary. It does not
+implement queueing, IndexedDB buffering, acknowledgement, retry, deduplication,
+ordering, delivery durability, TypeScript/Rust hash work, validate / extract /
+micro_episode integration, schema / validator behavior, Makefile changes,
+wrapper changes, or CI workflow changes.

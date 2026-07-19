@@ -1695,3 +1695,19 @@ make check-web-logger-rust-utf16-offset-conversion
 The check remains ordered after `release_quality_check: web logger unicode hash vector fixture validation` and before `release_quality_check: learner-state audit fixtures`. The wrapper still calls the Makefile target and does not duplicate `cargo test -p kslog_replay utf16`.
 
 This appendix records release-quality visible label wording only. It does not change Makefile, Rust code, tests, fixture JSON, CI workflow, `kslog_validate`, `kslog_extract`, `kslog_micro_episode`, `kslog_schema`, schema-level position_unit behavior, Rust SHA-256 helper code, TypeScript SHA-256 helper code, TypeScript/Rust cross-language vector checks, event durability queue / IndexedDB / acknowledgement / retry / deduplication, production readiness, real-data readiness, or model performance evidence. The Step-web-logger-021 status marker remains focused-helper evidence and is not reinterpreted as replay-focused remote status.
+
+## Step-web-logger-034 Schema-Level Position Unit Fixture Appendix
+
+Step-web-logger-034 adds the synthetic fixture root
+`tests/fixtures/web_logger_position_unit_schema/` for future Web logger
+schema-level `position_unit=utf16_code_unit` policy checks.
+
+The root contains README guidance, `case_index.json`, 5 valid JSONL cases,
+11 invalid JSONL cases, and 1 legacy JSONL case. The fixtures are intended for
+future schema / validator work and do not implement schema behavior, validation
+behavior, fixture validator CLI, Makefile target, release-quality wrapper
+changes, Rust / TypeScript / Python code changes, validate / extract /
+micro_episode integration, Rust / TypeScript SHA-256 helpers, TypeScript/Rust
+cross-language vector checks, event durability queue / IndexedDB /
+acknowledgement / retry / deduplication, production readiness, real-data
+readiness, or model performance evidence.
