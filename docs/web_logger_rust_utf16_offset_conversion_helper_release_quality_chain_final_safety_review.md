@@ -299,3 +299,9 @@ This does not revise the accepted focused-helper boundary recorded by this final
 Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
 
 The workflow design does not revise this final safety review decision. It only plans future public-safe status evidence for the Step-web-logger-028 label and keeps the Step-web-logger-021 helper-focused status boundary separate.
+
+## 27. Step-web-logger-030 Remote Status Marker
+
+Step-web-logger-030 adds [Rust UTF-16 Replay Integration Release Quality Remote Run Status](status/web_logger_rust_utf16_replay_integration_release_quality_remote_run_status.md).
+
+This marker does not revise the accepted focused-helper boundary recorded by this final safety review. It is a separate replay-focused evidence marker for Step-web-logger-024 through Step-web-logger-030.

@@ -373,3 +373,9 @@ The wrapper still calls `make check-web-logger-rust-utf16-offset-conversion` at 
 Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
 
 The design defines how future public-safe status evidence should be recorded for the Step-web-logger-028 label and combined helper-focused plus replay-focused target output. It does not create a status marker, change Rust code or tests, change wrapper behavior, or implement validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, or event durability.
+
+## 32. Step-web-logger-030 Remote Status Marker
+
+Step-web-logger-030 adds [Rust UTF-16 Replay Integration Release Quality Remote Run Status](status/web_logger_rust_utf16_replay_integration_release_quality_remote_run_status.md).
+
+The marker records public-safe remote evidence for the replay-focused release-quality label while keeping the evidence limited to `kslog_replay` tests. It does not implement validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, or event durability.

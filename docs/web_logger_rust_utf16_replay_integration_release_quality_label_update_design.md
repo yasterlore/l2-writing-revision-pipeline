@@ -340,3 +340,9 @@ The Step-web-logger-021 remote status marker remains helper-focused pre-Step-web
 Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
 
 The workflow design specifies how a future status marker should record public-safe remote or local/manual evidence for the updated label. It does not create the marker, change wrapper wording, change Makefile, change Rust code or tests, change fixture JSON, or reinterpret the Step-web-logger-021 helper-focused status boundary.
+
+## 26. Step-web-logger-030 Remote Status Marker
+
+Step-web-logger-030 adds [Rust UTF-16 Replay Integration Release Quality Remote Run Status](status/web_logger_rust_utf16_replay_integration_release_quality_remote_run_status.md).
+
+The marker records remote public-safe metadata for the updated label. It keeps Step-web-logger-021 as helper-focused evidence only and does not change wrapper wording, Makefile, Rust code, tests, fixture JSON, or broader runtime integration.

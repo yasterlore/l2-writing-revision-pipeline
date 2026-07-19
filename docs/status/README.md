@@ -48,6 +48,10 @@ Current status-marker posture:
 - The Rust UTF-16 offset conversion helper target is in the release-quality
   wrapper, and its remote status marker is now recorded as public-safe
   metadata-only/count-only evidence.
+- The Rust UTF-16 offset conversion and replay integration target is in the
+  release-quality wrapper, and its remote status marker is now recorded as
+  public-safe metadata-only/count-only evidence. This is a separate boundary
+  from the earlier helper-focused marker.
 
 Available markers:
 
@@ -1747,6 +1751,10 @@ invocation evidence, or file-writing evidence.
 ## Step-web-logger-021 Rust UTF-16 Offset Conversion Helper Remote Status Marker
 
 - [Rust UTF-16 offset conversion helper release-quality remote run status](web_logger_rust_utf16_offset_conversion_helper_release_quality_remote_run_status.md): status-marker-only / docs-only public-safe remote metadata record after Step-web-logger-019 wrapper integration. It records `local_fallback_used=no`, remote metadata availability, the observed Rust UTF-16 helper label, Makefile target command, final ok label, focused Rust helper test counts, broader Rust check counts, and safety flags without raw logs, full job output, source text, selected text, fixture JSON body, raw event payload body, private data, real participant data, logits / probabilities, performance metric body, broader replay integration claims, TypeScript/Rust compatibility claims, or event durability claims.
+
+## Step-web-logger-030 Rust UTF-16 Replay Integration Remote Status Marker
+
+- [Rust UTF-16 replay integration release-quality remote run status](web_logger_rust_utf16_replay_integration_release_quality_remote_run_status.md): status-marker-only / docs-only public-safe remote metadata record after the Step-web-logger-028 label update. It records `local_fallback_used=no`, remote metadata availability, the observed Rust UTF-16 offset conversion and replay integration label, Makefile target command, final ok label, helper-focused plus replay-focused test counts, broader Rust check counts, and safety flags without raw logs, full job output, raw Cargo output, source text, selected text, fixture JSON body, raw event payload body, private data copied to docs, absolute local paths copied to docs, real participant data, logits / probabilities, performance metric body, validate / extract / micro_episode integration claims, TypeScript/Rust compatibility claims, or event durability claims.
 
 ## Step-web-logger-022 Rust UTF-16 Offset Conversion Helper Final Safety Review
 

@@ -203,6 +203,8 @@ Replay-focused evidence needs its own status marker or an explicitly updated bou
 
 Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md) to design that future evidence path. It does not create the status marker or change the existing target.
 
+Step-web-logger-030 adds [Rust UTF-16 Replay Integration Release Quality Remote Run Status](status/web_logger_rust_utf16_replay_integration_release_quality_remote_run_status.md) as that separate public-safe evidence boundary. It does not change the existing target.
+
 ## 11. Expected Target Output Boundary
 
 Allowed target output:
