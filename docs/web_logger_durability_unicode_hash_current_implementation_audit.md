@@ -408,3 +408,9 @@ The design does not change the event durability audit conclusion. It plans only 
 Step-web-logger-028 updates only the Rust UTF-16 release-quality label wording.
 
 This does not change the event durability audit conclusion. Queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, and schema-level position_unit policy remain outside this update.
+
+## 20. Step-web-logger-029 Run Record Workflow Design
+
+Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
+
+This does not change the event durability audit conclusion. It designs only future public-safe status recording for the updated Rust UTF-16 replay release-quality label and does not add queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, or schema-level position_unit policy.

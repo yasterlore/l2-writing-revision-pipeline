@@ -538,3 +538,9 @@ The design recommends future wrapper label wording alignment for helper-focused 
 Step-web-logger-028 updates the wrapper label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
 
 The command and target remain unchanged. This update does not alter the durability safety boundary or implement queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, or schema-level position_unit policy.
+
+## 48. Step-web-logger-029 Run Record Workflow Design
+
+Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
+
+The workflow design preserves the durability safety boundary. It does not create a status marker, change wrapper or target behavior, alter code or tests, change fixture JSON, or implement queueing, IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery durability, TypeScript/Rust hash work, validate / extract / micro_episode integration, or schema-level position_unit policy.

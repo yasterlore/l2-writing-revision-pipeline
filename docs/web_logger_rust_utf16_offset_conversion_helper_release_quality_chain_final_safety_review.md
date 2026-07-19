@@ -293,3 +293,9 @@ The design proposes future wrapper label wording for the existing target after r
 Step-web-logger-028 updates the wrapper label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
 
 This does not revise the accepted focused-helper boundary recorded by this final safety review. The Step-web-logger-021 status marker remains valid only for its original focused-helper boundary; replay-focused status evidence remains future work.
+
+## 26. Step-web-logger-029 Run Record Workflow Design
+
+Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
+
+The workflow design does not revise this final safety review decision. It only plans future public-safe status evidence for the Step-web-logger-028 label and keeps the Step-web-logger-021 helper-focused status boundary separate.

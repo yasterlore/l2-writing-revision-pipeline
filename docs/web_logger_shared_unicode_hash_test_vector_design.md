@@ -529,3 +529,9 @@ The design keeps the shared vectors unchanged and plans only future release-qual
 Step-web-logger-028 updates the Rust UTF-16 release-quality label to mention offset conversion and replay integration.
 
 The shared Unicode/hash vectors remain unchanged. This label update does not add fixture data, regenerate hashes, implement TypeScript/Rust vector checks, or record replay-focused remote status.
+
+## 46. Step-web-logger-029 Run Record Workflow Design
+
+Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
+
+The workflow design keeps the shared Unicode/hash vectors unchanged and specifies only how future public-safe evidence should record the updated Rust UTF-16 replay label, target command, and count-only summaries.

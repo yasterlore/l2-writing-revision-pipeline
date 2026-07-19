@@ -669,3 +669,9 @@ The design keeps the Python validator chain separate from the Rust label update 
 Step-web-logger-028 updates only the Rust UTF-16 release-quality label wording.
 
 The Python validator chain remains unchanged. The Rust wrapper check and Python validator check remain complementary but separate evidence boundaries.
+
+## 49. Step-web-logger-029 Run Record Workflow Design
+
+Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
+
+The workflow design keeps the Python validator chain separate from the Rust replay-focused evidence boundary. It does not change validator behavior, fixture JSON, Makefile, wrapper behavior, Rust code, tests, TypeScript/Rust compatibility posture, validate / extract / micro_episode integration, or event durability.

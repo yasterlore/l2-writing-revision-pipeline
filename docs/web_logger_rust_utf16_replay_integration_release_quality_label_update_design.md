@@ -334,3 +334,9 @@ The insertion point remains after `release_quality_check: web logger unicode has
 Step-web-logger-028 does not change Makefile, Rust code, tests, fixture JSON, CI workflow, validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, or event durability.
 
 The Step-web-logger-021 remote status marker remains helper-focused pre-Step-web-logger-024 evidence. Replay-focused release-quality status evidence still needs a future run-record workflow, status marker, and final safety review.
+
+## 25. Step-web-logger-029 Run Record Workflow Design
+
+Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
+
+The workflow design specifies how a future status marker should record public-safe remote or local/manual evidence for the updated label. It does not create the marker, change wrapper wording, change Makefile, change Rust code or tests, change fixture JSON, or reinterpret the Step-web-logger-021 helper-focused status boundary.

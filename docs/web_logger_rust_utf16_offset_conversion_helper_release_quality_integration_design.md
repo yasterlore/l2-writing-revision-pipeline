@@ -334,3 +334,9 @@ The design records that the current Step-web-logger-019 label is now narrower th
 Step-web-logger-028 updates the existing wrapper label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
 
 The wrapper command remains `make check-web-logger-rust-utf16-offset-conversion`, and the insertion point remains after the Web logger Unicode/hash vector fixture validation check and before learner-state audit fixtures. The wrapper still does not duplicate the Cargo command.
+
+## 28. Step-web-logger-029 Run Record Workflow Design
+
+Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
+
+The workflow design is for future public-safe evidence recording after the Step-web-logger-028 label update. It does not change the wrapper, Makefile, Rust code, tests, fixture JSON, CI workflow, broader runtime integration, TypeScript/Rust hash work, or event durability.

@@ -362,3 +362,9 @@ The review accepts the Makefile-targeted Rust helper chain only within the focus
 Step-web-logger-025 adds [Rust UTF-16 Replay Integration Makefile Target Design](web_logger_rust_utf16_replay_integration_makefile_target_design.md).
 
 The design records that, after Step-web-logger-024, the existing `cargo test -p kslog_replay utf16` command runs both helper-focused and replay-focused UTF-16 tests. It recommends updating the existing target help text/docs in a future step rather than adding a duplicate target immediately. It does not change Makefile, wrapper, Rust code, tests, fixture JSON, CI workflow, validate / extract / micro_episode behavior, schema-level position_unit behavior, TypeScript/Rust hash work, or event durability.
+
+## 29. Step-web-logger-029 Run Record Workflow Design
+
+Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
+
+The workflow design records how future status evidence should describe the existing Makefile target after the release-quality label update. It does not add a new target, change the target command, change wrapper behavior, change Rust code or tests, change fixture JSON, or implement broader runtime integration.

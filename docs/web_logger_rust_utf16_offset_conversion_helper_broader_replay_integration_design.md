@@ -367,3 +367,9 @@ The design plans a future label wording update so release-quality output matches
 Step-web-logger-028 updates the wrapper label to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
 
 The wrapper still calls `make check-web-logger-rust-utf16-offset-conversion` at the same insertion point. This aligns visible release-quality wording with the replay-focused integration while leaving validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, event durability, and replay-focused remote status as future work.
+
+## 31. Step-web-logger-029 Run Record Workflow Design
+
+Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
+
+The design defines how future public-safe status evidence should be recorded for the Step-web-logger-028 label and combined helper-focused plus replay-focused target output. It does not create a status marker, change Rust code or tests, change wrapper behavior, or implement validate / extract / micro_episode integration, schema-level position_unit policy, TypeScript/Rust hash work, or event durability.

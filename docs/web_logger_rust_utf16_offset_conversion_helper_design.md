@@ -449,3 +449,9 @@ The design does not change the helper API or tests. It proposes future release-q
 Step-web-logger-028 updates release-quality label wording to `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
 
 The helper API, helper tests, replay-focused tests, target command, and fixture JSON remain unchanged. The update does not make TypeScript/Rust compatibility, hash compatibility, event durability, production readiness, real-data readiness, or model performance claims.
+
+## Step-web-logger-029 Run Record Workflow Design
+
+Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
+
+The design covers future public-safe status evidence for the updated Rust UTF-16 replay label. It does not change the helper API, helper tests, replay-focused tests, target command, fixture JSON, wrapper behavior, or the focused helper status boundary.

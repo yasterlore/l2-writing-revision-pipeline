@@ -201,6 +201,8 @@ The helper-focused remote status marker from Step-web-logger-021 must not be sil
 
 Replay-focused evidence needs its own status marker or an explicitly updated boundary. A release-quality pass after Step-web-logger-024 does not yet equal remote-status-recorded replay integration unless a remote run/status marker is created.
 
+Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md) to design that future evidence path. It does not create the status marker or change the existing target.
+
 ## 11. Expected Target Output Boundary
 
 Allowed target output:
