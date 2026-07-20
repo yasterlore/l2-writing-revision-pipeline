@@ -568,3 +568,15 @@ Phase 1 tests. It does not implement the target, does not add release-quality
 integration, and does not change Phase 2 UTF-16 numeric validation, replay,
 extract / micro_episode, TypeScript logger behavior, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 42. Step-web-logger-049 Rust Validator Phase 1 Makefile Target
+
+Step-web-logger-049 adds Makefile target
+`check-web-logger-rust-validator-position-unit-phase1` with command
+`cargo test -p kslog_validate position_unit`. It exposes the Step047 focused
+validator Phase 1 tests without expanding the policy to Phase 2 UTF-16
+numeric validation.
+
+Release-quality integration, extract / micro_episode integration, TypeScript
+logger behavior, event durability, production readiness, real-data readiness,
+and model performance evidence remain future work.

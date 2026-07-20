@@ -449,3 +449,13 @@ Step-web-logger-048 adds
 The design keeps the future target focused on `kslog_validate` Phase 1 tests.
 It does not expand replay integration, does not call replay, and does not
 settle the future shared-helper strategy for Phase 2 numeric UTF-16 checks.
+
+## 40. Step-web-logger-049 Validator Phase 1 Makefile Target
+
+Step-web-logger-049 adds Makefile target
+`check-web-logger-rust-validator-position-unit-phase1`, placed in the Web
+logger block before the Rust UTF-16 replay integration target.
+
+The target remains focused on `kslog_validate` Phase 1 tests. It does not run
+replay and does not settle the shared-helper strategy for Phase 2 numeric
+UTF-16 checks.

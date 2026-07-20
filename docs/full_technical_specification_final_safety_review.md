@@ -737,3 +737,21 @@ integration, Makefile or wrapper behavior, fixture JSON, TypeScript / Python
 code, validate / extract / micro_episode integration, status markers,
 TypeScript/Rust cross-language vector checks, event durability, production
 readiness, real-data readiness, model performance, or deployment readiness.
+
+## Step-web-logger-049 Rust Validator Phase 1 Makefile Target Safety Review Addendum
+
+Step-web-logger-049 adds standalone Makefile target
+`check-web-logger-rust-validator-position-unit-phase1` for focused Rust
+validator Phase 1 tests.
+
+The target runs `cargo test -p kslog_validate position_unit` and is placed
+between the position-unit fixture contract target and the Rust UTF-16 replay
+integration target. It does not run full validator tests, workspace tests, the
+Python fixture validator, replay checks, or release-quality wrapper
+integration.
+
+This addendum does not change Rust code, tests, fixture JSON, CI workflow
+integration, wrapper behavior, Phase 2 UTF-16 numeric metadata validation,
+extract / micro_episode integration, TypeScript/Rust cross-language vector
+checks, event durability, production readiness, real-data readiness, model
+performance, or deployment readiness.

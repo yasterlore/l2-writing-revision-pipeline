@@ -366,3 +366,45 @@ needed, add the focused target, keep Rust code / tests / fixtures / TypeScript
 technical specification related docs because Makefile-visible behavior
 changes. It should not claim release-quality integration, production
 readiness, or real-data readiness.
+
+## 28. Step-web-logger-049 Implementation Status
+
+Step-web-logger-049 implements this target design in Makefile.
+
+Added target:
+
+`check-web-logger-rust-validator-position-unit-phase1`
+
+Help text:
+
+`Run Rust validator position_unit Phase 1 policy tests`
+
+Command:
+
+`cargo test -p kslog_validate position_unit`
+
+The target is placed after `check-web-logger-position-unit-fixtures` and
+before `check-web-logger-rust-utf16-offset-conversion`. It runs focused Rust
+validator Phase 1 tests only. It does not run full validator tests, workspace
+tests, the Python fixture contract validator, replay checks, extract /
+micro_episode checks, or release-quality wrapper integration.
+
+Release-quality integration remains future work for Step-web-logger-050 and
+later. Phase 2 UTF-16 numeric metadata validation, TypeScript logger changes,
+SHA-256 helper work, TypeScript/Rust vector checks, event durability,
+production readiness, real-data readiness, and model performance evidence
+remain outside Step049.
+
+## 29. Recommended Next Step After Step-web-logger-049
+
+Recommended next step:
+
+Step-web-logger-050: Rust validator position_unit Phase 1 release-quality
+integration design
+
+Step050 should be release-quality-integration-design / docs-only. It should
+design the future wrapper label, command, insertion point, public-safe output
+boundary, failure semantics, and later remote/status/final-review staging for
+the new Makefile target. It should not modify the wrapper yet and should not
+claim Phase 2 UTF-16 numeric validation, production readiness, or real-data
+readiness.

@@ -605,3 +605,11 @@ exposure for focused validator tests only and does not add queueing,
 IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery
 durability, TypeScript/Rust hash work, production readiness, real-data
 readiness, or model performance evidence.
+
+## 38. Step-web-logger-049 Rust Validator Phase 1 Makefile Target
+
+Step-web-logger-049 adds the standalone Makefile target for Rust validator
+Phase 1 focused tests. This preserves the durability audit conclusion: the
+target does not add queueing, IndexedDB buffering, acknowledgement, retry,
+deduplication, ordering, delivery durability, TypeScript/Rust hash work,
+production readiness, real-data readiness, or model performance evidence.

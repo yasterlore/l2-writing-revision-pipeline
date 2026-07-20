@@ -499,3 +499,12 @@ Step-web-logger-048 adds
 The design recommends a future focused Makefile target for `kslog_validate`
 Phase 1 tests. It does not change this replay-focused boundary and does not
 call replay or `kslog_replay::utf16_offsets`.
+
+## 33. Step-web-logger-049 Validator Phase 1 Makefile Target
+
+Step-web-logger-049 adds
+`check-web-logger-rust-validator-position-unit-phase1` to Makefile. The target
+runs `cargo test -p kslog_validate position_unit`.
+
+This does not change the Step031 replay-focused accepted boundary, does not
+call replay, and does not add Phase 2 UTF-16 numeric metadata validation.

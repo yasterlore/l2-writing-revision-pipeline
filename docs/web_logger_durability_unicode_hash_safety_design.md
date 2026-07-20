@@ -732,3 +732,14 @@ Makefile exposure for focused validator tests only; queueing, IndexedDB
 persistence, acknowledgement, retry, deduplication, server-side idempotency,
 ordering guarantees, TypeScript/Rust hash work, production readiness,
 real-data readiness, and model performance evidence remain future work.
+
+## 66. Step-web-logger-049 Rust Validator Phase 1 Makefile Target
+
+Step-web-logger-049 adds Makefile target
+`check-web-logger-rust-validator-position-unit-phase1`.
+
+This target runs focused Rust validator Phase 1 tests only. It does not change
+event durability boundaries: queueing, IndexedDB persistence, acknowledgement,
+retry, deduplication, server-side idempotency, ordering guarantees,
+TypeScript/Rust hash work, production readiness, real-data readiness, and
+model performance evidence remain future work.

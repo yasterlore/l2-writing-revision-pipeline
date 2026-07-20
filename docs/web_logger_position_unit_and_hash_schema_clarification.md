@@ -658,3 +658,15 @@ The design recommends future target
 not change Makefile, wrapper, Rust code, tests, fixtures, TypeScript, Python,
 Phase 2 UTF-16 numeric validation, hash compatibility, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 66. Step-web-logger-049 Rust Validator Phase 1 Makefile Target
+
+Step-web-logger-049 adds Makefile target
+`check-web-logger-rust-validator-position-unit-phase1` with help text
+`Run Rust validator position_unit Phase 1 policy tests`. The command is
+`cargo test -p kslog_validate position_unit`.
+
+This exposes focused Rust validator Phase 1 coverage only. It does not add
+release-quality integration, Phase 2 UTF-16 numeric validation, hash
+compatibility implementation, TypeScript/Rust vector checks, event durability,
+production readiness, real-data readiness, or model performance evidence.

@@ -746,3 +746,18 @@ related docs. It does not change `kslog_schema`, `kslog_replay`,
 `kslog_extract`, `kslog_micro_episode`, Makefile, release-quality wrapper
 scripts, workflows, TypeScript code, Python code, fixture JSON, package files,
 Cargo files, or status markers.
+
+## Step-web-logger-049 Source Inventory Addendum
+
+`Makefile` adds target `check-web-logger-rust-validator-position-unit-phase1`
+near the existing Web logger validation targets.
+
+The target runs:
+
+`cargo test -p kslog_validate position_unit`
+
+The source inventory addition is limited to the Makefile target and related
+docs. It does not change release-quality wrapper scripts, workflows, Rust
+code, Rust tests, TypeScript code, Python code, fixture JSON, package files,
+Cargo files, `kslog_schema`, `kslog_validate`, `kslog_replay`,
+`kslog_extract`, `kslog_micro_episode`, or status markers.

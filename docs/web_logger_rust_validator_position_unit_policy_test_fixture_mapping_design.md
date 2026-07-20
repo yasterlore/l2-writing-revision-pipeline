@@ -494,3 +494,16 @@ with command `cargo test -p kslog_validate position_unit`. It remains
 docs-only and does not change Makefile, wrapper, Rust code, tests, fixtures,
 TypeScript, Python, release-quality wiring, Phase 2 UTF-16 numeric validation,
 production readiness, real-data readiness, or model performance evidence.
+
+## 31. Step-web-logger-049 Makefile Target Implementation
+
+Step-web-logger-049 adds the Makefile target
+`check-web-logger-rust-validator-position-unit-phase1` for this mapping's
+focused Rust validator tests. The target runs
+`cargo test -p kslog_validate position_unit` and is placed between the
+position-unit fixture contract target and the Rust UTF-16 replay integration
+target.
+
+The target does not change validator behavior, Rust tests, fixtures,
+TypeScript, Python, wrapper behavior, Phase 2 UTF-16 numeric validation,
+production readiness, real-data readiness, or model performance evidence.

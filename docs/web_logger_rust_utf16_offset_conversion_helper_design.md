@@ -509,3 +509,12 @@ Step-web-logger-048 adds [Rust Validator Position Unit Phase 1 Makefile Target D
 The design exposes the Step047 validator Phase 1 tests through a future
 Makefile target. It does not change this helper, does not call this helper,
 and does not implement validator-side numeric UTF-16 checks.
+
+## Step-web-logger-049 Validator Phase 1 Makefile Target
+
+Step-web-logger-049 adds the future target described in Step048:
+`check-web-logger-rust-validator-position-unit-phase1`.
+
+The target runs `cargo test -p kslog_validate position_unit`. It does not
+change this helper, call this helper, run replay checks, or implement
+validator-side numeric UTF-16 checks.

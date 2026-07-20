@@ -594,3 +594,15 @@ tests only. It does not modify schema behavior, validator behavior, Makefile,
 wrapper, tests, fixtures, TypeScript, Python, Phase 2 UTF-16 numeric
 validation, event durability, production readiness, real-data readiness, or
 model performance evidence.
+
+## 30. Step-web-logger-049 Makefile Target Implementation
+
+Step-web-logger-049 adds Makefile target
+`check-web-logger-rust-validator-position-unit-phase1` for the Step047
+focused validator Phase 1 tests. The target command is
+`cargo test -p kslog_validate position_unit`.
+
+This does not change schema behavior, validator behavior, Rust code, tests,
+fixtures, wrapper behavior, Phase 2 UTF-16 numeric validation, event
+durability, production readiness, real-data readiness, or model performance
+evidence.

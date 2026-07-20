@@ -1804,3 +1804,24 @@ extract / micro_episode integration, TypeScript logger changes, fixture JSON
 changes, Makefile changes, wrapper changes, Rust / TypeScript SHA-256 helpers,
 TypeScript/Rust checks, event durability, production readiness, real-data
 readiness, and model performance evidence remain future work.
+
+## Step-web-logger-049 Rust Validator Phase 1 Makefile Target Appendix
+
+Step-web-logger-049 adds Makefile target
+`check-web-logger-rust-validator-position-unit-phase1`.
+
+The target help text is:
+
+`Run Rust validator position_unit Phase 1 policy tests`
+
+The target command is:
+
+`cargo test -p kslog_validate position_unit`
+
+The target runs focused Rust validator Phase 1 tests only. It does not run
+full validator tests, workspace tests, the Python fixture contract validator,
+replay checks, extract / micro_episode checks, or release-quality wrapper
+integration. Phase 2 UTF-16 numeric metadata validation, TypeScript logger
+changes, fixture JSON changes, Rust / TypeScript SHA-256 helpers,
+TypeScript/Rust checks, event durability, production readiness, real-data
+readiness, and model performance evidence remain future work.

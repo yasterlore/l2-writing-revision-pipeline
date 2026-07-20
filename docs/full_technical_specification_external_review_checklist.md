@@ -675,3 +675,17 @@ Phase 2 UTF-16 numeric metadata validation, add a `kslog_replay::utf16_offsets`
 dependency, change fixture JSON, Makefile, wrapper, TypeScript / Python code,
 workflow files, package metadata, Cargo metadata, event durability, production
 readiness, real-data readiness, or model performance claims.
+
+Confirm Step-web-logger-049 adds Makefile target
+`check-web-logger-rust-validator-position-unit-phase1` with help text
+`Run Rust validator position_unit Phase 1 policy tests` and command
+`cargo test -p kslog_validate position_unit`. Confirm placement is after
+`check-web-logger-position-unit-fixtures` and before
+`check-web-logger-rust-utf16-offset-conversion`. Confirm `make help` lists the
+target and `make check-web-logger-rust-validator-position-unit-phase1` runs 9
+focused Rust validator Phase 1 tests. Confirm Step-web-logger-049 does not
+modify release-quality wrapper scripts, Rust code, tests, TypeScript / Python
+code, fixture JSON, workflows, package metadata, Cargo metadata, Phase 2
+UTF-16 numeric metadata validation, extract / micro_episode integration, event
+durability, production readiness, real-data readiness, or model performance
+claims.

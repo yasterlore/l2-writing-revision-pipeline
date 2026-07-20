@@ -864,3 +864,17 @@ extract / micro_episode integration coverage, not TypeScript logger coverage,
 not TypeScript/Rust compatibility evidence, not event durability evidence, not
 production readiness, not real-data readiness, and not model performance
 evidence.
+
+## Step-web-logger-049 Coverage Addendum
+
+`make check-web-logger-rust-validator-position-unit-phase1` adds
+Makefile-visible coverage for running the Step-web-logger-047 focused Rust
+validator Phase 1 tests through `cargo test -p kslog_validate position_unit`.
+
+This target coverage is focused only. It is not full validator test coverage,
+not workspace Rust test coverage, not Python fixture contract validation
+coverage, not replay check coverage, not release-quality wrapper coverage, not
+Phase 2 UTF-16 numeric metadata validation coverage, not extract /
+micro_episode integration coverage, not TypeScript logger coverage, not event
+durability evidence, not production readiness, not real-data readiness, and
+not model performance evidence.
