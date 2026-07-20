@@ -379,3 +379,26 @@ This satisfies the shared-helper prerequisite for future Phase 2 validator work
 without adding a `kslog_validate -> kslog_replay` dependency. It does not
 implement validator Phase 2 doc_len, cursor, selection, surrogate-pair,
 invalid-boundary, or detectable byte-index-misuse enforcement.
+
+## Step-web-logger-057 Implementation Note
+
+Step-web-logger-057 implements the bounded Rust validator Phase 2 UTF-16
+numeric metadata checks in `kslog_validate`. The implementation applies only
+after Phase 1 accepts a Web logger v0.2-style event with
+`position_unit=utf16_code_unit`, uses `kslog_schema::utf16_offsets`, and adds no
+`kslog_validate -> kslog_replay` dependency.
+
+The implemented reason-code boundary covers
+`doc_len_before_utf16_mismatch`, `doc_len_after_utf16_mismatch`,
+`start_greater_than_end`, `offset_beyond_utf16_length`,
+`offset_inside_surrogate_pair`, and `invalid_utf16_boundary`. Focused tests
+cover the five valid position-unit fixtures and the Phase 2 invalid fixture
+cases. Detectable byte-index misuse remains limited to cases that contradict
+UTF-16 length or scalar boundaries.
+
+Step057 does not add a Makefile target, does not add release-quality
+integration for Phase 2, does not change fixture JSON, does not change replay
+behavior, does not implement extract / micro_episode integration, does not
+change TypeScript logger behavior, does not add SHA-256 helpers or
+TypeScript/Rust vector checks, and does not provide production readiness,
+real-data readiness, or model performance evidence.

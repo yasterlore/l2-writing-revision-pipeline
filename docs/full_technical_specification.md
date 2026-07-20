@@ -1864,3 +1864,26 @@ enforcement, does not add a `kslog_validate -> kslog_replay` dependency, and
 does not change Makefile, release-quality wrapper, fixtures, TypeScript/Python
 code, SHA-256 helper work, TypeScript/Rust vector checks, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-057 Rust Validator Phase 2 UTF-16 Numeric Metadata Appendix
+
+Step-web-logger-057 adds bounded Phase 2 UTF-16 numeric metadata validation to
+`kslog_validate`. The check runs only after Phase 1 accepts a Web logger
+v0.2-style event with `position_unit=utf16_code_unit`, and it uses
+`kslog_schema::utf16_offsets` for UTF-16 code unit length and offset/range
+boundary checks. No `kslog_validate -> kslog_replay` dependency is added.
+
+The validator now emits body-free Phase 2 reason codes for
+`doc_len_before_utf16_mismatch`, `doc_len_after_utf16_mismatch`,
+`start_greater_than_end`, `offset_beyond_utf16_length`,
+`offset_inside_surrogate_pair`, and `invalid_utf16_boundary`. Focused tests
+cover the five valid position-unit fixtures and the Phase 2 invalid fixtures.
+Detectable byte-index misuse is limited to metadata that conflicts with
+UTF-16 length or scalar boundaries.
+
+This appendix does not add a Phase 2 Makefile target, does not add Phase 2
+release-quality wrapper integration, does not change fixtures, does not change
+replay behavior, does not implement extract / micro_episode integration, does
+not change TypeScript logger behavior, does not add SHA-256 helpers or
+TypeScript/Rust vector checks, and does not provide production readiness,
+real-data readiness, or model performance evidence.

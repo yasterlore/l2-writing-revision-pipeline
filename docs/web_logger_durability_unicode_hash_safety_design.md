@@ -816,3 +816,16 @@ This safety update does not relax no-oracle boundaries and does not implement
 validator Phase 2 UTF-16 numeric metadata enforcement, TypeScript logger
 changes, SHA-256 helpers, TypeScript/Rust vector checks, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 74. Step-web-logger-057 Validator Phase 2 Safety Update
+
+Step-web-logger-057 implements bounded validator Phase 2 UTF-16 numeric
+metadata checks in `kslog_validate` using `kslog_schema::utf16_offsets`.
+Diagnostics remain body-free and do not include raw source, selected, inserted,
+or deleted text.
+
+This safety update does not relax no-oracle boundaries and does not implement
+queueing, IndexedDB persistence, acknowledgement, retry, deduplication,
+server-side idempotency, ordering guarantees, TypeScript logger changes,
+SHA-256 helpers, TypeScript/Rust vector checks, production readiness,
+real-data readiness, or model performance evidence.

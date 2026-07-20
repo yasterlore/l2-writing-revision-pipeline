@@ -585,3 +585,15 @@ This does not implement validator Phase 2 UTF-16 numeric metadata checks,
 change TypeScript logger behavior, add SHA-256 helpers, add TypeScript/Rust
 vector checks, implement event durability, or claim production readiness,
 real-data readiness, or model performance evidence.
+
+## Step-web-logger-057 Validator Phase 2 Use Follow-Up
+
+Step-web-logger-057 uses the shared `kslog_schema::utf16_offsets` helper from
+`kslog_validate` for bounded Phase 2 UTF-16 numeric metadata checks. This
+confirms the helper has a validator-side consumer without adding a
+`kslog_validate -> kslog_replay` dependency.
+
+The new validator use does not change replay behavior and does not claim
+broader Unicode correctness, extract / micro_episode integration, TypeScript
+logger compatibility, SHA-256 compatibility, event durability, production
+readiness, real-data readiness, or model performance evidence.

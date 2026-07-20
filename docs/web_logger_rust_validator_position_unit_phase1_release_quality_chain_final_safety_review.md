@@ -311,3 +311,16 @@ Validator Phase 2 UTF-16 numeric metadata enforcement, extract /
 micro_episode integration, TypeScript logger changes, SHA-256 helper work,
 TypeScript/Rust vector checks, event durability, production readiness,
 real-data readiness, and model performance evidence remain future work.
+
+## 25. Step-web-logger-057 Phase 2 Follow-Up
+
+Step-web-logger-057 adds bounded Rust validator Phase 2 UTF-16 numeric metadata
+validation in `kslog_validate` using `kslog_schema::utf16_offsets`. This later
+implementation does not alter the Step-web-logger-054 accepted boundary, which
+remains a Phase 1 release-quality chain review.
+
+The Phase 2 implementation is separate evidence: it checks UTF-16 doc length
+metadata, cursor / selection bounds, surrogate-pair boundaries, invalid
+boundaries, and detectable byte-index misuse only for Phase 1 accepted Web
+logger v0.2-style `position_unit=utf16_code_unit` events. Phase 2 Makefile
+targeting and Phase 2 release-quality integration remain future work.

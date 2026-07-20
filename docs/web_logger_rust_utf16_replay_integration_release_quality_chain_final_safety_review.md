@@ -579,3 +579,14 @@ and does not expand it into validator Phase 2 enforcement, extract /
 micro_episode integration, TypeScript logger compatibility, SHA-256
 compatibility, event durability, production readiness, real-data readiness, or
 model performance evidence.
+
+## 41. Step-web-logger-057 Validator Phase 2 Follow-Up
+
+Step-web-logger-057 implements bounded validator Phase 2 UTF-16 numeric
+metadata checks in `kslog_validate` using `kslog_schema::utf16_offsets`. This
+new validator behavior remains distinct from the Step031 replay-focused
+accepted boundary.
+
+Replay-focused evidence does not prove validator Phase 2 behavior, and
+validator Phase 2 focused tests do not prove replay correctness. No replay code
+or replay behavior is changed by this follow-up.

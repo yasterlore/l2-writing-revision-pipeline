@@ -3913,3 +3913,19 @@ Phase 2 UTF-16 numeric metadata validation. It does not change Makefile,
 release-quality wrapper, fixtures, TypeScript/Python code, Cargo metadata,
 SHA-256 helpers, TypeScript/Rust vector checks, event durability, production
 readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-057 Rust Validator Phase 2 UTF-16 Numeric Metadata Validation
+
+Step-web-logger-057 adds bounded `kslog_validate` Phase 2 UTF-16 numeric
+metadata validation for Phase 1 accepted Web logger v0.2-style
+`position_unit=utf16_code_unit` events. It uses `kslog_schema::utf16_offsets`
+and does not add a `kslog_validate -> kslog_replay` dependency.
+
+The Step covers UTF-16 doc length metadata, cursor / selection offsets,
+surrogate-pair boundaries, invalid boundaries, and detectable byte-index misuse
+when inconsistent with UTF-16 length or scalar boundaries. It does not add a
+Phase 2 Makefile target, add Phase 2 release-quality wrapper integration,
+change fixtures, change replay behavior, implement extract / micro_episode
+integration, change TypeScript/Python code, add SHA-256 helpers, add
+TypeScript/Rust vector checks, add event durability, provide real-data use,
+metric evidence, or production readiness status.

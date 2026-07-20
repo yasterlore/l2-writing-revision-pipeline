@@ -714,3 +714,21 @@ surrogate-pair enforcement remains future work.
 Confirm no production readiness, real-data readiness, model performance,
 SHA-256 compatibility, TypeScript/Rust vector check, or event durability claim
 is introduced.
+
+## Step-web-logger-057 External Review Checklist Addendum
+
+Review `kslog_validate` Phase 2 UTF-16 numeric metadata validation. Confirm the
+check applies only after Phase 1 accepts a Web logger v0.2-style event with
+`position_unit=utf16_code_unit`, uses `kslog_schema::utf16_offsets`, and does
+not add a `kslog_validate -> kslog_replay` dependency.
+
+Confirm body-free reason-code coverage for `doc_len_before_utf16_mismatch`,
+`doc_len_after_utf16_mismatch`, `start_greater_than_end`,
+`offset_beyond_utf16_length`, `offset_inside_surrogate_pair`, and
+`invalid_utf16_boundary`. Confirm detectable byte-index misuse is not described
+as generally complete detection. Confirm Step-web-logger-057 does not add
+Makefile or release-quality integration for Phase 2, change fixture JSON,
+change replay behavior, implement extract / micro_episode integration, change
+TypeScript/Python code, add SHA-256 helpers, add TypeScript/Rust vector checks,
+implement event durability, or claim production readiness, real-data readiness,
+or model performance evidence.

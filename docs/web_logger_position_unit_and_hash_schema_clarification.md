@@ -753,3 +753,17 @@ This update is helper infrastructure only: `kslog_validate` Phase 2 numeric
 metadata enforcement, TypeScript logger changes, SHA-256 helpers,
 TypeScript/Rust vector checks, event durability, production readiness,
 real-data readiness, and model performance evidence remain unimplemented.
+
+## 74. Step-web-logger-057 Validator Phase 2 Follow-Up
+
+Step-web-logger-057 adds bounded `kslog_validate` enforcement for UTF-16
+numeric metadata after Phase 1 accepts `position_unit=utf16_code_unit` Web
+logger v0.2-style events. The validator uses `kslog_schema::utf16_offsets` for
+doc length and offset/range boundaries and keeps hash canonicalization as a
+separate future chain.
+
+Detectable byte-index misuse is handled only when the supplied metadata
+contradicts UTF-16 length or scalar boundaries. This follow-up does not add
+TypeScript logger changes, Rust or TypeScript SHA-256 helpers, TypeScript/Rust
+vector checks, event durability, production readiness, real-data readiness, or
+model performance evidence.

@@ -533,3 +533,14 @@ This shared helper extraction is not validator Phase 2 enforcement, extract /
 micro_episode integration, TypeScript logger compatibility, SHA-256 helper
 work, TypeScript/Rust vector checks, event durability, production readiness,
 real-data readiness, or model performance evidence.
+
+## 48. Step-web-logger-057 Validator Phase 2 Use Follow-Up
+
+Step-web-logger-057 adds validator-side use of `kslog_schema::utf16_offsets`
+for Phase 2 UTF-16 numeric metadata checks in `kslog_validate`. The dependency
+direction remains `kslog_validate -> kslog_schema`; no validator dependency on
+`kslog_replay` is added.
+
+This does not change replay behavior or expand replay-focused evidence into
+validator correctness. Phase 2 Makefile target and release-quality integration
+remain future work.

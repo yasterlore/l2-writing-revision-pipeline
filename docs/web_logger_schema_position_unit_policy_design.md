@@ -668,3 +668,19 @@ byte-index misuse enforcement.
 Makefile, release-quality wrapper, fixtures, TypeScript/Python code, SHA-256
 helpers, TypeScript/Rust vector checks, event durability, production readiness,
 real-data readiness, and model performance evidence remain unchanged.
+
+## 50. Step-web-logger-057 Validator Phase 2 Implementation Update
+
+Step-web-logger-057 implements bounded Phase 2 UTF-16 numeric metadata
+validation in `kslog_validate`. The check runs only for Web logger v0.2-style
+events already accepted by Phase 1 with `position_unit=utf16_code_unit`, and it
+uses `kslog_schema::utf16_offsets` for UTF-16 doc length and offset/range
+boundary checks.
+
+This moves doc_len, cursor, selection, surrogate-pair, invalid-boundary, and
+detectable byte-index-misuse enforcement from future design into validator
+behavior, while keeping Phase 2 Makefile target integration, Phase 2
+release-quality integration, extract / micro_episode integration, TypeScript
+logger changes, SHA-256 helper work, TypeScript/Rust vector checks, event
+durability, production readiness, real-data readiness, and model performance
+outside this step.

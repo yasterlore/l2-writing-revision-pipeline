@@ -595,3 +595,19 @@ this follow-up does not change fixtures, Makefile, release-quality wrapper,
 TypeScript/Python code, SHA-256 helper work, TypeScript/Rust vector checks,
 event durability, production readiness, real-data readiness, or model
 performance evidence.
+
+## 39. Step-web-logger-057 Phase 2 Fixture Mapping Follow-Up
+
+Step-web-logger-057 implements the Phase 2 validator mapping for the fixed
+Step034 fixture matrix. The five valid position-unit fixtures continue to pass.
+The Phase 2 invalid fixtures are covered with body-free reason codes for
+UTF-16 doc length mismatch, `start > end`, beyond-length offsets,
+surrogate-pair internal offsets, invalid UTF-16 boundaries where applicable,
+and detectable byte-index misuse when the metadata contradicts UTF-16 length or
+scalar boundaries.
+
+The Phase 1 fixture mapping remains intact: missing, unsupported,
+schema-mismatch, and unknown-version cases keep their Phase 1 reason codes, and
+the legacy missing case remains outside the global requirement. This follow-up
+does not change fixture JSON and does not add Makefile or release-quality
+coverage for Phase 2.

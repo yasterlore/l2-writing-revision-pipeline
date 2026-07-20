@@ -791,3 +791,16 @@ imports and test behavior. No Cargo metadata, Makefile, release-quality
 wrapper, fixture JSON, TypeScript/Python code, `kslog_validate` behavior,
 `kslog_extract`, or `kslog_micro_episode` source is changed by this source
 inventory update.
+
+## Step-web-logger-057 Source Inventory Addendum
+
+`crates/kslog_validate/src/lib.rs` adds Phase 2 UTF-16 numeric metadata
+validation for Phase 1 accepted Web logger `position_unit=utf16_code_unit`
+events. The implementation uses `kslog_schema::utf16_offsets` and adds no
+`kslog_validate -> kslog_replay` dependency.
+
+The source inventory addition is limited to `kslog_validate` behavior/tests and
+related docs. It does not change `kslog_schema`, `kslog_replay`, Makefile,
+release-quality wrapper scripts, workflows, TypeScript code, Python code,
+fixture JSON, package files, Cargo files, `kslog_extract`, `kslog_micro_episode`,
+or status markers.

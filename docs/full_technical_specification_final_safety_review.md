@@ -785,3 +785,18 @@ UTF-16 numeric metadata enforcement is not implemented, and no extract /
 micro_episode integration, TypeScript logger compatibility, SHA-256 helper
 work, TypeScript/Rust vector checks, event durability, production readiness,
 real-data readiness, or model performance evidence is claimed.
+
+## Step-web-logger-057 Rust Validator Phase 2 Safety Review Addendum
+
+Step-web-logger-057 adds bounded validator Phase 2 UTF-16 numeric metadata
+validation in `kslog_validate` using `kslog_schema::utf16_offsets`. The safety
+boundary is limited to Phase 1 accepted Web logger v0.2-style
+`position_unit=utf16_code_unit` events and body-free diagnostics.
+
+This addendum does not create Phase 2 release-quality acceptance, does not add
+a Phase 2 Makefile target, does not change fixture JSON, does not change replay
+behavior, does not implement extract / micro_episode integration, does not
+change TypeScript logger behavior, does not add SHA-256 helpers or
+TypeScript/Rust cross-language checks, and does not claim event durability,
+production readiness, real-data readiness, model performance, or deployment
+readiness.

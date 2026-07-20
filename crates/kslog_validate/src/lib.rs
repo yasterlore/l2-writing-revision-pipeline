@@ -9,7 +9,13 @@ use std::{
     io::{self, BufRead, Read},
 };
 
-use kslog_schema::{PositionUnitPolicyError, RawEvent};
+use kslog_schema::{
+    utf16_offsets::{
+        utf16_code_unit_len, utf16_code_unit_offset_to_utf8_byte_index,
+        utf16_code_unit_range_to_utf8_byte_range, Utf16OffsetError,
+    },
+    DiffOp, PositionUnit, PositionUnitPolicyError, RawEvent,
+};
 
 pub const DEFAULT_MAX_LINE_BYTES: usize = 64 * 1024;
 pub const FORBIDDEN_NO_ORACLE_FIELDS: &[&str] = &[
@@ -118,6 +124,10 @@ pub enum ValidationErrorKind {
     ForbiddenNoOracleField(String),
     RawEventSchema(String),
     PositionUnitPolicy(PositionUnitPolicyError),
+    Utf16NumericMetadata {
+        reason: Utf16NumericMetadataReason,
+        field: &'static str,
+    },
     SequenceGap {
         expected_seq: u64,
         actual_seq: u64,
@@ -185,6 +195,11 @@ impl Display for ValidationErrorKind {
                     error.reason_code()
                 )
             }
+            Self::Utf16NumericMetadata { reason, field } => write!(
+                formatter,
+                "UTF-16 numeric metadata error: {} at {field}",
+                reason.reason_code()
+            ),
             Self::SequenceGap {
                 expected_seq,
                 actual_seq,
@@ -241,12 +256,36 @@ impl ValidationErrorKind {
             Self::ForbiddenNoOracleField(_) => "forbidden_no_oracle_field",
             Self::RawEventSchema(_) => "raw_event_schema",
             Self::PositionUnitPolicy(error) => error.reason_code(),
+            Self::Utf16NumericMetadata { reason, .. } => reason.reason_code(),
             Self::SequenceGap { .. } => "sequence_gap",
             Self::SequenceOverflow { .. } => "sequence_overflow",
             Self::TimestampInversion { .. } => "timestamp_inversion",
             Self::CursorOutOfBounds { .. } => "cursor_out_of_bounds",
             Self::SelectionRangeInverted { .. } => "selection_range_inverted",
             Self::SelectionOutOfBounds { .. } => "selection_out_of_bounds",
+        }
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Utf16NumericMetadataReason {
+    DocLenBeforeMismatch,
+    DocLenAfterMismatch,
+    StartGreaterThanEnd,
+    OffsetBeyondUtf16Length,
+    OffsetInsideSurrogatePair,
+    InvalidUtf16Boundary,
+}
+
+impl Utf16NumericMetadataReason {
+    pub fn reason_code(self) -> &'static str {
+        match self {
+            Self::DocLenBeforeMismatch => "doc_len_before_utf16_mismatch",
+            Self::DocLenAfterMismatch => "doc_len_after_utf16_mismatch",
+            Self::StartGreaterThanEnd => "start_greater_than_end",
+            Self::OffsetBeyondUtf16Length => "offset_beyond_utf16_length",
+            Self::OffsetInsideSurrogatePair => "offset_inside_surrogate_pair",
+            Self::InvalidUtf16Boundary => "invalid_utf16_boundary",
         }
     }
 }
@@ -268,6 +307,7 @@ pub fn validate_jsonl_reader<R: BufRead>(
     let mut report = ValidationReport::new(options);
     let mut expected_seq = None;
     let mut previous_timestamp_ms = None;
+    let mut utf16_state = Utf16NumericMetadataState::default();
     let mut line = Vec::new();
     let mut line_number = 0;
 
@@ -307,6 +347,7 @@ pub fn validate_jsonl_reader<R: BufRead>(
 
         let event = parse_raw_event_line(trimmed_line, line_number)?;
         validate_position_unit_policy(&event, line_number)?;
+        validate_utf16_numeric_metadata(&event, &mut utf16_state, line_number)?;
         validate_sequence(&event, &mut expected_seq, line_number)?;
         validate_timestamp(&event, &mut previous_timestamp_ms, line_number)?;
         validate_cursor_ranges(&event, line_number)?;
@@ -316,6 +357,11 @@ pub fn validate_jsonl_reader<R: BufRead>(
     }
 
     Ok(report)
+}
+
+#[derive(Debug, Default)]
+struct Utf16NumericMetadataState {
+    text: Option<String>,
 }
 
 fn parse_raw_event_line(line: &[u8], line_number: usize) -> ValidationResult<RawEvent> {
@@ -359,6 +405,312 @@ fn validate_position_unit_policy(event: &RawEvent, line_number: usize) -> Valida
     event.position_unit_policy().map(|_| ()).map_err(|error| {
         ValidationError::new(line_number, ValidationErrorKind::PositionUnitPolicy(error))
     })
+}
+
+fn validate_utf16_numeric_metadata(
+    event: &RawEvent,
+    state: &mut Utf16NumericMetadataState,
+    line_number: usize,
+) -> ValidationResult<()> {
+    if !should_validate_utf16_numeric_metadata(event) {
+        return Ok(());
+    }
+
+    if state.text.is_none() && event.doc_len_before == Some(0) {
+        state.text = Some(String::new());
+    }
+
+    if let (Some(text), Some(doc_len_before)) = (state.text.as_deref(), event.doc_len_before) {
+        if utf16_code_unit_len(text) != doc_len_before as usize {
+            return Err(utf16_numeric_error(
+                line_number,
+                Utf16NumericMetadataReason::DocLenBeforeMismatch,
+                "doc_len_before",
+            ));
+        }
+    }
+
+    validate_before_utf16_offsets(event, state.text.as_deref(), line_number)?;
+
+    let after_text = compute_after_text(event, state.text.as_deref(), line_number)?;
+    if let (Some(text), Some(doc_len_after)) = (after_text.as_deref(), event.doc_len_after) {
+        if utf16_code_unit_len(text) != doc_len_after as usize {
+            return Err(utf16_numeric_error(
+                line_number,
+                Utf16NumericMetadataReason::DocLenAfterMismatch,
+                "doc_len_after",
+            ));
+        }
+    } else if let (Some(expected_len), Some(doc_len_after)) = (
+        expected_doc_len_after_from_metadata(event),
+        event.doc_len_after,
+    ) {
+        if expected_len != doc_len_after as usize {
+            return Err(utf16_numeric_error(
+                line_number,
+                Utf16NumericMetadataReason::DocLenAfterMismatch,
+                "doc_len_after",
+            ));
+        }
+    }
+
+    validate_after_utf16_offsets(event, after_text.as_deref(), line_number)?;
+    state.text = after_text;
+
+    Ok(())
+}
+
+fn should_validate_utf16_numeric_metadata(event: &RawEvent) -> bool {
+    event.is_web_logger_position_unit_target()
+        && matches!(
+            event.position_unit_policy(),
+            Ok(PositionUnit::Utf16CodeUnit)
+        )
+}
+
+fn validate_before_utf16_offsets(
+    event: &RawEvent,
+    text: Option<&str>,
+    line_number: usize,
+) -> ValidationResult<()> {
+    if let Some(text) = text {
+        check_utf16_offset_text(
+            text,
+            event.cursor_pos_before,
+            "cursor_pos_before",
+            line_number,
+        )?;
+        check_utf16_range_text(
+            text,
+            event.selection_start_before,
+            event.selection_end_before,
+            "selection_start_before",
+            "selection_end_before",
+            line_number,
+        )
+    } else {
+        check_utf16_offset_len_only(
+            event.cursor_pos_before,
+            "cursor_pos_before",
+            event.doc_len_before,
+            line_number,
+        )?;
+        check_utf16_range_len_only(
+            event.selection_start_before,
+            event.selection_end_before,
+            "selection_start_before",
+            "selection_end_before",
+            event.doc_len_before,
+            line_number,
+        )
+    }
+}
+
+fn validate_after_utf16_offsets(
+    event: &RawEvent,
+    text: Option<&str>,
+    line_number: usize,
+) -> ValidationResult<()> {
+    if let Some(text) = text {
+        check_utf16_offset_text(
+            text,
+            event.cursor_pos_after,
+            "cursor_pos_after",
+            line_number,
+        )?;
+        check_utf16_range_text(
+            text,
+            event.selection_start_after,
+            event.selection_end_after,
+            "selection_start_after",
+            "selection_end_after",
+            line_number,
+        )
+    } else {
+        check_utf16_offset_len_only(
+            event.cursor_pos_after,
+            "cursor_pos_after",
+            event.doc_len_after,
+            line_number,
+        )?;
+        check_utf16_range_len_only(
+            event.selection_start_after,
+            event.selection_end_after,
+            "selection_start_after",
+            "selection_end_after",
+            event.doc_len_after,
+            line_number,
+        )
+    }
+}
+
+fn compute_after_text(
+    event: &RawEvent,
+    before_text: Option<&str>,
+    line_number: usize,
+) -> ValidationResult<Option<String>> {
+    let Some(before_text) = before_text else {
+        return Ok(None);
+    };
+    let (Some(start), Some(end)) = (event.selection_start_before, event.selection_end_before)
+    else {
+        return Ok(None);
+    };
+
+    if matches!(
+        event.diff_op,
+        Some(DiffOp::SelectionOnly | DiffOp::NoTextChange)
+    ) {
+        return Ok(Some(before_text.to_string()));
+    }
+
+    let range = utf16_code_unit_range_to_utf8_byte_range(before_text, start as usize, end as usize)
+        .map_err(|error| {
+            utf16_error_to_validation_error(
+                line_number,
+                "selection_start_before",
+                "selection_end_before",
+                error,
+            )
+        })?;
+
+    let mut after_text = before_text.to_string();
+    after_text.replace_range(range, event.inserted_text.as_deref().unwrap_or(""));
+    Ok(Some(after_text))
+}
+
+fn expected_doc_len_after_from_metadata(event: &RawEvent) -> Option<usize> {
+    let before_len = event.doc_len_before? as usize;
+    if matches!(
+        event.diff_op,
+        Some(DiffOp::SelectionOnly | DiffOp::NoTextChange)
+    ) {
+        return Some(before_len);
+    }
+
+    let start = event.selection_start_before? as usize;
+    let end = event.selection_end_before? as usize;
+    if start > end || end > before_len {
+        return None;
+    }
+
+    let inserted_len = event
+        .inserted_text
+        .as_deref()
+        .map(utf16_code_unit_len)
+        .unwrap_or(0);
+    Some(before_len - (end - start) + inserted_len)
+}
+
+fn check_utf16_offset_text(
+    text: &str,
+    offset: Option<u32>,
+    field: &'static str,
+    line_number: usize,
+) -> ValidationResult<()> {
+    if let Some(offset) = offset {
+        utf16_code_unit_offset_to_utf8_byte_index(text, offset as usize)
+            .map_err(|error| utf16_error_to_validation_error(line_number, field, field, error))?;
+    }
+
+    Ok(())
+}
+
+fn check_utf16_range_text(
+    text: &str,
+    start: Option<u32>,
+    end: Option<u32>,
+    start_field: &'static str,
+    end_field: &'static str,
+    line_number: usize,
+) -> ValidationResult<()> {
+    if let (Some(start), Some(end)) = (start, end) {
+        utf16_code_unit_range_to_utf8_byte_range(text, start as usize, end as usize).map_err(
+            |error| utf16_error_to_validation_error(line_number, start_field, end_field, error),
+        )?;
+    }
+
+    Ok(())
+}
+
+fn check_utf16_offset_len_only(
+    offset: Option<u32>,
+    field: &'static str,
+    doc_len: Option<u32>,
+    line_number: usize,
+) -> ValidationResult<()> {
+    if let (Some(offset), Some(doc_len)) = (offset, doc_len) {
+        if offset > doc_len {
+            return Err(utf16_numeric_error(
+                line_number,
+                Utf16NumericMetadataReason::OffsetBeyondUtf16Length,
+                field,
+            ));
+        }
+    }
+
+    Ok(())
+}
+
+fn check_utf16_range_len_only(
+    start: Option<u32>,
+    end: Option<u32>,
+    start_field: &'static str,
+    end_field: &'static str,
+    doc_len: Option<u32>,
+    line_number: usize,
+) -> ValidationResult<()> {
+    if let (Some(start), Some(end)) = (start, end) {
+        if start > end {
+            return Err(utf16_numeric_error(
+                line_number,
+                Utf16NumericMetadataReason::StartGreaterThanEnd,
+                start_field,
+            ));
+        }
+    }
+
+    check_utf16_offset_len_only(start, start_field, doc_len, line_number)?;
+    check_utf16_offset_len_only(end, end_field, doc_len, line_number)
+}
+
+fn utf16_error_to_validation_error(
+    line_number: usize,
+    start_field: &'static str,
+    end_field: &'static str,
+    error: Utf16OffsetError,
+) -> ValidationError {
+    let (reason, field) = match error {
+        Utf16OffsetError::StartAfterEnd { .. } => {
+            (Utf16NumericMetadataReason::StartGreaterThanEnd, start_field)
+        }
+        Utf16OffsetError::OffsetBeyondUtf16Length { .. } => (
+            Utf16NumericMetadataReason::OffsetBeyondUtf16Length,
+            end_field,
+        ),
+        Utf16OffsetError::OffsetInsideSurrogatePair { .. } => (
+            Utf16NumericMetadataReason::OffsetInsideSurrogatePair,
+            end_field,
+        ),
+        Utf16OffsetError::InvalidBoundary { .. }
+        | Utf16OffsetError::UnsupportedPositionUnit { .. }
+        | Utf16OffsetError::InternalInvariantViolation => {
+            (Utf16NumericMetadataReason::InvalidUtf16Boundary, end_field)
+        }
+    };
+
+    utf16_numeric_error(line_number, reason, field)
+}
+
+fn utf16_numeric_error(
+    line_number: usize,
+    reason: Utf16NumericMetadataReason,
+    field: &'static str,
+) -> ValidationError {
+    ValidationError::new(
+        line_number,
+        ValidationErrorKind::Utf16NumericMetadata { reason, field },
+    )
 }
 
 fn trim_jsonl_newline(line: &[u8]) -> &[u8] {
@@ -614,6 +966,17 @@ mod tests {
         assert_eq!(err.line_number, Some(1));
     }
 
+    fn assert_position_unit_fixture_fails_with_reason_code(
+        relative_path: &str,
+        expected_reason_code: &str,
+    ) -> super::ValidationError {
+        let err = validate_fixture_public_safe(relative_path)
+            .expect_err("position_unit fixture should fail");
+
+        assert_eq!(err.kind.reason_code(), expected_reason_code);
+        err
+    }
+
     #[test]
     fn valid_simple_typing_fixture_passes() {
         let report =
@@ -767,24 +1130,127 @@ mod tests {
     }
 
     #[test]
-    fn position_unit_phase1_does_not_claim_deferred_utf16_numeric_reasons() {
-        for relative_path in [
-            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_doc_len_before_utf16_mismatch.jsonl",
-            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_doc_len_after_utf16_mismatch.jsonl",
-            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_selection_start_greater_than_end.jsonl",
-            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_offset_beyond_utf16_length.jsonl",
-            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_surrogate_pair_internal_offset.jsonl",
-            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_byte_index_supplied_as_utf16_when_detectable.jsonl",
+    fn position_unit_phase1_failures_are_not_overridden_by_phase2() {
+        for (relative_path, expected_reason_code) in [
+            (
+                "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_v0_2_missing_position_unit.jsonl",
+                "missing_position_unit",
+            ),
+            (
+                "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_unsupported_position_unit_byte_index.jsonl",
+                "unsupported_position_unit",
+            ),
+            (
+                "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_unsupported_position_unit_code_point.jsonl",
+                "unsupported_position_unit",
+            ),
+            (
+                "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_position_unit_schema_mismatch.jsonl",
+                "position_unit_schema_mismatch",
+            ),
+            (
+                "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_unknown_schema_version.jsonl",
+                "unknown_schema_version",
+            ),
         ] {
-            let result = validate_fixture_public_safe(relative_path);
-            if let Err(err) = result {
-                assert_ne!(err.kind.reason_code(), "doc_len_before_utf16_mismatch");
-                assert_ne!(err.kind.reason_code(), "doc_len_after_utf16_mismatch");
-                assert_ne!(err.kind.reason_code(), "offset_beyond_utf16_length");
-                assert_ne!(err.kind.reason_code(), "offset_inside_surrogate_pair");
-                assert_ne!(err.kind.reason_code(), "invalid_utf16_boundary");
-            }
+            assert_position_unit_fixture_fails_with_reason_code(relative_path, expected_reason_code);
         }
+    }
+
+    #[test]
+    fn position_unit_phase2_valid_fixtures_pass() {
+        for relative_path in [
+            "tests/fixtures/web_logger_position_unit_schema/valid/valid_ascii_utf16_position_unit.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/valid/valid_japanese_cursor_utf16_position_unit.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/valid/valid_japanese_selection_utf16_position_unit.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/valid/valid_emoji_boundary_utf16_position_unit.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/valid/valid_mixed_japanese_emoji_utf16_position_unit.jsonl",
+        ] {
+            let report = validate_fixture_public_safe(relative_path)
+                .expect("valid position_unit Phase 2 fixture should pass");
+
+            assert!(
+                report.event_count > 0,
+                "{relative_path} should contain at least one event"
+            );
+        }
+    }
+
+    #[test]
+    fn position_unit_phase2_doc_len_before_mismatch_fails_with_reason_code() {
+        let err = assert_position_unit_fixture_fails_with_reason_code(
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_doc_len_before_utf16_mismatch.jsonl",
+            "doc_len_before_utf16_mismatch",
+        );
+
+        assert_eq!(err.line_number, Some(2));
+    }
+
+    #[test]
+    fn position_unit_phase2_doc_len_after_mismatch_fails_with_reason_code() {
+        let err = assert_position_unit_fixture_fails_with_reason_code(
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_doc_len_after_utf16_mismatch.jsonl",
+            "doc_len_after_utf16_mismatch",
+        );
+
+        assert_eq!(err.line_number, Some(1));
+    }
+
+    #[test]
+    fn position_unit_phase2_selection_start_greater_than_end_fails_with_reason_code() {
+        let err = assert_position_unit_fixture_fails_with_reason_code(
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_selection_start_greater_than_end.jsonl",
+            "start_greater_than_end",
+        );
+
+        assert_eq!(err.line_number, Some(1));
+    }
+
+    #[test]
+    fn position_unit_phase2_offset_beyond_utf16_length_fails_with_reason_code() {
+        let err = assert_position_unit_fixture_fails_with_reason_code(
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_offset_beyond_utf16_length.jsonl",
+            "offset_beyond_utf16_length",
+        );
+
+        assert_eq!(err.line_number, Some(1));
+    }
+
+    #[test]
+    fn position_unit_phase2_surrogate_pair_internal_offset_fails_with_reason_code() {
+        let err = assert_position_unit_fixture_fails_with_reason_code(
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_surrogate_pair_internal_offset.jsonl",
+            "offset_inside_surrogate_pair",
+        );
+
+        assert_eq!(err.line_number, Some(2));
+    }
+
+    #[test]
+    fn position_unit_phase2_detectable_byte_index_misuse_fails_with_reason_code() {
+        let err = assert_position_unit_fixture_fails_with_reason_code(
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_byte_index_supplied_as_utf16_when_detectable.jsonl",
+            "offset_beyond_utf16_length",
+        );
+
+        assert_eq!(err.line_number, Some(2));
+    }
+
+    #[test]
+    fn position_unit_phase2_diagnostics_are_body_free() {
+        let err = assert_position_unit_fixture_fails_with_reason_code(
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_surrogate_pair_internal_offset.jsonl",
+            "offset_inside_surrogate_pair",
+        );
+        let message = err.to_string();
+
+        assert!(!message.contains('{'));
+        assert!(!message.contains('}'));
+        assert!(!message.contains("inserted_text"));
+        assert!(!message.contains("deleted_text"));
+        assert!(!message.contains("source_text"));
+        assert!(!message.contains("selected_text"));
+        assert!(!message.contains("😀"));
     }
 
     #[test]

@@ -902,3 +902,20 @@ stable reason codes, and body-free error output.
 `kslog_replay::utf16_offsets` re-export. This is helper extraction coverage
 only; validator Phase 2 UTF-16 numeric metadata enforcement remains
 unimplemented.
+
+## Step-web-logger-057 Coverage Addendum
+
+`cargo test -p kslog_validate position_unit_phase2` covers bounded validator
+Phase 2 UTF-16 numeric metadata validation. The coverage includes the five
+valid position-unit fixtures, Phase 2 invalid doc length, selection,
+beyond-length offset, surrogate-pair internal offset, and detectable
+byte-index misuse cases, plus body-free diagnostics checks.
+
+`cargo test -p kslog_validate position_unit` remains the broader
+position-unit regression filter and now includes both Phase 1 and Phase 2
+matching tests. This coverage is not a Phase 2 Makefile target, not
+release-quality wrapper integration for Phase 2, not replay correctness
+coverage, not extract / micro_episode integration coverage, not TypeScript
+logger coverage, not TypeScript/Rust compatibility evidence, not event
+durability evidence, not production readiness, not real-data readiness, and not
+model performance evidence.
