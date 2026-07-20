@@ -601,3 +601,11 @@ with UTF-16 code unit semantics. It remains separate from replay correctness
 evidence and does not change replay behavior, TypeScript code, Rust code,
 tests, fixtures, Makefile, wrapper, production readiness, real-data readiness,
 or model performance evidence.
+
+## 57. Step-web-logger-066 TypeScript Implementation Follow-Up
+
+Step-web-logger-066 implements TypeScript logger UTF-16 metadata alignment for
+the scoped raw event builder. This remains separate from replay correctness
+evidence and does not change replay behavior, Rust code, fixtures, Makefile,
+wrapper, production readiness, real-data readiness, or model performance
+evidence.

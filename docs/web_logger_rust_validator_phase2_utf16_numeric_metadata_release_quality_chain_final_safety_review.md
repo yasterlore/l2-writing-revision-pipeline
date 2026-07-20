@@ -310,3 +310,16 @@ code, tests, fixture JSON, replay behavior, extract / micro_episode
 integration, SHA-256 helper work, TypeScript/Rust vector checks, event
 durability, production readiness, real-data readiness, or model performance
 evidence.
+
+## 24. Step-web-logger-066 TypeScript Implementation Follow-Up
+
+Step-web-logger-066 updates the TypeScript logger to emit the v0.2-style
+position-unit metadata expected by the Rust validator boundary and to measure
+document lengths as UTF-16 code units. This is TypeScript logger implementation
+only and does not revise this Rust validator Phase 2 final review.
+
+The follow-up does not add TypeScript/Rust compatibility fixture validation,
+does not prove replay correctness, does not change Rust code, Makefile,
+release-quality wrapper, fixtures, extract / micro_episode integration,
+event durability, production readiness, real-data readiness, or model
+performance evidence.

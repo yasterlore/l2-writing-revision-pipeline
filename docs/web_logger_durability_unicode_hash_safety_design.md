@@ -919,3 +919,15 @@ No queueing, IndexedDB persistence, acknowledgement, retry, deduplication,
 server-side idempotency, ordering guarantees, SHA-256 helpers,
 TypeScript/Rust vector checks, production readiness, real-data readiness, or
 model performance evidence is added.
+
+## 82. Step-web-logger-066 TypeScript Emission Safety Update
+
+Step-web-logger-066 updates the synthetic-only TypeScript logger raw event
+builder to emit explicit position-unit metadata and UTF-16 code unit document
+lengths. It does not alter durability, hash, release-quality, or
+data-collection behavior.
+
+No queueing, IndexedDB persistence, acknowledgement, retry, deduplication,
+server-side idempotency, ordering guarantees, SHA-256 helpers,
+TypeScript/Rust vector checks, production readiness, real-data readiness, or
+model performance evidence is added.

@@ -776,3 +776,16 @@ implementation, TypeScript code, Rust code, fixtures, Makefile, wrapper,
 extract / micro_episode integration, SHA-256 helper work, TypeScript/Rust
 vector checks, event durability, production readiness, real-data readiness, or
 model performance evidence.
+
+## 59. Step-web-logger-066 TypeScript Emission Implementation
+
+Step-web-logger-066 implements scoped TypeScript logger emission for
+`position_unit=utf16_code_unit`, Rust-aligned v0.2 schema metadata, and
+UTF-16 code unit document lengths. Cursor and selection offsets remain browser
+selection API offsets and are treated as UTF-16 code units.
+
+This implementation does not change Rust validator behavior, fixtures,
+Makefile, release-quality wrapper, replay behavior, extract / micro_episode
+integration, SHA-256 helper work, TypeScript/Rust compatibility fixture
+validation, event durability, production readiness, real-data readiness, or
+model performance evidence.

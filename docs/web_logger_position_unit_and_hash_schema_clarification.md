@@ -839,3 +839,15 @@ records that TypeScript implementation, TypeScript/Rust compatibility
 fixtures, SHA-256 compatibility, event durability, production readiness,
 real-data readiness, and model performance evidence remain separate future
 work.
+
+## 83. Step-web-logger-066 TypeScript Emission Follow-Up
+
+Step-web-logger-066 updates the TypeScript logger to emit explicit
+`position_unit=utf16_code_unit`, `research_schema_target`, and Rust-aligned
+v0.2 `logger_schema_version` metadata. It also changes logger document length
+metadata to UTF-16 code unit length via JavaScript string `.length`.
+
+This does not implement TypeScript/Rust compatibility fixture validation,
+SHA-256 compatibility, replay correctness, extract / micro_episode
+integration, event durability, production readiness, real-data readiness, or
+model performance evidence.

@@ -39,6 +39,7 @@ export interface TextSnapshot {
 
 export interface SyntheticMetadata {
   logger_schema_version: string;
+  research_schema_target: string;
   session_id: string;
   participant_local_id: string;
   task_id: string;
@@ -47,6 +48,8 @@ export interface SyntheticMetadata {
 
 export interface RawEvent {
   logger_schema_version: string;
+  research_schema_target: string;
+  position_unit: typeof POSITION_UNIT_UTF16_CODE_UNIT;
   session_id: string;
   participant_local_id: string;
   task_id: string;
@@ -86,8 +89,14 @@ export interface BuildRawEventInput {
   qualityFlags?: string[];
 }
 
+export const LOGGER_SCHEMA_VERSION_V2 = "kslog.raw_event.v2" as const;
+export const WEB_LOGGER_POSITION_UNIT_SCHEMA_TARGET_V0_1 =
+  "web_logger_position_unit_schema_v0.1" as const;
+export const POSITION_UNIT_UTF16_CODE_UNIT = "utf16_code_unit" as const;
+
 export const SYNTHETIC_METADATA: SyntheticMetadata = {
-  logger_schema_version: "web_logger_schema_v0_1",
+  logger_schema_version: LOGGER_SCHEMA_VERSION_V2,
+  research_schema_target: WEB_LOGGER_POSITION_UNIT_SCHEMA_TARGET_V0_1,
   session_id: "synthetic_session_web_001",
   participant_local_id: "synthetic_writer_web_001",
   task_id: "synthetic_task_web_freewrite_001",
@@ -126,6 +135,7 @@ export function buildRawEvent(input: BuildRawEventInput): RawEvent {
 
   return omitUndefined({
     ...input.metadata,
+    position_unit: POSITION_UNIT_UTF16_CODE_UNIT,
     seq: input.seq,
     timestamp_ms: input.timestampMs,
     event_type: input.eventType,
@@ -138,8 +148,8 @@ export function buildRawEvent(input: BuildRawEventInput): RawEvent {
     selection_end_after: input.after.selectionEnd,
     cursor_pos_before: input.before.selectionStart,
     cursor_pos_after: input.after.selectionStart,
-    doc_len_before: charCount(input.before.text),
-    doc_len_after: charCount(input.after.text),
+    doc_len_before: utf16CodeUnitLength(input.before.text),
+    doc_len_after: utf16CodeUnitLength(input.after.text),
     inserted_text: textChange.insertedText,
     deleted_text: textChange.deletedText,
     text_hash_before: placeholderHash(input.seq, "before"),
@@ -155,6 +165,10 @@ export function toJsonl(events: RawEvent[]): string {
 
 export function forbiddenFieldNames(): string[] {
   return ["final_text", "observed_after_text", "gold_label"];
+}
+
+export function utf16CodeUnitLength(value: string): number {
+  return value.length;
 }
 
 function normalizeInputType(inputType: string | null | undefined): InputType | undefined {
@@ -193,13 +207,15 @@ function inferBackwardDeletion(
 } {
   if (before.selectionStart !== before.selectionEnd) {
     return omitUndefined({
-      deletedText: sliceChars(before.text, before.selectionStart, before.selectionEnd) || undefined
+      deletedText:
+        sliceUtf16CodeUnits(before.text, before.selectionStart, before.selectionEnd) || undefined
     });
   }
 
   if (after.selectionStart < before.selectionStart) {
     return omitUndefined({
-      deletedText: sliceChars(before.text, after.selectionStart, before.selectionStart) || undefined
+      deletedText:
+        sliceUtf16CodeUnits(before.text, after.selectionStart, before.selectionStart) || undefined
     });
   }
 
@@ -218,27 +234,25 @@ function inferGenericTextChange(
   deletedText?: string;
 } {
   let prefix = 0;
-  const beforeChars = [...before];
-  const afterChars = [...after];
   while (
-    prefix < beforeChars.length &&
-    prefix < afterChars.length &&
-    beforeChars[prefix] === afterChars[prefix]
+    prefix < before.length &&
+    prefix < after.length &&
+    before[prefix] === after[prefix]
   ) {
     prefix += 1;
   }
 
   let suffix = 0;
   while (
-    suffix + prefix < beforeChars.length &&
-    suffix + prefix < afterChars.length &&
-    beforeChars[beforeChars.length - 1 - suffix] === afterChars[afterChars.length - 1 - suffix]
+    suffix + prefix < before.length &&
+    suffix + prefix < after.length &&
+    before[before.length - 1 - suffix] === after[after.length - 1 - suffix]
   ) {
     suffix += 1;
   }
 
-  const deletedText = beforeChars.slice(prefix, beforeChars.length - suffix).join("");
-  const insertedText = afterChars.slice(prefix, afterChars.length - suffix).join("");
+  const deletedText = before.slice(prefix, before.length - suffix);
+  const insertedText = after.slice(prefix, after.length - suffix);
 
   return omitUndefined({
     insertedText: insertedText || undefined,
@@ -286,12 +300,8 @@ function placeholderHash(seq: number, side: "before" | "after"): string {
   return `synthetic_hash_web_${side}_${seq}`;
 }
 
-function charCount(value: string): number {
-  return [...value].length;
-}
-
-function sliceChars(value: string, start: number, end: number): string {
-  return [...value].slice(start, end).join("");
+function sliceUtf16CodeUnits(value: string, start: number, end: number): string {
+  return value.slice(start, end);
 }
 
 function omitUndefined<T extends Record<string, unknown>>(value: T): T {

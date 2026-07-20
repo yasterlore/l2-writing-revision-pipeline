@@ -3958,3 +3958,17 @@ fixture JSON, TypeScript/Python code, Cargo metadata, package metadata,
 workflows, status markers, extract / micro_episode integration, SHA-256
 helpers, TypeScript/Rust vector checks, event durability, real-data use,
 metric evidence, or production readiness status.
+
+## Step-web-logger-066 TypeScript Logger position_unit Emission
+
+Step-web-logger-066 updates `apps/logger-web/src/rawEvent.ts` so the
+TypeScript logger emits Rust-aligned v0.2-style position-unit metadata and
+UTF-16 code unit document lengths. It also updates focused logger-web tests for
+metadata emission, UTF-16 length semantics, cursor/selection preservation,
+JSONL preservation, and no-oracle field absence.
+
+Step-web-logger-066 does not change Rust/Python code, fixture JSON, Makefile,
+release-quality wrapper, workflows, package/Cargo metadata, replay behavior,
+extract / micro_episode integration, SHA-256 helper work, TypeScript/Rust
+compatibility fixture validation, event durability, real-data use, metric
+evidence, or production readiness status.

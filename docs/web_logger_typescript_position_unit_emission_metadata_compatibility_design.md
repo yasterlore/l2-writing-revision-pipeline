@@ -368,3 +368,25 @@ TypeScript emission and metadata alignment only, without claiming
 TypeScript/Rust compatibility, without changing Rust validator behavior,
 without changing release-quality wrapper behavior, and without claiming
 production or real-data readiness.
+
+## 25. Step-web-logger-066 Implementation Follow-Up
+
+Step-web-logger-066 implements the bounded TypeScript logger alignment
+recommended by this design. The logger now emits `logger_schema_version` as
+`kslog.raw_event.v2`, emits
+`research_schema_target=web_logger_position_unit_schema_v0.1`, and emits
+`position_unit=utf16_code_unit` for the scoped raw logger events.
+
+The implementation changes document length metadata to JavaScript string
+`.length`, preserving UTF-16 code unit semantics, and aligns inserted/deleted
+text inference with UTF-16 code unit slicing from browser selection offsets.
+Focused tests cover metadata emission, UTF-16 lengths, cursor/selection
+preservation, JSONL serialization, and no-oracle field absence using only
+small synthetic strings.
+
+This follow-up does not add TypeScript/Rust compatibility fixture validation,
+does not change Rust validator behavior, does not change replay behavior, does
+not change Makefile or release-quality wrapper behavior, does not implement
+extract / micro_episode integration, does not add SHA-256 helpers or vector
+checks, does not implement event durability, and does not claim production
+readiness, real-data readiness, or model performance evidence.

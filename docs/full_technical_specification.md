@@ -1934,3 +1934,25 @@ Cargo/package metadata, workflows, Phase 2 run record workflow, status marker,
 final safety review, extract / micro_episode integration, SHA-256 helper work,
 TypeScript/Rust vector checks, event durability, production readiness,
 real-data readiness, or model performance evidence.
+
+## Step-web-logger-066 TypeScript Logger position_unit Emission Appendix
+
+Step-web-logger-066 updates the TypeScript Web logger raw event builder to emit
+Rust-aligned v0.2 position-unit metadata:
+`logger_schema_version=kslog.raw_event.v2`,
+`research_schema_target=web_logger_position_unit_schema_v0.1`, and
+`position_unit=utf16_code_unit`.
+
+The logger now records `doc_len_before` and `doc_len_after` as JavaScript
+string `.length`, i.e. UTF-16 code unit length. Cursor and selection offsets
+remain browser selection API offsets and are treated as UTF-16 code unit
+offsets. Inserted/deleted text inference uses UTF-16 code unit slicing.
+
+Focused TypeScript tests cover metadata emission, UTF-16 document lengths,
+cursor/selection preservation, emoji selection deletion, JSONL serialization,
+and no-oracle field absence using small synthetic strings. This appendix does
+not add TypeScript/Rust compatibility fixture validation, does not change Rust
+validator behavior, replay behavior, Makefile, release-quality wrapper,
+fixtures, extract / micro_episode integration, SHA-256 helper work,
+TypeScript/Rust vector checks, event durability, production readiness,
+real-data readiness, or model performance evidence.

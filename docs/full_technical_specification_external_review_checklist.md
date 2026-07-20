@@ -769,3 +769,18 @@ TypeScript / Python code, tests, fixture JSON, workflows, package metadata,
 Cargo metadata, extract / micro_episode integration, SHA-256 helpers,
 TypeScript/Rust vector checks, event durability, production readiness,
 real-data readiness, or model performance evidence is added.
+
+## Step-web-logger-066 TypeScript Logger position_unit Emission Review
+
+Confirm `apps/logger-web/src/rawEvent.ts` emits
+`logger_schema_version=kslog.raw_event.v2`,
+`research_schema_target=web_logger_position_unit_schema_v0.1`, and
+`position_unit=utf16_code_unit`. Confirm document length metadata is based on
+JavaScript string `.length`, cursor/selection offsets remain browser UTF-16
+code unit offsets, and inserted/deleted inference uses UTF-16 code unit
+slicing. Confirm `apps/logger-web/tests/rawEvent.test.ts` covers metadata
+emission, UTF-16 length cases, cursor/selection preservation, JSONL
+serialization, and no-oracle field absence. Confirm this review does not treat
+the change as TypeScript/Rust compatibility fixture validation, replay
+correctness, extract / micro_episode integration, event durability, production
+readiness, real-data readiness, or model performance evidence.

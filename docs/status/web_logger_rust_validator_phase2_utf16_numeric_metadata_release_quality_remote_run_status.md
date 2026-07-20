@@ -422,3 +422,11 @@ as design-only planning for future TypeScript logger metadata alignment. It
 does not revise this remote status marker and does not claim TypeScript/Rust
 compatibility, replay correctness, event durability, production readiness,
 real-data readiness, or model performance evidence.
+
+## 27. Step-web-logger-066 TypeScript Implementation Follow-Up
+
+Step-web-logger-066 updates TypeScript logger metadata emission and UTF-16
+document length semantics. This does not revise this remote status marker and
+does not add new remote evidence for TypeScript/Rust compatibility fixture
+validation, replay correctness, event durability, production readiness,
+real-data readiness, or model performance.

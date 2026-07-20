@@ -509,3 +509,16 @@ This follow-up does not change Phase 2 validator behavior, tests, fixtures,
 Makefile target behavior, wrapper behavior, replay behavior, extract /
 micro_episode integration, SHA-256 helper work, event durability, production
 readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-066 TypeScript Implementation Follow-Up
+
+Step-web-logger-066 implements TypeScript logger emission of
+`position_unit=utf16_code_unit`, Rust-aligned v0.2 schema metadata, and
+UTF-16 code unit document lengths. This supports future TypeScript/Rust
+compatibility fixtures but does not change the Rust validator Phase 2
+implementation or its reason-code behavior.
+
+This follow-up does not change Rust code, validator behavior, fixtures,
+Makefile target behavior, wrapper behavior, replay behavior, extract /
+micro_episode integration, SHA-256 helper work, event durability, production
+readiness, real-data readiness, or model performance evidence.

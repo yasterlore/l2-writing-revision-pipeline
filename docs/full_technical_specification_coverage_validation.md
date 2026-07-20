@@ -951,3 +951,18 @@ final-reviewed, not replay correctness coverage, not extract / micro_episode
 integration coverage, not TypeScript logger coverage, not TypeScript/Rust
 compatibility evidence, not event durability evidence, not production
 readiness, not real-data readiness, and not model performance evidence.
+
+## Step-web-logger-066 Coverage Addendum
+
+`cd apps/logger-web && npm test` now covers TypeScript logger
+`position_unit=utf16_code_unit` emission, `research_schema_target` emission,
+Rust-aligned v0.2 `logger_schema_version`, UTF-16 code unit document lengths,
+cursor/selection offset preservation, emoji selection deletion, JSONL
+serialization, and no-oracle field absence with synthetic strings.
+
+`cd apps/logger-web && npm run typecheck` and `cd apps/logger-web && npm run
+build` cover the TypeScript compile/build boundary for this logger change.
+This is not TypeScript/Rust compatibility fixture validation, not replay
+correctness coverage, not extract / micro_episode integration coverage, not
+event durability evidence, not production readiness, not real-data readiness,
+and not model performance evidence.

@@ -766,3 +766,13 @@ the existing Rust schema parser/accessor and validator boundaries. It does not
 change `kslog_schema`, `RawEvent`, the shared UTF-16 helper API, Rust code,
 TypeScript code, tests, fixtures, Makefile, wrapper, production readiness,
 real-data readiness, or model performance evidence.
+
+## 47. Step-web-logger-066 TypeScript Implementation Follow-Up
+
+Step-web-logger-066 aligns the TypeScript logger with the existing Rust schema
+boundary by emitting `logger_schema_version=kslog.raw_event.v2`,
+`research_schema_target=web_logger_position_unit_schema_v0.1`, and
+`position_unit=utf16_code_unit`. This does not change `kslog_schema`,
+`RawEvent`, the shared UTF-16 helper API, Rust code/tests, fixtures, Makefile,
+wrapper, production readiness, real-data readiness, or model performance
+evidence.

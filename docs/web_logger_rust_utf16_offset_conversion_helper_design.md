@@ -657,3 +657,13 @@ with UTF-16 code unit semantics and the Rust validator Phase 2 boundary. It
 does not change `kslog_schema::utf16_offsets`, helper behavior, replay
 behavior, TypeScript code, tests, fixtures, Makefile, wrapper, production
 readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-066 TypeScript Implementation Follow-Up
+
+Step-web-logger-066 updates TypeScript logger document length metadata to use
+JavaScript string `.length`, matching UTF-16 code unit semantics. It also keeps
+cursor and selection offsets aligned with browser selection API offsets.
+
+This does not change `kslog_schema::utf16_offsets`, helper behavior, replay
+behavior, Rust code, fixtures, Makefile, wrapper, production readiness,
+real-data readiness, or model performance evidence.

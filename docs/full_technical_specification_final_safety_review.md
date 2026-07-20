@@ -828,3 +828,16 @@ marker evidence, not final safety review acceptance, not replay correctness,
 not extract / micro_episode integration, not TypeScript/Rust cross-language
 compatibility, not event durability, not production readiness, not real-data
 readiness, not model performance, and not deployment readiness.
+
+## Step-web-logger-066 TypeScript Logger position_unit Follow-Up
+
+Step-web-logger-066 updates the TypeScript logger to emit Rust-aligned
+v0.2-style position-unit metadata and UTF-16 code unit document lengths. This
+is a bounded TypeScript implementation follow-up after the Rust validator Phase
+2 final-reviewed chain.
+
+The update does not revise Rust validator final-review boundaries and does not
+constitute TypeScript/Rust compatibility fixture validation, replay
+correctness, extract / micro_episode integration, SHA-256 compatibility, event
+durability, production readiness, real-data readiness, data collection
+readiness, deployment readiness, or model performance evidence.

@@ -834,3 +834,17 @@ and related docs. It does not change Makefile, workflows, Rust code, Rust
 tests, TypeScript code, Python code, fixture JSON, package files, Cargo files,
 `kslog_schema`, `kslog_validate`, `kslog_replay`, `kslog_extract`,
 `kslog_micro_episode`, or status markers.
+
+## Step-web-logger-066 Source Inventory Addendum
+
+`apps/logger-web/src/rawEvent.ts` now emits Rust-aligned Web logger v0.2
+position-unit metadata and uses UTF-16 code unit document lengths.
+`apps/logger-web/tests/rawEvent.test.ts` adds focused synthetic coverage for
+metadata emission, UTF-16 length semantics, cursor/selection offset
+preservation, JSONL preservation, and no-oracle field absence.
+
+The source inventory addition is limited to TypeScript logger implementation,
+TypeScript tests, and related docs. It does not change Rust code, Python code,
+fixture JSON, Makefile, release-quality wrapper scripts, workflows, package
+metadata, Cargo files, `kslog_schema`, `kslog_validate`, `kslog_replay`,
+`kslog_extract`, `kslog_micro_episode`, or status markers.
