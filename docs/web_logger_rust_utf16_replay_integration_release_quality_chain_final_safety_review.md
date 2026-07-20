@@ -528,3 +528,12 @@ check.
 This does not change the Step031 replay-focused accepted boundary, does not
 call replay from the validator Phase 1 target, and does not add Phase 2
 UTF-16 numeric metadata validation.
+
+## 36. Step-web-logger-052 Validator Phase 1 Run Record Workflow Design
+
+Step-web-logger-052 designs future status marker evidence for the Rust
+validator Phase 1 release-quality check. The workflow should record that the
+Phase 1 target does not invoke replay.
+
+This does not change the Step031 replay-focused accepted boundary and does
+not add Phase 2 UTF-16 numeric metadata validation.

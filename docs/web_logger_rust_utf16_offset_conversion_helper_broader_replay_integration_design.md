@@ -478,3 +478,10 @@ before the Rust UTF-16 replay integration check. The target remains focused on
 
 This integration does not call replay and does not settle the shared-helper
 strategy for Phase 2 numeric UTF-16 checks.
+
+## 43. Step-web-logger-052 Validator Phase 1 Run Record Workflow Design
+
+Step-web-logger-052 designs future run-record workflow for the Rust validator
+Phase 1 release-quality check. The future marker should record that replay is
+not invoked by the Phase 1 target and that the shared-helper strategy for
+Phase 2 numeric UTF-16 checks remains future work.

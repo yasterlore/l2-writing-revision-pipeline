@@ -434,3 +434,14 @@ directly. Makefile remains unchanged in Step051. Phase 2 UTF-16 numeric
 validation, status marker evidence, final safety review acceptance,
 production readiness, real-data readiness, and model performance evidence
 remain future work.
+
+## 32. Step-web-logger-052 Run Record Workflow Design
+
+Step-web-logger-052 designs the future run-record workflow for the
+release-quality check that now calls this target. Future status evidence should
+record the Makefile target command and focused 9-test result as public-safe
+metadata only.
+
+This design does not modify Makefile and does not create status marker
+evidence, final safety review acceptance, Phase 2 UTF-16 numeric validation,
+production readiness, real-data readiness, or model performance evidence.

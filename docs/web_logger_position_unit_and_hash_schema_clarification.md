@@ -694,3 +694,14 @@ It does not implement SHA-256 helpers, TypeScript/Rust hash vector checks,
 Phase 2 UTF-16 numeric validation, TypeScript logger compatibility, event
 durability, production readiness, real-data readiness, or model performance
 evidence.
+
+## 69. Step-web-logger-052 Rust Validator Phase 1 Run Record Workflow Design
+
+Step-web-logger-052 designs future status marker evidence for the Rust
+validator Phase 1 release-quality check. The status marker should keep
+position-unit policy evidence and hash compatibility evidence distinct.
+
+This design does not implement SHA-256 helpers, TypeScript/Rust hash vector
+checks, Phase 2 UTF-16 numeric validation, TypeScript logger compatibility,
+event durability, production readiness, real-data readiness, or model
+performance evidence.

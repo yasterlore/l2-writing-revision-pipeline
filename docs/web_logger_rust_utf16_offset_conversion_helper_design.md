@@ -530,3 +530,9 @@ call this helper or implement validator-side numeric UTF-16 checks.
 Step-web-logger-051 adds the Rust validator Phase 1 target to the
 release-quality wrapper. The target still does not call this helper and does
 not implement validator-side numeric UTF-16 checks.
+
+## Step-web-logger-052 Validator Phase 1 Run Record Workflow Design
+
+Step-web-logger-052 designs future status marker evidence for the Rust
+validator Phase 1 release-quality check. The future marker should not treat
+the Phase 1 target as evidence that this helper is used by `kslog_validate`.

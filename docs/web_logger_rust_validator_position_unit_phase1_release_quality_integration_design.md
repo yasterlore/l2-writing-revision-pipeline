@@ -342,3 +342,14 @@ remote/manual evidence collection, metadata-only output handling, status
 marker fields, local fallback rules, safety checklist, and Step053 handoff
 without creating a status marker yet and without claiming Phase 2 numeric
 validation, production readiness, or real-data readiness.
+
+## 28. Step-web-logger-052 Run Record Workflow Design
+
+Step-web-logger-052 adds
+[Rust validator position_unit Phase 1 release-quality remote/manual run record workflow](web_logger_rust_validator_position_unit_phase1_release_quality_remote_run_record_workflow.md).
+
+The workflow design keeps Step051 release-quality integration as prerequisite
+evidence and defines what future Step053 should record as public-safe
+metadata. It does not create a status marker, does not create final safety
+review acceptance, and does not claim Phase 2 UTF-16 numeric validation,
+production readiness, real-data readiness, or model performance evidence.

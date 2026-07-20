@@ -530,3 +530,14 @@ This does not expand the mapping to Phase 2 UTF-16 numeric metadata
 validation, does not modify Rust code or tests, does not modify fixtures, and
 does not add status marker evidence, final safety review acceptance,
 production readiness, real-data readiness, or model performance evidence.
+
+## 34. Step-web-logger-052 Run Record Workflow Design
+
+Step-web-logger-052 designs how future status marker evidence should record
+the focused Rust validator Phase 1 test mapping. The required public-safe
+summary includes focused test count, expected reason-code categories, legacy
+missing position_unit gating, and explicit `phase2_utf16_numeric_validation_checked=false`.
+
+This workflow design does not change the mapping, Rust code, tests, fixtures,
+status marker files, production readiness, real-data readiness, or model
+performance evidence.

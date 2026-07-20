@@ -605,3 +605,16 @@ Phase 2 UTF-16 numeric validation, extract / micro_episode integration,
 TypeScript logger behavior, status marker evidence, final safety review,
 event durability, production readiness, real-data readiness, and model
 performance evidence remain future work.
+
+## 45. Step-web-logger-052 Rust Validator Phase 1 Run Record Workflow Design
+
+Step-web-logger-052 designs future status marker evidence for the Rust
+validator Phase 1 release-quality check. The workflow should record only
+public-safe metadata and count summaries for presence / value /
+schema-version gating.
+
+This does not make the full schema-level position_unit policy complete.
+Phase 2 UTF-16 numeric validation, extract / micro_episode integration,
+TypeScript logger behavior, final safety review, event durability, production
+readiness, real-data readiness, and model performance evidence remain future
+work.
