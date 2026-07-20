@@ -490,7 +490,9 @@ Step-web-logger-048 adds
 
 The design recommends exposing the Step047 focused validator tests through
 future Makefile target `check-web-logger-rust-validator-position-unit-phase1`
-with command `cargo test -p kslog_validate position_unit`. It remains
+with command `cargo test -p kslog_validate position_unit`. Step059 later
+corrects the implemented target command to
+`cargo test -p kslog_validate position_unit_phase1`. The design remains
 docs-only and does not change Makefile, wrapper, Rust code, tests, fixtures,
 TypeScript, Python, release-quality wiring, Phase 2 UTF-16 numeric validation,
 production readiness, real-data readiness, or model performance evidence.
@@ -500,9 +502,8 @@ production readiness, real-data readiness, or model performance evidence.
 Step-web-logger-049 adds the Makefile target
 `check-web-logger-rust-validator-position-unit-phase1` for this mapping's
 focused Rust validator tests. The target runs
-`cargo test -p kslog_validate position_unit` and is placed between the
-position-unit fixture contract target and the Rust UTF-16 replay integration
-target.
+`cargo test -p kslog_validate position_unit_phase1` after the Step059 filter
+correction and is placed before the Phase 2 / Rust UTF-16 replay target group.
 
 The target does not change validator behavior, Rust tests, fixtures,
 TypeScript, Python, wrapper behavior, Phase 2 UTF-16 numeric validation,
@@ -621,3 +622,13 @@ covers 8 tests.
 
 The existing `position_unit` filter remains a broader manual regression filter
 and should not be used as the Phase 1-only Makefile command after Step057.
+
+## 41. Step-web-logger-059 Makefile Filter Mapping Implementation
+
+Step-web-logger-059 implements the filter mapping. The Phase 1 Makefile target
+now uses `position_unit_phase1` and the Phase 2 Makefile target uses
+`position_unit_phase2`.
+
+The broader `position_unit` filter remains available manually but is no longer
+the Phase 1 target command. This keeps the 9-test Phase 1 mapping and 8-test
+Phase 2 mapping distinct.

@@ -573,9 +573,9 @@ production readiness, real-data readiness, or model performance evidence.
 
 Step-web-logger-049 adds Makefile target
 `check-web-logger-rust-validator-position-unit-phase1` with command
-`cargo test -p kslog_validate position_unit`. It exposes the Step047 focused
-validator Phase 1 tests without expanding the policy to Phase 2 UTF-16
-numeric validation.
+`cargo test -p kslog_validate position_unit_phase1` after the Step059 filter
+correction. It exposes the Step047 focused validator Phase 1 tests without
+including Phase 2 focused tests.
 
 Release-quality integration, extract / micro_episode integration, TypeScript
 logger behavior, event durability, production readiness, real-data readiness,
@@ -697,3 +697,15 @@ add release-quality integration, extract / micro_episode integration,
 TypeScript logger changes, SHA-256 helper work, TypeScript/Rust vector checks,
 event durability, production readiness, real-data readiness, or model
 performance evidence.
+
+## 52. Step-web-logger-059 Makefile Target Implementation
+
+Step-web-logger-059 implements the Makefile target split. Phase 1 now uses the
+`position_unit_phase1` filter, and the new Phase 2 target uses the
+`position_unit_phase2` filter.
+
+This makes Phase 1 and Phase 2 validator checks separately runnable from
+Makefile while keeping Phase 2 release-quality integration, extract /
+micro_episode integration, TypeScript logger changes, SHA-256 helper work,
+TypeScript/Rust vector checks, event durability, production readiness,
+real-data readiness, and model performance evidence out of scope.

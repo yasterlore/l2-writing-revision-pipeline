@@ -337,3 +337,15 @@ The recommended correction is to change the existing Phase 1 target command to
 target for `cargo test -p kslog_validate position_unit_phase2`. This follow-up
 does not change the Step054 accepted boundary or add Phase 2 release-quality
 acceptance.
+
+## 27. Step-web-logger-059 Makefile Target Follow-Up
+
+Step-web-logger-059 implements the Phase 1 filter correction and adds the
+separate Phase 2 Makefile target. The existing Phase 1 release-quality wrapper
+entry still calls `make check-web-logger-rust-validator-position-unit-phase1`,
+and that target is Phase 1-only again because it now uses the
+`position_unit_phase1` filter.
+
+This follow-up does not revise the Step054 accepted boundary and does not
+create Phase 2 release-quality integration, Phase 2 status marker evidence, or
+Phase 2 final safety review acceptance.

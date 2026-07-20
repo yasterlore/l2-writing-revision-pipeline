@@ -754,7 +754,10 @@ near the existing Web logger validation targets.
 
 The target runs:
 
-`cargo test -p kslog_validate position_unit`
+`cargo test -p kslog_validate position_unit_phase1`
+
+Step-web-logger-059 corrects the command from the broader `position_unit`
+substring filter to the Phase 1-only `position_unit_phase1` filter.
 
 The source inventory addition is limited to the Makefile target and related
 docs. It does not change release-quality wrapper scripts, workflows, Rust
@@ -804,3 +807,17 @@ related docs. It does not change `kslog_schema`, `kslog_replay`, Makefile,
 release-quality wrapper scripts, workflows, TypeScript code, Python code,
 fixture JSON, package files, Cargo files, `kslog_extract`, `kslog_micro_episode`,
 or status markers.
+
+## Step-web-logger-059 Source Inventory Addendum
+
+`Makefile` adds target
+`check-web-logger-rust-validator-position-unit-phase2-utf16-numeric` with
+command `cargo test -p kslog_validate position_unit_phase2`. It also corrects
+the existing Phase 1 target command to
+`cargo test -p kslog_validate position_unit_phase1`.
+
+The source inventory addition is limited to Makefile target exposure and
+related docs. It does not change release-quality wrapper scripts, workflows,
+Rust code, Rust tests, TypeScript code, Python code, fixture JSON, package
+files, Cargo files, `kslog_schema`, `kslog_validate`, `kslog_replay`,
+`kslog_extract`, `kslog_micro_episode`, or status markers.

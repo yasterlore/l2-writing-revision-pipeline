@@ -417,3 +417,17 @@ recommends correcting that target command to
 `cargo test -p kslog_validate position_unit_phase1` in the same future
 Makefile implementation Step. Step058 does not change Makefile or wrapper
 behavior.
+
+## Step-web-logger-059 Makefile Target Implementation Follow-Up
+
+Step-web-logger-059 implements the Makefile-visible follow-up. The existing
+Phase 1 target now runs `cargo test -p kslog_validate position_unit_phase1`,
+and the new Phase 2 target
+`check-web-logger-rust-validator-position-unit-phase2-utf16-numeric` runs
+`cargo test -p kslog_validate position_unit_phase2`.
+
+This adds focused Makefile access only. Phase 2 release-quality integration,
+status marker, final safety review, replay correctness, extract /
+micro_episode integration, TypeScript logger changes, SHA-256 helpers,
+TypeScript/Rust vector checks, event durability, production readiness,
+real-data readiness, and model performance evidence remain future work.

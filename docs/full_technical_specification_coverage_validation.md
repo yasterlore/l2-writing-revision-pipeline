@@ -851,7 +851,7 @@ evidence.
 
 ## Step-web-logger-047 Coverage Addendum
 
-`cargo test -p kslog_validate position_unit` now includes focused Phase 1
+`cargo test -p kslog_validate position_unit_phase1` now includes focused Phase 1
 coverage for the Rust validator position-unit gate. The tests cover the five
 Phase 1 valid fixtures, the missing / unsupported / schema-mismatch /
 unknown-version invalid fixtures, explicit legacy allowance, deferred Phase 2
@@ -869,15 +869,18 @@ evidence.
 
 `make check-web-logger-rust-validator-position-unit-phase1` adds
 Makefile-visible coverage for running the Step-web-logger-047 focused Rust
-validator Phase 1 tests through `cargo test -p kslog_validate position_unit`.
+validator Phase 1 tests through
+`cargo test -p kslog_validate position_unit_phase1`. Step-web-logger-059
+corrects this target from the broader substring filter to the Phase 1-only
+filter after Phase 2 tests were added.
 
 This target coverage is focused only. It is not full validator test coverage,
 not workspace Rust test coverage, not Python fixture contract validation
 coverage, not replay check coverage, not release-quality wrapper coverage, not
-Phase 2 UTF-16 numeric metadata validation coverage, not extract /
-micro_episode integration coverage, not TypeScript logger coverage, not event
-durability evidence, not production readiness, not real-data readiness, and
-not model performance evidence.
+Phase 2 UTF-16 numeric metadata target coverage, not extract / micro_episode
+integration coverage, not TypeScript logger coverage, not event durability
+evidence, not production readiness, not real-data readiness, and not model
+performance evidence.
 
 ## Step-web-logger-051 Coverage Addendum
 
@@ -919,3 +922,18 @@ coverage, not extract / micro_episode integration coverage, not TypeScript
 logger coverage, not TypeScript/Rust compatibility evidence, not event
 durability evidence, not production readiness, not real-data readiness, and not
 model performance evidence.
+
+## Step-web-logger-059 Coverage Addendum
+
+`make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`
+adds Makefile-visible focused coverage for
+`cargo test -p kslog_validate position_unit_phase2`. The existing Phase 1
+target now uses `position_unit_phase1`, so Phase 1 and Phase 2 Makefile
+coverage are distinct.
+
+This is Makefile target coverage only. Phase 2 is not yet release-quality
+integrated, not status-recorded, not final-reviewed, not replay correctness
+coverage, not extract / micro_episode integration coverage, not TypeScript
+logger coverage, not TypeScript/Rust compatibility evidence, not event
+durability evidence, not production readiness, not real-data readiness, and
+not model performance evidence.

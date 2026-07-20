@@ -46,7 +46,10 @@ Help text:
 
 Command:
 
-`cargo test -p kslog_validate position_unit`
+`cargo test -p kslog_validate position_unit_phase1`
+
+Step-web-logger-059 corrects this command from the broader `position_unit`
+filter to the Phase 1-only `position_unit_phase1` filter.
 
 The target is placed after `check-web-logger-position-unit-fixtures` and
 before `check-web-logger-rust-utf16-offset-conversion`. It is listed in
@@ -112,8 +115,8 @@ Recommended command:
 `make check-web-logger-rust-validator-position-unit-phase1`
 
 The wrapper should call the Makefile target and should not duplicate
-`cargo test -p kslog_validate position_unit` directly. The Makefile target
-remains the command source of truth.
+the Cargo command directly. The Makefile target remains the command source of
+truth.
 
 The command should not run full validator tests, workspace tests, the Python
 fixture validator, replay, extract / micro_episode checks, fixture mutation,
@@ -138,7 +141,8 @@ Expected output after future integration should include:
 
 - `release_quality_check: web logger Rust validator position_unit Phase 1 policy`
 - `command: make check-web-logger-rust-validator-position-unit-phase1`
-- underlying focused Cargo command: `cargo test -p kslog_validate position_unit`
+- underlying focused Cargo command after Step059:
+  `cargo test -p kslog_validate position_unit_phase1`
 - pass status for the focused Rust validator tests
 - expected focused test count: 9
 - final `release_quality_check: ok`
@@ -321,7 +325,7 @@ The check is inserted after
 and before
 `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
 The wrapper calls the Makefile target and does not duplicate
-`cargo test -p kslog_validate position_unit` directly.
+the Cargo command directly.
 
 This is release-quality integration for Rust validator Phase 1 focused tests
 only. It does not change Makefile, Rust code, tests, fixtures, TypeScript,
@@ -407,3 +411,13 @@ The release-quality wrapper can keep calling
 command is corrected, the existing Phase 1 release-quality label is accurate
 again without wrapper changes. Phase 2 wrapper integration remains a separate
 future chain.
+
+## 33. Step-web-logger-059 Makefile Correction Follow-Up
+
+Step-web-logger-059 corrects the Makefile target command. The wrapper command
+remains `make check-web-logger-rust-validator-position-unit-phase1`, but that
+target now runs `cargo test -p kslog_validate position_unit_phase1`.
+
+This restores the Phase 1 release-quality label to Phase 1-only coverage
+without changing `scripts/check_release_quality.sh`. The new Phase 2 target is
+not called by release-quality yet.

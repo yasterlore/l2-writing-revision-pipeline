@@ -600,7 +600,8 @@ model performance evidence.
 Step-web-logger-049 adds Makefile target
 `check-web-logger-rust-validator-position-unit-phase1` for the Step047
 focused validator Phase 1 tests. The target command is
-`cargo test -p kslog_validate position_unit`.
+`cargo test -p kslog_validate position_unit_phase1` after the Step059 filter
+correction.
 
 This does not change schema behavior, validator behavior, Rust code, tests,
 fixtures, wrapper behavior, Phase 2 UTF-16 numeric validation, event
@@ -717,3 +718,12 @@ This follow-up does not change schema behavior and does not add wrapper
 integration, extract / micro_episode integration, TypeScript logger changes,
 SHA-256 helper work, TypeScript/Rust vector checks, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 40. Step-web-logger-059 Makefile Target Follow-Up
+
+Step-web-logger-059 exposes the validator-side Phase 2 behavior through a
+Makefile target and corrects the Phase 1 target filter. This does not change
+the `kslog_schema` parser boundary or shared UTF-16 helper API.
+
+The Phase 2 target is Makefile-only at this point and is not release-quality
+integrated yet.

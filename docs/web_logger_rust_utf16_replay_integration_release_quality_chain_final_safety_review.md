@@ -504,7 +504,8 @@ call replay or `kslog_replay::utf16_offsets`.
 
 Step-web-logger-049 adds
 `check-web-logger-rust-validator-position-unit-phase1` to Makefile. The target
-runs `cargo test -p kslog_validate position_unit`.
+runs `cargo test -p kslog_validate position_unit_phase1` after the Step059
+filter correction.
 
 This does not change the Step031 replay-focused accepted boundary, does not
 call replay, and does not add Phase 2 UTF-16 numeric metadata validation.
@@ -599,3 +600,12 @@ keeping replay checks separate. The future Phase 2 target should run
 
 The replay target remains `check-web-logger-rust-utf16-offset-conversion`.
 Phase 2 validator target pass should not be interpreted as replay correctness.
+
+## 43. Step-web-logger-059 Makefile Target Follow-Up
+
+Step-web-logger-059 implements the validator Phase 2 Makefile target before
+the replay target. `check-web-logger-rust-utf16-offset-conversion` remains
+unchanged and remains the replay-focused boundary.
+
+The Phase 2 validator target is not release-quality-integrated yet and should
+not be read as replay correctness evidence.

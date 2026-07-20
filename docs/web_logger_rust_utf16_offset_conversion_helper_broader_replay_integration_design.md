@@ -554,3 +554,12 @@ the Phase 1 validator target and before
 
 This preserves the distinction between validator numeric metadata checks and
 replay correctness.
+
+## 50. Step-web-logger-059 Makefile Target Follow-Up
+
+Step-web-logger-059 adds the validator Phase 2 target in the recommended
+position, before the replay-focused UTF-16 target. The replay target command
+is unchanged.
+
+The new validator Phase 2 target does not expand or replace replay-focused
+evidence.

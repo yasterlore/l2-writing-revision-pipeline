@@ -841,3 +841,14 @@ IndexedDB persistence, acknowledgement, retry, deduplication, server-side
 idempotency, ordering guarantees, TypeScript logger changes, SHA-256 helpers,
 TypeScript/Rust vector checks, production readiness, real-data readiness, or
 model performance evidence.
+
+## 76. Step-web-logger-059 Makefile Target Safety Update
+
+Step-web-logger-059 adds a Phase 2 validator Makefile target and restores the
+Phase 1 target filter. The change is target exposure only; it does not change
+durability, hash, TypeScript logger, or data-collection behavior.
+
+No queueing, IndexedDB persistence, acknowledgement, retry, deduplication,
+server-side idempotency, ordering guarantees, TypeScript logger changes,
+SHA-256 helpers, TypeScript/Rust vector checks, production readiness,
+real-data readiness, or model performance evidence is added.

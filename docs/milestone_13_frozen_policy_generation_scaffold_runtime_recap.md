@@ -3873,14 +3873,15 @@ evidence, or production readiness status.
 Step-web-logger-049 adds Makefile target
 `check-web-logger-rust-validator-position-unit-phase1`.
 
-The target runs `cargo test -p kslog_validate position_unit` and exposes the
-Step-web-logger-047 focused Rust validator Phase 1 tests through `make`. It
-does not add release-quality wrapper integration, run full validator tests,
+After Step-web-logger-059, the target runs
+`cargo test -p kslog_validate position_unit_phase1` and exposes the
+Step-web-logger-047 focused Rust validator Phase 1 tests through `make`
+without also picking up Phase 2 tests. It does not run full validator tests,
 run workspace tests, run the Python fixture validator, run replay checks,
-modify Rust code or tests, change fixture JSON, implement UTF-16 numeric
-metadata validation, implement extract / micro_episode integration, change
-TypeScript logger behavior, add event durability, provide real-data use,
-metric evidence, or production readiness status.
+modify Rust code or tests, change fixture JSON, implement extract /
+micro_episode integration, change TypeScript logger behavior, add event
+durability, provide real-data use, metric evidence, or production readiness
+status.
 
 ## Step-web-logger-051 Rust Validator Phase 1 Release-Quality Integration
 
@@ -3928,4 +3929,18 @@ Phase 2 Makefile target, add Phase 2 release-quality wrapper integration,
 change fixtures, change replay behavior, implement extract / micro_episode
 integration, change TypeScript/Python code, add SHA-256 helpers, add
 TypeScript/Rust vector checks, add event durability, provide real-data use,
+metric evidence, or production readiness status.
+
+## Step-web-logger-059 Rust Validator Phase 2 Makefile Target
+
+Step-web-logger-059 adds Makefile target
+`check-web-logger-rust-validator-position-unit-phase2-utf16-numeric` with help
+text `Run Rust validator position_unit Phase 2 UTF-16 numeric metadata tests`
+and command `cargo test -p kslog_validate position_unit_phase2`.
+
+The target is placed after the corrected Phase 1 target and before the Rust
+UTF-16 replay target. Step059 does not change `scripts/check_release_quality.sh`,
+Rust code or tests, fixture JSON, TypeScript/Python code, Cargo metadata,
+package metadata, workflows, extract / micro_episode integration, SHA-256
+helpers, TypeScript/Rust vector checks, event durability, real-data use,
 metric evidence, or production readiness status.

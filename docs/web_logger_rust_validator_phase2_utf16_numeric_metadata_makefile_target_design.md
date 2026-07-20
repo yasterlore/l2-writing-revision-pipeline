@@ -401,3 +401,18 @@ technical specification docs because Makefile-visible behavior changes.
 Step059 should not modify Rust code, tests, fixture JSON, TypeScript, Python,
 or release-quality wrapper. It should not claim Phase 2 release-quality
 integration, production readiness, or real-data readiness.
+
+## 28. Step-web-logger-059 Implementation Note
+
+Step-web-logger-059 implements this Makefile target design. It corrects
+`check-web-logger-rust-validator-position-unit-phase1` to run
+`cargo test -p kslog_validate position_unit_phase1`, restoring Phase 1-only
+target scope. It also adds
+`check-web-logger-rust-validator-position-unit-phase2-utf16-numeric` with help
+text `Run Rust validator position_unit Phase 2 UTF-16 numeric metadata tests`
+and command `cargo test -p kslog_validate position_unit_phase2`.
+
+The Phase 2 target is placed after the corrected Phase 1 target and before
+`check-web-logger-rust-utf16-offset-conversion`. Step059 does not change the
+release-quality wrapper, Rust code/tests, fixture JSON, TypeScript/Python
+code, status markers, or Phase 2 release-quality acceptance.

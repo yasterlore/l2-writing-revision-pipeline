@@ -497,3 +497,15 @@ The future correction should keep target
 to `cargo test -p kslog_validate position_unit_phase1`. The same future Step
 should add the separate Phase 2 target designed in
 [Rust validator Phase 2 UTF-16 numeric metadata Makefile target design](web_logger_rust_validator_phase2_utf16_numeric_metadata_makefile_target_design.md).
+
+## 37. Step-web-logger-059 Filter Correction Implementation
+
+Step-web-logger-059 applies the correction described above. The Phase 1 target
+name and help text are unchanged, and the command is now
+`cargo test -p kslog_validate position_unit_phase1`.
+
+Step059 also adds the separate Phase 2 target
+`check-web-logger-rust-validator-position-unit-phase2-utf16-numeric` with
+command `cargo test -p kslog_validate position_unit_phase2`. The Phase 1
+target should be interpreted as Phase 1-only again; Phase 2 release-quality
+integration remains future work.

@@ -515,9 +515,9 @@ and does not implement validator-side numeric UTF-16 checks.
 Step-web-logger-049 adds the future target described in Step048:
 `check-web-logger-rust-validator-position-unit-phase1`.
 
-The target runs `cargo test -p kslog_validate position_unit`. It does not
-change this helper, call this helper, run replay checks, or implement
-validator-side numeric UTF-16 checks.
+After Step-web-logger-059, the target runs
+`cargo test -p kslog_validate position_unit_phase1`. It does not change this
+helper, call this helper, run replay checks, or include Phase 2 tests.
 
 ## Step-web-logger-050 Validator Phase 1 Release-Quality Integration Design
 
@@ -608,3 +608,13 @@ separate replay-focused target.
 The design also recommends correcting the Phase 1 target filter to
 `position_unit_phase1` so helper/replay and validator target scopes remain
 clear.
+
+## Step-web-logger-059 Makefile Target Follow-Up
+
+Step-web-logger-059 applies that target split. The validator Phase 2 target
+runs `cargo test -p kslog_validate position_unit_phase2`, while
+`check-web-logger-rust-utf16-offset-conversion` remains the separate replay
+target running `cargo test -p kslog_replay utf16`.
+
+This keeps shared helper validation, validator Phase 2 checks, and replay
+checks distinct.

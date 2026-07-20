@@ -654,17 +654,20 @@ Step-web-logger-048 adds
 
 The design recommends future target
 `check-web-logger-rust-validator-position-unit-phase1` for running
-`cargo test -p kslog_validate position_unit`. It remains docs-only and does
-not change Makefile, wrapper, Rust code, tests, fixtures, TypeScript, Python,
-Phase 2 UTF-16 numeric validation, hash compatibility, event durability,
-production readiness, real-data readiness, or model performance evidence.
+`cargo test -p kslog_validate position_unit`. Step059 later corrects the
+implemented target command to `cargo test -p kslog_validate position_unit_phase1`.
+The Step048 design remains docs-only and does not change Makefile, wrapper,
+Rust code, tests, fixtures, TypeScript, Python, Phase 2 UTF-16 numeric
+validation, hash compatibility, event durability, production readiness,
+real-data readiness, or model performance evidence.
 
 ## 66. Step-web-logger-049 Rust Validator Phase 1 Makefile Target
 
 Step-web-logger-049 adds Makefile target
 `check-web-logger-rust-validator-position-unit-phase1` with help text
 `Run Rust validator position_unit Phase 1 policy tests`. The command is
-`cargo test -p kslog_validate position_unit`.
+`cargo test -p kslog_validate position_unit_phase1` after the Step059 filter
+correction.
 
 This exposes focused Rust validator Phase 1 coverage only. It does not add
 release-quality integration, Phase 2 UTF-16 numeric validation, hash
@@ -778,3 +781,14 @@ distinct.
 This remains separate from SHA-256 hash compatibility, TypeScript logger
 emission, TypeScript/Rust vector checks, event durability, production
 readiness, real-data readiness, and model performance evidence.
+
+## 76. Step-web-logger-059 Makefile Target Follow-Up
+
+Step-web-logger-059 adds Makefile exposure for Phase 2 UTF-16 numeric metadata
+focused tests and corrects the Phase 1 target to use the Phase 1-only filter.
+This keeps position-unit validation evidence separate from SHA-256 hash
+compatibility and TypeScript/Rust vector checks.
+
+The Phase 2 target is not yet release-quality-integrated and does not prove
+TypeScript logger compatibility, event durability, production readiness,
+real-data readiness, or model performance.

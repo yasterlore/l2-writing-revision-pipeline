@@ -679,16 +679,16 @@ readiness, real-data readiness, or model performance claims.
 Confirm Step-web-logger-049 adds Makefile target
 `check-web-logger-rust-validator-position-unit-phase1` with help text
 `Run Rust validator position_unit Phase 1 policy tests` and command
-`cargo test -p kslog_validate position_unit`. Confirm placement is after
-`check-web-logger-position-unit-fixtures` and before
-`check-web-logger-rust-utf16-offset-conversion`. Confirm `make help` lists the
-target and `make check-web-logger-rust-validator-position-unit-phase1` runs 9
-focused Rust validator Phase 1 tests. Confirm Step-web-logger-049 does not
+`cargo test -p kslog_validate position_unit_phase1` after the Step-web-logger-059
+filter correction. Confirm placement is after
+`check-web-logger-position-unit-fixtures` and before the Phase 2 / Rust UTF-16
+replay target group. Confirm `make help` lists the target and
+`make check-web-logger-rust-validator-position-unit-phase1` runs 9 focused
+Rust validator Phase 1 tests. Confirm Step-web-logger-049 / 059 does not
 modify release-quality wrapper scripts, Rust code, tests, TypeScript / Python
-code, fixture JSON, workflows, package metadata, Cargo metadata, Phase 2
-UTF-16 numeric metadata validation, extract / micro_episode integration, event
-durability, production readiness, real-data readiness, or model performance
-claims.
+code, fixture JSON, workflows, package metadata, Cargo metadata, extract /
+micro_episode integration, event durability, production readiness, real-data
+readiness, or model performance claims.
 
 Confirm Step-web-logger-051 adds release-quality wrapper label
 `release_quality_check: web logger Rust validator position_unit Phase 1 policy`
@@ -696,7 +696,7 @@ with command `make check-web-logger-rust-validator-position-unit-phase1`.
 Confirm insertion is after `release_quality_check: web logger position_unit fixture contract validation`
 and before `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
 Confirm the wrapper calls the Makefile target and does not duplicate
-`cargo test -p kslog_validate position_unit` directly. Confirm Step-web-logger-051
+the Cargo command directly. Confirm Step-web-logger-051
 does not modify Makefile, Rust code, tests, TypeScript / Python code, fixture
 JSON, workflows, package metadata, Cargo metadata, Phase 2 UTF-16 numeric
 metadata validation, extract / micro_episode integration, status marker,
@@ -732,3 +732,22 @@ change replay behavior, implement extract / micro_episode integration, change
 TypeScript/Python code, add SHA-256 helpers, add TypeScript/Rust vector checks,
 implement event durability, or claim production readiness, real-data readiness,
 or model performance evidence.
+
+## Step-web-logger-059 External Review Checklist Addendum
+
+Confirm Makefile corrects `check-web-logger-rust-validator-position-unit-phase1`
+to run `cargo test -p kslog_validate position_unit_phase1` while keeping the
+target name and help text. Confirm Makefile adds
+`check-web-logger-rust-validator-position-unit-phase2-utf16-numeric` with help
+text `Run Rust validator position_unit Phase 2 UTF-16 numeric metadata tests`
+and command `cargo test -p kslog_validate position_unit_phase2`.
+
+Confirm the Phase 2 target is placed after the Phase 1 target and before
+`check-web-logger-rust-utf16-offset-conversion`, focused target counts remain
+9 for Phase 1 and 8 for Phase 2, and `scripts/check_release_quality.sh` is
+unchanged. Confirm Phase 2 is not yet release-quality-integrated,
+status-recorded, or final-reviewed, and no Rust / TypeScript / Python code,
+tests, fixture JSON, workflows, package metadata, Cargo metadata, extract /
+micro_episode integration, SHA-256 helpers, TypeScript/Rust vector checks,
+event durability, production readiness, real-data readiness, or model
+performance evidence is added.

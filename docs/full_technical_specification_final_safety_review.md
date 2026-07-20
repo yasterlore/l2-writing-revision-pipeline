@@ -744,11 +744,11 @@ Step-web-logger-049 adds standalone Makefile target
 `check-web-logger-rust-validator-position-unit-phase1` for focused Rust
 validator Phase 1 tests.
 
-The target runs `cargo test -p kslog_validate position_unit` and is placed
-between the position-unit fixture contract target and the Rust UTF-16 replay
-integration target. It does not run full validator tests, workspace tests, the
-Python fixture validator, replay checks, or release-quality wrapper
-integration.
+After Step-web-logger-059, the target runs
+`cargo test -p kslog_validate position_unit_phase1` and is placed before the
+Phase 2 target and the Rust UTF-16 replay integration target. It does not run
+full validator tests, workspace tests, the Python fixture validator, replay
+checks, or Phase 2 focused tests.
 
 This addendum does not change Rust code, tests, fixture JSON, CI workflow
 integration, wrapper behavior, Phase 2 UTF-16 numeric metadata validation,
@@ -800,3 +800,17 @@ change TypeScript logger behavior, does not add SHA-256 helpers or
 TypeScript/Rust cross-language checks, and does not claim event durability,
 production readiness, real-data readiness, model performance, or deployment
 readiness.
+
+## Step-web-logger-059 Rust Validator Phase 2 Makefile Target Safety Review Addendum
+
+Step-web-logger-059 corrects the Phase 1 Makefile target command to
+`cargo test -p kslog_validate position_unit_phase1` and adds
+`check-web-logger-rust-validator-position-unit-phase2-utf16-numeric` with
+command `cargo test -p kslog_validate position_unit_phase2`.
+
+The new target is Makefile-visible focused-test access only. It is not Phase 2
+release-quality integration, not status marker evidence, not final safety
+review acceptance, not replay correctness, not extract / micro_episode
+integration, not TypeScript/Rust cross-language compatibility, not event
+durability, not production readiness, not real-data readiness, not model
+performance, and not deployment readiness.
