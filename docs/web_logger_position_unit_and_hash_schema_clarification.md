@@ -594,3 +594,15 @@ The review accepts only bounded fixture-contract validation for the fixed
 `scripts/check_release_quality.sh`, schema behavior, validation behavior,
 replay behavior, TypeScript/Rust hash work, event durability, production
 readiness, real-data readiness, or model performance evidence.
+
+## 61. Step-web-logger-044 Rust Schema-Level Position Unit Policy Implementation Design
+
+Step-web-logger-044 adds
+[Rust Schema-Level Position Unit Policy Implementation Design](web_logger_rust_schema_position_unit_policy_implementation_design.md).
+
+The design plans future `kslog_schema` / `kslog_validate` handling for
+explicit `position_unit=utf16_code_unit`, version gating, unsupported and
+missing values, and validator reason-code staging. It does not change current
+schema behavior, validation behavior, replay behavior, TypeScript/Rust hash
+work, event durability, production readiness, real-data readiness, or model
+performance evidence.

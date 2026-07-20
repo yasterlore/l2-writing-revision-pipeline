@@ -443,3 +443,14 @@ accepted `kslog_replay` replay-focused boundary and does not add schema /
 validator behavior, validate / extract / micro_episode integration,
 TypeScript/Rust hash work, event durability, production readiness, real-data
 readiness, or model performance evidence.
+
+## 28. Step-web-logger-044 Rust Schema-Level Position Unit Policy Implementation Design
+
+Step-web-logger-044 adds
+[Rust Schema-Level Position Unit Policy Implementation Design](web_logger_rust_schema_position_unit_policy_implementation_design.md).
+
+The design keeps this replay-focused boundary separate from future
+`kslog_schema` / `kslog_validate` work. It recommends not making
+`kslog_validate` depend directly on `kslog_replay`; numeric UTF-16 validation
+should wait for a separate shared-helper strategy. It does not change replay
+code, schema behavior, validator behavior, fixtures, Makefile, wrapper, or CI.

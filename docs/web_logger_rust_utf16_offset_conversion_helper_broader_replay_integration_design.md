@@ -391,3 +391,14 @@ The review accepts the replay-focused chain with explicit `kslog_replay` boundar
 Step-web-logger-032 adds [Schema-Level Position Unit Policy Design for Web Logger Events](web_logger_schema_position_unit_policy_design.md).
 
 The design turns the remaining schema-level `position_unit` gap into a future staged policy chain. It does not change the replay implementation, validator behavior, schema structs, extraction behavior, micro_episode behavior, fixture JSON, Makefile, wrapper, CI workflow, TypeScript/Rust hash work, or event durability.
+
+## 35. Step-web-logger-044 Rust Schema-Level Position Unit Policy Implementation Design
+
+Step-web-logger-044 adds
+[Rust Schema-Level Position Unit Policy Implementation Design](web_logger_rust_schema_position_unit_policy_implementation_design.md).
+
+The design keeps replay integration and schema / validator policy as separate
+boundaries. It recommends Phase 1 Rust schema/validator presence and version
+gating before any validator-side numeric UTF-16 checks, and it does not change
+replay code, validator behavior, schema behavior, fixture JSON, Makefile,
+wrapper, CI workflow, TypeScript/Rust hash work, or event durability.

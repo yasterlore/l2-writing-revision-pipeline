@@ -455,3 +455,13 @@ The helper API, helper tests, replay-focused tests, target command, and fixture 
 Step-web-logger-029 adds [Rust UTF-16 Replay Integration Release Quality Remote/Manual Run Record Workflow](web_logger_rust_utf16_replay_integration_release_quality_remote_run_record_workflow.md).
 
 The design covers future public-safe status evidence for the updated Rust UTF-16 replay label. It does not change the helper API, helper tests, replay-focused tests, target command, fixture JSON, wrapper behavior, or the focused helper status boundary.
+
+## Step-web-logger-044 Rust Schema-Level Position Unit Policy Implementation Design
+
+Step-web-logger-044 adds [Rust Schema-Level Position Unit Policy Implementation Design](web_logger_rust_schema_position_unit_policy_implementation_design.md).
+
+The design treats the existing replay helper as evidence for UTF-16 boundary
+semantics but does not move or redesign helper code. It recommends a future
+shared-helper strategy before `kslog_validate` performs numeric UTF-16
+metadata checks, and it does not change helper behavior, tests, fixtures,
+Makefile, wrapper, or CI.

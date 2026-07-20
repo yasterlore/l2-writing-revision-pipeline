@@ -676,3 +676,14 @@ buffering, acknowledgement, retry, deduplication, ordering, delivery
 durability, TypeScript/Rust hash work, validate / extract / micro_episode
 integration, Rust schema / validator behavior, wrapper changes, or CI workflow
 changes.
+
+## 61. Step-web-logger-044 Rust Schema-Level Position Unit Policy Implementation Design
+
+Step-web-logger-044 adds
+[Rust Schema-Level Position Unit Policy Implementation Design](web_logger_rust_schema_position_unit_policy_implementation_design.md).
+
+The design preserves the durability safety boundary. It plans future schema /
+validator position_unit policy work only and does not implement queueing,
+IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery
+durability, TypeScript/Rust hash work, code changes, wrapper changes, or CI
+workflow changes.

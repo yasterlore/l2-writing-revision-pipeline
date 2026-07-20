@@ -441,3 +441,14 @@ Clarification:
 - Step-web-logger-044 should not claim implementation.
 - Step-web-logger-044 should preserve fixture contract and no-oracle
   boundaries.
+
+## 25. Step-web-logger-044 Implementation Design
+
+Step-web-logger-044 adds
+[Rust Schema-Level Position Unit Policy Implementation Design](web_logger_rust_schema_position_unit_policy_implementation_design.md).
+
+The design plans future `kslog_schema` / `kslog_validate` work without
+expanding this accepted boundary. It does not implement Rust schema /
+validator behavior, modify fixtures, modify Makefile / wrapper / CI, or
+provide production readiness, real-data readiness, or model performance
+evidence.

@@ -504,3 +504,16 @@ does not implement Rust schema behavior, implement Rust validation behavior,
 change validate / extract / micro_episode behavior, implement event
 durability, or provide production readiness, real-data readiness, or model
 performance evidence.
+
+## 37. Step-web-logger-044 Rust Implementation Design
+
+Step-web-logger-044 adds
+[Rust Schema-Level Position Unit Policy Implementation Design](web_logger_rust_schema_position_unit_policy_implementation_design.md).
+
+The design recommends a staged Rust path: first add schema field / parser
+boundary for position_unit and target metadata, then implement validator
+presence/value/version gating, and defer numeric UTF-16 metadata checks until a
+shared helper strategy is designed. It does not implement Rust schema
+behavior, implement Rust validation behavior, change validate / extract /
+micro_episode behavior, implement event durability, or provide production
+readiness, real-data readiness, or model performance evidence.
