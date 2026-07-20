@@ -745,3 +745,10 @@ parser/accessor boundary, `RawEvent` fields, or shared UTF-16 helper API.
 Step-web-logger-062 designs future status metadata for the Phase 2 wrapper
 check. It does not change the `kslog_schema` parser/accessor boundary,
 `RawEvent` fields, or shared UTF-16 helper API.
+
+## 44. Step-web-logger-063 Status Marker Follow-Up
+
+Step-web-logger-063 records public-safe remote metadata for the Phase 2
+release-quality check. It does not change the `kslog_schema` parser/accessor
+boundary, `RawEvent` fields, shared UTF-16 helper API, Rust code/tests,
+fixtures, or wrapper behavior.

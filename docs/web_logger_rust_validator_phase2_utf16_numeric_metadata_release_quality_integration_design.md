@@ -417,3 +417,17 @@ boundaries, and Step063 handoff.
 Step062 does not create a status marker, does not change the wrapper, and does
 not change Makefile, Rust code/tests, fixtures, or Phase 2 final-review
 evidence.
+
+## 27. Step-web-logger-063 Status Marker Follow-Up
+
+Step-web-logger-063 creates
+[Rust validator Phase 2 UTF-16 numeric metadata release-quality remote run status](status/web_logger_rust_validator_phase2_utf16_numeric_metadata_release_quality_remote_run_status.md).
+It records remote GitHub Actions Release Quality metadata for the Step061
+wrapper integration, including the Phase 2 label/command, focused 8-test target
+summary, final ok, unavailable metadata, and public-safe safety flags.
+
+Step063 is status-marker-only / docs-only. It does not change wrapper,
+Makefile, Rust code/tests, fixtures, replay behavior, extract /
+micro_episode integration, event durability, production readiness, real-data
+readiness, or model performance evidence. Phase 2 final safety review remains
+future work.

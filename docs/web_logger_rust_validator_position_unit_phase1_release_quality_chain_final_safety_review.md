@@ -377,3 +377,17 @@ boundary and does not create Phase 2 status marker evidence.
 
 Phase 2 status marker evidence and Phase 2 final safety review acceptance
 remain future work.
+
+## 31. Step-web-logger-063 Phase 2 Status Marker Follow-Up
+
+Step-web-logger-063 creates the separate Phase 2 remote status marker at
+`docs/status/web_logger_rust_validator_phase2_utf16_numeric_metadata_release_quality_remote_run_status.md`.
+That marker records public-safe remote metadata for the Phase 2 release-quality
+check after Step061.
+
+This does not revise the Step054 accepted Phase 1 boundary, does not convert
+Phase 1 evidence into Phase 2 evidence, and does not create Phase 2 final
+safety review acceptance. Replay correctness, extract / micro_episode
+integration, TypeScript/Rust compatibility, event durability, production
+readiness, real-data readiness, and model performance remain outside this
+Phase 1 final safety review.

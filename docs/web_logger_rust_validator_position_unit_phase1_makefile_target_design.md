@@ -528,3 +528,10 @@ and wrapper label/command. The Phase 1 target still runs
 Step-web-logger-062 designs future status recording for the Phase 2 wrapper
 check. It does not change the Phase 1 Makefile target or the Phase 1-only
 focused-test boundary.
+
+## 41. Step-web-logger-063 Phase 2 Status Marker Follow-Up
+
+Step-web-logger-063 records public-safe remote status metadata for the
+separate Phase 2 wrapper check. It does not change the Phase 1 Makefile target,
+the corrected `position_unit_phase1` filter, or the Phase 1-only focused-test
+boundary.

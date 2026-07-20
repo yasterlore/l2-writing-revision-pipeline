@@ -636,3 +636,10 @@ behavior, or the `kslog_schema::utf16_offsets` API.
 Step-web-logger-062 designs future status recording for the Phase 2 validator
 check that uses `kslog_schema::utf16_offsets`. It does not change helper
 behavior, replay behavior, or helper API.
+
+## Step-web-logger-063 Status Marker Follow-Up
+
+Step-web-logger-063 records public-safe remote metadata for the Phase 2
+validator check that uses `kslog_schema::utf16_offsets`. It does not change
+helper behavior, replay behavior, helper API, or replay-focused accepted
+boundaries.

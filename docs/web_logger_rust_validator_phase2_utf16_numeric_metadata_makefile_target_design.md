@@ -450,3 +450,13 @@ target remains unchanged and still runs
 
 Step062 does not create a status marker and does not change Makefile, wrapper,
 Rust code/tests, fixtures, or final-review evidence.
+
+## 32. Step-web-logger-063 Status Marker Follow-Up
+
+Step-web-logger-063 records public-safe remote metadata for the Phase 2 target
+after release-quality wrapper integration. The status marker path is
+`docs/status/web_logger_rust_validator_phase2_utf16_numeric_metadata_release_quality_remote_run_status.md`.
+
+This does not change the Makefile target, the corrected Phase 1 target
+filter, Rust code/tests, fixtures, wrapper behavior, replay behavior, or Phase
+2 final-review evidence.

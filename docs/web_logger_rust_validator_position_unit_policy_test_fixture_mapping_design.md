@@ -652,3 +652,10 @@ label.
 Step-web-logger-062 designs future metadata/count-only recording for the
 8-test Phase 2 mapping. It does not change fixture mappings, Rust tests,
 validator behavior, or the separate 9-test Phase 1 mapping.
+
+## 45. Step-web-logger-063 Status Marker Follow-Up
+
+Step-web-logger-063 records remote metadata/count-only evidence for the
+8-test Phase 2 mapping after wrapper integration. It does not change fixture
+mappings, Rust tests, validator behavior, fixture JSON, or the separate
+9-test Phase 1 mapping.

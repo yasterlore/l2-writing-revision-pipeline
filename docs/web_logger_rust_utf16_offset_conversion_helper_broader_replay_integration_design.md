@@ -581,3 +581,9 @@ separate from replay correctness evidence.
 Step-web-logger-062 designs future status metadata for the Phase 2 validator
 wrapper check. The run-record workflow should keep validator numeric metadata
 evidence separate from replay correctness evidence.
+
+## 54. Step-web-logger-063 Status Marker Follow-Up
+
+Step-web-logger-063 records public-safe remote metadata for the Phase 2
+validator wrapper check. The marker keeps validator numeric metadata evidence
+separate from replay correctness evidence and does not change replay behavior.

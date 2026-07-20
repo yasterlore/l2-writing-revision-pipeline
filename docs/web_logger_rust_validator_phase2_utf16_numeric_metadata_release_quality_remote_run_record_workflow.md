@@ -485,3 +485,20 @@ remote metadata is unavailable. It should not alter wrapper, Makefile, Rust /
 TypeScript / Python code, tests, fixture JSON, or workflow. It should not
 claim replay correctness, extract / micro_episode integration, TypeScript/Rust
 compatibility, production readiness, or real-data readiness.
+
+## 29. Step-web-logger-063 Status Marker Follow-Up
+
+Step-web-logger-063 creates
+`docs/status/web_logger_rust_validator_phase2_utf16_numeric_metadata_release_quality_remote_run_status.md`
+as a public-safe remote metadata status marker after Step-web-logger-061
+wrapper integration. It records `local_fallback_used=no`, remote metadata
+availability, observed Phase 1 and Phase 2 labels, the Phase 2 Makefile
+target command, focused 8-test Phase 2 target summary, final
+`release_quality_check: ok`, unavailable metadata, and status-step mutation
+fields.
+
+Step063 does not change wrapper, Makefile, Rust / TypeScript / Python code,
+tests, fixture JSON, replay behavior, extract / micro_episode integration,
+event durability, production readiness, real-data readiness, or model
+performance evidence. Phase 2 final safety review remains Step-web-logger-064
+future work.

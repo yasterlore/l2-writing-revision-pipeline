@@ -630,3 +630,10 @@ Step-web-logger-062 designs future status recording for the Phase 2 validator
 release-quality check. This does not change the replay-focused accepted
 boundary and does not make Phase 2 validator status evidence replay
 correctness evidence.
+
+## 47. Step-web-logger-063 Phase 2 Status Marker Follow-Up
+
+Step-web-logger-063 records public-safe remote metadata for the Phase 2
+validator release-quality check. This does not change the replay-focused
+accepted boundary and does not make Phase 2 validator status evidence replay
+correctness evidence.
