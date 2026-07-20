@@ -581,3 +581,16 @@ tests for position_unit policy and does not add queueing, IndexedDB buffering,
 acknowledgement, retry, deduplication, ordering, delivery durability,
 TypeScript/Rust hash work, production readiness, real-data readiness, or model
 performance evidence.
+
+## 36. Step-web-logger-047 Rust Validator Phase 1 Follow-Up
+
+Step-web-logger-047 adds bounded `kslog_validate` Phase 1 position-unit
+presence / value / schema-version enforcement. This improves the schema-side
+metadata gate for the fixed Web logger fixture family but does not change the
+event durability audit conclusion.
+
+Queueing, IndexedDB buffering, acknowledgement, retry, deduplication,
+ordering, delivery durability, TypeScript/Rust hash work, Phase 2 UTF-16
+numeric metadata validation, extract / micro_episode integration, production
+readiness, real-data readiness, and model performance evidence remain future
+work.

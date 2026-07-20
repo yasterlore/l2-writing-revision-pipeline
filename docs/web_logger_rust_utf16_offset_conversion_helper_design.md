@@ -488,3 +488,16 @@ The design keeps future validator Phase 1 limited to position_unit presence /
 value / schema-version gating and does not call this UTF-16 offset helper.
 Helper reuse for validator-side numeric UTF-16 checks remains a Phase 2 design
 topic.
+
+## Step-web-logger-047 Validator Phase 1 Follow-Up
+
+Step-web-logger-047 implements `kslog_validate` Phase 1 position-unit
+presence / value / schema-version enforcement without changing this helper.
+The validator uses the schema parser/accessor boundary for declared metadata
+and does not depend on `kslog_replay::utf16_offsets`.
+
+The UTF-16 offset helper remains the replay-side conversion boundary. Phase 2
+validator-side numeric UTF-16 checks, extract / micro_episode integration,
+TypeScript logger changes, SHA-256 helper work, TypeScript/Rust checks, event
+durability, production readiness, real-data readiness, and model performance
+evidence remain separate.

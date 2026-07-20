@@ -1788,3 +1788,19 @@ TypeScript logger changes, fixture changes, Makefile changes, wrapper changes,
 Rust / TypeScript SHA-256 helpers, TypeScript/Rust vector checks, event
 durability, production readiness, real-data readiness, and model performance
 evidence remain future work.
+
+## Step-web-logger-047 Rust Validator Phase 1 Position Unit Appendix
+
+Step-web-logger-047 updates `kslog_validate` with bounded Phase 1
+position-unit enforcement. After `RawEvent` deserialization, fixture-targeted
+Web logger v0.2-style records require explicit
+`position_unit=utf16_code_unit`; missing, unsupported, schema-mismatch, and
+unknown-version cases fail with stable body-free reason codes. Existing legacy
+synthetic records are not made subject to a global position-unit requirement.
+
+This appendix is limited to presence / value / schema-version gating. UTF-16
+numeric metadata validation, `kslog_replay::utf16_offsets` dependency,
+extract / micro_episode integration, TypeScript logger changes, fixture JSON
+changes, Makefile changes, wrapper changes, Rust / TypeScript SHA-256 helpers,
+TypeScript/Rust checks, event durability, production readiness, real-data
+readiness, and model performance evidence remain future work.

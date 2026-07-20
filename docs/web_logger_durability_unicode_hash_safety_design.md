@@ -709,3 +709,15 @@ This design does not change event durability boundaries. Queueing, IndexedDB
 persistence, acknowledgement, retry, deduplication, server-side idempotency,
 ordering guarantees, TypeScript/Rust hash work, production readiness,
 real-data readiness, and model performance evidence remain future work.
+
+## 64. Step-web-logger-047 Rust Validator Phase 1 Follow-Up
+
+Step-web-logger-047 adds bounded `kslog_validate` Phase 1 position-unit
+presence / value / schema-version enforcement. The safety boundary remains
+metadata-gating only and does not add delivery durability.
+
+Event queueing, IndexedDB persistence, acknowledgement, retry, deduplication,
+server-side idempotency, ordering guarantees, TypeScript/Rust hash work, Phase
+2 UTF-16 numeric metadata validation, extract / micro_episode integration,
+production readiness, real-data readiness, and model performance evidence
+remain future work.

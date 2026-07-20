@@ -720,3 +720,20 @@ numeric metadata validation, CI workflow integration, validate / extract /
 micro_episode integration, status markers, TypeScript/Rust cross-language
 vector checks, event durability, production readiness, real-data readiness,
 model performance, or deployment readiness.
+
+## Step-web-logger-047 Rust Validator Phase 1 Position Unit Safety Review Addendum
+
+Step-web-logger-047 adds bounded Rust validator Phase 1 enforcement for Web
+logger `position_unit` metadata in `kslog_validate`.
+
+The validator checks fixture-targeted Web logger v0.2-style records after
+`RawEvent` deserialization, requires explicit `position_unit=utf16_code_unit`,
+and fails missing, unsupported, schema-mismatch, and unknown-version cases
+with stable body-free reason codes. Existing legacy synthetic fixtures remain
+outside the global requirement.
+
+This addendum does not change UTF-16 numeric metadata validation, CI workflow
+integration, Makefile or wrapper behavior, fixture JSON, TypeScript / Python
+code, validate / extract / micro_episode integration, status markers,
+TypeScript/Rust cross-language vector checks, event durability, production
+readiness, real-data readiness, model performance, or deployment readiness.

@@ -427,3 +427,16 @@ The design maps future `kslog_validate` Phase 1 tests without expanding the
 replay integration boundary. Phase 1 validator policy should not call replay,
 and Phase 2 numeric UTF-16 validation should wait for a separate helper
 placement design.
+
+## 38. Step-web-logger-047 Validator Phase 1 Follow-Up
+
+Step-web-logger-047 adds `kslog_validate` Phase 1 position-unit presence /
+value / schema-version enforcement. This does not expand the replay
+integration boundary and does not call replay code or
+`kslog_replay::utf16_offsets`.
+
+The broader replay integration design remains separate from validator
+metadata gating. Phase 2 numeric UTF-16 validation, shared helper placement,
+extract / micro_episode integration, TypeScript logger changes, TypeScript/Rust
+hash work, event durability, production readiness, real-data readiness, and
+model performance evidence remain future work.

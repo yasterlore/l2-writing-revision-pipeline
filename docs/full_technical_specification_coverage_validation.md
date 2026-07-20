@@ -848,3 +848,19 @@ policy coverage, not UTF-16 numeric metadata validation coverage, not validate
 TypeScript/Rust compatibility evidence, not event durability evidence, not
 production readiness, not real-data readiness, and not model performance
 evidence.
+
+## Step-web-logger-047 Coverage Addendum
+
+`cargo test -p kslog_validate position_unit` now includes focused Phase 1
+coverage for the Rust validator position-unit gate. The tests cover the five
+Phase 1 valid fixtures, the missing / unsupported / schema-mismatch /
+unknown-version invalid fixtures, explicit legacy allowance, deferred Phase 2
+fixture handling, existing invalid synthetic fixture compatibility, and
+body-free diagnostics.
+
+This is Rust validator Phase 1 coverage only. It is not UTF-16 numeric
+metadata validation coverage, not replay helper coverage, not validate /
+extract / micro_episode integration coverage, not TypeScript logger coverage,
+not TypeScript/Rust compatibility evidence, not event durability evidence, not
+production readiness, not real-data readiness, and not model performance
+evidence.

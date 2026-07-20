@@ -542,3 +542,18 @@ for presence / value / schema-version gating. It explicitly defers UTF-16
 numeric metadata validation, shared helper placement, extract / micro_episode
 integration, TypeScript logger changes, event durability, production
 readiness, real-data readiness, and model performance evidence.
+
+## 40. Step-web-logger-047 Rust Validator Phase 1 Enforcement
+
+Step-web-logger-047 adds the bounded `kslog_validate` Phase 1 enforcement for
+this policy. Fixture-targeted Web logger v0.2-style events now require
+explicit `position_unit=utf16_code_unit`; missing, unsupported,
+schema-mismatch, and unknown-version cases fail with stable body-free reason
+codes. Existing legacy synthetic fixtures are not made subject to a global
+position-unit requirement.
+
+This remains presence / value / schema-version gating only. UTF-16 numeric
+metadata validation, `kslog_replay::utf16_offsets` dependency, extract /
+micro_episode integration, TypeScript logger changes, fixture JSON changes,
+Makefile / wrapper changes, event durability, production readiness,
+real-data readiness, and model performance evidence remain outside Step047.

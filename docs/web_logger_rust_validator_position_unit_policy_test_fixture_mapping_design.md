@@ -465,3 +465,20 @@ leave UTF-16 numeric metadata validation for Phase 2. It should not modify
 TypeScript / Python / fixture JSON / Makefile / wrapper / CI. It should update
 README and full technical specification related docs because validator
 behavior changes, and it should not claim production or real-data readiness.
+
+## 29. Step-web-logger-047 Implementation Status
+
+Step-web-logger-047 adds the Phase 1 validator enforcement planned by this
+mapping design. `kslog_validate` now checks fixture-targeted Web logger
+v0.2-style records after `RawEvent` deserialization and requires explicit
+`position_unit=utf16_code_unit` for that bounded target. Missing,
+unsupported, schema-mismatch, and unknown-version cases fail with stable
+body-free reason codes.
+
+The Step034 mapping remains split: the five Phase 1 valid fixtures pass, the
+five Phase 1 policy invalid fixtures fail with their Phase 1 reason codes, the
+legacy missing-position-unit fixture remains explicitly allowed, and UTF-16
+numeric metadata cases remain deferred. Step047 does not depend on
+`kslog_replay::utf16_offsets`, does not modify fixtures, Makefile, wrapper,
+TypeScript, Python, or release-quality wiring, and does not claim production
+or real-data readiness.

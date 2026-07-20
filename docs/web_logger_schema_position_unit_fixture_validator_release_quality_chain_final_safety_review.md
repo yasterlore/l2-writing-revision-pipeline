@@ -481,3 +481,18 @@ fixture contract status into validator enforcement, Phase 2 UTF-16 numeric
 metadata validation, extract / micro_episode integration, TypeScript/Rust
 compatibility, event durability, production readiness, real-data readiness, or
 model performance evidence.
+
+## 28. Step-web-logger-047 Rust Validator Phase 1 Follow-Up
+
+Step-web-logger-047 adds bounded `kslog_validate` Phase 1 enforcement for the
+position-unit fixture mapping. The validator checks presence / value /
+schema-version gating for fixture-targeted Web logger v0.2-style events and
+returns stable body-free reason codes for missing, unsupported,
+schema-mismatch, and unknown-version cases.
+
+This follow-up still does not expand the Step043 accepted boundary. The
+Step043 decision remains fixture-contract validation evidence only. Phase 2
+UTF-16 numeric metadata validation, extract / micro_episode integration,
+TypeScript logger changes, TypeScript/Rust compatibility, event durability,
+production readiness, real-data readiness, and model performance evidence
+remain separate.

@@ -631,3 +631,18 @@ schema-version enforcement from Phase 2 UTF-16 numeric metadata validation.
 It does not implement validator behavior, TypeScript logger changes, Rust or
 TypeScript SHA-256 helpers, TypeScript/Rust vector checks, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 64. Step-web-logger-047 Rust Validator Phase 1 Position Unit Enforcement
+
+Step-web-logger-047 adds bounded `kslog_validate` enforcement for the
+schema-level position-unit Phase 1 boundary. The validator now checks
+fixture-targeted Web logger v0.2-style records for explicit
+`position_unit=utf16_code_unit`, fails missing / unsupported /
+schema-mismatch / unknown-version cases with stable body-free reason codes,
+and preserves legacy synthetic fixture compatibility outside that target.
+
+This does not implement Phase 2 UTF-16 numeric metadata validation, extract /
+micro_episode integration, TypeScript logger changes, Rust or TypeScript
+SHA-256 helpers, TypeScript/Rust vector checks, fixture JSON changes, Makefile
+or wrapper changes, event durability, production readiness, real-data
+readiness, or model performance evidence.

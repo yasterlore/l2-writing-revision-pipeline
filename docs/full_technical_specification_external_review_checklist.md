@@ -663,3 +663,15 @@ changes, Makefile changes, wrapper changes, workflow changes, package metadata
 changes, Cargo metadata changes, TypeScript/Rust cross-language checks, event
 durability, production readiness, real-data readiness, or model performance
 claims.
+
+Confirm Step-web-logger-047 adds bounded Phase 1 `position_unit` enforcement
+to `kslog_validate`. Confirm fixture-targeted Web logger v0.2-style records
+require `position_unit=utf16_code_unit`, missing / unsupported /
+schema-mismatch / unknown-version cases fail with stable body-free reason
+codes, and existing legacy synthetic fixtures are not subject to a global
+position-unit requirement. Confirm focused `cargo test -p kslog_validate
+position_unit` coverage passes. Confirm Step-web-logger-047 does not implement
+Phase 2 UTF-16 numeric metadata validation, add a `kslog_replay::utf16_offsets`
+dependency, change fixture JSON, Makefile, wrapper, TypeScript / Python code,
+workflow files, package metadata, Cargo metadata, event durability, production
+readiness, real-data readiness, or model performance claims.

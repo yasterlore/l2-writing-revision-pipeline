@@ -733,3 +733,16 @@ compile-compatibility `None` metadata fields to existing `kslog_replay` and
 `kslog_micro_episode`, Makefile, release-quality wrapper scripts, workflows,
 TypeScript code, Python code, fixture JSON, package files, Cargo files, or
 status markers.
+
+## Step-web-logger-047 Source Inventory Addendum
+
+`crates/kslog_validate/src/lib.rs` adds Phase 1 position-unit enforcement and
+focused Rust tests for the fixed Step034 fixture mapping. The code uses the
+Step045 `kslog_schema` parser/accessor boundary and adds stable reason-code
+exposure for validator errors.
+
+The source inventory addition is centered on `kslog_validate` source and
+related docs. It does not change `kslog_schema`, `kslog_replay`,
+`kslog_extract`, `kslog_micro_episode`, Makefile, release-quality wrapper
+scripts, workflows, TypeScript code, Python code, fixture JSON, package files,
+Cargo files, or status markers.

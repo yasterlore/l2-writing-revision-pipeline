@@ -476,3 +476,17 @@ The design keeps Step031 replay integration separate from future validator
 Phase 1 position_unit enforcement. Phase 1 should not call replay or depend on
 `kslog_replay::utf16_offsets`; Phase 2 UTF-16 numeric metadata checks require
 a separate shared-helper strategy.
+
+## 31. Step-web-logger-047 Validator Phase 1 Follow-Up
+
+Step-web-logger-047 adds the planned `kslog_validate` Phase 1 position-unit
+presence / value / schema-version enforcement. It does not change this
+Step031 replay-focused accepted boundary and does not call
+`kslog_replay::utf16_offsets`.
+
+Replay-focused UTF-16 correctness remains scoped to `kslog_replay`, while the
+new validator behavior is limited to declared `position_unit` metadata
+gating. Phase 2 UTF-16 numeric metadata validation, extract / micro_episode
+integration, TypeScript logger changes, TypeScript/Rust compatibility, event
+durability, production readiness, real-data readiness, and model performance
+evidence remain separate.

@@ -3851,3 +3851,19 @@ extract / micro_episode integration, TypeScript logger changes, fixture
 changes, Makefile changes, wrapper changes, TypeScript/Rust cross-language
 checks, event durability, real-data use, metric evidence, or production
 readiness status.
+
+## Step-web-logger-047 Rust Validator Phase 1 Position Unit Policy
+
+Step-web-logger-047 adds bounded `kslog_validate` Phase 1 enforcement for
+Web logger position-unit metadata. Fixture-targeted Web logger v0.2-style
+records require explicit `position_unit=utf16_code_unit`; missing,
+unsupported, schema-mismatch, and unknown-version cases fail with stable
+body-free reason codes. Existing legacy synthetic fixtures remain outside the
+global requirement.
+
+This remains Phase 1 presence / value / schema-version gating only. It does
+not implement UTF-16 numeric metadata validation, depend on
+`kslog_replay::utf16_offsets`, change fixtures, Makefile, wrapper, TypeScript
+/ Python code, validate / extract / micro_episode integration,
+TypeScript/Rust cross-language checks, event durability, real-data use, metric
+evidence, or production readiness status.

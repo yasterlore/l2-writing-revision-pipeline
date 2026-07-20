@@ -9,7 +9,7 @@ use std::{
     io::{self, BufRead, Read},
 };
 
-use kslog_schema::RawEvent;
+use kslog_schema::{PositionUnitPolicyError, RawEvent};
 
 pub const DEFAULT_MAX_LINE_BYTES: usize = 64 * 1024;
 pub const FORBIDDEN_NO_ORACLE_FIELDS: &[&str] = &[
@@ -117,6 +117,7 @@ pub enum ValidationErrorKind {
     JsonLineIsNotObject,
     ForbiddenNoOracleField(String),
     RawEventSchema(String),
+    PositionUnitPolicy(PositionUnitPolicyError),
     SequenceGap {
         expected_seq: u64,
         actual_seq: u64,
@@ -177,6 +178,13 @@ impl Display for ValidationErrorKind {
                 write!(formatter, "forbidden no-oracle field present: {field}")
             }
             Self::RawEventSchema(message) => write!(formatter, "RawEvent schema error: {message}"),
+            Self::PositionUnitPolicy(error) => {
+                write!(
+                    formatter,
+                    "position_unit policy error: {}",
+                    error.reason_code()
+                )
+            }
             Self::SequenceGap {
                 expected_seq,
                 actual_seq,
@@ -218,6 +226,27 @@ impl Display for ValidationErrorKind {
                 formatter,
                 "{field} exceeds {doc_len_field}: {position} > {doc_len}"
             ),
+        }
+    }
+}
+
+impl ValidationErrorKind {
+    pub fn reason_code(&self) -> &'static str {
+        match self {
+            Self::Io(_) => "io_error",
+            Self::LineTooLong { .. } => "line_too_long",
+            Self::EmptyLine => "empty_line",
+            Self::MalformedJson(_) => "malformed_json",
+            Self::JsonLineIsNotObject => "json_line_is_not_object",
+            Self::ForbiddenNoOracleField(_) => "forbidden_no_oracle_field",
+            Self::RawEventSchema(_) => "raw_event_schema",
+            Self::PositionUnitPolicy(error) => error.reason_code(),
+            Self::SequenceGap { .. } => "sequence_gap",
+            Self::SequenceOverflow { .. } => "sequence_overflow",
+            Self::TimestampInversion { .. } => "timestamp_inversion",
+            Self::CursorOutOfBounds { .. } => "cursor_out_of_bounds",
+            Self::SelectionRangeInverted { .. } => "selection_range_inverted",
+            Self::SelectionOutOfBounds { .. } => "selection_out_of_bounds",
         }
     }
 }
@@ -277,6 +306,7 @@ pub fn validate_jsonl_reader<R: BufRead>(
         }
 
         let event = parse_raw_event_line(trimmed_line, line_number)?;
+        validate_position_unit_policy(&event, line_number)?;
         validate_sequence(&event, &mut expected_seq, line_number)?;
         validate_timestamp(&event, &mut previous_timestamp_ms, line_number)?;
         validate_cursor_ranges(&event, line_number)?;
@@ -314,6 +344,20 @@ fn parse_raw_event_line(line: &[u8], line_number: usize) -> ValidationResult<Raw
             line_number,
             ValidationErrorKind::RawEventSchema(error.to_string()),
         )
+    })
+}
+
+fn validate_position_unit_policy(event: &RawEvent, line_number: usize) -> ValidationResult<()> {
+    if !event.is_web_logger_position_unit_target() {
+        return Ok(());
+    }
+
+    if event.is_legacy_position_unit_missing_allowed() {
+        return Ok(());
+    }
+
+    event.position_unit_policy().map(|_| ()).map_err(|error| {
+        ValidationError::new(line_number, ValidationErrorKind::PositionUnitPolicy(error))
     })
 }
 
@@ -549,6 +593,27 @@ mod tests {
         validate_jsonl_reader(Cursor::new(content), &ValidationOptions::default())
     }
 
+    fn validate_fixture_public_safe(
+        relative_path: &str,
+    ) -> Result<super::ValidationReport, super::ValidationError> {
+        let path = fixture_path(relative_path);
+        let content = fs::read_to_string(&path)
+            .unwrap_or_else(|error| panic!("failed to read fixture {relative_path}: {error}"));
+        validate_jsonl_reader(Cursor::new(content), &ValidationOptions::default())
+    }
+
+    fn assert_position_unit_fixture_fails(relative_path: &str, expected_reason_code: &str) {
+        let err = validate_fixture_public_safe(relative_path)
+            .expect_err("position_unit Phase 1 fixture should fail");
+
+        assert_eq!(err.kind.reason_code(), expected_reason_code);
+        assert!(matches!(
+            err.kind,
+            ValidationErrorKind::PositionUnitPolicy(_)
+        ));
+        assert_eq!(err.line_number, Some(1));
+    }
+
     #[test]
     fn valid_simple_typing_fixture_passes() {
         let report =
@@ -636,6 +701,132 @@ mod tests {
             ));
             assert_eq!(err.line_number, Some(1));
         }
+    }
+
+    #[test]
+    fn position_unit_phase1_valid_fixtures_pass() {
+        for relative_path in [
+            "tests/fixtures/web_logger_position_unit_schema/valid/valid_ascii_utf16_position_unit.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/valid/valid_japanese_cursor_utf16_position_unit.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/valid/valid_japanese_selection_utf16_position_unit.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/valid/valid_emoji_boundary_utf16_position_unit.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/valid/valid_mixed_japanese_emoji_utf16_position_unit.jsonl",
+        ] {
+            let report = validate_fixture_public_safe(relative_path)
+                .expect("valid position_unit Phase 1 fixture should pass");
+
+            assert!(
+                report.event_count > 0,
+                "{relative_path} should contain at least one event"
+            );
+        }
+    }
+
+    #[test]
+    fn position_unit_phase1_invalid_missing_fails_with_reason_code() {
+        assert_position_unit_fixture_fails(
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_v0_2_missing_position_unit.jsonl",
+            "missing_position_unit",
+        );
+    }
+
+    #[test]
+    fn position_unit_phase1_invalid_unsupported_values_fail_with_reason_code() {
+        for relative_path in [
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_unsupported_position_unit_byte_index.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_unsupported_position_unit_code_point.jsonl",
+        ] {
+            assert_position_unit_fixture_fails(relative_path, "unsupported_position_unit");
+        }
+    }
+
+    #[test]
+    fn position_unit_phase1_invalid_schema_mismatch_fails_with_reason_code() {
+        assert_position_unit_fixture_fails(
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_position_unit_schema_mismatch.jsonl",
+            "position_unit_schema_mismatch",
+        );
+    }
+
+    #[test]
+    fn position_unit_phase1_invalid_unknown_schema_version_fails_with_reason_code() {
+        assert_position_unit_fixture_fails(
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_unknown_schema_version.jsonl",
+            "unknown_schema_version",
+        );
+    }
+
+    #[test]
+    fn position_unit_phase1_legacy_missing_fixture_is_allowed() {
+        let report = validate_fixture_public_safe(
+            "tests/fixtures/web_logger_position_unit_schema/legacy/legacy_missing_position_unit_explicitly_gated.jsonl",
+        )
+        .expect("legacy missing position_unit fixture should pass through explicit gate");
+
+        assert_eq!(report.event_count, 1);
+    }
+
+    #[test]
+    fn position_unit_phase1_does_not_claim_deferred_utf16_numeric_reasons() {
+        for relative_path in [
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_doc_len_before_utf16_mismatch.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_doc_len_after_utf16_mismatch.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_selection_start_greater_than_end.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_offset_beyond_utf16_length.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_surrogate_pair_internal_offset.jsonl",
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_byte_index_supplied_as_utf16_when_detectable.jsonl",
+        ] {
+            let result = validate_fixture_public_safe(relative_path);
+            if let Err(err) = result {
+                assert_ne!(err.kind.reason_code(), "doc_len_before_utf16_mismatch");
+                assert_ne!(err.kind.reason_code(), "doc_len_after_utf16_mismatch");
+                assert_ne!(err.kind.reason_code(), "offset_beyond_utf16_length");
+                assert_ne!(err.kind.reason_code(), "offset_inside_surrogate_pair");
+                assert_ne!(err.kind.reason_code(), "invalid_utf16_boundary");
+            }
+        }
+    }
+
+    #[test]
+    fn position_unit_phase1_preserves_existing_invalid_synthetic_fixtures() {
+        let invalid_dir = fixture_path("tests/fixtures/synthetic/raw_events/invalid");
+        let mut paths = fs::read_dir(&invalid_dir)
+            .unwrap_or_else(|error| panic!("failed to read invalid fixture directory: {error}"))
+            .map(|entry| entry.expect("invalid fixture entry is readable").path())
+            .filter(|path| path.extension().and_then(|ext| ext.to_str()) == Some("jsonl"))
+            .collect::<Vec<_>>();
+        paths.sort();
+
+        assert_eq!(paths.len(), 7);
+
+        for path in paths {
+            let relative_path = path
+                .strip_prefix(repository_root())
+                .expect("fixture path is under repository root")
+                .to_string_lossy()
+                .into_owned();
+            assert!(
+                validate_fixture_public_safe(&relative_path).is_err(),
+                "{relative_path} should remain invalid"
+            );
+        }
+    }
+
+    #[test]
+    fn position_unit_phase1_diagnostics_are_body_free() {
+        let err = validate_fixture_public_safe(
+            "tests/fixtures/web_logger_position_unit_schema/invalid/invalid_unsupported_position_unit_byte_index.jsonl",
+        )
+        .expect_err("unsupported position_unit fixture should fail");
+        let message = err.to_string();
+
+        assert_eq!(err.kind.reason_code(), "unsupported_position_unit");
+        assert!(!message.contains('{'));
+        assert!(!message.contains('}'));
+        assert!(!message.contains("inserted_text"));
+        assert!(!message.contains("deleted_text"));
+        assert!(!message.contains("source_text"));
+        assert!(!message.contains("selected_text"));
     }
 
     #[test]

@@ -567,3 +567,19 @@ Phase 2 deferred UTF-16 numeric metadata cases. It does not implement
 `kslog_validate` behavior, change schema code, change tests, change fixtures,
 change Makefile / wrapper / CI, or provide production readiness, real-data
 readiness, or model performance evidence.
+
+## 28. Step-web-logger-047 Validator Phase 1 Implementation Note
+
+Step-web-logger-047 adds the bounded `kslog_validate` Phase 1 enforcement that
+uses the Step045 parser/accessor boundary. The validator checks
+fixture-targeted Web logger v0.2-style events after `RawEvent`
+deserialization, requires explicit `position_unit=utf16_code_unit`, and fails
+missing / unsupported / schema-mismatch / unknown-version cases with stable
+body-free reason codes.
+
+This note is limited to presence / value / schema-version gating. UTF-16
+numeric metadata validation, `kslog_replay::utf16_offsets` dependency,
+extract / micro_episode integration, TypeScript logger changes, fixture JSON
+changes, Makefile changes, wrapper changes, event durability, production
+readiness, real-data readiness, and model performance evidence remain outside
+Step047.
