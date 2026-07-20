@@ -357,6 +357,8 @@ mod tests {
     ) -> RawEvent {
         RawEvent {
             logger_schema_version: "kslog.raw_event.v1".to_string(),
+            research_schema_target: None,
+            position_unit: None,
             session_id: "synthetic_session_extract_inline".to_string(),
             participant_local_id: "synthetic_writer_extract_inline".to_string(),
             task_id: "synthetic_task_extract_inline".to_string(),

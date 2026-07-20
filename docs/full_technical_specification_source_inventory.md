@@ -717,3 +717,19 @@ docs. It does not change Makefile, workflows, Rust code, TypeScript code,
 Python code, tests, fixture JSON, package files, Cargo files, `kslog_schema`,
 `kslog_validate`, `kslog_replay`, `kslog_extract`, `kslog_micro_episode`, or
 existing status markers.
+
+## Step-web-logger-045 Source Inventory Addendum
+
+`crates/kslog_schema/src/lib.rs` adds optional `RawEvent` fields for raw
+`position_unit` and `research_schema_target` metadata, plus the bounded
+`PositionUnit` / `PositionUnitPolicyError` parser/accessor API.
+
+The source inventory addition is centered on `kslog_schema` source and focused
+schema tests in that crate, plus related docs. Because `RawEvent` is directly
+constructed in downstream Rust test helpers, Step-web-logger-045 also adds
+compile-compatibility `None` metadata fields to existing `kslog_replay` and
+`kslog_extract` test helper initializers. It does not change `kslog_validate`,
+`kslog_replay` replay behavior, `kslog_extract` extraction behavior,
+`kslog_micro_episode`, Makefile, release-quality wrapper scripts, workflows,
+TypeScript code, Python code, fixture JSON, package files, Cargo files, or
+status markers.

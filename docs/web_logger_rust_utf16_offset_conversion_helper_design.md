@@ -465,3 +465,17 @@ semantics but does not move or redesign helper code. It recommends a future
 shared-helper strategy before `kslog_validate` performs numeric UTF-16
 metadata checks, and it does not change helper behavior, tests, fixtures,
 Makefile, wrapper, or CI.
+
+## Step-web-logger-045 Rust Schema Boundary Follow-Up
+
+Step-web-logger-045 adds `kslog_schema` fields and parser/accessor
+classification for Web logger `position_unit`, but it does not change this
+UTF-16 offset conversion helper or its tests. The helper remains the replay
+offset conversion boundary, while the new schema API only preserves and
+classifies declared position-unit metadata.
+
+Rust validator policy enforcement, UTF-16 numeric metadata checks outside the
+schema parser boundary, validate / extract / micro_episode integration,
+TypeScript logger changes, SHA-256 helper work, TypeScript/Rust vector checks,
+event durability, production readiness, real-data readiness, and model
+performance evidence remain future work.

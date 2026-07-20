@@ -703,3 +703,20 @@ integration, validate / extract / micro_episode integration, status markers,
 final safety review status, TypeScript/Rust cross-language vector checks,
 event durability, production readiness, real-data readiness, model
 performance, or deployment readiness.
+
+## Step-web-logger-045 Rust Schema Position Unit Boundary Safety Review Addendum
+
+Step-web-logger-045 adds the bounded Rust schema parser/accessor boundary for
+Web logger `position_unit` metadata in `kslog_schema`.
+
+`RawEvent` now accepts optional raw `position_unit` and optional
+`research_schema_target` fields while keeping unknown-field rejection. The
+parser/accessor classifies supported UTF-16 unit metadata, missing values,
+unsupported values, schema mismatch, and unknown schema version with stable
+body-free reason codes.
+
+This addendum does not change Rust validator policy enforcement, UTF-16
+numeric metadata validation, CI workflow integration, validate / extract /
+micro_episode integration, status markers, TypeScript/Rust cross-language
+vector checks, event durability, production readiness, real-data readiness,
+model performance, or deployment readiness.

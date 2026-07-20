@@ -452,3 +452,20 @@ expanding this accepted boundary. It does not implement Rust schema /
 validator behavior, modify fixtures, modify Makefile / wrapper / CI, or
 provide production readiness, real-data readiness, or model performance
 evidence.
+
+## 26. Step-web-logger-045 Rust Schema Boundary Follow-Up
+
+Step-web-logger-045 adds a bounded `kslog_schema` parser/accessor boundary for
+`position_unit`. `RawEvent` accepts optional raw `position_unit` and
+`research_schema_target` fields, and the schema crate can classify supported
+UTF-16 units, missing values, unsupported values, schema mismatch, and unknown
+schema version with body-free reason codes.
+
+This follow-up does not expand the Step034 through Step042 accepted fixture
+contract boundary into Rust validator policy enforcement. The accepted chain
+remains release-quality-integrated, remote-status-recorded fixture contract
+validation for the fixed synthetic matrix. `kslog_validate` policy
+enforcement, UTF-16 numeric metadata validation, validate / extract /
+micro_episode integration, TypeScript/Rust compatibility, event durability,
+production readiness, real-data readiness, and model performance evidence
+remain outside that accepted boundary.

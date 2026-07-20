@@ -648,3 +648,18 @@ Confirm Step-web-logger-036 adds `python/web_logger_position_unit_fixture_valida
 Confirm Step-web-logger-038 adds the standalone Makefile target `check-web-logger-position-unit-fixtures` with help text `Run Web logger position_unit fixture contract validation`. Confirm it runs `PYTHONPATH=python python3 -m web_logger_position_unit_fixture_validation --fixture-root tests/fixtures/web_logger_position_unit_schema --summary-only`, is placed near the existing Web logger fixture validation targets, runs the validator CLI only, does not run focused tests, emits summary-only public-safe output, and does not mutate or regenerate fixture metadata. Confirm Step-web-logger-038 does not change `scripts/check_release_quality.sh`, workflows, Rust / TypeScript / Python code, tests, fixture JSON, package metadata, Cargo metadata, Rust schema / validator behavior, validate / extract / micro_episode integration, TypeScript/Rust cross-language checks, event durability, production readiness, real-data readiness, or model performance claims.
 
 Confirm Step-web-logger-040 adds `release_quality_check: web logger position_unit fixture contract validation` to `scripts/check_release_quality.sh` with command `make check-web-logger-position-unit-fixtures`. Confirm it is inserted after Web logger Unicode/hash fixture validation and before Rust UTF-16 offset conversion and replay integration, calls the Makefile target rather than duplicating the Python command, and preserves unrelated check order. Confirm `make check-release-quality` observes the new label, command, public-safe validator summary, and final `release_quality_check: ok`. Confirm Step-web-logger-040 does not change Makefile, workflows, Rust / TypeScript / Python code, tests, fixture JSON, package metadata, Cargo metadata, Rust schema / validator behavior, validate / extract / micro_episode integration, status markers, final safety review, TypeScript/Rust cross-language checks, event durability, production readiness, real-data readiness, or model performance claims.
+
+Confirm Step-web-logger-045 adds optional `position_unit` and
+`research_schema_target` fields to `kslog_schema::RawEvent` and preserves
+`serde(deny_unknown_fields)`. Confirm the new parser/accessor boundary
+classifies supported `utf16_code_unit`, missing values, unsupported values,
+schema mismatch, and unknown schema version with stable body-free reason
+codes. Confirm focused `kslog_schema` tests pass, Step034 fixture records can
+deserialize at the schema boundary, and parser errors do not include raw event
+bodies or raw text fields. Confirm Step-web-logger-045 does not implement Rust
+validator policy enforcement, UTF-16 numeric metadata validation, validate /
+extract / micro_episode integration, TypeScript logger changes, fixture JSON
+changes, Makefile changes, wrapper changes, workflow changes, package metadata
+changes, Cargo metadata changes, TypeScript/Rust cross-language checks, event
+durability, production readiness, real-data readiness, or model performance
+claims.

@@ -517,3 +517,17 @@ shared helper strategy is designed. It does not implement Rust schema
 behavior, implement Rust validation behavior, change validate / extract /
 micro_episode behavior, implement event durability, or provide production
 readiness, real-data readiness, or model performance evidence.
+
+## 38. Step-web-logger-045 Rust Schema Boundary
+
+Step-web-logger-045 implements the first Rust schema-stage boundary for this
+policy. `kslog_schema::RawEvent` accepts optional raw `position_unit` and
+`research_schema_target`, and `kslog_schema` exposes parser/accessor functions
+for supported `utf16_code_unit`, missing value, unsupported value, schema
+mismatch, and unknown schema version classification.
+
+This remains a schema parser boundary only. Rust validator policy enforcement,
+UTF-16 numeric metadata validation, validate / extract / micro_episode
+integration, TypeScript logger changes, SHA-256 helper work, TypeScript/Rust
+vector checks, event durability, production readiness, real-data readiness,
+and model performance evidence remain future work.

@@ -1769,3 +1769,22 @@ create a status marker, create a final safety review, add Rust / TypeScript
 SHA-256 helpers, add TypeScript/Rust checks, implement event durability, or
 provide production readiness, real-data readiness, or model performance
 evidence.
+
+## Step-web-logger-045 Rust Schema Position Unit Parser Boundary Appendix
+
+Step-web-logger-045 updates `kslog_schema::RawEvent` so the Rust schema layer
+can receive optional raw `position_unit` and optional `research_schema_target`
+metadata while preserving unknown-field rejection. It adds typed,
+body-suppressed parser/accessor functions that classify supported
+`utf16_code_unit`, missing position_unit, unsupported position_unit, schema
+mismatch, and unknown schema version using stable reason codes.
+
+Focused `kslog_schema` tests cover deserialization, unsupported-value
+preservation, reason-code stability, unknown-field rejection, and schema
+deserialization of the Step034 fixture records. This appendix is limited to
+the Rust schema parser boundary. Rust validator policy enforcement, UTF-16
+numeric metadata validation, validate / extract / micro_episode integration,
+TypeScript logger changes, fixture changes, Makefile changes, wrapper changes,
+Rust / TypeScript SHA-256 helpers, TypeScript/Rust vector checks, event
+durability, production readiness, real-data readiness, and model performance
+evidence remain future work.

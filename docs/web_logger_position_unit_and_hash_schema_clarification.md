@@ -606,3 +606,17 @@ missing values, and validator reason-code staging. It does not change current
 schema behavior, validation behavior, replay behavior, TypeScript/Rust hash
 work, event durability, production readiness, real-data readiness, or model
 performance evidence.
+
+## 62. Step-web-logger-045 Rust Schema Position Unit Boundary
+
+Step-web-logger-045 adds the bounded `kslog_schema` parser/accessor layer for
+`position_unit`. `RawEvent` now accepts optional raw `position_unit` and
+optional `research_schema_target`, and the schema crate classifies supported
+`utf16_code_unit`, missing values, unsupported values, schema mismatch, and
+unknown schema version without printing event bodies or raw text fields.
+
+This does not implement Rust validator policy enforcement, UTF-16 numeric
+metadata checks, validate / extract / micro_episode integration, TypeScript
+logger behavior, Rust or TypeScript SHA-256 helpers, TypeScript/Rust vector
+checks, event durability, production readiness, real-data readiness, or model
+performance evidence.

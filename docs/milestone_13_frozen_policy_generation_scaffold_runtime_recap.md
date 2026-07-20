@@ -3836,3 +3836,18 @@ Rust schema / validator behavior, Makefile, workflow files, package files,
 Cargo files, validate / extract / micro_episode integration, status markers,
 final safety review status, TypeScript/Rust cross-language checks, event
 durability, real-data use, metric evidence, or production readiness status.
+
+## Step-web-logger-045 Rust Schema Position Unit Parser Boundary
+
+Step-web-logger-045 adds the bounded `kslog_schema` parser/accessor boundary
+for Web logger `position_unit` metadata. `RawEvent` accepts optional raw
+`position_unit` and `research_schema_target`, and the schema crate classifies
+supported UTF-16 unit metadata, missing values, unsupported values, schema
+mismatch, and unknown schema version with body-free reason codes.
+
+This remains Rust schema boundary work only. It does not implement Rust
+validator policy enforcement, UTF-16 numeric metadata validation, validate /
+extract / micro_episode integration, TypeScript logger changes, fixture
+changes, Makefile changes, wrapper changes, TypeScript/Rust cross-language
+checks, event durability, real-data use, metric evidence, or production
+readiness status.

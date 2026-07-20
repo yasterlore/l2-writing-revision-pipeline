@@ -538,3 +538,20 @@ Clarification:
   related docs because implementation behavior changes.
 - Step-web-logger-045 should not claim production readiness or real-data
   readiness.
+
+## 26. Step-web-logger-045 Implementation Note
+
+Step-web-logger-045 implements the first bounded Rust schema phase described
+by this design. `kslog_schema::RawEvent` now accepts optional raw
+`position_unit` and optional `research_schema_target` fields while preserving
+unknown-field rejection. The schema crate also exposes body-free
+`parse_position_unit()` / `position_unit_policy()` accessors that classify
+supported `utf16_code_unit`, missing values, unsupported values, schema
+mismatch, and unknown schema version with stable reason codes.
+
+This implementation note does not convert the Step034 fixture contract into
+Rust validator enforcement. UTF-16 numeric metadata checks, `kslog_validate`
+policy enforcement, validate / extract / micro_episode integration,
+TypeScript logger changes, SHA-256 helper work, TypeScript/Rust vector checks,
+event durability, production readiness, real-data readiness, and model
+performance evidence remain future work.

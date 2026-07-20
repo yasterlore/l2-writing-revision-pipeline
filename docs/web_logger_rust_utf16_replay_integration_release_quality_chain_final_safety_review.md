@@ -454,3 +454,15 @@ The design keeps this replay-focused boundary separate from future
 `kslog_validate` depend directly on `kslog_replay`; numeric UTF-16 validation
 should wait for a separate shared-helper strategy. It does not change replay
 code, schema behavior, validator behavior, fixtures, Makefile, wrapper, or CI.
+
+## 29. Step-web-logger-045 Rust Schema Boundary Follow-Up
+
+Step-web-logger-045 adds a bounded `kslog_schema` `position_unit`
+parser/accessor boundary. This is related to the future schema policy chain,
+but it does not change the accepted Step031 replay-focused boundary.
+
+Replay-focused UTF-16 correctness remains scoped to `kslog_replay`. The new
+schema boundary does not implement Rust validator policy enforcement, UTF-16
+numeric metadata validation, validate / extract / micro_episode integration,
+TypeScript logger changes, TypeScript/Rust compatibility, event durability,
+production readiness, real-data readiness, or model performance evidence.

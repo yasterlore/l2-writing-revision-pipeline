@@ -905,6 +905,8 @@ mod tests {
     fn synthetic_event(seq: u64, doc_len_before: u32, doc_len_after: u32) -> RawEvent {
         RawEvent {
             logger_schema_version: "kslog.raw_event.v1".to_string(),
+            research_schema_target: None,
+            position_unit: None,
             session_id: "synthetic_session_inline".to_string(),
             participant_local_id: "synthetic_writer_inline".to_string(),
             task_id: "synthetic_task_inline".to_string(),

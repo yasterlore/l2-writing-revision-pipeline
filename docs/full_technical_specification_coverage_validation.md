@@ -832,3 +832,19 @@ behavior coverage, not validate / extract / micro_episode coverage, not status
 marker evidence, not final safety review evidence, not TypeScript/Rust
 compatibility evidence, not event durability evidence, not production
 readiness, not real-data readiness, and not model performance evidence.
+
+## Step-web-logger-045 Coverage Addendum
+
+`cargo test -p kslog_schema` now includes focused coverage for the Rust schema
+`position_unit` parser/accessor boundary. The tests cover optional raw field
+deserialization, supported `utf16_code_unit`, missing values, unsupported
+values, schema mismatch, unknown schema version, stable body-free reason
+codes, unknown-field rejection, and schema deserialization of the Step034
+fixture records.
+
+This is Rust schema parser boundary coverage only. It is not Rust validator
+policy coverage, not UTF-16 numeric metadata validation coverage, not validate
+/ extract / micro_episode coverage, not TypeScript logger coverage, not
+TypeScript/Rust compatibility evidence, not event durability evidence, not
+production readiness, not real-data readiness, and not model performance
+evidence.

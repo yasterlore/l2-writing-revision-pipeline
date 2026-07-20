@@ -402,3 +402,18 @@ boundaries. It recommends Phase 1 Rust schema/validator presence and version
 gating before any validator-side numeric UTF-16 checks, and it does not change
 replay code, validator behavior, schema behavior, fixture JSON, Makefile,
 wrapper, CI workflow, TypeScript/Rust hash work, or event durability.
+
+## 36. Step-web-logger-045 Rust Schema Boundary Follow-Up
+
+Step-web-logger-045 implements the schema-side parser/accessor portion of the
+position_unit staging. `kslog_schema::RawEvent` now accepts optional raw
+position-unit metadata and exposes body-free reason-code classification.
+
+This does not change replay behavior or the broader replay integration design.
+Any downstream Rust test helper initializer updates are compile compatibility
+only for the expanded `RawEvent` fields. `kslog_validate` policy enforcement,
+validator-side UTF-16 numeric metadata checks, validate / extract /
+micro_episode integration, TypeScript logger changes, TypeScript/Rust hash
+compatibility, event durability, production readiness, real-data readiness,
+and model performance evidence remain outside this replay integration
+boundary.

@@ -558,3 +558,15 @@ future schema / validator position_unit policy work only and does not add
 queueing, IndexedDB buffering, acknowledgement, retry, deduplication,
 ordering, delivery durability, TypeScript/Rust hash work, implementation
 changes, wrapper changes, or CI workflow changes.
+
+## 34. Step-web-logger-045 Rust Schema Boundary Follow-Up
+
+Step-web-logger-045 adds a bounded `kslog_schema` parser/accessor boundary for
+declared `position_unit` metadata. This changes neither the durability audit
+conclusion nor the event-delivery risk profile.
+
+Queueing, IndexedDB buffering, acknowledgement, retry, deduplication,
+ordering, delivery durability, TypeScript/Rust hash work, Rust validator
+policy enforcement, validate / extract / micro_episode integration,
+production readiness, real-data readiness, and model performance evidence
+remain unimplemented.
