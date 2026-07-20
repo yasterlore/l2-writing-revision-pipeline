@@ -805,3 +805,14 @@ Queueing, IndexedDB persistence, acknowledgement, retry, deduplication,
 server-side idempotency, ordering guarantees, TypeScript/Rust hash work, Phase
 2 implementation, production readiness, real-data readiness, and model
 performance evidence remain future work.
+
+## 73. Step-web-logger-056 Shared UTF-16 Helper Safety Update
+
+Step-web-logger-056 extracts the UTF-16 helper into `kslog_schema` and keeps
+`kslog_replay` on the same helper via compatibility re-export. Helper errors
+remain body-free and do not include raw source text.
+
+This safety update does not relax no-oracle boundaries and does not implement
+validator Phase 2 UTF-16 numeric metadata enforcement, TypeScript logger
+changes, SHA-256 helpers, TypeScript/Rust vector checks, event durability,
+production readiness, real-data readiness, or model performance evidence.

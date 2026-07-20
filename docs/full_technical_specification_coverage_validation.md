@@ -890,3 +890,15 @@ not replay correctness coverage, not extract / micro_episode integration
 coverage, not TypeScript logger coverage, not TypeScript/Rust compatibility
 evidence, not event durability evidence, not production readiness, not
 real-data readiness, and not model performance evidence.
+
+## Step-web-logger-056 Coverage Addendum
+
+`cargo test -p kslog_schema utf16` covers the shared helper source of truth for
+ASCII, Japanese, mixed emoji, full-width text, valid empty ranges, empty
+strings, end offsets, combining sequences, precomposed accents, line endings,
+stable reason codes, and body-free error output.
+
+`cargo test -p kslog_replay utf16` preserves replay compatibility through the
+`kslog_replay::utf16_offsets` re-export. This is helper extraction coverage
+only; validator Phase 2 UTF-16 numeric metadata enforcement remains
+unimplemented.

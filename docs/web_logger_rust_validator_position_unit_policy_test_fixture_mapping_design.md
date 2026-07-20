@@ -581,3 +581,17 @@ detectable byte-index misuse.
 The design is metadata-only and does not paste fixture bodies, change
 fixtures, implement validator numeric checks, or claim Phase 2 release-quality
 evidence.
+
+## 38. Step-web-logger-056 Shared Helper Follow-Up
+
+Step-web-logger-056 moves reusable UTF-16 code unit length and offset/range
+conversion into `kslog_schema::utf16_offsets` and preserves
+`kslog_replay::utf16_offsets` as a compatibility re-export. This supports later
+Phase 2 validator fixture mapping without changing the Phase 1 validator
+mapping described here.
+
+The Phase 2 doc_len / offset / surrogate-pair checks remain unimplemented, and
+this follow-up does not change fixtures, Makefile, release-quality wrapper,
+TypeScript/Python code, SHA-256 helper work, TypeScript/Rust vector checks,
+event durability, production readiness, real-data readiness, or model
+performance evidence.

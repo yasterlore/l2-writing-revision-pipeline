@@ -367,3 +367,15 @@ Step unless explicitly scoped otherwise.
 Step056 should update README and full technical specification docs because
 shared helper behavior changes. It should not modify TypeScript / Python /
 fixture JSON / Makefile / wrapper and should not claim Phase 2 validation.
+
+## Step-web-logger-056 Implementation Note
+
+Step-web-logger-056 extracts reusable UTF-16 code unit length and offset/range
+conversion into `kslog_schema::utf16_offsets`. `kslog_replay::utf16_offsets`
+remains as a compatibility re-export, preserving the existing replay helper
+path while using the shared schema helper.
+
+This satisfies the shared-helper prerequisite for future Phase 2 validator work
+without adding a `kslog_validate -> kslog_replay` dependency. It does not
+implement validator Phase 2 doc_len, cursor, selection, surrogate-pair,
+invalid-boundary, or detectable byte-index-misuse enforcement.

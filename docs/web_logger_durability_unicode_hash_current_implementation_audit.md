@@ -675,3 +675,15 @@ It does not add queueing, IndexedDB buffering, acknowledgement, retry,
 deduplication, ordering, delivery durability, TypeScript/Rust hash work,
 Phase 2 implementation, production readiness, real-data readiness, or model
 performance evidence.
+
+## 45. Step-web-logger-056 Shared UTF-16 Helper Audit Update
+
+Step-web-logger-056 moves reusable UTF-16 code unit length and offset/range
+conversion into `kslog_schema::utf16_offsets`. `kslog_replay::utf16_offsets`
+remains as a compatibility re-export of the shared helper, preserving replay
+behavior.
+
+This audit update does not add validator Phase 2 UTF-16 numeric metadata
+enforcement, TypeScript logger changes, SHA-256 helpers, TypeScript/Rust vector
+checks, event durability, production readiness, real-data readiness, or model
+performance evidence.

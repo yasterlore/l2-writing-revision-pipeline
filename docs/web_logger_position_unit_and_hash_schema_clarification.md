@@ -741,3 +741,15 @@ validator implementation.
 It does not implement SHA-256 helpers, TypeScript/Rust hash vector checks,
 Phase 2 validation, TypeScript logger compatibility, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 73. Step-web-logger-056 Shared UTF-16 Helper Update
+
+Step-web-logger-056 extracts reusable UTF-16 code unit length and offset/range
+conversion into `kslog_schema::utf16_offsets`. `kslog_replay::utf16_offsets`
+remains as a compatibility re-export of the shared helper so replay behavior
+and existing helper paths remain stable.
+
+This update is helper infrastructure only: `kslog_validate` Phase 2 numeric
+metadata enforcement, TypeScript logger changes, SHA-256 helpers,
+TypeScript/Rust vector checks, event durability, production readiness,
+real-data readiness, and model performance evidence remain unimplemented.

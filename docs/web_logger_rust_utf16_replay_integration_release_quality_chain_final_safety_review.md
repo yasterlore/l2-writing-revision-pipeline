@@ -569,3 +569,13 @@ than making `kslog_validate` depend on `kslog_replay`.
 
 This does not change the Step031 replay-focused accepted boundary. Future
 validator Phase 2 validation would remain distinct from replay correctness.
+
+## 40. Step-web-logger-056 Shared Helper Follow-Up
+
+Step-web-logger-056 extracts the reusable UTF-16 helper into
+`kslog_schema::utf16_offsets` and keeps `kslog_replay::utf16_offsets` as a
+compatibility re-export. This preserves the replay-focused accepted boundary
+and does not expand it into validator Phase 2 enforcement, extract /
+micro_episode integration, TypeScript logger compatibility, SHA-256
+compatibility, event durability, production readiness, real-data readiness, or
+model performance evidence.

@@ -775,3 +775,13 @@ micro_episode integration, TypeScript/Rust cross-language vector checks,
 status marker evidence, final safety review acceptance, event durability,
 production readiness, real-data readiness, model performance, or deployment
 readiness.
+
+## Step-web-logger-056 Shared UTF-16 Helper Extraction Safety Note
+
+Step-web-logger-056 extracts shared UTF-16 helper infrastructure into
+`kslog_schema` and preserves replay compatibility through a re-export. The
+safety boundary remains limited: helper errors are body-free, validator Phase 2
+UTF-16 numeric metadata enforcement is not implemented, and no extract /
+micro_episode integration, TypeScript logger compatibility, SHA-256 helper
+work, TypeScript/Rust vector checks, event durability, production readiness,
+real-data readiness, or model performance evidence is claimed.

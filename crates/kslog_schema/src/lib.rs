@@ -7,6 +7,8 @@
 use serde::{Deserialize, Serialize};
 use std::{error::Error, fmt};
 
+pub mod utf16_offsets;
+
 pub const RAW_EVENT_SCHEMA_V1: &str = "kslog.raw_event.v1";
 pub const RAW_EVENT_SCHEMA_V2: &str = "kslog.raw_event.v2";
 pub const WEB_LOGGER_POSITION_UNIT_SCHEMA_TARGET_V0_1: &str =

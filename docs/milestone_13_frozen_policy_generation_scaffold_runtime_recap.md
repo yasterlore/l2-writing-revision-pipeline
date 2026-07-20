@@ -3899,3 +3899,17 @@ Python code, implement UTF-16 numeric metadata validation, implement extract /
 micro_episode integration, add status marker evidence, add final safety review
 acceptance, add event durability, provide real-data use, metric evidence, or
 production readiness status.
+
+## Step-web-logger-056 Shared UTF-16 Helper Extraction
+
+Step-web-logger-056 adds `crates/kslog_schema/src/utf16_offsets.rs` as the
+shared UTF-16 code unit length and offset/range conversion helper. The existing
+`crates/kslog_replay/src/utf16_offsets.rs` module remains as a compatibility
+re-export of the schema helper, preserving replay behavior and existing helper
+paths.
+
+Step-web-logger-056 does not change `kslog_validate` behavior or implement
+Phase 2 UTF-16 numeric metadata validation. It does not change Makefile,
+release-quality wrapper, fixtures, TypeScript/Python code, Cargo metadata,
+SHA-256 helpers, TypeScript/Rust vector checks, event durability, production
+readiness, real-data readiness, or model performance evidence.

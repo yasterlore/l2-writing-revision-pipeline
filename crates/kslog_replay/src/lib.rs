@@ -12,8 +12,8 @@ use std::{
 };
 
 use crate::utf16_offsets::{
-    utf16_code_unit_offset_to_utf8_byte_index, utf16_code_unit_range_to_utf8_byte_range,
-    Utf16OffsetError,
+    utf16_code_unit_len, utf16_code_unit_offset_to_utf8_byte_index,
+    utf16_code_unit_range_to_utf8_byte_range, Utf16OffsetError,
 };
 use kslog_schema::{EventType, RawEvent};
 
@@ -858,10 +858,6 @@ fn deterministic_text_hash(text: &str) -> String {
 
 fn char_count(text: &str) -> usize {
     text.chars().count()
-}
-
-fn utf16_code_unit_len(text: &str) -> usize {
-    text.chars().map(char::len_utf16).sum()
 }
 
 #[cfg(test)]

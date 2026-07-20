@@ -1850,3 +1850,17 @@ TypeScript logger changes, fixture JSON changes, Rust / TypeScript SHA-256
 helpers, TypeScript/Rust checks, event durability, release-quality status
 marker, final safety review, production readiness, real-data readiness, and
 model performance evidence remain future work.
+
+## Step-web-logger-056 Shared UTF-16 Helper Extraction Appendix
+
+Step-web-logger-056 adds `kslog_schema::utf16_offsets` as the reusable helper
+for UTF-16 code unit length and UTF-16 offset/range to UTF-8 byte offset
+conversion. `kslog_replay::utf16_offsets` remains as a compatibility re-export
+of the shared helper so existing replay behavior and helper paths remain
+stable.
+
+This does not implement `kslog_validate` Phase 2 UTF-16 numeric metadata
+enforcement, does not add a `kslog_validate -> kslog_replay` dependency, and
+does not change Makefile, release-quality wrapper, fixtures, TypeScript/Python
+code, SHA-256 helper work, TypeScript/Rust vector checks, event durability,
+production readiness, real-data readiness, or model performance evidence.

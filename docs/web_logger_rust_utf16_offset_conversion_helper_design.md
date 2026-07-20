@@ -572,3 +572,16 @@ The design recommends extracting reusable UTF-16 helper APIs into
 
 This design does not move helper code yet and does not implement Phase 2
 numeric validation.
+
+## Step-web-logger-056 Shared Helper Extraction Follow-Up
+
+Step-web-logger-056 moves the reusable UTF-16 code unit length and offset/range
+conversion helper into `kslog_schema::utf16_offsets`. The replay-facing module
+`kslog_replay::utf16_offsets` remains available as a compatibility re-export,
+so the original replay helper behavior and body-free diagnostics are
+preserved.
+
+This does not implement validator Phase 2 UTF-16 numeric metadata checks,
+change TypeScript logger behavior, add SHA-256 helpers, add TypeScript/Rust
+vector checks, implement event durability, or claim production readiness,
+real-data readiness, or model performance evidence.

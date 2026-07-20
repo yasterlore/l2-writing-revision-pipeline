@@ -300,3 +300,14 @@ Step055 does not implement Phase 2 validation, does not modify validator code,
 does not change Makefile or release-quality wrapper behavior, and does not
 claim replay correctness, TypeScript compatibility, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 24. Step-web-logger-056 Shared Helper Follow-Up
+
+Step-web-logger-056 extracts the reusable UTF-16 helper into
+`kslog_schema::utf16_offsets` and keeps `kslog_replay::utf16_offsets` as a
+compatibility re-export. The Step054 accepted boundary remains unchanged:
+Rust validator Phase 1 covers presence / value / schema-version gating only.
+Validator Phase 2 UTF-16 numeric metadata enforcement, extract /
+micro_episode integration, TypeScript logger changes, SHA-256 helper work,
+TypeScript/Rust vector checks, event durability, production readiness,
+real-data readiness, and model performance evidence remain future work.

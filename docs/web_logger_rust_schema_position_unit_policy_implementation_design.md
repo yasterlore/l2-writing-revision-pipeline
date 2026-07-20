@@ -679,3 +679,16 @@ This keeps schema helper extraction separate from validator behavior and does
 not claim Phase 2 validation, replay correctness, TypeScript compatibility,
 event durability, production readiness, real-data readiness, or model
 performance evidence.
+
+## 37. Step-web-logger-056 Shared UTF-16 Helper Follow-Up
+
+Step-web-logger-056 adds `kslog_schema::utf16_offsets` as the shared UTF-16
+code unit length and offset/range conversion helper. `kslog_replay` keeps its
+existing helper module path as a compatibility re-export of the schema helper.
+
+This extends the schema crate with shared helper infrastructure only; it does
+not change the Step045 `position_unit` parser/accessor boundary, does not
+implement validator Phase 2 numeric metadata checks, and does not change
+fixtures, Makefile, release-quality wrapper, TypeScript/Python code, SHA-256
+helper work, TypeScript/Rust vector checks, event durability, production
+readiness, real-data readiness, or model performance evidence.

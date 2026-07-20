@@ -655,3 +655,16 @@ This is not implementation. The full schema-level `position_unit` policy,
 extract / micro_episode integration, TypeScript logger behavior, event
 durability, production readiness, real-data readiness, and model performance
 evidence remain future work.
+
+## 49. Step-web-logger-056 Shared UTF-16 Helper Update
+
+Step-web-logger-056 extracts reusable UTF-16 code unit length and offset/range
+conversion into `kslog_schema::utf16_offsets`, with
+`kslog_replay::utf16_offsets` kept as a compatibility re-export. This prepares
+shared helper infrastructure for future Phase 2 validator work but does not
+implement Phase 2 doc_len, offset, surrogate-pair, invalid-boundary, or
+byte-index misuse enforcement.
+
+Makefile, release-quality wrapper, fixtures, TypeScript/Python code, SHA-256
+helpers, TypeScript/Rust vector checks, event durability, production readiness,
+real-data readiness, and model performance evidence remain unchanged.

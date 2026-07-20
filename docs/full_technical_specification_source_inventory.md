@@ -778,3 +778,16 @@ related docs. It does not change Makefile, workflows, Rust code, Rust tests,
 TypeScript code, Python code, fixture JSON, package files, Cargo files,
 `kslog_schema`, `kslog_validate`, `kslog_replay`, `kslog_extract`,
 `kslog_micro_episode`, or status markers.
+
+## Step-web-logger-056 Source Inventory Addendum
+
+`crates/kslog_schema/src/utf16_offsets.rs` is added as the shared UTF-16 helper
+source for code unit length and UTF-16 offset/range to UTF-8 byte offset
+conversion. `crates/kslog_schema/src/lib.rs` exposes the module.
+
+The existing `crates/kslog_replay/src/utf16_offsets.rs` path remains as a
+compatibility re-export of `kslog_schema::utf16_offsets`, preserving replay
+imports and test behavior. No Cargo metadata, Makefile, release-quality
+wrapper, fixture JSON, TypeScript/Python code, `kslog_validate` behavior,
+`kslog_extract`, or `kslog_micro_episode` source is changed by this source
+inventory update.

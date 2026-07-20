@@ -702,3 +702,15 @@ JSON, workflows, package metadata, Cargo metadata, Phase 2 UTF-16 numeric
 metadata validation, extract / micro_episode integration, status marker,
 final safety review, event durability, production readiness, real-data
 readiness, or model performance claims.
+
+## Step-web-logger-056 External Review Checklist Addendum
+
+Review `kslog_schema::utf16_offsets` as the shared helper source and
+`kslog_replay::utf16_offsets` as a compatibility re-export. Confirm helper
+diagnostics remain body-free, replay behavior is unchanged, `kslog_validate`
+does not depend on `kslog_replay`, and validator Phase 2 doc_len / offset /
+surrogate-pair enforcement remains future work.
+
+Confirm no production readiness, real-data readiness, model performance,
+SHA-256 compatibility, TypeScript/Rust vector check, or event durability claim
+is introduced.

@@ -521,3 +521,15 @@ validator Phase 2 separate from replay correctness.
 No helper move, validator numeric validation, replay behavior change,
 production readiness, real-data readiness, or model performance evidence is
 added in Step055.
+
+## 47. Step-web-logger-056 Shared Helper Extraction Follow-Up
+
+Step-web-logger-056 makes `kslog_schema::utf16_offsets` the shared helper
+source for UTF-16 code unit length and offset/range conversion while keeping
+`kslog_replay::utf16_offsets` as a compatibility re-export. Replay behavior and
+existing replay-focused UTF-16 tests remain compatible.
+
+This shared helper extraction is not validator Phase 2 enforcement, extract /
+micro_episode integration, TypeScript logger compatibility, SHA-256 helper
+work, TypeScript/Rust vector checks, event durability, production readiness,
+real-data readiness, or model performance evidence.
