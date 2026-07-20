@@ -594,3 +594,14 @@ ordering, delivery durability, TypeScript/Rust hash work, Phase 2 UTF-16
 numeric metadata validation, extract / micro_episode integration, production
 readiness, real-data readiness, and model performance evidence remain future
 work.
+
+## 37. Step-web-logger-048 Rust Validator Phase 1 Makefile Target Design
+
+Step-web-logger-048 adds
+[Rust Validator Position Unit Phase 1 Makefile Target Design](web_logger_rust_validator_position_unit_phase1_makefile_target_design.md).
+
+This preserves the durability audit conclusion. It plans future Makefile
+exposure for focused validator tests only and does not add queueing,
+IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery
+durability, TypeScript/Rust hash work, production readiness, real-data
+readiness, or model performance evidence.

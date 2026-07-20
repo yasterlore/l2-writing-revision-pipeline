@@ -496,3 +496,13 @@ UTF-16 numeric metadata validation, extract / micro_episode integration,
 TypeScript logger changes, TypeScript/Rust compatibility, event durability,
 production readiness, real-data readiness, and model performance evidence
 remain separate.
+
+## 29. Step-web-logger-048 Makefile Target Design Follow-Up
+
+Step-web-logger-048 adds
+[Rust Validator Position Unit Phase 1 Makefile Target Design](web_logger_rust_validator_position_unit_phase1_makefile_target_design.md).
+
+The design does not create a new accepted boundary and does not add the
+target. A separate Makefile implementation, release-quality integration,
+status marker, and final safety review chain are still needed before Rust
+validator Phase 1 has its own accepted release-quality boundary.

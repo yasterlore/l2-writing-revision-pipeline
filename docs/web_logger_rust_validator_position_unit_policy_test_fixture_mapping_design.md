@@ -482,3 +482,15 @@ numeric metadata cases remain deferred. Step047 does not depend on
 `kslog_replay::utf16_offsets`, does not modify fixtures, Makefile, wrapper,
 TypeScript, Python, or release-quality wiring, and does not claim production
 or real-data readiness.
+
+## 30. Step-web-logger-048 Makefile Target Design
+
+Step-web-logger-048 adds
+[Rust Validator Position Unit Phase 1 Makefile Target Design](web_logger_rust_validator_position_unit_phase1_makefile_target_design.md).
+
+The design recommends exposing the Step047 focused validator tests through
+future Makefile target `check-web-logger-rust-validator-position-unit-phase1`
+with command `cargo test -p kslog_validate position_unit`. It remains
+docs-only and does not change Makefile, wrapper, Rust code, tests, fixtures,
+TypeScript, Python, release-quality wiring, Phase 2 UTF-16 numeric validation,
+production readiness, real-data readiness, or model performance evidence.

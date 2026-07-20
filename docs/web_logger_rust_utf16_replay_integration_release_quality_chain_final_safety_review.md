@@ -490,3 +490,12 @@ gating. Phase 2 UTF-16 numeric metadata validation, extract / micro_episode
 integration, TypeScript logger changes, TypeScript/Rust compatibility, event
 durability, production readiness, real-data readiness, and model performance
 evidence remain separate.
+
+## 32. Step-web-logger-048 Validator Phase 1 Makefile Target Design
+
+Step-web-logger-048 adds
+[Rust Validator Position Unit Phase 1 Makefile Target Design](web_logger_rust_validator_position_unit_phase1_makefile_target_design.md).
+
+The design recommends a future focused Makefile target for `kslog_validate`
+Phase 1 tests. It does not change this replay-focused boundary and does not
+call replay or `kslog_replay::utf16_offsets`.

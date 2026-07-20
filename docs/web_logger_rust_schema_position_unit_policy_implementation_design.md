@@ -583,3 +583,14 @@ extract / micro_episode integration, TypeScript logger changes, fixture JSON
 changes, Makefile changes, wrapper changes, event durability, production
 readiness, real-data readiness, and model performance evidence remain outside
 Step047.
+
+## 29. Step-web-logger-048 Makefile Target Design
+
+Step-web-logger-048 adds
+[Rust Validator Position Unit Phase 1 Makefile Target Design](web_logger_rust_validator_position_unit_phase1_makefile_target_design.md).
+
+The design plans future Makefile exposure for the Step047 focused validator
+tests only. It does not modify schema behavior, validator behavior, Makefile,
+wrapper, tests, fixtures, TypeScript, Python, Phase 2 UTF-16 numeric
+validation, event durability, production readiness, real-data readiness, or
+model performance evidence.

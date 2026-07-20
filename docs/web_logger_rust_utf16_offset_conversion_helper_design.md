@@ -501,3 +501,11 @@ validator-side numeric UTF-16 checks, extract / micro_episode integration,
 TypeScript logger changes, SHA-256 helper work, TypeScript/Rust checks, event
 durability, production readiness, real-data readiness, and model performance
 evidence remain separate.
+
+## Step-web-logger-048 Validator Phase 1 Makefile Target Design
+
+Step-web-logger-048 adds [Rust Validator Position Unit Phase 1 Makefile Target Design](web_logger_rust_validator_position_unit_phase1_makefile_target_design.md).
+
+The design exposes the Step047 validator Phase 1 tests through a future
+Makefile target. It does not change this helper, does not call this helper,
+and does not implement validator-side numeric UTF-16 checks.

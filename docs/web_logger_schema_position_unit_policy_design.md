@@ -557,3 +557,14 @@ metadata validation, `kslog_replay::utf16_offsets` dependency, extract /
 micro_episode integration, TypeScript logger changes, fixture JSON changes,
 Makefile / wrapper changes, event durability, production readiness,
 real-data readiness, and model performance evidence remain outside Step047.
+
+## 41. Step-web-logger-048 Rust Validator Phase 1 Makefile Target Design
+
+Step-web-logger-048 adds
+[Rust Validator Position Unit Phase 1 Makefile Target Design](web_logger_rust_validator_position_unit_phase1_makefile_target_design.md).
+
+The design plans a future focused Makefile target for the Step047 validator
+Phase 1 tests. It does not implement the target, does not add release-quality
+integration, and does not change Phase 2 UTF-16 numeric validation, replay,
+extract / micro_episode, TypeScript logger behavior, event durability,
+production readiness, real-data readiness, or model performance evidence.
