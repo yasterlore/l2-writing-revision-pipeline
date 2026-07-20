@@ -687,3 +687,19 @@ release-quality wrapper integration, CI workflow integration, validate /
 extract / micro_episode integration, TypeScript/Rust cross-language vector
 checks, event durability, production readiness, real-data readiness, model
 performance, or deployment readiness.
+
+## Step-web-logger-040 Schema-Level Position Unit Fixture Validator Release-Quality Safety Review Addendum
+
+Step-web-logger-040 adds release-quality wrapper check
+`release_quality_check: web logger position_unit fixture contract validation`
+with command `make check-web-logger-position-unit-fixtures`.
+
+The check is placed after Web logger Unicode/hash fixture validation and before
+Rust UTF-16 replay integration. It calls the Makefile target and emits
+summary-only public-safe fixture contract validation output.
+
+This addendum does not change Rust schema / validator behavior, CI workflow
+integration, validate / extract / micro_episode integration, status markers,
+final safety review status, TypeScript/Rust cross-language vector checks,
+event durability, production readiness, real-data readiness, model
+performance, or deployment readiness.

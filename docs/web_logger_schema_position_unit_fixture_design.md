@@ -677,3 +677,13 @@ The design keeps release-quality integration bounded to the fixture contract
 target. It does not mutate this fixture root, regenerate metadata, change
 tests, modify the wrapper in this step, or implement Rust schema / validator
 behavior.
+
+## 32. Step-web-logger-040 Release-Quality Integration
+
+Step-web-logger-040 adds release-quality wrapper integration for the Makefile
+target that validates this fixture root.
+
+The wrapper calls `make check-web-logger-position-unit-fixtures`; it does not
+mutate this fixture root, regenerate metadata, change tests, change validator
+code, modify Makefile, implement Rust schema / validator behavior, create a
+status marker, or create a final safety review.

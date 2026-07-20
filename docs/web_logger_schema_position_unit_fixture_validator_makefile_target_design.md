@@ -407,3 +407,13 @@ Web logger Unicode/hash fixture validation check and before the Rust UTF-16
 replay integration check. It does not modify the wrapper, Makefile, validator,
 tests, fixtures, Rust schema / validator behavior, or release-quality status
 markers.
+
+## 27. Step-web-logger-040 Release-Quality Integration
+
+Step-web-logger-040 adds the planned release-quality wrapper check:
+`release_quality_check: web logger position_unit fixture contract validation`.
+
+The wrapper command is `make check-web-logger-position-unit-fixtures`, so the
+Makefile target remains the command source of truth. The integration does not
+change the Makefile target, Python validator, focused tests, fixtures, Rust
+schema / validator behavior, or release-quality status markers.

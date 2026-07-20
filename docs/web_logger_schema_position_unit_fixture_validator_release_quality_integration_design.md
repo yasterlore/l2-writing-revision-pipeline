@@ -382,3 +382,23 @@ Clarification:
   release-quality visible behavior changes.
 - It should not claim Rust schema / validator implementation.
 - It should not claim production readiness or real-data readiness.
+
+## 25. Step-web-logger-040 Implementation Note
+
+Step-web-logger-040 implements this design by adding the release-quality check
+to `scripts/check_release_quality.sh`.
+
+Implemented release-quality check:
+
+- label:
+  `release_quality_check: web logger position_unit fixture contract validation`
+- command: `make check-web-logger-position-unit-fixtures`
+- insertion point: after Web logger Unicode/hash fixture validation and before
+  Rust UTF-16 offset conversion and replay integration
+
+The wrapper calls the Makefile target and does not duplicate the Python
+validator command. This integration remains bounded to fixture contract
+validation and does not modify Makefile, Python validator, focused tests,
+fixture JSON, Rust schema / validator behavior, validate / extract /
+micro_episode behavior, status markers, final safety review, event durability,
+production readiness, real-data readiness, or model performance evidence.

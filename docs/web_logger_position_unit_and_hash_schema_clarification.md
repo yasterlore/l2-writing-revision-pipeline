@@ -547,3 +547,15 @@ and command `make check-web-logger-position-unit-fixtures`. It does not change
 `scripts/check_release_quality.sh`, Makefile, schema behavior, validation
 behavior, replay behavior, TypeScript/Rust hash work, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 57. Step-web-logger-040 Schema-Level Position Unit Fixture Validator Release-Quality Integration
+
+Step-web-logger-040 adds release-quality wrapper check
+`release_quality_check: web logger position_unit fixture contract validation`.
+
+The wrapper command is `make check-web-logger-position-unit-fixtures`, inserted
+after Unicode/hash fixture validation and before Rust UTF-16 replay
+integration. It does not change Makefile, schema behavior, validation
+behavior, replay behavior, TypeScript/Rust hash work, status markers, final
+safety review, event durability, production readiness, real-data readiness, or
+model performance evidence.

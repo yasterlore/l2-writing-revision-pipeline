@@ -628,3 +628,15 @@ queueing, IndexedDB buffering, acknowledgement, retry, deduplication,
 ordering, delivery durability, TypeScript/Rust hash work, validate / extract /
 micro_episode integration, Rust schema / validator behavior, wrapper changes
 in this step, or CI workflow changes.
+
+## 57. Step-web-logger-040 Schema-Level Position Unit Fixture Validator Release-Quality Integration
+
+Step-web-logger-040 adds release-quality wrapper integration for
+`check-web-logger-position-unit-fixtures`.
+
+The integration preserves the durability safety boundary. It adds fixture
+contract validation to the wrapper only and does not implement queueing,
+IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery
+durability, TypeScript/Rust hash work, validate / extract / micro_episode
+integration, Rust schema / validator behavior, status markers, final safety
+review, or CI workflow changes.

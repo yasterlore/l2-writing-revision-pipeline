@@ -819,3 +819,16 @@ coverage, not Rust validator behavior coverage, not release-quality wrapper
 coverage, not validate / extract / micro_episode coverage, not TypeScript/Rust
 compatibility evidence, not event durability evidence, not production
 readiness, not real-data readiness, and not model performance evidence.
+
+## Step-web-logger-040 Coverage Addendum
+
+The release-quality wrapper now includes
+`release_quality_check: web logger position_unit fixture contract validation`
+and runs `make check-web-logger-position-unit-fixtures`.
+
+This adds release-quality wrapper coverage for the fixture contract validator
+target only. It is not Rust schema behavior coverage, not Rust validator
+behavior coverage, not validate / extract / micro_episode coverage, not status
+marker evidence, not final safety review evidence, not TypeScript/Rust
+compatibility evidence, not event durability evidence, not production
+readiness, not real-data readiness, and not model performance evidence.

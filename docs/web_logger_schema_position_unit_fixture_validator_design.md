@@ -565,3 +565,13 @@ The design plans future wrapper integration through Makefile target
 `check-web-logger-position-unit-fixtures` without duplicating the Python
 command. It does not change the validator, focused tests, fixtures,
 release-quality wrapper, or Rust schema / validator behavior in this step.
+
+## 32. Step-web-logger-040 Release-Quality Integration
+
+Step-web-logger-040 adds release-quality wrapper integration for the fixture
+contract validator target.
+
+The wrapper now calls `make check-web-logger-position-unit-fixtures` under
+label `release_quality_check: web logger position_unit fixture contract validation`.
+It does not change the validator, focused tests, fixtures, Makefile, Rust
+schema / validator behavior, status markers, or final safety review.

@@ -3824,3 +3824,15 @@ schema / validator behavior, release-quality wrapper, workflow files, package
 files, Cargo files, validate / extract / micro_episode integration,
 TypeScript/Rust cross-language checks, event durability, real-data use, metric
 evidence, or production readiness status.
+
+## Step-web-logger-040 Schema-Level Position Unit Fixture Validator Release-Quality Integration
+
+Step-web-logger-040 adds release-quality wrapper check
+`release_quality_check: web logger position_unit fixture contract validation`
+with command `make check-web-logger-position-unit-fixtures`.
+
+The check remains bounded to fixture contract validation. It does not change
+Rust schema / validator behavior, Makefile, workflow files, package files,
+Cargo files, validate / extract / micro_episode integration, status markers,
+final safety review status, TypeScript/Rust cross-language checks, event
+durability, real-data use, metric evidence, or production readiness status.

@@ -705,3 +705,15 @@ docs. It does not change release-quality wrapper scripts, workflows, Rust
 code, TypeScript code, Python code, tests, fixture JSON, package files, Cargo
 files, `kslog_schema`, `kslog_validate`, `kslog_replay`, `kslog_extract`,
 `kslog_micro_episode`, or existing status markers.
+
+## Step-web-logger-040 Source Inventory Addendum
+
+`scripts/check_release_quality.sh` adds release-quality check
+`release_quality_check: web logger position_unit fixture contract validation`
+with command `make check-web-logger-position-unit-fixtures`.
+
+The source inventory addition is limited to the wrapper check and related
+docs. It does not change Makefile, workflows, Rust code, TypeScript code,
+Python code, tests, fixture JSON, package files, Cargo files, `kslog_schema`,
+`kslog_validate`, `kslog_replay`, `kslog_extract`, `kslog_micro_episode`, or
+existing status markers.

@@ -1750,3 +1750,22 @@ implement Rust `kslog_schema` / `kslog_validate` behavior, change validate /
 extract / micro_episode behavior, add Rust / TypeScript SHA-256 helpers, add
 TypeScript/Rust checks, implement event durability, or provide production
 readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-040 Schema-Level Position Unit Fixture Validator Release-Quality Appendix
+
+Step-web-logger-040 adds release-quality wrapper check
+`release_quality_check: web logger position_unit fixture contract validation`.
+
+The wrapper command is:
+
+`make check-web-logger-position-unit-fixtures`
+
+The check is inserted after Web logger Unicode/hash fixture validation and
+before Rust UTF-16 offset conversion and replay integration. The wrapper calls
+the Makefile target rather than duplicating the Python command. This remains
+fixture contract validation only and does not implement Rust `kslog_schema` /
+`kslog_validate` behavior, change validate / extract / micro_episode behavior,
+create a status marker, create a final safety review, add Rust / TypeScript
+SHA-256 helpers, add TypeScript/Rust checks, implement event durability, or
+provide production readiness, real-data readiness, or model performance
+evidence.
