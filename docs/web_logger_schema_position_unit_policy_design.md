@@ -721,3 +721,16 @@ This design does not change wrapper behavior yet and does not add extract /
 micro_episode integration, TypeScript logger changes, SHA-256 helper work,
 TypeScript/Rust vector checks, event durability, production readiness,
 real-data readiness, or model performance evidence.
+
+## 54. Step-web-logger-061 Release-Quality Integration
+
+Step-web-logger-061 adds the Phase 2 wrapper check with label
+`release_quality_check: web logger Rust validator position_unit Phase 2 UTF-16 numeric metadata`
+and command
+`make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
+
+This is release-quality wrapper integration for focused Rust validator Phase 2
+tests only. It does not add extract / micro_episode integration, TypeScript
+logger changes, SHA-256 helper work, TypeScript/Rust vector checks, event
+durability, production readiness, real-data readiness, or model performance
+evidence.

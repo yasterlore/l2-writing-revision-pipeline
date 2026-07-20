@@ -937,3 +937,17 @@ coverage, not extract / micro_episode integration coverage, not TypeScript
 logger coverage, not TypeScript/Rust compatibility evidence, not event
 durability evidence, not production readiness, not real-data readiness, and
 not model performance evidence.
+
+## Step-web-logger-061 Coverage Addendum
+
+`scripts/check_release_quality.sh` now invokes the Phase 2 Makefile target via
+`make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
+This adds release-quality-visible focused coverage for
+`cargo test -p kslog_validate position_unit_phase2` while keeping the wrapper
+command source at Makefile.
+
+This is wrapper coverage only. Phase 2 is not yet status-recorded, not
+final-reviewed, not replay correctness coverage, not extract / micro_episode
+integration coverage, not TypeScript logger coverage, not TypeScript/Rust
+compatibility evidence, not event durability evidence, not production
+readiness, not real-data readiness, and not model performance evidence.

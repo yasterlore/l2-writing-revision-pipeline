@@ -515,3 +515,10 @@ integration remains future work.
 Step-web-logger-060 designs future release-quality wrapper integration for the
 separate Phase 2 target. The Phase 1 Makefile target remains unchanged by that
 design and should continue to mean Phase 1-only focused tests.
+
+## 39. Step-web-logger-061 Release-Quality Integration Follow-Up
+
+Step-web-logger-061 adds the separate Phase 2 target to the release-quality
+wrapper while preserving the Phase 1 Makefile target name, help text, command,
+and wrapper label/command. The Phase 1 target still runs
+`cargo test -p kslog_validate position_unit_phase1`.

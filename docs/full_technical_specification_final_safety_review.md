@@ -814,3 +814,17 @@ review acceptance, not replay correctness, not extract / micro_episode
 integration, not TypeScript/Rust cross-language compatibility, not event
 durability, not production readiness, not real-data readiness, not model
 performance, and not deployment readiness.
+
+## Step-web-logger-061 Rust Validator Phase 2 Release-Quality Integration Safety Review Addendum
+
+Step-web-logger-061 integrates the Phase 2 focused target into
+`scripts/check_release_quality.sh` with label
+`release_quality_check: web logger Rust validator position_unit Phase 2 UTF-16 numeric metadata`
+and command
+`make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
+
+This is release-quality wrapper integration only. It is not Phase 2 status
+marker evidence, not final safety review acceptance, not replay correctness,
+not extract / micro_episode integration, not TypeScript/Rust cross-language
+compatibility, not event durability, not production readiness, not real-data
+readiness, not model performance, and not deployment readiness.

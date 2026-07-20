@@ -106,6 +106,9 @@ run make check-web-logger-position-unit-fixtures
 section "web logger Rust validator position_unit Phase 1 policy"
 run make check-web-logger-rust-validator-position-unit-phase1
 
+section "web logger Rust validator position_unit Phase 2 UTF-16 numeric metadata"
+run make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric
+
 section "web logger Rust UTF-16 offset conversion and replay integration"
 run make check-web-logger-rust-utf16-offset-conversion
 

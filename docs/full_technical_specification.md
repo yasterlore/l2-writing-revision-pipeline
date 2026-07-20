@@ -1911,3 +1911,26 @@ behavior, TypeScript/Python code, Cargo/package metadata, workflows, extract /
 micro_episode integration, SHA-256 helper work, TypeScript/Rust vector checks,
 event durability, production readiness, real-data readiness, or model
 performance evidence.
+
+## Step-web-logger-061 Rust Validator Phase 2 Release-Quality Integration
+
+Step-web-logger-061 adds release-quality wrapper coverage for the Phase 2
+validator target with label:
+
+`release_quality_check: web logger Rust validator position_unit Phase 2 UTF-16 numeric metadata`
+
+The wrapper command is:
+
+`make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`
+
+The wrapper calls the Makefile target rather than duplicating
+`cargo test -p kslog_validate position_unit_phase2` directly. The check is
+inserted after the Phase 1 validator label and before Rust UTF-16 replay
+integration. Phase 1 label / command remain unchanged.
+
+This is release-quality wrapper integration only. It does not change Makefile,
+Rust code/tests, fixture JSON, replay behavior, TypeScript/Python code,
+Cargo/package metadata, workflows, Phase 2 run record workflow, status marker,
+final safety review, extract / micro_episode integration, SHA-256 helper work,
+TypeScript/Rust vector checks, event durability, production readiness,
+real-data readiness, or model performance evidence.

@@ -821,3 +821,16 @@ related docs. It does not change release-quality wrapper scripts, workflows,
 Rust code, Rust tests, TypeScript code, Python code, fixture JSON, package
 files, Cargo files, `kslog_schema`, `kslog_validate`, `kslog_replay`,
 `kslog_extract`, `kslog_micro_episode`, or status markers.
+
+## Step-web-logger-061 Source Inventory Addendum
+
+`scripts/check_release_quality.sh` adds label
+`release_quality_check: web logger Rust validator position_unit Phase 2 UTF-16 numeric metadata`
+with command
+`make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
+
+The source inventory addition is limited to release-quality wrapper behavior
+and related docs. It does not change Makefile, workflows, Rust code, Rust
+tests, TypeScript code, Python code, fixture JSON, package files, Cargo files,
+`kslog_schema`, `kslog_validate`, `kslog_replay`, `kslog_extract`,
+`kslog_micro_episode`, or status markers.

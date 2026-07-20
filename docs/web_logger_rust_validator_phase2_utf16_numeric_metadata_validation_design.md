@@ -443,3 +443,17 @@ and command
 This follow-up does not change validator behavior, Makefile, wrapper, Rust
 code/tests, fixtures, replay behavior, status markers, production readiness,
 real-data readiness, or model performance evidence.
+
+## Step-web-logger-061 Release-Quality Integration Follow-Up
+
+Step-web-logger-061 adds the Phase 2 focused target to the release-quality
+wrapper with label
+`release_quality_check: web logger Rust validator position_unit Phase 2 UTF-16 numeric metadata`
+and command
+`make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
+
+This is wrapper integration only. It does not change Phase 2 validator
+behavior, fixtures, Makefile target behavior, replay behavior, extract /
+micro_episode integration, TypeScript logger behavior, SHA-256 helper work,
+event durability, production readiness, real-data readiness, or model
+performance evidence.

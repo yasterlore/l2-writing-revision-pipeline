@@ -800,3 +800,10 @@ validator target. The recommended wrapper check remains separate from
 SHA-256 hash compatibility, TypeScript/Rust vector checks, TypeScript logger
 emission, event durability, production readiness, real-data readiness, and
 model performance evidence.
+
+## 78. Step-web-logger-061 Release-Quality Integration Follow-Up
+
+Step-web-logger-061 adds the Phase 2 validator target to release-quality. This
+wrapper check remains separate from SHA-256 hash compatibility,
+TypeScript/Rust vector checks, TypeScript logger emission, event durability,
+production readiness, real-data readiness, and model performance evidence.

@@ -569,3 +569,9 @@ evidence.
 Step-web-logger-060 keeps the future Phase 2 release-quality check separate
 from replay integration. The recommended wrapper insertion point is after the
 Phase 1 validator label and before the Rust UTF-16 replay integration label.
+
+## 52. Step-web-logger-061 Release-Quality Integration Follow-Up
+
+Step-web-logger-061 inserts the Phase 2 validator release-quality check before
+the replay integration label. This keeps validator numeric metadata evidence
+separate from replay correctness evidence.

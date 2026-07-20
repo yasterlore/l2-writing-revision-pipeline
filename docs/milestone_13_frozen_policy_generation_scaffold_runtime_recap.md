@@ -3944,3 +3944,17 @@ Rust code or tests, fixture JSON, TypeScript/Python code, Cargo metadata,
 package metadata, workflows, extract / micro_episode integration, SHA-256
 helpers, TypeScript/Rust vector checks, event durability, real-data use,
 metric evidence, or production readiness status.
+
+## Step-web-logger-061 Rust Validator Phase 2 Release-Quality Integration
+
+Step-web-logger-061 adds release-quality wrapper label
+`release_quality_check: web logger Rust validator position_unit Phase 2 UTF-16 numeric metadata`
+with command
+`make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
+
+The check is inserted after the Phase 1 validator label and before Rust UTF-16
+replay integration. Step061 does not change Makefile, Rust code or tests,
+fixture JSON, TypeScript/Python code, Cargo metadata, package metadata,
+workflows, status markers, extract / micro_episode integration, SHA-256
+helpers, TypeScript/Rust vector checks, event durability, real-data use,
+metric evidence, or production readiness status.

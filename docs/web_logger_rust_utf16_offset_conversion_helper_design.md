@@ -624,3 +624,9 @@ checks distinct.
 Step-web-logger-060 designs release-quality wrapper placement for the
 validator Phase 2 target before the replay-focused UTF-16 target. The design
 does not change helper behavior or replay behavior.
+
+## Step-web-logger-061 Release-Quality Integration Follow-Up
+
+Step-web-logger-061 adds the Phase 2 validator target to release-quality before
+the replay-focused UTF-16 target. This does not change helper behavior, replay
+behavior, or the `kslog_schema::utf16_offsets` API.

@@ -431,3 +431,12 @@ integration.
 
 This follow-up does not change the wrapper and does not expand the Phase 1
 release-quality chain.
+
+## 35. Step-web-logger-061 Phase 2 Release-Quality Integration Follow-Up
+
+Step-web-logger-061 keeps the existing Phase 1 label and command unchanged and
+adds the separate Phase 2 label immediately after it. The new Phase 2 command
+is `make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
+
+The Phase 1 release-quality chain remains Phase 1-only. Phase 2 status marker
+and final safety review work remain future steps.

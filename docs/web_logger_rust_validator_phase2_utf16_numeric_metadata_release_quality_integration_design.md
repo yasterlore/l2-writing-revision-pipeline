@@ -386,3 +386,22 @@ TypeScript/Python code, or CI workflow. It should update README and full
 technical specification docs because release-quality visible behavior changes,
 but it should not create a status marker or claim production or real-data
 readiness.
+
+## 25. Step-web-logger-061 Implementation Follow-Up
+
+Step-web-logger-061 implements this design by adding one wrapper label/command
+pair:
+
+- label:
+  `release_quality_check: web logger Rust validator position_unit Phase 2 UTF-16 numeric metadata`
+- command:
+  `make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`
+
+The check is inserted after the Phase 1 validator label and before Rust UTF-16
+replay integration. The wrapper calls the Makefile target and does not
+duplicate `cargo test -p kslog_validate position_unit_phase2` directly.
+
+Step061 does not change Makefile, Rust code/tests, TypeScript/Python code,
+fixtures, workflows, package metadata, Cargo metadata, or status markers.
+Phase 2 run record workflow, status marker, and final safety review remain
+future work.

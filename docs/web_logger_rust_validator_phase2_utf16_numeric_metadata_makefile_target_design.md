@@ -428,3 +428,15 @@ and command
 
 Step060 is docs-only. It does not change the wrapper, Makefile, Rust code/tests,
 fixtures, status markers, or Phase 2 release-quality acceptance.
+
+## 30. Step-web-logger-061 Release-Quality Integration Follow-Up
+
+Step-web-logger-061 integrates the Phase 2 target into
+`scripts/check_release_quality.sh` with label
+`release_quality_check: web logger Rust validator position_unit Phase 2 UTF-16 numeric metadata`
+and command
+`make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
+
+The Makefile target remains unchanged and remains the command source of truth.
+Step061 does not change Rust code/tests, fixtures, or Phase 2 status/final
+review evidence.

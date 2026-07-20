@@ -358,3 +358,13 @@ broaden, or revise the Phase 1 accepted boundary.
 
 Phase 2 release-quality integration, Phase 2 status marker evidence, and Phase
 2 final safety review acceptance remain future work.
+
+## 29. Step-web-logger-061 Phase 2 Release-Quality Integration Follow-Up
+
+Step-web-logger-061 adds a separate Phase 2 wrapper check after the existing
+Phase 1 validator label. This does not revise the Step054 accepted Phase 1
+boundary, does not rename the Phase 1 label, and does not convert Phase 1
+remote status evidence into Phase 2 status evidence.
+
+Phase 2 run record workflow, status marker evidence, and final safety review
+acceptance remain future work.

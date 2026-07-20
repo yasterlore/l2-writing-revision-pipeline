@@ -733,3 +733,9 @@ integrated yet.
 Step-web-logger-060 designs future release-quality wrapper integration for the
 validator Phase 2 Makefile target. It does not change the `kslog_schema`
 parser/accessor boundary or shared UTF-16 helper API.
+
+## 42. Step-web-logger-061 Release-Quality Integration Follow-Up
+
+Step-web-logger-061 integrates the validator Phase 2 Makefile target into the
+release-quality wrapper. This does not change the `kslog_schema`
+parser/accessor boundary, `RawEvent` fields, or shared UTF-16 helper API.

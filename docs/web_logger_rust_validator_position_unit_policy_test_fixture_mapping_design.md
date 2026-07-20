@@ -639,3 +639,10 @@ Step-web-logger-060 designs wrapper integration for the 8-test Phase 2 mapping
 through `make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
 It keeps the 9-test Phase 1 mapping separate and does not change fixtures,
 Rust tests, or validator behavior.
+
+## 43. Step-web-logger-061 Release-Quality Integration Follow-Up
+
+Step-web-logger-061 exposes the 8-test Phase 2 mapping through release-quality
+by calling the existing Makefile target. The 9-test Phase 1 mapping remains
+separate and continues to run through the existing Phase 1 release-quality
+label.

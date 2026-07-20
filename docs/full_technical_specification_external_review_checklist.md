@@ -751,3 +751,21 @@ tests, fixture JSON, workflows, package metadata, Cargo metadata, extract /
 micro_episode integration, SHA-256 helpers, TypeScript/Rust vector checks,
 event durability, production readiness, real-data readiness, or model
 performance evidence is added.
+
+## Step-web-logger-061 External Review Checklist Addendum
+
+Confirm `scripts/check_release_quality.sh` adds
+`release_quality_check: web logger Rust validator position_unit Phase 2 UTF-16 numeric metadata`
+with command
+`make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
+Confirm the check is inserted after the Phase 1 validator label and before
+Rust UTF-16 replay integration, and that the Phase 1 label / command remain
+unchanged.
+
+Confirm the wrapper calls the Makefile target rather than duplicating the
+Cargo command directly. Confirm Phase 2 run record workflow, status marker,
+and final safety review remain future work, and no Makefile, Rust /
+TypeScript / Python code, tests, fixture JSON, workflows, package metadata,
+Cargo metadata, extract / micro_episode integration, SHA-256 helpers,
+TypeScript/Rust vector checks, event durability, production readiness,
+real-data readiness, or model performance evidence is added.
