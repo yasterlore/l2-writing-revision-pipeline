@@ -561,3 +561,14 @@ The shared helper strategy for future numeric UTF-16 validation remains open.
 The review does not claim Phase 2 numeric validation, broader Unicode
 correctness, production readiness, real-data readiness, or model performance
 evidence.
+
+## Step-web-logger-055 Phase 2 Shared Helper Design
+
+Step-web-logger-055 created
+`docs/web_logger_rust_validator_phase2_utf16_numeric_metadata_validation_design.md`.
+The design recommends extracting reusable UTF-16 helper APIs into
+`kslog_schema` so validator Phase 2 and replay can share semantics without a
+`kslog_validate -> kslog_replay` dependency.
+
+This design does not move helper code yet and does not implement Phase 2
+numeric validation.

@@ -382,3 +382,14 @@ The accepted boundary does not include Phase 2 UTF-16 numeric metadata
 validation, replay correctness, extract / micro_episode integration,
 TypeScript logger compatibility, SHA-256 compatibility, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 31. Step-web-logger-055 Phase 2 Design
+
+Step-web-logger-055 created
+[Rust validator Phase 2 UTF-16 numeric metadata validation design](web_logger_rust_validator_phase2_utf16_numeric_metadata_validation_design.md).
+The design keeps the Phase 1 release-quality label and target scoped to
+presence / value / schema-version gating and plans a separate future chain for
+UTF-16 numeric metadata validation.
+
+Step055 does not alter the wrapper, Makefile, Rust tests, release-quality
+ordering, or status marker, and it does not claim Phase 2 implementation.

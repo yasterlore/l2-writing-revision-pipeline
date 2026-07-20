@@ -729,3 +729,15 @@ It does not implement SHA-256 helpers, TypeScript/Rust hash vector checks,
 Phase 2 UTF-16 numeric validation, TypeScript logger compatibility, event
 durability, production readiness, real-data readiness, or model performance
 evidence.
+
+## 72. Step-web-logger-055 Phase 2 UTF-16 Numeric Metadata Design
+
+Step-web-logger-055 created
+[Rust validator Phase 2 UTF-16 numeric metadata validation design](web_logger_rust_validator_phase2_utf16_numeric_metadata_validation_design.md).
+The design keeps position-unit numeric validation separate from hash
+compatibility and recommends shared UTF-16 helper extraction before Phase 2
+validator implementation.
+
+It does not implement SHA-256 helpers, TypeScript/Rust hash vector checks,
+Phase 2 validation, TypeScript logger compatibility, event durability,
+production readiness, real-data readiness, or model performance evidence.

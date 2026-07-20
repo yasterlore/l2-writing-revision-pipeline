@@ -477,3 +477,11 @@ gating chain. It does not add Phase 2 UTF-16 numeric metadata validation,
 replay correctness, extract / micro_episode integration, TypeScript/Rust
 compatibility, event durability, production readiness, real-data readiness, or
 model performance evidence.
+
+## Step-web-logger-055 Phase 2 Design
+
+Step-web-logger-055 created
+[Rust validator Phase 2 UTF-16 numeric metadata validation design](web_logger_rust_validator_phase2_utf16_numeric_metadata_validation_design.md).
+The design plans a future chain and does not change this run-record workflow,
+the Step053 status marker, wrapper behavior, Makefile behavior, or remote
+evidence boundary.

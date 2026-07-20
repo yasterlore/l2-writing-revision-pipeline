@@ -643,3 +643,15 @@ This does not complete the full schema-level `position_unit` policy. Phase 2
 UTF-16 numeric metadata validation, extract / micro_episode integration,
 TypeScript logger behavior, event durability, production readiness,
 real-data readiness, and model performance evidence remain future work.
+
+## 48. Step-web-logger-055 Phase 2 UTF-16 Numeric Metadata Design
+
+Step-web-logger-055 created
+[Rust validator Phase 2 UTF-16 numeric metadata validation design](web_logger_rust_validator_phase2_utf16_numeric_metadata_validation_design.md).
+The design defines future validator checks for doc_len, cursor, selection,
+surrogate-pair, invalid-boundary, and detectable byte-index misuse cases.
+
+This is not implementation. The full schema-level `position_unit` policy,
+extract / micro_episode integration, TypeScript logger behavior, event
+durability, production readiness, real-data readiness, and model performance
+evidence remain future work.

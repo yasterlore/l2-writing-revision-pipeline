@@ -559,3 +559,13 @@ and keeps `kslog_replay` correctness separate.
 
 This does not change the Step031 replay-focused accepted boundary and does not
 add Phase 2 UTF-16 numeric metadata validation.
+
+## 39. Step-web-logger-055 Phase 2 Design Follow-Up
+
+Step-web-logger-055 created
+[Rust validator Phase 2 UTF-16 numeric metadata validation design](web_logger_rust_validator_phase2_utf16_numeric_metadata_validation_design.md).
+The design recommends sharing UTF-16 helper APIs through `kslog_schema` rather
+than making `kslog_validate` depend on `kslog_replay`.
+
+This does not change the Step031 replay-focused accepted boundary. Future
+validator Phase 2 validation would remain distinct from replay correctness.

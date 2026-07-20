@@ -569,3 +569,15 @@ The review does not add validator numeric checks, fixture changes, replay
 correctness, extract / micro_episode integration, TypeScript compatibility,
 event durability, production readiness, real-data readiness, or model
 performance evidence.
+
+## 37. Step-web-logger-055 Phase 2 Fixture Mapping Design
+
+Step-web-logger-055 created
+[Rust validator Phase 2 UTF-16 numeric metadata validation design](web_logger_rust_validator_phase2_utf16_numeric_metadata_validation_design.md).
+It maps deferred Phase 2 fixture cases for doc_len mismatch, start greater
+than end, offset beyond UTF-16 length, surrogate-pair internal offset, and
+detectable byte-index misuse.
+
+The design is metadata-only and does not paste fixture bodies, change
+fixtures, implement validator numeric checks, or claim Phase 2 release-quality
+evidence.

@@ -473,3 +473,13 @@ validator or workspace tests, and does not add Phase 2 UTF-16 numeric metadata
 validation, replay, extract / micro_episode, TypeScript compatibility, event
 durability, production readiness, real-data readiness, or model performance
 evidence.
+
+## 35. Step-web-logger-055 Phase 2 Design
+
+Step-web-logger-055 created
+[Rust validator Phase 2 UTF-16 numeric metadata validation design](web_logger_rust_validator_phase2_utf16_numeric_metadata_validation_design.md).
+The design recommends keeping the Step049 Makefile target focused on Phase 1
+and adding a separate future Phase 2 target after implementation.
+
+Step055 does not change Makefile and does not relabel the Phase 1 target as a
+full `position_unit` policy target.

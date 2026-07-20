@@ -667,3 +667,15 @@ does not complete Phase 2 UTF-16 numeric metadata validation, extract /
 micro_episode integration, TypeScript logger compatibility, SHA-256
 compatibility, event durability, production readiness, real-data readiness, or
 model performance evidence.
+
+## 36. Step-web-logger-055 Shared Helper Design
+
+Step-web-logger-055 created
+[Rust validator Phase 2 UTF-16 numeric metadata validation design](web_logger_rust_validator_phase2_utf16_numeric_metadata_validation_design.md).
+The design recommends extracting reusable UTF-16 helper APIs into
+`kslog_schema` before implementing validator Phase 2 numeric checks.
+
+This keeps schema helper extraction separate from validator behavior and does
+not claim Phase 2 validation, replay correctness, TypeScript compatibility,
+event durability, production readiness, real-data readiness, or model
+performance evidence.
