@@ -466,3 +466,13 @@ schema boundary does not implement Rust validator policy enforcement, UTF-16
 numeric metadata validation, validate / extract / micro_episode integration,
 TypeScript logger changes, TypeScript/Rust compatibility, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## 30. Step-web-logger-046 Validator Mapping Design
+
+Step-web-logger-046 adds
+[Rust Validator Position Unit Policy Test and Fixture Mapping Design](web_logger_rust_validator_position_unit_policy_test_fixture_mapping_design.md).
+
+The design keeps Step031 replay integration separate from future validator
+Phase 1 position_unit enforcement. Phase 1 should not call replay or depend on
+`kslog_replay::utf16_offsets`; Phase 2 UTF-16 numeric metadata checks require
+a separate shared-helper strategy.

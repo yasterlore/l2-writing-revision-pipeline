@@ -531,3 +531,14 @@ UTF-16 numeric metadata validation, validate / extract / micro_episode
 integration, TypeScript logger changes, SHA-256 helper work, TypeScript/Rust
 vector checks, event durability, production readiness, real-data readiness,
 and model performance evidence remain future work.
+
+## 39. Step-web-logger-046 Rust Validator Test Mapping Design
+
+Step-web-logger-046 adds
+[Rust Validator Position Unit Policy Test and Fixture Mapping Design](web_logger_rust_validator_position_unit_policy_test_fixture_mapping_design.md).
+
+The design defines the next `kslog_validate` Phase 1 test and fixture mapping
+for presence / value / schema-version gating. It explicitly defers UTF-16
+numeric metadata validation, shared helper placement, extract / micro_episode
+integration, TypeScript logger changes, event durability, production
+readiness, real-data readiness, and model performance evidence.

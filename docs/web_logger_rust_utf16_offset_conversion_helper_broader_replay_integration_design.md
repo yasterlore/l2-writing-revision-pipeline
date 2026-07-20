@@ -417,3 +417,13 @@ micro_episode integration, TypeScript logger changes, TypeScript/Rust hash
 compatibility, event durability, production readiness, real-data readiness,
 and model performance evidence remain outside this replay integration
 boundary.
+
+## 37. Step-web-logger-046 Validator Mapping Design
+
+Step-web-logger-046 adds
+[Rust Validator Position Unit Policy Test and Fixture Mapping Design](web_logger_rust_validator_position_unit_policy_test_fixture_mapping_design.md).
+
+The design maps future `kslog_validate` Phase 1 tests without expanding the
+replay integration boundary. Phase 1 validator policy should not call replay,
+and Phase 2 numeric UTF-16 validation should wait for a separate helper
+placement design.

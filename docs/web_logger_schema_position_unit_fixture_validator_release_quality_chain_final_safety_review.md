@@ -469,3 +469,15 @@ enforcement, UTF-16 numeric metadata validation, validate / extract /
 micro_episode integration, TypeScript/Rust compatibility, event durability,
 production readiness, real-data readiness, and model performance evidence
 remain outside that accepted boundary.
+
+## 27. Step-web-logger-046 Rust Validator Mapping Design
+
+Step-web-logger-046 adds
+[Rust Validator Position Unit Policy Test and Fixture Mapping Design](web_logger_rust_validator_position_unit_policy_test_fixture_mapping_design.md).
+
+The design keeps this final safety review's accepted boundary unchanged. It
+plans future Rust validator Phase 1 fixture mapping only and does not turn the
+fixture contract status into validator enforcement, Phase 2 UTF-16 numeric
+metadata validation, extract / micro_episode integration, TypeScript/Rust
+compatibility, event durability, production readiness, real-data readiness, or
+model performance evidence.

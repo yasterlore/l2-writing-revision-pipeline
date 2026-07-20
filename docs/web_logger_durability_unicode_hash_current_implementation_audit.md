@@ -570,3 +570,14 @@ ordering, delivery durability, TypeScript/Rust hash work, Rust validator
 policy enforcement, validate / extract / micro_episode integration,
 production readiness, real-data readiness, and model performance evidence
 remain unimplemented.
+
+## 35. Step-web-logger-046 Rust Validator Mapping Design
+
+Step-web-logger-046 adds
+[Rust Validator Position Unit Policy Test and Fixture Mapping Design](web_logger_rust_validator_position_unit_policy_test_fixture_mapping_design.md).
+
+This preserves the durability audit conclusion. It plans future validator
+tests for position_unit policy and does not add queueing, IndexedDB buffering,
+acknowledgement, retry, deduplication, ordering, delivery durability,
+TypeScript/Rust hash work, production readiness, real-data readiness, or model
+performance evidence.

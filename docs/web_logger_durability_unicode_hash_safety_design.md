@@ -699,3 +699,13 @@ server-side idempotency, ordering guarantees, TypeScript/Rust hash work, Rust
 validator policy enforcement, validate / extract / micro_episode integration,
 production readiness, real-data readiness, and model performance evidence
 remain future work.
+
+## 63. Step-web-logger-046 Rust Validator Mapping Design
+
+Step-web-logger-046 adds
+[Rust Validator Position Unit Policy Test and Fixture Mapping Design](web_logger_rust_validator_position_unit_policy_test_fixture_mapping_design.md).
+
+This design does not change event durability boundaries. Queueing, IndexedDB
+persistence, acknowledgement, retry, deduplication, server-side idempotency,
+ordering guarantees, TypeScript/Rust hash work, production readiness,
+real-data readiness, and model performance evidence remain future work.

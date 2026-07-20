@@ -620,3 +620,14 @@ metadata checks, validate / extract / micro_episode integration, TypeScript
 logger behavior, Rust or TypeScript SHA-256 helpers, TypeScript/Rust vector
 checks, event durability, production readiness, real-data readiness, or model
 performance evidence.
+
+## 63. Step-web-logger-046 Rust Validator Mapping Design
+
+Step-web-logger-046 adds
+[Rust Validator Position Unit Policy Test and Fixture Mapping Design](web_logger_rust_validator_position_unit_policy_test_fixture_mapping_design.md).
+
+The design separates future validator Phase 1 position_unit presence / value /
+schema-version enforcement from Phase 2 UTF-16 numeric metadata validation.
+It does not implement validator behavior, TypeScript logger changes, Rust or
+TypeScript SHA-256 helpers, TypeScript/Rust vector checks, event durability,
+production readiness, real-data readiness, or model performance evidence.

@@ -479,3 +479,12 @@ schema parser boundary, validate / extract / micro_episode integration,
 TypeScript logger changes, SHA-256 helper work, TypeScript/Rust vector checks,
 event durability, production readiness, real-data readiness, and model
 performance evidence remain future work.
+
+## Step-web-logger-046 Validator Mapping Design
+
+Step-web-logger-046 adds [Rust Validator Position Unit Policy Test and Fixture Mapping Design](web_logger_rust_validator_position_unit_policy_test_fixture_mapping_design.md).
+
+The design keeps future validator Phase 1 limited to position_unit presence /
+value / schema-version gating and does not call this UTF-16 offset helper.
+Helper reuse for validator-side numeric UTF-16 checks remains a Phase 2 design
+topic.

@@ -555,3 +555,15 @@ policy enforcement, validate / extract / micro_episode integration,
 TypeScript logger changes, SHA-256 helper work, TypeScript/Rust vector checks,
 event durability, production readiness, real-data readiness, and model
 performance evidence remain future work.
+
+## 27. Step-web-logger-046 Validator Test / Fixture Mapping Design
+
+Step-web-logger-046 adds
+[Rust Validator Position Unit Policy Test and Fixture Mapping Design](web_logger_rust_validator_position_unit_policy_test_fixture_mapping_design.md).
+
+The design uses the Step045 schema parser/accessor as input and maps the
+Step034 fixed fixture matrix into Phase 1 validator enforcement cases and
+Phase 2 deferred UTF-16 numeric metadata cases. It does not implement
+`kslog_validate` behavior, change schema code, change tests, change fixtures,
+change Makefile / wrapper / CI, or provide production readiness, real-data
+readiness, or model performance evidence.
