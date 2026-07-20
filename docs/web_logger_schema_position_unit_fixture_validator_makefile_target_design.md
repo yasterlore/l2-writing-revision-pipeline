@@ -393,3 +393,17 @@ metadata, add release-quality wrapper integration, implement Rust schema /
 validator behavior, change validate / extract / micro_episode behavior, add
 TypeScript/Rust hash checks, implement event durability, or provide production
 readiness, real-data readiness, or model performance evidence.
+
+## 26. Step-web-logger-039 Release-Quality Integration Design
+
+Step-web-logger-039 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Integration Design](web_logger_schema_position_unit_fixture_validator_release_quality_integration_design.md).
+
+The design plans future release-quality wrapper integration for
+`check-web-logger-position-unit-fixtures`. It recommends label
+`release_quality_check: web logger position_unit fixture contract validation`
+and command `make check-web-logger-position-unit-fixtures`, placed after the
+Web logger Unicode/hash fixture validation check and before the Rust UTF-16
+replay integration check. It does not modify the wrapper, Makefile, validator,
+tests, fixtures, Rust schema / validator behavior, or release-quality status
+markers.

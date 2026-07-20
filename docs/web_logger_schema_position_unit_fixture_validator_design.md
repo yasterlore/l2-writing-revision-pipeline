@@ -555,3 +555,13 @@ The target runs the Step-web-logger-036 validator CLI in summary-only mode:
 The target validates the fixture contract only and does not run focused tests,
 change the validator, change fixtures, add release-quality integration, or
 implement Rust schema / validator behavior.
+
+## 31. Step-web-logger-039 Release-Quality Integration Design
+
+Step-web-logger-039 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Integration Design](web_logger_schema_position_unit_fixture_validator_release_quality_integration_design.md).
+
+The design plans future wrapper integration through Makefile target
+`check-web-logger-position-unit-fixtures` without duplicating the Python
+command. It does not change the validator, focused tests, fixtures,
+release-quality wrapper, or Rust schema / validator behavior in this step.

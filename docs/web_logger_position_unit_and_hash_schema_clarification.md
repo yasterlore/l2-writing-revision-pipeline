@@ -535,3 +535,15 @@ The target runs the summary-only Python fixture contract validator for
 `scripts/check_release_quality.sh`, schema behavior, validation behavior,
 replay behavior, TypeScript/Rust hash work, event durability, production
 readiness, real-data readiness, or model performance evidence.
+
+## 56. Step-web-logger-039 Schema-Level Position Unit Fixture Validator Release-Quality Integration Design
+
+Step-web-logger-039 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Integration Design](web_logger_schema_position_unit_fixture_validator_release_quality_integration_design.md).
+
+The design recommends future release-quality label
+`release_quality_check: web logger position_unit fixture contract validation`
+and command `make check-web-logger-position-unit-fixtures`. It does not change
+`scripts/check_release_quality.sh`, Makefile, schema behavior, validation
+behavior, replay behavior, TypeScript/Rust hash work, event durability,
+production readiness, real-data readiness, or model performance evidence.

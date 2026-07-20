@@ -667,3 +667,13 @@ The target uses the Step-web-logger-036 summary-only validator CLI to validate
 the 17-case / 24-record fixture contract. It does not run focused tests,
 mutate fixture files, regenerate metadata, add release-quality integration, or
 implement Rust schema / validator behavior.
+
+## 31. Step-web-logger-039 Release-Quality Integration Design
+
+Step-web-logger-039 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Integration Design](web_logger_schema_position_unit_fixture_validator_release_quality_integration_design.md).
+
+The design keeps release-quality integration bounded to the fixture contract
+target. It does not mutate this fixture root, regenerate metadata, change
+tests, modify the wrapper in this step, or implement Rust schema / validator
+behavior.
