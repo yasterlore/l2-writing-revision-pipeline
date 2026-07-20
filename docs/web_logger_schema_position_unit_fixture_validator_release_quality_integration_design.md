@@ -413,3 +413,15 @@ public-safe release-quality evidence for this wrapper integration. It does not
 create a status marker, create a final safety review, modify the wrapper,
 modify Makefile, modify validator code, modify tests, modify fixtures, or
 implement Rust schema / validator behavior.
+
+## 27. Step-web-logger-042 Remote Status Marker
+
+Step-web-logger-042 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Remote Run Status](status/web_logger_schema_position_unit_fixture_validator_release_quality_remote_run_status.md).
+
+The marker records public-safe remote release-quality metadata for this
+integration: observed label, command, final ok label, 17-case / 24-record
+validator summary, reason-code counts, unavailable metadata, and safety flags.
+It does not create a final safety review, modify the wrapper, modify Makefile,
+modify validator code, modify tests, modify fixtures, or implement Rust schema
+/ validator behavior.

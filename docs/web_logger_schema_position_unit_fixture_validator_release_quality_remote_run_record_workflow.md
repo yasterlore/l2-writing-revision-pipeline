@@ -462,3 +462,17 @@ Clarification:
 - Step-web-logger-042 should not claim TypeScript/Rust compatibility.
 - Step-web-logger-042 should not claim production readiness or real-data
   readiness.
+
+## 27. Step-web-logger-042 Remote Status Marker
+
+Step-web-logger-042 creates
+[Schema-Level Position Unit Fixture Validator Release Quality Remote Run Status](status/web_logger_schema_position_unit_fixture_validator_release_quality_remote_run_status.md).
+
+The marker records public-safe remote metadata for the Step-web-logger-040
+wrapper integration, including the observed label, command, final ok label,
+17-case / 24-record validator summary, reason-code counts, unavailable
+metadata, and safety flags. It does not create a final safety review, modify
+wrapper / Makefile / code / tests / fixtures, implement Rust schema /
+validator behavior, implement validate / extract / micro_episode integration,
+or provide production readiness, real-data readiness, or model performance
+evidence.

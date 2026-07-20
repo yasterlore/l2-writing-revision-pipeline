@@ -585,3 +585,14 @@ The workflow design describes future status-marker evidence for running this
 validator through release-quality. It does not change the validator, focused
 tests, fixtures, Makefile, wrapper, Rust schema / validator behavior, or final
 safety review.
+
+## 34. Step-web-logger-042 Remote Status Marker
+
+Step-web-logger-042 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Remote Run Status](status/web_logger_schema_position_unit_fixture_validator_release_quality_remote_run_status.md).
+
+The marker records public-safe remote release-quality evidence for this
+validator through the wrapper. It records count-only fixture contract metadata
+and reason-code summaries, but does not change validator code, focused tests,
+fixtures, Makefile, wrapper, Rust schema / validator behavior, or final safety
+review.

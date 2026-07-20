@@ -427,3 +427,13 @@ The workflow design keeps future evidence recording tied to the Makefile
 target command and public-safe fixture contract counts. It does not create a
 status marker, modify Makefile, modify the wrapper, modify validator code,
 modify tests, modify fixtures, or implement Rust schema / validator behavior.
+
+## 29. Step-web-logger-042 Remote Status Marker
+
+Step-web-logger-042 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Remote Run Status](status/web_logger_schema_position_unit_fixture_validator_release_quality_remote_run_status.md).
+
+The marker records that release-quality observed the Makefile target command
+and a public-safe 17-case / 24-record validator summary. It does not change
+the Makefile target, Python validator, focused tests, fixtures, Rust schema /
+validator behavior, or release-quality wrapper.

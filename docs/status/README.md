@@ -52,6 +52,10 @@ Current status-marker posture:
   release-quality wrapper, and its remote status marker is now recorded as
   public-safe metadata-only/count-only evidence. This is a separate boundary
   from the earlier helper-focused marker.
+- The Web logger position_unit fixture contract validator target is in the
+  release-quality wrapper, and its remote status marker is now recorded as
+  public-safe metadata-only/count-only evidence. This is fixture contract
+  evidence only, not Rust schema / validator implementation evidence.
 
 Available markers:
 
@@ -1755,6 +1759,10 @@ invocation evidence, or file-writing evidence.
 ## Step-web-logger-030 Rust UTF-16 Replay Integration Remote Status Marker
 
 - [Rust UTF-16 replay integration release-quality remote run status](web_logger_rust_utf16_replay_integration_release_quality_remote_run_status.md): status-marker-only / docs-only public-safe remote metadata record after the Step-web-logger-028 label update. It records `local_fallback_used=no`, remote metadata availability, the observed Rust UTF-16 offset conversion and replay integration label, Makefile target command, final ok label, helper-focused plus replay-focused test counts, broader Rust check counts, and safety flags without raw logs, full job output, raw Cargo output, source text, selected text, fixture JSON body, raw event payload body, private data copied to docs, absolute local paths copied to docs, real participant data, logits / probabilities, performance metric body, validate / extract / micro_episode integration claims, TypeScript/Rust compatibility claims, or event durability claims.
+
+## Step-web-logger-042 Schema-Level Position Unit Fixture Validator Remote Status Marker
+
+- [Schema-level position_unit fixture validator release-quality remote run status](web_logger_schema_position_unit_fixture_validator_release_quality_remote_run_status.md): status-marker-only / docs-only public-safe remote metadata record after Step-web-logger-040 wrapper integration. It records `local_fallback_used=no`, remote metadata availability, the observed position_unit fixture contract validation label, Makefile target command, final ok label, 17-case / 24-record count-only validator summary, reason-code counts, and safety flags without raw logs, full job output, raw Cargo output, fixture bodies, fixture JSON bodies, event payload bodies, private paths copied to docs, absolute local paths copied to docs, real participant data, logits / probabilities, performance metric body, Rust schema implementation claims, Rust validator implementation claims, validate / extract / micro_episode integration claims, TypeScript/Rust compatibility claims, or event durability claims.
 
 ## Step-web-logger-031 Rust UTF-16 Replay Integration Final Safety Review
 
