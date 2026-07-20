@@ -705,3 +705,15 @@ This does not change the schema parser boundary itself and does not add
 extract / micro_episode integration, TypeScript logger changes, SHA-256 helper
 work, TypeScript/Rust vector checks, event durability, production readiness,
 real-data readiness, or model performance evidence.
+
+## 39. Step-web-logger-058 Makefile Target Design Follow-Up
+
+Step-web-logger-058 designs Makefile exposure for the validator behavior that
+uses the schema parser boundary and shared UTF-16 helper. It recommends keeping
+Phase 1 and Phase 2 focused targets separate with `position_unit_phase1` and
+`position_unit_phase2` filters.
+
+This follow-up does not change schema behavior and does not add wrapper
+integration, extract / micro_episode integration, TypeScript logger changes,
+SHA-256 helper work, TypeScript/Rust vector checks, event durability,
+production readiness, real-data readiness, or model performance evidence.

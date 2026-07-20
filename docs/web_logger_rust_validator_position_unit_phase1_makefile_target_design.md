@@ -483,3 +483,17 @@ and adding a separate future Phase 2 target after implementation.
 
 Step055 does not change Makefile and does not relabel the Phase 1 target as a
 full `position_unit` policy target.
+
+## 36. Step-web-logger-058 Filter Scope Follow-Up
+
+Step-web-logger-058 identifies a post-Step057 scope drift in the implemented
+Phase 1 Makefile target. The target command `cargo test -p kslog_validate
+position_unit` now matches both `position_unit_phase1` and
+`position_unit_phase2` tests because Cargo test filtering is substring based.
+
+The future correction should keep target
+`check-web-logger-rust-validator-position-unit-phase1` and help text
+`Run Rust validator position_unit Phase 1 policy tests`, but change the command
+to `cargo test -p kslog_validate position_unit_phase1`. The same future Step
+should add the separate Phase 2 target designed in
+[Rust validator Phase 2 UTF-16 numeric metadata Makefile target design](web_logger_rust_validator_phase2_utf16_numeric_metadata_makefile_target_design.md).

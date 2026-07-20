@@ -767,3 +767,14 @@ contradicts UTF-16 length or scalar boundaries. This follow-up does not add
 TypeScript logger changes, Rust or TypeScript SHA-256 helpers, TypeScript/Rust
 vector checks, event durability, production readiness, real-data readiness, or
 model performance evidence.
+
+## 75. Step-web-logger-058 Makefile Target Design Follow-Up
+
+Step-web-logger-058 designs future Makefile exposure for the Rust validator
+Phase 2 UTF-16 numeric metadata checks. It recommends a separate Phase 2 target
+and a Phase 1 target filter correction so Phase 1 and Phase 2 checks remain
+distinct.
+
+This remains separate from SHA-256 hash compatibility, TypeScript logger
+emission, TypeScript/Rust vector checks, event durability, production
+readiness, real-data readiness, and model performance evidence.

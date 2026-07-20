@@ -544,3 +544,13 @@ direction remains `kslog_validate -> kslog_schema`; no validator dependency on
 This does not change replay behavior or expand replay-focused evidence into
 validator correctness. Phase 2 Makefile target and release-quality integration
 remain future work.
+
+## 49. Step-web-logger-058 Makefile Target Design Follow-Up
+
+Step-web-logger-058 keeps the future Phase 2 validator Makefile target
+separate from replay-focused UTF-16 checks. The recommended placement is after
+the Phase 1 validator target and before
+`check-web-logger-rust-utf16-offset-conversion`.
+
+This preserves the distinction between validator numeric metadata checks and
+replay correctness.

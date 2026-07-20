@@ -698,3 +698,14 @@ The durability and hash audit conclusions remain unchanged: no queueing,
 IndexedDB buffering, acknowledgement, retry, deduplication, ordering or
 delivery guarantee, SHA-256 helper, TypeScript/Rust vector check, production
 readiness, real-data readiness, or model performance evidence is added.
+
+## 47. Step-web-logger-058 Makefile Target Design Audit Update
+
+Step-web-logger-058 designs Makefile target exposure for Phase 2 validator
+tests and a Phase 1 filter correction. This audit update does not change the
+durability or hash conclusions.
+
+No queueing, IndexedDB buffering, acknowledgement, retry, deduplication,
+ordering or delivery guarantee, SHA-256 helper, TypeScript/Rust vector check,
+production readiness, real-data readiness, or model performance evidence is
+added.

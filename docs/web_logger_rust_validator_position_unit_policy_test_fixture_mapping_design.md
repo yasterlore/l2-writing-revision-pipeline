@@ -611,3 +611,13 @@ schema-mismatch, and unknown-version cases keep their Phase 1 reason codes, and
 the legacy missing case remains outside the global requirement. This follow-up
 does not change fixture JSON and does not add Makefile or release-quality
 coverage for Phase 2.
+
+## 40. Step-web-logger-058 Makefile Filter Mapping Follow-Up
+
+Step-web-logger-058 maps the focused test filters to future Makefile targets.
+The Phase 1-only mapping uses `position_unit_phase1` and currently covers 9
+tests. The Phase 2-only mapping uses `position_unit_phase2` and currently
+covers 8 tests.
+
+The existing `position_unit` filter remains a broader manual regression filter
+and should not be used as the Phase 1-only Makefile command after Step057.

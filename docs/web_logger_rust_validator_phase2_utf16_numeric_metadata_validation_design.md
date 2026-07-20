@@ -402,3 +402,18 @@ behavior, does not implement extract / micro_episode integration, does not
 change TypeScript logger behavior, does not add SHA-256 helpers or
 TypeScript/Rust vector checks, and does not provide production readiness,
 real-data readiness, or model performance evidence.
+
+## Step-web-logger-058 Makefile Target Design Follow-Up
+
+Step-web-logger-058 adds
+[Rust validator Phase 2 UTF-16 numeric metadata Makefile target design](web_logger_rust_validator_phase2_utf16_numeric_metadata_makefile_target_design.md).
+It recommends future target
+`check-web-logger-rust-validator-position-unit-phase2-utf16-numeric` with
+command `cargo test -p kslog_validate position_unit_phase2`.
+
+The design also records that the existing Phase 1 target currently uses the
+broader substring filter `position_unit`, which now matches Phase 2 tests. It
+recommends correcting that target command to
+`cargo test -p kslog_validate position_unit_phase1` in the same future
+Makefile implementation Step. Step058 does not change Makefile or wrapper
+behavior.

@@ -684,3 +684,16 @@ release-quality integration, extract / micro_episode integration, TypeScript
 logger changes, SHA-256 helper work, TypeScript/Rust vector checks, event
 durability, production readiness, real-data readiness, and model performance
 outside this step.
+
+## 51. Step-web-logger-058 Makefile Target Design
+
+Step-web-logger-058 designs future Makefile exposure for the Phase 2 validator
+checks and recommends correcting the existing Phase 1 target filter. The
+future Phase 1 target command should use `position_unit_phase1`; the future
+Phase 2 target should use `position_unit_phase2`.
+
+This design keeps Phase 1 and Phase 2 validator evidence separate and does not
+add release-quality integration, extract / micro_episode integration,
+TypeScript logger changes, SHA-256 helper work, TypeScript/Rust vector checks,
+event durability, production readiness, real-data readiness, or model
+performance evidence.

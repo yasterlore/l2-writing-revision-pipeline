@@ -829,3 +829,15 @@ queueing, IndexedDB persistence, acknowledgement, retry, deduplication,
 server-side idempotency, ordering guarantees, TypeScript logger changes,
 SHA-256 helpers, TypeScript/Rust vector checks, production readiness,
 real-data readiness, or model performance evidence.
+
+## 75. Step-web-logger-058 Makefile Target Design Safety Update
+
+Step-web-logger-058 designs future Makefile target exposure for Phase 2
+validator tests and a correction to the existing Phase 1 target filter. The
+design keeps diagnostics public-safe and metadata-only in docs.
+
+This does not relax no-oracle boundaries and does not implement queueing,
+IndexedDB persistence, acknowledgement, retry, deduplication, server-side
+idempotency, ordering guarantees, TypeScript logger changes, SHA-256 helpers,
+TypeScript/Rust vector checks, production readiness, real-data readiness, or
+model performance evidence.

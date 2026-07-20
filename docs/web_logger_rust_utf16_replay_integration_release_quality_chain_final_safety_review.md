@@ -590,3 +590,12 @@ accepted boundary.
 Replay-focused evidence does not prove validator Phase 2 behavior, and
 validator Phase 2 focused tests do not prove replay correctness. No replay code
 or replay behavior is changed by this follow-up.
+
+## 42. Step-web-logger-058 Makefile Target Design Follow-Up
+
+Step-web-logger-058 designs Makefile exposure for validator Phase 2 tests while
+keeping replay checks separate. The future Phase 2 target should run
+`cargo test -p kslog_validate position_unit_phase2`, not replay tests.
+
+The replay target remains `check-web-logger-rust-utf16-offset-conversion`.
+Phase 2 validator target pass should not be interpreted as replay correctness.

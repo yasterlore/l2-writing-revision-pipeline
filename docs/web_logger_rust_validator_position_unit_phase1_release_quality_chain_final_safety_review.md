@@ -324,3 +324,16 @@ metadata, cursor / selection bounds, surrogate-pair boundaries, invalid
 boundaries, and detectable byte-index misuse only for Phase 1 accepted Web
 logger v0.2-style `position_unit=utf16_code_unit` events. Phase 2 Makefile
 targeting and Phase 2 release-quality integration remain future work.
+
+## 26. Step-web-logger-058 Makefile Target Design Follow-Up
+
+Step-web-logger-058 designs a Phase 2 Makefile target and a Phase 1 target
+filter correction. The Phase 1 final-reviewed boundary remains Phase 1-only;
+it should not be broadened to include Phase 2 tests merely because the current
+Makefile command uses the broader `position_unit` substring filter.
+
+The recommended correction is to change the existing Phase 1 target command to
+`cargo test -p kslog_validate position_unit_phase1` and add a separate Phase 2
+target for `cargo test -p kslog_validate position_unit_phase2`. This follow-up
+does not change the Step054 accepted boundary or add Phase 2 release-quality
+acceptance.

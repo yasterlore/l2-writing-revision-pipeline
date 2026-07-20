@@ -393,3 +393,17 @@ UTF-16 numeric metadata validation.
 
 Step055 does not alter the wrapper, Makefile, Rust tests, release-quality
 ordering, or status marker, and it does not claim Phase 2 implementation.
+
+## 32. Step-web-logger-058 Phase 1 Filter Correction Design Follow-Up
+
+Step-web-logger-058 records that the existing Phase 1 Makefile target command
+now runs a broader focused set after Step057 because `position_unit` also
+matches `position_unit_phase2` test names. The recommended future correction is
+to change the Makefile target command to
+`cargo test -p kslog_validate position_unit_phase1`.
+
+The release-quality wrapper can keep calling
+`make check-web-logger-rust-validator-position-unit-phase1`; after the Makefile
+command is corrected, the existing Phase 1 release-quality label is accurate
+again without wrapper changes. Phase 2 wrapper integration remains a separate
+future chain.

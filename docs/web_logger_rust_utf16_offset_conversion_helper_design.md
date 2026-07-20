@@ -597,3 +597,14 @@ The new validator use does not change replay behavior and does not claim
 broader Unicode correctness, extract / micro_episode integration, TypeScript
 logger compatibility, SHA-256 compatibility, event durability, production
 readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-058 Makefile Target Design Follow-Up
+
+Step-web-logger-058 designs a future Phase 2 validator Makefile target that
+uses `cargo test -p kslog_validate position_unit_phase2`. The target should not
+run replay tests; `check-web-logger-rust-utf16-offset-conversion` remains the
+separate replay-focused target.
+
+The design also recommends correcting the Phase 1 target filter to
+`position_unit_phase1` so helper/replay and validator target scopes remain
+clear.
