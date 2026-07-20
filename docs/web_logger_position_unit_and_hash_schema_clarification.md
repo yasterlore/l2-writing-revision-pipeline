@@ -830,3 +830,12 @@ Step-web-logger-064 final-reviews the Phase 2 validator release-quality chain.
 The accepted boundary remains separate from SHA-256 hash compatibility,
 TypeScript/Rust vector checks, TypeScript logger emission, event durability,
 production readiness, real-data readiness, and model performance evidence.
+
+## 82. Step-web-logger-065 TypeScript Compatibility Design Follow-Up
+
+Step-web-logger-065 designs future TypeScript logger emission of
+`position_unit=utf16_code_unit` and related UTF-16 metadata compatibility. It
+records that TypeScript implementation, TypeScript/Rust compatibility
+fixtures, SHA-256 compatibility, event durability, production readiness,
+real-data readiness, and model performance evidence remain separate future
+work.

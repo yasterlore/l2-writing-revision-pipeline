@@ -758,3 +758,11 @@ fixtures, or wrapper behavior.
 Step-web-logger-064 final-reviews the Phase 2 release-quality chain without
 changing the `kslog_schema` parser/accessor boundary, `RawEvent` fields,
 shared UTF-16 helper API, Rust code/tests, fixtures, or wrapper behavior.
+
+## 46. Step-web-logger-065 TypeScript Compatibility Design Follow-Up
+
+Step-web-logger-065 designs future TypeScript logger metadata alignment with
+the existing Rust schema parser/accessor and validator boundaries. It does not
+change `kslog_schema`, `RawEvent`, the shared UTF-16 helper API, Rust code,
+TypeScript code, tests, fixtures, Makefile, wrapper, production readiness,
+real-data readiness, or model performance evidence.

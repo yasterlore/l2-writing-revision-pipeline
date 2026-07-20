@@ -593,3 +593,11 @@ separate from replay correctness evidence and does not change replay behavior.
 Step-web-logger-064 final-reviews the Phase 2 validator wrapper chain. The
 accepted boundary keeps validator numeric metadata evidence separate from
 replay correctness evidence and does not change replay behavior.
+
+## 56. Step-web-logger-065 TypeScript Compatibility Design Follow-Up
+
+Step-web-logger-065 audits future TypeScript logger metadata compatibility
+with UTF-16 code unit semantics. It remains separate from replay correctness
+evidence and does not change replay behavior, TypeScript code, Rust code,
+tests, fixtures, Makefile, wrapper, production readiness, real-data readiness,
+or model performance evidence.

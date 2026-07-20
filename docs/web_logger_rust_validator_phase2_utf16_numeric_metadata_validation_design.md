@@ -483,7 +483,6 @@ This follow-up does not change Phase 2 validator behavior, tests, fixtures,
 Makefile target behavior, wrapper behavior, replay behavior, extract /
 micro_episode integration, TypeScript logger behavior, event durability,
 production readiness, real-data readiness, or model performance evidence.
-Phase 2 final safety review remains future work.
 
 ## Step-web-logger-064 Final Safety Review Follow-Up
 
@@ -497,3 +496,16 @@ This follow-up does not change Phase 2 validator behavior, tests, fixtures,
 Makefile target behavior, wrapper behavior, replay behavior, extract /
 micro_episode integration, TypeScript logger behavior, event durability,
 production readiness, real-data readiness, or model performance evidence.
+
+## Step-web-logger-065 TypeScript Compatibility Design Follow-Up
+
+Step-web-logger-065 adds a TypeScript logger compatibility design that audits
+whether the current logger emits `position_unit=utf16_code_unit` and the
+metadata expected by the Phase 2 validator. The design keeps this Rust
+validator Phase 2 behavior unchanged and treats TypeScript implementation and
+TypeScript/Rust compatibility fixtures as future work.
+
+This follow-up does not change Phase 2 validator behavior, tests, fixtures,
+Makefile target behavior, wrapper behavior, replay behavior, extract /
+micro_episode integration, SHA-256 helper work, event durability, production
+readiness, real-data readiness, or model performance evidence.

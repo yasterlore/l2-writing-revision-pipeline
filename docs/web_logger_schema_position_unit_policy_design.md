@@ -766,3 +766,13 @@ Web logger v0.2-style `position_unit=utf16_code_unit` events. It does not add
 extract / micro_episode integration, TypeScript logger changes, SHA-256 helper
 work, TypeScript/Rust vector checks, event durability, production readiness,
 real-data readiness, or model performance evidence.
+
+## 58. Step-web-logger-065 TypeScript Compatibility Design
+
+Step-web-logger-065 adds a design-only audit for future TypeScript logger
+`position_unit=utf16_code_unit` emission and metadata compatibility with the
+Rust Phase 1 / Phase 2 validator boundaries. It does not change the policy
+implementation, TypeScript code, Rust code, fixtures, Makefile, wrapper,
+extract / micro_episode integration, SHA-256 helper work, TypeScript/Rust
+vector checks, event durability, production readiness, real-data readiness, or
+model performance evidence.

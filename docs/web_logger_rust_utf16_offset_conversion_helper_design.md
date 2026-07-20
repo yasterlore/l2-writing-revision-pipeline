@@ -649,3 +649,11 @@ boundaries.
 Step-web-logger-064 final-reviews the Phase 2 validator release-quality chain
 that uses `kslog_schema::utf16_offsets`. It does not change helper behavior,
 replay behavior, helper API, or replay-focused accepted boundaries.
+
+## Step-web-logger-065 TypeScript Compatibility Design Follow-Up
+
+Step-web-logger-065 designs how future TypeScript logger metadata should align
+with UTF-16 code unit semantics and the Rust validator Phase 2 boundary. It
+does not change `kslog_schema::utf16_offsets`, helper behavior, replay
+behavior, TypeScript code, tests, fixtures, Makefile, wrapper, production
+readiness, real-data readiness, or model performance evidence.

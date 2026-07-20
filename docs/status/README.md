@@ -1784,6 +1784,10 @@ Related final safety review:
 
 - [Rust validator Phase 2 UTF-16 numeric metadata release-quality chain final safety review](../web_logger_rust_validator_phase2_utf16_numeric_metadata_release_quality_chain_final_safety_review.md): accepts only the explicit Phase 2 validator UTF-16 numeric metadata release-quality boundary and does not treat the status marker as raw job output or production / real-data readiness evidence.
 
+Related future design:
+
+- [TypeScript logger explicit position_unit emission and metadata compatibility design](../web_logger_typescript_position_unit_emission_metadata_compatibility_design.md): design-only audit for future TypeScript logger metadata alignment. It does not revise this status marker and does not claim TypeScript/Rust compatibility.
+
 ## Step-web-logger-031 Rust UTF-16 Replay Integration Final Safety Review
 
 - [Rust UTF-16 replay integration release-quality chain final safety review](../web_logger_rust_utf16_replay_integration_release_quality_chain_final_safety_review.md): final-safety-review / docs-only review that accepts the Step-web-logger-024 through Step-web-logger-030 replay-focused chain with explicit boundary for browser-originated UTF-16 code unit offset handling within `kslog_replay`. It does not revise the helper-focused marker and does not claim validate / extract / micro_episode integration, schema-level position_unit policy completion, TypeScript/Rust compatibility, event durability, production readiness, real-data readiness, or model performance.

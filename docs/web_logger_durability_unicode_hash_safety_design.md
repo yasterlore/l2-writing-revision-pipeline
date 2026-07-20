@@ -907,3 +907,15 @@ No queueing, IndexedDB persistence, acknowledgement, retry, deduplication,
 server-side idempotency, ordering guarantees, TypeScript logger changes,
 SHA-256 helpers, TypeScript/Rust vector checks, production readiness,
 real-data readiness, or model performance evidence is added.
+
+## 81. Step-web-logger-065 TypeScript Compatibility Design Safety Update
+
+Step-web-logger-065 designs future TypeScript logger metadata alignment with
+the Rust validator Phase 2 UTF-16 boundary. The design is docs-only and does
+not alter durability, hash, TypeScript logger runtime behavior, or
+data-collection behavior.
+
+No queueing, IndexedDB persistence, acknowledgement, retry, deduplication,
+server-side idempotency, ordering guarantees, SHA-256 helpers,
+TypeScript/Rust vector checks, production readiness, real-data readiness, or
+model performance evidence is added.

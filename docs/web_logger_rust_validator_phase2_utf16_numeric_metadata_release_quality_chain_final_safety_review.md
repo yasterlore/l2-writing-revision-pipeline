@@ -296,3 +296,17 @@ for validator Phase 2 exists. It should not implement code yet, should not
 claim TypeScript/Rust compatibility yet, should not alter Rust validator,
 should not alter release-quality wrapper, and should not claim production or
 real-data readiness.
+
+## 23. Step-web-logger-065 Follow-Up
+
+Step-web-logger-065 creates
+`docs/web_logger_typescript_position_unit_emission_metadata_compatibility_design.md`
+as a TypeScript logger compatibility design / docs-only follow-up. It keeps
+this final review's accepted Rust validator Phase 2 boundary unchanged and
+records TypeScript logger compatibility as separate future work.
+
+The follow-up does not change wrapper, Makefile, Rust / TypeScript / Python
+code, tests, fixture JSON, replay behavior, extract / micro_episode
+integration, SHA-256 helper work, TypeScript/Rust vector checks, event
+durability, production readiness, real-data readiness, or model performance
+evidence.

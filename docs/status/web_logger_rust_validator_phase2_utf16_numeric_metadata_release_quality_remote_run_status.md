@@ -413,3 +413,12 @@ Step064 does not change wrapper, Makefile, Rust / TypeScript / Python code,
 tests, fixture JSON, replay behavior, extract / micro_episode integration,
 event durability, production readiness, real-data readiness, or model
 performance evidence.
+
+## 26. Step-web-logger-065 TypeScript Compatibility Design Follow-Up
+
+Step-web-logger-065 adds
+`docs/web_logger_typescript_position_unit_emission_metadata_compatibility_design.md`
+as design-only planning for future TypeScript logger metadata alignment. It
+does not revise this remote status marker and does not claim TypeScript/Rust
+compatibility, replay correctness, event durability, production readiness,
+real-data readiness, or model performance evidence.
