@@ -431,3 +431,15 @@ status marker, final safety review, replay correctness, extract /
 micro_episode integration, TypeScript logger changes, SHA-256 helpers,
 TypeScript/Rust vector checks, event durability, production readiness,
 real-data readiness, and model performance evidence remain future work.
+
+## Step-web-logger-060 Release-Quality Integration Design Follow-Up
+
+Step-web-logger-060 designs future release-quality wrapper integration for the
+Phase 2 Makefile target. It recommends wrapper label
+`release_quality_check: web logger Rust validator position_unit Phase 2 UTF-16 numeric metadata`
+and command
+`make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
+
+This follow-up does not change validator behavior, Makefile, wrapper, Rust
+code/tests, fixtures, replay behavior, status markers, production readiness,
+real-data readiness, or model performance evidence.

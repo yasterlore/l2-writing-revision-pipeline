@@ -727,3 +727,9 @@ the `kslog_schema` parser boundary or shared UTF-16 helper API.
 
 The Phase 2 target is Makefile-only at this point and is not release-quality
 integrated yet.
+
+## 41. Step-web-logger-060 Release-Quality Design Follow-Up
+
+Step-web-logger-060 designs future release-quality wrapper integration for the
+validator Phase 2 Makefile target. It does not change the `kslog_schema`
+parser/accessor boundary or shared UTF-16 helper API.

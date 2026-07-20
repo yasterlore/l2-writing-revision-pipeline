@@ -349,3 +349,12 @@ and that target is Phase 1-only again because it now uses the
 This follow-up does not revise the Step054 accepted boundary and does not
 create Phase 2 release-quality integration, Phase 2 status marker evidence, or
 Phase 2 final safety review acceptance.
+
+## 28. Step-web-logger-060 Release-Quality Integration Design Follow-Up
+
+Step-web-logger-060 designs a future wrapper check for the Phase 2 target. It
+is separate from the Step054 accepted Phase 1 chain and does not rename,
+broaden, or revise the Phase 1 accepted boundary.
+
+Phase 2 release-quality integration, Phase 2 status marker evidence, and Phase
+2 final safety review acceptance remain future work.

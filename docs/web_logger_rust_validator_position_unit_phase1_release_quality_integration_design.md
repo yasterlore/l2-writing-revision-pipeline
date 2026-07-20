@@ -421,3 +421,13 @@ target now runs `cargo test -p kslog_validate position_unit_phase1`.
 This restores the Phase 1 release-quality label to Phase 1-only coverage
 without changing `scripts/check_release_quality.sh`. The new Phase 2 target is
 not called by release-quality yet.
+
+## 34. Step-web-logger-060 Phase 2 Release-Quality Design Follow-Up
+
+Step-web-logger-060 designs the separate additive Phase 2 wrapper check. The
+existing Phase 1 label and command should remain unchanged; the future Phase 2
+label should be inserted after the Phase 1 label and before Rust UTF-16 replay
+integration.
+
+This follow-up does not change the wrapper and does not expand the Phase 1
+release-quality chain.

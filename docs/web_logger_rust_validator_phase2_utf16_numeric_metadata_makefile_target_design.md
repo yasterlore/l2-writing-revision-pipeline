@@ -416,3 +416,15 @@ The Phase 2 target is placed after the corrected Phase 1 target and before
 `check-web-logger-rust-utf16-offset-conversion`. Step059 does not change the
 release-quality wrapper, Rust code/tests, fixture JSON, TypeScript/Python
 code, status markers, or Phase 2 release-quality acceptance.
+
+## 29. Step-web-logger-060 Release-Quality Integration Design Follow-Up
+
+Step-web-logger-060 adds
+[Rust validator Phase 2 UTF-16 numeric metadata release-quality integration design](web_logger_rust_validator_phase2_utf16_numeric_metadata_release_quality_integration_design.md).
+It recommends adding the Phase 2 target to the wrapper with label
+`release_quality_check: web logger Rust validator position_unit Phase 2 UTF-16 numeric metadata`
+and command
+`make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
+
+Step060 is docs-only. It does not change the wrapper, Makefile, Rust code/tests,
+fixtures, status markers, or Phase 2 release-quality acceptance.

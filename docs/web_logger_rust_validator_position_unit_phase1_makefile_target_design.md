@@ -509,3 +509,9 @@ Step059 also adds the separate Phase 2 target
 command `cargo test -p kslog_validate position_unit_phase2`. The Phase 1
 target should be interpreted as Phase 1-only again; Phase 2 release-quality
 integration remains future work.
+
+## 38. Step-web-logger-060 Release-Quality Design Follow-Up
+
+Step-web-logger-060 designs future release-quality wrapper integration for the
+separate Phase 2 target. The Phase 1 Makefile target remains unchanged by that
+design and should continue to mean Phase 1-only focused tests.

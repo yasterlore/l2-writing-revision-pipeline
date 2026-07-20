@@ -618,3 +618,9 @@ target running `cargo test -p kslog_replay utf16`.
 
 This keeps shared helper validation, validator Phase 2 checks, and replay
 checks distinct.
+
+## Step-web-logger-060 Release-Quality Design Follow-Up
+
+Step-web-logger-060 designs release-quality wrapper placement for the
+validator Phase 2 target before the replay-focused UTF-16 target. The design
+does not change helper behavior or replay behavior.

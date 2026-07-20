@@ -563,3 +563,9 @@ is unchanged.
 
 The new validator Phase 2 target does not expand or replace replay-focused
 evidence.
+
+## 51. Step-web-logger-060 Release-Quality Design Follow-Up
+
+Step-web-logger-060 keeps the future Phase 2 release-quality check separate
+from replay integration. The recommended wrapper insertion point is after the
+Phase 1 validator label and before the Rust UTF-16 replay integration label.
