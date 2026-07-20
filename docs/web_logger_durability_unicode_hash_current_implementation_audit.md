@@ -613,3 +613,12 @@ Phase 1 focused tests. This preserves the durability audit conclusion: the
 target does not add queueing, IndexedDB buffering, acknowledgement, retry,
 deduplication, ordering, delivery durability, TypeScript/Rust hash work,
 production readiness, real-data readiness, or model performance evidence.
+
+## 39. Step-web-logger-050 Rust Validator Phase 1 Release-Quality Integration Design
+
+Step-web-logger-050 adds design-only planning for future release-quality
+integration of the Rust validator Phase 1 target. This preserves the
+durability audit conclusion: release-quality planning does not add queueing,
+IndexedDB buffering, acknowledgement, retry, deduplication, ordering,
+delivery durability, TypeScript/Rust hash work, production readiness,
+real-data readiness, or model performance evidence.

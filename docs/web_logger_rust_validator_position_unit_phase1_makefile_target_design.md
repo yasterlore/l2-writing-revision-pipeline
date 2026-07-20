@@ -408,3 +408,17 @@ boundary, failure semantics, and later remote/status/final-review staging for
 the new Makefile target. It should not modify the wrapper yet and should not
 claim Phase 2 UTF-16 numeric validation, production readiness, or real-data
 readiness.
+
+## 30. Step-web-logger-050 Release-Quality Integration Design
+
+Step-web-logger-050 adds
+[Rust validator position_unit Phase 1 release-quality integration design](web_logger_rust_validator_position_unit_phase1_release_quality_integration_design.md).
+
+The design recommends future wrapper label
+`release_quality_check: web logger Rust validator position_unit Phase 1 policy`
+and command `make check-web-logger-rust-validator-position-unit-phase1`.
+It keeps this Makefile target as command source of truth, recommends insertion
+after position_unit fixture contract validation and before Rust UTF-16 replay
+integration, and remains docs-only without wrapper, Makefile, Rust code, test,
+fixture, Phase 2 UTF-16 numeric validation, production readiness, real-data
+readiness, or model performance changes.

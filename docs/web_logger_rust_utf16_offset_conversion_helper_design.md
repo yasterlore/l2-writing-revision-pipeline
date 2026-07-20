@@ -518,3 +518,9 @@ Step-web-logger-049 adds the future target described in Step048:
 The target runs `cargo test -p kslog_validate position_unit`. It does not
 change this helper, call this helper, run replay checks, or implement
 validator-side numeric UTF-16 checks.
+
+## Step-web-logger-050 Validator Phase 1 Release-Quality Integration Design
+
+Step-web-logger-050 designs future release-quality integration for the
+Step049 target. The planned wrapper check remains Phase 1 only and does not
+call this helper or implement validator-side numeric UTF-16 checks.

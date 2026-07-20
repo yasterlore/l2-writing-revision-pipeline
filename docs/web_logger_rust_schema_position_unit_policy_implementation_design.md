@@ -606,3 +606,15 @@ This does not change schema behavior, validator behavior, Rust code, tests,
 fixtures, wrapper behavior, Phase 2 UTF-16 numeric validation, event
 durability, production readiness, real-data readiness, or model performance
 evidence.
+
+## 31. Step-web-logger-050 Release-Quality Integration Design
+
+Step-web-logger-050 designs future release-quality integration for the Step049
+target. The design keeps the schema parser/accessor boundary as prerequisite
+context, but the planned wrapper check targets Rust validator Phase 1 behavior
+rather than schema parsing alone.
+
+This remains docs-only and does not change schema behavior, validator
+behavior, wrapper behavior, Makefile behavior, fixtures, Phase 2 UTF-16
+numeric validation, event durability, production readiness, real-data
+readiness, or model performance evidence.

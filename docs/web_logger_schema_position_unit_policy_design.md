@@ -580,3 +580,15 @@ numeric validation.
 Release-quality integration, extract / micro_episode integration, TypeScript
 logger behavior, event durability, production readiness, real-data readiness,
 and model performance evidence remain future work.
+
+## 43. Step-web-logger-050 Rust Validator Phase 1 Release-Quality Integration Design
+
+Step-web-logger-050 designs how the Step049 target should be added to the
+future release-quality wrapper. The planned label is scoped to Rust validator
+`position_unit` Phase 1 policy and should be inserted after the fixture
+contract validation check and before Rust UTF-16 replay integration.
+
+This does not make the full schema-level position_unit policy complete.
+Phase 2 UTF-16 numeric validation, extract / micro_episode integration,
+TypeScript logger behavior, event durability, production readiness, real-data
+readiness, and model performance evidence remain future work.

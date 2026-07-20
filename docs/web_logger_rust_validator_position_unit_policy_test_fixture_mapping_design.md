@@ -507,3 +507,15 @@ target.
 The target does not change validator behavior, Rust tests, fixtures,
 TypeScript, Python, wrapper behavior, Phase 2 UTF-16 numeric validation,
 production readiness, real-data readiness, or model performance evidence.
+
+## 32. Step-web-logger-050 Release-Quality Integration Design
+
+Step-web-logger-050 adds the release-quality integration design for the
+Step049 Makefile target. The planned wrapper check remains focused on this
+mapping's Phase 1 presence / value / schema-version tests through
+`make check-web-logger-rust-validator-position-unit-phase1`.
+
+The design does not expand the mapping to Phase 2 UTF-16 numeric metadata
+validation, does not modify Rust code or tests, does not modify fixtures, and
+does not add wrapper implementation, production readiness, real-data
+readiness, or model performance evidence.

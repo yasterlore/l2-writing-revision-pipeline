@@ -459,3 +459,13 @@ logger block before the Rust UTF-16 replay integration target.
 The target remains focused on `kslog_validate` Phase 1 tests. It does not run
 replay and does not settle the shared-helper strategy for Phase 2 numeric
 UTF-16 checks.
+
+## 41. Step-web-logger-050 Validator Phase 1 Release-Quality Integration Design
+
+Step-web-logger-050 designs future release-quality wrapper integration for
+the Step049 target. The recommended insertion point keeps the validator Phase
+1 check before Rust UTF-16 replay integration while preserving the separation
+between validator policy tests and replay-focused UTF-16 behavior.
+
+The design does not call replay and does not settle the shared-helper strategy
+for Phase 2 numeric UTF-16 checks.

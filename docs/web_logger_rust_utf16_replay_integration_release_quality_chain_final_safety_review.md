@@ -508,3 +508,13 @@ runs `cargo test -p kslog_validate position_unit`.
 
 This does not change the Step031 replay-focused accepted boundary, does not
 call replay, and does not add Phase 2 UTF-16 numeric metadata validation.
+
+## 34. Step-web-logger-050 Validator Phase 1 Release-Quality Integration Design
+
+Step-web-logger-050 designs future release-quality integration for the Rust
+validator Phase 1 target. The planned check should run before the existing
+Rust UTF-16 replay integration check, but it does not change this
+replay-focused accepted boundary.
+
+Validator Phase 1 release-quality integration is not replay correctness and
+does not add Phase 2 UTF-16 numeric metadata validation.
