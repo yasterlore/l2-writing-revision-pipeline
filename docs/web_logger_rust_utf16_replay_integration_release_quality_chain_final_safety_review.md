@@ -518,3 +518,13 @@ replay-focused accepted boundary.
 
 Validator Phase 1 release-quality integration is not replay correctness and
 does not add Phase 2 UTF-16 numeric metadata validation.
+
+## 35. Step-web-logger-051 Validator Phase 1 Release-Quality Integration
+
+Step-web-logger-051 adds the Rust validator Phase 1 target to the
+release-quality wrapper before the existing Rust UTF-16 replay integration
+check.
+
+This does not change the Step031 replay-focused accepted boundary, does not
+call replay from the validator Phase 1 target, and does not add Phase 2
+UTF-16 numeric metadata validation.

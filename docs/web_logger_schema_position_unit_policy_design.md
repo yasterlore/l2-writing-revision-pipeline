@@ -592,3 +592,16 @@ This does not make the full schema-level position_unit policy complete.
 Phase 2 UTF-16 numeric validation, extract / micro_episode integration,
 TypeScript logger behavior, event durability, production readiness, real-data
 readiness, and model performance evidence remain future work.
+
+## 44. Step-web-logger-051 Rust Validator Phase 1 Release-Quality Integration
+
+Step-web-logger-051 integrates the Rust validator Phase 1 target into the
+release-quality wrapper. The check remains scoped to presence / value /
+schema-version gating and runs through
+`make check-web-logger-rust-validator-position-unit-phase1`.
+
+This still does not make the full schema-level position_unit policy complete.
+Phase 2 UTF-16 numeric validation, extract / micro_episode integration,
+TypeScript logger behavior, status marker evidence, final safety review,
+event durability, production readiness, real-data readiness, and model
+performance evidence remain future work.

@@ -689,3 +689,16 @@ code, fixture JSON, workflows, package metadata, Cargo metadata, Phase 2
 UTF-16 numeric metadata validation, extract / micro_episode integration, event
 durability, production readiness, real-data readiness, or model performance
 claims.
+
+Confirm Step-web-logger-051 adds release-quality wrapper label
+`release_quality_check: web logger Rust validator position_unit Phase 1 policy`
+with command `make check-web-logger-rust-validator-position-unit-phase1`.
+Confirm insertion is after `release_quality_check: web logger position_unit fixture contract validation`
+and before `release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
+Confirm the wrapper calls the Makefile target and does not duplicate
+`cargo test -p kslog_validate position_unit` directly. Confirm Step-web-logger-051
+does not modify Makefile, Rust code, tests, TypeScript / Python code, fixture
+JSON, workflows, package metadata, Cargo metadata, Phase 2 UTF-16 numeric
+metadata validation, extract / micro_episode integration, status marker,
+final safety review, event durability, production readiness, real-data
+readiness, or model performance claims.

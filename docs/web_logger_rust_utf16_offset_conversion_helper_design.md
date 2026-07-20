@@ -524,3 +524,9 @@ validator-side numeric UTF-16 checks.
 Step-web-logger-050 designs future release-quality integration for the
 Step049 target. The planned wrapper check remains Phase 1 only and does not
 call this helper or implement validator-side numeric UTF-16 checks.
+
+## Step-web-logger-051 Validator Phase 1 Release-Quality Integration
+
+Step-web-logger-051 adds the Rust validator Phase 1 target to the
+release-quality wrapper. The target still does not call this helper and does
+not implement validator-side numeric UTF-16 checks.

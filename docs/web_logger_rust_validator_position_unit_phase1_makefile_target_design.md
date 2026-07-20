@@ -422,3 +422,15 @@ after position_unit fixture contract validation and before Rust UTF-16 replay
 integration, and remains docs-only without wrapper, Makefile, Rust code, test,
 fixture, Phase 2 UTF-16 numeric validation, production readiness, real-data
 readiness, or model performance changes.
+
+## 31. Step-web-logger-051 Release-Quality Integration
+
+Step-web-logger-051 adds the Step049 target to `scripts/check_release_quality.sh`
+with label `release_quality_check: web logger Rust validator position_unit Phase 1 policy`
+and command `make check-web-logger-rust-validator-position-unit-phase1`.
+
+The wrapper calls the Makefile target and does not duplicate the Cargo command
+directly. Makefile remains unchanged in Step051. Phase 2 UTF-16 numeric
+validation, status marker evidence, final safety review acceptance,
+production readiness, real-data readiness, and model performance evidence
+remain future work.

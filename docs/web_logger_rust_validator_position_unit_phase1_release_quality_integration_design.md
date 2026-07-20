@@ -303,3 +303,42 @@ changes, avoid TypeScript / Python changes, and update README plus full
 technical specification related docs because release-quality visible behavior
 changes. It should not claim Phase 2 numeric validation, production readiness,
 or real-data readiness.
+
+## 26. Step-web-logger-051 Implementation Status
+
+Step-web-logger-051 implements this release-quality integration design.
+
+Added release-quality label:
+
+`release_quality_check: web logger Rust validator position_unit Phase 1 policy`
+
+Added command:
+
+`make check-web-logger-rust-validator-position-unit-phase1`
+
+The check is inserted after
+`release_quality_check: web logger position_unit fixture contract validation`
+and before
+`release_quality_check: web logger Rust UTF-16 offset conversion and replay integration`.
+The wrapper calls the Makefile target and does not duplicate
+`cargo test -p kslog_validate position_unit` directly.
+
+This is release-quality integration for Rust validator Phase 1 focused tests
+only. It does not change Makefile, Rust code, tests, fixtures, TypeScript,
+Python, Phase 2 UTF-16 numeric metadata validation, extract / micro_episode
+integration, status marker evidence, final safety review acceptance, event
+durability, production readiness, real-data readiness, or model performance
+evidence.
+
+## 27. Recommended Next Step After Step-web-logger-051
+
+Recommended next step:
+
+Step-web-logger-052: Rust validator position_unit Phase 1 release-quality run
+record workflow design
+
+Step052 should be run-record-workflow-design / docs-only. It should define
+remote/manual evidence collection, metadata-only output handling, status
+marker fields, local fallback rules, safety checklist, and Step053 handoff
+without creating a status marker yet and without claiming Phase 2 numeric
+validation, production readiness, or real-data readiness.

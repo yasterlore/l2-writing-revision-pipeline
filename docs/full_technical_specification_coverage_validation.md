@@ -878,3 +878,15 @@ Phase 2 UTF-16 numeric metadata validation coverage, not extract /
 micro_episode integration coverage, not TypeScript logger coverage, not event
 durability evidence, not production readiness, not real-data readiness, and
 not model performance evidence.
+
+## Step-web-logger-051 Coverage Addendum
+
+`make check-release-quality` now includes the Rust validator Phase 1 target via
+`make check-web-logger-rust-validator-position-unit-phase1`.
+
+This adds release-quality wrapper coverage for the focused Rust validator
+Phase 1 tests. It is not Phase 2 UTF-16 numeric metadata validation coverage,
+not replay correctness coverage, not extract / micro_episode integration
+coverage, not TypeScript logger coverage, not TypeScript/Rust compatibility
+evidence, not event durability evidence, not production readiness, not
+real-data readiness, and not model performance evidence.

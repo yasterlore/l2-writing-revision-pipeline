@@ -3881,3 +3881,21 @@ modify Rust code or tests, change fixture JSON, implement UTF-16 numeric
 metadata validation, implement extract / micro_episode integration, change
 TypeScript logger behavior, add event durability, provide real-data use,
 metric evidence, or production readiness status.
+
+## Step-web-logger-051 Rust Validator Phase 1 Release-Quality Integration
+
+Step-web-logger-051 adds the Rust validator Phase 1 target to
+`scripts/check_release_quality.sh`.
+
+The added release-quality label is
+`release_quality_check: web logger Rust validator position_unit Phase 1 policy`,
+and the command is
+`make check-web-logger-rust-validator-position-unit-phase1`. The check is
+inserted after position_unit fixture contract validation and before Rust
+UTF-16 replay integration.
+
+This does not change Makefile, Rust code or tests, fixture JSON, TypeScript /
+Python code, implement UTF-16 numeric metadata validation, implement extract /
+micro_episode integration, add status marker evidence, add final safety review
+acceptance, add event durability, provide real-data use, metric evidence, or
+production readiness status.

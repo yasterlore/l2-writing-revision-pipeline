@@ -469,3 +469,12 @@ between validator policy tests and replay-focused UTF-16 behavior.
 
 The design does not call replay and does not settle the shared-helper strategy
 for Phase 2 numeric UTF-16 checks.
+
+## 42. Step-web-logger-051 Validator Phase 1 Release-Quality Integration
+
+Step-web-logger-051 adds the Rust validator Phase 1 target to release-quality
+before the Rust UTF-16 replay integration check. The target remains focused on
+`kslog_validate` Phase 1 policy tests.
+
+This integration does not call replay and does not settle the shared-helper
+strategy for Phase 2 numeric UTF-16 checks.

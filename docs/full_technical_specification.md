@@ -1825,3 +1825,28 @@ integration. Phase 2 UTF-16 numeric metadata validation, TypeScript logger
 changes, fixture JSON changes, Rust / TypeScript SHA-256 helpers,
 TypeScript/Rust checks, event durability, production readiness, real-data
 readiness, and model performance evidence remain future work.
+
+## Step-web-logger-051 Rust Validator Phase 1 Release-Quality Integration Appendix
+
+Step-web-logger-051 adds release-quality wrapper integration for the Rust
+validator Phase 1 target.
+
+Added label:
+
+`release_quality_check: web logger Rust validator position_unit Phase 1 policy`
+
+Added command:
+
+`make check-web-logger-rust-validator-position-unit-phase1`
+
+The check is inserted after the Web logger position_unit fixture contract
+validation check and before the Rust UTF-16 offset conversion and replay
+integration check. The wrapper calls the Makefile target and does not
+duplicate `cargo test -p kslog_validate position_unit` directly.
+
+This remains Rust validator Phase 1 focused-test coverage only. Phase 2
+UTF-16 numeric metadata validation, extract / micro_episode integration,
+TypeScript logger changes, fixture JSON changes, Rust / TypeScript SHA-256
+helpers, TypeScript/Rust checks, event durability, release-quality status
+marker, final safety review, production readiness, real-data readiness, and
+model performance evidence remain future work.

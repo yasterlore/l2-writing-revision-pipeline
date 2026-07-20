@@ -618,3 +618,14 @@ This remains docs-only and does not change schema behavior, validator
 behavior, wrapper behavior, Makefile behavior, fixtures, Phase 2 UTF-16
 numeric validation, event durability, production readiness, real-data
 readiness, or model performance evidence.
+
+## 32. Step-web-logger-051 Release-Quality Integration
+
+Step-web-logger-051 adds release-quality wrapper integration for the Rust
+validator Phase 1 target. The schema parser/accessor boundary remains
+prerequisite context, but the release-quality check runs validator focused
+tests through Makefile rather than schema tests alone.
+
+This does not change schema behavior, validator behavior, Makefile behavior,
+fixtures, Phase 2 UTF-16 numeric validation, event durability, production
+readiness, real-data readiness, or model performance evidence.

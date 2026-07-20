@@ -682,3 +682,15 @@ This design does not implement SHA-256 helpers, TypeScript/Rust hash vector
 checks, Phase 2 UTF-16 numeric validation, TypeScript logger compatibility,
 event durability, production readiness, real-data readiness, or model
 performance evidence.
+
+## 68. Step-web-logger-051 Rust Validator Phase 1 Release-Quality Integration
+
+Step-web-logger-051 adds release-quality wrapper integration for the Rust
+validator Phase 1 target. The wrapper calls
+`make check-web-logger-rust-validator-position-unit-phase1`.
+
+This keeps position-unit policy and hash compatibility boundaries distinct.
+It does not implement SHA-256 helpers, TypeScript/Rust hash vector checks,
+Phase 2 UTF-16 numeric validation, TypeScript logger compatibility, event
+durability, production readiness, real-data readiness, or model performance
+evidence.

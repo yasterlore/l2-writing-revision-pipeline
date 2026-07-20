@@ -761,3 +761,20 @@ docs. It does not change release-quality wrapper scripts, workflows, Rust
 code, Rust tests, TypeScript code, Python code, fixture JSON, package files,
 Cargo files, `kslog_schema`, `kslog_validate`, `kslog_replay`,
 `kslog_extract`, `kslog_micro_episode`, or status markers.
+
+## Step-web-logger-051 Source Inventory Addendum
+
+`scripts/check_release_quality.sh` adds the Rust validator Phase 1
+release-quality check:
+
+`release_quality_check: web logger Rust validator position_unit Phase 1 policy`
+
+The check runs:
+
+`make check-web-logger-rust-validator-position-unit-phase1`
+
+The source inventory addition is limited to the wrapper integration and
+related docs. It does not change Makefile, workflows, Rust code, Rust tests,
+TypeScript code, Python code, fixture JSON, package files, Cargo files,
+`kslog_schema`, `kslog_validate`, `kslog_replay`, `kslog_extract`,
+`kslog_micro_episode`, or status markers.
