@@ -417,3 +417,13 @@ The wrapper command is `make check-web-logger-position-unit-fixtures`, so the
 Makefile target remains the command source of truth. The integration does not
 change the Makefile target, Python validator, focused tests, fixtures, Rust
 schema / validator behavior, or release-quality status markers.
+
+## 28. Step-web-logger-041 Run Record Workflow Design
+
+Step-web-logger-041 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Remote/Manual Run Record Workflow](web_logger_schema_position_unit_fixture_validator_release_quality_remote_run_record_workflow.md).
+
+The workflow design keeps future evidence recording tied to the Makefile
+target command and public-safe fixture contract counts. It does not create a
+status marker, modify Makefile, modify the wrapper, modify validator code,
+modify tests, modify fixtures, or implement Rust schema / validator behavior.

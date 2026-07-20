@@ -575,3 +575,13 @@ The wrapper now calls `make check-web-logger-position-unit-fixtures` under
 label `release_quality_check: web logger position_unit fixture contract validation`.
 It does not change the validator, focused tests, fixtures, Makefile, Rust
 schema / validator behavior, status markers, or final safety review.
+
+## 33. Step-web-logger-041 Run Record Workflow Design
+
+Step-web-logger-041 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Remote/Manual Run Record Workflow](web_logger_schema_position_unit_fixture_validator_release_quality_remote_run_record_workflow.md).
+
+The workflow design describes future status-marker evidence for running this
+validator through release-quality. It does not change the validator, focused
+tests, fixtures, Makefile, wrapper, Rust schema / validator behavior, or final
+safety review.

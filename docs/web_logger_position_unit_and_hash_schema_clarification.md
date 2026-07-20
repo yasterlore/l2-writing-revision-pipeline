@@ -559,3 +559,15 @@ integration. It does not change Makefile, schema behavior, validation
 behavior, replay behavior, TypeScript/Rust hash work, status markers, final
 safety review, event durability, production readiness, real-data readiness, or
 model performance evidence.
+
+## 58. Step-web-logger-041 Schema-Level Position Unit Fixture Validator Release-Quality Run Record Workflow Design
+
+Step-web-logger-041 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Remote/Manual Run Record Workflow](web_logger_schema_position_unit_fixture_validator_release_quality_remote_run_record_workflow.md).
+
+The workflow design defines future public-safe status-marker metadata for the
+Step-web-logger-040 wrapper integration. It does not change Makefile,
+`scripts/check_release_quality.sh`, schema behavior, validation behavior,
+replay behavior, TypeScript/Rust hash work, status markers, final safety
+review, event durability, production readiness, real-data readiness, or model
+performance evidence.

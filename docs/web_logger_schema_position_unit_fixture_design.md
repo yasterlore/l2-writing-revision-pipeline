@@ -687,3 +687,13 @@ The wrapper calls `make check-web-logger-position-unit-fixtures`; it does not
 mutate this fixture root, regenerate metadata, change tests, change validator
 code, modify Makefile, implement Rust schema / validator behavior, create a
 status marker, or create a final safety review.
+
+## 33. Step-web-logger-041 Run Record Workflow Design
+
+Step-web-logger-041 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Remote/Manual Run Record Workflow](web_logger_schema_position_unit_fixture_validator_release_quality_remote_run_record_workflow.md).
+
+The workflow design plans future public-safe status evidence for release-quality
+execution against this fixture root. It does not create a status marker, mutate
+fixtures, regenerate metadata, modify tests, modify validator code, or
+implement Rust schema / validator behavior.

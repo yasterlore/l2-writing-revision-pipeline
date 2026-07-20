@@ -511,3 +511,15 @@ buffering, acknowledgement, retry, deduplication, ordering, delivery
 durability, TypeScript/Rust hash work, validate / extract / micro_episode
 integration, Rust schema / validator behavior, status markers, final safety
 review, or CI workflow changes.
+
+## 30. Step-web-logger-041 Schema-Level Position Unit Fixture Validator Release-Quality Run Record Workflow Design
+
+Step-web-logger-041 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Remote/Manual Run Record Workflow](web_logger_schema_position_unit_fixture_validator_release_quality_remote_run_record_workflow.md).
+
+This does not change the event durability audit conclusion. It designs future
+status evidence for the fixture contract target only and does not add queueing,
+IndexedDB buffering, acknowledgement, retry, deduplication, ordering, delivery
+durability, TypeScript/Rust hash work, validate / extract / micro_episode
+integration, Rust schema / validator behavior, status markers, final safety
+review, wrapper changes, or CI workflow changes.

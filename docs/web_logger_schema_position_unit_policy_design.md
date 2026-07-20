@@ -470,3 +470,15 @@ implement Rust schema behavior, implement Rust validation behavior, change
 validate / extract / micro_episode behavior, create a status marker, create a
 final safety review, implement event durability, or provide production
 readiness, real-data readiness, or model performance evidence.
+
+## 34. Step-web-logger-041 Run Record Workflow Design
+
+Step-web-logger-041 adds
+[Schema-Level Position Unit Fixture Validator Release Quality Remote/Manual Run Record Workflow](web_logger_schema_position_unit_fixture_validator_release_quality_remote_run_record_workflow.md).
+
+The workflow design plans future status-marker evidence for the fixture
+contract target only. It does not implement Rust schema behavior, implement
+Rust validation behavior, change validate / extract / micro_episode behavior,
+create a status marker, create a final safety review, implement event
+durability, or provide production readiness, real-data readiness, or model
+performance evidence.
