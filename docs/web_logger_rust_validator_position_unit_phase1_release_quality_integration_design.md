@@ -453,3 +453,10 @@ Step-web-logger-063 records the separate Phase 2 release-quality status marker
 without changing the existing Phase 1 release-quality label, command, remote
 status marker, or final-reviewed boundary. The Phase 1 chain remains
 Phase 1-only.
+
+## 38. Step-web-logger-064 Phase 2 Final Safety Review Follow-Up
+
+Step-web-logger-064 final-reviews the separate Phase 2 release-quality chain
+without changing the existing Phase 1 release-quality label, command, remote
+status marker, or final-reviewed boundary. The Phase 1 chain remains
+Phase 1-only.

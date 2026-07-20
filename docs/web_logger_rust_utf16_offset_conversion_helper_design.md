@@ -643,3 +643,9 @@ Step-web-logger-063 records public-safe remote metadata for the Phase 2
 validator check that uses `kslog_schema::utf16_offsets`. It does not change
 helper behavior, replay behavior, helper API, or replay-focused accepted
 boundaries.
+
+## Step-web-logger-064 Final Safety Review Follow-Up
+
+Step-web-logger-064 final-reviews the Phase 2 validator release-quality chain
+that uses `kslog_schema::utf16_offsets`. It does not change helper behavior,
+replay behavior, helper API, or replay-focused accepted boundaries.
