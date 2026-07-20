@@ -853,6 +853,17 @@ server-side idempotency, ordering guarantees, TypeScript logger changes,
 SHA-256 helpers, TypeScript/Rust vector checks, production readiness,
 real-data readiness, or model performance evidence is added.
 
+## 79. Step-web-logger-062 Run Record Workflow Safety Update
+
+Step-web-logger-062 designs future metadata/count-only status recording for
+the Phase 2 validator release-quality check. It does not alter durability,
+hash, TypeScript logger, or data-collection behavior.
+
+No queueing, IndexedDB persistence, acknowledgement, retry, deduplication,
+server-side idempotency, ordering guarantees, TypeScript logger changes,
+SHA-256 helpers, TypeScript/Rust vector checks, production readiness,
+real-data readiness, or model performance evidence is added.
+
 ## 78. Step-web-logger-061 Release-Quality Integration Safety Update
 
 Step-web-logger-061 adds wrapper coverage for the Phase 2 validator target. It

@@ -368,3 +368,12 @@ remote status evidence into Phase 2 status evidence.
 
 Phase 2 run record workflow, status marker evidence, and final safety review
 acceptance remain future work.
+
+## 30. Step-web-logger-062 Phase 2 Run Record Workflow Design Follow-Up
+
+Step-web-logger-062 designs a future run-record workflow for the separate
+Phase 2 release-quality chain. It does not revise the Step054 accepted Phase 1
+boundary and does not create Phase 2 status marker evidence.
+
+Phase 2 status marker evidence and Phase 2 final safety review acceptance
+remain future work.

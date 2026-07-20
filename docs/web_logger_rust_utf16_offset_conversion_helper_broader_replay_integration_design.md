@@ -575,3 +575,9 @@ Phase 1 validator label and before the Rust UTF-16 replay integration label.
 Step-web-logger-061 inserts the Phase 2 validator release-quality check before
 the replay integration label. This keeps validator numeric metadata evidence
 separate from replay correctness evidence.
+
+## 53. Step-web-logger-062 Run Record Workflow Design Follow-Up
+
+Step-web-logger-062 designs future status metadata for the Phase 2 validator
+wrapper check. The run-record workflow should keep validator numeric metadata
+evidence separate from replay correctness evidence.

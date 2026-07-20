@@ -734,3 +734,16 @@ tests only. It does not add extract / micro_episode integration, TypeScript
 logger changes, SHA-256 helper work, TypeScript/Rust vector checks, event
 durability, production readiness, real-data readiness, or model performance
 evidence.
+
+## 55. Step-web-logger-062 Run Record Workflow Design
+
+Step-web-logger-062 designs future run-record workflow for the Phase 2 wrapper
+check. The future status marker should record remote-first or explicitly
+local/manual fallback metadata, the Phase 2 label/command, the 8-test focused
+target summary, and public-safe safety flags without raw Cargo output or raw
+test output blocks.
+
+This design does not create a status marker and does not add extract /
+micro_episode integration, TypeScript logger changes, SHA-256 helper work,
+TypeScript/Rust vector checks, event durability, production readiness,
+real-data readiness, or model performance evidence.

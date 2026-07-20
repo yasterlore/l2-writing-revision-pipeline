@@ -457,3 +457,16 @@ behavior, fixtures, Makefile target behavior, replay behavior, extract /
 micro_episode integration, TypeScript logger behavior, SHA-256 helper work,
 event durability, production readiness, real-data readiness, or model
 performance evidence.
+
+## Step-web-logger-062 Run Record Workflow Design Follow-Up
+
+Step-web-logger-062 designs how future status evidence should record the
+Phase 2 release-quality check. It keeps evidence metadata/count-only and
+records missing remote metadata as `not available from provided public-safe
+metadata`.
+
+This follow-up does not change Phase 2 validator behavior, tests, fixtures,
+Makefile target behavior, wrapper behavior, status markers, replay behavior,
+extract / micro_episode integration, TypeScript logger behavior, event
+durability, production readiness, real-data readiness, or model performance
+evidence.

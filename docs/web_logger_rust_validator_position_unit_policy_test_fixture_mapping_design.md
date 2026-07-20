@@ -646,3 +646,9 @@ Step-web-logger-061 exposes the 8-test Phase 2 mapping through release-quality
 by calling the existing Makefile target. The 9-test Phase 1 mapping remains
 separate and continues to run through the existing Phase 1 release-quality
 label.
+
+## 44. Step-web-logger-062 Run Record Workflow Design Follow-Up
+
+Step-web-logger-062 designs future metadata/count-only recording for the
+8-test Phase 2 mapping. It does not change fixture mappings, Rust tests,
+validator behavior, or the separate 9-test Phase 1 mapping.

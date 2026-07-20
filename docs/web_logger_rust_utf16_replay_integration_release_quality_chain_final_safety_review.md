@@ -623,3 +623,10 @@ Step-web-logger-061 adds the Phase 2 validator label before the replay label in
 the release-quality wrapper. The replay-focused accepted boundary remains
 separate, and Phase 2 validator evidence should not be read as replay
 correctness evidence.
+
+## 46. Step-web-logger-062 Run Record Workflow Design Follow-Up
+
+Step-web-logger-062 designs future status recording for the Phase 2 validator
+release-quality check. This does not change the replay-focused accepted
+boundary and does not make Phase 2 validator status evidence replay
+correctness evidence.

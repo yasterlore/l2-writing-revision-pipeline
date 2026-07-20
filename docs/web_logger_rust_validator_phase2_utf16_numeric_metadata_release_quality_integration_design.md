@@ -405,3 +405,15 @@ Step061 does not change Makefile, Rust code/tests, TypeScript/Python code,
 fixtures, workflows, package metadata, Cargo metadata, or status markers.
 Phase 2 run record workflow, status marker, and final safety review remain
 future work.
+
+## 26. Step-web-logger-062 Run Record Workflow Design Follow-Up
+
+Step-web-logger-062 adds
+[Rust validator Phase 2 UTF-16 numeric metadata release-quality remote/manual run record workflow](web_logger_rust_validator_phase2_utf16_numeric_metadata_release_quality_remote_run_record_workflow.md).
+It designs remote-first evidence recording, local/manual fallback handling, the
+future status marker path, metadata/count-only fields, raw Cargo output safety
+boundaries, and Step063 handoff.
+
+Step062 does not create a status marker, does not change the wrapper, and does
+not change Makefile, Rust code/tests, fixtures, or Phase 2 final-review
+evidence.

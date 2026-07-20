@@ -807,3 +807,11 @@ Step-web-logger-061 adds the Phase 2 validator target to release-quality. This
 wrapper check remains separate from SHA-256 hash compatibility,
 TypeScript/Rust vector checks, TypeScript logger emission, event durability,
 production readiness, real-data readiness, and model performance evidence.
+
+## 79. Step-web-logger-062 Run Record Workflow Design Follow-Up
+
+Step-web-logger-062 designs future metadata/count-only status recording for
+the Phase 2 wrapper check. The workflow remains separate from SHA-256 hash
+compatibility, TypeScript/Rust vector checks, TypeScript logger emission,
+event durability, production readiness, real-data readiness, and model
+performance evidence.

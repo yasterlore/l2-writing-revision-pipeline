@@ -739,3 +739,9 @@ parser/accessor boundary or shared UTF-16 helper API.
 Step-web-logger-061 integrates the validator Phase 2 Makefile target into the
 release-quality wrapper. This does not change the `kslog_schema`
 parser/accessor boundary, `RawEvent` fields, or shared UTF-16 helper API.
+
+## 43. Step-web-logger-062 Run Record Workflow Design Follow-Up
+
+Step-web-logger-062 designs future status metadata for the Phase 2 wrapper
+check. It does not change the `kslog_schema` parser/accessor boundary,
+`RawEvent` fields, or shared UTF-16 helper API.

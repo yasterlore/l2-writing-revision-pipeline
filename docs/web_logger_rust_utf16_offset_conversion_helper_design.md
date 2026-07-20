@@ -630,3 +630,9 @@ does not change helper behavior or replay behavior.
 Step-web-logger-061 adds the Phase 2 validator target to release-quality before
 the replay-focused UTF-16 target. This does not change helper behavior, replay
 behavior, or the `kslog_schema::utf16_offsets` API.
+
+## Step-web-logger-062 Run Record Workflow Design Follow-Up
+
+Step-web-logger-062 designs future status recording for the Phase 2 validator
+check that uses `kslog_schema::utf16_offsets`. It does not change helper
+behavior, replay behavior, or helper API.

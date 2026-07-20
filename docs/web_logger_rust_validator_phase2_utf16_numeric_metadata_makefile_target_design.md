@@ -440,3 +440,13 @@ and command
 The Makefile target remains unchanged and remains the command source of truth.
 Step061 does not change Rust code/tests, fixtures, or Phase 2 status/final
 review evidence.
+
+## 31. Step-web-logger-062 Run Record Workflow Design Follow-Up
+
+Step-web-logger-062 designs the future status-marker workflow for recording
+the Phase 2 target after release-quality wrapper integration. The Makefile
+target remains unchanged and still runs
+`cargo test -p kslog_validate position_unit_phase2`.
+
+Step062 does not create a status marker and does not change Makefile, wrapper,
+Rust code/tests, fixtures, or final-review evidence.

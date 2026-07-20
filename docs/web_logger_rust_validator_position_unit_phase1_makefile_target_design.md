@@ -522,3 +522,9 @@ Step-web-logger-061 adds the separate Phase 2 target to the release-quality
 wrapper while preserving the Phase 1 Makefile target name, help text, command,
 and wrapper label/command. The Phase 1 target still runs
 `cargo test -p kslog_validate position_unit_phase1`.
+
+## 40. Step-web-logger-062 Phase 2 Run Record Workflow Design Follow-Up
+
+Step-web-logger-062 designs future status recording for the Phase 2 wrapper
+check. It does not change the Phase 1 Makefile target or the Phase 1-only
+focused-test boundary.

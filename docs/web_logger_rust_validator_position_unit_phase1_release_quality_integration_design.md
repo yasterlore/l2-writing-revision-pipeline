@@ -440,3 +440,9 @@ is `make check-web-logger-rust-validator-position-unit-phase2-utf16-numeric`.
 
 The Phase 1 release-quality chain remains Phase 1-only. Phase 2 status marker
 and final safety review work remain future steps.
+
+## 36. Step-web-logger-062 Phase 2 Run Record Workflow Design Follow-Up
+
+Step-web-logger-062 designs future Phase 2 status evidence recording without
+changing the existing Phase 1 release-quality label, command, remote status
+marker, or final-reviewed boundary.
